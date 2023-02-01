@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:56+0000\n"
+"POT-Creation-Date: 2023-02-01 00:54+0000\n"
 "PO-Revision-Date: 2023-01-19 09:57+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -606,7 +606,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Não Deverá Conter Esta Marca"
 
-#: core/app/items/delegate/itemdelegate.cpp:359
+#: core/app/items/delegate/itemdelegate.cpp:362
 #, kde-format
 msgid "Reference Image"
 msgstr "Imagem de Referência"
@@ -1481,7 +1481,7 @@ msgstr ""
 "Nesse caso, a funcionalidade de \"Gestão de Cores\" ficará desactivada até "
 "resolver essa questão.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3266,75 +3266,75 @@ msgstr "Desfazer"
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore"
 msgstr "Repor"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Remover as imagens seleccionadas da lista"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Delete..."
 msgstr "Apagar..."
 
-#: core/app/views/stack/trashview.cpp:125
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Itens Seleccionados Permanentemente"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Todos os Itens Permanentemente"
 
-#: core/app/views/stack/trashview.cpp:246
+#: core/app/views/stack/trashview.cpp:245
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Confirmar a Anulação"
 
-#: core/app/views/stack/trashview.cpp:247
-#: core/app/views/stack/trashview.cpp:272
+#: core/app/views/stack/trashview.cpp:246
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Tem a certeza que deseja repor %1 item?"
 msgstr[1] "Tem a certeza que deseja repor %1 itens?"
 
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:270
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Confirmar a Reposição"
 
-#: core/app/views/stack/trashview.cpp:300
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:299
+#: core/app/views/stack/trashview.cpp:349
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Confirmar a Remoção"
 
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:300
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Tem a certeza que deseja remover %1 item de forma permanente?"
 msgstr[1] "Tem a certeza que deseja remover %1 itens de forma permanente?"
 
-#: core/app/views/stack/trashview.cpp:351
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Tem a certeza que deseja remover TODOS os itens de forma permanente?"
 
-#: core/app/views/stack/trashview.cpp:440
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 itens seleccionados"
@@ -40052,49 +40052,49 @@ msgstr ""
 "Diversas ferramentas que incluem o editor, o modo de panorama, a mistura em "
 "pilha, o calendário, a galeria em HTML e a abertura com programas externos"
 
-#: core/libs/settings/applicationsettings_p.cpp:261
+#: core/libs/settings/applicationsettings_p.cpp:265
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Categoria"
 
-#: core/libs/settings/applicationsettings_p.cpp:262
+#: core/libs/settings/applicationsettings_p.cpp:266
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Viagem"
 
-#: core/libs/settings/applicationsettings_p.cpp:263
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Férias"
 
-#: core/libs/settings/applicationsettings_p.cpp:264
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amigos"
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natureza"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Festa"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Por fazer"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -60509,13 +60509,13 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Procura Avançada"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #: core/utilities/setup/camera/setupcamera.cpp:469
 #, kde-format
 msgid "Show file&name"
 msgstr "Mostrar o &nome do ficheiro"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
@@ -60523,13 +60523,13 @@ msgstr ""
 "Active esta opção para mostrar o nome do ficheiro por baixo da miniatura da "
 "imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:472
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Mostrar o taman&ho do ficheiro"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:473
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
@@ -60537,13 +60537,13 @@ msgstr ""
 "Active esta opção para mostrar o tamanho do ficheiro por baixo da miniatura "
 "da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #: core/utilities/setup/camera/setupcamera.cpp:475
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Mostrar a &data de criação da máquina"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #: core/utilities/setup/camera/setupcamera.cpp:476
 #, kde-format
 msgid ""
@@ -60552,12 +60552,12 @@ msgstr ""
 "Active esta opção para mostrar a data de criação da máquina por baixo da "
 "miniatura da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Mostrar a data de &modificação do ficheiro"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -60569,12 +60569,12 @@ msgstr ""
 "fotográfica. Esta opção é útil para identificar rapidamente os itens que "
 "foram modificados."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Mostrar as dimensões da ima&gem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -60582,12 +60582,12 @@ msgstr ""
 "Configure esta opção para mostrar o tamanho da imagem em pixels por baixo da "
 "miniatura da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Mostrar as proporções da imagem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
@@ -60595,47 +60595,47 @@ msgstr ""
 "Active esta opção para mostrar as proporções da imagem abaixo da miniatura "
 "da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid "Show image format"
 msgstr "Mostrar o formato da imagem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Active esta opção para mostrar o tipo MIME sobre a miniatura da mesma."
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:179
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Mostrar o títu&lo do digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 "Active esta opção para mostrar o título do digiKam por baixo da miniatura da "
 "imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Mostrar os &títulos do digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "Active esta opção para mostrar os títulos do digiKam por baixo da miniatura "
 "da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Mos&trar as marcas do digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -60643,25 +60643,56 @@ msgstr ""
 "Active esta opção para mostrar a lista de marcas do digiKam por baixo da "
 "miniatura da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Mostra&r a classificação do digiKam"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 "Active esta opção para mostrar a classificação do digiKam por baixo da "
 "miniatura da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:195
+#, fuzzy, kde-format
+#| msgid "Show digiKam tit&le"
+msgid "Show digiKam &pick label"
+msgstr "Mostrar o títu&lo do digiKam"
+
+#: core/utilities/setup/album/setupalbumview.cpp:196
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid ""
+"Set this option to show the digiKam pick label below the image thumbnail."
+msgstr ""
+"Active esta opção para mostrar o título do digiKam por baixo da miniatura da "
+"imagem."
+
+#: core/utilities/setup/album/setupalbumview.cpp:199
+#, fuzzy, kde-format
+#| msgid "Show digiKam tit&le"
+msgid "Show digiKam color &label"
+msgstr "Mostrar o títu&lo do digiKam"
+
+#: core/utilities/setup/album/setupalbumview.cpp:200
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+msgid ""
+"Set this option to show the digiKam color label as a border around the "
+"thumbnail."
+msgstr ""
+"Active esta opção para mostrar as marcas do digiKam por baixo da miniatura "
+"da imagem."
+
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Mostrar os botões sobrepostos de rotação"
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -60670,12 +60701,12 @@ msgstr ""
 "Active esta opção para mostrar os botões sobrepostos na miniatura da imagem "
 "que permitem processar a rotação da mesma para a esquerda ou para a direita."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Mostrar o botão sobreposto de ecrã completo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -60684,13 +60715,13 @@ msgstr ""
 "Active esta opção para mostrar um botão sobreposto na miniatura da imagem "
 "para a abrir em todo o ecrã."
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:211
 #: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Mostrar o Indicador de Localização Geográfica"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:212
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -60699,57 +60730,57 @@ msgstr ""
 "Active esta opção para mostrar um ícone sobre a miniatura da imagem, caso o "
 "item possua informações geográficas."
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:214
 #: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Acção do botão na miniatura:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:216
 #, kde-format
 msgid "Show Preview"
 msgstr "Mostrar a Antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:217
 #, kde-format
 msgid "Start Image Editor"
 msgstr "Iniciar o Editor de Imagem"
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:218
 #, kde-format
 msgid "Show on Light Table"
 msgstr "Mostrar na Mesa da Luz"
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:219
 #, kde-format
 msgid "Open with Default Application"
 msgstr "Abrir com a Aplicação Predefinida"
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:220
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Escolha o que deve acontecer ao carregar sobre uma miniatura."
 
-#: core/utilities/setup/album/setupalbumview.cpp:210
+#: core/utilities/setup/album/setupalbumview.cpp:222
 #: core/utilities/setup/camera/setupcamera.cpp:510
 #, kde-format
 msgid "Icon View font:"
 msgstr "Tipo de letra dos ícones:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:211
+#: core/utilities/setup/album/setupalbumview.cpp:223
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Seleccione aqui o tipo de letra usado para mostrar o texto nas áreas de "
 "ícones."
 
-#: core/utilities/setup/album/setupalbumview.cpp:213
+#: core/utilities/setup/album/setupalbumview.cpp:225
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Usar um tamanho de miniaturas maiores para resoluções mais altas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:214
+#: core/utilities/setup/album/setupalbumview.cpp:226
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -60772,18 +60803,18 @@ msgstr ""
 "para fazer efeito, sendo que a opção 'Reconstruir as Miniaturas' da "
 "ferramenta de Manutenção terá de ser processada sobre as colecções inteiras."
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ícones"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:268
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Tamanho dos ícones da Área da Árvore:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -60792,12 +60823,12 @@ msgstr ""
 "Configure esta opção para definir o tamanho em pixels dos ícones da Árvore "
 "nas barras laterais do digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr "Tamanho dos ícones da Área da Árvore de Pessoas:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:286
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -60806,22 +60837,22 @@ msgstr ""
 "Configure esta opção para definir o tamanho em pixels dos ícones da Árvore "
 "de Pessoas nas barras laterais do digiKam."
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgid "Tree View font:"
 msgstr "Tipo de letra da árvore:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Defina aqui o tipo de letra usado para apresentar o texto na árvore."
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Mostrar a quantidade de itens nas árvores"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -60830,62 +60861,62 @@ msgstr ""
 "Configure esta opção para mostrar, em conjunto com o nome do álbum, o número "
 "de itens na área de ícones dentro dele."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Vistas em Árvore"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "A antevisão mostra a área incorporada se disponível (mais rápido)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "A antevisão mostra a imagem completa"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Imagens RAW:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automática"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Antevisão incorporada"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Dados RAW em metade do tamanho"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Dados RAW no tamanho total (alta qualidade)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 "A imagem de antevisão é convertida para 8 bits para uma visualização mais "
 "rápida"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -60893,13 +60924,13 @@ msgstr ""
 "Desligue isto se não quiser converter uma imagem de antevisão a 16 'bits' "
 "para 8 'bits'."
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #: core/utilities/setup/camera/setupcamera.cpp:547
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Mostrar os ícones e o texto sobre a antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:332
 #: core/utilities/setup/camera/setupcamera.cpp:548
 #, kde-format
 msgid ""
@@ -60907,31 +60938,31 @@ msgid ""
 msgstr ""
 "Desligue isto se não quiser ver os ícones e o texto na antevisão da imagem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:348
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Antevisão"
 
-#: core/utilities/setup/album/setupalbumview.cpp:347
+#: core/utilities/setup/album/setupalbumview.cpp:363
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Ecrã Completo"
 
-#: core/utilities/setup/album/setupalbumview.cpp:352
+#: core/utilities/setup/album/setupalbumview.cpp:368
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Tipos MIME"
 
-#: core/utilities/setup/album/setupalbumview.cpp:355
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Categorias"
 
-#: core/utilities/setup/album/setupalbumview.cpp:516
+#: core/utilities/setup/album/setupalbumview.cpp:536
 #, kde-format
 msgctxt "@info"
 msgid ""

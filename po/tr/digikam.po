@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-31 00:56+0000\n"
-"PO-Revision-Date: 2023-01-31 00:40+0300\n"
+"POT-Creation-Date: 2023-02-01 00:54+0000\n"
+"PO-Revision-Date: 2023-02-01 00:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -497,7 +497,7 @@ msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
 msgstr "Bu Etiketten Olmamalı"
 
-#: core/app/items/delegate/itemdelegate.cpp:359
+#: core/app/items/delegate/itemdelegate.cpp:362
 #, kde-format
 msgid "Reference Image"
 msgstr "Başvuru Görseli"
@@ -1374,7 +1374,7 @@ msgstr ""
 "seçerseniz \"Renk Yönetimi\" desteği siz bu sorunu çözene dek etkisiz hale "
 "gelecektir.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2701,9 +2701,9 @@ msgid ""
 "p><p>Please install the 64-bit version of digiKam to get a better experience "
 "with digiKam.</p>"
 msgstr ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>DigiKam ile daha iyi bir deneyim elde etmek için lütfen digiKam'ın 64 "
-"bit sürümünü yükleyin.</p>"
+"<p>digiKam'i 64 bit Windows'ta 32 bit sürüm olarak çalıştırıyorsunuz.</"
+"p><p>Daha iyi bir digiKam deneyimi için lütfen digiKam'in 64 bit sürümünü "
+"kurun.</p>"
 
 #: core/app/main/main.cpp:263
 #, kde-format
@@ -2712,9 +2712,9 @@ msgid ""
 "it.\n"
 "There is no database plugin installed on your computer."
 msgstr ""
-"Run-time Qt SQLite veya MySQL veritabanı eklentisi mevcut değil. lütfen "
-"yükleyin.\n"
-"Bilgisayarınızda herhangi bir veritabanı eklentisi yüklü değil."
+"Çalışma zamanı Qt SQLite veya MySQL veritabanı eklentisi kullanılabilir "
+"değil; lütfen kurun.\n"
+"Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
 #: core/app/main/main.cpp:272
 #, kde-format
@@ -2723,9 +2723,9 @@ msgid ""
 "install it.\n"
 "Database plugins installed on your computer are listed below."
 msgstr ""
-"Run-time Qt SQLite veya MySQL veritabanı eklentisi mevcut değil. Lütfen "
-"yükleyin.\n"
-"Bilgisayarınızda kurulu veritabanı eklentileri aşağıda listelenmiştir."
+"Çalışma zamanı Qt SQLite veya MySQL veritabanı eklentisi kullanılabilir "
+"değil; lütfen kurun.\n"
+"Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
 #: core/app/main/main.cpp:312
 #, kde-format
@@ -3164,74 +3164,74 @@ msgstr "Geri Al"
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, fuzzy, kde-format
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Seçilen resimleri listeden kaldır"
 
-#: core/app/views/stack/trashview.cpp:124
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Delete..."
 msgstr "Sil..."
 
-#: core/app/views/stack/trashview.cpp:125
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Seçili Ögeler Kalıcı Olarak"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Tüm Ögeler Kalıcı Olarak"
 
-#: core/app/views/stack/trashview.cpp:246
+#: core/app/views/stack/trashview.cpp:245
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Geri Almayı Onayla"
 
-#: core/app/views/stack/trashview.cpp:247
-#: core/app/views/stack/trashview.cpp:272
+#: core/app/views/stack/trashview.cpp:246
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:270
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Geri Yüklemeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:300
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:299
+#: core/app/views/stack/trashview.cpp:349
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Silmeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:301
+#: core/app/views/stack/trashview.cpp:300
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:351
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "TÜM kalemleri kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:440
+#: core/app/views/stack/trashview.cpp:439
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçildi"
@@ -4495,20 +4495,16 @@ msgid "Help"
 msgstr "Yardım"
 
 #: core/avplayer/main/main.cpp:174
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#| "p><p>Please install the 64-bit version of digiKam to get a better "
-#| "experience with digiKam.</p>"
+#, kde-format
 msgctxt "#info"
 msgid ""
 "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
 "p><p>Please install the 64-bit version of AVPlayer to get a better "
 "experience with AVPlayer.</p>"
 msgstr ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>DigiKam ile daha iyi bir deneyim elde etmek için lütfen digiKam'ın 64 "
-"bit sürümünü yükleyin.</p>"
+"<p>AVPlayer'ı 64 bit Windows'ta 32 bit sürüm olarak çalıştırıyorsunuz.</"
+"p><p>AVPlayer ile daha iyi bir deneyim elde etmek için lütfen AVPlayer'ın 64 "
+"bit sürümünü kurun.</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
 #, fuzzy, kde-format
@@ -19851,6 +19847,9 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
+"Bu araç, Optik Karakter Tanıma işlemini gerçekleştirmek için %1 açık kaynak "
+"işletkesini kullanır. Tesseract programı ve istenilen dil modülleri "
+"sisteminizde kurulu olmalıdır."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
 #, fuzzy, kde-format
@@ -19973,13 +19972,14 @@ msgid "Start OCR using the current settings."
 msgstr "Şimdiki ayarları kullanarak Raw görüntü önizlemesi oluştur."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
-#, fuzzy, kde-format
-#| msgid "This library is not present on your system."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Tesseract program or language modules\n"
 "are not installed on your system."
-msgstr "Bu kitaplık sisteminizde mevcut değil."
+msgstr ""
+"Tesseract programı veya dil modülleri\n"
+"sisteminizde kurulu değil."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
 #, fuzzy, kde-format
@@ -21454,8 +21454,8 @@ msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr ""
-"GIMP çalıştırılırken bir hata oluştu. Lütfen doğru bir şekilde kurulu "
-"olduğundan emin olun."
+"Dışarıdan Gimp programı başlatılırken bir hata oluştu. Lütfen doğru şekilde "
+"kurulduğundan emin olun."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
 #, kde-format
@@ -29912,8 +29912,8 @@ msgid ""
 "xml file of the current version of digiKam is installed at the correct "
 "place. "
 msgstr ""
-"Veritabanı güncelleme eylemi bulunamadı. Lütfen digiKam'ın geçerli sürümünün "
-"dbconfig.xml dosyasının doğru yerde kurulu olduğundan emin olun. "
+"Veritabanı güncelleme eylemi bulunamadı. Lütfen digiKam'in güncel sürümünün "
+"dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:702
 #, kde-format
@@ -29973,15 +29973,7 @@ msgstr ""
 "yapılandırmanızı gözden geçirin."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1049
-#, fuzzy, kde-format
-#| msgid ""
-#| "There was an error associating your albumLibraryPath (\"%1\") with a "
-#| "storage volume of your system. This problem may indicate that there is a "
-#| "problem with your installation. If you are working on Linux, check that "
-#| "HAL is installed and running. In any case, you can seek advice from the "
-#| "digikam-devel@kde.org mailing list. The database updating process will "
-#| "now be aborted because we do not want to create a new database based on "
-#| "false assumptions from a broken installation."
+#, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
 "volume of your system. This problem may indicate that there is a problem "
@@ -29991,13 +29983,14 @@ msgid ""
 "process will now be aborted because we do not want to create a new database "
 "based on false assumptions from a broken installation."
 msgstr ""
-"Sizin albumLibraryPath (\"%1\") ile sisteminizdeki bir depolama birimiyle "
-"ilişkili bir hata var. Bu, kurulumunuzla ilgili bir hata olabileceğini "
-"gösterir. Eğer Linux üzerinde çalışıyorsanız lütfen HAL sisteminin kurulu ve "
-"çalışır durumda olduğunu doğrulayın. Yinede, digikam-devel@kde.org "
-"mektuplaşma listesinden öneri alabilirsiniz. Veritabanı güncelleme işlemi "
-"sorunlu bir yüklemeye sahip olduğunuz için aktif veritabanında sorunlar "
-"yaratabileceğinden gerçekleştirilmeyecek."
+"Sizin albumLibraryPath'inizi (\"%1\") sisteminizin depolama birimiyle "
+"ilişkilendirirken bir hata oluştu. Bu sorun, kurulumunuzla ilgili bir sorun "
+"olduğunu gösterebilir. Linux üzerinde çalışıyorsanız HAL'ın kurulu ve "
+"çalışır durumda olduğunu denetleyin. Her durumda, digiKam geliştiricileri "
+"posta listesinden tavsiye alabilirsiniz (bkz. www.digikam.org/support). "
+"Bozuk bir kurulumdan yanlış varsayımlara dayanan yeni bir veritabanı "
+"oluşturmak istemediğimiz için veritabanı güncelleme işlemi şimdi iptal "
+"edilecek."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
@@ -30074,9 +30067,9 @@ msgid ""
 "the digikam application and is absolutely required to run digikam. Please "
 "check your installation."
 msgstr ""
-"<b>%1</b> yapılandırma dosyası açılamadı. Bu dosya digikam uygulamasıyla "
-"birlikte yüklenir ve digikam'ı çalıştırmak için kesinlikle gereklidir. "
-"Lütfen kurulumunuzu kontrol edin."
+"<b>%1</b> yapılandırma dosyası açılamadı. Bu dosya digiKam uygulaması ile "
+"birlikte kurulur ve digikam'ın çalışması için mutlaka gereklidir. Lütfen "
+"kurulumunuzu denetleyin."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:180
 #, kde-format
@@ -30111,8 +30104,8 @@ msgid ""
 "An old version of the configuration file <b>%1</b> is found. Please ensure "
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
-"<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'ın "
-"çalışan sürümü ile birlikte sürülen sürümün yüklü olduğundan emin olun."
+"<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'in "
+"çalışan sürümüyle yayımlanan sürümün kurulu olduğundan emin olun."
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:201
 #, kde-format
@@ -30704,9 +30697,9 @@ msgid ""
 "digiKam will try to find these binaries automatically if they are already "
 "installed on your computer.</p>"
 msgstr ""
-"<p>Buradan, MySQL ikili sistem araçlarının bulunduğu yerleri "
-"yapılandırabilirsiniz. digiKam, bu ikili sistem dosyalarını bilgisayarınızda "
-"zaten yüklüyse otomatik olarak bulmaya çalışacaktır.</p>"
+"<p>Burada, MySQL ikili araçlarının bulunduğu konumları "
+"yapılandırabilirsiniz. digiKam, bilgisayarınızda halihazırda kuruluysa bu "
+"ikili dosyaları otomatik olarak bulmaya çalışır.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:140
 #, kde-format
@@ -35773,21 +35766,18 @@ msgid "Clear"
 msgstr "Temizle"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:164
-#, fuzzy, kde-format
-#| msgid "1 Kipi plugin installed"
-#| msgid_plural "%1 Kipi plugins installed"
+#, kde-format
 msgctxt "@info"
 msgid "1 plugin installed"
 msgid_plural "%1 plugins installed"
-msgstr[0] "1 Kipi eklentisi yüklendi"
-msgstr[1] "%1 Kipi eklentisi yüklendi"
+msgstr[0] "%1 eklenti kurulu"
+msgstr[1] "%1 eklenti kurulu"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:168
-#, fuzzy, kde-format
-#| msgid "No Kipi plugin installed"
+#, kde-format
 msgctxt "@info"
 msgid "No plugin installed"
-msgstr "Hiçbir Kipi eklentisi yüklenmemiş"
+msgstr "Kurulu eklenti yok"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:175
 #, kde-format
@@ -38819,6 +38809,12 @@ msgid ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
+"%2 üzerine yapılı\n"
+"%1 ön sürümü\n"
+"şu konuma indirildi:\n"
+"%3\n"
+"\n"
+"Geçerli oturumu kapatıp yükseltmek için \"Kur\"a tıklayın..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:479
 #, kde-format
@@ -38831,6 +38827,13 @@ msgid ""
 "\n"
 "Press \"Install\" to close current session and upgrade..."
 msgstr ""
+"Yeni %1\n"
+"%2 kararlı sürümü\n"
+"şu konuma indirildi:\n"
+"\n"
+"%3\n"
+"\n"
+"Geçerli oturumu kapatıp yükseltmek için \"Kur\"a tıklayın..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:503
 #, fuzzy, kde-format
@@ -38861,12 +38864,13 @@ msgstr ""
 "%3"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:602
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgid ""
 "Cannot start installer:\n"
 "%1"
-msgstr "Dosya kaydedilemiyor"
+msgstr ""
+"Kur çalıştırılamıyor:\n"
+"%1"
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:237
 #, fuzzy, kde-format
@@ -41207,49 +41211,49 @@ msgstr ""
 "Düzenleyici, panaroma, yığın karıştırma, takvim, html galerisi ve harici "
 "programlarla açmayı da içeren bazı araçlar"
 
-#: core/libs/settings/applicationsettings_p.cpp:261
+#: core/libs/settings/applicationsettings_p.cpp:265
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategori"
 
-#: core/libs/settings/applicationsettings_p.cpp:262
+#: core/libs/settings/applicationsettings_p.cpp:266
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Gezi"
 
-#: core/libs/settings/applicationsettings_p.cpp:263
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Tatiller"
 
-#: core/libs/settings/applicationsettings_p.cpp:264
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Arkadaşlar"
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Doğa"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Parti"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Yapılacaklar"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -44299,10 +44303,10 @@ msgid ""
 "click the 'Find' button to locate them on your system, otherwise please "
 "download and install them to proceed.</font></p></qt>"
 msgstr ""
-"<qt><p><font color=\"red\"><b>Uyarı:</b> Bazı gerekli ikililer sisteminizde "
-"bulunamadı. Eğer bu ikili dosyaları kurduysanız lütfen sisteminizde "
-"konumlandırmak için 'Bul' tıklayın. Aksi halde lütfen devam etmek için "
-"indirin ve kurun.</font></p></qt>"
+"<qt><p><font color=\"red\"><b>Uyarı:</b> Bazı gerekli ikili dosyalar "
+"sisteminizde bulunamadı. Bu ikili dosyalar kuruluysa sisteminizde bulmak "
+"için lütfen 'Bul' düğmesini tıklayın, aksi takdirde sürdürmek için bunları "
+"indirip kurun.</font></p></qt>"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:174
 #, kde-format
@@ -45925,6 +45929,16 @@ msgid ""
 "Application will try to find this binary automatically if they are already "
 "installed on your computer."
 msgstr ""
+"%1, çoklu ortam dosyalarını okumak, yazmak ve değiştirmek için açık kaynaklı "
+"bir programıdır. Bir komut satırı uygulaması olarak kullanılabildiğinden "
+"platformdan bağımsızdır. ExifTool genellikle farklı türde sayısal iş "
+"akışlarında içerilir ve Exif, IPTC, XMP, JFIF, GeoTIFF, ICC Profili, "
+"Photoshop IRB gibi birçok üst veri türünün yanı sıra birçok sayısal "
+"kameranın üreticiye özel üst veri biçimlerini destekler.\n"
+"\n"
+"Burada, ExifTool ikilisinin bulunduğu konumu yapılandırabilirsiniz. "
+"Uygulama, bilgisayarınızda halihazırda kuruluysa bu ikili dosyayı otomatik "
+"olarak bulmaya çalışacaktır."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:90
 #, fuzzy, kde-format
@@ -52365,20 +52379,16 @@ msgid "File(s) or folder(s) to open"
 msgstr "Açılacak dosya(lar) ya da dizin(ler)"
 
 #: core/showfoto/main/main.cpp:180
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#| "p><p>Please install the 64-bit version of digiKam to get a better "
-#| "experience with digiKam.</p>"
+#, kde-format
 msgctxt "#info"
 msgid ""
 "<p>You are running Showfoto as a 32-bit version on a 64-bit Windows.</"
 "p><p>Please install the 64-bit version of Showfoto to get a better "
 "experience with Showfoto.</p>"
 msgstr ""
-"<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-"p><p>DigiKam ile daha iyi bir deneyim elde etmek için lütfen digiKam'ın 64 "
-"bit sürümünü yükleyin.</p>"
+"<p>Showfoto'yu 64 bit Windows'ta 32 bit sürüm olarak çalıştırıyorsunuz.</"
+"p><p>Showfoto ile daha iyi bir deneyim elde etmek için lütfen Showfoto'nun "
+"64 bit sürümünü kurun.</p>"
 
 #: core/showfoto/main/showfoto.cpp:86
 #, kde-format
@@ -55474,22 +55484,22 @@ msgid ""
 "digiKam to scan for new items manually using the <b>Tools->Maintenance->Scan "
 "for new items</b> menu entry.</p></qt>"
 msgstr ""
-"<qt><p>Tebrikler. En düşük ayarlamalar tamamlanmıştır.</p><p>Unutmayın, "
-"digiKam yapılandırma panelini kullanarak daha fazla ayarı "
-"özelleştirebilirsiniz. digiKam dünyasıyla ilgili daha fazla bilgi edinmek "
-"için, <b>Yardım/El Kitabı</b> menü girişini kullanarak <b>digiKam El Kitabı</"
-"b> 'nı okumanızı öneririz (ayrı digiKam belgelendirmesi paketi kurmanız "
-"gerekir). El kitabını, <a href='https://www.digikam.org/docs'>digikam.org "
-"web sitesi</a> üzerinden çevrimiçi olarak da okuyabilirsiniz.</p><p>Asistanı "
-"kapatmak için <b>Bitir</b> düğmesine basın. digiKam, veritabanındaki tüm "
-"albümleri kaydetmek için koleksiyonunuzu tarayacak. Albümlerdeki ögeler "
-"başlangıç ​​aşamasından sonra arka planda toplanır.</p><p><i>Not:</i> "
-"koleksiyonunuzun boyutuna bağlı olarak, bu işlem biraz zaman alabilir. "
-"Tarama işlemini iptal ederseniz sonraki digiKam oturumunda yeniden "
-"başlatılacaktır.</p><p>Tarama tamamlandığında, bir sonraki açılışta digiKam "
-"yalnızca yeni albümleri tanımlamak için koleksiyonunuzu denetler- ki bu daha "
-"hızlıdır . Digikam'ı, <b>Araçlar->Bakım->Yeni Ögeleri Tara</b> menü girişini "
-"kullanarak elle yeni ögeler taramaya zorlayabilirsiniz.</p></qt>"
+"<qt><p>Tebrikler. Gerekli en az ayarlar tamamlandı.</p><p>Unutmayın, digiKam "
+"yapılandırma panelini kullanarak daha fazla ayarı özelleştirebilirsiniz. "
+"digiKam dünyasıyla ilgili daha fazla bilgi edinmek için, <b>Yardım/El "
+"Kitabı</b> menü girişini kullanarak <b>digiKam El Kitabı</b>'nı okumanızı "
+"öneririz (ayrı digiKam belgelendirmesi paketi kurmanız gerekir). El "
+"kitabını, <a href='https://www.digikam.org/docs'>digikam.org web sitesi</a> "
+"üzerinden çevrimiçi olarak da okuyabilirsiniz.</p><p>Yardımcıyı kapatmak "
+"için <b>Bitir</b> düğmesine basın. digiKam, veritabanındaki tüm albümleri "
+"kaydetmek için koleksiyonunuzu tarayacak. Albümlerdeki ögeler başlangıç ​​"
+"aşamasından sonra arka planda toplanır.</p><p><i>Not:</i> koleksiyonunuzun "
+"boyutuna bağlı olarak, bu işlem biraz zaman alabilir. Tarama işlemini iptal "
+"ederseniz sonraki digiKam oturumunda yeniden başlatılacaktır.</p><p>Tarama "
+"tamamlandığında, bir sonraki açılışta digiKam yalnızca yeni albümleri "
+"tanımlamak için koleksiyonunuzu denetler- ki bu daha hızlıdır. Digikam'ı, "
+"<b>Araçlar->Bakım->Yeni Ögeleri Tara</b> menü girişini kullanarak elle yeni "
+"ögeler taramaya zorlayabilirsiniz.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -55525,12 +55535,13 @@ msgid ""
 "dialog, you can customize the contents of these tooltips and the fonts used."
 "</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> araç ipuçları paragrafları ve digiKam metaverisini, fare "
-"ögeler üzerinde hareket ettiği zaman direkt olarak gösterir. Bu durum "
-"ögeleri seçerken kullanışlı olabilir. Araç ipuçları albüm klasör ve albüm "
-"simge görünümünde, toplu iş kuyruğu listesinde ve küçük resim çubuğunda "
-"görüntülenebilir. Bu araç ipuçlarını ve kullanılan yazı tiplerini digiKam "
-"yapılandırma diyaloğundan özelleştirebilirsiniz.</p></qt>"
+"<qt><p><i>Not:</i> Araç ipuçları, fare ögeler üzerinde hareket ederken "
+"fotoğraf ve digiKam üst verisini anında gösterir. Bu, ögeleri seçerken "
+"faydalı olabilir. Araç ipuçları, albüm klasörü görünümünde, albüm simgesi "
+"görünümünde, kamera simgesi görünümünde, toplu sıra listesi ve parmak "
+"çubuğunda görüntülenir. digiKam yapılandırma iletişim kutusundan, bu araç "
+"ipuçlarının içeriğini ve kullanılan yazıtiplerini özelleştirebilirsiniz.</"
+"p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:40
 #, kde-format
@@ -62516,39 +62527,39 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Gelişmiş Arama"
 
-#: core/utilities/setup/album/setupalbumview.cpp:149
+#: core/utilities/setup/album/setupalbumview.cpp:153
 #: core/utilities/setup/camera/setupcamera.cpp:469
 #, kde-format
 msgid "Show file&name"
 msgstr "&Dosya adını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:150
+#: core/utilities/setup/album/setupalbumview.cpp:154
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr ""
 "Dosya adının küçük resmin altında görünmesi için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:152
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:472
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Dosya &boyutunu göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:473
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr ""
 "Dosya boyutunun küçük resmin altında görünmesi için bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:155
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #: core/utilities/setup/camera/setupcamera.cpp:475
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Kamera oluştur&ma zamanını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:160
 #: core/utilities/setup/camera/setupcamera.cpp:476
 #, kde-format
 msgid ""
@@ -62557,12 +62568,12 @@ msgstr ""
 "Kamera oluşturma tarihini küçük resimlerin altında görünmesi için bu "
 "seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:163
 #, kde-format
 msgid "Show file &modification date"
 msgstr "Dosya &değiştirilme tarihini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show the file modification date below the image "
@@ -62577,12 +62588,12 @@ msgstr ""
 "altında görünmesi için bu seçeneği işaretleyin. Bu özellik, hangi ögelerin "
 "değiştiğini belirlemek için faydalıdır."
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "&Resim boyutlarını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:165
+#: core/utilities/setup/album/setupalbumview.cpp:169
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
@@ -62590,12 +62601,12 @@ msgstr ""
 "Piksel olarak resim boyutunun küçük resmin altında görünmesi için bu "
 "seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr "Resim en boy oranını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:173
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
@@ -62603,48 +62614,48 @@ msgstr ""
 "Resim küçük resminin altında resmin en boy oranını göstermek için bu "
 "seçeneği ayarla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
 msgid "Show image format"
 msgstr "Resim biçimini göster:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:177
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr ""
 "Resim mime türünü resim küçük resminde göstermek için bu seçeneğ ayarila."
 
-#: core/utilities/setup/album/setupalbumview.cpp:175
+#: core/utilities/setup/album/setupalbumview.cpp:179
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr "digiKam baş&lığını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:180
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 "digiKam başlığının küçük resmin altında görünmesi için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:183
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "digiKam &başlıklarını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
+#: core/utilities/setup/album/setupalbumview.cpp:184
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "digiKam başlıklarını küçük resmin altında görünmesi için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:187
 #: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "digiKam &etiketlerini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:188
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
@@ -62652,25 +62663,56 @@ msgstr ""
 "Küçük resminin altındaki digiKam etiketleri listesini göstermek için bu "
 "seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "digiKam beğenisini göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 "digiKam beğenisinin küçük resmin altında görünmesi için bu seçeneği "
 "işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:195
+#, fuzzy, kde-format
+#| msgid "Show digiKam tit&le"
+msgid "Show digiKam &pick label"
+msgstr "digiKam baş&lığını göster"
+
+#: core/utilities/setup/album/setupalbumview.cpp:196
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam title below the image thumbnail."
+msgid ""
+"Set this option to show the digiKam pick label below the image thumbnail."
+msgstr ""
+"digiKam başlığının küçük resmin altında görünmesi için bu seçeneği "
+"işaretleyin."
+
+#: core/utilities/setup/album/setupalbumview.cpp:199
+#, fuzzy, kde-format
+#| msgid "Show digiKam tit&le"
+msgid "Show digiKam color &label"
+msgstr "digiKam baş&lığını göster"
+
+#: core/utilities/setup/album/setupalbumview.cpp:200
+#, fuzzy, kde-format
+#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+msgid ""
+"Set this option to show the digiKam color label as a border around the "
+"thumbnail."
+msgstr ""
+"digiKam etiketlerini küçük resmin altında görünmesi için bu seçeneği "
+"işaretleyin."
+
+#: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Döndürme butonlarını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:204
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
@@ -62679,12 +62721,12 @@ msgstr ""
 "Resmin sağa ya da sola döndürebilecek kaplama tuşlarını göstermek için bu "
 "seçeneği ayarla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:207
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Tam ekran butonunu göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:208
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -62693,13 +62735,13 @@ msgstr ""
 "Resmin küçük resminde tam ekran kipinde açmak için bir buton göstermek "
 "istiyorsanız bu seçeneği işaretleyin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:211
 #: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Konum Belirtecini Göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:212
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
@@ -62708,61 +62750,61 @@ msgstr ""
 "Ögenin coğrafi konum bilgisi varsa küçük resmin üzerinde bir simge göstermek "
 "için bu seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:202
+#: core/utilities/setup/album/setupalbumview.cpp:214
 #: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Küçük Resim tıklama olayı:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:216
 #, fuzzy, kde-format
 #| msgid "Show preview"
 msgid "Show Preview"
 msgstr "Önizleme göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:205
+#: core/utilities/setup/album/setupalbumview.cpp:217
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "Resim düzenleyiciyi başlat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:206
+#: core/utilities/setup/album/setupalbumview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "Sağ panelde göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:219
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Öntanımlı Uygulama İle Aç"
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:220
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Küçük resme tıklayınca ne yapılacağını seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:210
+#: core/utilities/setup/album/setupalbumview.cpp:222
 #: core/utilities/setup/camera/setupcamera.cpp:510
 #, kde-format
 msgid "Icon View font:"
 msgstr "Simge Görünüm yazıtipi:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:211
+#: core/utilities/setup/album/setupalbumview.cpp:223
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 "Simge görünümünde görüntülenecek metin için kullanılan yazıtipini buradan "
 "seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:213
+#: core/utilities/setup/album/setupalbumview.cpp:225
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr "Yüksek ekran çözünürlüğü için büyük küçük resim boyutu kullan"
 
-#: core/utilities/setup/album/setupalbumview.cpp:214
+#: core/utilities/setup/album/setupalbumview.cpp:226
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -62785,18 +62827,18 @@ msgstr ""
 "gerekir ve Bakım aracından Küçük Resmi Yeniden Oluştur seçeneği tüm "
 "koleksiyonlarda işlenmelidir."
 
-#: core/utilities/setup/album/setupalbumview.cpp:245
+#: core/utilities/setup/album/setupalbumview.cpp:261
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Simgeler"
 
-#: core/utilities/setup/album/setupalbumview.cpp:252
+#: core/utilities/setup/album/setupalbumview.cpp:268
 #, kde-format
 msgid "Tree View icon size:"
 msgstr "Ağaç Görünümü simge boyutu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:259
+#: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
@@ -62805,13 +62847,13 @@ msgstr ""
 "digiKam yan çubularındaki Ağaç Görünümü simgelerinin piksel cinsinden "
 "boyutunu ayarlamak için bu özelliği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:262
+#: core/utilities/setup/album/setupalbumview.cpp:278
 #, fuzzy, kde-format
 #| msgid "Tree View icon size:"
 msgid "People Tree View icon size:"
 msgstr "Ağaç Görünümü simge boyutu:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:270
+#: core/utilities/setup/album/setupalbumview.cpp:286
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View icons in "
@@ -62823,23 +62865,23 @@ msgstr ""
 "digiKam yan çubularındaki Ağaç Görünümü simgelerinin piksel cinsinden "
 "boyutunu ayarlamak için bu özelliği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:273
+#: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
 msgid "Tree View font:"
 msgstr "Ağaç Görünüm yazıtipi:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:274
+#: core/utilities/setup/album/setupalbumview.cpp:290
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 "Ağaç Görünümde metin görüntülemek için kullanılacak yazıtipini buradan seçin."
 
-#: core/utilities/setup/album/setupalbumview.cpp:276
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Ağaç Görünümünde ögelerin sayısını göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:277
+#: core/utilities/setup/album/setupalbumview.cpp:293
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
@@ -62848,37 +62890,37 @@ msgstr ""
 "Albüm adının içindeki simge görünümü ögelerinin sayısını görüntülemek için "
 "bu seçeneği ayarlayın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Ağaç Görünümü"
 
-#: core/utilities/setup/album/setupalbumview.cpp:297
+#: core/utilities/setup/album/setupalbumview.cpp:313
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr "Eğer mümkünse önizleme gömülü görünümü gösterir (daha hızlı)"
 
-#: core/utilities/setup/album/setupalbumview.cpp:299
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Önizleme tüm resmi gösterir"
 
-#: core/utilities/setup/album/setupalbumview.cpp:301
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Ham resimler:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:304
+#: core/utilities/setup/album/setupalbumview.cpp:320
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Otomatik"
 
-#: core/utilities/setup/album/setupalbumview.cpp:306
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, fuzzy, kde-format
 #| msgctxt "@option:inlistbox Embedded preview as RAW image preview source"
 #| msgid "Embedded preview"
@@ -62886,7 +62928,7 @@ msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Gömülü önizleme"
 
-#: core/utilities/setup/album/setupalbumview.cpp:308
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@option:inlistbox Original, half-size data as RAW image preview source"
@@ -62895,7 +62937,7 @@ msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr "Ham veri yarım boyutta"
 
-#: core/utilities/setup/album/setupalbumview.cpp:310
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@option:inlistbox Original, half-size data as RAW image preview source"
@@ -62904,12 +62946,12 @@ msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr "Ham veri yarım boyutta"
 
-#: core/utilities/setup/album/setupalbumview.cpp:312
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr "Önizleme resmi daha hızlı görüntüleme için 8 bite dönüştürüldü"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:329
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
@@ -62917,13 +62959,13 @@ msgstr ""
 "Eğer önizleme resimlerini 16 bitten 8 bite dönüştürmek istemiyorsanız bu "
 "işareti kaldırın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #: core/utilities/setup/camera/setupcamera.cpp:547
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Önizlemedeki simge ve metinleri göster"
 
-#: core/utilities/setup/album/setupalbumview.cpp:316
+#: core/utilities/setup/album/setupalbumview.cpp:332
 #: core/utilities/setup/camera/setupcamera.cpp:548
 #, kde-format
 msgid ""
@@ -62932,31 +62974,31 @@ msgstr ""
 "Resim önizlemesinde simge ve metin görmek istemiyorsanız bunun işaretini "
 "kaldırın."
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:348
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Önizleme"
 
-#: core/utilities/setup/album/setupalbumview.cpp:347
+#: core/utilities/setup/album/setupalbumview.cpp:363
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Tam-Ekran"
 
-#: core/utilities/setup/album/setupalbumview.cpp:352
+#: core/utilities/setup/album/setupalbumview.cpp:368
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "Mime Türleri"
 
-#: core/utilities/setup/album/setupalbumview.cpp:355
+#: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: core/utilities/setup/album/setupalbumview.cpp:516
+#: core/utilities/setup/album/setupalbumview.cpp:536
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63231,9 +63273,10 @@ msgid ""
 "the right panel will be set automatically.</p><p>This list has been "
 "generated using the gphoto2 library installed on your computer.</p>"
 msgstr ""
-"<p>Kullanmak istediğiniz kamera adını seçin. Sağdaki panelde tüm öntanımlı "
-"ayarlar otomatik olarak yapılacaktır. </p><p>Bu liste bilgisayarınızda "
-"kurulu gphoto2 kitaplığı kullanılarak oluşturulmuştur.</p>"
+"<p>Burada kullanmak istediğiniz kamera adını seçin. Sağ paneldeki tüm "
+"öntanımlı ayarlar otomatik olarak ayarlanacaktır.</p><p>Bu liste, "
+"bilgisayarınızda kurulu olan gphoto2 kitaplığı kullanılarak oluşturulmuştur."
+"</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:140
 #, kde-format
