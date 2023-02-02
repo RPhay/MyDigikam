@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:54+0000\n"
-"PO-Revision-Date: 2023-01-30 12:19+0100\n"
+"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"PO-Revision-Date: 2023-02-01 02:18+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3039,11 +3039,9 @@ msgid "Restore"
 msgstr "აღდგენა"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "მონიშნული სურათების სიიდან წაშლა"
+msgstr "მონიშნული ფაილების აღდგენა სანაგვე ყუთიდან."
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -9902,12 +9900,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:396
 #, kde-format
 msgid "Horizontally first"
-msgstr ""
+msgstr "ჯერ ჰორიზონტალურად"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:397
 #, kde-format
 msgid "Vertically first"
-msgstr ""
+msgstr "ჯერ ვერტიკალურად"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:399
 #, kde-format
@@ -9928,12 +9926,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
 #, kde-format
 msgid "Mask Settings"
-msgstr ""
+msgstr "ნიღბის მორგება"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:424
 #, kde-format
 msgid "Energy function"
-msgstr ""
+msgstr "ენერგიის ფუნქცია"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:426
 #: core/utilities/setup/setupicc.cpp:480
@@ -10036,7 +10034,7 @@ msgstr ""
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:208
 #, kde-format
 msgid "Automatic Adjustment"
-msgstr ""
+msgstr "ავტომატური სწორება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
@@ -10054,7 +10052,7 @@ msgstr ""
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:351
 #, kde-format
 msgid "Click to set"
-msgstr ""
+msgstr "დასაყენებლად დააწკაპუნეთ"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:352
 #, kde-format
@@ -10349,7 +10347,7 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:415
 #, kde-format
 msgid "Crop Settings"
-msgstr ""
+msgstr "ამოჭრის მორგება"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:422
 #, kde-format
@@ -10365,12 +10363,12 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:425
 #, kde-format
 msgid "Diagonal Method"
-msgstr ""
+msgstr "დიაგონალური მეთოდი"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:426
 #, kde-format
 msgid "Harmonious Triangles"
-msgstr ""
+msgstr "ჰარმონიული სამკუთხედები"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
 #, kde-format
@@ -10413,7 +10411,7 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
 msgid "Golden spiral"
-msgstr ""
+msgstr "ოქროს სპირალი"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
@@ -33355,10 +33353,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not save icon for image '%1' to '%2'"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "სურათისთვის (%1) მინიატურის %2-ში შენახვის შეცდომა"
+msgstr "ფაილის %1 ალბომში %2 გადატანის შეცდომა"
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -33371,10 +33368,9 @@ msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not save icon for image '%1' to '%2'"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "სურათისთვის (%1) მინიატურის %2-ში შენახვის შეცდომა"
+msgstr "ფაილის %1 ალბომში %2 კოპირების შეცდომა"
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -50116,16 +50112,16 @@ msgid ""
 "about the digiKam world, we recommend reading the <b>digiKam handbook</b> "
 "using the <b>Help/Handbook</b> menu entry (you need to install the separate "
 "digiKam documentation package.) You can also read the manual online from the "
-"<a href='https://www.digikam.org/docs'>digikam.org website</a>.</p><p>Press "
-"<b>Finish</b> to close this assistant. digiKam will scan your collection to "
-"register all albums in the database. Items including in albums are collected "
-"after startup stage in background.</p><p><i>Note:</i> depending on your "
-"collection size, this operation can take a while. If you cancel the scanning "
-"operation, it will start again in the next digiKam session.</p><p>When "
-"scanning has completed, at next start-up, digiKam will only check your "
-"collection to identify new albums - which is much faster. You can force "
-"digiKam to scan for new items manually using the <b>Tools->Maintenance->Scan "
-"for new items</b> menu entry.</p></qt>"
+"<a href='https://docs.digikam.org/en/index.html'>dedicated website</a>.</"
+"p><p>Press <b>Finish</b> to close this assistant. digiKam will scan your "
+"collection to register all albums in the database. Items including in albums "
+"are collected after startup stage in background.</p><p><i>Note:</i> "
+"depending on your collection size, this operation can take a while. If you "
+"cancel the scanning operation, it will start again in the next digiKam "
+"session.</p><p>When scanning has completed, at next start-up, digiKam will "
+"only check your collection to identify new albums - which is much faster. "
+"You can force digiKam to scan for new items manually using the <b>Tools-"
+">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 
 #: core/utilities/firstrun/tooltipspage.cpp:56

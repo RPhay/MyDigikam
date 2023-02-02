@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:54+0000\n"
-"PO-Revision-Date: 2023-02-01 00:42+0300\n"
+"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"PO-Revision-Date: 2023-02-02 01:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -587,8 +587,8 @@ msgstr "Etiket Küçük Görseli Olarak Ayarla"
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
 msgid_plural "Move %1 Files to Trash"
-msgstr[0] "Çöpe Taşı"
-msgstr[1] "%1 Dosyayı Çöpe Taşı"
+msgstr[0] "Çöp Kutusuna Taşı"
+msgstr[1] "%1 Dosyayı Çöp Kutusuna Taşı"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:190
 #, kde-format
@@ -1906,7 +1906,7 @@ msgstr "Seçili ögenin dosya adını değiştir."
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
-msgstr "Çöpe Taşı"
+msgstr "Çöp Kutusuna Taşı"
 
 #: core/app/main/digikamapp_setup.cpp:483
 #, kde-format
@@ -3541,10 +3541,9 @@ msgid "Welcome to digiKam %1"
 msgstr "DigiKam'a Hoşgeldiniz %1"
 
 #: core/app/views/stack/welcomepageview.cpp:265
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background Image Credits"
-msgstr "Arkaplan belirginliği:"
+msgstr "Arka Plan Görseli Bilgileri"
 
 #: core/app/views/stack/welcomepageview.cpp:268
 #, fuzzy, kde-format
@@ -6566,7 +6565,7 @@ msgid ""
 "matrix radius that determines how much to blur the image."
 msgstr ""
 "Düzgünlük olarak 0 etkisizdir, 1 ve üzeri resmin ne kadar "
-"bulanıklaştırılacağını belirleyen Gaussian bulanıklaştırma matris yarıçapını "
+"bulanıklaştırılacağını belirleyen Gauss bulanıklaştırma matris yarıçapını "
 "belirler."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
@@ -9361,7 +9360,7 @@ msgstr "Süsleme Düzeltmesi..."
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:157
 #, kde-format
 msgid "Gaussian Blur"
-msgstr "Gaussian Bulanıklığı"
+msgstr "Gauss Bulanıklaştırması"
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:44
 #, fuzzy, kde-format
@@ -14900,11 +14899,10 @@ msgid "Origin"
 msgstr "Kaynak"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Credits"
+#, kde-format
 msgctxt "@item: iptc"
 msgid "Credits"
-msgstr "Krediler"
+msgstr "Emeği Geçenler"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
 #, kde-format
@@ -16284,11 +16282,10 @@ msgid "Origin"
 msgstr "Kaynak"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
-#, fuzzy, kde-format
-#| msgid "Credits"
+#, kde-format
 msgctxt "@item"
 msgid "Credits"
-msgstr "Krediler"
+msgstr "Emeği Geçenler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
 #, fuzzy, kde-format
@@ -31359,7 +31356,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
-msgstr "Dosyaları çöpe taşımak yerine &sil"
+msgstr "Dosyaları çöp kutusuna taşımak yerine &sil"
 
 #: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
@@ -31391,7 +31388,7 @@ msgid ""
 "moved to the Trash."
 msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler doğrudan "
-"Çöpe taşınacaktır."
+"çöp kutusuna taşınacaktır."
 
 #: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
@@ -31400,7 +31397,7 @@ msgid ""
 "be directly moved to the Trash."
 msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmeyecektir ve ögeler "
-"doğrudan çöpe taşınacaktır."
+"doğrudan çöp kutusuna taşınacaktır."
 
 #: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
@@ -33602,7 +33599,7 @@ msgid ""
 "Anisotropic (directional) modifier of the details. Keep it small for "
 "Gaussian noise."
 msgstr ""
-"Detayların anisotropic(eşyönlü) ayarlayıcısı. Gaussian kirlenmesi için bunu "
+"Detayların anisotropic(eşyönlü) ayarlayıcısı. Gauss kirlenmesi için bunu "
 "küçük tutun."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:143
@@ -33687,12 +33684,12 @@ msgstr "Buradan uzaysal bütünleme adımını (spatial integral) ayarlayın"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
 #, kde-format
 msgid "Gaussian:"
-msgstr "Gaussian Bulanıklığı:"
+msgstr "Gauss:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
 #, kde-format
 msgid "Set here the precision of the Gaussian function."
-msgstr "Buradan Gaussian faktörü kesinliğini ayarlayın"
+msgstr "Gauss işlevinin kesinliğini buradan ayarlayın."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:211
 #, kde-format
@@ -34845,7 +34842,7 @@ msgid ""
 "Radius value is the Gaussian blur matrix radius value used to determines how "
 "much to blur the image."
 msgstr ""
-"Yarıçap değeri görüntünün ne kadar bulanıklaştırılacağını belirten Gaussian "
+"Yarıçap değeri görüntünün ne kadar bulanıklaştırılacağını belirten Gauss "
 "bulanık matrisinin yarıçap değeridir."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:201
@@ -34949,7 +34946,7 @@ msgstr ""
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:268
 #, kde-format
 msgid "Gaussian sharpness:"
-msgstr "Gaussian keskinliği:"
+msgstr "Gauss keskinliği:"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:273
 #, kde-format
@@ -34979,8 +34976,8 @@ msgid ""
 "large values for circular or Gaussian sharpness."
 msgstr ""
 "Bu parametre dönüşüm matrisi boyutunu belirler. Matris genişliğini artırmak "
-"daha iyi sonuçlar verebilir, özellikle dairesel veya Gaussian keskinliği "
-"için geniş değerler seçildiğinde."
+"daha iyi sonuçlar verebilir, özellikle dairesel veya Gauss keskinliği için "
+"geniş değerler seçildiğinde."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
 #, fuzzy, kde-format
@@ -55466,23 +55463,40 @@ msgid "Scan Your Collection"
 msgstr "Koleksiyonunuzu Tarayın"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
+#| "can customize more settings using the digiKam configuration panel. To "
+#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
+#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
+#| "install the separate digiKam documentation package.) You can also read "
+#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
+#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
+#| "digiKam will scan your collection to register all albums in the database. "
+#| "Items including in albums are collected after startup stage in background."
+#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
+#| "take a while. If you cancel the scanning operation, it will start again "
+#| "in the next digiKam session.</p><p>When scanning has completed, at next "
+#| "start-up, digiKam will only check your collection to identify new albums "
+#| "- which is much faster. You can force digiKam to scan for new items "
+#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
+#| "entry.</p></qt>"
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
 "about the digiKam world, we recommend reading the <b>digiKam handbook</b> "
 "using the <b>Help/Handbook</b> menu entry (you need to install the separate "
 "digiKam documentation package.) You can also read the manual online from the "
-"<a href='https://www.digikam.org/docs'>digikam.org website</a>.</p><p>Press "
-"<b>Finish</b> to close this assistant. digiKam will scan your collection to "
-"register all albums in the database. Items including in albums are collected "
-"after startup stage in background.</p><p><i>Note:</i> depending on your "
-"collection size, this operation can take a while. If you cancel the scanning "
-"operation, it will start again in the next digiKam session.</p><p>When "
-"scanning has completed, at next start-up, digiKam will only check your "
-"collection to identify new albums - which is much faster. You can force "
-"digiKam to scan for new items manually using the <b>Tools->Maintenance->Scan "
-"for new items</b> menu entry.</p></qt>"
+"<a href='https://docs.digikam.org/en/index.html'>dedicated website</a>.</"
+"p><p>Press <b>Finish</b> to close this assistant. digiKam will scan your "
+"collection to register all albums in the database. Items including in albums "
+"are collected after startup stage in background.</p><p><i>Note:</i> "
+"depending on your collection size, this operation can take a while. If you "
+"cancel the scanning operation, it will start again in the next digiKam "
+"session.</p><p>When scanning has completed, at next start-up, digiKam will "
+"only check your collection to identify new albums - which is much faster. "
+"You can force digiKam to scan for new items manually using the <b>Tools-"
+">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 "<qt><p>Tebrikler. Gerekli en az ayarlar tamamlandı.</p><p>Unutmayın, digiKam "
 "yapılandırma panelini kullanarak daha fazla ayarı özelleştirebilirsiniz. "
@@ -65802,7 +65816,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:64
 #, kde-format
 msgid "Confirm when moving items to the &trash"
-msgstr "Ögeleri &çöpe taşırken onayla"
+msgstr "Ögeleri &çöp kutusuna taşırken onayla"
 
 #: core/utilities/setup/misc/setupmisc.cpp:65
 #, kde-format

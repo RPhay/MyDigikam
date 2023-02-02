@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:54+0000\n"
-"PO-Revision-Date: 2023-01-31 11:38+0100\n"
+"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"PO-Revision-Date: 2023-02-01 14:35+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -5213,7 +5213,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<para>Dit hulpmiddel Takenwachtrijbeheer kan kleuren automatisch in "
+"<para>Dit hulpmiddel Takenwachtrijbeheerder kan kleuren automatisch in "
 "afbeeldingen aanpassen.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
@@ -5237,8 +5237,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
 msgstr ""
-"<para>Dit hulpmiddel Takenwachtrijbeheer kan helderheid / contrast / gamma "
-"in afbeeldingen aanpassen.</para>"
+"<para>Dit hulpmiddel Takenwachtrijbeheerder kan Helderheid / Contrast / "
+"Gamma in afbeeldingen aanpassen.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
 #, kde-format
@@ -32448,12 +32448,12 @@ msgstr "Lichtkrachtruis"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:334
 #, kde-format
 msgid "Chrominance Blue Noise"
-msgstr "Chrominance blauwruis"
+msgstr "Chrominantie blauwe ruis"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:337
 #, kde-format
 msgid "Chrominance Red Noise"
-msgstr "Chrominance roodruis"
+msgstr "Chrominantie rode ruis"
 
 #: core/libs/dimg/filters/fx/invertfilter.cpp:55
 #, kde-format
@@ -33667,12 +33667,12 @@ msgstr "Lichtkracht"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:214
 #, kde-format
 msgid "Chrominance Blue"
-msgstr "Chrominance blauw"
+msgstr "Chrominantie blauw"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:218
 #, kde-format
 msgid "Chrominance Red"
-msgstr "Chrominance rood"
+msgstr "Chrominantie rood"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
 #, kde-format
@@ -43744,7 +43744,8 @@ msgstr "Pankaj Kumar"
 #: core/libs/widgets/mainview/daboutdata.cpp:244
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
-msgstr "Ondersteuning voor multi-core cpu in takenwachtrijbeheer en mentor"
+msgstr ""
+"Ondersteuning voor multi-core cpu in takenwachtrijbeheerder en begeleiding"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
@@ -53474,23 +53475,40 @@ msgid "Scan Your Collection"
 msgstr "Zoek in uw verzameling"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
+#| "can customize more settings using the digiKam configuration panel. To "
+#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
+#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
+#| "install the separate digiKam documentation package.) You can also read "
+#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
+#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
+#| "digiKam will scan your collection to register all albums in the database. "
+#| "Items including in albums are collected after startup stage in background."
+#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
+#| "take a while. If you cancel the scanning operation, it will start again "
+#| "in the next digiKam session.</p><p>When scanning has completed, at next "
+#| "start-up, digiKam will only check your collection to identify new albums "
+#| "- which is much faster. You can force digiKam to scan for new items "
+#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
+#| "entry.</p></qt>"
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
 "about the digiKam world, we recommend reading the <b>digiKam handbook</b> "
 "using the <b>Help/Handbook</b> menu entry (you need to install the separate "
 "digiKam documentation package.) You can also read the manual online from the "
-"<a href='https://www.digikam.org/docs'>digikam.org website</a>.</p><p>Press "
-"<b>Finish</b> to close this assistant. digiKam will scan your collection to "
-"register all albums in the database. Items including in albums are collected "
-"after startup stage in background.</p><p><i>Note:</i> depending on your "
-"collection size, this operation can take a while. If you cancel the scanning "
-"operation, it will start again in the next digiKam session.</p><p>When "
-"scanning has completed, at next start-up, digiKam will only check your "
-"collection to identify new albums - which is much faster. You can force "
-"digiKam to scan for new items manually using the <b>Tools->Maintenance->Scan "
-"for new items</b> menu entry.</p></qt>"
+"<a href='https://docs.digikam.org/en/index.html'>dedicated website</a>.</"
+"p><p>Press <b>Finish</b> to close this assistant. digiKam will scan your "
+"collection to register all albums in the database. Items including in albums "
+"are collected after startup stage in background.</p><p><i>Note:</i> "
+"depending on your collection size, this operation can take a while. If you "
+"cancel the scanning operation, it will start again in the next digiKam "
+"session.</p><p>When scanning has completed, at next start-up, digiKam will "
+"only check your collection to identify new albums - which is much faster. "
+"You can force digiKam to scan for new items manually using the <b>Tools-"
+">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 "<qt><p>Gefeliciteerd. Uw minimale instellingen zijn gedaan.</p><p>Denk er "
 "aan dat u meer instellingen kunt aanpassen met het configuratiepaneel van "
@@ -60328,35 +60346,31 @@ msgstr ""
 "voorbeeldafbeelding."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Tite&l van digiKam tonen"
+msgstr "&Keuzelabel van digiKam tonen"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Schakel deze optie in om de digiKam-titel te tonen onder de "
+"Schakel deze optie in om het keuzelabel van digiKam te tonen onder de "
 "miniatuurafbeelding."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Tite&l van digiKam tonen"
+msgstr "Keuze&label van digiKam tonen"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Activeer deze optie om de digiKam-tags onder een voorbeeldafbeelding te "
-"tonen."
+"Activeer deze optie om het keuzelabel van digiKam als een rand rond de "
+"miniatuur te tonen."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499
