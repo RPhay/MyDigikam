@@ -409,6 +409,13 @@ void SimilarityDb::removeImageSimilarity(qlonglong imageID1, qlonglong imageID2,
                    orderedIds.first, orderedIds.second, (int)algorithm);
 }
 
+void SimilarityDb::clearImageSimilarity(FuzzyAlgorithm algorithm)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageSimilarity "
+                                     "WHERE algorithm=?;"),
+                   (int)algorithm);
+}
+
 QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong imageID1, qlonglong imageID2)
 {
 
