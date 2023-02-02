@@ -70,13 +70,13 @@ void LightTableWindow::setupActions()
     ac->addAction(QLatin1String("open_with_default_application"), openWithAction);
     ac->setDefaultShortcut(openWithAction, Qt::CTRL | Qt::Key_F4);
 
-    d->removeItemAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove item from LightTable"), this);
+    d->removeItemAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove item from Light Table"), this);
     d->removeItemAction->setEnabled(false);
     connect(d->removeItemAction, SIGNAL(triggered()), this, SLOT(slotRemoveItem()));
     ac->addAction(QLatin1String("lighttable_removeitem"), d->removeItemAction);
     ac->setDefaultShortcut(d->removeItemAction, Qt::CTRL | Qt::Key_K);
 
-    d->clearListAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")), i18n("Remove all items from LightTable"), this);
+    d->clearListAction = new QAction(QIcon::fromTheme(QLatin1String("edit-clear")), i18n("Remove all items from Light Table"), this);
     d->clearListAction->setEnabled(false);
     connect(d->clearListAction, SIGNAL(triggered()), this, SLOT(slotClearItemsList()));
     ac->addAction(QLatin1String("lighttable_clearlist"), d->clearListAction);
@@ -155,18 +155,29 @@ void LightTableWindow::setupActions()
     d->rightZoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseRightZoom()), this);
     d->rightZoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomplus_right"), d->rightZoomPlusAction);
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     ac->setDefaultShortcut(d->rightZoomPlusAction, QKeySequence(QKeyCombination(Qt::ShiftModifier, d->rightZoomPlusAction->shortcut()[0].key())));
+
 #else
+
     ac->setDefaultShortcut(d->rightZoomPlusAction, Qt::Key(d->rightZoomPlusAction->shortcut()[0] ^ Qt::SHIFT) & d->rightZoomPlusAction->shortcut()[0]);
+
 #endif
+
     d->rightZoomMinusAction  = buildStdAction(StdZoomOutAction, d->previewView, SLOT(slotDecreaseRightZoom()), this);
     d->rightZoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomminus_right"), d->rightZoomMinusAction);
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     ac->setDefaultShortcut(d->rightZoomMinusAction, QKeySequence(QKeyCombination(Qt::ShiftModifier, d->rightZoomMinusAction->shortcut()[0].key())));
+
 #else
+
     ac->setDefaultShortcut(d->rightZoomMinusAction, Qt::Key(d->rightZoomMinusAction->shortcut()[0] ^ Qt::SHIFT) &  d->rightZoomMinusAction->shortcut()[0]);
+
 #endif
 
     d->rightZoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18n("Zoom to 100%"), this);
