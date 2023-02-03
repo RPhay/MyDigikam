@@ -68,6 +68,7 @@ QString SimilarityDb::getSetting(const QString& keyword)
     QList<QVariant> values;
 
     // TODO Should really check return status here
+
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("SelectSimilaritySetting")),
                                                    parameters, &values);
@@ -89,6 +90,7 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
     QList<QVariant> values;
 
     // TODO Should really check return status here
+
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("SelectSimilarityLegacySetting")),
                                                    parameters, &values);
@@ -111,6 +113,7 @@ QSet<qlonglong> SimilarityDb::registeredImageIds() const
     QList<QVariant> values;
 
     // Get all image ids from the first and second imageid column of the ImageSimilarity table.
+
     d->db->execSql(QString::fromUtf8("SELECT imageid1, imageId2 FROM ImageSimilarity;"),
                    &values);
 
@@ -125,6 +128,7 @@ QSet<qlonglong> SimilarityDb::registeredImageIds() const
     values.clear();
 
     // get all image ids from the ImageHaarMatrix table.
+
     d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix;"),
                    &values);
 
@@ -149,6 +153,7 @@ bool SimilarityDb::hasFingerprint(qlonglong imageId, FuzzyAlgorithm algorithm) c
                        imageId, &values);
 
         // return true if there is at least one fingerprint
+
         return !values.isEmpty();
     }
 
@@ -172,6 +177,7 @@ bool SimilarityDb::hasFingerprints(FuzzyAlgorithm algorithm) const
                        &values);
 
         // return true if there is at least one fingerprint
+
         return !values.isEmpty();
     }
 
@@ -191,11 +197,13 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
         if (values.isEmpty())
         {
             // The image id does not exist -> missing fingerprint
+
             return true;
         }
         else
         {
             // The image id exists -> if uniqueHash or modificationDate differ, we need a new fingerprint.
+
             if (values.size() == 2)
             {
                 if ((values.at(0).toDateTime() != imageInfo.modDateTime()) ||
@@ -228,11 +236,13 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
             if (values.isEmpty())
             {
                 // The image id does not exist -> missing fingerprint
+
                 itemIDs << info.id();
             }
             else
             {
                 // The image id exists -> if uniqueHash or modificationDate differ, we need a new fingerprint.
+
                 if (values.size() == 2)
                 {
                     if ((values.at(0).toDateTime() != info.modDateTime()) ||
@@ -266,11 +276,13 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
             if (values.isEmpty())
             {
                 // The image id does not exist -> missing fingerprint
+
                 urls << info.filePath();
             }
             else
             {
                 // The image id exists -> if uniqueHash or modificationDate differ, we need a new fingerprint.
+
                 if (values.size() == 2)
                 {
                     if ((values.at(0).toDateTime() != info.modDateTime()) ||
@@ -312,6 +324,7 @@ void SimilarityDb::removeImageFingerprint(qlonglong imageID,
     }
 
     // Also, remove all similarities for the image and algorithm if the backend is a MySQL DB.
+
     if (d->db->databaseType() == BdEngineBackend::DbType::MySQL)
     {
         removeImageSimilarity(imageID, algorithm);
@@ -330,6 +343,7 @@ double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, 
     // If the image ids are the same, we return 1 which is equivalent to 100%.
     // We do not have to access the database here as the same image id implies
     // the same image and thus identity.
+
     if (imageID1 == imageID2)
     {
         return 1;
@@ -345,6 +359,7 @@ double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, 
     QString similarityValueString = getImageSimilarityOrdered(orderedIds.first, orderedIds.second, algorithm);
 
     // If the similarity is non-null
+
     if (!similarityValueString.isEmpty())
     {
         bool ok;
@@ -363,6 +378,7 @@ double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, 
     }
 
     // Return the info that there is no value.
+
     return -1;
 }
 
@@ -468,13 +484,18 @@ bool SimilarityDb::integrityCheck()
     switch (d->db->databaseType())
     {
         case BdEngineBackend::DbType::SQLite:
-            // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
-            return values.size() == 1 && values.first().toString().toLower().compare(QLatin1String("ok")) == 0;
+        {
 
+            // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
+
+            return values.size() == 1 && values.first().toString().toLower().compare(QLatin1String("ok")) == 0;
+        }
         case BdEngineBackend::DbType::MySQL:
+        {
             // For MySQL, for every checked table, the table name, operation (check), message type (status) and the message text (ok on success)
             // are returned. So we check if there are four elements and if yes, whether the fourth element is "ok".
             //qCDebug(DIGIKAM_DATABASE_LOG) << "MySQL check returned " << values.size() << " rows";
+
             if ((values.size() % 4) != 0)
             {
                 return false;
@@ -507,10 +528,13 @@ bool SimilarityDb::integrityCheck()
             }
 
             // No error conditions. Db passed the integrity check.
-            return true;
 
+            return true;
+        }
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -527,7 +551,8 @@ QPair<qlonglong, qlonglong> SimilarityDb::orderIds(qlonglong id1, qlonglong id2)
 
     if (id1 <= id2)
     {
-        // If the first id is smaller or equal to the second, set it as fst.
+        // If the first id is smaller or equal to the second, set it as first.
+
         ordered.first  = id1;
         ordered.second = id2;
     }
