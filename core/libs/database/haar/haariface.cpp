@@ -178,9 +178,9 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
     Haar::SignatureData sig;
     haar.calcHaar(d->imageData(), &sig);
 
-    // Remove all previous similarities from images
+    // Remove all previous similarities from pictures
 
-    SimilarityDbAccess().db()->clearImageSimilarity();
+    SimilarityDbAccess().db()->removeImageSimilarity(0);
 
     // Apply duplicates search for the image. Use the image id 0 which cannot be present.
 
