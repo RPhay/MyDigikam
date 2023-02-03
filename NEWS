@@ -266,4 +266,5 @@ BUGFIXES:
 225 ==> 464769 - Rebuild Finger-Prints Process Slow.
 226 ==> 433391 - Request to add ImageProperties fields (location, city, state, country) to Advanced Search.
 227 ==> 465015 - Moving a video with a colour tag to a directory containing a video with the same name removes tag during rename.
-228 ==> 
+228 ==> 380967 - Add option to synchronize same description in images.
+229 ==> 
