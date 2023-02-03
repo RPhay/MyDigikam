@@ -114,7 +114,7 @@ QSet<qlonglong> SimilarityDb::registeredImageIds() const
 
     // Get all image ids from the first and second imageid column of the ImageSimilarity table.
 
-    d->db->execSql(QString::fromUtf8("SELECT imageid1, imageId2 FROM ImageSimilarity;"),
+    d->db->execSql(QString::fromUtf8("SELECT imageid1, imageid2 FROM ImageSimilarity;"),
                    &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
@@ -335,7 +335,7 @@ void SimilarityDb::removeImageFingerprint(qlonglong imageID,
 
 double SimilarityDb::getImageSimilarity(qlonglong imageID1, qlonglong imageID2, FuzzyAlgorithm algorithm)
 {
-    if (imageID1 < 0 || imageID2 < 0)
+    if ((imageID1 < 0) || (imageID2 < 0))
     {
         return -1;
     }
@@ -416,9 +416,9 @@ void SimilarityDb::setImageSimilarity(qlonglong imageID1, qlonglong imageID2, do
     }
 
     d->db->execSql(QString::fromUtf8("REPLACE INTO ImageSimilarity "
-                                     "(imageid1, imageid2, value, algorithm) "
+                                     "(imageid1, imageid2, algorithm, value) "
                                      " VALUES(?, ?, ?, ?);"),
-                   orderedIds.first, orderedIds.second, value, (int)algorithm);
+                   orderedIds.first, orderedIds.second, (int)algorithm, value);
 }
 
 void SimilarityDb::removeImageSimilarity(qlonglong imageID, FuzzyAlgorithm algorithm)
@@ -461,7 +461,7 @@ QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong image
     {
         int algorithmId = var.toInt();
 
-        if (algorithmId == 1)
+        if      (algorithmId == 1)
         {
             algorithms << FuzzyAlgorithm::Haar;
         }
@@ -485,10 +485,9 @@ bool SimilarityDb::integrityCheck()
     {
         case BdEngineBackend::DbType::SQLite:
         {
-
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
-            return values.size() == 1 && values.first().toString().toLower().compare(QLatin1String("ok")) == 0;
+            return ((values.size() == 1) && (values.first().toString().toLower().compare(QLatin1String("ok")) == 0));
         }
         case BdEngineBackend::DbType::MySQL:
         {
@@ -571,8 +570,7 @@ QString SimilarityDb::getImageSimilarityOrdered(qlonglong imageID1, qlonglong im
 
     d->db->execSql(QString::fromUtf8("SELECT value FROM ImageSimilarity "
                                      "WHERE ( imageid1=? OR imageid2=? ) AND algorithm=?;"),
-                   imageID1, imageID2, (int)algorithm,
-                   &values);
+                   imageID1, imageID2, (int)algorithm, &values);
 
     if (values.isEmpty())
     {
