@@ -184,12 +184,6 @@ public:
                                FuzzyAlgorithm algorithm = FuzzyAlgorithm::Haar);
 
     /**
-     * This method removes all image similarity entries for the algorithm.
-     * @param algorithm The algorithm.
-     */
-    void clearImageSimilarity(FuzzyAlgorithm algorithm = FuzzyAlgorithm::Haar);
-
-    /**
      * Returns the algorithms for which a similarity value exists for the given image ids.
      * @param imageID1 The first image id.
      * @param imageID2 The second image id.

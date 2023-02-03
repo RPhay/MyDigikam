@@ -93,8 +93,7 @@ const QString HaarIface::Private::signatureQuery = QString::fromUtf8("SELECT ima
 const Haar::WeightBin HaarIface::Private::weightBin;
 
 HaarIface::Private::Private()
-    : firstRunBestMatches(true),
-      m_data             (new Haar::ImageData)
+    : m_data(new Haar::ImageData)
 {
 }
 
