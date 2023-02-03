@@ -397,8 +397,6 @@ void SimilarityDb::setImageSimilarity(qlonglong imageID1, qlonglong imageID2, do
         {
             return;
         }
-
-        removeImageSimilarity(orderedIds.first, orderedIds.second);
     }
 
     d->db->execSql(QString::fromUtf8("REPLACE INTO ImageSimilarity "
@@ -421,6 +419,13 @@ void SimilarityDb::removeImageSimilarity(qlonglong imageID1, qlonglong imageID2,
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageSimilarity "
                                      "WHERE imageid1=? AND imageid2=? AND algorithm=?;"),
                    orderedIds.first, orderedIds.second, (int)algorithm);
+}
+
+void SimilarityDb::clearImageSimilarity(FuzzyAlgorithm algorithm)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageSimilarity "
+                                     "WHERE algorithm=?;"),
+                   (int)algorithm);
 }
 
 QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong imageID1, qlonglong imageID2)

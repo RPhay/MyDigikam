@@ -37,11 +37,10 @@
 
 #include "digikam_debug.h"
 #include "album.h"
-#include "coredb.h"
 #include "albummanager.h"
 #include "albumselectors.h"
-#include "coredbaccess.h"
-#include "coredbbackend.h"
+#include "similaritydb.h"
+#include "similaritydbaccess.h"
 #include "findduplicatesalbum.h"
 #include "findduplicatesalbumitem.h"
 #include "duplicatesfinder.h"
@@ -489,6 +488,7 @@ void FindDuplicatesView::slotFindDuplicates()
     }
 
     AlbumManager::instance()->clearCurrentAlbums();
+    SimilarityDbAccess().db()->clearImageSimilarity();
 
     DuplicatesFinder* const finder = new DuplicatesFinder(albums, tags,
                                                           d->albumTagRelation->itemData(d->albumTagRelation->currentIndex()).toInt(),
