@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -56251,12 +56251,12 @@ msgstr "Mở mục đã chọn trong bộ sửa ảnh."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
 #, fuzzy, kde-format
-msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Không có mục trên bảng ánh sáng"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
 #, fuzzy, kde-format
-msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Không có mục trên bảng ánh sáng"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -56306,53 +56306,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Không có mục trên bảng ánh sáng"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, fuzzy, kde-format
 msgid "Zoom to 100%"
 msgstr "Phóng to 1:1 (không thay đổi)"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Vừa khít cửa &sổ"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, fuzzy, kde-format
 msgid "Color-Managed View"
 msgstr "Ô xem đã Quản lí Màu"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Ảnh trước"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, fuzzy, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Canh lề đoạn bên phải"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, fuzzy, kde-format
 msgid "Edit Comments on the Right"
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh sắc màu của ảnh."
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Gán thẻ cho mục nà&y"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, fuzzy, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Canh lề đoạn bên trái"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, fuzzy, kde-format
 msgid "Edit Comments on the Left"
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh sắc màu của ảnh."
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Gán thẻ cho mục nà&y"

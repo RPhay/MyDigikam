@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2023-01-22 19:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -58765,13 +58765,15 @@ msgid "Open the item with default assigned application."
 msgstr "Ouvrir l'élément avec l'application désignée par défaut."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Supprimer l'élément de la table lumineuse"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Supprimer tous les éléments de la table lumineuse"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58822,53 +58824,53 @@ msgstr ""
 "Supprimer toutes les images de la table lumineuse lorsqu'elle est fermée"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zoomer à 100 %"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Ajuster à la &fenêtre"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Affichage avec gestion de la couleur"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Image précédente"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Modifier les titres sur la droite"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Modifier les commentaires sur la droite"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Afficher les étiquettes attribuées sur la droite"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Modifier les titres sur la gauche"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Modifier les commentaires sur la gauche"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Afficher les étiquettes attribuées sur la gauche"

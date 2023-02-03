@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-02-01 10:27+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 13:01+0100\n"
+"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Kate 22.08.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -10530,7 +10530,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Add weight masks"
-msgstr "Afegeix tipus de màscares"
+msgstr "Afegeix màscares de pes"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, kde-format
@@ -10541,7 +10541,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
-msgstr "Màscara de tipus supressió:"
+msgstr "Màscara de pes de supressió:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
@@ -10562,7 +10562,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
 msgid "Preservation weight mask:"
-msgstr "Màscara de tipus conservació:"
+msgstr "Màscara de pes de conservació:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
@@ -10602,32 +10602,32 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
-msgstr "Norma del gradient de brillantor"
+msgstr "Norma del degradat de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
-msgstr "Suma dels valors absoluts dels gradients de brillantor"
+msgstr "Suma dels valors absoluts dels degradats de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
-msgstr "Valor absolut del gradient de brillantor"
+msgstr "Valor absolut del degradat de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
-msgstr "Norma del gradient de luminància"
+msgstr "Norma del degradat de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
-msgstr "Suma dels valors absoluts dels gradients de luminància"
+msgstr "Suma dels valors absoluts dels degradats de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
-msgstr "Valor absolut del gradient de luminància"
+msgstr "Valor absolut del degradat de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
@@ -10635,7 +10635,7 @@ msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr ""
-"Aquesta opció permet escollir una funció de gradient. Aquesta funció s'usa "
+"Aquesta opció permet escollir una funció de degradat. Aquesta funció s'usa "
 "per a determinar quins píxels s'haurien de treure o mantenir."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
@@ -53556,24 +53556,7 @@ msgid "Scan Your Collection"
 msgstr "Explora la col·lecció local"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53597,7 +53580,7 @@ msgstr ""
 "que llegiu el <b>Manual del digiKam</b>, el trobareu a l'entrada del menú "
 "<b>Ajuda -> Manual</b> (cal que instal·leu per separat el paquet de "
 "documentació del digiKam). També podeu llegir el manual en línia des del <a "
-"href='https://www.digikam.org/docs'>lloc web de digikam.org</a>.</"
+"href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</a>.</"
 "p><p>Premeu <b>Acaba</b> per a tancar l'assistent. El digiKam explorarà la "
 "vostra col·lecció per a registrar tots els elements a la base de dades. Els "
 "elements inclosos als àlbums es recolliran durant l'inici en segon pla.</"
@@ -58112,13 +58095,15 @@ msgid "Open the item with default assigned application."
 msgstr "Obre l'element amb l'aplicació predeterminada assignada."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Elimina un element de la taula de llum"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Elimina tots els elements de la taula de llum"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58168,53 +58153,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Treu totes les imatges de la taula de llum quan es tanqui"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zoom al 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Ajusta a la &finestra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Vista gestionada del color"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Imatge anterior"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Edita els títols a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Edita els comentaris a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Mostra les etiquetes assignades a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Edita els títols a l'esquerra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Edita els comentaris a l'esquerra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Mostra les etiquetes assignades a l'esquerra"

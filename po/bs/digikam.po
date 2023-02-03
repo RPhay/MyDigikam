@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -61756,13 +61756,15 @@ msgid "Open the item with default assigned application."
 msgstr "Otvorite stavku sa podrazumijevano dodijeljenom aplikacijom."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Ukloni stavku sa SvjetlosnogPregleda"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Ukloni sve stavke sa SvjetlosnogPregleda"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -61812,53 +61814,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Uklonite sve slike sa svijetle liste kada je zatvorena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Uvećaj na 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Uklopi u pro&zor"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Pregled upravljanja bojama"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Prethodna slika"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Izmijeni desne naslove"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Izmijeni desne komentare"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Prikaži desne dodijeljene oznake"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Izmijeni lijeve naslove"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Izmijeni lijeve komentare"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Prikaži lijeve dodijeljene oznake"

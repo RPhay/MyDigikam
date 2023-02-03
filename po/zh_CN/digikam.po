@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2023-01-12 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -56306,13 +56306,15 @@ msgid "Open the item with default assigned application."
 msgstr "使用默认的应用程序打开该项目。"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "从看片台移除项目"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "从看片台移除所有项目"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -56362,53 +56364,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "关闭看片台时移除看片台上的所有图像"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "缩放至 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "适合窗口(&W)"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "色彩管理显示"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "上一张图像"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "编辑右视图项标题"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "编辑右视图项注释"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "显示右视图项标签"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "编辑左视图项标题"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "编辑左视图项注释"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "编辑左视图项标签"

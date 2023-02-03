@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -61828,13 +61828,15 @@ msgid "Open the item with default assigned application."
 msgstr "Άνοιγμα του επιλεγμένου αντικειμένου στον επεξεργαστή εικόνας."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Αφαίρεση αντικειμένου από τον φωτεινό πίνακα"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Αφαίρεση όλων των αντικειμένων από τον φωτεινό πίνακα"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -61885,53 +61887,53 @@ msgstr ""
 "Αφαίρεση όλων των αντικειμένων από τον φωτεινό πίνακα όταν είναι κλειστός"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Εστίαση στο 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Προσαρμογή στο &παράθυρο"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Προβολή με διαχείριση χρωμάτων"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Προηγούμενη εικόνα"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, fuzzy, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Στοίχιση κειμένου στα δεξιά"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, fuzzy, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Προκαθορισμένο σχόλιο εικόνας"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, fuzzy, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Στοίχιση κειμένου στα αριστερά"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, fuzzy, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Προκαθορισμένο σχόλιο εικόνας"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"

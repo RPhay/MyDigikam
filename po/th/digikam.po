@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -58692,13 +58692,15 @@ msgid "Open the item with default assigned application."
 msgstr "เปิดรายการที่เลือกในเครื่องมือแก้ไขภาพ"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "เอารายการออกจากโต๊ะฉายแสง"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "เอารายการทั้งหมดออกจากโต๊ะฉายแสง"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58748,53 +58750,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "เอารูปภาพทั้งหมดออกจากโต๊ะฉายแสงเมื่อมันถูกปิด"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "ปรับขนาดการดูเป็น 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "แสดงผลร่วมกับการจัดการระบบสี"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "ภาพก่อน"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, fuzzy, kde-format
 msgid "Edit Titles on the Right"
 msgstr "จัดเรียงข้อความชิดด้านขวา"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, fuzzy, kde-format
 msgid "Edit Comments on the Right"
 msgstr "ปรับตั้งค่าความเข้มสีของภาพได้ที่นี่"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "กำหนดป้ายกำกับไปยัง&รายการนี้"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, fuzzy, kde-format
 msgid "Edit Titles on the Left"
 msgstr "จัดเรียงข้อความชิดด้านซ้าย"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, fuzzy, kde-format
 msgid "Edit Comments on the Left"
 msgstr "ปรับตั้งค่าความเข้มสีของภาพได้ที่นี่"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "กำหนดป้ายกำกับไปยัง&รายการนี้"

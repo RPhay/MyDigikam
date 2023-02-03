@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2022-02-16 11:32+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -57921,14 +57921,18 @@ msgid "Open the item with default assigned application."
 msgstr "Deschide elementul selectat în editorul de imagini."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "%1 item on Light Table"
+#| msgid_plural "%1 items on Light Table"
+msgid "Remove item from Light Table"
+msgstr "Un element pe masa luminoasă"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "%1 item on Light Table"
+#| msgid_plural "%1 items on Light Table"
+msgid "Remove all items from Light Table"
+msgstr "Un element pe masa luminoasă"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
@@ -57977,53 +57981,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Mărește la 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Adaptează la fereastră"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Vizualizare cu gestiunea culorii"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Imaginea precedentă"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, fuzzy, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Aliniază textul la dreapta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, fuzzy, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Aliniază textul la dreapta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Atribuie etichete aces&tui element"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, fuzzy, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Aliniază textul la stânga"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Atribuie etichete aces&tui element"

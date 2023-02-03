@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -55785,14 +55785,14 @@ msgid "Open the item with default assigned application."
 msgstr "<p>छवि सम्पादक क्षेत्रमा प्रयोग गर्नका लागि पृष्ठभूमि रङ अनुकूलन गर्नुहोस् ।"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Remove item from Light Table"
+msgstr "प्रकाश"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Remove all items from Light Table"
+msgstr "प्रकाश"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, fuzzy, kde-format
@@ -55841,53 +55841,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, fuzzy, kde-format
 msgid "Zoom to 100%"
 msgstr "जुम घटाउनुहोस्"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, fuzzy, kde-format
 msgid "Color-Managed View"
 msgstr "रङ सन्तुलित दृश्य"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, fuzzy, kde-format
 msgid "Previous Image"
 msgstr "छवि मुद्रण गर्नुहोस्..."
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, fuzzy, kde-format
 msgid "Edit Comments on the Right"
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, fuzzy, kde-format
 msgid "Edit Comments on the Left"
 msgstr "<p>यहाँ छविको ह्यु समायोजन सेट गर्नुहोस् ।"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, fuzzy, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "सबै वस्तुमा ट्याग मानाङ्कन गर्नुहोस्"

@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-01-17 23:21+0000\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 10:48+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -388,7 +388,7 @@ msgid ""
 "This also includes the '%1' check box."
 msgstr ""
 "Skilgreinir hvernig valin merki eru notuð saman við að sía myndirnar. Þar er "
-"með talinn '%1' hakreiturinn."
+"með talinn '%1' gátreiturinn."
 
 #: core/app/filters/filtersidebarwidget.cpp:187
 #: core/utilities/searchwindow/searchgroup_label.cpp:301
@@ -3128,7 +3128,7 @@ msgstr "Afturkalla"
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Endurheimta aðeins síðustu færsluna úr ruslinu."
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
@@ -3136,11 +3136,9 @@ msgid "Restore"
 msgstr "Endurheimta"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Fjarlægja valda mynd af listanum"
+msgstr "Endurheimta valdar skrár úr ruslinu."
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -3150,7 +3148,7 @@ msgstr "Eyða..."
 #: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
-msgstr ""
+msgstr "Fjarlægja endanlega valin eða öll atriði úr ruslinu."
 
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
@@ -3212,17 +3210,20 @@ msgstr "Meira en 200 villuskýrslum notenda lokað á bugzilla."
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Yfirfærsla kóða í Qt6-stoðkerfið (kóði er áfram samhæfður við Qt5 API)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
+msgstr "Bætt allsstaðar við stillingum fyrir útflutning JPEG-XL, WEBP og AVIF."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Bætt við umbreytingu í taplaus JPEG-XL, WEBP og AVIF þjöppunarsnið við "
+"innflutning úr myndavél."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
@@ -3245,20 +3246,16 @@ msgstr ""
 #, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Bættu við möguleika til að skrifa lýsigögn í skrár með ExifTool-bakenda."
+"Bætt við möguleika til að skrifa lýsigögn í skrár með ExifTool-bakenda."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Virkjaðu þennan möguleika til þess að skrifa lýsigögn inn í RAW-skrár. Þessi "
-"eiginleiki er á vegum ExifTool-bakendans og er sjálfgefið haft óvirkt."
+"Valkvæðar aðgerðir til þess að skrifa lýsigögn inn í DNG og RAW-skrár eru "
+"núna alltaf útvistaðar til ExifTool-bakendans."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
@@ -3285,22 +3282,22 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Bættu við leit að atriðum eftir fjölda andlitasvæða."
+msgstr "Bætt við leit að atriðum eftir fjölda andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
 msgid "Add search for items without face regions."
-msgstr "Bættu við leit að atriðum án andlitasvæða."
+msgstr "Bætt við leit að atriðum án andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "Bættur stuðningur við netslóðir á milli stýrikerfa."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr ""
+msgstr "Bætt við stuðningi við SQLite WAL (Write-Ahead-Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3339,18 +3336,14 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Innfelling Google Summer of Code verkefnis 2021 <a href=\"https://community."
-"kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter - "
-"Myndgæðaröðun</a>."
+"Bætt við nýju verkfæri <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">til að framkvæma OCR-ljóslestur á skönnuðum "
+"texta</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3358,25 +3351,29 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"Bætt við eiginleika til að <a href=\"https://community.kde.org/GSoc/2022/"
+"StatusReports/PhuocKhanhLe\">greina fallegar myndir með vélanáms-reikniriti "
+"(deep learning)</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
 msgstr ""
-"Bættu við nýju verkfæri til að úthluta sérmerkingum sem byggjast á myndgæðum."
+"Bætt við nýju verkfæri til að úthluta sérmerkingum sem byggjast á myndgæðum."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Bætt við verkfæri til að úthluta einkunnum, sérmerkingum og litmerkjum í "
+"magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "Verkfæri til að setja lýsigögn merkinga á myndir"
+msgstr ""
+"Bætt við verkfæri til að úthluta titlum og skýringatextum í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3601,7 +3598,7 @@ msgstr "Sérmerking"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
-msgstr "Litamerki"
+msgstr "Litmerki"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
@@ -3637,7 +3634,7 @@ msgstr "Sérmerking"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
-msgstr "Litamerki"
+msgstr "Litmerki"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, kde-format
@@ -5851,10 +5848,9 @@ msgid "User Script: No script."
 msgstr "Skeljarskrifta notanda: Engin skrifta."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Skeljarskrifta notanda: Engin skrifta."
+msgstr "Skeljarskrifta notanda: Villa  við að opna skrá."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -5862,10 +5858,9 @@ msgid "User Script: Timeout from script."
 msgstr "Skeljarskrifta notanda: Skrifta féll á tíma."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:287
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "Skeljarskrifta notanda: Engin skrifta."
+msgstr "Skeljarskrifta notanda: Engin villa."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
@@ -5883,10 +5878,9 @@ msgid "User Script: Command not found."
 msgstr "Skeljarskrifta notanda: Skipun fannst ekki."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Skeljarskrifta notanda: Engin skrifta."
+msgstr "Skeljarskrifta notanda: Lauk með villukóða: %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -5978,8 +5972,7 @@ msgid "Use Absolute Size"
 msgstr "Nota algilda stærð"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
 msgstr "Tegund vatnsmerkis:"
 
@@ -6005,8 +5998,7 @@ msgid "Click to select watermark image."
 msgstr "Smelltu til að velja mynd fyrir vatnsmerki."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
 msgstr "Mynd vatnsmerkis:"
 
@@ -6027,7 +6019,7 @@ msgstr "Hunsa stærðarhlutföll vatnsmerkis"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
-msgstr "Hakaðu við þetta ef þú vilt hafa vatnsmerkið gegnsætt."
+msgstr "Merktu við þetta ef þú vilt hafa vatnsmerkið gegnsætt."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
@@ -6040,8 +6032,7 @@ msgid "Opacity of watermark"
 msgstr "Gegnsæi vatnsmerkis"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
 msgstr "Ógegnsæi (%):"
 
@@ -6056,8 +6047,7 @@ msgid "Enter your watermark string here."
 msgstr "Settu inn textastreng vatnsmerkisins þíns hér."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
 msgstr "Texti vatnsmerkis:"
 
@@ -6072,16 +6062,14 @@ msgid "Set the font color to use here."
 msgstr "Veldu hér lit á letur."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Textalitur:"
+msgstr "Litur á letri: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Gegnsæi texta:"
+msgstr "Ógegnsæi texta: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6095,7 +6083,7 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
-msgstr "Hakaðu við þetta ef þú vilt hafa bakgrunnsfyllingu aftan við textann."
+msgstr "Merktu við þetta ef þú vilt hafa bakgrunnsfyllingu aftan við textann."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
@@ -6108,16 +6096,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Veldu hér lit bakgrunns undir vatnsmerki."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
 msgstr "Litur bakgrunns:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Gegnsæi bakgrunns:"
+msgstr "Ógegnsæi bakgrunns: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6144,10 +6130,9 @@ msgid "Random Repetition"
 msgstr "Tilviljanakennd endurtekning"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Tegund staðsetningar:"
+msgstr "Tegund staðsetningar: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6199,10 +6184,9 @@ msgstr ""
 "1.0"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Þéttleikastuðull:"
+msgstr "Þéttleikastuðull: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6247,10 +6231,9 @@ msgid "Bottom center"
 msgstr "Neðst fyrir miðju"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Staðsetninguppstillingar:"
+msgstr "Staðsetning uppstillingar: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6273,10 +6256,9 @@ msgid "270 degrees CW"
 msgstr "270 gráður réttsælis"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Snúningur:"
+msgstr "Snúningur: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6284,10 +6266,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Stilltu hér stærð vatnsmerkis í prósentuhlutfalli af stærð myndar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Stærð (%):"
+msgstr "Stærð (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6295,10 +6276,9 @@ msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "Spássía frá jaðri í X-ási, í prósentuhlutfalli af stærð myndar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "X spássía (%):"
+msgstr "X-spássía (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6306,10 +6286,9 @@ msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "Spássía frá jaðri í Y-ási, í prósentuhlutfalli af stærð myndar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Y spássía (%):"
+msgstr "Y-spássía (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -6737,7 +6716,7 @@ msgstr "Veldu sérmerkingu:"
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
 #, kde-format
 msgid "Color Label:"
-msgstr "Litamerking:"
+msgstr "Litmerking:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
 #, kde-format
@@ -8546,8 +8525,8 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
-"Haka við til að beita innbyggðu litajafnvægi filmusniðsins, Taka hakið af ef "
-"þú vilt eiga sjálfur við litajafnvægið."
+"Merktu við til að beita innbyggðu litajafnvægi filmusniðsins, Taktu merkið "
+"af ef þú vilt eiga sjálfur við litajafnvægið."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:232
 #, kde-format
@@ -18981,6 +18960,9 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"Eftir greiningarferlið geturðu tvísmellt á eitt atriði til að birta hér "
+"greinda textann. Þú getur yfirfarið orð og lagað ef nauðsyn þykir. Ýttu á "
+"vistunarhnappinn til að skrá breytingarnar."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
 #, kde-format
@@ -19124,6 +19106,14 @@ msgid ""
 "\n"
 "See details on %1 for more information on Tesseract"
 msgstr ""
+"Þetta verkfæri getur umbreytt skjalaljósmyndum í texta með OCR-ljóslestri í "
+"gegnum Tesseract, kerfi með opnum grunnkóða fyrir Optical Characters "
+"Recognition myndgreiningu, upphaflega þróað hjá HP og nú styrkt af Google.\n"
+"\n"
+"Það styður mörg tungumál og stafróf (meðal annars hægri-til-vinstri texta) "
+"og greynir einnig framsetningu á síður.\n"
+"\n"
+"Skoðaðu nánari upplýsingar á %1 til að fræðast betur um Tesseract"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
 #, kde-format
@@ -19584,8 +19574,8 @@ msgid ""
 msgstr ""
 "\"Vista verkefnisskrá\": Þú getur haldið uppá verkefnisskrána sem varð til "
 "við að sauma saman myndirnar og notað hana til áframhaldandi vinnslu með %1 "
-"með því að haka við þetta. Það er gagnlegt ef þú vilt nota einhverja aðra "
-"vörpun, laga til sjóndeildarhringeða miðju víðmyndarinnar, nú eða breyta og "
+"með því að merkja við þetta. Það er gagnlegt ef þú vilt nota einhverja aðra "
+"vörpun, laga til sjóndeildarhring eða miðju víðmyndarinnar, nú eða breyta og "
 "bæta stýripunkta svo útkoman verði betri."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
@@ -23187,7 +23177,7 @@ msgstr "Búa til afstæð tákntengi"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "Hafa með fylgiskrár atriðanna"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -23424,7 +23414,7 @@ msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Hakaðu við hvort myndin eigi að vera sýnileg öllum eða notaðu valkosti í "
+"Merktu við hvort myndin eigi að vera sýnileg öllum eða notaðu valkosti í "
 "sendingu til að tilgreina það fyrir allar myndirnar"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
@@ -23433,7 +23423,7 @@ msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Hakaðu við hvort myndin eigi að vera sýnileg fjölskyldunni eða notaðu "
+"Merktu við hvort myndin eigi að vera sýnileg fjölskyldunni eða notaðu "
 "valkosti í sendingu til að tilgreina það fyrir allar myndirnar"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
@@ -23442,7 +23432,7 @@ msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
-"Hakaðu við hvort myndin eigi að vera sýnileg vinum þínum eða notaðu valkosti "
+"Merktu við hvort myndin eigi að vera sýnileg vinum þínum eða notaðu valkosti "
 "í sendingu til að tilgreina það fyrir allar myndirnar"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:514
@@ -29211,17 +29201,7 @@ msgstr ""
 "afkastameira þegar sýslað er með söfn með meira en 100K atriðum.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29242,8 +29222,8 @@ msgstr ""
 "velja sem hraðvirkastan vélbúnað undir þetta (eins og SSD-drif) með nóg af "
 "lausu plássi, sérstaklega fyrir smámyndagagnagrunninn.</p> <p>Athugið: ekki "
 "má nota hér möppu á fjarlægum miðli eins og t.d. NFS skráakerfi. Og ef verið "
-"er að hugsa um afköst, er alls ekki mælt með að notuð séu útskiptanleg tæki."
-"</p><p></p> "
+"er að hugsa um afköst, er alls ekki mælt með að notuð séu nettengd tæki.</"
+"p><p></p> "
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -29875,8 +29855,8 @@ msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr ""
-"Ef hakað er í þennan kassa, verður hlutum endanlega eytt í stað þess að fara "
-"fyrst í rusladallinn."
+"Ef merkt er í þennan reit, verður hlutum endanlega eytt í stað þess að fara "
+"fyrst í ruslið."
 
 #: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
@@ -29914,7 +29894,7 @@ msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr ""
-"Sé hakað í þennan reit, mun þessi gluggi hætta að birtast og skrám verður "
+"Sé merkt í þennan reit, mun þessi gluggi hætta að birtast og skrám verður "
 "þá  eytt beint og endanlega."
 
 #: core/libs/dialogs/deletedialog.cpp:384
@@ -29987,8 +29967,8 @@ msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
-"<p>Þessi albúm verða færð í ruslafötuna. </p><p>Athugaðu að <b>öll "
-"undiralbúm</b> eru einnig á listanum og fara því líka í ruslið.</p>"
+"<p>Þessi albúm verða færð í ruslið. </p><p>Athugaðu að <b>öll undiralbúm</b> "
+"eru einnig á listanum og fara því líka í ruslið.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
@@ -34957,7 +34937,7 @@ msgstr "<br/><nobr><i>Sérmerkingar</i></nobr>"
 #: core/libs/filters/filterstatusbar.cpp:149
 #, kde-format
 msgid "<br/><nobr><i>Color Labels</i></nobr>"
-msgstr "<br/><nobr><i>Litamerkingar</i></nobr>"
+msgstr "<br/><nobr><i>Litmerkingar</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:154
 #, kde-format
@@ -35502,10 +35482,9 @@ msgstr ""
 "albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Gat ekki fært skrána %1 í albúmið %2"
+msgstr "Gat ekki afritað fylgiskrá skráarinnar %1 í albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -35518,10 +35497,9 @@ msgid "Could not copy folder %1 to album %2"
 msgstr "Gat ekki afritað möppuna %1 í albúmið %2"
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to folder %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Gat ekki afritað skrána %1 í möppuna %2"
+msgstr "Gat ekki afritað fylgiskrá skráarinnar %1 í möppuna %2"
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -36695,7 +36673,7 @@ msgstr "Sérmerking"
 #, kde-format
 msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
-msgstr "Litamerki"
+msgstr "Litmerki"
 
 #: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
 #, kde-format
@@ -37280,13 +37258,13 @@ msgstr "<li>dagsetning</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr "<lisérmerking</li>"
+msgstr "<li>sérmerking</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr "<lilitmerking</li>"
+msgstr "<li>litamerking</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
 #, kde-format
@@ -37383,7 +37361,7 @@ msgstr "Sérmerking:"
 #, kde-format
 msgctxt "@label"
 msgid "Color Label:"
-msgstr "Litamerki:"
+msgstr "Litmerking:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
 #, kde-format
@@ -38220,7 +38198,7 @@ msgstr "Sérmerking: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
-msgstr "Litamerki: "
+msgstr "Litmerki: "
 
 #: core/libs/properties/itempropertiestab.cpp:362
 #, kde-format
@@ -42272,7 +42250,7 @@ msgstr "Leturstíll"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font style settings."
-msgstr "Hakaðu hér við til að breyta leturstíl."
+msgstr "Merktu hér við til að breyta leturstíl."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:305
 #, kde-format
@@ -42296,7 +42274,7 @@ msgstr "Stærð"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font size settings."
-msgstr "Hakaðu hér við til að breyta leturstærð."
+msgstr "Merktu hér við til að breyta leturstærð."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:329
 #, kde-format
@@ -44725,7 +44703,7 @@ msgstr "Ekkert"
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
-msgstr "Litamerking: %1"
+msgstr "Litmerking: %1"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:576
 #, kde-format
@@ -49451,6 +49429,13 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
+"<para>Þýðingavélin er vefþjónusta á netinu sem þýðir texta af einu tungumáli "
+"yfir á annað. Þetta er í boði fyrir þá lýsigagnareiti sem styðja "
+"aukatungumál, eins og til dæmis Titil, Skýringatexti, o.s.frv. Þýðingaferlið "
+"er fullkomlega sjálfvirkt en krefst internettengingar til að virka.</"
+"para><para>Notandi getur valið þá þýðingavél sem hentar best því tungumáli "
+"sem hann hefur í huga, því ekki eru öll heimsins tungumál jafn vel studd í "
+"vefþjónustum.</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:330
 #, kde-format
@@ -52940,24 +52925,7 @@ msgid "Scan Your Collection"
 msgstr "Skanna safnið þitt"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -52981,9 +52949,9 @@ msgstr ""
 "lesir <b>digiKam handbókina</b> með því að fara í valmyndina <b>Hjálp/"
 "Handbók</b> (þú verður að setja sérstaklega upp digiKam skjölunarpakkann - "
 "digikam-docs.) Þú getur líka lesið handbókina með því að fara á <a "
-"href='https://www.digikam.org/docs'>digikam.org vefsvæðið</a>.</p><p>Ýttu á "
-"<b>Ljúka</b> til að loka þessu leiðsagnarforriti. digiKam mun síðan skanna "
-"myndasafnið þitt og skrá ýmsar upplýsingar í gagnagrunninn.</"
+"href='https://docs.digikam.org/en/index.html'>digikam.org vefsvæðið</a>.</"
+"p><p>Ýttu á <b>Ljúka</b> til að loka þessu leiðsagnarforriti. digiKam mun "
+"síðan skanna myndasafnið þitt og skrá ýmsar upplýsingar í gagnagrunninn.</"
 "p><p><i>Athugaðu:</i> það fer eftir stærð myndasafnsins þíns hvað þessi "
 "skönnun tekur langan tíma. Ef þú hættir í  skönnuninni, mun henni verða "
 "haldið áfram í næsta skipti sem digiKam er ræst.</p><p>Þegar skönnuninni "
@@ -57003,26 +56971,7 @@ msgstr ""
 "stuðningi við lýsigögn.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "These expressions may be used to customize date format:\n"
-#| "\"d\": The day as a number without a leading zero (1 to 31)\n"
-#| "\"dd\": The day as a number with a leading zero (01 to 31)\n"
-#| "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-#| "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-#| "\"M\": The month as a number without a leading zero (1 to 12)\n"
-#| "\"MM\": The month as a number with a leading zero (01 to 12)\n"
-#| "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-#| "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-#| "\"yy\": The year as two digit number (eg. 00 to 99)\n"
-#| "\"yyyy\": The year as four digit number (eg. 2012)\n"
-#| "All other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:\n"
-#| "\"dd.MM.yyyy\" : 20.07.1969\n"
-#| "\"ddd MMMM d yy\" : Sun July 20 69\n"
-#| "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -57042,25 +56991,22 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"Þessi tákn má nota til að skilgreina dagsetningu:\n"
-"\"d\": Dagurinn sem tala án '0' forskeytis (1 to 31)\n"
-"\"dd\": Dagurinn sem tala með '0' forskeyti (01 to 31)\n"
-"\"ddd\": Stutt staðfært form dagsetningar (t.d. 'Mán' til 'Sun')\n"
-"\"dddd\": Langt staðfært form dagsetningar (t.d. 'Mánudagur' til "
-"'Sunnudagur')\n"
-"\"M\": Mánuður sem tala án '0' forskeytis (1 til 12)\n"
-"\"MM\": Mánuður sem tala með '0' forskeyti (01 til 12)\n"
-"\"MMM\": Stutt staðfært form mánaðar (t.d. 'Jan' til 'Des')\n"
-"\"MMMM\": Langt staðfært form mánaðar (t.d. 'Janúar' til 'Desember')\n"
-"\"yy\": Árið sem tveggja stafa tala (t.d. 00 til 99)\n"
-"\"yyyy\": Árið sem fjögurra stafa tala (t.d. 2012)\n"
-"Allir aðrir stafir verða meðhöndlaðir sem texti. Allar stafarunur sem "
+"<p>Þessi tákn má nota til að skilgreina dagsetningu:</p><p><b>d</b>: "
+"Dagurinn sem tala án '0' forskeytis (1 to 31)</p><p><b>dd</b>: Dagurinn sem "
+"tala með '0' forskeyti (01 to 31)</p><p><b>ddd</b>: Stutt staðfært form "
+"dagsetningar (t.d. 'Mán' til 'Sun')</p><p><b>dddd</b>: Langt staðfært form "
+"dagsetningar (t.d. 'Mánudagur' til 'Sunnudagur')</p><p><b>M</b>: Mánuður sem "
+"tala án '0' forskeytis (1 til 12)</p><p><b>MM</b>: Mánuður sem tala með '0' "
+"forskeyti (01 til 12)</p><p><b>MMM</b>: Stutt staðfært form mánaðar (t.d. "
+"'Jan' til 'Des')</p><p><b>MMMM</b>: Langt staðfært form mánaðar (t.d. "
+"'Janúar' til 'Desember')</p><p><b>yy</b>: Árið sem tveggja stafa tala (t.d. "
+"00 til 99)</p><p><b>yyyy</b>: Árið sem fjögurra stafa tala (t.d. 2012)</"
+"p><p>Allir aðrir stafir verða meðhöndlaðir sem texti. Allar stafarunur sem "
 "afmarkaðar eru með einföldum beinum úrfellingamerkjum verða meðhöndlaðar sem "
 "texti og ekki teknar með sem breytur.Sem dæmi;, ef dagsetningin er 20. júlí "
-"1969:\n"
-"\"dd.MM.yyyy\" : 20.07.1969\n"
-"\"ddd d MM yy\" : Sun 20 júl 69\n"
-"\"'Mynd tekin' d. MMMM yyyy\" : Mynd tekin 20. júlí 1969\n"
+"1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd d MM yy</b> : Sun 8 "
+"júl 69</p><p><b>'Mynd tekin' d. MMMM yyyy</b> : Mynd tekin 1. desember 2013</"
+"p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
 #, kde-format
@@ -57124,7 +57070,7 @@ msgid ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Hakaðu við þennan möguleika ef þú vilt hlaða myndum inn í sjálfvirkt gerð "
+"Merktu við þennan möguleika ef þú vilt hlaða myndum inn í sjálfvirkt gerð "
 "undiralbúm byggð á skráarendingum. Á þennan hátt er hægt að aðskilja JPEG og "
 "RAW skrár um leið og þeim er hlaðið inn frá myndavél."
 
@@ -57135,7 +57081,7 @@ msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Hakaðu við þennan möguleika ef þú vilt hlaða myndum inn í sjálfvirkt gerð "
+"Merktu við þennan möguleika ef þú vilt hlaða myndum inn í sjálfvirkt gerð "
 "undiralbúm byggð á dagsetningum."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:141
@@ -57471,13 +57417,15 @@ msgid "Open the item with default assigned application."
 msgstr "Opna atriðið með sjálfgefnu forriti."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Fjarlægja hlut af ljósaborði"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Fjarlægja alla hluti af ljósaborði"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -57527,53 +57475,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Fjarlægja alla hluti af ljósaborði þegar því er lokað"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Aðdráttur 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Laga að &glugga"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Litastýrð sýn"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Fyrri mynd"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Breyta titlum til hægri"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Breyta athugasemdum til hægri"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Sýna úthlutuð merki til hægri"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Breyta titlum til vinstri"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Breyta athugasemdum til vinstri"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Sýna úthlutuð merki til vinstri"
@@ -59119,41 +59067,37 @@ msgstr "Land"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
 msgid "Country of the location shown in the item"
-msgstr ""
+msgstr "Land staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Hérað:"
+msgstr "Hérað"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
 msgid "Province of the location shown in the item"
-msgstr ""
+msgstr "Hérað staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
-msgstr "Land"
+msgstr "Sveitarfélag"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "County of the location shown in the item"
-msgstr ""
+msgstr "Sveitarfélag staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Borg/Staður:"
+msgstr "Borg/Staður"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Settu inn staðsetningu innan borgar, þaðan sem efnið er upprunnið."
+msgstr "Borg staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -59761,31 +59705,27 @@ msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Veldu þetta til að sýna digiKam einkunnagjöf undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Sýna digiKam titi&l"
+msgstr "Sýna digiKam sér&merki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
-msgstr "Veldu þetta til að sýna digiKam titil undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam sérmerkingu undir smámyndum."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Sýna digiKam titi&l"
+msgstr "Sýna digiKam &litamerki"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
-msgstr "Veldu þetta til að sýna digiKam merki undir smámyndum."
+msgstr "Veldu þetta til að sýna digiKam litmerki sem jaðar í kringum smámynd."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499
@@ -60019,7 +59959,8 @@ msgstr ""
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
-"Taka hakið úr hér ef þú vilt ekki umbreyta 16-bita forskoðunarmynd í 8-bita."
+"Taktu merkið úr hér ef þú vilt ekki umbreyta 16-bita forskoðunarmynd í 8-"
+"bita."
 
 #: core/utilities/setup/album/setupalbumview.cpp:331
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -60033,7 +59974,7 @@ msgstr "Birta táknmyndir og texta yfir forskoðun"
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
-"Taka hakið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
+"Taktu merkið úr hér ef þú vilt ekki sjá táknmyndir og texta við forskoðun "
 "mynda."
 
 #: core/utilities/setup/album/setupalbumview.cpp:348
@@ -60342,7 +60283,7 @@ msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
 "USB cable.</p>"
 msgstr ""
-"<p>Hakaðu við þetta ef myndavélin þín er tengd við tölvuna með USB kapli.</p>"
+"<p>Merktu við þetta ef myndavélin þín er tengd við tölvuna með USB kapli.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:162
 #, kde-format
@@ -60356,7 +60297,7 @@ msgid ""
 "<p>Select this option if your camera is connected to your computer using a "
 "serial cable.</p>"
 msgstr ""
-"<p>Hakaðu við þetta ef myndavélin þín er tengd við tölvuna með raðtengi.</p>"
+"<p>Merktu við þetta ef myndavélin þín er tengd við tölvuna með raðtengi.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:166
 #, kde-format
@@ -60369,7 +60310,7 @@ msgid ""
 "<p>Select this option if your camera is connected to your computer network.</"
 "p>"
 msgstr ""
-"<p>Hakaðu við þetta ef myndavélin þín er tengd við sama net og tölvan þín.</"
+"<p>Merktu við þetta ef myndavélin þín er tengd við sama net og tölvan þín.</"
 "p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:172
@@ -61277,8 +61218,8 @@ msgid ""
 "files</li><li>Unchecked: Default settings are used when saving image files</"
 "li></ul>"
 msgstr ""
-"<ul><li>Hakað: Valgluggi þar sem hægt er að breyta stillingum við vistun "
-"myndskráa</li><li>Óhakað: Notaðar eru sjálfgefnar stillingar við vistun "
+"<ul><li>Merkt: Valgluggi þar sem hægt er að breyta stillingum við vistun "
+"myndskráa</li><li>Ómerkt: Notaðar eru sjálfgefnar stillingar við vistun "
 "myndskráa</li></ul>"
 
 #: core/utilities/setup/editor/setupraw.cpp:101
@@ -62069,7 +62010,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Color label"
-msgstr "Litamerki"
+msgstr "Litmerki"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:67
 #, kde-format
@@ -62395,7 +62336,7 @@ msgid ""
 "not enabled, these files will be rotated by flag."
 msgstr ""
 "Það gildir fyrir ýmis skráasnið sem leyfa þjöppun með gagnatapi að myndgögn "
-"munu tapast í hvert sinn sem mynd er snúið. Hakaðu við þetta ef þú vilt "
+"munu tapast í hvert sinn sem mynd er snúið. Merktu við þetta ef þú vilt "
 "leyfa snúning með gagnatapi. Ef þetta er ekki virkjað, verður skránum snúið "
 "með breytingu á stefnumerki."
 
@@ -63184,7 +63125,7 @@ msgid ""
 "<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
 "Management is disabled</li></ul>"
 msgstr ""
-"<ul><li>Hakað: Litastýring er virk</li><li>Óhakað: Litastýring er óvirk</"
+"<ul><li>Merkt: Litastýring er virk</li><li>Ómerkt: Litastýring er óvirk</"
 "li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:189
@@ -63525,14 +63466,7 @@ msgstr ""
 "kannaðar:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -63541,12 +63475,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"Á Mac OS X eru sjálfgefnar leitarslóðir <ul><li>/System/Library/ColorSync/"
+"Á macOS eru sjálfgefnar leitarslóðir <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
-"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/icc</"
-"li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc/</li></ul>Á kerfinu þínu hafa eftirfarandi slóðir fundist og verið "
-"kannaðar:<ul><li>%2</li></ul>"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>Á kerfinu þínu hafa eftirfarandi slóðir "
+"fundist og verið kannaðar:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format
@@ -63576,6 +63510,17 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
+"Þessar stillingar ákvarða gæði mynda og gefa út frá þeim stigaskor, sem "
+"geymd eru í gagnagrunni sem sérmerkingar. Þessar upplýsingar má meta á tvo "
+"vegi: með því að nota fjögur grunnatriði sem skemma myndir (móska, "
+"truflanir, lýsing og þjöppun), eða með því að nota vélnáms-tauganet (deep "
+"learning neural network engine). Fyrri kosturinn hjálpar við að ákvarða "
+"hvort myndir séu bjagaðar út frá áðurnefndum grunnþáttum, en hefur ókosti í "
+"för með sér: þetta krefst þess að notandinn fínstilli aðferðina og þetta "
+"getur ekki nýst samhliða greiningu á fagurfræðilegu gildi mynda. Seinni "
+"kosturinn notar gervigreindartækni byggða á %1 líkani við að spá fyrir um "
+"stigaskor. Þar sem vélnáms-aðferðin er enda-í-enda lausn, krefst hún ekki "
+"nákvæmra fínstillinga og er því auðveldari í notkun."
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64
 #, kde-format

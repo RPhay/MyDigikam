@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-02-01 02:18+0100\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 08:23+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -36607,10 +36607,10 @@ msgid "sRGB"
 msgstr "sRGB"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:609
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Adobe RGB"
-msgstr ""
+msgstr "Adobe RGB"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:610
 #, kde-format
@@ -49249,9 +49249,9 @@ msgid "Metering mode"
 msgstr "გაზომვის რეჟიმი"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
-#, kde-format
+#, fuzzy, kde-format
 msgid "Subject distance"
-msgstr ""
+msgstr "სუბიექტის დაშორება"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
 #, kde-format
@@ -50778,9 +50778,9 @@ msgid "Edit Bookmarks"
 msgstr "სანიშნების ჩასწორება"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add Bookmark..."
-msgstr ""
+msgstr "სანიშნის დამატება..."
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
@@ -53996,7 +53996,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info Example of custom date format for album naming"
 msgid "Ex.: %1"
-msgstr ""
+msgstr "მაგ: %1"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:252
 #, kde-format
@@ -54040,13 +54040,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
-msgstr ""
+msgstr "კამერის მედია"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:334
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
-msgstr ""
+msgstr "ალბომის ბიბლიოთეკა"
 
 #: core/utilities/import/widgets/freespacewidget.cpp:344
 #: core/utilities/import/widgets/freespacewidget.cpp:355
@@ -54066,7 +54066,7 @@ msgstr "ხელმისაწვდომი:"
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
-msgstr ""
+msgstr "ესაჭიროება:"
 
 #: core/utilities/import/widgets/importcontextmenu.cpp:254
 #, kde-format
@@ -54102,19 +54102,19 @@ msgstr "ყველა ფაილი"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Only New Files"
-msgstr ""
+msgstr "მხოლოდ ახალი ფაილები"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:131
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Raw Files"
-msgstr ""
+msgstr "Raw ფაილები"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:141
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "JPG/TIFF Files"
-msgstr ""
+msgstr "JPG/TIFF ფაილები"
 
 #: core/utilities/import/widgets/importfiltercombobox.cpp:146
 #, kde-format
@@ -54125,7 +54125,7 @@ msgstr "ვიდეო ფაილები"
 #: core/utilities/import/widgets/renamecustomizer.cpp:110
 #, kde-format
 msgid "Camera filenames"
-msgstr ""
+msgstr "კამერის ფაილის სახელები"
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:112
 #, kde-format
@@ -54143,7 +54143,7 @@ msgstr ""
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
-msgstr ""
+msgstr "დატოვება, როგორც არის"
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:123
 #, kde-format
@@ -54186,7 +54186,7 @@ msgstr ""
 #: core/utilities/import/widgets/scriptingsettings.cpp:82
 #, kde-format
 msgid "No script selected"
-msgstr ""
+msgstr "სკრიპტი არჩეული არაა"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:93
 #, kde-format
@@ -54281,14 +54281,18 @@ msgid "Open the item with default assigned application."
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove coordinates from file"
+msgid "Remove item from Light Table"
+msgstr "ფაილიდან კოორდინატების წაშლა"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove coordinates from file"
+msgid "Remove all items from Light Table"
+msgstr "ფაილიდან კოორდინატების წაშლა"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
@@ -54337,53 +54341,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "100%-მდე გადიდება"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "ფანჯარაში ჩატევა"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "ფერით-მართული ხედი"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "წინა გამოსახულება"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr ""
@@ -54780,12 +54784,12 @@ msgstr "ყველას გაშვება"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
-msgstr ""
+msgstr "ახალი რიგი"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, kde-format
 msgid "Remove Queue"
-msgstr ""
+msgstr "რიგის წაშლა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
@@ -54795,17 +54799,17 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, kde-format
 msgid "Remove items"
-msgstr ""
+msgstr "ჩანაწერების წაშლა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, kde-format
 msgid "Remove processed items"
-msgstr ""
+msgstr "დამუშავებული ჩანაწერების წაშლა"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Clear Queue"
-msgstr ""
+msgstr "რიგის გასუფთავება"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, kde-format
@@ -54825,7 +54829,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, kde-format
 msgid "Current Queue: "
-msgstr ""
+msgstr "მიმდინარე რიგი: "
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
@@ -54837,7 +54841,7 @@ msgstr "საგნები არაა"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, kde-format
 msgid "No tasks"
-msgstr ""
+msgstr "ამოცანების გარეშე"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:477

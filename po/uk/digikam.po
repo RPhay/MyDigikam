@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-02-01 09:01+0200\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 10:53+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -53748,24 +53748,7 @@ msgid "Scan Your Collection"
 msgstr "Сканувати вашу збірку"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53789,18 +53772,18 @@ msgstr ""
 "прочитати <b>Підручник з digiKam</b>. Відкрити цей підручник можна за "
 "допомогою пункту меню «Довідка/Підручник» (крім того, вам доведеться "
 "встановити окремий пакунок з документацією до digiKam). З підручником можна "
-"ознайомитися і у мережі, на <a href='https://www.digikam.org/docs'>сайті "
-"digikam.org</a>.</p><p>Натисніть кнопку <b>Завершити</b>, щоб закрити це "
-"допоміжне вікно. digiKam виконає сканування вашої збірки з метою реєстрації "
-"всіх записів у базі даних. Після виконання початкового налаштовування "
-"збирання даних виконуватиметься у фоновому режимі.</p><p><i>Зауваження:</i> "
-"якщо ви маєте досить велику збірку, ця дія може тривати досить довго. Якщо "
-"ви скасуєте сканування, його буде розпочато на початку наступного сеансу "
-"digiKam.</p><p>Після завершення сканування, під час наступного запуску, "
-"digiKam шукатиме у збірці лише нові записи, що значно пришвидшить "
-"сканування. Ви можете наказати програмі виконати сканування збірки вручну за "
-"допомогою пункту меню <b>Інструменти → Обслуговування → Виявити нові "
-"зображення</b>.</p></qt>"
+"ознайомитися і у мережі, на <a href='https://docs.digikam.org/en/index."
+"html'>сайті digikam.org</a>.</p><p>Натисніть кнопку <b>Завершити</b>, щоб "
+"закрити це допоміжне вікно. digiKam виконає сканування вашої збірки з метою "
+"реєстрації всіх записів у базі даних. Після виконання початкового "
+"налаштовування збирання даних виконуватиметься у фоновому режимі.</"
+"p><p><i>Зауваження:</i> якщо ви маєте досить велику збірку, ця дія може "
+"тривати досить довго. Якщо ви скасуєте сканування, його буде розпочато на "
+"початку наступного сеансу digiKam.</p><p>Після завершення сканування, під "
+"час наступного запуску, digiKam шукатиме у збірці лише нові записи, що "
+"значно пришвидшить сканування. Ви можете наказати програмі виконати "
+"сканування збірки вручну за допомогою пункту меню <b>Інструменти → "
+"Обслуговування → Виявити нові зображення</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -58346,13 +58329,15 @@ msgstr ""
 "записами цього типу."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Вилучити запис зі стола з підсвічуванням"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Вилучити всі записи зі стола з підсвічуванням"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58403,53 +58388,53 @@ msgstr ""
 "Вилучити всі зображення зі стола з підсвічуванням під час закриття його вікна"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Масштаб у 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Вмістити у &вікно"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Перегляд з керуванням кольорами"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Попереднє зображення"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Редагувати заголовки праворуч"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Редагувати коментарі праворуч"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Показувати пов'язані мітки праворуч"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Редагувати заголовки ліворуч"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Редагувати коментарі ліворуч"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Показувати пов'язані мітки ліворуч"

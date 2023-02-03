@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-02-01 14:35+0100\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 12:54+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -9278,7 +9278,7 @@ msgstr "healingClone"
 #, kde-format
 msgctxt "@title"
 msgid "Healing Clone Tool"
-msgstr "Hulpmiddel voor heling van kloon"
+msgstr "Hulpmiddel voor heling met kloon"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:60
 #, kde-format
@@ -9298,7 +9298,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Healing Clone..."
-msgstr "Kloon wordt geheeld..."
+msgstr "Kloon voor heling..."
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
 #, kde-format
@@ -53475,24 +53475,7 @@ msgid "Scan Your Collection"
 msgstr "Zoek in uw verzameling"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53515,17 +53498,17 @@ msgstr ""
 "digiKam. Om meer te leren over de digiKam-wereld, raden we het lezen van het "
 "<b>digiKam-handbook</b> aan via het <b>Help/Handbook</b> menu-item (het "
 "installeren van het separate digiKam documentatiepakket is dan nodig.) U "
-"kunt ook het online handboek lezen op de <a href='https://www.digikam.org/"
-"docs'>digikam.org website</a>.</p><p>Druk op <b>Voltooien</b> om deze "
-"assistent af te sluiten. digiKam zal uw verzameling scannen om alle albums "
-"in de database te registreren. Items in albums worden verzameld na de "
+"kunt ook het online handboek lezen op de <a href='https://docs.digikam.org/"
+"en/index.html'>daaraan gewijde website</a>.</p><p>Druk op <b>Voltooien</b> "
+"om deze assistent af te sluiten. digiKam zal uw verzameling scannen om alle "
+"albums in de database te registreren. Items in albums worden verzameld na de "
 "opstartfase in de achtergrond.</p><p><i>Opmerking:</i> afhankelijk van de "
 "grootte van uw verzameling zal deze bewerking even duren. Als u het scannen "
 "afbreekt, zal het weer starten in de volgende sessie van digiKam.</p><p>Als "
 "het scannen is voltooid zal digiKam bij de volgende start alleen uw "
 "verzameling controleren om nieuwe items te identificeren, hetwelk veel "
 "sneller is. Scannen naar afbeeldingen kan ook handmatig worden gestart met "
-"het menu-item <b>Hulpmiddellen->Onderhoud->Nieuwe items zoeken</b>.</p></qt>"
+"het menu-item <b>Hulpmiddelen->Onderhoud->Nieuwe items zoeken</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -58036,13 +58019,15 @@ msgid "Open the item with default assigned application."
 msgstr "Open het item met de standaard gekoppelde toepassing."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Item van lichttafel verwijderen"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Alle items van lichttafel verwijderen"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58092,53 +58077,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Bij het sluiten alle items van de lichttafel verwijderen"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zoomen naar 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Passend in &venster"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Weergave met kleurbeheer"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Vorige afbeelding"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Titels rechts bewerken"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Toelichting rechts bewerken"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Toegewezen tags rechts tonen"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Titels links bewerken"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Toelichting links bewerken"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Toegewezen tags links tonen"

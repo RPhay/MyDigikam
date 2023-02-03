@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:55+0000\n"
-"PO-Revision-Date: 2023-01-22 10:31+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"PO-Revision-Date: 2023-02-02 13:01+0100\n"
+"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Kate 22.08.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -3007,8 +3007,8 @@ msgstr ""
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
 msgstr ""
-"Introduïu el nom de la busca actual per dates per que es guardarà-la a la "
-"vista de «Busques»"
+"Introduïu el nom de la busca actual per dates per a guardar-la en la vista "
+"de «Busques»"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:215
 #, kde-format
@@ -3126,7 +3126,7 @@ msgstr "Desfés"
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Restaura només l'última entrada en la paperera."
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
@@ -3134,11 +3134,9 @@ msgid "Restore"
 msgstr "Restaura"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Elimina les imatges seleccionades de la llista"
+msgstr "Restaura la selecció de fitxers des de la paperera."
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -3149,6 +3147,8 @@ msgstr "Suprimix..."
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Elimina permanentment la selecció d'elements o tots els elements de la "
+"paperera."
 
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
@@ -6017,10 +6017,9 @@ msgid "Use Absolute Size"
 msgstr "Utilitza una mida absoluta"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Tipus de marca d'aigua:"
+msgstr "Tipus de marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -6044,10 +6043,9 @@ msgid "Click to select watermark image."
 msgstr "Cliqueu per a seleccionar una imatge de marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Imatge de marca d'aigua:"
+msgstr "Imatge de marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -6079,10 +6077,9 @@ msgid "Opacity of watermark"
 msgstr "Opacitat de la marca d'aigua"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Opacitat (%):"
+msgstr "Opacitat (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -6095,10 +6092,9 @@ msgid "Enter your watermark string here."
 msgstr "Introduïu ací el vostre text de la marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Text de la marca d'aigua:"
+msgstr "Text de la marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6113,16 +6109,14 @@ msgid "Set the font color to use here."
 msgstr "Establiu ací el color del tipus de lletra que s'utilitzarà."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Color del tipus de lletra:"
+msgstr "Color del tipus de lletra: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Opacitat del text:"
+msgstr "Opacitat del text: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6149,16 +6143,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Seleccioneu el color del fons de la marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Color de fons:"
+msgstr "Color de fons: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Opacitat del fons:"
+msgstr "Opacitat del fons: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6185,10 +6177,9 @@ msgid "Random Repetition"
 msgstr "Repetició aleatòria"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Tipus d'emplaçament:"
+msgstr "Tipus d'emplaçament: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6239,10 +6230,9 @@ msgstr ""
 "ser inferior a 1,0"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Factor de dispersió:"
+msgstr "Factor de dispersió: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6287,10 +6277,9 @@ msgid "Bottom center"
 msgstr "Inferior centre"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Posició d'emplaçament:"
+msgstr "Posició d'emplaçament: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6313,10 +6302,9 @@ msgid "270 degrees CW"
 msgstr "270 graus en sentit antihorari"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Gir:"
+msgstr "Gir: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6324,10 +6312,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Mida de la marca d'aigua, com a percentatge de la imatge marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Mida (%):"
+msgstr "Mida (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6337,10 +6324,9 @@ msgstr ""
 "marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Marge X (%):"
+msgstr "Marge X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6350,10 +6336,9 @@ msgstr ""
 "marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Marge Y (%):"
+msgstr "Marge Y (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -8115,7 +8100,7 @@ msgid ""
 msgstr ""
 "<p>Canvia la compressió d'imatges TIFF.</p><p>Si esta opció està activada, "
 "la mida final de la imatge TIFF es reduirà. S'utilitza un format de "
-"compressió sense pèrdua (Deflate) per que es guardarà el fitxer.</p>"
+"compressió sense pèrdua (Deflate) per a guardar el fitxer.</p>"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
 #, kde-format
@@ -10533,7 +10518,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Add weight masks"
-msgstr "Afig tipus de màscares"
+msgstr "Afig màscares de pes"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, kde-format
@@ -10543,7 +10528,7 @@ msgstr "Activeu esta opció per a afegir màscares de supressió i conservació.
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
-msgstr "Màscara de tipus supressió:"
+msgstr "Màscara de pes de supressió:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
@@ -10564,7 +10549,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
 msgid "Preservation weight mask:"
-msgstr "Màscara de tipus conservació:"
+msgstr "Màscara de pes de conservació:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
@@ -10604,32 +10589,32 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
-msgstr "Norma del gradient de brillantor"
+msgstr "Norma del degradat de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
-msgstr "Suma dels valors absoluts dels gradients de brillantor"
+msgstr "Suma dels valors absoluts dels degradats de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
-msgstr "Valor absolut del gradient de brillantor"
+msgstr "Valor absolut del degradat de brillantor"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
-msgstr "Norma del gradient de luminància"
+msgstr "Norma del degradat de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
-msgstr "Suma dels valors absoluts dels gradients de luminància"
+msgstr "Suma dels valors absoluts dels degradats de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
-msgstr "Valor absolut del gradient de luminància"
+msgstr "Valor absolut del degradat de luminància"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
@@ -10637,7 +10622,7 @@ msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr ""
-"Esta opció permet escollir una funció de gradient. Esta funció s'utilitza "
+"Esta opció permet escollir una funció de degradat. Esta funció s'utilitza "
 "per a determinar quins píxels s'haurien de traure o mantindre."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
@@ -13232,7 +13217,7 @@ msgid ""
 "used to save the text."
 msgstr ""
 "Introduïu la llegenda de la imatge. Este camp no està limitat. S'utilitzarà "
-"la codificació UTF8 per que es guardarà el text."
+"la codificació UTF8 per a guardar el text."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
@@ -29610,17 +29595,7 @@ msgstr ""
 "de 100.000 elements.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29639,10 +29614,10 @@ msgstr ""
 "emmagatzemar les empremtes digitals de similitud.<br/>Cal permís "
 "d'escriptura per a editar les propietats de les imatges.</p><p>Les bases de "
 "dades són motors del nucli de digiKam. Cal tindre cura d'utilitzar un lloc "
-"situat en un maquinari ràpid (com els SSD) amb espai lliure suficient, "
+"situat en un maquinari ràpid (p. ex. SSD o NVMe) amb espai lliure suficient, "
 "especialment per a la base de dades de miniatures.</p><p>Nota: Ací no podeu "
 "utilitzar sistemes de fitxers remots, com el NFS. Per motius de rendiment, "
-"també es recomana no utilitzar suports extraïbles.</p><p></p>"
+"també es recomana no utilitzar mitjans d'emmagatzematge de xarxa.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -29863,8 +29838,8 @@ msgid ""
 "This one can use quickly a lots of space, especially\n"
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
-"digiKam utilitza la base de dades de cares per que es guardarà els "
-"histogrames d'imatges dedicades al procés de reconeixement de cares.\n"
+"digiKam utilitza la base de dades de cares per a guardar els histogrames "
+"d'imatges dedicades al procés de reconeixement de cares.\n"
 "Açò pot utilitzar ràpidament molt espai, especialment si hi ha moltes "
 "imatges amb cares de persones detectades i etiquetades."
 
@@ -30444,7 +30419,7 @@ msgstr "No ho tornes a preguntar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr "Configuració per que es guardarà fitxers d'imatge"
+msgstr "Configuració per a guardar fitxers d'imatge"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
 #, kde-format
@@ -36016,10 +35991,9 @@ msgstr ""
 "copiat a l'àlbum %2."
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
+msgstr "No s'ha pogut moure el lateral des del fitxer %1 cap a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -36032,10 +36006,9 @@ msgid "Could not copy folder %1 to album %2"
 msgstr "No s'ha pogut copiar la carpeta %1 a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to folder %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
+msgstr "No s'ha pogut copiar el lateral des del fitxer %1 a la carpeta %2"
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -50878,8 +50851,8 @@ msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Configuració per que es guardarà els fitxers d'imatge<br/><i>Establix la "
-"configuració predeterminada emprada per que es guardarà les imatges</i></qt>"
+"<qt>Configuració per a guardar els fitxers d'imatge<br/><i>Establix la "
+"configuració predeterminada emprada per a guardar les imatges</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
@@ -53594,24 +53567,7 @@ msgid "Scan Your Collection"
 msgstr "Explora la col·lecció local"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53635,7 +53591,7 @@ msgstr ""
 "que llegiu el <b>Manual de digiKam</b>, el trobareu a l'entrada del menú "
 "<b>Ajuda -> Manual</b> (cal que instal·leu per separat el paquet de "
 "documentació de digiKam). També podeu llegir el manual en línia des del <a "
-"href='https://www.digikam.org/docs'>lloc web de digikam.org</a>.</"
+"href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</a>.</"
 "p><p>Premeu <b>Acaba</b> per a tancar l'assistent. digiKam explorarà la "
 "vostra col·lecció per a registrar tots els elements en la base de dades. Els "
 "elements inclosos en els àlbums s'arreplegaran durant l'inici en segon pla.</"
@@ -53980,8 +53936,8 @@ msgid ""
 "Enter the name of the current similar image search to save in the "
 "\"Similarity Searches\" view."
 msgstr ""
-"Introduïu el nom de la busca actual per imatge similar per que es guardarà-"
-"la a la vista de «Busques per similitud»."
+"Introduïu el nom de la busca actual per imatge similar per a guardar-la en "
+"la vista de «Busques per similitud»."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
@@ -54055,8 +54011,8 @@ msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
 "Searches\" view."
 msgstr ""
-"Introduïu el nom de la busca actual per croquis per que es guardarà-la a la "
-"vista de «Busques per similitud»."
+"Introduïu el nom de la busca actual per croquis per a guardar-la en la vista "
+"de «Busques per similitud»."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
@@ -55188,7 +55144,7 @@ msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
-"Introduïu ací el nom de la busca actual per mapa per que es guardarà-la a la "
+"Introduïu ací el nom de la busca actual per mapa per a guardar-la en la "
 "vista de «Busques per mapa»."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
@@ -58142,13 +58098,15 @@ msgid "Open the item with default assigned application."
 msgstr "Obri l'element amb l'aplicació predeterminada assignada."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, kde-format
-msgid "Remove item from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove item from LightTable"
+msgid "Remove item from Light Table"
 msgstr "Elimina un element de la taula de llum"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, kde-format
-msgid "Remove all items from LightTable"
+#, fuzzy, kde-format
+#| msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr "Elimina tots els elements de la taula de llum"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -58198,53 +58156,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr "Trau totes les imatges de la taula de llum quan es tanque"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Zoom al 100%"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Ajusta a la &finestra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Vista gestionada del color"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Imatge anterior"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr "Edita els títols a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr "Edita els comentaris a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr "Mostra les etiquetes assignades a la dreta"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr "Edita els títols a l'esquerra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr "Edita els comentaris a l'esquerra"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr "Mostra les etiquetes assignades a l'esquerra"
@@ -59066,8 +59024,8 @@ msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
 msgstr ""
-"Activeu esta opció per que es guardarà les modificacions actuals a una "
-"versió nova del fitxer"
+"Activeu esta opció per a guardar les modificacions actuals a una versió nova "
+"del fitxer"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:237
 #, kde-format
@@ -59800,40 +59758,34 @@ msgid "Country of the location shown in the item"
 msgstr "País de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Província:"
+msgstr "Província"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province of the location shown in the item"
-msgstr "País de l'emplaçament mostrat en l'element"
+msgstr "Província de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
-msgstr "País"
+msgstr "Comtat"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "County of the location shown in the item"
-msgstr "País de l'emplaçament mostrat en l'element"
+msgstr "Comtat de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Ciutat:"
+msgstr "Ciutat"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "País de l'emplaçament mostrat en l'element"
+msgstr "Ciutat de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -60270,7 +60222,7 @@ msgstr "Guarda la busca actual"
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
-"Introduïu un nom per a la busca actual per que es guardarà-la a la vista de "
+"Introduïu un nom per a la busca actual per a guardar-la en la vista de "
 "«Busques»"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:294
@@ -60463,34 +60415,30 @@ msgstr ""
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Mostra el títo&l de digiKam"
+msgstr "Mostra el &rètol de selecció de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Activeu esta opció per a mostrar el títol de digiKam davall de la miniatura "
-"de la imatge."
+"Activeu esta opció per a mostrar el rètol de selecció de digiKam davall de "
+"la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Mostra el títo&l de digiKam"
+msgstr "Mostra el rèto&l de color de digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Activeu esta opció per a mostrar les etiquetes de digiKam davall de la "
+"Activeu esta opció per a mostrar el rètol de color de digiKam davall de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
@@ -62172,7 +62120,7 @@ msgstr "En tancar l'editor"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
-msgstr "Pregunta sempre per que es guardarà els canvis"
+msgstr "Pregunta sempre per a guardar els canvis"
 
 #: core/utilities/setup/editor/setupversioning.cpp:221
 #, kde-format
@@ -63246,8 +63194,7 @@ msgstr "Escriu a fitxers laterals"
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
-msgstr ""
-"Activeu esta opció per que es guardarà les metadades a fitxers laterals XMP."
+msgstr "Activeu esta opció per a guardar les metadades a fitxers laterals XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
 #, kde-format
