@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
-"PO-Revision-Date: 2023-01-27 19:12+0100\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"PO-Revision-Date: 2023-02-03 15:27+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3146,7 +3146,7 @@ msgstr "Отмяна"
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Възстановяване само на последния елемент в кошчето. "
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
@@ -3154,11 +3154,9 @@ msgid "Restore"
 msgstr "Възстановяване"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Премахване на избрани изображения от списъка"
+msgstr "Възстановяване на избрани файлове от кошчето"
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -3169,6 +3167,7 @@ msgstr "Изтриване..."
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Необратимо изтриване на избраните елементи или всички елементи от кошчето."
 
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
@@ -29648,17 +29647,7 @@ msgstr ""
 "огромни размери на колекции с повече от 100 хил. елемента.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -36019,10 +36008,9 @@ msgstr ""
 "%2"
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Не може да се премести файл %1 в албум %2"
+msgstr "Не може да се премести съпътстващ файл %1 в албум %2"
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -36032,13 +36020,12 @@ msgstr "Не може да се премести файл %1 в албум %2"
 #: core/libs/iojobs/iojob.cpp:216
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
-msgstr "Не можа да се копира папка %1 в албум %2"
+msgstr "Не може да се копира папка %1 в албум %2"
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to folder %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Не можа да се копира файл %1 в папка %2"
+msgstr "Не може да се копира съпътстващ файл %1 в папка %2"
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -53573,24 +53560,7 @@ msgid "Scan Your Collection"
 msgstr "Претърсване на колекцията"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53735,13 +53705,13 @@ msgstr "Средно сходство"
 msgid "This shows all found duplicate items."
 msgstr "Това показва всички открити дублиращи се елементи."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Актуализиране на отпечатъците"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
@@ -53749,13 +53719,13 @@ msgstr ""
 "Използвайте този бутон, за да актуализирате всички отпечатъци на "
 "изображенията."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Търсене на дубликати"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53763,43 +53733,43 @@ msgstr ""
 "Използвайте този бутон, за да сканирате избраните албуми за дублиращи се "
 "елементи."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Търсене в:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Диапазон на сходство:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Ограничение:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Без"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Ограничаване до референтния албум"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Изключване на референтния албум"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53811,43 +53781,43 @@ msgstr ""
 "критерии, като например да ограничите търсенето до албума на референтното "
 "изображение или да изключите албума на референтното изображение от търсенето."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Ограничаване до:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Само избрания раздел"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Един от"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "И двете"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Албуми но без тагове"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Тагове, но без албуми"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53873,13 +53843,13 @@ msgstr ""
 "избраните тагове, но не и в албумите.\n"
 "\"Само избран таб\" означава, че се използва само избраният таб."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Премахване на дубликатите"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -58139,14 +58109,12 @@ msgid "Open the item with default assigned application."
 msgstr "Отваряне на елемента със стандартно зададеното приложение."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
 msgstr "Премахване на елемент от светлинната маса"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
 msgstr "Премахване на всички елементи от светлинната маса"
 
@@ -59795,40 +59763,34 @@ msgid "Country of the location shown in the item"
 msgstr "Държавата на местоположението на елемента"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Област:"
+msgstr "Област"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province of the location shown in the item"
-msgstr "Държавата на местоположението на елемента"
+msgstr "Областта на местоположението на елемента"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
 msgstr "Държава"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "County of the location shown in the item"
 msgstr "Държавата на местоположението на елемента"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Град:"
+msgstr "Град"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Държавата на местоположението на елемента"
+msgstr "Градът на местоположението на елемента"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -60456,35 +60418,31 @@ msgstr ""
 "изображението."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Показване на з&аглавието на digiKam"
+msgstr "Показване на &избрани етикети на digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Задайте тази опция, за да показвате заглавието на digiKam под миниатюрата на "
-"изображението."
+"Задайте тази опция, за да показвате избрани етикети на digiKam под "
+"миниатюрата на изображението."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Показване на з&аглавието на digiKam"
+msgstr "Показване на &цветни етикети на digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Задайте тази опция, за да показвате таговете на digiKam под миниатюрата на "
-"изображението."
+"Задайте тази опция, за да се показват цветните етикети на digiKam под "
+"миниатюрата на изображението."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499

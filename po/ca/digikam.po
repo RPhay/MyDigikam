@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
-"PO-Revision-Date: 2023-02-02 13:01+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"PO-Revision-Date: 2023-02-03 13:55+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Kate 22.08.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -5343,7 +5343,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
-msgstr "Ajust de les corbes"
+msgstr "Ajustament de les corbes"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
 #, kde-format
@@ -8074,8 +8074,8 @@ msgstr ""
 "Els fitxers RAW encara no s'han processat i, per tant, no estan preparats "
 "per a imprimir o editar amb un editor de gràfics de mapa de bits. Els RAW es "
 "processen amb un convertidor RAW a un espai de color intern de gamma àmplia "
-"a on es poden fer els ajustaments precisos abans de convertir a un TIFF o "
-"JPEG per a l'emmagatzematge, impressió, o una manipulació posterior. Amb "
+"a on es poden fer els ajustos precisos abans de convertir a un TIFF o JPEG "
+"per a l'emmagatzematge, impressió, o una manipulació posterior. Amb "
 "freqüència, aquest codifica la imatge en un espai de color depenent del "
 "dispositiu.</para><para>Per als detalls, vegeu la <a href='https://en."
 "wikipedia.org/wiki/Raw_image_format'>documentació del «Raw Image File»</a>.</"
@@ -8148,7 +8148,7 @@ msgstr "Format d'imatge amb etiquetes"
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:256
 #, kde-format
 msgid "Adjust Curve"
-msgstr "Ajust de corba"
+msgstr "Ajusta la corba"
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:44
 #, kde-format
@@ -8343,7 +8343,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:883
 #, kde-format
 msgid "Adjust Levels"
-msgstr "Ajust de nivells"
+msgstr "Ajusta els nivells"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
 #, kde-format
@@ -8391,7 +8391,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
-msgstr "Ajust dels nivells..."
+msgstr "Ajusta els nivells..."
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:120
 #, kde-format
@@ -8745,7 +8745,7 @@ msgstr "Color negatiu..."
 #: core/dplugins/editor/colors/hsl/hsltool.cpp:164
 #, kde-format
 msgid "HSL Adjustments"
-msgstr "Arranjament HSL"
+msgstr "Ajustos HSL"
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
 #, kde-format
@@ -9184,7 +9184,7 @@ msgid ""
 "To Continue polygon, either press L or double click\n"
 "To Cancel, press ESC"
 msgstr ""
-"Selecció de polígon amb Lasso.\n"
+"Selecció de polígon amb el llaç.\n"
 "Drecera: L\n"
 "Per a continuar amb el polígon, premeu «L» o feu doble clic\n"
 "Per a cancel·lar, premeu «Esc»"
@@ -9207,7 +9207,7 @@ msgid ""
 "Shortcut: CTRL+Z"
 msgstr ""
 "Desfà l'operació de clonació.\n"
-"Drecera: CTRL+Z"
+"Drecera: Ctrl+Z"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:204
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:205
@@ -9217,7 +9217,7 @@ msgid ""
 "Shortcut: CTRL+Y"
 msgstr ""
 "Refà l'operació de clonació.\n"
-"Drecera: CTRL+Y"
+"Drecera: Ctrl+Y"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:209
 #, kde-format
@@ -9232,15 +9232,15 @@ msgid ""
 "can clone only inside the lasso region.</p>"
 msgstr ""
 "<p>Com usar-ho:<br/><br/>* Premeu <b>s</b> per a canviar al mode de selecció "
-"d'origen, i seleccioneu el punt d'origen a la imatge.<br/>* Torneu a prémer "
-"<b>s</b> i inicieu el clonatge.<br/>* Premeu <b>[</b> i <b>]</b> per a "
+"d'origen i seleccioneu el punt d'origen a la imatge.<br/>* Torneu a prémer "
+"<b>s</b> i s'iniciarà el clonatge.<br/>* Premeu <b>[</b> i <b>]</b> per a "
 "canviar la mida del pinzell.<br/>* Premeu <b>Ctrl+Roda del ratolí</b> per a "
 "apropar/allunyar.<br/>* Premeu <b>m</b> per a fer una panoràmica de la "
 "imatge si és més gran que l'àrea de visualització.<br/>* Premeu <b>l</b> per "
-"a iniciar el mode «lasso». Comenceu a dibuixar el límit del «lasso» de "
-"manera contínua o discretament, després feu doble clic o torneu a prémer "
-"<b>l</b> per a tancar el límit.<br/>* Dins el mode «lasso», només podeu "
-"clonar dins la regió «lasso».</p>"
+"a iniciar el mode llaç. Comenceu a dibuixar el límit del llaç de manera "
+"contínua o discretament, després feu doble clic o torneu a prémer <b>l</b> "
+"per a tancar el límit.<br/>* Dins del mode llaç, només podeu clonar dins la "
+"regió del llaç.</p>"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:342
 #, kde-format
@@ -9251,7 +9251,7 @@ msgstr "clonatgeGuariment"
 #, kde-format
 msgctxt "@title"
 msgid "Healing Clone Tool"
-msgstr "Eina per al clonatge del guariment"
+msgstr "Eina per al clonatge de guariment"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:60
 #, kde-format
@@ -9656,7 +9656,7 @@ msgstr "Usa la gestió del color per a imprimir"
 #: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Settings..."
-msgstr "Arranjament..."
+msgstr "Configuració..."
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:339
 #, kde-format
@@ -10862,14 +10862,14 @@ msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
-"Seleccioneu un punt al giny de previsualització i després cliqueu aquest "
-"botó per a establir el punt per a la correcció automàtica."
+"Seleccioneu un punt al giny de vista prèvia i després cliqueu aquest botó "
+"per a assignar el punt per a la correcció automàtica."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:174
 #, kde-format
 msgctxt "Automatic Adjustment"
 msgid "Adjust"
-msgstr "Ajust"
+msgstr "Ajusta"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:183
 #, kde-format
@@ -10879,20 +10879,20 @@ msgid ""
 "horizontal or vertical lines.</p>"
 msgstr ""
 "<p>Corregeix automàticament el gir de les vostres imatges assignant dos "
-"punts al giny de previsualització i clicant <i>Ajusta</i>.<br/>Podeu ajustar "
+"punts al giny de vista prèvia i clicant <i>Ajusta</i>.<br/>Podeu ajustar "
 "tant les línies horitzontals com les verticals.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:208
 #, kde-format
 msgid "Automatic Adjustment"
-msgstr "Arranjament automàtic"
+msgstr "Ajust automàtic"
 
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
 #, kde-format
 msgid "Settings"
-msgstr "Arranjament"
+msgstr "Configuració"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:346
 #: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
@@ -11028,7 +11028,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
-msgstr "Ajustament de la perspectiva..."
+msgstr "Ajusta la perspectiva..."
 
 #: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:317
 #, kde-format
@@ -11570,8 +11570,8 @@ msgid ""
 "Enable this option to scale-up an image to a huge size. <b>Warning</b>: This "
 "process can take some time."
 msgstr ""
-"Activeu aquesta opció per a augmentar una imatge a una mida enorme. <b>Avís</"
-"b>: aquest procés pot trigar una estona."
+"Activeu aquesta opció per a augmentar una imatge fins a una mida enorme. "
+"<b>Avís</b>: aquest procés pot trigar una estona."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:404
 #, kde-format
@@ -14356,7 +14356,7 @@ msgid ""
 msgstr ""
 "<b>Nota: Les etiquetes de text <a href='https://en.wikipedia.org/wiki/"
 "IPTC_Information_Interchange_Model'>IPTC</a> són cadenes de mida limitada. "
-"Useu l'ajuda contextual per als detalls. En el seu lloc, considereu usar les "
+"er als detalls, useu l'ajuda contextual. En el seu lloc, considereu usar les "
 "<a href='https://ca.wikipedia.org/wiki/XMP'>XMP</a>.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
@@ -16415,7 +16415,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "Ajust de la data i l'hora"
+msgstr "Ajustament de la data i l'hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -16536,7 +16536,7 @@ msgstr ""
 "elements originals, o a partir d'un fitxer normal.\n"
 "\n"
 "Es poden ajustar moltes metadades de marques de temps o deixar-les sense "
-"modificar. L'ajustament pot ser un desplaçament o una data específica."
+"modificar. L'ajust pot ser un desplaçament o una data específica."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
 #, kde-format
@@ -20753,10 +20753,10 @@ msgid ""
 "collection page layout can be also used, based on Atkins algorithm.</p></qt>"
 msgstr ""
 "<qt><p><h1><b>Us donem la benvinguda al creador de la impressió</b></h1></"
-"p><p>Aquest assistent us guiarà per a agrupar les imatges a imprimir seguint "
-"plantilles específiques com un àlbum, collage o un marc de fotografies.</"
-"p><p>També es pot usar una disposició de pàgina adaptativa per a la "
-"col·lecció de fotografies, basada en l'algorisme Atkins.</p></qt>"
+"p><p>Aquest assistent us guiarà per a agrupar les imatges que s'imprimiran "
+"seguint plantilles específiques com un àlbum, collage o un marc de "
+"fotografies.</p><p>També es pot usar una disposició de pàgina adaptativa per "
+"a la col·lecció de fotografies, basada en l'algorisme Atkins.</p></qt>"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
 #, kde-format
@@ -29657,7 +29657,7 @@ msgstr ""
 "El Registre avançat d'escriptura («Write-Ahead Log») és un mode per a "
 "utilitzar un diari que registra les transaccions que s'han publicat però que "
 "encara no s'han aplicat a les bases de dades. Utilitza un fitxer perioditzat "
-"auxiliar per allotjar estructures per a les transaccions de recuperació "
+"auxiliar per a allotjar estructures per a les transaccions de recuperació "
 "durant una fallada. Els canvis s'enregistren primer al registre, abans que "
 "els canvis s'escriguin a la base de dades. Això fa que les sol·licituds a la "
 "base de dades siguin atòmiques i robustes en casos d'ús extensiu i crític."
@@ -31695,7 +31695,7 @@ msgstr "Reinicia-ho &tot"
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
 msgid "Adjust Curves"
-msgstr "Ajust de les corbes"
+msgstr "Ajusta les corbes"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
 #, kde-format
@@ -35405,7 +35405,7 @@ msgstr ""
 "als filtres actius.\n"
 "Premeu el botó «Reinicia» de la dreta per a netejar tota la configuració "
 "dels filtres.\n"
-"Premeu el botó «Arranjament» de la dreta per a obrir el plafó dels filtres."
+"Premeu el botó «Configuració» de la dreta per a obrir el plafó dels filtres."
 
 #: core/libs/filters/filterstatusbar.cpp:87
 #, kde-format
@@ -35740,7 +35740,7 @@ msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 "Usa els paràmetres predeterminats d'ordenació de qualitat configurats en el "
-"diàleg d'Arranjament."
+"diàleg de configuració."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:82
 #, kde-format
@@ -41152,7 +41152,7 @@ msgstr "Showfoto"
 #: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "%1 timestamp"
-msgstr "Marca de temps %1"
+msgstr "Marca de temps del %1"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:173
 #, kde-format
@@ -41280,7 +41280,7 @@ msgstr "XMP: Vídeo"
 #: core/libs/timeadjust/timeadjustsettings.cpp:303
 #, kde-format
 msgid "Timestamp Adjustments"
-msgstr "Arranjament de la marca de temps"
+msgstr "Ajustos de la marca de temps"
 
 #: core/libs/transitionmngr/effectmngr.cpp:99
 #, kde-format
@@ -43699,7 +43699,7 @@ msgstr "Ahmed Fathi"
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
-"Eina d'exportació a UPnP/DLNA i l'eina de clonatge del guariment per a "
+"Eina d'exportació a UPnP/DLNA i l'eina de clonatge de guariment per a "
 "l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:189
@@ -44962,7 +44962,7 @@ msgstr "Personalitzat"
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Settings"
-msgstr "Arranjament"
+msgstr "Configuració"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:183
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:152
@@ -50798,7 +50798,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
-msgstr "Consells emergents"
+msgstr "Consell d'eina"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
@@ -50806,8 +50806,8 @@ msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Configuració dels consells d'eina de la barra de miniatures i la vista "
-"de carpetes<br/><i>Personalitza la informació en els consells d'eina</i></qt>"
+"<qt>Configuració dels consells d'eina a la barra de miniatures i la vista de "
+"carpetes<br/><i>Personalitza la informació en els consells d'eina</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -51319,8 +51319,8 @@ msgstr "Carregadors d'imatges"
 #, kde-format
 msgid "Show Items' Toolti&ps With Thumbbar and Folder-View"
 msgstr ""
-"Mostra els consells dels elements amb la barra de miniatures i la vista de "
-"car&peta"
+"Mostra els consells d'eina dels elements amb la barra de miniatures i la "
+"vista de car&petes"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:103
 #, kde-format
@@ -51336,8 +51336,8 @@ msgstr ""
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
 msgstr ""
-"Establiu aquí el tipus de lletra usat per a mostrar el text en la informació "
-"emergent."
+"Establiu aquí el tipus de lletra usat per a mostrar el text en els consells "
+"d'eina."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:111
 #, kde-format
@@ -53275,7 +53275,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
-msgstr "Arranjament"
+msgstr "Configuració"
 
 #: core/utilities/firstrun/collectionpage.cpp:61
 #, kde-format
@@ -53377,7 +53377,7 @@ msgid ""
 "management programs:</p></qt>"
 msgstr ""
 "<qt><p>Establiu aquí si voleu desar la informació que el digiKam assigna als "
-"elements a les metadades dels fitxers, per a millorar la interoperabilitat "
+"elements en les metadades dels fitxers, per a millorar la interoperabilitat "
 "amb altres programes per a la gestió de les fotografies:</p></qt>"
 
 #: core/utilities/firstrun/metadatapage.cpp:74
@@ -53474,9 +53474,10 @@ msgstr ""
 "<qt><p><i>Nota:</i> Usar vistes prèvies sempre és més ràpid que usar "
 "l'editor, especialment per a comprovar una sèrie de captures. Però, en el "
 "mode de vista prèvia no és possible modificar o arreglar les imatges. De "
-"totes maneres, si el què voleu és comparar imatges eficientment, la millor "
-"opció és usar la taula de llum. Amb aquesta eina podeu mostrar imatges de "
-"costat i ampliar-les o desplaçar-les de forma sincronitzada.</p></qt>"
+"totes maneres, si el que voleu és comparar imatges de manera eficient, la "
+"millor opció és usar la taula de llum. Amb aquesta eina podreu mostrar "
+"imatges costat a costat i ampliar-les o desplaçar-les de forma sincronitzada."
+"</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
 #, kde-format
@@ -53490,7 +53491,7 @@ msgid ""
 "table:</p></qt>"
 msgstr ""
 "<qt><p>Establiu aquí com voleu que es mostrin les imatges en el mode de "
-"previsualització i a la taula de llum:</p></qt>"
+"vista prèvia i a la taula de llum:</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
@@ -53532,12 +53533,12 @@ msgstr ""
 #: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
 msgid "Open directly, with adjustments made automatically"
-msgstr "Obre'ls directament amb els ajustaments automàtics"
+msgstr "Obre-les directament, amb els ajustos automàtics"
 
 #: core/utilities/firstrun/rawpage.cpp:79
 #, kde-format
 msgid "Use the Raw import tool to adjust corrections manually"
-msgstr "Usa l'eina d'importació RAW per a ajustar les correccions manualment"
+msgstr "Usa l'eina d'importació RAW per a ajustar manualment les correccions"
 
 #: core/utilities/firstrun/rawpage.cpp:89
 #, kde-format
@@ -53575,15 +53576,15 @@ msgid ""
 ">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 "<qt><p>Enhorabona. Heu acabat de fer la configuració bàsica.</p><p>Recordeu "
-"que podeu personalitzar més paràmetres mitjançant el plafó de configuració "
-"del digiKam. Per a aprendre més coses quant al món del digiKam, us recomanem "
-"que llegiu el <b>Manual del digiKam</b>, el trobareu a l'entrada del menú "
-"<b>Ajuda -> Manual</b> (cal que instal·leu per separat el paquet de "
-"documentació del digiKam). També podeu llegir el manual en línia des del <a "
-"href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</a>.</"
-"p><p>Premeu <b>Acaba</b> per a tancar l'assistent. El digiKam explorarà la "
-"vostra col·lecció per a registrar tots els elements a la base de dades. Els "
-"elements inclosos als àlbums es recolliran durant l'inici en segon pla.</"
+"que podeu personalitzar més opcions de configuració mitjançant el plafó de "
+"configuració del digiKam. Per a aprendre més coses quant al món del digiKam, "
+"us recomanem que llegiu el <b>Manual del digiKam</b>, el trobareu a "
+"l'entrada de menú <b>Ajuda -> Manual</b> (cal que instal·leu per separat el "
+"paquet de documentació del digiKam). També podeu llegir el manual en línia "
+"des del <a href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</"
+"a>.</p><p>Premeu <b>Acaba</b> per a tancar l'assistent. El digiKam explorarà "
+"la vostra col·lecció per a registrar tots els elements a la base de dades. "
+"Els elements inclosos als àlbums es recolliran durant l'inici en segon pla.</"
 "p><p><i>Nota:</i> Depenent de la mida de la col·lecció, aquesta operació pot "
 "trigar una estona. Si cancel·leu l'exploració, es durà a terme en la propera "
 "sessió del digiKam.</p><p>Quan s'hagi fet l'exploració inicial, la propera "
@@ -53595,7 +53596,7 @@ msgstr ""
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
 msgid "<b>Enabled Contextual Tooltips</b>"
-msgstr "<b>Informació emergent contextual activada</b>"
+msgstr "<b>Consells d'eina activats</b>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:65
 #, kde-format
@@ -53603,18 +53604,18 @@ msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
 "folder-view:</p></qt>"
 msgstr ""
-"<qt><p>Establiu aquí si voleu que es mostri informació emergent contextual a "
-"la vista d'icones i de carpetes:</p></qt>"
+"<qt><p>Establiu aquí si voleu que es mostrin consells d'eina a les vistes "
+"d'icones i de carpetes:</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
 msgid "Do not show tooltips"
-msgstr "No mostris la informació emergent"
+msgstr "No mostris els consells d'eina"
 
 #: core/utilities/firstrun/tooltipspage.cpp:79
 #, kde-format
 msgid "Use Tooltips"
-msgstr "Usa la informació emergent"
+msgstr "Usa els consells d'eina"
 
 #: core/utilities/firstrun/tooltipspage.cpp:89
 #, kde-format
@@ -53626,13 +53627,13 @@ msgid ""
 "dialog, you can customize the contents of these tooltips and the fonts used."
 "</p></qt>"
 msgstr ""
-"<qt><p><i>Nota:</i> La informació emergent mostra al vol les metadades de "
-"les fotografies i del digiKam quan el ratolí passa per sobre dels elements. "
-"Això pot ser útil quan se seleccionen elements. La informació emergent es "
-"mostra a la vista de carpetes i d'icones de l'àlbum, a la vista d'icones, la "
-"llista de la cua per lots i a la barra de miniatures de la càmera. Al diàleg "
-"de configuració del digiKam podeu personalitzar el contingut d'aquesta "
-"informació emergent i el tipus de lletra emprat.</p></qt>"
+"<qt><p><i>Nota:</i> Els consells d'eina mostren al vol les fotografies i les "
+"metadades en el digiKam quan el ratolí passa per sobre dels elements. Això "
+"pot ser útil quan se seleccionen elements. Els consells d'eina es mostren a "
+"la vista de carpetes i d'icones de l'àlbum, a la vista d'icones de la "
+"càmera, la llista de la cua per lots i a la barra de miniatures. Al diàleg "
+"de configuració del digiKam podreu personalitzar el contingut d'aquests "
+"consells d'eina i el tipus de lletra que empren.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:40
 #, kde-format
@@ -53644,9 +53645,8 @@ msgid ""
 msgstr ""
 "<qt><p><h1><b>Us donem la benvinguda al digiKam %1</b></h1></p><p>El digiKam "
 "és una aplicació avançada per a la gestió de les fotografies digitals "
-"publicada com a programari lliure.</p><p>Aquest assistent us ajudarà a "
-"configurar l'arranjament inicial per a poder usar ràpidament el digiKam.</"
-"p></qt>"
+"publicada com a programari lliure.</p><p>Aquest assistent us ajudarà en la "
+"configuració inicial per a poder usar ràpidament el digiKam.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:66
 #, kde-format
@@ -53702,13 +53702,13 @@ msgstr "Similitud mitjana:"
 msgid "This shows all found duplicate items."
 msgstr "Això mostra tots els elements duplicats trobats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualitza les empremtes digitals"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
@@ -53716,13 +53716,13 @@ msgstr ""
 "Useu aquest botó per a actualitzar totes les empremtes digitals de les "
 "imatges."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Cerca els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53730,43 +53730,43 @@ msgstr ""
 "Useu aquest botó per a explorar els àlbums seleccionats per a cercar els "
 "elements duplicats."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Cerca a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Interval de similitud:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restricció:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Cap"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Restringeix a l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Exclou l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53778,43 +53778,43 @@ msgstr ""
 "criteris, com limitar la cerca a l'àlbum de la imatge de referència, o per a "
 "excloure de la cerca l'àlbum de la imatge de referència."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restringeix a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Només la pestanya seleccionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un de"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambdós"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Àlbums però no etiquetes"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetes però no àlbums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53841,13 +53841,13 @@ msgstr ""
 "«Només la pestanya seleccionada» vol dir que només s'usa la pestanya "
 "seleccionada."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Elimina els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -56869,7 +56869,7 @@ msgstr "Crea scripts"
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
-msgstr "Arranjament"
+msgstr "Configuració"
 
 #: core/utilities/import/main/importui.cpp:190
 #, kde-format
@@ -58095,14 +58095,12 @@ msgid "Open the item with default assigned application."
 msgstr "Obre l'element amb l'aplicació predeterminada assignada."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
 msgstr "Elimina un element de la taula de llum"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
 msgstr "Elimina tots els elements de la taula de llum"
 
@@ -61433,7 +61431,7 @@ msgid ""
 "each item while download."
 msgstr ""
 "Si la vista prèvia a mida completa està activa, afectarà la velocitat de la "
-"previsualització de cada element mentre es baixa."
+"vista prèvia de cada element mentre es baixa."
 
 #: core/utilities/setup/collections/setupcollections.cpp:88
 #, kde-format
@@ -63650,14 +63648,14 @@ msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"Configuració de les vistes de l'aplicació\n"
+"Configuració de les vistes a l'aplicació\n"
 "Personalitza l'aspecte de les vistes"
 
 #: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
-msgstr "Consells emergents"
+msgstr "Consell d'eina"
 
 #: core/utilities/setup/setup.cpp:169
 #, kde-format
@@ -63666,8 +63664,8 @@ msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
 msgstr ""
-"Configuració dels consells emergents\n"
-"Personalitza la informació dels consells d'eina dels elements"
+"Configuració dels consells d'eina\n"
+"Personalitza la informació en els consells d'eina dels elements"
 
 #: core/utilities/setup/setup.cpp:175
 #, kde-format
@@ -64210,7 +64208,7 @@ msgstr "Avançat"
 #: core/utilities/setup/setupicc.cpp:709
 #, kde-format
 msgid "Monitor Profile From System Settings"
-msgstr "Perfil del monitor de l'Arranjament del sistema"
+msgstr "Perfil del monitor des de l'Arranjament del sistema"
 
 #: core/utilities/setup/setupicc.cpp:741
 #, kde-format
@@ -64435,20 +64433,20 @@ msgstr "Ja existeix una plantilla de metadades anomenada «%1»."
 #: core/utilities/setup/setuptooltip.cpp:187
 #, kde-format
 msgid "Tool-Tips Font:"
-msgstr "Tipus de lletra dels consells:"
+msgstr "Tipus de lletra dels consells d'eina:"
 
 #: core/utilities/setup/setuptooltip.cpp:188
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
 msgstr ""
 "Establiu aquí el tipus de lletra emprat per a mostrar el text en els "
-"consells emergents."
+"consells d'eina."
 
 #: core/utilities/setup/setuptooltip.cpp:196
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
 msgstr ""
-"Mostra els consells dels elements de la vista d'icones i de la barra de "
+"Mostra els consells d'eina dels elements a la vista d'icones i la barra de "
 "miniatures"
 
 #: core/utilities/setup/setuptooltip.cpp:197
@@ -64655,7 +64653,7 @@ msgstr "Activeu aquesta opció per a mostrar el còdec del vídeo."
 #: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
 msgid "Show album items' tool-tips"
-msgstr "Mostra els consells dels elements dels àlbums"
+msgstr "Mostra els consells d'eina dels elements en els àlbums"
 
 #: core/utilities/setup/setuptooltip.cpp:350
 #, kde-format
@@ -64725,7 +64723,7 @@ msgstr "Activeu aquesta opció per a mostrar la vista prèvia de l'àlbum."
 #: core/utilities/setup/setuptooltip.cpp:390
 #, kde-format
 msgid "Show import items' tool-tips"
-msgstr "Mostra els consells dels elements a importar"
+msgstr "Mostra els consells d'eina dels elements a importar"
 
 #: core/utilities/setup/setuptooltip.cpp:391
 #, kde-format

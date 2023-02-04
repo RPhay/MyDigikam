@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -52471,71 +52471,71 @@ msgstr "रेगुलरिटी:"
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "फिंगरप्रिंट अपडेट करव"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "फोटू सीर्सक प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "डुप्लीकेट खोजव"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr "एलबम नाम प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "खोजव:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "रेगुलरिटी:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "रीस्टोरेसन"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "कुछ नइ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "चुने गे अलबमों ल मेटाय जाही"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "चुने गे अलबमों ल मेटाय जाही"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52544,46 +52544,46 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "रीस्टोरेसन"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "विसय सूची रीसेट करव"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "दोनों"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "फाइल मौजूद नइ हे"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "एलबम के नाम बदले मं फेल"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52598,13 +52598,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "चीज मेटारव"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."

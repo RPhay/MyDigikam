@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -58136,14 +58136,14 @@ msgstr "Semellanza media"
 msgid "This shows all found duplicate items."
 msgstr "Aquí móstranse todos os elementos duplicados atopados."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Actualizar as pegadas dixitais"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
@@ -58151,14 +58151,14 @@ msgid "Use this button to update all image fingerprints."
 msgstr ""
 "Empregue este botón para actualizar todas as pegadas dixitais das imaxes."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Atopar as duplicadas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -58166,34 +58166,34 @@ msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 "Empregue este botón para buscar elementos duplicados nos álbums escollidos."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Buscar en:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, fuzzy, kde-format
 #| msgid "Similarity range:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Intervalo de semellanza:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, fuzzy, kde-format
 #| msgid "Restriction:"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restrición:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Ningunha"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Restrict to reference album"
@@ -58201,7 +58201,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Restrinxir ao álbum de referencia"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Exclude reference album"
@@ -58209,7 +58209,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Excluír o álbum de referencia"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use this option to restrict the duplicate search with some criteria, as "
@@ -58225,14 +58225,14 @@ msgstr ""
 "para limitar a busca ao álbum da imaxe de referencia, ou para excluír o "
 "álbum da imaxe de referencia da busca."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, fuzzy, kde-format
 #| msgid "Restrict to:"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restrinxir a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Only selected tab"
@@ -58240,7 +58240,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Só o separador seleccionado"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "One of"
@@ -58248,7 +58248,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un de"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -58256,7 +58256,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Albums but not tags"
@@ -58264,7 +58264,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Álbums pero non etiquetas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Tags but not albums"
@@ -58272,7 +58272,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetas pero non álbums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use this option to decide about the relation of the selected albums and "
@@ -58304,14 +58304,14 @@ msgstr ""
 "pero non nos álbums.<br/> <i>Só o separador seleccionado</i> significa que "
 "só se usa o separador  seleccionado."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Retirar as palabras duplicadas"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"

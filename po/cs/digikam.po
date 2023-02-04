@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
-"PO-Revision-Date: 2023-01-24 15:18+0100\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"PO-Revision-Date: 2023-01-31 11:24+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -3113,11 +3113,9 @@ msgid "Restore"
 msgstr "Obnovit"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Odstranit vybrané obrázky ze seznamu"
+msgstr ""
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -5827,10 +5825,9 @@ msgid "Use Absolute Size"
 msgstr "Použít absolutní velikost"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Typ vodoznaku:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -5854,10 +5851,9 @@ msgid "Click to select watermark image."
 msgstr "Klikněte pro výběr obrázku vodoznaku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Obrázek vodoznaku:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -5889,10 +5885,9 @@ msgid "Opacity of watermark"
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Krytí (%):"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -5905,10 +5900,9 @@ msgid "Enter your watermark string here."
 msgstr "Sem zapište svůj text vodoznaku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Text vodoznaku:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -5921,16 +5915,14 @@ msgid "Set the font color to use here."
 msgstr "Zde vyberte barvu písma."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Barva písma:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Krytí textu:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -5956,16 +5948,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Zvolte barvu pozadí vodoznaku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Barva pozadí:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Krytí pozadí:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -5991,10 +5981,9 @@ msgid "Random Repetition"
 msgstr "Náhodné opakování"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Typ umístění:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6039,10 +6028,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Separator:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Oddělovač:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6087,10 +6075,9 @@ msgid "Bottom center"
 msgstr "Dole uprostřed"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Umístění:"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6113,10 +6100,9 @@ msgid "270 degrees CW"
 msgstr "270 stupňů po směru hodinových ručiček"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Otočení:"
+msgstr "Rotace: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6124,10 +6110,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Velikost vodoznaku v procentech označeného obrázku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Velikost (%):"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6135,10 +6120,9 @@ msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "Okraj od hrany v ose X v procentech velikosti označeného obrázku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Okraj X (%):"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6146,10 +6130,9 @@ msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "Okraj od hrany v ose Y v procentech velikosti označeného obrázku."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Okraj Y (%):"
+msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -25468,7 +25451,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:67
 #, kde-format
 msgid "This is the list of images to upload to your SmugMug account."
-msgstr "Toto je seznam obrázků nahraných na váš účet SmugMug."
+msgstr "Toto je seznam obrázků k odeslání na váš účet SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:75
 #, kde-format
@@ -28277,17 +28260,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28299,15 +28272,6 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>Zvolte si umístění, kde budou uloženy soubory databáze. Budou celkem "
-"čtyři databáze: jedna pro uložení všech vlastností sbírek, jedna pro uložení "
-"komprimovaných náhledů a jedna pro uložení metadat rozpoznávání obličejů a "
-"jedna pro uložení otisků podobnosti.<br/>Aby bylo možné upravovat vlastnosti "
-"obrázků, je vyžadováno právo zápisu.</p><p>Databáze jsou nejdůležitější "
-"soubory digiKamu. Zvolte umístění na rychlém disku (například SSD) s "
-"dostatkem místa - obzvláště pro databázi náhledů.</p><p>Poznámka: Nelze "
-"použít vzdálený systém souborů (například NFS). Zároveň z výkonových důvodů "
-"není vhodné používat výměnná média.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -33428,7 +33392,7 @@ msgid ""
 "This is the %1 folder to/from which selected photos will be uploaded/"
 "downloaded."
 msgstr ""
-"Toto je složka %1, ze které budou nahrávány, resp. do které budou stahovány "
+"Toto je složka %1, ze které budou odesílány, resp. do které budou stahovány "
 "vybrané fotografie."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:216
@@ -34509,10 +34473,9 @@ msgstr ""
 "alba %2"
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Nelze přesunout soubor %1 do alba %2"
+msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -34525,10 +34488,9 @@ msgid "Could not copy folder %1 to album %2"
 msgstr "Nelze zkopírovat složku %1 do alba %2"
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to album %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Nelze zkopírovat soubor %1 do alba %2"
+msgstr ""
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -51684,24 +51646,7 @@ msgid "Scan Your Collection"
 msgstr "Procházet vaši sbírku"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -51719,22 +51664,6 @@ msgid ""
 "You can force digiKam to scan for new items manually using the <b>Tools-"
 ">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
-"<qt><p>Gratulujeme! Vaše prvotní nastavení je u konce.</p><p>Nezapomeňte, že "
-"další nastavení můžete měnit v ovládacím  panelu digiKamu. Chcete-li se "
-"dozvědět více o možnostech digiKamu, doporučujeme k přečtení <b>příručku "
-"digiKamu</b> dostupnou z nabídky <b>Nápověda / Příručka aplikace digiKam</b> "
-"(za předpokladu, že jste si nainstalovali samostatný balíček s dokumentací "
-"digiKamu). Můžete si také přečíst dokumentaci dostupnou online na <a "
-"href='https://www.digikam.org/docs'>webu digikam.org</a>.</p><p>Pro ukončení "
-"tohoto průvodce klikněte na tlačítko <b>Dokončit</b>. digiKam začne "
-"procházet vaše sbírky a přidávat alba do databáze. Položky v albech budou po "
-"startu přidávána na pozadí.</p><p><i>Poznámka:</i> Tato operace může trvat "
-"déle, v závislosti na velikosti vaší sbírky. Pokud operaci procházení sbírky "
-"přerušíte, při příštím spuštění digiKamu začne znovu.</p><p>Jakmile bude "
-"úvodní procházení sbírky provedeno, při následujícím spuštění bude digiKam "
-"kontrolovat pouze nová alba ve sbírkách - což je mnohem rychlejší. Vyhledání "
-"nových položek můžete také spustit ručně z nabídky <b>Nástroje->Správa-"
-">Vyhledat nové položky</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -51842,25 +51771,25 @@ msgstr "Průměrná podobnost"
 msgid "This shows all found duplicate items."
 msgstr "Zde se zobrazí všechny nalezené duplicity."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Znovu vytvořit otisky"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Tímto tlačítkem se aktualizují otisky všech obrázků."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Najít duplicity"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -51868,43 +51797,43 @@ msgstr ""
 "Použijte toto tlačítko k prohledání vybraného alba a nalezení položek, které "
 "se vyskytují vícekrát."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Hledat v:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Rozsah podobnosti:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Omezení:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Žádný"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Omezit na referenční album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Vyjmout referenční album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51913,43 +51842,43 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Omezit na:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Pouze vybraná karta"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Jeden z"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Obojí"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Alba ale ne značky"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Značky ale ne alba"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51964,13 +51893,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Odstranit duplikáty"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -56161,16 +56090,14 @@ msgid "Open the item with default assigned application."
 msgstr "Otevřít položku s výchozí přiřazenou aplikací."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "Odstranit položku z náhledového stolku"
+msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
-msgstr "Odstranit všechny položky z náhledového stolku"
+msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
@@ -57808,10 +57735,9 @@ msgid "Country of the location shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Provincie:"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -57819,10 +57745,9 @@ msgid "Province of the location shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
-msgstr "Země"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
@@ -57830,16 +57755,14 @@ msgid "County of the location shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Město:"
+msgstr "Město"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Zadejte město, ve kterém byl snímek pořízen."
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -58463,34 +58386,27 @@ msgstr ""
 "digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Zobrazit &názvy digiKamu"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazil název digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Zobrazit &názvy digiKamu"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Zaškrtněte tuto volbu, aby se pod náhledem na obrázek zobrazily značky "
-"digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499

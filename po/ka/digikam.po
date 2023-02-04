@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 00:56+0000\n"
-"PO-Revision-Date: 2023-02-02 08:23+0100\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"PO-Revision-Date: 2023-02-03 15:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -15418,7 +15418,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
-msgstr ""
+msgstr "პროგრამისტი და წამყვანი"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
 #, kde-format
@@ -20872,7 +20872,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
-msgstr ""
+msgstr "პრეზენტაცია..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
@@ -22673,7 +22673,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:120
 #, kde-format
 msgid "Replace"
-msgstr "_გამოცვლა"
+msgstr "ჩანაცვლება"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:121
 #, kde-format
@@ -23184,7 +23184,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:276
 #, kde-format
 msgid "Visually Similar"
-msgstr ""
+msgstr "ვიზუალურად მსგავსი"
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:272
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:280
@@ -23617,7 +23617,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:54
 #, kde-format
 msgid "Ipfs Url"
-msgstr ""
+msgstr "Ipfs Url"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:48
 #, kde-format
@@ -25132,7 +25132,7 @@ msgstr "Twitter-ზე ატვირთვის დაწყება"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:293
 #, kde-format
 msgid "Twitter export"
-msgstr ""
+msgstr "Twitter-დან გატანა"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:329
 #, kde-format
@@ -25166,7 +25166,7 @@ msgstr "%1-ის გამოძახების შეცდომა"
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:311
 #, kde-format
 msgid "Code: %1. %2"
-msgstr ""
+msgstr "კოდი: %1. %2"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:420
 #, kde-format
@@ -25254,17 +25254,17 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:98
 #, kde-format
 msgid "&Choose operation:"
-msgstr ""
+msgstr "&აირჩიეთ ოპერაცია:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
 #, kde-format
 msgid "Export to web services"
-msgstr ""
+msgstr "ვებსერვისში გატანა"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
 #, kde-format
 msgid "Import from web services"
-msgstr ""
+msgstr "ვებსერვისიდან შემოტანა"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:112
 #, kde-format
@@ -25535,7 +25535,7 @@ msgstr ""
 #: core/libs/album/engine/album.cpp:794
 #, kde-format
 msgid "Current Search"
-msgstr ""
+msgstr "მიმდინარე ძებნა"
 
 #: core/libs/album/engine/album.cpp:797
 #, kde-format
@@ -25580,7 +25580,7 @@ msgstr ""
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
 msgid "Searches"
-msgstr ""
+msgstr "ძებნები"
 
 #: core/libs/album/manager/albummanager_database.cpp:108
 #, kde-format
@@ -25877,7 +25877,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_talbum.cpp:592
 #, kde-format
 msgid "No such album"
-msgstr ""
+msgstr "ასეთი ალბომი არ არსებობს"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:461
 #, kde-format
@@ -26533,7 +26533,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
-msgstr ""
+msgstr "ჭდეები (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:171
 #, kde-format
@@ -26765,7 +26765,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbcopymanager.cpp:142
 #, kde-format
 msgid "Create Schema..."
-msgstr ""
+msgstr "სქემის შექმნა..."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:146
 #, kde-format
@@ -26959,7 +26959,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1307
 #, kde-format
 msgid "Imported comments"
-msgstr ""
+msgstr "შემოტანილი კომენტარები"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
@@ -27409,7 +27409,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
-msgstr ""
+msgstr "მიმდინარეობის ინფორმაცია"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
@@ -27712,7 +27712,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
 msgid "Default Settings"
-msgstr ""
+msgstr "ნაგულისხმები პარამეტრები"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
 #, kde-format
@@ -27722,12 +27722,12 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
 #, kde-format
 msgid "Remote Server Settings"
-msgstr ""
+msgstr "დაშორებული სერვერის პარამეტრები"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:285
 #, kde-format
 msgid "Database Server Instructions"
-msgstr ""
+msgstr "ბაზის სერვერის ინსტრუქციები"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
 #, kde-format
@@ -28253,17 +28253,17 @@ msgstr ""
 #: core/libs/dialogs/imagedialog_preview.cpp:283
 #, kde-format
 msgid "<i>AudioBitRate:</i>"
-msgstr ""
+msgstr "<i>აუდიოსბიტურისიჩქარე:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
 msgid "<i>AudioChannelType:</i>"
-msgstr ""
+msgstr "<i>აუდიოარხისტიპი:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:285
 #, kde-format
 msgid "<i>AudioCodec:</i>"
-msgstr ""
+msgstr "<i>აუდიო კოდეკი:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
@@ -28273,12 +28273,12 @@ msgstr "<i>ხანგრძლივობა:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:287
 #, kde-format
 msgid "<i>FrameRate:</i>"
-msgstr ""
+msgstr "<i>კადრების სიჩქარე:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:288
 #, kde-format
 msgid "<i>VideoCodec:</i>"
-msgstr ""
+msgstr "<i>ვიდეოკოდეკი:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
 #, kde-format
@@ -28301,7 +28301,7 @@ msgstr ""
 #: core/libs/dialogs/infodlg.cpp:117
 #, kde-format
 msgid "Items List"
-msgstr ""
+msgstr "ჩანაწერების სია"
 
 #: core/libs/dialogs/libsinfodlg.cpp:141
 #, kde-format
@@ -28343,7 +28343,7 @@ msgstr "უცნობია"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
-msgstr ""
+msgstr "მანიფესტები"
 
 #: core/libs/dialogs/libsinfodlg.cpp:416
 #, kde-format
@@ -29413,82 +29413,82 @@ msgstr ""
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:131
 #, kde-format
 msgid "Decorative Pine"
-msgstr ""
+msgstr "დეკორატიული ფიჭვი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:132
 #, kde-format
 msgid "Decorative Wood"
-msgstr ""
+msgstr "დეკორატიული შეშა"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:133
 #, kde-format
 msgid "Decorative Paper"
-msgstr ""
+msgstr "დეკორატიული ფურცელი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:134
 #, kde-format
 msgid "Decorative Parquet"
-msgstr ""
+msgstr "დეკორატიული პარკეტი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:135
 #, kde-format
 msgid "Decorative Ice"
-msgstr ""
+msgstr "დეკორატიული ყინული"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:136
 #, kde-format
 msgid "Decorative Leaf"
-msgstr ""
+msgstr "დეკორატიული ფოთოლი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:137
 #, kde-format
 msgid "Decorative Marble"
-msgstr ""
+msgstr "დეკორატიული მარმარილო"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:138
 #, kde-format
 msgid "Decorative Rain"
-msgstr ""
+msgstr "დეკორატიული წვიმა"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:139
 #, kde-format
 msgid "Decorative Craters"
-msgstr ""
+msgstr "დეკორატიული კრატერები"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:140
 #, kde-format
 msgid "Decorative Dried"
-msgstr ""
+msgstr "დეკორატიული მშრალი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:141
 #, kde-format
 msgid "Decorative Pink"
-msgstr ""
+msgstr "ვარდისფერი ვარდისფერი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:142
 #, kde-format
 msgid "Decorative Stone"
-msgstr ""
+msgstr "დეკორატიული ქვა"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:143
 #, kde-format
 msgid "Decorative Chalk"
-msgstr ""
+msgstr "დეკორატიული ცარცი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:144
 #, kde-format
 msgid "Decorative Granite"
-msgstr ""
+msgstr "დეკორატიული გრანიტი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:145
 #, kde-format
 msgid "Decorative Rock"
-msgstr ""
+msgstr "დეკორატიული ქვა"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:146
 #, kde-format
 msgid "Decorative Wall"
-msgstr ""
+msgstr "დეკორატიული კედელი"
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:148
 #, kde-format
@@ -33087,7 +33087,7 @@ msgstr ""
 #: core/libs/filters/textfilter.cpp:91
 #, kde-format
 msgid "Album Name"
-msgstr "სახ_ელის მიხედვით"
+msgstr "ალბომის სახელი"
 
 #: core/libs/filters/textfilter.cpp:93
 #, kde-format
@@ -36607,7 +36607,7 @@ msgid "sRGB"
 msgstr "sRGB"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:609
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Adobe RGB"
 msgstr "Adobe RGB"
@@ -49249,7 +49249,7 @@ msgid "Metering mode"
 msgstr "გაზომვის რეჟიმი"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:74
-#, fuzzy, kde-format
+#, kde-format
 msgid "Subject distance"
 msgstr "სუბიექტის დაშორება"
 
@@ -50210,67 +50210,67 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "ძებნა:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "არცერთი"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50279,43 +50279,43 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "ორივე"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50330,13 +50330,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -50778,7 +50778,7 @@ msgid "Edit Bookmarks"
 msgstr "სანიშნების ჩასწორება"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add Bookmark..."
 msgstr "სანიშნის დამატება..."
 
@@ -51433,7 +51433,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
 #, kde-format
 msgid "Zoom in"
-msgstr "გა_დიდება"
+msgstr "გადიდება"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
 #, kde-format
@@ -51772,7 +51772,7 @@ msgstr ""
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:480
 #, kde-format
 msgid "This profile:"
-msgstr ""
+msgstr "ეს პროფილი:"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:523
 #, kde-format
@@ -51933,7 +51933,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editortool.cpp:400
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
-msgstr ""
+msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 
 #: core/utilities/imageeditor/editor/editortooliface.cpp:95
 #: core/utilities/imageeditor/editor/editortooliface.cpp:211
@@ -51956,7 +51956,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Guide:"
-msgstr ""
+msgstr "გიდი:"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:187
 #, kde-format
@@ -54281,18 +54281,14 @@ msgid "Open the item with default assigned application."
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove coordinates from file"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "ფაილიდან კოორდინატების წაშლა"
+msgstr "სინათლის ცხრილიდან ჩანაწერის წაშლა"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove coordinates from file"
+#, kde-format
 msgid "Remove all items from Light Table"
-msgstr "ფაილიდან კოორდინატების წაშლა"
+msgstr "სინათლის ცხრილიდან ყველა ჩანაწერის წაშლა"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
