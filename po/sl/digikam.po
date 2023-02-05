@@ -38,17 +38,17 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-04 00:55+0000\n"
-"PO-Revision-Date: 2023-02-02 06:59+0100\n"
+"PO-Revision-Date: 2023-02-04 08:35+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -57671,16 +57671,14 @@ msgid "Open the item with default assigned application."
 msgstr "Odpre izbran predmet v privzetem programu."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "Odstrani predmet iz osvetlitvene mize"
+msgstr "Odstrani predmet z osvetlitvene mize"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
-msgstr "Odstrani vse predmete iz osvetlitvene mize"
+msgstr "Odstrani vse predmete z osvetlitvene mize"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format

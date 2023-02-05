@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-01 00:54+0000\n"
+"POT-Creation-Date: 2023-02-04 00:55+0000\n"
 "PO-Revision-Date: 2022-05-29 19:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -50802,16 +50802,16 @@ msgid ""
 "about the digiKam world, we recommend reading the <b>digiKam handbook</b> "
 "using the <b>Help/Handbook</b> menu entry (you need to install the separate "
 "digiKam documentation package.) You can also read the manual online from the "
-"<a href='https://www.digikam.org/docs'>digikam.org website</a>.</p><p>Press "
-"<b>Finish</b> to close this assistant. digiKam will scan your collection to "
-"register all albums in the database. Items including in albums are collected "
-"after startup stage in background.</p><p><i>Note:</i> depending on your "
-"collection size, this operation can take a while. If you cancel the scanning "
-"operation, it will start again in the next digiKam session.</p><p>When "
-"scanning has completed, at next start-up, digiKam will only check your "
-"collection to identify new albums - which is much faster. You can force "
-"digiKam to scan for new items manually using the <b>Tools->Maintenance->Scan "
-"for new items</b> menu entry.</p></qt>"
+"<a href='https://docs.digikam.org/en/index.html'>dedicated website</a>.</"
+"p><p>Press <b>Finish</b> to close this assistant. digiKam will scan your "
+"collection to register all albums in the database. Items including in albums "
+"are collected after startup stage in background.</p><p><i>Note:</i> "
+"depending on your collection size, this operation can take a while. If you "
+"cancel the scanning operation, it will start again in the next digiKam "
+"session.</p><p>When scanning has completed, at next start-up, digiKam will "
+"only check your collection to identify new albums - which is much faster. "
+"You can force digiKam to scan for new items manually using the <b>Tools-"
+">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
@@ -50900,67 +50900,67 @@ msgstr ""
 msgid "This shows all found duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:121
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:123
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:125
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:132
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:150
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:153
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50969,43 +50969,43 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:173
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:189
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51020,13 +51020,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:210
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -54989,12 +54989,12 @@ msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
 #, kde-format
-msgid "Remove item from LightTable"
-msgstr "Fjern elementet får lysbordet"
+msgid "Remove item from Light Table"
+msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
 #, kde-format
-msgid "Remove all items from LightTable"
+msgid "Remove all items from Light Table"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
@@ -55044,53 +55044,53 @@ msgid "Remove all images from the light table when it is closed"
 msgstr ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:172
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:183
 #, kde-format
 msgid "Zoom to 100%"
 msgstr "Forstørr til 100 %"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:148
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:177
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:188
 #, kde-format
 msgid "Fit to &Window"
 msgstr "Tilpass til &vindauge"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:184
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:195
 #, kde-format
 msgid "Color-Managed View"
 msgstr "Vising med fargehandsaming"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:214
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:225
 #, kde-format
 msgid "Previous Image"
 msgstr "Førre bilete"
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:223
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:234
 #, kde-format
 msgid "Edit Titles on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:228
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:239
 #, kde-format
 msgid "Edit Comments on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:233
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:238
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:243
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, kde-format
 msgid "Edit Comments on the Left"
 msgstr ""
 
-#: core/utilities/lighttable/lighttablewindow_setup.cpp:248
+#: core/utilities/lighttable/lighttablewindow_setup.cpp:259
 #, kde-format
 msgid "Show Assigned Tags on the Left"
 msgstr ""
