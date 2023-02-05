@@ -162,7 +162,7 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
 
     d->ufraw->start();
 
-    return true;
+    return d->ufraw->waitForStarted(10000);
 }
 
 void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)

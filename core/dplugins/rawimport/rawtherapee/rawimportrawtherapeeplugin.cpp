@@ -157,7 +157,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     d->rawtherapee->start();
 
-    return true;
+    return d->rawtherapee->waitForStarted(10000);
 }
 
 void RawTherapeeRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)

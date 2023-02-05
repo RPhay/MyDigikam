@@ -218,7 +218,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     d->darktable->start();
 
-    return true;
+    return d->darktable->waitForStarted(10000);
 }
 
 void DarkTableRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)

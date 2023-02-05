@@ -237,6 +237,7 @@ void DImgFilterManager::Private::setupFilterIcons()
     filterIcons.insert(QLatin1String("darktable:RawConverter"),         QLatin1String("image-x-adobe-dng"));
     filterIcons.insert(QLatin1String("rawtherapee:RawConverter"),       QLatin1String("image-x-adobe-dng"));
     filterIcons.insert(QLatin1String("ufraw:RawConverter"),             QLatin1String("image-x-adobe-dng"));
+    filterIcons.insert(QLatin1String("art:RawConverter"),               QLatin1String("image-x-adobe-dng"));
 }
 
 void DImgFilterManager::Private::setupI18nStrings()

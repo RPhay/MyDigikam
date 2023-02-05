@@ -130,10 +130,12 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
 
             if (d->rawPlugin)
             {
-                d->rawPlugin->run(filePath, iofileSettings->rawDecodingSettings);
+                if (d->rawPlugin->run(filePath, iofileSettings->rawDecodingSettings))
+                {
+                    d->thread->stopLoading();
 
-                d->thread->stopLoading();
-                return;
+                    return;
+                }
             }
 
             qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong "
