@@ -519,11 +519,18 @@ void DIO::slotOneProccessed(const QUrl& url)
         case IOJobData::CopyFiles:
         case IOJobData::MoveFiles:
         {
-            if (data->destAlbum())
+            QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
+            scanPath        += QLatin1Char('/') + data->destName(url);
+
+            QFileInfo scanInfo(scanPath);
+
+            if (scanInfo.isDir())
             {
-                QString filePath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
-                filePath        += QLatin1Char('/') + data->destName(url);
-                ScanController::instance()->scannedInfo(filePath);
+                ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+            }
+            else
+            {
+                ScanController::instance()->scannedInfo(scanPath);
             }
 
             break;
