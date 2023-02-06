@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"POT-Creation-Date: 2023-02-06 00:57+0000\n"
 "PO-Revision-Date: 2023-02-03 12:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -27185,6 +27185,25 @@ msgstr "Preferencias de servicios Web"
 msgid "Export by Web Service"
 msgstr "Exportar mediante servicio Web"
 
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#, fuzzy, kde-format
+#| msgid ""
+#| "Error to import RAW image with UFRaw\n"
+#| "Close this dialog to load RAW image with native import tool"
+msgid ""
+"Error to import RAW image with ART\n"
+"Close this dialog to load RAW image with native import tool"
+msgstr ""
+"Ha ocurrido un error al importar la imagen RAW con UFRaw.\n"
+"Cierre este diálogo para cargar la imagen RAW con la herramienta de "
+"importación nativa."
+
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#, fuzzy, kde-format
+#| msgid "Raw Conversion"
+msgid "ART Raw Conversion"
+msgstr "Conversión RAW"
+
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
@@ -27411,7 +27430,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversión RAW de UFRaw"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:805
+#: core/libs/database/utils/ifaces/dio.cpp:812
 #, kde-format
 msgid "Trash"
 msgstr "Papelera"
@@ -29453,49 +29472,49 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omitir automáticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:769
+#: core/libs/database/utils/ifaces/dio.cpp:776
 #, kde-format
 msgid "Copy Album"
 msgstr "Copiar álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:774
+#: core/libs/database/utils/ifaces/dio.cpp:781
 #, kde-format
 msgid "Copy Images"
 msgstr "Copiar imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:780
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, kde-format
 msgid "Copy Files"
 msgstr "Copiar archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:785
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, kde-format
 msgid "Move Album"
 msgstr "Mover álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:790
+#: core/libs/database/utils/ifaces/dio.cpp:797
 #, kde-format
 msgid "Move Images"
 msgstr "Mover imágenes"
 
-#: core/libs/database/utils/ifaces/dio.cpp:795
+#: core/libs/database/utils/ifaces/dio.cpp:802
 #, kde-format
 msgid "Move Files"
 msgstr "Mover archivos"
 
-#: core/libs/database/utils/ifaces/dio.cpp:800
+#: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Borrar"
 
-#: core/libs/database/utils/ifaces/dio.cpp:810
+#: core/libs/database/utils/ifaces/dio.cpp:817
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaurar la papelera"
 
-#: core/libs/database/utils/ifaces/dio.cpp:815
+#: core/libs/database/utils/ifaces/dio.cpp:822
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vaciar la papelera"
@@ -32182,7 +32201,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Convertir profundidad "
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:430
 #, kde-format
 msgid "Unknown filter"
 msgstr "Filtro desconocido"

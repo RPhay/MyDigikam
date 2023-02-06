@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:55+0000\n"
-"PO-Revision-Date: 2023-02-02 21:14+0300\n"
+"POT-Creation-Date: 2023-02-06 00:57+0000\n"
+"PO-Revision-Date: 2023-02-05 12:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2047,7 +2047,7 @@ msgstr "Dosya Boyutuna Göre"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
-msgstr "Puana Göre"
+msgstr "Derecelendirmeye Göre"
 
 #: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
@@ -3408,6 +3408,8 @@ msgstr ""
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Derecelendirme, seçim ve renk etiketlerini toplu olarak atamak için yeni "
+"araç ekleyin."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, fuzzy, kde-format
@@ -3646,7 +3648,7 @@ msgstr "digiKam özellikleri"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr "Derecelendirme"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:72
 #, kde-format
@@ -3683,7 +3685,7 @@ msgstr "Etiketler"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr "Derecelendirme"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:99
 #, kde-format
@@ -6023,8 +6025,8 @@ msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
-"<b>Not:</b> Çevre çeşitleri TITLE, COMMENTS, COLORLABEL, PICKLABEL, RATING "
-"ve TAGSPATH ( ; ile ayrılmış) kullanılabilir."
+"<b>Not:</b> Çevre değişkenleri TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
+"RATING ve TAGSPATH ( ; ile ayrılmış) kullanılabilir."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
@@ -6975,7 +6977,7 @@ msgstr "Renk Etiketi:"
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
 #, kde-format
 msgid "Rating:"
-msgstr "Beğeni:"
+msgstr "Derecelendirme:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
 #, fuzzy, kde-format
@@ -6996,16 +6998,14 @@ msgstr ""
 "etkinleştirin."
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere derecelendirme veya renk "
+"atar veya etiket üst veri değerleri seçer.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
 #, fuzzy, kde-format
@@ -8943,9 +8943,9 @@ msgid ""
 "without clipping any color channel. Use the output histogram to evaluate "
 "each channel."
 msgstr ""
-"Herhangi bir renk kanalını kırpmadan maksimum parlaklık elde edinceye kadar "
-"kaydırıcıyı daha yüksek değerlere getirin. Her bir kanalı değerlendirmek "
-"için çıkış histogramını kullanın."
+"Herhangi bir renk kanalını kırpmadan en yüksek parlaklık elde edilene kadar "
+"kaydırıcıyı daha yüksek değerlere getirin. Her kanalı değerlendirmek için "
+"çıkış histogramını kullanın."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:276
 #, kde-format
@@ -18434,13 +18434,13 @@ msgstr "gallery.xml oluşturulamadı"
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
-msgstr "\"%1\" için dosyalar oluşturuluyor"
+msgstr "\"%1\" için dosyalar üretiliyor"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
-msgstr "HTML dosyaları Oluşturuluyor"
+msgstr "HTML dosyaları üretiliyor"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
 #, kde-format
@@ -18896,7 +18896,7 @@ msgstr "Çıktı Ayarları"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
 #, kde-format
 msgid "Generating Gallery"
-msgstr "Galeri Üretiliyor"
+msgstr "Galeri üretiliyor"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:82
 #, kde-format
@@ -19044,10 +19044,9 @@ msgid "Paths Selection"
 msgstr "Öge Seçimi"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:84
-#, fuzzy, kde-format
-#| msgid "Exporting Album"
+#, kde-format
 msgid "Generating jAlbum"
-msgstr "Albüm Dışarı Aktarılıyor"
+msgstr "jAlbum Üretiliyor"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
 #, fuzzy, kde-format
@@ -19598,18 +19597,16 @@ msgid ""
 msgstr "Eğer hiç başlık yoksa ekranın altında resim yazısı göster."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image rating"
-msgstr "Resim başlığını göster"
+msgstr "Görsel derecelendirmesini göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:332
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr " digiKam resim etiketi adlarını ekranın alt kısmında gösterin."
+msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
 #, fuzzy, kde-format
@@ -19819,6 +19816,8 @@ msgid ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
 msgstr ""
+"Tesseract, çeşitli işletim sistemleri için bir optik karakter tanıma "
+"işletkesidir."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
 #, fuzzy, kde-format
@@ -21714,7 +21713,7 @@ msgstr "Etiketler: %1\n"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:287
 #, kde-format
 msgid "Rating: %1\n"
-msgstr "Beğeni:  %1\n"
+msgstr "Derecelendirme: %1\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:292
 #, kde-format
@@ -21958,7 +21957,7 @@ msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
 "will be added as an attached file."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz Yorum, Derece ve Etiket gibi tüm öge "
+"Bu seçeneği etkinleştirirseniz Yorum, Derecelendirme ve Etiket gibi tüm öge "
 "özellikleri, ek dosya olarak eklenecektir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
@@ -22274,7 +22273,7 @@ msgstr "Video Ayarları"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
 #, kde-format
 msgid "Generating Video Slideshow"
-msgstr "Video Slayt Gösterisi Oluşturuluyor"
+msgstr "Video Slayt Gösterisi üretiliyor"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
 #, fuzzy, kde-format
@@ -23517,16 +23516,14 @@ msgstr ""
 "göster."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show image rating"
-msgstr "Resim başlığını göster"
+msgstr "Görsel derecelendirmesini göster"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:173
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr " digiKam resim etiketi adlarını ekranın alt kısmında gösterin."
+msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:175
 #, fuzzy, kde-format
@@ -28094,6 +28091,19 @@ msgstr "Sunucu Ayarlarını Uzaktan Yönet"
 msgid "Export by Web Service"
 msgstr "Eposta ile dışa aktar"
 
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#, kde-format
+msgid ""
+"Error to import RAW image with ART\n"
+"Close this dialog to load RAW image with native import tool"
+msgstr ""
+
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#, fuzzy, kde-format
+#| msgid "Raw Conversion"
+msgid "ART Raw Conversion"
+msgstr "Ham Dönüştürme"
+
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
@@ -28307,7 +28317,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Ham Dönüştürme"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:805
+#: core/libs/database/utils/ifaces/dio.cpp:812
 #, kde-format
 msgid "Trash"
 msgstr "Çöp"
@@ -28961,13 +28971,13 @@ msgstr "İçerik menüsü"
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
-msgstr "Beğeni: "
+msgstr "Derecelendirme: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
 #, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
-msgstr "Değerlendirme Yok"
+msgstr "Derecelendirme Yok"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, kde-format
@@ -29167,13 +29177,13 @@ msgstr "Etiketler"
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr "Derecelendirme"
 
 #: core/libs/album/treeview/labelstreeview.cpp:368
 #, kde-format
 msgctxt "@item: rating tree"
 msgid "No Rating"
-msgstr "Değerlendirme Yok"
+msgstr "Derecelendirme Yok"
 
 #: core/libs/album/treeview/labelstreeview.cpp:404
 #, fuzzy, kde-format
@@ -29674,17 +29684,13 @@ msgstr ""
 "anda smb:// URL'leri desteklememektedir. "
 
 #: core/libs/database/collection/collectionmanager_location.cpp:426
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your network storage must be set up to be accessible as files and folders "
-#| "through the operating system. DigiKam does not support remote URLs."
+#, kde-format
 msgid ""
 "Your network storage must be set up to be accessible as files and folders "
 "through the operating system. digiKam does not support remote URLs."
 msgstr ""
-"Ağ deponuzun işletim sistemi üzerinden dosya ve klasörler olarak "
-"erişilebilir olması için ayarlanmış olması gerekir. DigiKam, uzak URL'leri "
-"desteklemez."
+"Ağ depolama alanınız, işletim sistemi aracılığıyla dosya ve klasörler olarak "
+"erişilebilecek şekilde ayarlanmalıdır. digiKam, uzak URL'leri desteklemez."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:463
 #, kde-format
@@ -30032,7 +30038,7 @@ msgstr "İçe aktarılan yorumlar"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported ratings"
-msgstr "İçe aktarılan beğeni dereceleri"
+msgstr "İçe aktarılan derecelendirmeler"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
@@ -30421,57 +30427,57 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Otomatik olarak atla"
 
-#: core/libs/database/utils/ifaces/dio.cpp:769
+#: core/libs/database/utils/ifaces/dio.cpp:776
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Albüme Göre"
 
-#: core/libs/database/utils/ifaces/dio.cpp:774
+#: core/libs/database/utils/ifaces/dio.cpp:781
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "Resimleri &Gruplandır"
 
-#: core/libs/database/utils/ifaces/dio.cpp:780
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Copy Files"
 msgstr "Değeri kopyala"
 
-#: core/libs/database/utils/ifaces/dio.cpp:785
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "Albüme &Taşı..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:790
+#: core/libs/database/utils/ifaces/dio.cpp:797
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Resimler Kaydet"
 
-#: core/libs/database/utils/ifaces/dio.cpp:795
+#: core/libs/database/utils/ifaces/dio.cpp:802
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Film Dosyaları"
 
-#: core/libs/database/utils/ifaces/dio.cpp:800
+#: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
 
-#: core/libs/database/utils/ifaces/dio.cpp:810
+#: core/libs/database/utils/ifaces/dio.cpp:817
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
 msgstr "Geri Yükle"
 
-#: core/libs/database/utils/ifaces/dio.cpp:815
+#: core/libs/database/utils/ifaces/dio.cpp:822
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -33204,7 +33210,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Dönüştürme Derinliği"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:430
 #, kde-format
 msgid "Unknown filter"
 msgstr "Bilinmeyen Süzgeç"
@@ -36422,7 +36428,7 @@ msgstr "Resim renk etiketi atanıyor"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:188
 #, kde-format
 msgid "Assigning image ratings"
-msgstr "Resim derecelendirmesi atanıyor"
+msgstr "Görsel derecelendirmeleri atanıyor"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:195
 #: core/libs/fileactionmanager/fileactionmngr.cpp:207
@@ -36742,9 +36748,9 @@ msgid ""
 "Select the rating value used to filter albums' contents. Use the context pop-"
 "up menu to set rating filter conditions."
 msgstr ""
-"Albümlerin içeriğini filtrelemek için kullanılan derecelendirme değerini "
-"seçin. Derecelendirme filtresi koşullarını ayarlamak için içerik pop-up "
-"menüsünü kullanın."
+"Albümlerin içeriğini süzmek için kullanılan derecelendirme değerini seçin. "
+"Derecelendirme süzgeci koşullarını ayarlamak için içerik açılır menüsünü "
+"kullanın."
 
 #: core/libs/filters/ratingfilter.cpp:172
 #, kde-format
@@ -36754,12 +36760,12 @@ msgstr "%1 değerine eşit ya da bundan daha büyük derecelendirme."
 #: core/libs/filters/ratingfilter.cpp:178
 #, kde-format
 msgid "Rating equal to %1."
-msgstr "Beğeni %1 değerine eşit."
+msgstr "Derecelendirme %1 değerine eşit."
 
 #: core/libs/filters/ratingfilter.cpp:184
 #, kde-format
 msgid "Rating less than or equal to %1."
-msgstr "Beğeni %1 değerinden daha küçük veya eşit."
+msgstr "Derecelendirme %1 değerinden daha küçük veya eşit."
 
 #: core/libs/filters/ratingfilter.cpp:231
 #, kde-format
@@ -36784,7 +36790,7 @@ msgstr "Küçüklük ya da Eşitlik Durumu"
 #: core/libs/filters/ratingfilter.cpp:243
 #, kde-format
 msgid "Exclude Items Without Rating"
-msgstr "Derecelendirilmemiş Ögeleri Hariç Tut"
+msgstr "Derecelendirilmemiş Ögeleri Dışarıda Tut"
 
 #: core/libs/filters/textfilter.cpp:72
 #, kde-format
@@ -38438,11 +38444,10 @@ msgid "Title"
 msgstr "Başlık"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:55
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@title: xmp namespace for rating container"
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr "Derecelendirme"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:59
 #, fuzzy, kde-format
@@ -38994,14 +38999,12 @@ msgstr[0] "Resmin renk etiketini düzenlediniz. "
 msgstr[1] "%1 resmin renk etiketini düzenlediniz. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:295
-#, fuzzy, kde-format
-#| msgid "You have edited the rating of the image. "
-#| msgid_plural "You have edited the rating of %1 images. "
+#, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
 msgid_plural "You have edited the rating of %1 images. "
-msgstr[0] "Resmin beğenisini düzenlediniz. "
-msgstr[1] "%1 resmin beğenisini düzenlediniz. "
+msgstr[0] "Görselin derecelendirmesini düzenlediniz "
+msgstr[1] "%1 görselin derecelendirmesini düzenlediniz "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:301
 #, fuzzy, kde-format
@@ -39066,11 +39069,10 @@ msgid "<li>color label</li>"
 msgstr "<li>renk etiketi</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
-#, fuzzy, kde-format
-#| msgid "<li>rating</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr "<li>beğeni</li>"
+msgstr "<li>derecelendirme</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
 #, fuzzy, kde-format
@@ -39178,11 +39180,10 @@ msgid "Color Label:"
 msgstr "Renk Etiketi:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
-#, fuzzy, kde-format
-#| msgid "Rating:"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Beğeni:"
+msgstr "Derecelendirme:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
 #, fuzzy, kde-format
@@ -40047,7 +40048,7 @@ msgstr "Renk Etiketi: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
-msgstr "Beğeni: "
+msgstr "Derecelendirme: "
 
 #: core/libs/properties/itempropertiestab.cpp:363
 #, kde-format
@@ -41170,7 +41171,7 @@ msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
-"Metaveri ile ilgili işlemler, başlıklar, derecelendirmeler, etiketler, "
+"Üst veri ile ilgili işlemler, başlıklar, derecelendirmeler, etiketler, "
 "coğrafi konum ve yönlendirme"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:454
@@ -47012,7 +47013,7 @@ msgstr "Seç"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:149
 #, kde-format
 msgid "Rating"
-msgstr "Değerlendirme"
+msgstr "Derecelendirme"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:28
 #, fuzzy, kde-format
@@ -59132,7 +59133,7 @@ msgstr "Boyuta Göre"
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
-msgstr "Puana Göre"
+msgstr "Derecelendirmeye Göre"
 
 #: core/utilities/import/main/importui.cpp:399
 #, kde-format
@@ -61453,7 +61454,7 @@ msgstr "(Hiçbir Değer Seçilmedi)"
 #: core/utilities/searchwindow/ratingsearchutilities.cpp:205
 #, kde-format
 msgid "No Rating assigned"
-msgstr "Beğeni atanmamış"
+msgstr "Derecelendirme atanmamış"
 
 #: core/utilities/searchwindow/searchfields.cpp:74
 #, kde-format
@@ -61627,10 +61628,9 @@ msgid "Return items with labels"
 msgstr "Etiketli resimleri getir"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:149
-#, fuzzy, kde-format
-#| msgid "Return pictures rated at least"
+#, kde-format
 msgid "Return items rated at least"
-msgstr "En az bu kadar beğenilen resimleri getir"
+msgstr "En az şu kadar derecelendirilen ögeleri döndür"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:150
 #, fuzzy, kde-format
@@ -61739,26 +61739,22 @@ msgid "Return items with the file format"
 msgstr "Görüntü dosya biçimi ile resimleri getir"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:251
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
-msgstr "1 Resim"
+msgstr "%1 [Görsel]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:256
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
-msgstr "Videolar"
+msgstr "%1 [Video]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:261
-#, fuzzy, kde-format
-#| msgid "Audio"
+#, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
-msgstr "Ses"
+msgstr "%1 [Ses]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:286
 #, kde-format
@@ -61794,22 +61790,19 @@ msgstr "Resimleri renk modeli ile bul"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:307
 #: core/utilities/searchwindow/searchfields_createfield.cpp:308
 #: core/utilities/searchwindow/searchfields_createfield.cpp:309
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
-msgstr "1 Resim"
+msgstr "%1 [Görsel]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:313
 #: core/utilities/searchwindow/searchfields_createfield.cpp:314
 #: core/utilities/searchwindow/searchfields_createfield.cpp:315
 #: core/utilities/searchwindow/searchfields_createfield.cpp:316
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
-msgstr "Videolar"
+msgstr "%1 [Video]"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:327
 #, kde-format
@@ -62682,14 +62675,14 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
 msgid "Show digiKam &rating"
-msgstr "digiKam beğenisini göster"
+msgstr "digiKam &derecelendirmesini göster"
 
 #: core/utilities/setup/album/setupalbumview.cpp:192
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
-"digiKam beğenisinin küçük resmin altında görünmesi için bu seçeneği "
-"işaretleyin."
+"digiKam derecelendirmesinin görselin altında görünmesi için bu seçeneği "
+"seçin."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #, fuzzy, kde-format
@@ -63219,11 +63212,12 @@ msgid ""
 "and tags.</p><p>Are you sure you want to apply your changes and lose the "
 "support for these formats?</p>"
 msgstr ""
-"<p>Desteklenen biçimler listesinden bu biçimleri kaldırmak istediniz: <b>%1</"
-"b>.</p><p>Bunlar en genel biçimlerdir. Eğer albümünüzde bu biçimlerde "
-"görüntülere sahipseniz bunların tüm beğeni oranları, etkiletleri, notları ve "
-"benzeri tüm bilgileri de kaldırılacaklardır.</p><p>Bu seçimi uygulamak ve bu "
-"biçime verilen desteği çekmek istiyor musunuz?</p>"
+"<p>Şu görsel biçimlerini desteklenen biçimler listesinden kaldırmayı "
+"seçtiniz: <b>%1</b>.</p><p>Bunlar çok yaygın biçimlerdir. Koleksiyonunuzda "
+"bu biçimlere sahip görselleriniz varsa bunlar veri tabanından kaldırılacak "
+"ve derecelendirme ve etiketler dahil olmak üzere bunlarla ilgili tüm "
+"bilgileri kaybedeceksiniz.</p><p>Değişikliklerinizi uygulamak ve bu biçimler "
+"için desteği kaybetmek istediğinizden emin misiniz?</p>"
 
 #: core/utilities/setup/album/setupmime.cpp:304
 #, kde-format
@@ -63617,14 +63611,14 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:495
 #, kde-format
 msgid "Show item &rating"
-msgstr "Öge &beğenisini göster"
+msgstr "Öge &derecelendirmesini göster"
 
 #: core/utilities/setup/camera/setupcamera.cpp:496
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr ""
-"Öge beğenisini resim küçük resminin altında göstermek için bu seçeneği "
-"ayarlayın."
+"Görsel küçük görselinin altında öge derecelendirmesini göstermek için bu "
+"seçeneği ayarlayın."
 
 #: core/utilities/setup/camera/setupcamera.cpp:500
 #, kde-format
@@ -64703,19 +64697,16 @@ msgstr ""
 " Devam etmek istiyor musunuz?"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
-#, fuzzy, kde-format
-#| msgid ""
-#| "Advanced configuration menu allow you to manage metadata namespaces used "
-#| "by digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
-#| "b>Order is important when reading metadata"
+#, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
 "digiKam to store and retrieve tags, rating and comments.<br/><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
-"Gelişmiş yapılandırma menüsü, digiKam tarafından etiket, derecelendirme ve "
-"yorumları saklamak için kullanılan metaveri isim uzaylarını yönetmeye izin "
-"verir.<br><b>Not: </b>Metaveri okunurken sıra önemlidir"
+"Gelişmiş yapılandırma menüsü, digiKam tarafından etiketleri, "
+"derecelendirmeyi ve yorumları depolamak ve almak için kullanılan üst veri ad "
+"alanlarını yönetmenize olanak tanır.<br/><b>Not: </b>Üst veriyi okurken sıra "
+"önemlidir"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
 #, kde-format
@@ -64826,19 +64817,15 @@ msgstr ""
 "li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new comment namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Rating\"</"
-#| "i></li><li>Select the correct namespace option from list.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
-"<p>Yeni yorum isim uzayı oluşturmak için, parametreleri belirtmelisiniz:</"
-"p><p><ul><li>Noktalar ile isim uzayı adı.<br/>Örn.:<i>\"Xmp.xmp.Rating\"</"
-"i></li><li>Listeden doğru isim uzayı seçeneğini seçin.</li></ul></p>"
+"<p>Yeni yorum ad alanları oluşturmak için parametreleri belirtmeniz gerekir:"
+"</p><p><ul><li>Noktalı ad alanı adı.<br/>Örn.: <i>\"Xmp.xmp.Comment\" </i></"
+"li><li>Listeden doğru ad alanı seçeneğini seçin.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
@@ -64868,7 +64855,7 @@ msgstr "Etiketlerin Yolunu Ayarla:"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
 #, kde-format
 msgid "Rating Mapping:"
-msgstr "Derecelendirme Planlaması:"
+msgstr "Derecelendirme Eşlemleme:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:542
 #, kde-format
@@ -65011,20 +64998,16 @@ msgid "Read metadata from Baloo"
 msgstr "Baloo'dan meta verileri oku"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:41
-#, fuzzy, kde-format
-#| msgid ""
-#| "Turn on this option if you want to apply changes to rating, comments and "
-#| "tags made in Baloo to digiKam's metadata storage. Please note that image "
-#| "metadata will not be edited automatically."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Turn on this option if you want to apply changes to rating, comments and "
 "tags made in Baloo to digiKam's metadata storage. Please note that image "
 "metadata will not be edited automatically."
 msgstr ""
-"Değerlendirme, yorumlar ve etikletlerin Baloo'dan digiKam'in metaveri "
-"depolama alanına taşıma için bu özelliği açın. Unutmayın, resim metaverisi "
-"kendiliğinden düzenlenmeyecektir."
+"Baloo'da yapılan derecelendirme, yorum ve etiket değişikliklerini digiKam'in "
+"üst veri deposuna uygulamak istiyorsanız bu seçeneği açın. Lütfen görsel üst "
+"verisinin otomatik olarak düzenlenemeyeceğini unutmayın."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:63
 #, fuzzy, kde-format
@@ -65117,21 +65100,17 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Rating"
-msgstr "Beğeni"
+msgstr "Derecelendirme"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to store the image rating in the EXIF tag and the XMP "
-#| "tags."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
 msgstr ""
-"Resim derecelendirmesini EXIF etiketinde ve XMP etiketlerinde saklamak için "
-"bu seçeneği açın."
+"Öge derecelendirmesini Exif etiketinde ve XMP etiketlerinde saklamak için bu "
+"seçeneği açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
@@ -67093,7 +67072,8 @@ msgstr "Resim etiketleri"
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
-"Reism seç, renk ve derecelendirme etiketlerini göstermek için bunu seçin."
+"Görsel seçimi, renk ve derecelendirme etiketlerini görüntülemek için bu "
+"seçeneği ayarlayın."
 
 #: core/utilities/setup/setuptooltip.cpp:307
 #, kde-format
