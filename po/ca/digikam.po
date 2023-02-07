@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-03 13:55+0100\n"
+"PO-Revision-Date: 2023-02-06 13:05+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -27122,23 +27122,19 @@ msgid "Export by Web Service"
 msgstr "Exporta per al servei web"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Error en importar la imatge RAW amb l'UFRaw\n"
+"Error en importar la imatge RAW amb l'ART\n"
 "Tanqueu aquest diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "Conversió RAW"
+msgstr "Conversió RAW de l'ART"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format

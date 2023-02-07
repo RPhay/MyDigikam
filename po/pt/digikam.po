@@ -60056,10 +60056,9 @@ msgid "County of the location shown in the item"
 msgstr "País da localização apresentada no item"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Cidade:"
+msgstr "Cidade"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format

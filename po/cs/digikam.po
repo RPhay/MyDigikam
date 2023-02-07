@@ -25907,10 +25907,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "Převod RAW"
+msgstr ""
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format

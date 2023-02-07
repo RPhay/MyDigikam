@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-03 08:26+0200\n"
+"PO-Revision-Date: 2023-02-06 09:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -27253,23 +27253,19 @@ msgid "Export by Web Service"
 msgstr "Експортувати за допомогою вебслужби"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Помилка під час спроби імпортувати цифровий негатив за допомогою UFRaw.\n"
+"Помилка під час спроби імпортувати цифровий негатив за допомогою ART.\n"
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "Перетворення цифрових негативів"
+msgstr "Перетворення цифрових негативів ART"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
