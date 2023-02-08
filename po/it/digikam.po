@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-01-28 19:14+0100\n"
+"PO-Revision-Date: 2023-02-06 20:38+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -3142,7 +3142,7 @@ msgstr "Annulla"
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Ripristina solo l'ultima voce nel cestino."
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
@@ -3150,11 +3150,9 @@ msgid "Restore"
 msgstr "Ripristina"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Rimuovi le immagini selezionate dall'elenco"
+msgstr "Ripristina la selezione di file dal cestino."
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -3165,6 +3163,8 @@ msgstr "Elimina..."
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Rimuove permanentemente tutti gli elementi, o una loro selezione, dal "
+"cestino."
 
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
@@ -27168,23 +27168,19 @@ msgid "Export by Web Service"
 msgstr "Esporta tramite servizio web"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Errore durante l'importazione dell'immagine RAW con UFRaw\n"
+"Errore durante l'importazione dell'immagine RAW con ART\n"
 "Chiudi la finestra di dialogo per caricare l'immagine RAW con lo strumento "
 "di importazione nativo"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "Conversione RAW"
+msgstr "Conversione RAW ART"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
@@ -29669,17 +29665,7 @@ msgstr ""
 "nella gestione di collezioni che contengono più di 100.000 elementi.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br/>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
-#| "enough free space especially for thumbnails database.</p><p>Note: a "
-#| "remote file system such as NFS, cannot be used here. For performance "
-#| "reasons, it is also recommended not to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -29698,10 +29684,11 @@ msgstr ""
 "per memorizzare le impronte digitali somiglianti.<br/>Per modificare le "
 "proprietà delle immagini è richiesto il permesso di scrittura.</p><p>Le "
 "banche dati sono nuclei centrali di digiKam. Fai in modo di utilizzare una "
-"posizione in un dispositivo veloce (tipo SSD) con abbastanza spazio libero "
-"per la banca dati delle miniature.</p><p>Nota: qui non può essere utilizzato "
-"un sistema di file remoti, tipo NFS. Per ragioni di prestazioni, si "
-"raccomanda di non utilizzare dispositivi rimovibili.</p><p></p>"
+"posizione in un dispositivo veloce (per es. SSD o NVMe) con abbastanza "
+"spazio libero per la banca dati delle miniature.</p><p>Nota: qui non può "
+"essere utilizzato un sistema di file remoti, tipo NFS. Per ragioni di "
+"prestazioni, si raccomanda di non utilizzare dispositivi di memorizzazione "
+"di rete.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -36076,10 +36063,9 @@ msgstr ""
 "comunque copiata nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:187
-#, fuzzy, kde-format
-#| msgid "Could not move file %1 to album %2"
+#, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
-msgstr "Impossibile spostare il file %1 nell'album %2"
+msgstr "Impossibile spostare il sidecar dal file %1 nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:193
 #, kde-format
@@ -36092,10 +36078,9 @@ msgid "Could not copy folder %1 to album %2"
 msgstr "Impossibile copiare la cartella %1 nell'album %2"
 
 #: core/libs/iojobs/iojob.cpp:228
-#, fuzzy, kde-format
-#| msgid "Could not copy file %1 to folder %2"
+#, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
-msgstr "Impossibile copiare il file %1 nella cartella %2"
+msgstr "Impossibile copiare il sidecar dal file %1 nella cartella %2"
 
 #: core/libs/iojobs/iojob.cpp:236
 #, kde-format
@@ -53625,24 +53610,7 @@ msgid "Scan Your Collection"
 msgstr "Analizza la tua raccolta"
 
 #: core/utilities/firstrun/startscanpage.cpp:40
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you "
-#| "can customize more settings using the digiKam configuration panel. To "
-#| "learn more about the digiKam world, we recommend reading the <b>digiKam "
-#| "handbook</b> using the <b>Help/Handbook</b> menu entry (you need to "
-#| "install the separate digiKam documentation package.) You can also read "
-#| "the manual online from the <a href='https://www.digikam.org/docs'>digikam."
-#| "org website</a>.</p><p>Press <b>Finish</b> to close this assistant. "
-#| "digiKam will scan your collection to register all albums in the database. "
-#| "Items including in albums are collected after startup stage in background."
-#| "</p><p><i>Note:</i> depending on your collection size, this operation can "
-#| "take a while. If you cancel the scanning operation, it will start again "
-#| "in the next digiKam session.</p><p>When scanning has completed, at next "
-#| "start-up, digiKam will only check your collection to identify new albums "
-#| "- which is much faster. You can force digiKam to scan for new items "
-#| "manually using the <b>Tools->Maintenance->Scan for new items</b> menu "
-#| "entry.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p>Congratulations. Your minimal setup is done.</p><p>Remember, you can "
 "customize more settings using the digiKam configuration panel. To learn more "
@@ -53665,17 +53633,17 @@ msgstr ""
 "digiKam. Per sapere di più sul mondo di digiKam, raccomandiamo di leggere il "
 "<b>manuale di digiKam</b> usando la voce di menu <b>Aiuto/Manuale di "
 "digiKam</b> apposita (è necessario installare il pacchetto separato della "
-"documentazione di digiKam). Puoi anche leggere il manuale in linea sul sito "
-"<a href='https://www.digikam.org/docs'>digikam.org</a>.</p><p>Premi <b>Fine</"
-"b> per chiudere questa procedura guidata. digiKam analizzerà la tua raccolta "
-"per memorizzare tutti gli album nella banca dati.</p><p><i>Nota:</i> a "
-"seconda della dimensione della raccolta, questa operazione può durare un "
-"po'. Se interrompi l'operazione di analisi, questa partirà di nuovo alla "
-"prossima apertura di digiKam.</p><p>Quando l'analisi è completa, al "
-"successivo avvio digiKam controllerà la tua raccolta solo per trovare nuovi "
-"oggetti, il che è più veloce. Puoi forzare digiKam a controllare la presenza "
-"di nuovi elementi usando la voce di menu <b>Strumenti->Manutenzione->Cerca "
-"nuovi elementi</b>.</p></qt>"
+"documentazione di digiKam). Puoi anche leggere il manuale in linea sul <a "
+"href='https://docs.digikam.org/en/index.html'>sito web dedicato</a>.</"
+"p><p>Premi <b>Fine</b> per chiudere questa procedura guidata. digiKam "
+"analizzerà la tua raccolta per memorizzare tutti gli album nella banca dati."
+"</p><p><i>Nota:</i> a seconda della dimensione della raccolta, questa "
+"operazione può durare un po'. Se interrompi l'operazione di analisi, questa "
+"partirà di nuovo alla prossima apertura di digiKam.</p><p>Quando l'analisi è "
+"completa, al successivo avvio digiKam controllerà la tua raccolta solo per "
+"trovare nuovi oggetti, il che è più veloce. Puoi forzare digiKam a "
+"controllare la presenza di nuovi elementi usando la voce di menu "
+"<b>Strumenti->Manutenzione->Cerca nuovi elementi</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -58179,14 +58147,12 @@ msgid "Open the item with default assigned application."
 msgstr "Apri l'elemento con l'applicazione predefinita assegnata."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
 msgstr "Rimuovi elemento dal tavolo luminoso"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
 msgstr "Rimuovi tutti gli elementi dal tavolo luminoso"
 
@@ -59842,40 +59808,34 @@ msgid "Country of the location shown in the item"
 msgstr "Stato del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Provincia:"
+msgstr "Provincia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province of the location shown in the item"
-msgstr "Stato del luogo mostrato nell'elemento"
+msgstr "Provincia del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
-msgstr "Stato"
+msgstr "Regione"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "County of the location shown in the item"
-msgstr "Stato del luogo mostrato nell'elemento"
+msgstr "Regione del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Città:"
+msgstr "Città"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Stato del luogo mostrato nell'elemento"
+msgstr "Città del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -60504,35 +60464,31 @@ msgstr ""
 "miniatura dell'immagine."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Mostra il tito&lo di digiKam"
+msgstr "Mostra l'etichetta di &scelta di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare il titolo di digiKam sotto la miniatura "
-"dell'immagine."
+"Abilita questa opzione per mostrare l'etichetta di scelta di digiKam sotto "
+"la miniatura dell'immagine."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Mostra il tito&lo di digiKam"
+msgstr "Mostra l'etichetta co&lorata di digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:200
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam tags below the image thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Abilita questa opzione per mostrare i tag di digiKam sotto la miniatura "
-"dell'immagine."
+"Abilita questa opzione per mostrare l'etichetta colorata di digiKam attorno "
+"alla miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
 #: core/utilities/setup/camera/setupcamera.cpp:499

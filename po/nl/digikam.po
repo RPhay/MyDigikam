@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-06 10:20+0100\n"
+"PO-Revision-Date: 2023-02-07 14:03+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -53668,7 +53668,7 @@ msgstr "Zoeken in:"
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
-msgstr "Reeks van overeenkomst:"
+msgstr "Reeks van gelijkenissen:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:152
 #, kde-format
@@ -53842,7 +53842,7 @@ msgstr "Zoeken in albums:"
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:57
 #, kde-format
 msgid "Similarity range:"
-msgstr "Reeks van overeenkomst:"
+msgstr "Reeks van gelijkenissen:"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:73
 #, kde-format
@@ -58377,7 +58377,7 @@ msgstr "Vingerafdrukken opnieuw aanmaken"
 #: core/utilities/maintenance/maintenancedlg.cpp:266
 #, kde-format
 msgid "Similarity range (in percents): "
-msgstr "Reeks van overeenkomst (in percentages): "
+msgstr "Reeks van gelijkenissen (in percentages): "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:286
 #, kde-format

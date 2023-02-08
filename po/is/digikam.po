@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-02 10:48+0000\n"
+"PO-Revision-Date: 2023-02-07 11:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3228,7 +3228,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-msgstr ""
+msgstr "Bætt við JPEG-XL; WEBP og AVIF umbreytum í Magnvinnslustjóra."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3240,7 +3240,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
-msgstr ""
+msgstr "Birta (hamborgara)-valmynd á verkfærastiku ef aðalvalmynd er falin."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
@@ -3381,6 +3381,8 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Endurskrifun handbókar</"
+"a> úr DocBook yfir í Sphinx/ReStructuredText kerfi."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
@@ -5495,11 +5497,11 @@ msgid ""
 "container format.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
-"<p>Þetta verkfæri magnvinnslustjórans getur umbreytt myndgögnum yfir á AVIF-"
-"snið.</p><p>AV1 Image File Format sniðið er skráasnið til að geyma myndir "
-"eða myndarunur þjappaðar með AV1 í ISOBMFF-gagnagámasniði.</p><p>Skoðaðu "
-"nánari upplýsingar um þetta myndasnið á <a href='https://en.wikipedia.org/"
-"wiki/AVIF'>þessari síðu</a>.</p>"
+"<para>Þetta verkfæri magnvinnslustjórans getur umbreytt myndgögnum yfir á "
+"AVIF-snið.</para><para>AV1 Image File Format sniðið er skráasnið til að "
+"geyma myndir eða myndarunur þjappaðar með AV1 í ISOBMFF-gagnagámasniði.</"
+"para><para>Skoðaðu nánari upplýsingar um þetta myndasnið á <a href='https://"
+"en.wikipedia.org/wiki/AVIF'>þessari síðu</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
 #, kde-format
@@ -26754,23 +26756,19 @@ msgid "Export by Web Service"
 msgstr "Flytja út með vefþjónustu"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Villa við að flytja inn RAW-mynd með UFRaw\n"
+"Villa við að flytja inn RAW-mynd með ART\n"
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "RAW-umbreyting"
+msgstr "RAW-umbreyting með ART"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
@@ -57436,16 +57434,14 @@ msgid "Open the item with default assigned application."
 msgstr "Opna atriðið með sjálfgefnu forriti."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "Fjarlægja hlut af ljósaborði"
+msgstr "Fjarlægja atriði af ljósaborði"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
-msgstr "Fjarlægja alla hluti af ljósaborði"
+msgstr "Fjarlægja öll atriði af ljósaborði"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
