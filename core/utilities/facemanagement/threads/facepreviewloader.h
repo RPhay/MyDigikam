@@ -32,7 +32,7 @@ public:
     ~FacePreviewLoader() override;
 
     void cancel();
-    bool sentOutLimitReached();
+    bool sentOutLimitReached() const;
     void checkRestart();
 
 public Q_SLOTS:
