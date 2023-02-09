@@ -184,7 +184,7 @@ void FacePipeline::Private::receiverFlowControl()
     }
 }
 
-bool FacePipeline::Private::hasFinished()
+bool FacePipeline::Private::hasFinished() const
 {
     return !packagesOnTheRoad && !infosForFiltering;
 }
