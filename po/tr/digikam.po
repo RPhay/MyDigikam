@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-05 12:25+0300\n"
+"PO-Revision-Date: 2023-02-08 19:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3341,7 +3341,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr ""
+msgstr "SQLite WAL (Önden Günlükleme) kipi için destek ekle"
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -17408,7 +17408,7 @@ msgstr "Takvimi Yazdır"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
 #, kde-format
 msgid "Printing in Progress"
-msgstr "Yazdırma Devam Ediyor"
+msgstr "Yazdırma Sürüyor"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
@@ -23851,11 +23851,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
-msgstr "Devam et"
+msgstr "Sürdür"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
@@ -23930,11 +23929,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
-msgstr "Giriş Başarısız"
+msgstr "Oturum Açma Başarısız"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:385
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:385
@@ -24153,7 +24151,7 @@ msgstr "Bu değer, en fazla yağmur damlası sayısını belirler."
 #, kde-format
 msgid "Invalid session key or session expired. Try to log in again."
 msgstr ""
-"Geçersiz oturum anahtarı veya oturumun süresi doldu. Tekrar giriş yapmayı "
+"Geçersiz oturum anahtarı veya oturumun süresi doldu. Yeniden oturum açmayı "
 "deneyin."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:511
@@ -24669,7 +24667,7 @@ msgstr "İmza yok"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:744
 #, kde-format
 msgid "Login Failed / Invalid auth token"
-msgstr ""
+msgstr "Oturum Açma Başarısız / Geçersiz yetkilendirme jetonu"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:748
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
@@ -25009,7 +25007,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
 #, kde-format
 msgid "Login failed / Invalid auth token"
-msgstr ""
+msgstr "Oturum Açma Başarısız / Geçersiz yetkilendirme jetonu"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
 #, kde-format
@@ -25069,7 +25067,7 @@ msgstr ""
 #, kde-format
 msgctxt "google photos album privacy"
 msgid "Sign-In Required to View"
-msgstr "Görüntülemek için Giriş Yapmak Gerekli"
+msgstr "Görüntülemek için Oturum Açma Gerekli"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:76
 #, kde-format
@@ -25406,6 +25404,8 @@ msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account"
 msgstr ""
+"Hesabınızın oturumu kapatılacaktır; başka bir hesabı yetkilendirmek için "
+"\"Sürdür\"e tıklayın"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:48
 #, kde-format
@@ -25521,7 +25521,7 @@ msgstr "Kimlik doğrulaması yapılıyor..."
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:327
 #, kde-format
 msgid "Login failed: %1\n"
-msgstr "Giriş başarısız: %1\n"
+msgstr "Oturum açma başarısız: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:341
 #, fuzzy, kde-format
@@ -25616,7 +25616,7 @@ msgstr "Açılamıyor: %1"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:112
 #, kde-format
 msgid "Logged in as:"
-msgstr ""
+msgstr "Oturumu açılan kullanıcı: "
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:122
 #, fuzzy, kde-format
@@ -25645,10 +25645,9 @@ msgid "Start upload to Imgur"
 msgstr "Yüklemek için Resim Seç"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
-#, fuzzy, kde-format
-#| msgid "Not Tagged"
+#, kde-format
 msgid "<i>Not logged in</i>"
-msgstr "Etiketlenmemiş"
+msgstr "<i>Oturum açılmadı</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
 #, fuzzy, kde-format
@@ -25764,10 +25763,9 @@ msgid "iNaturalist"
 msgstr "Doğal"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:569
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgid "Login"
-msgstr "Profil Hatası"
+msgstr "Oturum Aç"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
@@ -26171,13 +26169,12 @@ msgstr "Serbest Döndürme"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:595
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
-msgstr ""
+msgstr "<i>oturum açma <b>başarısız</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:658
-#, fuzzy, kde-format
-#| msgid "<b>Canceled</b>"
+#, kde-format
 msgid "<i>login <b>canceled</b></i>"
-msgstr "<b>İptal Edildi</b>"
+msgstr "<i>oturum açma <b>iptal edildi</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:715
 #, kde-format
@@ -26380,11 +26377,10 @@ msgstr "Toplu işlenecek resim listesidir."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:207
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:384
-#, fuzzy, kde-format
-#| msgid "This is the list of images to batch process."
+#, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
-msgstr "Toplu işlenecek resim listesidir."
+msgstr "Bu, seçili vikideki hesabınıza oturum açma formudur."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -26552,7 +26548,7 @@ msgstr "Yeni bir viki ekle"
 #, kde-format
 msgctxt "@label"
 msgid "Login:"
-msgstr "Giriş:"
+msgstr "Oturum aç:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:335
 #, kde-format
@@ -26564,25 +26560,25 @@ msgstr "Parola:"
 #, kde-format
 msgctxt "@action"
 msgid "&Log in"
-msgstr ""
+msgstr "&Oturum Aç"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:356
 #, kde-format
 msgctxt "@option"
 msgid "Login Information"
-msgstr "Giriş Bilgileri"
+msgstr "Oturum Açma Bilgileri"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:362
 #, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
-msgstr ""
+msgstr "Oturum açılan viki: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:366
 #, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
-msgstr ""
+msgstr "Oturumu açılan kullanıcı: "
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:370
 #, kde-format
@@ -26594,7 +26590,7 @@ msgstr "Hesabı Değiştir"
 #, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
-msgstr "Çıkış yap ve aktarım için kullanılan hesabı değiştir"
+msgstr "Oturumu kapat ve aktarım için kullanılan hesabı değiştir"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, kde-format
@@ -26693,6 +26689,8 @@ msgstr "Basit yazı biçimleri, tek tek kelimeler veya geometrik şekiller"
 msgctxt "@item"
 msgid "Logos with only simple typefaces, individual words or geometric shapes"
 msgstr ""
+"Yalnızca basit yazıyüzlerine, tek tek sözcüklere veya geometrik şekillere "
+"sahip logolar"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:423
 #, kde-format
@@ -26832,11 +26830,10 @@ msgid "MediaWiki export"
 msgstr "MediaWiki aktarımı"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
-msgstr "Giriş Hatası"
+msgstr "Oturum Açma Hatası"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
 #, kde-format
@@ -27020,8 +27017,7 @@ msgstr ""
 "%1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:87
-#, fuzzy, kde-format
-#| msgid "URL:"
+#, kde-format
 msgctxt "piwigo login settings"
 msgid "URL:"
 msgstr "URL:"
@@ -27306,10 +27302,9 @@ msgid "Export to &Rajce..."
 msgstr "Dışarıya aktarma hatası"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "Not Tagged"
+#, kde-format
 msgid "Not logged in"
-msgstr "Etiketlenmemiş"
+msgstr "Oturum açılmadı"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:229
 #, kde-format
@@ -27371,12 +27366,12 @@ msgstr "Desteklenmeyen dosya uzantıları"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, kde-format
 msgid "Logging in %v%"
-msgstr "Oturum açılıyor %%v"
+msgstr "Oturum açılıyor %​%v"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
 #, kde-format
 msgid "Logging out %v%"
-msgstr "Çıkış yapılıyor %%v"
+msgstr "Oturum kapatılıyor %​%v"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
 #, fuzzy, kde-format
@@ -27554,12 +27549,12 @@ msgstr "Tarayıcıdan Aktar..."
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:370
 #, kde-format
 msgid "Logging in to SmugMug service..."
-msgstr "SmugMug servisine giriş yapılıyor..."
+msgstr "SmugMug hizmetine oturum açılıyor..."
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:691
 #, kde-format
 msgid "Login failed"
-msgstr "Giriş başarısız oldu"
+msgstr "Oturum açma başarısız"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:695
 #, kde-format
@@ -27610,7 +27605,7 @@ msgstr "Anonim"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:86
 #, kde-format
 msgid "Login as anonymous to SmugMug web service."
-msgstr "SmugMug servisine anonim kullanıcı olarak giriş yap."
+msgstr "SmugMug web hizmetine anonim olarak oturum açın."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:88
 #, kde-format
@@ -27620,7 +27615,7 @@ msgstr "SmugMug Hesabı"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:89
 #, kde-format
 msgid "Login to SmugMug web service using email and password."
-msgstr "SmugMug servisine e-posta ve parola ile giriş yap."
+msgstr "SmugMug web hizmetine e-posta ve parola ile oturum açın."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:91
 #, kde-format
@@ -27760,6 +27755,8 @@ msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account."
 msgstr ""
+"Hesabınızın oturumu kapatılacaktır; başka bir hesabı yetkilendirmek için "
+"\"Sürdür\"e tıklayın"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:763
 #, fuzzy, kde-format
@@ -31487,7 +31484,7 @@ msgstr "Bu iletiyi bir daha gösterme"
 #: core/libs/dialogs/dmessagebox.cpp:155
 #, kde-format
 msgid "Continue"
-msgstr "Devam et"
+msgstr "Sürdür"
 
 #: core/libs/dialogs/dmessagebox.cpp:166 core/libs/dialogs/dmessagebox.cpp:229
 #, kde-format
@@ -33674,8 +33671,8 @@ msgstr "Açı derecesi:"
 msgid ""
 "Set here the angular integration step (in degrees) analogous to anisotropy."
 msgstr ""
-"Buradan köşeli birleştirme paralel adımının anisotropy 'e oranını (derece "
-"olarak) ayarlayın."
+"Burada anizotropiye benzer açısal tümleştirme adımını (derece türünden) "
+"ayarlayın."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:199
 #, kde-format
@@ -35816,12 +35813,12 @@ msgstr "Çeşitli"
 #: core/libs/dplugins/webservices/wslogindialog.cpp:86
 #, kde-format
 msgid "Login:"
-msgstr "Giriş:"
+msgstr "Kullanıcı adı:"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:100
 #, kde-format
 msgid "&Login"
-msgstr "&Giriş"
+msgstr "&Oturum Aç"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:103
 #, kde-format
@@ -35829,10 +35826,9 @@ msgid "&Skip"
 msgstr "&Atla"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:165
-#, fuzzy, kde-format
-#| msgid "Tag name cannot be empty"
+#, kde-format
 msgid "Password cannot be empty."
-msgstr "Etiket ismi boş bırakılamaz"
+msgstr "Parola boş bırakılamaz."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:51
 #, fuzzy, kde-format
@@ -35977,7 +35973,7 @@ msgstr ""
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:192
 #, kde-format
 msgid "This is the %1 account that is currently logged in."
-msgstr ""
+msgstr "Bu, şu anda oturumu açık olan %1 hesabı."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:194
 #, kde-format
@@ -41024,7 +41020,7 @@ msgstr "Pentax Dijital Kamera Ham Görüntü Formatı"
 #: core/libs/rawengine/drawfiles.cpp:88
 #, kde-format
 msgid "Logitech Digital Camera Raw Image Format"
-msgstr "Logitech Dijital Kamera Ham Görüntü Formatı"
+msgstr "Logitech Sayısal Kamera Ham Görüntü Biçimi"
 
 #: core/libs/rawengine/drawfiles.cpp:89
 #, kde-format
@@ -45549,7 +45545,7 @@ msgstr "Risto Saukonpaa"
 #: core/libs/widgets/mainview/daboutdata.cpp:344
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
-msgstr "Tasarım, simgeler, logo, banner, mocup, beta testleri"
+msgstr "Tasarım, simgeler, logo, afiş, maket, beta sınayıcısı"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
@@ -46612,11 +46608,10 @@ msgid "Unavailable"
 msgstr "Kullanılamaz"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolloadingview.cpp:74
-#, fuzzy, kde-format
-#| msgid "Printing in Progress"
+#, kde-format
 msgctxt "info"
 msgid "Loading in progress"
-msgstr "Yazdırma Devam Ediyor"
+msgstr "Yükleme sürüyor"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:151
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:125
@@ -66011,7 +66006,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:78
 #, kde-format
 msgid "Enable internal debug logging"
-msgstr ""
+msgstr "İçsel hata ayıklama günlüklemesini etkinleştir"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
 #, kde-format

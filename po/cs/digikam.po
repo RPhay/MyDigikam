@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-01-31 11:24+0100\n"
+"PO-Revision-Date: 2023-02-08 14:01+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -5827,7 +5827,7 @@ msgstr "Použít absolutní velikost"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Watermark type: "
-msgstr ""
+msgstr "Typ vodoznaku: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -5853,7 +5853,7 @@ msgstr "Klikněte pro výběr obrázku vodoznaku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
 #, kde-format
 msgid "Watermark image: "
-msgstr ""
+msgstr "Obrázek vodoznaku: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -5887,7 +5887,7 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
 msgid "Opacity (%): "
-msgstr ""
+msgstr "Krytí (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -5902,7 +5902,7 @@ msgstr "Sem zapište svůj text vodoznaku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
 #, kde-format
 msgid "Watermark text: "
-msgstr ""
+msgstr "Text vodoznaku: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -5917,12 +5917,12 @@ msgstr "Zde vyberte barvu písma."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
 #, kde-format
 msgid "Font color: "
-msgstr ""
+msgstr "Barva písma: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
 #, kde-format
 msgid "Text opacity: "
-msgstr ""
+msgstr "Krytí textu: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -5950,12 +5950,12 @@ msgstr "Zvolte barvu pozadí vodoznaku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
 #, kde-format
 msgid "Background color: "
-msgstr ""
+msgstr "Barva pozadí: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
 #, kde-format
 msgid "Background opacity: "
-msgstr ""
+msgstr "Krytí pozadí: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -5983,7 +5983,7 @@ msgstr "Náhodné opakování"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid "Placement Type: "
-msgstr ""
+msgstr "Typ umístění: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6077,7 +6077,7 @@ msgstr "Dole uprostřed"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
 #, kde-format
 msgid "Placement Position: "
-msgstr ""
+msgstr "Umístění: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6112,7 +6112,7 @@ msgstr "Velikost vodoznaku v procentech označeného obrázku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
 #, kde-format
 msgid "Size (%): "
-msgstr ""
+msgstr "Velikost (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6122,7 +6122,7 @@ msgstr "Okraj od hrany v ose X v procentech velikosti označeného obrázku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
 #, kde-format
 msgid "X margin (%): "
-msgstr ""
+msgstr "Okraj X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6132,7 +6132,7 @@ msgstr "Okraj od hrany v ose Y v procentech velikosti označeného obrázku."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
 #, kde-format
 msgid "Y margin (%): "
-msgstr ""
+msgstr "Okraj Y (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -28284,6 +28284,15 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
+"<p>Zvolte si umístění, kde budou uloženy soubory databáze. Budou celkem "
+"čtyři databáze: jedna pro uložení všech vlastností sbírek, jedna pro uložení "
+"komprimovaných náhledů a jedna pro uložení metadat rozpoznávání obličejů a "
+"jedna pro uložení otisků podobnosti.<br/>Aby bylo možné upravovat vlastnosti "
+"obrázků, je vyžadováno právo zápisu.</p><p>Databáze jsou nejdůležitější "
+"soubory digiKamu. Zvolte umístění na rychlém disku (např. SSD nebo NVME) s "
+"dostatkem místa - obzvláště pro databázi náhledů.</p><p>Poznámka: Nelze "
+"použít vzdálený systém souborů (například NFS). Zároveň z výkonových důvodů "
+"není vhodné používat síťová úložiště.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -51676,6 +51685,22 @@ msgid ""
 "You can force digiKam to scan for new items manually using the <b>Tools-"
 ">Maintenance->Scan for new items</b> menu entry.</p></qt>"
 msgstr ""
+"<qt><p>Gratulujeme! Vaše prvotní nastavení je u konce.</p><p>Nezapomeňte, že "
+"další nastavení můžete měnit v ovládacím  panelu digiKamu. Chcete-li se "
+"dozvědět více o možnostech digiKamu, doporučujeme k přečtení <b>příručku "
+"digiKamu</b> dostupnou z nabídky <b>Nápověda / Příručka aplikace digiKam</b> "
+"(za předpokladu, že jste si nainstalovali samostatný balíček s dokumentací "
+"digiKamu). Můžete si také přečíst dokumentaci dostupnou online na <a "
+"href='https://docs.digikam.org/en/index.html'>webu digikam.org</a>.</"
+"p><p>Pro ukončení tohoto průvodce klikněte na tlačítko <b>Dokončit</b>. "
+"digiKam začne procházet vaše sbírky a přidávat alba do databáze. Položky v "
+"albech budou po startu přidávána na pozadí.</p><p><i>Poznámka:</i> Tato "
+"operace může trvat déle, v závislosti na velikosti vaší sbírky. Pokud "
+"operaci procházení sbírky přerušíte, při příštím spuštění digiKamu začne "
+"znovu.</p><p>Jakmile bude úvodní procházení sbírky provedeno, při "
+"následujícím spuštění bude digiKam kontrolovat pouze nová alba ve sbírkách - "
+"což je mnohem rychlejší. Vyhledání nových položek můžete také spustit ručně "
+"z nabídky <b>Nástroje->Správa->Vyhledat nové položky</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:56
 #, kde-format
@@ -57749,7 +57774,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
 msgid "Province"
-msgstr ""
+msgstr "Provincie"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -57759,7 +57784,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "County"
-msgstr ""
+msgstr "Okres"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
@@ -61899,7 +61924,7 @@ msgid ""
 "a few selected profiles. Store all your additional color profiles in the "
 "directory set here.</p>"
 msgstr ""
-"<p>digiKam hledá ICC profily ve výchozích systémových adresářích a sám dodá "
+"<p>digiKam hledá ICC profily ve výchozích systémových složkách a sám dodá "
 "několik vybraných profilů. Všechny vaše další profily barev uložte do zde "
 "zvoleného adresáře.</p>"
 
