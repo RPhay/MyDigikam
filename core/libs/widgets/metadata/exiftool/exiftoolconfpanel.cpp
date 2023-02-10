@@ -151,43 +151,49 @@ void ExifToolConfPanel::setExifToolDirectory(const QString& dir)
 void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
 {
     d->exifToolFormats->clear();
+    bool exifToolAvailable = false;
 
     if (found)
     {
         QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
         parser->setExifToolProgram(exifToolDirectory());
-        ExifToolParser::ExifToolData parsed;
-        QStringList read;
-        QStringList write;
+        exifToolAvailable = parser->exifToolAvailable();
 
-        if (parser->readableFormats() && !parser->currentData().isEmpty())
+        if (exifToolAvailable)
         {
-            parsed = parser->currentData();
-            read   = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
-        }
+            ExifToolParser::ExifToolData parsed;
+            QStringList read;
+            QStringList write;
 
-        if (parser->writableFormats() && !parser->currentData().isEmpty())
-        {
-            parsed = parser->currentData();
-            write  = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
-        }
+            if (parser->readableFormats() && !parser->currentData().isEmpty())
+            {
+                parsed = parser->currentData();
+                read   = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
+            }
 
-        QString ext;
-        QString desc;
+            if (parser->writableFormats() && !parser->currentData().isEmpty())
+            {
+                parsed = parser->currentData();
+                write  = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();
+            }
 
-        for (int i = 0 ; i < read.size()  ; i += 2)
-        {
-            ext  = read[i];
-            desc = read[i + 1];
-            new QTreeWidgetItem(d->exifToolFormats, QStringList() << ext
-                                                                  << i18nc("@info: status", "yes")
-                                                                  << (write.contains(ext) ? i18nc("@info: status", "yes")
-                                                                                          : i18nc("@info: status", "no"))
-                                                                  << desc);
+            QString ext;
+            QString desc;
+
+            for (int i = 0 ; i < read.size()  ; i += 2)
+            {
+                ext  = read[i];
+                desc = read[i + 1];
+                new QTreeWidgetItem(d->exifToolFormats, QStringList() << ext
+                                                                      << i18nc("@info: status", "yes")
+                                                                      << (write.contains(ext) ? i18nc("@info: status", "yes")
+                                                                                              : i18nc("@info: status", "no"))
+                                                                      << desc);
+            }
         }
     }
 
-    Q_EMIT signalExifToolSettingsChanged(found);
+    Q_EMIT signalExifToolSettingsChanged(exifToolAvailable);
 }
 
 void ExifToolConfPanel::slotSearchTextChanged(const SearchTextSettings& settings)
