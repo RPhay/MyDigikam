@@ -145,7 +145,7 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
 
     QDateTime now(QDateTime::currentDateTime());
 
-    for (auto cookie : cookies)
+    for (const auto& cookie : cookies)
     {
         if (filterCookie(cookie, false, now))
         {
@@ -350,7 +350,7 @@ QList<QNetworkCookie> INatBrowserDlg::filterCookies(const QList<QNetworkCookie>&
     QList<QNetworkCookie> result;
     QDateTime now(QDateTime::currentDateTime());
 
-    for (auto cookie : cookies)
+    for (const auto& cookie : cookies)
     {
         if (filterCookie(cookie, keepSessionCookies, now))
         {
