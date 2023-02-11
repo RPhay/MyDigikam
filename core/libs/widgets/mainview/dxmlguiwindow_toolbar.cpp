@@ -27,7 +27,7 @@ void DXmlGuiWindow::slotConfToolbars()
     connect(&dlg, SIGNAL(newToolbarConfig()),
             this, SLOT(slotNewToolbarConfig()));
 
-    dlg.exec();
+    (void)dlg.exec();
 }
 
 void DXmlGuiWindow::slotNewToolbarConfig()
