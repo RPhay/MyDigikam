@@ -66,7 +66,6 @@ ItemsPage::ItemsPage(ExpoBlendingManager* const mngr, QWizard* const dlg)
                                       "<ul><li>%2</li>"
                                       "<li>%3</li>"
                                       "<li>%4</li></ul>"
-                                      "<p>%5</p>"
                                       "</qt>")
                    .arg(i18nc("@info", "Set here the list of your bracketed images to fuse. Please follow these conditions"))
                    .arg(i18nc("@info", "At least 2 images from the same subject must be added to the stack."))
