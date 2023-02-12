@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-11 00:55+0000\n"
+"POT-Creation-Date: 2023-02-12 00:55+0000\n"
 "PO-Revision-Date: 2022-07-29 12:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -38009,13 +38009,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binaaridataa %1 tavua"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, fuzzy, kde-format
 #| msgid "File does not exist or is not a file"
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "Tiedostoa ei ole olemassa tai ei ole tiedosto"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, fuzzy, kde-format
 #| msgid "File does not exist or is not a file"
 msgid "Perl does not exists or exec permission is missing"

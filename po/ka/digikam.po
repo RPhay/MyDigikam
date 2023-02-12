@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-11 00:55+0000\n"
-"PO-Revision-Date: 2023-02-03 15:52+0100\n"
+"POT-Creation-Date: 2023-02-12 00:55+0000\n"
+"PO-Revision-Date: 2023-02-11 06:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -28602,7 +28602,7 @@ msgstr "უცნობია"
 #: core/libs/dimg/filters/auto/equalizefilter.cpp:51
 #, kde-format
 msgid "Auto Equalize"
-msgstr ""
+msgstr "ავტომატური გათანაბრება"
 
 #: core/libs/dimg/filters/auto/normalizefilter.cpp:51
 #, kde-format
@@ -34560,12 +34560,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""
@@ -36328,7 +36328,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Solid white"
-msgstr ""
+msgstr "სულ თეთრი"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:412
 #, kde-format
@@ -58267,7 +58267,7 @@ msgstr ""
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
 msgid "Special Options"
-msgstr ""
+msgstr "სპეციალური პარამეტრები"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
 #, kde-format

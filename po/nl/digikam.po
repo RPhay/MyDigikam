@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-11 00:55+0000\n"
-"PO-Revision-Date: 2023-02-07 14:03+0100\n"
+"POT-Creation-Date: 2023-02-12 00:55+0000\n"
+"PO-Revision-Date: 2023-02-11 11:00+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -18762,7 +18762,7 @@ msgid ""
 "larger size require more network bandwidth"
 msgstr ""
 "De afbeeldingsgrootte van JPEG in pixels, met gebruik van standaard "
-"schermresoluties. Waarschuwing: grotere afmeting vereist mee bandbreedte in "
+"schermresoluties. Waarschuwing: grotere afmeting vereist meer bandbreedte in "
 "het netwerk"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
@@ -37183,12 +37183,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Binaire gegevens %1 bytes"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool bestaat niet of of toegangsrecht op uitvoeren ontbreekt"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl bestaat niet of of toegangsrecht op uitvoeren ontbreekt"
