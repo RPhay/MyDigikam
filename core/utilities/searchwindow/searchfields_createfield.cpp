@@ -637,7 +637,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Country"), i18n("Country of the location shown in the item"));
+        field->setText(i18n("Country"), i18n("Country shown in the item"));
 
         QStringList countries = CoreDbAccess().db()->getAllImagePropertiesByName(name);
         countries            += countries;
@@ -653,7 +653,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("Province"), i18n("Province of the location shown in the item"));
+        field->setText(i18n("Province"), i18n("Province shown in the item"));
 
         QStringList provinces = CoreDbAccess().db()->getAllImagePropertiesByName(name);
         provinces            += provinces;
@@ -669,7 +669,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("County"), i18n("County of the location shown in the item"));
+        field->setText(i18n("Sublocation"), i18n("Sublocation shown in the item"));
 
         QStringList locations = CoreDbAccess().db()->getAllImagePropertiesByName(name);
         locations            += locations;
@@ -685,7 +685,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldChoice* const field = new SearchFieldChoice(parent);
         field->setFieldName(name);
-        field->setText(i18n("City"), i18n("City of the location shown in the item"));
+        field->setText(i18n("City"), i18n("City shown in the item"));
 
         QStringList cities = CoreDbAccess().db()->getAllImagePropertiesByName(name);
         cities            += cities;
