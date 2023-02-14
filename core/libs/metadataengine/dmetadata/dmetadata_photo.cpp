@@ -247,7 +247,7 @@ QString DMetadata::getLensDescription() const
     QString     lens;
     QStringList lensExifTags;
 
-    // In first, try to get Lens information from makernotes.
+    // In first, try to get Lens information from Makernotes.
 
     lensExifTags.append(QLatin1String("Exif.CanonCs.LensType"));      ///< Canon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.CanonCs.Lens"));          ///< Canon Cameras Makernote.
@@ -269,14 +269,13 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    ///< Olympus Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   ///< Olympus Cameras Makernote.
 
-    // Check Makernotes first.
-
-    // Sony Cameras Makernote and others.
+    // Try Exif.Photo.LensModel for Sony and Canon first.
 
     QString make      = getExifTagString("Exif.Image.Make");
     QString lensModel = QLatin1String("Exif.Photo.LensModel");
 
-    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive) ||
+        make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
     {
         lensExifTags.prepend(lensModel);
     }
