@@ -78,7 +78,7 @@ JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
     KConfigGroup group      = config->group("jAlbum tool");
     d->settings->readSettings(group);
 
-    d->introPage         = new JAlbumIntroPage(this,         i18n("Welcome to jAlbum Album Tool"));
+    d->introPage         = new JAlbumIntroPage(this,         i18n("Welcome to jAlbum Export Tool"));
     d->selectionPage     = new JAlbumSelectionPage(this,     i18n("Items Selection"));
     d->outputPage        = new JAlbumOutputPage(this,        i18n("Paths Selection"));
     d->finalPage         = new JAlbumFinalPage(this,         i18n("Generating jAlbum"));
