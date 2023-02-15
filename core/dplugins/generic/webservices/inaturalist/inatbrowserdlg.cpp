@@ -145,7 +145,7 @@ INatBrowserDlg::INatBrowserDlg(const QString& username,
 
     QDateTime now(QDateTime::currentDateTime());
 
-    for (auto cookie : cookies)
+    for (const auto& cookie : cookies)
     {
         if (filterCookie(cookie, false, now))
         {
@@ -301,7 +301,7 @@ void INatBrowserDlg::slotWebText(const QString& text)
 #ifdef HAVE_QWEBENGINE
 
         Q_EMIT signalApiToken(doc.object()[key].toString(),
-                            filterCookies(d->cookies.values(), false));
+                              filterCookies(d->cookies.values(), false));
 
 #else
 
@@ -309,7 +309,7 @@ void INatBrowserDlg::slotWebText(const QString& text)
             (d->browser->page()->networkAccessManager()->cookieJar());
 
         Q_EMIT signalApiToken(doc.object()[key].toString(),
-                            filterCookies(jar->getAllCookies(), false));
+                              filterCookies(jar->getAllCookies(), false));
 
 #endif
 
@@ -350,7 +350,7 @@ QList<QNetworkCookie> INatBrowserDlg::filterCookies(const QList<QNetworkCookie>&
     QList<QNetworkCookie> result;
     QDateTime now(QDateTime::currentDateTime());
 
-    for (auto cookie : cookies)
+    for (const auto& cookie : cookies)
     {
         if (filterCookie(cookie, keepSessionCookies, now))
         {

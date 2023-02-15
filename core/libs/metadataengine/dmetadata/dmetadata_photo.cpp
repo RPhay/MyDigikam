@@ -247,7 +247,7 @@ QString DMetadata::getLensDescription() const
     QString     lens;
     QStringList lensExifTags;
 
-    // In first, try to get Lens information from makernotes.
+    // In first, try to get Lens information from Makernotes.
 
     lensExifTags.append(QLatin1String("Exif.CanonCs.LensType"));      ///< Canon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.CanonCs.Lens"));          ///< Canon Cameras Makernote.
@@ -269,16 +269,30 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    ///< Olympus Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   ///< Olympus Cameras Makernote.
 
-    // Check Makernotes first.
-
-    // Sony Cameras Makernote and others.
+    // Try Exif.Photo.LensModel for Sony and Canon first.
 
     QString make      = getExifTagString("Exif.Image.Make");
     QString lensModel = QLatin1String("Exif.Photo.LensModel");
 
-    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
+    if      (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
     {
         lensExifTags.prepend(lensModel);
+    }
+    else if (make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
+    {
+        QString canonLt = QLatin1String("Exif.CanonCs.LensType");
+        QString canonCs = getExifTagString(canonLt.toLatin1().constData());
+        QString exifMod = getExifTagString(lensModel.toLatin1().constData());
+
+        if ((exifMod == QLatin1String("RF70-200mm F2.8 L IS USM"))   &&
+            (canonCs == QLatin1String("Canon RF 70-200mm F4L IS USM")))
+        {
+            return QLatin1String("Canon RF 70-200mm F2.8L IS USM");
+        }
+        else
+        {
+            lensExifTags.append(lensModel);
+        }
     }
     else
     {

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:57+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -11954,10 +11954,10 @@ msgstr "ਚਿੱਤਰ ਸੰਭਾਲੇ ਜਾ ਰਹੇ ਹਨ"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -17401,7 +17401,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "ਇਕੱਲੇ ਚਿੱਤਰ ਝਲਕ"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17409,26 +17409,26 @@ msgid ""
 "conditions"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
 #, fuzzy, kde-format
 #| msgid "Exposure (E.V):"
 msgctxt "@title: column"
@@ -18221,7 +18221,7 @@ msgstr "ਡਾਊਨਲੋਡ ਮੁਕੰਮਲ..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18266,7 +18266,7 @@ msgstr "ਨਵੀਂ ਐਲਬਮ ਬਣਾਓ"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to digiKam %1"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "ਡਿਜਿਕੈਮ %1 ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -22808,7 +22808,7 @@ msgid "Start upload to Box"
 msgstr "ਅੱਪਲੋਡ ਲਈ ਚਿੱਤਰ ਚੁਣੋ"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -22817,13 +22817,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/google/gswindow.cpp:507
+#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -22835,8 +22835,8 @@ msgid "Warning"
 msgstr "ਚੇਤਾਵਨੀ"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:508
+#: core/dplugins/generic/webservices/google/gswindow.cpp:533
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22845,12 +22845,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22863,12 +22863,12 @@ msgstr "ਯੋਗਦਾਨ..."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:537
+#: core/dplugins/generic/webservices/google/gswindow.cpp:951
+#: core/dplugins/generic/webservices/google/gswindow.cpp:972
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -22881,7 +22881,7 @@ msgstr "ਰੱਦ ਕਰੋ"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:612
+#: core/dplugins/generic/webservices/google/gswindow.cpp:613
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -24270,21 +24270,21 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "ਉਚਾਈ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:621
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "ਗੂਗਲ ਨਕਸ਼ਾ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:626
+#: core/dplugins/generic/webservices/google/gswindow.cpp:627
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "ਗੂਗਲ ਨਕਸ਼ਾ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:946
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24294,7 +24294,7 @@ msgstr ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24304,14 +24304,14 @@ msgstr ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:994
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "%1: ਫਾਇਲ ਸੰਭਾਲਣ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24322,7 +24322,7 @@ msgstr ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24333,13 +24333,13 @@ msgstr ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1069
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24347,7 +24347,7 @@ msgid ""
 "%1"
 msgstr "ਉਚਾਈ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -24355,7 +24355,7 @@ msgid ""
 "%1"
 msgstr "ਉਚਾਈ"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -36762,13 +36762,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ਚੁਣਿਆ ਫੋਲਡਰ ਮੌਜੂਦ ਨਹੀਂ ਹੈ ਜਾਂ ਪੜ੍ਹਨ-ਯੋਗ ਨਹੀਂ ਹੈ"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, fuzzy, kde-format
 #| msgid "The selected folder does not exist or is not readable"
 msgid "Perl does not exists or exec permission is missing"
@@ -43811,15 +43811,15 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "ਵੇਰਵਾ"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: status"
 msgid "yes"
 msgstr "ਹਾਂ"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: status"
@@ -59672,7 +59672,7 @@ msgstr "ਦੇਸ਼:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
-msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -59682,19 +59682,19 @@ msgid "Province"
 msgstr "ਖਿੱਤਾ:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Province shown in the item"
+msgstr "ਇੰਬੈੱਡ ਕੀਤੀ ਝਲਕ ਪੂਰਾ ਚਿੱਤਰ ਸਾਈਜ਼ ਲੋਡ ਕਰਦੀ ਹੈ।"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "ਦੇਸ਼:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "ਅਧੀਨ-ਟਿਕਾਣਾ:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -59705,7 +59705,7 @@ msgstr "ਸ਼ਹਿਰ:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -64281,6 +64281,11 @@ msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "ਸਭ ਸੈਟਿੰਗਾਂ ਨੂੰ ਉਨ੍ਹਾਂ ਦੇ ਡਿਫਾਲਟ ਮੁੱਲਾਂ ਲਈ ਰੀ-ਸੈੱਟ ਕਰੋ।"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "ਦੇਸ਼:"
 
 #, fuzzy
 #~ msgctxt "@title"

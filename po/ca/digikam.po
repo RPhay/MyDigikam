@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:57+0000\n"
-"PO-Revision-Date: 2023-02-06 13:05+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"PO-Revision-Date: 2023-02-12 23:00+0100\n"
+"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Kate 22.08.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -864,7 +864,7 @@ msgstr "No hi ha disponible cap eina d'exportació"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "Gestor de la cua de lots"
+msgstr "Gestor de la cua per lots"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:139
 #, kde-format
@@ -1790,7 +1790,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
-msgstr "Gestor de la cua de lots"
+msgstr "Gestor de la cua per lots"
 
 #: core/app/main/digikamapp_setup.cpp:394
 #, kde-format
@@ -1931,8 +1931,8 @@ msgstr "Inclou les subbranques de l'àlbum"
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
-"Activeu aquesta opció per a mostrar tots els subàlbums continguts en l'àlbum "
-"actual."
+"Establiu aquesta opció per a mostrar tots els subàlbums continguts en "
+"l'àlbum actual."
 
 #: core/app/main/digikamapp_setup.cpp:543
 #, kde-format
@@ -1947,7 +1947,7 @@ msgid ""
 "Activate this option to show all images marked by the given tag and all its "
 "sub-tags."
 msgstr ""
-"Activeu aquesta opció per a mostrar totes les imatges marcades amb "
+"Establiu aquesta opció per a mostrar totes les imatges marcades amb "
 "l'etiqueta indicada i totes les seves subetiquetes."
 
 #: core/app/main/digikamapp_setup.cpp:550
@@ -1961,7 +1961,7 @@ msgstr "Mostra tots els elements agrupats com a oberts"
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
-"Activeu aquesta opció per a mostrar tots els elements agrupats com a oberts."
+"Establiu aquesta opció per a mostrar tots els elements agrupats com a oberts."
 
 #: core/app/main/digikamapp_setup.cpp:558
 #, kde-format
@@ -2872,7 +2872,7 @@ msgid ""
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
 "Us donem la benvinguda a la Gestió de cares del digiKam. Si és la primera "
-"vegada que useu aquesta funcionalitat, considereu usar el quadre d'ajuda al "
+"vegada que useu aquesta característica, considereu usar el quadre d'ajuda al "
 "plafó lateral esquerre inferior."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:202
@@ -3023,8 +3023,7 @@ msgid ""
 "to a new search virtual Album using the name set on the left."
 msgstr ""
 "Si premeu aquest botó, les dates seleccionades a la línia de temps es "
-"desaran en un àlbum virtual de cerca nou usant el nom indicat a la banda "
-"esquerra."
+"desaran en un àlbum virtual de cerca nou usant el nom establert a l'esquerra."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
 #: core/app/views/stack/itemiconview_p.h:185
@@ -3232,7 +3231,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua de lots."
+"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -5171,7 +5170,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar automàticament "
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar automàticament "
 "els colors de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
@@ -5195,7 +5194,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar la Brillantor/"
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar la Brillantor/"
 "Contrast/Gamma de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
@@ -5218,7 +5217,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les imatges a "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les imatges a "
 "blanc i negre.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
@@ -5242,7 +5241,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot barrejar els canals de "
+"<para>Aquesta eina del gestor de la cua per lots pot barrejar els canals de "
 "color de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
@@ -5278,7 +5277,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust color balance from images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar l'equilibri de "
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar l'equilibri de "
 "color de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:32
@@ -5311,8 +5310,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert image color depth to 8 bits."
 "</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir la profunditat "
-"de color d'una imatge a 8 bits.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot convertir la "
+"profunditat de color d'una imatge a 8 bits.</para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
@@ -5335,8 +5334,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
 "bits.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir la profunditat "
-"de color a 16 bits de les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot convertir la "
+"profunditat de color a 16 bits de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
@@ -5398,7 +5397,8 @@ msgstr "Carrega..."
 msgctxt "@info: open file dialog"
 msgid "Load all parameters from settings text file."
 msgstr ""
-"Carrega tots els paràmetres des d'un fitxer de text amb la configuració."
+"Carrega tots els paràmetres des d'un fitxer de text amb les opcions de "
+"configuració."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
@@ -5414,7 +5414,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the color curves from images."
 "</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar les corbes de "
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar les corbes de "
 "color de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
@@ -5438,7 +5438,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar el To/Saturació/"
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar el To/Saturació/"
 "Claredat de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
@@ -5461,7 +5461,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images to a different color "
 "space.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les imatges a "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les imatges a "
 "un espai de color diferent.</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
@@ -5484,7 +5484,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot invertir els colors de "
+"<para>Aquesta eina del gestor de la cua per lots pot invertir els colors de "
 "les imatges.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
@@ -5508,7 +5508,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar el balanç de "
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar el balanç de "
 "blancs de les imatges.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
@@ -5533,7 +5533,7 @@ msgid ""
 "container format.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format AVIF.</para><para>L'«AV1 Image File Format» és una "
 "especificació de format de fitxer d'imatges de gràfics per a emmagatzemar "
 "imatges o seqüències d'imatges comprimides amb AV1 en el format contenidor "
@@ -5561,7 +5561,7 @@ msgid ""
 "Adobe.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges RAW al format DNG.</para><para>El «Digital Negative» és un format "
 "d'imatge RAW sense pèrdua creat per Adobe.</para><para>Vegeu els detalls "
 "quant a aquest format en <a href='https://en.wikipedia.org/wiki/"
@@ -5594,7 +5594,7 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir dades "
 "d'imatges al format HEIF.</para><para>El «High Efficiency Image File "
 "Format» (HEIF), també conegut com a «High Efficiency Image Coding» (HEIC), "
 "és un format de fitxer per a imatges individuals i seqüències d'imatges. El "
@@ -5631,7 +5631,7 @@ msgid ""
 "method.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format JPEG-2000.</para><para>Aquest és un estàndard de "
 "compressió i un sistema de codificació d'imatges. Fou creat pel comitè "
 "«Joint Photographic Experts Group» el 2000 amb la intenció de reemplaçar el "
@@ -5663,7 +5663,7 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format JPEG.</para><para>El format «Joint Photographic Experts "
 "Group» és un mètode usat normalment de compressió amb pèrdua per a les "
 "imatges digitals, particularment per a aquelles imatges produïdes per la "
@@ -5693,7 +5693,7 @@ msgid ""
 "replacement.</para><para>See details about this format from <a href='https://"
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format JPEG-XL.</para><para>El JPEG-XL és un format de fitxer "
 "de gràfics ràster lliure de cànons que permet compressió amb i sense pèrdua. "
 "Està dissenyat per superar els formats ràster existents i així convertir-se "
@@ -5723,7 +5723,7 @@ msgid ""
 "details about this format from <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format PGF.</para><para>El «Progressive Graphics File» és un "
 "format d'imatge de mapa de bits basat en la compressió per ondetes que usa "
 "compressió de dades sense pèrdua i amb pèrdua.</para><para>Vegeu els detalls "
@@ -5763,7 +5763,7 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format PNG.</para><para>El «Portable Network Graphics» és un "
 "format de fitxer de gràfics rasteritzats que permet compressió de dades "
 "sense pèrdua.</para><para>Vegeu els detalls quant a aquest format en <a "
@@ -5793,7 +5793,7 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format TIFF.</para><para>El «Tagged Image File Format» és un "
 "format de fitxer d'ordinador per a emmagatzemar imatges de gràfics "
 "rasteritzats, popular entre els artistes gràfics, la indústria editorial i "
@@ -5824,7 +5824,7 @@ msgid ""
 "transparency.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot convertir les dades "
+"<para>Aquesta eina del gestor de la cua per lots pot convertir les dades "
 "d'imatges al format WEBP.</para><para>El WEBP és un format de fitxer "
 "d'imatges que Google ha desenvolupat com a substitució dels formats de "
 "fitxer JPEG, PNG i GIF. El WEBP ofereix fitxers més petits per la mateixa "
@@ -5952,7 +5952,7 @@ msgid ""
 "$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot executar scripts "
+"<para>Aquesta eina del gestor de la cua per lots pot executar scripts "
 "d'usuari de l'intèrpret d'ordres com una etapa del flux de treball.</"
 "para><para>Variables dels scripts:</para><para>Usa <b>$INPUT</b> i <b>"
 "$OUTPUT</b> per als noms de fitxer d'entrada / sortida (amb els caràcters "
@@ -5981,8 +5981,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can add decorative border around images."
 "</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot afegir vores decoratives "
-"al voltant de les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot afegir vores "
+"decoratives al voltant de les imatges.</para>"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
 #, kde-format
@@ -6002,7 +6002,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot aplicar una textura a "
+"<para>Aquesta eina del gestor de la cua per lots pot aplicar una textura a "
 "les imatges.</para>"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
@@ -6127,8 +6127,8 @@ msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
-"Indica l'opacitat del text de marca d'aigua. 100 és completament opac, 0 és "
-"completament transparent."
+"Estableix l'opacitat del text de marca d'aigua. 100 és completament opac, 0 "
+"és completament transparent."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
@@ -6161,8 +6161,8 @@ msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
-"Indica l'opacitat del fons de la marca d'aigua. 100 és completament opac, 0 "
-"és completament transparent."
+"Estableix l'opacitat del fons de la marca d'aigua. 100 és completament opac, "
+"0 és completament transparent."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
 #, kde-format
@@ -6363,8 +6363,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can add a text watermark over images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot afegir una marca d'aigua "
-"de text sobre les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot afegir una marca "
+"d'aigua de text sobre les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
 #, kde-format
@@ -6385,8 +6385,8 @@ msgid ""
 "<para>This Batch Queue Manager tool remove or add vignettings to images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots elimina o afegeix vinyetatge "
-"a les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots elimina o afegeix "
+"vinyetatge a les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:59
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
@@ -6421,7 +6421,7 @@ msgstr "Una eina per a difuminar les imatges"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot difuminar les imatges.</"
+"<para>Aquesta eina del gestor de la cua per lots pot difuminar les imatges.</"
 "para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
@@ -6444,7 +6444,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot corregir els píxels "
+"<para>Aquesta eina del gestor de la cua per lots pot corregir els píxels "
 "cremats a les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
@@ -6497,7 +6497,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
 "over images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot corregir automàticament "
+"<para>Aquesta eina del gestor de la cua per lots pot corregir automàticament "
 "els defectes de la lent sobre les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
@@ -6521,7 +6521,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can emulate tone mapping over images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot emular el mapatge dels "
+"<para>Aquesta eina del gestor de la cua per lots pot emular el mapatge dels "
 "tons de les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
@@ -6543,7 +6543,7 @@ msgstr "Una eina per a eliminar el soroll de les fotografies usant ondetes"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot reduir el soroll a les "
+"<para>Aquesta eina del gestor de la cua per lots pot reduir el soroll a les "
 "imatges.</para>"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
@@ -6567,8 +6567,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot reduir l'efecte de l'ull "
-"vermell a les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot reduir l'efecte de "
+"l'ull vermell a les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
@@ -6634,7 +6634,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can restore images using Greystoration "
 "algorithm.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot restaurar imatges usant "
+"<para>Aquesta eina del gestor de la cua per lots pot restaurar imatges usant "
 "l'algorisme Greystoration.</para>"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
@@ -6654,7 +6654,7 @@ msgstr "Una eina per a definir més les imatges"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot definir més les imatges."
+"<para>Aquesta eina del gestor de la cua per lots pot definir més les imatges."
 "</para>"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
@@ -6677,8 +6677,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply color effects over images.</"
 "para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot aplicar efectes de color "
-"a les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot aplicar efectes de "
+"color a les imatges.</para>"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
@@ -6699,8 +6699,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot afegir gra de pel·lícula "
-"a les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot afegir gra de "
+"pel·lícula a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
@@ -6762,8 +6762,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots assignarà valors alternatius "
-"de títols i descripcions a les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots assignarà valors "
+"alternatius de títols i descripcions a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
 #, kde-format
@@ -6799,7 +6799,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots assignarà valors de "
+"<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
 "metadades de valoració, o color, o rètols de selecció a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
@@ -6821,7 +6821,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots assignarà valors de "
+"<para>Aquesta eina del gestor de la cua per lots assignarà valors de "
 "metadades de jerarquies de paraules claus a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
@@ -6843,7 +6843,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply metadata template over images."
 "</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot aplicar plantilles de "
+"<para>Aquesta eina del gestor de la cua per lots pot aplicar plantilles de "
 "metadades a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
@@ -6867,7 +6867,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign a pick label metadata value "
 "by parsing image and estimate the quality.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots assigna un valor de "
+"<para>Aquesta eina del gestor de la cua per lots assigna un valor de "
 "metadades de rètols de selecció analitzant la imatge i estimant la seva "
 "qualitat.</para>"
 
@@ -7010,8 +7010,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or "
 "Xmp from images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot eliminar metadades Exif, "
-"IPTC o XMP de les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot eliminar metadades "
+"Exif, IPTC o XMP de les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:43
 #, kde-format
@@ -7041,7 +7041,7 @@ msgstr "Una eina per a ajustar la data i la marca de temps de les imatges"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot ajustar l'hora a les "
+"<para>Aquesta eina del gestor de la cua per lots pot ajustar l'hora a les "
 "imatges.</para>"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:107
@@ -7100,7 +7100,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot traduir cadenes de "
+"<para>Aquesta eina del gestor de la cua per lots pot traduir cadenes de "
 "l'idioma alternatiu a les metadades XMP de les imatges.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
@@ -7131,7 +7131,7 @@ msgstr "Posició:"
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr ""
-"Establiu aquí la posició de l'angle superior esquerre per a l'escapçat."
+"Establiu aquí la posició de la cantonada superior esquerre per a l'escapçat."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:115
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
@@ -7162,7 +7162,7 @@ msgstr "Una eina per a escapçar imatges a una àrea"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot escapçar imatges d'una "
+"<para>Aquesta eina del gestor de la cua per lots pot escapçar imatges d'una "
 "regió.</para>"
 
 #: core/dplugins/bqm/transform/flip/flip.cpp:58
@@ -7202,7 +7202,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot executar un script "
+"<para>Aquesta eina del gestor de la cua per lots pot executar un script "
 "d'usuari de l'intèrpret d'ordres com una etapa del flux de treball.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:150
@@ -7291,7 +7291,7 @@ msgstr ""
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot redimensionar les "
+"<para>Aquesta eina del gestor de la cua per lots pot redimensionar les "
 "imatges.</para>"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:86
@@ -7347,7 +7347,8 @@ msgstr "Una eina per a girar les imatges"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr ""
-"<para>Aquesta eina del gestor de la cua de lots pot girar les imatges.</para>"
+"<para>Aquesta eina del gestor de la cua per lots pot girar les imatges.</"
+"para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
 #, kde-format
@@ -8402,9 +8403,9 @@ msgid ""
 "range.</p>"
 msgstr ""
 "<b>Nivells automàtics</b>:<p>Aquesta opció maximitza l'abast tonal dels "
-"canals vermell, verd i blau. Cerca els valors límits de les ombres i les "
-"llums intenses de la imatge, i ajusta els canals vermell, verd i blau a "
-"l'abast complet de l'histograma.</p>"
+"canals vermell, verd i blau. Cerca els valors límits de les ombres i la llum "
+"intensa de la imatge, i ajusta els canals vermell, verd i blau a l'abast "
+"complet de l'histograma.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
 #, kde-format
@@ -9314,7 +9315,7 @@ msgstr "Mostra la quadrícula"
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr ""
-"Activeu aquesta opció per a mostrar la quadrícula de correcció que "
+"Establiu aquesta opció per a mostrar la quadrícula de correcció que "
 "s'aplicarà."
 
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:64
@@ -10083,7 +10084,7 @@ msgstr "Caricatura"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:118
 #, kde-format
 msgid "Multiple Corners"
-msgstr "Múltiples cantons"
+msgstr "Múltiples cantonades"
 
 # skip-rule: punctuation-period
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:119
@@ -10166,11 +10167,11 @@ msgstr ""
 "al voltant d'un cilindre vertical.</p><p><b>Cilíndric H/V.</b>: deforma la "
 "fotografia al voltant de dos cilindres, vertical i horitzontal.</"
 "p><p><b>Caricatura</b>: distorsiona la fotografia amb un efecte «ull de "
-"peix» invertit.</p><p><b>Múltiples cantons</b>: divideix la fotografia amb "
-"un model de múltiples cantons.</p><p><b>Ones horitzontals</b>: distorsiona "
-"la fotografia amb ones horitzontals.</p><p><b>Ones verticals</b>: "
-"distorsiona la fotografia amb ones verticals.</p><p><b>Blocs d'ones 1</b>: "
-"divideix la imatge en cel·les i fa com si es veuen a través de blocs de "
+"peix» invertit.</p><p><b>Múltiples cantonades</b>: divideix la fotografia "
+"amb un model de múltiples cantonades.</p><p><b>Ones horitzontals</b>: "
+"distorsiona la fotografia amb ones horitzontals.</p><p><b>Ones verticals</"
+"b>: distorsiona la fotografia amb ones verticals.</p><p><b>Blocs d'ones 1</"
+"b>: divideix la imatge en cel·les i fa com si es veuen a través de blocs de "
 "vidre.</p><p><b>Blocs d'ones 2</b>: com el bloc d'ones 1, però amb una altra "
 "versió de la distorsió dels blocs de vidre.</p><p><b>Ones circulars 1</b>: "
 "distorsiona la fotografia amb ones circulars.</p><p><b>Ones circulars 2</b>: "
@@ -10447,7 +10448,7 @@ msgid ""
 "black border, generated while panorama stitching for example."
 msgstr ""
 "Aquesta eina de l'editor d'imatges pot escapçar automàticament una imatge "
-"detectant la vora interior negra, generada en un muntatge de panorama, per "
+"detectant la vora interior negra, generada en una unió del panorama, per "
 "exemple."
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:99
@@ -10473,7 +10474,7 @@ msgstr "Mantén la relació d'aspecte"
 #, kde-format
 msgid "Enable this option to maintain aspect ratio with new image sizes."
 msgstr ""
-"Activeu aquesta opció per a mantenir la relació d'aspecte amb les mides "
+"Establiu aquesta opció per a mantenir la relació d'aspecte amb les mides "
 "noves de la imatge."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:197
@@ -10536,7 +10537,7 @@ msgstr "Afegeix màscares de pes"
 #, kde-format
 msgid "Enable this option to add suppression and preservation masks."
 msgstr ""
-"Activeu aquesta opció per a afegir màscares de supressió i conservació."
+"Establiu aquesta opció per a afegir màscares de supressió i conservació."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
@@ -10648,7 +10649,7 @@ msgstr "Conserva els tons de la pell"
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr ""
-"Activeu aquesta opció per a mantenir els píxels que tinguin un color proper "
+"Establiu aquesta opció per a mantenir els píxels que tinguin un color proper "
 "als tons de la pell."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
@@ -10749,7 +10750,7 @@ msgstr "Primer verticalment"
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr ""
-"Aquí podeu indicar si voleu que el redimensionat comenci primer "
+"Aquí podeu establir si voleu que el redimensionat comenci primer "
 "horitzontalment o verticalment."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:417
@@ -10962,8 +10963,8 @@ msgid ""
 "mouse for dragging the corner to adjust the perspective transformation area."
 msgstr ""
 "Aquesta és la vista prèvia de l'operació de transformació de la perspectiva. "
-"Podeu usar el ratolí per a arrossegar l'angle i ajustar l'àrea de "
-"transformació de la perspectiva."
+"Podeu usar el ratolí per a arrossegar la cantonada fins on s'ajustarà l'àrea "
+"de transformació de la perspectiva."
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:132
 #, kde-format
@@ -11170,7 +11171,8 @@ msgstr "Aspecte exacte"
 #, kde-format
 msgid "Enable this option to force exact aspect ratio crop."
 msgstr ""
-"Activeu aquesta opció per a forçar l'escapçat exacte de la relació d'aspecte."
+"Establiu aquesta opció per a forçar l'escapçat exacte de la relació "
+"d'aspecte."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:323
 #, kde-format
@@ -11200,7 +11202,7 @@ msgstr "Automàtica"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:331
 #, kde-format
 msgid "Enable this option to automatically set the orientation."
-msgstr "Activeu aquesta opció per a establir automàticament l'orientació."
+msgstr "Establiu aquesta opció per a establir automàticament l'orientació."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:335
 #, kde-format
@@ -11283,7 +11285,7 @@ msgstr "Seccions àuries"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
-msgstr "Activeu aquesta opció per a mostrar les seccions àuries."
+msgstr "Establiu aquesta opció per a mostrar les seccions àuries."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
@@ -11293,7 +11295,7 @@ msgstr "Seccions de l'espiral àuria"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:438
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
-msgstr "Activeu aquesta opció per a mostrar les seccions de l'espiral àuria."
+msgstr "Establiu aquesta opció per a mostrar les seccions de l'espiral àuria."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
@@ -11303,7 +11305,7 @@ msgstr "Espiral àuria"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
-msgstr "Activeu aquesta opció per a mostrar una guia de l'espiral àuria."
+msgstr "Establiu aquesta opció per a mostrar una guia de l'espiral àuria."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
@@ -11313,7 +11315,7 @@ msgstr "Triangles auris"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
-msgstr "Activeu aquesta opció per a mostrar els triangles auris."
+msgstr "Establiu aquesta opció per a mostrar els triangles auris."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
@@ -11323,7 +11325,7 @@ msgstr "Inverteix horitzontalment"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
-msgstr "Activeu aquesta opció per a invertir les línies guia horitzontalment."
+msgstr "Establiu aquesta opció per a invertir les línies guia horitzontalment."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
@@ -11333,7 +11335,7 @@ msgstr "Inverteix verticalment"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
-msgstr "Activeu aquesta opció per a invertir les línies guia verticalment."
+msgstr "Establiu aquesta opció per a invertir les línies guia verticalment."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:452
 #, kde-format
@@ -11570,7 +11572,7 @@ msgid ""
 "Enable this option to scale-up an image to a huge size. <b>Warning</b>: This "
 "process can take some time."
 msgstr ""
-"Activeu aquesta opció per a augmentar una imatge fins a una mida enorme. "
+"Establiu aquesta opció per a augmentar una imatge fins a una mida enorme. "
 "<b>Avís</b>: aquest procés pot trigar una estona."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:404
@@ -11744,7 +11746,7 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
 "To smooth the target image, it will be blurred a little."
 msgstr ""
-"Activeu aquesta opció per a processar el filtre d'antialiàsing a la imatge "
+"Establiu aquesta opció per a processar el filtre d'antialiàsing a la imatge "
 "inclinada. Per a suavitzar la imatge final, però serà una mica borrosa."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:328
@@ -12041,10 +12043,10 @@ msgstr "Es desen els canvis -"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -13289,7 +13291,7 @@ msgstr "Sincronitza la data de creació IPTC"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
-msgstr "Assigna la data de creació a avui"
+msgstr "Estableix la data de creació a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
 #, kde-format
@@ -13321,7 +13323,7 @@ msgstr "Subsegon original"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
 #, kde-format
 msgid "Set original date to today"
-msgstr "Assigna la data original a avui"
+msgstr "Estableix la data original a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
 #, kde-format
@@ -13357,7 +13359,7 @@ msgstr "Subsegon de digitalització"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
-msgstr "Assigna la data de digitalització a avui"
+msgstr "Estableix la data de digitalització a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
 #, kde-format
@@ -13468,7 +13470,7 @@ msgstr "Temps d'exposició (segons):"
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
 msgstr ""
-"Activeu aquesta opció per a indicar el temps d'exposició de la imatge, en "
+"Establiu aquesta opció per a indicar el temps d'exposició de la imatge, en "
 "segons."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
@@ -14267,8 +14269,8 @@ msgid ""
 "Select here the white balance mode set by the camera when the picture was "
 "taken."
 msgstr ""
-"Seleccioneu aquí el mode del balanç de blancs indicat per la càmera quan es "
-"va prendre la imatge."
+"Seleccioneu aquí el mode del balanç de blancs establert per la càmera quan "
+"es va prendre la imatge."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
@@ -14301,7 +14303,7 @@ msgstr "Categories addicionals:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, kde-format
 msgid "Set here the extra category"
-msgstr "Establiu aquí la categoria extra"
+msgstr "Establiu aquí la categoria addicional"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
 #, kde-format
@@ -15030,7 +15032,7 @@ msgstr "Hora d'enviament:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
 #, kde-format
 msgid "Set envelope sent date to today"
-msgstr "Assigneu la data d'enviament del sobre a avui"
+msgstr "Estableix la data d'enviament del sobre a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
 #, kde-format
@@ -15233,7 +15235,7 @@ msgstr "Hora de publicació"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
 msgid "Set release date to today"
-msgstr "Assigneu la data de publicació a avui"
+msgstr "Estableix la data de publicació a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
 #, kde-format
@@ -15268,7 +15270,7 @@ msgstr "Hora de venciment"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
 #, kde-format
 msgid "Set expiration date to today"
-msgstr "Assigna la data de venciment a avui"
+msgstr "Estableix la data de venciment a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
@@ -15605,7 +15607,7 @@ msgstr "Establiu aquí la sinopsi del contingut."
 #, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr "Comentaris:"
+msgstr "Llegendes:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
 #, kde-format
@@ -15805,7 +15807,7 @@ msgstr "Data del vídeo"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
 #, kde-format
 msgid "Set video date to today"
-msgstr "Assigna la data del vídeo a avui"
+msgstr "Estableix la data del vídeo a avui"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #, kde-format
@@ -17586,7 +17588,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "Establir les imatges amb bràqueting"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17596,26 +17598,26 @@ msgstr ""
 "Establiu aquí la llista de les imatges amb bràqueting a fusionar. Seguiu "
 "aquestes condicions:"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
-msgstr "Almenys s'han d'afegir a la pila 2 imatges del mateix tema."
+msgstr "Almenys s'han d'afegir a la pila 2 imatges amb el mateix motiu."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr "No s'han de barrejar imatges amb una profunditat de color diferent."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr "Totes les imatges han de tenir les mateixes dimensions."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
@@ -18363,9 +18365,13 @@ msgid "Jalbum completed."
 msgstr "S'ha completat la «jAlbum»."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18407,8 +18413,9 @@ msgid "Create jAlbum Album"
 msgstr "Crea un àlbum «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Us donem la benvinguda a l'eina d'àlbum «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -19790,7 +19797,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
-msgstr "Retallat del panorama"
+msgstr "Unió del panorama"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
 #, kde-format
@@ -19849,10 +19856,9 @@ msgid ""
 "of the panorama, or modify the control points to get better results."
 msgstr ""
 "«Desa el fitxer del projecte»: Podeu desar el fitxer del projecte generat "
-"per a fusionar el vostre panorama per a ajustar-lo encara més amb %1. Això "
-"és útil si voleu una projecció diferent, modificació de l'horitzó o centrat "
-"del panorama, o modificar els punts de control per a obtenir millors "
-"resultats."
+"per a unir el vostre panorama per a ajustar-lo encara més amb %1. Això és "
+"útil si voleu una projecció diferent, modificació de l'horitzó o centrat del "
+"panorama, o modificar els punts de control per a obtenir millors resultats."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
@@ -19910,7 +19916,7 @@ msgid ""
 "at the same time (those are TIFF files that can be big)."
 msgstr ""
 "Si voleu desar el fitxer del projecte, i si les imatges eren imatges RAW, "
-"llavors les imatges convertides emprades durant el procés de fusió també es "
+"llavors les imatges convertides emprades durant el procés d'unió també es "
 "copiaran (aquestes són els fitxers TIFF que poden ser grans)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
@@ -20108,7 +20114,7 @@ msgid ""
 msgstr ""
 "<qt><h1>Vista prèvia del panorama</h1><p>Dibuixeu un rectangle si voleu "
 "escapçar la imatge.</p><p>En prémer el botó <i>Següent</i> es llançarà el "
-"procés d'agrupació final.</p></qt>"
+"procés d'unió final.</p></qt>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:564
 #, kde-format
@@ -21778,8 +21784,8 @@ msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
-"Si s'ha indicat, la pista de so de l'àlbum actual es desarà i es restaurarà "
-"automàticament en el proper inici."
+"Si s'ha establert, la pista de so de l'àlbum actual es desarà i es "
+"restaurarà automàticament en el proper inici."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, kde-format
@@ -23042,7 +23048,7 @@ msgid "Start upload to Box"
 msgstr "Comença la pujada al Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -23053,13 +23059,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/google/gswindow.cpp:507
+#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -23070,8 +23076,8 @@ msgid "Warning"
 msgstr "Avís"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:508
+#: core/dplugins/generic/webservices/google/gswindow.cpp:533
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -23080,12 +23086,12 @@ msgstr "Ha fallat en l'autenticació. Cliqueu a «Continua» per a autenticar."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -23097,12 +23103,12 @@ msgstr "Continua"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:537
+#: core/dplugins/generic/webservices/google/gswindow.cpp:951
+#: core/dplugins/generic/webservices/google/gswindow.cpp:972
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -23114,7 +23120,7 @@ msgstr "Cancel·la"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:612
+#: core/dplugins/generic/webservices/google/gswindow.cpp:613
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -23615,9 +23621,9 @@ msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgstr ""
-"Indica l'adreça de la destinació a on pujar les imatges. Pot ser una adreça "
-"emprada en el Dolphin o el Konqueror, p. ex. ftp://elmeu.servidor.org/sub/"
-"carpeta."
+"Estableix l'adreça de la destinació a on pujar les imatges. Pot ser una "
+"adreça emprada en el Dolphin o el Konqueror, p. ex. ftp://elmeu.servidor.org/"
+"sub/carpeta."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:83
 #, kde-format
@@ -23806,13 +23812,13 @@ msgstr ""
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
 msgstr ""
-"Afegiu etiquetes extres per a la imatge o useu la pestanya Opcions de la "
-"pujada per a afegir etiquetes per a totes les imatges"
+"Afegiu etiquetes addicionals per a la imatge o useu la pestanya Opcions de "
+"la pujada per a afegir etiquetes per a totes les imatges"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:547
 #, kde-format
 msgid "Enter extra tags, separated by commas."
-msgstr "Introduïu etiquetes extres, separades per comes."
+msgstr "Introduïu etiquetes addicionals, separades per comes."
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:48
 #, kde-format
@@ -24099,8 +24105,8 @@ msgstr "Afegeix etiquetes per imatge"
 #, kde-format
 msgid "If checked, you can set extra tags for each image in the File List tab"
 msgstr ""
-"Si està marcada, podeu definir etiquetes extres per a cada imatge a la "
-"pestanya de la llista de fitxers"
+"Si està marcada, podreu establir etiquetes addicionals per a cada imatge a "
+"la pestanya de la llista de fitxers"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:137
 #, kde-format
@@ -24514,19 +24520,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Ha fallat la crida al Google Drive: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Exportació al Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:626
+#: core/dplugins/generic/webservices/google/gswindow.cpp:627
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Exportació al Google Photo"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:946
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24536,7 +24542,7 @@ msgstr ""
 "Ha fallat en desar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24546,13 +24552,13 @@ msgstr ""
 "Ha fallat en baixar la fotografia: %1\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:994
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Ha fallat en desar la imatge a %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24564,7 +24570,7 @@ msgstr ""
 "%2\n"
 "Voleu continuar?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24576,13 +24582,13 @@ msgstr ""
 "%2\n"
 "No s'ha pujat cap imatge al vostre compte."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1069
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "D'acord"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24592,7 +24598,7 @@ msgstr ""
 "Ha fallat la crida al Google Drive:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24602,7 +24608,7 @@ msgstr ""
 "Ha fallat la crida al Google Photos:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28623,9 +28629,10 @@ msgid ""
 "set in your CD burning application. If you create further CDs for use with "
 "digikam in the future, please remember to give them a unique label as well."
 msgstr ""
-"Aquest és un CD/DVD que s'identificarà amb l'etiqueta («%1») que heu indicat "
-"en l'aplicació d'enregistrament de CD. Si creeu més CD per a usar-los amb el "
-"digiKam en el futur, recordeu de donar-los també una etiqueta inequívoca."
+"Aquest és un CD/DVD que s'identificarà amb l'etiqueta («%1») que heu "
+"establert en l'aplicació d'enregistrament de CD. Si creeu més CD per a usar-"
+"los amb el digiKam en el futur, recordeu de donar-los també una etiqueta "
+"inequívoca."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:363
 #, kde-format
@@ -28673,8 +28680,9 @@ msgid ""
 "Your network storage must be set up to be accessible as files and folders "
 "through the operating system. digiKam does not support remote URLs."
 msgstr ""
-"L'emmagatzematge de xarxa ha de ser accessible com a fitxers i carpetes a "
-"través del sistema operatiu. El digiKam no reconeix URL remots."
+"L'emmagatzematge de xarxa s'ha de configurar per a ser accessible com a "
+"fitxers i carpetes a través del sistema operatiu. El digiKam no reconeix URL "
+"remots."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:463
 #, kde-format
@@ -29938,7 +29946,7 @@ msgid ""
 msgstr ""
 "<p>Nota: A un servidor Linux, una base de dades es pot inicialitzar amb les "
 "ordres següents:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -"
-"u root</p><p>...</p><p>Introduïu el codi SQL a l'indicador del MySQL per tal "
+"u root</p><p>...</p><p>Introduïu el codi SQL a l'indicatiu de MySQL per tal "
 "d'iniciar les bases de dades del digiKam amb atorgament de privilegis (vegeu "
 "abans)</p><p>...</p><p>quit</p><p>NOTA: Si teniu una col·lecció enorme, "
 "haureu d'iniciar el servidor de MySQL amb «mysql --max_allowed_packet=128M "
@@ -30059,7 +30067,7 @@ msgstr "El nom de la base de dades de similitud està buit"
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
-"Aquest camí s'ha introduït com a opció de la línia d'ordres (--database-"
+"Aquest camí s'ha establert com a opció de la línia d'ordres (--database-"
 "directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
@@ -30107,7 +30115,7 @@ msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
-"<p>La carpeta on hostatjar el fitxer de la base de dades no existeix:</"
+"<p>La carpeta on allotjar el fitxer de la base de dades no existeix:</"
 "p><p><b>%1</b></p>Voleu que la creï el digiKam?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
@@ -30122,7 +30130,7 @@ msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>El digiKam no ha pogut crear la carpeta per a hostatjar el fitxer de la "
+"<p>El digiKam no ha pogut crear la carpeta per a allotjar el fitxer de la "
 "base de dades.\n"
 "Seleccioneu una ubicació diferent.</p><p><b>%1</b></p>"
 
@@ -31504,7 +31512,8 @@ msgstr "Conserva la lluminositat"
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
-msgstr "Activeu aquesta opció si voleu conservar la lluminositat de la imatge."
+msgstr ""
+"Establiu aquesta opció si voleu conservar la lluminositat de la imatge."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:178
 #, kde-format
@@ -31879,7 +31888,7 @@ msgid ""
 "enabled, the border width will be a percentage of the image size, else the "
 "border width will be in pixels."
 msgstr ""
-"Activeu aquesta opció si voleu mantenir la relació d'aspecte de la imatge. "
+"Establiu aquesta opció si voleu mantenir la relació d'aspecte de la imatge. "
 "Si l'activeu, l'amplada de la vora serà un percentatge de la mida de la "
 "imatge, altrament, l'amplada de la vora serà en píxels."
 
@@ -32416,7 +32425,7 @@ msgstr "Ombres:"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:293
 #, kde-format
 msgid "Set how much the filter affects highlights."
-msgstr "Establiu quant ha d'afectar el filtre a les llums intenses."
+msgstr "Establiu quant ha d'afectar el filtre a la llum intensa."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:203
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:250
@@ -32437,7 +32446,7 @@ msgstr "Establiu quant ha d'afectar el filtre als tons mitjans."
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:305
 #, kde-format
 msgid "Highlights:"
-msgstr "Llums intenses:"
+msgstr "Llum intensa:"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:215
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:262
@@ -32517,8 +32526,8 @@ msgid ""
 "Preservation of details to set the sharpening level of the small features in "
 "the target image. Higher values leave details sharp."
 msgstr ""
-"Conservació dels detalls per a indicar el nivell d'agudització dels petits "
-"detalls en la imatge final. Els valors més alts deixen els detalls més "
+"Conservació dels detalls per a establir el nivell d'agudització dels detalls "
+"petits en la imatge final. Els valors més alts deixen els detalls més "
 "definits."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:136
@@ -32573,7 +32582,7 @@ msgstr "Iteracions:"
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:162
 #, kde-format
 msgid "Sets the number of times the filter is applied to the image."
-msgstr "Indica el nombre de vegades que el filtre s'aplica sobre la imatge."
+msgstr "Estableix el nombre de vegades que el filtre s'aplica sobre la imatge."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:164
 #, kde-format
@@ -33237,7 +33246,7 @@ msgid ""
 "Set this option to try to guess the right camera/lens settings from the "
 "image metadata (as Exif or XMP)."
 msgstr ""
-"Activeu aquesta opció per a intentar esbrinar la configuració correcta de "
+"Establiu aquesta opció per a intentar esbrinar la configuració correcta de "
 "càmera i lent des de les metadades de la imatge (com l'Exif o XMP)."
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:190
@@ -33901,8 +33910,8 @@ msgid ""
 "filter parameters."
 msgstr ""
 "Aquesta és l'agudesa per a la convolució gaussiana. Useu aquest paràmetre "
-"quan el difuminat sigui de tipus gaussià. En la majoria de casos hauríeu de "
-"deixar aquest paràmetre a 0, perquè produeix defectes bruts. Quan useu "
+"quan el difuminat sigui de tipus gaussià. En la majoria de casos hauríeu "
+"d'establir aquest paràmetre a 0, perquè produeix defectes bruts. Quan useu "
 "valors diferents de zero, probablement també haureu d'incrementar els "
 "paràmetres de correlació i/o filtre del soroll."
 
@@ -34001,7 +34010,7 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the rotated image. "
 "In order to smooth the target image, it will be blurred a little."
 msgstr ""
-"Activeu aquesta opció per a processar el filtre d'antialiàsing a la imatge "
+"Establiu aquesta opció per a processar el filtre d'antialiàsing a la imatge "
 "girada. Per tal de suavitzar la imatge final, aquesta quedarà una mica "
 "borrosa."
 
@@ -34044,7 +34053,7 @@ msgstr "Eina per al balanç de blancs"
 #, kde-format
 msgctxt "@title: WB"
 msgid "Color Temperature"
-msgstr "Temperatura del color"
+msgstr "Temperatura de color"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:186
 #, kde-format
@@ -35247,9 +35256,9 @@ msgid ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 msgstr ""
-"La base de dades no és vàlida: el paràmetre «DBFaceVersion» no existeix. No "
-"es pot verificar la versió de l'esquema de la base de dades actual. Proveu "
-"d'iniciar amb una base de dades buida. "
+"La base de dades no és vàlida: l'opció de configuració paràmetre "
+"«DBFaceVersion» no existeix. No es pot verificar la versió de l'esquema de "
+"la base de dades actual. Proveu d'iniciar amb una base de dades buida. "
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:160
 #, kde-format
@@ -37213,12 +37222,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "Dades binàries %1 bytes"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "No existeix l'ExifTool o li manca el permís d'execució"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "No existeix el Perl o li manca el permís d'execució"
@@ -39095,16 +39104,15 @@ msgid ""
 "strong='true'>Manual</emphasis>: Set a custom temperature and green level "
 "values.</item></list></para>"
 msgstr ""
-"<title>Balanç de blancs</title><para>Configureu el balanç de blancs en brut:"
-"</para><para><list><item><emphasis strong='true'>D65 predeterminat</"
-"emphasis>: usa un balanç de blancs D65 amb llum de dia estàndard.</"
-"item><item><emphasis strong='true'>Càmera</emphasis>: usa el balanç de "
-"blancs especificat per la càmera. Si no està disponible, retorna al balanç "
-"de blancs neutre predeterminat</item><item><emphasis "
-"strong='true'>Automàtic</emphasis>: calcula un balanç de blancs automàtic de "
-"la mitjana de tota la imatge</item><item><emphasis strong='true'>Manual</"
-"emphasis>: estableix uns valors de temperatura i un nivell de verd "
-"personalitzats.</item></list></para>"
+"<title>Balanç de blancs</title><para>Configureu el balanç de blancs RAW:</"
+"para><para><list><item><emphasis strong='true'>D65 predeterminat</emphasis>: "
+"usa un balanç de blancs D65 amb llum de dia estàndard.</item><item><emphasis "
+"strong='true'>Càmera</emphasis>: usa el balanç de blancs especificat per la "
+"càmera. Si no està disponible, retorna al balanç de blancs neutre "
+"predeterminat</item><item><emphasis strong='true'>Automàtic</emphasis>: "
+"calcula un balanç de blancs automàtic de la mitjana de tota la imatge</"
+"item><item><emphasis strong='true'>Manual</emphasis>: estableix uns valors "
+"de temperatura i un nivell de verd personalitzats.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:397
 #, kde-format
@@ -39142,7 +39150,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Highlights:"
-msgstr "Llums intenses:"
+msgstr "Llum intensa:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:411
 #, kde-format
@@ -39181,15 +39189,15 @@ msgid ""
 "strong='true'>Rebuild</emphasis>: reconstruct highlights using a level "
 "value</item></list></para>"
 msgstr ""
-"<title>Llums intenses</title><para>Seleccioneu aquí el mètode per a escurçar "
-"les llums intenses:</para><para><list><item><emphasis strong='true'>Blanc "
-"sòlid</emphasis>: escurça les llums intenses al blanc sòlid</"
-"item><item><emphasis strong='true'>Sense escurçar</emphasis>: deixa les "
-"llums intenses en diverses tonalitats de rosa</item><item><emphasis "
+"<title>Llum intensa</title><para>Seleccioneu aquí el mètode per a escurçar "
+"la llum intensa:</para><para><list><item><emphasis strong='true'>Blanc "
+"sòlid</emphasis>: escurça la llum intensa al blanc sòlid</"
+"item><item><emphasis strong='true'>Sense escurçar</emphasis>: deixa la llum "
+"intensa en diverses tonalitats de rosa</item><item><emphasis "
 "strong='true'>Barreja</emphasis>: barreja els valors escurçats i els no "
 "escurçats fent un encadenament gradual a blanc</item><item><emphasis "
-"strong='true'>Reconstrucció</emphasis>: reconstrueix les llums intenses "
-"usant un valor de nivell</item></list></para>"
+"strong='true'>Reconstrucció</emphasis>: reconstrueix la llum intensa usant "
+"un valor de nivell</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:427
 #, kde-format
@@ -39204,8 +39212,8 @@ msgid ""
 "<title>Level</title><para>Specify the reconstruct highlight level. Low "
 "values favor whites and high values favor colors.</para>"
 msgstr ""
-"<title>Nivell</title><para>Indica el nivell de reconstrucció de les llums "
-"intenses. Els valors baixos afavoreixen els blancs i els valors alts "
+"<title>Nivell</title><para>Especifica el nivell de reconstrucció de la llum "
+"intensa. Els valors baixos afavoreixen els blancs i els valors alts "
 "afavoreixen els colors.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:435
@@ -39241,7 +39249,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider"
 msgid "Highlight:"
-msgstr "Llums intenses:"
+msgstr "Llum intensa:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:452
 #, kde-kuit-format
@@ -39251,15 +39259,15 @@ msgid ""
 "correction before interpolation in E.V. Only take effect if Shift Correction "
 "is > 1.0 E.V</para>"
 msgstr ""
-"<title>Llums intenses</title><para>Quantitat del manteniment de les llums "
-"intenses en la correcció de l'exposició abans de la interpolació, en E.V. "
+"<title>Llum intensa</title><para>Quantitat del manteniment de la llum "
+"intensa en la correcció de l'exposició abans de la interpolació, en E.V. "
 "Només té efecte si la correcció del desplaçament és > 1,0 E.V</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:456
 #, kde-format
 msgctxt "@option:check"
 msgid "Correct false colors in highlights"
-msgstr "Corregeix els colors falsos en les llums intenses"
+msgstr "Corregeix els colors falsos en la llum intensa"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:457
 #, kde-kuit-format
@@ -39270,7 +39278,7 @@ msgid ""
 "</para>"
 msgstr ""
 "<para>Si està activat, les imatges amb canals sobreexposats es processen amb "
-"més precisió, sense «núvols roses» (i llums blaves intenses en làmpades de "
+"més precisió, sense «núvols roses» (i llum blava intensa en làmpades de "
 "tungstè).</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:461
@@ -39302,9 +39310,9 @@ msgid ""
 "<title>Brightness</title><para>Specify the brightness level of output image. "
 "The default value is 1.0 (works in 8-bit mode only).</para>"
 msgstr ""
-"<title>Brillantor</title><para>Indica el nivell de brillantor de la imatge "
-"de sortida. El valor predeterminat és 1,0 (només treballa en el mode de 8 "
-"bits).</para>"
+"<title>Brillantor</title><para>Especifica el nivell de brillantor de la "
+"imatge de sortida. El valor predeterminat és 1,0 (només treballa en el mode "
+"de 8 bits).</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:480
 #, kde-format
@@ -39331,8 +39339,8 @@ msgid ""
 "<title>Black point value</title><para>Specify specific black point value of "
 "the output image.</para>"
 msgstr ""
-"<title>Valor del punt negre</title><para>Indica el valor específic del punt "
-"negre de la imatge de sortida.</para>"
+"<title>Valor del punt negre</title><para>Especifica el valor específic del "
+"punt negre de la imatge de sortida.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:491
 #, kde-format
@@ -39359,8 +39367,8 @@ msgid ""
 "<title>White point value</title><para>Specify specific white point value of "
 "the output image.</para>"
 msgstr ""
-"<title>Valor del punt blanc</title><para>Indica el valor específic del punt "
-"blanc de la imatge de sortida.</para>"
+"<title>Valor del punt blanc</title><para>Especifica el valor específic del "
+"punt blanc de la imatge de sortida.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:539
 #, kde-format
@@ -39586,22 +39594,22 @@ msgstr "Format de fitxer RAW de les càmeres digitals Casio"
 #: core/libs/rawengine/drawfiles.cpp:54
 #, kde-format
 msgid "NuCore Raw Image File"
-msgstr "Fitxer d'imatge RAW NuCore"
+msgstr "Fitxer d'imatge RAW de NuCore"
 
 #: core/libs/rawengine/drawfiles.cpp:59
 #, kde-format
 msgid "Canon Digital Camera RAW Image Format version 2.0"
-msgstr "Format de fitxer RAW de càmeres digitals Canon versió 2.0"
+msgstr "Format d'imatge RAW de càmeres digitals Canon versió 2.0"
 
 #: core/libs/rawengine/drawfiles.cpp:61
 #, kde-format
 msgid "Canon Digital Camera RAW Image Format version 1.0"
-msgstr "Format de fitxer RAW de càmeres digitals Canon versió 1.0"
+msgstr "Format de fitxer d'imatge RAW de càmeres digitals Canon versió 1.0"
 
 #: core/libs/rawengine/drawfiles.cpp:62
 #, kde-format
 msgid "Capture Shop Raw Image File"
-msgstr "Format d'imatge RAW del Capture Shop"
+msgstr "Fitxer d'imatge RAW del Capture Shop"
 
 #: core/libs/rawengine/drawfiles.cpp:63
 #, kde-format
@@ -39631,7 +39639,7 @@ msgstr "Format d'imatge RAW de càmeres digitals Imacon"
 #: core/libs/rawengine/drawfiles.cpp:79
 #, kde-format
 msgid "Leaf Raw Image File"
-msgstr "Fitxer d'imatge RAW Leaf"
+msgstr "Fitxer d'imatge RAW de Leaf"
 
 #: core/libs/rawengine/drawfiles.cpp:80
 #, kde-format
@@ -39656,7 +39664,7 @@ msgstr "Format d'imatge RAW de càmeres digitals Minolta Dimage"
 #: core/libs/rawengine/drawfiles.cpp:85 core/libs/rawengine/drawfiles.cpp:118
 #, kde-format
 msgid "Nikon Digital Camera Raw Image Format"
-msgstr "Formats de fitxer RAW de càmeres digitals Nikon"
+msgstr "Format de fitxer d'imatge RAW de càmeres digitals Nikon"
 
 #: core/libs/rawengine/drawfiles.cpp:86 core/libs/rawengine/drawfiles.cpp:143
 #, kde-format
@@ -39686,7 +39694,7 @@ msgstr "Format d'imatge de càmeres digitals Panasonic"
 #: core/libs/rawengine/drawfiles.cpp:91
 #, kde-format
 msgid "Digital Foto Maker Raw Image File"
-msgstr "Format d'imatge RAW del Foto Maker Digital"
+msgstr "Fitxer d'imatge RAW del Foto Maker Digital"
 
 #: core/libs/rawengine/drawfiles.cpp:92 core/libs/rawengine/drawfiles.cpp:97
 #: core/libs/rawengine/drawfiles.cpp:107
@@ -39712,7 +39720,7 @@ msgstr "Fitxer d'imatge RAW de Phantom Software"
 #: core/libs/rawengine/drawfiles.cpp:115
 #, kde-format
 msgid "Sinar Raw Image File"
-msgstr "Fitxer d'imatge RAW Sinar"
+msgstr "Fitxer d'imatge RAW de Sinar"
 
 #: core/libs/rawengine/drawfiles.cpp:116
 #, kde-format
@@ -39732,7 +39740,7 @@ msgstr "Format d'imatge RAW de càmeres digitals Panasonic LX3"
 #: core/libs/rawengine/drawfiles.cpp:121
 #, kde-format
 msgid "Sinar Capture Shop Raw Image File"
-msgstr "Format d'imatge RAW del Sinar Capture Shop"
+msgstr "Fitxer d'imatge RAW del Sinar Capture Shop"
 
 #: core/libs/rawengine/drawfiles.cpp:127
 #, kde-format
@@ -39747,7 +39755,7 @@ msgstr "Format d'imatge RAW de Samsung"
 #: core/libs/rawengine/drawfiles.cpp:138
 #, kde-format
 msgid "Canon Digital Camera RAW Image Format version 3.0"
-msgstr "Format de fitxer RAW de càmeres digitals Canon versió 3.0"
+msgstr "Format de fitxer d'imatge RAW de càmeres digitals Canon versió 3.0"
 
 #: core/libs/rawengine/drawfiles.cpp:148 core/libs/rawengine/drawfiles.cpp:154
 #, kde-format
@@ -39781,7 +39789,7 @@ msgstr "Taula de llum"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
-msgstr "Gestor de la cua de lots"
+msgstr "Gestor de la cua per lots"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:433
 #, kde-format
@@ -39815,7 +39823,7 @@ msgstr "Afegir elements a la taula de llum"
 #: core/libs/settings/applicationsettings_miscs.cpp:457
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Afegir elements al gestor de la cua de lots"
+msgstr "Afegir elements al gestor de la cua per lots"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:460
 #, kde-format
@@ -42136,7 +42144,7 @@ msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
 "decoders"
 msgstr ""
-"Nombre de fils de descodificació. Configurar abans d'obrir. Potser no té "
+"Nombre de fils de descodificació. Establir abans d'obrir. Potser no té "
 "efecte per alguns descodificadors"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
@@ -42284,12 +42292,12 @@ msgstr "Durada màxima de l'anàlisi"
 #, kde-format
 msgid "0: auto. how many microseconds are analyzed to probe the input"
 msgstr ""
-"0: automàtica. Nombre de microsegons que s'analitzen per provar l'entrada"
+"0: automàtica. Nombre de microsegons que s'analitzen per a provar l'entrada"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:66
 #, kde-format
 msgid "Extra"
-msgstr "Extra"
+msgstr "Addicional"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
 #, kde-format
@@ -42475,7 +42483,7 @@ msgstr "Shader"
 #, kde-format
 msgctxt "@option"
 msgid "Brightness"
-msgstr "Lluminositat"
+msgstr "Brillantor"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:69
 #, kde-format
@@ -43817,7 +43825,7 @@ msgstr "Pankaj Kumar"
 #: core/libs/widgets/mainview/daboutdata.cpp:244
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
-msgstr "Implementació del multinucli en el gestor de la cua de lots i mentor"
+msgstr "Implementació del multinucli en el gestor de la cua per lots i mentor"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
@@ -43974,7 +43982,7 @@ msgstr "Mikolaj Machowski"
 #: core/libs/widgets/mainview/daboutdata.cpp:355
 #, kde-format
 msgid "Bug reports and patches"
-msgstr "Informes d'errors i pedaços"
+msgstr "Informes d'error i pedaços"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:354
 #, kde-format
@@ -44384,14 +44392,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "Descripció"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "Sí"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
@@ -45203,7 +45211,7 @@ msgstr "Multimèdia dinàmic"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:141
 #, kde-format
 msgid "Media Management "
-msgstr "Gestió dels fitxers multimèdia "
+msgstr "Gestió multimèdia "
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:145
 #, kde-format
@@ -50100,7 +50108,7 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
-"<para>Activeu aquesta opció per activar la característica de verificació "
+"<para>Establiu aquesta opció per activar la característica de verificació "
 "ortogràfica en segon pla en les llegendes, títols i altres ginys d'edició de "
 "text. La verificació ortogràfica és capaç de detectar automàticament "
 "l'idioma actual utilitzat en el text i proposarà una alternativa a les "
@@ -50642,8 +50650,8 @@ msgid ""
 "now, select \"Yes\", otherwise select \"No\". In this case, \"Color "
 "Management\" feature will be disabled until you solve this issue</p>"
 msgstr ""
-"<p>El camí als perfils ICC sembla que no és vàlid.</p><p>Si voleu indicar-lo "
-"ara, seleccioneu «Sí», altrament, seleccioneu «No». En aquest cas, la "
+"<p>El camí als perfils ICC sembla que no és vàlid.</p><p>Si voleu establir-"
+"lo ara, seleccioneu «Sí», altrament, seleccioneu «No». En aquest cas, la "
 "característica de «Gestió del color» quedarà inactivada fins que resolgueu "
 "aquesta qüestió</p>"
 
@@ -51032,7 +51040,7 @@ msgstr "Mo&stra el format de la imatge"
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el format de la imatge sobre la "
+"Establiu aquesta opció per a mostrar el format de la imatge sobre la "
 "miniatura de la imatge."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
@@ -51045,7 +51053,7 @@ msgstr "Mo&stra l'indicador de geolocalització"
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
-"Activeu aquesta opció per a indicar si la imatge conté informació de "
+"Establiu aquesta opció per a indicar si la imatge conté informació de "
 "geolocalització."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:180
@@ -51168,7 +51176,7 @@ msgstr "Per a totes les pestanyes"
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
-"Activeu aquesta opció per a configurar com s'han de visualitzar els títols "
+"Establiu aquesta opció per a configurar com s'han de visualitzar els títols "
 "de pestanya de les barres laterals."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:255
@@ -51182,7 +51190,7 @@ msgstr "Estil dels ginys:"
 #, kde-format
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ""
-"Activeu aquesta opció per a triar la decoració predeterminada de les "
+"Establiu aquesta opció per a triar la decoració predeterminada de les "
 "finestres i l'aspecte."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:275
@@ -51195,7 +51203,7 @@ msgstr "Tema d'icones (canvis després de reiniciar):"
 #: core/utilities/setup/misc/setupmisc.cpp:232
 #, kde-format
 msgid "Set this option to choose the default icon theme."
-msgstr "Activeu aquesta opció per a triar el tema d'icones predeterminat."
+msgstr "Establiu aquesta opció per a triar el tema d'icones predeterminat."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
 #: core/utilities/setup/misc/setupmisc.cpp:236
@@ -51343,7 +51351,7 @@ msgid ""
 "Set this option to display the image information when the mouse hovers over "
 "a thumbbar or folder-view item."
 msgstr ""
-"Activeu aquesta opció per a mostrar la informació de la imatge quan el "
+"Establiu aquesta opció per a mostrar la informació de la imatge quan el "
 "ratolí passi per sobre d'un element de la barra de miniatures o la vista de "
 "carpetes."
 
@@ -51368,7 +51376,7 @@ msgstr "Mostra el nom del fitxer"
 #: core/utilities/setup/setuptooltip.cpp:204
 #, kde-format
 msgid "Set this option to display the image file name."
-msgstr "Activeu aquesta opció per a mostrar el nom del fitxer d'imatge."
+msgstr "Establiu aquesta opció per a mostrar el nom del fitxer d'imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:117
 #, kde-format
@@ -51379,7 +51387,7 @@ msgstr "Mostra la data del fitxer"
 #: core/utilities/setup/setuptooltip.cpp:207
 #, kde-format
 msgid "Set this option to display the image file date."
-msgstr "Activeu aquesta opció per a mostrar la data del fitxer d'imatge."
+msgstr "Establiu aquesta opció per a mostrar la data del fitxer d'imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:120
 #, kde-format
@@ -51390,7 +51398,7 @@ msgstr "Mostra la mida del fitxer"
 #: core/utilities/setup/setuptooltip.cpp:210
 #, kde-format
 msgid "Set this option to display the image file size."
-msgstr "Activeu aquesta opció per a mostrar la mida del fitxer d'imatge."
+msgstr "Establiu aquesta opció per a mostrar la mida del fitxer d'imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #, kde-format
@@ -51401,7 +51409,7 @@ msgstr "Mostra el tipus d'imatge"
 #: core/utilities/setup/setuptooltip.cpp:213
 #, kde-format
 msgid "Set this option to display the image type."
-msgstr "Activeu aquesta opció per a mostrar el tipus d'imatge."
+msgstr "Establiu aquesta opció per a mostrar el tipus d'imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #, kde-format
@@ -51413,7 +51421,7 @@ msgstr "Mostra les dimensions de la imatge"
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
 msgstr ""
-"Activeu aquesta opció per a mostrar les dimensions de la imatge en píxels."
+"Establiu aquesta opció per a mostrar les dimensions de la imatge en píxels."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:143
 #: core/utilities/setup/setuptooltip.cpp:236
@@ -51423,8 +51431,8 @@ msgid ""
 "Set this option to display the make and model of the camera with which the "
 "image has been taken."
 msgstr ""
-"Activeu aquesta opció per a mostrar el fabricant i el model de la càmera amb "
-"la qual s'ha pres la imatge."
+"Establiu aquesta opció per a mostrar el fabricant i el model de la càmera "
+"amb la qual s'ha pres la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:146
 #: core/utilities/setup/setuptooltip.cpp:239
@@ -51440,7 +51448,7 @@ msgstr "Model de lent de la càmera"
 msgid ""
 "Set this option to display the lens model with which the image was taken."
 msgstr ""
-"Activeu aquesta opció per a mostrar el model de lent amb què es va prendre "
+"Establiu aquesta opció per a mostrar el model de lent amb què es va prendre "
 "la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:150
@@ -51453,7 +51461,7 @@ msgstr "Mostra la data de la càmera"
 #, kde-format
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
-"Activeu aquesta opció per a mostrar la data en què es va prendre la imatge."
+"Establiu aquesta opció per a mostrar la data en què es va prendre la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:154
 #: core/utilities/setup/setuptooltip.cpp:247
@@ -51463,8 +51471,8 @@ msgid ""
 "Set this option to display the camera aperture and focal settings used to "
 "take the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar la configuració de l'obertura i la focal "
-"de la càmera emprades en prendre la imatge."
+"Establiu aquesta opció per a mostrar la configuració de l'obertura i la "
+"focal de la càmera emprades en prendre la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:158
 #: core/utilities/setup/setuptooltip.cpp:251
@@ -51474,7 +51482,7 @@ msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
 "the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar l'exposició i la sensibilitat de la "
+"Establiu aquesta opció per a mostrar l'exposició i la sensibilitat de la "
 "càmera emprades en prendre la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:161
@@ -51489,7 +51497,7 @@ msgid ""
 "Set this option to display the camera mode and program used to take the "
 "image."
 msgstr ""
-"Activeu aquesta opció per a mostrar el mode i el programa de la càmera "
+"Establiu aquesta opció per a mostrar el mode i el programa de la càmera "
 "emprats en prendre la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:165
@@ -51504,7 +51512,7 @@ msgstr "Mostra la configuració del flaix de la càmera"
 msgid ""
 "Set this option to display the camera flash settings used to take the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar la configuració del flaix de la càmera "
+"Establiu aquesta opció per a mostrar la configuració del flaix de la càmera "
 "emprada en prendre la imatge."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:169
@@ -51520,7 +51528,7 @@ msgid ""
 "Set this option to display the camera white balance settings used to take "
 "the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar la configuració del balanç de blancs de "
+"Establiu aquesta opció per a mostrar la configuració del balanç de blancs de "
 "la càmera emprada en prendre la imatge."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:98
@@ -51857,7 +51865,7 @@ msgstr "Afegeix una preferida"
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
-msgstr "Afegeix una carpeta"
+msgstr "Afegeix una subcarpeta"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:118
 #, kde-format
@@ -53956,7 +53964,7 @@ msgid ""
 "a new search virtual album using name set on the left side."
 msgstr ""
 "Si premeu aquest botó, la cerca actual d'imatge similar es desarà a un àlbum "
-"virtual de cerca nou usant el nom indicat a la banda esquerra."
+"virtual de cerca nou usant el nom establert a l'esquerra."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:35
 #, kde-format
@@ -54032,7 +54040,7 @@ msgid ""
 "new search virtual album using the name set on the left side."
 msgstr ""
 "Si premeu aquest botó, la cerca actual aproximada per croquis es desarà a un "
-"àlbum virtual nou de cerca usant el nom indicat a la banda esquerra."
+"àlbum virtual nou de cerca usant el nom establert a l'esquerra."
 
 #: core/utilities/fuzzysearch/sketchwidget.cpp:145
 #, kde-format
@@ -54373,7 +54381,7 @@ msgstr "Mostra els trajectes en el mapa"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
-msgstr "Activeu aquesta opció per a mostrar els trajectes en el mapa."
+msgstr "Establiu aquesta opció per a mostrar els trajectes en el mapa."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
 #, kde-format
@@ -54416,7 +54424,7 @@ msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
-"Determina el desplaçament entre l'hora de la imatge i l'hora del trajecte. "
+"Estableix el desplaçament entre l'hora de la imatge i l'hora del trajecte. "
 "P. ex. per a corregir un rellotge incorrecte de la càmera o una zona horària "
 "diferent."
 
@@ -54424,7 +54432,7 @@ msgstr ""
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
-"Determina si l'hora de la imatge està per davant o darrere de l'hora del "
+"Estableix si l'hora de la imatge està per davant o darrere de l'hora del "
 "trajecte."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
@@ -54445,9 +54453,9 @@ msgid ""
 "time data. If the time difference exceeds this setting, no match will be "
 "attempted."
 msgstr ""
-"Indica la diferència màxima de temps per a interpolar els punts del fitxer "
-"GPX i l'hora de la imatge. Si la diferència de temps excedeix aquesta opció "
-"de configuració, es considera que no coincideixen."
+"Estableix la diferència màxima de temps per a interpolar els punts del "
+"fitxer GPX i l'hora de la imatge. Si la diferència de temps excedeix aquesta "
+"opció de configuració, es considera que no coincideixen."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
@@ -54461,7 +54469,7 @@ msgid ""
 "be matched. If the time difference exceeds this setting, no match will be "
 "attempted."
 msgstr ""
-"Indica la diferència màxima de temps entre un punt del trajecte del GPS i "
+"Estableix la diferència màxima de temps entre un punt del trajecte del GPS i "
 "l'hora de la imatge per a aparellar-los. Si la diferència de temps excedeix "
 "aquesta opció de configuració, es considera que no són coincidents."
 
@@ -55860,8 +55868,8 @@ msgid ""
 "Set this option to display black overlaid on the image. This will help you "
 "to avoid under-exposing the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar el negre sobreacolorit a la imatge. Això "
-"us ajudarà a evitar la subexposició de la imatge."
+"Establiu aquesta opció per a mostrar el negre sobreacolorit a la imatge. "
+"Això us ajudarà a evitar la subexposició de la imatge."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, kde-format
@@ -55876,8 +55884,8 @@ msgid ""
 "Set this option to display white overlaid on the image. This will help you "
 "to avoid over-exposing the image."
 msgstr ""
-"Activeu aquesta opció per a mostrar el blanc sobreacolorit a la imatge. Això "
-"us ajudarà a evitar la sobreexposició de la imatge."
+"Establiu aquesta opció per a mostrar el blanc sobreacolorit a la imatge. "
+"Això us ajudarà a evitar la sobreexposició de la imatge."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:468
 #: core/utilities/import/main/importui.cpp:488
@@ -57596,7 +57604,7 @@ msgid ""
 "Enable this option if you want images automatically rotated or flipped using "
 "Exif information provided by the camera."
 msgstr ""
-"Activeu aquesta opció si voleu que les imatges es girin o inverteixin "
+"Establiu aquesta opció si voleu que les imatges es girin o inverteixin "
 "automàticament d'acord amb la informació Exif proporcionada per la càmera."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:144
@@ -57613,7 +57621,7 @@ msgid ""
 "Enable this option to write the document name to the Exif metadata. The "
 "document name is the original file name of the imported file."
 msgstr ""
-"Activeu aquesta opció per a escriure el nom del document a les metadades de "
+"Establiu aquesta opció per a escriure el nom del document a les metadades de "
 "l'Exif. El nom del document és el nom del fitxer original del fitxer "
 "importat."
 
@@ -57626,8 +57634,8 @@ msgid ""
 "values will be saved in the DateTimeDigitized and DateTimeCreated EXIF, XMP, "
 "and IPTC tags."
 msgstr ""
-"Activeu aquesta opció per a establir les etiquetes de metadades de la data i "
-"hora als valors correctes si la càmera no assigna correctament aquestes "
+"Establiu aquesta opció per a establir les etiquetes de metadades de la data "
+"i hora als valors correctes si la càmera no assigna correctament aquestes "
 "etiquetes quan es prenen les imatges. Els valors es desaran a les etiquetes "
 "Exif, XMP i IPTC, amb DateTimeDigitized i DateTimeCreated."
 
@@ -57638,9 +57646,9 @@ msgid ""
 "Enable this option to automatically convert all JPEG files to a lossless "
 "image format. Note: Image conversion can take a while on a slow computer."
 msgstr ""
-"Activeu aquesta opció per a convertir automàticament tots els fitxers JPEG a "
-"un format d'imatge sense pèrdua. Nota: La conversió de la imatge pot trigar "
-"una estona en un ordinador lent."
+"Establiu aquesta opció per a convertir automàticament tots els fitxers JPEG "
+"a un format d'imatge sense pèrdua. Nota: La conversió de la imatge pot "
+"trigar una estona en un ordinador lent."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:157
 #, kde-kuit-format
@@ -57758,7 +57766,7 @@ msgid ""
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Activeu aquesta opció si voleu baixar les imatges en subàlbums creats "
+"Establiu aquesta opció si voleu baixar les imatges en subàlbums creats "
 "automàticament basats en l'extensió del fitxer dins de l'àlbum de "
 "destinació. D'aquesta manera, podreu separar els fitxers JPEG i RAW en "
 "baixar-los des de la càmera."
@@ -57770,7 +57778,7 @@ msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Activeu aquesta opció si voleu baixar les imatges a subàlbums creats "
+"Establiu aquesta opció si voleu baixar les imatges a subàlbums creats "
 "automàticament segons la data dins l'àlbum de destinació."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:141
@@ -57851,7 +57859,7 @@ msgctxt "@info"
 msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr ""
-"Activeu aquesta opció per a convertir automàticament les imatges RAW al "
+"Establiu aquesta opció per a convertir automàticament les imatges RAW al "
 "contenidor DNG."
 
 #: core/utilities/import/widgets/freespacewidget.cpp:330
@@ -57951,7 +57959,7 @@ msgid ""
 "Turn on this option to use the camera provided image filenames without "
 "modifications."
 msgstr ""
-"Activeu aquesta opció per a usar els noms dels fitxers d'imatge donats per "
+"Establiu aquesta opció per a usar els noms dels fitxers d'imatge donats per "
 "la càmera sense modificacions."
 
 #: core/utilities/import/widgets/renamecustomizer.cpp:118
@@ -58348,7 +58356,9 @@ msgstr "Manteniment"
 #: core/utilities/maintenance/maintenancedlg.cpp:211
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
-msgstr "<qt><b>Seleccioneu les operacions de manteniment a processar</b></qt>"
+msgstr ""
+"<qt><b>Seleccioneu les operacions de manteniment que s'han de processar</b></"
+"qt>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:217
 #, kde-format
@@ -58360,7 +58370,7 @@ msgstr "Processa els elements de:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
-msgstr "Usa les últimes eines i paràmetres actius desats"
+msgstr "Usa les últimes eines i opcions de configuració desades"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:219
 #, kde-format
@@ -58766,7 +58776,7 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
-"No s'ha especificat cap àlbum per a hostatjar els elements processats de la "
+"No s'ha especificat cap àlbum per a allotjar els elements processats de la "
 "cua «%1». Si us plau, seleccioneu-ne un des del plafó de la Configuració de "
 "la cua."
 
@@ -58776,9 +58786,9 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
-"L'àlbum per a hostatjar els elements processats de la cua «%1» no està "
-"disponible o no s'hi pot escriure. Si us plau, especifiqueu-ne un altre des "
-"del plafó de la Configuració de la cua."
+"L'àlbum per a allotjar els elements processats de la cua «%1» no està "
+"disponible o no s'hi pot escriure. Si us plau, establiu-ne un altre des del "
+"plafó de la Configuració de la cua."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
@@ -58798,7 +58808,7 @@ msgstr "Element «%1» de la cua «%2»: %3"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, kde-format
 msgid "Batch queue finished"
-msgstr "S'ha completat la cua de lots"
+msgstr "S'ha completat la cua per lots"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
@@ -58993,7 +59003,7 @@ msgstr "Empra els noms de fitxer originals"
 #, kde-format
 msgid "Turn on this option to use original filenames without modifications."
 msgstr ""
-"Activeu aquesta opció per a usar els noms de fitxer originals sense "
+"Establiu aquesta opció per a usar els noms de fitxer originals sense "
 "modificacions."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:184
@@ -59033,7 +59043,7 @@ msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
 msgstr ""
-"Activeu aquesta opció per a desar les modificacions actuals a una versió "
+"Establiu aquesta opció per a desar les modificacions actuals a una versió "
 "nova del fitxer"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:237
@@ -59042,7 +59052,7 @@ msgid ""
 "Turn on this option to use all CPU core from your computer to process more "
 "than one item from a queue at the same time."
 msgstr ""
-"Activeu aquesta opció per a usar tots els nuclis de la CPU de l'ordinador "
+"Establiu aquesta opció per a usar tots els nuclis de la CPU de l'ordinador "
 "per a processar més d'un element de la cua al mateix temps."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:250
@@ -59208,7 +59218,7 @@ msgstr "Descripció"
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "Gestor de la cua de lots"
+msgstr "Gestor de la cua per lots"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:116
 #, kde-format
@@ -59762,8 +59772,9 @@ msgid "Country"
 msgstr "País"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr "País de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -59772,18 +59783,21 @@ msgid "Province"
 msgstr "Província"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr "Província de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County"
-msgstr "Comtat"
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Sublocalització:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "Comtat de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -59792,8 +59806,9 @@ msgid "City"
 msgstr "Ciutat"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
-msgid "City of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Ciutat de l'emplaçament mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -60285,8 +60300,8 @@ msgstr "Mostra el &nom del fitxer"
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el nom del fitxer a sota de la miniatura "
-"de la imatge."
+"Establiu aquesta opció per a mostrar el nom del fitxer a sota de la "
+"miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:472
@@ -60299,7 +60314,7 @@ msgstr "Mostra la &mida del fitxer"
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la mida del fitxer a sota de la "
+"Establiu aquesta opció per a mostrar la mida del fitxer a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:159
@@ -60314,7 +60329,7 @@ msgstr "Mostra la da&ta de creació de la càmera"
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la data de creació de la càmera a sota "
+"Establiu aquesta opció per a mostrar la data de creació de la càmera a sota "
 "de la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:163
@@ -60329,10 +60344,10 @@ msgid ""
 "if it is different than camera creation date. This option is useful to "
 "identify quickly which items have been modified."
 msgstr ""
-"Activeu aquesta opció per a mostrar la data de modificació del fitxer a sota "
-"de la miniatura de la imatge si aquesta és diferent de la data de creació de "
-"la càmera. Aquesta opció és útil per a identificar ràpidament quins elements "
-"han estat modificats."
+"Establiu aquesta opció per a mostrar la data de modificació del fitxer a "
+"sota de la miniatura de la imatge si aquesta és diferent de la data de "
+"creació de la càmera. Aquesta opció és útil per a identificar ràpidament "
+"quins elements han estat modificats."
 
 #: core/utilities/setup/album/setupalbumview.cpp:168
 #, kde-format
@@ -60344,8 +60359,8 @@ msgstr "Mostra les dimensions de la imat&ge"
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la mida en píxels de la imatge a sota de "
-"la miniatura de la imatge."
+"Establiu aquesta opció per a mostrar la mida en píxels de la imatge a sota "
+"de la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:172
 #, kde-format
@@ -60357,8 +60372,8 @@ msgstr "Mostra la relació d'aspecte de la imatge"
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la relació d'aspecte de la imatge a sota "
-"de la miniatura de la imatge."
+"Establiu aquesta opció per a mostrar la relació d'aspecte de la imatge a "
+"sota de la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:176
 #, kde-format
@@ -60369,7 +60384,7 @@ msgstr "Mostra el format de la imatge"
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el tipus MIME de la imatge sobre la "
+"Establiu aquesta opció per a mostrar el tipus MIME de la imatge sobre la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:179
@@ -60381,7 +60396,7 @@ msgstr "Mostra el títo&l del digiKam"
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el títol del digiKam a sota de la "
+"Establiu aquesta opció per a mostrar el títol del digiKam a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:183
@@ -60393,7 +60408,7 @@ msgstr "Mostra les &llegendes del digiKam"
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar les llegendes del digiKam a sota de la "
+"Establiu aquesta opció per a mostrar les llegendes del digiKam a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:187
@@ -60407,8 +60422,8 @@ msgstr "Mostra les e&tiquetes del digiKam"
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la llista d'etiquetes del digiKam a sota "
-"de la miniatura de la imatge."
+"Establiu aquesta opció per a mostrar la llista d'etiquetes del digiKam a "
+"sota de la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:191
 #, kde-format
@@ -60419,7 +60434,7 @@ msgstr "Mostra la &valoració del digiKam"
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la valoració del digiKam a sota de la "
+"Establiu aquesta opció per a mostrar la valoració del digiKam a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:195
@@ -60432,7 +60447,7 @@ msgstr "Mostra el &rètol de selecció del digiKam"
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el rètol de selecció del digiKam a sota "
+"Establiu aquesta opció per a mostrar el rètol de selecció del digiKam a sota "
 "de la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:199
@@ -60446,7 +60461,7 @@ msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar el rètol de color del digiKam a sota de "
+"Establiu aquesta opció per a mostrar el rètol de color del digiKam a sota de "
 "la miniatura de la imatge."
 
 #: core/utilities/setup/album/setupalbumview.cpp:203
@@ -60461,7 +60476,7 @@ msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
 "to process left or right image rotation."
 msgstr ""
-"Activeu aquesta opció per a mostrar els botons superposats a sobre de la "
+"Establiu aquesta opció per a mostrar els botons superposats a sobre de la "
 "miniatura de la imatge, per a poder girar la imatge a la dreta o l'esquerra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:207
@@ -60475,7 +60490,7 @@ msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
 "it in fullscreen mode."
 msgstr ""
-"Activeu aquesta opció per a mostrar un botó a sobre de la miniatura de la "
+"Establiu aquesta opció per a mostrar un botó a sobre de la miniatura de la "
 "imatge per a obrir-la en el mode de pantalla completa."
 
 #: core/utilities/setup/album/setupalbumview.cpp:211
@@ -60490,7 +60505,7 @@ msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
 "geolocation information."
 msgstr ""
-"Activeu aquesta opció per a mostrar una icona a sobre de la miniatura de la "
+"Establiu aquesta opció per a mostrar una icona a sobre de la miniatura de la "
 "imatge si l'element conté informació de geolocalització."
 
 #: core/utilities/setup/album/setupalbumview.cpp:214
@@ -60624,8 +60639,8 @@ msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr ""
-"Activeu aquesta opció per a mostrar el nombre d'elements que conté al nom de "
-"l'àlbum dins de la vista d'icones."
+"Establiu aquesta opció per a mostrar el nombre d'elements que conté al nom "
+"de l'àlbum dins de la vista d'icones."
 
 #: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
@@ -61089,7 +61104,7 @@ msgid ""
 "drive when mounted<br/>on your desktop), please use<br/><a href=\"umscamera"
 "\">%1</a> from the camera list.</p>"
 msgstr ""
-"<p>Per a indicar una càmera <b>USB d'emmagatzematge massiu</b><br/>(que "
+"<p>Per a establir una càmera <b>USB d'emmagatzematge massiu</b><br/>(que "
 "apareix com una unitat extraïble quan està muntada), <br/>useu <a href="
 "\"umscamera\">%1</a> des de la llista de càmeres.</p>"
 
@@ -61100,7 +61115,7 @@ msgid ""
 "Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the camera list."
 "</p>"
 msgstr ""
-"<p>Per a indicar un <b>dispositiu USB genèric PTP</b><br/>(que usa el "
+"<p>Per a establir un <b>dispositiu USB genèric PTP</b><br/>(que usa el "
 "protocol per a la transferència d'imatges <br/>-Picture Transfer Protocol-), "
 "si us plau, <br/>useu <a href=\"ptpcamera\">%1</a> des de la llista de "
 "càmeres.</p>"
@@ -61112,7 +61127,7 @@ msgid ""
 "Transfer Protocol), please<br/>use <a href=\"ptpipcamera\">%1</a> from the "
 "camera list.</p>"
 msgstr ""
-"<p>Per a indicar un <b>Dispositiu de xarxa PTP/IP genèric</b><br/>(el qual "
+"<p>Per a establir un <b>Dispositiu de xarxa PTP/IP genèric</b><br/>(el qual "
 "usa el protocol per a la transferència d'imatges, si us plau, <br/>useu <a "
 "href=\"ptpipcamera\">%1</a> des de la llista de càmeres.</p>"
 
@@ -61307,7 +61322,7 @@ msgstr "Mostra el format de la imatge"
 #, kde-format
 msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar les etiquetes del digiKam a sota de la "
+"Establiu aquesta opció per a mostrar les etiquetes del digiKam a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/camera/setupcamera.cpp:495
@@ -61319,7 +61334,7 @@ msgstr "Mostra la &valoració de l'element"
 #, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
 msgstr ""
-"Activeu aquesta opció per a mostrar la valoració de l'element a sota de la "
+"Establiu aquesta opció per a mostrar la valoració de l'element a sota de la "
 "miniatura de la imatge."
 
 #: core/utilities/setup/camera/setupcamera.cpp:500
@@ -61328,7 +61343,7 @@ msgid ""
 "Set this option to show overlay buttons on the image thumbnail for image "
 "rotation."
 msgstr ""
-"Activeu aquesta opció per a mostrar els botons superposats a sobre de la "
+"Establiu aquesta opció per a mostrar els botons superposats a sobre de la "
 "miniatura de la imatge per a girar la imatge."
 
 #: core/utilities/setup/camera/setupcamera.cpp:505
@@ -61367,7 +61382,7 @@ msgid ""
 "images, a half size version of the Raw data is used instead of the embedded "
 "JPEG preview.</p>"
 msgstr ""
-"<p>Activeu aquesta opció per a carregar les imatges a mida completa per a "
+"<p>Establiu aquesta opció per a carregar les imatges a mida completa per a "
 "les vistes prèvies en lloc d'una mina reduïda. Com que aquesta opció farà "
 "que es trigui més temps a carregar les imatges, useu-la només si teniu un "
 "ordinador ràpid.</p><p><b>Nota:</b> Per a imatges RAW, s'usa una versió de "
@@ -61383,7 +61398,7 @@ msgstr "Vista prèvia de cada element mentre es baixa"
 #, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
-"<p>Activeu aquesta opció per a una vista prèvia de cada element mentre es "
+"<p>Establiu aquesta opció per a una vista prèvia de cada element mentre es "
 "baixa.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
@@ -61849,7 +61864,7 @@ msgid ""
 "Enable this option to use the background theme color in the image editor "
 "area."
 msgstr ""
-"Activeu aquesta opció per a usar el color del fons del tema en l'àrea de "
+"Establiu aquesta opció per a usar el color del fons del tema en l'àrea de "
 "l'editor d'imatges."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:136
@@ -61959,7 +61974,7 @@ msgid ""
 "Enable this option to restore the settings of the Image Editor tools from "
 "the last session. Otherwise, the default settings will be used."
 msgstr ""
-"Activeu aquesta opció per a restaurar la configuració de les eines de "
+"Establiu aquesta opció per a restaurar la configuració de les eines de "
 "l'editor d'imatges de la darrera sessió. Altrament, s'usarà la configuració "
 "predeterminada."
 
@@ -62505,7 +62520,7 @@ msgstr "Separador:"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
 #, kde-format
 msgid "Set Tags Path:"
-msgstr "Establiu la ubicació de les etiquetes:"
+msgstr "Establiu el camí de les etiquetes:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
 #, kde-format
@@ -62646,7 +62661,7 @@ msgid ""
 "Turn on this option to push rating, comments and tags from digiKam into the "
 "Baloo storage"
 msgstr ""
-"Activeu aquesta opció per a passar les valoracions, comentaris i etiquetes "
+"Establiu aquesta opció per a passar les valoracions, comentaris i etiquetes "
 "del digiKam a l'emmagatzematge del Baloo"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
@@ -62663,7 +62678,7 @@ msgid ""
 "tags made in Baloo to digiKam's metadata storage. Please note that image "
 "metadata will not be edited automatically."
 msgstr ""
-"Activeu aquesta opció si voleu aplicar els canvis a les valoracions, "
+"Establiu aquesta opció si voleu aplicar els canvis a les valoracions, "
 "comentaris i etiquetes fetes al Baloo a l'emmagatzematge de metadades del "
 "digiKam. Cal tenir en compte que les metadades de la imatge no s'editaran "
 "automàticament."
@@ -62723,7 +62738,7 @@ msgstr "Etiquetes a la imatge"
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item tags in the XMP and IPTC tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar les etiquetes de l'element a les "
+"Establiu aquesta opció per a emmagatzemar les etiquetes de l'element a les "
 "etiquetes XMP i IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:50
@@ -62739,9 +62754,9 @@ msgid ""
 "Turn on this option to store item caption and title in the JFIF Comment "
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar la llegenda i el títol de l'element "
-"a la secció de comentaris JFIF, l'etiqueta Exif, l'etiqueta XMP i l'etiqueta "
-"IPTC."
+"Establiu aquesta opció per a emmagatzemar la llegenda i el títol de "
+"l'element a la secció de comentaris JFIF, l'etiqueta Exif, l'etiqueta XMP i "
+"l'etiqueta IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
@@ -62756,7 +62771,7 @@ msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar la valoració de l'element a les "
+"Establiu aquesta opció per a emmagatzemar la valoració de l'element a les "
 "etiquetes Exif i XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
@@ -62770,8 +62785,8 @@ msgstr "Rètol de selecció"
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar el rètol de selecció de l'element a "
-"les etiquetes XMP."
+"Establiu aquesta opció per a emmagatzemar el rètol de selecció de l'element "
+"a les etiquetes XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
@@ -62784,7 +62799,7 @@ msgstr "Rètol de color"
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar el rètol de color de l'element a "
+"Establiu aquesta opció per a emmagatzemar el rètol de color de l'element a "
 "les etiquetes XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
@@ -62800,7 +62815,7 @@ msgid ""
 "Turn on this option to store the item date and time in the EXIF, XMP, and "
 "IPTC tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar la data i hora de l'element a les "
+"Establiu aquesta opció per a emmagatzemar la data i hora de l'element a les "
 "etiquetes Exif, XMP i IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
@@ -62816,8 +62831,8 @@ msgid ""
 "Turn on this option to store the metadata template in the XMP and the IPTC "
 "tags. You can set template values to Template setup page."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar la plantilla de les metadades a les "
-"etiquetes XMP i IPTC. Podeu indicar valors de plantilla a la pàgina "
+"Establiu aquesta opció per a emmagatzemar la plantilla de les metadades a "
+"les etiquetes XMP i IPTC. Podeu indicar valors de plantilla a la pàgina "
 "d'arranjament de plantilla."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:81
@@ -62832,7 +62847,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar les etiquetes de cares amb "
+"Establiu aquesta opció per a emmagatzemar les etiquetes de cares amb "
 "rectangles de la cara en les etiquetes XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
@@ -62848,7 +62863,7 @@ msgid ""
 "Turn on this option to store Geolocation information in the Exif tag and the "
 "XMP tags."
 msgstr ""
-"Activeu aquesta opció per a emmagatzemar la informació de geolocalització a "
+"Establiu aquesta opció per a emmagatzemar la informació de geolocalització a "
 "les etiquetes Exif i XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
@@ -62873,9 +62888,9 @@ msgid ""
 "Exiv2. This will slowdown a little bit the synchronization of files metadata "
 "with database."
 msgstr ""
-"Activeu aquesta opció per a escriure les metadades als fitxers amb el dorsal "
-"de l'ExifTool en lloc de l'Exiv2. Això alentirà una mica la sincronització "
-"de les metadades dels fitxers amb la base de dades."
+"Establiu aquesta opció per a escriure les metadades als fitxers amb el "
+"dorsal de l'ExifTool en lloc de l'Exiv2. Això alentirà una mica la "
+"sincronització de les metadades dels fitxers amb la base de dades."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -62887,7 +62902,7 @@ msgstr "Escriu les metadades als fitxers DNG"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to write metadata into DNG files."
-msgstr "Activeu aquesta opció per a escriure les metadades als fitxers DNG."
+msgstr "Establiu aquesta opció per a escriure les metadades als fitxers DNG."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:125
 #, kde-format
@@ -62902,7 +62917,7 @@ msgid ""
 "Turn on this option to write metadata into RAW files. This feature is "
 "delegate to ExifTool backend and is disabled by default."
 msgstr ""
-"Activeu aquesta opció per a escriure les metadades en els fitxers RAW. "
+"Establiu aquesta opció per a escriure les metadades en els fitxers RAW. "
 "Aquesta característica està delegada en el dorsal de l'ExifTool i està "
 "desactivada de manera predeterminada."
 
@@ -63136,7 +63151,7 @@ msgid ""
 "shown rotated. Enable this option to allow editing this field. "
 msgstr ""
 "Les metadades del fitxer en general conten una etiqueta descrivint que "
-"aquest es girarà en mostrar-lo. Activeu aquesta opció per a permetre "
+"aquest es girarà en mostrar-lo. Establiu aquesta opció per a permetre "
 "l'edició d'aquest camp."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:107
@@ -63189,8 +63204,8 @@ msgid ""
 "Turn on this option to read metadata from XMP sidecar files when reading "
 "metadata."
 msgstr ""
-"Activeu aquesta opció per a llegir les metadades des de fitxers laterals XMP "
-"en llegir les metadades."
+"Establiu aquesta opció per a llegir les metadades des de fitxers laterals "
+"XMP en llegir les metadades."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
 #, kde-format
@@ -63204,7 +63219,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
 msgstr ""
-"Activeu aquesta opció per a desar les metadades a fitxers laterals XMP."
+"Establiu aquesta opció per a desar les metadades a fitxers laterals XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
 #, kde-format
@@ -63245,7 +63260,7 @@ msgid ""
 "name (BASENAME.xmp) used by many commercial programs. For Darktable do not "
 "enable this option."
 msgstr ""
-"Activeu aquesta opció per a crear els fitxers laterals XMP en un format de "
+"Establiu aquesta opció per a crear els fitxers laterals XMP en un format de "
 "nom de fitxer compatible (BASENAME.xmp) usat per molts programes comercials. "
 "No activeu aquesta opció per al Darktable."
 
@@ -63286,7 +63301,7 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
-"Aquí es poden afegir extensions extres als fitxers laterals\n"
+"Aquí es poden afegir extensions addicionals als fitxers laterals\n"
 "que es processaran junt amb els elements normals. Aquests\n"
 "fitxers no seran visibles, però es consideraran com una\n"
 "extensió del fitxer principal. Només cal escriure «xyz abc»\n"
@@ -63352,7 +63367,7 @@ msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
-"La data de l'àlbum s'ajusta en funció de l'opció definida quan es troben "
+"La data de l'àlbum s'ajusta en funció de l'opció establerta quan es troben "
 "elements nous durant l'exploració."
 
 #: core/utilities/setup/misc/setupmisc.cpp:50
@@ -63481,7 +63496,7 @@ msgid ""
 "recognition db.\n"
 "For clean up routines for other databases, please use the maintenance."
 msgstr ""
-"Activeu aquesta opció per a forçar al digiKam a netejar la base de dades "
+"Establiu aquesta opció per a forçar al digiKam a netejar la base de dades "
 "nucli de les entrades d'elements obsolets.\n"
 "Només se suprimiran les entrades si el fitxer d'imatge/vídeo/àudio ja s'ha "
 "eliminat, és a dir,\n"
@@ -63614,8 +63629,8 @@ msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
-"<b>Nota: Tots els canvis en aquests paràmetres només tindran efecte després "
-"de reiniciar. Alguns dels paràmetres depenen del maquinari i podrien no "
+"<b>Nota: Tots els canvis en aquestes opcions de configuració només tindran "
+"efecte després de reiniciar. Algunes depenen del maquinari i podrien no "
 "tenir cap efecte.</b>"
 
 #: core/utilities/setup/setup.cpp:153
@@ -64091,8 +64106,8 @@ msgid ""
 "Editor window. <i>Warning</i>: This can slow down rendering of the image, "
 "depending on the speed of your computer.</p>"
 msgstr ""
-"<p>Activeu aquesta opció si voleu usar el <b>Perfil de color del monitor</b> "
-"per a visualitzar les imatges a la finestra de l'editor d'imatges amb una "
+"<p>Establiu aquesta opció si voleu usar el <b>Perfil de color del monitor</"
+"b> per a visualitzar les imatges a la finestra de l'editor d'imatges amb una "
 "correcció de color adaptada al vostre monitor. En qualsevol moment podeu "
 "commutar aquesta opció des de la finestra de l'editor. <i>Avís</i>: aquesta "
 "opció pot retardar la renderització de les imatges a la pantalla, depenent "
@@ -64335,7 +64350,7 @@ msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr ""
-"Activeu aquesta opció per a sincronitzar automàticament el zoom i la "
+"Establiu aquesta opció per a sincronitzar automàticament el zoom i la "
 "panoràmica entre els plafons esquerre i dret si les imatges tenen la mateixa "
 "mida."
 
@@ -64352,7 +64367,7 @@ msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr ""
-"Activeu aquesta opció per a carregar automàticament una imatge en el plafó "
+"Establiu aquesta opció per a carregar automàticament una imatge en el plafó "
 "dret quan se seleccioni l'element corresponent a la barra de miniatures."
 
 #: core/utilities/setup/setuplighttable.cpp:101
@@ -64366,7 +64381,7 @@ msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
-"Activeu aquesta opció per a treure totes les imatges de la taula de llum "
+"Establiu aquesta opció per a treure totes les imatges de la taula de llum "
 "quan la tanqueu, o desactiveu-la per a conservar les imatges que hi hagi."
 
 #: core/utilities/setup/setupplugins.cpp:73
@@ -64385,7 +64400,7 @@ msgstr "Editor d'imatges"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr "Gestor de la cua de lots"
+msgstr "Gestor de la cua per lots"
 
 #: core/utilities/setup/setupplugins.cpp:91
 #, kde-format
@@ -64470,7 +64485,7 @@ msgid ""
 "Set this option to display image information when the mouse hovers over an "
 "icon-view or thumb-bar item."
 msgstr ""
-"Activeu aquesta opció per a mostrar la informació de la imatge quan el "
+"Establiu aquesta opció per a mostrar la informació de la imatge quan el "
 "ratolí passi per sobre d'un element de la vista d'icones o de la barra de "
 "miniatures."
 
@@ -64512,7 +64527,8 @@ msgstr "Relació d'aspecte de la imatge"
 #: core/utilities/setup/setuptooltip.cpp:219
 #, kde-format
 msgid "Set this option to display the image aspect ratio."
-msgstr "Activeu aquesta opció per a mostrar la relació d'aspecte de la imatge."
+msgstr ""
+"Establiu aquesta opció per a mostrar la relació d'aspecte de la imatge."
 
 #: core/utilities/setup/setuptooltip.cpp:235
 #: core/utilities/setup/setuptooltip.cpp:415
@@ -64569,7 +64585,7 @@ msgstr "Nom de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:356
 #, kde-format
 msgid "Set this option to display the album name."
-msgstr "Activeu aquesta opció per a mostrar el nom de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar el nom de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:285
 #, kde-format
@@ -64579,7 +64595,7 @@ msgstr "Títol de la imatge"
 #: core/utilities/setup/setuptooltip.cpp:286
 #, kde-format
 msgid "Set this option to display the image title."
-msgstr "Activeu aquesta opció per a mostrar el títol de la imatge."
+msgstr "Establiu aquesta opció per a mostrar el títol de la imatge."
 
 #: core/utilities/setup/setuptooltip.cpp:288
 #, kde-format
@@ -64589,7 +64605,7 @@ msgstr "Llegenda de la imatge"
 #: core/utilities/setup/setuptooltip.cpp:289
 #, kde-format
 msgid "Set this option to display the image captions."
-msgstr "Activeu aquesta opció per a mostrar les llegendes de la imatge."
+msgstr "Establiu aquesta opció per a mostrar les llegendes de la imatge."
 
 #: core/utilities/setup/setuptooltip.cpp:291
 #, kde-format
@@ -64599,7 +64615,7 @@ msgstr "Etiquetes de la imatge"
 #: core/utilities/setup/setuptooltip.cpp:292
 #, kde-format
 msgid "Set this option to display the image tags."
-msgstr "Activeu aquesta opció per a mostrar les etiquetes de la imatge."
+msgstr "Establiu aquesta opció per a mostrar les etiquetes de la imatge."
 
 #: core/utilities/setup/setuptooltip.cpp:294
 #, kde-format
@@ -64610,7 +64626,7 @@ msgstr "Rètols de la imatge"
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
 msgstr ""
-"Activeu aquesta opció per a mostrar els rètols de selecció, color i "
+"Establiu aquesta opció per a mostrar els rètols de selecció, color i "
 "valoració de la imatge."
 
 #: core/utilities/setup/setuptooltip.cpp:307
@@ -64627,23 +64643,24 @@ msgstr "Relació d'aspecte del vídeo"
 #: core/utilities/setup/setuptooltip.cpp:326
 #, kde-format
 msgid "Set this option to display the Aspect Ratio of the Video."
-msgstr "Activeu aquesta opció per a mostrar la relació d'aspecte del vídeo."
+msgstr "Establiu aquesta opció per a mostrar la relació d'aspecte del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:314
 #, kde-format
 msgid "Set this option to display the Audio Bit Rate of the Video."
-msgstr "Activeu aquesta opció per a mostrar la taxa de bits d'àudio del vídeo."
+msgstr ""
+"Establiu aquesta opció per a mostrar la taxa de bits d'àudio del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:317
 #, kde-format
 msgid "Set this option to display the Audio Channel Type of the Video."
 msgstr ""
-"Activeu aquesta opció per a mostrar el tipus de canal d'àudio del vídeo."
+"Establiu aquesta opció per a mostrar el tipus de canal d'àudio del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:320
 #, kde-format
 msgid "Set this option to display the Audio Codec of the Video."
-msgstr "Activeu aquesta opció per a mostrar el còdec d'àudio del vídeo."
+msgstr "Establiu aquesta opció per a mostrar el còdec d'àudio del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:322
 #, kde-format
@@ -64653,7 +64670,7 @@ msgstr "Durada del vídeo"
 #: core/utilities/setup/setuptooltip.cpp:323
 #, kde-format
 msgid "Set this option to display the Duration of the Video."
-msgstr "Activeu aquesta opció per a mostrar la durada del vídeo."
+msgstr "Establiu aquesta opció per a mostrar la durada del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:325
 #, kde-format
@@ -64663,7 +64680,7 @@ msgstr "Velocitat dels fotogrames del vídeo"
 #: core/utilities/setup/setuptooltip.cpp:329
 #, kde-format
 msgid "Set this option to display the Codec of the Video."
-msgstr "Activeu aquesta opció per a mostrar el còdec del vídeo."
+msgstr "Establiu aquesta opció per a mostrar el còdec del vídeo."
 
 #: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
@@ -64682,7 +64699,7 @@ msgid ""
 "Set this option to display album information when the mouse hovers over a "
 "folder-view item."
 msgstr ""
-"Activeu aquesta opció per a mostrar la informació de l'àlbum quan el ratolí "
+"Establiu aquesta opció per a mostrar la informació de l'àlbum quan el ratolí "
 "passi per sobre d'un element de la vista de carpetes."
 
 #: core/utilities/setup/setuptooltip.cpp:358
@@ -64693,7 +64710,7 @@ msgstr "Data de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:359
 #, kde-format
 msgid "Set this option to display the album date."
-msgstr "Activeu aquesta opció per a mostrar la data de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar la data de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:361
 #, kde-format
@@ -64703,7 +64720,7 @@ msgstr "Col·lecció de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:362
 #, kde-format
 msgid "Set this option to display the album collection."
-msgstr "Activeu aquesta opció per a mostrar la col·lecció de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar la col·lecció de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:364
 #, kde-format
@@ -64713,7 +64730,7 @@ msgstr "Categoria de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:365
 #, kde-format
 msgid "Set this option to display the album category."
-msgstr "Activeu aquesta opció per a mostrar la categoria de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar la categoria de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:367
 #, kde-format
@@ -64723,7 +64740,7 @@ msgstr "Llegenda de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:368
 #, kde-format
 msgid "Set this option to display the album caption."
-msgstr "Activeu aquesta opció per a mostrar la llegenda de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar la llegenda de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:370
 #, kde-format
@@ -64733,7 +64750,7 @@ msgstr "Vista prèvia de l'àlbum"
 #: core/utilities/setup/setuptooltip.cpp:371
 #, kde-format
 msgid "Set this option to display the album preview."
-msgstr "Activeu aquesta opció per a mostrar la vista prèvia de l'àlbum."
+msgstr "Establiu aquesta opció per a mostrar la vista prèvia de l'àlbum."
 
 #: core/utilities/setup/setuptooltip.cpp:390
 #, kde-format
@@ -64753,7 +64770,7 @@ msgstr "Nom de l'element"
 #: core/utilities/setup/setuptooltip.cpp:397
 #, kde-format
 msgid "Set this option to display the item name."
-msgstr "Activeu aquesta opció per a mostrar el nom de l'element."
+msgstr "Establiu aquesta opció per a mostrar el nom de l'element."
 
 #: core/utilities/setup/setuptooltip.cpp:399
 #, kde-format
@@ -64763,7 +64780,7 @@ msgstr "Data de l'element"
 #: core/utilities/setup/setuptooltip.cpp:400
 #, kde-format
 msgid "Set this option to display the item date."
-msgstr "Activeu aquesta opció per a mostrar la data de l'element."
+msgstr "Establiu aquesta opció per a mostrar la data de l'element."
 
 #: core/utilities/setup/setuptooltip.cpp:402
 #, kde-format
@@ -64773,7 +64790,7 @@ msgstr "Mida de l'element"
 #: core/utilities/setup/setuptooltip.cpp:403
 #, kde-format
 msgid "Set this option to display the item size."
-msgstr "Activeu aquesta opció per a mostrar la mida de l'element."
+msgstr "Establiu aquesta opció per a mostrar la mida de l'element."
 
 #: core/utilities/setup/setuptooltip.cpp:405
 #, kde-format
@@ -64783,7 +64800,7 @@ msgstr "Tipus de l'element"
 #: core/utilities/setup/setuptooltip.cpp:406
 #, kde-format
 msgid "Set this option to display the item type."
-msgstr "Activeu aquesta opció per a mostrar el tipus de l'element."
+msgstr "Establiu aquesta opció per a mostrar el tipus de l'element."
 
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
@@ -64793,7 +64810,7 @@ msgstr "Dimensions de l'element"
 #: core/utilities/setup/setuptooltip.cpp:409
 #, kde-format
 msgid "Set this option to display the item dimensions."
-msgstr "Activeu aquesta opció per a mostrar les dimensions de l'element."
+msgstr "Establiu aquesta opció per a mostrar les dimensions de l'element."
 
 #: core/utilities/setup/setuptooltip.cpp:412
 #, kde-format
@@ -64832,3 +64849,6 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid "County"
+#~ msgstr "Comtat"

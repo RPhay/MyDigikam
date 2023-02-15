@@ -66,6 +66,7 @@ public:
         STYLE_PLASTIQUE,
         STYLE_BREEZE,
         STYLE_FUSION,
+        STYLE_OXYGEN,
         STYLE_GTK2
     };
 
@@ -226,7 +227,8 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
 
     QStyleOptionProgressBar progressOpts = progressBarOptions();
 
-    if (d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)
+    if ((d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2) ||
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN))
     {
         progressOpts.state |= QStyle::State_Horizontal;
     }
@@ -688,6 +690,10 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             hint += QSize(2, 0);
             break;
 
+        case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
+            hint += QSize(8, 8);
+            break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
             hint += QSize(8, 8);
             break;
@@ -968,6 +974,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("breeze"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_BREEZE;
+        }
+        else if (style()->objectName() == QLatin1String("oxygen"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN;
         }
         else if (style()->objectName() == QLatin1String("gtk2"))
         {

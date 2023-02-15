@@ -21,7 +21,6 @@
 // Qt includes
 
 #include <QExplicitlySharedDataPointer>
-#include <QApplication>
 #include <QMetaMethod>
 #include <QMutex>
 #include <QSharedData>
@@ -61,7 +60,7 @@ public:
                                                   const DImg& image);
     FacePipelineExtendedPackage::Ptr filterOrBuildPackage(const ItemInfo& info);
 
-    bool hasFinished();
+    bool hasFinished() const;
     void checkFinished();
     void start();
     void stop();

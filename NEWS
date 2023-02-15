@@ -268,4 +268,6 @@ BUGFIXES:
 227 ==> 465015 - Moving a video with a colour tag to a directory containing a video with the same name removes tag during rename.
 228 ==> 380967 - Add option to synchronize same description in images.
 229 ==> 465286 - Add ART (another raw therapee) to list to Raw Import tools.
-230 ==> 
+230 ==> 465462 - Writing Metadata changes immediatly to files.
+231 ==> 465679 - Wrong field label in advanced search screen (geographic position part).
+232 ==> 

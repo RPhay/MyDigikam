@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:57+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-01-22 19:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -12193,10 +12193,10 @@ msgstr "Enregistrement des changements - "
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -17778,7 +17778,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "Définir les images entre crochets"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17788,13 +17788,13 @@ msgstr ""
 "Définir ici la liste des images ayant fait l'objet d'une prise de vue en "
 "fourchette pour les fusionner. Veuillez suivre ces recommandations."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "Au moins deux images du même sujet doivent être ajoutées à la pile."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
@@ -17802,13 +17802,13 @@ msgid "Do not mix images with different color depth."
 msgstr ""
 "Ne pas mélanger les images ayant des profondeurs différentes de couleurs."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr "Toutes les images doivent avoir les mêmes dimensions."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
@@ -18570,9 +18570,13 @@ msgid "Jalbum completed."
 msgstr "Jalbum terminé."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18615,8 +18619,9 @@ msgid "Create jAlbum Album"
 msgstr "Créer album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Bienvenue dans l'outil d'album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -23286,7 +23291,7 @@ msgid "Start upload to Box"
 msgstr "Démarrer l'envoi vers Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -23297,13 +23302,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/google/gswindow.cpp:507
+#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -23314,8 +23319,8 @@ msgid "Warning"
 msgstr "Attention"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:508
+#: core/dplugins/generic/webservices/google/gswindow.cpp:533
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -23326,12 +23331,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -23343,12 +23348,12 @@ msgstr "Continuer"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:537
+#: core/dplugins/generic/webservices/google/gswindow.cpp:951
+#: core/dplugins/generic/webservices/google/gswindow.cpp:972
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -23360,7 +23365,7 @@ msgstr "Annuler"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:612
+#: core/dplugins/generic/webservices/google/gswindow.cpp:613
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -24784,19 +24789,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "L'appel à Google Drive a échoué : %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Exportation vers Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:626
+#: core/dplugins/generic/webservices/google/gswindow.cpp:627
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Exportation vers Google Photo"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:946
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24806,7 +24811,7 @@ msgstr ""
 "Impossible d'enregistrer une photo : %1\n"
 "Voulez-vous vraiment continuer ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24816,13 +24821,13 @@ msgstr ""
 "Impossible de télécharger une photo : %1\n"
 "Voulez-vous vraiment continuer ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:994
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Impossible d'enregistrer une image dans %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24834,7 +24839,7 @@ msgstr ""
 "%2\n"
 "Voulez-vous vraiment continuer ?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24846,13 +24851,13 @@ msgstr ""
 "%2\n"
 "Aucune image n'a été envoyée vers votre compte."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1069
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Ok"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24862,7 +24867,7 @@ msgstr ""
 "L'appel de Google Drive a échoué :\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -24872,7 +24877,7 @@ msgstr ""
 "L'appel à Google Photos a échoué :\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -37650,13 +37655,13 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "%1 octets de données binaires"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 "Le logiciel « Exiftool » n'existe pas ou n'a pas de permission d'exécution."
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""
@@ -44889,14 +44894,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "Description"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "oui"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
@@ -60452,8 +60457,9 @@ msgid "Country"
 msgstr "Pays"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -60465,19 +60471,19 @@ msgstr "Province :"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country"
-msgid "County"
-msgstr "Pays"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Lieu :"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -60489,7 +60495,7 @@ msgstr "Ville :"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -65629,6 +65635,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#, fuzzy
+#~| msgid "Country"
+#~ msgid "County"
+#~ msgstr "Pays"
 
 #~ msgctxt "@title"
 #~ msgid "Geolocation Editor"

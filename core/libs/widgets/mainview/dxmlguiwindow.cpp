@@ -266,12 +266,12 @@ void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
 
 #ifdef Q_OS_WIN
 
-    int  w   = group.readEntry(QString::fromLatin1("DK Width"),     win->width());
-    int  h   = group.readEntry(QString::fromLatin1("DK Height"),    win->height());
-    int  x   = group.readEntry(QString::fromLatin1("DK PositionX"), win->geometry().x());
-    int  y   = group.readEntry(QString::fromLatin1("DK PositionY"), win->geometry().y());
-    bool max = group.readEntry(QString::fromLatin1("DK Maximized"), (bool)(win->windowState() &
-                                                                           Qt::WindowMaximized));
+    int  w   = group.readEntry(QLatin1String("DK Width"),     win->width());
+    int  h   = group.readEntry(QLatin1String("DK Height"),    win->height());
+    int  x   = group.readEntry(QLatin1String("DK PositionX"), win->geometry().x());
+    int  y   = group.readEntry(QLatin1String("DK PositionY"), win->geometry().y());
+    bool max = group.readEntry(QLatin1String("DK Maximized"), (bool)(win->windowState() &
+                                                                     Qt::WindowMaximized));
 
     if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
     {
@@ -303,12 +303,12 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 
 #ifdef Q_OS_WIN
 
-    group.writeEntry(QString::fromLatin1("DK Width"),     win->width());
-    group.writeEntry(QString::fromLatin1("DK Height"),    win->height());
-    group.writeEntry(QString::fromLatin1("DK PositionX"), win->geometry().x());
-    group.writeEntry(QString::fromLatin1("DK PositionY"), win->geometry().y());
-    group.writeEntry(QString::fromLatin1("DK Maximized"), (bool)(win->windowState() &
-                                                                 Qt::WindowMaximized));
+    group.writeEntry(QLatin1String("DK Width"),     win->width());
+    group.writeEntry(QLatin1String("DK Height"),    win->height());
+    group.writeEntry(QLatin1String("DK PositionX"), win->geometry().x());
+    group.writeEntry(QLatin1String("DK PositionY"), win->geometry().y());
+    group.writeEntry(QLatin1String("DK Maximized"), (bool)(win->windowState() &
+                                                           Qt::WindowMaximized));
 
 #else
 
@@ -374,7 +374,7 @@ void DXmlGuiWindow::slotRawCameraList()
 void DXmlGuiWindow::slotSolidHardwareList()
 {
     SolidHardwareDlg* const dlg = new SolidHardwareDlg(qApp->activeWindow());
-    dlg->exec();
+    (void)dlg->exec();
 }
 
 void DXmlGuiWindow::slotDonateMoney()

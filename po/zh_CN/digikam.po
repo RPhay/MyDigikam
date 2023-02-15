@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 00:57+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-02-07 11:01\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -11487,10 +11487,10 @@ msgstr "正在保存更改 -"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -16822,7 +16822,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "设置包围 (阶段) 曝光图像"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16830,26 +16830,26 @@ msgid ""
 "conditions"
 msgstr "在此设置用于合成的包围 (阶段) 曝光图像。用于合成的图像应满足以下条件："
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
 msgstr "至少添加同一被摄主体的 2 张图像到合成堆栈中。"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
 msgstr "不要混用色彩深度不同的图像。"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
 msgstr "所有图像必须具有相同大小。"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:78
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
 #, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
@@ -17585,9 +17585,13 @@ msgid "Jalbum completed."
 msgstr "jAlbum 相册已完成制作。"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -17628,8 +17632,9 @@ msgid "Create jAlbum Album"
 msgstr "创建 jAlbum 相册"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "欢迎使用 jAlbum 相册制作工具"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -22043,7 +22048,7 @@ msgid "Start upload to Box"
 msgstr "开始上传到 Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -22052,13 +22057,13 @@ msgstr "未选择图像。请选择要上传的图像。"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/google/gswindow.cpp:507
+#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -22069,8 +22074,8 @@ msgid "Warning"
 msgstr "警告"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
+#: core/dplugins/generic/webservices/google/gswindow.cpp:508
+#: core/dplugins/generic/webservices/google/gswindow.cpp:533
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22079,12 +22084,12 @@ msgstr "身份验证失败。点击“继续”进行身份验证。"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22096,12 +22101,12 @@ msgstr "继续"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:537
+#: core/dplugins/generic/webservices/google/gswindow.cpp:951
+#: core/dplugins/generic/webservices/google/gswindow.cpp:972
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -22113,7 +22118,7 @@ msgstr "取消"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:612
+#: core/dplugins/generic/webservices/google/gswindow.cpp:613
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -23464,19 +23469,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google Drive 调用失败： %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:620
+#: core/dplugins/generic/webservices/google/gswindow.cpp:621
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google Drive 导出"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:626
+#: core/dplugins/generic/webservices/google/gswindow.cpp:627
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Google Photos 导出"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
+#: core/dplugins/generic/webservices/google/gswindow.cpp:946
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23486,7 +23491,7 @@ msgstr ""
 "无法保存照片：%1\n"
 "您想要继续吗？"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
+#: core/dplugins/generic/webservices/google/gswindow.cpp:967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23496,13 +23501,13 @@ msgstr ""
 "无法下载照片：%1\n"
 "您想要继续吗？"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
+#: core/dplugins/generic/webservices/google/gswindow.cpp:994
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "无法保存照片到 %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23514,7 +23519,7 @@ msgstr ""
 "%2\n"
 "您想要继续吗？"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23526,13 +23531,13 @@ msgstr ""
 "%2\n"
 "并未上传任何图像到您的账户。"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1069
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "确定"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23542,7 +23547,7 @@ msgstr ""
 "Google Drive 调用失败：\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23552,7 +23557,7 @@ msgstr ""
 "Google Photos 调用失败：\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -35660,12 +35665,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr "二进制数据 %1 字节"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr "ExifTool 不存在，或缺少执行权限"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl 不存在，或缺少执行权限"
@@ -42547,14 +42552,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr "描述"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr "是"
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
 #, kde-format
 msgctxt "@info: status"
 msgid "no"
@@ -57534,8 +57539,9 @@ msgid "Country"
 msgstr "国家/地区"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr "项目中显示的国家/地区位置"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -57544,18 +57550,21 @@ msgid "Province"
 msgstr "州/省"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr "项目中显示的州/省位置"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County"
-msgstr "郡/县"
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "次要位置："
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "项目中显示的郡/县位置"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -57564,8 +57573,9 @@ msgid "City"
 msgstr "城市"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
-msgid "City of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "项目中显示的城市位置"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -62220,3 +62230,6 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid "County"
+#~ msgstr "郡/县"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:55+0000\n"
+"POT-Creation-Date: 2023-02-12 00:55+0000\n"
 "PO-Revision-Date: 2022-05-29 19:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -25676,6 +25676,18 @@ msgstr ""
 msgid "Export by Web Service"
 msgstr ""
 
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#, kde-format
+msgid ""
+"Error to import RAW image with ART\n"
+"Close this dialog to load RAW image with native import tool"
+msgstr ""
+
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#, kde-format
+msgid "ART Raw Conversion"
+msgstr ""
+
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
@@ -25881,7 +25893,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:805
+#: core/libs/database/utils/ifaces/dio.cpp:812
 #, kde-format
 msgid "Trash"
 msgstr "Papirkorg"
@@ -27816,49 +27828,49 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:769
+#: core/libs/database/utils/ifaces/dio.cpp:776
 #, kde-format
 msgid "Copy Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:774
+#: core/libs/database/utils/ifaces/dio.cpp:781
 #, kde-format
 msgid "Copy Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:780
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopier filer"
 
-#: core/libs/database/utils/ifaces/dio.cpp:785
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, kde-format
 msgid "Move Album"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:790
+#: core/libs/database/utils/ifaces/dio.cpp:797
 #, kde-format
 msgid "Move Images"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:795
+#: core/libs/database/utils/ifaces/dio.cpp:802
 #, kde-format
 msgid "Move Files"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:800
+#: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Slett"
 
-#: core/libs/database/utils/ifaces/dio.cpp:810
+#: core/libs/database/utils/ifaces/dio.cpp:817
 #, kde-format
 msgid "Restore Trash"
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:815
+#: core/libs/database/utils/ifaces/dio.cpp:822
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -30413,7 +30425,7 @@ msgctxt "Convert image bit depth"
 msgid "Convert Depth"
 msgstr "Endra fargedjupn"
 
-#: core/libs/dimg/filters/dimgfiltermanager.cpp:429
+#: core/libs/dimg/filters/dimgfiltermanager.cpp:430
 #, kde-format
 msgid "Unknown filter"
 msgstr "Ukjent filter"
@@ -35224,12 +35236,12 @@ msgctxt "info"
 msgid "Binary data %1 bytes"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:378
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:371
 #, kde-format
 msgid "ExifTool does not exists or exec permission is missing"
 msgstr ""
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:392
+#: core/libs/metadataengine/exiftool/exiftoolprocess.cpp:385
 #, kde-format
 msgid "Perl does not exists or exec permission is missing"
 msgstr ""
@@ -41866,14 +41878,14 @@ msgctxt "@title: column"
 msgid "Description"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:183
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:184
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:188
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:189
 #, kde-format
 msgctxt "@info: status"
 msgid "yes"
 msgstr ""
 
-#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:185
+#: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:190
 #, kde-format
 msgctxt "@info: status"
 msgid "no"

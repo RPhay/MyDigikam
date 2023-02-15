@@ -80,7 +80,7 @@ JAlbumIntroPage::JAlbumIntroPage(QWizard* const dialog, const QString& title)
     desc->setWordWrap(true);
     desc->setOpenExternalLinks(true);
     desc->setText(i18n("<qt>"
-                       "<p><h1><b>Welcome to jAlbum album tool</b></h1></p>"
+                       "<p><h1><b>Welcome to jAlbum export tool</b></h1></p>"
                        "<p>This assistant will guide you to export quickly</p><p></p>"
                        "<p>your images as a jAlbum project.</p>"
                        "</qt>"));
@@ -112,12 +112,16 @@ JAlbumIntroPage::JAlbumIntroPage(QWizard* const dialog, const QString& title)
     setLeftBottomPix(QIcon::fromTheme(QLatin1String("text-html")));
 
 #ifdef Q_OS_WIN
+
     d->binSearch->addDirectory(QLatin1String(qgetenv("ProgramFiles").constData()) + QLatin1String("\\jAlbum\\"));
+
 #else
+
     d->binSearch->addDirectory(QLatin1String("/usr/share/"));
     d->binSearch->addDirectory(QLatin1String("/usr/share/jAlbum/"));
     d->binSearch->addDirectory(QLatin1String("/usr/share/jalbum/"));
     d->binSearch->addDirectory(QLatin1String("/usr/lib/jalbum/"));
+
 #endif
 
     connect(d->binSearch, SIGNAL(signalBinariesFound(bool)),
