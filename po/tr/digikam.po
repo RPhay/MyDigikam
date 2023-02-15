@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-02-08 19:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -18985,12 +18985,21 @@ msgid "Jalbum completed."
 msgstr "Galeri tamamlandı."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will "
+#| "guide you to send your items with a mail client application.</p><p>Before "
+#| "to export contents, you will be able to adjust attachments properties "
+#| "accordingly with your mail service capabilities.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
+"<qt><p><h1><b>Eposta Aracına Hoşgeldiniz</b></h1></p><p>Bıu yardımcı, size "
+"ögelerinizi eposta istemci uygulaması ile yollama konusunda yardımcı olacak."
+"</p><p>İçeriği dışa aktarmadan önce, eposta servis yeteneklerinize göre "
+"eklerin özelliklerini düzenleyebileceksiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, fuzzy, kde-format
@@ -19034,7 +19043,7 @@ msgstr "Yeni Albüm Oluştur"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to Email Tool"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Eposta Aracına Hoşgeldiniz"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -61977,9 +61986,10 @@ msgid "Country"
 msgstr "Ülke:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -61988,20 +61998,22 @@ msgid "Province"
 msgstr "Vilayet:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "Ülke:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Alt konum:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -62012,7 +62024,7 @@ msgstr "Şehir:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -67289,6 +67301,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "Ülke:"
 
 #, fuzzy
 #~| msgid "Geolocation Editor"

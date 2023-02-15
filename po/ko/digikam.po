@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -18699,9 +18699,13 @@ msgid "Jalbum completed."
 msgstr "jAlbum이 완료되었습니다."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18747,8 +18751,9 @@ msgid "Create jAlbum Album"
 msgstr "jAlbum 앨범 만들기"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "jAlbum 앨범 도구에 오신 것을 환영합니다"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -60322,9 +60327,10 @@ msgid "Country"
 msgstr "국가:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "콘텐츠 출처의 도시 내 위치를 설정하십시오."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -60333,20 +60339,22 @@ msgid "Province"
 msgstr "도/광역시:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "콘텐츠 출처의 도시 내 위치를 설정하십시오."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "국가:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "하위 위치:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "콘텐츠 출처의 도시 내 위치를 설정하십시오."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -60357,7 +60365,7 @@ msgstr "도시:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "콘텐츠 출처의 도시 내 위치를 설정하십시오."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -64844,6 +64852,11 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "국가:"
 
 #, fuzzy
 #~| msgid "Geolocation Editor"

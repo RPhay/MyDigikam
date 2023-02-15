@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-02-07 11:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -18128,9 +18128,13 @@ msgid "Jalbum completed."
 msgstr "Gerð jAlbum-myndasafns er lokið."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18172,8 +18176,9 @@ msgid "Create jAlbum Album"
 msgstr "Búa til jAlbum-albúm"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Velkomin í jAlbum albúmaverkfærið"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -59080,8 +59085,9 @@ msgid "Country"
 msgstr "Land"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr "Land staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -59090,18 +59096,21 @@ msgid "Province"
 msgstr "Hérað"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr "Hérað staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County"
-msgstr "Sveitarfélag"
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Nákvæm staðsetning:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "Sveitarfélag staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -59110,8 +59119,9 @@ msgid "City"
 msgstr "Borg/Staður"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
-msgid "City of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Borg staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -64038,6 +64048,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
+
+#~ msgid "County"
+#~ msgstr "Sveitarfélag"
 
 #~ msgctxt "@title"
 #~ msgid "Geolocation Editor"

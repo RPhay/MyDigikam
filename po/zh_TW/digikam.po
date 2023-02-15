@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -18944,7 +18944,7 @@ msgstr "儲存檔案已完成..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18991,7 +18991,7 @@ msgstr "建立新相簿"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "歡迎使用曝光混合工具"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -62005,9 +62005,10 @@ msgid "Country"
 msgstr "國家："
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "在這裡設定城市裡內容的位置。"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -62016,20 +62017,22 @@ msgid "Province"
 msgstr "興趣："
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "在這裡設定城市裡內容的位置。"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "國家："
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "轄區："
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "在這裡設定城市裡內容的位置。"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -62040,7 +62043,7 @@ msgstr "城市："
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "在這裡設定城市裡內容的位置。"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -66955,6 +66958,11 @@ msgstr "重設所有設定值為預設值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "重設所有設定值為預設值。"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "國家："
 
 #, fuzzy
 #~ msgctxt "@title"

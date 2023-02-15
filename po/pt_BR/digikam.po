@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2021-08-23 13:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -19360,12 +19360,22 @@ msgid "Jalbum completed."
 msgstr "Galeria concluída."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will "
+#| "guide you to send your items with a mail client application.</p><p>Before "
+#| "to export contents, you will be able to adjust attachments properties "
+#| "accordingly with your mail service capabilities.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
+"<qt><p><h1><b>Bem-vindo à ferramenta E-mail</b></h1></p><p>Este assistente "
+"irá guiá-lo no envio dos seus itens com um aplicativo cliente de e-mail.</"
+"p><p>Antes de exportar os conteúdos, você será capaz de ajustar as "
+"propriedades dos anexos de acordo com as capacidades do seu serviço de e-"
+"mail.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, fuzzy, kde-format
@@ -19409,7 +19419,7 @@ msgstr "Criar novo álbum"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to Email Tool"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Bem-vindo à ferramenta E-mail"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -64033,9 +64043,10 @@ msgid "Country"
 msgstr "País:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "Defina aqui a localização do conteúdo na cidade."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -64044,20 +64055,22 @@ msgid "Province"
 msgstr "Estado:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "Defina aqui a localização do conteúdo na cidade."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "País:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Sublocalização:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "Defina aqui a localização do conteúdo na cidade."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -64068,7 +64081,7 @@ msgstr "Cidade:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -69455,6 +69468,11 @@ msgstr "Restaurar todas as configurações para os valores padrão."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Restaurar todas as configurações para os valores padrão."
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "País:"
 
 #, fuzzy
 #~| msgid "Geolocation Editor"

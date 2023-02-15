@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2015-03-03 14:36+0100\n"
 "Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -17609,7 +17609,7 @@ msgstr "Kolekto"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -17650,7 +17650,7 @@ msgstr "Krei novan albumon"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Elekti eron"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -57700,7 +57700,7 @@ msgstr "Lando:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
-msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -57709,19 +57709,18 @@ msgid "Province"
 msgstr "Ŝtato (Usono) / Provinco"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Province shown in the item"
+msgstr "Ŝanĝi Grandecon de Ŝildo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "Lando:"
+msgid "Sublocation"
+msgstr "Loko:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -57732,7 +57731,7 @@ msgstr "Urbo:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -62148,6 +62147,11 @@ msgstr "Forigu paĝon"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Forigu paĝon"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "Lando:"
 
 #, fuzzy
 #~ msgctxt "@title"

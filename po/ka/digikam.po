@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-02-13 06:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -17082,7 +17082,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -17121,9 +17121,11 @@ msgid "Create jAlbum Album"
 msgstr "ახალი ალბომის შექმნა"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Welcome to Panorama Tool"
+msgid "Welcome to jAlbum Export Tool"
+msgstr "მოგესალმებით პანორამის ხელსაწყოში"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -55897,7 +55899,7 @@ msgstr "ქვეყანა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
-msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -55907,17 +55909,18 @@ msgstr "პროვინცია"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
-msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County"
-msgstr "ქვეყანა"
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "ქვემდებარეობა:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -55927,7 +55930,7 @@ msgstr "ქალაქი"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -60279,6 +60282,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
+
+#~ msgid "County"
+#~ msgstr "ქვეყანა"
 
 #~ msgctxt "@title"
 #~ msgid "Error"

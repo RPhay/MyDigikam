@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -18501,7 +18501,7 @@ msgstr "คิวประมวลผลกลุ่มภาพเสร็จ
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18546,7 +18546,7 @@ msgstr "สร้างอัลบั้มใหม่"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to digiKam %1"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "ยินดีต้อนรับสู่ 'ดิจิแคม' (digiKam %1)"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -60406,9 +60406,10 @@ msgid "Country"
 msgstr "ประเทศ:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -60417,20 +60418,22 @@ msgid "Province"
 msgstr "จังหวัด:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "ประเทศ:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "สถานที่ย่อย:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -60441,7 +60444,7 @@ msgstr "เมือง:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -65197,6 +65200,11 @@ msgstr "ปรับค่าทั้งหมดกลับไปใช้ค
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "ปรับค่าทั้งหมดกลับไปใช้ค่าปริยายของพวกมัน"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "ประเทศ:"
 
 #, fuzzy
 #~ msgctxt "@title"

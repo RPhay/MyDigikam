@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2022-07-29 12:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -19020,12 +19020,19 @@ msgid "Jalbum completed."
 msgstr "jAlbum on valmis."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p><h1><b>Welcome to Calendar Tool</b></h1></p><p>This assistant will "
+#| "guide you to create and print a calendar with a selection of images taken "
+#| "from your collection.</p>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
+"<p><h1><b>Tervetuloa kalenterityökaluun</b></h1></p><p>Tämä ohjattu toiminto "
+"auttaa sinua luomaan ja tulostamaan kalenterin kokoelmasta valituin kuvin.</"
+"p>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
@@ -19065,8 +19072,9 @@ msgid "Create jAlbum Album"
 msgstr "Luo jAlbum-albumi"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Tervetuloa jAlbum-albumityökaluun"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -60942,9 +60950,10 @@ msgid "Country"
 msgstr "Valtio:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -60953,20 +60962,22 @@ msgid "Province"
 msgstr "Provinssi:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "Valtio:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Alisijainti:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -60977,7 +60988,7 @@ msgstr "Kaupunki:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -65697,6 +65708,11 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "Valtio:"
 
 #, fuzzy
 #~| msgid "Geolocation Editor"

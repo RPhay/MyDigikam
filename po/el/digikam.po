@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -19631,7 +19631,7 @@ msgstr "η αποθήκευση αρχείου ολοκληρώθηκε..."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -19678,7 +19678,7 @@ msgstr "Δημιουργία νέου λευκώματος"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Καλώς ήλθατε στο Εργαλείο μίξης επιπέδων έκθεσης"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -63619,9 +63619,10 @@ msgid "Country"
 msgstr "Χώρα:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Country shown in the item"
+msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -63630,20 +63631,22 @@ msgid "Province"
 msgstr "Περιφέρεια:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Province shown in the item"
+msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country:"
-msgid "County"
-msgstr "Χώρα:"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Δημοτικό διαμέρισμα:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
+msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -63654,7 +63657,7 @@ msgstr "Πόλη:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -68913,6 +68916,11 @@ msgstr "Επαναφορά όλων των ρυθμίσεων στις προκ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Επαναφορά όλων των ρυθμίσεων στις προκαθορισμένες τιμές τους."
+
+#, fuzzy
+#~| msgid "Country:"
+#~ msgid "County"
+#~ msgstr "Χώρα:"
 
 #, fuzzy
 #~ msgctxt "@title"

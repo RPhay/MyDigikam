@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -17645,7 +17645,7 @@ msgstr "चयनित डाउनलोड करें"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -17688,7 +17688,7 @@ msgstr "नया एल्बम बनाएँ"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "छवियाँ सहेजें"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -57940,9 +57940,9 @@ msgid "Country"
 msgstr "गणनाः"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Country shown in the item"
+msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -57950,19 +57950,19 @@ msgid "Province"
 msgstr "पूर्वावलोकन"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, kde-format
-msgid "Province of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Province shown in the item"
+msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "County"
-msgstr "गणनाः"
+msgid "Sublocation"
+msgstr "जियोलोकेशन"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County of the location shown in the item"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Sublocation shown in the item"
+msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -57971,7 +57971,7 @@ msgstr "क्रेडिट:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -62385,6 +62385,10 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
+
+#, fuzzy
+#~ msgid "County"
+#~ msgstr "गणनाः"
 
 #, fuzzy
 #~ msgctxt "@title"

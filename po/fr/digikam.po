@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2023-01-22 19:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -18570,9 +18570,13 @@ msgid "Jalbum completed."
 msgstr "Jalbum terminé."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
+#| "project.</p></qt>"
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -18615,8 +18619,9 @@ msgid "Create jAlbum Album"
 msgstr "Créer album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, kde-format
-msgid "Welcome to jAlbum Album Tool"
+#, fuzzy, kde-format
+#| msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "Bienvenue dans l'outil d'album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -60452,8 +60457,9 @@ msgid "Country"
 msgstr "Pays"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, kde-format
-msgid "Country of the location shown in the item"
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -60465,19 +60471,19 @@ msgstr "Province :"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Country"
-msgid "County"
-msgstr "Pays"
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Lieu :"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -60489,7 +60495,7 @@ msgstr "Ville :"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
@@ -65629,6 +65635,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#, fuzzy
+#~| msgid "Country"
+#~ msgid "County"
+#~ msgstr "Pays"
 
 #~ msgctxt "@title"
 #~ msgid "Geolocation Editor"

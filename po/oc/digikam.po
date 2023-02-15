@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:56+0000\n"
+"POT-Creation-Date: 2023-02-15 00:56+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -17735,7 +17735,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
 msgid ""
-"<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
+"<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
@@ -17779,7 +17779,7 @@ msgstr "imatges"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, fuzzy, kde-format
 #| msgid "images"
-msgid "Welcome to jAlbum Album Tool"
+msgid "Welcome to jAlbum Export Tool"
 msgstr "imatges"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
@@ -57458,7 +57458,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
-msgid "Country of the location shown in the item"
+msgid "Country shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
@@ -57468,17 +57468,18 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
-msgid "Province of the location shown in the item"
+msgid "Province shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "County"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "images"
+msgid "Sublocation"
+msgstr "imatges"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
-msgid "County of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
@@ -57488,7 +57489,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
-msgid "City of the location shown in the item"
+msgid "City shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
