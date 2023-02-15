@@ -289,6 +289,10 @@ QString DMetadata::getLensDescription() const
         {
             return QLatin1String("Canon RF 70-200mm F2.8L IS USM");
         }
+        else
+        {
+            lensExifTags.append(lensModel);
+        }
     }
     else
     {
