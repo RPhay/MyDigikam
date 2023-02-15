@@ -274,10 +274,21 @@ QString DMetadata::getLensDescription() const
     QString make      = getExifTagString("Exif.Image.Make");
     QString lensModel = QLatin1String("Exif.Photo.LensModel");
 
-    if (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive) ||
-        make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
+    if      (make.contains(QLatin1String("SONY"), Qt::CaseInsensitive))
     {
         lensExifTags.prepend(lensModel);
+    }
+    else if (make.contains(QLatin1String("CANON"), Qt::CaseInsensitive))
+    {
+        QString canonLt = QLatin1String("Exif.CanonCs.LensType");
+        QString canonCs = getExifTagString(canonLt.toLatin1().constData());
+        QString exifMod = getExifTagString(lensModel.toLatin1().constData());
+
+        if ((exifMod == QLatin1String("RF70-200mm F2.8 L IS USM"))   &&
+            (canonCs == QLatin1String("Canon RF 70-200mm F4L IS USM")))
+        {
+            return QLatin1String("Canon RF 70-200mm F2.8L IS USM");
+        }
     }
     else
     {
