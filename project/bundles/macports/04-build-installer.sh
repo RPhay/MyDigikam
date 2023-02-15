@@ -82,13 +82,13 @@ lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
 lib/plugins/digikam/dimg/*.so \
 lib/plugins/digikam/rawimport/*.so \
-lib/mariadb-10.5/bin/mysql \
-lib/mariadb-10.5/bin/mysqld \
-lib/mariadb-10.5/bin/my_print_defaults \
-lib/mariadb-10.5/bin/mysqladmin \
-lib/mariadb-10.5/bin/mysqltest \
-lib/mariadb-10.5/mysql/*.dylib \
-lib/mariadb-10.5/plugin/*.so \
+lib/mariadb/bin/mysql \
+lib/mariadb/bin/mysqld \
+lib/mariadb/bin/my_print_defaults \
+lib/mariadb/bin/mysqladmin \
+lib/mariadb/bin/mysqltest \
+lib/mariadb/mysql/*.dylib \
+lib/mariadb/plugin/*.so \
 bin/kbuildsycoca5 \
 bin/solid-hardware5 \
 libexec/qt5/plugins/imageformats/*.dylib \
@@ -114,13 +114,13 @@ lib/libdigikam*.dSYM \
 lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
-lib/mariadb-10.5 \
+lib/mariadb \
 lib/ImageMagick* \
-share/mariadb-10.5 \
+share/mariadb \
 share/ImageMagick* \
 etc/xdg \
 etc/ImageMagick* \
-etc/mariadb-10.5 \
+etc/mariadb \
 "
 
 #etc/sane.d \
@@ -544,12 +544,12 @@ for HPP in ${HEADERFILES[@]} ; do
 
 done
 
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/mysql-test
-rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb-10.5/sql-bench
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/mysql-test
+rm -rfv $TEMPROOT/digikam.app/Contents/share/mariadb/sql-bench
 
 echo -e "\n---------- Patch config and script files in bundle"
 
-MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb-10.5"`)
+MARIADBDIRS=(`find $TEMPROOT -type d -name "mariadb"`)
 
 for DIR in ${MARIADBDIRS[@]} ; do
 
@@ -584,14 +584,14 @@ done
 #################################################################################################
 # See bug #436624: move mariadb share files at basedir (this must be done after patch operations)
 
-rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/"
-rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb-10.5"
+rsync -a "$TEMPROOT/digikam.app/Contents/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/"
+rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb"
 
 # At run time, digiKam will check for mariadb folder-name without revision numbers.
 
-ln -sv "../../../../../digikam.app/Contents/lib/mariadb-10.5/share/mariadb-10.5" "$TEMPROOT/digikam.app/Contents/lib/mariadb-10.5/share/mariadb"
-ln -sv "../../../digikam.app/Contents/lib/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../../digikam.app/Contents/etc/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+ln -sv "../../../../../digikam.app/Contents/lib/mariadb/share/mariadb" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb"                     "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb"                     "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Install ExifTool binary.

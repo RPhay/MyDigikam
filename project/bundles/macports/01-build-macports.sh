@@ -302,7 +302,7 @@ port install \
              qt5-qtimageformats \
              qt5-qtnetworkauth \
              qt5-sqlite-plugin \
-             qt5-mysql-plugin +mariadb10_5
+             qt5-mysql-plugin
 
 port deactivate boost
 
