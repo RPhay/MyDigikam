@@ -663,22 +663,6 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
-    else if (name == QLatin1String("location"))
-    {
-        // choice
-
-        SearchFieldChoice* const field = new SearchFieldChoice(parent);
-        field->setFieldName(name);
-        field->setText(i18n("Sublocation"), i18n("Sublocation shown in the item"));
-
-        QStringList locations = CoreDbAccess().db()->getAllImagePropertiesByName(name);
-        locations            += locations;
-        locations.sort();
-
-        field->setChoice(locations);
-
-        return field;
-    }
     else if (name == QLatin1String("city"))
     {
         // choice
@@ -692,6 +676,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         cities.sort();
 
         field->setChoice(cities);
+
+        return field;
+    }
+    else if (name == QLatin1String("location"))
+    {
+        // choice
+
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Sublocation"), i18n("Sublocation shown in the item"));
+
+        QStringList locations = CoreDbAccess().db()->getAllImagePropertiesByName(name);
+        locations            += locations;
+        locations.sort();
+
+        field->setChoice(locations);
 
         return field;
     }

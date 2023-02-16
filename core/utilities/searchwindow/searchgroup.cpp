@@ -194,8 +194,8 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField(QLatin1String("nogps"),         group));
     group->addField(SearchField::createField(QLatin1String("country"),       group));
     group->addField(SearchField::createField(QLatin1String("provinceState"), group));
-    group->addField(SearchField::createField(QLatin1String("location"),      group));
     group->addField(SearchField::createField(QLatin1String("city"),          group));
+    group->addField(SearchField::createField(QLatin1String("location"),      group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
