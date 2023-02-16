@@ -271,4 +271,5 @@ BUGFIXES:
 230 ==> 465462 - Writing Metadata changes immediatly to files.
 231 ==> 465679 - Wrong field label in advanced search screen (geographic position part).
 232 ==> 242630 - Write online documentation sections based on Sphinx/ReStructuredText for more Post-Processing tools, as Panorama, Calendar, OCRTextConverter, etc.
-233 ==> 
+233 ==> 465832 - Recognize faces don't run because "there are no identities to recognize".
+234 ==> 
