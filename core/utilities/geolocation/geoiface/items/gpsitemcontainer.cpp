@@ -1120,43 +1120,48 @@ void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationI
 {
     if      (tagData.tipName == QLatin1String("{Country}"))
     {
-        locationInfo.country       = tagData.tagName;
+        locationInfo.country = tagData.tagName;
     }
     else if (tagData.tipName == QLatin1String("{Country code}"))
     {
-        locationInfo.countryCode   = tagData.tagName;
+        locationInfo.countryCode = tagData.tagName;
     }
-    else if (tagData.tipName == QLatin1String("{State}"))
-    {
-        locationInfo.provinceState = tagData.tagName;
-    }
-    else if (locationInfo.provinceState.isEmpty() &&
+    else if ((tagData.tipName == QLatin1String("{State}"))        ||
+             (tagData.tipName == QLatin1String("{County}"))       ||
              (tagData.tipName == QLatin1String("{State district}")))
     {
-        locationInfo.provinceState = tagData.tagName;
-    }
-    else if (tagData.tipName == QLatin1String("{County}"))
-    {
-        locationInfo.location      = tagData.tagName;
+        if (!locationInfo.provinceState.isEmpty())
+        {
+            locationInfo.provinceState.append(QLatin1String(" / "));
+        }
+
+        locationInfo.provinceState.append(tagData.tagName);
     }
     else if (tagData.tipName == QLatin1String("{City}"))
     {
-        locationInfo.city          = tagData.tagName;
-    }
-    else if (locationInfo.city.isEmpty() &&
-             (tagData.tipName == QLatin1String("{Place}")))
-    {
-        locationInfo.city          = tagData.tagName;
+        locationInfo.city = tagData.tagName;
     }
     else if (locationInfo.city.isEmpty() &&
              (tagData.tipName == QLatin1String("{Town}")))
     {
-        locationInfo.city          = tagData.tagName;
+        locationInfo.city = tagData.tagName;
     }
     else if (locationInfo.city.isEmpty() &&
              (tagData.tipName == QLatin1String("{Village}")))
     {
-        locationInfo.city          = tagData.tagName;
+        locationInfo.city = tagData.tagName;
+    }
+    else if ((tagData.tipName == QLatin1String("{Suburb}"))       ||
+             (tagData.tipName == QLatin1String("{Street}"))       ||
+             (tagData.tipName == QLatin1String("{House number}")) ||
+             (tagData.tipName == QLatin1String("{City district}")))
+    {
+        if (!locationInfo.location.isEmpty())
+        {
+            locationInfo.location.append(QLatin1String(" / "));
+        }
+
+        locationInfo.location.append(tagData.tagName);
     }
 }
 
