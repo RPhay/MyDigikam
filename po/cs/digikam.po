@@ -17627,10 +17627,9 @@ msgid "Create jAlbum Album"
 msgstr ""
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to Calendar Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Vítejte v nástroji kalendáře"
+msgstr ""
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -57778,16 +57777,14 @@ msgid "Province"
 msgstr "Provincie"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Preview single items"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Nahlédnout na jednotlivé položky"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Čtvrť:"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
@@ -62557,6 +62554,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgid "County"
-#~ msgstr "Okres"

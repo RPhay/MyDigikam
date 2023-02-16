@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-13 15:56+0200\n"
+"PO-Revision-Date: 2023-02-15 08:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18480,19 +18480,15 @@ msgid "Jalbum completed."
 msgstr "jAlbum завершено."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Вітаємо на сторінці інструмента альбомів jAlbum</b></h1></"
-"p><p>За допомогою цієї допоміжної програми ви зможете швидко</p><p></"
-"p><p>експортувати ваші зображення у форматі проєкту jAlbum.</p></qt>"
+"<qt><p><h1><b>Вітаємо на сторінці інструмента експортування альбомів jAlbum</"
+"b></h1></p><p>За допомогою цієї допоміжної програми ви зможете швидко</"
+"p><p></p><p>експортувати ваші зображення у форматі проєкту jAlbum.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
@@ -18528,10 +18524,9 @@ msgid "Create jAlbum Album"
 msgstr "Створення альбому jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Вітаємо у засобі надсилання створення альбомів jAlbum"
+msgstr "Вітаємо у засобі експортування альбомів jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -60004,10 +59999,9 @@ msgid "Country"
 msgstr "Країна"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "Країна місця, яку буде показано для запису"
+msgstr "Країна, яку буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -60015,22 +60009,19 @@ msgid "Province"
 msgstr "Область"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Область місця, яку буде показано для запису"
+msgstr "Область, яку буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Точне розташування:"
+msgstr "Точне розташування"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Район місця, який буде показано для запису"
+msgstr "Район, який буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
@@ -60038,10 +60029,9 @@ msgid "City"
 msgstr "Місто"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#, kde-format
 msgid "City shown in the item"
-msgstr "Місто місця, яке буде показано для запису"
+msgstr "Місто, яке буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format

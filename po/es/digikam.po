@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-06 15:19+0100\n"
+"PO-Revision-Date: 2023-02-16 01:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18422,17 +18422,13 @@ msgid "Jalbum completed."
 msgstr "jAlbum completado."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Bienvenido a la herramienta de álbum jAlbum</b></h1></"
+"<qt><p><h1><b>Bienvenido a la herramienta de exportación de jAlbum</b></h1></"
 "p><p>Este asistente le guiará para exportar rápidamente</p><p></"
 "p><p>imágenes como proyecto de jAlbum.</p></qt>"
 
@@ -18470,10 +18466,9 @@ msgid "Create jAlbum Album"
 msgstr "Crear álbum de jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Bienvenido a la herramienta de álbumes de jAlbum"
+msgstr "Bienvenido a la herramienta de exportación de jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -59815,10 +59810,9 @@ msgid "Country"
 msgstr "País"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "País de la ubicación mostrada en el elemento"
+msgstr "País mostrado en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -59826,22 +59820,19 @@ msgid "Province"
 msgstr "Provincia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Provincia de la ubicación mostrada en el elemento"
+msgstr "Provincia mostrada en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Sub-ubicación:"
+msgstr "Sububicación"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Condado de la ubicación mostrada en el elemento"
+msgstr "Sububicación mostrada en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
@@ -59849,10 +59840,9 @@ msgid "City"
 msgstr "Ciudad"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#, kde-format
 msgid "City shown in the item"
-msgstr "Ciudad de la ubicación mostrada en el elemento"
+msgstr "Ciudad mostrada en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
