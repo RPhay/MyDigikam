@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2023-02-08 19:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -62005,26 +62005,26 @@ msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Alt konum:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
-msgid "Sublocation shown in the item"
-msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Şehir:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
+msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Alt konum:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
 msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

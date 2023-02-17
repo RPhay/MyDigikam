@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2023-02-16 01:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -59826,23 +59826,23 @@ msgstr "Provincia mostrada en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
-msgid "Sublocation"
-msgstr "Sububicación"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "Sublocation shown in the item"
-msgstr "Sububicación mostrada en el elemento"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
 msgid "City"
 msgstr "Ciudad"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "City shown in the item"
 msgstr "Ciudad mostrada en el elemento"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation"
+msgstr "Sububicación"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation shown in the item"
+msgstr "Sububicación mostrada en el elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format

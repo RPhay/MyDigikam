@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-13 06:47+0100\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
+"PO-Revision-Date: 2023-02-16 06:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -17121,11 +17121,9 @@ msgid "Create jAlbum Album"
 msgstr "ახალი ალბომის შექმნა"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Welcome to Panorama Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "მოგესალმებით პანორამის ხელსაწყოში"
+msgstr "მოგესალმებით jAlbum ალბომის გატანის ხელსაწყოში"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -54554,7 +54552,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgid "Common Options"
-msgstr ""
+msgstr "საერთო პარამეტრები"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:224
 #, kde-format
@@ -55913,24 +55911,23 @@ msgid "Province shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "ქვემდებარეობა:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, kde-format
-msgid "Sublocation shown in the item"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
 msgid "City"
 msgstr "ქალაქი"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "City shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation"
+msgstr "ქვემდებარეობა"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation shown in the item"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

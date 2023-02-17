@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -60425,26 +60425,26 @@ msgstr "ตั้งค่าสถานที่ของเนื้อหา
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "สถานที่ย่อย:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
-msgid "Sublocation shown in the item"
-msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "เมือง:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
+msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "สถานที่ย่อย:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
 msgstr "ตั้งค่าสถานที่ของเนื้อหาภายในประเทศที่นี่"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

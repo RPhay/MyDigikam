@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -57898,22 +57898,22 @@ msgstr "<p>Ở đây hãy đặt cách điều chỉnh độ tương phản củ
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation"
-msgstr "Vùng chọn"
+msgid "City"
+msgstr "Công trạng:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation shown in the item"
+msgid "City shown in the item"
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh độ tương phản của ảnh."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City"
-msgstr "Công trạng:"
+msgid "Sublocation"
+msgstr "Vùng chọn"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh độ tương phản của ảnh."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

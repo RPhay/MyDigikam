@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-06 20:38+0100\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
+"PO-Revision-Date: 2023-02-13 23:07+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -59825,27 +59825,27 @@ msgid "Province shown in the item"
 msgstr "Provincia del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "City"
+msgstr "Città"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "City of the location shown in the item"
+msgid "City shown in the item"
+msgstr "Città del luogo mostrato nell'elemento"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Posto:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "County of the location shown in the item"
 msgid "Sublocation shown in the item"
 msgstr "Regione del luogo mostrato nell'elemento"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
-msgid "City"
-msgstr "Città"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
-msgid "City shown in the item"
-msgstr "Città del luogo mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -61592,7 +61592,7 @@ msgstr "Inserisci le cartelle da ignorare per l'aggiunta alle tue raccolte."
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
-msgstr "Ignora cartelle"
+msgstr "Cartelle ignorate"
 
 #: core/utilities/setup/collections/setupcollections.cpp:236
 #, kde-format

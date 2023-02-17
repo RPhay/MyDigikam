@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2022-07-29 12:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -60969,26 +60969,26 @@ msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Alisijainti:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
-msgid "Sublocation shown in the item"
-msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Kaupunki:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
+msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Alisijainti:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
 msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

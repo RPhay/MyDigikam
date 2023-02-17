@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-12 23:00+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
+"PO-Revision-Date: 2023-02-15 12:34+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Kate 22.08.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -18342,19 +18342,15 @@ msgid "Jalbum completed."
 msgstr "S'ha completat la «jAlbum»."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Us donem la benvinguda a l'eina d'àlbum «jAlbum»</b></h1></"
-"p><p>Este assistent vos guiarà per a exportar ràpidament</p><p></p><p>les "
-"imatges com un projecte de «jAlbum».</p></qt>"
+"<qt><p><h1><b>Us donem la benvinguda a l'eina d'exportació «jAlbum»</b></"
+"h1></p><p>Este assistent vos guiarà per a exportar ràpidament</p><p></"
+"p><p>les imatges com un projecte de «jAlbum».</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
@@ -18390,10 +18386,9 @@ msgid "Create jAlbum Album"
 msgstr "Crea un àlbum «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Us donem la benvinguda a l'eina d'àlbum «jAlbum»"
+msgstr "Us donem la benvinguda a l'eina d'exportació «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -59773,10 +59768,9 @@ msgid "Country"
 msgstr "País"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "País de l'emplaçament mostrat en l'element"
+msgstr "País mostrat en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -59784,33 +59778,29 @@ msgid "Province"
 msgstr "Província"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Província de l'emplaçament mostrat en l'element"
+msgstr "Província mostrada en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Sublocalització:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
-msgid "Sublocation shown in the item"
-msgstr "Comtat de l'emplaçament mostrat en l'element"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
 msgid "City"
 msgstr "Ciutat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
 msgid "City shown in the item"
-msgstr "Ciutat de l'emplaçament mostrat en l'element"
+msgstr "Ciutat mostrada en l'element"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation"
+msgstr "Sublocalització"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation shown in the item"
+msgstr "Sublocalització mostrada en l'element"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -64850,6 +64840,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid "County"
-#~ msgstr "Comtat"

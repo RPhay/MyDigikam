@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2023-01-22 19:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -60476,26 +60476,26 @@ msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Lieu :"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
-msgid "Sublocation shown in the item"
-msgstr "Pays associé à l'emplacement affiché dans l'élément"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Ville :"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Country of the location shown in the item"
 msgid "City shown in the item"
+msgstr "Pays associé à l'emplacement affiché dans l'élément"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Lieu :"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Country of the location shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2023-02-07 11:25+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -59102,27 +59102,27 @@ msgid "Province shown in the item"
 msgstr "Hérað staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "City"
+msgstr "Borg/Staður"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "City of the location shown in the item"
+msgid "City shown in the item"
+msgstr "Borg staðsetningarinnar sem sýnd er í atriðinu"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "Sublocation:"
 msgid "Sublocation"
 msgstr "Nákvæm staðsetning:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "County of the location shown in the item"
 msgid "Sublocation shown in the item"
 msgstr "Sveitarfélag staðsetningarinnar sem sýnd er í atriðinu"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, kde-format
-msgid "City"
-msgstr "Borg/Staður"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
-msgid "City shown in the item"
-msgstr "Borg staðsetningarinnar sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format

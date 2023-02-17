@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -57956,22 +57956,22 @@ msgstr "<p>छवि शीर्षक भरें. यह क्षेत्�
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation"
-msgstr "जियोलोकेशन"
+msgid "City"
+msgstr "क्रेडिट:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation shown in the item"
+msgid "City shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City"
-msgstr "क्रेडिट:"
+msgid "Sublocation"
+msgstr "जियोलोकेशन"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "<p>छवि शीर्षक भरें. यह क्षेत्र ASCII अक्षरों तक सीमित रहेगा."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2023-02-03 22:20+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -61098,29 +61098,29 @@ msgstr "Bundesland/Kanton:"
 msgid "Province shown in the item"
 msgstr "Geben Sie hier den Ort innerhalb der Stadt an."
 
-# Stadtteil?
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Stadtbereich:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Set here the content's location within the city."
-msgid "Sublocation shown in the item"
-msgstr "Geben Sie hier den Ort innerhalb der Stadt an."
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Stadt:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
 #| msgid "Set here the content's location within the city."
 msgid "City shown in the item"
+msgstr "Geben Sie hier den Ort innerhalb der Stadt an."
+
+# Stadtteil?
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Sublocation:"
+msgid "Sublocation"
+msgstr "Stadtbereich:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "Sublocation shown in the item"
 msgstr "Geben Sie hier den Ort innerhalb der Stadt an."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702

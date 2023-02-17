@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
-"PO-Revision-Date: 2023-02-12 18:25+0100\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
+"PO-Revision-Date: 2023-02-16 07:20+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.2.2\n"
 
@@ -18215,19 +18215,15 @@ msgid "Jalbum completed."
 msgstr "Jalbum je dokončan."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Dobrodošli v orodju jAlbum</b></h1></p> <p>Ta pomočnik vas bo "
-"vodil, da boste hitro izvozili</p><p></p><p>vaše slike kot projekt jAlbum.</"
-"p></qt>"
+"<qt><p><h1><b>Dobrodošli v orodju jAlbum export tool</b></h1></p> <p>Ta "
+"pomočnik vas bo vodil, da boste hitro izvozili</p><p></p><p>vaše slike kot "
+"projekt jAlbum.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
@@ -18263,10 +18259,9 @@ msgid "Create jAlbum Album"
 msgstr "Ustvari album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Dobrodošli v orodje jAlbum"
+msgstr "Dobrodošli v orodje jAlbum export tool"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -59340,10 +59335,9 @@ msgid "Country"
 msgstr "Država"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "Država lokacije prikazane v postavki"
+msgstr "Država prikazana v postavki"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -59351,33 +59345,29 @@ msgid "Province"
 msgstr "Provinca"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Država lokacije prikazane v postavki"
+msgstr "Provinca prikazana v postavki"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
-msgid "Sublocation"
-msgstr "Pod-položaj:"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
-msgid "Sublocation shown in the item"
-msgstr "Okrožje lokacije prikazane v postavki"
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, kde-format
 msgid "City"
 msgstr "Mesto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
 msgid "City shown in the item"
-msgstr "Kraj lokacije prikazane v postavki"
+msgstr "Kraj prikazan v postavki"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation"
+msgstr "Pod-položaj"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "Sublocation shown in the item"
+msgstr "Pod-položaj prikazan v postavki"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format

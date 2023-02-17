@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:56+0000\n"
+"POT-Creation-Date: 2023-02-17 00:55+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -57440,22 +57440,22 @@ msgstr "<p>यहाँ छविको व्यतिरेक समायो
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation"
-msgstr "चयन"
+msgid "City"
+msgstr "श्रेय:"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
-msgid "Sublocation shown in the item"
+msgid "City shown in the item"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City"
-msgstr "श्रेय:"
+msgid "Sublocation"
+msgstr "चयन"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
-msgid "City shown in the item"
+msgid "Sublocation shown in the item"
 msgstr "<p>यहाँ छविको व्यतिरेक समायोजन सेट गर्नुहोस् ।"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
