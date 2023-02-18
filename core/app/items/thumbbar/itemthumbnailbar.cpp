@@ -39,9 +39,9 @@ class Q_DECL_HIDDEN ItemThumbnailBar::Private
 public:
 
     explicit Private()
+      : scrollPolicy    (Qt::ScrollBarAlwaysOn),
+        duplicatesFilter(nullptr)
     {
-        scrollPolicy     = Qt::ScrollBarAlwaysOn;
-        duplicatesFilter = nullptr;
     }
 
     Qt::ScrollBarPolicy          scrollPolicy;
@@ -50,7 +50,7 @@ public:
 
 ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     : ItemCategorizedView(parent),
-      d(new Private())
+      d                  (new Private())
 {
     setItemDelegate(new ItemThumbnailDelegate(this));
     setSpacing(3);
