@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-17 00:55+0000\n"
-"PO-Revision-Date: 2023-02-08 14:01+0100\n"
+"PO-Revision-Date: 2023-02-17 16:20+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17629,7 +17629,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr ""
+msgstr "Vítejte v nástroji pro export jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -20692,7 +20692,7 @@ msgstr "Na střed"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
 #, kde-format
 msgid "OpenGL Viewer"
-msgstr ""
+msgstr "Prohlížeč OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
 #, kde-format
@@ -33061,7 +33061,7 @@ msgstr "Zápis"
 #, kde-format
 msgctxt "@title"
 msgid "Type-Mimes"
-msgstr "MIME-typy"
+msgstr "Typy MIME"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, kde-format
@@ -47345,23 +47345,23 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "Chyba: Nelze najít přihlašovací údaje Bing ve webové verzi."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "Chyba: Nelze získat klíč Bing z webové verze."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Chyba: Nelze získat token Bing z webové verze."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr ""
+msgstr "Chyba: Nelze získat dodatečné informace Bing z webové verze."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -47369,7 +47369,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "Chyba: Nelze zpracovat automaticky detekovaný jazyk"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -48179,12 +48179,12 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Chyba: Nelze najít Yandex SID ve webové verzi."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Chyba: Nelze získat Yandex SID z webové verze."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, kde-format
@@ -58695,7 +58695,7 @@ msgstr "Celá obrazovka"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
-msgstr "MIME typy"
+msgstr "Typy MIME"
 
 #: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
