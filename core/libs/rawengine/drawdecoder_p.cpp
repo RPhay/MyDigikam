@@ -823,11 +823,16 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
     return true;
 }
 
-bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
+bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw, bool rotate)
 {
     raw->imgdata.params.use_auto_wb   = 1;         // Use automatic white balance.
     raw->imgdata.params.use_camera_wb = 1;         // Use camera white balance, if possible.
     raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
+
+    if (!rotate)
+    {
+        raw->imgdata.params.user_flip = 0;
+    }
 
 #ifdef USE_DNGSDK
 

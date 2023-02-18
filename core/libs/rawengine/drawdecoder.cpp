@@ -148,7 +148,7 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QBuffer& buffer
     return (Private::loadEmbeddedPreview(imgData, raw));
 }
 
-bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
+bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path, bool rotate)
 {
     QFileInfo fileInfo(path);
     QString   rawFilesExt = rawFiles();
@@ -186,7 +186,7 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
     }
 
 
-    if (!Private::loadHalfPreview(image, raw))
+    if (!Private::loadHalfPreview(image, raw, rotate))
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failed to get half preview from LibRaw!";
         return false;

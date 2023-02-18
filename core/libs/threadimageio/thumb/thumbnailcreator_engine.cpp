@@ -137,8 +137,10 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from half preview with libraw for" << path;
 
                 // TODO: Use DImg based loader instead?
+                // We store thumbnails unrotated, loading
+                // half preview from libraw unrotated here.
 
-                DRawDecoder::loadHalfPreview(qimage, path);
+                DRawDecoder::loadHalfPreview(qimage, path, false);
             }
 
             // Special case with DNG file. See bug #338081

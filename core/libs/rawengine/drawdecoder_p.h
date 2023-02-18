@@ -89,7 +89,7 @@ public:
 
     static bool loadEmbeddedPreview(QByteArray&, LibRaw* const raw);
 
-    static bool loadHalfPreview(QImage&, LibRaw* const raw);
+    static bool loadHalfPreview(QImage&, LibRaw* const raw, bool rotate = true);
 
 private:
 

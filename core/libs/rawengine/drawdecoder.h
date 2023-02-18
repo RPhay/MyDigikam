@@ -95,7 +95,7 @@ public:
      * Get the half decoded RAW picture. This is slower than loadEmbeddedPreview() method
      * and non cancelable. This method does not require a class instance to run.
      */
-    static bool loadHalfPreview(QImage& image, const QString& path);
+    static bool loadHalfPreview(QImage& image, const QString& path, bool rotate = true);
 
     /**
      * Get the half decoded RAW picture as JPEG data in QByteArray. This is slower than loadEmbeddedPreview()
