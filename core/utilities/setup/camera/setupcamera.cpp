@@ -564,7 +564,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     layout2->addWidget(d->fullScreenSettings);
     layout2->addStretch();
 
-    d->tab->insertTab(ImportWindow, panel4, i18n("Import Window"));
+    d->tab->insertTab(ImportWindow, panel4, i18nc("@title:tab import tool GUI settings", "Import Window"));
 
     // -------------------------------------------------------------
 
