@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:55+0000\n"
+"POT-Creation-Date: 2023-02-19 00:55+0000\n"
 "PO-Revision-Date: 2023-02-15 11:06+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -41052,7 +41052,7 @@ msgstr "Miniatuur is null"
 msgid "File does not exist or is not a file"
 msgstr "Bestand bestaat niet of is geen bestand"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:211
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "Er kon geen miniatuur voor %1 worden aangemaakt"
