@@ -1145,8 +1145,9 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     }
     else if (name == QLatin1String("faceregionscount"))
     {
-        sql += QString::fromUtf8(" (Images.id IN (SELECT imageid FROM ImageTagProperties WHERE property = ? "
-                                     " GROUP BY imageid HAVING COUNT(*) ");
+        sql += QString::fromUtf8(" (Images.id IN (SELECT imageid FROM ImageTagProperties "
+                                 " WHERE property = ? OR property = ? "
+                                 " GROUP BY imageid HAVING COUNT(*) ");
 
         if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
         {
@@ -1166,21 +1167,23 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                                              relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
                                                                              : SearchXml::LessThan);
             sql += QString::fromUtf8(" ?) ) ");
-            *boundValues << ImageTagPropertyName::tagRegion() << values.first() << values.last();
+            *boundValues << ImageTagPropertyName::tagRegion() << ImageTagPropertyName::autodetectedFace()
+                         << values.first() << values.last();
         }
         else
         {
             ItemQueryBuilder::addSqlRelation(sql, relation);
             sql += QString::fromUtf8(" ?) ) ");
-            *boundValues << ImageTagPropertyName::tagRegion() << reader.valueToInt();
+            *boundValues << ImageTagPropertyName::tagRegion() << ImageTagPropertyName::autodetectedFace()
+                         << reader.valueToInt();
         }
     }
     else if (name == QLatin1String("nofaceregions"))
     {
             reader.readToEndOfElement();
             sql += QString::fromUtf8(" (Images.id NOT IN (SELECT imageid FROM ImageTagProperties "
-                                     " WHERE property = ?) ) ");
-            *boundValues << ImageTagPropertyName::tagRegion();
+                                     " WHERE property = ? OR property = ? ) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion() << ImageTagPropertyName::autodetectedFace();
     }
     else if (name == QLatin1String("similarity"))
     {
