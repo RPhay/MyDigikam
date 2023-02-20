@@ -274,4 +274,6 @@ BUGFIXES:
 233 ==> 465832 - Recognize faces don't run because "there are no identities to recognize".
 234 ==> 465983 - Orientation of a DNG file not correct in the thumb bar.
 235 ==> 466083 - Search photos with exactly 1 face regions and not tagged.
-236 ==> 
+236 ==> 466146 - XMP metadata is not written into jxl files.
+237 ==> 
+
