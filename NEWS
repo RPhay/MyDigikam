@@ -276,4 +276,3 @@ BUGFIXES:
 235 ==> 466083 - Search photos with exactly 1 face regions and not tagged.
 236 ==> 466146 - XMP metadata is not written into jxl files.
 237 ==> 
-

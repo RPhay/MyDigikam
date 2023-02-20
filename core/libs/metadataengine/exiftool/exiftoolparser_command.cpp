@@ -161,9 +161,18 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     d->prepareProcess();
 
     QByteArrayList cmdArgs;
+    QString suffix(fileInfo.suffix().toUpper());
+
+    if (suffix != QLatin1String("JXL"))
+    {
+        cmdArgs << QByteArray("-xmp:all=");
+        cmdArgs << QByteArray("-exif:all=");
+        cmdArgs << QByteArray("-iptc:all=");
+    }
+
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
-    cmdArgs << QByteArray("-all:all>all:all");
+    cmdArgs << QByteArray("-all:all");
 
     if (hasExif)
     {
