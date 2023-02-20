@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2023-02-08 19:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -63689,7 +63689,9 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>İndirirken her ögeyi önizlemek için bunu işaretleyin.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Window"
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "İçe Aktarma Penceresi"
 

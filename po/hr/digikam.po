@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -58304,9 +58304,10 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
-msgstr ""
+msgstr "Postavke"
 
 #: core/utilities/setup/camera/setupcamera.cpp:831
 #, kde-format

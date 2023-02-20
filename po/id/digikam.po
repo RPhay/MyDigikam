@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2022-09-27 23:22+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -60287,9 +60287,11 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Importing"
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
-msgstr ""
+msgstr "Pengimporan"
 
 #: core/utilities/setup/camera/setupcamera.cpp:831
 #, kde-format

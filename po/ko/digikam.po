@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -61820,6 +61820,7 @@ msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
 #, fuzzy, kde-format
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "어린이"
 

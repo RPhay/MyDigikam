@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -59412,6 +59412,7 @@ msgstr "<p>छवि फ़ाइल तिथि प्रदर्शित �
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
 #, fuzzy, kde-format
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "आयात"
 

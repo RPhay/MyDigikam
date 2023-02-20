@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2023-02-16 07:20+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -60915,7 +60915,9 @@ msgstr ""
 "<p>Nastavite to možnost za predogled vsakega predmeta med prejemom.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Window"
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Okno uvoza"
 

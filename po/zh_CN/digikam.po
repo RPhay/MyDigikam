@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:55+0000\n"
+"POT-Creation-Date: 2023-02-20 00:54+0000\n"
 "PO-Revision-Date: 2023-02-15 11:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -59039,7 +59039,9 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>勾选此项以在下载过程中预览每一张图像。</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Window"
+msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "导入对话框"
 
