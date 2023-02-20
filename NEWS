@@ -275,4 +275,5 @@ BUGFIXES:
 234 ==> 465983 - Orientation of a DNG file not correct in the thumb bar.
 235 ==> 466083 - Search photos with exactly 1 face regions and not tagged.
 236 ==> 466146 - XMP metadata is not written into jxl files.
-237 ==> 
+237 ==> 465533 - Tag's aren't being removed from images.
+238 ==> 
