@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-15 11:06+0100\n"
+"PO-Revision-Date: 2023-02-20 10:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -61299,8 +61299,7 @@ msgstr ""
 "tonen.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Venster importeren"

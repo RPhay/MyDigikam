@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-08 19:04+0300\n"
+"PO-Revision-Date: 2023-02-20 20:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -5604,7 +5604,7 @@ msgstr ""
 #| msgid "HSL Correction"
 msgctxt "@title"
 msgid "HSL Correction"
-msgstr "HSL Düzeltme"
+msgstr "TDA Düzeltme"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
@@ -8700,7 +8700,7 @@ msgid ""
 "their fullest range, adjusting everything in between.</p>"
 msgstr ""
 "<b>Karşıtlığı Ger</b>:<p>Bu seçenek, en düşük ve en yüksek değerleri tam "
-"aralığa genişleterek ve aradaki her şeyi ayarlayarak bir görselin RGB "
+"aralığa genişleterek ve aradaki her şeyi ayarlayarak bir görselin KYM "
 "değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:158
@@ -8711,7 +8711,7 @@ msgid ""
 "using image histogram properties.</p>"
 msgstr ""
 "<b>Otomatik Pozlama</b>:<p>Bu seçenek, görüntü histogramı özelliklerini "
-"kullanarak en uygun açıklığı ve siyah düzeyini hesaplamak için görselin RGB "
+"kullanarak en uygun açıklığı ve siyah düzeyini hesaplamak için görselin KYM "
 "değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
@@ -8991,7 +8991,7 @@ msgstr "Renk Negatifi..."
 #: core/dplugins/editor/colors/hsl/hsltool.cpp:164
 #, kde-format
 msgid "HSL Adjustments"
-msgstr "HSL Ayarlamaları"
+msgstr "TDA Ayarlamaları"
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
 #, fuzzy, kde-format
@@ -17893,7 +17893,7 @@ msgid ""
 "Convert to CIECAM02 color appearance model during the blending process "
 "instead of RGB."
 msgstr ""
-"Harmanlama işlemi sırasında RGB yerine CIECAM02 renk görünüşü modeline "
+"Harmanlama işlemi sırasında KYM yerine CIECAM02 renk görünüşü modeline "
 "dönüştür."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
@@ -31870,7 +31870,7 @@ msgstr "Sayfa yüklenemedi %1"
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
-msgstr "RGB"
+msgstr "KYM"
 
 #: core/libs/dimg/dimg_metadata.cpp:431
 #, kde-format
@@ -33992,7 +33992,7 @@ msgid ""
 "values where both the original and blurred image's value are low and do the "
 "opposite on high values."
 msgstr ""
-"<b>İşlev</b>: Bu işlev, orijinal RGB kanallarını doygun bulanık görüntü ile "
+"<b>İşlev</b>: Bu işlev, orijinal KYM kanallarını doygun bulanık görüntü ile "
 "birleştirir. Bu işlev, ton eşleme aşamalarının her birinde kullanılır. "
 "Doğrusal veya güçlü olabilir. Temel olarak, bu işlev hem özgün hem de "
 "bulanık görüntü değerinin düşük olduğu değerleri artırır ve yüksek değerleri "
@@ -40141,7 +40141,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
-msgstr "RGB değerini dört renk olarak ara değerle"
+msgstr "KYM değerini dört renk olarak ara değerle"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:244
 #, kde-kuit-format
@@ -40155,7 +40155,7 @@ msgid ""
 "but it eliminates false 2x2 mesh patterns with VNG quality method or mazes "
 "with AHD quality method.</para>"
 msgstr ""
-"<title>RGB'yi dört renk olarak yorumlayın</title><para>Öntanımlı durum tüm "
+"<title>KYM'yi dört renk olarak yorumlayın</title><para>Öntanımlı durum tüm "
 "yeşil piksellerin aynı olduğunu varsaymaktır. Çift -sıra yeşil pikseller mor "
 "ötesi ışığa tek-sıra piksellerden daha duyarlıysa bu fark çıktıda bir örgü "
 "desenine neden olur; bu seçeneği kullanmak bu sorunu minimum ayrıntı "
@@ -40896,14 +40896,14 @@ msgstr ""
 "<title>Çalışma alanı</title><para>RAW veriyi çözünce kullanılacak çıktı renk "
 "uzayını buradan seçin.</para><para><list><item><emphasis strong='true'>Ham "
 "(lineer)</emphasis>: bu kipte, RAW çözerken  hiçbir çıktı renk uzayı "
-"kullanılmaz.</item><item><emphasis strong='true'>sRGB</emphasis>: bu bir RGB "
+"kullanılmaz.</item><item><emphasis strong='true'>sRGB</emphasis>: bu bir KYM "
 "renk uzayıdır, Hewlett-Packard ve Microsoft ile beraber oluşturulmuştur. Web "
 "ve portre fotoğrafçılığı için en iyi seçimdir.</item><item><emphasis "
-"strong='true'>Adobe RGB</emphasis>: bu genişletilmiş RGB renk uzayıdır. "
+"strong='true'>Adobe RGB</emphasis>: bu genişletilmiş KYM renk uzayıdır. "
 "Adobe tarafından geliştirilmiştir. Reklam ve çizgi resim gibi çizim "
 "uygulamaları için kullanılır.</item><item><emphasis strong='true'>Geniş Gam</"
 "emphasis>: bu renk uzayı, Adobe RGB renk uzayının genişletilmiş sürümüdür.</"
-"item><item><emphasis strong='true'>Pro-Photo</emphasis>: bu bir RGB renk "
+"item><item><emphasis strong='true'>Pro-Photo</emphasis>: bu bir KYM renk "
 "uzayıdır. Kodak tarafından gliştirilmiştir. Özellikle geniş gamda fotoğraf "
 "çıktıları sağlar.</item><item><emphasis strong='true'>Özel</emphasis>: özel "
 "bir çıktı renk uzayı profili kullan.</item></list></para>"
@@ -44938,7 +44938,7 @@ msgstr "GRİ"
 #, kde-format
 msgctxt "@info: icc profile color space"
 msgid "HSV"
-msgstr "HSV"
+msgstr "TDD"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:382
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:443
@@ -57550,7 +57550,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editortool.cpp:400
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
-msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
+msgstr "(%1,%2) KYMA:%3,%4,%5,%6"
 
 #: core/utilities/imageeditor/editor/editortooliface.cpp:95
 #: core/utilities/imageeditor/editor/editortooliface.cpp:211

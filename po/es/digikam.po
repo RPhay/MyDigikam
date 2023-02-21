@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-16 01:05+0100\n"
+"PO-Revision-Date: 2023-02-20 11:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -61428,8 +61428,7 @@ msgstr ""
 "descarga.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Ventana de importación"

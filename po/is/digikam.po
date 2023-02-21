@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-07 11:25+0000\n"
+"PO-Revision-Date: 2023-02-20 11:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -248,7 +248,7 @@ msgstr "Hlaða inn úr myndavél"
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
-msgstr "Hala niður && eyða úr myndavél"
+msgstr "Hlaða inn && eyða úr myndavél"
 
 #: core/app/dragdrop/importdragdrop.cpp:50
 #: core/showfoto/thumbbar/showfotodragdrophandler.cpp:45
@@ -18128,17 +18128,13 @@ msgid "Jalbum completed."
 msgstr "Gerð jAlbum-myndasafns er lokið."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b> Velkomin í jAlbum albúmaverkfærið</b></h1></p><p>Þessi "
+"<qt><p><h1><b> Velkomin í jAlbum útflutningsverkfærið</b></h1></p><p>Þessi "
 "leiðarvísir mun hjálpa þér að flytja út</p><p></p><p>myndirnar þínar sem "
 "jAlbum-verkefni.</p></qt>"
 
@@ -18176,10 +18172,9 @@ msgid "Create jAlbum Album"
 msgstr "Búa til jAlbum-albúm"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Velkomin í jAlbum albúmaverkfærið"
+msgstr "Velkomin í jAlbum útflutningsverkfærið"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -55889,7 +55884,7 @@ msgstr "Gat ekki keyrt skriftu á <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:960
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
-msgstr "Gat ekki halað niður skránni <b>%1</b>."
+msgstr "Gat ekki sótt skrána <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:964
 #, kde-format
@@ -56725,8 +56720,8 @@ msgid ""
 "\n"
 "Try Anyway?"
 msgstr ""
-"Það er ekki laust nægilegt pláss á disk albúmsins sem þú valdir til að hala "
-"niður og vinna með valdar myndir úr myndavélinni.\n"
+"Það er ekki laust nægilegt pláss á disk albúmsins sem þú valdir til að sækja "
+"og vinna með valdar myndir úr myndavélinni.\n"
 "\n"
 "Áætluð rýmisþörf: %1\n"
 "Tiltækt laust pláss: %2\n"
@@ -59085,10 +59080,9 @@ msgid "Country"
 msgstr "Land"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "Land staðsetningarinnar sem sýnd er í atriðinu"
+msgstr "Land sem sýnt er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -59096,10 +59090,9 @@ msgid "Province"
 msgstr "Hérað"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Hérað staðsetningarinnar sem sýnd er í atriðinu"
+msgstr "Hérað sem sýnt er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
@@ -59107,22 +59100,19 @@ msgid "City"
 msgstr "Borg/Staður"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#, kde-format
 msgid "City shown in the item"
-msgstr "Borg staðsetningarinnar sem sýnd er í atriðinu"
+msgstr "Borg sem sýnd er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Nákvæm staðsetning:"
+msgstr "Nákvæm staðsetning"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Sveitarfélag staðsetningarinnar sem sýnd er í atriðinu"
+msgstr "Hverfi sem sýnt er í atriðinu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -60664,8 +60654,7 @@ msgstr ""
 "<p> Veldu þetta til að forskoða hvert atriði á meðan því er hlaðið inn.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Innflutningsgluggi"
@@ -61026,8 +61015,8 @@ msgstr ""
 "mjög stórra tvíundakerfis-keyrsluskráa. Einhverjar þessara skráa fundust "
 "ekki. Smelltu á 'Sækja' til að byrja að sækja nauðsynlegar skrár. Þú getur "
 "hætt við þetta ferli, næst þegar digiKam ræsist mun þessi gluggi birtast "
-"aftur. Andlitaskönnun mun ekki virka án þessara skráa.</p><p>Skrárnar verða "
-"niðurhalaðar í %1. Gakktu úr skugga um að u.þ.b. %2 séu tiltæk. <b>Eftir að "
+"aftur. Andlitaskönnun mun ekki virka án þessara skráa.</p><p>Skránum verður "
+"hlaðið yfir í í %1. Gakktu úr skugga um að u.þ.b. %2 séu tiltæk. <b>Eftir að "
 "búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:215

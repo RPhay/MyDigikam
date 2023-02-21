@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-16 06:01+0100\n"
+"PO-Revision-Date: 2023-02-20 06:41+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -19615,7 +19615,7 @@ msgstr ""
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
-msgstr ""
+msgstr "Png"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
 #, kde-format
@@ -29614,7 +29614,7 @@ msgstr "ნაჭერი"
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Burlap"
-msgstr ""
+msgstr "ჭილოფი"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:85
 #, kde-format
@@ -30075,7 +30075,7 @@ msgstr ""
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:328
 #, kde-format
 msgid "Common Settings"
-msgstr ""
+msgstr "საერთო პარამეტრები"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:331
 #, kde-format
@@ -56790,7 +56790,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
-msgstr ""
+msgstr "Mime ტიპები"
 
 #: core/utilities/setup/album/setupalbumview.cpp:371
 #, kde-format
@@ -57337,8 +57337,7 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr ""
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "შემოტანის ფანჯარა"
