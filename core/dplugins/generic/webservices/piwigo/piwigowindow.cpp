@@ -87,6 +87,11 @@ public:
     unsigned int                   uploadCount;
     unsigned int                   uploadTotal;
     QStringList                    pUploadList;
+
+    QLabel*                        userNameLbl;
+    QLabel*                        userName;
+    QLabel*                        urlLbl;
+    QLabel*                        url;
 };
 
 PiwigoWindow::Private::Private(PiwigoWindow* const parent,
@@ -103,7 +108,11 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
       iface         (interface),
       progressDlg   (nullptr),
       uploadCount   (0),
-      uploadTotal   (0)
+      uploadTotal   (0),
+      userNameLbl   (nullptr),
+      userName      (nullptr),
+      urlLbl        (nullptr),
+      url           (nullptr)
 {
     parent->setMainWidget(widget);
     parent->setModal(false);
@@ -137,7 +146,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     albumView = new QTreeWidget;
     QStringList labels;
-    labels << i18n("Albums");
+    labels << i18n("Remote Albums");
     albumView->setHeaderLabels(labels);
     albumView->setSortingEnabled(true);
     albumView->sortByColumn(0, Qt::AscendingOrder);
@@ -146,6 +155,11 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     QFrame* const optionFrame = new QFrame;
     QVBoxLayout* const vlay   = new QVBoxLayout();
+
+    userNameLbl       = new QLabel(i18nc("piwigo account settings", "Name:"), optionFrame);
+    userName          = new QLabel(optionFrame);
+    urlLbl            = new QLabel(i18nc("piwigo url settings", "Url:"), optionFrame);
+    url               = new QLabel(optionFrame);
 
     confButton = new QPushButton;
     confButton->setText(i18n("Change Account"));
@@ -201,6 +215,11 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
+
+    vlay->addWidget(userNameLbl);
+    vlay->addWidget(userName);
+    vlay->addWidget(urlLbl);
+    vlay->addWidget(url);
     vlay->addWidget(confButton);
     vlay->addWidget(optionsBox);
 
@@ -361,6 +380,9 @@ void PiwigoWindow::slotDoLogin()
     }
 
     d->talker->login(url, d->pPiwigo->username(), d->pPiwigo->password());
+
+    d->userName->setText(QString::fromLatin1("<b>%1</b>").arg(d->pPiwigo->username()));
+    d->url->setText(QString::fromLatin1("<b>%1</b>").arg(url.toDisplayString()));
 }
 
 void PiwigoWindow::slotLoginFailed(const QString& msg)
