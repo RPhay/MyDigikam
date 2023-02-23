@@ -215,7 +215,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
-
+    vlay->addWidget(logo);
     vlay->addWidget(userNameLbl);
     vlay->addWidget(userName);
     vlay->addWidget(urlLbl);
@@ -227,7 +227,6 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
-    hlay->addWidget(logo);
     hlay->addWidget(albumView);
     hlay->addWidget(optionFrame);
 
