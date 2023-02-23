@@ -55,6 +55,7 @@
 #include "piwigoitem.h"
 #include "piwigotalker.h"
 #include "imagedialog.h"
+#include "ditemslist.h"
 
 namespace DigikamGenericPiwigoPlugin
 {
@@ -82,6 +83,7 @@ public:
     PiwigoTalker*                  talker;
     PiwigoSession*                 pPiwigo;
     DInfoInterface*                iface;
+    DItemsList*                    imageList;
 
     QProgressDialog*               progressDlg;
     unsigned int                   uploadCount;
@@ -106,6 +108,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
       talker        (nullptr),
       pPiwigo       (nullptr),
       iface         (interface),
+      imageList     (nullptr),
       progressDlg   (nullptr),
       uploadCount   (0),
       uploadTotal   (0),
@@ -141,6 +144,15 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
                   .arg(QLatin1String("https://piwigo.org"))
                   .arg(QString::fromLatin1("<img src=\"data:image/png;base64,%1\">")
                   .arg(QLatin1String(byteArray.toBase64().data()))));
+
+    // ---------------------------------------------------------------------------
+
+    imageList = new DItemsList(nullptr);
+    imageList->setObjectName(QLatin1String("MailImages ImagesList"));
+    imageList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    imageList->setIface(iface);
+    imageList->listView()->clear();
+    imageList->loadImagesFromCurrentSelection();
 
     // ---------------------------------------------------------------------------
 
@@ -221,13 +233,14 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     vlay->addWidget(urlLbl);
     vlay->addWidget(url);
     vlay->addWidget(confButton);
+    vlay->addWidget(albumView);
     vlay->addWidget(optionsBox);
 
     optionFrame->setLayout(vlay);
 
     // ---------------------------------------------------------------------------
 
-    hlay->addWidget(albumView);
+    hlay->addWidget(imageList);
     hlay->addWidget(optionFrame);
 
     widget->setLayout(hlay);
@@ -533,7 +546,7 @@ void PiwigoWindow::slotAlbumSelected()
 
 void PiwigoWindow::slotAddPhoto()
 {
-    const QList<QUrl> urls(d->iface->currentSelectedItems());
+    const QList<QUrl> urls(d->imageList->imageUrls());
 
     if (urls.isEmpty())
     {
