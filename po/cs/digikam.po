@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-17 16:20+0100\n"
+"POT-Creation-Date: 2023-02-23 00:55+0000\n"
+"PO-Revision-Date: 2023-02-22 16:47+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2813,7 +2813,6 @@ msgstr "Zobrazit na celou obrazovku"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
@@ -5830,7 +5829,7 @@ msgid "Watermark type: "
 msgstr "Typ vodoznaku: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:508
 #, kde-format
 msgid "Image"
 msgstr "Obrázek"
@@ -12600,7 +12599,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Copyright (*):"
-msgstr "Copyright (*):"
+msgstr "Autorská práva (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
 #, kde-format
@@ -13784,7 +13783,7 @@ msgstr "Zadejte jméno autora popisku."
 #: core/libs/template/templateviewer.cpp:149
 #, kde-format
 msgid "Copyright:"
-msgstr "Copyright:"
+msgstr "Autorská práva:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
 #, kde-format
@@ -14954,7 +14953,7 @@ msgstr "Zadejte potřebný odkaz na autorské právo."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
 #, kde-format
 msgid "Sync Exif Copyright"
-msgstr "Synchronizovat Copyright EXIF"
+msgstr "Synchronizovat Autorská práva EXIF"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
 #: core/libs/template/templatepanel.cpp:174
@@ -20904,7 +20903,7 @@ msgstr "Náhled..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:155
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:169
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -21950,7 +21949,7 @@ msgstr "Exportovat do Boxu"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:251
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -22059,7 +22058,7 @@ msgstr "Export do Boxu"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:606
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -22085,7 +22084,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:390
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -25042,59 +25041,80 @@ msgstr "Odeslat metadata %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Přijata neplatná odpověď vzdáleného Piwigo (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:123
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:132
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Navštívit webovou stránku Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:151
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Delete Album"
+msgid "Remote Albums"
+msgstr "Smazat album"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "filename"
+#| msgid "Name:"
+msgctxt "piwigo account settings"
+msgid "Name:"
+msgstr "Název:"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
+#, kde-format
+msgctxt "piwigo url settings"
+msgid "Url:"
+msgstr ""
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:165
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Změnit účet"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:173
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Před odesláním změnit velikost fotografií"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:162
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
 #, kde-format
 msgid "Maximum width:"
 msgstr "Maximální šířka:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:168
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:182
 #, kde-format
 msgid "Maximum height:"
 msgstr "Maximální výška:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:174
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Kvalita obrázku JPEG se změněnou velikostí:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Export Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:260
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:378
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:634
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:279
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:400
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Upravit data Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:369
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:391
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Neúspěšné přihlášení ke vzdálenému serveru piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:370
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:392
 #, kde-format
 msgid ""
 "\n"
@@ -25103,8 +25123,8 @@ msgstr ""
 "\n"
 "Přejete si znovu zkontrolovat svá nastavení a zkusit úlohu znovu?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:442
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:466
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:464
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:488
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -25117,27 +25137,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:520
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:542
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Není co odesílat - prosím vyberte fotografie pro odeslání."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:559
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:581
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Soubor %1 není v podporovaném formátu pro obrázky a video"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:564
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Odesílání souboru %1 "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:585
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:607
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Selhání při odesílání médií do vzdáleného Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:608
 #, kde-format
 msgid ""
 "\n"
@@ -41447,13 +41467,13 @@ msgstr "Neformátované informace o modelu ICC profilu"
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "Autorská práva"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:139
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "Raw information about the ICC profile copyright"
-msgstr "Neformátované informace o copyrightu ICC profilu"
+msgstr "Neformátované informace o autorských právech profilu ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:140
 #, kde-format
@@ -59341,8 +59361,7 @@ msgstr ""
 "<p>Zaškrtněte tuto volbu pro náhled každé položky již během stahování.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Okno importu"

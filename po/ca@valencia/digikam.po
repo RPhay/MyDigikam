@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-20 10:06+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-02-23 00:55+0000\n"
+"PO-Revision-Date: 2023-02-22 22:20+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2823,7 +2823,6 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
@@ -3063,7 +3062,7 @@ msgid ""
 "settings or select an album with content."
 msgstr ""
 "La consulta actual de la base de dades no ha retornat cap resultat. Canvieu "
-"els paràmetres de la busca o seleccioneu un àlbum amb contingut."
+"la configuració de la busca o seleccioneu un àlbum amb contingut."
 
 #: core/app/views/stack/itemiconview_p.h:168
 #, kde-format
@@ -3351,16 +3350,16 @@ msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
 msgstr ""
-"Afegir paràmetres per a llistar els idiomes alternatius/traduïts preferits "
-"en el giny d'edició de text."
+"Afegir opcions de configuració per a llistar els idiomes alternatius/"
+"traduïts preferits en el giny d'edició de text."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
-"Permetre utilitzar els paràmetres d'ordenació segons qualitat d'imatge "
-"global o personalitzada per tot arreu."
+"Permetre utilitzar les opcions de configuració d'ordenació de les imatges "
+"segons la qualitat de forma global o personalitzada per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -6023,7 +6022,7 @@ msgid "Watermark type: "
 msgstr "Tipus de marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:508
 #, kde-format
 msgid "Image"
 msgstr "Imatge"
@@ -11974,7 +11973,7 @@ msgstr "Busca"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
-msgstr "Exporta a KML"
+msgstr "Exporta cap a KML"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
 #, kde-format
@@ -18293,7 +18292,7 @@ msgstr "Inicia «jAlbum» amb fitxers de projecte nou"
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
 #, kde-format
 msgid "jAlbum Export"
-msgstr "Exporta cap a «jAlbum»"
+msgstr "Exporta cap a jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:58
 #, kde-format
@@ -18548,7 +18547,7 @@ msgstr "S'ha produït un error en iniciar el servidor multimèdia..."
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
 #, kde-format
 msgid "DLNA Export"
-msgstr "Exporteu cap a DLNA"
+msgstr "Exporta cap a DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
 #, kde-format
@@ -21276,8 +21275,7 @@ msgstr "Seleccioneu el format preferit al qual convertir les imatges."
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
-msgstr ""
-"<p>El valor nou de compressió de les imatges JPEG que s'han d'enviar:</p>"
+msgstr "<p>El valor nou de compressió de les imatges JPEG que s'enviaran:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
@@ -21903,7 +21901,7 @@ msgstr "Vista prèvia..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:155
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:169
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -23007,7 +23005,7 @@ msgstr "Exporteu cap a Box"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:251
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -23121,7 +23119,7 @@ msgstr "Exporta cap a Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:606
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -23148,7 +23146,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:390
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -23522,7 +23520,7 @@ msgid ""
 "compression<br/><b>75</b>: low compression (default value)<br/><b>100</b>: "
 "no compression</p>"
 msgstr ""
-"<p>El valor de la nova compressió de les imatges JPEG que s'han d'enviar:</"
+"<p>El valor nou de compressió de les imatges JPEG que s'enviaran:</"
 "p><p><b>1</b>: compressió molt alta<br/><b>25</b>: compressió alta<br/> "
 "<b>50</b>: compressió mitjana<br/><b>75</b>: compressió baixa (valor "
 "predeterminat) <br/><b>100</b>: sense compressió</p>"
@@ -23591,7 +23589,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "Exporta a un emmagatzematge local..."
+msgstr "Exporta cap a un emmagatzematge local..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
@@ -23732,13 +23730,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Exporta a un emmagatzematge remot..."
+msgstr "Exporta cap a un emmagatzematge remot..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
-msgstr "Importa des de l'emmagatzematge remot..."
+msgstr "Importa des d'un emmagatzematge remot..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
@@ -24473,7 +24471,7 @@ msgstr "Comença la pujada al servei web Google Photos"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "Importeu des del servei web Google Photos"
+msgstr "Importeu des del servei web de Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
@@ -24627,7 +24625,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
-msgstr "Exporta a &ImageShack..."
+msgstr "Exporta cap a &ImageShack..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:225
 #, kde-format
@@ -24697,7 +24695,7 @@ msgstr "Comença la pujada al servei web ImageShack"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
 msgid "Image Shack Export"
-msgstr "Exporteu cap a Image Shack"
+msgstr "Exporta cap a ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:269
 #, kde-format
@@ -24782,7 +24780,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
-msgstr "Exporta a &Imgur..."
+msgstr "Exporta cap a &Imgur..."
 
 #: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:192
 #, kde-format
@@ -24892,7 +24890,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
-msgstr "Exporta a l'&iNaturalist..."
+msgstr "Exporta cap a &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:261
 #, kde-format
@@ -25301,7 +25299,7 @@ msgstr "<i>identificació no vàlida</i>"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:762
 #, kde-format
 msgid "iNaturalist Export"
-msgstr "Exporteu cap a l'iNaturalist"
+msgstr "Exporteu cap a iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
@@ -25374,7 +25372,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
-msgstr "Exporta a l'&Ipfs..."
+msgstr "Exporta cap a &Ipfs..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
 #, kde-format
@@ -25967,7 +25965,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
-msgstr "Exporta a &Onedrive..."
+msgstr "Exporta cap a &Onedrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
 #, kde-format
@@ -25985,7 +25983,7 @@ msgstr "Comença la pujada a Onedrive"
 #, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
-msgstr "Exporta a Onedrive"
+msgstr "Exporta cap a Onedrive"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:325
@@ -26212,59 +26210,80 @@ msgstr "Puja les metadades de %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "S'ha rebut una resposta no vàlida des de Piwigo remot (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:123
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:132
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Visiteu la pàgina de Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:151
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Delete Album"
+msgid "Remote Albums"
+msgstr "Suprimix l'àlbum"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "filename"
+#| msgid "Name:"
+msgctxt "piwigo account settings"
+msgid "Name:"
+msgstr "Nom:"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
+#, kde-format
+msgctxt "piwigo url settings"
+msgid "Url:"
+msgstr ""
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:165
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Canvia de compte"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:173
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Redimensiona les fotografies abans de pujar-les"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:162
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
 #, kde-format
 msgid "Maximum width:"
 msgstr "Amplària màxima:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:168
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:182
 #, kde-format
 msgid "Maximum height:"
 msgstr "Alçària màxima:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:174
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Canvia de mida amb la qualitat de JPEG:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Exporteu cap a Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:260
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:378
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:634
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:279
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:400
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Edita les dades de Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:369
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:391
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "No s'ha pogut connectar al piwigo remot. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:370
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:392
 #, kde-format
 msgid ""
 "\n"
@@ -26273,8 +26292,8 @@ msgstr ""
 "\n"
 "Voleu comprovar la configuració i tornar-ho a intentar?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:442
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:466
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:464
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:488
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26287,27 +26306,27 @@ msgstr ""
 msgid "Album"
 msgstr "Àlbum"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:520
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:542
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Res que s'haja de pujar: seleccioneu les fotografies que es pujaran."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:559
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:581
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "El fitxer %1 no té cap format d'imatge o vídeo admés"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:564
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
 #, kde-format
 msgid "Uploading file %1"
 msgstr "S'està pujant el fitxer %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:585
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:607
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "No s'ha pogut pujar el suport a Piwigo remot. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:608
 #, kde-format
 msgid ""
 "\n"
@@ -26640,8 +26659,8 @@ msgstr ""
 msgid ""
 "This is a clickable link to open the SmugMug home page in a web browser."
 msgstr ""
-"Açò és un enllaç que podeu clicar per a obrir la pàgina web de SmugMug en un "
-"navegador web."
+"Este és un enllaç que podeu clicar per a obrir la pàgina inicial de SmugMug "
+"en un navegador web."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:81
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:139
@@ -26767,7 +26786,7 @@ msgstr "Dimensió màxima:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr "Importeu des del servei web SmugMug"
+msgstr "Importeu des del servei web de SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
 #, kde-format
@@ -26813,7 +26832,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:763
 #, kde-format
 msgid "SmugMug Import"
-msgstr "Importació a SmugMug"
+msgstr "Importació des de SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:799
 #, kde-format
@@ -26999,7 +27018,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
-msgstr "Exporta als serveis web..."
+msgstr "Exporta cap als serveis web..."
 
 #: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:326
 #, kde-format
@@ -27067,7 +27086,7 @@ msgstr "Es&colliu l'operació:"
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
 #, kde-format
 msgid "Export to web services"
-msgstr "Exporta als serveis web"
+msgstr "Exporta cap als serveis web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
 #, kde-format
@@ -27088,7 +27107,7 @@ msgstr "Sele&cciona un compte:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr "Exporteu cap a serveis web"
+msgstr "Exporteu cap als serveis web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
 #, kde-format
@@ -34782,7 +34801,7 @@ msgstr "Ubicació: "
 #, kde-format
 msgctxt "@info"
 msgid "These are basic settings for the new %1 album."
-msgstr "Esta és la configuració bàsica per al nou àlbum de %1."
+msgstr "Esta és la configuració bàsica per a l'àlbum nou de %1."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:110
 #, kde-format
@@ -34881,7 +34900,7 @@ msgstr ""
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:186
 #, kde-format
 msgid "This is a clickable link to open %1 in a browser."
-msgstr "Açò és un enllaç que podeu clicar per a obrir %1 en un navegador."
+msgstr "Este és un enllaç que podeu clicar per a obrir %1 en un navegador."
 
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:192
 #, kde-format

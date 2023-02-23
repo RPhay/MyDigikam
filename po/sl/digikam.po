@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-20 00:54+0000\n"
-"PO-Revision-Date: 2023-02-16 07:20+0100\n"
+"POT-Creation-Date: 2023-02-23 00:55+0000\n"
+"PO-Revision-Date: 2023-02-22 09:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.2.2\n"
 
@@ -2876,7 +2876,6 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
@@ -6062,7 +6061,7 @@ msgid "Watermark type: "
 msgstr "Vrsta vodnega žiga: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:508
 #, kde-format
 msgid "Image"
 msgstr "Slika"
@@ -21731,7 +21730,7 @@ msgstr "Predogled..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:155
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:169
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -22816,7 +22815,7 @@ msgstr "Izvoz v Box"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:251
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -22925,7 +22924,7 @@ msgstr "Izvoz v Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:606
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -22951,7 +22950,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:390
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -25973,59 +25972,80 @@ msgstr "Pošiljanje metapodatkov %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Prejet neveljaven odgovor iz oddaljenega strežnika Piwigo (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:123
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:132
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Obiščite spletišče Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:151
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:149
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Delete Album"
+msgid "Remote Albums"
+msgstr "Izbriši album"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#, fuzzy, kde-format
+#| msgctxt "filename"
+#| msgid "Name:"
+msgctxt "piwigo account settings"
+msgid "Name:"
+msgstr "Ime:"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
+#, kde-format
+msgctxt "piwigo url settings"
+msgid "Url:"
+msgstr ""
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:165
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Spremeni račun"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:159
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:173
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Spremeni velikost fotografij pred nalaganjem"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:162
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
 #, kde-format
 msgid "Maximum width:"
 msgstr "Največja širina:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:168
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:182
 #, kde-format
 msgid "Maximum height:"
 msgstr "Največja višina:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:174
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Kakovost preoblikovane slike JPEG:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Izvozi v Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:260
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:378
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:634
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:279
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:400
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Uredi podatke Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:369
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:391
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Prijava v oddaljeni piwigo ni uspela. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:370
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:392
 #, kde-format
 msgid ""
 "\n"
@@ -26034,8 +26054,8 @@ msgstr ""
 "\n"
 "Ali želite preveriti nastavitve in poskusiti znova?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:442
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:466
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:464
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:488
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26048,27 +26068,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:520
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:542
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Ni ničesar za nalaganje - izberite fotografije za prenos."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:559
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:581
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Datoteka %1 ni podprta oblika slike ali videa"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:564
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Pošiljanje datoteke %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:585
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:607
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Pošiljanje medija na oddaljeni Piwigo ni uspelo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:586
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:608
 #, kde-format
 msgid ""
 "\n"
@@ -60915,8 +60935,7 @@ msgstr ""
 "<p>Nastavite to možnost za predogled vsakega predmeta med prejemom.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Okno uvoza"
