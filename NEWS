@@ -277,4 +277,5 @@ BUGFIXES:
 236 ==> 466146 - XMP metadata is not written into jxl files.
 237 ==> 465533 - Tag's aren't being removed from images.
 238 ==> 463577 - Exiv2 alters unrelated DJI Exif metadata when editing tags.
-239 ==> 
+239 ==> 466259 - digiKam crash after launch.
+240 ==> 
