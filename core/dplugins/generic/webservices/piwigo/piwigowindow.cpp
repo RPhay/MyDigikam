@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * SPDX-FileCopyrightText: 2006      by Colin Guthrie <kde at colin dot guthr dot ie>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008      by Andrea Diamantini <adjam7 at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2014 by Frederic Coiffier <frederic dot coiffier at free dot com>
  *
@@ -34,7 +34,6 @@
 #include <QVBoxLayout>
 #include <QTextStream>
 #include <QFile>
-#include <QProgressDialog>
 #include <QApplication>
 #include <QIcon>
 #include <QMenu>
@@ -56,6 +55,7 @@
 #include "piwigotalker.h"
 #include "imagedialog.h"
 #include "ditemslist.h"
+#include "dprogresswdg.h"
 
 namespace DigikamGenericPiwigoPlugin
 {
@@ -85,8 +85,8 @@ public:
     PiwigoSession*                 pPiwigo;
     DInfoInterface*                iface;
     DItemsList*                    imageList;
+    DProgressWdg*                  progressBar;
 
-    QProgressDialog*               progressDlg;
     unsigned int                   uploadCount;
     unsigned int                   uploadTotal;
     QStringList                    pUploadList;
@@ -111,7 +111,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
       pPiwigo       (nullptr),
       iface         (interface),
       imageList     (nullptr),
-      progressDlg   (nullptr),
+      progressBar   (nullptr),
       uploadCount   (0),
       uploadTotal   (0),
       userNameLbl   (nullptr),
@@ -149,12 +149,19 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
-    imageList = new DItemsList(nullptr);
-    imageList->setObjectName(QLatin1String("MailImages ImagesList"));
-    imageList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    imageList              = new DItemsList(nullptr);
+    imageList->setObjectName(QLatin1String("Piwigo ImagesList"));
     imageList->setIface(iface);
     imageList->listView()->clear();
     imageList->loadImagesFromCurrentSelection();
+
+    progressBar            = new DProgressWdg(imageList);
+    progressBar->setMaximum(0);
+    progressBar->reset();
+    imageList->appendControlButtonsWidget(progressBar);
+    QBoxLayout* const blay = imageList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(progressBar, 20);
+    progressBar->hide();
 
     // ---------------------------------------------------------------------------
 
@@ -281,15 +288,6 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 
     d->talker      = new PiwigoTalker(iface, d->widget);
 
-    // setting progressDlg and its numeric hints
-
-    d->progressDlg = new QProgressDialog(this);
-    d->progressDlg->setModal(true);
-    d->progressDlg->setAutoReset(true);
-    d->progressDlg->setAutoClose(true);
-    d->progressDlg->setMaximum(0);
-    d->progressDlg->reset();
-
     // connect functions
 
     connectSignals();
@@ -339,7 +337,7 @@ void PiwigoWindow::connectSignals()
     connect(d->resizeCheckBox, SIGNAL(stateChanged(int)),
             this, SLOT(slotEnableSpinBox(int)));
 
-    connect(d->progressDlg, SIGNAL(canceled()),
+    connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotAddPhotoCancel()));
 
     connect(d->talker, SIGNAL(signalProgressInfo(QString)),
@@ -466,12 +464,12 @@ void PiwigoWindow::slotBusy(bool val)
 
 void PiwigoWindow::slotProgressInfo(const QString& msg)
 {
-    d->progressDlg->setLabelText(msg);
+    d->progressBar->progressStatusChanged(msg);
 }
 
 void PiwigoWindow::slotError(const QString& msg)
 {
-    d->progressDlg->hide();
+    setUiInProgressState(false);
     QMessageBox::critical(this, QString(), msg);
 }
 
@@ -589,9 +587,10 @@ void PiwigoWindow::slotAddPhoto()
     }
 
     d->uploadTotal = d->pUploadList.count();
-    d->progressDlg->reset();
-    d->progressDlg->setMaximum(d->uploadTotal);
+    d->progressBar->reset();
+    d->progressBar->setMaximum(d->uploadTotal);
     d->uploadCount = 0;
+    startButton()->setEnabled(false);
     slotAddPhotoNext();
 }
 
@@ -599,8 +598,10 @@ void PiwigoWindow::slotAddPhotoNext()
 {
     if (d->pUploadList.isEmpty())
     {
-        d->progressDlg->reset();
-        d->progressDlg->hide();
+        d->progressBar->reset();
+        setUiInProgressState(false);
+        startButton()->setEnabled(true);
+
         return;
     }
 
@@ -622,25 +623,25 @@ void PiwigoWindow::slotAddPhotoNext()
         return;
     }
 
-    d->progressDlg->setLabelText(i18n("Uploading file %1", QUrl(photoPath).fileName()));
+    d->progressBar->progressStatusChanged(i18n("Uploading file %1", QUrl(photoPath).fileName()));
 
-    if (d->progressDlg->isHidden())
+    if (d->progressBar->isHidden())
     {
-        d->progressDlg->show();
+        setUiInProgressState(true);
     }
 }
 
 void PiwigoWindow::slotAddPhotoSucceeded()
 {
     d->uploadCount++;
-    d->progressDlg->setValue(d->uploadCount);
+    d->progressBar->setValue(d->uploadCount);
     slotAddPhotoNext();
 }
 
 void PiwigoWindow::slotAddPhotoFailed(const QString& msg)
 {
-    d->progressDlg->reset();
-    d->progressDlg->hide();
+    d->progressBar->reset();
+    setUiInProgressState(false);
 
     if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload media into remote Piwigo. ") + msg +
@@ -657,8 +658,8 @@ void PiwigoWindow::slotAddPhotoFailed(const QString& msg)
 
 void PiwigoWindow::slotAddPhotoCancel()
 {
-    d->progressDlg->reset();
-    d->progressDlg->hide();
+    d->progressBar->reset();
+    setUiInProgressState(false);
     d->talker->cancel();
 }
 
@@ -669,17 +670,23 @@ void PiwigoWindow::slotEnableSpinBox(int n)
     switch (n)
     {
         case 0:
+        {
             b = false;
             break;
+        }
 
         case 1:
         case 2:
+        {
             b = true;
             break;
+        }
 
         default:
+        {
             b = false;
             break;
+        }
     }
 
     d->widthSpinBox->setEnabled(b);
@@ -711,6 +718,21 @@ QString PiwigoWindow::cleanName(const QString& str) const
     plain.replace(QLatin1String("&amp;"),  QLatin1String("&"));
 
     return plain;
+}
+
+void PiwigoWindow::setUiInProgressState(bool inProgress)
+{
+    setRejectButtonMode(inProgress ? QDialogButtonBox::Cancel : QDialogButtonBox::Close);
+
+    if (inProgress)
+    {
+        d->progressBar->show();
+    }
+    else
+    {
+        d->progressBar->hide();
+        d->progressBar->progressCompleted();
+    }
 }
 
 } // namespace DigikamGenericPiwigoPlugin

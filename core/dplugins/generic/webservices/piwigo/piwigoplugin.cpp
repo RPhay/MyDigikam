@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to export to Piwigo web-service.
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -97,7 +97,7 @@ QList<DPluginAuthor> PiwigoPlugin::authors() const
                              QString::fromUtf8("(C) 2010-2021"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2021"))
+                             QString::fromUtf8("(C) 2006-2023"))
             ;
 }
 

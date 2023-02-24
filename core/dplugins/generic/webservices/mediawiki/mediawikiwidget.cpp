@@ -707,9 +707,9 @@ void MediaWikiWidget::slotChangeUserClicked()
 
 void MediaWikiWidget::slotLoginClicked()
 {
-     Q_EMIT signalLoginRequest(d->nameEdit->text(), d->passwdEdit->text(),
-                               d->wikiSelect->itemText(d->wikiSelect->currentIndex()),
-                               d->wikiSelect->itemData(d->wikiSelect->currentIndex()).toUrl());
+    Q_EMIT signalLoginRequest(d->nameEdit->text(), d->passwdEdit->text(),
+                              d->wikiSelect->itemText(d->wikiSelect->currentIndex()),
+                              d->wikiSelect->itemData(d->wikiSelect->currentIndex()).toUrl());
 }
 
 void MediaWikiWidget::slotNewWikiClicked()
