@@ -72,6 +72,7 @@ public:
     QTreeWidget*                   albumView;
 
     QPushButton*                   confButton;
+    QPushButton*                   reloadButton;
 
     QCheckBox*                     resizeCheckBox;
     QSpinBox*                      widthSpinBox;
@@ -101,6 +102,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     : widget        (new QWidget(parent)),
       albumView     (nullptr),
       confButton    (nullptr),
+      reloadButton  (nullptr),
       resizeCheckBox(nullptr),
       widthSpinBox  (nullptr),
       heightSpinBox (nullptr),
@@ -162,6 +164,12 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     albumView->setHeaderLabels(labels);
     albumView->setSortingEnabled(true);
     albumView->sortByColumn(0, Qt::AscendingOrder);
+
+    reloadButton = new QPushButton();
+    reloadButton->setText(i18nc("reload album list", "Reload"));
+    reloadButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
+    reloadButton->setToolTip(i18n("Reload album list"));
+    reloadButton->setEnabled(false);
 
     // ---------------------------------------------------------------------------
 
@@ -234,6 +242,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     vlay->addWidget(url);
     vlay->addWidget(confButton);
     vlay->addWidget(albumView);
+    vlay->addWidget(reloadButton);
     vlay->addWidget(optionsBox);
 
     optionFrame->setLayout(vlay);
@@ -322,6 +331,9 @@ void PiwigoWindow::connectSignals()
     connect(d->confButton, SIGNAL(clicked()),
             this, SLOT(slotSettings()));
 
+    connect(d->reloadButton, SIGNAL(clicked()),
+            this, SLOT(slotReloadAlbums()));
+
     connect(d->resizeCheckBox, SIGNAL(stateChanged(int)),
             this, SLOT(slotEnableSpinBox(int)));
 
@@ -371,6 +383,11 @@ void PiwigoWindow::readSettings()
     d->widthSpinBox->setValue(group.readEntry("Maximum Width",   1600));
     d->heightSpinBox->setValue(group.readEntry("Maximum Height", 1600));
     d->qualitySpinBox->setValue(group.readEntry("Quality",       95));
+}
+
+void PiwigoWindow::slotReloadAlbums()
+{
+    d->talker->listAlbums();
 }
 
 void PiwigoWindow::slotDoLogin()
@@ -428,11 +445,13 @@ void PiwigoWindow::slotBusy(bool val)
     {
         setCursor(Qt::WaitCursor);
         startButton()->setEnabled(false);
+        d->reloadButton->setEnabled(false);
     }
     else
     {
         setCursor(Qt::ArrowCursor);
         bool loggedIn = d->talker->loggedIn();
+        d->reloadButton->setEnabled(loggedIn);
         startButton()->setEnabled(loggedIn && d->albumView->currentItem());
     }
 }
