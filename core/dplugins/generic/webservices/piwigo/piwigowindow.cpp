@@ -180,6 +180,8 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     userName          = new QLabel(optionFrame);
     urlLbl            = new QLabel(i18nc("piwigo url settings", "Url:"), optionFrame);
     url               = new QLabel(optionFrame);
+    url->setOpenExternalLinks(true);
+    url->setFocusPolicy(Qt::NoFocus);
 
     confButton = new QPushButton;
     confButton->setText(i18n("Change Account"));
@@ -411,7 +413,13 @@ void PiwigoWindow::slotDoLogin()
     d->talker->login(url, d->pPiwigo->username(), d->pPiwigo->password());
 
     d->userName->setText(QString::fromLatin1("<b>%1</b>").arg(d->pPiwigo->username()));
-    d->url->setText(QString::fromLatin1("<b>%1</b>").arg(url.toDisplayString()));
+    d->url->setText(QString::fromLatin1(
+                            "<b><a href='%1'>"
+                            "<font color=\"#9ACD32\">%2</font>"
+                            "</a></b>")
+                            .arg(url.url())
+                            .arg(url.toDisplayString())
+    );
 }
 
 void PiwigoWindow::slotLoginFailed(const QString& msg)
