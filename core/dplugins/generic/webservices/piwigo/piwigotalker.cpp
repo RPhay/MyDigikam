@@ -134,7 +134,7 @@ QByteArray PiwigoTalker::computeMD5Sum(const QString& filepath)
     if (!file.open(QIODevice::ReadOnly))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "File open error:" << filepath;
-        
+
         return QByteArray();
     }
 
@@ -220,8 +220,7 @@ bool PiwigoTalker::addPhoto(int   albumId,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << mediaPath << " " << d->md5sum.toHex();
 
-    if (mediaPath.endsWith(QLatin1String(".mp4"))  ||
-        mediaPath.endsWith(QLatin1String(".MP4"))  ||
+    if (mediaPath.endsWith(QLatin1String(".mp4"))  || mediaPath.endsWith(QLatin1String(".MP4"))  ||
         mediaPath.endsWith(QLatin1String(".ogg"))  || mediaPath.endsWith(QLatin1String(".OGG"))  ||
         mediaPath.endsWith(QLatin1String(".webm")) || mediaPath.endsWith(QLatin1String(".WEBM")))
     {
@@ -242,6 +241,7 @@ bool PiwigoTalker::addPhoto(int   albumId,
         if (image.isNull())
         {
             // Invalid image
+
             return false;
         }
 
@@ -350,7 +350,7 @@ void PiwigoTalker::slotFinished(QNetworkReply* reply)
         return;
     }
 
-    d->reply     = nullptr;
+    d->reply    = nullptr;
     State state = d->state; // Can change in the treatment itself, so we cache it
 
     if (reply->error() != QNetworkReply::NoError)
@@ -604,7 +604,7 @@ void PiwigoTalker::parseResponseListAlbums(const QByteArray& data)
 
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << album.m_refNum << "\n";
 
-                iter = albumList.insert(iter, album);
+                iter                 = albumList.insert(iter, album);
             }
 
             if (ts.name() == QLatin1String("name"))
@@ -988,9 +988,9 @@ void PiwigoTalker::addPhotoSummary()
     qsl.append(QLatin1String("file_sum=") + QLatin1String(computeMD5Sum(d->path).toHex()));
     qsl.append(QLatin1String("date_creation=") +
                QString::fromUtf8(d->date.toString(QLatin1String("yyyy-MM-dd hh:mm:ss")).toUtf8().toPercentEncoding()));
-
-    //qsl.append("tag_ids="); // TODO Implement this function
-
+/*
+    qsl.append("tag_ids="); // TODO Implement this function
+*/
     QString dataParameters = qsl.join(QLatin1Char('&'));
     QByteArray buffer;
     buffer.append(dataParameters.toUtf8());
