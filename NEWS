@@ -295,7 +295,7 @@ BUGFIXES:
 254 ==> 094493 - Support for preprocessing of images on export.
 255 ==> 178204 - Entire hierarchy is not displayed.
 256 ==> 351650 - Failed to logon with piwigo apache_authentication.
-257 ==> 
+257 ==> 105638 - Exporting comments with Piwigo.
 258 ==> 
 259 ==> 
 260 ==> 
