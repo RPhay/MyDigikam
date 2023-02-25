@@ -293,7 +293,7 @@ BUGFIXES:
 252 ==> 104127 - Wish: Upload order should follow current Album sort method.
 253 ==> 129856 - Export to remote web-service deletes Exif, when using the resize option.
 254 ==> 094493 - Support for preprocessing of images on export.
-255 ==> 
+255 ==> 178204 - Entire hierarchy is not displayed.
 256 ==> 
 257 ==> 
 258 ==> 
