@@ -131,6 +131,7 @@ GPSItemContainer::GPSItemContainer(const QUrl& url)
       m_tagList     (),
       m_savedTagList(),
       m_writeXmpTags(true),
+      m_writeMetaLoc(true),
       m_saveTags    (true),
       m_saveGPS     (true)
 {
