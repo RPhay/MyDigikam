@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:56+0000\n"
-"PO-Revision-Date: 2023-02-20 06:41+0100\n"
+"POT-Creation-Date: 2023-02-25 00:57+0000\n"
+"PO-Revision-Date: 2023-02-24 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5736,7 +5736,7 @@ msgid "Watermark type: "
 msgstr "ჭვირნიშანი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:520
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
 #, kde-format
 msgid "Image"
 msgstr "გამოსახულება"
@@ -17482,7 +17482,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Transition"
-msgstr ""
+msgstr "გადასვლა"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
 #, kde-format
@@ -20341,7 +20341,7 @@ msgstr "გადახედვა..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:181
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -21372,7 +21372,7 @@ msgstr "Box-ზე გატანა"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:263
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -21481,7 +21481,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:618
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -21504,7 +21504,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:402
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -24444,80 +24444,90 @@ msgstr "%1-ის მეტამონაცემების ატვირ�
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "დაშორებული Piwigo-სგან მიღებული პასუხი არასწორია (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:135
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Piwigo -ის ვებგვერდის ნახვა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#, kde-format
 msgid "Remote Albums"
 msgstr "ალბომის წაშლა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
+#, kde-format
+msgctxt "reload album list"
+msgid "Reload"
+msgstr "თავიდან ჩატვირთვა"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#, kde-format
+msgid "Reload album list"
+msgstr "ალბომების სიის თავიდან ჩატვირთვა"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:173
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "ანგარიშის შეცვლა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:185
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "ატვირთვამდე სურათების ზომის შეცვლა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
 #, kde-format
 msgid "Maximum width:"
 msgstr "მაქსიმალური სიგანე:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
 #, kde-format
 msgid "Maximum height:"
 msgstr "მაქსიმალური სიგრძე:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:200
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "ზომაშეცვლილი JPEG ხარისხი:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:258
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo -ზე გატანა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:291
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:668
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Piwigo-ის მონაცემების ჩასწორება"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:403
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "დაშორებულ Piwigo-ზე შესვლის შეცდომა. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:404
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid ""
 "\n"
@@ -24526,8 +24536,8 @@ msgstr ""
 "\n"
 "გნებავთ შეამოწმოთ პარამეტრები და თავიდან სცადოთ?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:476
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:500
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -24540,27 +24550,27 @@ msgstr ""
 msgid "Album"
 msgstr "ალბომი"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:554
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "ასატვირთი არაფერია - აირჩიეთ ასატვირთი სურათები."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:593
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "ფაილი %1 მხარდაუჭერელი გამოსახულების ან ვიდეო ფორმატშია"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:598
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "Uploading file %1"
 msgstr "%1 ფაილის ატვირთვა"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:619
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "დაშორებულ Piwigo-ზე მედიის ატვირთვის შეცდომა. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:620
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
 #, kde-format
 msgid ""
 "\n"
@@ -24975,18 +24985,6 @@ msgstr "ახალი ალბომი"
 #, kde-format
 msgid "Create new SmugMug album"
 msgstr "SmugMug ახალი ალბომის შექმნა"
-
-#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
-#, kde-format
-msgctxt "reload album list"
-msgid "Reload"
-msgstr "თავიდან ჩატვირთვა"
-
-#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
-#, kde-format
-msgid "Reload album list"
-msgstr "ალბომების სიის თავიდან ჩატვირთვა"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:152
 #, kde-format
@@ -31777,7 +31775,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
-msgstr ""
+msgstr "ექსპოზიციის კომპენსაცია"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:285
 #, kde-format
@@ -55593,7 +55591,7 @@ msgstr ""
 #, kde-format
 msgctxt "Return items rated at least...at most..."
 msgid "at most"
-msgstr ""
+msgstr "მაქსიმუმ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:158
 #, kde-format

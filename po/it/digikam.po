@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-24 00:56+0000\n"
-"PO-Revision-Date: 2023-02-13 23:07+0100\n"
+"POT-Creation-Date: 2023-02-25 00:57+0000\n"
+"PO-Revision-Date: 2023-02-23 21:06+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -667,25 +667,25 @@ msgstr "Rimuovi dal gruppo"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected Here"
-msgstr "Gruppo selezionato qui"
+msgstr "Raggruppa i selezionati qui"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:139
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Time"
-msgstr "Gruppo selezionato per Tempo"
+msgstr "Raggruppa i selezionati per Tempo"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:144
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Filename"
-msgstr "Gruppo selezionato per nome del file"
+msgstr "Raggruppa i selezionati per nome file"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:149
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr "Gruppo selezionato per Timelapse / Burst"
+msgstr "Raggruppa i selezionati per timelapse / burst"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -697,7 +697,7 @@ msgstr "Rimuovi la selezione dai gruppi"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Ungroup Selected"
-msgstr "Separa selezionati"
+msgstr "Separa i selezionati"
 
 #: core/app/items/utils/contextmenuhelper_services.cpp:29
 #: core/app/items/utils/contextmenuhelper_services.cpp:46
@@ -6046,7 +6046,7 @@ msgid "Watermark type: "
 msgstr "Tipo di filigrana: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:520
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
 #, kde-format
 msgid "Image"
 msgstr "Immagine"
@@ -18437,17 +18437,13 @@ msgid "Jalbum completed."
 msgstr "jAlbum completato."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Benvenuto allo strumento per album jAlbum</b></h1></"
+"<qt><p><h1><b>Benvenuto allo strumento di esportazione jAlbum</b></h1></"
 "p><p>Questa procedura guidata ti aiuterà a esportare rapidamente</p><p></"
 "p><p>le tue immagini come progetto jAlbum.</p></qt>"
 
@@ -18485,10 +18481,9 @@ msgid "Create jAlbum Album"
 msgstr "Crea album jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Benvenuto allo strumento per album jAlbum"
+msgstr "Benvenuto allo strumento di esportazione jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -21993,7 +21988,7 @@ msgstr "Anteprima..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:181
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -23084,7 +23079,7 @@ msgstr "Esporta in Box"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:263
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -23193,7 +23188,7 @@ msgstr "Esportazione in Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:618
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -23219,7 +23214,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:402
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -26274,80 +26269,90 @@ msgstr "Carica i metadati di %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Risposta non valida ricevuta dal Piwigo remoto (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:135
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Visita il sito web di Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:161
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#, kde-format
 msgid "Remote Albums"
-msgstr "Elimina album"
+msgstr "Album remoti"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
+#, kde-format
+msgctxt "reload album list"
+msgid "Reload"
+msgstr "Ricarica"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
+#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
+#, kde-format
+msgid "Reload album list"
+msgstr "Ricarica elenco degli album"
+
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Nome:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:173
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Cambia account"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:185
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Ridimensiona le foto prima di caricarle"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
 #, kde-format
 msgid "Maximum width:"
 msgstr "Larghezza massima:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
 #, kde-format
 msgid "Maximum height:"
 msgstr "Altezza massima:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:200
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Qualità JPEG ridimensionata:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:258
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Esportazione in Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:291
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:412
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:668
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Modifica i dati di Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:403
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Accesso al Piwigo remoto non riuscito."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:404
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid ""
 "\n"
@@ -26356,8 +26361,8 @@ msgstr ""
 "\n"
 "Vuoi controllare le impostazioni e riprovare?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:476
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:500
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26370,27 +26375,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:554
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Nulla da caricare; seleziona le foto da caricare."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:593
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Il file %1 non è un file immagine o video supportato"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:598
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Caricamento del file %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:619
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Caricamento di dati su Piwigo remoto non riuscito. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:620
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
 #, kde-format
 msgid ""
 "\n"
@@ -26816,18 +26821,6 @@ msgstr "Nuovo album"
 #, kde-format
 msgid "Create new SmugMug album"
 msgstr "Crea un nuovo album SmugMug"
-
-#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
-#, kde-format
-msgctxt "reload album list"
-msgid "Reload"
-msgstr "Ricarica"
-
-#: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
-#: core/libs/dplugins/webservices/wssettingswidget.cpp:220
-#, kde-format
-msgid "Reload album list"
-msgstr "Ricarica elenco degli album"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:152
 #, kde-format
@@ -29706,7 +29699,7 @@ msgstr ""
 "memorizzati i file delle banche dati. Sono presenti quattro banche dati: una "
 "per tutte le proprietà della raccolta, una per memorizzare le miniature "
 "compresse, una per memorizzare i metadati del riconoscimento dei visi e una "
-"per memorizzare le impronte digitali somiglianti.<br/>Per modificare le "
+"per memorizzare i codici di controllo somiglianti.<br/>Per modificare le "
 "proprietà delle immagini è richiesto il permesso di scrittura.</p><p>Le "
 "banche dati sono nuclei centrali di digiKam. Fai in modo di utilizzare una "
 "posizione in un dispositivo veloce (per es. SSD o NVMe) con abbastanza "
@@ -40146,7 +40139,7 @@ msgstr "Elimina tag"
 #: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
-msgstr "Modifica il titolo dei tag"
+msgstr "Modifica il titolo del tag"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
 #: core/libs/tags/manager/tagsmanager.cpp:713
@@ -53749,22 +53742,20 @@ msgstr ""
 "configurazione, non è dunque consigliato eseguire questa operazione per il "
 "momento, e il rischio è tutto a tuo carico.</p></qt>"
 
-# Per cosa starà mai «Ref.»? Boh!
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Ref. images"
-msgstr "Rif. immagini"
+msgstr "Immagini di rif."
 
-# Per cosa starà mai «Ref.»? Boh!
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Ref. dates"
-msgstr "Rif. date"
+msgstr "Date di rif."
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
 #, kde-format
 msgid "Ref. albums"
-msgstr "Rif. album"
+msgstr "Album di rif."
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:71
 #, kde-format
@@ -58400,7 +58391,7 @@ msgstr "Aggiornamento della banca dati dei volti"
 #: core/utilities/maintenance/fingerprintsgenerator.cpp:101
 #, kde-format
 msgid "Finger-prints"
-msgstr "Impronte digitali"
+msgstr "Codici di controllo"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
 #, kde-format
@@ -58502,7 +58493,7 @@ msgstr "Esegui la pulizia delle banche dati"
 #: core/utilities/maintenance/maintenancedlg.cpp:255
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
-msgstr "Ricerca oggetti cambiati o non catalogati (più veloce)"
+msgstr "Analizza gli elementi cambiati o non catalogati (più veloce)"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:250
 #, kde-format
@@ -58512,7 +58503,7 @@ msgstr "Ricostruisci le miniature"
 #: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Rebuild Finger-prints"
-msgstr "Ricalcola le impronte digitali"
+msgstr "Ricalcola i codici di controllo"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:266
 #, kde-format
@@ -59828,10 +59819,9 @@ msgid "Country"
 msgstr "Stato"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Country shown in the item"
-msgstr "Stato del luogo mostrato nell'elemento"
+msgstr "Stato mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, kde-format
@@ -59839,10 +59829,9 @@ msgid "Province"
 msgstr "Provincia"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Provincia del luogo mostrato nell'elemento"
+msgstr "Provincia mostrata nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
@@ -59850,22 +59839,19 @@ msgid "City"
 msgstr "Città"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "City of the location shown in the item"
+#, kde-format
 msgid "City shown in the item"
-msgstr "Città del luogo mostrato nell'elemento"
+msgstr "Città mostrata nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Posto:"
+msgstr "Posto"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "County of the location shown in the item"
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Regione del luogo mostrato nell'elemento"
+msgstr "Posto mostrato nell'elemento"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
@@ -61458,8 +61444,7 @@ msgstr ""
 "mentre viene scaricato.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Finestra di importazione"
@@ -64479,7 +64464,7 @@ msgstr "Gestore elaborazione in serie"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Loaders"
-msgstr "Caricatore immagini"
+msgstr "Caricatori di immagini"
 
 #: core/utilities/setup/setuptemplate.cpp:85
 #, kde-format
