@@ -278,4 +278,15 @@ BUGFIXES:
 237 ==> 465533 - Tag's aren't being removed from images.
 238 ==> 463577 - Exiv2 alters unrelated DJI Exif metadata when editing tags.
 239 ==> 466259 - digiKam crash after launch.
-240 ==> 
+240 ==> 088262 - Support for remote protocol
+241 ==> 107721 - Improve the way pictures can be uploaded to Piwigo.
+242 ==> 145767 - No albums shown when syncing with remote web-service.
+243 ==> 149580 - Piwigo export not working.
+244 ==> 154696 - Allow a selection of pictures from an album to be uploaded to Piwigo.
+245 ==> 182954 - Crashes on Piwigo export.
+246 ==> 103401 - Piwigo export upload failed.
+247 ==> 105471 - Piwigo integration for host application.
+248 ==> 143885 - Crash after attempting to export Piwigo to remote location.
+249 ==> 148952 - Cannot export to Piwigo. Gives error message "Failed to login into remote web-service. URL probably incorrect".
+250 ==> 
+251 ==> 
