@@ -288,5 +288,16 @@ BUGFIXES:
 247 ==> 105471 - Piwigo integration for host application.
 248 ==> 143885 - Crash after attempting to export Piwigo to remote location.
 249 ==> 148952 - Cannot export to Piwigo. Gives error message "Failed to login into remote web-service. URL probably incorrect".
-250 ==> 
-251 ==> 
+250 ==> 295593 - The album list into piwigo export dialog is empty.
+251 ==> 104509 - Upload reported to fail but works actually.
+252 ==> 104127 - Wish: Upload order should follow current Album sort method.
+253 ==> 
+254 ==> 
+255 ==> 
+256 ==> 
+257 ==> 
+258 ==> 
+259 ==> 
+260 ==> 
+261 ==> 
+
