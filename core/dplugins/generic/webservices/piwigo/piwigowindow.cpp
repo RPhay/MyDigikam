@@ -165,14 +165,14 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
-    albumView = new QTreeWidget;
+    albumView                   = new QTreeWidget;
     QStringList labels;
     labels << i18n("Remote Albums");
     albumView->setHeaderLabels(labels);
     albumView->setSortingEnabled(true);
     albumView->sortByColumn(0, Qt::AscendingOrder);
 
-    reloadButton = new QPushButton();
+    reloadButton                = new QPushButton();
     reloadButton->setText(i18nc("reload album list", "Reload"));
     reloadButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
     reloadButton->setToolTip(i18n("Reload album list"));
@@ -180,17 +180,17 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 
     // ---------------------------------------------------------------------------
 
-    QFrame* const optionFrame = new QFrame;
-    QVBoxLayout* const vlay   = new QVBoxLayout();
+    QFrame* const optionFrame   = new QFrame;
+    QVBoxLayout* const vlay     = new QVBoxLayout();
 
-    userNameLbl       = new QLabel(i18nc("piwigo account settings", "Name:"), optionFrame);
-    userName          = new QLabel(optionFrame);
-    urlLbl            = new QLabel(i18nc("piwigo url settings", "Url:"), optionFrame);
-    url               = new QLabel(optionFrame);
+    userNameLbl                 = new QLabel(i18nc("piwigo account settings", "Name:"), optionFrame);
+    userName                    = new QLabel(optionFrame);
+    urlLbl                      = new QLabel(i18nc("piwigo url settings", "Url:"), optionFrame);
+    url                         = new QLabel(optionFrame);
     url->setOpenExternalLinks(true);
     url->setFocusPolicy(Qt::NoFocus);
 
-    confButton = new QPushButton;
+    confButton                  = new QPushButton;
     confButton->setText(i18n("Change Account"));
     confButton->setIcon(QIcon::fromTheme(QLatin1String("system-switch-user")));
     confButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -198,25 +198,25 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
     QGroupBox* const optionsBox = new QGroupBox(i18n("Options"));
     QVBoxLayout* const vlay2    = new QVBoxLayout();
 
-    resizeCheckBox           = new QCheckBox(optionsBox);
+    resizeCheckBox              = new QCheckBox(optionsBox);
     resizeCheckBox->setText(i18n("Resize photos before uploading"));
 
-    QGridLayout* const glay  = new QGridLayout;
-    QLabel* const widthLabel = new QLabel(i18n("Maximum width:"));
+    QGridLayout* const glay     = new QGridLayout;
+    QLabel* const widthLabel    = new QLabel(i18n("Maximum width:"));
 
-    widthSpinBox   = new QSpinBox;
+    widthSpinBox                = new QSpinBox;
     widthSpinBox->setRange(1,8000);
     widthSpinBox->setValue(1600);
 
     QLabel* const heightLabel   = new QLabel(i18n("Maximum height:"));
 
-    heightSpinBox  = new QSpinBox;
+    heightSpinBox               = new QSpinBox;
     heightSpinBox->setRange(1,8000);
     heightSpinBox->setValue(1600);
 
-    QLabel* const qualityLabel= new QLabel(i18n("Resized JPEG quality:"));
+    QLabel* const qualityLabel  = new QLabel(i18n("Resized JPEG quality:"));
 
-    qualitySpinBox = new QSpinBox;
+    qualitySpinBox              = new QSpinBox;
     qualitySpinBox->setRange(1,100);
     qualitySpinBox->setValue(95);
 
@@ -269,7 +269,7 @@ PiwigoWindow::Private::Private(PiwigoWindow* const parent,
 PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
                            QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("PiwigoSync Dialog")),
-      d(new Private(this, iface))
+      d           (new Private(this, iface))
 {
     d->pPiwigo = new PiwigoSession();
 
@@ -512,7 +512,7 @@ void PiwigoWindow::slotAlbums(const QList<PiwigoAlbum>& albumList)
             bool found                  = false;
             int i                       = 0;
 
-            while (!found && i < parentItemList.size())
+            while (!found && (i < parentItemList.size()))
             {
                 parentItem = parentItemList.at(i);
 

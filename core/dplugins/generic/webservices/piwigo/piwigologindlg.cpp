@@ -102,6 +102,7 @@ PiwigoLoginDlg::PiwigoLoginDlg(QWidget* const pParent,
     resize(QSize(300, 150).expandedTo(minimumSizeHint()));
 
     // setting initial data
+
     d->pUrlEdit->setText(pPiwigo->url());
     d->pUsernameEdit->setText(pPiwigo->username());
     d->pPasswordEdit->setText(pPiwigo->password());

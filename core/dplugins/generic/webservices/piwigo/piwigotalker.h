@@ -49,15 +49,15 @@ public:
 
     enum State
     {
-        GE_LOGOUT = -1,
-        GE_LOGIN  = 0,
-        GE_GETVERSION,
-        GE_LISTALBUMS,
-        GE_CHECKPHOTOEXIST,
-        GE_GETINFO,
-        GE_SETINFO,
-        GE_ADDPHOTOCHUNK,
-        GE_ADDPHOTOSUMMARY
+        PG_LOGOUT = -1,
+        PG_LOGIN  = 0,
+        PG_GETVERSION,
+        PG_LISTALBUMS,
+        PG_CHECKPHOTOEXIST,
+        PG_GETINFO,
+        PG_SETINFO,
+        PG_ADDPHOTOCHUNK,
+        PG_ADDPHOTOSUMMARY
     };
 
     enum
