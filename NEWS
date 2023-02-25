@@ -291,7 +291,7 @@ BUGFIXES:
 250 ==> 295593 - The album list into piwigo export dialog is empty.
 251 ==> 104509 - Upload reported to fail but works actually.
 252 ==> 104127 - Wish: Upload order should follow current Album sort method.
-253 ==> 
+253 ==> 129856 - Export to remote web-service deletes Exif, when using the resize option.
 254 ==> 
 255 ==> 
 256 ==> 
