@@ -294,7 +294,7 @@ BUGFIXES:
 253 ==> 129856 - Export to remote web-service deletes Exif, when using the resize option.
 254 ==> 094493 - Support for preprocessing of images on export.
 255 ==> 178204 - Entire hierarchy is not displayed.
-256 ==> 
+256 ==> 351650 - Failed to logon with piwigo apache_authentication.
 257 ==> 
 258 ==> 
 259 ==> 
