@@ -8,32 +8,32 @@ APPLY_COMMON_POLICIES()
 
 # To fill MacOS and Windows bundles metadata
 
-set(BUNDLE_APP_NAME_STRING          "avplayer")
-set(BUNDLE_APP_DESCRIPTION_STRING   "Stand alone Audio and Video Player from digiKam Project")
-set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
-set(BUNDLE_COMMENT_STRING           "Free and open source software to play audio and video")
-set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
-set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
-set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
+#set(BUNDLE_APP_NAME_STRING          "avplayer")
+#set(BUNDLE_APP_DESCRIPTION_STRING   "Stand alone Audio and Video Player from digiKam Project")
+#set(BUNDLE_LEGAL_COPYRIGHT_STRING   "GNU Public License V2")
+#set(BUNDLE_COMMENT_STRING           "Free and open source software to play audio and video")
+#set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
+#set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
+#set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
 
-set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ConfigDialog.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/StatisticsView.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ScreenSaver.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/qoptions.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/common.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/EventFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSDFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSD.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/AVFilterSubtitle.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListModel.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListItem.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayListDelegate.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayList.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/main.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow_p.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow_setup.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow_io.cpp
+set(avplayer_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/utils/ConfigDialog.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/utils/StatisticsView.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/utils/ScreenSaver.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/utils/qoptions.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/utils/common.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/filters/EventFilter.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/filters/OSDFilter.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/filters/OSD.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/filters/AVFilterSubtitle.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/playlist/PlayListModel.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/playlist/PlayListItem.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/playlist/PlayListDelegate.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/playlist/PlayList.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/main/main.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/main/MainWindow.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/main/MainWindow_p.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/main/MainWindow_setup.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/main/MainWindow_io.cpp
 )
 
 # Set the application icon on the application
@@ -52,7 +52,7 @@ if(WIN32)
 elseif(APPLE)
 
     ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(avplayer ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
@@ -135,13 +135,13 @@ target_compile_definitions(avplayer
                            ${MEDIAPLAYER_DEFINITIONS}
 )
 
-install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
-install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
+#install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
+#install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
+#install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
 
 if(WIN32)
 
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     set(avplayer_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
 
@@ -156,6 +156,6 @@ if(WIN32)
     set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
     target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 
-    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
+#    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 endif()

@@ -305,38 +305,4 @@
 
 ;-------------------------------------------
 
-!macro CHECKAVPLAYER un
-
-    Function ${un}CheckAVPlayerRunning
-
-        Push "avplayer.exe"
-        Call ${un}IsProcessRunning
-        Pop $R1
-
-        ${While} $R1 != ''
-
-            MessageBox MB_ABORTRETRYIGNORE|MB_DEFBUTTON2 "AVPlayer appears to be running.$\nPlease close all running instances of AVPlayer before continuing the installation." /SD IDIGNORE IDABORT CheckAVPlayerRunning_abort IDIGNORE CheckAVPlayerRunning_ignore
-
-            Push "avplayer.exe"
-            Call ${un}IsProcessRunning
-            Pop $R1
-
-        ${EndWhile}
-
-        CheckAVPlayerRunning_ignore:
-        Return
-
-        CheckAVPlayerRunning_abort:
-        Quit
-
-    FunctionEnd
-
-!macroend
-
-; Insert function as an installer and uninstaller function.
-!insertmacro CHECKAVPLAYER ""
-!insertmacro CHECKAVPLAYER "un."
-
-;-------------------------------------------
-
 !endif ;EXECUTABLE_RUNNING_INCLUDED

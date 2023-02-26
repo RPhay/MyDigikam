@@ -205,7 +205,6 @@
 
         Call CheckDigikamRunning
         Call CheckShowfotoRunning
-        Call CheckAVPlayerRunning
 
         SetOutPath "$INSTDIR"
 
@@ -292,7 +291,6 @@
         SetOutPath "$INSTDIR\bin"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
-        CreateShortCut "$SMPROGRAMS\$StartMenuFolder\AVPlayer.lnk" "$INSTDIR\avplayer.exe"
 
         WriteINIStr "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url" "InternetShortcut" "URL" "${PRODUCT_HOMEPAGE}"
 
@@ -309,7 +307,6 @@
 
         Call un.CheckDigikamRunning
         Call un.CheckShowfotoRunning
-        Call un.CheckAVPlayerRunning
 
         Delete "$INSTDIR\*.exe"
         Delete "$INSTDIR\*.conf"
@@ -343,7 +340,6 @@
         Delete "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk"
         Delete "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk"
         Delete "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk"
-        Delete "$SMPROGRAMS\$StartMenuFolder\AVPlayer.lnk"
         Delete "$SMPROGRAMS\$StartMenuFolder\The ${MY_PRODUCT} HomePage.url"
 
         RMDir "$SMPROGRAMS\$StartMenuFolder"

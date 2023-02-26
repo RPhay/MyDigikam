@@ -479,10 +479,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     add_subdirectory(dplugins)
     add_subdirectory(showfoto)
 
-    if(ENABLE_MEDIAPLAYER)
-        add_subdirectory(avplayer)
-    endif()
-
     if(BUILD_TESTING)
         add_subdirectory(tests)
     endif()

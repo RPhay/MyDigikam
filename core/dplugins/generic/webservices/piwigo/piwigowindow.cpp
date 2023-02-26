@@ -458,7 +458,11 @@ void PiwigoWindow::slotBusy(bool val)
         setCursor(Qt::ArrowCursor);
         bool loggedIn = d->talker->loggedIn();
         d->reloadButton->setEnabled(loggedIn);
-        startButton()->setEnabled(loggedIn && d->albumView->currentItem());
+
+        bool b = loggedIn && d->albumView->currentItem();
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "busy : " << b;
+        startButton()->setEnabled(b);
+
     }
 }
 

@@ -82,7 +82,7 @@ cd "$INSTALL_PREFIX"
 # This is odd: grep -E under macOS return an error if nothing is found
 touch digikam.txt
 
-FILES=$(find . | grep -E '(digikam|showfoto|avplayer)')
+FILES=$(find . | grep -E '(digikam|showfoto)')
 
 for FILE in $FILES ; do
     if [[ -f ${FILE} || -d ${FILE} ]] ; then
