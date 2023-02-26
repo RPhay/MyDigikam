@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:57+0000\n"
+"POT-Creation-Date: 2023-02-26 00:56+0000\n"
 "PO-Revision-Date: 2023-02-23 11:32+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2921,7 +2921,7 @@ msgstr "Sense etiquetes d'àlbum"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3775,7 +3775,7 @@ msgstr "Propietats del fitxer"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Filename"
 msgstr "Nom del fitxer"
@@ -3839,7 +3839,7 @@ msgstr "Coordenades"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "Altitude"
 msgstr "Altitud"
@@ -4092,7 +4092,7 @@ msgstr "Unitat"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:254
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatura"
@@ -11990,7 +11990,7 @@ msgstr "Cerca"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
-msgstr "Exporta cap a KML"
+msgstr "Exporta a KML"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
 #, kde-format
@@ -12052,7 +12052,7 @@ msgstr "Es desen els canvis -"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -12081,31 +12081,31 @@ msgid "Edit Geolocation"
 msgstr "Edició de la geolocalització"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Latitude"
 msgstr "Latitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Longitude"
 msgstr "Longitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #, kde-format
 msgid "Speed"
 msgstr "Velocitat"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "# satellites"
 msgstr "Nombre de satèl·lits"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Fix type"
 msgstr "Tipus de correcció"
@@ -12121,7 +12121,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16480,7 +16480,7 @@ msgstr "S'ha actualitzat la marca de temps"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Status"
 msgstr "Estat"
@@ -18315,7 +18315,7 @@ msgstr "Llança el «jAlbum» amb fitxers de projecte nou"
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
 #, kde-format
 msgid "jAlbum Export"
-msgstr "Exporta cap al jAlbum"
+msgstr "Exporta al jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:58
 #, kde-format
@@ -18569,7 +18569,7 @@ msgstr "S'ha produït un error en iniciar el servidor multimèdia..."
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
 #, kde-format
 msgid "DLNA Export"
-msgstr "Exporta cap a DLNA"
+msgstr "Exporta a DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
 #, kde-format
@@ -22983,16 +22983,16 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
-msgstr "Exporta cap a &Box..."
+msgstr "Exporta a &Box..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:432
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:417
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:696
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:843
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1014
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -23015,7 +23015,7 @@ msgstr "Ha fallat en llistar les carpetes"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr "Exportació cap a Box"
+msgstr "Exportació a Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
@@ -23126,7 +23126,7 @@ msgstr "%v / %m"
 #, kde-format
 msgctxt "@info"
 msgid "Box export"
-msgstr "Exporta cap a Box"
+msgstr "Exporta a Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
@@ -23223,14 +23223,14 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
-msgstr "Exporta cap a &Dropbox..."
+msgstr "Exporta a &Dropbox..."
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
-msgstr "Exportació cap a Dropbox"
+msgstr "Exportació a Dropbox"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
@@ -23271,7 +23271,7 @@ msgstr "%v / %m"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:280
 #, kde-format
 msgid "Dropbox export"
-msgstr "Exportació cap a Dropbox"
+msgstr "Exportació a Dropbox"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:318
@@ -23346,7 +23346,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
-msgstr "Exporta cap a &Facebook..."
+msgstr "Exporta a &Facebook..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
 #, kde-format
@@ -23429,7 +23429,7 @@ msgstr "Valida la sessió anterior..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "Exportació cap al servei web Facebook"
+msgstr "Exportació al servei web Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
 #, kde-format
@@ -23463,7 +23463,7 @@ msgstr "La crida al Facebook ha fallat: %1\n"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:485
 #, kde-format
 msgid "Facebook export"
-msgstr "Exportació cap a Facebook"
+msgstr "Exportació a Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:620
 #, kde-format
@@ -23553,7 +23553,7 @@ msgstr "Aquesta és la llista d'elements a copiar a la destinació especificada.
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Exportació cap a un emmagatzematge local"
+msgstr "Exportació a un emmagatzematge local"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
@@ -23607,7 +23607,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "Exporta cap a un emmagatzematge local..."
+msgstr "Exporta a un emmagatzematge local..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
@@ -23651,7 +23651,7 @@ msgstr "<i>no seleccionada</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Exportació cap a un emmagatzematge remot"
+msgstr "Exportació a un emmagatzematge remot"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
 #, kde-format
@@ -23748,7 +23748,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Exporta cap a un emmagatzematge remot..."
+msgstr "Exporta a un emmagatzematge remot..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
@@ -23842,7 +23842,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
-msgstr "Exporta cap a &Flickr..."
+msgstr "Exporta a &Flickr..."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:340
 #, kde-format
@@ -24165,8 +24165,8 @@ msgid ""
 "<b><h2><a href='https://www.flickr.com'><font color=\"#0065DE\">flick</"
 "font><font color=\"#FF0084\">r</font></a> Export</h2></b>"
 msgstr ""
-"<b><h2>Exportació cap a <a href='https://www.flickr.com'><font color="
-"\"#0065DE\">flick</font><font color=\"#FF0084\">r</font></a></h2></b>"
+"<b><h2>Exportació a <a href='https://www.flickr.com'><font color=\"#0065DE"
+"\">flick</font><font color=\"#FF0084\">r</font></a></h2></b>"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:454
 #, kde-format
@@ -24182,7 +24182,7 @@ msgstr "Menys opcions d'etiquetes"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "Exportació cap al servei web %1"
+msgstr "Exportació al servei web %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
@@ -24199,7 +24199,7 @@ msgstr "Només per al Photostream"
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:807
 #, kde-format
 msgid "Flickr Export"
-msgstr "Exportació cap a Flickr"
+msgstr "Exportació a Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:842
 #, kde-format
@@ -24344,7 +24344,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
-msgstr "Exporta cap a &Google Photos..."
+msgstr "Exporta a &Google Photos..."
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:120
 #, kde-format
@@ -24356,7 +24356,7 @@ msgstr "Importa des de &Google Photos..."
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
-msgstr "Exporta cap a &Google Drive..."
+msgstr "Exporta a &Google Drive..."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:106
 #, kde-format
@@ -24462,7 +24462,7 @@ msgstr "Construeix una cadena d'etiquetes combinades."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
-msgstr "Exportació cap a Google Drive"
+msgstr "Exportació a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
 #, kde-format
@@ -24474,7 +24474,7 @@ msgstr "Comença la pujada al Google Drive"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr "Exportació cap al servei web Google Photos"
+msgstr "Exportació al servei web Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
 #, kde-format
@@ -24518,13 +24518,13 @@ msgstr "Ha fallat la crida al Google Drive: %1\n"
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
-msgstr "Exportació cap a Google Drive"
+msgstr "Exportació a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:627
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
-msgstr "Exportació cap a Google Photo"
+msgstr "Exportació a Google Photo"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:946
 #, kde-format
@@ -24640,7 +24640,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
-msgstr "Exporta cap a &ImageShack..."
+msgstr "Exporta a &ImageShack..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:225
 #, kde-format
@@ -24691,7 +24691,7 @@ msgstr "Crea una galeria nova"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr "Exportació cap a ImageShack"
+msgstr "Exportació a ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
@@ -24710,7 +24710,7 @@ msgstr "Comença la pujada al servei web ImageShack"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
 msgid "Image Shack Export"
-msgstr "Exporta cap a ImageShack"
+msgstr "Exporta a ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:269
 #, kde-format
@@ -24795,7 +24795,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
-msgstr "Exporta cap a &Imgur..."
+msgstr "Exporta a &Imgur..."
 
 #: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:192
 #, kde-format
@@ -24827,7 +24827,7 @@ msgstr "Puja anònimament"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
-msgstr "Exportació cap a imgur.com"
+msgstr "Exportació a imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
 #, kde-format
@@ -24905,7 +24905,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
-msgstr "Exporta cap a &iNaturalist..."
+msgstr "Exporta a &iNaturalist..."
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:261
 #, kde-format
@@ -25282,7 +25282,7 @@ msgid ""
 "<b><h2><a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></a> Export</"
 "h2></b>"
 msgstr ""
-"<b><h2>Exportació cap a <a href=\"%1\"><font color=\"#74ac00\">iNaturalist</"
+"<b><h2>Exportació a <a href=\"%1\"><font color=\"#74ac00\">iNaturalist</"
 "font></a></h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
@@ -25314,7 +25314,7 @@ msgstr "<i>identificació no vàlida</i>"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:762
 #, kde-format
 msgid "iNaturalist Export"
-msgstr "Exportació cap a iNaturalist"
+msgstr "Exportació a iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
@@ -25387,13 +25387,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
-msgstr "Exporta cap a &Ipfs..."
+msgstr "Exporta a &Ipfs..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
-msgstr "Exportació cap a IPFS"
+msgstr "Exportació a IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
 #, kde-format
@@ -25452,7 +25452,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
-msgstr "Exporta cap a MediaWiki..."
+msgstr "Exporta a MediaWiki..."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:116
 #, kde-format
@@ -25923,7 +25923,7 @@ msgstr "Configuració de la pujada"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
-msgstr "Exportació cap a MediaWiki"
+msgstr "Exportació a MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
 #, kde-format
@@ -25934,7 +25934,7 @@ msgstr "Comença la pujada al MediaWiki"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:302
 #, kde-format
 msgid "MediaWiki export"
-msgstr "Exportació cap a MediaWiki"
+msgstr "Exportació a MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
 #, kde-format
@@ -25980,13 +25980,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
-msgstr "Exporta cap a &Onedrive..."
+msgstr "Exporta a &Onedrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr "Exportació cap a Onedrive"
+msgstr "Exportació a Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
 #, kde-format
@@ -25998,7 +25998,7 @@ msgstr "Comença la pujada a l'Onedrive"
 #, kde-format
 msgctxt "@info"
 msgid "Onedrive export"
-msgstr "Exporta cap a Onedrive"
+msgstr "Exporta a Onedrive"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:325
@@ -26052,7 +26052,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
-msgstr "Exporta cap a &Pinterest..."
+msgstr "Exporta a &Pinterest..."
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:498
 #, kde-format
@@ -26068,7 +26068,7 @@ msgstr "Ha fallat en llistar les taules"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr "Exportació cap a Pinterest"
+msgstr "Exportació a Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
 #, kde-format
@@ -26085,7 +26085,7 @@ msgstr "Ha fallat en l'autenticació. Cliqueu a «Continua» per a autenticar."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:292
 #, kde-format
 msgid "Pinterest export"
-msgstr "Exportació cap a Pinterest"
+msgstr "Exportació a Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:329
 #, kde-format
@@ -26152,74 +26152,74 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
-msgstr "Exporta cap a &Piwigo..."
+msgstr "Exporta a &Piwigo..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Verifica si ja existeix %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:483
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "L'URL del Piwigo probablement és incorrecte"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:489
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "S'han indicat un nom d'usuari o contrasenya incorrectes"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:534
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "La pujada al Piwigo versió inferior a la 2.4 ja no està admesa"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:608
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:763
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:836
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "S'ha rebut una resposta no vàlida del Piwigo remot"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:614
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Ha fallat en llistar els àlbums"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:664
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "La fotografia «%1» ja existeix."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:769
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "La fotografia «%1» ja existeix en aquest àlbum."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:859
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Error: No s'ha pogut obrir la fotografia: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Puja el fragment %1/%2 de %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:921
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Avís: No s'ha pogut pujar la mida completa de la fotografia."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:972
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Puja les metadades de %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1007
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "S'ha rebut una resposta no vàlida des del Piwigo remot (%1)"
@@ -26293,7 +26293,7 @@ msgstr "Canvia de mida amb la qualitat del JPEG:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
-msgstr "Exportació cap a Piwigo"
+msgstr "Exportació a Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
@@ -26405,7 +26405,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
-msgstr "Exporta cap a &Rajce..."
+msgstr "Exporta a &Rajce..."
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:163
 #, kde-format
@@ -26503,7 +26503,7 @@ msgstr "S'estan afegint les fotografies %v%"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
-msgstr "Exportació cap a Rajce.net"
+msgstr "Exportació a Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
 #, kde-format
@@ -26639,7 +26639,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
-msgstr "Exporta cap a &SmugMug..."
+msgstr "Exporta a &SmugMug..."
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:118
 #, kde-format
@@ -26809,7 +26809,7 @@ msgstr "Comença la baixada des del servei web de SmugMug"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "Exportació cap al servei web SmugMug"
+msgstr "Exportació al servei web SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
 #, kde-format
@@ -26848,7 +26848,7 @@ msgstr "Importació des de SmugMug"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:799
 #, kde-format
 msgid "SmugMug Export"
-msgstr "Exportació cap a SmugMug"
+msgstr "Exportació a SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:919
 #, kde-format
@@ -26907,7 +26907,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
-msgstr "Exporta cap a &Twitter..."
+msgstr "Exporta a &Twitter..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:471
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:483
@@ -26939,7 +26939,7 @@ msgstr "Ha fallat en crear el tweet de la fotografia pujada"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr "Exportació cap a Twitter"
+msgstr "Exportació a Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
 #, kde-format
@@ -26950,7 +26950,7 @@ msgstr "Comença la pujada al Twitter"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:293
 #, kde-format
 msgid "Twitter export"
-msgstr "Exportació cap a Twitter"
+msgstr "Exportació a Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:329
 #, kde-format
@@ -27029,7 +27029,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
-msgstr "Exporta cap als serveis web..."
+msgstr "Exporta als serveis web..."
 
 #: core/dplugins/generic/webservices/unified/wizard/wsauthenticationpage.cpp:326
 #, kde-format
@@ -27097,7 +27097,7 @@ msgstr "Es&colliu l'operació:"
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:100
 #, kde-format
 msgid "Export to web services"
-msgstr "Exporta cap als serveis web"
+msgstr "Exporta als serveis web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:101
 #, kde-format
@@ -27118,7 +27118,7 @@ msgstr "Sele&cciona un compte:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr "Exportació cap als serveis web"
+msgstr "Exportació als serveis web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
 #, kde-format
@@ -52773,7 +52773,7 @@ msgid "Tilt"
 msgstr "Inclinació"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Accuracy"
 msgstr "Precisió"
@@ -54590,66 +54590,66 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#punts"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:404
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
 #, kde-format
 msgid "Not available"
 msgstr "No disponible"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:443
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:448
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
 # Nre.= Abreviatura de nombre (sinònim de quantitat)
 # skip-rule: t-pu_sp
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
 #, kde-format
 msgid "#Sat: %1"
 msgstr "Nre.sat.: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:496
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
 #, kde-format
 msgid "Modified"
 msgstr "Modificat"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Date and time"
 msgstr "Data i hora"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:833
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
 #, kde-format
 msgid "Failed to open file."
 msgstr "Ha fallat en obrir el fitxer."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:902
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:903
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Ha fallat en afegir la informació del GPS a la imatge."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:914
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Ha fallat en eliminar la informació del GPS de la imatge"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:956
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:979
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:950
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:957
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:980
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Ha fallat en desar les etiquetes al fitxer."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "No s'han pogut desar els canvis al fitxer"

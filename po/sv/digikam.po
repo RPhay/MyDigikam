@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:57+0000\n"
+"POT-Creation-Date: 2023-02-26 00:56+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2941,7 +2941,7 @@ msgstr "Album utan etiketter"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3770,7 +3770,7 @@ msgstr "Filegenskaper"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Filename"
 msgstr "Filnamn"
@@ -3834,7 +3834,7 @@ msgstr "Koordinater"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "Altitude"
 msgstr "Höjd"
@@ -4087,7 +4087,7 @@ msgstr "Enhet"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:254
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatyrbild"
@@ -11975,7 +11975,7 @@ msgstr "Sparar ändringar -"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -12004,31 +12004,31 @@ msgid "Edit Geolocation"
 msgstr "Redigera geografisk plats"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Latitude"
 msgstr "Latitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Longitude"
 msgstr "Longitud"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #, kde-format
 msgid "Speed"
 msgstr "Sparar ändringar - %p %"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "# satellites"
 msgstr "Misslyckades spara viss information"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Fix type"
 msgstr "Fel"
@@ -12044,7 +12044,7 @@ msgid "3-d"
 msgstr "Tredimensionell"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16468,7 +16468,7 @@ msgstr "Tidstämpel uppdaterad"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Status"
 msgstr "Status"
@@ -22989,9 +22989,9 @@ msgstr "Exportera till &Box..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:696
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:843
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1014
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -26195,72 +26195,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Exportera till &Piwigo..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Kontrollera om %1 redan finns"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:483
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Webbadress till Piwigo är troligen felaktig"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:489
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Felaktigt användarnamn eller lösenord angivet"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:534
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Uppladdning till Piwigo-version tidigare än 2.4 stöds inte längre"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:608
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:763
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:836
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Ogiltigt svar mottaget från Piwigo fjärrplats"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:614
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Misslyckades lista album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:664
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "Fotot '%1' finns redan."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:769
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "Fotot '%1' finns redan i det här albumet."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:859
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Fel: Kan inte öppna foto: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Ladda upp segment %1/%2 av %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:921
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Varning: Fullstor bild kan inte laddas upp."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:972
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Ladda upp metadata för %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1007
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Ogiltigt svar mottaget från Piwigo fjärrplats (%1)"
@@ -53358,7 +53358,7 @@ msgid "Tilt"
 msgstr "Lutning"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Accuracy"
 msgstr "Noggrannhet"
@@ -55188,64 +55188,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "Antal punkter"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:404
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
 #, kde-format
 msgid "Not available"
 msgstr "Inte tillgänglig"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:443
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:448
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
 #, kde-format
 msgid "#Sat: %1"
 msgstr "Sat. nr.: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:496
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
 #, kde-format
 msgid "Modified"
 msgstr "Ändrad"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Date and time"
 msgstr "Datum och tid"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:833
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
 #, kde-format
 msgid "Failed to open file."
 msgstr "Misslyckades öppna fil."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:902
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:903
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Misslyckades lägga till GPS-information i bild"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:914
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Misslyckades ta bort GPS-information i bild"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:956
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:979
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:950
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:957
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:980
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Misslyckades spara taggar i bild"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Kunde inte spara filändringar"

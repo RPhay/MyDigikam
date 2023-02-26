@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:57+0000\n"
+"POT-Creation-Date: 2023-02-26 00:56+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2955,7 +2955,7 @@ msgstr "Etiketarik gabeko albuma"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3783,7 +3783,7 @@ msgstr "Fitxategiaren propietateak"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Filename"
 msgstr "Fitxategi-izena"
@@ -3847,7 +3847,7 @@ msgstr "Koordenatuak"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "Altitude"
 msgstr "Altitudea"
@@ -4100,7 +4100,7 @@ msgstr "Unitatea"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:254
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
 msgstr "Koadro txikia"
@@ -11983,7 +11983,7 @@ msgstr "Gorde irudiak"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -12014,31 +12014,31 @@ msgid "Edit Geolocation"
 msgstr "Geolokalizazioa"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Latitude"
 msgstr "Latitudea"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Longitude"
 msgstr "Longitudea"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #, fuzzy, kde-format
 msgid "Speed"
 msgstr "Abiadura"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, fuzzy, kde-format
 msgid "# satellites"
 msgstr "Sateliteak"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Fix type"
 msgstr ""
@@ -12054,7 +12054,7 @@ msgid "3-d"
 msgstr "D"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, fuzzy, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -16737,7 +16737,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Status"
 msgstr "Egoera"
@@ -23269,9 +23269,9 @@ msgstr "Esportatu"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:696
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:843
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1014
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -26542,74 +26542,74 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Esportatu"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
 #, fuzzy, kde-format
 msgid "Check if %1 already exists"
 msgstr "Egiaztatu %1 aurretik dagoen"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:483
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
 #, fuzzy, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Piwigo URLa ziur aski ez da zuzena"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:489
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
 #, fuzzy, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Erabiltzaile-izen edo pasahitz okerra zehaztu da"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:534
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Piwigo 2.4 baino bertsio txikiagora zama-igotzea ez da onartzen"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:608
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:763
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:836
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
 #, fuzzy, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Urruneko Piwigo zerbitzariak erantzun baliogabea eman du"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:614
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to list albums"
 msgstr "Huts egin du albumak zerrendatzea"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:664
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
 #, fuzzy, kde-format
 #| msgid "Tag name already exists"
 msgid "Photo '%1' already exists."
 msgstr "'%1' argazkia badago lehendik ere."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:769
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
 #, fuzzy, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "'%1' argazkia lehendik ere badago album honetan."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:859
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
 #, fuzzy, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Errorea: Ezin da argazkia ireki: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:886
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Zama-igo  %3tik  %1/%2  puska"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:921
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Abisua: Neurri osoko argazkia ezin da zama-igo."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:972
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Zama-igo %1(r)(e)n meta-datuak"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1007
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
 #, fuzzy, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Erantzun baliogabea eman du urruneko Piwigo zerbitzariak (%1)"
@@ -54480,7 +54480,7 @@ msgid "Tilt"
 msgstr "Okerdura"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Accuracy"
 msgstr "Zehaztasuna"
@@ -56279,64 +56279,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "Puntuak"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:404
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
 #, kde-format
 msgid "Not available"
 msgstr "Ez dago erabilgarri"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:443
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:448
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
 #, kde-format
 msgid "Fix: %1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
 #, fuzzy, kde-format
 msgid "#Sat: %1"
 msgstr "Lr"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:496
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
 #, fuzzy, kde-format
 msgid "%1d"
 msgstr "%1e"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:520
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
 #, fuzzy, kde-format
 msgid "Modified"
 msgstr "Aldatua"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Date and time"
 msgstr "Data eta ordua"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:833
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
 #, fuzzy, kde-format
 msgid "Failed to open file."
 msgstr "Huts egin du fitxategia irekitzea"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:902
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:903
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:914
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:956
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:979
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:950
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:957
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:980
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr ""
