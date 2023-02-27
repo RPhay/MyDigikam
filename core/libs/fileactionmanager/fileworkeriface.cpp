@@ -312,12 +312,12 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             metadata->applyChanges();
         }
 
+        ScanController::instance()->scannedInfo(filePath,
+                                                CollectionScanner::ModifiedScan);
+
         // DB rotation
 
         ItemInfo(info).setOrientation(metaOrientation);
-
-        ScanController::instance()->scannedInfo(filePath,
-                                                CollectionScanner::ModifiedScan);
 
         // Adjust faces in the DB
 

@@ -304,6 +304,11 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
                 (*it)->fileSizeCached = false;
             }
 
+            if (changes & DatabaseFields::UniqueHash)
+            {
+                (*it)->uniqueHashCached = false;
+            }
+
             if (changes & DatabaseFields::ManualOrder)
             {
                 (*it)->manualOrderCached = false;

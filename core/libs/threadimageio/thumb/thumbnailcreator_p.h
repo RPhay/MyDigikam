@@ -43,6 +43,7 @@
 #include "digikam_config.h"
 #include "metaengine_previews.h"
 #include "metaengine_rotation.h"
+#include "filereadwritelock.h"
 #include "drawdecoder.h"
 #include "drawfiles.h"
 #include "digikam_debug.h"
