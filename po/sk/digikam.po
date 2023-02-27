@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -4268,955 +4268,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Zakázané prípony súborov"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Otvoriť náhľad"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Otvoriť náhľad"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, fuzzy, kde-format
-#| msgid "Drag and drop an image here"
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Sem môžete pretiahnuť obrázok"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "Vrátiť obrázky s formátom súboru"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, fuzzy, kde-format
-#| msgid "&Shortcut:"
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Skrat&ka:"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "Možnosti celej obrazovky"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Súbor sa nedá uložiť"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "Umiestnenie obrazovky:"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-#| msgid "Rotated by 180 Degrees"
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "Otočené o 180 stupňov"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "Možnosti celej obrazovky"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "capture video frame"
-#| msgid "Capture"
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "Zachytiť"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Pomocník"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Otvoriť"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Otvoriť súbor"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "O aplikácii"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Pomocník"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Neznámy typ súboru"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, fuzzy, kde-format
-#| msgid "Aspect ratio"
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Pomer strán"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Network Error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Chyba siete"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-#| msgid "Filename"
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Názov súboru"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Prerušujem..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "Michal Gašpar,Jozef Říha"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, fuzzy, kde-format
-#| msgid "Loading..."
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Načítava sa..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-#| msgid "Load image"
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Načítať obrázok"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Prerušujem..."
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, fuzzy, kde-format
-#| msgctxt "@title:window %1: name of the camera"
-#| msgid "Capture from %1"
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr "Zachytiť z %1"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgid "One active filter"
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Jeden aktívny filter"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "Na Vašom systéme nie je dostupný OpenGL."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@item: open in browser"
-#| msgid "Internal"
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Interný"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgctxt "@info"
-msgid "Current time"
-msgstr "Aktuálne meno"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@info"
-msgid "Duration"
-msgstr "Trvanie"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Vykresľovací zámer:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Otvoriť"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "capture video frame"
-#| msgid "Capture"
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Zachytiť"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, fuzzy, kde-format
-#| msgid "Columns"
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Stĺpce"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Otvoriť súbor"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, fuzzy, kde-format
-#| msgid "Play All"
-msgctxt "@option"
-msgid "Play list"
-msgstr "Prehrať všetko"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, fuzzy, kde-format
-#| msgid "History"
-msgctxt "@option"
-msgid "History"
-msgstr "História"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action"
-msgid "About"
-msgstr "O aplikácii"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, fuzzy, kde-format
-#| msgid "Speed"
-msgctxt "@option"
-msgid "Speed"
-msgstr "Rýchlosť"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, fuzzy, kde-format
-#| msgctxt "@info: correction status"
-#| msgid "enabled"
-msgctxt "@action"
-msgid "Enable"
-msgstr "povolené"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, fuzzy, kde-format
-#| msgid "Time"
-msgctxt "@label"
-msgid "Times"
-msgstr "Čas"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, fuzzy, kde-format
-#| msgctxt "start of the range"
-#| msgid "From:"
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Od:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "Odstrániť vybrané obrázky zo zoznamu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Two"
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Dvaja/dve"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, fuzzy, kde-format
-#| msgid "Auto"
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Auto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Zvuk"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, fuzzy, kde-format
-#| msgid "Untitled"
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Bez názvu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Auto play"
-msgctxt "@action"
-msgid "Auto load"
-msgstr "&Automaticky prehrať"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Otvoriť"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Auto&detekcia"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "System"
-msgctxt "@option"
-msgid "System"
-msgstr "Systém"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, fuzzy, kde-format
-#| msgid "Audio bitrate"
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Dátový tok zvuku"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option"
-msgid "Channel"
-msgstr "Kanál:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, fuzzy, kde-format
-#| msgid "Same as input"
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Rovnaký ako vstup"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, fuzzy, kde-format
-#| msgctxt "@label: audio channel type"
-#| msgid "Stereo"
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Stereo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Vľavo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image right"
-#| msgid "Right"
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Vpravo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, fuzzy, kde-format
-#| msgid "Editor Window"
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Okno editora"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, fuzzy, kde-format
-#| msgctxt "@item: angle"
-#| msgid "Custom"
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Vlastné"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Color space"
-msgctxt "@option"
-msgid "Color space"
-msgstr "Farebný priestor"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Video kodek"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Under-water"
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Pod vodou"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "Na Vašom systéme nie je dostupný OpenGL."
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgid "Open in the editor"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Otvoriť v editore"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, fuzzy, kde-format
-#| msgid "Click to select watermark image."
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "Kliknite sem pre výber obrázka s vodoznakom."
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Vyčistiť"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-#| msgid "Remove selected tag"
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Odstrániť vybranú značku"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgid "Select sound files"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Vybrať zvukové súbory"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Nastaviť na pôvodné"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Ok"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Použiť"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, fuzzy, kde-format
-#| msgid "Format"
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Formát"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Bitový tok audia"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, fuzzy, kde-format
-#| msgid "Start import"
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Spustiť import"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Trvanie"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Dostupné:"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, fuzzy, kde-format
-#| msgid "Codec"
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Kodek"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Video kodek"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Video kodek"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, fuzzy, kde-format
-#| msgid "Total Items"
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Spolu položiek"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, fuzzy, kde-format
-#| msgid "Start import"
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Spustiť import"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Bitový tok audia"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, fuzzy, kde-format
-#| msgid "Names:"
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Mená:"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, fuzzy, kde-format
-#| msgid "GPS"
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "GPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, fuzzy, kde-format
-#| msgid "Pixel count"
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Počet pixelov"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, fuzzy, kde-format
-#| msgid "Size"
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Veľkosť"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Veľkosť súboru"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-#| msgid "Photo size"
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Veľkosť fotografie"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Formát dátumu:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, fuzzy, kde-format
-#| msgid "Frame rate"
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Snímková frekvencia"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Kanál:"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-#| msgid "Change Account"
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Prepnúť účet"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Veľkosť súboru"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@info: histogram properties"
-#| msgid "Median:"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Medián:"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, fuzzy, kde-format
-#| msgid "Key"
-msgctxt "@title"
-msgid "Key"
-msgstr "Kľúč"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Value"
-msgctxt "@title"
-msgid "Value"
-msgstr "Hodnota"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metadáta"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metadáta"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option"
-msgid "Audio"
-msgstr "Zvuk"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, fuzzy, kde-format
-#| msgid "Ok"
-msgctxt "@action"
-msgid "Ok"
-msgstr "Ok"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6055,7 +5106,7 @@ msgid "Watermark type: "
 msgstr "Typ vodoznaku:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Obrázok"
@@ -11984,6 +11035,11 @@ msgstr "3-d"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Použiť"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, fuzzy, kde-format
@@ -22919,7 +21975,7 @@ msgstr "Začiatok:"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -26099,7 +25155,7 @@ msgstr "Exportovať"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Upraviť dáta Piwigo"
@@ -26118,8 +25174,8 @@ msgstr ""
 "\n"
 "Želáte si znova skontrolovať nastavenia a skúsiť to znova?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26132,27 +25188,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Nie je čo odoslať - vyberte, prosím, fotografie na odoslanie."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Súbor %1 nie je v podporovanom formáte pre obrázky alebo video"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Odosiela sa súbor %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Nepodarilo sa nahrať mediálny súbor do vzdialeného Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -27070,6 +26126,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Toto je nastavenie krivky svietivosti obrázka"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Nastaviť na pôvodné"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -29318,6 +28382,13 @@ msgstr "Hľadajú sa obrázky v jednotlivých albumoch..."
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migrovať ->"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Zrušiť"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -42580,6 +41651,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "Tieňovať"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr ""
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Brightness:"
@@ -42788,6 +41865,11 @@ msgstr ""
 #| msgid "About"
 msgid "About Qt"
 msgstr "O aplikácii"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "Ok"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -65652,6 +64734,642 @@ msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Otvoriť náhľad"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Otvoriť náhľad"
+
+#, fuzzy
+#~| msgid "Drag and drop an image here"
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Sem môžete pretiahnuť obrázok"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "Vrátiť obrázky s formátom súboru"
+
+#, fuzzy
+#~| msgid "&Shortcut:"
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Skrat&ka:"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "Možnosti celej obrazovky"
+
+#, fuzzy
+#~| msgid "Cannot Save File"
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Súbor sa nedá uložiť"
+
+#, fuzzy
+#~| msgid "Screen placement:"
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "Umiestnenie obrazovky:"
+
+#, fuzzy
+#~| msgid "Rotated by 180 Degrees"
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "Otočené o 180 stupňov"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "Možnosti celej obrazovky"
+
+#, fuzzy
+#~| msgctxt "capture video frame"
+#~| msgid "Capture"
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "Zachytiť"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Pomocník"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Otvoriť"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Otvoriť súbor"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "O aplikácii"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Help"
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Pomocník"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Neznámy typ súboru"
+
+#, fuzzy
+#~| msgid "Aspect ratio"
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Pomer strán"
+
+#, fuzzy
+#~| msgctxt "@title: window"
+#~| msgid "Network Error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Chyba siete"
+
+#, fuzzy
+#~| msgid "Filename"
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Názov súboru"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Prerušujem..."
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "Michal Gašpar,Jozef Říha"
+
+#, fuzzy
+#~| msgid "Loading..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Načítava sa..."
+
+#, fuzzy
+#~| msgid "Load image"
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Načítať obrázok"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Prerušujem..."
+
+#, fuzzy
+#~| msgctxt "@title:window %1: name of the camera"
+#~| msgid "Capture from %1"
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr "Zachytiť z %1"
+
+#, fuzzy
+#~| msgid "One active filter"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Jeden aktívny filter"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "Na Vašom systéme nie je dostupný OpenGL."
+
+#, fuzzy
+#~| msgctxt "@item: open in browser"
+#~| msgid "Internal"
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Interný"
+
+#, fuzzy
+#~| msgid "Current Name"
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Aktuálne meno"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Trvanie"
+
+#, fuzzy
+#~| msgid "Rendering intent:"
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Vykresľovací zámer:"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Otvoriť"
+
+#, fuzzy
+#~| msgctxt "capture video frame"
+#~| msgid "Capture"
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Zachytiť"
+
+#, fuzzy
+#~| msgid "Columns"
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Stĺpce"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Otvoriť súbor"
+
+#, fuzzy
+#~| msgid "Play All"
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Prehrať všetko"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "História"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "O aplikácii"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Rýchlosť"
+
+#, fuzzy
+#~| msgctxt "@info: correction status"
+#~| msgid "enabled"
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "povolené"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Čas"
+
+#, fuzzy
+#~| msgctxt "start of the range"
+#~| msgid "From:"
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Od:"
+
+#, fuzzy
+#~| msgid "Remove selected images from the list"
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "Odstrániť vybrané obrázky zo zoznamu"
+
+#, fuzzy
+#~| msgctxt "@item: scene code"
+#~| msgid "Two"
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Dvaja/dve"
+
+#, fuzzy
+#~| msgid "Auto"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Zvuk"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Untitled"
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Bez názvu"
+
+#, fuzzy
+#~| msgid "&Auto play"
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "&Automaticky prehrať"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Otvoriť"
+
+#, fuzzy
+#~| msgid "Auto-&Detect"
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Auto&detekcia"
+
+#, fuzzy
+#~| msgctxt "@title:tab"
+#~| msgid "System"
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Systém"
+
+#, fuzzy
+#~| msgid "Audio bitrate"
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Dátový tok zvuku"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Kanál:"
+
+#, fuzzy
+#~| msgid "Same as input"
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Rovnaký ako vstup"
+
+#, fuzzy
+#~| msgctxt "@label: audio channel type"
+#~| msgid "Stereo"
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Stereo"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image left"
+#~| msgid "Left"
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Vľavo"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image right"
+#~| msgid "Right"
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Vpravo"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Editor Window"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Okno editora"
+
+#, fuzzy
+#~| msgctxt "@item: angle"
+#~| msgid "Custom"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Vlastné"
+
+#, fuzzy
+#~| msgctxt "@info: icc profile class"
+#~| msgid "Color space"
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Farebný priestor"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Video kodek"
+
+#, fuzzy
+#~| msgctxt "@item: scene code"
+#~| msgid "Under-water"
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Pod vodou"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "Na Vašom systéme nie je dostupný OpenGL."
+
+#, fuzzy
+#~| msgid "Open in the editor"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Otvoriť v editore"
+
+#, fuzzy
+#~| msgid "Click to select watermark image."
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "Kliknite sem pre výber obrázka s vodoznakom."
+
+#, fuzzy
+#~| msgctxt "@action: search bar"
+#~| msgid "Clear"
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Vyčistiť"
+
+#, fuzzy
+#~| msgid "Remove selected tag"
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Odstrániť vybranú značku"
+
+#, fuzzy
+#~| msgid "Select sound files"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Vybrať zvukové súbory"
+
+#, fuzzy
+#~| msgid "Format"
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Formát"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Bitový tok audia"
+
+#, fuzzy
+#~| msgid "Start import"
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Spustiť import"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Trvanie"
+
+#, fuzzy
+#~| msgctxt "@info Storage"
+#~| msgid "Available:"
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Dostupné:"
+
+#, fuzzy
+#~| msgid "Codec"
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Kodek"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Video kodek"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Video kodek"
+
+#, fuzzy
+#~| msgid "Total Items"
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Spolu položiek"
+
+#, fuzzy
+#~| msgid "Start import"
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Spustiť import"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Bitový tok audia"
+
+#, fuzzy
+#~| msgid "Names:"
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Mená:"
+
+#, fuzzy
+#~| msgid "GPS"
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "GPS"
+
+#, fuzzy
+#~| msgid "Pixel count"
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Počet pixelov"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Veľkosť"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Veľkosť súboru"
+
+#, fuzzy
+#~| msgid "Photo size"
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Veľkosť fotografie"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Date format:"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Formát dátumu:"
+
+#, fuzzy
+#~| msgid "Frame rate"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Snímková frekvencia"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Kanál:"
+
+#, fuzzy
+#~| msgid "Change Account"
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Prepnúť účet"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Veľkosť súboru"
+
+#, fuzzy
+#~| msgctxt "@info: histogram properties"
+#~| msgid "Median:"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Medián:"
+
+#, fuzzy
+#~| msgid "Key"
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Kľúč"
+
+#, fuzzy
+#~| msgctxt "@title: DPlugin properties"
+#~| msgid "Value"
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Hodnota"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metadáta"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metadáta"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Zvuk"
+
+#, fuzzy
+#~| msgid "Ok"
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
 #, fuzzy
 #~| msgid "Country:"

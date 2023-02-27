@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -4264,930 +4264,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "不明なフォーマット"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "プレビューを開く"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "プレビューを開く"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, fuzzy, kde-format
-#| msgid "Drag and drop an image here"
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "ここに画像をドラッグ＆ドロップ"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "次のファイルフォーマットの画像を探す"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, fuzzy, kde-format
-#| msgid "&Shortcut:"
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "ショートカット(&S):"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "フルスクリーンのオプション"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "ファイルの保存エラー"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "パーセント:"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-#| msgid "Rotated by 180 Degrees"
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "180 度回転"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "フルスクリーンのオプション"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Capture"
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "キャプチャ"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "ヘルプ(&H)"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, fuzzy, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "開く..."
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, fuzzy, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "フォルダを開く"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "概要"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "ヘルプ(&H)"
-
-#: core/avplayer/main/main.cpp:174
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#| "p><p>Please install the 64-bit version of digiKam to get a better "
-#| "experience with digiKam.</p>"
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-"<p>64ビット Windows で32ビット版の digiKam を実行しています。</p><p>より良い"
-"動作のために64ビット版の digiKam をインストールしてください。</p>"
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgid "Type of the media file"
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "メディアファイルの種類"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, fuzzy, kde-format
-#| msgid "Aspect ratio"
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "アスペクト比"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgid "Error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "エラー"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-#| msgid "Filename"
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "ファイル名"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "中断しています..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "スリナム"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, fuzzy, kde-format
-#| msgid "Loading..."
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "読み込み中..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-#| msgid "Load image"
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "画像を読み込み"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "中断しています..."
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, fuzzy, kde-format
-#| msgctxt "@title:window %1: name of the camera"
-#| msgid "Capture from %1"
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr "%1 からキャプチャ"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "アクティブなフィルタはありません"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, fuzzy, kde-format
-#| msgid "Sorry. OpenGL support not available on your system"
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "残念ながら、あなたのシステムには OpenGL サポートがありません。"
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, fuzzy, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "補間法:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgctxt "@info"
-msgid "Current time"
-msgstr "現在の名前"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@info"
-msgid "Duration"
-msgstr "長さ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
-msgctxt "@info"
-msgid "Render engine"
-msgstr "レンダリングインテント:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, fuzzy, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "開く..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Capture"
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "キャプチャ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "フォルダを開く"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, fuzzy, kde-format
-#| msgid "Clear All"
-msgctxt "@option"
-msgid "Play list"
-msgstr "すべてクリア"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, fuzzy, kde-format
-#| msgid "History"
-msgctxt "@option"
-msgid "History"
-msgstr "履歴"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action"
-msgid "About"
-msgstr "概要"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, fuzzy, kde-format
-#| msgid "Speed:"
-msgctxt "@option"
-msgid "Speed"
-msgstr "速度:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "大理石"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, fuzzy, kde-format
-#| msgid "Time:"
-msgctxt "@label"
-msgid "Times"
-msgstr "時刻:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, fuzzy, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "ファイルフォーマット"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "選択した値をリストから削除"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, fuzzy, kde-format
-#| msgid "Two"
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "二人"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, fuzzy, kde-format
-#| msgid "Auto"
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "自動"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "音声"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "動画"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, fuzzy, kde-format
-#| msgid "Untitled"
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "タイトルなし"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
-msgctxt "@action"
-msgid "Auto load"
-msgstr "自動回転"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, fuzzy, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "開く..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr ""
-
-# ACCELERATOR changed by translator
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "自動検出(&T)"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, fuzzy, kde-format
-#| msgid "System Font"
-msgctxt "@option"
-msgid "System"
-msgstr "システムフォント"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, fuzzy, kde-format
-#| msgid "Audio bitrate"
-msgctxt "@option"
-msgid "Audio track"
-msgstr "音声ビットレート"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option"
-msgid "Channel"
-msgstr "チャンネル:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, fuzzy, kde-format
-#| msgid "Same as input"
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "入力と同じ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, fuzzy, kde-format
-#| msgid "Stereo"
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "ステレオ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "左"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image right"
-#| msgid "Right"
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "右"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "動画"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, fuzzy, kde-format
-#| msgid "Editor Window"
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "エディタウィンドウ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, fuzzy, kde-format
-#| msgctxt "@item: angle"
-#| msgid "Custom"
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "カスタム"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, fuzzy, kde-format
-#| msgid "Color space"
-msgctxt "@option"
-msgid "Color space"
-msgstr "カラースペース"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option"
-msgid "Decoder"
-msgstr "動画コーデック"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, fuzzy, kde-format
-#| msgid "Under-water"
-msgctxt "@option"
-msgid "Renderer"
-msgstr "水中"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, fuzzy, kde-format
-#| msgid "Sorry. OpenGL support not available on your system"
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "残念ながら、あなたのシステムには OpenGL サポートがありません。"
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgid "Open in the editor"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "エディタで開く"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, fuzzy, kde-format
-#| msgid "Click to select watermark image."
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "クリックしてウォーターマーク画像を選択します。"
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, fuzzy, kde-format
-#| msgid "Clear"
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "クリア"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-#| msgid "Remove selected tag"
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "選択したタグを削除"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgid "Select None"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "すべて選択解除"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "リセット"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr ""
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "適用"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, fuzzy, kde-format
-#| msgid "Format"
-msgctxt "@option: base"
-msgid "Format"
-msgstr "フォーマット"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "音声ビットレート"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, fuzzy, kde-format
-#| msgid "Start image editor"
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "画像エディタを開く"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "長さ"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
-msgctxt "@option: common"
-msgid "Available"
-msgstr "利用可能:"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, fuzzy, kde-format
-#| msgid "Codec"
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "コーデック"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "動画コーデック"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "動画コーデック"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, fuzzy, kde-format
-#| msgid "Total Items"
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "アイテム総数"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, fuzzy, kde-format
-#| msgid "Start image editor"
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "画像エディタを開く"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "音声ビットレート"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, fuzzy, kde-format
-#| msgid "Names:"
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "名前:"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@item: exif namespace"
-#| msgid "GPS"
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "GPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, fuzzy, kde-format
-#| msgid "Pixel count"
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "ピクセル数"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, fuzzy, kde-format
-#| msgid "Size"
-msgctxt "@option: video"
-msgid "Size"
-msgstr "サイズ"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-#| msgid "File Size"
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "ファイルサイズ"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-#| msgid "Photo Flash"
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "写真のフラッシュ"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "日付の書式:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, fuzzy, kde-format
-#| msgid "Frame rate"
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "フレームレート"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "チャンネル:"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "文字種別を変更:"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, fuzzy, kde-format
-#| msgid "File Size"
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "ファイルサイズ"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgid "Median:"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "中央値:"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, fuzzy, kde-format
-#| msgid "Kenya"
-msgctxt "@title"
-msgid "Key"
-msgstr "ケニア"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "メタデータ"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "動画"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@option"
-msgid "Metadata"
-msgstr "メタデータ"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option"
-msgid "Audio"
-msgstr "音声"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr ""
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6065,7 +5141,7 @@ msgid "Watermark type: "
 msgstr "ウォーターマークの種類:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "画像"
@@ -12079,6 +11155,11 @@ msgstr ""
 #, kde-format
 msgid "DOP"
 msgstr ""
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "適用"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -23397,7 +22478,7 @@ msgstr "開始値:"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -26657,7 +25738,7 @@ msgstr "エクスポート"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr ""
@@ -26674,8 +25755,8 @@ msgid ""
 "Do you want to check your settings and try again?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26688,28 +25769,28 @@ msgstr ""
 msgid "Album"
 msgstr "アルバム"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, fuzzy, kde-format
 msgid "Uploading file %1"
 msgstr "画像ファイル"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, fuzzy, kde-format
 #| msgid "Failed to add GPS info to image."
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "GPS 情報を画像に追加できませんでした。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, fuzzy, kde-format
 #| msgid "Do you want to apply your changes?"
 msgid ""
@@ -27661,6 +26742,14 @@ msgstr "この EV 値は画像の露出補正に使われます。"
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "これは画像の明度のトーンカーブ調整です。"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "リセット"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -29949,6 +29038,13 @@ msgstr "各アルバムの画像をスキャン中..."
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "キャンセル"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, fuzzy, kde-format
@@ -42972,6 +42068,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr ""
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr ""
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Brightness:"
@@ -43174,6 +42276,11 @@ msgstr ""
 #| msgid "About"
 msgid "About Qt"
 msgstr "概要"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr ""
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -66142,6 +65249,610 @@ msgstr "すべての設定を標準の値に戻します。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "すべての設定を標準の値に戻します。"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "プレビューを開く"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "プレビューを開く"
+
+#, fuzzy
+#~| msgid "Drag and drop an image here"
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "ここに画像をドラッグ＆ドロップ"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "次のファイルフォーマットの画像を探す"
+
+#, fuzzy
+#~| msgid "&Shortcut:"
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "ショートカット(&S):"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "フルスクリーンのオプション"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "ファイルの保存エラー"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "パーセント:"
+
+#, fuzzy
+#~| msgid "Rotated by 180 Degrees"
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "180 度回転"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "フルスクリーンのオプション"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Capture"
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "キャプチャ"
+
+#, fuzzy
+#~| msgid "&Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "ヘルプ(&H)"
+
+#, fuzzy
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "開く..."
+
+#, fuzzy
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "フォルダを開く"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "概要"
+
+#, fuzzy
+#~| msgid "&Help"
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "ヘルプ(&H)"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
+#~| "p><p>Please install the 64-bit version of digiKam to get a better "
+#~| "experience with digiKam.</p>"
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
+#~ "experience with AVPlayer.</p>"
+#~ msgstr ""
+#~ "<p>64ビット Windows で32ビット版の digiKam を実行しています。</p><p>より良"
+#~ "い動作のために64ビット版の digiKam をインストールしてください。</p>"
+
+#, fuzzy
+#~| msgid "Type of the media file"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "メディアファイルの種類"
+
+#, fuzzy
+#~| msgid "Aspect ratio"
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "アスペクト比"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "エラー"
+
+#, fuzzy
+#~| msgid "Filename"
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "ファイル名"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "中断しています..."
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "スリナム"
+
+#, fuzzy
+#~| msgid "Loading..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "読み込み中..."
+
+#, fuzzy
+#~| msgid "Load image"
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "画像を読み込み"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "中断しています..."
+
+#, fuzzy
+#~| msgctxt "@title:window %1: name of the camera"
+#~| msgid "Capture from %1"
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr "%1 からキャプチャ"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "アクティブなフィルタはありません"
+
+#, fuzzy
+#~| msgid "Sorry. OpenGL support not available on your system"
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "残念ながら、あなたのシステムには OpenGL サポートがありません。"
+
+#, fuzzy
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "補間法:"
+
+#, fuzzy
+#~| msgid "Current Name"
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "現在の名前"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "長さ"
+
+#, fuzzy
+#~| msgid "Rendering intent:"
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "レンダリングインテント:"
+
+#, fuzzy
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "開く..."
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Capture"
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "キャプチャ"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "フォルダを開く"
+
+#, fuzzy
+#~| msgid "Clear All"
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "すべてクリア"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "履歴"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "概要"
+
+#, fuzzy
+#~| msgid "Speed:"
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "速度:"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "大理石"
+
+#, fuzzy
+#~| msgid "Time:"
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "時刻:"
+
+#, fuzzy
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "ファイルフォーマット"
+
+#, fuzzy
+#~| msgid "Remove the current selected value from the list"
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "選択した値をリストから削除"
+
+#, fuzzy
+#~| msgid "Two"
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "二人"
+
+#, fuzzy
+#~| msgid "Auto"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "自動"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "音声"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "動画"
+
+#, fuzzy
+#~| msgid "Untitled"
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "タイトルなし"
+
+#, fuzzy
+#~| msgid "Auto rotate"
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "自動回転"
+
+#, fuzzy
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "開く..."
+
+# ACCELERATOR changed by translator
+#, fuzzy
+#~| msgid "Auto-&Detect"
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "自動検出(&T)"
+
+#, fuzzy
+#~| msgid "System Font"
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "システムフォント"
+
+#, fuzzy
+#~| msgid "Audio bitrate"
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "音声ビットレート"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "チャンネル:"
+
+#, fuzzy
+#~| msgid "Same as input"
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "入力と同じ"
+
+#, fuzzy
+#~| msgid "Stereo"
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "ステレオ"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image left"
+#~| msgid "Left"
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "左"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image right"
+#~| msgid "Right"
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "右"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "動画"
+
+#, fuzzy
+#~| msgid "Editor Window"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "エディタウィンドウ"
+
+#, fuzzy
+#~| msgctxt "@item: angle"
+#~| msgid "Custom"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "カスタム"
+
+#, fuzzy
+#~| msgid "Color space"
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "カラースペース"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "動画コーデック"
+
+#, fuzzy
+#~| msgid "Under-water"
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "水中"
+
+#, fuzzy
+#~| msgid "Sorry. OpenGL support not available on your system"
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "残念ながら、あなたのシステムには OpenGL サポートがありません。"
+
+#, fuzzy
+#~| msgid "Open in the editor"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "エディタで開く"
+
+#, fuzzy
+#~| msgid "Click to select watermark image."
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "クリックしてウォーターマーク画像を選択します。"
+
+#, fuzzy
+#~| msgid "Clear"
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "クリア"
+
+#, fuzzy
+#~| msgid "Remove selected tag"
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "選択したタグを削除"
+
+#, fuzzy
+#~| msgid "Select None"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "すべて選択解除"
+
+#, fuzzy
+#~| msgid "Format"
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "フォーマット"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "音声ビットレート"
+
+#, fuzzy
+#~| msgid "Start image editor"
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "画像エディタを開く"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "長さ"
+
+#, fuzzy
+#~| msgctxt "@info Storage"
+#~| msgid "Available:"
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "利用可能:"
+
+#, fuzzy
+#~| msgid "Codec"
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "コーデック"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "動画コーデック"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "動画コーデック"
+
+#, fuzzy
+#~| msgid "Total Items"
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "アイテム総数"
+
+#, fuzzy
+#~| msgid "Start image editor"
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "画像エディタを開く"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "音声ビットレート"
+
+#, fuzzy
+#~| msgid "Names:"
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "名前:"
+
+#, fuzzy
+#~| msgctxt "@item: exif namespace"
+#~| msgid "GPS"
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "GPS"
+
+#, fuzzy
+#~| msgid "Pixel count"
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "ピクセル数"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "サイズ"
+
+#, fuzzy
+#~| msgid "File Size"
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "ファイルサイズ"
+
+#, fuzzy
+#~| msgid "Photo Flash"
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "写真のフラッシュ"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Date format:"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "日付の書式:"
+
+#, fuzzy
+#~| msgid "Frame rate"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "フレームレート"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "チャンネル:"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "文字種別を変更:"
+
+#, fuzzy
+#~| msgid "File Size"
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "ファイルサイズ"
+
+#, fuzzy
+#~| msgid "Median:"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "中央値:"
+
+#, fuzzy
+#~| msgid "Kenya"
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "ケニア"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "メタデータ"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "動画"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "メタデータ"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "音声"
 
 #, fuzzy
 #~| msgid "Country:"

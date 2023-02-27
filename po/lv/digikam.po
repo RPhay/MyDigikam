@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -4294,884 +4294,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Failu pārdēvēšana"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Atvērt priekšskatījumu"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Atvērt priekšskatījumu"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, fuzzy, kde-format
-#| msgid "Drag and drop an image here"
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Velciet un nometiet attēlu šeit"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "Atrast attēlus ar faila formātu"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, fuzzy, kde-format
-#| msgid "&Shortcut:"
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Ī&sinājumtaustiņš:"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Neizdevās parsēt %1 GPX failu!"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "Procenti:"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "Pagriezt par 180 grādiem"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-#| msgid "Capture image..."
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "Tvert attēlu..."
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Palīdzība"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, fuzzy, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Atvērt ar..."
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, fuzzy, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Atvērt mapi"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "Par"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Palīdzība"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Faila izmērs"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, fuzzy, kde-format
-#| msgid "Aspect ratio"
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Malu attiecība"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Atskaņotāja kļūda"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-#| msgid "Invalid Profile"
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Nederīgs profils"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Ielādēt..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, fuzzy, kde-format
-#| msgid "Loading..."
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Ielādē..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-#| msgctxt "load theme"
-#| msgid "&Load"
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "&Ielādēt"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Ielādēt..."
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Nav aktīva filtra"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "OpenGL jūsu sistēmā nav pieejams."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, fuzzy, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Interpolācija:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgctxt "@info"
-msgid "Current time"
-msgstr "Pašreizējais nosaukums"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Ilgums"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Attēlošanas mērķis:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, fuzzy, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Atvērt ar..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "capture video frame"
-#| msgid "Capture"
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Tvert"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Atvērt mapi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, fuzzy, kde-format
-#| msgid "Play All"
-msgctxt "@option"
-msgid "Play list"
-msgstr "Atskaņot visu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, fuzzy, kde-format
-#| msgid "History"
-msgctxt "@option"
-msgid "History"
-msgstr "Vēsture"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action"
-msgid "About"
-msgstr "Par"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Ieslēgts"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, fuzzy, kde-format
-#| msgid "Time"
-msgctxt "@label"
-msgid "Times"
-msgstr "Laiks"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "No"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "Izņemt izvēlētos Raw failus no saraksta"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, fuzzy, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Līdz:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, fuzzy, kde-format
-#| msgid "Auto"
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Automātiska"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, fuzzy, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Automātiska"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, fuzzy, kde-format
-#| msgid "Untitled"
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Nenosaukts"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Automātiski pagriezt"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, fuzzy, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Atvērt ar..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Automātiski &noteikt"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, fuzzy, kde-format
-#| msgid "System Font"
-msgctxt "@option"
-msgid "System"
-msgstr "Sistēmas fonts"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Audio faili"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option"
-msgid "Channel"
-msgstr "Kanāls:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Pa kreisi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image right"
-#| msgid "Right"
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Pa labi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, fuzzy, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Ietilpināt &logā"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, fuzzy, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Pielāgota"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Color space"
-msgctxt "@option"
-msgid "Color space"
-msgstr "Krāsu telpa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "&Atkodēt"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Attēlošanas mērķis:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "OpenGL jūsu sistēmā nav pieejams."
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgid "Open in the editor"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Atvērt redaktorā"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Notīrīt"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Izņemt izvēlētos Raw failus no saraksta"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgid "Select None"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Notīrīt iezīmējumu"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Nomest"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Labi"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Atcelt"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Pielietot"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Formāts"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, fuzzy, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Audio faili"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, fuzzy, kde-format
-#| msgid "Start image editor"
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Palaist attēlu redaktoru"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Ilgums"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Pieejams:"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Audio faili"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "&Atkodēt"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, fuzzy, kde-format
-#| msgid "Total Items"
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Vienību kopskaits"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, fuzzy, kde-format
-#| msgid "Start image editor"
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Palaist attēlu redaktoru"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Audio faili"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, fuzzy, kde-format
-#| msgid "Names:"
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Nosaukumi:"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Pikseļi: "
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, fuzzy, kde-format
-#| msgid "Size"
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Izmērs"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Faila izmērs"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-#| msgid "Photo Flash"
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Fotoaparāta zibspuldze"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Datuma formāts:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "<li>Izveidots:</li>"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Kanāls:"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-#| msgid "Change Case"
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Mainīt reģistru"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Faila izmērs"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@info: histogram properties"
-#| msgid "Median:"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Mediāna:"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Kenija"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metadati"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metadati"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Automātiska"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "Labi"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6010,7 +5132,7 @@ msgid "Watermark type: "
 msgstr "Pievienot ūdenszīmi"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Attēls"
@@ -11910,6 +11032,11 @@ msgstr ""
 #, kde-format
 msgid "DOP"
 msgstr ""
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Pielietot"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -22553,7 +21680,7 @@ msgstr "Sākuma indekss:"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -25714,7 +24841,7 @@ msgstr "Eksportēt"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr ""
@@ -25731,8 +24858,8 @@ msgid ""
 "Do you want to check your settings and try again?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -25745,27 +24872,27 @@ msgstr ""
 msgid "Album"
 msgstr "Albums"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -26686,6 +25813,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr ""
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Nomest"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -28907,6 +28042,13 @@ msgstr "Meklē attēlus albumos"
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Atcelt"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, fuzzy, kde-format
@@ -41597,6 +40739,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "Ēnas:"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr ""
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Brightness:"
@@ -41795,6 +40943,11 @@ msgstr ""
 #| msgid "About"
 msgid "About Qt"
 msgstr "Par"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "Labi"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -64148,6 +63301,499 @@ msgstr "Atjaunot visus iestatījumus uz to noklusētajām vērtībām."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Atjaunot visus iestatījumus uz to noklusētajām vērtībām."
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Atvērt priekšskatījumu"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Atvērt priekšskatījumu"
+
+#, fuzzy
+#~| msgid "Drag and drop an image here"
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Velciet un nometiet attēlu šeit"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "Atrast attēlus ar faila formātu"
+
+#, fuzzy
+#~| msgid "&Shortcut:"
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Ī&sinājumtaustiņš:"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Neizdevās parsēt %1 GPX failu!"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "Procenti:"
+
+#, fuzzy
+#~| msgid "Rotate 180 degrees"
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "Pagriezt par 180 grādiem"
+
+#, fuzzy
+#~| msgid "Capture image..."
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "Tvert attēlu..."
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Palīdzība"
+
+#, fuzzy
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Atvērt ar..."
+
+#, fuzzy
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Atvērt mapi"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "Par"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Palīdzība"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Faila izmērs"
+
+#, fuzzy
+#~| msgid "Aspect ratio"
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Malu attiecība"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Player error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Atskaņotāja kļūda"
+
+#, fuzzy
+#~| msgid "Invalid Profile"
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Nederīgs profils"
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Ielādēt..."
+
+#, fuzzy
+#~| msgid "Loading..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Ielādē..."
+
+#, fuzzy
+#~| msgctxt "load theme"
+#~| msgid "&Load"
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "&Ielādēt"
+
+#, fuzzy
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Ielādēt..."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Nav aktīva filtra"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "OpenGL jūsu sistēmā nav pieejams."
+
+#, fuzzy
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Interpolācija:"
+
+#, fuzzy
+#~| msgid "Current Name"
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Pašreizējais nosaukums"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Ilgums"
+
+#, fuzzy
+#~| msgid "Rendering intent:"
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Attēlošanas mērķis:"
+
+#, fuzzy
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Atvērt ar..."
+
+#, fuzzy
+#~| msgctxt "capture video frame"
+#~| msgid "Capture"
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Tvert"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Atvērt mapi"
+
+#, fuzzy
+#~| msgid "Play All"
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Atskaņot visu"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Vēsture"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "Par"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Ieslēgts"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Laiks"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "No"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "Izņemt izvēlētos Raw failus no saraksta"
+
+#, fuzzy
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Līdz:"
+
+#, fuzzy
+#~| msgid "Auto"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Automātiska"
+
+#, fuzzy
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Automātiska"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Untitled"
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Nenosaukts"
+
+#, fuzzy
+#~| msgid "Auto rotate"
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Automātiski pagriezt"
+
+#, fuzzy
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Atvērt ar..."
+
+#, fuzzy
+#~| msgid "Auto-&Detect"
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Automātiski &noteikt"
+
+#, fuzzy
+#~| msgid "System Font"
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Sistēmas fonts"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Audio faili"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Kanāls:"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image left"
+#~| msgid "Left"
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Pa kreisi"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image right"
+#~| msgid "Right"
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Pa labi"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Ietilpināt &logā"
+
+#, fuzzy
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Pielāgota"
+
+#, fuzzy
+#~| msgctxt "@info: icc profile class"
+#~| msgid "Color space"
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Krāsu telpa"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "&Atkodēt"
+
+#, fuzzy
+#~| msgid "Rendering intent:"
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Attēlošanas mērķis:"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "OpenGL jūsu sistēmā nav pieejams."
+
+#, fuzzy
+#~| msgid "Open in the editor"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Atvērt redaktorā"
+
+#, fuzzy
+#~| msgctxt "@action: search bar"
+#~| msgid "Clear"
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Notīrīt"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Izņemt izvēlētos Raw failus no saraksta"
+
+#, fuzzy
+#~| msgid "Select None"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Notīrīt iezīmējumu"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Formāts"
+
+#, fuzzy
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Audio faili"
+
+#, fuzzy
+#~| msgid "Start image editor"
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Palaist attēlu redaktoru"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Ilgums"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Pieejams:"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Audio faili"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "&Atkodēt"
+
+#, fuzzy
+#~| msgid "Total Items"
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Vienību kopskaits"
+
+#, fuzzy
+#~| msgid "Start image editor"
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Palaist attēlu redaktoru"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Audio faili"
+
+#, fuzzy
+#~| msgid "Names:"
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Nosaukumi:"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Pikseļi: "
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Izmērs"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Faila izmērs"
+
+#, fuzzy
+#~| msgid "Photo Flash"
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Fotoaparāta zibspuldze"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Datuma formāts:"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "<li>Izveidots:</li>"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Kanāls:"
+
+#, fuzzy
+#~| msgid "Change Case"
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Mainīt reģistru"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Faila izmērs"
+
+#, fuzzy
+#~| msgctxt "@info: histogram properties"
+#~| msgid "Median:"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Mediāna:"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Kenija"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metadati"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metadati"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Automātiska"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Labi"
 
 #, fuzzy
 #~| msgid "Country:"

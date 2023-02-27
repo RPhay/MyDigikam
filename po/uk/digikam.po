@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2023-02-24 13:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -4318,837 +4318,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Підтримувані розширення"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Відкриття відео"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Відкриття адреси"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr "Адреса"
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, kde-format
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Перетягніть і скиньте файл на програвач\n"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "A: перемкнути співвідношення розмірів"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr "Подвійне клацання — перемикання повноекранного режиму"
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Скорочення:\n"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr "Пробіл: пауза/продовжити\n"
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "F: увімкнути/вимкнути повноекранний режим\n"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr "T: увімкнути або вимкнути режим «над іншими вікнами»\n"
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-"N: показати наступний кадр. Щоб продовжити відтворення, натисніть пробіл\n"
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Ctrl+O: відкрити файл\n"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "O: екранна панель\n"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr "P: відтворити з початку\n"
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr "Q/ESC: вийти\n"
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr "S: зупинити\n"
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, kde-format
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "R: обернути на 90°"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "M: вимкнути або увімкнути звук\n"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "C: захопити відео"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr "↑/↓: збільшити/зменшити гучність\n"
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr "Ctrl+↑/↓: збільшити/зменшити швидкість\n"
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr "-&gt;/&lt;-: гортання вперед/назад\n"
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, kde-format
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Довідка"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Відкрити"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Відкрити адресу"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "Про програму"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Довідка"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-"<p>Ви працюєте із 32-бітовою версією AVPlayer у 64-бітовій версії Windows.</"
-"p><p>Будь ласка, встановіть 64-бітову версію AVPlayer, щоб скористатися "
-"усіма можливостями AVPlayer на повну силу.</p>"
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Відкриття файла мультимедійних даних"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Співвідношення розмірів"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, kde-format
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Помилка програвача"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr "Немає мультимедійних даних"
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Некоректні мультимедійні дані"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Буферизація…"
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "Буферизовано"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Завантаження…"
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Завантажено"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr "Застрягло"
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, kde-format
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Буферизація… %1% @%2 %3"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr ""
-"Захопити кадр з відео\n"
-"Місце зберігання: %1\n"
-"Формат: %2"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Відкриття файла субтитрів"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, kde-format
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "Обробник відео є недоступним на вашій платформі!"
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Зовнішня"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "Поточний час"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Тривалість"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Рушій обробки"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr "Швидкість. Ctrl+↑/↓"
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Відкрити"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Захопити"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Гучність"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Відкрити адресу"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "Відтворити список"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "Журнал"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr "Про програму"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr "Налаштування"
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr "Швидкість"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr "Повторення"
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Увімкнути"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr "нескінченно"
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr "Рази"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Від"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "від'ємні значення буде відраховано від кінця"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "До"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr "Годинник"
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Авто"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Звук"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Відео"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr "Набуде чинності при наступному відтворенні"
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Субтитри"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, kde-format
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Автозавантаження"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Відкрити"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Рушій"
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-"У FFmpeg передбачено підтримку ширшого спектра субтитрів, але показано буде "
-"лише простий текст\n"
-"У LibASS передбачено підтримку стилів «ass»"
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr "Набір символів"
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Автовизначення"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "Система"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr "Для автоматичного виявлення потрібна libchardet"
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Звукова доріжка"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "Канал"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Як у вхідних"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Стерео"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr "Моно (центр)"
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Лівий"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Правий"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Відео"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Вікно"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Нетипове"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "Простір кольорів"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Декодер"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Обробник"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, kde-format
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "є недоступним на вашій платформі!"
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Відкриття зовнішньої звукової доріжки"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr "Не можна скористатися цим обробником"
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "Скористайтеся комбінацією Ctrl/Shift + клацання, щоб вибрати декілька"
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Спорожнити"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Вилучити позначені записи"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Вибір файлів"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Скинути"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Гаразд"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Застосувати"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr "Адреса"
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Формат"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Бітова швидкість"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Час початку"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Тривалість"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Доступно"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Кодек"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Декодер"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Подробиці щодо засобу декодування"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Загальний час"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Час початку"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Бітова швидкість"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Кадри"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "Частота кадрів"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr "Частота кадрів зараз"
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Розміри у пікселях"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Розмір"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, kde-format
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Закодований розмір"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Розмір GOP"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Формат дискретизації"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Частота дискретизації"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Канали"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Компонування каналів"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Розміри кадру"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, kde-format
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Інформація про дані"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Ключ"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr "Значення"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Метадані"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Відео"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Метадані"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Звук"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "Гаразд"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6077,7 +5246,7 @@ msgid "Watermark type: "
 msgstr "Тип накладки: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Зображення"
@@ -12218,6 +11387,11 @@ msgstr "3D"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Застосувати"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -23247,7 +22421,7 @@ msgstr "Експорт до Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -26421,7 +25595,7 @@ msgstr "Експорт до Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Редагувати дані Piwigo"
@@ -26440,8 +25614,8 @@ msgstr ""
 "\n"
 "Бажаєте змінити налаштування і спробувати ще раз?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26454,29 +25628,29 @@ msgstr ""
 msgid "Album"
 msgstr "Альбом"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 "Нічого вивантажувати, — будь ласка, виберіть фотографії для вивантаження."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Файл %1 не містить даних у підтримуваному форматі зображень або відео"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Вивантаження файла %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr ""
 "Не вдалося вивантажити мультимедійні дані на віддалений сервер Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -27431,6 +26605,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Це крива виправлення яскравості світла зображення"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Скинути"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -29662,6 +28844,13 @@ msgstr "Пошук зображень у окремих альбомах…"
 #, kde-format
 msgid "Migrate ->"
 msgstr "Міграція ->"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Скасувати"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -42673,6 +41862,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "Шейдер"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr "Рушій"
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, kde-format
 msgctxt "@option"
@@ -42853,6 +42048,11 @@ msgstr "Мультимедійна бібліотека на основі Qt і 
 #, kde-format
 msgid "About Qt"
 msgstr "Про Qt"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "Гаразд"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -65101,6 +64301,537 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Відкриття відео"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Відкриття адреси"
+
+#~ msgctxt "@info"
+#~ msgid "Url"
+#~ msgstr "Адреса"
+
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Перетягніть і скиньте файл на програвач\n"
+
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "A: перемкнути співвідношення розмірів"
+
+#~ msgctxt "@info"
+#~ msgid "Double click to switch fullscreen"
+#~ msgstr "Подвійне клацання — перемикання повноекранного режиму"
+
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Скорочення:\n"
+
+#~ msgctxt "@info"
+#~ msgid "Space: pause/continue\n"
+#~ msgstr "Пробіл: пауза/продовжити\n"
+
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "F: увімкнути/вимкнути повноекранний режим\n"
+
+#~ msgctxt "@info"
+#~ msgid "T: stays on top on/off\n"
+#~ msgstr "T: увімкнути або вимкнути режим «над іншими вікнами»\n"
+
+#~ msgctxt "@info"
+#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
+#~ msgstr ""
+#~ "N: показати наступний кадр. Щоб продовжити відтворення, натисніть пробіл\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Ctrl+O: відкрити файл\n"
+
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "O: екранна панель\n"
+
+#~ msgctxt "@info"
+#~ msgid "P: replay\n"
+#~ msgstr "P: відтворити з початку\n"
+
+#~ msgctxt "@info"
+#~ msgid "Q/ESC: quit\n"
+#~ msgstr "Q/ESC: вийти\n"
+
+#~ msgctxt "@info"
+#~ msgid "S: stop\n"
+#~ msgstr "S: зупинити\n"
+
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "R: обернути на 90°"
+
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "M: вимкнути або увімкнути звук\n"
+
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "C: захопити відео"
+
+#~ msgctxt "@info"
+#~ msgid "Up/Down: volume +/-\n"
+#~ msgstr "↑/↓: збільшити/зменшити гучність\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+Up/Down: speed +/-\n"
+#~ msgstr "Ctrl+↑/↓: збільшити/зменшити швидкість\n"
+
+#~ msgctxt "@info"
+#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
+#~ msgstr "-&gt;/&lt;-: гортання вперед/назад\n"
+
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Довідка"
+
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Відкрити"
+
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Відкрити адресу"
+
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "Про програму"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Довідка"
+
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
+#~ "experience with AVPlayer.</p>"
+#~ msgstr ""
+#~ "<p>Ви працюєте із 32-бітовою версією AVPlayer у 64-бітовій версії Windows."
+#~ "</p><p>Будь ласка, встановіть 64-бітову версію AVPlayer, щоб скористатися "
+#~ "усіма можливостями AVPlayer на повну силу.</p>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Відкриття файла мультимедійних даних"
+
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Співвідношення розмірів"
+
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Помилка програвача"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "No media"
+#~ msgstr "Немає мультимедійних даних"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Некоректні мультимедійні дані"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Буферизація…"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "Буферизовано"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Завантаження…"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Завантажено"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Stalled"
+#~ msgstr "Застрягло"
+
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Буферизація… %1% @%2 %3"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr ""
+#~ "Захопити кадр з відео\n"
+#~ "Місце зберігання: %1\n"
+#~ "Формат: %2"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Відкриття файла субтитрів"
+
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "Обробник відео є недоступним на вашій платформі!"
+
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Зовнішня"
+
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Поточний час"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Тривалість"
+
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Рушій обробки"
+
+#~ msgctxt "@info"
+#~ msgid "Speed. Ctrl+Up/Down"
+#~ msgstr "Швидкість. Ctrl+↑/↓"
+
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Відкрити"
+
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Захопити"
+
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Гучність"
+
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Відкрити адресу"
+
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Відтворити список"
+
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Журнал"
+
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "Про програму"
+
+#~ msgctxt "@action"
+#~ msgid "Setup"
+#~ msgstr "Налаштування"
+
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Швидкість"
+
+#~ msgctxt "@option"
+#~ msgid "Repeat"
+#~ msgstr "Повторення"
+
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Увімкнути"
+
+#~ msgctxt "@info"
+#~ msgid "infinity"
+#~ msgstr "нескінченно"
+
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Рази"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Від"
+
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "від'ємні значення буде відраховано від кінця"
+
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "До"
+
+#~ msgctxt "@action"
+#~ msgid "Clock"
+#~ msgstr "Годинник"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Авто"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Звук"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Відео"
+
+#~ msgctxt "@info"
+#~ msgid "Take effect in next playback"
+#~ msgstr "Набуде чинності при наступному відтворенні"
+
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Субтитри"
+
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Автозавантаження"
+
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Відкрити"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "FFmpeg supports more subtitles but only render plain text\n"
+#~ "LibASS supports 'ass' styles"
+#~ msgstr ""
+#~ "У FFmpeg передбачено підтримку ширшого спектра субтитрів, але показано "
+#~ "буде лише простий текст\n"
+#~ "У LibASS передбачено підтримку стилів «ass»"
+
+#~ msgctxt "@label"
+#~ msgid "Charset"
+#~ msgstr "Набір символів"
+
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Автовизначення"
+
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Система"
+
+#~ msgctxt "@info"
+#~ msgid "Auto detect requires libchardet"
+#~ msgstr "Для автоматичного виявлення потрібна libchardet"
+
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Звукова доріжка"
+
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Канал"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Як у вхідних"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Стерео"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Mono (center)"
+#~ msgstr "Моно (центр)"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Лівий"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Правий"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Відео"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Вікно"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Нетипове"
+
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Простір кольорів"
+
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Декодер"
+
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Обробник"
+
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "є недоступним на вашій платформі!"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Відкриття зовнішньої звукової доріжки"
+
+#~ msgctxt "@info"
+#~ msgid "Can not use this renderer"
+#~ msgstr "Не можна скористатися цим обробником"
+
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr ""
+#~ "Скористайтеся комбінацією Ctrl/Shift + клацання, щоб вибрати декілька"
+
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Спорожнити"
+
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Вилучити позначені записи"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Вибір файлів"
+
+#~ msgctxt "@option: base"
+#~ msgid "Url"
+#~ msgstr "Адреса"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Формат"
+
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Бітова швидкість"
+
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Час початку"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Тривалість"
+
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Доступно"
+
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Кодек"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Декодер"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Подробиці щодо засобу декодування"
+
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Загальний час"
+
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Час початку"
+
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Бітова швидкість"
+
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Кадри"
+
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "Частота кадрів"
+
+#~ msgctxt "@option: video"
+#~ msgid "FPS Now"
+#~ msgstr "Частота кадрів зараз"
+
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Розміри у пікселях"
+
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Розмір"
+
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Закодований розмір"
+
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Розмір GOP"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Формат дискретизації"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Частота дискретизації"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Канали"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Компонування каналів"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Розміри кадру"
+
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Інформація про дані"
+
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Ключ"
+
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Значення"
+
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Метадані"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Відео"
+
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Метадані"
+
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Звук"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Гаразд"
 
 #~ msgid "County"
 #~ msgstr "Район"

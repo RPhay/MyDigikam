@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2023-02-24 11:01+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -4197,830 +4197,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Podporovaná rozšíření"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Otevřít video"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Otevřít URL"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr "URL"
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, kde-format
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Přetáhněte soubor na přehrávač\n"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "A: Přepnout poměr stran"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr "Dvojklik pro přepnutí na celou obrazovku"
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Zkratka:\n"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr "Mezerník: pozastavit/pokračovat\n"
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "F: tlačítko celoobrazovkového režimu\n"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Ctrl+O: Otevřít soubor\n"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "O: On Screen Display\n"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr "P: znovu přehrát\n"
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr "S: zastavit\n"
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, kde-format
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "R: otočit o 90°"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "M: ztlumení zap/vyp\n"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "C: nahrávat video"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, kde-format
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Nápověda"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Otevřít"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Otevřít URL"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "O aplikaci"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Nápověda"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Otevřít soubor média"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Poměr stran"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, kde-format
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Chyba přehrávače"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr "Žádné médium"
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Neplatné médium"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Ukládání do mezipaměti..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "V mezipaměti"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Načítání..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Načteno"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr "Stojící"
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, kde-format
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Ukládání do mezipaměti... %1% @%2 %3"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr ""
-"Zachytit snímek videa\n"
-"Uložit do: %1\n"
-"Formát: %2"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Otevřít soubor s titulky"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, kde-format
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "Renderer videa není pro vaši platformu dostupný."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Externí"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "Nynější čas"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Trvání"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Renderovací nástroj"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Otevřít"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Zachytávat"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Hlasitost"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Otevřít URL"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "Seznam skladeb"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "Historie"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr "O aplikaci"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr "Nastavení"
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr "Rychlost"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr "Opakovat"
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Povolit"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr "nekonečno"
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Od"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "negativní hodnota znamená od konce"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Komu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr "Hodiny"
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Automaticky"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Audio"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Titulky"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, kde-format
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Automatické načtení"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Otevřít"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Databáze"
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr "Znaková sada"
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Automatická detekce"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "Systém"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr "Automatická detekce vyžaduje knihovnu libchardet"
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Zvuková skladba"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "Kanál"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Jako vstup"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Stereo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr "Mono (střed)"
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Vlevo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Vpravo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Okno"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Vlastní"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "Barevný prostor"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Dekodér"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Renderer"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, kde-format
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Vymazat"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Vybrat soubory"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Obnovit"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "OK"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Použít"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr "URL"
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Formát"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Datový tok"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Čas zahájení"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Trvání"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Dostupné"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Kodek"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Dekodér"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Podrobnosti dekodéru"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Celkový čas"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Čas zahájení"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Datový tok"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Rámce"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "FPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Formát pixelu"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Velikost"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, kde-format
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Velikost GOP"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Vzorkovací formát"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Rychlost vzorkování"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Kanály"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Rozložení kanálů"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Velikost snímku"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, kde-format
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Informace o médiu"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Klíč"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr "Hodnota"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metadata"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metadata"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Audio"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "OK"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -5829,7 +5005,7 @@ msgid "Watermark type: "
 msgstr "Typ vodoznaku: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Obrázek"
@@ -11543,6 +10719,11 @@ msgstr "3-d"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Použít"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -22058,7 +21239,7 @@ msgstr "Export do Boxu"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -25114,7 +24295,7 @@ msgstr "Export Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Upravit data Piwigo"
@@ -25133,8 +24314,8 @@ msgstr ""
 "\n"
 "Přejete si znovu zkontrolovat svá nastavení a zkusit úlohu znovu?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -25147,27 +24328,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Není co odesílat - prosím vyberte fotografie pro odeslání."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Soubor %1 není v podporovaném formátu pro obrázky a video"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Odesílání souboru %1 "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Selhání při odesílání médií do vzdáleného Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -26062,6 +25243,14 @@ msgstr "Tato hodnota v E.V bude použita ke kompenzaci expozice obrázku."
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Toto je nastavení křivek pro jas obrázku"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Obnovit"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -28198,6 +27387,13 @@ msgstr "Vyhledávání obrázků v jednotlivých albech..."
 #, kde-format
 msgid "Migrate ->"
 msgstr "Převést ->"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Zrušit"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -40763,6 +39959,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr ""
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr "Databáze"
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, kde-format
 msgctxt "@option"
@@ -40943,6 +40145,11 @@ msgstr ""
 #, kde-format
 msgid "About Qt"
 msgstr "O Qt"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "OK"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -62573,3 +61780,449 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Otevřít video"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Otevřít URL"
+
+#~ msgctxt "@info"
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Přetáhněte soubor na přehrávač\n"
+
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "A: Přepnout poměr stran"
+
+#~ msgctxt "@info"
+#~ msgid "Double click to switch fullscreen"
+#~ msgstr "Dvojklik pro přepnutí na celou obrazovku"
+
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Zkratka:\n"
+
+#~ msgctxt "@info"
+#~ msgid "Space: pause/continue\n"
+#~ msgstr "Mezerník: pozastavit/pokračovat\n"
+
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "F: tlačítko celoobrazovkového režimu\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Ctrl+O: Otevřít soubor\n"
+
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "O: On Screen Display\n"
+
+#~ msgctxt "@info"
+#~ msgid "P: replay\n"
+#~ msgstr "P: znovu přehrát\n"
+
+#~ msgctxt "@info"
+#~ msgid "S: stop\n"
+#~ msgstr "S: zastavit\n"
+
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "R: otočit o 90°"
+
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "M: ztlumení zap/vyp\n"
+
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "C: nahrávat video"
+
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Nápověda"
+
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Otevřít"
+
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Otevřít URL"
+
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "O aplikaci"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Nápověda"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Otevřít soubor média"
+
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Poměr stran"
+
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Chyba přehrávače"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "No media"
+#~ msgstr "Žádné médium"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Neplatné médium"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Ukládání do mezipaměti..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "V mezipaměti"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Načítání..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Načteno"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Stalled"
+#~ msgstr "Stojící"
+
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Ukládání do mezipaměti... %1% @%2 %3"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr ""
+#~ "Zachytit snímek videa\n"
+#~ "Uložit do: %1\n"
+#~ "Formát: %2"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Otevřít soubor s titulky"
+
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "Renderer videa není pro vaši platformu dostupný."
+
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Externí"
+
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Nynější čas"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Trvání"
+
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Renderovací nástroj"
+
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Otevřít"
+
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Zachytávat"
+
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Hlasitost"
+
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Otevřít URL"
+
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Seznam skladeb"
+
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Historie"
+
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "O aplikaci"
+
+#~ msgctxt "@action"
+#~ msgid "Setup"
+#~ msgstr "Nastavení"
+
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Rychlost"
+
+#~ msgctxt "@option"
+#~ msgid "Repeat"
+#~ msgstr "Opakovat"
+
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Povolit"
+
+#~ msgctxt "@info"
+#~ msgid "infinity"
+#~ msgstr "nekonečno"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Od"
+
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "negativní hodnota znamená od konce"
+
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Komu"
+
+#~ msgctxt "@action"
+#~ msgid "Clock"
+#~ msgstr "Hodiny"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Automaticky"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Titulky"
+
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Automatické načtení"
+
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Otevřít"
+
+#~ msgctxt "@label"
+#~ msgid "Charset"
+#~ msgstr "Znaková sada"
+
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Automatická detekce"
+
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Systém"
+
+#~ msgctxt "@info"
+#~ msgid "Auto detect requires libchardet"
+#~ msgstr "Automatická detekce vyžaduje knihovnu libchardet"
+
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Zvuková skladba"
+
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Kanál"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Jako vstup"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Stereo"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Mono (center)"
+#~ msgstr "Mono (střed)"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Vlevo"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Vpravo"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Okno"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Vlastní"
+
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Barevný prostor"
+
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Dekodér"
+
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Renderer"
+
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Vymazat"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Vybrat soubory"
+
+#~ msgctxt "@option: base"
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Formát"
+
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Datový tok"
+
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Čas zahájení"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Trvání"
+
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Dostupné"
+
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Kodek"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Dekodér"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Podrobnosti dekodéru"
+
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Celkový čas"
+
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Čas zahájení"
+
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Datový tok"
+
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Rámce"
+
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "FPS"
+
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Formát pixelu"
+
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Velikost"
+
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Velikost GOP"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Vzorkovací formát"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Rychlost vzorkování"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Kanály"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Rozložení kanálů"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Velikost snímku"
+
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Informace o médiu"
+
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Klíč"
+
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Hodnota"
+
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metadata"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metadata"
+
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "OK"

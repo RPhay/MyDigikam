@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2023-02-23 18:26+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -4340,837 +4340,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Extensiones permitidas"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Abrir un vídeo"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Abrir un URL"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr "URL"
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, kde-format
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Arrastre y suelte un archivo en el reproductor\n"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "A: cambiar las proporciones"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr "Doble clic para cambiar a pantalla completa"
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Acceso rápido:\n"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr "Espacio: pausar/continuar\n"
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "F: pantalla completa activada/desactivada\n"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr "T: permanece encima activado/desactivado\n"
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-"N: mostrar el siguiente fotograma. Continúe la reproducción pulsando "
-"«Espacio».\n"
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Ctrl+O: abrir un archivo\n"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "O: Visualización en pantalla\n"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr "P: volver a reproducir\n"
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr "Q/Esc: salir\n"
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr "S: detener\n"
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, kde-format
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "R: rotar 90 grados"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "M: silenciar activado/desactivado\n"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "C: capturar vídeo"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr "Arriba/Abajo: subir/bajar el volumen\n"
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr "Ctrl+Arriba/Abajo: aumentar/disminuir la velocidad\n"
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr "-&gt;/&lt;-: avanzar/retroceder\n"
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, kde-format
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Ayuda"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Abrir"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Abrir URL"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "Acerca de"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Ayuda"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-"<p>Está ejecutando una versión de AVPlayer de 32 bits en Windows de 64 bits."
-"</p><p>Por favor, instale la versión de 64 bits de AVPlayer para disfrutar "
-"de una mejor experiencia con AVPlayer.</p>"
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Abrir un archivo multimedia"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Proporciones"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, kde-format
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Error del reproductor"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr "Ningún medio"
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Medio no válido"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Almacenando temporalmente..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "En almacenamiento temporal"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Cargando..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Cargado"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr "Detenido"
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, kde-format
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Almacenando temporalmente... %1% @%2 %3"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr ""
-"Capturar fotograma de vídeo\n"
-"Guardar en: %1\n"
-"Formato: %2"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Abrir un archivo de subtítulos"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, kde-format
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "El renderizador de vídeo no está disponible en su plataforma."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Externa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "Tiempo actual"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Duración"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Motor de renderizado"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr "Velocidad. Ctrl+Arriba/Abajo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Abrir"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Capturar"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Volumen"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Abrir URL"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "Lista de reproducción"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "Historial"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr "Acerca de"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr "Configuración"
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr "Velocidad"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr "Repetir"
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Activar"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr "sin límite"
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr "Veces"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Desde"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "un valor negativo significa desde el final"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Hasta"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr "Reloj"
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Automática"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Sonido"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Vídeo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr "Tiene efecto en la siguiente reproducción"
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Subtítulos"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, kde-format
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Cargar automáticamente"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Abrir"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Motor"
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-"FFmpeg admite más subtítulos, aunque solo muestra texto sin formato.\n"
-"LibASS admite estilos «ass»."
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr "Juego de caracteres"
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Detectar automáticamente"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "Sistema"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr "La detección automática necesita «libchardet»"
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Pista de sonido"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "Canal"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Como entrada"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Estéreo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr "Mono (centro)"
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Izquierdo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Derecho"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Vídeo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Ventana"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Personalizada"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "Espacio de color"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Descodificador"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Renderizador"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, kde-format
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "no está disponible en su plataforma."
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Abrir una pista de sonido externa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr "No se puede usar este renderizador"
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "Use Ctrl/Mayúscuals + Clic para seleccionar varios elementos"
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Borrar todo"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Eliminar elementos seleccionados"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, kde-format
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Seleccionar archivos"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Reiniciar"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Aceptar"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Aplicar"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr "URL"
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Formato"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Tasa de bits"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Tiempo de inicio"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Duración"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Disponible"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Códec"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Descodificador"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Detalles del descodificador"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Tiempo total"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Tiempo de inicio"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Tasa de bits"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Fotogramas"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "FPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr "FPS actuales"
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Formato de píxeles"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Tamaño"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, kde-format
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Tamaño codificado"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Tamaño del GOP"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Formato de muestreo"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Frecuencia de muestreo"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Canales"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Disposición de los canales"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Tamaño del fotograma"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, kde-format
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Información del medio"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Tecla"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr "Valor"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metadatos"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Vídeo"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metadatos"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Sonido"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "Aceptar"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6090,7 +5259,7 @@ msgid "Watermark type: "
 msgstr "Tipo de marca de agua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Imagen"
@@ -12181,6 +11350,11 @@ msgstr "3-d"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Aplicar"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -23207,7 +22381,7 @@ msgstr "Exportación a Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -26359,7 +25533,7 @@ msgstr "Exportación a Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Editar datos de Piwigo"
@@ -26378,8 +25552,8 @@ msgstr ""
 "\n"
 "¿Desea comprobar sus preferencias y volver a intentarlo?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26392,27 +25566,27 @@ msgstr ""
 msgid "Album"
 msgstr "Álbum"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "No hay nada para enviar. Seleccione las fotos a enviar."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "El archivo %1 no es un formato de imagen o de vídeo permitido"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Enviando archivo %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "No se ha podido enviar multimedia al Piwigo remoto."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -27362,6 +26536,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Este es el ajuste de la curva de luminosidad de la imagen"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Reiniciar"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -29589,6 +28771,13 @@ msgstr "Escaneo de imágenes por álbumes individuales..."
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migrar ->"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -42539,6 +41728,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "Sombreador"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr "Motor"
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, kde-format
 msgctxt "@option"
@@ -42719,6 +41914,11 @@ msgstr "Infraestructura multimedia basada en Qt y FFmpeg.\n"
 #, kde-format
 msgid "About Qt"
 msgstr "Acerca de Qt"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "Aceptar"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -64898,6 +64098,536 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "¿Desea reiniciar todas las preferencias de vídeo a sus valores "
 "predeterminados?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Abrir un vídeo"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Abrir un URL"
+
+#~ msgctxt "@info"
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Arrastre y suelte un archivo en el reproductor\n"
+
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "A: cambiar las proporciones"
+
+#~ msgctxt "@info"
+#~ msgid "Double click to switch fullscreen"
+#~ msgstr "Doble clic para cambiar a pantalla completa"
+
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Acceso rápido:\n"
+
+#~ msgctxt "@info"
+#~ msgid "Space: pause/continue\n"
+#~ msgstr "Espacio: pausar/continuar\n"
+
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "F: pantalla completa activada/desactivada\n"
+
+#~ msgctxt "@info"
+#~ msgid "T: stays on top on/off\n"
+#~ msgstr "T: permanece encima activado/desactivado\n"
+
+#~ msgctxt "@info"
+#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
+#~ msgstr ""
+#~ "N: mostrar el siguiente fotograma. Continúe la reproducción pulsando "
+#~ "«Espacio».\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Ctrl+O: abrir un archivo\n"
+
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "O: Visualización en pantalla\n"
+
+#~ msgctxt "@info"
+#~ msgid "P: replay\n"
+#~ msgstr "P: volver a reproducir\n"
+
+#~ msgctxt "@info"
+#~ msgid "Q/ESC: quit\n"
+#~ msgstr "Q/Esc: salir\n"
+
+#~ msgctxt "@info"
+#~ msgid "S: stop\n"
+#~ msgstr "S: detener\n"
+
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "R: rotar 90 grados"
+
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "M: silenciar activado/desactivado\n"
+
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "C: capturar vídeo"
+
+#~ msgctxt "@info"
+#~ msgid "Up/Down: volume +/-\n"
+#~ msgstr "Arriba/Abajo: subir/bajar el volumen\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+Up/Down: speed +/-\n"
+#~ msgstr "Ctrl+Arriba/Abajo: aumentar/disminuir la velocidad\n"
+
+#~ msgctxt "@info"
+#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
+#~ msgstr "-&gt;/&lt;-: avanzar/retroceder\n"
+
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Ayuda"
+
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Abrir URL"
+
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "Acerca de"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Ayuda"
+
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
+#~ "experience with AVPlayer.</p>"
+#~ msgstr ""
+#~ "<p>Está ejecutando una versión de AVPlayer de 32 bits en Windows de 64 "
+#~ "bits.</p><p>Por favor, instale la versión de 64 bits de AVPlayer para "
+#~ "disfrutar de una mejor experiencia con AVPlayer.</p>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Abrir un archivo multimedia"
+
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Proporciones"
+
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Error del reproductor"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "No media"
+#~ msgstr "Ningún medio"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Medio no válido"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Almacenando temporalmente..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "En almacenamiento temporal"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Cargando..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Cargado"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Stalled"
+#~ msgstr "Detenido"
+
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Almacenando temporalmente... %1% @%2 %3"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr ""
+#~ "Capturar fotograma de vídeo\n"
+#~ "Guardar en: %1\n"
+#~ "Formato: %2"
+
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Abrir un archivo de subtítulos"
+
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "El renderizador de vídeo no está disponible en su plataforma."
+
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Externa"
+
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Tiempo actual"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Duración"
+
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Motor de renderizado"
+
+#~ msgctxt "@info"
+#~ msgid "Speed. Ctrl+Up/Down"
+#~ msgstr "Velocidad. Ctrl+Arriba/Abajo"
+
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Capturar"
+
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Volumen"
+
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Abrir URL"
+
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Lista de reproducción"
+
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Historial"
+
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "Acerca de"
+
+#~ msgctxt "@action"
+#~ msgid "Setup"
+#~ msgstr "Configuración"
+
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Velocidad"
+
+#~ msgctxt "@option"
+#~ msgid "Repeat"
+#~ msgstr "Repetir"
+
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Activar"
+
+#~ msgctxt "@info"
+#~ msgid "infinity"
+#~ msgstr "sin límite"
+
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Veces"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Desde"
+
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "un valor negativo significa desde el final"
+
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Hasta"
+
+#~ msgctxt "@action"
+#~ msgid "Clock"
+#~ msgstr "Reloj"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Automática"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Sonido"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgctxt "@info"
+#~ msgid "Take effect in next playback"
+#~ msgstr "Tiene efecto en la siguiente reproducción"
+
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Subtítulos"
+
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Cargar automáticamente"
+
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "FFmpeg supports more subtitles but only render plain text\n"
+#~ "LibASS supports 'ass' styles"
+#~ msgstr ""
+#~ "FFmpeg admite más subtítulos, aunque solo muestra texto sin formato.\n"
+#~ "LibASS admite estilos «ass»."
+
+#~ msgctxt "@label"
+#~ msgid "Charset"
+#~ msgstr "Juego de caracteres"
+
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Detectar automáticamente"
+
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Sistema"
+
+#~ msgctxt "@info"
+#~ msgid "Auto detect requires libchardet"
+#~ msgstr "La detección automática necesita «libchardet»"
+
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Pista de sonido"
+
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Canal"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Como entrada"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Estéreo"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Mono (center)"
+#~ msgstr "Mono (centro)"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Izquierdo"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Derecho"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Ventana"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Personalizada"
+
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Espacio de color"
+
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Descodificador"
+
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Renderizador"
+
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "no está disponible en su plataforma."
+
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Abrir una pista de sonido externa"
+
+#~ msgctxt "@info"
+#~ msgid "Can not use this renderer"
+#~ msgstr "No se puede usar este renderizador"
+
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "Use Ctrl/Mayúscuals + Clic para seleccionar varios elementos"
+
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Borrar todo"
+
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Eliminar elementos seleccionados"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Seleccionar archivos"
+
+#~ msgctxt "@option: base"
+#~ msgid "Url"
+#~ msgstr "URL"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Formato"
+
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Tasa de bits"
+
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Tiempo de inicio"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Duración"
+
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Disponible"
+
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Códec"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Descodificador"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Detalles del descodificador"
+
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Tiempo total"
+
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Tiempo de inicio"
+
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Tasa de bits"
+
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Fotogramas"
+
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "FPS"
+
+#~ msgctxt "@option: video"
+#~ msgid "FPS Now"
+#~ msgstr "FPS actuales"
+
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Formato de píxeles"
+
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Tamaño"
+
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Tamaño codificado"
+
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Tamaño del GOP"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Formato de muestreo"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Frecuencia de muestreo"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Canales"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Disposición de los canales"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Tamaño del fotograma"
+
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Información del medio"
+
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Tecla"
+
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Valor"
+
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metadatos"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metadatos"
+
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Sonido"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Aceptar"
 
 #~ msgid "County"
 #~ msgstr "Condado"

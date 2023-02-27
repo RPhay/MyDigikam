@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2022-07-29 12:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -4379,961 +4379,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Tiedostomuoto ei ole tuettu"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Avaa kuvan esikatselu"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Avaa kuvan esikatselu"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, fuzzy, kde-format
-#| msgid "Drag and drop an image here"
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Vedä ja pudota kuva tähän"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-#| msgid "Adjusted with Aspect ratio"
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "Sovitettu kuvasuhteeseen"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, fuzzy, kde-format
-#| msgid "&Shortcut:"
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "&Pikanäppäin:"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "Koko näytön tilan asetukset"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-#| msgid "Cannot open file"
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Tiedostoa ei voi avata"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "On Screen Display Font:"
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "Kuvaruutunäyttöfontti:"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "Kierrä 180°"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "Koko näytön tilan asetukset"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-#| msgid "Capture image..."
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "Kaappaa kuva…"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Ohje"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Avaa"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Avaa tiedosto"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "Tietoa"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Ohje"
-
-#: core/avplayer/main/main.cpp:174
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#| "p><p>Please install the 64-bit version of digiKam to get a better "
-#| "experience with digiKam.</p>"
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-"<p>Käytät 32-bittistä digiKamia 64-bittisessä Windowsissa.</p><p>Paremman "
-"käyttökokemuksen digiKamista saa asentamalla sen 64-bittisen version.</p>"
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgid "Type of the media file"
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Mediatiedoston tyyppi"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, fuzzy, kde-format
-#| msgid "Aspect ratio"
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Kuvasuhde"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Network Error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Verkkovirhe"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-#| msgid "invalid name"
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "virheellinen nimi"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Keskeytetään…"
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "Mikael Lammentausta,Lasse Liehu,Teemu Rytilahti,Tommi Nieminen"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, fuzzy, kde-format
-#| msgid "Loading..."
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Luetaan…"
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-#| msgid "Load image"
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Lataa kuva"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgid "Aborting..."
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Keskeytetään…"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, fuzzy, kde-format
-#| msgctxt "@title:window %1: name of the camera"
-#| msgid "Capture from %1"
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr "Kaappaa kamerasta %1"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgid "One active filter"
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Yksi aktiivinen suodatin"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "Järjestelmässä ei ole OpenGL-tukea."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "@item: open in browser"
-#| msgid "Internal"
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Sisäinen"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, fuzzy, kde-format
-#| msgid "Current Name"
-msgctxt "@info"
-msgid "Current time"
-msgstr "Nykyinen nimi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@info"
-msgid "Duration"
-msgstr "Kesto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Rasterointiaie:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Avaa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "capture video frame"
-#| msgid "Capture"
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Kaappaa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, fuzzy, kde-format
-#| msgid "Columns"
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Sarakkeita"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, fuzzy, kde-format
-#| msgid "Open File"
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Avaa tiedosto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, fuzzy, kde-format
-#| msgid "Play All"
-msgctxt "@option"
-msgid "Play list"
-msgstr "Toista kaikki"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, fuzzy, kde-format
-#| msgid "History"
-msgctxt "@option"
-msgid "History"
-msgstr "Historia"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, fuzzy, kde-format
-#| msgid "About"
-msgctxt "@action"
-msgid "About"
-msgstr "Tietoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, fuzzy, kde-format
-#| msgid "Speed"
-msgctxt "@option"
-msgid "Speed"
-msgstr "Nopeus"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, fuzzy, kde-format
-#| msgid "enabled"
-msgctxt "@action"
-msgid "Enable"
-msgstr "käytössä"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, fuzzy, kde-format
-#| msgid "Time"
-msgctxt "@label"
-msgid "Times"
-msgstr "Aika"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-#| msgid "Use native file dialogs from the system"
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "Käytä järjestelmän omia tiedostonvalintaikkunoita"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Two"
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Kaksi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, fuzzy, kde-format
-#| msgid "Auto"
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Automaattinen"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Äänet"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, fuzzy, kde-format
-#| msgid "Submission title"
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Lähetyksen otsikko"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "&Auto play"
-msgctxt "@action"
-msgid "Auto load"
-msgstr "&Automaattinen toisto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, fuzzy, kde-format
-#| msgctxt "@action: open image"
-#| msgid "Open"
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Avaa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "&Tunnista"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "System"
-msgctxt "@option"
-msgid "System"
-msgstr "Järjestelmä"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, fuzzy, kde-format
-#| msgid "Audio bitrate"
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Äänen bittinopeus"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option"
-msgid "Channel"
-msgstr "Kanava:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, fuzzy, kde-format
-#| msgid "Same as input"
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Sama kuin syöte"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, fuzzy, kde-format
-#| msgctxt "@label: audio channel type"
-#| msgid "Stereo"
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Stereo"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image left"
-#| msgid "Left"
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Vasemmalle"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@action: rotate image right"
-#| msgid "Right"
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Oikealle"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, fuzzy, kde-format
-#| msgid "Editor Window"
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Muokkausikkuna"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, fuzzy, kde-format
-#| msgctxt "@item: angle"
-#| msgid "Custom"
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Mukautettu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, fuzzy, kde-format
-#| msgctxt "@info: icc profile class"
-#| msgid "Color space"
-msgctxt "@option"
-msgid "Color space"
-msgstr "Väriavaruus"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Videokoodekki"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, fuzzy, kde-format
-#| msgctxt "@item: scene code"
-#| msgid "Under-water"
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Vedenalainen kuva"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "Järjestelmässä ei ole OpenGL-tukea."
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgid "Open in the editor"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Avaa muokkaustilaan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, fuzzy, kde-format
-#| msgid "Click to select watermark image."
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "Valitse kuvan vesileimaksi napsauttamalla."
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@action: search bar"
-#| msgid "Clear"
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Tyhjennä"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-#| msgid "Remove selected tag"
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Poista valitut luokitus"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgid "Select sound files"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Valitse äänitiedostot"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Palauta alkuasetukset"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "OK"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Peru"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Käytä"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, fuzzy, kde-format
-#| msgid "Format"
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Muoto"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Äänen bittinopeus"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, fuzzy, kde-format
-#| msgid "Start import"
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Aloita tuonti"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, fuzzy, kde-format
-#| msgid "Duration"
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Kesto"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Vapaana:"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, fuzzy, kde-format
-#| msgid "Codec"
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Koodekki"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Videokoodekki"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Videokoodekki"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, fuzzy, kde-format
-#| msgid "Total Items"
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Kohteiden lukumäärä"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, fuzzy, kde-format
-#| msgid "Start import"
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Aloita tuonti"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Äänen bittinopeus"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, fuzzy, kde-format
-#| msgid "Names:"
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Nimet:"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, fuzzy, kde-format
-#| msgid "GPS"
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "GPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, fuzzy, kde-format
-#| msgid "Pixel count"
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Kuvapistemäärä"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, fuzzy, kde-format
-#| msgid "Size"
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Koko"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Tiedoston koko"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-#| msgid "Photo size"
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Kuvakoko"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Päiväyksen muoto:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, fuzzy, kde-format
-#| msgid "Frame rate"
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Kuvataajuus"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, fuzzy, kde-format
-#| msgid "Channel:"
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Kanava:"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-#| msgid "Change Account"
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Vaihda tiliä"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Tiedoston koko"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@info: histogram properties"
-#| msgid "Median:"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Mediaani:"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, fuzzy, kde-format
-#| msgid "Key"
-msgctxt "@title"
-msgid "Key"
-msgstr "Avain"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Value"
-msgctxt "@title"
-msgid "Value"
-msgstr "Arvo"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metatiedot"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Video"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, fuzzy, kde-format
-#| msgid "Metadata"
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metatiedot"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, fuzzy, kde-format
-#| msgid "Audio"
-msgctxt "@option"
-msgid "Audio"
-msgstr "Äänet"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "point has been set and is valid"
-#| msgid "Okay"
-msgctxt "@action"
-msgid "Ok"
-msgstr "Selvä"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6383,7 +5428,7 @@ msgid "Watermark type: "
 msgstr "Vesileiman tyyppi:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Kuva"
@@ -12591,6 +11636,11 @@ msgstr "3D"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Käytä"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -23799,7 +22849,7 @@ msgstr "Aloita vienti"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -27149,7 +26199,7 @@ msgstr "Piwigo-vienti"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Muokkaa Piwigo-tietoja"
@@ -27168,8 +26218,8 @@ msgstr ""
 "\n"
 "Haluatko tarkistaa asetukset ja yrittää uudelleen?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -27182,27 +26232,27 @@ msgstr ""
 msgid "Album"
 msgstr "Albumi"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Ei lähetettävää: valitse lähetettävät valokuvat."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Tiedoston %1 kuva- tai videotiedostomuotoa ei tueta"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Lähetetään tiedostoa %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Media lähettäminen etä-Piwigoon epäonnistui. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -28169,6 +27219,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Tämä on kuvan värikirkkauden säätökäyrä"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Palauta alkuasetukset"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -30456,6 +29514,13 @@ msgstr "Kartoitetaan kuvia albumeissa…"
 #, kde-format
 msgid "Migrate ->"
 msgstr "Siirrä →"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Peru"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -43249,6 +42314,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr ""
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr ""
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, kde-format
 msgctxt "@option"
@@ -43433,6 +42504,11 @@ msgstr ""
 #, kde-format
 msgid "About Qt"
 msgstr "Tietoa Qt:sta"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "OK"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -65732,6 +64808,651 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Avaa kuvan esikatselu"
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Avaa kuvan esikatselu"
+
+#, fuzzy
+#~| msgid "Drag and drop an image here"
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Vedä ja pudota kuva tähän"
+
+#, fuzzy
+#~| msgid "Adjusted with Aspect ratio"
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "Sovitettu kuvasuhteeseen"
+
+#, fuzzy
+#~| msgid "&Shortcut:"
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "&Pikanäppäin:"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "Koko näytön tilan asetukset"
+
+#, fuzzy
+#~| msgid "Cannot open file"
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Tiedostoa ei voi avata"
+
+#, fuzzy
+#~| msgctxt "@option"
+#~| msgid "On Screen Display Font:"
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "Kuvaruutunäyttöfontti:"
+
+#, fuzzy
+#~| msgid "Rotate 180 degrees"
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "Kierrä 180°"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "Koko näytön tilan asetukset"
+
+#, fuzzy
+#~| msgid "Capture image..."
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "Kaappaa kuva…"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Ohje"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Avaa"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Avaa tiedosto"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "Tietoa"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Help"
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Ohje"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
+#~| "p><p>Please install the 64-bit version of digiKam to get a better "
+#~| "experience with digiKam.</p>"
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
+#~ "experience with AVPlayer.</p>"
+#~ msgstr ""
+#~ "<p>Käytät 32-bittistä digiKamia 64-bittisessä Windowsissa.</p><p>Paremman "
+#~ "käyttökokemuksen digiKamista saa asentamalla sen 64-bittisen version.</p>"
+
+#, fuzzy
+#~| msgid "Type of the media file"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Mediatiedoston tyyppi"
+
+#, fuzzy
+#~| msgid "Aspect ratio"
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Kuvasuhde"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Network Error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Verkkovirhe"
+
+#, fuzzy
+#~| msgid "invalid name"
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "virheellinen nimi"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Keskeytetään…"
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "Mikael Lammentausta,Lasse Liehu,Teemu Rytilahti,Tommi Nieminen"
+
+#, fuzzy
+#~| msgid "Loading..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Luetaan…"
+
+#, fuzzy
+#~| msgid "Load image"
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Lataa kuva"
+
+#, fuzzy
+#~| msgid "Aborting..."
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Keskeytetään…"
+
+#, fuzzy
+#~| msgctxt "@title:window %1: name of the camera"
+#~| msgid "Capture from %1"
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr "Kaappaa kamerasta %1"
+
+#, fuzzy
+#~| msgid "One active filter"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Yksi aktiivinen suodatin"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "Järjestelmässä ei ole OpenGL-tukea."
+
+#, fuzzy
+#~| msgctxt "@item: open in browser"
+#~| msgid "Internal"
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Sisäinen"
+
+#, fuzzy
+#~| msgid "Current Name"
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Nykyinen nimi"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Kesto"
+
+#, fuzzy
+#~| msgid "Rendering intent:"
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Rasterointiaie:"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Avaa"
+
+#, fuzzy
+#~| msgctxt "capture video frame"
+#~| msgid "Capture"
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Kaappaa"
+
+#, fuzzy
+#~| msgid "Columns"
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Sarakkeita"
+
+#, fuzzy
+#~| msgid "Open File"
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Avaa tiedosto"
+
+#, fuzzy
+#~| msgid "Play All"
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Toista kaikki"
+
+#, fuzzy
+#~| msgid "History"
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#, fuzzy
+#~| msgid "About"
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "Tietoa"
+
+#, fuzzy
+#~| msgid "Speed"
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Nopeus"
+
+#, fuzzy
+#~| msgid "enabled"
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "käytössä"
+
+#, fuzzy
+#~| msgid "Time"
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Aika"
+
+#, fuzzy
+#~| msgid "Use native file dialogs from the system"
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "Käytä järjestelmän omia tiedostonvalintaikkunoita"
+
+#, fuzzy
+#~| msgctxt "@item: scene code"
+#~| msgid "Two"
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Kaksi"
+
+#, fuzzy
+#~| msgid "Auto"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Automaattinen"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Äänet"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Submission title"
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Lähetyksen otsikko"
+
+#, fuzzy
+#~| msgid "&Auto play"
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "&Automaattinen toisto"
+
+#, fuzzy
+#~| msgctxt "@action: open image"
+#~| msgid "Open"
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Avaa"
+
+#, fuzzy
+#~| msgid "Auto-&Detect"
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "&Tunnista"
+
+#, fuzzy
+#~| msgctxt "@title:tab"
+#~| msgid "System"
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Järjestelmä"
+
+#, fuzzy
+#~| msgid "Audio bitrate"
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Äänen bittinopeus"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Kanava:"
+
+#, fuzzy
+#~| msgid "Same as input"
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Sama kuin syöte"
+
+#, fuzzy
+#~| msgctxt "@label: audio channel type"
+#~| msgid "Stereo"
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Stereo"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image left"
+#~| msgid "Left"
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Vasemmalle"
+
+#, fuzzy
+#~| msgctxt "@action: rotate image right"
+#~| msgid "Right"
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Oikealle"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Editor Window"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Muokkausikkuna"
+
+#, fuzzy
+#~| msgctxt "@item: angle"
+#~| msgid "Custom"
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Mukautettu"
+
+#, fuzzy
+#~| msgctxt "@info: icc profile class"
+#~| msgid "Color space"
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Väriavaruus"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Videokoodekki"
+
+#, fuzzy
+#~| msgctxt "@item: scene code"
+#~| msgid "Under-water"
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Vedenalainen kuva"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "Järjestelmässä ei ole OpenGL-tukea."
+
+#, fuzzy
+#~| msgid "Open in the editor"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Avaa muokkaustilaan"
+
+#, fuzzy
+#~| msgid "Click to select watermark image."
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "Valitse kuvan vesileimaksi napsauttamalla."
+
+#, fuzzy
+#~| msgctxt "@action: search bar"
+#~| msgid "Clear"
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Tyhjennä"
+
+#, fuzzy
+#~| msgid "Remove selected tag"
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Poista valitut luokitus"
+
+#, fuzzy
+#~| msgid "Select sound files"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Valitse äänitiedostot"
+
+#, fuzzy
+#~| msgid "Format"
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Muoto"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Äänen bittinopeus"
+
+#, fuzzy
+#~| msgid "Start import"
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Aloita tuonti"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Kesto"
+
+#, fuzzy
+#~| msgctxt "@info Storage"
+#~| msgid "Available:"
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Vapaana:"
+
+#, fuzzy
+#~| msgid "Codec"
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Koodekki"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Videokoodekki"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Videokoodekki"
+
+#, fuzzy
+#~| msgid "Total Items"
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Kohteiden lukumäärä"
+
+#, fuzzy
+#~| msgid "Start import"
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Aloita tuonti"
+
+#, fuzzy
+#~| msgid "Audio Bit Rate"
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Äänen bittinopeus"
+
+#, fuzzy
+#~| msgid "Names:"
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Nimet:"
+
+#, fuzzy
+#~| msgid "GPS"
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "GPS"
+
+#, fuzzy
+#~| msgid "Pixel count"
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Kuvapistemäärä"
+
+#, fuzzy
+#~| msgid "Size"
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Koko"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Tiedoston koko"
+
+#, fuzzy
+#~| msgid "Photo size"
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Kuvakoko"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Date format:"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Päiväyksen muoto:"
+
+#, fuzzy
+#~| msgid "Frame rate"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Kuvataajuus"
+
+#, fuzzy
+#~| msgid "Channel:"
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Kanava:"
+
+#, fuzzy
+#~| msgid "Change Account"
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Vaihda tiliä"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Tiedoston koko"
+
+#, fuzzy
+#~| msgctxt "@info: histogram properties"
+#~| msgid "Median:"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Mediaani:"
+
+#, fuzzy
+#~| msgid "Key"
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Avain"
+
+#, fuzzy
+#~| msgctxt "@title: DPlugin properties"
+#~| msgid "Value"
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Arvo"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metatiedot"
+
+#, fuzzy
+#~| msgctxt "@item: xmp namespace"
+#~| msgid "Video"
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Metadata"
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metatiedot"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Äänet"
+
+#, fuzzy
+#~| msgctxt "point has been set and is valid"
+#~| msgid "Okay"
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Selvä"
 
 #, fuzzy
 #~| msgid "Country:"

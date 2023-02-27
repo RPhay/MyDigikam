@@ -1,6 +1,5 @@
 # Translation for digikam.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2018, Free Software Foundation.
-# Copyright (C) 2019-2022, This file is copyright:
+# Copyright (C) 2005-2023 This file is copyright:
 # This package is distributed under the same license as the digikam package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
@@ -33,21 +32,21 @@
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2006.
 # Marcos <marcos@euskalgnu.org>, 2006, 2011.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007, 2010.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022, 2023.
 # Enbata <urazpian@hotmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
-"PO-Revision-Date: 2022-11-24 05:00+0100\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"PO-Revision-Date: 2023-02-26 17:16+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -577,13 +576,12 @@ msgstr[0] "Eraman zakarrontzira"
 msgstr[1] "Eraman %1 fitxategi zakarrontzira"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:190
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
 msgid_plural "Image Quality Sort"
-msgstr[0] "Irudi-kalitatearen sailkatzailea"
-msgstr[1] "Irudi-kalitatearen sailkatzailea"
+msgstr[0] "Irudi-kalitatearen araberako sailkapena"
+msgstr[1] "Irudi-kalitatearen araberako sailkapena"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
@@ -969,8 +967,7 @@ msgid "%1 %2"
 msgstr "%2 %1"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Hautatu helburuko karpeta"
@@ -1343,10 +1340,9 @@ msgid "Checking ICC repository..."
 msgstr "ICC gordetegia egiaztatzen..."
 
 #: core/app/main/digikamapp.cpp:170
-#, fuzzy, kde-format
-#| msgid "Reading database..."
+#, kde-format
 msgid "Clean up Database..."
-msgstr "Datu-basea irakurtzen..."
+msgstr "Garbitu datu-basea..."
 
 #: core/app/main/digikamapp.cpp:188
 #, kde-format
@@ -1530,18 +1526,16 @@ msgstr ""
 "dugu. Ikono-gaia erabilgarri egongo da digiKam berrabiatu ondoren."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "Hautatu sintaxia aztertu behar zaion karpeta"
+msgstr "Hautatu sintaxia aztertu beharreko karpeta"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr "Hautatu albumera inportatu beharreko karpeta"
+msgstr "Hautatu albumera inportatu beharreko karpetak"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -1872,11 +1866,10 @@ msgid "Scan for Faces"
 msgstr "Aztertu aurpegi bila"
 
 #: core/app/main/digikamapp_setup.cpp:443
-#, fuzzy, kde-format
-#| msgid "Synchronize"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
-msgstr "Sinkronizatu"
+msgstr "Aurpegiak ezagutzea"
 
 #: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
@@ -2667,20 +2660,17 @@ msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatikoki hauteman eta ireki konektatutako gphoto2 kamera bat"
 
 #: core/app/main/main.cpp:191
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start digikam with the SQLite database file found in the directory <dir>"
+#, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
-"Abiarazi digiKam <dir> direktorioan aurkitutako SQLite datu-base "
+"Abiarazi «digiKam» \"dir\" direktorioan aurkitutako SQLite datu-base "
 "fitxategiarekin"
 
 #: core/app/main/main.cpp:194
-#, fuzzy, kde-format
-#| msgid "Start digikam with the configuration file <config>"
+#, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "Abiarazi digiKam konfiguratzeko <konfig> fitxategiarekin"
+msgstr "Abiarazi «digiKam» konfiguratzeko \"config\" fitxategiarekin"
 
 #: core/app/main/main.cpp:221
 #, kde-format
@@ -2827,10 +2817,9 @@ msgid "Clear all faces on this image"
 msgstr "Garbitu irudi honetako aurpegi guztiak"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark As Face Tag"
+#, kde-format
 msgid "Mark all unknown faces as ignored"
-msgstr "Markatu «aurpegi» etiketa gisa"
+msgstr "Markatu aurpegi ezezagun guztiak ezikusi gisa"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3120,10 +3109,9 @@ msgstr "Azken bilaketa"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
 #: core/app/views/stack/itemiconview_search.cpp:108
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "FacesDetector"
-msgstr "Aurpegia atzematea"
+msgstr "Aurpegi detektatzailea"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
 #: core/app/views/stack/itemiconview_search.cpp:110
@@ -3132,6 +3120,8 @@ msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
+"Aurpegi-ezagutza ataza bat dagoeneko martxan da. Aldiko ataza bat ibil "
+"daiteke. Mesedez, itxoin amaitu arte."
 
 #: core/app/views/stack/itemiconview_views.cpp:118
 #, kde-format
@@ -3157,7 +3147,7 @@ msgstr "Desegin"
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Lehengoratu bakarrik zakarrontziko azken sarrera."
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
@@ -3165,10 +3155,9 @@ msgid "Restore"
 msgstr "Leheneratu"
 
 #: core/app/views/stack/trashview.cpp:122
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Kendu hautatutako irudiak zerrendatik"
+msgstr "Lehengoratu zakarrontzitik fitxategi-hautapena."
 
 #: core/app/views/stack/trashview.cpp:126
 #, kde-format
@@ -3232,10 +3221,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementu hautatuta"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Bugzillan erabiltzaileen 1300 txosten baino gehiago itxi ziren."
+msgstr "Bugzillan erabiltzaileen 200 txosten baino gehiago itxi dira."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -4281,860 +4269,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Euskarria duten hedapenak"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Ireki bideo bat"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Ireki URL bat"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr "URLa"
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, kde-format
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "Arrastatu eta jaregin fitxategia bat jotzailean\n"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "A: aldatu itxura-proportzioa"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr "Klik bikoitza pantaila betera aldatzeko"
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "Lasterbidea:\n"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr "Zuriunea: eten/jarraitu\n"
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "F: pantaila betea piztu/itzali\n"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr "T: gainean egon piztu/itzali\n"
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-"N: erakutsi hurrengo fotograma. Jarraitu joaldiarekin 'Zuriunea' sakatuz\n"
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Ktrl+O: ireki fitxategi bat\n"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "O: pantailan azaltzea\n"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr "P: berriz jo\n"
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr "Q/IHES: irten\n"
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr "S: gelditu\n"
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, kde-format
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "R: biratu 90 gradu"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "M: isilaraztea piztu/itzali\n"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "C: bideoa atzematea"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr "Gora/Behera: bolumena +/-\n"
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr "Ktrl+Gora/Behera: abiadura +/-\n"
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr "-&gt;/&lt;-: bilatu aurrerantz/atzerantz\n"
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "Laguntza"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Ireki"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Ireki URLa"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "Honi buruz"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "Laguntza"
-
-#: core/avplayer/main/main.cpp:174
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
-#| "p><p>Please install the 64-bit version of digiKam to get a better "
-#| "experience with digiKam.</p>"
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-"<p>digiKam 32 biteko bertsioa erabiltzen ari zara 64 biteko Windows batean.</"
-"p><p>Mesedez, instalatu digiKam-en 64 biteko bertsioa, digiKam-ekin "
-"esperientzia hobea izateko.</p>"
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Ireki multimedia fitxategi bat"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Itxura-proportzioa"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Jotzailearen errorea"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr "Euskarririk ez"
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Euskarri baliogabea"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Tarteko-memoriaratzen..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "Tarteko-memoriaratua"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Zamatzen..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Zamatuta"
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr "Trabatuta"
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Tarteko-memoriaratzen... %1% @%2 %3"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr ""
-"Atzeman bideo-fotograma\n"
-"Gorde hona: %1\n"
-"Formatua: %2"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Ireki azpidatzi fitxategi bat"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, kde-format
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "Bideo errendatzailea ez dago erabilgarri zure plataforman!"
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Kanpokoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "Uneko ordua"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Iraupena"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Errendatzeko motorra"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr "Abiadura. Ktrl+Gora/Behera"
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Ireki"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Atzeman"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "Bolumena"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Ireki URLa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "Jotze-zerrenda"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "Historia"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr "Honi buruz"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr "Ezarri"
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr "Abiadura"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr "Errepikatu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Gaitu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr "mugagabea"
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr "Aldiak"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Nondik: "
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "balio negatiboak amaieratik adierazten du"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Nora:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr "Erlojua"
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Automatikoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Audioa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Bideoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr "Indarrean ipini hurrengo atzera-jotzean"
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Azpidatzia"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, kde-format
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Automatikoki zamatzea"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Ireki"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "Motorra"
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-"«FFmpeg»ek azpidatzi gehiago onartzen ditu baina bakarrik testu laua "
-"errendatzen du\n"
-"«LibASS»ek 'ass' estiloak onartzen ditu"
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr "Karaktere-multzoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Automatikoki antzeman"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "Sistema"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr "Automatikoki antzemateak «libchardet» behar du"
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Audio-pista"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "Kanala"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "Sarrerako gisa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "Estereoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr "Mono (erdiratua)"
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "Ezkerra"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Eskuina"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Bideoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Leihoa"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Norberak finkatua"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "Kolore-eremua"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Deskodetzailea"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Errendatzailea"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, kde-format
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "zure plataforman ez dago erabilgarri!"
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an external audio track"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "Ireki kanpoko audio-pista bat"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr "Ezin du errendatzaile hau erabili"
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "Erabili Ktrl/Maius + Klik elementu anizkoitzak hautatzeko"
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Garbitu"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Kendu hautatutako elementuak"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Hautatu fitxategiak"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "Berrezarri"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "Ados"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "Utzi"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "Aplikatu"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr "URLa"
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Formatua"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Bit-emaria"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Hasierako ordua"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Iraupena"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Erabilgarri"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Kodeka"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Deskodetzailea"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Deskodetzailearen xehetasuna"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "Denbora osoa"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Hasierako ordua"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Bit-emaria"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Fotogramak"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "FPS"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr "FPS orain"
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Pixelaren formatua"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Neurria"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, kde-format
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Kodetutako neurria"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "GOP neurria"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Laginaren formatua"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Lagin-emaria"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Kanalak"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Kanalen antolamendua"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Fotogramaren neurria"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgid "Median:"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Mediana:"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Gakoa"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr "Balioa"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Metadatuak"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Bideoa"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Metadatuak"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Audioa"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "Ados"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -5980,7 +5114,7 @@ msgid "Watermark type: "
 msgstr "Ur-marka mota:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "Irudia"
@@ -12058,6 +11192,11 @@ msgstr "D"
 #, fuzzy, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "Aplikatu"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
@@ -19420,6 +18559,8 @@ msgid ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
 msgstr ""
+"«Tesseract», hainbat sistema-eragiletarako karaktere ezagutza optikorako "
+"motor bat da."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
 #, fuzzy, kde-format
@@ -19444,13 +18585,15 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
+"Tresna horrek sorburu irekiko %1 motorra erabiltzen du karaktereen ezagutza "
+"optikorako. «Tesseract» programa eta nahi den hizkuntzarako moduluak zure "
+"sisteman instalatu behar dira."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
-msgstr "Aurpegi ezagutza"
+msgstr "Testu-ezagutza"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
 #, kde-format
@@ -23420,7 +22563,7 @@ msgstr "Hasierako kolorea: "
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -26696,7 +25839,7 @@ msgstr "Piwigo esportatu"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, fuzzy, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Editatu Piwigo datuak"
@@ -26715,8 +25858,8 @@ msgstr ""
 "\n"
 "Zure ezarpenak ikuskatu eta berriro saiatzea nahi duzu?"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -26729,28 +25872,28 @@ msgstr ""
 msgid "Album"
 msgstr "Albuma"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 "Ez dago zama-igotzeko ezer - mesedez, hautatu zama-igo beharreko argazkiak."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, fuzzy, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "%1 fitxategiak ez dauka onartutako irudi edo bideo formatu bat"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, kde-format
 msgid "Uploading file %1"
 msgstr "%1 fitxategia zama-igotzen"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Huts egin du euskarria urruneko Piwigo-ra zama-igotzea."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, fuzzy, kde-format
 #| msgid " Do you want to continue?"
 msgid ""
@@ -27699,6 +26842,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr "Hau da irudi argitasunaren doiketa kurba"
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "Berrezarri"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -30029,6 +29180,13 @@ msgstr "Irudiak aztertzen banakako albumetan..."
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migratu ->"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "Utzi"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -43465,6 +42623,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "Ombragé"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr "Motorra"
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, fuzzy, kde-format
 #| msgid "Brightness:"
@@ -43669,6 +42833,11 @@ msgstr ""
 #| msgid "About"
 msgid "About Qt"
 msgstr "Honi buruz"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "Ados"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -55008,16 +54177,15 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
 msgstr "Ezarpenak"
 
 #: core/utilities/firstrun/collectionpage.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Configure where you keep your images</b>"
-msgstr "<b>Konfiguratu irudiak eta metadatuak non gordeko diren</b>"
+msgstr "<b>Konfiguratu zure irudiak non gordetzen dituzun</b>"
 
 #: core/utilities/firstrun/collectionpage.cpp:74
 #, kde-format
@@ -55027,15 +54195,15 @@ msgid "/Pictures"
 msgstr "/Argazkiak"
 
 #: core/utilities/firstrun/collectionpage.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>Please enter a location where you keep your images.</p> <p>You can choose "
 "any local folder, even one that already contains images.<br/> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
-"<p>Sartu irudiak gordetzea nahi duzun kokalekua.</p><p>Lokaleko edozer "
-"karpeta aukera dezakezu, nahiz eta batek jadanik irudiak eduki.<br/>Karpeta "
-"gehiago gehi daitezke beranduago <i>Ezarpenak</i> menuan. </p> "
+"<p>Mesedez, sartu zure irudiak gordetzeko kokalekua.</p><p>Edozein karpeta "
+"lokal erabil dezakezu, baita dagoeneko irudiak dituen bat.<br/>Beranduago, "
+"<i>Ezarpenak</i> menutik, karpeta gehiago gehi daitezke.</p>"
 
 #: core/utilities/firstrun/collectionpage.cpp:88
 #, fuzzy, kde-format
@@ -55059,11 +54227,10 @@ msgstr ""
 "Zure irudi guztiak horra joango dira."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Sortu erroko albumaren karpeta?"
+msgstr "Erroko album-karpeta sortu?"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -66562,6 +65729,570 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open a video"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Ireki bideo bat"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open an url"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Ireki URL bat"
+
+#~ msgctxt "@info"
+#~ msgid "Url"
+#~ msgstr "URLa"
+
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "Arrastatu eta jaregin fitxategia bat jotzailean\n"
+
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "A: aldatu itxura-proportzioa"
+
+#~ msgctxt "@info"
+#~ msgid "Double click to switch fullscreen"
+#~ msgstr "Klik bikoitza pantaila betera aldatzeko"
+
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "Lasterbidea:\n"
+
+#~ msgctxt "@info"
+#~ msgid "Space: pause/continue\n"
+#~ msgstr "Zuriunea: eten/jarraitu\n"
+
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "F: pantaila betea piztu/itzali\n"
+
+#~ msgctxt "@info"
+#~ msgid "T: stays on top on/off\n"
+#~ msgstr "T: gainean egon piztu/itzali\n"
+
+#~ msgctxt "@info"
+#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
+#~ msgstr ""
+#~ "N: erakutsi hurrengo fotograma. Jarraitu joaldiarekin 'Zuriunea' sakatuz\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Ktrl+O: ireki fitxategi bat\n"
+
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "O: pantailan azaltzea\n"
+
+#~ msgctxt "@info"
+#~ msgid "P: replay\n"
+#~ msgstr "P: berriz jo\n"
+
+#~ msgctxt "@info"
+#~ msgid "Q/ESC: quit\n"
+#~ msgstr "Q/IHES: irten\n"
+
+#~ msgctxt "@info"
+#~ msgid "S: stop\n"
+#~ msgstr "S: gelditu\n"
+
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "R: biratu 90 gradu"
+
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "M: isilaraztea piztu/itzali\n"
+
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "C: bideoa atzematea"
+
+#~ msgctxt "@info"
+#~ msgid "Up/Down: volume +/-\n"
+#~ msgstr "Gora/Behera: bolumena +/-\n"
+
+#~ msgctxt "@info"
+#~ msgid "Ctrl+Up/Down: speed +/-\n"
+#~ msgstr "Ktrl+Gora/Behera: abiadura +/-\n"
+
+#~ msgctxt "@info"
+#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
+#~ msgstr "-&gt;/&lt;-: bilatu aurrerantz/atzerantz\n"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "Laguntza"
+
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Ireki"
+
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Ireki URLa"
+
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "Honi buruz"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "Laguntza"
+
+#, fuzzy
+#~| msgid ""
+#~| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
+#~| "p><p>Please install the 64-bit version of digiKam to get a better "
+#~| "experience with digiKam.</p>"
+#~ msgctxt "#info"
+#~ msgid ""
+#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
+#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
+#~ "experience with AVPlayer.</p>"
+#~ msgstr ""
+#~ "<p>digiKam 32 biteko bertsioa erabiltzen ari zara 64 biteko Windows "
+#~ "batean.</p><p>Mesedez, instalatu digiKam-en 64 biteko bertsioa, digiKam-"
+#~ "ekin esperientzia hobea izateko.</p>"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open a media file"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Ireki multimedia fitxategi bat"
+
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Itxura-proportzioa"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Player error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Jotzailearen errorea"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "No media"
+#~ msgstr "Euskarririk ez"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Euskarri baliogabea"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Tarteko-memoriaratzen..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "Tarteko-memoriaratua"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Zamatzen..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Zamatuta"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Stalled"
+#~ msgstr "Trabatuta"
+
+#, fuzzy
+#~| msgctxt "@title: media loading state"
+#~| msgid "Buffering... %1% @%2 %3"
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Tarteko-memoriaratzen... %1% @%2 %3"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr ""
+#~ "Atzeman bideo-fotograma\n"
+#~ "Gorde hona: %1\n"
+#~ "Formatua: %2"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open a subtitle file"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Ireki azpidatzi fitxategi bat"
+
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "Bideo errendatzailea ez dago erabilgarri zure plataforman!"
+
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Kanpokoa"
+
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Uneko ordua"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Iraupena"
+
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Errendatzeko motorra"
+
+#~ msgctxt "@info"
+#~ msgid "Speed. Ctrl+Up/Down"
+#~ msgstr "Abiadura. Ktrl+Gora/Behera"
+
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Ireki"
+
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Atzeman"
+
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "Bolumena"
+
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Ireki URLa"
+
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Jotze-zerrenda"
+
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Historia"
+
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "Honi buruz"
+
+#~ msgctxt "@action"
+#~ msgid "Setup"
+#~ msgstr "Ezarri"
+
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "Abiadura"
+
+#~ msgctxt "@option"
+#~ msgid "Repeat"
+#~ msgstr "Errepikatu"
+
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Gaitu"
+
+#~ msgctxt "@info"
+#~ msgid "infinity"
+#~ msgstr "mugagabea"
+
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Aldiak"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Nondik: "
+
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "balio negatiboak amaieratik adierazten du"
+
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Nora:"
+
+#~ msgctxt "@action"
+#~ msgid "Clock"
+#~ msgstr "Erlojua"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Automatikoa"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Audioa"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Bideoa"
+
+#~ msgctxt "@info"
+#~ msgid "Take effect in next playback"
+#~ msgstr "Indarrean ipini hurrengo atzera-jotzean"
+
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Azpidatzia"
+
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Automatikoki zamatzea"
+
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Ireki"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "FFmpeg supports more subtitles but only render plain text\n"
+#~ "LibASS supports 'ass' styles"
+#~ msgstr ""
+#~ "«FFmpeg»ek azpidatzi gehiago onartzen ditu baina bakarrik testu laua "
+#~ "errendatzen du\n"
+#~ "«LibASS»ek 'ass' estiloak onartzen ditu"
+
+#~ msgctxt "@label"
+#~ msgid "Charset"
+#~ msgstr "Karaktere-multzoa"
+
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Automatikoki antzeman"
+
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Sistema"
+
+#~ msgctxt "@info"
+#~ msgid "Auto detect requires libchardet"
+#~ msgstr "Automatikoki antzemateak «libchardet» behar du"
+
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Audio-pista"
+
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Kanala"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "Sarrerako gisa"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "Estereoa"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Mono (center)"
+#~ msgstr "Mono (erdiratua)"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "Ezkerra"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Eskuina"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Bideoa"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Leihoa"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Norberak finkatua"
+
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Kolore-eremua"
+
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Deskodetzailea"
+
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Errendatzailea"
+
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "zure plataforman ez dago erabilgarri!"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open an external audio track"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "Ireki kanpoko audio-pista bat"
+
+#~ msgctxt "@info"
+#~ msgid "Can not use this renderer"
+#~ msgstr "Ezin du errendatzaile hau erabili"
+
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "Erabili Ktrl/Maius + Klik elementu anizkoitzak hautatzeko"
+
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Garbitu"
+
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Kendu hautatutako elementuak"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Select files"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Hautatu fitxategiak"
+
+#~ msgctxt "@option: base"
+#~ msgid "Url"
+#~ msgstr "URLa"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Formatua"
+
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Bit-emaria"
+
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Hasierako ordua"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Iraupena"
+
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Erabilgarri"
+
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Kodeka"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Deskodetzailea"
+
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Deskodetzailearen xehetasuna"
+
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "Denbora osoa"
+
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Hasierako ordua"
+
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Bit-emaria"
+
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Fotogramak"
+
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "FPS"
+
+#~ msgctxt "@option: video"
+#~ msgid "FPS Now"
+#~ msgstr "FPS orain"
+
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Pixelaren formatua"
+
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Neurria"
+
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Kodetutako neurria"
+
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "GOP neurria"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Laginaren formatua"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Lagin-emaria"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Kanalak"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Kanalen antolamendua"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Fotogramaren neurria"
+
+#, fuzzy
+#~| msgid "Median:"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Mediana:"
+
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Gakoa"
+
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "Balioa"
+
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Metadatuak"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Bideoa"
+
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Metadatuak"
+
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Audioa"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "Ados"
 
 #, fuzzy
 #~| msgid "Country:"

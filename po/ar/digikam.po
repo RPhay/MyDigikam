@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -4342,869 +4342,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "الامتدادات المدعومة"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgid "Open a preview"
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "افتح معاينة"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "افتح عنوان الرابط"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr "العنوان"
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, fuzzy, kde-format
-#| msgid "Drag and drop an image here"
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr "اسحب صورة وأسقطها هنا"
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-#| msgid "Return pictures with the aspect ratio"
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "أرجع الصّور ذات النّسبة الباعيّة"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, fuzzy, kde-format
-#| msgid "&Shortcut:"
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr "الا&ختصار:"
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "خيارات ملء الشّاشة"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-#| msgid "Cannot open file"
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "تعذّر فتح الملفّ"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr "مكان الشّاشة:"
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-#| msgid "Rotate 180 degrees"
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "دور 180 درجة"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, fuzzy, kde-format
-#| msgid "Full-screen Options"
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "خيارات ملء الشّاشة"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "سجّل صورة."
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
-msgctxt "@title:window"
-msgid "Help"
-msgstr "مساعدة"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "افتح"
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "افتح المسار"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr "عن"
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "مساعدة"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgid "Type of the media file"
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "نوع ملفّ الوسائط"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "النّسبة الباعيّة"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Network Error"
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "خطأ شبكيّ"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-#| msgid "invalid name"
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "الاسم غير صالح"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "جارٍ التخزين المؤقت..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, fuzzy, kde-format
-#| msgctxt "NAME OF TRANSLATORS"
-#| msgid "Your names"
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "صفا الفليج"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "يحمّل..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-#| msgid "&Load..."
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "&حمّل..."
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr "متوقّف"
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "جارٍ التخزين المؤقت... %1% @%2 %3"
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, fuzzy, kde-format
-#| msgctxt "@title:window %1: name of the camera"
-#| msgid "Capture from %1"
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr "التقط من %1"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgid "One active filter"
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "مرشّح واحد نشط"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "خارجي"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "الوقت الحالي"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "المدّة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "الطلاء النية:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "افتح"
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "التقط"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr "المستوى"
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "افتح المسار"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "قائمة التشغيل"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "التاريخ"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr "عن"
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr "الإعداد"
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr "السّرعة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr "التكرار"
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "مكّن"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr "لانهاية"
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr "المرات"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "من"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "أزل الصّور المحدّدة من القائمة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "إلى"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr "الساعة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "آليّ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "الصّوت"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "فيديو"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "الترجمة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
-msgctxt "@action"
-msgid "Auto load"
-msgstr "دوّر آليًّا"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "افتح"
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr "محرك"
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr "طقم المحارف"
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "اكتشف آليًّا"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "النظام"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "مسار صوت"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "القناة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, fuzzy, kde-format
-#| msgid "Same as input"
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr "مثل الدّخل"
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr "ستيريو"
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr "اليسار"
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "اليمين"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "فيديو"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "النافذة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "مخصّصة"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "الفضاء اللونيّ"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option"
-msgid "Decoder"
-msgstr "مرماز الفيديو"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "عارض"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, fuzzy, kde-format
-#| msgid "OpenGL support is not available on your system."
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgid "Open in the editor"
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr "افتح في المحرّر"
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, fuzzy, kde-format
-#| msgid "Click to select watermark image."
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr "انقر لاختيار صورة للعلامة المائيّة."
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "امسح"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-#| msgid "Remove selected tag"
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "أزل الوسم المحدّد"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgid "Select audio files"
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "حدّد ملفّات الصّوت"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, kde-format
-msgid "Reset"
-msgstr "صفّر"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr "حسنًا"
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, kde-format
-msgid "Cancel"
-msgstr "ألغِ"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, kde-format
-msgid "Apply"
-msgstr "طبّق"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr "العنوان"
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "التّنسيق"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "معدل نقل البتات"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "وقت البدء"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "المدّة"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "متوفّرة"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "مرماز"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "مرماز الفيديو"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, fuzzy, kde-format
-#| msgid "Video codec"
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "مرماز الفيديو"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "الوقت الكلي"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "وقت البدء"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "معدل نقل البتات"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "الإطارات"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr "  إطار/ثا"
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "تنسيق نقاط الشاشة"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "الحجم"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-#| msgid "File size"
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "حجم الملفّ"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "اعرض ملفّ حجم"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "تنسيق التّاريخ:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "معدل العينة"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "القنوات"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "القناة "
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "مقاس الإطار"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "معلومات الوسائط"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "المفتاح"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr "القيمة"
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "البيانات الوصفيّة"
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "فيديو"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "البيانات الوصفيّة"
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "الصّوت"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr "حسنًا"
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -6046,7 +5183,7 @@ msgid "Watermark type: "
 msgstr "نوع العلامة المائيّة:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
 msgstr "صورة"
@@ -11786,6 +10923,11 @@ msgstr "3-الأبعاد"
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, kde-format
+msgid "Apply"
+msgstr "طبّق"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, fuzzy, kde-format
@@ -22734,7 +21876,7 @@ msgstr "ابدأ فهرس:"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -25956,7 +25098,7 @@ msgstr "صدّر"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr ""
@@ -25973,8 +25115,8 @@ msgid ""
 "Do you want to check your settings and try again?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -25987,28 +25129,28 @@ msgstr ""
 msgid "Album"
 msgstr "الألبوم"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, fuzzy, kde-format
 msgid "Uploading file %1"
 msgstr "EXIF ملفّ."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "فشل حفظ بعض المعلومات:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, fuzzy, kde-format
 msgid ""
 "\n"
@@ -26965,6 +26107,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr ""
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, kde-format
+msgid "Reset"
+msgstr "صفّر"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -29162,6 +28312,13 @@ msgstr "يفحص الصّور في الألبومات المنفصلة..."
 #, kde-format
 msgid "Migrate ->"
 msgstr "رحّل ←"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, kde-format
+msgid "Cancel"
+msgstr "ألغِ"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -41649,6 +40806,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr "مظلل"
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr "محرك"
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, kde-format
 msgctxt "@option"
@@ -41848,6 +41011,11 @@ msgstr ""
 #, kde-format
 msgid "About Qt"
 msgstr "عن كيوت"
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
+msgstr "حسنًا"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
@@ -63927,6 +63095,525 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضيّة."
+
+#, fuzzy
+#~| msgid "Open a preview"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "افتح معاينة"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Open an url"
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "افتح عنوان الرابط"
+
+#~ msgctxt "@info"
+#~ msgid "Url"
+#~ msgstr "العنوان"
+
+#, fuzzy
+#~| msgid "Drag and drop an image here"
+#~ msgctxt "@info"
+#~ msgid "Drag and drop a file to player\n"
+#~ msgstr "اسحب صورة وأسقطها هنا"
+
+#, fuzzy
+#~| msgid "Return pictures with the aspect ratio"
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "أرجع الصّور ذات النّسبة الباعيّة"
+
+#, fuzzy
+#~| msgid "&Shortcut:"
+#~ msgctxt "@info"
+#~ msgid "Shortcut:\n"
+#~ msgstr "الا&ختصار:"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "خيارات ملء الشّاشة"
+
+#, fuzzy
+#~| msgid "Cannot open file"
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "تعذّر فتح الملفّ"
+
+#, fuzzy
+#~| msgid "Screen placement:"
+#~ msgctxt "@info"
+#~ msgid "O: On Screen Display\n"
+#~ msgstr "مكان الشّاشة:"
+
+#, fuzzy
+#~| msgid "Rotate 180 degrees"
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "دور 180 درجة"
+
+#, fuzzy
+#~| msgid "Full-screen Options"
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "خيارات ملء الشّاشة"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "سجّل صورة."
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Help"
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "مساعدة"
+
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "افتح"
+
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "افتح المسار"
+
+#~ msgctxt "@action: about AVPlayer"
+#~ msgid "About"
+#~ msgstr "عن"
+
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "مساعدة"
+
+#, fuzzy
+#~| msgid "Type of the media file"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "نوع ملفّ الوسائط"
+
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "النّسبة الباعيّة"
+
+#, fuzzy
+#~| msgctxt "@title: window"
+#~| msgid "Network Error"
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "خطأ شبكيّ"
+
+#, fuzzy
+#~| msgid "invalid name"
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "الاسم غير صالح"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "جارٍ التخزين المؤقت..."
+
+#, fuzzy
+#~| msgctxt "NAME OF TRANSLATORS"
+#~| msgid "Your names"
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "صفا الفليج"
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "يحمّل..."
+
+#, fuzzy
+#~| msgid "&Load..."
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "&حمّل..."
+
+#~ msgctxt "@info: media loading"
+#~ msgid "Stalled"
+#~ msgstr "متوقّف"
+
+#, fuzzy
+#~| msgctxt "@title: media loading state"
+#~| msgid "Buffering... %1% @%2 %3"
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "جارٍ التخزين المؤقت... %1% @%2 %3"
+
+#, fuzzy
+#~| msgctxt "@title:window %1: name of the camera"
+#~| msgid "Capture from %1"
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr "التقط من %1"
+
+#, fuzzy
+#~| msgid "One active filter"
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "مرشّح واحد نشط"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "Video renderer is not available on your platform!"
+#~ msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
+
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "خارجي"
+
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "الوقت الحالي"
+
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "المدّة"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "الطلاء النية:"
+
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "افتح"
+
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "التقط"
+
+#~ msgctxt "@info: button"
+#~ msgid "Volume"
+#~ msgstr "المستوى"
+
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "افتح المسار"
+
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "قائمة التشغيل"
+
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "التاريخ"
+
+#~ msgctxt "@action"
+#~ msgid "About"
+#~ msgstr "عن"
+
+#~ msgctxt "@action"
+#~ msgid "Setup"
+#~ msgstr "الإعداد"
+
+#~ msgctxt "@option"
+#~ msgid "Speed"
+#~ msgstr "السّرعة"
+
+#~ msgctxt "@option"
+#~ msgid "Repeat"
+#~ msgstr "التكرار"
+
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "مكّن"
+
+#~ msgctxt "@info"
+#~ msgid "infinity"
+#~ msgstr "لانهاية"
+
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "المرات"
+
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "من"
+
+#, fuzzy
+#~| msgid "Remove selected images from the list"
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "أزل الصّور المحدّدة من القائمة"
+
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "إلى"
+
+#~ msgctxt "@action"
+#~ msgid "Clock"
+#~ msgstr "الساعة"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "آليّ"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "الصّوت"
+
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "فيديو"
+
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "الترجمة"
+
+#, fuzzy
+#~| msgid "Auto rotate"
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "دوّر آليًّا"
+
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "افتح"
+
+#~ msgctxt "@label"
+#~ msgid "Charset"
+#~ msgstr "طقم المحارف"
+
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "اكتشف آليًّا"
+
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "النظام"
+
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "مسار صوت"
+
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "القناة"
+
+#, fuzzy
+#~| msgid "Same as input"
+#~ msgctxt "@action: channel option"
+#~ msgid "As input"
+#~ msgstr "مثل الدّخل"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Stereo"
+#~ msgstr "ستيريو"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Left"
+#~ msgstr "اليسار"
+
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "اليمين"
+
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "فيديو"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "النافذة"
+
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "مخصّصة"
+
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "الفضاء اللونيّ"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "مرماز الفيديو"
+
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "عارض"
+
+#, fuzzy
+#~| msgid "OpenGL support is not available on your system."
+#~ msgctxt "@info"
+#~ msgid "not available on your platform!"
+#~ msgstr "دعم «أوبن‌جي‌إل» غير متوفّر في النّظام."
+
+#, fuzzy
+#~| msgid "Open in the editor"
+#~ msgctxt "@title:window"
+#~ msgid "Open an External Audio Track"
+#~ msgstr "افتح في المحرّر"
+
+#, fuzzy
+#~| msgid "Click to select watermark image."
+#~ msgctxt "@info"
+#~ msgid "Use Ctrl/Shift + Click to select multiple items"
+#~ msgstr "انقر لاختيار صورة للعلامة المائيّة."
+
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "امسح"
+
+#, fuzzy
+#~| msgid "Remove selected tag"
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "أزل الوسم المحدّد"
+
+#, fuzzy
+#~| msgid "Select audio files"
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "حدّد ملفّات الصّوت"
+
+#~ msgctxt "@option: base"
+#~ msgid "Url"
+#~ msgstr "العنوان"
+
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "التّنسيق"
+
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "معدل نقل البتات"
+
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "وقت البدء"
+
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "المدّة"
+
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "متوفّرة"
+
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "مرماز"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "مرماز الفيديو"
+
+#, fuzzy
+#~| msgid "Video codec"
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "مرماز الفيديو"
+
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "الوقت الكلي"
+
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "وقت البدء"
+
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "معدل نقل البتات"
+
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "الإطارات"
+
+#~ msgctxt "@option: common"
+#~ msgid "FPS"
+#~ msgstr "  إطار/ثا"
+
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "تنسيق نقاط الشاشة"
+
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "الحجم"
+
+#, fuzzy
+#~| msgid "File size"
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "حجم الملفّ"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "اعرض ملفّ حجم"
+
+#, fuzzy
+#~| msgctxt "@label:listbox"
+#~| msgid "Date format:"
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "تنسيق التّاريخ:"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "معدل العينة"
+
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "القنوات"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "القناة "
+
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "مقاس الإطار"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "Media info"
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "معلومات الوسائط"
+
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "المفتاح"
+
+#~ msgctxt "@title"
+#~ msgid "Value"
+#~ msgstr "القيمة"
+
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "البيانات الوصفيّة"
+
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "فيديو"
+
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "البيانات الوصفيّة"
+
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "الصّوت"
+
+#~ msgctxt "@action"
+#~ msgid "Ok"
+#~ msgstr "حسنًا"
 
 #, fuzzy
 #~| msgid "Country:"

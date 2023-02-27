@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:56+0000\n"
+"POT-Creation-Date: 2023-02-27 00:58+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -4112,827 +4112,6 @@ msgctxt "@item: component info"
 msgid "Supported Extensions"
 msgstr "Tidak diketahui"
 
-#: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Video"
-msgstr "Buka Dengan"
-
-#: core/avplayer/filters/EventFilter.cpp:83
-#: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open an Url"
-msgstr "Buka dalam Pengurus Fail"
-
-#: core/avplayer/filters/EventFilter.cpp:84
-#: core/avplayer/main/MainWindow_io.cpp:511
-#, kde-format
-msgctxt "@info"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:106
-#, kde-format
-msgctxt "@info"
-msgid "Drag and drop a file to player\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:107
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "A: switch aspect ratio"
-msgstr "Kekalkan nisbah aspek"
-
-#: core/avplayer/filters/EventFilter.cpp:108
-#, kde-format
-msgctxt "@info"
-msgid "Double click to switch fullscreen"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:109
-#, kde-format
-msgctxt "@info"
-msgid "Shortcut:\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:110
-#, kde-format
-msgctxt "@info"
-msgid "Space: pause/continue\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:111
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "F: fullscreen on/off\n"
-msgstr "Pilihan Lain"
-
-#: core/avplayer/filters/EventFilter.cpp:112
-#, kde-format
-msgctxt "@info"
-msgid "T: stays on top on/off\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:113
-#, kde-format
-msgctxt "@info"
-msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:114
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Ctrl+O: open a file\n"
-msgstr "Model Warna"
-
-#: core/avplayer/filters/EventFilter.cpp:115
-#, kde-format
-msgctxt "@info"
-msgid "O: On Screen Display\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:116
-#, kde-format
-msgctxt "@info"
-msgid "P: replay\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:117
-#, kde-format
-msgctxt "@info"
-msgid "Q/ESC: quit\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:118
-#, kde-format
-msgctxt "@info"
-msgid "S: stop\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:119
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "R: rotate 90 degrees"
-msgstr "Putar 90 Darjah"
-
-#: core/avplayer/filters/EventFilter.cpp:120
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "M: mute on/off\n"
-msgstr "Pilihan Lain"
-
-#: core/avplayer/filters/EventFilter.cpp:121
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "C: capture video"
-msgstr "Lubang Bukaan"
-
-#: core/avplayer/filters/EventFilter.cpp:122
-#, kde-format
-msgctxt "@info"
-msgid "Up/Down: volume +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:123
-#, kde-format
-msgctxt "@info"
-msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:124
-#, kde-format
-msgctxt "@info"
-msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Help"
-msgstr "&Bantuan"
-
-#: core/avplayer/filters/EventFilter.cpp:528
-#, fuzzy, kde-format
-msgctxt "@action: open new media"
-msgid "Open"
-msgstr "Buka Dengan..."
-
-#: core/avplayer/filters/EventFilter.cpp:529
-#, fuzzy, kde-format
-msgctxt "@action: open new stream"
-msgid "Open Url"
-msgstr "Buka Dengan"
-
-#: core/avplayer/filters/EventFilter.cpp:531
-#, kde-format
-msgctxt "@action: about AVPlayer"
-msgid "About"
-msgstr ""
-
-#: core/avplayer/filters/EventFilter.cpp:532
-#, fuzzy, kde-format
-msgctxt "@action: AVPlayer help"
-msgid "Help"
-msgstr "&Bantuan"
-
-#: core/avplayer/main/main.cpp:174
-#, kde-format
-msgctxt "#info"
-msgid ""
-"<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-"p><p>Please install the 64-bit version of AVPlayer to get a better "
-"experience with AVPlayer.</p>"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Media File"
-msgstr "Buka Dengan"
-
-#: core/avplayer/main/MainWindow_io.cpp:568
-#: core/avplayer/main/MainWindow_setup.cpp:529
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Aspect ratio"
-msgstr "Kekalkan nisbah aspek"
-
-#: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Player Error"
-msgstr "Ralat"
-
-#: core/avplayer/main/MainWindow_io.cpp:724
-#, kde-format
-msgctxt "@info: media loading"
-msgid "No media"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:731
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Invalid media"
-msgstr "Namafail"
-
-#: core/avplayer/main/MainWindow_io.cpp:738
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Buffering..."
-msgstr "Muat Naik..."
-
-#: core/avplayer/main/MainWindow_io.cpp:745
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Buffered"
-msgstr "Sharuzzaman Ahmat Raslan"
-
-#: core/avplayer/main/MainWindow_io.cpp:752
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Loading..."
-msgstr "Muat Naik..."
-
-#: core/avplayer/main/MainWindow_io.cpp:759
-#, fuzzy, kde-format
-msgctxt "@info: media loading"
-msgid "Loaded"
-msgstr "Muat Naik..."
-
-#: core/avplayer/main/MainWindow_io.cpp:766
-#, kde-format
-msgctxt "@info: media loading"
-msgid "Stalled"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-msgctxt "@title:window, media loading state"
-msgid "Buffering... %1% @%2 %3"
-msgstr "Muat Naik..."
-
-#: core/avplayer/main/MainWindow_io.cpp:905
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid ""
-"Capture video frame\n"
-"Save to: %1\n"
-"Format: %2"
-msgstr "Tetapan Lanjutan"
-
-#: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Open a Subtitle File"
-msgstr "Buka Dengan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:30
-#, kde-format
-msgctxt "@info"
-msgid "Video renderer is not available on your platform!"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:153
-#: core/avplayer/main/MainWindow_setup.cpp:179
-#, fuzzy, kde-format
-msgctxt "@action: audio track"
-msgid "External"
-msgstr "Interpolasi:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:245
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Current time"
-msgstr "Kekalkan nisbah aspek"
-
-#: core/avplayer/main/MainWindow_setup.cpp:249
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Duration"
-msgstr "Ketepuan:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:253
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Render engine"
-msgstr "Keamatan Persembahan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:258
-#, kde-format
-msgctxt "@info"
-msgid "Speed. Ctrl+Up/Down"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:269
-#, fuzzy, kde-format
-msgctxt "@info: open new media"
-msgid "Open"
-msgstr "Buka Dengan..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:276
-#, fuzzy, kde-format
-msgctxt "@info: button"
-msgid "Capture"
-msgstr "Lubang Bukaan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:279
-#, kde-format
-msgctxt "@info: button"
-msgid "Volume"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:303
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Open Url"
-msgstr "Buka Dengan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:308
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Play list"
-msgstr "Kosongkan semua"
-
-#: core/avplayer/main/MainWindow_setup.cpp:321
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "History"
-msgstr "Sejarah"
-
-#. i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
-#.
-#: core/avplayer/main/MainWindow_setup.cpp:339
-#, kde-format
-msgctxt "@action"
-msgid "About"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:340
-#, kde-format
-msgctxt "@action"
-msgid "Setup"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:345
-#, kde-format
-msgctxt "@option"
-msgid "Speed"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:356
-#, kde-format
-msgctxt "@option"
-msgid "Repeat"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:361
-#: core/avplayer/main/MainWindow_setup.cpp:439
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Enable"
-msgstr "Marmar"
-
-#: core/avplayer/main/MainWindow_setup.cpp:372
-#, kde-format
-msgctxt "@info"
-msgid "infinity"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:374
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Times"
-msgstr "Masa:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:380
-#, fuzzy, kde-format
-msgctxt "@label: from time-stamp"
-msgid "From"
-msgstr "Dari:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:383
-#: core/avplayer/main/MainWindow_setup.cpp:395
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "negative value means from the end"
-msgstr "Buang Kumpulan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:392
-#, fuzzy, kde-format
-msgctxt "@label: to time-stamp"
-msgid "To"
-msgstr "Ke:"
-
-#: core/avplayer/main/MainWindow_setup.cpp:415
-#, kde-format
-msgctxt "@action"
-msgid "Clock"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:423
-#, fuzzy, kde-format
-msgctxt "@option: clock sync"
-msgid "Auto"
-msgstr "Auto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:424
-#, fuzzy, kde-format
-msgctxt "@option: clock sync"
-msgid "Audio"
-msgstr "Auto"
-
-#: core/avplayer/main/MainWindow_setup.cpp:425
-#, fuzzy, kde-format
-msgctxt "@option: clock sync"
-msgid "Video"
-msgstr "Paparkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:435
-#, kde-format
-msgctxt "@info"
-msgid "Take effect in next playback"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:437
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Subtitle"
-msgstr "Tajuk"
-
-#: core/avplayer/main/MainWindow_setup.cpp:446
-#, fuzzy, kde-format
-msgctxt "@action"
-msgid "Auto load"
-msgstr "Dinormalkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:453
-#, fuzzy, kde-format
-msgctxt "@action: open subtitle file"
-msgid "Open"
-msgstr "Buka Dengan..."
-
-#: core/avplayer/main/MainWindow_setup.cpp:458
-#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
-#, kde-format
-msgctxt "@label"
-msgid "Engine"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:471
-#, kde-format
-msgctxt "@info"
-msgid ""
-"FFmpeg supports more subtitles but only render plain text\n"
-"LibASS supports 'ass' styles"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:477
-#, kde-format
-msgctxt "@label"
-msgid "Charset"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:483
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Auto detect"
-msgstr "Dinormalkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:484
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "System"
-msgstr "Font Sistem"
-
-#: core/avplayer/main/MainWindow_setup.cpp:495
-#, kde-format
-msgctxt "@info"
-msgid "Auto detect requires libchardet"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:497
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Audio track"
-msgstr "Dinormalkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:506
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Channel"
-msgstr "Purata"
-
-#: core/avplayer/main/MainWindow_setup.cpp:515
-#, kde-format
-msgctxt "@action: channel option"
-msgid "As input"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:516
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Stereo"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:517
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Mono (center)"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:518
-#, kde-format
-msgctxt "@action: channel option"
-msgid "Left"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:519
-#, fuzzy, kde-format
-msgctxt "@action: channel option"
-msgid "Right"
-msgstr "Tinggi"
-
-#: core/avplayer/main/MainWindow_setup.cpp:535
-#, fuzzy, kde-format
-msgctxt "@action: aspect ratio"
-msgid "Video"
-msgstr "Paparkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:537
-#, fuzzy, kde-format
-msgctxt "@action: video ratio"
-msgid "Window"
-msgstr "Import"
-
-#: core/avplayer/main/MainWindow_setup.cpp:540
-#, fuzzy, kde-format
-msgctxt "@action: video ratio"
-msgid "Custom"
-msgstr "Tersendiri"
-
-#: core/avplayer/main/MainWindow_setup.cpp:549
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Color space"
-msgstr "Keseimbangan Warna"
-
-#: core/avplayer/main/MainWindow_setup.cpp:560
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Decoder"
-msgstr "Paparkan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:567
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Renderer"
-msgstr "Keamatan Persembahan"
-
-#: core/avplayer/main/MainWindow_setup.cpp:750
-#, kde-format
-msgctxt "@info"
-msgid "not available on your platform!"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:818
-#, kde-format
-msgctxt "@title:window"
-msgid "Open an External Audio Track"
-msgstr ""
-
-#: core/avplayer/main/MainWindow_setup.cpp:864
-#, kde-format
-msgctxt "@info"
-msgid "Can not use this renderer"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:56
-#, kde-format
-msgctxt "@info"
-msgid "Use Ctrl/Shift + Click to select multiple items"
-msgstr ""
-
-#: core/avplayer/playlist/PlayList.cpp:63
-#, fuzzy, kde-format
-msgctxt "@action: clear playlist"
-msgid "Clear"
-msgstr "Kosongkan"
-
-#: core/avplayer/playlist/PlayList.cpp:66
-#, fuzzy, kde-format
-msgctxt "@info"
-msgid "Remove selected items"
-msgstr "Buang Kumpulan"
-
-#: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Select Files"
-msgstr "Pilihan"
-
-#: core/avplayer/utils/ConfigDialog.cpp:61
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
-#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
-#: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:510
-#, fuzzy, kde-format
-msgid "Reset"
-msgstr "Set semula"
-
-#: core/avplayer/utils/ConfigDialog.cpp:62
-#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
-msgid "Ok"
-msgstr ""
-
-#: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
-#: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
-#, fuzzy, kde-format
-msgid "Cancel"
-msgstr "Batal"
-
-#: core/avplayer/utils/ConfigDialog.cpp:64
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
-#, fuzzy, kde-format
-msgid "Apply"
-msgstr "Terap"
-
-#: core/avplayer/utils/StatisticsView.cpp:37
-#, kde-format
-msgctxt "@option: base"
-msgid "Url"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:38
-#, fuzzy, kde-format
-msgctxt "@option: base"
-msgid "Format"
-msgstr "Format"
-
-#: core/avplayer/utils/StatisticsView.cpp:39
-#, fuzzy, kde-format
-msgctxt "@option: base"
-msgid "Bit rate"
-msgstr "Format Fail"
-
-#: core/avplayer/utils/StatisticsView.cpp:40
-#, fuzzy, kde-format
-msgctxt "@option: base"
-msgid "Start time"
-msgstr "Orientasi"
-
-#: core/avplayer/utils/StatisticsView.cpp:41
-#, fuzzy, kde-format
-msgctxt "@option: base"
-msgid "Duration"
-msgstr "Ketepuan:"
-
-#: core/avplayer/utils/StatisticsView.cpp:48
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Available"
-msgstr "Boleh didapatkan:"
-
-#: core/avplayer/utils/StatisticsView.cpp:49
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Codec"
-msgstr "Paparkan"
-
-#: core/avplayer/utils/StatisticsView.cpp:50
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Decoder"
-msgstr "Paparkan"
-
-#: core/avplayer/utils/StatisticsView.cpp:51
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Decoder detail"
-msgstr "Paparkan"
-
-#: core/avplayer/utils/StatisticsView.cpp:52
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Total time"
-msgstr "%1 (%2)"
-
-#: core/avplayer/utils/StatisticsView.cpp:53
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Start time"
-msgstr "Orientasi"
-
-#: core/avplayer/utils/StatisticsView.cpp:54
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Bit rate"
-msgstr "Format Fail"
-
-#: core/avplayer/utils/StatisticsView.cpp:55
-#, fuzzy, kde-format
-msgctxt "@option: common"
-msgid "Frames"
-msgstr "Nama:"
-
-#: core/avplayer/utils/StatisticsView.cpp:56
-#, kde-format
-msgctxt "@option: common"
-msgid "FPS"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:63
-#, kde-format
-msgctxt "@option: video"
-msgid "FPS Now"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:64
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "Pixel format"
-msgstr "Format Fail"
-
-#: core/avplayer/utils/StatisticsView.cpp:65
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "Size"
-msgstr "Saiz"
-
-#: core/avplayer/utils/StatisticsView.cpp:66
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "Coded size"
-msgstr "Teks"
-
-#: core/avplayer/utils/StatisticsView.cpp:67
-#, fuzzy, kde-format
-msgctxt "@option: video"
-msgid "GOP size"
-msgstr "Ciri-ciri"
-
-#: core/avplayer/utils/StatisticsView.cpp:74
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Sample format"
-msgstr "Format tarikh:"
-
-#: core/avplayer/utils/StatisticsView.cpp:75
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Sample rate"
-msgstr "Format Fail"
-
-#: core/avplayer/utils/StatisticsView.cpp:76
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Channels"
-msgstr "Purata"
-
-#: core/avplayer/utils/StatisticsView.cpp:77
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Channel layout"
-msgstr "Purata"
-
-#: core/avplayer/utils/StatisticsView.cpp:78
-#, fuzzy, kde-format
-msgctxt "@option: audio"
-msgid "Frame size"
-msgstr "Teks"
-
-#: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Media Info"
-msgstr "Sederhana"
-
-#: core/avplayer/utils/StatisticsView.cpp:147
-#, fuzzy, kde-format
-msgctxt "@title"
-msgid "Key"
-msgstr "Kekunci"
-
-#: core/avplayer/utils/StatisticsView.cpp:148
-#, kde-format
-msgctxt "@title"
-msgid "Value"
-msgstr ""
-
-#: core/avplayer/utils/StatisticsView.cpp:152
-#, fuzzy, kde-format
-msgctxt "@item: video info"
-msgid "Metadata"
-msgstr "Edit..."
-
-#: core/avplayer/utils/StatisticsView.cpp:154
-#, fuzzy, kde-format
-msgctxt "@item: video stats"
-msgid "Video"
-msgstr "Paparkan"
-
-#: core/avplayer/utils/StatisticsView.cpp:161
-#: core/avplayer/utils/StatisticsView.cpp:169
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Metadata"
-msgstr "Edit..."
-
-#: core/avplayer/utils/StatisticsView.cpp:163
-#, fuzzy, kde-format
-msgctxt "@option"
-msgid "Audio"
-msgstr "Auto"
-
-#: core/avplayer/utils/StatisticsView.cpp:173
-#, kde-format
-msgctxt "@action"
-msgid "Ok"
-msgstr ""
-
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:60
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:119
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:262
@@ -5735,7 +4914,7 @@ msgid "Watermark type: "
 msgstr "Nama Baru"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:545
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, fuzzy, kde-format
 msgid "Image"
 msgstr "Imej"
@@ -11203,6 +10382,11 @@ msgstr ""
 #, kde-format
 msgid "DOP"
 msgstr ""
+
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:160
+#, fuzzy, kde-format
+msgid "Apply"
+msgstr "Terap"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, fuzzy, kde-format
@@ -21448,7 +20632,7 @@ msgstr "&Eksport"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:646
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -24424,7 +23608,7 @@ msgstr "&Eksport"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:702
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr ""
@@ -24441,8 +23625,8 @@ msgid ""
 "Do you want to check your settings and try again?"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:501
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:525
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:505
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:529
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:94
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:113
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:143
@@ -24455,27 +23639,27 @@ msgstr ""
 msgid "Album"
 msgstr "Album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:579
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:583
 #, kde-format
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:621
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
 #, fuzzy, kde-format
 msgid "Uploading file %1"
 msgstr "Format Fail"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:647
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
 #, fuzzy, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Maklumat Imej"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:648
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
 #, kde-format
 msgid ""
 "\n"
@@ -25356,6 +24540,14 @@ msgstr ""
 #, kde-format
 msgid "This is the curve adjustment of the image luminosity"
 msgstr ""
+
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
+#: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
+#: core/libs/tags/widgets/tageditdlg.cpp:193
+#: core/utilities/searchwindow/searchview.cpp:510
+#, fuzzy, kde-format
+msgid "Reset"
+msgstr "Set semula"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -27324,6 +26516,13 @@ msgstr ""
 #, kde-format
 msgid "Migrate ->"
 msgstr ""
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
+#: core/libs/dplugins/webservices/wstooldialog.cpp:110
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
+#, fuzzy, kde-format
+msgid "Cancel"
+msgstr "Batal"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
@@ -39259,6 +38458,12 @@ msgctxt "@title"
 msgid "Shader"
 msgstr ""
 
+#: core/libs/video/qtav/config/VideoEQConfigPage.cpp:50
+#, kde-format
+msgctxt "@label"
+msgid "Engine"
+msgstr ""
+
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:68
 #, fuzzy, kde-format
 msgctxt "@option"
@@ -39438,6 +38643,11 @@ msgstr ""
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:207
 #, kde-format
 msgid "About Qt"
+msgstr ""
+
+#: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
+#, kde-format
+msgid "Ok"
 msgstr ""
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
@@ -60160,6 +59370,429 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Video"
+#~ msgstr "Buka Dengan"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open an Url"
+#~ msgstr "Buka dalam Pengurus Fail"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "A: switch aspect ratio"
+#~ msgstr "Kekalkan nisbah aspek"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "F: fullscreen on/off\n"
+#~ msgstr "Pilihan Lain"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Ctrl+O: open a file\n"
+#~ msgstr "Model Warna"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "R: rotate 90 degrees"
+#~ msgstr "Putar 90 Darjah"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "M: mute on/off\n"
+#~ msgstr "Pilihan Lain"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "C: capture video"
+#~ msgstr "Lubang Bukaan"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Help"
+#~ msgstr "&Bantuan"
+
+#, fuzzy
+#~ msgctxt "@action: open new media"
+#~ msgid "Open"
+#~ msgstr "Buka Dengan..."
+
+#, fuzzy
+#~ msgctxt "@action: open new stream"
+#~ msgid "Open Url"
+#~ msgstr "Buka Dengan"
+
+#, fuzzy
+#~ msgctxt "@action: AVPlayer help"
+#~ msgid "Help"
+#~ msgstr "&Bantuan"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Media File"
+#~ msgstr "Buka Dengan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Aspect ratio"
+#~ msgstr "Kekalkan nisbah aspek"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Player Error"
+#~ msgstr "Ralat"
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Invalid media"
+#~ msgstr "Namafail"
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffering..."
+#~ msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Buffered"
+#~ msgstr "Sharuzzaman Ahmat Raslan"
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Loading..."
+#~ msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@info: media loading"
+#~ msgid "Loaded"
+#~ msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@title:window, media loading state"
+#~ msgid "Buffering... %1% @%2 %3"
+#~ msgstr "Muat Naik..."
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Capture video frame\n"
+#~ "Save to: %1\n"
+#~ "Format: %2"
+#~ msgstr "Tetapan Lanjutan"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Open a Subtitle File"
+#~ msgstr "Buka Dengan"
+
+#, fuzzy
+#~ msgctxt "@action: audio track"
+#~ msgid "External"
+#~ msgstr "Interpolasi:"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Current time"
+#~ msgstr "Kekalkan nisbah aspek"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Duration"
+#~ msgstr "Ketepuan:"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Render engine"
+#~ msgstr "Keamatan Persembahan"
+
+#, fuzzy
+#~ msgctxt "@info: open new media"
+#~ msgid "Open"
+#~ msgstr "Buka Dengan..."
+
+#, fuzzy
+#~ msgctxt "@info: button"
+#~ msgid "Capture"
+#~ msgstr "Lubang Bukaan"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Open Url"
+#~ msgstr "Buka Dengan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Play list"
+#~ msgstr "Kosongkan semua"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "History"
+#~ msgstr "Sejarah"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Enable"
+#~ msgstr "Marmar"
+
+#, fuzzy
+#~ msgctxt "@label"
+#~ msgid "Times"
+#~ msgstr "Masa:"
+
+#, fuzzy
+#~ msgctxt "@label: from time-stamp"
+#~ msgid "From"
+#~ msgstr "Dari:"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "negative value means from the end"
+#~ msgstr "Buang Kumpulan"
+
+#, fuzzy
+#~ msgctxt "@label: to time-stamp"
+#~ msgid "To"
+#~ msgstr "Ke:"
+
+#, fuzzy
+#~ msgctxt "@option: clock sync"
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#, fuzzy
+#~ msgctxt "@option: clock sync"
+#~ msgid "Audio"
+#~ msgstr "Auto"
+
+#, fuzzy
+#~ msgctxt "@option: clock sync"
+#~ msgid "Video"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Subtitle"
+#~ msgstr "Tajuk"
+
+#, fuzzy
+#~ msgctxt "@action"
+#~ msgid "Auto load"
+#~ msgstr "Dinormalkan"
+
+#, fuzzy
+#~ msgctxt "@action: open subtitle file"
+#~ msgid "Open"
+#~ msgstr "Buka Dengan..."
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Auto detect"
+#~ msgstr "Dinormalkan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "System"
+#~ msgstr "Font Sistem"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Audio track"
+#~ msgstr "Dinormalkan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Channel"
+#~ msgstr "Purata"
+
+#, fuzzy
+#~ msgctxt "@action: channel option"
+#~ msgid "Right"
+#~ msgstr "Tinggi"
+
+#, fuzzy
+#~ msgctxt "@action: aspect ratio"
+#~ msgid "Video"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@action: video ratio"
+#~ msgid "Window"
+#~ msgstr "Import"
+
+#, fuzzy
+#~ msgctxt "@action: video ratio"
+#~ msgid "Custom"
+#~ msgstr "Tersendiri"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Color space"
+#~ msgstr "Keseimbangan Warna"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Decoder"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Renderer"
+#~ msgstr "Keamatan Persembahan"
+
+#, fuzzy
+#~ msgctxt "@action: clear playlist"
+#~ msgid "Clear"
+#~ msgstr "Kosongkan"
+
+#, fuzzy
+#~ msgctxt "@info"
+#~ msgid "Remove selected items"
+#~ msgstr "Buang Kumpulan"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Select Files"
+#~ msgstr "Pilihan"
+
+#, fuzzy
+#~ msgctxt "@option: base"
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#, fuzzy
+#~ msgctxt "@option: base"
+#~ msgid "Bit rate"
+#~ msgstr "Format Fail"
+
+#, fuzzy
+#~ msgctxt "@option: base"
+#~ msgid "Start time"
+#~ msgstr "Orientasi"
+
+#, fuzzy
+#~ msgctxt "@option: base"
+#~ msgid "Duration"
+#~ msgstr "Ketepuan:"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Available"
+#~ msgstr "Boleh didapatkan:"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Codec"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Decoder"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Decoder detail"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Total time"
+#~ msgstr "%1 (%2)"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Start time"
+#~ msgstr "Orientasi"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Bit rate"
+#~ msgstr "Format Fail"
+
+#, fuzzy
+#~ msgctxt "@option: common"
+#~ msgid "Frames"
+#~ msgstr "Nama:"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "Pixel format"
+#~ msgstr "Format Fail"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "Size"
+#~ msgstr "Saiz"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "Coded size"
+#~ msgstr "Teks"
+
+#, fuzzy
+#~ msgctxt "@option: video"
+#~ msgid "GOP size"
+#~ msgstr "Ciri-ciri"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Sample format"
+#~ msgstr "Format tarikh:"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Sample rate"
+#~ msgstr "Format Fail"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Channels"
+#~ msgstr "Purata"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Channel layout"
+#~ msgstr "Purata"
+
+#, fuzzy
+#~ msgctxt "@option: audio"
+#~ msgid "Frame size"
+#~ msgstr "Teks"
+
+#, fuzzy
+#~ msgctxt "@title:window"
+#~ msgid "Media Info"
+#~ msgstr "Sederhana"
+
+#, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Key"
+#~ msgstr "Kekunci"
+
+#, fuzzy
+#~ msgctxt "@item: video info"
+#~ msgid "Metadata"
+#~ msgstr "Edit..."
+
+#, fuzzy
+#~ msgctxt "@item: video stats"
+#~ msgid "Video"
+#~ msgstr "Paparkan"
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Metadata"
+#~ msgstr "Edit..."
+
+#, fuzzy
+#~ msgctxt "@option"
+#~ msgid "Audio"
+#~ msgstr "Auto"
 
 #, fuzzy
 #~ msgid "County"
