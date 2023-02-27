@@ -224,7 +224,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
         d->dbIdForReplacement = -1;    // Just to prevent bugs
     }
 
-    FileReadLocker readLock(identifier.filePath);
+    FileWriteLocker lock(identifier.filePath);
 
     // Get info about path
 
@@ -273,8 +273,6 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
     if (image.isNull())
     {
-        FileWriteLocker writeLock(identifier.filePath);
-
         image = createThumbnail(info, rect);
 
         if (!image.isNull())
