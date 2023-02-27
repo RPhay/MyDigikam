@@ -204,7 +204,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
                                               i18n("Clear all faces on this image"),  this);
 
     d->markAsIgnoredAction      = new QAction(QIcon::fromTheme(QLatin1String("dialog-cancel")),
-                                              i18n("Mark all unknown faces as ignored"),  this);
+                                              i18n("Mark all unconfirmed faces as ignored"),  this);
 
     d->peopleToggleAction       = ac->action(QLatin1String("toggle_show_face_tags"));
 

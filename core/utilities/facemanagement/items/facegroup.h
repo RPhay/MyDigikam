@@ -120,7 +120,7 @@ public Q_SLOTS:
     void rejectAll();
 
     /**
-     * Mark all unknown faces as ignored on the current image
+     * Mark all unconfirmed faces as ignored on the current image
      */
     void markAllAsIgnored();
 

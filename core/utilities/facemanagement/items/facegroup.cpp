@@ -376,7 +376,8 @@ void FaceGroup::markAllAsIgnored()
 {
     Q_FOREACH (FaceItem* const item, d->items)
     {
-        if (item->face().isUnknownName())
+        if (item->face().isUnknownName()   ||
+            item->face().isUnconfirmedName())
         {
             FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
                                                          FaceTags::ignoredPersonTagId());
