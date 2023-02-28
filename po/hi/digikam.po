@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2810,7 +2810,7 @@ msgstr "सभी परिवर्तनों को छवियों म�
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "नया टैग जोड़ें..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -38353,7 +38353,7 @@ msgstr "टैग्स:"
 msgid "No or invalid size specified"
 msgstr "आकार या तो अवैध है या नहीं दिया गया है"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "लघुछवि नल (नहीं) है"

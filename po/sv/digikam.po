@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2815,7 +2815,7 @@ msgstr "Rensa alla ansikten på den här bilden"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mark this face as Ignored"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Markera ansiktet som ignorerat"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40301,7 +40301,7 @@ msgstr "Användningar:"
 msgid "No or invalid size specified"
 msgstr "Ingen eller ogiltig storlek angiven"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Miniatyrbilden är tom"

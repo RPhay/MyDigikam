@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
-"PO-Revision-Date: 2023-02-26 09:06+0100\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
+"PO-Revision-Date: 2023-02-27 07:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2846,8 +2846,9 @@ msgid "Clear all faces on this image"
 msgstr "Počisti vse obraze na tej sliki"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, kde-format
-msgid "Mark all unknown faces as ignored"
+#, fuzzy, kde-format
+#| msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Označi vse neznane obraze kot prezrte"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -39960,7 +39961,7 @@ msgstr "Uporabe:"
 msgid "No or invalid size specified"
 msgstr "Navedene ni nobene velikosti ali pa je le ta napačna"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Sličice ni"

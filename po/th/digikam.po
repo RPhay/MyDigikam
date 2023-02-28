@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2945,7 +2945,7 @@ msgstr "ปรับใช้การเปลี่ยนแปลงทั้
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "เพิ่มป้ายกำกับใหม่..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40069,7 +40069,7 @@ msgstr "การใช้:"
 msgid "No or invalid size specified"
 msgstr "ไม่มีหรือระบุขนาดไม่ถูกต้อง"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "ภาพตัวอย่างว่าง"

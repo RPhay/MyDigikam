@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2816,7 +2816,7 @@ msgstr "Vymazať všetky tváre na tomto obrázku"
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mark this face as Ignored"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Označiť túto tvár ako ignorovanú"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40143,7 +40143,7 @@ msgstr "Použitie:"
 msgid "No or invalid size specified"
 msgstr "Nebola zadaná alebo bola chybne zadaná veľkosť"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Náhľad je prázdny"

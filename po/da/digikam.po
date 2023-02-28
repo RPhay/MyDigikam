@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -3086,7 +3086,7 @@ msgstr "Ryd alle ansigter i dette billede"
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Tilføj et ansigtsmærke"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -42124,7 +42124,7 @@ msgstr "Brug:"
 msgid "No or invalid size specified"
 msgstr "Ingen eller ugyldig størrelse angivet"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Miniature er null"

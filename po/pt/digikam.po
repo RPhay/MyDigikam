@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2023-02-17 19:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -2932,8 +2932,9 @@ msgid "Clear all faces on this image"
 msgstr "Limpar todas as caras nesta imagem"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, kde-format
-msgid "Mark all unknown faces as ignored"
+#, fuzzy, kde-format
+#| msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marcar todas as caras desconhecidas como ignoradas"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40282,7 +40283,7 @@ msgstr "Utilizações:"
 msgid "No or invalid size specified"
 msgstr "Tamanho inválido ou não indicado"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "A miniatura é nula"

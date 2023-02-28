@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2023-02-23 11:32+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2794,8 +2794,9 @@ msgid "Clear all faces on this image"
 msgstr "Neteja totes les cares d'aquesta imatge"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, kde-format
-msgid "Mark all unknown faces as ignored"
+#, fuzzy, kde-format
+#| msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marca totes les cares desconegudes com a ignorades"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40304,7 +40305,7 @@ msgstr "Usos:"
 msgid "No or invalid size specified"
 msgstr "La mida especificada és nul·la o no vàlida"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "La miniatura és nul·la"

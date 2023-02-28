@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -3042,7 +3042,7 @@ msgstr "清除此影像中的所有臉孔"
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 #| msgid "Add a Face Tag"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "加入臉孔標籤..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -41243,7 +41243,7 @@ msgstr "用途："
 msgid "No or invalid size specified"
 msgstr "未指定或指定了無效的大小"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "縮圖是空的"

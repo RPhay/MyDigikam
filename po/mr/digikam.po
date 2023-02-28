@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -2856,7 +2856,7 @@ msgstr ""
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 #| msgid "Remove items"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "घटक काढून टाका"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -38223,7 +38223,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "अवैध आकार निश्चित केले किंवा केले नाही."
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr ""

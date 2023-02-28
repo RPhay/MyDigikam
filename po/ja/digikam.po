@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2818,7 +2818,7 @@ msgstr "すべての変更を画像に適用"
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "新しいタグを追加..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40630,7 +40630,7 @@ msgstr "タグ:"
 msgid "No or invalid size specified"
 msgstr "サイズが指定されていないか不正です"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "サムネイルが空です"

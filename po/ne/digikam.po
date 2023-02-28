@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2789,7 +2789,7 @@ msgstr "तस्विरमा सबै परिवर्तन लागू
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "नयाँ ट्याग थप्नुहोस्..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -38281,7 +38281,7 @@ msgstr "ट्याग:"
 msgid "No or invalid size specified"
 msgstr "साइज निर्दिष्ट छैन वा अवैध छ"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, fuzzy, kde-format
 msgid "Thumbnail is null"
 msgstr "क्लिक कार्य:"

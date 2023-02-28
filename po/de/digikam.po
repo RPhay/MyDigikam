@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2023-02-20 17:22+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2798,8 +2798,9 @@ msgid "Clear all faces on this image"
 msgstr "Alle Gesichtsmarkierungen auf diesem Bild löschen"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, kde-format
-msgid "Mark all unknown faces as ignored"
+#, fuzzy, kde-format
+#| msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Alle unbekannten Gesichter als „Ignoriert“ markieren"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -40552,7 +40553,7 @@ msgstr "Verwendungen:"
 msgid "No or invalid size specified"
 msgstr "Es wurde eine ungültige oder gar keine Größe angegeben."
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Keine Vorschau vorhanden"

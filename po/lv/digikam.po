@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -2857,7 +2857,7 @@ msgstr "Noņemt visas sejas šajā attēlā"
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Pievienot jaunu tagu..."
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -39340,7 +39340,7 @@ msgstr "Lietojumi:"
 msgid "No or invalid size specified"
 msgstr "Nav norādīts vai nepareizs izmērs"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Sīktēla nav"

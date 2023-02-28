@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
-"PO-Revision-Date: 2023-02-24 05:12+0100\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
+"PO-Revision-Date: 2023-02-27 06:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2723,7 +2723,7 @@ msgstr "გამოსახულებიდან სახეების �
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -31359,7 +31359,7 @@ msgstr[1] "ნაპოვნია %1 დამატება"
 #, kde-format
 msgctxt "@info"
 msgid "No plugin found"
-msgstr ""
+msgstr "დამატებების გარეშე"
 
 #: core/libs/dplugins/webservices/wscomboboxintermediate.cpp:46
 #, kde-format
@@ -37238,7 +37238,7 @@ msgstr "გამოყენებებები:"
 msgid "No or invalid size specified"
 msgstr ""
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr ""
@@ -52033,7 +52033,7 @@ msgstr "კავშირი დამყარებულია."
 #: core/utilities/import/backend/cameracontroller.cpp:427
 #, kde-format
 msgid "Connection failed."
-msgstr ""
+msgstr "მიერთების შეცდომა."
 
 #: core/utilities/import/backend/cameracontroller.cpp:452
 #, kde-format

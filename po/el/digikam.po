@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-27 00:58+0000\n"
+"POT-Creation-Date: 2023-02-28 00:55+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3142,7 +3142,7 @@ msgstr "Καθαρισμός όλων των προσώπων σε αυτήν τ
 #: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 #| msgid "Mark As Face Tag"
-msgid "Mark all unknown faces as ignored"
+msgid "Mark all unconfirmed faces as ignored"
 msgstr "Να σημειωθει ως ετικέτα προσώπου"
 
 #: core/app/views/preview/itempreviewview.cpp:214
@@ -42661,7 +42661,7 @@ msgstr "Χρήσεις:"
 msgid "No or invalid size specified"
 msgstr "Δεν ορίσθηκε μέγεθος ή ορίσθηκε μη έγκυρο μέγεθος"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:304
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Η εικόνα επισκόπησης είναι κενή"
