@@ -67,9 +67,11 @@ MiscPage::MiscPage(QWidget* const parent, bool previewOpt)
     m_fps->setToolTip(QString::fromLatin1("<= 0: ") + i18n("Ignore"));
     gl->addWidget(m_fps, r++, 1);
 
-    gl->addWidget(new QLabel(i18n("Progress update interval") + QString::fromLatin1("(ms)")), r, 0);
+    QLabel* const lbl = new QLabel(i18n("Progress update interval") + QString::fromLatin1("(ms)"));
+    lbl->setVisible(false);
+    gl->addWidget(lbl, r, 0);
     m_notify_interval     = new QSpinBox();
-    m_notify_interval->setEnabled(false);
+    m_notify_interval->setVisible(false);
     gl->addWidget(m_notify_interval, r++, 1);
 
     gl->addWidget(new QLabel(i18n("Buffer frames")), r, 0);
