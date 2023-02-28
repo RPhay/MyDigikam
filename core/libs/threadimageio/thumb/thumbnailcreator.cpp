@@ -224,8 +224,6 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
         d->dbIdForReplacement = -1;    // Just to prevent bugs
     }
 
-    FileWriteLocker lock(identifier.filePath);
-
     // Get info about path
 
     ThumbnailInfo info = makeThumbnailInfo(identifier, rect);
@@ -273,29 +271,39 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
     if (image.isNull())
     {
-        image = createThumbnail(info, rect);
+        FileWriteLocker lock(identifier.filePath);
 
-        if (!image.isNull())
+        // Try again from the DB, maybe it was created
+        // by another task after the write lock.
+
+        image = loadFromDatabase(info);
+
+        if (image.isNull())
         {
-            switch (d->thumbnailStorage)
+            image = createThumbnail(info, rect);
+
+            if (!image.isNull())
             {
-                case ThumbnailDatabase:
+                switch (d->thumbnailStorage)
                 {
-                    storeInDatabase(info, image);
-                    break;
-                }
-
-                case FreeDesktopStandard:
-                {
-                    // Image is stored rotated
-
-                    if (d->exifRotate)
+                    case ThumbnailDatabase:
                     {
-                        image.qimage = exifRotate(image.qimage, image.exifOrientation);
+                        storeInDatabase(info, image);
+                        break;
                     }
 
-                    storeFreedesktop(info, image);
-                    break;
+                    case FreeDesktopStandard:
+                    {
+                        // Image is stored rotated
+
+                        if (d->exifRotate)
+                        {
+                            image.qimage = exifRotate(image.qimage, image.exifOrientation);
+                        }
+
+                        storeFreedesktop(info, image);
+                        break;
+                    }
                 }
             }
         }
