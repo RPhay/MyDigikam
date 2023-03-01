@@ -224,39 +224,44 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
         d->dbIdForReplacement = -1;    // Just to prevent bugs
     }
 
-    // Get info about path
-
-    ThumbnailInfo info = makeThumbnailInfo(identifier, rect);
-
-    // Load pregenerated thumbnail
-
+    ThumbnailInfo info;
     ThumbnailImage image;
 
-    switch (d->thumbnailStorage)
     {
-        case ThumbnailDatabase:
+        FileReadLocker lock(identifier.filePath);
+
+        // Get info about path
+
+        info = makeThumbnailInfo(identifier, rect);
+
+        // Load pregenerated thumbnail
+
+        switch (d->thumbnailStorage)
         {
-            if (pregenerate)
+            case ThumbnailDatabase:
             {
-                if (isInDatabase(info))
+                if (pregenerate)
                 {
-                    return QImage();
+                    if (isInDatabase(info))
+                    {
+                        return QImage();
+                    }
+
+                    // Otherwise, fall through and generate
+                }
+                else
+                {
+                    image = loadFromDatabase(info);
                 }
 
-                // Otherwise, fall through and generate
+                break;
             }
-            else
+
+            case FreeDesktopStandard:
             {
-                image = loadFromDatabase(info);
+                image = loadFreedesktop(info);
+                break;
             }
-
-            break;
-        }
-
-        case FreeDesktopStandard:
-        {
-            image = loadFreedesktop(info);
-            break;
         }
     }
 
@@ -273,38 +278,44 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     {
         FileWriteLocker lock(identifier.filePath);
 
-        // Try again from the DB, maybe it was created
-        // by another task after the write lock.
-
-        image = loadFromDatabase(info);
-
-        if (image.isNull())
+        switch (d->thumbnailStorage)
         {
-            image = createThumbnail(info, rect);
-
-            if (!image.isNull())
+            case ThumbnailDatabase:
             {
-                switch (d->thumbnailStorage)
+                if (isInDatabase(info))
                 {
-                    case ThumbnailDatabase:
+                    image = loadFromDatabase(info);
+                }
+                else
+                {
+                    image = createThumbnail(info, rect);
+
+                    if (!image.isNull())
                     {
                         storeInDatabase(info, image);
-                        break;
-                    }
-
-                    case FreeDesktopStandard:
-                    {
-                        // Image is stored rotated
-
-                        if (d->exifRotate)
-                        {
-                            image.qimage = exifRotate(image.qimage, image.exifOrientation);
-                        }
-
-                        storeFreedesktop(info, image);
-                        break;
                     }
                 }
+
+                break;
+            }
+
+            case FreeDesktopStandard:
+            {
+                image = createThumbnail(info, rect);
+
+                if (!image.isNull())
+                {
+                    // Image is stored rotated
+
+                    if (d->exifRotate)
+                    {
+                        image.qimage = exifRotate(image.qimage, image.exifOrientation);
+                    }
+
+                    storeFreedesktop(info, image);
+                }
+
+                break;
             }
         }
     }
