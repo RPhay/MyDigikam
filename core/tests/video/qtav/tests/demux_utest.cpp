@@ -33,7 +33,7 @@ private:
     QtAVTestDataDir m_testDataDir;
     QString testFile1() { return m_testDataDir.basemediav1_mp4(); }
 
-    void checkPackets(QString filename)
+    void checkPackets(const QString& filename)
     {
         AVDemuxer demux;
         QVERIFY(demux.setMedia(filename));
@@ -147,9 +147,9 @@ private Q_SLOTS:
     }
 
     void checkBasemedia() { checkPackets(m_testDataDir.basemediav1_mp4()); }
-    void checkRiffMpeg() { checkPackets(m_testDataDir.riffMpeg_avi()); } 
-    void checkMpeg2() { checkPackets(m_testDataDir.mpeg2_mp4()); }
-    void checkMpeg4() { checkPackets(m_testDataDir.mpeg4_mp4()); }
+    void checkRiffMpeg()  { checkPackets(m_testDataDir.riffMpeg_avi());    } 
+    void checkMpeg2()     { checkPackets(m_testDataDir.mpeg2_mp4());       }
+    void checkMpeg4()     { checkPackets(m_testDataDir.mpeg4_mp4());       }
 };
 
 QTEST_MAIN(DemuxTest)
