@@ -177,7 +177,7 @@ Calculator::~Calculator()
 void Calculator::haar2D(Unit a[])
 {
     int  i;
-    Unit t[NumberOfPixels >> 1];
+    Unit t[NumberOfPixels >> 1] = { 0.0 };
 
     // scale by 1/sqrt(128) = 0.08838834764831843:
 /*
@@ -192,7 +192,7 @@ void Calculator::haar2D(Unit a[])
     for (i = 0 ; i < NumberOfPixelsSquared ; i += NumberOfPixels)
     {
         int h, h1;
-        Unit C = 1;
+        Unit C = 1.0;
 
         for (h = NumberOfPixels ; h > 1 ; h = h1)
         {
@@ -228,7 +228,7 @@ void Calculator::haar2D(Unit a[])
 
     for (i = 0 ; i < NumberOfPixels ; ++i)
     {
-        Unit C = 1;
+        Unit C = 1.0;
         int  h, h1;
 
         for (h = NumberOfPixels ; h > 1 ; h = h1)
