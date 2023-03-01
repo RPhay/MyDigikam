@@ -113,7 +113,7 @@ public:
      *
      * @param widget The widget that is shown as page in the DConfigDlgWdg.
      */
-    explicit DConfigDlgWdgItem(QWidget* widget);
+    explicit DConfigDlgWdgItem(QWidget* const widget);
 
     /**
      * Creates a new page widget item.
@@ -122,7 +122,7 @@ public:
      * @param name The localized string that is show in the navigation view
      *             of the DConfigDlgWdg.
      */
-    DConfigDlgWdgItem(QWidget* widget, const QString& name);
+    DConfigDlgWdgItem(QWidget* const widget, const QString& name);
 
     /**
      * Destroys the page widget item.

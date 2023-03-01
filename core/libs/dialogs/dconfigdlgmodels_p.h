@@ -32,7 +32,7 @@ public:
 
 protected:
 
-    DConfigDlgModel* q_ptr;
+    DConfigDlgModel* q_ptr = nullptr;
 
 private:
 
@@ -45,7 +45,7 @@ class Q_DECL_HIDDEN PageItem
 {
 public:
 
-    explicit PageItem(DConfigDlgWdgItem* pageItem, PageItem* parent = nullptr);
+    explicit PageItem(DConfigDlgWdgItem* const pageItem, PageItem* const parent = nullptr);
     ~PageItem();
 
     void appendChild(PageItem* child);
@@ -93,6 +93,7 @@ protected:
     void _k_itemChanged()
     {
         Q_Q(DConfigDlgWdgModel);
+
         DConfigDlgWdgItem* const item = qobject_cast<DConfigDlgWdgItem*>(q->sender());
 
         if (!item)
@@ -113,6 +114,7 @@ protected:
     void _k_itemToggled(bool checked)
     {
         Q_Q(DConfigDlgWdgModel);
+
         DConfigDlgWdgItem* const item = qobject_cast<DConfigDlgWdgItem*>(q->sender());
 
         if (!item)

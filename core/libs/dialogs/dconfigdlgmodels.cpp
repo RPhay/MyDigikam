@@ -73,7 +73,7 @@ public:
     bool              enabled   : 1;
 };
 
-DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
+DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* const widget)
     : QObject(nullptr),
       d      (new Private)
 {
@@ -90,7 +90,7 @@ DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget)
     }
 }
 
-DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget, const QString& name)
+DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* const widget, const QString& name)
     : QObject(nullptr),
       d      (new Private)
 {
@@ -198,7 +198,7 @@ bool DConfigDlgWdgItem::isChecked() const
 
 // ---------------------------------------------------------------------------------
 
-PageItem::PageItem(DConfigDlgWdgItem* pageWidgetItem, PageItem* parent)
+PageItem::PageItem(DConfigDlgWdgItem* const pageWidgetItem, PageItem* const parent)
     : mPageWidgetItem(pageWidgetItem),
       mParentItem    (parent)
 {
@@ -251,7 +251,7 @@ int PageItem::row() const
 {
     if (mParentItem)
     {
-        return mParentItem->mChildItems.indexOf(const_cast<PageItem *>(this));
+        return mParentItem->mChildItems.indexOf(const_cast<PageItem*>(this));
     }
 
     return 0;
@@ -292,7 +292,8 @@ void PageItem::dump(int indent)
     }
 
     const QString name = (mPageWidgetItem ? mPageWidgetItem->name() : QLatin1String("root"));
-    qDebug("%s (%p)", qPrintable(QString(QString::fromLatin1("%1%2")).arg(prefix, name)), (void *)this);
+    qCDebug(DIGIKAM_GENERAL_LOG) << QString::asprintf("%s (%p)", qPrintable(QString(QString::fromLatin1("%1%2")).arg(prefix, name)),
+                                                                 (void*)this);
 
     for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
