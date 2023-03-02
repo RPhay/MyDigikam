@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-28 00:55+0000\n"
+"POT-Creation-Date: 2023-03-02 00:52+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1459,8 +1459,8 @@ msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"밝은 색 배열을 선택했습니다. 어두운 아이콘 테마로 전환합니다. 아이콘 테마는 "
-"digiKam을 다시 시작한 후에 사용할 수 있습니다."
+"밝은 색 구성표를 선택했습니다. 어두운 아이콘 테마로 전환합니다. 아이콘 테마"
+"는 digiKam을 다시 시작한 후에 사용할 수 있습니다."
 
 #: core/app/main/digikamapp_config.cpp:111
 #: core/showfoto/main/showfoto_config.cpp:191
@@ -1469,8 +1469,8 @@ msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"어두운 색 배열을 선택했습니다. 밝은 아이콘 테마로 전환합니다. 아이콘 테마는 "
-"digiKam을 다시 시작한 후에 사용할 수 있습니다."
+"어두운 색 구성표를 선택했습니다. 밝은 아이콘 테마로 전환합니다. 아이콘 테마"
+"는 digiKam을 다시 시작한 후에 사용할 수 있습니다."
 
 #: core/app/main/digikamapp_import.cpp:81
 #, fuzzy, kde-format
@@ -26742,7 +26742,7 @@ msgstr ""
 "그림을 표시할 수 없습니다"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:173
-#: core/libs/video/qtav/config/MiscPage.cpp:87
+#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "중단"
@@ -40159,7 +40159,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "크기가 지정되지 않았거나 잘못됨"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr ""
@@ -41559,59 +41559,59 @@ msgstr "무시됨"
 msgid "Progress update interval"
 msgstr "진행 표시기"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:75
+#: core/libs/video/qtav/config/MiscPage.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
 msgid "Buffer frames"
 msgstr "이정희,박신조"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Timeout"
 msgstr "이미지 편집기를 엽니다."
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, fuzzy, kde-format
 #| msgctxt "Seconds"
 #| msgid "s"
 msgid "s"
 msgstr "초"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:93
+#: core/libs/video/qtav/config/MiscPage.cpp:95
 #, fuzzy, kde-format
 #| msgid "OpenGL error"
 msgid "OpenGL type"
 msgstr "OpenGL 오류"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:99
+#: core/libs/video/qtav/config/MiscPage.cpp:101
 #, kde-format
 msgid "Windows only"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:100
+#: core/libs/video/qtav/config/MiscPage.cpp:102
 #, kde-format
 msgid "OpenGLES is Used by DXVA Zero Copy"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:103
+#: core/libs/video/qtav/config/MiscPage.cpp:105
 #, kde-format
 msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:104
+#: core/libs/video/qtav/config/MiscPage.cpp:106
 #, kde-format
 msgid "RESTART REQUIRED"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:121
+#: core/libs/video/qtav/config/MiscPage.cpp:123
 #, kde-format
 msgid "Currently only works for Qt>=5.5 XCB build"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:128
+#: core/libs/video/qtav/config/MiscPage.cpp:130
 #, kde-format
 msgid "Misc"
 msgstr ""

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-28 00:55+0000\n"
+"POT-Creation-Date: 2023-03-02 00:52+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -26166,7 +26166,7 @@ msgstr ""
 "ਡੀਕੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:173
-#: core/libs/video/qtav/config/MiscPage.cpp:87
+#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "ਛੱਡੋ"
@@ -39610,7 +39610,7 @@ msgstr "ਵਰਤੋਂ:"
 msgid "No or invalid size specified"
 msgstr "ਚਿੱਤਰ ਅਕਾਰ ਹੈ ਨਹੀਂ ਜਾਂ ਠੀਕ ਨਹੀਂ ਹੈ"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "ਥੰਮਨੇਲ ਨਲ ਹੈ"
@@ -40928,56 +40928,56 @@ msgstr "ਮਾਨੀਟਰ ਪਰੋਫਾਇਲ:"
 msgid "Progress update interval"
 msgstr "ਭੂਗੋਲੀ-ਟਿਕਾਣਾ ਫਿਲਟਰ"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:75
+#: core/libs/video/qtav/config/MiscPage.cpp:77
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
 msgid "Buffer frames"
 msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, fuzzy, kde-format
 #| msgid "Open the image editor."
 msgid "Timeout"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ ਖੋਲ੍ਹੋ।"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, kde-format
 msgid "s"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:93
+#: core/libs/video/qtav/config/MiscPage.cpp:95
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "OpenGL type"
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/libs/video/qtav/config/MiscPage.cpp:99
+#: core/libs/video/qtav/config/MiscPage.cpp:101
 #, kde-format
 msgid "Windows only"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:100
+#: core/libs/video/qtav/config/MiscPage.cpp:102
 #, kde-format
 msgid "OpenGLES is Used by DXVA Zero Copy"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:103
+#: core/libs/video/qtav/config/MiscPage.cpp:105
 #, kde-format
 msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:104
+#: core/libs/video/qtav/config/MiscPage.cpp:106
 #, kde-format
 msgid "RESTART REQUIRED"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:121
+#: core/libs/video/qtav/config/MiscPage.cpp:123
 #, kde-format
 msgid "Currently only works for Qt>=5.5 XCB build"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:128
+#: core/libs/video/qtav/config/MiscPage.cpp:130
 #, kde-format
 msgid "Misc"
 msgstr ""
