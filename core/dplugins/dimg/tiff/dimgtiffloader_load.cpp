@@ -90,6 +90,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     uint32    w, h;
     uint16    bits_per_sample;
     uint16    samples_per_pixel;
+    uint16    sample_format;
     uint16    photometric;
     uint16    planar_config;
     uint32    rows_per_strip;
@@ -101,6 +102,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     TIFFGetFieldDefaulted(tif, TIFFTAG_BITSPERSAMPLE, &bits_per_sample);
     TIFFGetFieldDefaulted(tif, TIFFTAG_SAMPLESPERPIXEL, &samples_per_pixel);
+    TIFFGetFieldDefaulted(tif, TIFFTAG_SAMPLEFORMAT, &sample_format);
     TIFFGetFieldDefaulted(tif, TIFFTAG_PLANARCONFIG, &planar_config);
 
     if (TIFFGetFieldDefaulted(tif, TIFFTAG_ROWSPERSTRIP, &rows_per_strip) == 0 || rows_per_strip == 0)
@@ -276,7 +278,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         strip_size    = TIFFStripSize(tif);
         num_of_strips = TIFFNumberOfStrips(tif);
 
-        if (bits_per_sample == 16)          // 16 bits image.
+        if ((bits_per_sample == 16) && (sample_format == SAMPLEFORMAT_UINT))          // 16 bits image.
         {
             data.reset(new_failureTolerant(w, h, 8));
             QScopedArrayPointer<uchar> strip(new_failureTolerant(strip_size));
@@ -493,7 +495,203 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             }
         }
 
-        else if (bits_per_sample == 32)          // 32 bits image.
+        else if ((bits_per_sample == 16) && (sample_format == SAMPLEFORMAT_IEEEFP))          // 16 bits float image.
+        {
+            data.reset(new_failureTolerant(w, h, 8));
+            QScopedArrayPointer<uchar> strip(new_failureTolerant(strip_size));
+
+            if (!data || strip.isNull())
+            {
+                qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to allocate memory for TIFF image" << filePath;
+                TIFFClose(tif);
+                loadingFailed();
+
+                return false;
+            }
+
+            qint64 offset     = 0;
+            qint64 bytesRead  = 0;
+            uint   checkpoint = 0;
+
+            for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
+            {
+                if (observer && st == checkpoint)
+                {
+                    checkpoint += granularity(observer, num_of_strips, 0.8F);
+
+                    if (!observer->continueQuery())
+                    {
+                        TIFFClose(tif);
+                        loadingFailed();
+
+                        return false;
+                    }
+
+                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
+                }
+
+                bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
+
+                if (bytesRead == -1)
+                {
+                    qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
+                    TIFFClose(tif);
+                    loadingFailed();
+                    return false;
+                }
+
+
+                if ((num_of_strips != 0) && (samples_per_pixel != 0))
+                {
+                    if ((planar_config == PLANARCONFIG_SEPARATE) &&
+                        (remainder((double)st, (double)(num_of_strips / samples_per_pixel)) == 0.0))
+                    {
+                        offset = 0;
+                    }
+                }
+
+                ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());
+                ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
+                ushort* p        = nullptr;
+
+                if      ((samples_per_pixel == 3) &&
+                         (planar_config == PLANARCONFIG_CONTIG))
+                {
+                    for (int i = 0 ; i < (bytesRead / 6) ; ++i)
+                    {
+                        p = dataPtr;
+
+                        p[2] = convertHalFloat(*stripPtr++);
+                        p[1] = convertHalFloat(*stripPtr++);
+                        p[0] = convertHalFloat(*stripPtr++);
+                        p[3] = 0xFFFF;
+
+                        dataPtr += 4;
+                    }
+
+                    offset += bytesRead / 6 * 8;
+                }
+
+                // cppcheck-suppress knownConditionTrueFalse
+                else if ((samples_per_pixel == 3) &&
+                         (planar_config == PLANARCONFIG_SEPARATE))
+                {
+                    for (int i = 0 ; i < (bytesRead / 2) ; ++i)
+                    {
+                        p = dataPtr;
+
+                        // cppcheck-suppress knownConditionTrueFalse
+                        if (samples_per_pixel != 0)
+                        {
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
+                            {
+                                int val = st / den;
+
+                                switch (val)
+                                {
+                                    case 0:
+                                    {
+                                        p[2] = convertHalFloat(*stripPtr++);
+                                        p[3] = 0xFFFF;
+                                        break;
+                                    }
+
+                                    case 1:
+                                    {
+                                        p[1] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+
+                                    case 2:
+                                    {
+                                        p[0] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+                                }
+
+                                dataPtr += 4;
+                            }
+                        }
+                    }
+
+                    offset += bytesRead / 2 * 8;
+                }
+
+                else if ((samples_per_pixel == 4) &&
+                         (planar_config == PLANARCONFIG_CONTIG))
+                {
+                    for (int i = 0 ; i < (bytesRead / 8) ; ++i)
+                    {
+                        p = dataPtr;
+
+                        p[2] = convertHalFloat(*stripPtr++);
+                        p[1] = convertHalFloat(*stripPtr++);
+                        p[0] = convertHalFloat(*stripPtr++);
+                        p[3] = convertHalFloat(*stripPtr++);
+
+                        dataPtr += 4;
+                    }
+
+                    offset += bytesRead / 8 * 8;
+                }
+
+                // cppcheck-suppress knownConditionTrueFalse
+                else if ((samples_per_pixel == 4) &&
+                         (planar_config == PLANARCONFIG_SEPARATE))
+                {
+                    for (int i = 0 ; i < bytesRead / 2 ; ++i)
+                    {
+                        p = dataPtr;
+
+                        // cppcheck-suppress knownConditionTrueFalse
+                        if (samples_per_pixel != 0)
+                        {
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
+                            {
+                                int val = st / den;
+
+                                switch (val)
+                                {
+                                    case 0:
+                                    {
+                                        p[2] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+
+                                    case 1:
+                                    {
+                                        p[1] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+
+                                    case 2:
+                                    {
+                                        p[0] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+
+                                    case 3:
+                                    {
+                                        p[3] = convertHalFloat(*stripPtr++);
+                                        break;
+                                    }
+                                }
+
+                                dataPtr += 4;
+                            }
+                        }
+                    }
+
+                    offset += bytesRead / 2 * 8;
+                }
+            }
+        }
+
+        else if ((bits_per_sample == 32) && (sample_format == SAMPLEFORMAT_IEEEFP))          // 32 bits float image.
         {
             data.reset(new_failureTolerant(w, h, 8));
             QScopedArrayPointer<uchar> strip(new_failureTolerant(strip_size));
@@ -855,6 +1053,76 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
 
     return true;
+}
+
+/*
+ * This function is inspired by DNG_HalfToFloat() from the DNG SDK.
+*/
+
+inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
+{
+    int32 sign 	   = (halfValue >> 15) & 0x00000001;
+    int32 exponent = (halfValue >> 10) & 0x0000001f;
+    int32 mantissa =  halfValue        & 0x000003ff;
+
+    if (exponent == 0)
+    {
+        if (mantissa == 0)
+        {
+            // Plus or minus zero
+
+            uint32 result = (sign << 31);
+            float fvalue  = 0.0F;
+            memcpy(&fvalue, &result, sizeof(float));
+
+            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
+        }
+        else
+        {
+            // Denormalized number -- renormalize it
+
+            while (!(mantissa & 0x00000400))
+            {
+                mantissa <<= 1;
+                exponent -=  1;
+            }
+
+            exponent += 1;
+            mantissa &= ~0x00000400;
+        }
+    }
+    else if (exponent == 31)
+    {
+        if (mantissa == 0)
+        {
+            // Positive or negative infinity, convert to maximum (16 bit) values.
+
+            uint32 result = ((sign << 31) | ((0x1eL + 127 - 15) << 23) | (0x3ffL << 13));
+            float fvalue  = 0.0F;
+            memcpy(&fvalue, &result, sizeof(float));
+
+            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
+        }
+        else
+        {
+            // Nan -- Just set to zero.
+
+            return 0;
+        }
+    }
+
+    // Normalized number
+
+    exponent  += (127 - 15);
+    mantissa <<= 13;
+
+    // Assemble sign, exponent and mantissa.
+
+    uint32 result = ((sign << 31) | (exponent << 23) | mantissa);
+    float fvalue  = 0.0F;
+    memcpy(&fvalue, &result, sizeof(float));
+
+    return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
 }
 
 } // namespace DigikamTIFFDImgPlugin

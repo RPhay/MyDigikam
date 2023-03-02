@@ -298,6 +298,6 @@ BUGFIXES:
 257 ==> 105638 - Exporting comments with Piwigo.
 258 ==> 153456 - Ability to specify if the image caption should set the web-service title or description.
 259 ==> 351650 - Failed to logon with piwigo apache_authentication.
-260 ==> 
+260 ==> 466651 - Thumbnails from 16 bit float tif files are displayed very darkly in digiKam.
 261 ==> 
 
