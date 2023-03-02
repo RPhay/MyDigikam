@@ -299,5 +299,7 @@ BUGFIXES:
 258 ==> 153456 - Ability to specify if the image caption should set the web-service title or description.
 259 ==> 351650 - Failed to logon with piwigo apache_authentication.
 260 ==> 466651 - Thumbnails from 16 bit float tif files are displayed very darkly in digiKam.
-261 ==> 
-
+261 ==> 466652 - digiKam doesn't display tags from video (.mp4) files.
+262 ==> 
+263 ==> 
+264 ==> 
