@@ -966,7 +966,10 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
 
             uint32 result = (sign << 31);
 
-            return (ushort)qBound(0.0F, (* (float*) &result) * 65535.0F, 65535.0F);
+            float fvalue  = 0.0F;
+            memcpy(&fvalue, &result, sizeof(float));
+
+            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
         }
         else
         {
@@ -990,7 +993,10 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
 
             uint32 result = ((sign << 31) | ((0x1eL + 127 - 15) << 23) | (0x3ffL << 13));
 
-            return (ushort)qBound(0.0F, (* (float*) &result) * 65535.0F, 65535.0F);
+            float fvalue  = 0.0F;
+            memcpy(&fvalue, &result, sizeof(float));
+
+            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
         }
         else
         {
@@ -1009,7 +1015,10 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
 
     uint32 result = ((sign << 31) | (exponent << 23) | mantissa);
 
-    return (ushort)qBound(0.0F, (* (float*) &result) * 65535.0F, 65535.0F);
+    float fvalue  = 0.0F;
+    memcpy(&fvalue, &result, sizeof(float));
+
+    return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
 }
 
 } // namespace DigikamTIFFDImgPlugin
