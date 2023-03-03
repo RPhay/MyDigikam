@@ -278,7 +278,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         strip_size    = TIFFStripSize(tif);
         num_of_strips = TIFFNumberOfStrips(tif);
 
-        if ((bits_per_sample == 16) && (sample_format == SAMPLEFORMAT_UINT))          // 16 bits image.
+        if (bits_per_sample == 16)          // 16 bits image.
         {
             data.reset(new_failureTolerant(w, h, 8));
             QScopedArrayPointer<uchar> strip(new_failureTolerant(strip_size));
@@ -345,17 +345,27 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         // We have to read two bytes for one pixel
 
-                        p        = dataPtr;
+                        p = dataPtr;
 
-                        p[0]     = *stripPtr;      // RGB have to be set to the _same_ value
-                        p[1]     = *stripPtr;
-                        p[2]     = *stripPtr++;
-                        p[3]     = 0xFFFF;         // set alpha to 100%
+                        if (sample_format == SAMPLEFORMAT_IEEEFP)
+                        {
+                            p[0] = convertHalFloat(*stripPtr);
+                            p[1] = convertHalFloat(*stripPtr);
+                            p[2] = convertHalFloat(*stripPtr++);
+                            p[3] = 0xFFFF;
+                        }
+                        else
+                        {
+                            p[0] = *stripPtr;     // RGB have to be set to the _same_ value
+                            p[1] = *stripPtr;
+                            p[2] = *stripPtr++;
+                            p[3] = 0xFFFF;        // set alpha to 100%
+                        }
 
                         dataPtr += 4;
                     }
 
-                    offset += bytesRead * 4;       // The _byte_offset in the data array is, of course, four times bytesRead
+                    offset += bytesRead * 4;      // The _byte_offset in the data array is, of course, four times bytesRead
                 }
 
                 else if ((samples_per_pixel == 3) &&
@@ -363,12 +373,22 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     for (int i = 0 ; i < (bytesRead / 6) ; ++i)
                     {
-                        p        = dataPtr;
+                        p = dataPtr;
 
-                        p[2]     = *stripPtr++;
-                        p[1]     = *stripPtr++;
-                        p[0]     = *stripPtr++;
-                        p[3]     = 0xFFFF;
+                        if (sample_format == SAMPLEFORMAT_IEEEFP)
+                        {
+                            p[2] = convertHalFloat(*stripPtr++);
+                            p[1] = convertHalFloat(*stripPtr++);
+                            p[0] = convertHalFloat(*stripPtr++);
+                            p[3] = 0xFFFF;
+                        }
+                        else
+                        {
+                            p[2] = *stripPtr++;
+                            p[1] = *stripPtr++;
+                            p[0] = *stripPtr++;
+                            p[3] = 0xFFFF;
+                        }
 
                         dataPtr += 4;
                     }
@@ -393,25 +413,52 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                             {
                                 int val = st / den;
 
-                                switch (val)
+                                if (sample_format == SAMPLEFORMAT_IEEEFP)
                                 {
-                                    case 0:
+                                    switch (val)
                                     {
-                                        p[2] = *stripPtr++;
-                                        p[3] = 0xFFFF;
-                                        break;
-                                    }
+                                        case 0:
+                                        {
+                                            p[2] = convertHalFloat(*stripPtr++);
+                                            p[3] = 0xFFFF;
+                                            break;
+                                        }
 
-                                    case 1:
-                                    {
-                                        p[1] = *stripPtr++;
-                                        break;
-                                    }
+                                        case 1:
+                                        {
+                                            p[1] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
 
-                                    case 2:
+                                        case 2:
+                                        {
+                                            p[0] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    switch (val)
                                     {
-                                        p[0] = *stripPtr++;
-                                        break;
+                                        case 0:
+                                        {
+                                            p[2] = *stripPtr++;
+                                            p[3] = 0xFFFF;
+                                            break;
+                                        }
+
+                                        case 1:
+                                        {
+                                            p[1] = *stripPtr++;
+                                            break;
+                                        }
+
+                                        case 2:
+                                        {
+                                            p[0] = *stripPtr++;
+                                            break;
+                                        }
                                     }
                                 }
 
@@ -428,12 +475,22 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     for (int i = 0 ; i < (bytesRead / 8) ; ++i)
                     {
-                        p        = dataPtr;
+                        p = dataPtr;
 
-                        p[2]     = *stripPtr++;
-                        p[1]     = *stripPtr++;
-                        p[0]     = *stripPtr++;
-                        p[3]     = *stripPtr++;
+                        if (sample_format == SAMPLEFORMAT_IEEEFP)
+                        {
+                            p[2] = convertHalFloat(*stripPtr++);
+                            p[1] = convertHalFloat(*stripPtr++);
+                            p[0] = convertHalFloat(*stripPtr++);
+                            p[3] = convertHalFloat(*stripPtr++);
+                        }
+                        else
+                        {
+                            p[2] = *stripPtr++;
+                            p[1] = *stripPtr++;
+                            p[0] = *stripPtr++;
+                            p[3] = *stripPtr++;
+                        }
 
                         dataPtr += 4;
                     }
@@ -458,226 +515,62 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                             {
                                 int val = st / den;
 
-                                switch (val)
+                                if (sample_format == SAMPLEFORMAT_IEEEFP)
                                 {
-                                    case 0:
+                                    switch (val)
                                     {
-                                        p[2] = *stripPtr++;
-                                        break;
-                                    }
+                                        case 0:
+                                        {
+                                            p[2] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
 
-                                    case 1:
-                                    {
-                                        p[1] = *stripPtr++;
-                                        break;
-                                    }
+                                        case 1:
+                                        {
+                                            p[1] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
 
-                                    case 2:
-                                    {
-                                        p[0] = *stripPtr++;
-                                        break;
-                                    }
+                                        case 2:
+                                        {
+                                            p[0] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
 
-                                    case 3:
-                                    {
-                                        p[3] = *stripPtr++;
-                                        break;
+                                        case 3:
+                                        {
+                                            p[3] = convertHalFloat(*stripPtr++);
+                                            break;
+                                        }
                                     }
                                 }
-
-                                dataPtr += 4;
-                            }
-                        }
-                    }
-
-                    offset += bytesRead / 2 * 8;
-                }
-            }
-        }
-
-        else if ((bits_per_sample == 16) && (sample_format == SAMPLEFORMAT_IEEEFP))          // 16 bits float image.
-        {
-            data.reset(new_failureTolerant(w, h, 8));
-            QScopedArrayPointer<uchar> strip(new_failureTolerant(strip_size));
-
-            if (!data || strip.isNull())
-            {
-                qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to allocate memory for TIFF image" << filePath;
-                TIFFClose(tif);
-                loadingFailed();
-
-                return false;
-            }
-
-            qint64 offset     = 0;
-            qint64 bytesRead  = 0;
-            uint   checkpoint = 0;
-
-            for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
-            {
-                if (observer && st == checkpoint)
-                {
-                    checkpoint += granularity(observer, num_of_strips, 0.8F);
-
-                    if (!observer->continueQuery())
-                    {
-                        TIFFClose(tif);
-                        loadingFailed();
-
-                        return false;
-                    }
-
-                    observer->progressInfo(0.1F + (0.8F * (((float)st) / ((float)num_of_strips))));
-                }
-
-                bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
-
-                if (bytesRead == -1)
-                {
-                    qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
-                    TIFFClose(tif);
-                    loadingFailed();
-                    return false;
-                }
-
-
-                if ((num_of_strips != 0) && (samples_per_pixel != 0))
-                {
-                    if ((planar_config == PLANARCONFIG_SEPARATE) &&
-                        (remainder((double)st, (double)(num_of_strips / samples_per_pixel)) == 0.0))
-                    {
-                        offset = 0;
-                    }
-                }
-
-                ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());
-                ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
-                ushort* p        = nullptr;
-
-                if      ((samples_per_pixel == 3) &&
-                         (planar_config == PLANARCONFIG_CONTIG))
-                {
-                    for (int i = 0 ; i < (bytesRead / 6) ; ++i)
-                    {
-                        p = dataPtr;
-
-                        p[2] = convertHalFloat(*stripPtr++);
-                        p[1] = convertHalFloat(*stripPtr++);
-                        p[0] = convertHalFloat(*stripPtr++);
-                        p[3] = 0xFFFF;
-
-                        dataPtr += 4;
-                    }
-
-                    offset += bytesRead / 6 * 8;
-                }
-
-                // cppcheck-suppress knownConditionTrueFalse
-                else if ((samples_per_pixel == 3) &&
-                         (planar_config == PLANARCONFIG_SEPARATE))
-                {
-                    for (int i = 0 ; i < (bytesRead / 2) ; ++i)
-                    {
-                        p = dataPtr;
-
-                        // cppcheck-suppress knownConditionTrueFalse
-                        if (samples_per_pixel != 0)
-                        {
-                            int den = (int)num_of_strips / (int)samples_per_pixel;
-
-                            if (den != 0)
-                            {
-                                int val = st / den;
-
-                                switch (val)
+                                else
                                 {
-                                    case 0:
+                                    switch (val)
                                     {
-                                        p[2] = convertHalFloat(*stripPtr++);
-                                        p[3] = 0xFFFF;
-                                        break;
-                                    }
+                                        case 0:
+                                        {
+                                            p[2] = *stripPtr++;
+                                            break;
+                                        }
 
-                                    case 1:
-                                    {
-                                        p[1] = convertHalFloat(*stripPtr++);
-                                        break;
-                                    }
+                                        case 1:
+                                        {
+                                            p[1] = *stripPtr++;
+                                            break;
+                                        }
 
-                                    case 2:
-                                    {
-                                        p[0] = convertHalFloat(*stripPtr++);
-                                        break;
-                                    }
-                                }
+                                        case 2:
+                                        {
+                                            p[0] = *stripPtr++;
+                                            break;
+                                        }
 
-                                dataPtr += 4;
-                            }
-                        }
-                    }
-
-                    offset += bytesRead / 2 * 8;
-                }
-
-                else if ((samples_per_pixel == 4) &&
-                         (planar_config == PLANARCONFIG_CONTIG))
-                {
-                    for (int i = 0 ; i < (bytesRead / 8) ; ++i)
-                    {
-                        p = dataPtr;
-
-                        p[2] = convertHalFloat(*stripPtr++);
-                        p[1] = convertHalFloat(*stripPtr++);
-                        p[0] = convertHalFloat(*stripPtr++);
-                        p[3] = convertHalFloat(*stripPtr++);
-
-                        dataPtr += 4;
-                    }
-
-                    offset += bytesRead / 8 * 8;
-                }
-
-                // cppcheck-suppress knownConditionTrueFalse
-                else if ((samples_per_pixel == 4) &&
-                         (planar_config == PLANARCONFIG_SEPARATE))
-                {
-                    for (int i = 0 ; i < bytesRead / 2 ; ++i)
-                    {
-                        p = dataPtr;
-
-                        // cppcheck-suppress knownConditionTrueFalse
-                        if (samples_per_pixel != 0)
-                        {
-                            int den = (int)num_of_strips / (int)samples_per_pixel;
-
-                            if (den != 0)
-                            {
-                                int val = st / den;
-
-                                switch (val)
-                                {
-                                    case 0:
-                                    {
-                                        p[2] = convertHalFloat(*stripPtr++);
-                                        break;
-                                    }
-
-                                    case 1:
-                                    {
-                                        p[1] = convertHalFloat(*stripPtr++);
-                                        break;
-                                    }
-
-                                    case 2:
-                                    {
-                                        p[0] = convertHalFloat(*stripPtr++);
-                                        break;
-                                    }
-
-                                    case 3:
-                                    {
-                                        p[3] = convertHalFloat(*stripPtr++);
-                                        break;
+                                        case 3:
+                                        {
+                                            p[3] = *stripPtr++;
+                                            break;
+                                        }
                                     }
                                 }
 
