@@ -954,7 +954,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
 inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
 {
-    int32 sign 	   = (halfValue >> 15) & 0x00000001;
+    int32 sign     = (halfValue >> 15) & 0x00000001;
     int32 exponent = (halfValue >> 10) & 0x0000001f;
     int32 mantissa =  halfValue        & 0x000003ff;
 
