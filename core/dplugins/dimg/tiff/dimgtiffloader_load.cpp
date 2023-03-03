@@ -965,11 +965,9 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
             // Plus or minus zero
 
             uint32 result = (sign << 31);
+            float *fvalue = reinterpret_cast<float*>(&result);
 
-            float fvalue  = 0.0F;
-            memcpy(&fvalue, &result, sizeof(float));
-
-            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
+            return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
         }
         else
         {
@@ -992,11 +990,9 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
             // Positive or negative infinity, convert to maximum (16 bit) values.
 
             uint32 result = ((sign << 31) | ((0x1eL + 127 - 15) << 23) | (0x3ffL << 13));
+            float *fvalue = reinterpret_cast<float*>(&result);
 
-            float fvalue  = 0.0F;
-            memcpy(&fvalue, &result, sizeof(float));
-
-            return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
+            return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
         }
         else
         {
@@ -1014,11 +1010,9 @@ inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
     // Assemble sign, exponent and mantissa.
 
     uint32 result = ((sign << 31) | (exponent << 23) | mantissa);
+    float *fvalue = reinterpret_cast<float*>(&result);
 
-    float fvalue  = 0.0F;
-    memcpy(&fvalue, &result, sizeof(float));
-
-    return (ushort)qBound(0.0F, fvalue * 65535.0F, 65535.0F);
+    return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
 }
 
 } // namespace DigikamTIFFDImgPlugin
