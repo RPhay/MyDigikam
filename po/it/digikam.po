@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:52+0000\n"
-"PO-Revision-Date: 2023-02-23 21:06+0100\n"
+"PO-Revision-Date: 2023-03-01 19:10+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2809,10 +2809,9 @@ msgid "Clear all faces on this image"
 msgstr "Pulisci tutti i volti in questa immagine"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Segna tutti i volti sconosciuti come Ignorati"
+msgstr "Segna tutti i volti non confermati come Ignorati"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
