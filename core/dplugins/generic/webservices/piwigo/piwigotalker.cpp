@@ -235,14 +235,12 @@ bool PiwigoTalker::addPhoto(int   albumId,
 
         if (image.isNull())
         {
-            image.load(mediaPath);
-        }
+            if (!image.load(mediaPath) || image.isNull())
+            {
+                // Invalid image
 
-        if (image.isNull())
-        {
-            // Invalid image
-
-            return false;
+                return false;
+            }
         }
 
         if (!rescale)
