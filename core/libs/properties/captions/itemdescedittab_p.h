@@ -76,7 +76,6 @@
 #include "altlangstredit.h"
 #include "albummodel.h"
 #include "metadatahub.h"
-#include "addtagslineedit.h"
 
 namespace Digikam
 {
