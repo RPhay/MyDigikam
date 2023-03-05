@@ -165,7 +165,9 @@ public:
     /**
      * Compares the two string by natural comparison and adheres to given sort order
      */
-    static inline int naturalCompare(const QString& a, const QString& b, Qt::SortOrder sortOrder,
+    static inline int naturalCompare(const QString& a,
+                                     const QString& b,
+                                     Qt::SortOrder sortOrder,
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive)
     {
         QCollator collator;
