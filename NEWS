@@ -28,6 +28,7 @@ General        : Allows to use Global or Customized Image Quality Sorting settin
 General        : Add new tool to perform OCR over scanned text.
                  https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
 General        : Add Icon-View settings to customize Labels visibility over thumbnails.
+General        : Add support for float16 (half float) images in the TIFF Loader.
 Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
                  https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
 QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
