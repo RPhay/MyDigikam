@@ -112,14 +112,14 @@ int DNGWriter::convert()
         }
 
         // -----------------------------------------------------------------------------------------
-
+/*
         ret = d->storeMakernote(host, negative, identify.data(), identifyMake.data(), meta.data());
 
         if (ret != PROCESS_CONTINUE)
         {
             return ret;
         }
-
+*/
         // -----------------------------------------------------------------------------------------
 
         ret = d->storeXmp(host, negative, identify.data(), identifyMake.data(), meta.data());
