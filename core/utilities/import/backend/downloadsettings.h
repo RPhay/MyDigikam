@@ -41,7 +41,7 @@ public:
         backupRaw   (false),
         convertDng  (false),
         compressDng (true),
-        previewMode (DNGWriter::MEDIUM),
+        previewMode (DNGWriter::FULL_SIZE),
         rating      (NoRating),
         pickLabel   (NoPickLabel),
         colorLabel  (NoColorLabel)

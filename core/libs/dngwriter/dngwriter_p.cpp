@@ -60,7 +60,7 @@ void DNGWriter::Private::reset()
     jpegLossLessCompression = true;
     updateFileDate          = false;
     backupOriginalRawFile   = false;
-    previewMode             = DNGWriter::MEDIUM;
+    previewMode             = DNGWriter::FULL_SIZE;
 }
 
 void DNGWriter::Private::cleanup()

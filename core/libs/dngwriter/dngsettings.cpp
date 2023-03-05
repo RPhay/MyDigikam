@@ -87,7 +87,7 @@ DNGSettings::DNGSettings(QWidget* const parent)
     d->previewModeCB->insertItem(DNGWriter::NONE,      i18nc("embedded preview type in dng file", "None"));
     d->previewModeCB->insertItem(DNGWriter::MEDIUM,    i18nc("embedded preview type in dng file", "Medium"));
     d->previewModeCB->insertItem(DNGWriter::FULL_SIZE, i18nc("embedded preview type in dng file", "Full size"));
-    d->previewModeCB->setDefaultIndex(DNGWriter::MEDIUM);
+    d->previewModeCB->setDefaultIndex(DNGWriter::FULL_SIZE);
 
     d->errorView        = new ExifToolErrorView(this);
     d->errorView->setErrorText(i18n("Warning: ExifTool is not available to post-process metadata. "

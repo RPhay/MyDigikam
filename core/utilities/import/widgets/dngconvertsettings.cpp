@@ -111,7 +111,7 @@ void DNGConvertSettings::readSettings(KConfigGroup& group)
 {
     d->dngSettings->setBackupOriginalRawFile(group.readEntry(QLatin1String("BackupOriginalRawFile"), false));
     d->dngSettings->setCompressLossLess(group.readEntry(QLatin1String("CompressLossLess"),           true));
-    d->dngSettings->setPreviewMode(group.readEntry(QLatin1String("PreviewMode"),                     (int)DNGWriter::MEDIUM));
+    d->dngSettings->setPreviewMode(group.readEntry(QLatin1String("PreviewMode"),                     (int)DNGWriter::FULL_SIZE));
     d->convertDng->setChecked(group.readEntry(QLatin1String("ConvertDng"),                           false));
 
     d->dngSettings->setEnabled(d->convertDng->isChecked());

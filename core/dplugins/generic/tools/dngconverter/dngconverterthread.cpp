@@ -38,7 +38,7 @@ public:
       : backupOriginalRawFile(false),
         compressLossLess     (true),
         updateFileDate       (false),
-        previewMode          (DNGWriter::MEDIUM)
+        previewMode          (DNGWriter::FULL_SIZE)
     {
     }
 

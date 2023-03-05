@@ -42,7 +42,7 @@ public:
         compressLossLess     (true),
         updateFileDate       (false),
         cancel               (false),
-        previewMode          (DNGWriter::MEDIUM),
+        previewMode          (DNGWriter::FULL_SIZE),
         action               (NONE)
     {
     }

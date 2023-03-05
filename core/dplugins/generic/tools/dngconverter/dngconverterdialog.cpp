@@ -243,7 +243,7 @@ void DNGConverterDialog::readSettings()
 
     d->dngSettings->setBackupOriginalRawFile(group.readEntry("BackupOriginalRawFile", false));
     d->dngSettings->setCompressLossLess(group.readEntry("CompressLossLess",           true));
-    d->dngSettings->setCompressLossLess(group.readEntry("PreviewMode",                (int)(DNGWriter::MEDIUM)));
+    d->dngSettings->setPreviewMode(group.readEntry("PreviewMode",                     (int)(DNGWriter::FULL_SIZE)));
     d->conflictSettings->readSettings(group);
 }
 

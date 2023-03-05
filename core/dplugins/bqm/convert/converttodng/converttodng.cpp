@@ -65,7 +65,7 @@ BatchToolSettings ConvertToDNG::defaultSettings()
 {
     BatchToolSettings settings;
     settings.insert(QLatin1String("CompressLossLess"),      true);
-    settings.insert(QLatin1String("PreviewMode"),           DNGWriter::MEDIUM);
+    settings.insert(QLatin1String("PreviewMode"),           DNGWriter::FULL_SIZE);
     settings.insert(QLatin1String("BackupOriginalRawFile"), false);
 
     return settings;
