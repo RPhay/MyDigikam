@@ -158,7 +158,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto.");
     newFeatures << i18n("Add online translations support to Alternative Language text editor widget.");
     newFeatures << i18n("Add Localize config panel in Setup/Misc for digiKam and Showfoto.");
-    newFeatures << i18n("Add settings to list prefered alternative/translated languages in text edit widget.");
+    newFeatures << i18n("Add settings to list preferred alternative/translated languages in text edit widget.");
     newFeatures << i18n("Allow to use Global or Customized Image Quality Sorting settings everywhere.");
     newFeatures << i18n("Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran\">to perform OCR over scanned text</a>.");
     newFeatures << i18n("Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning model</a>.");
