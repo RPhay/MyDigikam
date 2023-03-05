@@ -302,5 +302,11 @@ BUGFIXES:
 260 ==> 466651 - Thumbnails from 16 bit float tif files are displayed very darkly in digiKam.
 261 ==> 466652 - digiKam doesn't display tags from video (.mp4) files.
 262 ==> 466873 - Batch conversion to WEBP and AV1 format.
-263 ==> 
-264 ==> 
+263 ==> 466876 - LightTable: Selected image properties are not showed when clicking each image.
+264 ==> 466594 - ExifTool information doesn't change when comparing images in digiKam/Light Table.
+265 ==> 
+266 ==> 
+267 ==> 
+268 ==> 
+269 ==> 
+270 ==> 
