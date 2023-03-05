@@ -134,14 +134,12 @@ public:
             return 0;
         }
 
-        if (a < b)
-        {
-            return (-1);
-        }
-        else
+        if (a > b)
         {
             return 1;
         }
+
+        return (-1);
     }
 
     /**
@@ -154,10 +152,8 @@ public:
         {
             return compareResult;
         }
-        else
-        {
-            return (- compareResult);
-        }
+
+        return (- compareResult);
     }
 
     template <typename T>

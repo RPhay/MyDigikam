@@ -446,7 +446,7 @@ void ShowfotoFolderViewSideBar::slotViewModeChanged(int mode)
 
 void ShowfotoFolderViewSideBar::setSortOrder(int order)
 {
-    d->fsSortOrder = (order == ShowfotoItemSortSettings::AscendingOrder) ? Qt::DescendingOrder : Qt::AscendingOrder; // Inverted compared to Thumbbar.
+    d->fsSortOrder = (Qt::SortOrder)order;
     d->fsmodel->sort(d->fsRole, d->fsSortOrder);
 }
 
