@@ -13,8 +13,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_TEST_DATA_DIR_H
-#define DIGIKAM_TEST_DATA_DIR_H
+#ifndef DIGIKAM_DTEST_DATA_DIR_H
+#define DIGIKAM_DTEST_DATA_DIR_H
 
 // Qt includes
 
@@ -157,4 +157,4 @@ protected:
     }
 };
 
-#endif // DIGIKAM_TEST_DATA_DIR
+#endif // DIGIKAM_DTEST_DATA_DIR
