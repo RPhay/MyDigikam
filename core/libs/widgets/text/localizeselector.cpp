@@ -46,37 +46,37 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN LocalizeSelector::Private
+class Q_DECL_HIDDEN TranslateAction : public QWidgetAction
 {
+    Q_OBJECT
+
 public:
 
-    class Q_DECL_HIDDEN TranslateAction : public QWidgetAction
+    explicit TranslateAction(QObject* const parent)
+        : QWidgetAction(parent)
     {
-    public:
+    }
 
-        explicit TranslateAction(QObject* const parent)
-            : QWidgetAction(parent)
-        {
-        }
+    QWidget* createWidget(QWidget* parent) override
+    {
+        m_list         = new QListWidget(parent);
+        QFontMetrics fontMt(m_list->font());
+        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XX-XX"));
+        int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
+        width         += fontRect.width() + m_list->verticalScrollBar()->height();
+        m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        m_list->setFixedWidth(width);
 
-        QWidget* createWidget(QWidget* parent) override
-        {
-            m_list         = new QListWidget(parent);
-            QFontMetrics fontMt(m_list->font());
-            QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XX-XX"));
-            int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
-            width         += fontRect.width() + m_list->verticalScrollBar()->height();
-            m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-            m_list->setFixedWidth(width);
+        return m_list;
+    }
 
-            return m_list;
-        }
+public:
 
-    public:
+    QListWidget* m_list = nullptr;
+};
 
-        QListWidget* m_list = nullptr;
-    };
-
+class Q_DECL_HIDDEN LocalizeSelector::Private
+{
 public:
 
     explicit Private()
@@ -102,7 +102,7 @@ LocalizeSelector::LocalizeSelector(QWidget* const parent)
     d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
     d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
     QMenu* const menu  = new QMenu(d->translateButton);
-    d->translateAction = new Private::TranslateAction(d->translateButton);
+    d->translateAction = new TranslateAction(d->translateButton);
     menu->addAction(d->translateAction);
     d->translateButton->setMenu(menu);
 
@@ -336,3 +336,5 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
 }
 
 } // namespace Digikam
+
+#include "localizeselector.moc"
