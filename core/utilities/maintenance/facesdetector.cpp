@@ -163,6 +163,11 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             filterMode = FacePipeline::ScanAll;
             writeMode  = FacePipeline::OverwriteUnconfirmed;
         }
+        else if (settings.alreadyScannedHandling == FaceScanSettings::ClearAll)
+        {
+            filterMode = FacePipeline::ScanAll;
+            writeMode  = FacePipeline::OverwriteAllFaces;
+        }
         else // FaceScanSettings::Merge
         {
             filterMode = FacePipeline::ScanAll;

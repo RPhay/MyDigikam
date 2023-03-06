@@ -305,7 +305,7 @@ BUGFIXES:
 263 ==> 466876 - LightTable: Selected image properties are not showed when clicking each image.
 264 ==> 466594 - ExifTool information doesn't change when comparing images in digiKam/Light Table.
 265 ==> 466938 - Duplicate Detection Reference Image.
-266 ==> 
+266 ==> 466564 - Ability to rescan face regions to get better results.
 267 ==> 
 268 ==> 
 269 ==> 

@@ -43,7 +43,8 @@ public:
     {
         Skip,
         Merge,
-        Rescan
+        Rescan,
+        ClearAll
     };
 
 public:

@@ -52,8 +52,12 @@ public:
         /// Write results. Merge with existing entries.
         NormalWrite,
 
+        /// Add new results. Previous all results will be cleared.
+        OverwriteAllFaces,
+
         /// Add new results. Previous unconfirmed results will be cleared.
         OverwriteUnconfirmed
+
     };
 
 public:

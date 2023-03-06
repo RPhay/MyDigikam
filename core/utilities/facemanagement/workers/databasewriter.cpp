@@ -44,11 +44,17 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
         // OverwriteUnconfirmed means that a new scan discarded unconfirmed results of previous scans
         // (assuming at least equal or new, better methodology is in use compared to the previous scan)
 
-        if ((mode == FacePipeline::OverwriteUnconfirmed) && (package->processFlags & FacePipelinePackage::ProcessedByDetector))
+        if      ((mode == FacePipeline::OverwriteUnconfirmed) &&
+                 (package->processFlags & FacePipelinePackage::ProcessedByDetector))
         {
             QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
             qCDebug(DIGIKAM_GENERAL_LOG) << "Removing old entries" << oldEntries;
             utils.removeFaces(oldEntries);
+        }
+        else if ((mode == FacePipeline::OverwriteAllFaces) &&
+                 (package->processFlags & FacePipelinePackage::ProcessedByDetector))
+        {
+            utils.removeAllFaces(package->info.id());
         }
 
         // mark the whole image as scanned-for-faces
