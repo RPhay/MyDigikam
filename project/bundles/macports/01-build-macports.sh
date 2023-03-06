@@ -266,6 +266,8 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
 
 fi
 
+echo -e "MariaDB Variant=$MP_MARIADB_VARIANT\n"
+
 port install \
              cctools +xcode \
              cmake \
@@ -302,7 +304,7 @@ port install \
              qt5-qtimageformats \
              qt5-qtnetworkauth \
              qt5-sqlite-plugin \
-             qt5-mysql-plugin
+             qt5-mysql-plugin $MP_MARIADB_VARIANT
 
 port deactivate boost
 
