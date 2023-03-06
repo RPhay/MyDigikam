@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:52+0000\n"
+"POT-Creation-Date: 2023-03-06 00:44+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3243,9 +3243,12 @@ msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加本地化配置面板。"
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add settings to list prefered alternative/translated languages in text "
+#| "edit widget."
 msgid ""
-"Add settings to list prefered alternative/translated languages in text edit "
+"Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr "为文字编辑控件的偏好替代语言/翻译语言列表添加设置。"
 
@@ -10669,7 +10672,7 @@ msgstr "正在保存更改 -"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -21170,9 +21173,9 @@ msgstr "导出到 Box(&B)..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:872
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1044
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -24254,72 +24257,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "导出到 Piwigo(&P)..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "检查 %1 是否已经存在"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Piwigo URL 可能不正确"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "指定的用户名或密码错误"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "不再支持上传到 Piwigo 2.4 以下的版本"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:714
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "收到来自远程 Piwigo 的无效响应"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:637
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr "无法列出相册"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "照片“%1”已存在。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:797
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "照片“%1”已存在于此相册中。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:888
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "错误：无法打开照片：%1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:916
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "上传数据块 %1/%2，总计 %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:951
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "注意：无法上传完整尺寸的照片。"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1002
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "上传 %1 的元数据"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1037
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "从远程 Piwigo 服务收到无效的响应 (%1)"
@@ -35601,21 +35604,21 @@ msgid "Selected items have different text here."
 msgstr "选中的项目在此处有不同的文本。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:106
+#: core/libs/properties/captions/tagsedit.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "打开标签管理器"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:112
+#: core/libs/properties/captions/tagsedit.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "在此输入标签。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:113
+#: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -35626,21 +35629,21 @@ msgstr ""
 "在此输入文字以创建标签。“/”可用于创建标签的层级结构，它可以用来创建多个层级。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:130
+#: core/libs/properties/captions/tagsedit.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "已指定标签"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:136
+#: core/libs/properties/captions/tagsedit.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "最近标签"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:294
+#: core/libs/properties/captions/tagsedit.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"

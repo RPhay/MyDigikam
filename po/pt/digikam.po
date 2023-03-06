@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:52+0000\n"
+"POT-Creation-Date: 2023-03-06 00:44+0000\n"
 "PO-Revision-Date: 2023-02-17 19:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -3484,9 +3484,12 @@ msgstr ""
 "digiKam e Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add settings to list prefered alternative/translated languages in text "
+#| "edit widget."
 msgid ""
-"Add settings to list prefered alternative/translated languages in text edit "
+"Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 "Adição da configuração para listar as línguas alternativas/traduzidas "
@@ -11340,7 +11343,7 @@ msgstr "A gravar as alterações -"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -22233,9 +22236,9 @@ msgstr "Exportar para o &Box..."
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:872
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1044
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -25374,72 +25377,72 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Exportar para o &Piwigo..."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Verificar se %1 já existe"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "O URL do Piwigo é provavelmente incorrecto"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Foi indicado um utilizador ou senha incorrectos"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "O envio para o Piwigo com uma versão < 2.4 não é mais suportado"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:714
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Foi recebida uma resposta inválida do Piwigo remoto"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:637
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Não foi possível listar os álbuns"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "A fotografia '%1' já existe."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:797
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "A fotografia '%1' já existe neste álbum."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:888
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Erro : Não é possível abrir a fotografia: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:916
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr "Enviar o bloco %1/%2 de %3"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:951
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Atenção : Não é possível enviar a fotografia no tamanho original."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1002
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Enviar os meta-dados de %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1037
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Foi recebida uma resposta inválida do Piwigo remoto (%1)"
@@ -37171,21 +37174,21 @@ msgid "Selected items have different text here."
 msgstr "Os itens seleccionados têm textos diferentes aqui."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:106
+#: core/libs/properties/captions/tagsedit.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "Abrir o Gestor de Marcas"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:112
+#: core/libs/properties/captions/tagsedit.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "Indique aqui uma marca."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:113
+#: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -37198,21 +37201,21 @@ msgstr ""
 "hierarquia ao mesmo tempo."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:130
+#: core/libs/properties/captions/tagsedit.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "Marcas já atribuídas"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:136
+#: core/libs/properties/captions/tagsedit.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Marcas Recentes"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:294
+#: core/libs/properties/captions/tagsedit.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"

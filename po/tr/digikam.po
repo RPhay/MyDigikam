@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:52+0000\n"
+"POT-Creation-Date: 2023-03-06 00:44+0000\n"
 "PO-Revision-Date: 2023-02-20 20:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3368,7 +3368,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
-"Add settings to list prefered alternative/translated languages in text edit "
+"Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
@@ -11404,7 +11404,7 @@ msgstr "Değişiklikler kaydediliyor -"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -22809,9 +22809,9 @@ msgstr "Dışarıya aktarma hatası"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:872
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1044
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -26126,79 +26126,79 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr "Dışarıya aktarma hatası"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
 msgid "Check if %1 already exists"
 msgstr "Dosya zaten var"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Muhtemelen Piwigo adresi geçersiz"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Geçersiz kullanıcı adı veya parolası belirtildi"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
 #, fuzzy, kde-format
 #| msgid "Filter identifier or version is not supported"
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr "Süzgeç tanımlayıcı veya sürüm desteklenmiyor"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:714
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Uzak Piwigo'dan geçersiz yanıt alındı"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:637
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgid "Failed to list albums"
 msgstr "Albüm yeniden isimlendirilemedi"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "File already exists"
 msgid "Photo '%1' already exists."
 msgstr "Dosya zaten var"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:797
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:888
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr "Hata : Resim açılamıyor: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:916
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:951
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Uyarı: Tam boyutta resim yüklenemiyor."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1002
 #, fuzzy, kde-format
 #| msgid "Loading metadata -"
 msgid "Upload the metadata of %1"
 msgstr "Metaveri yükleniyor -"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1037
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Uzak Piwigo (%1) 'dan geçersiz yanıt alındı"
@@ -38346,7 +38346,7 @@ msgid "Selected items have different text here."
 msgstr "Ögenin dilini buradan seçin."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:106
+#: core/libs/properties/captions/tagsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "Open Tag Manager"
 msgctxt "@action"
@@ -38354,7 +38354,7 @@ msgid "Open Tag Manager"
 msgstr "Etiket Yöneticisini Aç"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:112
+#: core/libs/properties/captions/tagsedit.cpp:111
 #, fuzzy, kde-format
 #| msgid "Enter tag here."
 msgctxt "@info"
@@ -38362,7 +38362,7 @@ msgid "Enter tag here."
 msgstr "Etiketi buraya girin."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:113
+#: core/libs/properties/captions/tagsedit.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the text used to create tags here. '/' can be used to create a "
@@ -38379,7 +38379,7 @@ msgstr ""
 "oluşturmak için kullanılabilir."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:130
+#: core/libs/properties/captions/tagsedit.cpp:129
 #, fuzzy, kde-format
 #| msgid "Tags already assigned"
 msgctxt "@info"
@@ -38387,7 +38387,7 @@ msgid "Tags already assigned"
 msgstr "Hâlihazırda atanmış etiketler"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:136
+#: core/libs/properties/captions/tagsedit.cpp:135
 #, fuzzy, kde-format
 #| msgid "Recent Tags"
 msgctxt "@info"
@@ -38395,7 +38395,7 @@ msgid "Recent Tags"
 msgstr "Yeni Etiketler"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:294
+#: core/libs/properties/captions/tagsedit.cpp:293
 #, fuzzy, kde-format
 #| msgid "No Recently Assigned Tags"
 msgctxt "@action"
