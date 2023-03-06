@@ -589,9 +589,9 @@ rm -fr "$TEMPROOT/digikam.app/Contents/share/mariadb$MARIADB_SUFFIX"
 
 # At run time, digiKam will check for mariadb folder-name without revision numbers.
 
-ln -sv "../../../../../digikam.app/Contents/lib/mariadb/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb/share/mariadb$MARIADB_SUFFIX"
-ln -sv "../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX"                     "$TEMPROOT/digikam.app/Contents/lib/mariadb"
-ln -sv "../../../digikam.app/Contents/etc/mariadb$MARIADB_SUFFIX"                     "$TEMPROOT/digikam.app/Contents/etc/mariadb"
+ln -sv "../../../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb$MARIADB_SUFFIX" "$TEMPROOT/digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX/share/mariadb"
+ln -sv "../../../digikam.app/Contents/lib/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/lib/mariadb"
+ln -sv "../../../digikam.app/Contents/etc/mariadb$MARIADB_SUFFIX"                                    "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
 # Install ExifTool binary.
