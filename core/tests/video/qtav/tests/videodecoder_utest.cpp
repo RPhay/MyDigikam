@@ -95,6 +95,7 @@ private Q_SLOTS:
             ++frameCount;
             //QVERIFY(frame.timestamp() >= last_timestamp);
             last_timestamp = frame.timestamp();
+            Q_UNUSED(last_timestamp);
 
             auto format    = frame.format();
 
