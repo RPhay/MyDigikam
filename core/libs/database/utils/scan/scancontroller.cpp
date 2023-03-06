@@ -367,7 +367,7 @@ ItemInfo ScanController::scannedInfo(const QString& filePath,
 
     ItemInfo info = ItemInfo::fromLocalFile(filePath);
 
-    if (info.isNull())
+    if (info.isNull() || !info.isVisible())
     {
         qlonglong id = scanner.scanFile(filePath, CollectionScanner::NormalScan);
 
