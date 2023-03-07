@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-06 00:44+0000\n"
-"PO-Revision-Date: 2023-02-28 08:38+0200\n"
+"POT-Creation-Date: 2023-03-07 00:44+0000\n"
+"PO-Revision-Date: 2023-03-06 08:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -3387,10 +3387,7 @@ msgstr ""
 "digiKam та Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
@@ -8902,7 +8899,7 @@ msgstr "Використовувати керування кольорами д�
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
@@ -39799,7 +39796,7 @@ msgstr ""
 "виконуватиметься. Будьте обережні!"
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -43169,7 +43166,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
@@ -52568,25 +52565,34 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Вилучити непідтверджені результати і виконати пересканування"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Clear unconfirmed results and rescan"
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr "Вилучити непідтверджені результати і виконати пересканування"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Виявляти обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Знайти усі обличчя на ваших фотографіях"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52596,13 +52602,13 @@ msgstr ""
 "Знайти всі зображення облич на ваших фотографіях\n"
 "і спробувати розпізнати осіб на фотографіях"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Розпізнати обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52612,37 +52618,37 @@ msgstr ""
 "Виконати повторну спробу розпізнавання виявлених,\n"
 "але ще не підтверджених облич на знімках."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Процес"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Місця для пошуку"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Точність обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Чутливість"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Специфічність"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52656,13 +52662,13 @@ msgstr ""
 "але тим менше буде розпізнано облич (буде розпізнано лише обличчя,\n"
 "які є дуже подібними до попередньо визначених за допомогою міток обличчя)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Використовувати модель виявлення YOLO v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52670,14 +52676,14 @@ msgstr ""
 "Виявлення облич за допомогою моделі даних YOLO v3. Якісніші результати, але "
 "повільніша обробка."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Використовувати всі ядра процесора"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52690,7 +52696,7 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -57765,27 +57771,27 @@ msgstr "База даних подібності"
 msgid "Find duplicates items"
 msgstr "Знайти дублікати"
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Пошук облич в альбомі: %1"
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Пошук облич у %1 альбомах"
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Пошук облич на зображенні: %1"
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Пошук облич на %1 зображеннях"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
 msgid "Updating faces database"
 msgstr "Оновлюється база даних облич"
@@ -57942,13 +57948,13 @@ msgstr "Знайти дублікати зображень"
 msgid "Faces data management: "
 msgstr "Керування даними щодо облич: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Вилучити і повторно створити всі тренувальні дані"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57959,47 +57965,47 @@ msgstr ""
 "розпізнавання і повторного їх створення на основі даних щодо доступних "
 "зображень облич."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Режим пошуку: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Вилучити усі дані і повторити пошук"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Шукати лише записи без призначень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Напрямок синхронізації: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr "з бази даних до метаданих зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr "з метаданих зображення до бази даних"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Докладні дані наведено на панелі налаштовування метаданих: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Синхронізувати метадані з базою даних"

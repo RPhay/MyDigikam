@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-06 00:44+0000\n"
+"POT-Creation-Date: 2023-03-07 00:44+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -8400,7 +8400,7 @@ msgstr "对打印流程进行色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr "设置..."
@@ -37908,7 +37908,7 @@ msgid ""
 msgstr "删除数据库中的所有标签。更改不会同步到文件。请谨慎操作。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -41164,7 +41164,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "图像品质分类器"
@@ -50415,25 +50415,34 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未确认结果并重新扫描"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Clear unconfirmed results and rescan"
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr "清除未确认结果并重新扫描"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "检测人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "查找照片中所有的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50443,13 +50452,13 @@ msgstr ""
 "查找照片中所有的人脸，\n"
 "并尝试识别人脸所属的人物"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -50459,37 +50468,37 @@ msgstr ""
 "尝试重新识别\n"
 "已标记但未确认人物的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "扫描流程"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "扫描范围"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "人脸识别精度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "宽泛"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "精准"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50502,26 +50511,26 @@ msgstr ""
 "数值越高，识别精确度越高，匹配的人脸也越少。\n"
 "(只有与同一人物标签的已有人脸高度相似的人脸才会被识别)。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "使用 YOLO v3 检测模型"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr "人脸检测功能将使用 YOLO v3 数据模型。精确度更高，速度也更慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50533,7 +50542,7 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -55343,27 +55352,27 @@ msgstr "相似性数据库"
 msgid "Find duplicates items"
 msgstr "查找重复项目"
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "扫描相册中的人脸：%1"
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "扫描 %1 个相册中的人脸"
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "扫描图像中的人脸：%1"
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "扫描 %1 张图像中的人脸"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
 msgid "Updating faces database"
 msgstr "正在更新人脸数据库"
@@ -55516,13 +55525,13 @@ msgstr "查找重复项目"
 msgid "Faces data management: "
 msgstr "人脸数据管理："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "清除并重建所有训练数据"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55530,47 +55539,47 @@ msgid ""
 "available faces."
 msgstr "此选项将清除所有人脸识别训练数据，然后基于可用的人脸进行重建。"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr "扫描模式："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "清除所有信息并重新扫描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "仅扫描未指定品质项目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr "从数据库到图像元数据"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr "从图像元数据到数据库"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "打开元数据管理配置对话框："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "图像与数据库元数据同步"

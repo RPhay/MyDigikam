@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-06 00:44+0000\n"
+"POT-Creation-Date: 2023-03-07 00:44+0000\n"
 "PO-Revision-Date: 2023-02-20 20:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -8952,7 +8952,7 @@ msgstr "Yazdırma için Renk Yönetimini kullan"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
@@ -40869,7 +40869,7 @@ msgstr ""
 "olmayacak. Dikkatli sürdürün."
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -44457,7 +44457,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Resim Kalitesi Sıralayıcısı"
@@ -54136,19 +54136,28 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Onaylanmamış sonuçarı temizle ve yeniden tara"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Clear unconfirmed results and rescan"
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr "Onaylanmamış sonuçarı temizle ve yeniden tara"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Yüzleri algıla"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Fotoğraflarınızdaki tüm yüzleri bulun"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
@@ -54156,7 +54165,7 @@ msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Yüzleri algıla ve tanı (deneysel)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -54170,14 +54179,14 @@ msgstr ""
 "Fotoğraflarınızdaki tüm yüzleri bulun ve hangi kişinin tasvir edildiğini "
 "tanımaya çalışın"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Eşitle"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -54189,14 +54198,14 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr "İşaretlenmiş fakat onaylanmamış yüzleri tekrar tanımlayın."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "İş Akışı"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -54204,27 +54213,27 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Burada ara:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Doğruluk"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Duyarlılık"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Specific Location"
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Belirli Konum"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54234,26 +54243,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Tüm işlemci çekirdeklerinde çalış"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -54272,7 +54281,7 @@ msgstr ""
 "çalışmak istediğinizi seçebilirsiniz. Uyarı: Bu özellikler hala deneysel ve "
 "öntanımlı olarak devre dışı bırakılmıştır."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -59562,35 +59571,35 @@ msgstr "Benzerlik"
 msgid "Find duplicates items"
 msgstr "Yinelenen ögeleri bul"
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Albümlerde ara:"
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Albümlerde ara:"
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in image: %1"
 msgstr "Yüzler taranıyor"
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in %1 images"
 msgstr "Yüzler taranıyor"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
@@ -59755,13 +59764,13 @@ msgstr "Yinelenen Ögeleri Bul"
 msgid "Faces data management: "
 msgstr "Yüz veri yönetimi: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Tüm eğitim verilerini sil ve yeniden oluştur"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59771,49 +59780,49 @@ msgstr ""
 "Bu, kullanılabilir yüzlerden yeniden inşa ve tanıma için tüm eğitim "
 "verilerini silecektir."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
 msgid "Detect and recognize Faces"
 msgstr "Yüzleri algıla ve tanı (deneysel)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Tarama Kipi: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tümünü temizle ve tekrar tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Yalnızca atanmamışları tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Senkronize Yönü: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Veritabanından resim metaverisine"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Resim metaverisinden veritabanına"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Detaylar için metaveri kurulum panelini kontrol edin: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaveriyi ve Veritabanını Senkronize Et"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-06 00:44+0000\n"
-"PO-Revision-Date: 2023-02-17 19:39+0000\n"
+"POT-Creation-Date: 2023-03-07 00:44+0000\n"
+"PO-Revision-Date: 2023-03-06 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -172,7 +172,8 @@ msgstr ""
 "X-POFile-SpellExtra: Udmurt Yucatec Maya PlqaD Levantino Chichewa\n"
 "X-POFile-SpellExtra: Queretaro Querétaro Tesseract LSTM Dzongkha Fijan\n"
 "X-POFile-SpellExtra: Oromo deep learning unique Sonnet Sphinx\n"
-"X-POFile-SpellExtra: ReStructuredText IIQ\n"
+"X-POFile-SpellExtra: ReStructuredText IIQ sequenciar filmrolls RawBurst\n"
+"X-POFile-SpellExtra: CRM OM ART\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2932,8 +2933,7 @@ msgid "Clear all faces on this image"
 msgstr "Limpar todas as caras nesta imagem"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marcar todas as caras desconhecidas como ignoradas"
 
@@ -3484,10 +3484,7 @@ msgstr ""
 "digiKam e Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
@@ -8956,7 +8953,7 @@ msgstr "Usar a Gestão de Cores na Impressão"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr "Configuração..."
@@ -25453,11 +25450,9 @@ msgid "Visit Piwigo website"
 msgstr "Visitar a página Web do Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgid "Remote Albums"
-msgstr "Apagar o Álbum"
+msgstr "Álbuns Remotos"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
@@ -25474,9 +25469,7 @@ msgid "Reload album list"
 msgstr "Actualizar a lista de álbuns"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Nome:"
@@ -25485,7 +25478,7 @@ msgstr "Nome:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
@@ -39586,7 +39579,7 @@ msgstr ""
 "ficheiros. Proceda com cuidado."
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -42959,7 +42952,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordenação por Qualidade da Imagem"
@@ -52325,25 +52318,34 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Limpar os resultados não-confirmados e analisar de novo"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "Clear unconfirmed results and rescan"
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr "Limpar os resultados não-confirmados e analisar de novo"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Detectar as caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Descobrir todas as caras nas suas fotografias"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Detectar e reconhecer caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52353,13 +52355,13 @@ msgstr ""
 "Procura todas as caras nas suas fotografias\n"
 "e tenta reconhecer qual a pessoa representada"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Reconhecer as caras"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52369,37 +52371,37 @@ msgstr ""
 "Tenta reconhecer de novo as pessoas representadas\n"
 "nas caras marcadas mas ainda não confirmadas."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Fluxograma"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Procurar em"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Precisão da Cara"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Sensibilidade"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Especificidade"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52413,13 +52415,13 @@ msgstr ""
 "caras reconhecidas (só as caras que sejam muito semelhantes às caras pré-"
 "marcadas serão reconhecidas)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Usar o modelo de detecção YOLO v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52427,14 +52429,14 @@ msgstr ""
 "Detecção de caras com o modelo de dados YOLO v3. Gera melhores resultados "
 "mas é mais lento."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Trabalhar com todos os recursos"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52446,7 +52448,7 @@ msgstr ""
 "deseja aplicar todas as potencialidades dos processadores no seu sistema\n"
 "ou se deseja trabalhar apenas em segundo-plano num único núcleo."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -57454,27 +57456,27 @@ msgstr "BD de Semelhanças"
 msgid "Find duplicates items"
 msgstr "Procurar os itens duplicados"
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "Procurar por caras no álbum: %1"
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "Procurar por caras nos %1 álbuns"
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr "Procurar por caras na imagem: %1"
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr "Procurar por caras nas %1 imagens"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
 msgid "Updating faces database"
 msgstr "A actualizar a base de dados das caras"
@@ -57632,13 +57634,13 @@ msgstr "Procurar os Itens Duplicados"
 msgid "Faces data management: "
 msgstr "Gestão dos dados de cara: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Limpar e reconstruir todos os dados de treino"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57648,47 +57650,47 @@ msgstr ""
 "Isto irá limpar todos os dados de treino do reconhecimento e reconstruí-los "
 "a partir de todas as caras disponíveis."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Detectar e reconhecer caras"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Modo de Análise: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Limpar tudo e analisar de novo"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analisar apenas os não-atribuídos"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcção da Sincronização: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Da base de dados para os meta-dados da imagem"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Dos meta-dados das imagens para a base de dados"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Verificar detalhes no painel de configuração dos meta-dados: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronizar os Meta-Dados e a Base de Dados"
@@ -60516,8 +60518,7 @@ msgstr ""
 "<p>Active esta opção para antever cada item durante a transferência.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Janela de Importação"
@@ -63950,533 +63951,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Deseja repor todas as definições com os seus valores por omissão?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Video"
-#~ msgstr "Abrir um Vídeo"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an Url"
-#~ msgstr "Abrir um URL"
-
-#~ msgctxt "@info"
-#~ msgid "Url"
-#~ msgstr "URL"
-
-#~ msgctxt "@info"
-#~ msgid "Drag and drop a file to player\n"
-#~ msgstr "Arraste e largue um ficheiro para o leitor\n"
-
-#~ msgctxt "@info"
-#~ msgid "A: switch aspect ratio"
-#~ msgstr "A: mudar de proporções de tamanho"
-
-#~ msgctxt "@info"
-#~ msgid "Double click to switch fullscreen"
-#~ msgstr "Faça duplo-click para mudar para o ecrã completo"
-
-#~ msgctxt "@info"
-#~ msgid "Shortcut:\n"
-#~ msgstr "Atalho:\n"
-
-#~ msgctxt "@info"
-#~ msgid "Space: pause/continue\n"
-#~ msgstr "Espaço: pausar/continuar\n"
-
-#~ msgctxt "@info"
-#~ msgid "F: fullscreen on/off\n"
-#~ msgstr "F: Ecrã completo ligado/desligado\n"
-
-#~ msgctxt "@info"
-#~ msgid "T: stays on top on/off\n"
-#~ msgstr "T: activar/desactivar a posição de topo\n"
-
-#~ msgctxt "@info"
-#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-#~ msgstr ""
-#~ "N: mostrar a imagem seguinte. Continue a reprodução ao carregar em "
-#~ "'Espaço'\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+O: open a file\n"
-#~ msgstr "Ctrl+O: abrir um ficheiro\n"
-
-#~ msgctxt "@info"
-#~ msgid "O: On Screen Display\n"
-#~ msgstr "O: Visualização no Ecrã\n"
-
-#~ msgctxt "@info"
-#~ msgid "P: replay\n"
-#~ msgstr "P: repetir\n"
-
-#~ msgctxt "@info"
-#~ msgid "Q/ESC: quit\n"
-#~ msgstr "Q/ESC: sair\n"
-
-#~ msgctxt "@info"
-#~ msgid "S: stop\n"
-#~ msgstr "S: parar\n"
-
-#~ msgctxt "@info"
-#~ msgid "R: rotate 90 degrees"
-#~ msgstr "R: Rodar em 90 graus"
-
-#~ msgctxt "@info"
-#~ msgid "M: mute on/off\n"
-#~ msgstr "M: silenciar/repor o som\n"
-
-#~ msgctxt "@info"
-#~ msgid "C: capture video"
-#~ msgstr "C: capturar o vídeo"
-
-#~ msgctxt "@info"
-#~ msgid "Up/Down: volume +/-\n"
-#~ msgstr "Cima/Baixo: volume +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+Up/Down: speed +/-\n"
-#~ msgstr "Ctrl+Cima/Baixo: velocidade +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
-#~ msgstr "-&gt;/&lt;-: avançar/recuar\n"
-
-#~ msgctxt "@title:window"
-#~ msgid "Help"
-#~ msgstr "Ajuda"
-
-#~ msgctxt "@action: open new media"
-#~ msgid "Open"
-#~ msgstr "Abrir"
-
-#~ msgctxt "@action: open new stream"
-#~ msgid "Open Url"
-#~ msgstr "Abrir um URL"
-
-#~ msgctxt "@action: about AVPlayer"
-#~ msgid "About"
-#~ msgstr "Acerca"
-
-#~ msgctxt "@action: AVPlayer help"
-#~ msgid "Help"
-#~ msgstr "Ajuda"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
-#~ "experience with AVPlayer.</p>"
-#~ msgstr ""
-#~ "<p>Está a executar o AVPlayer em 32 bits num Windows a 64-bits.</p><p>Por "
-#~ "favor instale a versão a 64 bits do AVPlayer para obter uma melhor "
-#~ "experiência com o AVPlayer.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Media File"
-#~ msgstr "Abrir um Ficheiro Multimédia"
-
-#~ msgctxt "@option"
-#~ msgid "Aspect ratio"
-#~ msgstr "Proporções"
-
-#~ msgctxt "@title:window"
-#~ msgid "Player Error"
-#~ msgstr "Erro do Leitor"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "No media"
-#~ msgstr "Sem conteúdos"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "Conteúdo inválido"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "A guardar em memória temporária..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffered"
-#~ msgstr "Em memória temporária"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loading..."
-#~ msgstr "A carregar..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loaded"
-#~ msgstr "Carregado"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Stalled"
-#~ msgstr "Parado"
-
-#~ msgctxt "@title:window, media loading state"
-#~ msgid "Buffering... %1% @%2 %3"
-#~ msgstr "A Guardar em Memória Temporária... %1% @%2 %3"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Capture video frame\n"
-#~ "Save to: %1\n"
-#~ "Format: %2"
-#~ msgstr ""
-#~ "Capturar uma imagem de vídeo\n"
-#~ "Gravar em: %1\n"
-#~ "Formato: %2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Subtitle File"
-#~ msgstr "Abrir um Ficheiro de Legendas"
-
-#~ msgctxt "@info"
-#~ msgid "Video renderer is not available on your platform!"
-#~ msgstr "O visualizador do vídeo não está disponível na sua plataforma!"
-
-#~ msgctxt "@action: audio track"
-#~ msgid "External"
-#~ msgstr "Externa"
-
-#~ msgctxt "@info"
-#~ msgid "Current time"
-#~ msgstr "Hora actual"
-
-#~ msgctxt "@info"
-#~ msgid "Duration"
-#~ msgstr "Duração"
-
-#~ msgctxt "@info"
-#~ msgid "Render engine"
-#~ msgstr "Motor de desenho"
-
-#~ msgctxt "@info"
-#~ msgid "Speed. Ctrl+Up/Down"
-#~ msgstr "Velocidade. Ctrl+Cima/Baixo"
-
-#~ msgctxt "@info: open new media"
-#~ msgid "Open"
-#~ msgstr "Abrir"
-
-#~ msgctxt "@info: button"
-#~ msgid "Capture"
-#~ msgstr "Capturar"
-
-#~ msgctxt "@info: button"
-#~ msgid "Volume"
-#~ msgstr "Volume"
-
-#~ msgctxt "@action"
-#~ msgid "Open Url"
-#~ msgstr "Abrir um URL"
-
-#~ msgctxt "@option"
-#~ msgid "Play list"
-#~ msgstr "Reproduzir a lista"
-
-#~ msgctxt "@option"
-#~ msgid "History"
-#~ msgstr "Histórico"
-
-#~ msgctxt "@action"
-#~ msgid "About"
-#~ msgstr "Acerca"
-
-#~ msgctxt "@action"
-#~ msgid "Setup"
-#~ msgstr "Configuração"
-
-#~ msgctxt "@option"
-#~ msgid "Speed"
-#~ msgstr "Velocidade"
-
-#~ msgctxt "@option"
-#~ msgid "Repeat"
-#~ msgstr "Repetir"
-
-#~ msgctxt "@action"
-#~ msgid "Enable"
-#~ msgstr "Activar"
-
-#~ msgctxt "@info"
-#~ msgid "infinity"
-#~ msgstr "infinito"
-
-#~ msgctxt "@label"
-#~ msgid "Times"
-#~ msgstr "Tempos"
-
-#~ msgctxt "@label: from time-stamp"
-#~ msgid "From"
-#~ msgstr "De"
-
-#~ msgctxt "@info"
-#~ msgid "negative value means from the end"
-#~ msgstr "um valor negativo significa que conta a partir do fim"
-
-#~ msgctxt "@label: to time-stamp"
-#~ msgid "To"
-#~ msgstr "Até"
-
-#~ msgctxt "@action"
-#~ msgid "Clock"
-#~ msgstr "Relógio"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Auto"
-#~ msgstr "Auto"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Audio"
-#~ msgstr "Áudio"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgctxt "@info"
-#~ msgid "Take effect in next playback"
-#~ msgstr "Usar o efeito na próxima reprodução"
-
-#~ msgctxt "@option"
-#~ msgid "Subtitle"
-#~ msgstr "Legenda"
-
-#~ msgctxt "@action"
-#~ msgid "Auto load"
-#~ msgstr "Carregar automaticamente"
-
-#~ msgctxt "@action: open subtitle file"
-#~ msgid "Open"
-#~ msgstr "Abrir"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "FFmpeg supports more subtitles but only render plain text\n"
-#~ "LibASS supports 'ass' styles"
-#~ msgstr ""
-#~ "O FFmpeg suporta mais legendas mas só consegue desenhar texto simples\n"
-#~ "A LibASS suporta os estilos 'ass'"
-
-#~ msgctxt "@label"
-#~ msgid "Charset"
-#~ msgstr "Conjunto de Caracteres"
-
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Auto-detectar"
-
-#~ msgctxt "@option"
-#~ msgid "System"
-#~ msgstr "Sistema"
-
-#~ msgctxt "@info"
-#~ msgid "Auto detect requires libchardet"
-#~ msgstr "A detecção automática necessita da 'libchardet'"
-
-#~ msgctxt "@option"
-#~ msgid "Audio track"
-#~ msgstr "Faixa de áudio"
-
-#~ msgctxt "@option"
-#~ msgid "Channel"
-#~ msgstr "Canal"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "As input"
-#~ msgstr "Igual à entrada"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Stereo"
-#~ msgstr "Estéreo"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Mono (center)"
-#~ msgstr "Mono (centro)"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Left"
-#~ msgstr "Esquerda"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Right"
-#~ msgstr "Direita"
-
-#~ msgctxt "@action: aspect ratio"
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Window"
-#~ msgstr "Janela"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Custom"
-#~ msgstr "Personalizado"
-
-#~ msgctxt "@option"
-#~ msgid "Color space"
-#~ msgstr "Espaço de cores"
-
-#~ msgctxt "@option"
-#~ msgid "Decoder"
-#~ msgstr "Descodificador"
-
-#~ msgctxt "@option"
-#~ msgid "Renderer"
-#~ msgstr "Motor de desenho"
-
-#~ msgctxt "@info"
-#~ msgid "not available on your platform!"
-#~ msgstr "não disponível na sua plataforma!"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an External Audio Track"
-#~ msgstr "Abrir uma Faixa de Áudio Externo"
-
-#~ msgctxt "@info"
-#~ msgid "Can not use this renderer"
-#~ msgstr "Não é possível usar este sistema de desenho"
-
-#~ msgctxt "@info"
-#~ msgid "Use Ctrl/Shift + Click to select multiple items"
-#~ msgstr "Usar o Ctrl/Shift + Click para seleccionar vários itens"
-
-#~ msgctxt "@action: clear playlist"
-#~ msgid "Clear"
-#~ msgstr "Limpar"
-
-#~ msgctxt "@info"
-#~ msgid "Remove selected items"
-#~ msgstr "Remover os itens seleccionados"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Files"
-#~ msgstr "Seleccionar os Ficheiros"
-
-#~ msgctxt "@option: base"
-#~ msgid "Url"
-#~ msgstr "URL"
-
-#~ msgctxt "@option: base"
-#~ msgid "Format"
-#~ msgstr "Formato"
-
-#~ msgctxt "@option: base"
-#~ msgid "Bit rate"
-#~ msgstr "Taxa de dados"
-
-#~ msgctxt "@option: base"
-#~ msgid "Start time"
-#~ msgstr "Hora de início"
-
-#~ msgctxt "@option: base"
-#~ msgid "Duration"
-#~ msgstr "Duração"
-
-#~ msgctxt "@option: common"
-#~ msgid "Available"
-#~ msgstr "Disponível"
-
-#~ msgctxt "@option: common"
-#~ msgid "Codec"
-#~ msgstr "Codificador"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder"
-#~ msgstr "Descodificador"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder detail"
-#~ msgstr "Detalhe do descodificador"
-
-#~ msgctxt "@option: common"
-#~ msgid "Total time"
-#~ msgstr "Tempo total"
-
-#~ msgctxt "@option: common"
-#~ msgid "Start time"
-#~ msgstr "Tempo de início"
-
-#~ msgctxt "@option: common"
-#~ msgid "Bit rate"
-#~ msgstr "Taxa de dados"
-
-#~ msgctxt "@option: common"
-#~ msgid "Frames"
-#~ msgstr "Imagens"
-
-#~ msgctxt "@option: common"
-#~ msgid "FPS"
-#~ msgstr "IPS"
-
-#~ msgctxt "@option: video"
-#~ msgid "FPS Now"
-#~ msgstr "IPS Agora"
-
-#~ msgctxt "@option: video"
-#~ msgid "Pixel format"
-#~ msgstr "Formato dos pixels"
-
-#~ msgctxt "@option: video"
-#~ msgid "Size"
-#~ msgstr "Tamanho"
-
-#~ msgctxt "@option: video"
-#~ msgid "Coded size"
-#~ msgstr "Tamanho codificado"
-
-#~ msgctxt "@option: video"
-#~ msgid "GOP size"
-#~ msgstr "Tamanho do GOP"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample format"
-#~ msgstr "Formato das amostras"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample rate"
-#~ msgstr "Taxa de amostragem"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channels"
-#~ msgstr "Canais"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channel layout"
-#~ msgstr "Disposição dos canais"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Frame size"
-#~ msgstr "Tamanho das imagens"
-
-#~ msgctxt "@title:window"
-#~ msgid "Media Info"
-#~ msgstr "Informação dos Conteúdos"
-
-#~ msgctxt "@title"
-#~ msgid "Key"
-#~ msgstr "Chave"
-
-#~ msgctxt "@title"
-#~ msgid "Value"
-#~ msgstr "Valor"
-
-#~ msgctxt "@item: video info"
-#~ msgid "Metadata"
-#~ msgstr "Meta-dados"
-
-#~ msgctxt "@item: video stats"
-#~ msgid "Video"
-#~ msgstr "Vídeo"
-
-#~ msgctxt "@option"
-#~ msgid "Metadata"
-#~ msgstr "Meta-dados"
-
-#~ msgctxt "@option"
-#~ msgid "Audio"
-#~ msgstr "Áudio"
-
-#~ msgctxt "@action"
-#~ msgid "Ok"
-#~ msgstr "Ok"
