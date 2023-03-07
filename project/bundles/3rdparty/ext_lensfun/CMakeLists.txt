@@ -26,7 +26,9 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun0.3.95-installdb-mxe.patch
+        GIT_TAG v0.3.3
+
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_regex_mxe.patch
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
@@ -51,6 +53,7 @@ elseif (APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
+        GIT_TAG v0.3.3
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -77,6 +80,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
+        GIT_TAG v0.3.3
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
