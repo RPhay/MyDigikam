@@ -51,10 +51,10 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
 
     Q_FOREACH (const QUrl& url, urls)
     {
-        ba5.append(QString::fromUtf8("'%1' ").arg(url.toLocalFile()).toUtf8());
+        ba5.append(QString::fromUtf8("'%1' ").arg(url.path()).toUtf8());
     }
 
-    setData(QLatin1String("text/x-moz-url"), ba5);
+    setData(QLatin1String("text/plain"), ba5);
 
     // commonly accessible mime data, for dragging to outside digikam
 
