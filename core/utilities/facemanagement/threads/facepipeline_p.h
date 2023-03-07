@@ -48,8 +48,8 @@ public:
     void processBatch(const QList<ItemInfo>& infos);
     void sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages);
     void skipFromFilter(const QList<ItemInfo>& infosForSkipping);
-    void send(FacePipelineExtendedPackage::Ptr package);
-    bool senderFlowControl(FacePipelineExtendedPackage::Ptr package);
+    void send(const FacePipelineExtendedPackage::Ptr& package);
+    bool senderFlowControl(const FacePipelineExtendedPackage::Ptr& package);
     void receiverFlowControl();
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info);
     FacePipelineExtendedPackage::Ptr buildPackage(const ItemInfo& info,
@@ -101,7 +101,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     friend class FacePipeline;
-    void startProcess(FacePipelineExtendedPackage::Ptr package);
+    void startProcess(const FacePipelineExtendedPackage::Ptr& package);
 
     void accuracyAndModel(double accuracy, bool yolo);
     void thresholdChanged(double threshold);
