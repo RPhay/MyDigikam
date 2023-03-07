@@ -52,7 +52,7 @@ if(WIN32)
 elseif(APPLE)
 
     ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
-#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
+#    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/main/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(avplayer ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
