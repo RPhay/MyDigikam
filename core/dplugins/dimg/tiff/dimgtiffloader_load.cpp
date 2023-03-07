@@ -349,9 +349,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[0] = convertHalFloat(*stripPtr);
-                            p[1] = convertHalFloat(*stripPtr);
-                            p[2] = convertHalFloat(*stripPtr++);
+                            p[0] = convertHalfFloat(*stripPtr);
+                            p[1] = convertHalfFloat(*stripPtr);
+                            p[2] = convertHalfFloat(*stripPtr++);
                             p[3] = 0xFFFF;
                         }
                         else
@@ -377,9 +377,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[2] = convertHalFloat(*stripPtr++);
-                            p[1] = convertHalFloat(*stripPtr++);
-                            p[0] = convertHalFloat(*stripPtr++);
+                            p[2] = convertHalfFloat(*stripPtr++);
+                            p[1] = convertHalfFloat(*stripPtr++);
+                            p[0] = convertHalfFloat(*stripPtr++);
                             p[3] = 0xFFFF;
                         }
                         else
@@ -419,20 +419,20 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                     {
                                         case 0:
                                         {
-                                            p[2] = convertHalFloat(*stripPtr++);
+                                            p[2] = convertHalfFloat(*stripPtr++);
                                             p[3] = 0xFFFF;
                                             break;
                                         }
 
                                         case 1:
                                         {
-                                            p[1] = convertHalFloat(*stripPtr++);
+                                            p[1] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
 
                                         case 2:
                                         {
-                                            p[0] = convertHalFloat(*stripPtr++);
+                                            p[0] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
                                     }
@@ -479,10 +479,10 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[2] = convertHalFloat(*stripPtr++);
-                            p[1] = convertHalFloat(*stripPtr++);
-                            p[0] = convertHalFloat(*stripPtr++);
-                            p[3] = convertHalFloat(*stripPtr++);
+                            p[2] = convertHalfFloat(*stripPtr++);
+                            p[1] = convertHalfFloat(*stripPtr++);
+                            p[0] = convertHalfFloat(*stripPtr++);
+                            p[3] = convertHalfFloat(*stripPtr++);
                         }
                         else
                         {
@@ -521,25 +521,25 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                     {
                                         case 0:
                                         {
-                                            p[2] = convertHalFloat(*stripPtr++);
+                                            p[2] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
 
                                         case 1:
                                         {
-                                            p[1] = convertHalFloat(*stripPtr++);
+                                            p[1] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
 
                                         case 2:
                                         {
-                                            p[0] = convertHalFloat(*stripPtr++);
+                                            p[0] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
 
                                         case 3:
                                         {
-                                            p[3] = convertHalFloat(*stripPtr++);
+                                            p[3] = convertHalfFloat(*stripPtr++);
                                             break;
                                         }
                                     }
@@ -952,7 +952,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
  * This function is inspired by DNG_HalfToFloat() from the DNG SDK.
 */
 
-inline ushort DImgTIFFLoader::convertHalFloat(ushort halfValue)
+inline ushort DImgTIFFLoader::convertHalfFloat(ushort halfValue)
 {
     int32 sign     = (halfValue >> 15) & 0x00000001;
     int32 exponent = (halfValue >> 10) & 0x0000001f;
