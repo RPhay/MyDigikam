@@ -231,7 +231,7 @@ void LocalizeSelectorList::setTitle(const QString& title)
 
 void LocalizeSelectorList::clearLanguages()
 {
-    return d->trList->clear();
+    d->trList->clear();
 }
 
 void LocalizeSelectorList::addLanguage(const QString& code)
