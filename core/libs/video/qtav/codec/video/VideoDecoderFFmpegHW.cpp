@@ -149,7 +149,9 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
 {
     // From vlc begin
 
+#   if LIBAVCODEC_VERSION_MAJOR < 60
     codec_ctx->thread_safe_callbacks = true;
+#   endif
     codec_ctx->thread_count          = threads;
 
 #ifdef _MSC_VER                  // krazy:exclude=cpp
