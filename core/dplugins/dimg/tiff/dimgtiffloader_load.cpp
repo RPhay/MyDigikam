@@ -27,6 +27,7 @@ extern "C"
 // Qt includes
 
 #include <QFile>
+#include <QFloat16>
 #include <QByteArray>
 
 // Local includes
@@ -349,9 +350,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[0] = convertHalfFloat(*stripPtr);
-                            p[1] = convertHalfFloat(*stripPtr);
-                            p[2] = convertHalfFloat(*stripPtr++);
+                            p[0] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr))   * 65535.0F, 65535.0F);
+                            p[1] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr))   * 65535.0F, 65535.0F);
+                            p[2] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                             p[3] = 0xFFFF;
                         }
                         else
@@ -377,9 +378,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[2] = convertHalfFloat(*stripPtr++);
-                            p[1] = convertHalfFloat(*stripPtr++);
-                            p[0] = convertHalfFloat(*stripPtr++);
+                            p[2] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
+                            p[1] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
+                            p[0] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                             p[3] = 0xFFFF;
                         }
                         else
@@ -419,20 +420,20 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                     {
                                         case 0:
                                         {
-                                            p[2] = convertHalfFloat(*stripPtr++);
+                                            p[2] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             p[3] = 0xFFFF;
                                             break;
                                         }
 
                                         case 1:
                                         {
-                                            p[1] = convertHalfFloat(*stripPtr++);
+                                            p[1] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
 
                                         case 2:
                                         {
-                                            p[0] = convertHalfFloat(*stripPtr++);
+                                            p[0] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
                                     }
@@ -479,10 +480,10 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                         if (sample_format == SAMPLEFORMAT_IEEEFP)
                         {
-                            p[2] = convertHalfFloat(*stripPtr++);
-                            p[1] = convertHalfFloat(*stripPtr++);
-                            p[0] = convertHalfFloat(*stripPtr++);
-                            p[3] = convertHalfFloat(*stripPtr++);
+                            p[2] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
+                            p[1] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
+                            p[0] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
+                            p[3] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                         }
                         else
                         {
@@ -521,25 +522,25 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                     {
                                         case 0:
                                         {
-                                            p[2] = convertHalfFloat(*stripPtr++);
+                                            p[2] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
 
                                         case 1:
                                         {
-                                            p[1] = convertHalfFloat(*stripPtr++);
+                                            p[1] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
 
                                         case 2:
                                         {
-                                            p[0] = convertHalfFloat(*stripPtr++);
+                                            p[0] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
 
                                         case 3:
                                         {
-                                            p[3] = convertHalfFloat(*stripPtr++);
+                                            p[3] = (ushort)qBound(0.0F, (*reinterpret_cast<qfloat16*>(stripPtr++)) * 65535.0F, 65535.0F);
                                             break;
                                         }
                                     }
@@ -946,73 +947,6 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
 
     return true;
-}
-
-/*
- * This function is inspired by DNG_HalfToFloat() from the DNG SDK.
-*/
-
-inline ushort DImgTIFFLoader::convertHalfFloat(ushort halfValue)
-{
-    int32 sign     = (halfValue >> 15) & 0x00000001;
-    int32 exponent = (halfValue >> 10) & 0x0000001f;
-    int32 mantissa =  halfValue        & 0x000003ff;
-
-    if (exponent == 0)
-    {
-        if (mantissa == 0)
-        {
-            // Plus or minus zero
-
-            uint32 result       = (sign << 31);
-            float* const fvalue = reinterpret_cast<float*>(&result);
-
-            return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
-        }
-        else
-        {
-            // Denormalized number -- renormalize it
-
-            while (!(mantissa & 0x00000400))
-            {
-                mantissa <<= 1;
-                exponent -=  1;
-            }
-
-            exponent += 1;
-            mantissa &= ~0x00000400;
-        }
-    }
-    else if (exponent == 31)
-    {
-        if (mantissa == 0)
-        {
-            // Positive or negative infinity, convert to maximum (16 bit) values.
-
-            uint32 result       = ((sign << 31) | ((0x1eL + 127 - 15) << 23) | (0x3ffL << 13));
-            float* const fvalue = reinterpret_cast<float*>(&result);
-
-            return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
-        }
-        else
-        {
-            // Nan -- Just set to zero.
-
-            return 0;
-        }
-    }
-
-    // Normalized number
-
-    exponent  += (127 - 15);
-    mantissa <<= 13;
-
-    // Assemble sign, exponent and mantissa.
-
-    uint32 result       = ((sign << 31) | (exponent << 23) | mantissa);
-    float* const fvalue = reinterpret_cast<float*>(&result);
-
-    return (ushort)qBound(0.0F, *fvalue * 65535.0F, 65535.0F);
 }
 
 } // namespace DigikamTIFFDImgPlugin

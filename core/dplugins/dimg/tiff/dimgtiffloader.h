@@ -76,8 +76,6 @@ private:
     static void dimg_tiff_warning(const char* module, const char* format, va_list warnings);
     static void dimg_tiff_error(const char* module, const char* format, va_list errors);
 
-    ushort convertHalfFloat(ushort halfValue);
-
 private:
 
     bool m_sixteenBit;
