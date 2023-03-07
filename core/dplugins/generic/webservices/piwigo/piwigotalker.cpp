@@ -261,7 +261,7 @@ bool PiwigoTalker::addPhoto(int   albumId,
             d->tmpPath = d->path;
             image.save(d->path, "JPEG", quality);
 
-            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Upload a resized version: " << d->path ;
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Upload a resized version: " << d->path;
 
             // Restore all metadata with EXIF
             // in the resized version

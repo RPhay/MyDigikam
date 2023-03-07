@@ -90,6 +90,7 @@ public:
     unsigned int                   uploadCount;
     unsigned int                   uploadTotal;
     QStringList                    pUploadList;
+    QString                        currPhotoPath;
 
     QLabel*                        userNameLbl;
     QLabel*                        userName;
@@ -459,10 +460,9 @@ void PiwigoWindow::slotBusy(bool val)
         bool loggedIn = d->talker->loggedIn();
         d->reloadButton->setEnabled(loggedIn);
 
-        bool b = loggedIn && d->albumView->currentItem();
+        bool b = (loggedIn && d->albumView->currentItem());
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "busy : " << b;
         startButton()->setEnabled(b);
-
     }
 }
 
@@ -613,8 +613,9 @@ void PiwigoWindow::slotAddPhotoNext()
     int column                  = d->albumView->currentColumn();
     QString albumTitle          = item->text(column);
     const PiwigoAlbum& album    = d->albumDict.value(albumTitle);
-    QString photoPath           = d->pUploadList.takeFirst();
-    bool res                    = d->talker->addPhoto(album.m_refNum, photoPath,
+    d->currPhotoPath            = d->pUploadList.takeFirst();
+    bool res                    = d->talker->addPhoto(album.m_refNum,
+                                                      d->currPhotoPath,
                                                       d->resizeCheckBox->isChecked(),
                                                       d->widthSpinBox->value(),
                                                       d->heightSpinBox->value(),
@@ -623,11 +624,12 @@ void PiwigoWindow::slotAddPhotoNext()
     if (!res)
     {
         slotAddPhotoFailed(i18n("The file %1 is not a supported image or video format",
-                                QUrl(photoPath).fileName()));
+                                QUrl(d->currPhotoPath).fileName()));
         return;
     }
 
-    d->progressBar->progressStatusChanged(i18n("Uploading file %1", QUrl(photoPath).fileName()));
+    d->progressBar->progressStatusChanged(i18n("Uploading file %1", QUrl(d->currPhotoPath).fileName()));
+    d->imageList->processing(QUrl::fromLocalFile(d->currPhotoPath));
 
     if (d->progressBar->isHidden())
     {
@@ -639,11 +641,13 @@ void PiwigoWindow::slotAddPhotoSucceeded()
 {
     d->uploadCount++;
     d->progressBar->setValue(d->uploadCount);
+    d->imageList->processed(QUrl::fromLocalFile(d->currPhotoPath), true);
     slotAddPhotoNext();
 }
 
 void PiwigoWindow::slotAddPhotoFailed(const QString& msg)
 {
+    d->imageList->processed(QUrl::fromLocalFile(d->currPhotoPath), false);
     d->progressBar->reset();
     setUiInProgressState(false);
 
@@ -662,6 +666,7 @@ void PiwigoWindow::slotAddPhotoFailed(const QString& msg)
 
 void PiwigoWindow::slotAddPhotoCancel()
 {
+    d->imageList->processed(QUrl::fromLocalFile(d->currPhotoPath), false);
     d->progressBar->reset();
     setUiInProgressState(false);
     d->talker->cancel();
