@@ -709,7 +709,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 imageSetEmbbededText(QLatin1String(text_ptr[i].key), QLatin1String(text_ptr[i].text));
 
                 qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Reading PNG Embedded text: key=" << text_ptr[i].key
-                                              << " text=" << text_ptr[i].text;
+                                              << "size=" << QLatin1String(text_ptr[i].text).size();
             }
         }
     }
