@@ -58,11 +58,11 @@ DItemDrag::DItemDrag(const QList<QUrl>& urls,
 
 #ifdef Q_OS_WIN
 
-    txt.append(QString::fromUtf8("%1\r\n").arg(url.path()));
+    txt.append(QString::fromUtf8("%1\r\n").arg(url.toLocalFile()));
 
 #else
 
-    txt.append(QString::fromUtf8("%1\n").arg(url.path()));
+    txt.append(QString::fromUtf8("%1\n").arg(url.toLocalFile()));
 
 #endif
 
