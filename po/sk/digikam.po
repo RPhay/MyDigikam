@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:44+0000\n"
+"POT-Creation-Date: 2023-03-08 00:44+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -972,9 +972,9 @@ msgstr ""
 "presunú.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1097
-#: core/utilities/imageeditor/main/imagewindow.cpp:1122
-#: core/utilities/imageeditor/main/imagewindow.cpp:1154
+#: core/utilities/imageeditor/main/imagewindow.cpp:1098
+#: core/utilities/imageeditor/main/imagewindow.cpp:1123
+#: core/utilities/imageeditor/main/imagewindow.cpp:1155
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album „%1“"
@@ -20784,7 +20784,7 @@ msgstr "Náhľad..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -21857,7 +21857,7 @@ msgstr "Exportovať do Boxu"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:282
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -21975,7 +21975,7 @@ msgstr "Začiatok:"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:654
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -21999,7 +21999,7 @@ msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -25075,33 +25075,33 @@ msgstr "Odosielanie metadát %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Prijatá neplatná odpoveď zo vzdialeného Piwigo (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:138
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Navštíviť webovú stránku Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Delete Album"
 msgid "Remote Albums"
 msgstr "Odstrániť album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
 msgctxt "reload album list"
 msgid "Reload"
 msgstr "Znovu načítať"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Reload album list"
 msgstr "Znovu načítat zoznam albumov"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -25109,63 +25109,63 @@ msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Meno:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:189
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Prepnúť účet"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:203
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Pred odoslaním zmeniť veľkosť fotografií"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:206
 #, kde-format
 msgid "Maximum width:"
 msgstr "Maximálna šírka:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:212
 #, fuzzy, kde-format
 #| msgid "New height:"
 msgid "Maximum height:"
 msgstr "Nová výška:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:218
 #, fuzzy, kde-format
 #| msgid "JPEG quality:"
 msgid "Resized JPEG quality:"
 msgstr "Kvalita JPEG:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:277
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Exportovať"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:301
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:436
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:711
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Upraviť dáta Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Neúspešné prihlásenie ku vzdialenému serveru piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
 msgid ""
 "\n"
@@ -25193,22 +25193,22 @@ msgstr "Album"
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Nie je čo odoslať - vyberte, prosím, fotografie na odoslanie."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Súbor %1 nie je v podporovanom formáte pre obrázky alebo video"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:631
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Odosiela sa súbor %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Nepodarilo sa nahrať mediálny súbor do vzdialeného Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid ""
 "\n"
@@ -41252,69 +41252,69 @@ msgid "Codec %1 is not supported by CUDA"
 msgstr "Formát média zatiaľ nie je podporovaný"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
 #, fuzzy, kde-format
 msgid "0: auto"
 msgstr "Žiadne automatické ukladanie"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:375
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
 msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
 "quality. However it provides a big speedup for hi definition streams"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:381
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
 msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
 "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:383
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
 msgid "Force skipping frames for speed up decoding."
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:385
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:347
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
 #, kde-format
 msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
 "decoders"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
 #, kde-format
 msgid "1: single thread decoding"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:340
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
 #, kde-format
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:341
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
 #, kde-format
 msgid "Not implemented for all codecs"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
 #, kde-format
 msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
 #, kde-format
 msgid "GenericCopy: slowest. Generic cpu copy"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:348
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
 msgstr ""
@@ -56159,14 +56159,14 @@ msgstr "Neznáme"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:927
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "V aktuálnom albume nie sú obrázky"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -56175,13 +56175,13 @@ msgstr ""
 "V aktuálnom albume nie sú obrázky.\n"
 "Editor obrázkov bude ukončený."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1199
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Nie je k dispozícii (súbor prázdny)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1201
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

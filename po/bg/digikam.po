@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:44+0000\n"
+"POT-Creation-Date: 2023-03-08 00:44+0000\n"
 "PO-Revision-Date: 2023-02-24 17:45+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -975,9 +975,9 @@ msgstr ""
 "избраните изображения.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1097
-#: core/utilities/imageeditor/main/imagewindow.cpp:1122
-#: core/utilities/imageeditor/main/imagewindow.cpp:1154
+#: core/utilities/imageeditor/main/imagewindow.cpp:1098
+#: core/utilities/imageeditor/main/imagewindow.cpp:1123
+#: core/utilities/imageeditor/main/imagewindow.cpp:1155
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Албум \"%1\""
@@ -21140,7 +21140,7 @@ msgstr "Предварителен преглед..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -22242,7 +22242,7 @@ msgstr "Експортиране в Box"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:282
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -22354,7 +22354,7 @@ msgstr "Експортиране в Box"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:654
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -22380,7 +22380,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -25437,90 +25437,90 @@ msgstr "Качете метаданните на %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Невалиден отговор, получен от отдалечения Piwigo (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:138
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Посетете уебсайта на Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
 #, kde-format
 msgid "Remote Albums"
 msgstr "Отдалечен на албум"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
 msgctxt "reload album list"
 msgid "Reload"
 msgstr "Презареждане"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Reload album list"
 msgstr "Презареждане на списъка с албуми"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
 #, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Име:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:189
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr "Адрес:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Промяна на акаунт"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:203
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Променете размера на снимките, преди да ги качите"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:206
 #, kde-format
 msgid "Maximum width:"
 msgstr "Максимална широчина:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:212
 #, kde-format
 msgid "Maximum height:"
 msgstr "Максимална височина:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:218
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Преоразмерено качество на JPEG:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Експортиране в Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:301
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:436
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:711
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Редактиране на данни Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Неуспешно влизане в отдалеченото piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
 msgid ""
 "\n"
@@ -25548,22 +25548,22 @@ msgstr "Албум"
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Нищо за качване - моля, изберете снимки за качване."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "Файлът %1 не е поддържан формат на изображение или видео"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:631
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Качване на файл %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Неуспешно качване на медия в отдалечен Piwigo. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid ""
 "\n"
@@ -41304,14 +41304,14 @@ msgid "Codec %1 is not supported by CUDA"
 msgstr "Кодек %1 не се поддържа от CUDA"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
 #, kde-format
 msgid "0: auto"
 msgstr "0: авто"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:375
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
 msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
@@ -41321,7 +41321,7 @@ msgstr ""
 "има определящ ефект върху качеството. То обаче осигурява голямо ускорение за "
 "потоци с висока разделителна способност"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:381
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
 msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
@@ -41331,13 +41331,13 @@ msgstr ""
 "кадри (-1=Няма, 0=По подразбиране, 1=B-кадри, 2=P-кадри, 3=B+P-кадри, "
 "4=всички кадри)"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:383
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
 msgid "Force skipping frames for speed up decoding."
 msgstr "Принудително пропускане на кадри за ускоряване на декодирането."
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:385
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:347
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
 #, kde-format
 msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
@@ -41346,36 +41346,36 @@ msgstr ""
 "Брой нишки за декодиране. Задайте преди отваряне. Може да няма ефект за "
 "някои декодери"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
 #, kde-format
 msgid "1: single thread decoding"
 msgstr "1: декодиране с една нишка"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:340
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
 #, kde-format
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
 "ZeroCopy: най-бързо. Директно рендиране без копиране на данни между CPU и GPU"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:341
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
 #, kde-format
 msgid "Not implemented for all codecs"
 msgstr "Не е разработено за всички кодеци"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
 #, kde-format
 msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
 msgstr "OptimizedCopy: копиране от паметта на USWC, оптимизирано от SSE4.1"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
 #, kde-format
 msgid "GenericCopy: slowest. Generic cpu copy"
 msgstr "GenericCopy: най-бавно. Общо копие на процесора"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:348
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
 msgstr "Многопоточно декодиране може да се срине"
@@ -55470,13 +55470,13 @@ msgstr "Неизвестно"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 на %2 (%3 Мп)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:927
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Няма снимки в текущия албум"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -55485,13 +55485,13 @@ msgstr ""
 "Няма снимки за показване в текущия албум.\n"
 "Редакторът на снимки ще бъде затворен."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1199
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Файлът не е наличен"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1201
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

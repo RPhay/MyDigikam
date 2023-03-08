@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-07 00:44+0000\n"
+"POT-Creation-Date: 2023-03-08 00:44+0000\n"
 "PO-Revision-Date: 2023-02-20 11:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -970,9 +970,9 @@ msgstr ""
 "myndavélinni.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1097
-#: core/utilities/imageeditor/main/imagewindow.cpp:1122
-#: core/utilities/imageeditor/main/imagewindow.cpp:1154
+#: core/utilities/imageeditor/main/imagewindow.cpp:1098
+#: core/utilities/imageeditor/main/imagewindow.cpp:1123
+#: core/utilities/imageeditor/main/imagewindow.cpp:1155
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Albúm \"%1\""
@@ -20806,7 +20806,7 @@ msgstr "Forskoðun..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -21879,7 +21879,7 @@ msgstr "Flytja út á Box"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:282
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -21988,7 +21988,7 @@ msgstr "Box-útflutningur"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:654
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -22014,7 +22014,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -25043,33 +25043,33 @@ msgstr "Senda lýsigögn fyrir %1"
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr "Ógild svörun fékkst frá fjartengdum Piwigo myndasafnsþjóni (%1)"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:138
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr "Fara á heimasíðu Piwigo"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Delete Album"
 msgid "Remote Albums"
 msgstr "Eyða albúmi"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
 msgctxt "reload album list"
 msgid "Reload"
 msgstr "Endurhlaða"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Reload album list"
 msgstr "Endurhlaða albúmalista"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "filename"
 #| msgid "Name:"
@@ -25077,60 +25077,60 @@ msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Heiti:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:189
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Skipta um aðgang"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:203
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr "Breyta stærð mynda fyrir útflutning"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:206
 #, kde-format
 msgid "Maximum width:"
 msgstr "Hámarksbreidd:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:212
 #, kde-format
 msgid "Maximum height:"
 msgstr "Hámarkshæð:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:218
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr "Gæði stærðarbreyttrar JPEG:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo útflutningur"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:301
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:436
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:711
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Breyta Piwigo-gögnum"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Tókst ekki að skrá inn í Piwigo myndasafn. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
 msgid ""
 "\n"
@@ -25158,22 +25158,22 @@ msgstr "Albúm"
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Ekkert til að senda - veldu myndir til sendingar."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr "%1-skráin er ekki stutt mynd eða myndskeiðssnið"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:631
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Sendi inn skrá %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr "Tókst ekki að senda efni í fjartengt Piwigo-safn. "
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid ""
 "\n"
@@ -40765,14 +40765,14 @@ msgid "Codec %1 is not supported by CUDA"
 msgstr "Kóðunarlykillinn %1 er ekki studdur af CUDA"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
 #, kde-format
 msgid "0: auto"
 msgstr "0: sjálfvirkt"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:375
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
 msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
@@ -40782,7 +40782,7 @@ msgstr ""
 "áhrif á gæði. Hinsvegar veldur það mikilli hraðaaukningu fyrir streymi í "
 "háupplausn"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:381
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
 msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
@@ -40792,13 +40792,13 @@ msgstr ""
 "(-1=Ekkert, 0=Sjálfgefið, 1=B-rammar, 2=P-rammar, 3=B+P rammar, 4=allir "
 "rammar)"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:383
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
 msgid "Force skipping frames for speed up decoding."
 msgstr "Þvinga fram sleppingu á römmum til að hraða afkóðun."
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:385
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:347
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
 #, kde-format
 msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
@@ -40807,36 +40807,36 @@ msgstr ""
 "Fjöldi afkóðunarþráða. Stillist fyrir opnun. Kannski engin áhrif fyrir suma "
 "afkóðara"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
 #, kde-format
 msgid "1: single thread decoding"
 msgstr "1: afkóðun á einum þræði"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:340
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
 #, kde-format
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
 "ZeroCopy: hraðvirkast. Bein myndgerð án afritunar gagna á milli CPU og GPU"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:341
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
 #, kde-format
 msgid "Not implemented for all codecs"
 msgstr "Ekki útfært fyrir alla kóðunarlykla"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
 #, kde-format
 msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
 msgstr "OptimizedCopy: afritun úr USWC-minni bestuðu með SSE4.1"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
 #, kde-format
 msgid "GenericCopy: slowest. Generic cpu copy"
 msgstr "GenericCopy: hægvirkast. Almenn afritun á CPU"
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:348
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
 msgstr "Fjölþráða afkóðun gæti hrunið"
@@ -54805,13 +54805,13 @@ msgstr "Óþekkt"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:927
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Engin mynd í fyrirliggjandi albúmi"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -54820,13 +54820,13 @@ msgstr ""
 "Það er engin mynd til að sýna úr núverandi albúmi.\n"
 "Myndvinnsluham verður lokað."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1199
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Skrá ekki tiltæk"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1201
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
