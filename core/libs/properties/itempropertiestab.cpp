@@ -184,6 +184,9 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelFileOwner                  = new DTextLabelValue(QString(), w1);
     d->labelFilePermissions            = new DTextLabelValue(QString(), w1);
 
+    d->labelFile->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    d->labelFolder->setTextInteractionFlags(Qt::TextSelectableByMouse);
+
     glay1->addWidget(file,                     0, 0, 1, 1);
     glay1->addWidget(d->labelFile,             0, 1, 1, 1);
     glay1->addWidget(folder,                   1, 0, 1, 1);

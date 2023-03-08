@@ -307,6 +307,6 @@ BUGFIXES:
 265 ==> 466938 - Duplicate Detection Reference Image.
 266 ==> 466564 - Ability to rescan face regions to get better results.
 267 ==> 461651 - digiKam segfault immediately after "Scan collection for faces".
-268 ==> 
+268 ==> 467024 - Make Text in Properties Selectable for Copy.
 269 ==> 
 270 ==> 
