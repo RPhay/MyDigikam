@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:52+0000\n"
+"POT-Creation-Date: 2023-03-08 00:44+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -936,9 +936,9 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1097
-#: core/utilities/imageeditor/main/imagewindow.cpp:1122
-#: core/utilities/imageeditor/main/imagewindow.cpp:1154
+#: core/utilities/imageeditor/main/imagewindow.cpp:1098
+#: core/utilities/imageeditor/main/imagewindow.cpp:1123
+#: core/utilities/imageeditor/main/imagewindow.cpp:1155
 #, kde-format
 msgid "Album \"%1\""
 msgstr ""
@@ -3218,7 +3218,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
-"Add settings to list prefered alternative/translated languages in text edit "
+"Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
@@ -8109,7 +8109,7 @@ msgstr ""
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr ""
@@ -10307,7 +10307,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -19488,7 +19488,7 @@ msgstr "Ovdačájeheapmi …"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -20485,9 +20485,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:872
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1044
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -20519,7 +20519,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:282
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -20628,7 +20628,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:654
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -20651,7 +20651,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -23461,160 +23461,160 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:714
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:637
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:797
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:888
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:916
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:951
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1002
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1037
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:138
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
 #, kde-format
 msgid "Remote Albums"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
 msgctxt "reload album list"
 msgid "Reload"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Reload album list"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
 #, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:189
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:203
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:206
 #, kde-format
 msgid "Maximum width:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:212
 #, kde-format
 msgid "Maximum height:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:218
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:301
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:436
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:711
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
 msgid ""
 "\n"
@@ -23640,22 +23640,22 @@ msgstr ""
 msgid "Nothing to upload - please select photos to upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:631
 #, kde-format
 msgid "Uploading file %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid ""
 "\n"
@@ -34312,21 +34312,21 @@ msgid "Selected items have different text here."
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:106
+#: core/libs/properties/captions/tagsedit.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:112
+#: core/libs/properties/captions/tagsedit.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:113
+#: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -34336,21 +34336,21 @@ msgid ""
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:130
+#: core/libs/properties/captions/tagsedit.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:136
+#: core/libs/properties/captions/tagsedit.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:294
+#: core/libs/properties/captions/tagsedit.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
@@ -36513,7 +36513,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -38092,69 +38092,69 @@ msgid "Codec %1 is not supported by CUDA"
 msgstr ""
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
 #, kde-format
 msgid "0: auto"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:375
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
 msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
 "quality. However it provides a big speedup for hi definition streams"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:381
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
 msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
 "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:383
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
 msgid "Force skipping frames for speed up decoding."
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:385
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:347
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
 #, kde-format
 msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
 "decoders"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
 #, kde-format
 msgid "1: single thread decoding"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:340
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
 #, kde-format
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:341
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
 #, kde-format
 msgid "Not implemented for all codecs"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
 #, kde-format
 msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
 #, kde-format
 msgid "GenericCopy: slowest. Generic cpu copy"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:348
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
 msgstr ""
@@ -39677,7 +39677,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr ""
@@ -48857,25 +48857,32 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48883,13 +48890,13 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -48897,37 +48904,37 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -48937,26 +48944,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -48965,7 +48972,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -51666,26 +51673,26 @@ msgstr ""
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:927
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1199
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1201
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -53572,27 +53579,27 @@ msgstr ""
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
@@ -53740,13 +53747,13 @@ msgstr ""
 msgid "Faces data management: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53754,47 +53761,47 @@ msgid ""
 "available faces."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr ""
