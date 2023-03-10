@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-07 20:30+0300\n"
+"PO-Revision-Date: 2023-03-09 13:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -63934,8 +63934,8 @@ msgstr ""
 "<p>Yeni derecelendirme isim uzayı oluşturmak için, parametreleri "
 "belirtmelisiniz:</p><p><ul><li>Noktalar ile isim uzayı adı.<br/>Örn.: <i>"
 "\"Xmp.xmp.Rating\"</i></li><li>Derecelendirme eşleştirmesi, yalnızca isim "
-"uzayı 0-5 değerlerinden başkaya ihtiyaç duyuyorsa <br/>Ex.: Microsoft 0 1 25 "
-"50 75 99 kullanıyor</li><li>Listeden doğru isim uzayı seçeneğini seçin.</"
+"uzayı 0-5 değerlerinden başkaya gereksinim duyuyorsa <br/>Ex.: Microsoft 0 1 "
+"25 50 75 99 kullanıyor</li><li>Listeden doğru isim uzayı seçeneğini seçin.</"
 "li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
@@ -64048,22 +64048,15 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Switching off exif auto rotation will most probably show your images in a "
-#| "wrong orientation, so only change this option if you explicitly require "
-#| "this. Furthermore, you need to regenerate all already stored thumbnails "
-#| "via the <interface>Tools / Maintenance</interface> menu."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Switching off exif auto rotation will most probably show your images in a "
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
-"Exif otomatik döndürmeyi kapatmak büyük ihtimalle resimlerinizi yanlış yönde "
-"gösterilmesine sebep olacaktır, bu seçeneği yalnızca özellikle ihtiyaç "
-"duyuyorsanız değiştirin. Ayrıca, <interface>Araçlar / Bakım</interface> "
-"menüsünden saklanan bütün küçük resimleri yeniden oluşturmanız gerekiyor."
+"Exif otomatik döndürmeyi kapatmak büyük olasılıkla görsellerinizi yanlış bir "
+"yönde gösterecektir, bu nedenle bu seçeneği yalnızca özellikle buna "
+"gereksiniminiz varsa değiştirin."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:263
 #, kde-format

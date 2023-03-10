@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-07 09:05+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"PO-Revision-Date: 2023-03-09 21:10+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -23441,7 +23441,7 @@ msgstr "Nivell d'accés"
 msgid ""
 "These are security and privacy settings for the new Google Photos album."
 msgstr ""
-"Aquesta és la configuració de seguretat i privadesa per al nou àlbum del "
+"Aquesta és la configuració de seguretat i privadesa per a l'àlbum nou de "
 "Google Photos."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:70
@@ -25709,7 +25709,7 @@ msgstr "Descripció de l'àlbum que es crearà (opcional)."
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:115
 #, kde-format
 msgid "Album template for the new album (optional)."
-msgstr "Plantilla d'àlbum per al nou àlbum (opcional)."
+msgstr "Plantilla d'àlbum per a l'àlbum nou (opcional)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:118
 #, kde-format
@@ -26481,7 +26481,7 @@ msgstr "Aquest és l'ajust de la corba de la lluminositat en la imatge"
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
-msgstr "Reinicia"
+msgstr "Inicialitza"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -30917,7 +30917,7 @@ msgstr "Reinicia el &canal"
 #: core/libs/dimg/filters/curves/curvesbox.cpp:224
 #, kde-format
 msgid "Reset &All"
-msgstr "Reinicia-ho &tot"
+msgstr "Inicialitza-ho &tot"
 
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
@@ -34630,7 +34630,7 @@ msgstr ""
 "\n"
 "Moveu el cursor del ratolí sobre aquest text per a veure més detalls quant "
 "als filtres actius.\n"
-"Premeu el botó «Reinicia» de la dreta per a netejar tota la configuració "
+"Premeu el botó «Inicialitza» de la dreta per a netejar tota la configuració "
 "dels filtres.\n"
 "Premeu el botó «Configuració» de la dreta per a obrir el plafó dels filtres."
 
@@ -39347,7 +39347,7 @@ msgstr "&Icona:"
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
-msgstr "Reinicia"
+msgstr "Inicialitza"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:147
 #, kde-format
@@ -53176,7 +53176,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
-msgstr "Desa la cerca actual d'imatge similar a un nou àlbum virtual"
+msgstr "Desa la cerca actual d'imatge similar a un àlbum virtual nou"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
 #, kde-format
@@ -53252,7 +53252,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
-msgstr "Desa la cerca actual per croquis a un nou àlbum virtual"
+msgstr "Desa la cerca actual per croquis a un àlbum virtual nou"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
 #, kde-format
@@ -54386,7 +54386,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
 #, kde-format
 msgid "Save current map search to a new virtual album."
-msgstr "Desa la cerca actual per mapa a un nou àlbum virtual."
+msgstr "Desa la cerca actual per mapa a un àlbum virtual nou."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:166
 #, kde-format
@@ -58552,7 +58552,7 @@ msgstr "Qualsevol de: %1"
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:29
 #, kde-format
 msgid "any color depth"
-msgstr "qualsevol profunditat de color"
+msgstr "Qualsevol profunditat de color"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:30
 #, kde-format
@@ -59456,7 +59456,7 @@ msgstr "Edita la cerca actual..."
 #: core/utilities/searchwindow/searchtabheader.cpp:285
 #, kde-format
 msgid "Save Current Search"
-msgstr "Desa la cerca actual"
+msgstr "Desament de la cerca actual"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:289
 #, kde-format
@@ -59467,7 +59467,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:294
 #, kde-format
 msgid "Save current search to a new virtual Album"
-msgstr "Desa la cerca actual a un nou àlbum virtual"
+msgstr "Desa la cerca actual a un àlbum virtual nou"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:295
 #, kde-format
@@ -59475,14 +59475,14 @@ msgid ""
 "If you press this button, the current search will be saved to a new virtual "
 "Search Album using the name set on the left side."
 msgstr ""
-"Si premeu aquest botó, la cerca actual es desarà a un nou àlbum virtual de "
+"Si premeu aquest botó, la cerca actual es desarà a un àlbum virtual nou de "
 "cerques usant el nom establert a l'esquerra."
 
 #: core/utilities/searchwindow/searchtabheader.cpp:310
 #: core/utilities/searchwindow/searchtabheader.cpp:337
 #, kde-format
 msgid "Edit Stored Search"
-msgstr "Edita la cerca emmagatzemada"
+msgstr "Edició de la cerca emmagatzemada"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:352
 #, kde-format

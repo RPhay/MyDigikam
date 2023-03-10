@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-02-24 11:01+0100\n"
+"PO-Revision-Date: 2023-03-08 14:15+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2783,10 +2783,9 @@ msgid "Clear all faces on this image"
 msgstr "Smazat všechny obličeje na tomto obrázku"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Označit všechny neznámé obličeje jako ignorované"
+msgstr "Označit nepotvrzené obličeje jako ignorované"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -50498,12 +50497,10 @@ msgstr "Vymazat nepotvrzené výsledky a znovu prohledat"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Vymazat nepotvrzené výsledky a znovu prohledat"
+msgstr "Vymazat všechny předchozí výsledky a znovu prohledat"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
@@ -54946,8 +54943,8 @@ msgstr ""
 "00 až 99)</p><p><b>yyyy</b>: Rok, jako čtyřciferné číslo (např. 2012)</"
 "p><p>Všechny ostatní vstupní znaky budou zpracovány jako text. Jakákoliv "
 "posloupnost znaků, uzavřených mezi apostrofy, bude zpracována jako text, "
-"nikoliv použita jako výraz. Příklad, pokud datum je 20 leden 1969:"
-"<p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Ne. Leden "
+"nikoliv použita jako výraz. Příklad, pokud datum je 20 leden 1969:</"
+"p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Ne. Leden "
 "20 69</p><p><b>'Fotografie byla pořízena v ' dddd</b> : Fotografie byla "
 "pořízena v neděli</p>"
 
