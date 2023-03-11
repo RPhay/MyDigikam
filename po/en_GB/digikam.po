@@ -36,7 +36,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-02 22:03+0000\n"
+"PO-Revision-Date: 2023-03-10 17:28+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -3330,10 +3330,7 @@ msgstr ""
 "Add Localize configuration panel in Setup/Misc for digiKam and Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
@@ -51605,12 +51602,10 @@ msgstr "Clear unconfirmed results and rescan"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Clear unconfirmed results and rescan"
+msgstr "Clear all previous results and re-scan"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format

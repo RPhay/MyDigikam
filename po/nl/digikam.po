@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-07 11:26+0100\n"
+"PO-Revision-Date: 2023-03-10 10:49+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -13137,8 +13137,8 @@ msgstr "Digitale zoom-verhouding:"
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr ""
-"Stel de digitale zoom-verhouding in gebruikt door de camera bij het maken "
-"van de foto."
+"Stel de digitale zoomverhouding in gebruikt door de camera bij het maken van "
+"de foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format

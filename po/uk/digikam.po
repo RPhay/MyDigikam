@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-07 19:56+0200\n"
+"PO-Revision-Date: 2023-03-10 09:00+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -4023,7 +4023,7 @@ msgstr "Апертура:"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
-msgstr "Фокальна відстань"
+msgstr "Фокусна відстань"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:82
 #: core/app/views/tableview/tableview_column_photo.cpp:122
@@ -13171,7 +13171,7 @@ msgstr "Запис технічних подробиць використанн�
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length (mm):"
-msgstr "Фокальна відстань (у мм):"
+msgstr "Фокусна відстань (у мм):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
@@ -13179,13 +13179,13 @@ msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
 "picture."
 msgstr ""
-"Тут ви можете встановити фокальну відстань об'єктива у міліметрах, яку "
+"Тут ви можете встановити фокусну відстань об'єктива у міліметрах, яку "
 "фотоапарат використав для знімання."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
 #, kde-format
 msgid "Focal length in 35mm film (mm):"
-msgstr "Фокальна відстань для 35мм плівки (мм):"
+msgstr "Фокусна відстань для 35мм плівки (мм):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:160
 #, kde-format
@@ -13193,7 +13193,7 @@ msgid ""
 "Set here equivalent focal length assuming a 35mm film camera, in mm. A value "
 "of 0 means the focal length is unknown."
 msgstr ""
-"Тут ви можете встановити еквівалентну фокальну відстань для 35мм-плівкового "
+"Тут ви можете встановити еквівалентну фокусну відстань для 35мм-плівкового "
 "фотоапарата, у мм. Значення 0 означає, що фокальна відстань є невідомою."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
@@ -18156,7 +18156,7 @@ msgstr "Показувати діафрагму і фокусну відстан
 #, kde-format
 msgctxt "@info"
 msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Показувати діафрагму і фокальну відстань фотоапарата внизу екрана."
+msgstr "Показувати діафрагму і фокусну відстань фотоапарата внизу екрана."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
 #, kde-format
@@ -21967,7 +21967,7 @@ msgstr "Показувати діафрагму і фокусну відстан
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
 msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Показувати діафрагму і фокальну відстань фотоапарата внизу екрана."
+msgstr "Показувати діафрагму і фокусну відстань фотоапарата внизу екрана."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:148
 #: core/showfoto/setup/showfotosetuptooltip.cpp:157
@@ -29823,7 +29823,7 @@ msgstr "<i>Апертура:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:275
 #, kde-format
 msgid "<i>Focal:</i>"
-msgstr "<i>Фокальна відстань:</i>"
+msgstr "<i>Фокусна відстань:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:276
 #, kde-format
@@ -32597,7 +32597,7 @@ msgstr ""
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:190
 #, kde-format
 msgid "Focal Length (mm):"
-msgstr "Фокальна відстань (у мм):"
+msgstr "Фокусна відстань (у мм):"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:191
 #, kde-format
@@ -32663,7 +32663,7 @@ msgstr "Апертура: <numid>%1</numid>"
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
-msgstr "Фокальна відстань: <numid>%1</numid>"
+msgstr "Фокусна відстань: <numid>%1</numid>"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
 #, kde-format
@@ -51992,12 +51992,12 @@ msgstr "Апертура:"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
 msgid "Focal length"
-msgstr "Фокальна відстань"
+msgstr "Фокусна відстань"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
 #, kde-format
 msgid "Focal length (35mm equivalent)"
-msgstr "Фокальна відстань об'єктива (у 35 мм еквіваленті)"
+msgstr "Фокусна відстань об'єктива (у 35 мм еквіваленті)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:460
@@ -59085,7 +59085,7 @@ msgstr "–"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:422
 #, kde-format
 msgid "Focal length of the lens"
-msgstr "Фокальна відстань об'єктива"
+msgstr "Фокусна відстань об'єктива"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:423
 #, kde-format
@@ -59096,7 +59096,7 @@ msgstr "–"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
 msgid "35mm equivalent focal length"
-msgstr "Фокальна відстань у 35мм еквіваленті"
+msgstr "Фокусна відстань у 35мм еквіваленті"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, kde-format

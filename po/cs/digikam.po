@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-08 14:15+0100\n"
+"PO-Revision-Date: 2023-03-10 12:44+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -123,25 +123,25 @@ msgstr "Vč&era"
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Monday"
-msgstr "Posled&ní pondělí"
+msgstr "Minulé po&ndělí"
 
 #: core/app/date/ddatepickerpopup.cpp:135
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Friday"
-msgstr "Poslední páte&k"
+msgstr "Minulý páte&k"
 
 #: core/app/date/ddatepickerpopup.cpp:136
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last &Week"
-msgstr "Poslední &týden"
+msgstr "Minulý &týden"
 
 #: core/app/date/ddatepickerpopup.cpp:137
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Last M&onth"
-msgstr "P&oslední měsíc"
+msgstr "Min&ulý měsíc"
 
 #: core/app/date/ddatepickerpopup.cpp:147
 #, kde-format
