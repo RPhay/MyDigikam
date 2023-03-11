@@ -97,8 +97,10 @@ DK_KF5_VERSION="5.102"
 # Qt version to use in bundle and provided by Macports.
 DK_QTVERSION="5.15"
 
-# Mariadb version to install for Qt QSL plugin
-DK_MARIADB_VERSION="10.5"
+# Mariadb version to install for Qt QSL plugin.
+# Left empty to use current 5.x from Macports
+DK_MARIADB_VERSION=""
+#DK_MARIADB_VERSION="10.5"
 
 if [[ ! -z "$DK_MARIADB_VERSION" ]] ; then
     MP_MARIADB_VARIANT="+mariadb$DK_MARIADB_VERSION"
