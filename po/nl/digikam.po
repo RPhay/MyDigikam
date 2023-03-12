@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-10 10:49+0100\n"
+"PO-Revision-Date: 2023-03-11 14:26+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -12750,7 +12750,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
 msgid "Exposure mode:"
-msgstr "Opname-modus:"
+msgstr "Belichtingsmodus:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:199
 #, kde-format
@@ -13438,8 +13438,9 @@ msgid ""
 msgstr ""
 "Stel de flitsenergie in BCPS-eenheden in die gebruikt werd bij het maken van "
 "de foto. Beam Candle Power Seconds is de maat van de effectieve intensiteit "
-"van een lichtbron als het gefocuseerd wordt in een straal door een reflector "
-"of lens. Deze waarde is de effectieve intensiteit gedurende een seconde."
+"van een lichtbron als het gefocusseerd wordt in een straal door een "
+"reflector of lens. Deze waarde is de effectieve intensiteit gedurende een "
+"seconde."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
 #, kde-format

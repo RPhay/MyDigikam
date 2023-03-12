@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-10 09:00+0200\n"
+"PO-Revision-Date: 2023-03-11 19:08+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -12393,7 +12393,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:137
 #, kde-format
 msgid "Custom rendered:"
-msgstr "Нетипове перетворено:"
+msgstr "Нетипово перетворено:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:139
 #, kde-format
@@ -12714,7 +12714,7 @@ msgstr "Сканер віддзеркаленого матеріалу"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
 #, kde-format
 msgid "Digital still camera"
-msgstr "Нерухома цифрова фотокамера"
+msgstr "Цифрова фотокамера"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
 #, kde-format
@@ -12744,7 +12744,7 @@ msgstr "Час експозиції (у секундах):"
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
-msgstr "Тут ви можете встановити час експозиції знімку у секундах."
+msgstr "Тут ви можете встановити час експозиції знімка у секундах."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
 #, kde-format
@@ -12871,7 +12871,7 @@ msgstr "Режим вимірювання:"
 #, kde-format
 msgctxt "metering mode"
 msgid "Unknown"
-msgstr "Невідомо"
+msgstr "Невідомий"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:225
 #, kde-format
@@ -12895,13 +12895,13 @@ msgstr "Пляма"
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-spot"
-msgstr "Мульти-пляма"
+msgstr "Мультипляма"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:229
 #, kde-format
 msgctxt "metering mode"
 msgid "Multi-segment"
-msgstr "Мульти-сегмент"
+msgstr "Мультисегмент"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:230
 #, kde-format
@@ -12987,7 +12987,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Scene capture type:"
-msgstr "Тип сцени знімку:"
+msgstr "Тип сцени знімка:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:296
 #, kde-format
@@ -12999,13 +12999,13 @@ msgstr "Стандартний"
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Landscape"
-msgstr "Альбомна"
+msgstr "Ландшафтний"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Portrait"
-msgstr "Книжкова"
+msgstr "Портретний"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
 #, kde-format
@@ -13049,7 +13049,7 @@ msgstr "Зблизька"
 #, kde-format
 msgctxt "@item: subject distance"
 msgid "Distant view"
-msgstr "На відстані"
+msgstr "На віддалі"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:311
 #, kde-format
