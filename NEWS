@@ -308,5 +308,5 @@ BUGFIXES:
 266 ==> 466564 - Ability to rescan face regions to get better results.
 267 ==> 461651 - digiKam segfault immediately after "Scan collection for faces".
 268 ==> 467024 - Make Text in Properties Selectable for Copy.
-269 ==> 
+269 ==> 467245 - NetBSD compilation fix for Neptune.
 270 ==> 
