@@ -309,4 +309,9 @@ BUGFIXES:
 267 ==> 461651 - digiKam segfault immediately after "Scan collection for faces".
 268 ==> 467024 - Make Text in Properties Selectable for Copy.
 269 ==> 467245 - NetBSD compilation fix for Neptune.
-270 ==> 
+270 ==> 467233 - Tags added to videos files (mp4 or mov) in digiKam are not written into file metadate.
+271 ==> 
+272 ==> 
+273 ==> 
+274 ==> 
+275 ==> 
