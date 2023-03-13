@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-05 22:12+0100\n"
+"PO-Revision-Date: 2023-03-12 18:03+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3360,10 +3360,7 @@ msgstr ""
 "per digiKam e Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
@@ -52412,23 +52409,21 @@ msgstr "Salta le immagini già analizzate"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
-msgstr "Analizza ancora e unisci i risultati"
+msgstr "Rianalizza e unisci i risultati"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
-msgstr "Pulisci i risultati non confermati e analizza ancora"
+msgstr "Pulisci i risultati non confermati e rianalizza"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Pulisci i risultati non confermati e analizza ancora"
+msgstr "Pulisci tutti i risultati precedenti e rianalizza"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format

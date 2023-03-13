@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-02-20 17:22+0100\n"
+"PO-Revision-Date: 2023-03-02 10:22+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17564,17 +17564,13 @@ msgid "Jalbum completed."
 msgstr "Die jAlbum-Galerie ist fertiggestellt."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to jAlbum album tool</b></h1></p><p>This assistant "
-#| "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
-#| "project.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Willkommen beim Werkzeug zur jAlbum-Generierung</b></h1></"
+"<qt><p><h1><b>Willkommen beim Werkzeug zum jAlbum-Export</b></h1></"
 "p><p>Dieser Assistent hilft Ihnen dabei, die Bilder schnell</p><p></p><p>für "
 "ein jAlbum-Projekt zu exportieren.</p></qt>"
 
@@ -17612,10 +17608,9 @@ msgid "Create jAlbum Album"
 msgstr "Neues jAlbum erstellen"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Willkommen beim Werkzeug zur jAlbum-Generierung"
+msgstr "Willkommen beim Werkzeug zum jAlbum-Export"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -25451,9 +25446,7 @@ msgid "Reload album list"
 msgstr "Albenliste neu laden"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Name:"
@@ -25462,7 +25455,7 @@ msgstr "Name:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URL:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
@@ -26283,8 +26276,7 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>Liste aller Benutzer-Alben.</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "%1 - Das Erstellen des Albums ist fehlgeschlagen"
@@ -26354,23 +26346,19 @@ msgid "Export by Web Service"
 msgstr "Zu Webdienst exportieren"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error to import RAW image with UFRaw\n"
-#| "Close this dialog to load RAW image with native import tool"
+#, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"Fehler beim Importieren des RAW-Bildes mit UFRaw\n"
+"Fehler beim Importieren des RAW-Bildes mit ART\n"
 "Schließen Sie diesen Dialog, um das RAW-Bild mit dem Standard-Importtool zu "
 "laden"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "RAW-Umwandlung"
+msgstr "ART-RAW-Umwandlung"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
@@ -26383,10 +26371,9 @@ msgstr ""
 "laden"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "DarkTable Raw Conversion"
-msgstr "RAW-Umwandlung"
+msgstr "Darktable-RAW-Umwandlung"
 
 #: core/dplugins/rawimport/native/rawimport.cpp:65
 #, kde-format
@@ -26414,7 +26401,7 @@ msgstr "RAW-Bild mit Libraw importieren"
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
 #, kde-format
 msgid "A tool to import Raw images using Libraw engine"
-msgstr "Ein Werkzeug zum Importieren von RAW-Bildern mit dem Libraw-Codec."
+msgstr "Ein Werkzeug zum Importieren von RAW-Bildern mit dem Libraw-Codec"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:68
 #, kde-format
@@ -26425,9 +26412,9 @@ msgid ""
 "for details: <a href='https://www.libraw.org/'>https://www.libraw.org/</a></"
 "p>"
 msgstr ""
-"<p>Dieses Werkzeug zur Bildbearbeitung nutzt Libraw als Entwicklungswerkzeug."
-"</p><p>Es ist das <b>Standard</b> RAW-Importwerkzeug und ist Bestandteil der "
-"Anwendung. Es benötigt keinerlei zusätzliche Hilfen.</p><p>Siehe Libraw-"
+"<p>Dieses Werkzeug zur Bildbearbeitung nutzt Libraw für das Entwickeln.</"
+"p><p>Es ist das <b>Standard</b>-RAW-Importwerkzeug und ist Bestandteil der "
+"Anwendung. Es benötigt keinerlei externe Software.</p><p>Siehe Libraw-"
 "Webseite: <a href='https://www.libraw.org/'>https://www.libraw.org/</a></p>"
 
 #: core/dplugins/rawimport/native/rawpreview.cpp:172
@@ -26527,7 +26514,7 @@ msgstr "Zurücksetzen"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
 msgid "Reset curve to linear"
-msgstr "Kurve in Gerade zurücksetzen"
+msgstr "Kurve auf Gerade zurücksetzen"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
 #: core/utilities/searchwindow/searchfields_createfield.cpp:460
@@ -26560,7 +26547,7 @@ msgstr "Importieren"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:321
 #, kde-format
 msgid "Import image to editor using current settings."
-msgstr "Bild in den Editor mit den aktuellen Einstellungen importieren."
+msgstr "Bild mit den aktuellen Einstellungen in den Editor importieren."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:323
 #, kde-format
@@ -26585,10 +26572,9 @@ msgstr ""
 "laden"
 
 #: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "RawTherapee Raw Conversion"
-msgstr "RAW-Umwandlung"
+msgstr "RawTherapee-RAW-Umwandlung"
 
 #: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
@@ -26601,10 +26587,9 @@ msgstr ""
 "laden"
 
 #: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "UFRaw Raw Conversion"
-msgstr "RAW-Umwandlung"
+msgstr "UFRaw-RAW-Umwandlung"
 
 #: core/libs/album/engine/album.cpp:421
 #: core/libs/database/utils/ifaces/dio.cpp:812
@@ -26643,33 +26628,25 @@ msgid "Current Duplicates Search"
 msgstr "Aktuelle Suche nach Duplikaten"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:241
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The folder you want to delete contains files (%1) which are not "
-#| "displayed in digiKam.</p><p>Do you want to continue?</p>"
+#, kde-format
 msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
-"<p>Der zu löschende Ordner enthält Dateien (%1) die nicht in digiKam "
+"<p>Das zu löschende Album enthält Dateien (%1), die nicht in digiKam "
 "angezeigt werden.</p><p>Möchten Sie fortfahren?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:254
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The folder you want to delete contains files (%1) which are not "
-#| "displayed in digiKam.</p><p>Do you want to continue?</p>"
+#, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
 msgstr ""
-"<p>Der zu löschende Ordner enthält Dateien (%1) die nicht in digiKam "
-"angezeigt werden.</p><p>Möchten Sie fortfahren?</p>"
+"<p>Das zu löschende Album ist nicht leer.</p><p>Möchten Sie fortfahren?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Album umbenennen (%1)"
@@ -26691,37 +26668,28 @@ msgstr "Alben werden durchsucht"
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
 #, kde-format
 msgid "Searches"
-msgstr "Virtuelle Alben"
+msgstr "Suchliste"
 
 #: core/libs/album/manager/albummanager_database.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL database directory are not found, please set the correct "
-#| "location in the next dialog."
+#, kde-format
 msgid ""
 "The MySQL database directory was not found, please set the correct location "
 "in the next dialog."
 msgstr ""
-"Die SQLite-Datenbank wurde nicht gefunden; Bitte geben Sie den korrekten "
-"Speicherort im nächsten Dialog ein."
+"Der MySQL-Datenbankordner wurde nicht gefunden; Bitte geben Sie den "
+"korrekten Speicherort im nächsten Dialog ein."
 
 #: core/libs/album/manager/albummanager_database.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MySQL binary tools are not found, please set the correct location in "
-#| "the next dialog."
+#, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
-"Das MySQL Programm wurde nicht gefunden; Bitte geben Sie den korrekten "
+"Das MySQL-Programm wurde nicht gefunden; Bitte geben Sie den korrekten "
 "Speicherort im nächsten Dialog ein."
 
 #: core/libs/album/manager/albummanager_database.cpp:125
-#, fuzzy, kde-format
-#| msgid ""
-#| "The SQLite core database are not found, please set the correct location "
-#| "in the next dialog."
+#, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
@@ -26737,6 +26705,10 @@ msgid ""
 "If you want to start with a new configuration and with a first run wizard, "
 "delete the file %1"
 msgstr ""
+"\n"
+"\n"
+"Wenn Sie mit einer neuen Konfiguration und dem Einrichtungsassistenten "
+"starten wollen, löschen Sie die Datei %1"
 
 #: core/libs/album/manager/albummanager_database.cpp:148
 #, kde-format
@@ -26746,8 +26718,11 @@ msgid ""
 "Details:\n"
 "%1"
 msgstr ""
-"<p><b>Fehler beim Start des internen Servers.</b></p>Details:\n"
-" %1"
+"Fehler beim Start des internen Servers.\n"
+"\n"
+"\n"
+"Details:\n"
+"%1"
 
 #: core/libs/album/manager/albummanager_database.cpp:164
 #, kde-format
@@ -26799,16 +26774,7 @@ msgstr ""
 "Einstellungen im <b>Einstellungsdialog</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:255
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your locale has changed since this album was last opened.\n"
-#| "Old locale: %1, new locale: %2\n"
-#| "If you have recently changed your locale, you need not be concerned.\n"
-#| "Please note that if you switched to a locale that does not support some "
-#| "of the filenames in your collection, these files may no longer be found "
-#| "in the collection. If you are sure that you want to continue, click "
-#| "'Yes'. Otherwise, click 'No' and correct your locale setting before "
-#| "restarting digiKam."
+#, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
 "Old character set: %1, new character set: %2\n"
@@ -26820,17 +26786,16 @@ msgid ""
 "'Yes'. Otherwise, click 'No' and correct your database character set setting "
 "before restarting digiKam."
 msgstr ""
-"Ihre Regionaleinstellungen wurden geändert, seitdem dieses Album das letzte "
+"Der Datenbank-Zeichensatz wurden geändert, seitdem dieses Album das letzte "
 "Mal geöffnet wurde.\n"
-"Alte Regionaleinstellungen: %1, Neue Regionaleinstellungen: %2\n"
-"Wenn Sie ihre Regionaleinstellungen kürzliche bearbeitet haben, gibt es "
-"keinen Grund zur Besorgnis.\n"
-"Bitte beachten Sie, dass Regionaleinstellungen, die nicht alle Dateinamen "
-"Ihrer Sammlung unterstützen, unter Umständen dazu führen, dass diese Dateien "
-"nicht länger in der Sammlung gefunden werden können. Falls Sie fortfahren "
-"möchten, klicken Sie bitte auf „Ja“, um mit dem Album zu arbeiten. "
-"Anderenfalls klicken Sie bitte auf „Nein“ und korrigieren Sie Ihre "
-"Regionaleinstellungen, bevor Sie digiKam erneut starten."
+"Alter Zeichensatz: %1, neuer Zeichensatz: %2\n"
+"Wenn Sie den Zeichensatz kürzliche geändert haben, gibt es keinen Grund zur "
+"Besorgnis.\n"
+"Bitte beachten Sie, dass Zeichensätze, die nicht alle Dateinamen Ihrer "
+"Sammlung unterstützen, unter Umständen dazu führen, dass diese Dateien nicht "
+"länger in der Sammlung gefunden werden können. Falls Sie fortfahren möchten, "
+"klicken Sie bitte auf „Ja“. Anderenfalls klicken Sie bitte auf „Nein“ und "
+"korrigieren Sie die Zeichensatzeinstellung, bevor Sie digiKam erneut starten."
 
 #: core/libs/album/manager/albummanager_database.cpp:298
 #, kde-format
@@ -26875,15 +26840,13 @@ msgstr ""
 "Einrichtungsdialogs lösen"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Sammlung nicht gefunden"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Datenbankordner"
@@ -26898,18 +26861,17 @@ msgid ""
 "database file was indeed created for the pictures located in the folder "
 "\"%2\" - or ignore the old file and start with a new database?</p> "
 msgstr ""
-"<p>Sie haben den Ordner „%1“ als neuen Speicherplatz für die Datenbank "
-"ausgewählt. An dieser Stelle liegt bereits eine Datenbankdatei einer älteren "
-"digiKam-Version.</p><p>Möchten Sie die alte Datenbankdatei aktualisieren, "
-"und somit bestätigen, dass diese Datenbankdatei wirklich für die in „%2“ "
-"befindlichen Bilder erstellt worden ist, oder die alte Datenbankdatei "
-"ignorieren und mit einer neuen Datenbank beginnen?</p> "
+"<p>Sie haben den Ordner „%1“ als Speicherort für die Datenbank ausgewählt. "
+"An dieser Stelle liegt bereits eine Datenbankdatei einer älteren digiKam-"
+"Version.</p><p>Möchten Sie die alte Datenbankdatei aktualisieren, und somit "
+"bestätigen, dass diese Datenbankdatei wirklich für die in „%2“ befindlichen "
+"Bilder erstellt worden ist, oder die alte Datenbankdatei ignorieren und mit "
+"einer neuen Datenbank beginnen?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Datenbank aktualisieren"
@@ -26918,8 +26880,7 @@ msgstr "Datenbank aktualisieren"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, fuzzy, kde-format
-#| msgid "Create New Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Neue Datenbank erstellen"
@@ -26928,8 +26889,7 @@ msgstr "Neue Datenbank erstellen"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Neuer Datenbankordner"
@@ -26943,7 +26903,7 @@ msgid ""
 "database, or copy the current database to this location and continue using "
 "it?</p> "
 msgstr ""
-"<p>Sie haben den Ordner „%1“ als neuen Speicherplatz für die Datenbank "
+"<p>Sie haben den Ordner „%1“ als neuen Speicherort für die Datenbank "
 "ausgewählt. An dieser Stelle liegt bereits eine Datenbankdatei einer älteren "
 "digiKam-Version.</p> <p>Möchten Sie die alte Datenbankdatei aktualisieren, "
 "eine neue Datenbank erstellen oder die aktuelle Datenbank an diese Stelle "
@@ -26952,8 +26912,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, fuzzy, kde-format
-#| msgid "Copy Current Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Aktuelle Datenbankdatei kopieren"
@@ -26966,11 +26925,11 @@ msgid ""
 "p> <p>Would you like to upgrade the old database file or start with a new "
 "database?</p>"
 msgstr ""
-"<p>Sie haben den Ordner „%1“ als neuen Speicherplatz für die Datenbank "
+"<p>Sie haben den Ordner „%1“ als neuen Speicherort für die Datenbank "
 "ausgewählt. An dieser Stelle liegt bereits eine Datenbankdatei einer älteren "
 "digiKam-Version.</p> <p>Möchten Sie die alte Datenbankdatei aktualisieren, "
 "eine neue Datenbank erstellen oder die aktuelle Datenbank an diese Stelle "
-"kopieren und sie weiterhin benutzen?</p> "
+"kopieren und sie weiterhin benutzen?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:588
 #, kde-format
@@ -26979,7 +26938,7 @@ msgid ""
 "Trying to upgrade old databases."
 msgstr ""
 "Das Kopieren der alten Datenbankdatei „%1“ an ihren neuen Platz „%2“ ist "
-"fehlgeschlagen. Es wird nun versucht die alte Datenbank zu aktualisieren."
+"fehlgeschlagen. Es wird nun versucht, die alte Datenbank zu aktualisieren."
 
 #: core/libs/album/manager/albummanager_database.cpp:603
 #, kde-format
@@ -26988,7 +26947,7 @@ msgid ""
 "</p><p>Would you like to copy the current database to this location and "
 "continue using it, or start with a new database?</p> "
 msgstr ""
-"<p>Sie haben den Ordner „%1“ als neuen Ort zum Speichern der Datenbank "
+"<p>Sie haben den Ordner „%1“ als neuen Speicherort für die Datenbank "
 "ausgewählt.</p><p>Möchten Sie die aktuelle Datenbank dorthin kopieren und "
 "sie weiter benutzen oder möchten Sie eine neue Datenbank erstellen?</p>"
 
@@ -27006,8 +26965,7 @@ msgstr ""
 "entfernen und die aktuelle Datenbank an diese Stelle kopieren?</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Existierende Datei verwenden"
@@ -27032,11 +26990,10 @@ msgstr ""
 "„%2“. Es wird eine leere Datenbank benutzt."
 
 #: core/libs/album/manager/albummanager_database.cpp:751
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "New database"
-msgstr "Neuer Datenbankordner"
+msgstr "Neue Datenbank"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
@@ -27047,7 +27004,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_palbum.cpp:352
 #, kde-format
 msgid "No album for collection location: Internal error"
-msgstr "Es wurde keine Alben-Sammlung geladen: Interner Fehler"
+msgstr "Am Sammlungsort befinden sich keine Alben: Interner Fehler"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:368
 #, kde-format
@@ -27078,12 +27035,12 @@ msgstr "Es existiert bereits ein Album dieses Namens."
 #: core/libs/album/manager/albummanager_palbum.cpp:419
 #, kde-format
 msgid "Failed to create directory '%1'"
-msgstr "Fehler beim Erstellen des Ordners %1"
+msgstr "Fehler beim Erstellen des Ordners „%1“"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:428
 #, kde-format
 msgid "Failed to add album to database"
-msgstr "Das Hinzufügen des Albums zur Datenbank ist fehlgeschlagen."
+msgstr "Das Hinzufügen des Albums zur Datenbank ist fehlgeschlagen"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
@@ -27098,10 +27055,11 @@ msgstr "Album nicht gefunden"
 #: core/libs/album/manager/albummanager_palbum.cpp:461
 #, kde-format
 msgid "Cannot rename root album"
-msgstr "Das Album lässt sich nicht umbenennen."
+msgstr "Der Basisordner kann nicht umbenannt werden."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:467
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot rename album root album"
 msgid "Cannot rename album root album"
 msgstr "Das Basis-Album lässt sich nicht umbenennen."
 
@@ -27184,7 +27142,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_talbum.cpp:503
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
-msgstr ""
+msgstr "Versuch, das TAlbum nirgendwo hinzuschieben."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:509
 #, kde-format
@@ -27351,7 +27309,7 @@ msgstr "Weiß"
 #, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Picks: "
-msgstr "Auswahl:"
+msgstr "Auswahl: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:375
 #, kde-format
@@ -27381,10 +27339,10 @@ msgid "Accepted"
 msgstr "Angenommen"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
-msgstr "Export läuft"
+msgstr "Exportierte Markierungen"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
 #, fuzzy, kde-format
@@ -27401,10 +27359,9 @@ msgid "Expand Selected Nodes"
 msgstr "Ausgewählte Knoten ausklappen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Expand all Albums"
-msgstr "Album kopieren"
+msgstr "Alle Alben ausklappen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
@@ -27414,10 +27371,9 @@ msgid "Collapse Selected Recursively"
 msgstr "Ausgewählte Knoten rekursiv einklappen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse all Albums"
-msgstr "Album kopieren"
+msgstr "Alle Alben einklappen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
@@ -27431,9 +27387,9 @@ msgid "Scan for Faces"
 msgstr "Nach Gesichtern suchen"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:237
-#, fuzzy, kde-format
+#, kde-format
 msgid "Repair hidden Items"
-msgstr "Einträge gruppieren"
+msgstr "Ausgeblendete Einträge reparieren"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
@@ -27441,8 +27397,7 @@ msgid "Refresh"
 msgstr "Aktualisieren"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:305
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Nach Gesichtern suchen"
@@ -27567,16 +27522,13 @@ msgid "White"
 msgstr "Weiß"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Neues Album erstellen"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Album bearbeiten"
@@ -27598,11 +27550,10 @@ msgid "&Title:"
 msgstr "&Titel:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:150
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
-msgstr "Geben Sie hier den Anbieter des Inhalts an."
+msgstr "Geben Sie hier den neuen Albumtitel an."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:155
 #, kde-format
@@ -27642,12 +27593,12 @@ msgid "&Oldest"
 msgstr "&Ältestes"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
-msgstr "Benutzen Sie diesen Knopf, um alle doppelten Bilder zu löschen."
+msgstr ""
+"Benutzen Sie diesen Knopf, um das Datum des ältesten Bildes im Album "
+"auszuwählen."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
@@ -27657,12 +27608,12 @@ msgid "&Average"
 msgstr "&Durchschnitt"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
-msgstr "Benutzen Sie diesen Knopf, um alle doppelten Bilder zu löschen."
+msgstr ""
+"Benutzen Sie diesen Knopf, um das Durchschnittsdatum der Bilder im Album zu "
+"bestimmen."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:186
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
@@ -27672,12 +27623,12 @@ msgid "Newest"
 msgstr "Neuestes"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
-msgstr "Benutzen Sie diesen Knopf, um alle doppelten Bilder zu löschen."
+msgstr ""
+"Benutzen Sie diesen Knopf, um das Datum des jüngsten Bildes im Album "
+"auszuwählen."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
@@ -27711,12 +27662,10 @@ msgid ""
 "\"%1\""
 msgstr ""
 "Neues Album erstellen in\n"
-"\"%1\""
+"„%1“"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Es kann kein Durchschnitt berechnet werden."
@@ -27767,8 +27716,7 @@ msgstr[0] "1 Album ausgeschlossen"
 msgstr[1] "%1 Alben ausgeschlossen"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Album auswählen"
@@ -27805,7 +27753,9 @@ msgid "No Album Selected"
 msgstr "Kein Album ausgewählt"
 
 #: core/libs/album/widgets/albumselectors.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reset selected albums"
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Ausgewählte Alben zurücksetzen"
@@ -27829,7 +27779,9 @@ msgid "No Tag Selected"
 msgstr "Kein Stichwort ausgewählt"
 
 #: core/libs/album/widgets/albumselectors.cpp:212
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Reset selected tags"
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Ausgewählte Stichwörter zurücksetzen"
@@ -27876,7 +27828,7 @@ msgstr "digiKam unterstützt keine entfernten Adressen (URLs) als Sammlung."
 #: core/libs/database/collection/collectionmanager_location.cpp:448
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
-msgstr "Der ausgewählte Ordner existiert nicht oder ins nicht lesbar."
+msgstr "Der ausgewählte Ordner existiert nicht oder ist nicht lesbar."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:260
 #, kde-format
@@ -28012,7 +27964,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
-msgstr "Gemeinsam benutzter Ordner, unter „%1“ eingehängt"
+msgstr "Freigegebener Ordner, unter „%1“ eingehängt"
 
 #: core/libs/database/coredb/coredbaccess.cpp:312
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
@@ -28023,28 +27975,28 @@ msgid ""
 "Error opening database backend.\n"
 "%1"
 msgstr ""
-"Fehler bei Öffnen des Datenbanktreibers.\n"
+"Fehler beim Öffnen des Datenbanktreibers.\n"
 "%1"
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:62
 #, kde-format
 msgid "Error while opening the source database."
-msgstr "Fehler bei Öffnen der Quelldatenbank."
+msgstr "Fehler beim Öffnen der Quelldatenbank."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:72
 #, kde-format
 msgid "Error while opening the target database."
-msgstr "Fehler bei Öffnen der Zieldatenbank."
+msgstr "Fehler beim Öffnen der Zieldatenbank."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:119
 #, kde-format
 msgid "Error while preparing the target database."
-msgstr "Fehler bei Vorbereiten der Zieldatenbank."
+msgstr "Fehler beim Vorbereiten der Zieldatenbank."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:130
 #, kde-format
 msgid "Error while scrubbing the target database."
-msgstr "Fehler beim Leeren der Zieldatenbank."
+msgstr "Fehler beim Bereinigen der Zieldatenbank."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:142
 #, kde-format
@@ -28087,7 +28039,7 @@ msgid ""
 msgstr ""
 "Die Datenbank ist ungültig: Die Einstellung „DBVersion“ ist nicht vorhanden. "
 "Die aktuelle Version des Datenbankschemas kann daher nicht überprüft werden. "
-"Versuchen Sie bitte mit einer leeren Datenbank neu zu starten. "
+"Versuchen Sie bitte, mit einer leeren Datenbank neu zu starten. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:271
 #, kde-format
@@ -28141,20 +28093,16 @@ msgid ""
 "this error to the digikam developers mailing list (see www.digikam.org/"
 "support). As well, please have a look at what digiKam prints on the console. "
 msgstr ""
-"Die Aktualisierung des Schemas von Version 4 nach 6 ist durch einen für das "
+"Die Aktualisierung des Schemas von Version 4 auf 6 ist durch einen für das "
 "Programm unerwarteten Fehler fehlgeschlagen. Sie können Ihre alte Datenbank "
 "wegwerfen und mit einer leeren neu anfangen. In diesem Fall verschieben Sie "
 "bitte die Datenbankdateien „%1“ und „%2“ aus dem Ordner „%3“. "
 "Höchstwahrscheinlich möchten Sie aber lieber diesen Fehler an die Entwickler-"
-"Mailingliste, siehe  www.digikam.org/support, auf Englisch berichten. "
+"Mailingliste, siehe www.digikam.org/support, auf Englisch berichten. "
 "Betrachten Sie bitte zusätzlich, was digiKam auf der Konsole ausgibt. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:453
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to update the database schema from version %1 to version %2. "
-#| "Please read the error messages printed on the console and report this "
-#| "error as a bug at bugs.kde.org. "
+#, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
 "The cause could be a missing upgrade of the database to the current server "
@@ -28162,23 +28110,22 @@ msgid ""
 "database."
 msgstr ""
 "Die Aktualisierung des Datenbankschemas von Version %1 auf %2 ist "
-"fehlgeschlagen. Bitte lesen Sie die Fehlermeldung, die in der Konsole "
-"ausgegeben wurde und melden Sie diesen Fehler auf bugs.kde.org."
+"fehlgeschlagen.\n"
+"Eine mögliche Ursache ist eine fehlende Aktualisierung der Datenbank auf die "
+"aktuelle Serverversion. Starten Sie jetzt digiKam neu, um eine benötigte "
+"Aktualisierung der Datenbank durchzuführen."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:462
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to update the database schema from version %1 to version %2. "
-#| "Please read the error messages printed on the console and report this "
-#| "error as a bug at bugs.kde.org. "
+#, kde-format
 msgid ""
 "Failed to update the database schema from version %1 to version %2.\n"
 "Please read the error messages printed on the console and report this error "
 "as a bug at bugs.kde.org."
 msgstr ""
 "Die Aktualisierung des Datenbankschemas von Version %1 auf %2 ist "
-"fehlgeschlagen. Bitte lesen Sie die Fehlermeldung, die in der Konsole "
-"ausgegeben wurde und melden Sie diesen Fehler auf bugs.kde.org."
+"fehlgeschlagen.\n"
+"Bitte lesen Sie die Fehlermeldung, die in der Konsole ausgegeben wurde und "
+"melden Sie diesen Fehler auf bugs.kde.org."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:681
 #, kde-format
@@ -28245,9 +28192,10 @@ msgid ""
 "the schema updating process. Please try with an empty database, or repair "
 "your configuration."
 msgstr ""
-"Es wurde kein Basispfad in der Konfigurationsdatei gefunden. Daher wird die "
-"Aktualisierung des Schemas abgebrochen. Versuchen Sie es bitte noch einmal "
-"mit einer leeren Datenbank oder reparieren Sie Ihre Konfiguration."
+"Es wurde kein Alben-Bibliothekspfad in der Konfigurationsdatei gefunden. "
+"Daher wird die Aktualisierung des Schemas abgebrochen. Versuchen Sie es "
+"bitte noch einmal mit einer leeren Datenbank oder reparieren Sie Ihre "
+"Konfiguration."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1049
 #, kde-format
@@ -28298,7 +28246,7 @@ msgstr "Datei-Suffix-Filter initialisiert und importiert"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
 msgid "Did the initial full scan"
-msgstr "Die erste Komplettuntersuchung wurde durchgeführt."
+msgstr "Die erste Komplettsuche wurde durchgeführt"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1276
 #, kde-format
@@ -28318,7 +28266,7 @@ msgstr "Bewertungen importiert"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Dropped v3 tables"
-msgstr "v3 Tabellen weggeworfen"
+msgstr "v3-Tabellen gelöscht"
 
 #: core/libs/database/engine/dbengineaccess.cpp:55
 #, kde-format
@@ -28473,20 +28421,18 @@ msgid "RAW image file (%1)"
 msgstr "RAW-Bilddatei (%1)"
 
 #: core/libs/database/models/itemfiltermodel.cpp:386
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Faces"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
-msgstr[0] "Nach Gesichtern"
-msgstr[1] "Nach Gesichtern"
+msgstr[0] "%1 Gesicht"
+msgstr[1] "%1 Gesichter"
 
 #: core/libs/database/models/itemfiltermodel.cpp:389
 #, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
-msgstr "Keine Gesichtsmarkierung"
+msgstr "Kein Gesicht"
 
 #: core/libs/database/models/itemfiltermodel.cpp:400
 #, kde-format
@@ -28507,27 +28453,24 @@ msgstr "Das ist das Originalbild"
 #: core/libs/database/server/databaseserver.cpp:153
 #, kde-format
 msgid "Database type is not supported."
-msgstr "Der Datenbanktyp wird nicht unterstützt"
+msgstr "Der Datenbanktyp wird nicht unterstützt."
 
 #: core/libs/database/server/databaseserver.cpp:287
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file!"
+#, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysqld“-Serverbefehl eingegeben "
 "worden."
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql initialization command set in configuration file!."
+#, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysql“-Initialisierungsbefehl "
 "eingegeben worden."
 
 #: core/libs/database/server/databaseserver.cpp:305
-#, fuzzy, kde-format
-#| msgid "No path to mysql administration command set in configuration file!."
+#, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "In der Einrichtungsdatei ist kein Pfad zum „mysql“-Initialisierungsbefehl "
@@ -28549,7 +28492,7 @@ msgid ""
 msgstr ""
 "Die MySQL-Server-Konfigurationsdatei kann nicht erstellt werden.<p>Das "
 "bedeutet, dass entweder die Standard-Konfigurationsdatei</p><p>%1</"
-"p><p>nicht lesbar ist oder die Zieldatei</p><p>%2</p><p> nicht geschrieben "
+"p><p>nicht lesbar ist oder die Zieldatei</p><p>%2</p><p>nicht geschrieben "
 "werden kann.</p>"
 
 #: core/libs/database/server/databaseserver.cpp:437
@@ -28585,7 +28528,8 @@ msgstr ""
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
-"Die Verbindung zur Datenbank kann nach 60 Sekunden nicht hergestellt werden."
+"Die Verbindung zur Datenbank konnte innerhalb von 60 Sekunden nicht "
+"hergestellt werden."
 
 #: core/libs/database/server/databaseserver.cpp:698
 #, kde-format
@@ -28601,12 +28545,13 @@ msgid ""
 "The database is now upgraded to the current server version, this can take a "
 "while."
 msgstr ""
+"Die Datenbank wird jetzt auf die aktuelle Serverversion aktualisiert. Dies "
+"kann eine Weile dauern."
 
 #: core/libs/database/server/databaseserver.cpp:769
-#, fuzzy, kde-format
-#| msgid "Could not start database server."
+#, kde-format
 msgid "Could not upgrade database."
-msgstr "Der Datenbank-Server kann nicht gestartet werden."
+msgstr "Die Aktualisierung der Datenbank ist fehlgeschlagen."
 
 #: core/libs/database/server/databaseserver.cpp:813
 #, kde-format
@@ -28674,12 +28619,11 @@ msgid ""
 msgstr ""
 "Die Datenbank ist ungültig: Die Einstellung „DBThumbnailsVersion“ ist nicht "
 "vorhanden. Die aktuelle Version des Datenbankschemas kann daher nicht "
-"überprüft werden. Versuchen Sie bitte mit einer leeren Datenbank neu zu "
+"überprüft werden. Versuchen Sie bitte, mit einer leeren Datenbank neu zu "
 "starten. "
 
 #: core/libs/database/utils/ifaces/dio.cpp:329
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dateikonflikt"
@@ -28696,24 +28640,30 @@ msgid ""
 "Overwrite automatically: conflicting files will be overwritten.\n"
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
+"Dateien oder Ordner mit demselben Namen sind bereits im Zielordner "
+"vorhanden.\n"
+"\n"
+"Welche Aktion soll im Falle eines Konflikts durchgeführt werden?\n"
+"\n"
+"Die verfügbaren Aktionen:\n"
+"Automatisch umbenennen: Konfliktdateien werden umbenannt.\n"
+"Automatisch überschreiben: Konfliktdateien werden überschrieben.\n"
+"Automatisch überspringen: Konfliktdateien werden übersprungen."
 
 #: core/libs/database/utils/ifaces/dio.cpp:339
-#, fuzzy, kde-format
-#| msgid "Rename automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatisch umbenennen"
 
 #: core/libs/database/utils/ifaces/dio.cpp:341
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatisch überschreiben"
 
 #: core/libs/database/utils/ifaces/dio.cpp:343
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch überspringen"
@@ -28778,19 +28728,17 @@ msgid "Scanning collections, please wait..."
 msgstr "Die Sammlungen werden eingelesen, bitte warten ..."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This shows the progress of the scan. During the scan, all files on disk "
-#| "are registered in a database."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This shows the progress of the scan. During the scan, all files on disk are "
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 msgstr ""
-"Dies zeigt den Fortschritt der Untersuchung an. Während der Untersuchung "
-"werden alle Dateien unterhalb des Basisordners in die Datenbank aufgenommen."
+"Dies zeigt den Fortschritt der Erfassung an. Dabei werden alle Dateien "
+"unterhalb des Basisordners in die Datenbank aufgenommen. Hinweis: dieser "
+"Dialog erscheint automatisch, wenn eine vorherige Erfassung der Sammlungen "
+"nicht vollständig durchgeführt worden ist."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
@@ -28849,7 +28797,7 @@ msgstr "Gesamtfortschritt"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
-msgstr "Typ der Datenbank oder der Speicherort müssen verschieden sein!"
+msgstr "Typ der Datenbank oder der Speicherort müssen verschieden sein."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
@@ -28889,7 +28837,7 @@ msgstr "SQLite"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:61
 #, kde-format
 msgid "Mysql Internal"
-msgstr "Mysql-Internal"
+msgstr "Mysql intern"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:66
 #, kde-format
@@ -28915,7 +28863,7 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
-"<p><b>MySQL-Internal</b> ist geeignet als lokale Datenbank für große "
+"<p><b>MySQL intern</b> ist geeignet als lokale Datenbank für große "
 "Sammlungen. Sie wird empfohlen für lokale Sammlungen mit mehr als 100.000 "
 "Einträgen.</p>"
 
@@ -28926,22 +28874,12 @@ msgid ""
 "remote and shared database storage. It is also more efficient to manage huge "
 "collection sizes with more than 100K items.</p>"
 msgstr ""
-"<p><b>MySQL Server</b> ist die zuverlässige Lösung für entfernte und "
-"gemeinsam verwendete Datenbanken. Sie ist sehr leistungsfähig beim Verwalten "
-"von Sammlungen mit mehr als 100.000 Einträgen.</p>"
+"<p><b>MySQL-Server</b> ist die zuverlässigere Lösung insbesondere für "
+"entfernte und gemeinsam verwendete Datenbanken. Sie ist sehr leistungsfähig "
+"beim Verwalten von Sammlungen mit mehr als 100.000 Einträgen.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are three databases: one for all collections properties, "
-#| "one to store compressed thumbnails, and one to store faces recognition "
-#| "metadata.<br/>Write access is required to be able to edit image "
-#| "properties.</p><p>Databases are digiKam core engines. Take care to use a "
-#| "place hosted by fast hardware (as SSD) with enough free space especially "
-#| "for thumbnails database.</p><p>Note: a remote file system such as NFS, "
-#| "cannot be used here. For performance reasons, it is also recommended not "
-#| "to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28953,20 +28891,22 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>Legen Sie hier den Ordner fest, in dem die digiKam-Datenbank gespeichert "
-"wird. Diese umfasst die Eigenschaften aller Sammlungen und Alben, die "
-"komprimierten Vorschaubilder ebenso wie die Metadaten der "
-"Gesichtererkennung. Es werden Schreibrechte benötigt, damit Sie die "
-"Bildeigenschaften bearbeiten können.</p><p>Dies ist das Herzstück von "
-"digiKam. Sie sollte deshalb auf einem schnellen Datenträger (z.B. SSD) "
-"abgelegt sein.</p><p>Hinweis: Entfernte Dateisysteme, wie z.B. NFS, können "
-"hierfür nicht verwendet werden.</p>"
+"<p>Legen Sie hier den Ordner fest, in dem die digiKam-Datenbankdateien "
+"gespeichert werden. Es gibt vier Datenbanken: für die Eigenschaften aller "
+"Sammlungen, für die komprimiertern Vorschaubilder, für die "
+"Gesichtserkennungsdaten und für Ähnlichkeits-Fingerabdrücke.</br>Es werden "
+"Schreibrechte benötigt, damit Sie die Bildeigenschaften bearbeiten können.</"
+"p><p>Die Datenbanken gehören zum Kern von digiKam. Sie sollte deshalb auf "
+"einem schnellen Datenträger (z.B. SSD oder NVMe) abgelegt sein, die genügend "
+"Speicherplatz bieten, vor allem für die Vorschau-Datenbank.</p><p>Hinweis: "
+"Entfernte Dateisysteme, wie z.B. NFS, können hierfür nicht verwendet werden. "
+"Für eine bessere Leistung wird außerdem von der Verwendung von "
+"Netzlaufwerken abgeraten.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
-#, fuzzy, kde-format
-#| msgid "Add information from the database"
+#, kde-format
 msgid "Enable WAL mode for the databases"
-msgstr "Informationen aus der Datenbank hinzufügen"
+msgstr "WAL-Modus für Datenbanken aktivieren"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
 #, kde-format
@@ -28974,6 +28914,8 @@ msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
+"Der WAL-Modus (Write-Ahead-Log) bieten auf unterstützten System in den "
+"meisten Szenarien deutlich mehr Geschwindigkeit."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -28985,6 +28927,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Write-Ahead-Logging ist ein Modus, der in einem Journal alle Transaktionen "
+"aufzeichnet, die zwar gespeichert, aber noch nicht in die Datenbank "
+"übernommen worden sind. Er nutzt eine Hilfsdatei, in der Strukturen mit "
+"Wiederherstellungstransaktionen für den Fall eines Absturzes gespeichert "
+"werden. Änderungen werden zuerst in der Logdatei gespeichert bevor sie in "
+"die Datenbankdatei geschrieben werden. Dadurch werden Datenbankabfragen "
+"atomar und robust in extremen und kritischen Nutzungsszenarien."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -29011,14 +28960,10 @@ msgstr "Rechnername:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
 #, kde-format
 msgid "Set the host computer name"
-msgstr "Den Rechnernamen einstellen"
+msgstr "Rechnernamen hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the computer name running MySQL server.\n"
-#| "This can be \"localhost\" for a local server, or the network computer\n"
-#| " name (or IP address) in case of remote computer."
+#, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
 "This can be \"localhost\" for a local server, or the network computer\n"
@@ -29040,14 +28985,16 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
 #, kde-format
 msgid "Set the database connection options"
-msgstr "Optionen der Datenbankverbindung"
+msgstr "Optionen der Datenbankverbindung hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
 "For advanced users only."
-msgstr "Nur für fortgeschrittene Benutzer"
+msgstr ""
+"Geben Sie die Verbindungsoptionen für den MySQL-Server an.\n"
+"Nur für fortgeschrittene Benutzer"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
 #, kde-format
@@ -29057,23 +29004,18 @@ msgstr "Benutzer:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
 #, kde-format
 msgid "Set the database account name"
-msgstr "Name des Benutzer-Kontos"
+msgstr "Namen des Benutzer-Kontos hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set the MySQL server account name used\n"
-#| "by digiKam to be connected to the server.\n"
-#| "This account must be available on the remote MySQL server when database "
-#| "have been created."
+#, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
 "by digiKam to be connected to the server.\n"
 "This account must be available on the remote\n"
 "MySQL server when database have been created."
 msgstr ""
-"Name des Benutzer-Kontos beim MySQL-Server, den\n"
-"digiKam zur Anmeldung verwendet.\n"
+"Name des Benutzer-Kontos, den digiKam für\n"
+"die Anmeldung am MySQL-Server verwendet.\n"
 "Dieses Konto muss beim MySQL-Server nach dem Erzeugen der Datenbank "
 "eingerichtet sein."
 
@@ -29084,8 +29026,8 @@ msgid ""
 "by digiKam to be connected to the server.\n"
 "You can left this field empty to use an account set without password."
 msgstr ""
-"Passwort für das Benutzer-Konto beim MySQL-Server, das\n"
-"digiKam für die Anmeldung verwendet.\n"
+"Passwort für das Benutzer-Konto, das digiKam für\n"
+"die Anmeldung am MySQL-Server verwendet.\n"
 "Sie können das Feld leer lassen und ein Konto ohne Passwort verwenden."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:212
@@ -29099,7 +29041,7 @@ msgid ""
 "Set the host computer port.\n"
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
-"IP-Port für den Rechner auf dem der MySQL-Server läuft.\n"
+"Der Port des Rechners, auf dem der MySQL-Server läuft.\n"
 "Standardmäßig wird Port 3306 verwendet"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
@@ -29124,7 +29066,7 @@ msgstr "Name der Hauptdatenbank:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
 #, kde-format
 msgid "Set the core database name"
-msgstr "Wählen Sie hier den Namen der Hauptdatenbank"
+msgstr "Namen der Hauptdatenbank hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, kde-format
@@ -29139,21 +29081,15 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
 #, kde-format
 msgid "Thumbs Db Name:"
-msgstr "Name der Datenbank für Vorschaubilder"
+msgstr "Name der Datenbank für Vorschaubilder:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
-#, fuzzy, kde-format
-#| msgid "Set the thumbnails database name"
+#, kde-format
 msgid "Set the thumbnails database name or folder"
-msgstr "Wählen Sie hier den Namen der Datenbank für die Vorschaubilder"
+msgstr "Namen oder Ordner der Datenbank für die Vorschaubilder hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
-#, fuzzy, kde-format
-#| msgid ""
-#| "The thumbnails database is used by digiKam to host\n"
-#| "image thumbs with wavelets compression images.\n"
-#| "This one can use quickly a lots of space,\n"
-#| "especially if you have huge collections."
+#, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
 "image thumbs with wavelets compression images.\n"
@@ -29161,10 +29097,11 @@ msgid ""
 "especially if you have huge collections.\n"
 "Choose a local folder to use a SQLite database."
 msgstr ""
-"Die Datenbank für Vorschaubilder wird von digiKam verwendet, \n"
-"um Vorschaubilder mit einer Wavelet-Komprimierung zu speichern .\n"
+"Die Datenbank für Vorschaubilder wird von digiKam verwendet,\n"
+"um Vorschaubilder mit einer Wavelet-Komprimierung zu speichern.\n"
 "Die Datenbank benötigt rasch sehr viel Speicherplatz,\n"
-"besonders für große Sammlungen."
+"besonders für große Sammlungen.\n"
+"Wählen Sie für SQLite einen lokalen Ordner."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #, kde-format
@@ -29174,7 +29111,7 @@ msgstr "Name der Datenbank für die Gesichtserkennung:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
 #, kde-format
 msgid "Set the face database name"
-msgstr "Wählen Sie hier den Namen der Datenbank zur Gesichtserkennung"
+msgstr "Namen der Datenbank zur Gesichtserkennung hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
@@ -29186,7 +29123,7 @@ msgid ""
 msgstr ""
 "Die Gesichtserkennungs-Datenbank wird von digiKam verwendet,\n"
 "um Histogramme zu speichern, die dem Prozess\n"
-"„Gesichter entdecken“  zugeordnet sind.\n"
+"„Gesichter entdecken“ dienen.\n"
 "Sie benötigt rasch sehr viel Speicherplatz, besonders bei\n"
 "vielen Bildern von Personen mit entdeckten und erkannten Gesichtern."
 
@@ -29198,19 +29135,16 @@ msgstr "Name der Ähnlichkeits-Datenbank:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
 #, kde-format
 msgid "Set the similarity database name"
-msgstr "Wählen Sie hier den Namen der Ähnlichkeits-Datenbank"
+msgstr "Namen der Ähnlichkeits-Datenbank hier eingeben"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
-#, fuzzy, kde-format
-#| msgid ""
-#| "The similarity database is used by digiKam to host image Haar matrix data "
-#| "for the similarity search."
+#, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
-"Die Ähnlichkeits-Datenbank wird von digiKam verwendet, um Haar-Matrix Daten\n"
-"für die Ähnlichkeitssuche zu speichern."
+"Die Ähnlichkeits-Datenbank wird von digiKam verwendet,\n"
+"um Haar-Matrix-Daten für die Ähnlichkeitssuche zu speichern."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
 #, kde-format
@@ -29221,7 +29155,7 @@ msgstr "Voreinstellungen"
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr ""
-"Setzt alle Einstellungen der Datenbanknamen auf die Standardwerte zurück."
+"Alle Einstellungen der Datenbanknamen auf die Standardwerte zurücksetzen."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
 #, kde-format
@@ -29242,11 +29176,11 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
-"<p>digiKam erwartet, dass die Datenbank mit einem bestimmten Benutzerkonto "
-"bereits erzeugt wurde. Das Konto <i>digikam</i> benötigt uneingeschränkten "
-"Zugriff auf die Datenbank. <br/>Zum Erzeugen der Datenbank können folgende "
-"SQL-Befehle verwendet werden (wobei <b><i>password</i></b> mit dem reellen "
-"Passwort zu ersetzen ist.</p>"
+"<p>digiKam erwartet, dass die Datenbank bereits mit einem eigenen "
+"Benutzerkonto erzeugt wurde. Das Konto <i>digikam</i> benötigt "
+"uneingeschränkten Zugriff auf die Datenbank.<br/>Wenn die Datenbank noch "
+"nicht existiert, können folgende SQL-Befehle verwendet werden (wobei "
+"<b><i>password</i></b> mit dem tatsächlichen Passwort zu ersetzen ist).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
 #, kde-format
@@ -29262,11 +29196,11 @@ msgstr ""
 "<p>Hinweis: auf einem Linux-Rechner kann die Datenbank mit folgenden "
 "Befehlen eingerichtet werden:</p><p># su</p><p># systemctl restart mysqld</"
 "p><p># mysql -u root</p><p>...</p><p>Geben Sie die SQL-Befehle ein, um die "
-"Datenbank mit allen Privilegien (siehe Dokumentation) zu initialisieren</"
-"p><p>...</p><p>quit</p><p>Hinweis: Wenn Sie eine sehr große Sammlung haben, "
-"sollten Sie den MySQL-Server folgendermaßen starten: mysql --"
-"max_allowed_packet=128M oder die entsprechende Einstellung in der Datei my."
-"ini bzw. ~/.my.cnf ändern</p><p></p>"
+"Datenbank mit allen Privilegien (siehe oben) zu initialisieren</p><p>...</"
+"p><p>quit</p><p>Hinweis: Wenn Sie eine sehr große Sammlung haben, sollten "
+"Sie den MySQL-Server folgendermaßen starten: mysql --max_allowed_packet=128M "
+"oder die entsprechende Einstellung in der Datei my.ini bzw. ~/.my.cnf "
+"ändern</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
 #, kde-format
@@ -29301,21 +29235,22 @@ msgstr ""
 "<p>Verwenden Sie folgende Konfiguration für die Verbindung zu einem "
 "entfernten <a href=\"https://en.wikipedia.org/wiki/MySQL\">MySQL-Datenbank-"
 "Server</a> (oder auch <a href=\"https://en.wikipedia.org/wiki/MariaDB"
-"\">MariaDB</a>) in einem Netzwerk. Genau wie bei SQLite oder MySQL-Internal "
-"werden 3 Datenbank-Dateien auf dem Server-Rechner gespeichert: eine für alle "
+"\">MariaDB</a>) in einem Netzwerk. Genau wie bei SQLite oder internem MySQL "
+"werden drei Datenbanken auf dem Server-Rechner gespeichert: eine für alle "
 "Sammlungs-Einstellungen, eine für die komprimierten Vorschaubilder und eine "
 "zum Speichern der Gesichtserkennungs-Metadaten.</p><p>Im Unterschied zu "
-"SQLite oder MySQL-Internal können Sie zur Vereinfachung Ihrer Sicherungen "
-"die Namen der Datenbank-Dateien wählen.</p><p>Diese Datenbank-Dateien sind "
-"das Herzstück von digiKam. Um Leistungseinschränkungen vorzubeugen, sorgen "
-"Sie für eine schnelle Verbindung zum Server-Rechner. Auch wird empfohlen, "
-"die Datenbank auf einem schnellen Speichermedium mit genügend freiem "
-"Speicherplatz wie <a href=\"https://en.wikipedia.org/wiki/Solid-state_drive"
-"\">SSD</a> zu speichern, insbesondere für die Datenbank der komprimierten "
-"Vorschaubilder <a href=\"https://en.wikipedia.org/wiki/"
-"Progressive_Graphics_File\">PGF</a>.</p><p>Die Datenbank muss zuvor von "
-"einem Administrator auf dem Server-Rechner eingerichtet worden sein. Schauen "
-"Sie im Reiter <b>Voraussetzungen</b> nach Details.</p>"
+"SQLite oder internem MySQL können Sie zur Vereinfachung Ihrer Sicherungen "
+"die Namen der Datenbanken selber wählen.</p><p>Datenbanken sind das "
+"Herzstück von digiKam. Um Leistungseinschränkungen vorzubeugen, sorgen Sie "
+"für eine schnelle Verbindung zum Server-Rechner. Auch wird empfohlen, die "
+"Datenbank auf einem schnellen Speichermedium mit genügend freiem "
+"Speicherplatz wie einer <a href=\"https://en.wikipedia.org/wiki/Solid-"
+"state_drive\">SSD</a> zu speichern, insbesondere für die Datenbank der "
+"Vorschaubilder, selbst wenn diese im per Wavelet ins <a href=\"https://en."
+"wikipedia.org/wiki/Progressive_Graphics_File\">PGF</a>-Format komprimiert "
+"werden.</p><p>Die Datenbank muss zuvor von einem Administrator auf dem "
+"Server eingerichtet worden sein. Schauen Sie im Reiter <b>Voraussetzungen</"
+"b> nach Details.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
 #, kde-format
@@ -29323,16 +29258,14 @@ msgid "Documentation"
 msgstr "Dokumentation"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
-#, fuzzy, kde-format
-#| msgid "Thumbs Db Name:"
+#, kde-format
 msgid "Thumbs Db Folder:"
-msgstr "Name der Datenbank für Vorschaubilder"
+msgstr "Ordner für Vorschaudatenbank:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Datenbankverbindungstest"
@@ -29357,7 +29290,7 @@ msgstr "Der Rechnername des Servers ist leer"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
 #, kde-format
 msgid "The server user name is empty"
-msgstr "Der Benutzername des Servers ist leer"
+msgstr "Der Benutzername zum Server ist leer"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
 #, kde-format
@@ -29382,11 +29315,11 @@ msgstr "Der Name der Ähnlichkeits-Datenbank ist leer"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
-msgstr "Als Pfad wurde in der Kommandozeile angegeben (--database-directory)."
+msgstr ""
+"Der Pfad wurde als Kommandozeilenoption (--database-directory) angegeben."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Datenbank-Einrichtung"
@@ -29397,8 +29330,8 @@ msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
-"Die Namen der Datenbank-Dateien sind fehlerhaft. Die Fehlermeldung lautet "
-"<br/><p>%1</p><br/>Bitte überprüfen Sie Ihre Konfiguration."
+"Die Namen der Datenbanken sind fehlerhaft. Die Fehlermeldung lautet <br/><p>"
+"%1</p><br/>Bitte überprüfen Sie Ihre Konfiguration."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
 #, kde-format
@@ -29406,7 +29339,7 @@ msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr ""
-"Beim Verbindungstest zur Datenbank trat folgender Fehler auf: <br/><p>%1</"
+"Beim Verbindungstest zur Datenbank trat folgender Fehler auf:<br/><p>%1</"
 "p><br/>Überprüfen Sie bitte Ihre Konfiguration."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
@@ -29419,8 +29352,7 @@ msgstr ""
 "Metadaten in einer Datenbankdatei speichern kann."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Datenbankordner erstellen?"
@@ -29435,11 +29367,10 @@ msgstr ""
 "b></p>Soll der Ordner erstellen werden?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "Das Erstellen des Datenbank-Ordners ist fehlgeschlagen."
+msgstr "Erstellen des Datenbankordners fehlgeschlagen"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -29447,12 +29378,11 @@ msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>Der unten angezeigte Datenbank-Ordner lässt sich nicht erstellen.\n"
+"<p>Der unten angezeigte Datenbankordner lässt sich nicht erstellen.\n"
 "Bitte wählen Sie einen anderen Speicherort.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, fuzzy, kde-format
-#| msgid "No Database Write Access"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Kein Schreibzugriff auf die Datenbank"
@@ -29463,12 +29393,11 @@ msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
 "file.<br/>Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
-"<p>Sie haben keine Schreibrechte auf den Datenbank-Ordner.<br/>Bitte wählen "
+"<p>Sie haben keine Schreibrechte auf den Datenbankordner.<br/>Bitte wählen "
 "Sie einen anderen Speicherort.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Statistik der Datenbank"
@@ -29511,7 +29440,7 @@ msgstr "Pfad der Datenbank"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
-msgstr "Interner Datenbank-Server:"
+msgstr "Interner Datenbank-Server"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
@@ -29574,7 +29503,7 @@ msgstr "Gesamt"
 #, kde-format
 msgid ""
 "This binary file is used to manage a dedicated instance of MariaDB server."
-msgstr "Dieses Programm verwaltet eine bestimmte Instanz des MariaDB-Servers."
+msgstr "Dieses Programm verwaltet eine dedizierte Instanz des MariaDB-Servers."
 
 #: core/libs/database/utils/widgets/mysqlinitbinary.cpp:34
 #, kde-format
@@ -29588,7 +29517,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
-msgstr "Dieses Programm startet eine bestimmte Instanz des MariaDB-Servers."
+msgstr "Dieses Programm startet eine dedizierte Instanz des MariaDB-Servers."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format

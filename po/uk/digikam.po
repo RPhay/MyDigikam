@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-11 19:08+0200\n"
+"PO-Revision-Date: 2023-03-12 09:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -13754,7 +13754,7 @@ msgstr ""
 #, kde-format
 msgctxt "original owner of content"
 msgid "Source:"
-msgstr "Автор:"
+msgstr "Джерело:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
 #, kde-format
@@ -14203,7 +14203,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgid "Service ID:"
-msgstr "ІД служби:"
+msgstr "Ід. служби:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
@@ -14742,7 +14742,7 @@ msgid ""
 "Set here the string that identifies content that recurs. This field is "
 "limited to 32 characters."
 msgstr ""
-"Тут ви можете встановити рядок, що ідентифікуватиме вміст який повторно "
+"Тут ви можете встановити рядок, що ідентифікуватиме вміст, який повторно "
 "обробляли. Вміст цього поля обмежено 32 символами."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
@@ -15564,7 +15564,7 @@ msgstr "Повідомлення для друку"
 #, kde-format
 msgctxt "@option"
 msgid "Reference:"
-msgstr "Еталон:"
+msgstr "Посилання:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:242
 #, kde-format

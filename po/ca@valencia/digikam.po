@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-07 09:05+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"PO-Revision-Date: 2023-03-12 21:41+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1980,13 +1980,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
-msgstr "Pel nom"
+msgstr "Per nom"
 
 #: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
-msgstr "Pel camí"
+msgstr "Per camí"
 
 #: core/app/main/digikamapp_setup.cpp:566
 #, kde-format
@@ -11457,7 +11457,7 @@ msgstr "Tipus de destinació"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:67
 #, kde-format
 msgid "&Local or web target used by GoogleEarth"
-msgstr "Destinació &local o web utilitzada pel GoogleEarth"
+msgstr "Destinació &local o web utilitzada per GoogleEarth"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
@@ -14582,8 +14582,8 @@ msgid ""
 "Set here the shorthand reference of content. This field is limited to 64 "
 "characters."
 msgstr ""
-"Establiu ací la referència curta pel contingut. Este camp està limitat a 64 "
-"caràcters."
+"Establiu ací la referència curta per al contingut. Este camp està limitat a "
+"64 caràcters."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
 #, kde-format
@@ -18955,7 +18955,7 @@ msgstr "Guarda la configuració"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
-msgstr "Plantilla pel nom de fitxer:"
+msgstr "Plantilla per al nom de fitxer:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
@@ -18973,8 +18973,8 @@ msgid ""
 "you choose to save also the project file, it will have the name \"panorama."
 "pto\"."
 msgstr ""
-"«Plantilla pel nom de fitxer»: Establiu ací el nom base dels fitxers que es "
-"guardaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
+"«Plantilla per al nom de fitxer»: Establiu ací el nom base dels fitxers que "
+"es guardaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
 "eixida JPEG, llavors el panorama es guardarà amb el nom «panorama.jpg». Si "
 "també decidiu guardar el fitxer del projecte, el seu nom serà «panorama.pto»."
 
@@ -23426,7 +23426,7 @@ msgstr "Nivell d'accés"
 msgid ""
 "These are security and privacy settings for the new Google Photos album."
 msgstr ""
-"Esta és la configuració de seguretat i privadesa per al nou àlbum de Google "
+"Esta és la configuració de seguretat i privadesa per a l'àlbum nou de Google "
 "Photos."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:70
@@ -25695,7 +25695,7 @@ msgstr "Descripció de l'àlbum que es crearà (opcional)."
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:115
 #, kde-format
 msgid "Album template for the new album (optional)."
-msgstr "Plantilla d'àlbum per al nou àlbum (opcional)."
+msgstr "Plantilla d'àlbum per a l'àlbum nou (opcional)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:118
 #, kde-format
@@ -26468,7 +26468,7 @@ msgstr "Este és l'ajust de la corba de la lluminositat en la imatge"
 #: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
-msgstr "Reinicia"
+msgstr "Restablix"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:265
 #, kde-format
@@ -27833,9 +27833,9 @@ msgid ""
 "system (\"%1\"). No more specific means of identification (UUID, label) is "
 "available."
 msgstr ""
-"Esta entrada només identificarà pel camí a on es troba en el sistema («%1»). "
-"No hi ha disponible cap altra manera d'identificació més específica (UUID, "
-"etiqueta)."
+"Esta entrada només s'identificarà pel camí a on es troba en el sistema "
+"(«%1»). No hi ha disponible cap altra manera d'identificació més específica "
+"(UUID, etiqueta)."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:396
 #, kde-format
@@ -30905,7 +30905,7 @@ msgstr "Reinicia el &canal"
 #: core/libs/dimg/filters/curves/curvesbox.cpp:224
 #, kde-format
 msgid "Reset &All"
-msgstr "Reinicia-ho &tot"
+msgstr "Restablix-ho &tot"
 
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
@@ -34621,7 +34621,7 @@ msgstr ""
 "\n"
 "Moveu el cursor del ratolí sobre este text per a veure més detalls quant als "
 "filtres actius.\n"
-"Premeu el botó «Reinicia» de la dreta per a netejar tota la configuració "
+"Premeu el botó «Restablix» de la dreta per a netejar tota la configuració "
 "dels filtres.\n"
 "Premeu el botó «Configuració» de la dreta per a obrir el quadro dels filtres."
 
@@ -38177,7 +38177,7 @@ msgstr ""
 "emphasis>: utilitza una interpolació bilineal d'alta velocitat però baixa "
 "qualitat (el predeterminat, per a un ordinador lent). En este mètode, el "
 "valor roig d'un píxel no roig és la mitjana dels píxels rojos adjacents, i "
-"el mateix pel blau i el verd.</item><item><emphasis strong='true'>VNG</"
+"el mateix per al blau i el verd.</item><item><emphasis strong='true'>VNG</"
 "emphasis>: utilitza la interpolació d'un nombre variable de degradats "
 "(«Variable Number of Gradients»). Este mètode calcula els degradats a prop "
 "del píxel d'interés i utilitza els degradats més baixos (que representen els "
@@ -39340,7 +39340,7 @@ msgstr "&Icona:"
 #, kde-format
 msgctxt "@action"
 msgid "Reset"
-msgstr "Reinicia"
+msgstr "Restablix"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:147
 #, kde-format
@@ -39965,15 +39965,15 @@ msgstr ""
 "els propietari/s actuals del copyright de la fotografia. Normalment este "
 "serà el fotògraf, però si la imatge la va fer un empleat o com un encàrrec, "
 "llavors cal indicar l'agència o l'empresa. Utilitzeu la fórmula apropiada "
-"pel vostre país. USA: &copy; {data de primera publicació} nom del propietari "
-"del copyright, com a «&copy;2005 John Doe». Nota, es pot utilitzar la "
-"paraula «copyright» o l'abreviació «copr» en lloc del símbol &copy;. En "
-"alguns països només es reconeix el símbol de copyright i l'abreviatura no "
-"funciona. A més, el símbol del copyright haurà de ser un cercle complet amb "
-"una «c» a dins; no és suficient alguna cosa com (c) a on els parèntesis "
-"formen un cercle parcial. Per a una protecció mundial addicional, es "
-"recomana utilitzar la frase «all rights reserved» (tots els drets reservats) "
-"després de l'avís de més amunt. \n"
+"per al vostre país. USA: &copy; {data de primera publicació} nom del "
+"propietari del copyright, com a «&copy;2005 John Doe». Nota, es pot "
+"utilitzar la paraula «copyright» o l'abreviació «copr» en lloc del símbol "
+"&copy;. En alguns països només es reconeix el símbol de copyright i "
+"l'abreviatura no funciona. A més, el símbol del copyright haurà de ser un "
+"cercle complet amb una «c» a dins; no és suficient alguna cosa com (c) a on "
+"els parèntesis formen un cercle parcial. Per a una protecció mundial "
+"addicional, es recomana utilitzar la frase «all rights reserved» (tots els "
+"drets reservats) després de l'avís de més amunt. \n"
 "A Europa heu d'utilitzar: Copyright {Any} {Propietari del copyright}, «all "
 "rights reserved». \n"
 "Al Japó, per a una protecció màxima, han d'aparéixer els tres elements "
@@ -51244,7 +51244,7 @@ msgstr "creat: %1"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgid "By Name"
-msgstr "Pel nom"
+msgstr "Per nom"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:229
 #, kde-format
@@ -53184,7 +53184,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
 msgid "Save current similar image search to a new virtual Album"
-msgstr "Guarda la busca actual d'imatge similar a un nou àlbum virtual"
+msgstr "Guarda la busca actual d'imatge similar a un àlbum virtual nou"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:91
 #, kde-format
@@ -53259,7 +53259,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
-msgstr "Guarda la busca actual per croquis a un nou àlbum virtual"
+msgstr "Guarda la busca actual per croquis a un àlbum virtual nou"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
 #, kde-format
@@ -53422,7 +53422,8 @@ msgstr "Títol desconegut"
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
-msgstr "Teclegeu un nom i un comentari pel punt, i trieu a on s'ha de guardar."
+msgstr ""
+"Teclegeu un nom i un comentari per al punt, i trieu a on s'ha de guardar."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
@@ -54392,7 +54393,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
 #, kde-format
 msgid "Save current map search to a new virtual album."
-msgstr "Guarda la busca actual per mapa a un nou àlbum virtual."
+msgstr "Guarda la busca actual per mapa a un àlbum virtual nou."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:166
 #, kde-format
@@ -57660,7 +57661,7 @@ msgid ""
 "is supported both for SQLite and MySQL."
 msgstr ""
 "Esta opció conduïx al buidatge (encolliment) de les bases de dades. El "
-"buidatge funciona per SQLite i MySQL."
+"buidatge funciona per a SQLite i MySQL."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
@@ -58552,7 +58553,7 @@ msgstr "Qualsevol de: %1"
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:29
 #, kde-format
 msgid "any color depth"
-msgstr "qualsevol profunditat de color"
+msgstr "Qualsevol profunditat de color"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:30
 #, kde-format
@@ -59456,7 +59457,7 @@ msgstr "Edita la busca actual..."
 #: core/utilities/searchwindow/searchtabheader.cpp:285
 #, kde-format
 msgid "Save Current Search"
-msgstr "Guarda la busca actual"
+msgstr "Guardeu la busca actual"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:289
 #, kde-format
@@ -59468,7 +59469,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:294
 #, kde-format
 msgid "Save current search to a new virtual Album"
-msgstr "Guarda la busca actual a un nou àlbum virtual"
+msgstr "Guarda la busca actual a un àlbum virtual nou"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:295
 #, kde-format
@@ -59476,14 +59477,14 @@ msgid ""
 "If you press this button, the current search will be saved to a new virtual "
 "Search Album using the name set on the left side."
 msgstr ""
-"Si premeu este botó, la busca actual es guardarà a un nou àlbum virtual de "
+"Si premeu este botó, la busca actual es guardarà a un àlbum virtual nou de "
 "busques utilitzant el nom establit a l'esquerra."
 
 #: core/utilities/searchwindow/searchtabheader.cpp:310
 #: core/utilities/searchwindow/searchtabheader.cpp:337
 #, kde-format
 msgid "Edit Stored Search"
-msgstr "Edita la busca emmagatzemada"
+msgstr "Editeu la busca emmagatzemada"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:352
 #, kde-format
@@ -62326,8 +62327,8 @@ msgstr ""
 "girat abans de mostrar-lo.</para> <para>Seleccioneu esta opció si voleu que "
 "el fitxer que voleu girar canvie el contingut. Esta és una operació sense "
 "pèrdua per a fitxers JPEG. Per a altres formats, és una operació amb pèrdua, "
-"pel qual necessitareu activar-ho de forma explícita. No accepta els formats "
-"RAW i de només lectura, serà girat per una sola etiqueta.</para>"
+"per a la qual necessitareu activar-ho de forma explícita. No accepta els "
+"formats RAW i de només lectura, serà girat per una sola etiqueta.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:73
 #, kde-format

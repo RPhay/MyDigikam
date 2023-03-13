@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-09 21:10+0100\n"
+"PO-Revision-Date: 2023-03-12 21:41+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1981,13 +1981,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
-msgstr "Pel nom"
+msgstr "Per nom"
 
 #: core/app/main/digikamapp_setup.cpp:565
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
-msgstr "Pel camí"
+msgstr "Per camí"
 
 #: core/app/main/digikamapp_setup.cpp:566
 #, kde-format
@@ -11473,12 +11473,12 @@ msgstr "Tipus de destinació"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:67
 #, kde-format
 msgid "&Local or web target used by GoogleEarth"
-msgstr "Destinació &local o web usada pel GoogleEarth"
+msgstr "Destinació &local o web usada per GoogleEarth"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
 msgid "Web target used by GoogleMaps"
-msgstr "Destinació web usada pel GoogleMaps"
+msgstr "Destinació web usada per GoogleMaps"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:71
 #, kde-format
@@ -14603,8 +14603,8 @@ msgid ""
 "Set here the shorthand reference of content. This field is limited to 64 "
 "characters."
 msgstr ""
-"Establiu aquí la referència curta pel contingut. Aquest camp està limitat a "
-"64 caràcters."
+"Establiu aquí la referència curta per al contingut. Aquest camp està limitat "
+"a 64 caràcters."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
 #, kde-format
@@ -18978,7 +18978,7 @@ msgstr "Desa la configuració"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
-msgstr "Plantilla pel nom de fitxer:"
+msgstr "Plantilla per al nom de fitxer:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
@@ -18996,8 +18996,8 @@ msgid ""
 "you choose to save also the project file, it will have the name \"panorama."
 "pto\"."
 msgstr ""
-"«Plantilla pel nom de fitxer»: Establiu aquí el nom base dels fitxers que es "
-"desaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
+"«Plantilla per al nom de fitxer»: Establiu aquí el nom base dels fitxers que "
+"es desaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
 "sortida JPEG, llavors el panorama es desarà amb el nom «panorama.jpg». Si "
 "també decidiu desar el fitxer del projecte, el seu nom serà «panorama.pto»."
 
@@ -27846,7 +27846,7 @@ msgid ""
 "system (\"%1\"). No more specific means of identification (UUID, label) is "
 "available."
 msgstr ""
-"Aquesta entrada només identificarà pel camí a on es troba en el sistema "
+"Aquesta entrada només s'identificarà pel camí a on es troba en el sistema "
 "(«%1»). No hi ha disponible cap altra manera d'identificació més específica "
 "(UUID, etiqueta)."
 
@@ -38185,7 +38185,7 @@ msgstr ""
 "emphasis>: usa una interpolació bilineal d'alta velocitat però baixa "
 "qualitat (el predeterminat, per a un ordinador lent). En aquest mètode, el "
 "valor vermell d'un píxel no vermell és la mitjana dels píxels vermells "
-"adjacents, i el mateix pel blau i el verd.</item><item><emphasis "
+"adjacents, i el mateix per al blau i el verd.</item><item><emphasis "
 "strong='true'>VNG</emphasis>: usa la interpolació d'un nombre variable de "
 "degradats («Variable Number of Gradients»). Aquest mètode calcula els "
 "degradats a prop del píxel d'interès i usa els degradats més baixos (que "
@@ -39971,7 +39971,7 @@ msgstr ""
 "necessari per a reclamar la propietat intel·lectual, i hauria d'identificar "
 "el/s propietari/s actual/s del copyright de la fotografia. Normalment aquest "
 "serà el fotògraf, però si la imatge la va fer un empleat o com un encàrrec, "
-"llavors cal indicar l'agència o l'empresa. Useu la fórmula apropiada pel "
+"llavors cal indicar l'agència o l'empresa. Useu la fórmula apropiada per al "
 "vostre país. USA: &copy; {data de primera publicació} nom del propietari del "
 "copyright, com a «&copy;2005 John Doe». Nota, es pot usar la paraula "
 "«copyright» o l'abreviació «copr» en lloc del símbol &copy;. En alguns "
@@ -41305,7 +41305,7 @@ msgstr ""
 #: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
 #, kde-format
 msgid "Codec %1 is not supported by CUDA"
-msgstr "El còdec %1 no està implementat pel CUDA"
+msgstr "El còdec %1 no està implementat per CUDA"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
@@ -51239,7 +51239,7 @@ msgstr "creat: %1"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgid "By Name"
-msgstr "Pel nom"
+msgstr "Per nom"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:229
 #, kde-format
@@ -53415,7 +53415,7 @@ msgstr "Títol desconegut"
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
-msgstr "Teclegeu un nom i un comentari pel punt, i trieu a on desar-lo."
+msgstr "Teclegeu un nom i un comentari per al punt, i trieu a on desar-lo."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
@@ -57659,7 +57659,7 @@ msgid ""
 "is supported both for SQLite and MySQL."
 msgstr ""
 "Aquesta opció condueix al buidatge (encongiment) de les bases de dades. El "
-"buidatge funciona pel SQLite i el MySQL."
+"buidatge funciona per a SQLite i MySQL."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:243
 #, kde-format
@@ -62324,8 +62324,8 @@ msgstr ""
 "girat abans de mostrar-lo.</para> <para>Seleccioneu aquesta opció si voleu "
 "que el fitxer que voleu girar canviï el contingut. Aquesta és una operació "
 "sense pèrdua per a fitxers JPEG. Per a altres formats, és una operació amb "
-"pèrdua, pel qual necessitareu activar-ho de forma explícita. No accepta els "
-"formats RAW i de només lectura, serà girat per una sola etiqueta.</para>"
+"pèrdua, per a la qual necessitareu activar-ho de forma explícita. No accepta "
+"els formats RAW i de només lectura, serà girat per una sola etiqueta.</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:73
 #, kde-format
