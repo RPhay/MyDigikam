@@ -42,6 +42,8 @@ public:
 
 public Q_SLOTS:
 
+    void slotSaveProfile();
+    void slotLoadProfile();
     void slotResetToDefault();
     void slotRevertChanges();
     void slotAddNewNamespace();

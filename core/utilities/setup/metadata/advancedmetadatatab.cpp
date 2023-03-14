@@ -25,20 +25,23 @@
 #include <QListView>
 #include <QStandardItemModel>
 #include <QStandardItem>
-#include <QDebug>
 #include <QLabel>
+#include <QUrl>
 
 // KDE includes
 
+#include <kconfig.h>
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dmetadatasettings.h"
 #include "namespacelistview.h"
 #include "namespaceeditdlg.h"
 #include "dmessagebox.h"
-#include "digikam_debug.h"
+#include "dfiledialog.h"
 
 namespace Digikam
 {
@@ -56,6 +59,8 @@ public:
         moveUpButton    (nullptr),
         moveDownButton  (nullptr),
         revertChanges   (nullptr),
+        saveProfile     (nullptr),
+        loadProfile     (nullptr),
         resetButton     (nullptr),
         unifyReadWrite  (nullptr),
         readingAllTags  (nullptr),
@@ -73,6 +78,8 @@ public:
     QPushButton*                moveUpButton;
     QPushButton*                moveDownButton;
     QPushButton*                revertChanges;
+    QPushButton*                saveProfile;
+    QPushButton*                loadProfile;
     QPushButton*                resetButton;
     QCheckBox*                  unifyReadWrite;
     QCheckBox*                  readingAllTags;
@@ -126,6 +133,77 @@ AdvancedMetadataTab::AdvancedMetadataTab(QWidget* const parent)
 AdvancedMetadataTab::~AdvancedMetadataTab()
 {
     delete d;
+}
+
+void AdvancedMetadataTab::slotSaveProfile()
+{
+    QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(), i18nc("@title:window", "Save Advanced Metadata Profile"),
+                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                    QLatin1String("*.dkamp"), nullptr,
+                                                    QFileDialog::DontConfirmOverwrite);
+
+    if (savePath.isEmpty())
+    {
+        return;
+    }
+
+    if (!savePath.endsWith(QLatin1String(".dkamp")))
+    {
+        savePath.append(QLatin1String(".dkamp"));
+    }
+
+    KConfig* const config = new KConfig(savePath);
+    KConfigGroup group1   = config->group(QLatin1String("General"));
+    KConfigGroup group2   = config->group(QLatin1String("Metadata"));
+    group1.writeEntry(QLatin1String("AMPVersion"), 1);
+    d->container.writeToConfig(group2);
+    config->sync();
+
+    delete config;
+}
+
+void AdvancedMetadataTab::slotLoadProfile()
+{
+    QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(), i18nc("@title:window", "Load Advanced Metadata Profile"),
+                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+                                                    QLatin1String("*.dkamp"));
+
+    if (loadPath.isEmpty())
+    {
+        return;
+    }
+
+    KConfig* const config = new KConfig(loadPath);
+    KConfigGroup group1   = config->group(QLatin1String("General"));
+    KConfigGroup group2   = config->group(QLatin1String("Metadata"));
+    int version           = group1.readEntry(QLatin1String("AMPVersion"), 0);
+
+    if (version != 1)
+    {
+        delete config;
+
+        return;
+    }
+
+    DMetadataSettingsContainer container;
+    container.readFromConfig(group2);
+
+    delete config;
+
+    if (container.mappingKeys().size() != 5)
+    {
+        return;
+    }
+
+    d->container = container;
+
+    d->unifyReadWrite->setChecked(d->container.unifyReadWrite());
+    d->readingAllTags->setChecked(d->container.readingAllTags());
+
+    d->revertChanges->setEnabled(false);
+    d->changed = false;
+
+    setModels();
 }
 
 void AdvancedMetadataTab::slotResetToDefault()
@@ -279,6 +357,12 @@ void AdvancedMetadataTab::connectButtons()
     connect(d->deleteButton, SIGNAL(clicked()),
             d->namespaceView, SLOT(slotDeleteSelected()));
 
+    connect(d->saveProfile, SIGNAL(clicked()),
+            this, SLOT(slotSaveProfile()));
+
+    connect(d->loadProfile, SIGNAL(clicked()),
+            this, SLOT(slotLoadProfile()));
+
     connect(d->resetButton, SIGNAL(clicked()),
             this, SLOT(slotResetToDefault()));
 
@@ -373,6 +457,12 @@ void AdvancedMetadataTab::setUi()
     // Revert changes is disabled, until a change is made
 
     d->revertChanges->setEnabled(false);
+    d->saveProfile = new QPushButton(QIcon::fromTheme(QLatin1String("document-save-as")),
+                                     i18n("Save Profile"));
+
+    d->loadProfile = new QPushButton(QIcon::fromTheme(QLatin1String("document-open")),
+                                     i18n("Load Profile"));
+
     d->resetButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
                                      i18n("Reset to Default"));
 
@@ -382,6 +472,8 @@ void AdvancedMetadataTab::setUi()
     buttonsLayout->addWidget(d->moveUpButton);
     buttonsLayout->addWidget(d->moveDownButton);
     buttonsLayout->addWidget(d->revertChanges);
+    buttonsLayout->addWidget(d->saveProfile);
+    buttonsLayout->addWidget(d->loadProfile);
     buttonsLayout->addWidget(d->resetButton);
 
     QVBoxLayout* const vbox = new QVBoxLayout();
@@ -462,6 +554,9 @@ QList<NamespaceEntry>& AdvancedMetadataTab::getCurrentContainer()
 
 void AdvancedMetadataTab::setModels()
 {
+    d->metadataType->blockSignals(true);
+    d->metadataType->clear();
+
     QList<QString> keys = d->container.mappingKeys();
 
     Q_FOREACH (const QString& str, keys)
@@ -470,6 +565,13 @@ void AdvancedMetadataTab::setModels()
     }
 
     d->metadataTypeSize = keys.size();
+
+    for (int i = 0 ; i < d->models.size() ; ++i)
+    {
+        d->models.at(i)->clear();
+    }
+
+    d->models.clear();
 
     for (int i = 0 ; i < keys.size() * 2 ; ++i)
     {
@@ -487,6 +589,9 @@ void AdvancedMetadataTab::setModels()
     {
         setModelData(d->models.at(index++), d->container.getWriteMapping(str));
     }
+
+    d->metadataType->setCurrentIndex(0);
+    d->metadataType->blockSignals(false);
 
     slotIndexChanged();
 }
