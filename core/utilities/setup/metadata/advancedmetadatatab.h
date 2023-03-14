@@ -94,10 +94,10 @@ private:
      * @param model - model to be populated
      * @param container - namespace container to get data
      */
-    void setModelData(QStandardItemModel* model, const QList<NamespaceEntry>& container);
+    void setModelData(QStandardItemModel* const model, const QList<NamespaceEntry>& container);
     void setUi();
 
-    void setDataToItem(QStandardItem* item, NamespaceEntry& entry);
+    void setDataToItem(QStandardItem* const item, const NamespaceEntry& entry);
 
     /**
      * @brief getModelIndex - the view can have up to 6 models
@@ -113,7 +113,7 @@ private:
 
     void updateContainer();
 
-    void saveModelData(QStandardItemModel* model, QList<NamespaceEntry>& container);
+    void saveModelData(QStandardItemModel* const model, QList<NamespaceEntry>& container);
 
 private:
 

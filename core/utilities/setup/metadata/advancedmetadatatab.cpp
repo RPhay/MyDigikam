@@ -377,7 +377,7 @@ void AdvancedMetadataTab::connectButtons()
             d->namespaceView, SLOT(slotMoveItemDown()));
 }
 
-void AdvancedMetadataTab::setModelData(QStandardItemModel* model,
+void AdvancedMetadataTab::setModelData(QStandardItemModel* const model,
                                        const QList<NamespaceEntry>& container)
 {
     QStandardItem* const root = model->invisibleRootItem();
@@ -488,7 +488,7 @@ void AdvancedMetadataTab::setUi()
     advancedConfLayout->addLayout(bottomLayout);
 }
 
-void AdvancedMetadataTab::setDataToItem(QStandardItem* item, NamespaceEntry& entry)
+void AdvancedMetadataTab::setDataToItem(QStandardItem* const item, const NamespaceEntry& entry)
 {
     item->setData(entry.namespaceName,  Qt::DisplayRole);
     item->setData(entry.namespaceName,  NAME_ROLE);
@@ -615,7 +615,7 @@ void AdvancedMetadataTab::updateContainer()
     }
 }
 
-void AdvancedMetadataTab::saveModelData(QStandardItemModel* model,
+void AdvancedMetadataTab::saveModelData(QStandardItemModel* const model,
                                         QList<NamespaceEntry>& container)
 {
     QStandardItem* const root = model->invisibleRootItem();
