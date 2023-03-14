@@ -637,16 +637,16 @@ void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString
         }
 
         ns.tagPaths          = (NamespaceEntry::TagType)gr.readEntry("tagPaths").toInt();
-        ns.separator         = gr.readEntry("separator");
+        ns.separator         = gr.readEntry("separator", QString());
         ns.nsType            = (NamespaceEntry::NamespaceType)gr.readEntry("nsType").toInt();
         ns.index             = gr.readEntry("index").toInt();
         ns.subspace          = (NamespaceEntry::NsSubspace)gr.readEntry("subspace").toInt();
-        ns.alternativeName   = gr.readEntry("alternativeName");
+        ns.alternativeName   = gr.readEntry("alternativeName", QString());
         ns.specialOpts       = (NamespaceEntry::SpecialOptions)gr.readEntry("specialOpts").toInt();
         ns.secondNameOpts    = (NamespaceEntry::SpecialOptions)gr.readEntry("secondNameOpts").toInt();
         ns.isDefault         = gr.readEntry(QLatin1String("isDefault"), QVariant(true)).toBool();
         ns.isDisabled        = gr.readEntry(QLatin1String("isDisabled"), QVariant(false)).toBool();
-        QString conversion   = gr.readEntry("convertRatio");
+        QString conversion   = gr.readEntry("convertRatio", QString());
 
         if (!conversion.isEmpty() || (ns.nsType == NamespaceEntry::RATING))
         {
@@ -683,17 +683,32 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
 
         KConfigGroup tmp = namespacesGroup.group(groupNumber);
         tmp.writeEntry("namespaceName",   e.namespaceName);
-        tmp.writeEntry("alternativeName", e.alternativeName);
-        tmp.writeEntry("subspace",        (int)e.subspace);
-        tmp.writeEntry("tagPaths",        (int)e.tagPaths);
-        tmp.writeEntry("separator",       e.separator);
-        tmp.writeEntry("nsType",          (int)e.nsType);
-        tmp.writeEntry("convertRatio",    e.convertRatio);
-        tmp.writeEntry("specialOpts",     (int)e.specialOpts);
-        tmp.writeEntry("secondNameOpts",  (int)e.secondNameOpts);
-        tmp.writeEntry("index",           e.index);
-        tmp.writeEntry("isDisabled",      e.isDisabled);
-        tmp.writeEntry("isDefault",       e.isDefault);
+
+        if (!e.alternativeName.isEmpty())
+        {
+            tmp.writeEntry("alternativeName", e.alternativeName);
+        }
+
+        tmp.writeEntry("subspace",         (int)e.subspace);
+        tmp.writeEntry("tagPaths",         (int)e.tagPaths);
+
+        if (!e.separator.isEmpty())
+        {
+            tmp.writeEntry("separator",    e.separator);
+        }
+
+        tmp.writeEntry("nsType",           (int)e.nsType);
+
+        if (!e.convertRatio.isEmpty())
+        {
+            tmp.writeEntry("convertRatio", e.convertRatio);
+        }
+
+        tmp.writeEntry("specialOpts",      (int)e.specialOpts);
+        tmp.writeEntry("secondNameOpts",   (int)e.secondNameOpts);
+        tmp.writeEntry("index",            e.index);
+        tmp.writeEntry("isDisabled",       e.isDisabled);
+        tmp.writeEntry("isDefault",        e.isDefault);
     }
 }
 
