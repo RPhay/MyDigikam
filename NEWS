@@ -310,7 +310,7 @@ BUGFIXES:
 268 ==> 467024 - Make Text in Properties Selectable for Copy.
 269 ==> 467245 - NetBSD compilation fix for Neptune.
 270 ==> 467233 - Tags added to videos files (mp4 or mov) in digiKam are not written into file metadate.
-271 ==> 
+271 ==> 467312 - Applying a template in the BQM fails in MP4 files.
 272 ==> 
 273 ==> 
 274 ==> 
