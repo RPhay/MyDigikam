@@ -23,6 +23,7 @@
 #include <QCheckBox>
 #include <QPushButton>
 #include <QListView>
+#include <QStandardPaths>
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QLabel>
@@ -137,7 +138,8 @@ AdvancedMetadataTab::~AdvancedMetadataTab()
 
 void AdvancedMetadataTab::slotSaveProfile()
 {
-    QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(), i18nc("@title:window", "Save Advanced Metadata Profile"),
+    QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(),
+                                                    i18nc("@title:window", "Save Advanced Metadata Profile"),
                                                     QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
                                                     QLatin1String("*.dkamp"), nullptr,
                                                     QFileDialog::DontConfirmOverwrite);
@@ -164,9 +166,13 @@ void AdvancedMetadataTab::slotSaveProfile()
 
 void AdvancedMetadataTab::slotLoadProfile()
 {
-    QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(), i18nc("@title:window", "Load Advanced Metadata Profile"),
-                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-                                                    QLatin1String("*.dkamp"));
+    QString metaPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                              QLatin1String("digikam/metadata"),
+                                              QStandardPaths::LocateDirectory);
+
+    QString loadPath = DFileDialog::getOpenFileName(qApp->activeWindow(),
+                                                    i18nc("@title:window", "Load Advanced Metadata Profile"),
+                                                    metaPath, QLatin1String("*.dkamp"));
 
     if (loadPath.isEmpty())
     {

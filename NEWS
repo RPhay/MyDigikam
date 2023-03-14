@@ -311,7 +311,7 @@ BUGFIXES:
 269 ==> 467245 - NetBSD compilation fix for Neptune.
 270 ==> 467233 - Tags added to videos files (mp4 or mov) in digiKam are not written into file metadate.
 271 ==> 467312 - Applying a template in the BQM fails in MP4 files.
-272 ==> 
+272 ==> 467276 - FR: Better (native) integration with Darktable sidecars.
 273 ==> 
 274 ==> 
 275 ==> 
