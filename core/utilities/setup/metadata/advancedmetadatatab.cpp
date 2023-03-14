@@ -138,10 +138,11 @@ AdvancedMetadataTab::~AdvancedMetadataTab()
 
 void AdvancedMetadataTab::slotSaveProfile()
 {
+    QString metaPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+
     QString savePath = DFileDialog::getSaveFileName(qApp->activeWindow(),
                                                     i18nc("@title:window", "Save Advanced Metadata Profile"),
-                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-                                                    QLatin1String("*.dkamp"), nullptr,
+                                                    metaPath, QLatin1String("*.dkamp"), nullptr,
                                                     QFileDialog::DontConfirmOverwrite);
 
     if (savePath.isEmpty())
@@ -154,14 +155,12 @@ void AdvancedMetadataTab::slotSaveProfile()
         savePath.append(QLatin1String(".dkamp"));
     }
 
-    KConfig* const config = new KConfig(savePath);
-    KConfigGroup group1   = config->group(QLatin1String("General"));
-    KConfigGroup group2   = config->group(QLatin1String("Metadata"));
+    KConfig config(savePath);
+    KConfigGroup group1 = config.group(QLatin1String("General"));
+    KConfigGroup group2 = config.group(QLatin1String("Metadata"));
     group1.writeEntry(QLatin1String("AMPVersion"), 1);
     d->container.writeToConfig(group2);
-    config->sync();
-
-    delete config;
+    config.sync();
 }
 
 void AdvancedMetadataTab::slotLoadProfile()
@@ -179,22 +178,18 @@ void AdvancedMetadataTab::slotLoadProfile()
         return;
     }
 
-    KConfig* const config = new KConfig(loadPath);
-    KConfigGroup group1   = config->group(QLatin1String("General"));
-    KConfigGroup group2   = config->group(QLatin1String("Metadata"));
-    int version           = group1.readEntry(QLatin1String("AMPVersion"), 0);
+    KConfig config(loadPath);
+    KConfigGroup group1 = config.group(QLatin1String("General"));
+    KConfigGroup group2 = config.group(QLatin1String("Metadata"));
+    int version         = group1.readEntry(QLatin1String("AMPVersion"), 0);
 
     if (version != 1)
     {
-        delete config;
-
         return;
     }
 
     DMetadataSettingsContainer container;
     container.readFromConfig(group2);
-
-    delete config;
 
     if (container.mappingKeys().size() != 5)
     {
