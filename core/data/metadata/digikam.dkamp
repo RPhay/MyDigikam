@@ -6,161 +6,128 @@ readingAllTags=false
 unifyReadWrite=true
 
 [Metadata][readCaptionNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.dc.description
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=2
 subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.exif.UserComment
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=1
 subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.tiff.ImageDescription
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=1
 subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.acdsee.notes
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=3
 subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0004]
-alternativeName=
-convertRatio=
 index=4
 isDefault=true
 isDisabled=false
 namespaceName=JPEG/TIFF Comments
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=4
 subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0005]
 alternativeName=Exif.Photo.UserComment
-convertRatio=
 index=5
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.ImageDescription
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0006]
-alternativeName=
-convertRatio=
 index=6
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.Caption
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0007]
-alternativeName=
-convertRatio=
 index=7
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.XPComment
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][readColor labelNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.digiKam.ColorLabel
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readColor labelNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.xmp.Label
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readColor labelNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.photoshop.Urgency
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0000]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=0
 isDefault=true
@@ -168,13 +135,11 @@ isDisabled=false
 namespaceName=Xmp.xmp.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0001]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=1
 isDefault=true
@@ -182,13 +147,11 @@ isDisabled=false
 namespaceName=Xmp.acdsee.rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0002]
-alternativeName=
 convertRatio=0,1,25,50,75,99
 index=2
 isDefault=true
@@ -196,13 +159,11 @@ isDisabled=false
 namespaceName=Xmp.MicrosoftPhoto.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0003]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=3
 isDefault=true
@@ -210,13 +171,11 @@ isDisabled=false
 namespaceName=Exif.Image.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0004]
-alternativeName=
 convertRatio=0,1,25,50,75,99
 index=4
 isDefault=true
@@ -224,13 +183,11 @@ isDisabled=false
 namespaceName=Exif.Image.RatingPercent
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][readRatingNamespaces][#0005]
-alternativeName=
 convertRatio=8,6,5,4,2,1
 index=5
 isDefault=true
@@ -238,14 +195,11 @@ isDisabled=false
 namespaceName=Iptc.Application2.Urgency
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][readTagsNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
@@ -258,8 +212,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][readTagsNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
@@ -273,7 +225,6 @@ tagPaths=1
 
 [Metadata][readTagsNamespaces][#0002]
 alternativeName=Xmp.lr.HierarchicalSubject
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
@@ -286,8 +237,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][readTagsNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
@@ -300,8 +249,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][readTagsNamespaces][#0004]
-alternativeName=
-convertRatio=
 index=4
 isDefault=true
 isDisabled=false
@@ -314,8 +261,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][readTagsNamespaces][#0005]
-alternativeName=
-convertRatio=
 index=5
 isDefault=true
 isDisabled=false
@@ -328,22 +273,17 @@ subspace=2
 tagPaths=0
 
 [Metadata][readTagsNamespaces][#0006]
-alternativeName=
-convertRatio=
 index=6
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.Keywords
 nsType=0
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=0
 
 [Metadata][readTagsNamespaces][#0007]
-alternativeName=
-convertRatio=
 index=7
 isDefault=true
 isDisabled=false
@@ -356,217 +296,172 @@ subspace=0
 tagPaths=0
 
 [Metadata][readTitleNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.dc.title
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=2
 subspace=2
 tagPaths=1
 
 [Metadata][readTitleNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.acdsee.caption
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=3
 subspace=2
 tagPaths=1
 
 [Metadata][readTitleNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.ObjectName
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][readTitleNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.XPTitle
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.dc.description
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=2
 subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.exif.UserComment
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=1
 subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.tiff.ImageDescription
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=1
 subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.acdsee.notes
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=3
 subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0004]
-alternativeName=
-convertRatio=
 index=4
 isDefault=true
 isDisabled=false
 namespaceName=JPEG/TIFF Comments
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=4
 subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0005]
 alternativeName=Exif.Photo.UserComment
-convertRatio=
 index=5
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.ImageDescription
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0006]
-alternativeName=
-convertRatio=
 index=6
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.Caption
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0007]
-alternativeName=
-convertRatio=
 index=7
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.XPComment
 nsType=3
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][writeColor labelNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.digiKam.ColorLabel
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeColor labelNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.xmp.Label
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeColor labelNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.photoshop.Urgency
 nsType=5
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0000]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=0
 isDefault=true
@@ -574,13 +469,11 @@ isDisabled=false
 namespaceName=Xmp.xmp.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0001]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=1
 isDefault=true
@@ -588,13 +481,11 @@ isDisabled=false
 namespaceName=Xmp.acdsee.rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0002]
-alternativeName=
 convertRatio=0,1,25,50,75,99
 index=2
 isDefault=true
@@ -602,13 +493,11 @@ isDisabled=false
 namespaceName=Xmp.MicrosoftPhoto.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=2
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0003]
-alternativeName=
 convertRatio=0,1,2,3,4,5
 index=3
 isDefault=true
@@ -616,13 +505,11 @@ isDisabled=false
 namespaceName=Exif.Image.Rating
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0004]
-alternativeName=
 convertRatio=0,1,25,50,75,99
 index=4
 isDefault=true
@@ -630,13 +517,11 @@ isDisabled=false
 namespaceName=Exif.Image.RatingPercent
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
 
 [Metadata][writeRatingNamespaces][#0005]
-alternativeName=
 convertRatio=8,6,5,4,2,1
 index=5
 isDefault=true
@@ -644,14 +529,11 @@ isDisabled=false
 namespaceName=Iptc.Application2.Urgency
 nsType=2
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
@@ -664,8 +546,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
@@ -679,7 +559,6 @@ tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0002]
 alternativeName=Xmp.lr.HierarchicalSubject
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
@@ -692,8 +571,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
@@ -706,8 +583,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0004]
-alternativeName=
-convertRatio=
 index=4
 isDefault=true
 isDisabled=false
@@ -720,8 +595,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0005]
-alternativeName=
-convertRatio=
 index=5
 isDefault=true
 isDisabled=false
@@ -734,22 +607,17 @@ subspace=2
 tagPaths=0
 
 [Metadata][writeTagsNamespaces][#0006]
-alternativeName=
-convertRatio=
 index=6
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.Keywords
 nsType=0
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=0
 
 [Metadata][writeTagsNamespaces][#0007]
-alternativeName=
-convertRatio=
 index=7
 isDefault=true
 isDisabled=false
@@ -762,57 +630,45 @@ subspace=0
 tagPaths=0
 
 [Metadata][writeTitleNamespaces][#0000]
-alternativeName=
-convertRatio=
 index=0
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.dc.title
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=2
 subspace=2
 tagPaths=1
 
 [Metadata][writeTitleNamespaces][#0001]
-alternativeName=
-convertRatio=
 index=1
 isDefault=true
 isDisabled=false
 namespaceName=Xmp.acdsee.caption
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=3
 subspace=2
 tagPaths=1
 
 [Metadata][writeTitleNamespaces][#0002]
-alternativeName=
-convertRatio=
 index=2
 isDefault=true
 isDisabled=false
 namespaceName=Iptc.Application2.ObjectName
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=1
 tagPaths=1
 
 [Metadata][writeTitleNamespaces][#0003]
-alternativeName=
-convertRatio=
 index=3
 isDefault=true
 isDisabled=false
 namespaceName=Exif.Image.XPTitle
 nsType=1
 secondNameOpts=0
-separator=
 specialOpts=0
 subspace=0
 tagPaths=1
