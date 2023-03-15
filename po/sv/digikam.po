@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -28666,7 +28666,7 @@ msgstr "Flytta filer"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
@@ -57860,7 +57860,7 @@ msgstr "Visa i högra rutan"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Redigera"
@@ -62147,7 +62147,23 @@ msgstr ""
 "komprimerade med kodaren AOMedia Video 1 (AV1), ett öppet och kostnadsfritt "
 "kodningsformat. </item>"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reread Metadata From File"
+#| msgid_plural "Reread Metadata From Selected Files"
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "Läs metadata från fil igen"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove metadata from file"
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "Ta bort metadata från fil"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -62155,7 +62171,7 @@ msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Varning"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62167,7 +62183,7 @@ msgstr ""
 "Alla ändringar kommer att gå förlorade.\n"
 "Vill du fortsätta?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -62179,47 +62195,60 @@ msgstr ""
 "kommentarer.<br/><b>Observera:</b>Ordningen är viktig vid läsning av "
 "metadata."
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
 msgid "Read Options"
 msgstr "Läsalternativ"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, kde-format
 msgid "Write Options"
 msgstr "Skrivalternativ"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr "Förena läs och skriv"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Läs all metadata för etiketter"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Add"
 msgstr "Lägg till"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr "Flytta upp"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr "Flytta ner"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Revert Changes"
 msgstr "Återställ ändringar"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgid "Save Profile"
+msgstr "Spara fil"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Profile"
+msgid "Load Profile"
+msgstr "Profil"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr "Återställ till förval"

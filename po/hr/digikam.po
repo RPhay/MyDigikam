@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -26668,7 +26668,7 @@ msgstr "Datoteka: "
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr ""
@@ -54406,7 +54406,7 @@ msgstr ""
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr ""
@@ -58337,13 +58337,25 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "Širina"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "Širina"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58354,7 +58366,7 @@ msgstr ""
 "Geografske koordinate neopozivo će se ukloniti iz svih odabranih slika.\n"
 "Želite li nastaviti?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -58362,47 +58374,57 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "Ujedinjeni narodi"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "Ujedinjeni narodi"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, fuzzy, kde-format
 msgid "Read all metadata for tags"
 msgstr "Širina"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "&Dodaj"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Revert Changes"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+msgid "Save Profile"
+msgstr "Datoteka: "
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+msgid "Load Profile"
+msgstr "Datoteka: "
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr ""

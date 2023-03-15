@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -27271,7 +27271,7 @@ msgstr "चलचित्र फाइल"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, fuzzy, kde-format
 msgid "Delete"
 msgstr "मेट्नुहोस्"
@@ -54941,7 +54941,7 @@ msgstr ""
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, fuzzy, kde-format
 msgid "Edit"
 msgstr "सम्पादन..."
@@ -58954,13 +58954,25 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "फाइलबाट डाटाबेसमा मेटाडेटा पढ्नुहोस्"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "फाइलबाट डाटाबेसमा मेटाडेटा पढ्नुहोस्"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "दर"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58969,7 +58981,7 @@ msgid ""
 " Do you want to continue?"
 msgstr "यो सञ्चालन सुचारू गर्दा छवि रङको गुणस्तर घटाउछ । तपाईँ जारी राख्न चाहनुहुन्छ ?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -58977,47 +58989,57 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "फाइल पुन: नामकरण विकल्प"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "इन्टरफेस विकल्प"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, fuzzy, kde-format
 msgid "Read all metadata for tags"
 msgstr "फाइलबाट डाटाबेसमा मेटाडेटा पढ्नुहोस्"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "थप्नुहोस्"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "बढि"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "बढि"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "सबै परिवर्तनहरू उल्टाउनुहोस्"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+msgid "Save Profile"
+msgstr "चलचित्र फाइल"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+msgid "Load Profile"
+msgstr "प्रोफाइल ID"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "<p>सबै फिल्टर परिमितिहरूलाई तिनीहरूको पूर्वनिर्धारित मानमा रिसेट गर्नुहोस् ।"

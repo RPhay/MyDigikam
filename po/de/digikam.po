@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2023-03-02 10:22+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -28700,7 +28700,7 @@ msgstr "Dateien verschieben"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
@@ -58285,7 +58285,7 @@ msgstr "Im rechten Fensterbereich anzeigen"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -62689,7 +62689,23 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reread Metadata From File"
+#| msgid_plural "Reread Metadata From Selected Files"
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "Metadaten aus Datei neu einlesen"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove metadata from file"
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "Metadaten aus der Datei entfernen"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -62697,7 +62713,7 @@ msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Warnung"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62709,7 +62725,7 @@ msgstr ""
 "Alle Änderungen gehen verloren.\n"
 "Möchten Sie fortfahren?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -62720,49 +62736,62 @@ msgstr ""
 "von Markierungen, Bewertungen und Beschriftungen zu verwalten.<br/"
 "><b>Hinweis: </b>Beim Lesen ist die Reihenfolge von Bedeutung"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
 msgid "Read Options"
 msgstr "Einstellungen zum Lesen"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, kde-format
 msgid "Write Options"
 msgstr "Einstellungen zum Schreiben"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr "Identische Einstellungen für Lesen und Schreiben"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Read metadata from Baloo"
 msgid "Read all metadata for tags"
 msgstr "Metadaten aus Baloo einlesen"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr "Nach oben"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr "Nach unten"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Revert Changes"
 msgstr "Änderungen verwerfen"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgid "Save Profile"
+msgstr "Datei speichern"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Profile"
+msgid "Load Profile"
+msgstr "Biografie/Porträt"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr "Auf Voreinstellung zurücksetzen"

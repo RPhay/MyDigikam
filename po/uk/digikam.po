@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2023-03-12 09:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -28773,7 +28773,7 @@ msgstr "Пересунути файли"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -57494,7 +57494,7 @@ msgstr "Показ на правій панелі"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
@@ -61809,13 +61809,29 @@ msgstr ""
 "стисканням за допомогою кодеку AOMedia Video 1 (AV1). Це відкритий формат "
 "кодування — сплачувати за використання патентів не потрібно. </item>"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reread Metadata From File"
+#| msgid_plural "Reread Metadata From Selected Files"
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "Повторно прочитати метадані з позначених файлів"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove metadata from file"
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "Вилучити метадані з файла"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Попередження"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61827,7 +61843,7 @@ msgstr ""
 "Усі внесені зміни буде втрачено.\n"
 " Відновити типові значення?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -61839,47 +61855,61 @@ msgstr ""
 "міток, оцінок і коментарів.<br/><b>Зауваження:</b> під час читання метаданих "
 "береться до уваги їхній порядок."
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
 msgid "Read Options"
 msgstr "Параметри читання"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, kde-format
 msgid "Write Options"
 msgstr "Параметри запису"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr "Уніфікувати читання і запис"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Читати усі метадані для міток"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Add"
 msgstr "Додати"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr "Пересунути вище"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr "Пересунути нижче"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Revert Changes"
 msgstr "Скасувати зміни"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save File"
+msgid "Save Profile"
+msgstr "Збереження файла"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Profile"
+msgid "Load Profile"
+msgstr "Профіль"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr "Повернутися до типового"

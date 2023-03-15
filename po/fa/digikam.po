@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -28025,7 +28025,7 @@ msgstr "پرونده فیلمها"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "حذف"
@@ -55953,7 +55953,7 @@ msgstr "نمایش روی تابلوی راست"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "ویرایش"
@@ -60042,14 +60042,26 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "خواندن فراداده از پرونده برای دادگان"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "خواندن فراداده از پرونده برای دادگان"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "اخطار"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60058,7 +60070,7 @@ msgid ""
 " Do you want to continue?"
 msgstr "اجرای این عمل، کیفیت رنگ تصویر را کاهش می‌دهد. می‌خواهید ادامه دهید؟"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -60066,47 +60078,57 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "گزینه‌های تغییر نام پرونده"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "گزینه‌های واسط"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, fuzzy, kde-format
 msgid "Read all metadata for tags"
 msgstr "خواندن فراداده از پرونده برای دادگان"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "&افزودن‌"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "حرکت به بالا"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "حرکت به پایین"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "رجعت همه تغییرات"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+msgid "Save Profile"
+msgstr "پرونده فیلمها"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+msgid "Load Profile"
+msgstr "شناسه Profile"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "<p>بازنشانی کل پارامترهای پالایه به مقادیر پیش‌فرض آنها."

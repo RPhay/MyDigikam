@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -28237,7 +28237,7 @@ msgstr "ينقل ملفّات"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "احذف"
@@ -56675,7 +56675,7 @@ msgstr "أظهر في اللوحة اليسرى"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "حرّر"
@@ -60826,7 +60826,22 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reread Metadata From File"
+#| msgid_plural "Reread Metadata From Selected Files"
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "لا تعد قراءة شيء"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+#| msgid "Read metadata from Baloo"
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "اقرأ البيانات الوصفيّة من «بالو»"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "@title: dialog"
 #| msgid "Warning"
@@ -60834,7 +60849,7 @@ msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "تحذير"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option will reset configuration to default\n"
@@ -60850,7 +60865,7 @@ msgstr ""
 "ستضيع كلّ التّغييرات.\n"
 " أتريد المتابعة؟"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -60858,48 +60873,61 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
 msgid "Read Options"
 msgstr "خيارات القراءة"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, kde-format
 msgid "Write Options"
 msgstr "خيارات الكتابة"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr "وحّد بين القراءة والكتابة"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, fuzzy, kde-format
 #| msgid "Read metadata from Baloo"
 msgid "Read all metadata for tags"
 msgstr "اقرأ البيانات الوصفيّة من «بالو»"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Add"
 msgstr "أضف"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr "انقل لأعلى"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr "انقل لأسفل"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "اعكس التّغييرات"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgid "Save Profile"
+msgstr "احفظ الملفّ"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Profile"
+msgid "Load Profile"
+msgstr "اللاحة"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr "صفّر إلى الافتراضيّ"

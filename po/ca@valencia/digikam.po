@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-09 00:43+0000\n"
-"PO-Revision-Date: 2023-03-12 21:41+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
+"PO-Revision-Date: 2023-03-14 11:02+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -8732,8 +8732,8 @@ msgstr "Fitxer de configuració de la restauració de fotografia que es guardar�
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text de la restauració "
-"de la fotografia."
+"No s'ha pogut guardar la configuració en el fitxer de text per a la "
+"restauració de la fotografia."
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:59
 #, kde-format
@@ -10785,22 +10785,22 @@ msgstr ""
 #, kde-format
 msgid "Cannot load settings from the Photograph Resizing text file."
 msgstr ""
-"No s'han pogut carregar la configuració des del fitxer de text de la "
-"redimensió de la fotografia."
+"No s'han pogut carregar les opcions de configuració des del fitxer de text "
+"de la redimensió de la fotografia."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr ""
-"Fitxer de configuració de la redimensió de la fotografia que es guardarà"
+"Fitxer de configuració de redimensió de la fotografia que s'ha de guardar"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
 msgid "Cannot save settings to the Photograph Resizing text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text de la redimensió "
-"de la fotografia."
+"No s'ha pogut guardar la configuració en el fitxer de text per a la "
+"redimensió de la fotografia."
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:44
 #, kde-format
@@ -12731,8 +12731,8 @@ msgid ""
 msgstr ""
 "Seleccioneu ací el mode emprat per la càmera per a establir l'exposició quan "
 "es va prendre la imatge. En el mode de bràqueting automàtic, la càmera pren "
-"una sèrie de marcs de la mateixa escena amb opcions de configuració "
-"diferents de l'exposició."
+"una sèrie de fotogrames de la mateixa escena amb paràmetres diferents de "
+"l'exposició."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
@@ -16623,10 +16623,10 @@ msgstr ""
 "<p>Esta eina permet als usuaris barrejar conjuntament imatges amb bràqueting "
 "per a crear una fotografia pseudo HDR.</p><p>Per a crear una imatge de marge "
 "dinàmic elevat, cal utilitzar imatges del mateix motiu preses amb un trípode "
-"i exposades amb opcions de configuració diferents de l'exposició.</p><p>Per "
-"a crear una imatge amb uns resultats millors, podeu utilitzar imatges RAW en "
-"lloc de JPEG, a on la profunditat de color és més elevada i estan millor "
-"adaptades per a fusionar píxel a píxel.</p>"
+"i exposades amb paràmetres diferents de l'exposició.</p><p>Per a crear una "
+"imatge amb uns resultats millors, podeu utilitzar imatges RAW en lloc de "
+"JPEG, a on la profunditat de color és més elevada i estan millor adaptades "
+"per a fusionar píxel a píxel.</p>"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
@@ -18955,7 +18955,7 @@ msgstr "Guarda la configuració"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "File name template:"
-msgstr "Plantilla per al nom de fitxer:"
+msgstr "Plantilla del nom de fitxer:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:102
 #, kde-format
@@ -18973,8 +18973,8 @@ msgid ""
 "you choose to save also the project file, it will have the name \"panorama."
 "pto\"."
 msgstr ""
-"«Plantilla per al nom de fitxer»: Establiu ací el nom base dels fitxers que "
-"es guardaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
+"«Plantilla del nom de fitxer»: Establiu ací el nom base dels fitxers que es "
+"guardaran. Per exemple, si la plantilla és «panorama» i si heu triat una "
 "eixida JPEG, llavors el panorama es guardarà amb el nom «panorama.jpg». Si "
 "també decidiu guardar el fitxer del projecte, el seu nom serà «panorama.pto»."
 
@@ -21985,8 +21985,8 @@ msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the F2 key.</b>"
 msgstr ""
-"<b>Nota: Este diàleg per a la configuració de la presentació de diapositives "
-"es pot activar en qualsevol moment amb la tecla F2.</b>"
+"<b>Nota: Este diàleg per a la configuració del passe de diapositives es pot "
+"activar en qualsevol moment amb la tecla F2.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
 #, kde-format
@@ -26692,7 +26692,7 @@ msgstr ""
 "No s'ha pogut obrir la base de dades.\n"
 "\n"
 "No podeu utilitzar digiKam sense una base de dades operativa.\n"
-"Comproveu la configuració de la base de dades en el següent diàleg."
+"Comproveu la configuració de la base de dades en el diàleg següent."
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -28638,7 +28638,7 @@ msgstr "Mou fitxers"
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
@@ -29097,7 +29097,7 @@ msgstr "Configuració predeterminada"
 msgid "Reset database names settings to common default values."
 msgstr ""
 "Restablix la configuració dels noms de les bases de dades als valors "
-"predeterminats comuns."
+"predeterminats habituals."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
 #, kde-format
@@ -30579,7 +30579,7 @@ msgstr "Lluminositat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr "Fitxer que es carregarà amb la configuració del blanc i negre"
+msgstr "Fitxer que es carregaran amb la configuració del blanc i negre"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -30597,13 +30597,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr "Fitxer que es guardarà amb la configuració del blanc i negre"
+msgstr "Fitxer que es guardaran amb la configuració del blanc i negre"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text del blanc i negre."
+"No s'ha pogut guardar la configuració en el fitxer de text per al blanc i "
+"negre."
 
 #: core/libs/dimg/filters/bw/infraredfilter.cpp:60
 #, kde-format
@@ -30760,8 +30761,8 @@ msgstr "Fitxer que es guardarà amb la mescla de guanys de Gimp"
 msgctxt "@info"
 msgid "Cannot save settings to the Gains Mixer text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text de la mescla de "
-"guanys."
+"No s'ha pogut guardar la configuració en el fitxer de text per a la mescla "
+"de guanys."
 
 #: core/libs/dimg/filters/bw/tonalityfilter.cpp:54
 #, kde-format
@@ -32269,7 +32270,7 @@ msgstr ""
 #, kde-format
 msgid "Cannot save settings to the Photograph Local Contrast text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text del contrast "
+"No s'ha pogut guardar la configuració en el fitxer de text per al contrast "
 "local de la fotografia."
 
 #: core/libs/dimg/filters/lens/antivignettingfilter.cpp:58
@@ -32935,7 +32936,7 @@ msgstr ""
 #, kde-format
 msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text de la reducció "
+"No s'ha pogut guardar la configuració en el fitxer de text per a la reducció "
 "del soroll de la fotografia."
 
 #: core/libs/dimg/filters/raw/rawprocessingfilter.cpp:67
@@ -33161,8 +33162,8 @@ msgstr ""
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text del reenfocament "
-"de la fotografia."
+"No s'ha pogut guardar la configuració en el fitxer de text per al "
+"reenfocament de la fotografia."
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:72
 #, kde-format
@@ -33610,7 +33611,7 @@ msgstr "Fitxer que es guardarà amb la configuració del balanç del color blanc
 msgctxt "@info"
 msgid "Cannot save settings to the White Color Balance text file."
 msgstr ""
-"No s'ha pogut guardar la configuració en el fitxer de text del balanç del "
+"No s'ha pogut guardar la configuració en el fitxer de text per al balanç del "
 "color blanc."
 
 #: core/libs/dngwriter/dngsettings.cpp:80
@@ -54848,7 +54849,8 @@ msgstr "Carrega..."
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr ""
-"Carrega tots els paràmetres des d'un fitxer de text amb la configuració."
+"Carrega tots els paràmetres des d'un fitxer de text amb les opcions de "
+"configuració."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
 #, kde-format
@@ -57270,7 +57272,7 @@ msgstr "Mostra en el quadro dret"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Edita"
@@ -61572,13 +61574,29 @@ msgstr ""
 "HEIF) comprimides amb el còdec AOMedia Video 1 (AV1), un format de "
 "codificació obert i lliure de cànons. </item>"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, fuzzy, kde-format
+#| msgid "Reread Metadata From File"
+#| msgid_plural "Reread Metadata From Selected Files"
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr "Rellig les metadades des del fitxer"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Remove metadata from file"
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr "Suprimix les metadades del fitxer"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61590,7 +61608,7 @@ msgstr ""
 "Es perdran tots els canvis.\n"
 "  Voleu continuar?"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -61602,47 +61620,61 @@ msgstr ""
 "valoracions i comentaris.<br/><b>Nota:</b> L'ordre en llegir metadades és "
 "important."
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
 msgid "Read Options"
 msgstr "Opcions de lectura"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, kde-format
 msgid "Write Options"
 msgstr "Opcions d'escriptura"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr "Unifica la lectura i l'escriptura"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr "Llig totes les metadades per a les etiquetes"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, kde-format
 msgid "Add"
 msgstr "Afig"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Move Up"
 msgstr "Mou amunt"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
 msgid "Move Down"
 msgstr "Mou avall"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, kde-format
 msgid "Revert Changes"
 msgstr "Desfés tots els canvis"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Save File"
+msgid "Save Profile"
+msgstr "Guarda el fitxer"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "Content type"
+#| msgid "Profile"
+msgid "Load Profile"
+msgstr "Perfil"
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
 msgid "Reset to Default"
 msgstr "Restablix als valors predeterminats"
