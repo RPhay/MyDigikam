@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-02-19 08:25+0100\n"
+"PO-Revision-Date: 2023-03-15 21:24+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -302,18 +302,18 @@ msgstr "&Rezigni"
 #: core/app/dragdrop/itemdragdrop.cpp:656
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr "Asigni Etikedojn al &Elektitaj Eroj"
+msgstr "A&signi Etikedojn al Elektitaj Eroj"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
 #: core/app/views/preview/itempreviewview.cpp:715
 #, kde-format
 msgid "Assign Tags to &This Item"
-msgstr "Asigni Etikedojn al &Ĉi tiu Ero"
+msgstr "Asigni Etikedojn al Ĉi &tiu Ero"
 
 #: core/app/dragdrop/itemdragdrop.cpp:668
 #, kde-format
 msgid "Assign Tags to &All Items"
-msgstr "Asigni Etikedojn al &Ĉiuj Eroj"
+msgstr "Asigni Etikedojn &al Ĉiuj Eroj"
 
 #: core/app/dragdrop/itemdragdrop.cpp:722
 #, kde-format
@@ -323,7 +323,7 @@ msgstr "Importado"
 #: core/app/dragdrop/tagdragdrop.cpp:81
 #, kde-format
 msgid "M&erge Here"
-msgstr "M&erĝi Ĉi tie"
+msgstr "Kunfandi Ĉi ti&e"
 
 #: core/app/dragdrop/tagdragdrop.cpp:233 core/app/dragdrop/tagdragdrop.cpp:342
 #, kde-format
@@ -334,13 +334,13 @@ msgstr "Agordi kiel Etikedan Bildeton"
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ŝanĝi vizaĝnomon de '%2' al '%3'"
+msgstr[1] "Ŝanĝi vizaĝonomojn de '%2' al '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:416
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr "Asignu Etikedon(j)n '%1' al Eroj"
+msgstr "Asigni Etikedon(j)n '%1' al Eroj"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
@@ -482,8 +482,8 @@ msgstr "Se ĉi tio ne estas vizaĝo, alklaku por forigi ĝin."
 msgctxt "@info:tooltip"
 msgid "1 grouped item.\n"
 msgid_plural "%1 grouped items.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 grupigita ero.\n"
+msgstr[1] "%1 grupigitaj eroj.\n"
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:122
 #, kde-format
@@ -556,22 +556,22 @@ msgstr "Agordi kiel Etikedan Bildeton"
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
 msgid_plural "Move %1 Files to Trash"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Movi al Rubujo"
+msgstr[1] "Movi %1 Dosierojn al Rubujo"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:190
 #, kde-format
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
 msgid_plural "Image Quality Sort"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bildkvalita Ordigo"
+msgstr[1] "Bildkvalita Ordigo"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Reset Album Icon"
-msgstr "Restarigi Albuma Ikono"
+msgstr "Restarigi Album-Piktogramon"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:86
 #, kde-format
@@ -890,24 +890,24 @@ msgstr "Aldoni al Ekzistanta Vico"
 #, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 Ero"
+msgstr[1] "%1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:303
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Albumdato: %2 %3 %4 - 1 Ero"
+msgstr[1] "Albumdato: %2 %3 %4 - %1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:330
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 inkluzive 1 subetikedo"
+msgstr[1] "%2 inkluzive %1 subetikedoj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:334
 #, kde-format
@@ -916,29 +916,29 @@ msgctxt ""
 "items in tag"
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 - 1 Ero"
+msgstr[1] "%2 - %1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:339
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 - 1 Ero"
+msgstr[1] "%2 - %1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:351
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ŝlosilvorta Serĉo - 1 Ero"
+msgstr[1] "Ŝlosilvorta Serĉo - %1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:355
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Altnivela Serĉo - 1 Ero"
+msgstr[1] "Altnivela Serĉo - %1 Eroj"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:369
 #, kde-format
@@ -1345,15 +1345,15 @@ msgstr ""
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Neniu ero elektita (%1 ero)"
+msgstr[1] "Neniu ero elektita (%1 eroj)"
 
 #: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Neniu ero elektita (%1 [%2] ero)"
+msgstr[1] "Neniu ero elektita (%1 [%2] eroj)"
 
 #: core/app/main/digikamapp.cpp:628
 #, kde-format
@@ -1366,8 +1366,8 @@ msgstr[1] ""
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1/%2 ero elektita (%3/%4)"
+msgstr[1] "%1/%2 eroj elektitaj (%3/%4)"
 
 #: core/app/main/digikamapp.cpp:652
 #, kde-format
@@ -1416,8 +1416,8 @@ msgstr "(%1 el %2. Sumo kun grupigitaj eroj: %3)"
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ero kaŝita"
+msgstr[1] "%1 eroj kaŝitaj"
 
 #: core/app/main/digikamapp.cpp:787
 #, kde-format
@@ -1462,7 +1462,7 @@ msgstr "Kartlegiloj"
 #: core/app/main/digikamapp_camera.cpp:79
 #, kde-format
 msgid "Add Images..."
-msgstr "Aldonu bildojn..."
+msgstr "Aldoni bildojn..."
 
 #: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
@@ -1472,7 +1472,7 @@ msgstr "Aldonas novajn erojn al Albumo."
 #: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
 msgid "Add Folders..."
-msgstr "Aldonu dosierujojn..."
+msgstr "Aldoni dosierujojn..."
 
 #: core/app/main/digikamapp_camera.cpp:88
 #, kde-format
@@ -1781,13 +1781,13 @@ msgstr "Meti la elektitajn erojn sur la lumtabulo bildeton."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
-msgstr "Aldonu al Luma Tablo"
+msgstr "Aldoni al Luma Tablo"
 
 #: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
-msgstr "Aldonu elektitajn erojn al la lumtabulo bildeto."
+msgstr "Aldoni elektitajn erojn al la lumtabulo bildeto."
 
 #: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
@@ -1805,7 +1805,7 @@ msgstr "Aldoni al Nuna Vico"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
-msgstr "Aldonu elektitajn erojn al nuna vico de staplomastrumilo."
+msgstr "Aldoni elektitajn erojn al nuna vico de staplomastrumilo."
 
 #: core/app/main/digikamapp_setup.cpp:401
 #, kde-format
@@ -1841,13 +1841,13 @@ msgstr "Relegi Metadatumojn El Elektitaj Dosieroj"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
-msgstr "Skanu por Vizaĝoj"
+msgstr "Skani por Vizaĝoj"
 
 #: core/app/main/digikamapp_setup.cpp:443
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
-msgstr "Rekonu Vizaĝojn"
+msgstr "Rekoni Vizaĝojn"
 
 #: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
@@ -2206,7 +2206,7 @@ msgstr "Prizorgado..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
-msgstr "Skanu por novaj Eroj"
+msgstr "Skani por novaj Eroj"
 
 #: core/app/main/digikamapp_setup.cpp:837
 #, kde-format
@@ -2783,7 +2783,7 @@ msgstr "Antaŭen"
 #: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Add a Face Tag"
-msgstr "Aldonu Vizaĝan Etikedon"
+msgstr "Aldoni Vizaĝan Etikedon"
 
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
@@ -2791,10 +2791,9 @@ msgid "Clear all faces on this image"
 msgstr "Forigi ĉiujn vizaĝojn sur ĉi tiu bildo"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Marki ĉiujn nekonatajn vizaĝojn kiel ignoritajn"
+msgstr "Marki ĉiujn nekonfirmitajn vizaĝojn kiel ignoritajn"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -2804,7 +2803,7 @@ msgstr "Montri Vizaĝajn Etikedojn"
 #: core/app/views/preview/itempreviewview.cpp:219
 #, kde-format
 msgid "Add a focus point"
-msgstr "Aldonu fokuspunkton"
+msgstr "Aldoni fokuspunkton"
 
 #: core/app/views/preview/itempreviewview.cpp:221
 #, kde-format
@@ -2860,7 +2859,7 @@ msgstr "Etikedoj"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:113
 #, kde-format
 msgid "Scan collection for faces"
-msgstr "Skanu kolekton por vizaĝoj"
+msgstr "Skani kolekton por vizaĝoj"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:150
 #, kde-format
@@ -3328,15 +3327,12 @@ msgstr ""
 "Aldonu Localize agordan panelon en Setup/Misc por digiKam kaj Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
-"Aldonu agordojn por listigi preferatajn alternativajn/tradukitajn lingvojn "
+"Aldoni agordojn por listigi preferatajn alternativajn/tradukitajn lingvojn "
 "en tekstredakta fenestraĵo."
 
 #: core/app/views/stack/welcomepageview.cpp:162
@@ -5104,7 +5100,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Add Border"
-msgstr "Aldonu Bordon"
+msgstr "Aldoni Bordon"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
 #, kde-format
@@ -5126,7 +5122,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Add Texture"
-msgstr "Aldonu Teksturon"
+msgstr "Aldoni Teksturon"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
 #, kde-format
@@ -5210,7 +5206,7 @@ msgstr "Marku ĉi tion se vi volas ke akvomarko estu travidebla."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
 msgid "Add transparency to watermark image"
-msgstr "Aldonu travideblecon al akvomarko bildo"
+msgstr "Aldoni travideblecon al akvomarka bildo"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
 #, kde-format
@@ -5476,7 +5472,7 @@ msgstr "Y-marĝeno (%):"
 #, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
-msgstr "Aldonu Akvomarkon"
+msgstr "Aldoni Akvomarkon"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
 #, kde-format
@@ -7928,7 +7924,7 @@ msgstr "Blanka Bilanco..."
 #: core/dplugins/editor/decorate/border/bordertool.cpp:162
 #, kde-format
 msgid "Add Border"
-msgstr "Aldonu Bordon"
+msgstr "Aldoni Bordon"
 
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:59
 #, kde-format
@@ -7947,7 +7943,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Add Border..."
-msgstr "Aldonu Bordon..."
+msgstr "Aldoni Bordon..."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:136
 #, kde-format
@@ -8044,12 +8040,12 @@ msgstr "Elektu la tekstan opakecon por uzi ĉi tie."
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:221
 #, kde-format
 msgid "Add border"
-msgstr "Aldonu randon"
+msgstr "Aldoni randon"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:222
 #, kde-format
 msgid "Add a solid border around text using current text color"
-msgstr "Aldonu solidan randon ĉirkaŭ teksto uzante nunan tekstkoloron"
+msgstr "Aldoni solidan randon ĉirkaŭ teksto uzante nunan tekstkoloron"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:224
 #, kde-format
@@ -9546,7 +9542,7 @@ msgstr "Specifu ĉi tie vian deziratan enhav-konscian reskalon procenton."
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Add weight masks"
-msgstr "Aldonu pezajn maskojn"
+msgstr "Aldoni pezajn maskojn"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, kde-format
@@ -9561,7 +9557,7 @@ msgstr "Subprema pezomasko:"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
 msgid "Draw a suppression mask"
-msgstr "Desegnu subpreman maskon"
+msgstr "Desegni subpreman maskon"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:273
 #, kde-format
@@ -9582,7 +9578,7 @@ msgstr "Konservada pezomasko:"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
 msgid "Draw a preservation mask"
-msgstr "Desegnu konservan maskon"
+msgstr "Desegni konservan maskon"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:285
 #, kde-format
@@ -10001,7 +9997,7 @@ msgstr "Malsupre dekstre:"
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:145
 #, kde-format
 msgid "Draw preview while moving"
-msgstr "Desegnu antaŭrigardon dum moviĝado"
+msgstr "Desegni antaŭrigardon dum moviĝado"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:146
 #, kde-format
@@ -10823,7 +10819,7 @@ msgstr "Skani Bildon"
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:72
 #, kde-format
 msgid "Scan Images"
-msgstr "Skanu Bildojn"
+msgstr "Skani Bildojn"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
@@ -11391,7 +11387,7 @@ msgstr "GPX-Trakoj"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:154
 #, kde-format
 msgid "Draw GPX Track"
-msgstr "Desegnu GPX-Trakon"
+msgstr "Desegni GPX-Trakon"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:158
 #, kde-format
@@ -11738,7 +11734,7 @@ msgstr "%1 (%2/%3) - Redakti metadatumojn"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:89
 #, kde-format
 msgid "Add a new value to the list"
-msgstr "Aldonu novan valoron al la listo"
+msgstr "Aldoni novan valoron al la listo"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:86
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:84
@@ -14543,7 +14539,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
-msgstr "Redaktu metadatumojn..."
+msgstr "Redakti metadatumojn..."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:91
 #, kde-format
@@ -14759,7 +14755,7 @@ msgstr "Video dato"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
 #, kde-format
 msgid "Set video date to today"
-msgstr "Agordu videodaton al hodiaŭ"
+msgstr "Agordi videodaton al hodiaŭ"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #, kde-format
@@ -15385,7 +15381,7 @@ msgstr "Skribu la korektitan daton kaj horon por ĉiu bildo"
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
-msgstr "Alĝustigu Tempon kaj Daton"
+msgstr "Alĝustigi Tempon kaj Daton"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
@@ -15414,7 +15410,7 @@ msgstr "Fermu"
 #, kde-format
 msgctxt "@info"
 msgid "Close window"
-msgstr "Fermu fenestron"
+msgstr "Fermi fenestron"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
 #: core/libs/timeadjust/timeadjustsettings.cpp:302
@@ -15703,7 +15699,7 @@ msgstr "&Ĝuste"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:150
 #, kde-format
 msgid "Draw lines on calendar"
-msgstr "Desegnu liniojn sur kalendaro"
+msgstr "Desegni liniojn sur kalendaro"
 
 #. i18n: ectx: property (text), widget (QLabel, ratioLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:162
@@ -17787,7 +17783,7 @@ msgstr "Montru la kreadtempon/daton ĉe la malsupro de la ekrano."
 #, kde-format
 msgctxt "@option:check"
 msgid "Show camera aperture and focal length"
-msgstr "Montru fotilan aperturon kaj fokusan distancon"
+msgstr "Montri fotilan aperturon kaj fokusan distancon"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
 #, kde-format
@@ -19317,7 +19313,7 @@ msgstr "Rotacii foton maldekstren"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
 #, kde-format
 msgid "Rotate &left"
-msgstr "Turnu &maldekstren"
+msgstr "Rotacii ma&ldekstren"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -19331,7 +19327,7 @@ msgstr "Rotacii foton dekstren"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
 #, kde-format
 msgid "Rotate &right"
-msgstr "Turnu &dekstre"
+msgstr "Rotacii dekst&ren"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -19349,7 +19345,7 @@ msgstr "Antaŭa foto"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:114
 #, kde-format
 msgid "<< Pr&evious"
-msgstr "<< Antaŭa"
+msgstr "<< A&ntaŭa"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropNext)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropNext)
@@ -19710,7 +19706,7 @@ msgstr "Elektu vian preferatan presan eligon."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
 #, kde-format
 msgid "Add again"
-msgstr "Aldonu denove"
+msgstr "Aldoni denove"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
@@ -19775,7 +19771,7 @@ msgstr "Bildaj Eligo-Agordoj"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:117
 #, kde-format
 msgid "Render Printing"
-msgstr "Redonu Preson"
+msgstr "Bildigi Preson"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:254
 #, kde-format
@@ -20289,7 +20285,7 @@ msgstr "Komencante generi vid-prezenton..."
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
-msgstr "%1 enigu bildojn por prilabori"
+msgstr "%1 enigobildoj prilaborendaj"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:137
 #, kde-format
@@ -22280,7 +22276,7 @@ msgstr "Komenci alŝuton al Facebook-retservo"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
 #, kde-format
 msgid "Continue with Facebook"
-msgstr "Daŭrigu kun Fejsbuko"
+msgstr "Daŭrigi kun Fejsbuko"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:310
 #, kde-format
@@ -22363,7 +22359,7 @@ msgstr "Inkluzivi la kromĉarojn de la aĵoj"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
 msgid "Overwrite existing items in the target"
-msgstr "Anstataŭigu ekzistantajn erojn en la celo"
+msgstr "Anstataŭigi ekzistantajn erojn en la celo"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
@@ -22927,7 +22923,7 @@ msgstr "Enigu novajn etikedojn ĉi tie, apartigitajn per komoj."
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:132
 #, kde-format
 msgid "Add tags per image"
-msgstr "Aldonu etikedojn per bildo"
+msgstr "Aldoni etikedojn po bildo"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:133
 #, kde-format
@@ -23191,7 +23187,7 @@ msgstr "Eksporti al Google Drive..."
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:106
 #, kde-format
 msgid "Add As New"
-msgstr "Aldonu Kiel Novan"
+msgstr "Aldoni Kiel Novan"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:107
 #, kde-format
@@ -23201,7 +23197,7 @@ msgstr "Ero estos aldonita kune kun la ligita versio."
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:113
 #, kde-format
 msgid "Add All"
-msgstr "Aldonu Ĉion"
+msgstr "Aldoni Ĉion"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:114
 #, kde-format
@@ -23507,7 +23503,7 @@ msgstr "Forigi informstangon sur bildetoj"
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Add to root folder"
-msgstr "Aldonu al radika dosierujo"
+msgstr "Aldoni al radika dosierujo"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:91
 #, kde-format
@@ -24377,7 +24373,7 @@ msgstr "Nova"
 #, kde-format
 msgctxt "@info"
 msgid "Add a wiki to this list"
-msgstr "Aldonu vikion al ĉi tiu listo"
+msgstr "Aldoni vikion al ĉi tiu listo"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:282
 #, kde-format
@@ -24479,7 +24475,7 @@ msgstr "Aldoni"
 #, kde-format
 msgctxt "@info"
 msgid "Add a new wiki"
-msgstr "Aldonu novan vikion"
+msgstr "Aldoni novan vikion"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
 #, kde-format
@@ -24527,7 +24523,7 @@ msgstr "Ŝanĝi Konton"
 #, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
-msgstr "Elsaluti kaj ŝanĝu la konton uzatan por translokigo"
+msgstr "Elsaluti kaj ŝanĝi la konton uzatan por translokigo"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, kde-format
@@ -24587,7 +24583,7 @@ msgstr "Propra verko, Krea Komunaĵo Atribuite 3.0"
 #, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
-msgstr "Propra laboro, liberigu en publikan domajnon sub la permesilo CC-Zero"
+msgstr "Propra laboro, eldoni en publikan domajnon sub la permesilo CC-Zero"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:411
 #, kde-format
@@ -25044,11 +25040,9 @@ msgid "Visit Piwigo website"
 msgstr "Viziti la retejon de Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgid "Remote Albums"
-msgstr "Forigi Albumon"
+msgstr "Forigi Albumojn"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
@@ -25065,9 +25059,7 @@ msgid "Reload album list"
 msgstr "Reŝargi albumliston"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Nomo:"
@@ -25076,7 +25068,7 @@ msgstr "Nomo:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
@@ -26965,7 +26957,7 @@ msgstr "Trovi duplikatojn..."
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, kde-format
 msgid "Scan for Faces"
-msgstr "Skanu por Vizaĝoj"
+msgstr "Skani por Vizaĝoj"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
@@ -26981,7 +26973,7 @@ msgstr "Refreŝigi"
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr "Skanu por Vizaĝoj"
+msgstr "Skani por Vizaĝoj"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
@@ -28444,7 +28436,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
 msgid "Enable WAL mode for the databases"
-msgstr "Ebligu WAL-reĝimon por la datumbazoj"
+msgstr "Ebligi WAL-reĝimon por la datumbazoj"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:114
 #, kde-format
@@ -28497,7 +28489,7 @@ msgstr "Gastiganta Nomo:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
 #, kde-format
 msgid "Set the host computer name"
-msgstr "Agordu la gastigan komputilon nomon"
+msgstr "Agordi la gastigan komputilnomon"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
@@ -28522,7 +28514,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
 #, kde-format
 msgid "Set the database connection options"
-msgstr "Agordu la opciojn pri datumbaza konekto"
+msgstr "Agordi la opciojn pri datumbaza konekto"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, kde-format
@@ -28541,7 +28533,7 @@ msgstr "Uzanto:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
 #, kde-format
 msgid "Set the database account name"
-msgstr "Agordu la datumbazan konton nomon"
+msgstr "Agordi la datumbazan konton nomon"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
@@ -30844,12 +30836,12 @@ msgstr "Turni maldekstre"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:402
 #, kde-format
 msgid "Flip Horizontally"
-msgstr "Turnu Horizontale"
+msgstr "Turni Horizontale"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:407
 #, kde-format
 msgid "Flip Vertically"
-msgstr "Turnu Vertikale"
+msgstr "Turni Vertikale"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:412
 #, kde-format
@@ -31808,7 +31800,7 @@ msgstr "Kontraŭ-Vignetting Ilo"
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:103
 #, kde-format
 msgid "Add vignetting"
-msgstr "Aldonu vinjetadon"
+msgstr "Aldoni vinjetadon"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:104
 #, kde-format
@@ -31917,7 +31909,7 @@ msgstr "Ilo por Distordo de lenso"
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:140
 #, kde-format
 msgid "Use Metadata"
-msgstr "Uzu metadatumojn"
+msgstr "Uzi metadatumojn"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:146
 #, kde-format
@@ -32209,7 +32201,7 @@ msgstr ""
 #: core/libs/dimg/filters/levels/histogrambox.cpp:272
 #, kde-format
 msgid "<p>Select the histogram channel to display:</p>"
-msgstr "<p>Elektu la histograman kanalon por montri:</p>"
+msgstr "<p>Elektu la histograman kanalon montrendan:</p>"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:278
 #, kde-format
@@ -33407,16 +33399,16 @@ msgstr "Neniu kromaĵo instalita"
 msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
 msgid_plural "(%1 activated)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "(%1 aktivita)"
+msgstr[1] "(%1 aktivitaj)"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:190
 #, kde-format
 msgctxt "@info"
 msgid "1 plugin found"
 msgid_plural "%1 plugins found"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 kromaĵo trovita"
+msgstr[1] "%1 kromaĵoj trovitaj"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:194
 #, kde-format
@@ -33437,7 +33429,7 @@ msgstr "Ensaluti:"
 #: core/libs/dplugins/webservices/wslogindialog.cpp:100
 #, kde-format
 msgid "&Login"
-msgstr "&Ensaluti"
+msgstr "Ensa&luti"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:103
 #, kde-format
@@ -33518,7 +33510,7 @@ msgstr "Konto-Selektilo"
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
 #, kde-format
 msgid "Add another account"
-msgstr "Aldonu alian konton"
+msgstr "Aldoni alian konton"
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:87
 #, kde-format
@@ -33719,7 +33711,7 @@ msgstr "Nuligi nunan operacion"
 #, kde-format
 msgctxt "@info"
 msgid "Add new images to the list"
-msgstr "Aldonu novajn bildojn al la listo"
+msgstr "Aldoni novajn bildojn al la listo"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:94
 #, kde-format
@@ -34183,8 +34175,8 @@ msgstr "Unu aktiva filtrilo"
 #, kde-format
 msgid "1 active filter"
 msgid_plural "%1 active filters"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 aktiva filtrilo"
+msgstr[1] "%1 aktivaj filtriloj"
 
 #: core/libs/filters/geolocationfilter.cpp:28
 #, kde-format
@@ -34464,7 +34456,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr "Asignu \"Malakceptitan\" Etikedon al Malaltkvalitaj Bildoj"
+msgstr "Asigni \"Malakceptitan\" Etikedon al Malaltkvalitaj Bildoj"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
@@ -34480,7 +34472,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgstr "Asignu 'Atendante' Etikedon al Mezkvalitaj Bildoj"
+msgstr "Asigni 'Atendante' Etikedon al Mezkvalitaj Bildoj"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:138
 #, kde-format
@@ -34496,7 +34488,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgstr "Asignu \"Akceptitan\" Etikedon al Altkvalitaj Bildoj"
+msgstr "Asigni \"Akceptitan\" Etikedon al Altkvalitaj Bildoj"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:151
 #, kde-format
@@ -35880,7 +35872,7 @@ msgstr "Titolo"
 #, kde-format
 msgctxt "@title: xmp namespace for pick-label container"
 msgid "Pick label"
-msgstr "Elektu etikedon"
+msgstr "Elekti etikedon"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:67
 #, kde-format
@@ -35956,7 +35948,7 @@ msgstr "F&ermi"
 #: core/libs/notificationmanager/dnotificationwidget_p.cpp:93
 #, kde-format
 msgid "Close message"
-msgstr "Fermu mesaĝon"
+msgstr "Fermi mesaĝon"
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:112
 #, kde-format
@@ -36717,7 +36709,7 @@ msgstr "<b>Dato</b>:"
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:182
 #, kde-format
 msgid "See more information on the Internet"
-msgstr "Vidu pli da informoj en la interreto"
+msgstr "Vidi pli da informoj en la interreto"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:410
 #, kde-format
@@ -38419,7 +38411,7 @@ msgstr "Ĉu vi volas fari ĉi tiun operacion sur ĉiuj grupaj eroj?"
 #: core/libs/settings/applicationsettings_miscs.cpp:393
 #, kde-format
 msgid "Remember choice for this operation"
-msgstr "Memoru elekton por ĉi tiu operacio"
+msgstr "Memori elekton por ĉi tiu operacio"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:424
 #: core/utilities/lighttable/lighttablewindow.cpp:48
@@ -38551,7 +38543,7 @@ msgstr "%1 en %2"
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
-msgstr "Kreu \"%1\" en %2"
+msgstr "Krei \"%1\" en %2"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:399
 #, kde-format
@@ -38693,7 +38685,7 @@ msgstr "Aldoni al Listo"
 #: core/libs/tags/manager/taglist.cpp:68
 #, kde-format
 msgid "Add selected tags to Quick Access List"
-msgstr "Aldonu elektitajn etikedojn al Listo de Rapida Aliro"
+msgstr "Aldoni elektitajn etikedojn al Listo de Rapida Aliro"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:138
 #, kde-format
@@ -39654,7 +39646,7 @@ msgstr "Ŝablono: "
 #: core/libs/template/templateselector.cpp:68
 #, kde-format
 msgid "Open metadata template editor"
-msgstr "Malfermu metadatuman ŝablonan redaktilon"
+msgstr "Malfermi metadatuman ŝablonan redaktilon"
 
 #: core/libs/template/templateselector.cpp:69
 #, kde-format
@@ -48572,7 +48564,7 @@ msgstr "Montri nur elektitajn erojn (%1/%2)"
 #, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "Elektu Alternativajn Lingvoj Por Redakti Tekston"
+msgstr "Elekti Alternativajn Lingvojn Por Redakti Tekston"
 
 #: core/libs/widgets/text/localizeconfig.cpp:233
 #, kde-format
@@ -48884,19 +48876,19 @@ msgstr "Ŝargi enhavon al redaktilo"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Append Contents"
-msgstr "Aldonu Enhavon"
+msgstr "Aldoni Enhavon"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Append Contents"
-msgstr "Aldonu Enhavon"
+msgstr "Aldoni Enhavon"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:259
 #, kde-format
 msgctxt "@info"
 msgid "Append contents to editor stack"
-msgstr "Aldonu enhavon al redaktilo"
+msgstr "Aldoni enhavon al redaktilo"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:273
 #, kde-format
@@ -49074,14 +49066,14 @@ msgstr "Lokoj"
 #, kde-format
 msgctxt "@action"
 msgid "Add Bookmark"
-msgstr "Aldonu legosignon"
+msgstr "Aldoni legosignon"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
-msgstr "Aldonu novan legosignon al la listo"
+msgstr "Aldoni novan legosignon al la listo"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:122
 #, kde-format
@@ -49111,7 +49103,7 @@ msgstr "Redakti nunan legosignon el la listo"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr "Aldonu Novan Legomarkon"
+msgstr "Aldoni Novan Legomarkon"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
 #, kde-format
@@ -49165,7 +49157,7 @@ msgstr "Pilo"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add Bookmark"
-msgstr "Aldonu legosignon"
+msgstr "Aldoni legosignon"
 
 #: core/showfoto/folderview/showfotofolderviewsidebar.cpp:384
 #, kde-format
@@ -49804,7 +49796,7 @@ msgstr "Oksigeno"
 #: core/utilities/setup/misc/setupmisc.cpp:265
 #, kde-format
 msgid "Use Icon Theme From System"
-msgstr "Uzu Piktograman Etoson de Sistemo"
+msgstr "Uzi Piktograman Etoson de Sistemo"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:317
 #: core/utilities/setup/misc/setupmisc.cpp:272
@@ -49920,7 +49912,7 @@ msgstr "Agordu ĉi tiun opcion por montri la bildodosiernomon."
 #: core/showfoto/setup/showfotosetuptooltip.cpp:117
 #, kde-format
 msgid "Show file date"
-msgstr "Montru dosierdaton"
+msgstr "Montri dosierdaton"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:118
 #: core/utilities/setup/setuptooltip.cpp:207
@@ -50395,13 +50387,13 @@ msgstr "Aldoni Favorito"
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
-msgstr "Aldonu Subdosierujon"
+msgstr "Aldoni Subdosierujon"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:118
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
-msgstr "Aldonu novan subdosierujon al la listo"
+msgstr "Aldoni novan subdosierujon al la listo"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:135
 #, kde-format
@@ -50413,7 +50405,7 @@ msgstr "Forigi Eron"
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
-msgstr "Forigu elektitan eron el la listo"
+msgstr "Forigi elektitan eron el la listo"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:153
 #, kde-format
@@ -50519,7 +50511,7 @@ msgstr "Grandega (%1x%2)"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Add as Favorite"
-msgstr "Aldonu kiel ŝatatan"
+msgstr "Aldoni kiel ŝatatan"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:418
 #, kde-format
@@ -50840,7 +50832,7 @@ msgstr "Gamo..."
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Add only a specific range of a renaming option"
-msgstr "Aldonu nur specifan gamon de alinoma opcio"
+msgstr "Aldoni nur specifan gamon de alinoma opcio"
 
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
 #, kde-format
@@ -51359,7 +51351,7 @@ msgstr "Dato && Tempo..."
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
-msgstr "Aldonu daton kaj horon"
+msgstr "Aldoni daton kaj horon"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:258
 #, kde-format
@@ -51403,7 +51395,7 @@ msgstr "Dosierujo"
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:37
 #, kde-format
 msgid "Add the directory name"
-msgstr "Aldonu la dosierujon"
+msgstr "Aldoni la dosierujon"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:40
 #, kde-format
@@ -51427,7 +51419,7 @@ msgstr "Dosiero"
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:39
 #, kde-format
 msgid "Add file properties"
-msgstr "Aldonu dosierajn proprietojn"
+msgstr "Aldoni dosierajn proprietojn"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:45
 #, kde-format
@@ -51480,7 +51472,7 @@ msgstr "Metadatenoj..."
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
 #, kde-format
 msgid "Add metadata information"
-msgstr "Aldonu informojn pri metadatumoj"
+msgstr "Aldoni informojn pri metadatumoj"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
 #, kde-format
@@ -51491,7 +51483,7 @@ msgstr "Nombro..."
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:56
 #, kde-format
 msgid "Add a sequence number"
-msgstr "Aldonu sinsekvon"
+msgstr "Aldoni sinsekvon"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:59
 #, kde-format
@@ -51682,7 +51674,7 @@ msgstr "Preterpasi bildojn jam skanitajn"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
-msgstr "Skanu denove kaj kunfandu rezultojn"
+msgstr "Skani denove kaj kunfandi rezultojn"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
 #: core/utilities/maintenance/maintenancedlg.cpp:319
@@ -51693,12 +51685,10 @@ msgstr "Malplenigi nekonfirmitajn rezultojn kaj reskanu"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Malplenigi nekonfirmitajn rezultojn kaj reskanu"
+msgstr "Malplenigi ĉiujn antaŭajn rezultojn kaj reskani"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
@@ -51732,7 +51722,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
-msgstr "Rekonu vizaĝojn"
+msgstr "Rekoni vizaĝojn"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
@@ -51938,7 +51928,7 @@ msgstr "Fari nenion"
 #: core/utilities/firstrun/metadatapage.cpp:79
 #, kde-format
 msgid "Add information to files"
-msgstr "Aldonu informojn al dosieroj"
+msgstr "Aldoni informojn al dosieroj"
 
 #: core/utilities/firstrun/metadatapage.cpp:89
 #, kde-format
@@ -51985,7 +51975,7 @@ msgstr "Migri agordon de digiKam 4"
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:100
 #, kde-format
 msgid "Create a new configuration"
-msgstr "Kreu novan agordon"
+msgstr "Krei novan agordon"
 
 #: core/utilities/firstrun/openfilepage.cpp:57
 #, kde-format
@@ -52157,7 +52147,7 @@ msgstr ""
 #: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
 msgid "Do not show tooltips"
-msgstr "Ne montru konsiletojn"
+msgstr "Ne montri konsiletojn"
 
 #: core/utilities/firstrun/tooltipspage.cpp:79
 #, kde-format
@@ -52251,7 +52241,7 @@ msgstr "Ĉi tio montras ĉiujn trovitajn duplikatajn erojn."
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
-msgstr "Ĝisdatigu fingrospurojn"
+msgstr "Ĝisdatigi fingrospurojn"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:122
 #, kde-format
@@ -52545,7 +52535,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
 msgid "Save current sketch search to a new virtual Album"
-msgstr "Konservu nunan skizserĉon al nova virtuala Albumo"
+msgstr "Konservi nunan skizserĉon al nova virtuala Albumo"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:117
 #, kde-format
@@ -52739,7 +52729,7 @@ msgstr "Fo&rigi"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
 #, kde-format
 msgid "Add Folder"
-msgstr "Aldonu Dosierujon"
+msgstr "Aldoni Dosierujon"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
 #, kde-format
@@ -53329,82 +53319,82 @@ msgstr "{LAU2}"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
-msgstr "Aldonu lando-etikedon"
+msgstr "Aldoni lando-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
-msgstr "Aldonu ŝtatetikedon"
+msgstr "Aldoni ŝtatetikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
-msgstr "Aldonu ŝtatdistriktan etikedon"
+msgstr "Aldoni ŝtatdistriktan etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
-msgstr "Aldonu graflando-etikedon"
+msgstr "Aldoni graflando-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
-msgstr "Aldonu urbo-etikedon"
+msgstr "Aldoni urbo-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
-msgstr "Aldonu etikedon de urbodistrikto"
+msgstr "Aldoni etikedon de urbodistrikto"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
-msgstr "Aldonu antaŭurbo-etikedon"
+msgstr "Aldoni antaŭurbo-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
-msgstr "Aldonu urbo-etikedon"
+msgstr "Aldoni urbo-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
-msgstr "Aldonu vilaĝan etikedon"
+msgstr "Aldoni vilaĝan etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
-msgstr "Aldonu vilaĝeto-etikedon"
+msgstr "Aldoni vilaĝeto-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
-msgstr "Aldonu straton"
+msgstr "Aldoni straton"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
-msgstr "Aldonu domnumero-etikedon"
+msgstr "Aldoni domnumero-etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
-msgstr "Aldonu lokon"
+msgstr "Aldoni lokon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
-msgstr "Aldonu Lokan Administran Areon 2"
+msgstr "Aldoni Lokan Administran Areon 2"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
-msgstr "Aldonu Lokan Administran Areon 1"
+msgstr "Aldoni Lokan Administran Areon 1"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
-msgstr "Aldonu novan etikedon"
+msgstr "Aldoni novan etikedon"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
@@ -54419,13 +54409,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
-msgstr "Turnu Horizontale"
+msgstr "Turni Horizontale"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
-msgstr "Turnu Vertikale"
+msgstr "Turni Vertikale"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:212
@@ -56500,7 +56490,7 @@ msgstr ""
 #: core/utilities/lighttable/lighttablepreview.cpp:62
 #, kde-format
 msgid "Drag and drop an image here"
-msgstr "Trenu kaj faligi bildon ĉi tie"
+msgstr "Treni kaj faligi bildon ĉi tie"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:260
 #, kde-format
@@ -56532,7 +56522,7 @@ msgstr "Forviŝi ĉion"
 #: core/utilities/lighttable/lighttablethumbbar.cpp:467
 #, kde-format
 msgid "Drag and drop images here"
-msgstr "Trenu kaj faligi bildojn ĉi tie"
+msgstr "Treni kaj faligi bildojn ĉi tie"
 
 #: core/utilities/lighttable/lighttablewindow.cpp:192
 #, kde-format
@@ -56786,22 +56776,22 @@ msgstr "Trovi duplikatajn erojn"
 #: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "Skanu por vizaĝoj en albumo: %1"
+msgstr "Skani por vizaĝoj en albumo: %1"
 
 #: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "Skanu por vizaĝoj en %1 albumoj"
+msgstr "Skani por vizaĝoj en %1 albumoj"
 
 #: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
-msgstr "Skanu por vizaĝoj en bildo: %1"
+msgstr "Skani por vizaĝoj en bildo: %1"
 
 #: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
-msgstr "Skanu por vizaĝoj en %1 bildoj"
+msgstr "Skani por vizaĝoj en %1 bildoj"
 
 #: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
@@ -56859,7 +56849,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid "Scan for new items"
-msgstr "Skanu por novaj eroj"
+msgstr "Skani por novaj eroj"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:232
 #, kde-format
@@ -56912,7 +56902,7 @@ msgstr "Fari datumbazan purigadon"
 #: core/utilities/maintenance/maintenancedlg.cpp:255
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
-msgstr "Skanu por ŝanĝitaj aŭ ne-katalogitaj eroj (pli rapide)"
+msgstr "Skani por ŝanĝitaj aŭ ne-katalogitaj eroj (pli rapide)"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:250
 #, kde-format
@@ -58359,7 +58349,7 @@ msgstr "Bildformato"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, kde-format
 msgid "Return items with the aspect ratio"
-msgstr "Redonu erojn kun la proporcio"
+msgstr "Redoni erojn kun la proporcio"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
@@ -58503,7 +58493,7 @@ msgstr "Vizaĝoj"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, kde-format
 msgid "Return items by number of face regions"
-msgstr "Redonu erojn laŭ nombro da vizaĝregionoj"
+msgstr "Redoni erojn laŭ nombro da vizaĝregionoj"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, kde-format
@@ -58721,7 +58711,7 @@ msgstr "Redakti..."
 #: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
-msgstr "Aldonu Serĉgrupon"
+msgstr "Aldoni Serĉgrupon"
 
 #: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
@@ -59793,7 +59783,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:544
 #, kde-format
 msgid "Preview each item while downloading it"
-msgstr "Antaŭrigardu ĉiun eron dum elŝuto de ĝi"
+msgstr "Antaŭrigardi ĉiun eron dum elŝuto de ĝi"
 
 #: core/utilities/setup/camera/setupcamera.cpp:545
 #, kde-format
@@ -59801,8 +59791,7 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "<p>Agordu ĉi tiun opcion por antaŭrigardi ĉiun eron dum elŝuto.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Importa Fenestro"
@@ -60141,7 +60130,7 @@ msgstr "Via kolekto uzos ĉi tiun kategorion:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr "Elŝutu Bezonatajn Dosierojn"
+msgstr "Elŝuti Bezonatajn Dosierojn"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
@@ -60167,7 +60156,7 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
-msgstr "Malebligu vizaĝmotoran funkcion kaj ne demandu denove"
+msgstr "Malebligi vizaĝmotoran funkcion kaj ne demandu denove"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
@@ -60564,7 +60553,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Keep a snapshot of an edited image"
-msgstr "Konservu momentfoton de redaktita bildo"
+msgstr "Konservi momentfoton de redaktita bildo"
 
 #: core/utilities/setup/editor/setupversioning.cpp:272
 #: core/utilities/setup/editor/setupversioning.cpp:318
@@ -60735,20 +60724,16 @@ msgstr ""
 "formato. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Forigi metadatumojn el dosiero"
+msgstr "Konservi Altnivelan Metadatum-Profilon"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Forigi metadatumojn el dosiero"
+msgstr "Ŝargi Altnivelan Metadatum-Profilon"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -60820,18 +60805,14 @@ msgid "Revert Changes"
 msgstr "Reverti Ŝanĝojn"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Konservi Dosieron"
+msgstr "Konservi Profilon"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profilo"
+msgstr "Ŝargi Profilon"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
@@ -61367,7 +61348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
-msgstr "&Reskanu dosieron kiam dosieroj estas modifitaj"
+msgstr "&Reskani dosieron kiam dosieroj estas modifitaj"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
 #, kde-format
@@ -61626,13 +61607,13 @@ msgstr "Skribi al XMP kromĉaro nur por nurlegebla objekto"
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Skribu nur al XMP kromĉaro"
+msgstr "Skribi nur al XMP kromĉaro"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr "Skribu al objekto kaj XMP Sidecar"
+msgstr "Skribi al objekto kaj XMP Sidecar"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
@@ -61821,21 +61802,7 @@ msgid "&Scan for new items at startup (makes startup slower)"
 msgstr "&Skani novajn erojn ĉe ekfunkciigo (malrapidigas ekfunkciigon)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to force digiKam to scan all collections for new items "
-#| "to\n"
-#| "register new elements in database. The scan is performed in the "
-#| "background through\n"
-#| "the progress manager available in the statusbar\n"
-#| "when digiKam main interface\n"
-#| "is loaded. If your computer is fast enough, this will have no effect on "
-#| "usability\n"
-#| "of digiKam while scanning. If your collections are huge or if you use a "
-#| "remote database,\n"
-#| "this can introduce low latency, and it is recommended to disable this "
-#| "option and to plan\n"
-#| "a manual scan through the maintenance tool at the right moment."
+#, kde-format
 msgid ""
 "Set this option to force digiKam to scan all collections for new items to\n"
 "register new elements in database. The scan is performed in the background "
@@ -62492,7 +62459,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:374
 #, kde-format
 msgid "Use color managed view in editor"
-msgstr "Uzu kolor-administritan vidon en redaktilo"
+msgstr "Uzi kolor-administritan vidon en redaktilo"
 
 #: core/utilities/setup/setupicc.cpp:375
 #, kde-format
@@ -63065,7 +63032,7 @@ msgstr "Agordu ĉi tiun opcion por montri la Kodekon de la Video."
 #: core/utilities/setup/setuptooltip.cpp:349
 #, kde-format
 msgid "Show album items' tool-tips"
-msgstr "Montru la konsiletojn de albumeroj"
+msgstr "Montri la konsiletojn de albumeroj"
 
 #: core/utilities/setup/setuptooltip.cpp:350
 #, kde-format
@@ -63229,531 +63196,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Video"
-#~ msgstr "Malfermi Videon"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an Url"
-#~ msgstr "Malfermi Url"
-
-#~ msgctxt "@info"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@info"
-#~ msgid "Drag and drop a file to player\n"
-#~ msgstr "Trenu kaj faligi dosieron al ludilo\n"
-
-#~ msgctxt "@info"
-#~ msgid "A: switch aspect ratio"
-#~ msgstr "A: ŝanĝi bildformaton"
-
-#~ msgctxt "@info"
-#~ msgid "Double click to switch fullscreen"
-#~ msgstr "Duoble alklaku por ŝanĝi plenan ekranon"
-
-#~ msgctxt "@info"
-#~ msgid "Shortcut:\n"
-#~ msgstr "Ŝparvojo:\n"
-
-#~ msgctxt "@info"
-#~ msgid "Space: pause/continue\n"
-#~ msgstr "Spaco: paŭzi/daŭrigi\n"
-
-#~ msgctxt "@info"
-#~ msgid "F: fullscreen on/off\n"
-#~ msgstr "F: plenekrana ŝaltita/malŝaltita\n"
-
-#~ msgctxt "@info"
-#~ msgid "T: stays on top on/off\n"
-#~ msgstr "T: restas supre on/off\n"
-
-#~ msgctxt "@info"
-#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-#~ msgstr "N: montri sekvan kadron. Daŭrigu la ludadon premante 'Spaco'\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+O: open a file\n"
-#~ msgstr "Ctrl+O: malfermi dosieron\n"
-
-#~ msgctxt "@info"
-#~ msgid "O: On Screen Display\n"
-#~ msgstr "O: Surekrana ekrano\n"
-
-#~ msgctxt "@info"
-#~ msgid "P: replay\n"
-#~ msgstr "P: reludi\n"
-
-#~ msgctxt "@info"
-#~ msgid "Q/ESC: quit\n"
-#~ msgstr "Q/ESC: ĉesi\n"
-
-#~ msgctxt "@info"
-#~ msgid "S: stop\n"
-#~ msgstr "S: halti\n"
-
-#~ msgctxt "@info"
-#~ msgid "R: rotate 90 degrees"
-#~ msgstr "R: turnu 90 gradojn"
-
-#~ msgctxt "@info"
-#~ msgid "M: mute on/off\n"
-#~ msgstr "M: silentigi ŝalti/malŝalti\n"
-
-#~ msgctxt "@info"
-#~ msgid "C: capture video"
-#~ msgstr "C: kapti videon"
-
-#~ msgctxt "@info"
-#~ msgid "Up/Down: volume +/-\n"
-#~ msgstr "Supren/Malsupren: volumo +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+Up/Down: speed +/-\n"
-#~ msgstr "Ctrl+Supren/Malsupren: rapido +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
-#~ msgstr "->/<-: serĉi antaŭen/malantaŭen\n"
-
-#~ msgctxt "@title:window"
-#~ msgid "Help"
-#~ msgstr "Helpo"
-
-#~ msgctxt "@action: open new media"
-#~ msgid "Open"
-#~ msgstr "Malfermi"
-
-#~ msgctxt "@action: open new stream"
-#~ msgid "Open Url"
-#~ msgstr "Malfermi URL"
-
-#~ msgctxt "@action: about AVPlayer"
-#~ msgid "About"
-#~ msgstr "Pri"
-
-#~ msgctxt "@action: AVPlayer help"
-#~ msgid "Help"
-#~ msgstr "Helpo"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
-#~ "experience with AVPlayer.</p>"
-#~ msgstr ""
-#~ "<p>Vi rulas AVPlayer kiel 32-bita versio en 64-bita Vindozo.</"
-#~ "p><p>Bonvolu instali la 64-bitan version de AVPlayer por akiri pli bonan "
-#~ "sperton kun AVPlayer.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Media File"
-#~ msgstr "Malfermi Median Dosieron"
-
-#~ msgctxt "@option"
-#~ msgid "Aspect ratio"
-#~ msgstr "Bildformato"
-
-#~ msgctxt "@title:window"
-#~ msgid "Player Error"
-#~ msgstr "Ludanta Eraro"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "No media"
-#~ msgstr "Neniu amaskomunikilaro"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "Nevalida amaskomunikilaro"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "Buffering..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffered"
-#~ msgstr "Bufrita"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loading..."
-#~ msgstr "Ŝargante..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loaded"
-#~ msgstr "Ŝarĝita"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Stalled"
-#~ msgstr "Ekhaltis"
-
-#~ msgctxt "@title:window, media loading state"
-#~ msgid "Buffering... %1% @%2 %3"
-#~ msgstr "Buffering... %1% @%2 %3"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Capture video frame\n"
-#~ "Save to: %1\n"
-#~ "Format: %2"
-#~ msgstr ""
-#~ "Kapti videokadron\n"
-#~ "Konservi al: %1\n"
-#~ "Formato: %2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Subtitle File"
-#~ msgstr "Malfermi Subtitolan Dosieron"
-
-#~ msgctxt "@info"
-#~ msgid "Video renderer is not available on your platform!"
-#~ msgstr "Video-bildilo ne haveblas sur via platformo!"
-
-#~ msgctxt "@action: audio track"
-#~ msgid "External"
-#~ msgstr "Ekstera"
-
-#~ msgctxt "@info"
-#~ msgid "Current time"
-#~ msgstr "Nuna horo"
-
-#~ msgctxt "@info"
-#~ msgid "Duration"
-#~ msgstr "Daŭro"
-
-#~ msgctxt "@info"
-#~ msgid "Render engine"
-#~ msgstr "Redonu motoron"
-
-#~ msgctxt "@info"
-#~ msgid "Speed. Ctrl+Up/Down"
-#~ msgstr "Rapido. Ctrl+Supren/Malsupren"
-
-#~ msgctxt "@info: open new media"
-#~ msgid "Open"
-#~ msgstr "Malfermi"
-
-#~ msgctxt "@info: button"
-#~ msgid "Capture"
-#~ msgstr "Kapto"
-
-#~ msgctxt "@info: button"
-#~ msgid "Volume"
-#~ msgstr "Volumo"
-
-#~ msgctxt "@action"
-#~ msgid "Open Url"
-#~ msgstr "Malfermi URL"
-
-#~ msgctxt "@option"
-#~ msgid "Play list"
-#~ msgstr "Ludlisto"
-
-#~ msgctxt "@option"
-#~ msgid "History"
-#~ msgstr "Historio"
-
-#~ msgctxt "@action"
-#~ msgid "About"
-#~ msgstr "Pri"
-
-#~ msgctxt "@action"
-#~ msgid "Setup"
-#~ msgstr "Agordi"
-
-#~ msgctxt "@option"
-#~ msgid "Speed"
-#~ msgstr "Rapido"
-
-#~ msgctxt "@option"
-#~ msgid "Repeat"
-#~ msgstr "Ripeti"
-
-#~ msgctxt "@action"
-#~ msgid "Enable"
-#~ msgstr "Ebligi"
-
-#~ msgctxt "@info"
-#~ msgid "infinity"
-#~ msgstr "senfineco"
-
-#~ msgctxt "@label"
-#~ msgid "Times"
-#~ msgstr "Tempoj"
-
-#~ msgctxt "@label: from time-stamp"
-#~ msgid "From"
-#~ msgstr "De"
-
-#~ msgctxt "@info"
-#~ msgid "negative value means from the end"
-#~ msgstr "negativa valoro signifas de la fino"
-
-#~ msgctxt "@label: to time-stamp"
-#~ msgid "To"
-#~ msgstr "Al"
-
-#~ msgctxt "@action"
-#~ msgid "Clock"
-#~ msgstr "Horloĝo"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Auto"
-#~ msgstr "Aŭtomate"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Audio"
-#~ msgstr "Aŭdio"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgctxt "@info"
-#~ msgid "Take effect in next playback"
-#~ msgstr "Efikiĝi en la sekva reproduktado"
-
-#~ msgctxt "@option"
-#~ msgid "Subtitle"
-#~ msgstr "Subtitolo"
-
-#~ msgctxt "@action"
-#~ msgid "Auto load"
-#~ msgstr "Aŭtomata ŝarĝo"
-
-#~ msgctxt "@action: open subtitle file"
-#~ msgid "Open"
-#~ msgstr "Malfermi"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "FFmpeg supports more subtitles but only render plain text\n"
-#~ "LibASS supports 'ass' styles"
-#~ msgstr ""
-#~ "FFmpeg subtenas pli da subtekstoj sed nur bildigi simplan tekston\n"
-#~ "LibASS subtenas \"azen\" stilojn"
-
-#~ msgctxt "@label"
-#~ msgid "Charset"
-#~ msgstr "Signaro"
-
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Aŭtomata detektado"
-
-#~ msgctxt "@option"
-#~ msgid "System"
-#~ msgstr "Sistemo"
-
-#~ msgctxt "@info"
-#~ msgid "Auto detect requires libchardet"
-#~ msgstr "Aŭtomata detektado postulas libchardet"
-
-#~ msgctxt "@option"
-#~ msgid "Audio track"
-#~ msgstr "Sontrako"
-
-#~ msgctxt "@option"
-#~ msgid "Channel"
-#~ msgstr "Kanalo"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "As input"
-#~ msgstr "Kiel enigo"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Stereo"
-#~ msgstr "Stereo"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Mono (center)"
-#~ msgstr "Mono (meze)"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Left"
-#~ msgstr "Maldekstren"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Right"
-#~ msgstr "Dekstren"
-
-#~ msgctxt "@action: aspect ratio"
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Window"
-#~ msgstr "Fenestro"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Custom"
-#~ msgstr "Kutimo"
-
-#~ msgctxt "@option"
-#~ msgid "Color space"
-#~ msgstr "Kolora spaco"
-
-#~ msgctxt "@option"
-#~ msgid "Decoder"
-#~ msgstr "Malĉifrilo"
-
-#~ msgctxt "@option"
-#~ msgid "Renderer"
-#~ msgstr "Redonanto"
-
-#~ msgctxt "@info"
-#~ msgid "not available on your platform!"
-#~ msgstr "ne havebla sur via platformo!"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an External Audio Track"
-#~ msgstr "Malfermi Eksteran Aŭdan Trakon"
-
-#~ msgctxt "@info"
-#~ msgid "Can not use this renderer"
-#~ msgstr "Ne povas uzi ĉi tiun bildilon"
-
-#~ msgctxt "@info"
-#~ msgid "Use Ctrl/Shift + Click to select multiple items"
-#~ msgstr "Uzi Ctrl/Shift + Klaki por elekti plurajn erojn"
-
-#~ msgctxt "@action: clear playlist"
-#~ msgid "Clear"
-#~ msgstr "Forigi"
-
-#~ msgctxt "@info"
-#~ msgid "Remove selected items"
-#~ msgstr "Forigi elektitajn erojn"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Files"
-#~ msgstr "Elekti Dosierojn"
-
-#~ msgctxt "@option: base"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@option: base"
-#~ msgid "Format"
-#~ msgstr "Formato"
-
-#~ msgctxt "@option: base"
-#~ msgid "Bit rate"
-#~ msgstr "Bitrapideco"
-
-#~ msgctxt "@option: base"
-#~ msgid "Start time"
-#~ msgstr "Komenca tempo"
-
-#~ msgctxt "@option: base"
-#~ msgid "Duration"
-#~ msgstr "Daŭro"
-
-#~ msgctxt "@option: common"
-#~ msgid "Available"
-#~ msgstr "Disponebla"
-
-#~ msgctxt "@option: common"
-#~ msgid "Codec"
-#~ msgstr "Kodeko"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder"
-#~ msgstr "Malĉifrilo"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder detail"
-#~ msgstr "Malĉifrilo detalo"
-
-#~ msgctxt "@option: common"
-#~ msgid "Total time"
-#~ msgstr "Tuta tempo"
-
-#~ msgctxt "@option: common"
-#~ msgid "Start time"
-#~ msgstr "Komenca tempo"
-
-#~ msgctxt "@option: common"
-#~ msgid "Bit rate"
-#~ msgstr "Bitrapideco"
-
-#~ msgctxt "@option: common"
-#~ msgid "Frames"
-#~ msgstr "Kadroj"
-
-#~ msgctxt "@option: common"
-#~ msgid "FPS"
-#~ msgstr "FPS"
-
-#~ msgctxt "@option: video"
-#~ msgid "FPS Now"
-#~ msgstr "FPS Nun"
-
-#~ msgctxt "@option: video"
-#~ msgid "Pixel format"
-#~ msgstr "Pixel formato"
-
-#~ msgctxt "@option: video"
-#~ msgid "Size"
-#~ msgstr "Grandeco"
-
-#~ msgctxt "@option: video"
-#~ msgid "Coded size"
-#~ msgstr "Kodigita grandeco"
-
-#~ msgctxt "@option: video"
-#~ msgid "GOP size"
-#~ msgstr "GOP grandeco"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample format"
-#~ msgstr "Specimena formato"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample rate"
-#~ msgstr "Specimeniga rapideco"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channels"
-#~ msgstr "Kanaloj"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channel layout"
-#~ msgstr "Kanala aranĝo"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Frame size"
-#~ msgstr "Kadra grandeco"
-
-#~ msgctxt "@title:window"
-#~ msgid "Media Info"
-#~ msgstr "Media Info"
-
-#~ msgctxt "@title"
-#~ msgid "Key"
-#~ msgstr "Ŝlosilo"
-
-#~ msgctxt "@title"
-#~ msgid "Value"
-#~ msgstr "Valoro"
-
-#~ msgctxt "@item: video info"
-#~ msgid "Metadata"
-#~ msgstr "Metadatenoj"
-
-#~ msgctxt "@item: video stats"
-#~ msgid "Video"
-#~ msgstr "Video"
-
-#~ msgctxt "@option"
-#~ msgid "Metadata"
-#~ msgstr "Metadatenoj"
-
-#~ msgctxt "@option"
-#~ msgid "Audio"
-#~ msgstr "Aŭdio"
-
-#~ msgctxt "@action"
-#~ msgid "Ok"
-#~ msgstr "Bone"
