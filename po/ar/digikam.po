@@ -6031,7 +6031,7 @@ msgstr "التاريخ"
 #, kde-format
 msgctxt "@item: exif namespace"
 msgid "GPS"
-msgstr "جي‌پي‌إس"
+msgstr "جي‌بي‌إس"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, fuzzy, kde-format
@@ -36537,7 +36537,7 @@ msgid ""
 "No Geolocation\n"
 "Information\n"
 "Available"
-msgstr "معلومات الموقع (جي‌پي‌إس)"
+msgstr "معلومات الموقع (جي‌بي‌إس)"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:156
 #, kde-format
@@ -51367,7 +51367,7 @@ msgstr "مرماز الفيديو"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:48
 #, kde-format
 msgid "Position Information (GPS)"
-msgstr "معلومات الموقع (جي‌پي‌إس)"
+msgstr "معلومات الموقع (جي‌بي‌إس)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:50
 #, fuzzy, kde-format
@@ -53293,12 +53293,12 @@ msgstr "فشل فتح الملفّ."
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:903
 #, kde-format
 msgid "Failed to add GPS info to image."
-msgstr "فشلت إضافة معلومات جي‌پي‌إس إلى الصّورة."
+msgstr "فشلت إضافة معلومات جي‌بي‌إس إلى الصّورة."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to remove GPS info from image"
-msgstr "فشلت إزالة معلومات جي‌پي‌إس من الصّورة"
+msgstr "فشلت إزالة معلومات جي‌بي‌إس من الصّورة"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:950
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:957
@@ -53355,7 +53355,7 @@ msgstr "ابحث عن قيم الارتفاع الرّأسيّ النّاقصة"
 #| msgid "GPS Sync"
 msgctxt "@title:window"
 msgid "GPS Sync"
-msgstr "مزامنة جي‌پي‌إس"
+msgstr "مزامنة جي‌بي‌إس"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, fuzzy, kde-format
@@ -58409,7 +58409,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:629
 #, kde-format
 msgid "GPS"
-msgstr "جي‌پي‌إس"
+msgstr "جي‌بي‌إس"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:606
 #, kde-format
@@ -58426,7 +58426,7 @@ msgstr "-"
 #, fuzzy, kde-format
 #| msgid "Image has no GPS info"
 msgid "Item has no GPS info"
-msgstr "ليس في الصّورة معلومات جي‌پي‌إس"
+msgstr "ليس في الصّورة معلومات جي‌بي‌إس"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:630
 #, kde-format
@@ -61328,7 +61328,7 @@ msgstr ""
 #| msgid "Position Information (GPS)"
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
-msgstr "معلومات الموقع (جي‌پي‌إس)"
+msgstr "معلومات الموقع (جي‌بي‌إس)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, fuzzy, kde-format

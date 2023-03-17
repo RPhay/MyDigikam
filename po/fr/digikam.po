@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-09 16:01+0100\n"
+"PO-Revision-Date: 2023-03-15 21:05+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -16654,11 +16654,10 @@ msgid "Clear all"
 msgstr "Tout effacer"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgid "Exposure Blending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
-msgstr "Fusion d'exposition"
+msgstr "Mélange d'exposition"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #, kde-format
@@ -26604,10 +26603,9 @@ msgstr ""
 "l'outil natif d'importation."
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
-#, fuzzy, kde-format
-#| msgid "Raw Conversion"
+#, kde-format
 msgid "ART Raw Conversion"
-msgstr "Conversion RAW"
+msgstr "Conversion « RAW ART »"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
@@ -62312,18 +62310,14 @@ msgid "Revert Changes"
 msgstr "Annuler les modifications"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Enregistrer un fichier"
+msgstr "Enregistrer un profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profil"
+msgstr "Charger un profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
@@ -62331,18 +62325,16 @@ msgid "Reset to Default"
 msgstr "Réinitialiser aux valeurs par défaut"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
-msgstr "Nouvel espace Xmp"
+msgstr "Nouveau nom d'espace « XMP »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr "Modifier l'espace Xmp"
+msgstr "Modifier un nom d'espace « XMP »"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, kde-format

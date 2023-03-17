@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-09 08:52+0100\n"
+"PO-Revision-Date: 2023-03-16 11:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.2.2\n"
 
@@ -61077,20 +61077,16 @@ msgstr ""
 "</item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Znova preberi metapodatke iz datoteke"
+msgstr "Shrani profil naprednih metapodatkov"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Odstrani metapodatke iz datoteke"
+msgstr "Naloži profil naprednih metapodatkov"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -61163,18 +61159,14 @@ msgid "Revert Changes"
 msgstr "Povrni vse spremembe"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Shrani datoteko"
+msgstr "Shrani profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profil"
+msgstr "Naloži profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format

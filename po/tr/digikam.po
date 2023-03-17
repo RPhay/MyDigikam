@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-09 13:30+0300\n"
+"PO-Revision-Date: 2023-03-16 12:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -36468,18 +36468,14 @@ msgstr "Afrikaanca"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:330
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:478
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Amharic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Amharic"
-msgstr "Etiyopyaca"
+msgstr "Amharca"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:331
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Arabic"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Arabic"
 msgstr "Arapça"
@@ -36691,12 +36687,10 @@ msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Faroese"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Faroese"
-msgstr "Faroece"
+msgstr "Faroe Dili"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:360
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:508
@@ -36987,12 +36981,10 @@ msgstr "Malgaşça"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:397
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Maori"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Maori"
-msgstr "Maori"
+msgstr "Maori Dili"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:398
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:546
@@ -37308,12 +37300,10 @@ msgstr "İsveççe"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:437
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:585
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Swahili"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Swahili"
-msgstr "Svahili"
+msgstr "Suahili"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:438
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:586
@@ -37437,9 +37427,7 @@ msgstr "Ukraynaca"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:453
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:601
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Urdu"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Urdu"
 msgstr "Urduca"
@@ -37492,12 +37480,10 @@ msgstr "Yidçe"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:608
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Yoruba"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Yoruba"
-msgstr "Yoruba"
+msgstr "Yorubaca"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:461
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:609
@@ -46177,7 +46163,7 @@ msgstr "Afrikaanca (Güney Afrika)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
-msgstr "Habeşçe (Etyopya)"
+msgstr "Amharca (Etyopya)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 #, kde-format
@@ -48250,7 +48236,7 @@ msgstr "Yidçe (Almanya)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yoruba (Nigeria)"
-msgstr "Yoruba (Nijerya)"
+msgstr "Yorubaca (Nijerya)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 #, kde-format
@@ -49990,7 +49976,7 @@ msgstr "Arnavutça"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
-msgstr "Habeş Dili"
+msgstr "AmharcaArap"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
 #, kde-format
@@ -50710,7 +50696,7 @@ msgstr "Yidçe"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
-msgstr "Yoruba"
+msgstr "Yorubaca"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:475
 #, kde-format
