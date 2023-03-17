@@ -45,7 +45,26 @@ if (MINGW)
         UPDATE_COMMAND ""
     )
 
-else() # MacOS and Linux
+elseif(APPLE)
+
+    ExternalProject_Add(ext_gmic_qt
+
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+
+        SOURCE_DIR gmic-qt
+        INSTALL_DIR ${PREFIX_ext_gmicqt}
+
+        CMAKE_ARGS -DCMAKE_CXX_COMPILER=g++
+                   -DCMAKE_C_COMPILER=gcc
+                   -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} 
+                   -DCMAKE_BUILD_TYPE=RelWithDebInfo
+                   ${GmicQt_Conf}
+
+        UPDATE_COMMAND ""
+    )
+
+else() # Linux
 
     ExternalProject_Add(ext_gmic_qt
 
