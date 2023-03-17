@@ -314,5 +314,5 @@ BUGFIXES:
 271 ==> 467276 - FR: Better (native) integration with Darktable sidecars.
 272 ==> 467402 - No more possibility to create a new album.
 273 ==> 467413 - Saving changes in the image editor does not work.
-274 ==> 
+274 ==> 467498 - Thumbnails creation causes an assert error.
 275 ==> 
