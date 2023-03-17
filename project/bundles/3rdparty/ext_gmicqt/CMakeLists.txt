@@ -55,11 +55,11 @@ elseif(APPLE)
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
 
-        CMAKE_ARGS -DCMAKE_CXX_COMPILER=g++
-                   -DCMAKE_C_COMPILER=gcc
-                   -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} 
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} 
                    -DCMAKE_BUILD_TYPE=RelWithDebInfo
                    ${GmicQt_Conf}
+#                   -DCMAKE_CXX_COMPILER=g++
+#                   -DCMAKE_C_COMPILER=gcc
 
         UPDATE_COMMAND ""
     )
