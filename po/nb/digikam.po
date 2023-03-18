@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-28 00:55+0000\n"
+"POT-Creation-Date: 2023-03-15 00:44+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -945,9 +945,9 @@ msgstr ""
 "bilder  til.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1097
-#: core/utilities/imageeditor/main/imagewindow.cpp:1122
-#: core/utilities/imageeditor/main/imagewindow.cpp:1154
+#: core/utilities/imageeditor/main/imagewindow.cpp:1098
+#: core/utilities/imageeditor/main/imagewindow.cpp:1123
+#: core/utilities/imageeditor/main/imagewindow.cpp:1155
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album «%1»"
@@ -3244,7 +3244,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
-"Add settings to list prefered alternative/translated languages in text edit "
+"Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
@@ -8243,7 +8243,7 @@ msgstr "Bruke fargestyring i utskrifta"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:363
+#: core/utilities/maintenance/maintenancedlg.cpp:364
 #, kde-format
 msgid "Settings..."
 msgstr "Innstillinger …"
@@ -10558,7 +10558,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:382
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -19851,7 +19851,7 @@ msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:198
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
@@ -20850,9 +20850,9 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:723
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:874
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1046
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:872
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1044
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:741
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:763
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:805
@@ -20884,7 +20884,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:281
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:282
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
@@ -20993,7 +20993,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:650
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:654
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
@@ -21016,7 +21016,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:425
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, kde-format
 msgctxt "@title:window"
@@ -23861,160 +23861,160 @@ msgctxt "@action"
 msgid "Export to &Piwigo..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:339
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, kde-format
 msgid "Check if %1 already exists"
 msgstr "Kontroller om %1 finnes fra før"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:504
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:502
 #, kde-format
 msgid "Piwigo URL probably incorrect"
 msgstr "Piwigo-URL er antakelig feil"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:511
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
 msgstr "Feil brukernavn eller passord angitt"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:557
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:744
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
 #, kde-format
 msgid "Upload to Piwigo version inferior to 2.4 is no longer supported"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:632
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:716
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:792
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:867
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:714
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:865
 #, kde-format
 msgid "Invalid response received from remote Piwigo"
 msgstr "Ugyldig svar mottatt fra Piwigo på nett"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:639
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:637
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
 msgstr "Klarte ikke lage liste over album"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:690
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, kde-format
 msgid "Photo '%1' already exists."
 msgstr "Bildet «%1» finnes fra før."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:799
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:797
 #, kde-format
 msgid "Photo '%1' already exists in this album."
 msgstr "Bildet «%1» finnes fra før i dette albumet."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:890
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:888
 #, kde-format
 msgid "Error : Cannot open photo: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:918
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:916
 #, kde-format
 msgid "Upload the chunk %1/%2 of %3"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:953
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:951
 #, kde-format
 msgid "Warning : The full size photo cannot be uploaded."
 msgstr "Advarsel: Bildet kan ikke lastes opp i full størrelse."
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1004
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1002
 #, kde-format
 msgid "Upload the metadata of %1"
 msgstr "Last opp metadata for %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1039
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:1037
 #, kde-format
 msgid "Invalid response received from remote Piwigo (%1)"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:137
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:138
 #, kde-format
 msgid "Visit Piwigo website"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:170
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
 #, kde-format
 msgid "Remote Albums"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:176
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
 msgctxt "reload album list"
 msgid "Reload"
 msgstr "Last på nytt"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:178
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:179
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:137
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:220
 #, kde-format
 msgid "Reload album list"
 msgstr "Oppdater albumliste"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:186
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
 #, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:188
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:189
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:194
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:195
 #, kde-format
 msgid "Change Account"
 msgstr "Endre konto"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:202
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:203
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:164
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:255
 #, kde-format
 msgid "Resize photos before uploading"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:205
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:206
 #, kde-format
 msgid "Maximum width:"
 msgstr "Største bredde:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:211
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:212
 #, kde-format
 msgid "Maximum height:"
 msgstr "Største høyde:"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:217
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:218
 #, kde-format
 msgid "Resized JPEG quality:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:276
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:277
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:300
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:435
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:706
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:301
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:436
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:711
 #, kde-format
 msgid "Edit Piwigo Data"
 msgstr "Rediger Piwigo-data"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
 msgstr "Kunne ikke logge inn på piwigo på nettet."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
 msgid ""
 "\n"
@@ -24042,22 +24042,22 @@ msgstr "Album"
 msgid "Nothing to upload - please select photos to upload."
 msgstr "Ingenting å laste opp – velg bilder som skal lastes opp."
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:625
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:626
 #, kde-format
 msgid "The file %1 is not a supported image or video format"
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:630
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:631
 #, kde-format
 msgid "Uploading file %1"
 msgstr "Laster opp fil %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:651
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
 msgstr ""
 
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:652
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
 msgid ""
 "\n"
@@ -24879,7 +24879,7 @@ msgstr ""
 "«%1»"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:173
-#: core/libs/video/qtav/config/MiscPage.cpp:87
+#: core/libs/video/qtav/config/MiscPage.cpp:89
 #, kde-format
 msgid "Abort"
 msgstr "Avbryt"
@@ -26963,7 +26963,7 @@ msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
 msgid "Delete"
 msgstr "Slett"
@@ -35070,21 +35070,21 @@ msgid "Selected items have different text here."
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:106
+#: core/libs/properties/captions/tagsedit.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:112
+#: core/libs/properties/captions/tagsedit.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:113
+#: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -35094,21 +35094,21 @@ msgid ""
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:130
+#: core/libs/properties/captions/tagsedit.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:136
+#: core/libs/properties/captions/tagsedit.cpp:135
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
-#: core/libs/properties/captions/tagsedit.cpp:294
+#: core/libs/properties/captions/tagsedit.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
@@ -35271,14 +35271,14 @@ msgid "Writable: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:215
+#: core/libs/properties/itempropertiestab.cpp:218
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:216
+#: core/libs/properties/itempropertiestab.cpp:219
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -35286,8 +35286,8 @@ msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:217
-#: core/libs/properties/itempropertiestab.cpp:315
+#: core/libs/properties/itempropertiestab.cpp:220
+#: core/libs/properties/itempropertiestab.cpp:318
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -35312,77 +35312,77 @@ msgid "Camera File Properties"
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:255
+#: core/libs/properties/itempropertiestab.cpp:258
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:256
+#: core/libs/properties/itempropertiestab.cpp:259
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:257
+#: core/libs/properties/itempropertiestab.cpp:260
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:258
+#: core/libs/properties/itempropertiestab.cpp:261
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:259
+#: core/libs/properties/itempropertiestab.cpp:262
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:263
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:261
+#: core/libs/properties/itempropertiestab.cpp:264
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:265
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:266
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:267
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:268
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -35395,42 +35395,42 @@ msgid "Photograph Properties"
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:322
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:323
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:321
+#: core/libs/properties/itempropertiestab.cpp:324
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:316
+#: core/libs/properties/itempropertiestab.cpp:319
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:317
+#: core/libs/properties/itempropertiestab.cpp:320
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:321
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -35467,7 +35467,7 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:644
-#: core/libs/properties/itempropertiestab.cpp:464
+#: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -35778,97 +35778,97 @@ msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:208
+#: core/libs/properties/itempropertiestab.cpp:211
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:218
+#: core/libs/properties/itempropertiestab.cpp:221
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:219
+#: core/libs/properties/itempropertiestab.cpp:222
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:220
+#: core/libs/properties/itempropertiestab.cpp:223
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:248
+#: core/libs/properties/itempropertiestab.cpp:251
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:308
+#: core/libs/properties/itempropertiestab.cpp:311
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:352
+#: core/libs/properties/itempropertiestab.cpp:355
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:359
+#: core/libs/properties/itempropertiestab.cpp:362
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:360
+#: core/libs/properties/itempropertiestab.cpp:363
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:361
+#: core/libs/properties/itempropertiestab.cpp:364
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:365
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:363
+#: core/libs/properties/itempropertiestab.cpp:366
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:397
+#: core/libs/properties/itempropertiestab.cpp:400
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:739
+#: core/libs/properties/itempropertiestab.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:944
+#: core/libs/properties/itempropertiestab.cpp:947
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:977
+#: core/libs/properties/itempropertiestab.cpp:980
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -37382,7 +37382,7 @@ msgstr ""
 "Fortsett med forsiktighet."
 
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
 msgid "Help"
@@ -38010,7 +38010,7 @@ msgstr "Bruksmåter:"
 msgid "No or invalid size specified"
 msgstr "Du har ikke valgt en gyldig størrelse"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:306
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Ingen miniatyr"
@@ -39005,69 +39005,69 @@ msgid "Codec %1 is not supported by CUDA"
 msgstr ""
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
 #, kde-format
 msgid "0: auto"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:375
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
 msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
 "quality. However it provides a big speedup for hi definition streams"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:381
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
 msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
 "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:383
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
 msgid "Force skipping frames for speed up decoding."
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:385
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:347
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:388
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:349
 #, kde-format
 msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
 "decoders"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:387
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
 #, kde-format
 msgid "1: single thread decoding"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:340
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
 #, kde-format
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:341
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:342
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
 #, kde-format
 msgid "Not implemented for all codecs"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:345
 #, kde-format
 msgid "OptimizedCopy: copy from USWC memory optimized by SSE4.1"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:346
 #, kde-format
 msgid "GenericCopy: slowest. Generic cpu copy"
 msgstr ""
 
-#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:348
+#: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
 msgstr ""
@@ -39271,52 +39271,52 @@ msgstr ""
 msgid "Progress update interval"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:75
+#: core/libs/video/qtav/config/MiscPage.cpp:77
 #, kde-format
 msgid "Buffer frames"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, kde-format
 msgid "Timeout"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:81
+#: core/libs/video/qtav/config/MiscPage.cpp:83
 #, kde-format
 msgid "s"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:93
+#: core/libs/video/qtav/config/MiscPage.cpp:95
 #, kde-format
 msgid "OpenGL type"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:99
+#: core/libs/video/qtav/config/MiscPage.cpp:101
 #, kde-format
 msgid "Windows only"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:100
+#: core/libs/video/qtav/config/MiscPage.cpp:102
 #, kde-format
 msgid "OpenGLES is Used by DXVA Zero Copy"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:103
+#: core/libs/video/qtav/config/MiscPage.cpp:105
 #, kde-format
 msgid "D3D9 has performance if ZeroCopy is disabled or for software decoders"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:104
+#: core/libs/video/qtav/config/MiscPage.cpp:106
 #, kde-format
 msgid "RESTART REQUIRED"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:121
+#: core/libs/video/qtav/config/MiscPage.cpp:123
 #, kde-format
 msgid "Currently only works for Qt>=5.5 XCB build"
 msgstr ""
 
-#: core/libs/video/qtav/config/MiscPage.cpp:128
+#: core/libs/video/qtav/config/MiscPage.cpp:130
 #, kde-format
 msgid "Misc"
 msgstr ""
@@ -40619,7 +40619,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:345
+#: core/utilities/maintenance/maintenancedlg.cpp:346
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Bildesortering etter kvalitet"
@@ -49854,25 +49854,32 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Nullstil ubekreftede resultater og skann igjen"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
+#: core/utilities/maintenance/maintenancedlg.cpp:320
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Clear all previous results and rescan"
+msgstr ""
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Oppdag ansikter"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Finn alle ansikter i fotoene dine"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49880,13 +49887,13 @@ msgid ""
 "try to recognize which person is depicted"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -49894,37 +49901,37 @@ msgid ""
 "on marked but yet unconfirmed faces."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49934,26 +49941,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Arbeid på alle prosessorkjerner"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -49962,7 +49969,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -52745,13 +52752,13 @@ msgstr ""
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:927
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -52760,13 +52767,13 @@ msgstr ""
 "Det finnes ingen bilder i dette albumet.\n"
 "Bilderedigeringsprogrammet blir nå lukket."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1199
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1201
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -54430,7 +54437,7 @@ msgstr "Vis i høyre panel"
 
 #: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:359
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Rediger"
@@ -54695,27 +54702,27 @@ msgstr ""
 msgid "Find duplicates items"
 msgstr "Finn dupliserte elementer"
 
-#: core/utilities/maintenance/facesdetector.cpp:280
+#: core/utilities/maintenance/facesdetector.cpp:285
 #, kde-format
 msgid "Scan for faces in album: %1"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:284
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:291
+#: core/utilities/maintenance/facesdetector.cpp:296
 #, kde-format
 msgid "Scan for faces in image: %1"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:295
+#: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Scan for faces in %1 images"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:305
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
@@ -54863,13 +54870,13 @@ msgstr ""
 msgid "Faces data management: "
 msgstr "Administrasjon av ansiktsdata: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:322
+#: core/utilities/maintenance/maintenancedlg.cpp:323
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Tøm og bygg alle treningsdata"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54877,47 +54884,47 @@ msgid ""
 "available faces."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:327
+#: core/utilities/maintenance/maintenancedlg.cpp:328
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:334
+#: core/utilities/maintenance/maintenancedlg.cpp:335
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Skannemodus: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:339
+#: core/utilities/maintenance/maintenancedlg.cpp:340
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Nullstil alt og skann igjen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Skann bare det som ikke er tilordnet"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:352
+#: core/utilities/maintenance/maintenancedlg.cpp:353
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Synk-retning:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:356
+#: core/utilities/maintenance/maintenancedlg.cpp:357
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Fra databasen til bildenes metadata"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Fra bildenes metadata til databasen"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:360
+#: core/utilities/maintenance/maintenancedlg.cpp:361
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Sjekk metadata oppsettspanel etter detaljer: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synkroniser  metadata med databasen"
@@ -58450,13 +58457,25 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Advanced Metadata Profile"
+msgstr ""
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
+#, kde-format
+msgctxt "@title:window"
+msgid "Load Advanced Metadata Profile"
+msgstr ""
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:215
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58465,7 +58484,7 @@ msgid ""
 " Do you want to continue?"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:322
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:407
 #, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
@@ -58473,47 +58492,57 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:332
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, fuzzy, kde-format
 msgid "Read Options"
 msgstr "Innstillinger for navneendring"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:333
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:418
 #, fuzzy, kde-format
 msgid "Write Options"
 msgstr "Forhåndsvisningsvalg"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:335
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:420
 #, kde-format
 msgid "Unify read and write"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:336
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:421
 #, kde-format
 msgid "Read all metadata for tags"
 msgstr ""
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:356
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:441
 #, fuzzy, kde-format
 msgid "Add"
 msgstr "&Legg til"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:365
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, fuzzy, kde-format
 msgid "Move Up"
 msgstr "Flytt opp"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:368
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, fuzzy, kde-format
 msgid "Move Down"
 msgstr "Flytt ned"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:371
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:456
 #, fuzzy, kde-format
 msgid "Revert Changes"
 msgstr "Tilbakestill alle endringer"
 
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:377
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
+#, kde-format
+msgid "Save Profile"
+msgstr ""
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
+#, kde-format
+msgid "Load Profile"
+msgstr ""
+
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, fuzzy, kde-format
 msgid "Reset to Default"
 msgstr "Tilbakestill til standardverdier."
