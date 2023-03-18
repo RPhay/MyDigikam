@@ -119,6 +119,10 @@ include(RulesInstallPaths)
 
 include(RulesWindows)
 
+# -- MacOS compilation and linking adjustements -----------------------------
+
+include(RulesMacOS)
+
 # -- To link under Solaris (see bug #274484) ----------------------------------
 
 if(NOT WIN32)
