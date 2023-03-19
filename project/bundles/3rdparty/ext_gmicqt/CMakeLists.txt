@@ -58,8 +58,8 @@ elseif(APPLE)
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} 
                    -DCMAKE_BUILD_TYPE=RelWithDebInfo
                    ${GmicQt_Conf}
-#                   -DCMAKE_CXX_COMPILER=g++
-#                   -DCMAKE_C_COMPILER=gcc
+#                   -DCMAKE_CXX_COMPILER=${INSTALL_ROOT}/bin/g++
+#                   -DCMAKE_C_COMPILER=${INSTALL_ROOT}/bin/gcc
 
         UPDATE_COMMAND ""
     )
