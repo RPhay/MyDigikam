@@ -37,6 +37,7 @@ QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
 QueueManager   : Add new tool to assign titles and captions in batch.
 Documentation  : Rewrite online documentation from DocBook to Sphinx/ReStructuredText framework.
                  https://docs.digikam.org/en/index.html
+ImageEditor    : Update Gmic-Qt tool to last version 3.2.2.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -315,4 +316,9 @@ BUGFIXES:
 272 ==> 467402 - No more possibility to create a new album.
 273 ==> 467413 - Saving changes in the image editor does not work.
 274 ==> 467498 - Thumbnails creation causes an assert error.
-275 ==> 
+275 ==> 467568 - "An error occurred during the internal server start".
+276 ==> 
+277 ==> 
+278 ==>
+279 ==> 
+280 ==> 
