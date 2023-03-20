@@ -317,8 +317,8 @@ BUGFIXES:
 273 ==> 467413 - Saving changes in the image editor does not work.
 274 ==> 467498 - Thumbnails creation causes an assert error.
 275 ==> 467568 - "An error occurred during the internal server start".
-276 ==> 
-277 ==> 
-278 ==>
+276 ==> 460570 - Face Recognition fails (process stuck at 0%).
+277 ==> 465078 - Progress bar stays at 0%.
+278 ==> 465434 - Problems with face recognition.
 279 ==> 
 280 ==> 
