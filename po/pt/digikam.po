@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-07 09:30+0000\n"
+"PO-Revision-Date: 2023-03-20 14:30+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -61463,20 +61463,16 @@ msgstr ""
 "aberto e livre de patentes. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Ler de Novo os Meta-Dados do Ficheiro"
+msgstr "Gravar o Perfil Avançado dos Meta-Dados"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Remover os meta-dados do ficheiro"
+msgstr "Carregar um Perfil Avançado dos Meta-Dados"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -61549,18 +61545,14 @@ msgid "Revert Changes"
 msgstr "Reverter as Alterações"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Gravar o Ficheiro"
+msgstr "Gravar o Perfil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Perfil"
+msgstr "Carregar um Perfil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format

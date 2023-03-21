@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-10 12:44+0100\n"
+"PO-Revision-Date: 2023-03-16 16:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -59438,20 +59438,16 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Znovu načíst metadata ze souboru"
+msgstr "Uložit profil pokročilých metadat"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Odstranit ze souboru metadata"
+msgstr "Načíst profil pokročilých metadat"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -59523,18 +59519,14 @@ msgid "Revert Changes"
 msgstr "Vrátit změny"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Uložit soubor"
+msgstr "Uložit profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profil"
+msgstr "Načíst profil"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
