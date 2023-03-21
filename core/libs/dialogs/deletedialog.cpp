@@ -696,7 +696,7 @@ void DeleteDialog::keyPressEvent(QKeyEvent* e)
 
 void DeleteDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
 }
 
 } // namespace Digikam

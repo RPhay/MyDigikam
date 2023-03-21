@@ -201,54 +201,7 @@ bool DXmlGuiWindow::thumbbarVisibility() const
 
 void DXmlGuiWindow::slotHelpContents()
 {
-    openHandbook(d->handbookSection);
-}
-
-void DXmlGuiWindow::openHandbook(const QString& section, const QString& chapter, const QString& reference)
-{
-    QUrl url;
-
-    if (section.isEmpty())
-    {
-        if (QApplication::applicationName() == QLatin1String("showfoto"))
-        {
-            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/showfoto_editor.html"));
-        }
-        else
-        {
-            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
-        }
-    }
-    else
-    {
-        if (chapter.isEmpty())
-        {
-            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1.html").arg(section));
-        }
-        else
-        {
-            if (reference.isEmpty())
-            {
-                url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1/%2.html").arg(section).arg(chapter));
-            }
-            else
-            {
-                url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1/%2.html#%3").arg(section).arg(chapter).arg(reference));
-            }
-        }
-    }
-
-#ifdef HAVE_QWEBENGINE
-
-    WebBrowserDlg* const browser = new WebBrowserDlg(url, qApp->activeWindow());
-    browser->show();
-
-#else
-
-    QDesktopServices::openUrl(url);
-
-#endif
-
+    openOnlineDocumentation(d->handbookSection);
 }
 
 void DXmlGuiWindow::unminimizeAndActivateWindow()

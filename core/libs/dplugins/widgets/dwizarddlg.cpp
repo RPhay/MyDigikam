@@ -6,7 +6,7 @@
  * Date        : 2009-11-13
  * Description : a template to create wizard dialog.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 #include "dpluginaboutdlg.h"
 
@@ -84,7 +85,7 @@ void DWizardDlg::slotAboutPlugin()
 
 void DWizardDlg::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
+    openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
 }
 
 void DWizardDlg::restoreDialogSize()

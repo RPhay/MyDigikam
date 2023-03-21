@@ -29,11 +29,11 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "daboutdata.h"
 #include "coredb.h"
 #include "applicationsettings.h"
 #include "coredbaccess.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -154,7 +154,7 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
 
 void DBStatDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_stats"));
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_stats"));
 }
 
 } // namespace Digikam

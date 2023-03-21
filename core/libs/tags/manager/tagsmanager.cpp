@@ -45,6 +45,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "digikam_globals.h"
 #include "dmessagebox.h"
 #include "dxmlguiwindow.h"
 #include "tagpropwidget.h"
@@ -847,7 +848,7 @@ void TagsManager::setupActions()
     connect(helpButton, &QPushButton::clicked,
             this, []()
         {
-            DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("tags-manager"));
+            openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("tags-manager"));
         }
     );
 

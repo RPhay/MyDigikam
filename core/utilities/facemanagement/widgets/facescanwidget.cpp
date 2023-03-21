@@ -145,7 +145,7 @@ void FaceScanWidget::setupUi()
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
         {
-            DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("people_view"));
+            openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("people_view"));
         }
     );
 

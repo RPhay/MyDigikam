@@ -50,7 +50,7 @@
 #include "collectionmanager.h"
 #include "newitemsfinder.h"
 #include "dtextedit.h"
-#include "dxmlguiwindow.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {
@@ -1740,7 +1740,7 @@ int SetupCollectionModel::buttonMapId(const QModelIndex& index) const
 
 void SetupCollectionModel::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("collections_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("collections_settings"));
 }
 
 } // namespace Digikam

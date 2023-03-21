@@ -47,6 +47,10 @@
 #include <QStandardPaths>
 #include <QDesktopServices>
 
+#ifdef HAVE_QWEBENGINE
+#   include "webbrowserdlg.h"
+#endif
+
 // KDE includes
 
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
@@ -97,10 +101,6 @@
 #include "daboutdata.h"
 #include "dpluginloader.h"
 #include "solidhardwaredlg.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webbrowserdlg.h"
-#endif
 
 namespace Digikam
 {

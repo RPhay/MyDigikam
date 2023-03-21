@@ -36,8 +36,8 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "daboutdata.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -213,7 +213,7 @@ void InfoDlg::slotCopy2ClipBoard()
 
 void InfoDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    openOnlineDocumentation();
 }
 
 } // namespace Digikam

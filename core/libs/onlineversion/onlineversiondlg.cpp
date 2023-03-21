@@ -6,7 +6,7 @@
  * Date        : 2020-12-31
  * Description : Online version dialog.
  *
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -50,10 +50,10 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "onlineversionchecker.h"
 #include "onlineversiondwnl.h"
 #include "dfileoperations.h"
-#include "dxmlguiwindow.h"
 #include "itempropertiestab.h"
 
 namespace Digikam
@@ -627,7 +627,7 @@ void OnlineVersionDlg::slotOpenInFileManager()
 
 void OnlineVersionDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("miscs_settings"), QLatin1String("updates-settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("miscs_settings"), QLatin1String("updates-settings"));
 }
 
 void OnlineVersionDlg::slotSetupUpdate()

@@ -34,7 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "dxmlguiwindow.h"
+#include "digikam_globals.h"
 #include "searchgroup.h"
 #include "searchutilities.h"
 #include "searchwindow.h"
@@ -553,7 +553,7 @@ void SearchViewBottomBar::paintEvent(QPaintEvent*)
 
 void SearchViewBottomBar::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("search_view"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("search_view"));
 }
 
 } // namespace Digikam

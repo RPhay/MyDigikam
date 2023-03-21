@@ -6,7 +6,7 @@
  * Date        : 2009-28-04
  * Description : first run assistant dialog
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -20,6 +20,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 #include "welcomepage.h"
 #include "collectionpage.h"
@@ -130,7 +131,7 @@ FirstRunDlg::~FirstRunDlg()
 
 void FirstRunDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("getting_started"), QLatin1String("quick_start"));
+    openOnlineDocumentation(QLatin1String("getting_started"), QLatin1String("quick_start"));
 }
 
 QString FirstRunDlg::firstAlbumPath() const

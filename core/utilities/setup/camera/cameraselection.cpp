@@ -39,12 +39,12 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "dfileselector.h"
-#include "digikam_config.h"
 #include "gpcamera.h"
 #include "dtextedit.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -700,7 +700,7 @@ void CameraSelection::slotSearchTextChanged(const SearchTextSettings& settings)
 
 void CameraSelection::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("camera_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("camera_settings"));
 }
 
 } // namespace Digikam

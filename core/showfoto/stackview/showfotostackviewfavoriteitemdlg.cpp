@@ -815,7 +815,7 @@ bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetIt
 
 void ShowfotoStackViewFavoriteItemDlg::slotHelp()
 {
-    Digikam::DXmlGuiWindow::openHandbook(QLatin1String("showfoto_editor"),
+    Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"),
                                          QLatin1String("showfoto_leftsidebar"),
                                          QLatin1String("showfoto-stacktab"));
 }

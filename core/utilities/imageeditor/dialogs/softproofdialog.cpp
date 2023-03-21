@@ -243,7 +243,7 @@ void SoftProofDialog::slotOk()
 
 void SoftProofDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("color_management"), QLatin1String("printer_profiles"));
+    openOnlineDocumentation(QLatin1String("color_management"), QLatin1String("printer_profiles"));
 }
 
 } // namespace Digikam

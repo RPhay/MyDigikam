@@ -28,6 +28,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "rule.h"
 #include "dxmlguiwindow.h"
 
@@ -153,7 +154,7 @@ void RuleDialog::setSettingsWidget(QWidget* const settingsWidget)
 
 void RuleDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

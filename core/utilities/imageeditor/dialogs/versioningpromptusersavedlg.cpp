@@ -7,7 +7,7 @@
  * Description : Dialog to prompt users about versioning
  *
  * SPDX-FileCopyrightText: 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 
 namespace Digikam
@@ -133,7 +134,7 @@ void VersioningPromptUserSaveDialog::slotButtonClicked(QAbstractButton* button)
     }
     else if (d->clicked == QDialogButtonBox::Help)
     {
-        DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("versioning-settings"));
+        openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("versioning-settings"));
 
         return;
     }

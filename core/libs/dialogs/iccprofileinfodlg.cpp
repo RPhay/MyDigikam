@@ -70,7 +70,7 @@ ICCProfileInfoDlg::~ICCProfileInfoDlg()
 
 void ICCProfileInfoDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("color_management"));
+    openOnlineDocumentation(QLatin1String("color_management"));
 }
 
 } // namespace Digikam

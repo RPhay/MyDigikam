@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 #include "systemsettings.h"
 #include "itempropertiestab.h"
@@ -481,7 +482,7 @@ QString FilesDownloader::getFacesEnginePath() const
 
 void FilesDownloader::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("getting_started"), QLatin1String("quick_start"), QLatin1String("firstrun-downloads"));
+    openOnlineDocumentation(QLatin1String("getting_started"), QLatin1String("quick_start"), QLatin1String("firstrun-downloads"));
 }
 
 //-----------------------------------------------------------------------------

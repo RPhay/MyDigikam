@@ -202,7 +202,7 @@ void ToolSettingsView::slotHelpPlugin()
     {
         if (d->tool->plugin())
         {
-            DXmlGuiWindow::openHandbook(d->tool->plugin()->handbookSection(),
+            openOnlineDocumentation(d->tool->plugin()->handbookSection(),
                                         d->tool->plugin()->handbookChapter(),
                                         d->tool->plugin()->handbookReference());
         }

@@ -35,10 +35,11 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_globals.h"
 #include "dlayoutbox.h"
 #include "dexpanderbox.h"
 #include "dnuminput.h"
-#include "digikam_config.h"
 #include "setup.h"
 #include "albumselectors.h"
 #include "facescansettings.h"
@@ -698,7 +699,7 @@ void MaintenanceDlg::slotQualitySetup()
 
 void MaintenanceDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("maintenance_tools"));
+    openOnlineDocumentation(QLatin1String("maintenance_tools"));
 }
 
 } // namespace Digikam

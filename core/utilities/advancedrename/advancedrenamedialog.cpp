@@ -7,7 +7,7 @@
  * Description : a rename dialog for the AdvancedRename utility
  *
  * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -42,7 +42,7 @@
 
 // Local includes
 
-#include "dxmlguiwindow.h"
+#include "digikam_globals.h"
 #include "advancedrenamewidget.h"
 #include "contextmenuhelper.h"
 #include "parser.h"
@@ -583,7 +583,7 @@ NewNamesList AdvancedRenameDialog::filterNewNames() const
 
 void AdvancedRenameDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

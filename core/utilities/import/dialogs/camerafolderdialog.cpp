@@ -196,7 +196,7 @@ void CameraFolderDialog::slotFolderPathSelectionChanged(CameraFolderItem* item)
 
 void CameraFolderDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("import_tools"), QLatin1String("camera_import"), QLatin1String("camera-upload"));
+    openOnlineDocumentation(QLatin1String("import_tools"), QLatin1String("camera_import"), QLatin1String("camera-upload"));
 }
 
 } // namespace Digikam

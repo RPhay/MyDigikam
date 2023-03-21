@@ -6,7 +6,7 @@
  * Date        : 2018-12-31
  * Description : digiKam plugin about dialog
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -41,8 +41,8 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "itempropertiestab.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -203,7 +203,7 @@ DPluginAboutDlg::~DPluginAboutDlg()
 
 void DPluginAboutDlg::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
+    openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
 }
 
 } // namespace Digikam

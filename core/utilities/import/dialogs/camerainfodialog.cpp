@@ -7,7 +7,7 @@
  * Description : a dialog to display camera information.
  *
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -30,6 +30,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "dxmlguiwindow.h"
 
 namespace Digikam
@@ -93,7 +94,7 @@ CameraInfoDialog::~CameraInfoDialog()
 
 void CameraInfoDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("import_tools"), QLatin1String("camera_import"));
+    openOnlineDocumentation(QLatin1String("import_tools"), QLatin1String("camera_import"));
 }
 
 } // namespace Digikam

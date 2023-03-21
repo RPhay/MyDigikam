@@ -252,6 +252,16 @@ DIGIKAM_EXPORT QDateTime startOfDay(const QDate&);
  */
 DIGIKAM_EXPORT void setupKSycocaDatabaseFile();
 
+/**
+ * Open online handbook at the section/chapter/reference page.
+ *
+ * if section and chapter and reference are empty, fromt page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)
+ * if only chapter and reference are empty, section page is open.       (as: https://docs.digikam.org/en/main_window.html)
+ * if only reference is empty, chapter from section page is open.       (as: https://docs.digikam.org/en/main_window/people_view.html)
+ * else reference at chapter from section page is open.                 (as: https://docs.digikam.org/en/main_window/people_view.html#face-recognition)
+ */
+DIGIKAM_EXPORT void openOnlineDocumentation(const QString& section = QString(), const QString& chapter = QString(), const QString& reference = QString());
+
 } // namespace Digikam
 
 #endif // DIGIKAM_GLOBALS_H

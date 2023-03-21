@@ -6,7 +6,7 @@
  * Date        : 2021-08-27
  * Description : Showfoto folder view bookmark edit dialog
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dfileselector.h"
 #include "dlayoutbox.h"
 #include "dtextedit.h"
@@ -330,9 +331,9 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkDialog(ShowfotoFolderViewBookmarkLis
 
 void ShowfotoFolderViewBookmarkDlg::slotHelp()
 {
-    Digikam::DXmlGuiWindow::openHandbook(QLatin1String("showfoto_editor"),
-                                         QLatin1String("showfoto_leftsidebar"),
-                                         QLatin1String("showfoto-folderstab"));
+    Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"),
+                                     QLatin1String("showfoto_leftsidebar"),
+                                     QLatin1String("showfoto-folderstab"));
 }
 
 } // namespace ShowFoto

@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "coredbaccess.h"
 #include "dbsettingswidget.h"
@@ -46,7 +47,6 @@
 #include "dbengineparameters.h"
 #include "coredbschemaupdater.h"
 #include "coredbcopymanager.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -211,7 +211,7 @@ void DatabaseMigrationDialog::setupMainArea()
 
 void DatabaseMigrationDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_migration"));
+    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_migration"));
 }
 
 void DatabaseMigrationDialog::slotPerformCopy()

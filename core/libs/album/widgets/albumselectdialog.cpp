@@ -8,7 +8,7 @@
  *               pictures from camera
  *
  * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -35,12 +35,12 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "album.h"
 #include "albummanager.h"
 #include "albumselectwidget.h"
 #include "albumthumbnailloader.h"
 #include "collectionmanager.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -171,7 +171,7 @@ PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albu
 
 void AlbumSelectDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("albums_view"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("albums_view"));
 }
 
 } // namespace Digikam

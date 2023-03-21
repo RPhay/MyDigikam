@@ -15,6 +15,7 @@
 #ifndef DIGIKAM_GLOBALS_P_H
 #define DIGIKAM_GLOBALS_P_H
 
+#include "digikam_config.h"
 #include "digikam_globals.h"
 
 // Qt includes
@@ -35,6 +36,10 @@
 #include <QSysInfo>
 #include <QMimeType>
 #include <QMimeDatabase>
+
+#ifdef HAVE_QWEBENGINE
+#   include "webbrowserdlg.h"
+#endif
 
 // KDE includes
 

@@ -285,7 +285,7 @@ Setup::~Setup()
 
 void Setup::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"));
+    openOnlineDocumentation(QLatin1String("setup_application"));
 }
 
 void Setup::setTemplate(const Template& t)

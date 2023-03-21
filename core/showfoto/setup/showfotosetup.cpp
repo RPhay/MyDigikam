@@ -28,6 +28,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "setupeditoriface.h"
 #include "setupicc.h"
 #include "setupiofiles.h"
@@ -214,7 +215,7 @@ ShowfotoSetup::~ShowfotoSetup()
 
 void ShowfotoSetup::slotHelp()
 {
-    Digikam::DXmlGuiWindow::openHandbook(QLatin1String("showfoto_editor"), QLatin1String("showfoto_setup"));
+    Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"), QLatin1String("showfoto_setup"));
 }
 
 void ShowfotoSetup::slotOkClicked()

@@ -27,8 +27,8 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "tooltipcreator.h"
-#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -92,7 +92,7 @@ void TooltipDialog::clearTooltip()
 
 void TooltipDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
+    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam
