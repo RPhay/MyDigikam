@@ -320,5 +320,5 @@ BUGFIXES:
 276 ==> 460570 - Face Recognition fails (process stuck at 0%).
 277 ==> 465078 - Progress bar stays at 0%.
 278 ==> 465434 - Problems with face recognition.
-279 ==> 
+279 ==> 147367 - Support for color correction of Oval frame fade using unfaded outer fame colors.
 280 ==> 
