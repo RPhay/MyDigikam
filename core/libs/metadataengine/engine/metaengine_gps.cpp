@@ -245,69 +245,73 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
 
         // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
 
-        const QString altRefXmp = getXmpTagString("Xmp.exif.GPSAltitudeRef");
+        QString altRefXmp = getXmpTagString("Xmp.exif.GPSAltitudeRef");
 
-        if (!altRefXmp.isEmpty())
+        if (altRefXmp.isEmpty())
         {
-            const QString altXmp = getXmpTagString("Xmp.exif.GPSAltitude");
-
-            if (!altXmp.isEmpty())
-            {
-                num = altXmp.section(QLatin1Char('/'), 0, 0).toDouble();
-                den = altXmp.section(QLatin1Char('/'), 1, 1).toDouble();
-
-                if (den == 0)
-                {
-                    return false;
-                }
-
-                *altitude = num/den;
-
-                if (altRefXmp == QLatin1String("1"))
-                {
-                    *altitude *= -1.0;
-                }
-
-                return true;
-            }
+            altRefXmp = QLatin1String("0");
         }
 
-        // Get the reference from Exif (above/below sea level)
+        const QString altXmp = getXmpTagString("Xmp.exif.GPSAltitude");
 
-        const QByteArray altRef = getExifTagData("Exif.GPSInfo.GPSAltitudeRef");
-
-        if (!altRef.isEmpty())
+        if (!altXmp.isEmpty())
         {
-            // Altitude decoding from Exif.
+            num = altXmp.section(QLatin1Char('/'), 0, 0).toDouble();
+            den = altXmp.section(QLatin1Char('/'), 1, 1).toDouble();
 
-            Exiv2::ExifKey exifKey3("Exif.GPSInfo.GPSAltitude");
-            Exiv2::ExifData exifData(d->exifMetadata());
-            Exiv2::ExifData::const_iterator it = exifData.findKey(exifKey3);
-
-            if (it != exifData.end() && (*it).count())
-            {
-                num = (double)((*it).toRational(0).first);
-                den = (double)((*it).toRational(0).second);
-
-                if (den == 0)
-                {
-                    return false;
-                }
-
-                *altitude = num / den;
-            }
-            else
+            if (den == 0)
             {
                 return false;
             }
 
-            if (altRef[0] == '1')
+            *altitude = num/den;
+
+            if (altRefXmp == QLatin1String("1"))
             {
                 *altitude *= -1.0;
             }
 
             return true;
         }
+
+        // Get the reference from Exif (above/below sea level)
+
+        QByteArray altRef = getExifTagData("Exif.GPSInfo.GPSAltitudeRef");
+
+        if (altRef.isEmpty())
+        {
+            altRef = "0";
+        }
+
+        // Altitude decoding from Exif.
+
+        Exiv2::ExifKey exifKey3("Exif.GPSInfo.GPSAltitude");
+        Exiv2::ExifData exifData(d->exifMetadata());
+        Exiv2::ExifData::const_iterator it = exifData.findKey(exifKey3);
+
+        if (it != exifData.end() && (*it).count())
+        {
+            num = (double)((*it).toRational(0).first);
+            den = (double)((*it).toRational(0).second);
+
+            if (den == 0)
+            {
+                return false;
+            }
+
+            *altitude = num / den;
+        }
+        else
+        {
+            return false;
+        }
+
+        if (altRef[0] == '1')
+        {
+            *altitude *= -1.0;
+        }
+
+        return true;
     }
     catch (Exiv2::AnyError& e)
     {

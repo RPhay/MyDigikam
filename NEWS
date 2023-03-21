@@ -328,7 +328,7 @@ BUGFIXES:
 284 ==> 150253 - Add new tool to filter such as described in "Image Deblurring with Blurred/Noisy Image Pairs".
 285 ==> 210581 - Add new tool to eliminate purple fringing.
 286 ==> 412400 - Add new tool like Capture One or Lightroom gradient plugin.
-287 ==> 
+287 ==> 467623 - I do "Item > Write Metadata to File" = Erases the Altitude field and leaves Altitude at Zero(0).
 288 ==> 
 289 ==> 
 290 ==> 
@@ -343,4 +343,3 @@ BUGFIXES:
 299 ==> 
 300 ==> 
 301 ==> 
-
