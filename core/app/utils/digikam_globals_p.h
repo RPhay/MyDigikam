@@ -40,7 +40,7 @@
 #ifdef HAVE_QWEBENGINE
 #   include "webbrowserdlg.h"
 #else
-#   include<QDesktopServices>
+#   include <QDesktopServices>
 #endif
 
 // KDE includes
