@@ -747,8 +747,8 @@ void SetupCollectionModel::addCollection(int category)
         return;
     }
 
-    QString path;
     QString label;
+    QString path = lastAddedCollectionPath;
 
     if (askForNewCollectionPath(category, &path, &label))
     {
@@ -1492,6 +1492,8 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     {
         return false;
     }
+
+    lastAddedCollectionPath = curl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile();
 
     // Check path: First check with manager
 

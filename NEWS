@@ -331,7 +331,7 @@ BUGFIXES:
 287 ==> 467623 - I do "Item > Write Metadata to File" = Erases the Altitude field and leaves Altitude at Zero(0).
 288 ==> 467669 - Disable DNN models download at startup.
 289 ==> 467687 - Copy of pictures from one album to another doesn't keep its manual ordering.
-290 ==> 
+290 ==> 467680 - Add a Collections Dialogue Behavior.
 291 ==> 
 292 ==> 
 293 ==> 

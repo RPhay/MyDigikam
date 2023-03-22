@@ -26,6 +26,8 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -56,6 +58,9 @@ public:
     {
     }
 
+    static const QString     configGroupName;
+    static const QString     configLastAddedCollectionPath;
+
     bool                     rootsPathChanged;
 
     SetupCollectionTreeView* collectionView;
@@ -66,6 +71,9 @@ public:
     QTabWidget*              tab;
     QLabel*                  ignoreLabel;
 };
+
+const QString SetupCollections::Private::configGroupName(QLatin1String("Collection Settings"));
+const QString SetupCollections::Private::configLastAddedCollectionPath(QLatin1String("LastAddedCollectionPath"));
 
 SetupCollections::SetupCollections(QWidget* const parent)
     : QScrollArea(parent),
@@ -199,6 +207,12 @@ SetupCollections::CollectionsTab SetupCollections::activeTab() const
 
 void SetupCollections::applySettings()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(d->configGroupName);
+
+    group.writeEntry(d->configLastAddedCollectionPath,
+                     d->collectionModel->lastAddedCollectionPath);
+
     d->collectionModel->apply();
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
@@ -218,6 +232,12 @@ void SetupCollections::applySettings()
 
 void SetupCollections::readSettings()
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(d->configGroupName);
+
+    d->collectionModel->lastAddedCollectionPath =
+        group.readEntry(d->configLastAddedCollectionPath, QString());
+
     d->collectionModel->loadCollections();
 
     ApplicationSettings* const settings = ApplicationSettings::instance();

@@ -155,6 +155,10 @@ public Q_SLOTS:
     void slotUpdatePressed(int mappedId);
     void slotDeletePressed(int mappedId);
 
+public:
+
+    QString lastAddedCollectionPath;
+
 protected Q_SLOTS:
 
     void addCollection(int category);
