@@ -124,7 +124,6 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     // ---------------------------------------------------------------
 
     d->errorView = new SlideError(this);
-    d->errorView->installEventFilter(this);
 
     insertWidget(ErrorView, d->errorView);
 
@@ -132,7 +131,6 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 
     d->imageView = new SlideImage(this);
     d->imageView->setPreviewSettings(d->settings->previewSettings);
-    d->imageView->installEventFilter(this);
 
     connect(d->imageView, SIGNAL(signalImageLoaded(bool)),
             this, SLOT(slotImageLoaded(bool)));
@@ -145,7 +143,6 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 
     d->videoView = new SlideVideo(this);
     d->videoView->setInfoInterface(d->settings->iface);
-    d->videoView->installEventFilter(this);
 
     connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
             this, SLOT(slotVideoLoaded(bool)));
@@ -160,14 +157,12 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     // ---------------------------------------------------------------
 
     d->endView = new SlideEnd(this);
-    d->endView->installEventFilter(this);
 
     insertWidget(EndView, d->endView);
 
     // ---------------------------------------------------------------
 
     d->osd = new SlideOSD(d->settings, this);
-    d->osd->installEventFilter(this);
 
     // ---------------------------------------------------------------
 
@@ -177,6 +172,14 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 
     connect(d->mouseMoveTimer, SIGNAL(timeout()),
             this, SLOT(slotMouseMoveTimeOut()));
+
+    // ---------------------------------------------------------------
+
+    d->errorView->installEventFilter(this);
+    d->imageView->installEventFilter(this);
+    d->videoView->installEventFilter(this);
+    d->endView->installEventFilter(this);
+    d->osd->installEventFilter(this);
 
     // ---------------------------------------------------------------
 

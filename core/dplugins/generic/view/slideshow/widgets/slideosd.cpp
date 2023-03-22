@@ -104,36 +104,26 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     d->settings     = settings;
 
     d->slideProps   = new SlideProperties(d->settings, this);
-    d->slideProps->installEventFilter(d->parent);
 
     // ---------------------------------------------------------------
 
     d->labelsBox    = new DHBox(this);
 
     d->clWidget     = new ColorLabelSelector(d->labelsBox);
-    d->clWidget->installEventFilter(this);
-    d->clWidget->installEventFilter(d->parent);
-    d->clWidget->colorLabelWidget()->installEventFilter(this);
     d->clWidget->setFocusPolicy(Qt::NoFocus);
     d->clWidget->setMouseTracking(true);
 
     d->plWidget     = new PickLabelSelector(d->labelsBox);
-    d->plWidget->installEventFilter(this);
-    d->plWidget->installEventFilter(d->parent);
     d->plWidget->setFocusPolicy(Qt::NoFocus);
-    d->plWidget->pickLabelWidget()->installEventFilter(this);
     d->plWidget->setMouseTracking(true);
 
     d->ratingWidget = new RatingWidget(d->labelsBox);
     d->ratingWidget->setTracking(false);
     d->ratingWidget->setFading(false);
-    d->ratingWidget->installEventFilter(this);
-    d->ratingWidget->installEventFilter(d->parent);
     d->ratingWidget->setFocusPolicy(Qt::NoFocus);
     d->ratingWidget->setMouseTracking(true);
 
     d->labelsBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignLeft);
-    d->labelsBox->installEventFilter(d->parent);
     d->labelsBox->setMouseTracking(true);
 
     d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
@@ -154,19 +144,34 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
 
     d->progressBox   = new DHBox(this);
     d->progressBox->setVisible(d->settings->showProgressIndicator);
-    d->progressBox->installEventFilter(d->parent);
     d->progressBox->setMouseTracking(true);
 
     d->progressBar   = new QProgressBar(d->progressBox);
     d->progressBar->setMinimum(0);
     d->progressBar->setMaximum(d->settings->delay);
     d->progressBar->setFocusPolicy(Qt::NoFocus);
-    d->progressBar->installEventFilter(d->parent);
     d->progressBar->setMouseTracking(true);
 
     d->toolBar       = new SlideToolBar(d->settings, d->progressBox);
+
+    // ---------------------------------------------------------------
+
+    d->slideProps->installEventFilter(d->parent);
+    d->clWidget->installEventFilter(this);
+    d->clWidget->installEventFilter(d->parent);
+    d->clWidget->colorLabelWidget()->installEventFilter(this);
+    d->plWidget->installEventFilter(this);
+    d->plWidget->installEventFilter(d->parent);
+    d->plWidget->pickLabelWidget()->installEventFilter(this);
+    d->ratingWidget->installEventFilter(this);
+    d->ratingWidget->installEventFilter(d->parent);
+    d->labelsBox->installEventFilter(d->parent);
+    d->progressBox->installEventFilter(d->parent);
+    d->progressBar->installEventFilter(d->parent);
     d->toolBar->installEventFilter(this);
     d->toolBar->installEventFilter(d->parent);
+
+    // ---------------------------------------------------------------
 
     connect(d->toolBar, SIGNAL(signalPause()),
             d->parent, SLOT(slotPause()));
