@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:44+0000\n"
+"POT-Creation-Date: 2023-03-22 00:45+0000\n"
 "PO-Revision-Date: 2023-03-20 14:30+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -8953,7 +8953,7 @@ msgstr "Usar a Gestão de Cores na Impressão"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:364
+#: core/utilities/maintenance/maintenancedlg.cpp:365
 #, kde-format
 msgid "Settings..."
 msgstr "Configuração..."
@@ -27354,7 +27354,7 @@ msgstr "Álbum das Legendas"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:725
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -34342,21 +34342,21 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Utilizador6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:69
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Manual 'Online'..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, kde-format
 msgid "About..."
 msgstr "Acerca..."
@@ -34433,7 +34433,7 @@ msgstr ""
 "p><p><b>PPM</b>: envia a imagem processada no formato PPM. Este gera os "
 "maiores ficheiros, sem perder qualidade. A imagem não é comprimida.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
@@ -36577,7 +36577,7 @@ msgstr ""
 "actualizações."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:185
+#: core/utilities/setup/downloader/filesdownloader.cpp:186
 #, kde-format
 msgid "Download"
 msgstr "Obter"
@@ -37323,7 +37323,7 @@ msgstr "Propriedades"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
 msgstr "Meta-dados"
@@ -39266,38 +39266,38 @@ msgid "Delete Tags"
 msgstr "Apagar as Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Editar o Título da Marca"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:713
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Repor o Ícone da Marca"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverter a Selecção"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Incluir a Árvore de Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Fechar a Árvore de Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:734
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Remover a Marca das Imagens"
@@ -39372,13 +39372,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "As marcas anteriores foram alteradas. Deseja gravar as alterações? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:179
+#: core/libs/tags/manager/tagsmanager.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestor de Marcas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:338
+#: core/libs/tags/manager/tagsmanager.cpp:339
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39394,7 +39394,7 @@ msgstr[1] ""
 "As marcas '%2' têm uma ou mais sub-marcas. Se apagar estas, também vai "
 "apagar as sub-marcas. Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:361
+#: core/libs/tags/manager/tagsmanager.cpp:362
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39404,7 +39404,7 @@ msgstr[0] "A marca '%2' está atribuída a um ou mais itens. Deseja continuar?"
 msgstr[1] ""
 "As marcas '%2' estão atribuídas a um ou mais itens. Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:371
+#: core/libs/tags/manager/tagsmanager.cpp:372
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39412,7 +39412,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Apagar a marca %2?"
 msgstr[1] "Apagar as marcas %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:377
+#: core/libs/tags/manager/tagsmanager.cpp:378
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39420,7 +39420,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Apagar a marca"
 msgstr[1] "Apagar as marcas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:500
+#: core/libs/tags/manager/tagsmanager.cpp:501
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39432,8 +39432,8 @@ msgstr ""
 "se não as leu anteriormente (invocando a opção 'Ler as Marcas da Imagem')."
 "<br/> Deseja prosseguir?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:512
-#: core/libs/tags/manager/tagsmanager.cpp:531
+#: core/libs/tags/manager/tagsmanager.cpp:513
+#: core/libs/tags/manager/tagsmanager.cpp:532
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39443,7 +39443,7 @@ msgstr ""
 "colecção.\n"
 "Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:551
+#: core/libs/tags/manager/tagsmanager.cpp:552
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39455,43 +39455,43 @@ msgstr ""
 "dados nos ficheiros mais tarde.\n"
 "Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:615
+#: core/libs/tags/manager/tagsmanager.cpp:616
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Deseja remover a marca seleccionada de todas as imagens?"
 msgstr[1] "Deseja remover as marcas seleccionadas de todas as imagens?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:696
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organizar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:699
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronizar a &Exportação"
 
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Criar a Marca a Partir do Livro de Endereços"
 
-#: core/libs/tags/manager/tagsmanager.cpp:719
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Assinalar as Marcas Não Atribuídas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:739
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Adiciona uma marca nova à marca actual. A marca actual é a última marca "
 "carregada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39500,76 +39500,76 @@ msgstr ""
 "Apaga os itens seleccionados. Também irá funcionar com vários itens, mas não "
 "irá apagar a marca de topo."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Editar o título da marca seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Repor o ícone para as marcas seleccionadas. Funciona com a selecção múltipla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Assinala todas as marcas que não estejam associadas a imagens."
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverte a selecção. Só serão seleccionados os itens visíveis"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Os itens seleccionados serão expandidos"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Expandir a árvore de marcas por completo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Fechar a árvore de marcas por completo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:762
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Apaga as marcas seleccionadas das imagens. Funciona com a selecção múltipla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:810
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Gravar as Marcas da Base de Dados na Imagem"
 
-#: core/libs/tags/manager/tagsmanager.cpp:813
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ler as Marcas da Imagem"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Limpar todas as marcas apenas da base de dados"
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Gravar os Meta-Dados das Marcas na Imagem."
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Ler as marcas das imagens para a base de dados. As marcas existentes não "
 "serão afectadas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39578,7 +39578,7 @@ msgstr ""
 "Apaga todas as marcas apenas da base de dados. Não irá sincronizar com os "
 "ficheiros. Proceda com cuidado."
 
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
@@ -42952,7 +42952,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:346
+#: core/utilities/maintenance/maintenancedlg.cpp:347
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordenação por Qualidade da Imagem"
@@ -43123,7 +43123,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid "Color Management"
 msgstr "Gestão de Cores"
@@ -49599,57 +49599,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Tamanho dos Ícones: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Novo Favorito"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Editar o Favorito"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Título:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Indique aqui um título do favorito..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "O título do favorito deverá ser único e não vazio"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:132
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "Í&cone:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:140
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:153
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Localização:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:158
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -49959,18 +49959,18 @@ msgstr "&Decorar"
 msgid "Effec&ts"
 msgstr "Efei&tos"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Configurar"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid "Editor Window"
 msgstr "Janela do Editor"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -49978,7 +49978,7 @@ msgstr ""
 "<qt>Configuração do Editor de Imagens<br/><i>Personaliza o comportamento do "
 "editor de imagens</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -49987,12 +49987,12 @@ msgstr ""
 "<qt>Gestão da Informação Incorporada na Imagem<br/><i>Configura as relações "
 "entre as imagens e os meta-dados</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid "Tool Tip"
 msgstr "Dica"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -50001,12 +50001,12 @@ msgstr ""
 "<qt>Configuração das Dicas dos Itens de Miniaturas<br/><i>Personaliza a "
 "informação nas dicas</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Descodificação RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -50015,7 +50015,7 @@ msgstr ""
 "<qt>Configuração da Descodificação dos Ficheiros RAW<br/><i>Personaliza a "
 "configuração da descodificação RAW por omissão</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -50024,12 +50024,12 @@ msgstr ""
 "<qt>Configuração da Gestão de Cores<br/><i>Personaliza a configuração da "
 "gestão de cores</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid "Save Images"
 msgstr "Gravar as Imagens"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -50038,12 +50038,12 @@ msgstr ""
 "<qt>Configuração da Gravação de Ficheiros de Imagem<br/><i>Modifica a "
 "configuração predefinida que é usada na gravação das imagens</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:142
 #, kde-format
 msgid "Plugins"
 msgstr "'Plugins'"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -50052,13 +50052,13 @@ msgstr ""
 "<qt>Configuração dos 'Plugins' da Interface Principal<br/><i>Defina quais os "
 "'plugins' que estarão acessíveis a partir da aplicação</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:148
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Diversos"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -52298,28 +52298,28 @@ msgstr ""
 "também poderá reconhecer as pessoas apresentadas nas suas fotografias."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:317
+#: core/utilities/maintenance/maintenancedlg.cpp:318
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Ignorar as imagens já analisadas"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Analisar de novo e reunir os resultados"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Limpar os resultados não-confirmados e analisar de novo"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -54643,19 +54643,19 @@ msgstr "Erro do Perfil"
 msgid "No profile is selected."
 msgstr "Nenhum perfil seleccionado."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Gravar?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Gravar as Alterações"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54663,13 +54663,13 @@ msgid ""
 msgstr ""
 "Grava as alterações actuais. Nota: A imagem original nunca será substituída."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Gravar as Alterações como uma Nova Versão"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54679,19 +54679,19 @@ msgstr ""
 "Grava as alterações actuais como uma versão nova. O ficheiro carregado irá "
 "permanecer inalterado, sendo que será criado um novo ficheiro."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Esquecer as Alterações"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr "Esquece as alterações aplicadas à imagem nesta sessão de edição."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:101
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -55920,25 +55920,25 @@ msgstr ""
 "Seleccione por favor a pasta correcta da máquina fotográfica para onde "
 "deseja enviar as imagens."
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:45
+#: core/utilities/import/dialogs/camerainfodialog.cpp:46
 #, kde-format
 msgctxt "@title:window"
 msgid "Device Information"
 msgstr "Informação do Dispositivo"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:58
+#: core/utilities/import/dialogs/camerainfodialog.cpp:59
 #, kde-format
 msgctxt "@title"
 msgid "Device Summary"
 msgstr "Resumo do Dispositivo"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:66
+#: core/utilities/import/dialogs/camerainfodialog.cpp:67
 #, kde-format
 msgctxt "@title"
 msgid "Device Manual"
 msgstr "Manual do Dispositivo"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:74
+#: core/utilities/import/dialogs/camerainfodialog.cpp:75
 #, kde-format
 msgctxt "@title"
 msgid "About Driver"
@@ -57484,42 +57484,42 @@ msgstr "A actualizar a base de dados das caras"
 msgid "Finger-prints"
 msgstr "Impressões Digitais"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:196
+#: core/utilities/maintenance/maintenancedlg.cpp:197
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Manutenção"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:211
+#: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>Seleccionar as Operações de Manutenção a Processar</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:217
+#: core/utilities/maintenance/maintenancedlg.cpp:218
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "Processar os itens de:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 "Usar as ferramentas e configurações activas e gravadas pela última vez."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Trabalhar com todos os núcleos de processamento (se possível)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgid "Common Options"
 msgstr "Opções Comuns"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57528,12 +57528,12 @@ msgstr ""
 "<qt>Sem opção<br/><i>Nota: só a Colecção de Álbuns será processada por esta "
 "ferramenta.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:227
 #, kde-format
 msgid "Scan for new items"
 msgstr "Procurar por itens novos"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57547,27 +57547,27 @@ msgstr ""
 "digiKam temporariamente<br/> para se certificar que não ocorre nenhum dano "
 "nas bases de dados.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:235
+#: core/utilities/maintenance/maintenancedlg.cpp:236
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Limpar também a base de dados de miniaturas."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Limpar também a base de dados das caras."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Limpar também a base de dados de semelhanças."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Limpeza alargada e redução de todas as bases de dados."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57576,69 +57576,69 @@ msgstr ""
 "Esta opção leva à limpeza (redução de tamanho) das bases de dados. A limpeza "
 "é suportada tanto para o SQLite como o MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:244
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Efectuar a limpeza da base de dados"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:248
-#: core/utilities/maintenance/maintenancedlg.cpp:255
+#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Procurar por itens alterados ou não-catalogados (mais rápido)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstruir as Miniaturas"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:258
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstruir as Impressões Digitais"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:266
+#: core/utilities/maintenance/maintenancedlg.cpp:267
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Gama de semelhança (como percentagem): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:286
+#: core/utilities/maintenance/maintenancedlg.cpp:287
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restrição nos duplicados:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:290
+#: core/utilities/maintenance/maintenancedlg.cpp:291
 #, kde-format
 msgid "No restriction"
 msgstr "Sem restrição"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restringir ao álbum da imagem de referência"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Excluir o álbum da imagem de referência"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:307
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Procurar os Itens Duplicados"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:313
+#: core/utilities/maintenance/maintenancedlg.cpp:314
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestão dos dados de cara: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:323
+#: core/utilities/maintenance/maintenancedlg.cpp:324
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Limpar e reconstruir todos os dados de treino"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:326
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57648,47 +57648,47 @@ msgstr ""
 "Isto irá limpar todos os dados de treino do reconhecimento e reconstruí-los "
 "a partir de todas as caras disponíveis."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:328
+#: core/utilities/maintenance/maintenancedlg.cpp:329
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Detectar e reconhecer caras"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:335
+#: core/utilities/maintenance/maintenancedlg.cpp:336
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Modo de Análise: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Limpar tudo e analisar de novo"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analisar apenas os não-atribuídos"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:353
+#: core/utilities/maintenance/maintenancedlg.cpp:354
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcção da Sincronização: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Da base de dados para os meta-dados da imagem"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Dos meta-dados das imagens para a base de dados"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:361
+#: core/utilities/maintenance/maintenancedlg.cpp:362
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Verificar detalhes no painel de configuração dos meta-dados: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:367
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronizar os Meta-Dados e a Base de Dados"
@@ -60854,13 +60854,13 @@ msgstr "Seleccionar a Categoria"
 msgid "Your collection will use this category:"
 msgstr "A sua colecção irá usar esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Transferir os Ficheiros Necessários"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:203
+#: core/utilities/setup/downloader/filesdownloader.cpp:204
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60881,23 +60881,23 @@ msgstr ""
 "se que tem cerca de %2 disponíveis. <b>Após a transferência terminar com "
 "sucesso, terá de reiniciar o digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:215
+#: core/utilities/setup/downloader/filesdownloader.cpp:216
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Desactivar a funcionalidade do motor de caras e não perguntar de novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Todos os ficheiros foram transferidos com sucesso."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:274
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Erro de Transferência"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:276
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60916,28 +60916,28 @@ msgstr ""
 "\n"
 "Poderá tentar de novo ou prosseguir a transferência no próximo início."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Tentar de Novo"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:416
+#: core/utilities/setup/downloader/filesdownloader.cpp:417
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "O código de validação é incorrecto."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File write error."
 msgstr "Erro de escrita no ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:447
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, kde-format
 msgid "File open error."
 msgstr "Erro de acesso ao ficheiro."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:462
+#: core/utilities/setup/downloader/filesdownloader.cpp:463
 #, kde-format
 msgid "File on the server is too large."
 msgstr "O ficheiro no servidor é demasiado grande."
@@ -61559,35 +61559,35 @@ msgstr "Carregar um Perfil"
 msgid "Reset to Default"
 msgstr "Repor a Predefinição"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:145
 #, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Novo Espaço de Nomes XMP"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Editar o Espaço de Nomes XMP"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
 msgid "Add metadata namespace"
 msgstr "Adicionar o espaço de nomes dos meta-dados"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:242
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:243
 #, kde-format
 msgid "Metadata Subspace"
 msgstr "Sub-Espaço dos Meta-Dados"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:254
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:255
 #, kde-format
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "Nome:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:262
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:263
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -61603,7 +61603,7 @@ msgstr ""
 "li><li>Indique se só deverá ser escrita uma palavra-chave ou a localização "
 "completa.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:273
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:274
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -61619,7 +61619,7 @@ msgstr ""
 "<br/>Ex.: a Microsoft usa o 0 1 25 50 75 99</li><li>Seleccione a opção "
 "correcta do espaço de nomes a partir da lista.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:285
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -61631,87 +61631,87 @@ msgstr ""
 "\"Xmp.xmp.Classificacao\"</i></li><li>Seleccione a opção correcta do espaço "
 "de nomes a partir da lista.</li></ul></p>"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:294
 #, kde-format
 msgid "Special Options"
 msgstr "Opções Especiais"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:321
 #, kde-format
 msgid "Alternative name"
 msgstr "Nome alternativo"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:325
 #, kde-format
 msgid "Alternative special options"
 msgstr "Opções especiais alternativas"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:354
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:355
 #, kde-format
 msgid "Separator:"
 msgstr "Separador:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:361
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Definir a Localização das Marcas:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:381
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Associação das Classificações:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:542
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:543
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Este é um espaço de nomes predefinido. Os espaços de nomes predefinidos só "
 "podem ser desactivados"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:570
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
 msgid "The namespace name is required"
 msgstr "O nome do espaço de nomes é obrigatório"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:581
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "O nome do espaço de nomes EXIF deverá começar por \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:588
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 "O nome do espaço de nomes alternativo do EXIF deverá começar por \"Exif\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:598
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "O nome do espaço de nomes IPTC deverá começar por \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:604
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 "O nome do espaço de nomes alternativo do IPTC deverá começar por \"Iptc\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:614
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:615
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "O nome do espaço de nomes XMP deverá começar por \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:621
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:622
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 "O nome do espaço de nomes alternativo do XMP deverá começar por \"Xmp\"."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:637
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:638
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "O separador de locais das marcas é obrigatório"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:643
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:644
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Só é permitido um carácter como separador dos locais das marcas"

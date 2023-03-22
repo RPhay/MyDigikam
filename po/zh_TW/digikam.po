@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:44+0000\n"
+"POT-Creation-Date: 2023-03-22 00:45+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -9011,7 +9011,7 @@ msgstr "列印使用的色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:364
+#: core/utilities/maintenance/maintenancedlg.cpp:365
 #, kde-format
 msgid "Settings..."
 msgstr "設定值..."
@@ -28111,7 +28111,7 @@ msgstr "新增相簿"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:725
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -35260,22 +35260,22 @@ msgctxt "@title"
 msgid "User6"
 msgstr "使用者"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:68
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:69
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Online Handbook..."
 msgstr "Kipi 外掛程式手冊"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:71
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
 #, fuzzy, kde-format
 msgid "About..."
 msgstr "關於"
@@ -35350,7 +35350,7 @@ msgid ""
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
@@ -37594,7 +37594,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:185
+#: core/utilities/setup/downloader/filesdownloader.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Download"
@@ -38324,7 +38324,7 @@ msgstr "屬性"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
 msgstr "中繼資料"
@@ -40222,39 +40222,39 @@ msgid "Delete Tags"
 msgstr "刪除標籤"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:709
+#: core/libs/tags/manager/tagsmanager.cpp:710
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "項目標題"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:713
+#: core/libs/tags/manager/tagsmanager.cpp:714
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "重設標籤圖示"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:722
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Invert Selection"
 msgstr "反相選擇"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:728
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "展開標籤樹狀圖"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:731
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse Tag Tree"
 msgstr "複製相簿..."
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:734
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "從影像移除標籤"
@@ -40338,14 +40338,14 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "先前的標籤已變更。要儲存變更嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:179
+#: core/libs/tags/manager/tagsmanager.cpp:180
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "標籤管理員"
 
-#: core/libs/tags/manager/tagsmanager.cpp:338
+#: core/libs/tags/manager/tagsmanager.cpp:339
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40357,7 +40357,7 @@ msgid_plural ""
 msgstr[0] ""
 "標籤 '%1' 有一個以上的子標籤。刪除這些標籤也會刪除子標籤。是否要繼續？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:361
+#: core/libs/tags/manager/tagsmanager.cpp:362
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40365,21 +40365,21 @@ msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] "標籤 '%1' 被指定到一個以上的項目。是否要繼續？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:371
+#: core/libs/tags/manager/tagsmanager.cpp:372
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "刪除標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:377
+#: core/libs/tags/manager/tagsmanager.cpp:378
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "刪除標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:500
+#: core/libs/tags/manager/tagsmanager.cpp:501
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -40387,15 +40387,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:512
-#: core/libs/tags/manager/tagsmanager.cpp:531
+#: core/libs/tags/manager/tagsmanager.cpp:513
+#: core/libs/tags/manager/tagsmanager.cpp:532
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "這項操作依照收藏的大小，可能會花很長的時間。您要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:551
+#: core/libs/tags/manager/tagsmanager.cpp:552
 #, fuzzy, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40406,41 +40406,41 @@ msgstr ""
 "要套用變更到檔案，您必須稍後選擇將中繼資料寫入檔案。\n"
 "您要繼續嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:615
+#: core/libs/tags/manager/tagsmanager.cpp:616
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "您要從收藏清單中移除此收藏「%1」嗎？"
 
-#: core/libs/tags/manager/tagsmanager.cpp:696
+#: core/libs/tags/manager/tagsmanager.cpp:697
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "組織"
 
-#: core/libs/tags/manager/tagsmanager.cpp:699
+#: core/libs/tags/manager/tagsmanager.cpp:700
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "同步匯出(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:716
+#: core/libs/tags/manager/tagsmanager.cpp:717
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "從通訊錄建立標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:719
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "最近指定的標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:739
+#: core/libs/tags/manager/tagsmanager.cpp:740
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "將標籤新增到上次點擊的標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:742
+#: core/libs/tags/manager/tagsmanager.cpp:743
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -40450,83 +40450,83 @@ msgid ""
 "the root tag."
 msgstr "刪除選取的項目。它可以刪除多個項目，但不會刪除根標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:747
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "移除選取的標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:748
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "重置選取的標籤圖示。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:752
 #, fuzzy, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:753
+#: core/libs/tags/manager/tagsmanager.cpp:754
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "轉換選取的項目。只有可見的項目會被選取。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:757
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "選取的項目會被展開"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:759
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "將標籤樹展開一層"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:761
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "下載完成..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:762
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "從影像刪除選取的標籤。可以用於多個選取標籤。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:810
+#: core/libs/tags/manager/tagsmanager.cpp:811
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "將標籤從資料庫寫入到影像"
 
-#: core/libs/tags/manager/tagsmanager.cpp:813
+#: core/libs/tags/manager/tagsmanager.cpp:814
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "從影像讀取標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "只抹除資料庫中的所有標籤"
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:819
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "將標籤中繼資料寫入影像。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:820
+#: core/libs/tags/manager/tagsmanager.cpp:821
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr "從影像讀取標籤再寫入資料庫。現有的標籤不會受到影響"
 
-#: core/libs/tags/manager/tagsmanager.cpp:823
+#: core/libs/tags/manager/tagsmanager.cpp:824
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
 
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:846
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
@@ -44051,7 +44051,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:108
-#: core/utilities/maintenance/maintenancedlg.cpp:346
+#: core/utilities/maintenance/maintenancedlg.cpp:347
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
@@ -44223,7 +44223,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid "Color Management"
 msgstr "色彩管理"
@@ -51497,41 +51497,41 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "顆粒大小："
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "書籤"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:105
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "書籤"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "標題(&T)："
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, fuzzy, kde-format
 #| msgid "Enter tag name here..."
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "在這裡輸入標籤名稱..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:132
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, fuzzy, kde-format
 #| msgid "&Icon:"
@@ -51539,7 +51539,7 @@ msgctxt "@label"
 msgid "&Icon:"
 msgstr "圖示(&I)："
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:140
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, fuzzy, kde-format
 #| msgid "Reset"
@@ -51547,14 +51547,14 @@ msgctxt "@action:button"
 msgid "Reset"
 msgstr "重設"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:153
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "路徑"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:158
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
 msgctxt "@info"
@@ -51884,19 +51884,19 @@ msgstr "裝飾"
 msgid "Effec&ts"
 msgstr "效果"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "組態設定"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid "Editor Window"
 msgstr "編輯視窗"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -51905,19 +51905,19 @@ msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr "<qt>影像編輯器視窗設定值<br/><i>自訂影像編輯器視窗</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr "<qt>內嵌的影像資訊管理<br/><i>自訂影像和中繼資料之間的關聯</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid "Tool Tip"
 msgstr "工具提示"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -51927,57 +51927,57 @@ msgid ""
 "information in tool-tips</i></qt>"
 msgstr "<qt>縮圖列項目工具提示設定<br/><i>自訂在工具提示中的資訊</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW 解碼"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr "<qt>RAW 檔解碼設定<br/><i>自訂預設的 RAW 解碼設定值</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr "<qt>色彩管理設定<br/><i>自訂色彩管理設定值</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid "Save Images"
 msgstr "儲存影像"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr "<qt>儲存影像檔設定值<br/><i>設定影像儲存的預設組態設定</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:142
 #, kde-format
 msgid "Plugins"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:143
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:148
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:149
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -54286,28 +54286,28 @@ msgstr ""
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:317
+#: core/utilities/maintenance/maintenancedlg.cpp:318
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳過已掃描的影像"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "再次掃描並合併結果"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未確認的結果並重新掃描"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Clear unconfirmed results and rescan"
@@ -56673,32 +56673,32 @@ msgstr "描述檔錯誤"
 msgid "No profile is selected."
 msgstr "沒有選擇描述檔。"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "要儲存？"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "儲存變更"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Save the current changes. Note: The original image will never be overwritten."
 msgstr "儲存目前的變更。注意：原始影像將不會被覆寫。"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "將變更存成新版本"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56706,19 +56706,19 @@ msgid ""
 "unchanged, a new file will be created."
 msgstr "將目前的變更存成新版本。載入的檔案不會被變更，而是會另外產生新的檔案。"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "丟棄變更"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr "丟棄在目前的編輯工作階段中所套用的變更。 "
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:101
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid ""
@@ -58001,27 +58001,27 @@ msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
 msgstr "<p>請選擇想要上傳影像的相機資料夾。</p>"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:45
+#: core/utilities/import/dialogs/camerainfodialog.cpp:46
 #, kde-format
 msgctxt "@title:window"
 msgid "Device Information"
 msgstr "裝置資訊"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:58
+#: core/utilities/import/dialogs/camerainfodialog.cpp:59
 #, fuzzy, kde-format
 #| msgid "Device Summary"
 msgctxt "@title"
 msgid "Device Summary"
 msgstr "裝置摘要"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:66
+#: core/utilities/import/dialogs/camerainfodialog.cpp:67
 #, fuzzy, kde-format
 #| msgid "Device Manual"
 msgctxt "@title"
 msgid "Device Manual"
 msgstr "裝置使用手冊"
 
-#: core/utilities/import/dialogs/camerainfodialog.cpp:74
+#: core/utilities/import/dialogs/camerainfodialog.cpp:75
 #, fuzzy, kde-format
 #| msgid "About Driver"
 msgctxt "@title"
@@ -59654,31 +59654,31 @@ msgstr "正在更新臉孔資料庫"
 msgid "Finger-prints"
 msgstr "指紋"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:196
+#: core/utilities/maintenance/maintenancedlg.cpp:197
 #, fuzzy, kde-format
 #| msgid "Maintenance"
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "維護"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:211
+#: core/utilities/maintenance/maintenancedlg.cpp:212
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
 msgstr "<qt><b>選擇要處理的維護操作</b></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:217
+#: core/utilities/maintenance/maintenancedlg.cpp:218
 #, kde-format
 msgctxt "@label"
 msgid "Process items from:"
 msgstr "處理項目從："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:218
+#: core/utilities/maintenance/maintenancedlg.cpp:219
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
@@ -59686,24 +59686,24 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "在所有的處理器核心上工作"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgid "Common Options"
 msgstr "一般選項"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:224
+#: core/utilities/maintenance/maintenancedlg.cpp:225
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr "<qt>沒有選項<br/><i>注意：此工具只處理相簿收藏。</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:226
+#: core/utilities/maintenance/maintenancedlg.cpp:227
 #, kde-format
 msgid "Scan for new items"
 msgstr "掃描新增的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:232
+#: core/utilities/maintenance/maintenancedlg.cpp:233
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -59712,105 +59712,105 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:235
+#: core/utilities/maintenance/maintenancedlg.cpp:236
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the thumbnail database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Also clean up the faces database."
 msgstr "正在更新臉孔資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the similarity database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Extended clean up and shrink all databases."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:243
+#: core/utilities/maintenance/maintenancedlg.cpp:244
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:248
-#: core/utilities/maintenance/maintenancedlg.cpp:255
+#: core/utilities/maintenance/maintenancedlg.cpp:249
+#: core/utilities/maintenance/maintenancedlg.cpp:256
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "掃描已變更或未分類的項目（速度較快）"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:251
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "重新建立縮圖"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:257
+#: core/utilities/maintenance/maintenancedlg.cpp:258
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "重新建立指紋"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:266
+#: core/utilities/maintenance/maintenancedlg.cpp:267
 #, fuzzy, kde-format
 #| msgid "Similarity (in percents): "
 msgid "Similarity range (in percents): "
 msgstr "相似度（百分比）："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:286
+#: core/utilities/maintenance/maintenancedlg.cpp:287
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgid "Restriction on duplicates:"
 msgstr "尋找重複檔"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:290
+#: core/utilities/maintenance/maintenancedlg.cpp:291
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "沒有選擇區域"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, fuzzy, kde-format
 #| msgid "Store as a different name"
 msgid "Restrict to album of reference image"
 msgstr "以不同名稱儲存"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:306
+#: core/utilities/maintenance/maintenancedlg.cpp:307
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "尋找重覆的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:313
+#: core/utilities/maintenance/maintenancedlg.cpp:314
 #, kde-format
 msgid "Faces data management: "
 msgstr "臉孔資料管理："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:323
+#: core/utilities/maintenance/maintenancedlg.cpp:324
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "清除並重建所有訓練資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:325
+#: core/utilities/maintenance/maintenancedlg.cpp:326
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid ""
@@ -59825,47 +59825,47 @@ msgstr ""
 "這會清除所有之前訓練過的資料，並從所有可找到的臉孔重新建立辨識資料。若是有使"
 "用任何其它的應用程式來協助您建立辨識訓練資料，請小心使用。"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:328
+#: core/utilities/maintenance/maintenancedlg.cpp:329
 #, fuzzy, kde-format
 msgid "Detect and recognize Faces"
 msgstr "偵測與辨識臉孔"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:335
+#: core/utilities/maintenance/maintenancedlg.cpp:336
 #, kde-format
 msgid "Scan Mode: "
 msgstr "掃描型號："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:340
+#: core/utilities/maintenance/maintenancedlg.cpp:341
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "全部清除並重新掃描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "只掃描未指定的"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:353
+#: core/utilities/maintenance/maintenancedlg.cpp:354
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:357
+#: core/utilities/maintenance/maintenancedlg.cpp:358
 #, kde-format
 msgid "From database to image metadata"
 msgstr "從資料庫同步到影像中繼資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From image metadata to database"
 msgstr "從影像中繼資料同步到資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:361
+#: core/utilities/maintenance/maintenancedlg.cpp:362
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "檢查中繼資料設定面板裡的詳情："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:366
+#: core/utilities/maintenance/maintenancedlg.cpp:367
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "將資料庫與中繼資料同步"
@@ -63119,14 +63119,14 @@ msgstr "選擇項目"
 msgid "Your collection will use this category:"
 msgstr "以這個名稱建立您的新收藏："
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#: core/utilities/setup/downloader/filesdownloader.cpp:174
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "正在下載檔案 %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:203
+#: core/utilities/setup/downloader/filesdownloader.cpp:204
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -63139,17 +63139,17 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:215
+#: core/utilities/setup/downloader/filesdownloader.cpp:216
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:265
+#: core/utilities/setup/downloader/filesdownloader.cpp:266
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:274
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
@@ -63157,7 +63157,7 @@ msgctxt "@title:window"
 msgid "Download Error"
 msgstr "下載新項目"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:276
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -63169,30 +63169,30 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#: core/utilities/setup/downloader/filesdownloader.cpp:284
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "加入膠片顆粒"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:416
+#: core/utilities/setup/downloader/filesdownloader.cpp:417
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:440
+#: core/utilities/setup/downloader/filesdownloader.cpp:441
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:447
+#: core/utilities/setup/downloader/filesdownloader.cpp:448
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "匯出工具"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:462
+#: core/utilities/setup/downloader/filesdownloader.cpp:463
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
@@ -63781,36 +63781,36 @@ msgstr "簡介"
 msgid "Reset to Default"
 msgstr "重置為預設值"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:145
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "新的名稱"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:149
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "新的名稱"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, fuzzy, kde-format
 msgid "Add metadata namespace"
 msgstr "加入中繼資料資訊"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:242
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:243
 #, fuzzy, kde-format
 msgid "Metadata Subspace"
 msgstr "中繼資料"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:254
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:255
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: namespace name"
 msgid "Name:"
 msgstr "名稱："
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:262
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:263
 #, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
@@ -63820,7 +63820,7 @@ msgid ""
 "written.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:273
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:274
 #, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
@@ -63830,7 +63830,7 @@ msgid ""
 "from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:284
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:285
 #, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
@@ -63838,82 +63838,82 @@ msgid ""
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:294
 #, fuzzy, kde-format
 msgid "Special Options"
 msgstr "特別須知："
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:320
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:321
 #, fuzzy, kde-format
 msgid "Alternative name"
 msgstr "裝飾松木"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:325
 #, fuzzy, kde-format
 msgid "Alternative special options"
 msgstr "黃金螺旋區段"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:354
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:355
 #, fuzzy, kde-format
 msgid "Separator:"
 msgstr "麥卡托投影（Mercator）"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:360
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:361
 #, fuzzy, kde-format
 msgid "Set Tags Path:"
 msgstr "標籤路徑"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:380
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:381
 #, fuzzy, kde-format
 msgid "Rating Mapping:"
 msgstr "評分："
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:542
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:543
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:570
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:580
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:581
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:587
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:588
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:598
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:604
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:614
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:615
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:621
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:622
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:637
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:638
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:643
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:644
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""
