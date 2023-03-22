@@ -4436,8 +4436,8 @@ qlonglong CoreDB::copyItem(int srcAlbumID, const QString& srcName,
 
     QVariant id;
     d->db->execSql(QString::fromUtf8("INSERT INTO Images "
-                                     "( album, name, status, category, modificationDate, fileSize, uniqueHash ) "
-                                     " SELECT ?, ?, status, category, modificationDate, fileSize, uniqueHash "
+                                     "( album, name, status, category, modificationDate, fileSize, uniqueHash, manualOrder ) "
+                                     " SELECT ?, ?, status, category, modificationDate, fileSize, uniqueHash, manualOrder "
                                      " FROM Images WHERE id=?;"),
                    dstAlbumID, dstName, srcId, nullptr, &id);
 
