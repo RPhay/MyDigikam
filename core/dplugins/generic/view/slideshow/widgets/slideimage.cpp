@@ -72,8 +72,14 @@ SlideImage::SlideImage(QWidget* const parent)
 
 SlideImage::~SlideImage()
 {
-    delete d->previewThread;
+    d->previewPreloadThread->stopAllTasks();
+    d->previewThread->stopAllTasks();
+
+    d->previewPreloadThread->wait();
+    d->previewThread->wait();
+
     delete d->previewPreloadThread;
+    delete d->previewThread;
     delete d;
 }
 
@@ -181,12 +187,15 @@ void SlideImage::updatePixmap()
 
     double ratio   = qApp->devicePixelRatio();
 
-    QSize fullSize = QSizeF(ratio*width(), ratio*height()).toSize();
+    QSize fullSize = QSizeF(ratio * width(), ratio * height()).toSize();
     d->pixmap      = QPixmap(fullSize);
     d->pixmap.fill(Qt::black);
     QPainter p(&(d->pixmap));
 
-    QPixmap pix(d->preview.smoothScale(d->pixmap.width(), d->pixmap.height(), Qt::KeepAspectRatio).convertToPixmap());
+    QPixmap pix(d->preview.smoothScale(d->pixmap.width(),
+                                       d->pixmap.height(),
+                                       Qt::KeepAspectRatio).convertToPixmap());
+
     p.drawPixmap((d->pixmap.width()  - pix.width())  / 2,
                  (d->pixmap.height() - pix.height()) / 2, pix,
                  0, 0, pix.width(), pix.height());
