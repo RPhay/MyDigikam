@@ -88,10 +88,12 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     QTextBrowser* const details     = new QTextBrowser(tab);
     details->setOpenExternalLinks(true);
+    details->setOpenLinks(false);
     details->setFocusPolicy(Qt::NoFocus);
+    details->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
 
     QString txtDetails = tool->details();
-    txtDetails.replace(QLatin1String("\n"), QLatin1String("<br>"));
+    txtDetails.replace(QLatin1String("\n"), QLatin1String("<br/>"));
     details->setText(txtDetails);
 
     tab->addTab(details, i18nc("@title", "Details"));
