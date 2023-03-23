@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:45+0000\n"
+"POT-Creation-Date: 2023-03-23 00:44+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -23595,7 +23595,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Presentación"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -65439,7 +65439,7 @@ msgstr ""
 "A vista previa a tamaño completo, se está activada, afectará á velocidade "
 "coa que se cargue a vista previa de cada elemento mentres se descarga."
 
-#: core/utilities/setup/collections/setupcollections.cpp:88
+#: core/utilities/setup/collections/setupcollections.cpp:96
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -65456,7 +65456,7 @@ msgstr ""
 "<p>Importante: Ten que montar a compartición de maneira nativa no sistema "
 "antes de preparar unha colección remota.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:101
+#: core/utilities/setup/collections/setupcollections.cpp:109
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -65466,12 +65466,12 @@ msgstr ""
 "<p>Aquí están as localizacións dos álbums raíz onde se aloxan as imaxes. É "
 "preciso ter acceso de escritura para editar as imaxes.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:115
+#: core/utilities/setup/collections/setupcollections.cpp:123
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Vixiar os álbums por se houber cambios externos (require reiniciar)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:118
+#: core/utilities/setup/collections/setupcollections.cpp:126
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -65479,14 +65479,14 @@ msgid ""
 "activate album monitoring.</b>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:131
+#: core/utilities/setup/collections/setupcollections.cpp:139
 #, fuzzy, kde-format
 #| msgid "Root Album Folders"
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Cartafoles do álbum raíz"
 
-#: core/utilities/setup/collections/setupcollections.cpp:138
+#: core/utilities/setup/collections/setupcollections.cpp:146
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -65508,7 +65508,7 @@ msgstr ""
 "predeterminada.</p> <p>Para incluír de novo directorios que se ignoran de "
 "maneira predeterminada, prefíxeo cun guión, p. ex. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:156
+#: core/utilities/setup/collections/setupcollections.cpp:164
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -65517,19 +65517,19 @@ msgstr ""
 "Directorios adicionais para ignorar (<a href='image'>directorios ignorados "
 "actualmente</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:161
+#: core/utilities/setup/collections/setupcollections.cpp:169
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "Escriba directorios que quere evitar engadir ás súas coleccións."
 
-#: core/utilities/setup/collections/setupcollections.cpp:177
+#: core/utilities/setup/collections/setupcollections.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Directorios ignorados"
 
-#: core/utilities/setup/collections/setupcollections.cpp:236
+#: core/utilities/setup/collections/setupcollections.cpp:256
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -65614,19 +65614,19 @@ msgid ""
 msgstr "Quere retirar a colección «%1» da lista de coleccións?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1668
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Local Collections"
 msgstr "Coleccións locais"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1669
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Coleccións en medios eliminábeis"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Coleccións en comparticións de rede"
@@ -65692,38 +65692,38 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Estado"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1534
+#: core/utilities/setup/collections/setupcollectionview.cpp:1536
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Engadiu anteriormente unha colección que contén a ruta «%1»."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1564
+#: core/utilities/setup/collections/setupcollectionview.cpp:1566
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problema ao engadir a colección"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1573
+#: core/utilities/setup/collections/setupcollectionview.cpp:1575
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Engadindo unha colección"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#: core/utilities/setup/collections/setupcollectionview.cpp:1579
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "A nova colección crearase con este nome:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1660
 #, fuzzy, kde-format
 #| msgid "Select Category"
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Seleccionar a categoría"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:1664
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "A colección usará esta categoría:"

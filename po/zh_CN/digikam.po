@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:45+0000\n"
+"POT-Creation-Date: 2023-03-23 00:44+0000\n"
 "PO-Revision-Date: 2023-03-11 04:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -20781,7 +20781,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -58313,7 +58313,7 @@ msgid ""
 msgstr ""
 "如果启用了内嵌预览视图加载完整图像，下载过程中预览每张图像的速度将受到影响。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:88
+#: core/utilities/setup/collections/setupcollections.cpp:96
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -58328,7 +58328,7 @@ msgstr ""
 "系统 (如 NFS、通过 cifs/smbfs 挂载到本机的 Samba 位置)。</p><p>注意：您必须先"
 "在本机挂载共享位置，然后再在 digiKam 中设置远程相册集合。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:101
+#: core/utilities/setup/collections/setupcollections.cpp:109
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -58338,12 +58338,12 @@ msgstr ""
 "<p>下表列出了所有用于存储图像的根相册位置。要编辑这些相册中的图像，必须具备这"
 "些位置的写入权限。</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:115
+#: core/utilities/setup/collections/setupcollections.cpp:123
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "监视相册的外部更改 (需要重新启动)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:118
+#: core/utilities/setup/collections/setupcollections.cpp:126
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -58353,13 +58353,13 @@ msgstr ""
 "<b>注意：监视相册的外部更改会消耗大量系统资源并拖慢 digiKam 的速度。如果您正"
 "在使用 macOS 和网络相册集合，请不要启用相册监视功能。</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:131
+#: core/utilities/setup/collections/setupcollections.cpp:139
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "根相册文件夹"
 
-#: core/utilities/setup/collections/setupcollections.cpp:138
+#: core/utilities/setup/collections/setupcollections.cpp:146
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -58377,26 +58377,26 @@ msgstr ""
 "图，@eaDir 目录已被默认忽略。</p><p>要包含被默认忽略的目录，请在目录名称前添"
 "加半角减号前缀，如 -@eaDir。</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:156
+#: core/utilities/setup/collections/setupcollections.cpp:164
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr "额外的忽略目录 (<a href='image'>当前已忽略目录</a>)："
 
-#: core/utilities/setup/collections/setupcollections.cpp:161
+#: core/utilities/setup/collections/setupcollections.cpp:169
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr "输入您想在添加到相册集合时忽略的目录。"
 
-#: core/utilities/setup/collections/setupcollections.cpp:177
+#: core/utilities/setup/collections/setupcollections.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "已忽略目录"
 
-#: core/utilities/setup/collections/setupcollections.cpp:236
+#: core/utilities/setup/collections/setupcollections.cpp:256
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -58469,19 +58469,19 @@ msgid ""
 msgstr "您想要从相册集合列表移除相册集合“%1”吗？"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1668
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Local Collections"
 msgstr "本机集合"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1669
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "可移动媒介集合"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "网络共享集合"
@@ -58544,35 +58544,35 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "状态"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1534
+#: core/utilities/setup/collections/setupcollectionview.cpp:1536
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "您已经添加过包含路径“%1”的相册集合。"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1564
+#: core/utilities/setup/collections/setupcollectionview.cpp:1566
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "添加相册集合时出错"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1573
+#: core/utilities/setup/collections/setupcollectionview.cpp:1575
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "添加相册集合"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#: core/utilities/setup/collections/setupcollectionview.cpp:1579
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "新相册集合将以此名称创建："
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1660
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "选择相册集合类型"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:1664
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："

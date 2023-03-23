@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:45+0000\n"
+"POT-Creation-Date: 2023-03-23 00:44+0000\n"
 "PO-Revision-Date: 2023-03-15 12:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3210,7 +3210,7 @@ msgstr "Més de 200 informes d'usuari tancats a Bugzilla."
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
 "Adaptar el codi a l'entorn de treball de les Qt6 (codi encara compatible amb "
-"la API de les Qt5)."
+"l'API de les Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
@@ -17152,7 +17152,7 @@ msgstr "Latitud del GPS"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
-msgstr "Llargària del GPS"
+msgstr "Longitud del GPS"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:43
 #, kde-format
@@ -21720,7 +21720,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Passe de diapositives"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -23061,7 +23061,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
 #, kde-format
 msgid "Invalid API Key"
-msgstr "Clau de la API no vàlida"
+msgstr "Clau de l'API no vàlida"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:752
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
@@ -24692,7 +24692,7 @@ msgstr "Latitud:"
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
-msgstr "Llargària:"
+msgstr "Longitud:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:267
 #, kde-format
@@ -24806,7 +24806,7 @@ msgstr "Nom:"
 #, kde-format
 msgctxt "@label"
 msgid "API URL:"
-msgstr "URL de la API:"
+msgstr "URL de l'API:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:322
 #, kde-format
@@ -25826,7 +25826,7 @@ msgstr "Usuari/sobrenom/contrasenya no vàlid"
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:699
 #, kde-format
 msgid "Invalid API key"
-msgstr "Clau de la API no vàlida"
+msgstr "Clau de l'API no vàlida"
 
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1067
 #, kde-format
@@ -41392,7 +41392,7 @@ msgstr "Potser més ràpida"
 #: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
 #, kde-format
 msgid "VA API version %1.%2; Vendor: %3;"
-msgstr "Versió de la API VA %1.%2; proveïdor: %3;"
+msgstr "Versió de l'API VA %1.%2; proveïdor: %3;"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
 #, kde-format
@@ -51513,7 +51513,7 @@ msgstr "Establix un valor predeterminat per a les cadenes buides"
 #, kde-format
 msgctxt "The length of the string"
 msgid "Length:"
-msgstr "Llargària:"
+msgstr "Longitud:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/advancedrename/parser/modifiers/fillmodifierdialogwidget.ui:36
@@ -51932,7 +51932,7 @@ msgstr "Latitud en el format descrit per l'especificació XMP"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:51
 #, kde-format
 msgid "Longitude in the format as described by the XMP specification"
-msgstr "Llargària en el format descrit per l'especificació XMP"
+msgstr "Longitud en el format descrit per l'especificació XMP"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:52
 #, kde-format
@@ -51942,7 +51942,7 @@ msgstr "Latitud com a valor doble"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:53
 #, kde-format
 msgid "Longitude as double value"
-msgstr "Llargària com a valor doble"
+msgstr "Longitud com a valor doble"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:54
 #, kde-format
@@ -51952,7 +51952,7 @@ msgstr "Latitud en forma intel·ligible per les persones"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:55
 #, kde-format
 msgid "Longitude in a human readable form"
-msgstr "Llargària en forma intel·ligible per les persones"
+msgstr "Longitud en forma intel·ligible per les persones"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:56
 #, kde-format
@@ -53639,7 +53639,7 @@ msgstr ""
 "<p>Establix la zona horària de la càmera durant la presa de la fotografia, "
 "de manera que les marques de temps de les imatges es poden convertir a GMT "
 "per a coincidir amb l'hora de referència del GPS.</p><p>Nota: Els "
-"desplaçaments positius compten cap a l'est des de la llargària zero (GMT), "
+"desplaçaments positius compten cap a l'est des de la longitud zero (GMT), "
 "són «abans de l'hora».</p>"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
@@ -60685,7 +60685,7 @@ msgstr ""
 "Si la vista prèvia a mida completa està activa, afectarà la velocitat de la "
 "vista prèvia de cada element mentre es baixa."
 
-#: core/utilities/setup/collections/setupcollections.cpp:88
+#: core/utilities/setup/collections/setupcollections.cpp:96
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -60702,7 +60702,7 @@ msgstr ""
 "p><p>Important: haureu de muntar el recurs compartit de forma nativa al "
 "vostre sistema abans de configurar una col·lecció remota.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:101
+#: core/utilities/setup/collections/setupcollections.cpp:109
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -60713,12 +60713,12 @@ msgstr ""
 "les imatges. Es necessita accés d'escriptura per a editar les imatges "
 "d'estos àlbums.</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:115
+#: core/utilities/setup/collections/setupcollections.cpp:123
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Controla els àlbums davant de canvis externs (requerix reiniciar)"
 
-#: core/utilities/setup/collections/setupcollections.cpp:118
+#: core/utilities/setup/collections/setupcollections.cpp:126
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -60729,13 +60729,13 @@ msgstr ""
 "digiKam. Si utilitzeu MacOS i col·leccions de xarxa, no hauríeu d'activar el "
 "control dels àlbums.</b>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:131
+#: core/utilities/setup/collections/setupcollections.cpp:139
 #, kde-format
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "Carpetes de l'àlbum principal"
 
-#: core/utilities/setup/collections/setupcollections.cpp:138
+#: core/utilities/setup/collections/setupcollections.cpp:146
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -60758,7 +60758,7 @@ msgstr ""
 "p><p>Per a tornar a incloure els directoris que s'ignoren de manera "
 "predeterminada, poseu-hi un menys al davant, p. ex. -@eaDir.</p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:156
+#: core/utilities/setup/collections/setupcollections.cpp:164
 #, kde-format
 msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
@@ -60767,20 +60767,20 @@ msgstr ""
 "Directoris addicionals que s'han d'ignorar (<a href='image'>directoris "
 "actualment ignorats</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:161
+#: core/utilities/setup/collections/setupcollections.cpp:169
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 "Introduïu els directoris que voleu ignorar per a afegir a les col·leccions."
 
-#: core/utilities/setup/collections/setupcollections.cpp:177
+#: core/utilities/setup/collections/setupcollections.cpp:185
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "Directoris ignorats"
 
-#: core/utilities/setup/collections/setupcollections.cpp:236
+#: core/utilities/setup/collections/setupcollections.cpp:256
 #, kde-format
 msgid ""
 "<p>Directories starting with a dot are ignored by default.<br/> <code>%1</"
@@ -60855,19 +60855,19 @@ msgid ""
 msgstr "Voleu eliminar la col·lecció «%1» de la llista de col·leccions?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1668
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Local Collections"
 msgstr "Col·leccions locals"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1669
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Col·leccions en suports extraïbles"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Col·leccions en recursos compartits"
@@ -60930,35 +60930,35 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Estat"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1534
+#: core/utilities/setup/collections/setupcollectionview.cpp:1536
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Heu afegit prèviament una col·lecció que conté el camí «%1»."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1564
+#: core/utilities/setup/collections/setupcollectionview.cpp:1566
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problema en annexar una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1573
+#: core/utilities/setup/collections/setupcollectionview.cpp:1575
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "S'està afegint una col·lecció"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#: core/utilities/setup/collections/setupcollectionview.cpp:1579
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "La nova col·lecció es crearà amb este nom:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1660
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Seleccioneu la categoria"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:1664
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
@@ -62504,7 +62504,7 @@ msgid ""
 msgstr ""
 "Establiu esta opció per a crear els fitxers laterals XMP en un format de nom "
 "de fitxer compatible (BASENAME.xmp) utilitzat per molts programes "
-"comercials. No activeu esta opció per al Darktable."
+"comercials. No activeu esta opció per a Darktable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
 #, kde-format

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 00:45+0000\n"
+"POT-Creation-Date: 2023-03-23 00:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -21766,7 +21766,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "นำเสนอภาพ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -61265,7 +61265,7 @@ msgid ""
 "each item while download."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:88
+#: core/utilities/setup/collections/setupcollections.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Below are the locations of your root albums used to store your images. "
@@ -61287,7 +61287,7 @@ msgstr ""
 "และระบบแฟ้มทางระบบแฟ้มทางไกลที่ใช้ร่วมกันบนเครือข่าย (เช่น ผ่านทาง NFS หรือแซมบ้า) "
 "เพื่อใช้เป็นตำแหน่งรากของอัลบั้มก็ได้เช่นกัน</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:101
+#: core/utilities/setup/collections/setupcollections.cpp:109
 #, kde-format
 msgid ""
 "<p>Below are the locations of your root albums used to store your images. "
@@ -61297,12 +61297,12 @@ msgstr ""
 "<p>ด้านล่างนี้เป็นตำแหน่งต่าง ๆ ของรากอัลบั้มต่าง ๆ ของคุณ ซึ่งถูกใช้ในการจัดเก็บภาพถ่ายต่าง ๆ "
 "ทั้งนี้คุณจำเป็นจะต้องมีสิทธิ์ในการแก้ไขภาพต่าง ๆ ในอัลบั้มเหล่านี้ด้วย</p><p></p>"
 
-#: core/utilities/setup/collections/setupcollections.cpp:115
+#: core/utilities/setup/collections/setupcollections.cpp:123
 #, kde-format
 msgid "Monitor the albums for external changes (requires restart)"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:118
+#: core/utilities/setup/collections/setupcollections.cpp:126
 #, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
@@ -61310,14 +61310,14 @@ msgid ""
 "activate album monitoring.</b>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:131
+#: core/utilities/setup/collections/setupcollections.cpp:139
 #, fuzzy, kde-format
 #| msgid "Root Album Folders"
 msgctxt "@title:tab"
 msgid "Root Album Folders"
 msgstr "โฟลเดอร์ต่าง ๆ ที่ใช้เป็นรากของอัลบั้ม"
 
-#: core/utilities/setup/collections/setupcollections.cpp:138
+#: core/utilities/setup/collections/setupcollections.cpp:146
 #, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
@@ -61330,7 +61330,7 @@ msgid ""
 "default prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:156
+#: core/utilities/setup/collections/setupcollections.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "Additional &image file extensions (<a href='image'>Currently-supported "
@@ -61340,19 +61340,19 @@ msgid ""
 "directories</a>):"
 msgstr "นามสกุลเพิ่มเติมของแฟ้ม&ภาพ (<a href='image'>ค่าที่ใช้ในปัจจุบัน</a>):"
 
-#: core/utilities/setup/collections/setupcollections.cpp:161
+#: core/utilities/setup/collections/setupcollections.cpp:169
 #, kde-format
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollections.cpp:177
+#: core/utilities/setup/collections/setupcollections.cpp:185
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
 msgstr "กำหนดให้ใช้ป้ายกำกับนี้"
 
-#: core/utilities/setup/collections/setupcollections.cpp:236
+#: core/utilities/setup/collections/setupcollections.cpp:256
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Files with these extensions will be recognized as movie files and "
@@ -61439,19 +61439,19 @@ msgid ""
 msgstr "คุณต้องการจะลบคลังภาพ \"%1\" ออกจากรายการคลังภาพต่าง ๆ ของคุณจริงหรือไม่ ?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1668
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Local Collections"
 msgstr "คลังภาพภายในระบบ"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1669
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "คลังภาพบนสื่อจัดเก็บข้อมูลที่ถอดเสียบได้"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "คลังภาพบนตำแหน่งใช้งานร่วมกันบนเครือข่าย"
@@ -61518,37 +61518,37 @@ msgctxt "#title: collection status"
 msgid "Status"
 msgstr "สถานะ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1534
+#: core/utilities/setup/collections/setupcollectionview.cpp:1536
 #, fuzzy, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "คุณเพิ่งจะทำการเพิ่มคลังภาพที่บรรจุพาธ \"%1\" อยู่ภายใน ไปก่อนหน้านี้เอง"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1564
+#: core/utilities/setup/collections/setupcollectionview.cpp:1566
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "เกิดปัญหาในการเพิ่มคลังภาพ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1573
+#: core/utilities/setup/collections/setupcollectionview.cpp:1575
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "การเพิ่มคลังภาพ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1577
+#: core/utilities/setup/collections/setupcollectionview.cpp:1579
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "คลังภาพตัวใหม่ของคุณจะถูกสร้างโดยใช้ชื่อต่อไปนี้:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1660
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "เลือกรายการ"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:1664
 #, fuzzy, kde-format
 #| msgid "Your new collection will be created with this name:"
 msgid "Your collection will use this category:"
