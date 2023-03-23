@@ -335,7 +335,7 @@ BUGFIXES:
 290 ==> 467680 - Add a Collections Dialogue Behavior.
 291 ==> 422996 - digiKam Crash with GMicQt plugin on Mac Mojave.
 292 ==> 467215 - macOS 11.74 Big Sur: digiKam crashes unexpectedly after launching G'MIC (theme settings relevant).
-293 ==> 
+293 ==> 467643 - Ambigous text in UI - Setup/Misc.
 294 ==> 
 295 ==> 
 296 ==> 
