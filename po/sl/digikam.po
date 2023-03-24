@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:44+0000\n"
+"POT-Creation-Date: 2023-03-24 00:45+0000\n"
 "PO-Revision-Date: 2023-03-16 11:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3367,8 +3367,11 @@ msgstr ""
 "KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, kde-format
-msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, fuzzy, kde-format
+#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 msgstr ""
 "Dodaj konfiguracijsko ploščo črkovalnika v nastavitvah/ostalo v digiKam in "
 "Showfoto."
@@ -3382,8 +3385,10 @@ msgstr ""
 "alternativnih besedil."
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, kde-format
-msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, fuzzy, kde-format
+#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 "Dodaj konfiguracijsko ploščo za lokalizacijo v nastavitve/ostalo za digiKam "
 "in Showfoto."
@@ -33432,73 +33437,73 @@ msgctxt "@label"
 msgid "Version"
 msgstr "Verzija"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Avtorji"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Ime"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Vrednost"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "ID vmesnika"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "ID Orodja"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Knjižnica"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Velikost datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Datum datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Lastnik datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Skupina datoteke"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, kde-format
 msgctxt "@title"
 msgid "Properties"

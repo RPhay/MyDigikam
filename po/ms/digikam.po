@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:44+0000\n"
+"POT-Creation-Date: 2023-03-24 00:45+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -3202,7 +3202,9 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:159
@@ -3213,7 +3215,8 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
@@ -31089,73 +31092,73 @@ msgctxt "@label"
 msgid "Version"
 msgstr "Menurun"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:99
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "E-mel:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Penulis"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
 #, fuzzy, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Nama"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "Interpolasi:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "Ala&tan"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Album"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Teks"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Nama Fail"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Namafail"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Fail"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Properties"

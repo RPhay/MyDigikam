@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:44+0000\n"
+"POT-Creation-Date: 2023-03-24 00:45+0000\n"
 "PO-Revision-Date: 2023-03-15 21:05+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -3417,8 +3417,11 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, kde-format
-msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, fuzzy, kde-format
+#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 msgstr ""
 "Ajouter un panneau de configuration pour la vérification orthographique dans "
 "Configuration / Divers pour les logiciels DigiKam et Showfoto."
@@ -3430,8 +3433,10 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, kde-format
-msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, fuzzy, kde-format
+#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 "Ajouter un panneau de configuration pour la localisation dans "
 "Configuration / Divers pour les logiciels DigiKam et Showfoto."
@@ -34148,73 +34153,73 @@ msgctxt "@label"
 msgid "Version"
 msgstr "Version"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "Détails"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Auteurs"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Nom"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Valeur"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "Identifiant de l'interface"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "Identifiant de l'outil"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Bibliothèque"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Taille du fichier"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Date du fichier"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Propriétaire du fichier"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Groupe du fichier"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, kde-format
 msgctxt "@title"
 msgid "Properties"

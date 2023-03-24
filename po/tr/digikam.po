@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:44+0000\n"
-"PO-Revision-Date: 2023-03-21 15:09+0300\n"
+"POT-Creation-Date: 2023-03-24 00:45+0000\n"
+"PO-Revision-Date: 2023-03-23 14:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3351,7 +3351,9 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:159
@@ -3362,7 +3364,8 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
@@ -3948,13 +3951,13 @@ msgstr "Tür"
 #: core/app/views/tableview/tableview_column_item.cpp:131
 #, kde-format
 msgid "Creation date/time"
-msgstr "Oluşturulma tarihi/saati"
+msgstr "Oluşturulma tarihi/zamanı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:83
 #: core/app/views/tableview/tableview_column_item.cpp:136
 #, kde-format
 msgid "Digitization date/time"
-msgstr "Sayısallaştırma tarihi/saati"
+msgstr "Sayısallaştırma tarihi/zamanı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:84
 #: core/app/views/tableview/tableview_column_item.cpp:141
@@ -6304,7 +6307,7 @@ msgstr ""
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:43
 #, kde-format
 msgid "Time Adjust"
-msgstr "Saat Ayarı"
+msgstr "Zaman Ayarı"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:44
 #, kde-format
@@ -6313,18 +6316,16 @@ msgstr "Resmin Zaman Damgasını Ayarla"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Time Adjust"
+#, kde-format
 msgctxt "@title"
 msgid "Time Adjust"
-msgstr "Saat Ayarı"
+msgstr "Zaman Ayarı"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to adjust date and time-stamp from images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
-msgstr "Görüntülerde tarih ve saat damgasını ayarlamak için bir araç"
+msgstr "Görsellerdeki tarih ve zaman bilgisini ayarlamak için bir araç"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
 #, fuzzy, kde-kuit-format
@@ -11583,7 +11584,7 @@ msgstr "%1 GPX dosyası ayrıştırılamıyor."
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:377
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
-msgstr "%1 GPX dosyası kullanmak üzere tarih-saat içermiyor."
+msgstr "%1 GPX dosyası, kullanmak üzere tarih-zaman içermiyor."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:385
 #, kde-format
@@ -11921,8 +11922,8 @@ msgid ""
 "Sets the time zone of the camera during picture shooting, so that the time "
 "stamps of the GPS can be converted to match the local time"
 msgstr ""
-"Resim çekme sırasındaki kameranın zaman dilimini ayarlar, böylece GPS'eki "
-"zaman damgası yerel saat ile eşleştirilmesi için dönüştürülebilir."
+"Fotoğraf çekimi sırasında kameranın zaman dilimini ayarlar, böylece GPS'in "
+"zaman damgaları yerel saatle eşleşecek şekilde dönüştürülebilir."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:198
 #, kde-format
@@ -12652,7 +12653,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
 #, kde-format
 msgid "Creation date and time"
-msgstr "Oluşturulma tarihi ve saati"
+msgstr "Oluşturulma tarihi ve zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:111
 #, kde-format
@@ -12682,20 +12683,21 @@ msgid ""
 "Set here the date and time of image creation. In this standard it is the "
 "date and time the file was changed."
 msgstr ""
-"Resim yaratılma tarihini ve saatini buradan belirleyin. Bu standartlarda "
-"dosyadaki tarih ve saat değiştirilir."
+"Görselin oluşturulma tarihini ve zamanını buradan ayarlayın. Bu standartta "
+"dosyanın değiştirildiği tarih ve zamandır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
-"Resim yaratılma tarihi ve saati için saniye kesirlerini buradan belirleyin."
+"Görselin oluşturulma tarihi ve zamanı için burada saniyenin kesirlerini "
+"ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
 msgid "Original date and time"
-msgstr "Özgün tarih ve saat"
+msgstr "Özgün tarih ve zaman"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
 #, kde-format
@@ -12713,8 +12715,9 @@ msgid ""
 "Set here the date and time when the original image data was generated. For a "
 "digital still camera the date and time the picture was taken are recorded."
 msgstr ""
-"Özgün resim verisi oluşturulduğundaki tarih ve saati buradan belirleyin. Bir "
-"dijital kamera için resmin çekildiği tarih ve zaman kaydedilir."
+"Özgün görsel verisinin oluşturulduğu tarihi ve zamanı buradan ayarlayın. "
+"Sayısal bir fotoğraf makinesi için, fotoğrafın çekildiği tarih ve zaman "
+"kaydedilir."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
 #, kde-format
@@ -12722,13 +12725,13 @@ msgid ""
 "Set here the fractions of seconds for the date and time when the original "
 "image data was generated."
 msgstr ""
-"Özgün resim verisi oluşturulduğundaki tarih ve saat için saniye kesirlerini "
-"buradan belirleyin."
+"Özgün görsel verisinin oluşturulduğu tarih ve zaman için burada saniyenin "
+"kesirlerini ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
 #, kde-format
 msgid "Digitization date and time"
-msgstr "Sayısallaştırma tarihi ve saati"
+msgstr "Sayısallaştırma tarihi ve zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:168
 #, kde-format
@@ -12750,10 +12753,10 @@ msgid ""
 "time the file was recorded, then Original and Digitization date and time "
 "will have the same contents."
 msgstr ""
-"Resmin dijital veri olarak depolandığındaki tarih ve saati buradan "
-"belirleyin. Eğer resim dijital bir kamera ile çekildiyse ve aynı anda dosya "
-"olarak kaydedildiyse o halde Özgün ve Sayısallaştırma tarih ve saati aynı "
-"içeriğe sahip olacaktır."
+"Görselin sayısal veri olarak kaydedildiği tarihi ve zamanı buradan "
+"ayarlayın. Örneğin, bir sayısal sabit kamera tarafından bir görsel "
+"yakalanmışsa ve aynı zamanda dosya kaydedilmişse Özgün ve Sayısallaştırma "
+"tarih ve zamanı aynı içeriğe sahip olur."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:188
 #, kde-format
@@ -12761,8 +12764,8 @@ msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
 "stored as digital data."
 msgstr ""
-"Resmin dijital veri olarak depolandığındaki tarih ve saat için saniye "
-"kesirlerini buradan belirleyin."
+"Görselin sayısal veri olarak depolandığı tarih ve zaman için saniyenin "
+"kesirlerini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
 #, kde-format
@@ -13182,7 +13185,7 @@ msgstr "Başlık"
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
-msgstr "Tarih ve Saat"
+msgstr "Tarih ve Zaman"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:108
 #, kde-format
@@ -14527,7 +14530,7 @@ msgstr "Gönderilme tarihi:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:255
 #, kde-format
 msgid "Sent time:"
-msgstr "Gönderilme saati:"
+msgstr "Gönderilme zamanı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
 #, kde-format
@@ -14542,12 +14545,12 @@ msgstr "Hizmetin malzemeyi gönderdiği tarihi buradan belirleyin."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
 #, kde-format
 msgid "Set here the time when the service sent the material."
-msgstr "Hizmetin malzemeyi gönderdiği saati buradan belirleyin."
+msgstr "Hizmetin malzemeyi gönderdiği zamanı buradan belirleyin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
-msgstr "Hizmetin malzemeyi gönderdiği saat dilimini buradan ayarlayın."
+msgstr "Hizmetin malzemeyi gönderdiği zaman dilimini buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
@@ -14578,7 +14581,7 @@ msgstr "Sayısallaştırma tarihi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:129
 #, kde-format
 msgid "Digitization time"
-msgstr "Sayısallaştırma saati"
+msgstr "Sayısallaştırma zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:142
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
@@ -14589,13 +14592,13 @@ msgstr "Dijital temsilin yaratılma tarihini buradan belirleyin."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
 #, kde-format
 msgid "Set here the creation time of digital representation."
-msgstr "Dijital temsilin yaratılma saatini buradan belirleyin."
+msgstr "Sayısal temsilin oluşturulma zamanını buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
 #, kde-format
 msgid "Set here the time zone of digital representation."
-msgstr "Dijital gösterim saat dilimini buradan ayarlayın."
+msgstr "Sayısal temsilin zaman dilimini buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
@@ -14606,7 +14609,7 @@ msgstr "Oluşturulma tarihi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:154
 #, kde-format
 msgid "Creation time"
-msgstr "Oluşturulma saati"
+msgstr "Oluşturulma zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:163
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
@@ -14624,14 +14627,14 @@ msgstr "Düşünsel içeriğin yaratılma tarihini buradan belirleyin."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
 #, kde-format
 msgid "Set here the creation time of intellectual content."
-msgstr "Düşünsel içeriğin yaratılma saatini buradan belirleyin."
+msgstr "Sanatsal içeriğin oluşturulma zamanını buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:173
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:158
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr "Buradan entelektüel içeriğin saat dilimini ayarlayın."
+msgstr "Sanatsal içeriğin zaman dilimini buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
 #, kde-format
@@ -14747,7 +14750,7 @@ msgstr "Yayınlanma tarihi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
 #, kde-format
 msgid "Release time"
-msgstr "Yayınlanma saati"
+msgstr "Yayım zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
@@ -14765,8 +14768,7 @@ msgstr ""
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr ""
-"Düşünsel içeriğin en erken istenilen kullanılabilir saatini buradan "
-"belirleyin."
+"Sanatsal içeriğin en erken kullanıma açıldığı zamanı buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
@@ -14784,7 +14786,7 @@ msgstr "Zaman aşımı tarihi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:157
 #, kde-format
 msgid "Expiration time"
-msgstr "Zaman aşımı saati"
+msgstr "Son kullanma süresi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
 #, kde-format
@@ -14801,8 +14803,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
-msgstr ""
-"Düşünsel içeriğin en son istenilen kullanılabilir saatini buradan belirleyin."
+msgstr "Sanatsal içeriğin en son kullanılabileceği zamanı buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
 #, kde-format
@@ -17609,7 +17610,7 @@ msgstr "Resim Çözünürlük Birimi"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
-msgstr "Resim Tarih Saat Bilgisi"
+msgstr "Görsel Tarihi ve Zamanı"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
@@ -19994,7 +19995,7 @@ msgstr "Resim dosya isimleri"
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
-msgstr "Exif tarihi-saati"
+msgstr "Exif tarih-zamanı"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
 #, kde-format
@@ -20088,11 +20089,11 @@ msgid ""
 "print ISO sensibility from camera\n"
 "print date and time from camera"
 msgstr ""
-"dosya adını yazdır\n"
-"kamera pozlama süresini yazdır\n"
-"öge yorumunu yazdır\n"
-"kameranın ISO hassasiyetini yazdır\n"
-"kameranın tarih ve saat bilgisini yazdır"
+"yazdır: dosya adı\n"
+"yazdır: kamera pozlama süresi\n"
+"yazdır: öge açıklaması\n"
+"yazdır: kameranın ISO hassasiyeti\n"
+"yazdır: kameranın tarih ve zaman bilgisi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:99
@@ -25269,10 +25270,9 @@ msgid "Closest %1research-grade %2 reported in %3."
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Creation time"
+#, kde-format
 msgid "observation time"
-msgstr "Oluşturulma saati"
+msgstr "gözlem zamanı"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1079
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1106
@@ -34136,8 +34136,8 @@ msgid ""
 "An angle in degrees by which to rotate the image. A positive angle rotates "
 "the image clockwise; a negative angle rotates it counter-clockwise."
 msgstr ""
-"Görüntüyü yönlendirecek derece cinsinden bir açı. Pozitif bir açı görüntüyü "
-"saat yönünde döndürecektir. Negatif açı ise saat yönünün tersine döndürür."
+"Görselin döndürüleceği derece türünden bir açı. Pozitif bir açı görseli saat "
+"yönünde döndürür; negatif bir açı onu saat yönünün tersine döndürür."
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:97
 #, kde-format
@@ -34348,8 +34348,8 @@ msgstr "güneşin doğuş veya batış ışığı"
 msgctxt "@item: WB settings"
 msgid "tungsten lamp used in photo studio or light at 1 hour from dusk/dawn"
 msgstr ""
-"Fotoğraf stüdyosunda ya da gün doğumu/gün batımından 1 saat sonra kullanılan "
-"tungsten lambası"
+"fotoğraf stüdyosunda kullanılan tungsten lamba veya alacakaranlıktan/"
+"şafaktan 1 saat sonra ışık"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:219
 #, kde-format
@@ -34736,80 +34736,80 @@ msgctxt "@label"
 msgid "Version"
 msgstr "Sürüm"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:99
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
 #, fuzzy, kde-format
 #| msgid "Authors"
 msgctxt "@title"
 msgid "Authors"
 msgstr "Yazarlar"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "İsim"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Değer"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, fuzzy, kde-format
 #| msgid "&Interface"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "&Arayüz"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 #| msgid "Tool Tip"
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "İpucu"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Kitaplık"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "File Size"
 msgctxt "@item"
 msgid "File Size"
 msgstr "Dosya Boyutu"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Dosya Tarihi"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 #| msgid "File name"
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Dosya adı"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "File"
 msgctxt "@item"
 msgid "File Group"
 msgstr "Dosya"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title"
@@ -41618,11 +41618,10 @@ msgid "Error message: %1"
 msgstr "Hata iletisi: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Determine Time Difference With Clock Photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
-msgstr "Saat Fotoğrafı ile Zaman Farkına Karar Ver"
+msgstr "Saat Fotoğrafı ile Zaman Değişikliklerini Algıla"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:90
 #, kde-format
@@ -41637,10 +41636,10 @@ msgid ""
 "displayed. The difference of your internal camera clock will be determined "
 "from this setting."
 msgstr ""
-"Eğer setinizdeki bir fotoğrafta bir saat veya harici zaman kaynağı varsa "
-"buraya yükleyebilir ve belirteci gösterilen (tarih ve) saate "
-"ayarlayabilirsiniz. Dahili kamera saatinizdeki fark, bu ayar ile tespit "
-"edilecektir."
+"Kümenizde üzerinde saat veya başka bir dış zaman kaynağı olan bir "
+"fotoğrafınız varsa,onu buraya yükleyebilir ve göstergeyi görüntülenen "
+"(tarihe ve) zamana ayarlayabilirsiniz. İç kamera saatinizin farkı bu ayardan "
+"belirlenir."
 
 #: core/libs/timeadjust/clockphotodialog.cpp:173
 #, fuzzy, kde-format
@@ -41656,7 +41655,7 @@ msgstr "Saat tarih ve zamanı:"
 #: core/libs/timeadjust/clockphotodialog.cpp:241
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
-msgstr "Saat Resmini Çıkartmak için Resim Seç"
+msgstr "Saat Fotoğrafını Çıkarmak için Görsel Seç"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:165
 #, kde-format
@@ -41773,13 +41772,13 @@ msgstr "gün"
 #: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "Determine difference from clock photo"
-msgstr "Resimdeki saatten farkı tespit et"
+msgstr "Saat fotoğrafından farkı algıla"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
-msgstr "Resme sürükleyerek ya da tıklayarak saat resmi seçin"
+msgstr "Bir saat fotoğrafı seçmek için ya bir fotoğraf sürükle ya da tıkla"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:270
 #, kde-format
@@ -45345,11 +45344,9 @@ msgid "International Color Consortium Color Profile"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "ID3 And Lyrics3 information"
-msgstr "Tarih ve Saat Bilgileri"
+msgstr "ID3 ve Lyrics3 bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:215
 #, kde-format
@@ -45537,11 +45534,9 @@ msgid "Panasonic RAW 2 Information"
 msgstr "Başlık Bilgileri"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Streaming Parrot Drone Video Information"
-msgstr "Tarih ve Saat Bilgileri"
+msgstr "Parrot Uçargözü Video Bilgisini Aktar"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:347
 #, fuzzy, kde-format
@@ -53792,7 +53787,7 @@ msgstr "Tarih ve zaman (standart biçim)"
 #, kde-format
 msgctxt "@item"
 msgid "Date and time"
-msgstr "Tarih ve saat"
+msgstr "Tarih ve zaman"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:19
@@ -53812,7 +53807,7 @@ msgstr "Biçim:"
 #: core/utilities/advancedrename/parser/options/dateoptiondialogwidget.ui:116
 #, kde-format
 msgid "Time:"
-msgstr "Saat:"
+msgstr "Zaman:"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
@@ -55461,18 +55456,17 @@ msgid "Camera time zone:"
 msgstr "Kamera zaman dilimi:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the time zone of the camera during picture shooting, so that the "
-#| "time stamps of the GPS can be converted to match the local time"
+#, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
 "the time stamps of the images can be converted to GMT to match the GPS time "
 "reference.</p><p>Note: positive offsets count eastwards from zero longitude "
 "(GMT), they are 'ahead of time'.</p>"
 msgstr ""
-"Resim çekme sırasındaki kameranın zaman dilimini ayarlar, böylece GPS'eki "
-"zaman damgası yerel saat ile eşleştirilmesi için dönüştürülebilir."
+"<p>Fotoğraf çekimi sırasında kameranın ayarlandığı zaman dilimini ayarlar, "
+"böylece görsellerin zaman damgalarının GPS zaman başvurusuyla eşleşmesi için "
+"GMT'ye dönüştürülebilir.</p><p>Not: Pozitif ofsetler sıfır boylamından (GMT) "
+"doğuya doğru sayılır; \"vaktinden ileride\"dirler.</p>"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
@@ -55485,8 +55479,8 @@ msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
-"Resiml zamanları ve parça zamanları arasındaki dengelemeyi ayarlar. Örn. "
-"yanlış kamera saatini veya farklı saat dilimini düzeltmek için."
+"Resim süreleri ve izleme süreleri arasındaki farkı ayarlar. Örneğin. yanlış "
+"kamera saatini veya farklı zaman dilimini düzeltmek için."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
@@ -55671,7 +55665,7 @@ msgstr "Değiştirme"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Date and time"
-msgstr "Tarih ve saat"
+msgstr "Tarih ve zaman"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
 #, kde-format

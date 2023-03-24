@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-23 00:44+0000\n"
+"POT-Creation-Date: 2023-03-24 00:45+0000\n"
 "PO-Revision-Date: 2011-03-11 10:04+0100\n"
 "Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -3253,7 +3253,9 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:159
@@ -3264,7 +3266,8 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgid ""
+"Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
@@ -31332,79 +31335,79 @@ msgctxt "@label"
 msgid "Version"
 msgstr "Veličina slike:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:99
 #, fuzzy, kde-format
 #| msgid "Detail:"
 msgctxt "@title"
 msgid "Details"
 msgstr "Detalj:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:124
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Ime:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, fuzzy, kde-format
 #| msgid "Interpolate"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "Interpoliraj"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "Nepoznato"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@item"
 msgid "Library"
 msgstr "Gibraltar"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@item"
 msgid "File Size"
 msgstr "Datoteka: "
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Naziv datoteke:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:146
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Naziv datoteke:"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@item"
 msgid "File Group"
 msgstr "Datoteka: "
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:149
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Properties"
