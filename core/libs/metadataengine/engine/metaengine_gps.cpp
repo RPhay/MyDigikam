@@ -300,15 +300,15 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
             }
 
             *altitude = num / den;
+
+            if (altRef[0] == '1')
+            {
+                *altitude *= -1.0;
+            }
         }
         else
         {
             return false;
-        }
-
-        if (altRef[0] == '1')
-        {
-            *altitude *= -1.0;
         }
 
         return true;
