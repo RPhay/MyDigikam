@@ -164,23 +164,35 @@ void ImageQualityParser::startAnalyse()
 
     // Calculating finalquality
 
+    *d->label = NoPickLabel;
+
     if (d->running)
     {
         if (d->imq.detectAesthetic)
         {
             if      (aestheticScore == -1.0F)
             {
-                *d->label = NoPickLabel;
+                return;
             }
             else if (aestheticScore == 0.0F)
             {
-                *d->label = RejectedLabel;
+                if (d->imq.lowQRejected)
+                {
+                    *d->label = RejectedLabel;
+                }
+
+                return;
             }
             else if (aestheticScore == 1.0F)
             {
-                *d->label = PendingLabel;
+                if (d->imq.mediumQPending)
+                {
+                    *d->label = PendingLabel;
+                }
+
+                return;
             }
-            else
+            else if (d->imq.highQAccepted)
             {
                 *d->label = AcceptedLabel;
             }
@@ -195,26 +207,32 @@ void ImageQualityParser::startAnalyse()
 
             if      (finalQuality == -1.0F)
             {
-                *d->label = NoPickLabel;
+                return;
             }
             else if ((int)finalQuality <= d->imq.rejectedThreshold)
             {
-                *d->label = RejectedLabel;
+                if (d->imq.lowQRejected)
+                {
+                    *d->label = RejectedLabel;
+                }
+
+                return;
             }
             else if (((int)finalQuality > d->imq.rejectedThreshold) &&
-                    ((int)finalQuality <= d->imq.acceptedThreshold))
+                     ((int)finalQuality <= d->imq.acceptedThreshold))
             {
-                *d->label = PendingLabel;
+                if (d->imq.mediumQPending)
+                {
+                    *d->label = PendingLabel;
+                }
+
+                return;
             }
-            else
+            else if (d->imq.highQAccepted)
             {
                 *d->label = AcceptedLabel;
             }
         }
-    }
-    else
-    {
-        *d->label = NoPickLabel;
     }
 }
 
