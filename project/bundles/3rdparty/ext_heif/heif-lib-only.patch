@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index f522032..3d86a7c 100644
+index e37e012..86bc1f3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -169,5 +169,5 @@ if(WITH_EXAMPLES)
+@@ -150,8 +150,8 @@ if(WITH_EXAMPLES)
      add_subdirectory (examples)
  endif()
  add_subdirectory (libheif)
@@ -10,3 +10,6 @@ index f522032..3d86a7c 100644
 -add_subdirectory (gnome)
 +#add_subdirectory (gdk-pixbuf)
 +#add_subdirectory (gnome)
+ 
+ 
+ # --- packaging (source code)

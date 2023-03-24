@@ -9,10 +9,15 @@
 set(PREFIX_ext_heif "${EXTPREFIX}")
 
 set(Heif_Conf -DBUILD_SHARED_LIBS=ON
+              -DENABLE_PLUGIN_LOADING=OFF
               -DWITH_LIBDE265=ON
               -DWITH_X265=ON
-              -DWITH_AOM=OFF
+              -DWITH_AOM_DECODER=OFF
+              -DWITH_AOM_ENCODER=OFF
               -DWITH_RAV1E=OFF
+              -DWITH_RAV1E_PLUGIN=OFF
+              -DWITH_SvtEnc=OFF
+              -DWITH_SvtEnc_PLUGIN=OFF
               -DWITH_DAV1D=OFF
               -DWITH_EXAMPLES=OFF
 )
@@ -25,7 +30,7 @@ if(MINGW)
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/strukturag/libheif.git
-        GIT_TAG v1.13.0
+        GIT_TAG v1.15.1
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
@@ -51,7 +56,7 @@ elseif(APPLE)
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/strukturag/libheif.git
-        GIT_TAG v1.13.0
+        GIT_TAG v1.15.1
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
@@ -77,7 +82,7 @@ else() # Linux
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/strukturag/libheif.git
-        GIT_TAG v1.13.0
+        GIT_TAG v1.15.1
 
         PATCH_COMMAND git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-only.patch
 
