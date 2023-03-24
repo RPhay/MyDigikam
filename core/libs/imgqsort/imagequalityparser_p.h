@@ -54,26 +54,10 @@ class Q_DECL_HIDDEN ImageQualityParser::Private
 public:
 
     explicit Private()
-      : clusterCount     (30),               ///< used for k-means clustering algorithm in noise detection
-        size             (512),
-        edgeThresh       (1),
-        ratio            (3),
-        kernel_size      (3),
-        lowThreshold     (0.4),
-        blurrejected     (0.0),
-        blur             (0.0),
-        acceptedThreshold(0.0),
-        pendingThreshold (0.0),
-        rejectedThreshold(0.0),
-        calculator       (nullptr),
-        label            (nullptr),
-        running          (true)
+      : calculator(nullptr),
+        label     (nullptr),
+        running   (true)
     {
-        for (int c = 0 ; c < 3 ; ++c)
-        {
-            fimg[c] = nullptr;
-        }
-
         calculator = new ImageQualityCalculator();
     }
 
@@ -82,33 +66,9 @@ public:
         delete calculator;
     }
 
-    float*                  fimg[3];
-    const uint              clusterCount;
-    const uint              size;              ///< Size of squared original image.
-
-    Mat                     src_gray;          ///< Matrix of the grayscaled source image
-    Mat                     detected_edges;    ///< Matrix containing only edges in the image
-
-    int                     edgeThresh;        ///< threshold above which we say that edges are present at a point
-    int                     ratio;             ///< lower:upper threshold for canny edge detector algorithm
-    int                     kernel_size;       ///< kernel size for the Sobel operations to be performed internally by the edge detector
-
-    double                  lowThreshold;
-
     DImg                    image;             ///< original image
-    DImg                    neimage;           ///< noise estimation image[for color]
-    DImg                    img8;              ///< compression detector image on 8 bits
 
     ImageQualityContainer   imq;
-
-    double                  blurrejected;
-    double                  blur;
-
-    double                  acceptedThreshold;
-    double                  pendingThreshold;
-    double                  rejectedThreshold;
-
-    QString                 path;              ///< Path to host result file
 
     ImageQualityCalculator* calculator;
 
