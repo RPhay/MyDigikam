@@ -60,14 +60,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:45+0000\n"
-"PO-Revision-Date: 2023-03-15 16:27+0100\n"
+"PO-Revision-Date: 2023-03-24 17:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.80\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -3383,14 +3383,13 @@ msgstr ""
 "texto del pie de foto mediante el componente KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 "Se ha añadido un panel de configuración de la comprobación ortográfica en "
-"Configuración/Varios para digiKam y Showfoto."
+"Preferencias/Varios para digiKam y Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3401,12 +3400,11 @@ msgstr ""
 "idioma alternativo."
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Se ha añadido un panel de configuración de la localización en Configuración/"
+"Se ha añadido un panel de configuración de la localización en Preferencias/"
 "Varios para digiKam y Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
