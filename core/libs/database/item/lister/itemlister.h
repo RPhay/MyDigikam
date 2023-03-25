@@ -175,29 +175,6 @@ private:
                             double>& imageSimilarityMap);
     //@}
 
-    // -----------------------------------------------------------------------------
-
-    /** @name Operations with FAlbum
-     */
-
-    //@{
-
-public:
-
-    /**
-     * List the images which have faces. An image with n faces will be listed n times.
-     * FIXME: Obviously an ugly way. Should be trashed later in favor of a better method.
-     */
-    void listFaces(ItemListerReceiver* const receiver,
-                   int personId);
-
-private:
-
-    void listFromIdList(ItemListerReceiver* const receiver,
-                        const QList<qlonglong>& imageIds);
-
-    //@}
-
 private:
 
     // Disable
