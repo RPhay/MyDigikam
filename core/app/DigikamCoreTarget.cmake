@@ -164,6 +164,13 @@ target_link_libraries(digikamcore
                       opencv_flann
 )
 
+if(Qt6_FOUND)
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          Qt${QT_VERSION_MAJOR}::StateMachine
+    )
+endif()
+
 if(ENABLE_QWEBENGINE)
 
     target_link_libraries(digikamcore

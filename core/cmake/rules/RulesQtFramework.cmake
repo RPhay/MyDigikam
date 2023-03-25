@@ -43,6 +43,10 @@ find_package(Qt${QT_VERSION_MAJOR}
 
 if(Qt6_FOUND)
 
+    find_package(Qt${QT_VERSION_MAJOR} REQUIRED
+                 NO_MODULE COMPONENTS
+                 StateMachine
+    )
     find_package(Qt${QT_VERSION_MAJOR}
                  OPTIONAL_COMPONENTS
                  OpenGLWidgets
