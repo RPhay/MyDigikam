@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:45+0000\n"
-"PO-Revision-Date: 2023-03-15 18:09+0100\n"
+"PO-Revision-Date: 2023-03-24 09:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3367,14 +3367,13 @@ msgstr ""
 "component KF5::Sonnet toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"Configuratiepaneel voor spellingcontrole toevoegen in Setup/Misc voor "
-"digiKam en Showfoto."
+"Configuratiepaneel voor spellingcontrole toevoegen in Instellingen/Diversen "
+"voor digiKam en Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3385,13 +3384,12 @@ msgstr ""
 "taal toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Configuratiepaneel voor lokaliseren (taalregio) toevoegen in Setup/Misc voor "
-"digiKam en Showfoto."
+"Configuratiepaneel voor lokaliseren (taalregio) toevoegen in Instellingen/"
+"Diversen voor digiKam en Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
