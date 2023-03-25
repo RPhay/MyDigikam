@@ -342,7 +342,9 @@ bool MetadataHub::write(DMetadata& metadata,
     {
         if (d->itemPosition.hasCoordinates())
         {
-            dirty |= metadata.setGPSInfo(d->itemPosition.altitude(),
+            double altitude = d->itemPosition.altitude();
+
+            dirty |= metadata.setGPSInfo(d->itemPosition.hasAltitude() ? &altitude : nullptr,
                                          d->itemPosition.latitudeNumber(),
                                          d->itemPosition.longitudeNumber());
         }
