@@ -4163,7 +4163,7 @@ qlonglong CoreDB::getFirstItemWithFaceTag(int tagId) const
 
     if (values.isEmpty())
     {
-        return 0;
+        return -1;
     }
 
     return values.first().toLongLong();
