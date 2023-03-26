@@ -390,7 +390,7 @@ FaceTagsIface FacePipeline::editRegion(const ItemInfo& info,
 
     face.setRegion(newRegion);
 
-    return std::move(face);
+    return face;
 }
 
 FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
@@ -407,7 +407,7 @@ FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
     package->databaseFaces.setRole(FacePipelineFaceTagsIface::ForEditing);
     d->send(package);
 
-    return std::move(face);
+    return face;
 }
 
 void FacePipeline::remove(const ItemInfo& info,

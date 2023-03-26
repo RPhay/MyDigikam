@@ -354,7 +354,7 @@ void MapWidgetView::slotAllTrackFilesReady()
         return;
     }
 
-    const TrackManager::Track& track = d->trackManager->getTrackList().constFirst();
+    const TrackManager::Track track = d->trackManager->getTrackList().constFirst();
 
     if ((track.id != 0) && (track.points.size() > 0))
     {
