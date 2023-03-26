@@ -291,6 +291,7 @@ port install \
              py38-lxml \
              x265 \
              libde265 \
+             libheif \
              aom \
              ffmpeg \
              wget +ssl \
