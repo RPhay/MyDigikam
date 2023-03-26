@@ -135,7 +135,6 @@ set(libdatabase_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlister_palbum.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlister_talbum.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlister_salbum.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlister_falbum.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlisterrecord.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemlisterreceiver.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/item/lister/itemattributeswatch.cpp

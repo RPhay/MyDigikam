@@ -236,14 +236,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
         if (!format.isEmpty() && m_readFormats.contains(format))
         {
-            if (format == QLatin1String("WEBP"))
-            {
-                return 70;
-            }
-            else
-            {
-                return 90;
-            }
+            return 90;
         }
     }
 
@@ -254,14 +247,7 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     if (m_writeFormats.contains(format.toUpper()))
     {
-        if (format.toUpper() == QLatin1String("WEBP"))
-        {
-            return 70;
-        }
-        else
-        {
-            return 90;
-        }
+        return 90;
     }
 
     return 0;

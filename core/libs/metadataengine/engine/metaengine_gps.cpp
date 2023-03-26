@@ -29,6 +29,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "geodetictools.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -401,9 +402,27 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 
     try
     {
-        // In first, we need to clean up all existing GPS info.
+        // In first, we need to clean up all existing GPS info
+        // if the coordinate deviation is greater than 100 m.
 
-        removeGPSInfo();
+        double lat = 0.0;
+        double lon = 0.0;
+
+        if (getGPSLatitudeNumber(&lat) && getGPSLongitudeNumber(&lon))
+        {
+            GeodeticCalculator calc;
+            calc.setStartingGeographicPoint(lon, lat);
+            calc.setDestinationGeographicPoint(longitude, latitude);
+
+            if (calc.orthodromicDistance() > 100.0)
+            {
+                removeGPSInfo();
+            }
+        }
+        else
+        {
+            removeGPSInfo();
+        }
 
         // now re-initialize the GPS info:
 

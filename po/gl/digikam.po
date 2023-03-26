@@ -24106,7 +24106,9 @@ msgstr "Non se escolleu ningunha imaxe. Escolla as imaxes para enviar."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Warning"
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Aviso"

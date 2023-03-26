@@ -38,17 +38,17 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:45+0000\n"
-"PO-Revision-Date: 2023-03-16 11:16+0100\n"
+"PO-Revision-Date: 2023-03-25 10:06+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -3367,14 +3367,13 @@ msgstr ""
 "KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"Dodaj konfiguracijsko ploščo črkovalnika v nastavitvah/ostalo v digiKam in "
-"Showfoto."
+"Dodaj konfiguracijsko ploščo črkovalnika v meniju Nastavitve/Ostalo v "
+"digiKam in Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3385,13 +3384,12 @@ msgstr ""
 "alternativnih besedil."
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Dodaj konfiguracijsko ploščo za lokalizacijo v nastavitve/ostalo za digiKam "
-"in Showfoto."
+"Dodaj konfiguracijsko ploščo za lokalizacijo v meniju Nastavitve/Ostalo za "
+"digiKam in Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format

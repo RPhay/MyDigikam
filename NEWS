@@ -338,7 +338,7 @@ BUGFIXES:
 293 ==> 467643 - Ambigous text in UI - Setup/Misc.
 294 ==> 467736 - Image Quality Sort ignores disabled "Assign Pick Labels".
 295 ==> 467090 - Maps Window with Google Maps only empty.
-296 ==> 
+296 ==> 400579 - Add new option to preserve gps data with minor geolocation modificaiton.
 297 ==> 
 298 ==> 
 299 ==> 
