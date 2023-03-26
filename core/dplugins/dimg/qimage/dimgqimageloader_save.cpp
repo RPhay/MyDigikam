@@ -35,14 +35,13 @@ bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const o
     QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
     int quality          = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
 
-    if (quality < 0)
-    {
-        quality = 90;
-    }
-
-    if (quality > 100)
+    if      (quality > 100)
     {
         quality = 100;
+    }
+    else if (quality < 0)
+    {
+        quality = 90;
     }
 
     QVariant formatAttr      = imageGetAttribute(QLatin1String("format"));

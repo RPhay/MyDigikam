@@ -337,6 +337,48 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
         }
     }
 
+    // JXL file format.
+
+    if (mimeType.toUpper() == QLatin1String("JXL"))
+    {
+        if (iofileSettings->JXLLossLess)
+        {
+            attributes.insert(QLatin1String("quality"), 100);    // LossLess compression
+        }
+        else
+        {
+            attributes.insert(QLatin1String("quality"), iofileSettings->JXLCompression);
+        }
+    }
+
+    // WEBP file format.
+
+    if (mimeType.toUpper() == QLatin1String("WEBP"))
+    {
+        if (iofileSettings->WEBPLossLess)
+        {
+            attributes.insert(QLatin1String("quality"), 100);    // LossLess compression
+        }
+        else
+        {
+            attributes.insert(QLatin1String("quality"), iofileSettings->WEBPCompression);
+        }
+    }
+
+    // AVIF file format.
+
+    if (mimeType.toUpper() == QLatin1String("AVIF"))
+    {
+        if (iofileSettings->AVIFLossLess)
+        {
+            attributes.insert(QLatin1String("quality"), 100);    // LossLess compression
+        }
+        else
+        {
+            attributes.insert(QLatin1String("quality"), iofileSettings->AVIFCompression);
+        }
+    }
+
     return attributes;
 }
 
