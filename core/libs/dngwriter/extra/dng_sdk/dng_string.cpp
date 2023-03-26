@@ -27,7 +27,7 @@
 #   endif
 #endif
 
-#if qiPhone || qAndroid
+#if qLinux || qiPhone || qAndroid
 #include <ctype.h> // for isdigit
 #endif
 
