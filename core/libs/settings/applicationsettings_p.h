@@ -58,6 +58,7 @@
 #include "drawdecoder.h"
 #include "coredbaccess.h"
 #include "coredb.h"
+#include "haariface.h"
 
 namespace Digikam
 {
@@ -188,6 +189,7 @@ public:
     static const QString configDuplicatesSearchLastMaxSimilarity;
     static const QString configDuplicatesSearchLastAlbumTagRelation;
     static const QString configDuplicatesSearchLastRestrictions;
+    static const QString configDuplicatesSearchReferenceSelectionMethod;
     static const ApplicationSettings::OperationStrings configGroupingOperateOnAll;
 
     /// start up setting
@@ -343,6 +345,7 @@ public:
     int                                          duplicatesSearchLastMaxSimilarity;
     int                                          duplicatesSearchLastAlbumTagRelation;
     int                                          duplicatesSearchLastRestrictions;
+    HaarIface::RefImageSelMethod     duplicatesSearchLastReferenceImageSelectionMethod;
 
     /// Grouping operation settings
     ApplicationSettings::OperationModes          groupingOperateOnAll;

@@ -25,11 +25,13 @@
 
 #include "album.h"
 #include "maintenancetool.h"
+#include "haariface.h"
+#include "digikam_gui_export.h"
 
 namespace Digikam
 {
 
-class DuplicatesFinder : public MaintenanceTool
+class DIGIKAM_GUI_EXPORT DuplicatesFinder : public MaintenanceTool
 {
     Q_OBJECT
 
@@ -43,6 +45,8 @@ public:
                      int minSimilarity = 90,
                      int maxSimilarity = 100,
                      int searchResultRestriction = 0,
+                     HaarIface::RefImageSelMethod method = HaarIface::RefImageSelMethod::OlderOrLarger,
+                     const AlbumList& referenceImageAlbum = {},
                      ProgressItem* const parent = nullptr);
 
     ~DuplicatesFinder() override;

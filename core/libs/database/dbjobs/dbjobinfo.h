@@ -24,6 +24,7 @@
 
 #include "coredburl.h"
 #include "digikam_export.h"
+#include "haariface.h"
 
 namespace Digikam
 {
@@ -135,13 +136,16 @@ class DIGIKAM_DATABASE_EXPORT SearchesDBJobInfo : public DBJobInfo
 public:
 
     explicit SearchesDBJobInfo(QList<int>&& searchIds);
-    SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate);
+    SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate, HaarIface::RefImageSelMethod referenceSelectionMethod, QSet<qlonglong>&& refImageIds);
 
     bool isDuplicatesJob()            const;
     bool isAlbumUpdate()              const;
 
     const QList<int>& searchIds()     const;
     const QSet<qlonglong>& imageIds() const;
+
+    HaarIface::RefImageSelMethod refImageSelectionMethod() const;
+    const QSet<qlonglong>& refImageIds() const;
 
     void setMinThreshold(double t);
     double minThreshold()             const;
@@ -161,6 +165,8 @@ public:
     QSet<qlonglong>  m_imageIds;
     double           m_minThreshold;
     double           m_maxThreshold;
+    QSet<qlonglong>  m_refImageIds; // Image ids of the reference images if duplicates are available
+    HaarIface::RefImageSelMethod              m_refImageSelectionMethod;
 };
 
 // ---------------------------------------------

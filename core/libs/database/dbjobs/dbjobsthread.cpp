@@ -232,6 +232,7 @@ void SearchesDBJobsThread::searchesListing(const SearchesDBJobInfo& info)
         QSet<qlonglong>::const_iterator begin = info.imageIds().constBegin();
         QSet<qlonglong>::const_iterator end   = info.imageIds().constBegin();
 
+        // Split job on multiple threads
         for (int i = 0; i < threadsCount; ++i)
         {
             // The last thread should read until the end of the list.

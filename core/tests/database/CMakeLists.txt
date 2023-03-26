@@ -138,3 +138,22 @@ target_link_libraries(tagscache_utest
                       digikamdatabase
                       ${COMMON_TEST_LINK}
 )
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/haariface_utest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+
+              GUI
+)
+
+add_compile_definitions(haariface_utest PRIVATE digikamgui_EXPORT)

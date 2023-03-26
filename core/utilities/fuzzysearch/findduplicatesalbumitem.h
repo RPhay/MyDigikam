@@ -30,7 +30,7 @@
 namespace Digikam
 {
 
-class FindDuplicatesAlbumItem : public QTreeWidgetItem
+class DIGIKAM_GUI_EXPORT FindDuplicatesAlbumItem : public QTreeWidgetItem
 {
 
 public:

@@ -41,6 +41,8 @@
 #include "albumselectors.h"
 #include "similaritydb.h"
 #include "similaritydbaccess.h"
+#include "albumselectcombobox.h"
+#include "albumtreeview.h"
 #include "findduplicatesalbum.h"
 #include "findduplicatesalbumitem.h"
 #include "duplicatesfinder.h"
@@ -81,10 +83,12 @@ public:
     QLabel*              similarityLabel;
     QLabel*              restrictResultsLabel;
     QLabel*              albumTagRelationLabel;
+    QLabel*              refImageSelMethodLabel;
 
     DIntRangeBox*        similarityRange;
     SqueezedComboBox*    searchResultRestriction;
     SqueezedComboBox*    albumTagRelation;
+    SqueezedComboBox*    refImageSelMethod;
 
     QPushButton*         findDuplicatesBtn;
     QPushButton*         updateFingerPrtBtn;
@@ -95,6 +99,7 @@ public:
     ProgressItem*        progressItem;
 
     AlbumSelectors*      albumSelectors;
+    AlbumSelectors* refImageAlbumSelector;
 
     ApplicationSettings* settings;
 
@@ -188,6 +193,22 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
     d->albumTagRelation->setCurrentIndex(ApplicationSettings::instance()->getDuplicatesAlbumTagRelation());
 
+    const auto refSelMethod = ApplicationSettings::instance()->getDuplicatesRefImageSelMethod();
+    d->refImageSelMethod      = new SqueezedComboBox();
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Older or Larger") ,  (unsigned int)HaarIface::RefImageSelMethod::OlderOrLarger);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer selected folder as reference") ,  (unsigned int)HaarIface::RefImageSelMethod::PreferFolder);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer other than selected folder as reference") , (unsigned int)HaarIface::RefImageSelMethod::ExcludeFolder);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer Newer Creation Date") , (unsigned int)HaarIface::RefImageSelMethod::NewerCreationDate);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer Newer Modification Date") , (unsigned int)HaarIface::RefImageSelMethod::NewerModificationDate);
+    d->refImageSelMethod->setCurrentIndex(d->refImageSelMethod->findData((unsigned int)refSelMethod));
+    d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method", "Select method for reference image selection"));
+
+    d->refImageSelMethodLabel = new QLabel(i18nc("@label", "Reference Image Selection Method:"));
+    d->refImageSelMethodLabel->setBuddy(d->refImageSelMethod);
+
+    d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"), nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+    d->refImageAlbumSelector->setVisible(refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder || refSelMethod == HaarIface::RefImageSelMethod::PreferFolder);
+
     QString tip = i18nc("@info",
                         "Use this option to decide about the relation of the selected albums and tags.\n"
                         "\"One of\" means that the images are either in the selected albums or tags.\n"
@@ -195,7 +216,6 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                         "\"Albums but not tags\" means that images must be in the selected albums but not tags.\n"
                         "\"Tags but not albums\" means that images must be in the selected tags but not albums.\n"
                         "\"Only selected tab\" means that only the selected tab is used.");
-
     d->albumTagRelation->setToolTip(tip);
 
     // Load the last choice from application settings.
@@ -216,16 +236,19 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
-    mainLayout->addWidget(d->albumTagRelationLabel,   1, 0, 1,  2);
-    mainLayout->addWidget(d->albumTagRelation,        1, 2, 1, -1);
-    mainLayout->addWidget(d->albumSelectors,          2, 0, 1, -1);
-    mainLayout->addWidget(d->similarityLabel,         3, 0, 1,  1);
-    mainLayout->addWidget(d->similarityRange,         3, 2, 1,  1);
-    mainLayout->addWidget(d->restrictResultsLabel,    4, 0, 1,  2);
-    mainLayout->addWidget(d->searchResultRestriction, 4, 2, 1, -1);
-    mainLayout->addWidget(d->updateFingerPrtBtn,      5, 0, 1, -1);
-    mainLayout->addWidget(d->findDuplicatesBtn,       6, 0, 1, -1);
-    mainLayout->addWidget(d->removeDuplicatesBtn,     7, 0, 1, -1);
+    mainLayout->addWidget(d->refImageSelMethodLabel,  1, 0, 1,  -1);
+    mainLayout->addWidget(d->refImageSelMethod,       2, 0, 1, -1);
+    mainLayout->addWidget(d->refImageAlbumSelector,   3, 0, 1, -1);
+    mainLayout->addWidget(d->albumTagRelationLabel,   4, 0, 1,  2);
+    mainLayout->addWidget(d->albumTagRelation,        4, 2, 1, -1);
+    mainLayout->addWidget(d->albumSelectors,          5, 0, 1, -1);
+    mainLayout->addWidget(d->similarityLabel,         6, 0, 1,  1);
+    mainLayout->addWidget(d->similarityRange,         6, 2, 1,  1);
+    mainLayout->addWidget(d->restrictResultsLabel,    7, 0, 1,  2);
+    mainLayout->addWidget(d->searchResultRestriction, 7, 2, 1, -1);
+    mainLayout->addWidget(d->updateFingerPrtBtn,      8, 0, 1, -1);
+    mainLayout->addWidget(d->findDuplicatesBtn,       9, 0, 1, -1);
+    mainLayout->addWidget(d->removeDuplicatesBtn,     10, 0, 1, -1);
 
     mainLayout->setRowStretch(0, 10);
     mainLayout->setColumnStretch(2, 10);
@@ -255,11 +278,14 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
+
+    connect(d->refImageSelMethod, QOverload<int>::of(&SqueezedComboBox::currentIndexChanged), this, &FindDuplicatesView::slotReferenceSelectionMethodChanged);
 }
 
 FindDuplicatesView::~FindDuplicatesView()
 {
     d->albumSelectors->saveState();
+    d->refImageAlbumSelector->saveState();
     delete d;
 }
 
@@ -309,6 +335,7 @@ void FindDuplicatesView::populateTreeView()
 
         if (salbum && salbum->isDuplicatesSearch() && !salbum->extraData(this))
         {
+            // Adding item to listView by creating an item and passing listView as parent
             FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(d->listView, salbum);
             salbum->setExtraData(this, item);
         }
@@ -325,6 +352,7 @@ void FindDuplicatesView::populateTreeView()
     d->listView->sortByColumn(1, Qt::DescendingOrder);
 
     d->albumSelectors->loadState();
+    d->refImageAlbumSelector->loadState();
 
     if (waitCursor)
     {
@@ -455,8 +483,10 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->albumTagRelation->setEnabled(val);
     d->similarityRange->setEnabled(val);
     d->albumSelectors->setEnabled(val);
+    d->refImageSelMethod->setEnabled(val);
 
     d->albumTagRelationLabel->setEnabled(val);
+    d->refImageSelMethodLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
     d->similarityLabel->setEnabled(val);
 }
@@ -464,11 +494,13 @@ void FindDuplicatesView::enableControlWidgets(bool val)
 void FindDuplicatesView::slotFindDuplicates()
 {
     d->albumSelectors->saveState();
+    d->refImageAlbumSelector->saveState();
     enableControlWidgets(false);
     slotClear();
 
     AlbumList albums;
     AlbumList tags;
+    AlbumList referenceImageSelector;
 
     if (d->albumTagRelation->itemData(d->albumTagRelation->currentIndex()).toInt() == HaarIface::AlbumTagRelation::NoMix)
     {
@@ -487,13 +519,20 @@ void FindDuplicatesView::slotFindDuplicates()
         tags   = d->albumSelectors->selectedTags();
     }
 
+    const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->itemData(d->refImageSelMethod->currentIndex()).toUInt();
+    if (referenceImageSelectionMethod != HaarIface::RefImageSelMethod::OlderOrLarger)
+    {
+        referenceImageSelector = d->refImageAlbumSelector->selectedAlbums();
+    }
+
     AlbumManager::instance()->clearCurrentAlbums();
     SimilarityDbAccess().db()->clearImageSimilarity();
 
     DuplicatesFinder* const finder = new DuplicatesFinder(albums, tags,
                                                           d->albumTagRelation->itemData(d->albumTagRelation->currentIndex()).toInt(),
                                                           d->similarityRange->minValue(), d->similarityRange->maxValue(),
-                                                          d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt());
+                                                          d->searchResultRestriction->itemData(d->searchResultRestriction->currentIndex()).toInt(),
+                                                          referenceImageSelectionMethod, referenceImageSelector);
 
     connect(finder, SIGNAL(signalComplete()),
             this, SLOT(slotComplete()));
@@ -522,6 +561,12 @@ void FindDuplicatesView::slotUpdateDuplicates(const QList<SAlbum*>& sAlbumsToReb
 void FindDuplicatesView::slotApplicationSettingsChanged()
 {
     d->similarityRange->setRange(d->settings->getMinimumSimilarityBound(), 100);
+}
+
+void FindDuplicatesView::slotReferenceSelectionMethodChanged(int index)
+{
+   auto method = static_cast<HaarIface::RefImageSelMethod>(d->refImageSelMethod->itemData(index).toUInt());
+   d->refImageAlbumSelector->setVisible(method == HaarIface::RefImageSelMethod::ExcludeFolder || method == HaarIface::RefImageSelMethod::PreferFolder);
 }
 
 void FindDuplicatesView::slotComplete()

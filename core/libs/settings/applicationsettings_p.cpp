@@ -132,6 +132,7 @@ const QString ApplicationSettings::Private::configDuplicatesSearchLastMinSimilar
 const QString ApplicationSettings::Private::configDuplicatesSearchLastMaxSimilarity(QLatin1String("Last maximum similarity"));
 const QString ApplicationSettings::Private::configDuplicatesSearchLastAlbumTagRelation(QLatin1String("Last search album tag relation"));
 const QString ApplicationSettings::Private::configDuplicatesSearchLastRestrictions(QLatin1String("Last search results restriction"));
+const QString ApplicationSettings::Private::configDuplicatesSearchReferenceSelectionMethod(QLatin1String("Last reference image method"));
 const ApplicationSettings::OperationStrings ApplicationSettings::Private::configGroupingOperateOnAll =
         ApplicationSettings::Private::createConfigGroupingOperateOnAll();
 
@@ -245,6 +246,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       duplicatesSearchLastMaxSimilarity     (100),
       duplicatesSearchLastAlbumTagRelation  (0),
       duplicatesSearchLastRestrictions      (0),
+      duplicatesSearchLastReferenceImageSelectionMethod (HaarIface::RefImageSelMethod::OlderOrLarger),
       groupingOperateOnAll                  (ApplicationSettings::OperationModes()),
       q                                     (qq)
 {
@@ -379,6 +381,7 @@ void ApplicationSettings::Private::init()
     duplicatesSearchLastMaxSimilarity    = 100;
     duplicatesSearchLastAlbumTagRelation = 0;
     duplicatesSearchLastRestrictions     = 0;
+    duplicatesSearchLastReferenceImageSelectionMethod = HaarIface::RefImageSelMethod::OlderOrLarger;
 
     scanAtStart                          = true;
     cleanAtStart                         = true;

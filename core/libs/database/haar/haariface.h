@@ -86,6 +86,23 @@ public:
         TagExclusive    = 4
     };
 
+    /*!
+     * \brief The RefImageSelMethod enum
+     * Selection method to determine which image
+     * will be the reference in the duplicate search
+     *
+     * When adding method here, update also
+     * HaarIface::findDuplicates()
+     */
+    enum class RefImageSelMethod: unsigned int
+    {
+        OlderOrLarger = 0, // Original
+        PreferFolder = 1, // Prefer select folder to be the reference
+        ExcludeFolder = 2, // Prefer image not in the selected folder
+        NewerCreationDate = 3, // Prefer newer creation date image
+        NewerModificationDate = 4, // Prefer newer modification date image
+    };
+
     using DuplicatesResultsMap = QMap<qlonglong, QPair<double, QList<qlonglong> > >;
 
 public:
@@ -174,6 +191,8 @@ public:
         const QSet<qlonglong>& images2Scan,
         const QSet<qlonglong>::const_iterator& rangeBegin,
         const QSet<qlonglong>::const_iterator& rangeEnd,
+        RefImageSelMethod refImageSelectionMethod,
+        const QSet<qlonglong>& refs,
         double requiredPercentage,
         double maximumPercentage,
         DuplicatesSearchRestrictions searchResultRestriction = DuplicatesSearchRestrictions::None,
@@ -228,6 +247,17 @@ private:
                                              const QList<int>& targetAlbums,
                                              SketchType type);
 
+    /**
+     * @brief bestMatchesWithThreshold
+     * @param imageid
+     * @param querySig
+     * @param requiredPercentage
+     * @param maximumPercentage
+     * @param targetAlbums
+     * @param searchResultRestriction
+     * @param type
+     * @return (av. similarity, Maps with images and similarity)
+     */
     QPair<double, QMap<qlonglong, double> > bestMatchesWithThreshold(qlonglong imageid,
                                                                      Haar::SignatureData* const querySig,
                                                                      double requiredPercentage,

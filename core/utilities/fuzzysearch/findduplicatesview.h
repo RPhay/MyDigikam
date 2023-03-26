@@ -58,6 +58,12 @@ private Q_SLOTS:
     void slotAlbumDeleted(Album* a);
     void slotSearchUpdated(SAlbum* a);
     void slotSelectItemsTimer();
+    /*!
+     * \brief slotClear
+     * Remove extradata from every album stored in the listview
+     * This extra data is used to indicate that the album was already
+     * processed
+     */
     void slotClear();
     void slotFindDuplicates();
     void slotUpdateDuplicates(const QList<SAlbum*>& sAlbumsToRebuild,
@@ -67,6 +73,7 @@ private Q_SLOTS:
     void slotUpdateFingerPrints();
     void slotCheckForValidSettings();
     void slotApplicationSettingsChanged();
+    void slotReferenceSelectionMethodChanged(int index);
 
 private:
 

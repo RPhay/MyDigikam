@@ -333,6 +333,15 @@ int  ApplicationSettings::getDuplicatesAlbumTagRelation() const
     return d->duplicatesSearchLastAlbumTagRelation;
 }
 
+void ApplicationSettings::setDuplicatesReferenceImageSelectionMethod(HaarIface::RefImageSelMethod val)
+{
+    d->duplicatesSearchLastReferenceImageSelectionMethod = val;
+}
+
+HaarIface::RefImageSelMethod ApplicationSettings::getDuplicatesRefImageSelMethod() const {
+    return d->duplicatesSearchLastReferenceImageSelectionMethod;
+}
+
 
 void ApplicationSettings::setDuplicatesSearchRestrictions(int val)
 {

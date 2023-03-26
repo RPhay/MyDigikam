@@ -195,14 +195,16 @@ SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
 {
 }
 
-SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate)
+SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate, HaarIface::RefImageSelMethod referenceSelectionMethod, QSet<qlonglong> &&refImageIds)
     : DBJobInfo                 (),
       m_duplicates              (true),
       m_albumUpdate             (isAlbumUpdate),
       m_searchResultRestriction (0),
       m_imageIds                (std::move(imageIds)),
       m_minThreshold            (0.4),
-      m_maxThreshold            (1)
+      m_maxThreshold            (1),
+      m_refImageSelectionMethod (referenceSelectionMethod),
+      m_refImageIds             (std::move(refImageIds))
 {
 }
 
@@ -234,6 +236,14 @@ const QList<int>& SearchesDBJobInfo::searchIds() const
 const QSet<qlonglong>& SearchesDBJobInfo::imageIds() const
 {
     return m_imageIds;
+}
+
+const QSet<qlonglong>& SearchesDBJobInfo::refImageIds() const {
+    return m_refImageIds;
+}
+
+HaarIface::RefImageSelMethod SearchesDBJobInfo::refImageSelectionMethod() const {
+    return m_refImageSelectionMethod;
 }
 
 void SearchesDBJobInfo::setMinThreshold(double t)

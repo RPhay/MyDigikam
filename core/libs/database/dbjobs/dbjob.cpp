@@ -378,6 +378,8 @@ void SearchesJob::runFindDuplicates()
     auto results     = m_iface->findDuplicates(m_jobInfo.imageIds(),
                                                m_begin,
                                                m_end,
+                                               m_jobInfo.refImageSelectionMethod(),
+                                               m_jobInfo.refImageIds(),
                                                m_jobInfo.minThreshold(),
                                                m_jobInfo.maxThreshold(),
                                                restriction,

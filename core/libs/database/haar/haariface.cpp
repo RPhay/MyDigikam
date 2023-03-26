@@ -17,6 +17,14 @@
  * ============================================================ */
 
 #include "haariface_p.h"
+#include <iostream>
+
+#define ENABLE_DEBUG_DUPLICATES 0
+#if ENABLE_DEBUG_DUPLICATES
+#   define DEBUG_DUPLICATES(x) std::cout << x << std::endl;
+#else
+#   define DEBUG_DUPLICATES(x)
+#endif
 
 namespace Digikam
 {
@@ -751,6 +759,8 @@ QSet<qlonglong> HaarIface::imagesFromAlbumsAndTags(const QList<int>& albums2Scan
 HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>& images2Scan,
                                                           const QSet<qlonglong>::const_iterator& rangeBegin,
                                                           const QSet<qlonglong>::const_iterator& rangeEnd,
+                                                          RefImageSelMethod refImageSelectionMethod,
+                                                          const QSet<qlonglong>& refs,
                                                           double requiredPercentage,
                                                           double maximumPercentage,
                                                           DuplicatesSearchRestrictions searchResultRestriction,
@@ -775,6 +785,15 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
     for (images2ScanIterator = rangeBegin ; images2ScanIterator != rangeEnd ; ++images2ScanIterator)
     {
+#if ENABLE_DEBUG_DUPLICATES
+        {
+            ItemInfo info(*images2ScanIterator);
+            const QString path = info.filePath();
+            const QString name = info.name();
+            DEBUG_DUPLICATES("Iterate image: " << name.toStdString() << "Path: " << path.toStdString());
+        }
+#endif
+
         if (observer && observer->isCanceled())
         {
             break;
@@ -799,33 +818,105 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             if (!(duplicates.isEmpty()) && !((duplicates.count() == 1) && (duplicates.first() == *images2ScanIterator)))
             {
+                DEBUG_DUPLICATES("\tHas duplicates");
                 // Use the oldest image date or larger pixel/file size as the reference image.
+                // Or if the image is in the refImage list
 
                 QDateTime refDateTime;
+                QDateTime refModDateTime;
                 quint64   refPixelSize  = 0;
                 qlonglong refFileSize   = 0;
                 qlonglong reference     = *images2ScanIterator;
 
-                Q_FOREACH (const qlonglong& refId, duplicates)
-                {
-                    ItemInfo info(refId);
-                    quint64 infoPixelSize = (quint64)info.dimensions().width() *
-                                            (quint64)info.dimensions().height();
+                const bool useReferenceImages = (refImageSelectionMethod == RefImageSelMethod::PreferFolder) || (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder);
 
-                    if (
-                        !refDateTime.isValid()             ||
-                        (infoPixelSize    >  refPixelSize) ||
-                        ((infoPixelSize   == refPixelSize) &&
-                         (info.fileSize() >  refFileSize)) ||
-                        ((infoPixelSize   == refPixelSize) &&
-                         (info.fileSize() == refFileSize)  &&
-                         (info.dateTime() <  refDateTime))
-                       )
+                bool referenceFound = false;
+                if (useReferenceImages) {
+                    for (auto it = refs.begin(); it != refs.end(); it++) {
+#if ENABLE_DEBUG_DUPLICATES
+                        {
+                            ItemInfo info(*it);
+                            const QString path = info.filePath();
+                            const QString name = info.name();
+                            DEBUG_DUPLICATES("\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                        }
+#endif
+                        if (*it == *images2ScanIterator) {
+                            // image of images2ScanIterator is already in the references present, so take it as the
+                            // reference
+                            DEBUG_DUPLICATES("\tReference found!");
+                            referenceFound = true;
+                            break;
+                        }
+                    }
+                }
+
+
+                if (!useReferenceImages || (!referenceFound && refImageSelectionMethod == RefImageSelMethod::PreferFolder) || (referenceFound && refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)) {
+                    DEBUG_DUPLICATES("\tChecking Duplicates")
+                    Q_FOREACH (const qlonglong& refId, duplicates)
                     {
-                        reference    = refId;
-                        refDateTime  = info.dateTime();
-                        refFileSize  = info.fileSize();
-                        refPixelSize = infoPixelSize;
+#if ENABLE_DEBUG_DUPLICATES
+                        {
+                            ItemInfo info(refId);
+                            const QString path = info.filePath();
+                            const QString name = info.name();
+                            DEBUG_DUPLICATES("\t\tDuplicates: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                        }
+#endif
+
+                        ItemInfo info(refId);
+                        quint64 infoPixelSize = (quint64)info.dimensions().width() *
+                                                (quint64)info.dimensions().height();
+
+                        bool referenceFound = false;
+                        if (useReferenceImages) {
+                            for (auto it = refs.begin(); it != refs.end(); it++) {
+#if ENABLE_DEBUG_DUPLICATES
+                                {
+                                    ItemInfo info(*it);
+                                    const QString path = info.filePath();
+                                    const QString name = info.name();
+                                    DEBUG_DUPLICATES("\t\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                                }
+#endif
+                                if (*it == refId) {
+                                    DEBUG_DUPLICATES("\t\tReference found!");
+                                    referenceFound = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        const bool preferFolderCond = referenceFound && refImageSelectionMethod == RefImageSelMethod::PreferFolder;
+                        const bool excludeFolderCond = !referenceFound && refImageSelectionMethod == RefImageSelMethod::ExcludeFolder;
+                        const bool newerCreationCond = refImageSelectionMethod == RefImageSelMethod::NewerCreationDate && (!refDateTime.isValid() || (info.dateTime() >  refDateTime));
+                        const bool newerModCond = refImageSelectionMethod == RefImageSelMethod::NewerCreationDate && (!refModDateTime.isValid() || (info.modDateTime() >  refModDateTime));
+                        const bool olderOrLargerCond =  refImageSelectionMethod == RefImageSelMethod::OlderOrLarger && (!refDateTime.isValid() ||
+                                                        (infoPixelSize    >  refPixelSize) ||
+                                                        ((infoPixelSize   == refPixelSize) && (info.fileSize() >  refFileSize)) ||
+                                                        ((infoPixelSize   == refPixelSize) && (info.fileSize() == refFileSize)  && (info.dateTime() <  refDateTime)));
+
+                        if (preferFolderCond || excludeFolderCond || newerCreationCond || newerModCond || olderOrLargerCond)
+                        {
+                            reference    = refId;
+                            refDateTime  = info.dateTime();
+                            refModDateTime = info.modDateTime();
+                            refFileSize  = info.fileSize();
+                            refPixelSize = infoPixelSize;
+
+#if ENABLE_DEBUG_DUPLICATES
+                            {
+                                const QString path = info.filePath();
+                                const QString name = info.name();
+                                DEBUG_DUPLICATES("\t\tUse as eference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id() << "Pixelsize: " << infoPixelSize << ", File size: " << refFileSize << ", Datetime: " << refDateTime.toString().toStdString());
+                            }
+#endif
+
+                            if (preferFolderCond || excludeFolderCond) {
+                                break;
+                            }
+                        }
                     }
                 }
 
@@ -850,6 +941,17 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
             observer->imageProcessed();
         }
     }
+#if ENABLE_DEBUG_DUPLICATES
+    DEBUG_DUPLICATES("Results:");
+    for (auto i=resultsMap.constBegin(); i != resultsMap.constEnd(); i++) {
+        {
+            ItemInfo info(i.key());
+            const QString path = info.filePath();
+            const QString name = info.name();
+            DEBUG_DUPLICATES("\t\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+        }
+    }
+#endif
 
     return resultsMap;
 }

@@ -289,6 +289,7 @@ void ApplicationSettings::readSettings()
     d->duplicatesSearchLastMaxSimilarity     = group.readEntry(d->configDuplicatesSearchLastMaxSimilarity,    100);
     d->duplicatesSearchLastAlbumTagRelation  = group.readEntry(d->configDuplicatesSearchLastAlbumTagRelation, 0);
     d->duplicatesSearchLastRestrictions      = group.readEntry(d->configDuplicatesSearchLastRestrictions,     0);
+    d->duplicatesSearchLastReferenceImageSelectionMethod = (HaarIface::RefImageSelMethod)group.readEntry(d->configDuplicatesSearchReferenceSelectionMethod, (unsigned int)HaarIface::RefImageSelMethod::OlderOrLarger);
 
     // ---------------------------------------------------------------------
 
@@ -468,6 +469,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configDuplicatesSearchLastMaxSimilarity,       d->duplicatesSearchLastMaxSimilarity);
     group.writeEntry(d->configDuplicatesSearchLastAlbumTagRelation,    d->duplicatesSearchLastAlbumTagRelation);
     group.writeEntry(d->configDuplicatesSearchLastRestrictions,        d->duplicatesSearchLastRestrictions);
+    group.writeEntry(d->configDuplicatesSearchReferenceSelectionMethod,    (unsigned int)d->duplicatesSearchLastReferenceImageSelectionMethod);
 
     group = config->group(d->configGroupGrouping);
 

@@ -34,6 +34,7 @@
 #include "dbengineparameters.h"
 #include "versionmanager.h"
 #include "digikam_export.h"
+#include "haariface.h"
 
 class KConfigGroup;
 
@@ -546,6 +547,9 @@ public:
 
     void setDuplicatesAlbumTagRelation(int val);
     int  getDuplicatesAlbumTagRelation() const;
+
+    void setDuplicatesReferenceImageSelectionMethod(HaarIface::RefImageSelMethod val);
+    HaarIface::RefImageSelMethod getDuplicatesRefImageSelMethod() const;
 
     void setDuplicatesSearchRestrictions(int val);
     int  getDuplicatesSearchRestrictions() const;
