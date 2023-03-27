@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:45+0000\n"
-"PO-Revision-Date: 2023-03-11 04:52\n"
+"PO-Revision-Date: 2023-03-26 02:18\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3226,8 +3226,7 @@ msgid ""
 msgstr "使用 KF5::Sonnet 组件在标题文字控件中添加拼写检查支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
@@ -3240,8 +3239,7 @@ msgid ""
 msgstr "为替代语言文字编辑器控件添加在线翻译服务支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加本地化配置面板。"
@@ -10921,7 +10919,7 @@ msgstr "目标类型"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:67
 #, kde-format
 msgid "&Local or web target used by GoogleEarth"
-msgstr "谷歌地球使用的本机或网络目标(&L)"
+msgstr "谷歌地球使用的本地或者网络目标(&L)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
@@ -26707,7 +26705,7 @@ msgid ""
 "work well for your local hard disk."
 msgstr ""
 "无法在您的系统中识别位于此路径的存储媒介。它在添加时将使用文件路径作为其唯一"
-"的识别方式。这对于本机存储设备而言不会构成问题。"
+"的识别方式。这对于本地存储设备而言不会构成问题。"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:421
 #, kde-format
@@ -26715,7 +26713,7 @@ msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
 "not support smb:// URLs. "
 msgstr ""
-"对不起，digiKam 目前不支持 smb:// URL。请先将 Samba 共享位置挂载到本机，然后"
+"对不起，digiKam 目前不支持 smb:// URL。请先将 Samba 共享位置挂载到本地，然后"
 "再添加它们。"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:426
@@ -27589,8 +27587,8 @@ msgid ""
 "the default and recommended backend for collections with less than 100K "
 "items.</p>"
 msgstr ""
-"<p>在此选择数据库后端程序。</p><p><b>SQLite</b> 后端程序适用于数据库存储于本"
-"机的中小规模相册集合。此为默认设置，推荐 100K 件项目以内的相册集合使用。</p>"
+"<p>在此选择数据库后端程序。</p><p><b>SQLite</b> 后端程序适用于数据库存储在本"
+"地的中小规模相册集合。此为默认设置，推荐 100K 件项目以内的相册集合使用。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
 #, kde-format
@@ -27599,8 +27597,8 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
-"<p><b>MySQL 本机服务器</b>后端程序适用于数据库存储于本机的大型相册集合。推荐"
-"超过 100K 件项目的本机相册集合使用。</p>"
+"<p><b>MySQL 本地服务器</b>后端程序适用于数据库存储在本地的大型相册集合。推荐"
+"超过 100K 件项目的本地相册集合使用。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:85
 #, kde-format
@@ -27696,7 +27694,7 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 "这是正在运行该 MySQL 服务器的计算机名称。\n"
-"对于本机服务器而言它可能是“localhost”，\n"
+"对于本地服务器而言它可能是“localhost”，\n"
 "对于远程计算机而言则可能是该计算机的网络名称或 IP 地址。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:188
@@ -27822,7 +27820,7 @@ msgstr ""
 "这些缩略图将使用小波算法进行压缩。\n"
 "此数据库将在短时间内占用大量空间，\n"
 "尤其是在相册集合规模庞大的时候。\n"
-"请为该 SQLite 数据库选择一个本机文件夹。"
+"请为该 SQLite 数据库选择一个本地文件夹。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #, kde-format
@@ -47707,7 +47705,7 @@ msgstr "输入自定义文件夹视图路径或从历史中选择"
 #, kde-format
 msgctxt "@info: folder-view path edit"
 msgid "Enter local path here..."
-msgstr "在此输入本机路径..."
+msgstr "在此输入本地路径..."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:286
 #, kde-format
@@ -50566,7 +50564,7 @@ msgid ""
 "any local folder, even one that already contains images.<br/> More folders "
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
-"<p>请设置您保存图像的位置。</p> <p>可选择任意一个本机文件夹，它可以是空文件"
+"<p>请设置您保存图像的位置。</p> <p>可选择任意一个本地文件夹，它可以是空文件"
 "夹，也可以包含图像。<br/>您日后还可以在 <b>设置</b> 菜单的 <b>配置</b> 对话框"
 "添加更多文件夹。</p> "
 
@@ -53857,7 +53855,7 @@ msgid ""
 "\n"
 "https://www.digikam.org/?q=contact"
 msgstr ""
-"\"已挂载相机\"驱动程序是一套简易程序接口，相机存储设备通过它挂载到本机系统。"
+"\"已挂载相机\"驱动程序是一套简易程序接口，相机存储设备通过它挂载到本地系统。"
 "它并不使用 libgphoto2 驱动程序。要报告此驱动程序的问题，请联系 digiKam 团队："
 "https://www.digikam.org/?q=contact"
 
@@ -58477,7 +58475,7 @@ msgstr "您想要从相册集合列表移除相册集合“%1”吗？"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Local Collections"
-msgstr "本机集合"
+msgstr "本地集合"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:934
 #: core/utilities/setup/collections/setupcollectionview.cpp:1671
@@ -59149,20 +59147,16 @@ msgstr ""
 "的图像文件格式规范。它是一种开放、且无需版权费用的编码格式</item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "从所选文件重新读取元数据"
+msgstr "保存高级元数据配置文件"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "移除文件元数据"
+msgstr "加载高级元数据配置文件"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -59233,18 +59227,14 @@ msgid "Revert Changes"
 msgstr "还原更改"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "保存文件"
+msgstr "保存配置"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "档案"
+msgstr "加载配置"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format

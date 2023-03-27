@@ -36,7 +36,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 00:45+0000\n"
-"PO-Revision-Date: 2023-03-10 17:28+0000\n"
+"PO-Revision-Date: 2023-03-26 14:33+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -3311,13 +3311,13 @@ msgstr ""
 "component."
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"Add Spellcheck configuration panel in Setup/Misc for digiKam and Showfoto."
+"Add Spellcheck configuration panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3327,12 +3327,12 @@ msgstr ""
 "Add online translations support to Alternative Language text editor widget."
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Add Localize configuration panel in Setup/Misc for digiKam and Showfoto."
+"Add Localise configuration panel in Settings/Miscellaneous for digiKam and "
+"Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -60644,20 +60644,16 @@ msgstr ""
 "encoding format. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Reread Metadata From File"
+msgstr "Save Advanced Metadata Profile"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Remove metadata from file"
+msgstr "Load Advanced Metadata Profile"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -60729,18 +60725,14 @@ msgid "Revert Changes"
 msgstr "Revert Changes"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Save File"
+msgstr "Save Profile"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profile"
+msgstr "Load Profile"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
