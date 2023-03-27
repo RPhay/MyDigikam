@@ -340,7 +340,7 @@ BUGFIXES:
 295 ==> 467090 - Maps Window with Google Maps only empty.
 296 ==> 400579 - Add new option to preserve gps data with minor geolocation modification.
 297 ==> 463785 - Slideshow starts with black screen and digikam crashes.
-298 ==> 
+298 ==> 467473 - digiKam crashes when viewing pictures in full screen mode - Windows 10.
 299 ==> 
 300 ==> 
 301 ==> 
