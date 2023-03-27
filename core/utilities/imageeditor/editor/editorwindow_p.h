@@ -84,9 +84,6 @@
 #   include <kopenwithdialog.h>
 #endif
 
-#include <kservicetype.h>
-#include <kservicetypetrader.h>
-
 // Restore warnings
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
