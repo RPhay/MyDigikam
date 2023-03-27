@@ -35,7 +35,6 @@
 #include <QFile>
 #include <QPointer>
 #include <QXmlStreamAttributes>
-#include <QStringRef>
 #include <QString>
 #include <QStandardPaths>
 #include <QIcon>

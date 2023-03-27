@@ -30,7 +30,9 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QTextStream>
-#include <QTextCodec>
+#if (QT_VERSION <= QT_VERSION_CHECK(5, 99, 0))
+    #include <QTextCodec>
+#endif
 
 // KDE includes
 

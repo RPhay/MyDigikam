@@ -21,7 +21,6 @@
 // Qt includes
 
 #include <QMap>
-#include <QRegExp>
 #include <QWidget>
 
 // Local includes

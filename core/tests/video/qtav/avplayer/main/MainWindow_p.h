@@ -28,7 +28,9 @@
 #include <QActionGroup>
 #include <QDesktopServices>
 #include <QFileInfo>
-#include <QTextCodec>
+#if (QT_VERSION <= QT_VERSION_CHECK(5, 99, 0))
+    #include <QTextCodec>
+#endif
 #include <QTextStream>
 #include <QUrl>
 #include <QGraphicsOpacityEffect>

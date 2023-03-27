@@ -22,7 +22,6 @@
 #include <QIcon>
 #include <QMenu>
 #include <QPushButton>
-#include <QRegExp>
 #include <QStyle>
 #include <QToolButton>
 

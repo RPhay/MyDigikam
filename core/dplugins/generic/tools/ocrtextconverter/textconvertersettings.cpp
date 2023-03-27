@@ -246,7 +246,7 @@ void TextConverterSettings::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Text Converter Settings"));
     OcrOptions opt;
-    opt.language       = group.readEntry("OcrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
+    opt.language       = group.readEntry("OcrLanguages",          QString()/* FIXME: OcrOptions::LanguageModes::DEFAULT */);
     opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
     opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
     opt.dpi            = group.readEntry("Dpi",                   300);

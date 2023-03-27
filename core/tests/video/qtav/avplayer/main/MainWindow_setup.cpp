@@ -483,10 +483,14 @@ void MainWindow::setupUi()
     box->addItem(i18nc("@option", "Auto detect"), QString::fromLatin1("AutoDetect"));
     box->addItem(i18nc("@option", "System"),      QString::fromLatin1("System"));
 
+#if (QT_VERSION <= QT_VERSION_CHECK(5, 99, 0))
     Q_FOREACH (const QByteArray& cs, QTextCodec::availableCodecs())
     {
         box->addItem(QString::fromLatin1(cs), QString::fromLatin1(cs));
     }
+#else
+    // FIXME, QTextCodec is now in Qt5Compat
+#endif
 
     connect(box, SIGNAL(activated(int)),
             this, SLOT(setSubtitleCharset(int)));

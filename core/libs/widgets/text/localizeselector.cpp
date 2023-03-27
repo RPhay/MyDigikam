@@ -329,7 +329,7 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
     }
     else
     {
-        error = trengine->error();
+        error = QChar(trengine->error());
     }
 
     return false;

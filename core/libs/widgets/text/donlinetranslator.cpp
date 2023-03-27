@@ -469,7 +469,7 @@ int DOnlineTranslator::getSplitIndex(const QString& untranslatedText, int limit)
 
     // Non-breaking space
 
-    splitIndex = untranslatedText.lastIndexOf(0x00a0, limit - 1);
+    splitIndex = untranslatedText.lastIndexOf(QChar(0x00a0), limit - 1);
 
     if (splitIndex != -1)
     {

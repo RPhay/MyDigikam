@@ -17,6 +17,7 @@
 
 // Qt includes
 
+#include <QObject>
 #include <QPointer>
 
 namespace Digikam

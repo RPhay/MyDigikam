@@ -226,7 +226,7 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
 
         for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
         {
-            if (key == d->ignoredMask[i])
+            if (QChar(key) == d->ignoredMask[i])
             {
                 e->ignore();
                 return;
@@ -235,7 +235,7 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
 
         for (int i = 0 ; i < d->acceptedMask.size() ; ++i)
         {
-            if (key != d->acceptedMask[i])
+            if (QChar(key) != d->acceptedMask[i])
             {
                 e->ignore();
                 return;
