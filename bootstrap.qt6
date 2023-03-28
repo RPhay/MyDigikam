@@ -16,6 +16,9 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 #export CC=/usr/bin/clang
 #export CXX=/usr/bin/clang++
 
+# patch KF version
+find . -type f \( -name 'CMakeLists.txt' -o -iname '*.cmake' \) -print0 | xargs -0 sed -i 's/KF5/KF6/g'
+
 mkdir -p build
 cd build
 
