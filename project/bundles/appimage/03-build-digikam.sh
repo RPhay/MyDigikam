@@ -49,6 +49,7 @@ ORIG_WD="`pwd`"
 # Install out-dated dependencies
 
 cd $BUILDING_DIR
+rm -rf $BUILDING_DIR/* || true
 
 /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
@@ -132,10 +133,12 @@ echo "---------- Configure digiKam $DK_VERSION"
 
 if [[ $DK_QTVERSION == 5.* ]] ; then
 
+    echo "Build digiKam with Qt5"
     BUILD_WITH_QT6=OFF
 
 else
 
+    echo "Build digiKam with Qt6"
     BUILD_WITH_QT6=ON
 
 fi
@@ -204,9 +207,11 @@ fi
 
 if [[ $DK_QTVERSION == 5.* ]] ; then
 
-cd $BUILDING_DIR
+    echo "Build 3rd-party plugins with Qt5"
 
-/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+    cd $BUILDING_DIR
+
+    /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -215,9 +220,13 @@ cd $BUILDING_DIR
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
+
+else
+
+    echo "Drop build stage of 3rd-party plugins with Qt6"
 
 fi
 
