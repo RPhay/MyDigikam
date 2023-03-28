@@ -342,5 +342,6 @@ BUGFIXES:
 297 ==> 463785 - Slideshow starts with black screen and digikam crashes.
 298 ==> 467473 - digiKam crashes when viewing pictures in full screen mode - Windows 10.
 299 ==> 467496 - Various crashes on Windows: update libde265 >= 1.0.11 and libaom >= v3.6.0.
-300 ==> 
+300 ==> 466156 - digiKam crash on Windows 10, if you click on "Show Fullscreen" of thumbnail element, and closing this.
 301 ==> 
+302 ==> 
