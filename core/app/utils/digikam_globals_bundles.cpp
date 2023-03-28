@@ -378,11 +378,11 @@ void loadEcmQtTranslationFiles(QApplication& app)
 
         Q_FOREACH (const auto& catalog, ecmCatalogs)
         {
-            QString subPath    = ( QLatin1String("locale/")      
-                                 + localeDirName                  
-                                 + QLatin1String("/LC_MESSAGES/")
-                                 + catalog                       
-                                 + QLatin1String(".qm"));
+            QString subPath    = QLatin1String("locale/")       +
+                                 localeDirName                  +
+                                 QLatin1String("/LC_MESSAGES/") +
+                                 catalog                        +
+                                 QLatin1String(".qm");
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
 
