@@ -346,4 +346,10 @@ BUGFIXES:
 301 ==> 467854 - Upgrade libheif in Windows build.
 302 ==> 467906 - digiKam is crash when use slideshow.
 303 ==> 467911 - digiKam 8.0.0 crashes after second invocation of G'MIC-Qt
-304 ==> 
+304 ==> 467871 - When adding thumbnail to parent tag, not require parent tag to be applied.
+305 ==> 
+306 ==> 
+307 ==> 
+308 ==> 
+309 ==> 
+310 ==> 

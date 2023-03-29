@@ -839,11 +839,32 @@ QHash<int, QString> AlbumManager::tagNames(bool includeInternal) const
     return hash;
 }
 
-QList< int > AlbumManager::subTags(int tagId, bool recursive)
+QList<int> AlbumManager::subTags(int tagId, bool recursive) const
 {
     TAlbum* const album = this->findTAlbum(tagId);
 
     return album->childAlbumIds(recursive);
+}
+
+int AlbumManager::findTopId(int tagId) const
+{
+    TAlbum* const album = findTAlbum(tagId);
+
+    if (!album || album->isInternalTag())
+    {
+        return -1;
+    }
+
+    int topId     = tagId;
+    Album* parent = album;
+
+    while (!parent->isRoot())
+    {
+        topId  = parent->id();
+        parent = parent->parent();
+    }
+
+    return topId;
 }
 
 AlbumList AlbumManager::findTagsWithProperty(const QString& property)

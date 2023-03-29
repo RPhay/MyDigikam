@@ -659,7 +659,8 @@ public:
     /**
      * TODO
      */
-    QList<int> subTags(int tagId, bool recursive = false);
+    QList<int> subTags(int tagId, bool recursive = false)                                                const;
+    int findTopId(int tagId)                                                                             const;
 
 private:
 

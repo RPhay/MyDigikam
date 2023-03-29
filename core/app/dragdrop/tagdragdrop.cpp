@@ -228,15 +228,13 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     else
                     {
                         QMenu popMenu(view);
-                        QAction* setAction    = nullptr;
-
-                        setAction             = popMenu.addAction(i18n("Set as Tag Thumbnail"));
+                        QAction* const setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
                         popMenu.addSeparator();
-                        popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+                        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
                         popMenu.setMouseTracking(true);
-                        QAction* const choice = popMenu.exec(QCursor::pos());
-                        set                   = (choice == setAction);
+                        QAction* const choice   = popMenu.exec(QCursor::pos());
+                        set                     = (choice == setAction);
                     }
 
                     if (set)
@@ -281,7 +279,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                                                                               faceNames.first(),
                                                                               targetName));
                         popMenu.addSeparator();
-                        popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+                        popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
                         popMenu.setMouseTracking(true);
                         QAction* const choice       = popMenu.exec(QCursor::pos());
@@ -313,55 +311,13 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             }
         }
 
-        if ((imageIDs.size() == 1) && ItemInfo(imageIDs.first()).tagIds().contains(destAlbum->id()))
-        {
-            // Setting the dropped image as the album thumbnail
-            // If the ctrl key is pressed, when dropping the image, the
-            // thumbnail is set without a popup menu
-
-            bool set = false;
-
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-
-            if (e->modifiers() == Qt::ControlModifier)
-
-#else
-
-            if (e->keyboardModifiers() == Qt::ControlModifier)
-
-#endif
-
-            {
-                set = true;
-            }
-            else
-            {
-                QMenu popMenu(view);
-                QAction* setAction    = nullptr;
-
-                setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
-                popMenu.addSeparator();
-                popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
-
-                popMenu.setMouseTracking(true);
-                QAction* const choice = popMenu.exec(QCursor::pos());
-                set                   = (choice == setAction);
-            }
-
-            if (set)
-            {
-                QString errMsg;
-                AlbumManager::instance()->updateTAlbumIcon(destAlbum, QString(), imageIDs.first(), errMsg);
-            }
-
-            return true;
-        }
-
         // If a ctrl key is pressed while dropping the drag object,
         // the tag is assigned to the images without showing a
         // popup menu.
 
-        bool assign = false;
+        bool hasSameTopId = false;
+        bool assign       = false;
+        bool set          = false;
 
         // Use selected tags instead of dropped on.
 
@@ -373,6 +329,21 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         if (!tview)
         {
             return false;
+        }
+
+        if (imageIDs.size() == 1)
+        {
+            const int topId         = AlbumManager::instance()->findTopId(destAlbum->id());
+            const QList<int> tagIds = ItemInfo(imageIDs.first()).tagIds();
+
+            Q_FOREACH (int tid, tagIds)
+            {
+                if (AlbumManager::instance()->findTopId(tid) == topId)
+                {
+                    hasSameTopId = true;
+                    break;
+                }
+            }
         }
 
         QList<Album*> selTags = tview->selectedItems();
@@ -412,19 +383,33 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         else
         {
             QMenu popMenu(view);
+            QAction* setAction = nullptr;
             QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                            i18n("Assign Tag(s) '%1' to Items", tagNames.join(QLatin1String(", "))));
+                                                            i18n("Assign Tag(s) '%1' to Items",
+                                                                 tagNames.join(QLatin1String(", "))));
+
+            if (hasSameTopId)
+            {
+                setAction = popMenu.addAction(i18n("Set as Tag Thumbnail"));
+            }
+
             popMenu.addSeparator();
-            popMenu.addAction( QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel") );
+            popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
             popMenu.setMouseTracking(true);
-            QAction* const choice       = popMenu.exec(QCursor::pos());
-            assign                      = (choice == assignAction);
+            QAction* const choice = popMenu.exec(QCursor::pos());
+            assign                = (choice == assignAction);
+            set                   = (setAction && choice == setAction);
         }
 
-        if (assign)
+        if      (assign)
         {
             Q_EMIT assignTags(imageIDs, tagIdList);
+        }
+        else if (set)
+        {
+            QString errMsg;
+            AlbumManager::instance()->updateTAlbumIcon(destAlbum, QString(), imageIDs.first(), errMsg);
         }
 
         return true;
