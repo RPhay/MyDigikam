@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to restore images
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,7 +29,7 @@
 #include "digikam_debug.h"
 #include "restoration.h"
 
-namespace Digikam
+namespace DigikamBqmRestorationPlugin
 {
 
 RestorationPlugin::RestorationPlugin(QObject* const parent)
@@ -53,7 +53,7 @@ QString RestorationPlugin::iid() const
 
 QIcon RestorationPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("colorfx"));
+    return QIcon::fromTheme(QLatin1String("restoration"));
 }
 
 QString RestorationPlugin::description() const
@@ -86,7 +86,7 @@ QList<DPluginAuthor> RestorationPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2009-2022"))
+                             QString::fromUtf8("(C) 2009-2023"))
             ;
 }
 
@@ -98,4 +98,4 @@ void RestorationPlugin::setup(QObject* const parent)
     addTool(tool);
 }
 
-} // namespace Digikam
+} // namespace DigikamBqmRestorationPlugin

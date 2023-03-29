@@ -27,7 +27,7 @@
 
 #include "dimg.h"
 
-namespace DigikamBqmRestorationPlugin
+namespace DigikamBqmRedEyeCorrectionPlugin
 {
 
 RedEyeCorrection::RedEyeCorrection(QObject* const parent)
@@ -113,4 +113,4 @@ void RedEyeCorrection::cancel()
     BatchTool::cancel();
 }
 
-} // namespace DigikamBqmRestorationPlugin
+} // namespace DigikamBqmRedEyeCorrectionPlugin

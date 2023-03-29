@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to restore images
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -23,7 +23,7 @@
 
 using namespace Digikam;
 
-namespace Digikam
+namespace DigikamBqmRestorationPlugin
 {
 
 class RestorationPlugin : public DPluginBqm
@@ -50,6 +50,6 @@ public:
     void setup(QObject* const)           override;
 };
 
-} // namespace Digikam
+} // namespace DigikamBqmRestorationPlugin
 
 #endif // DIGIKAM_RESTORATION_PLUGIN_H

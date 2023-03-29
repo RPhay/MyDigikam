@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a BQM plugin to reduce red eyes
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,7 +29,7 @@
 #include "digikam_debug.h"
 #include "redeyecorrection.h"
 
-namespace DigikamBqmRestorationPlugin
+namespace DigikamBqmRedEyeCorrectionPlugin
 {
 
 RedEyeCorrectionPlugin::RedEyeCorrectionPlugin(QObject* const parent)
@@ -98,4 +98,4 @@ void RedEyeCorrectionPlugin::setup(QObject* const parent)
     addTool(tool);
 }
 
-} // namespace DigikamBqmRestorationPlugin
+} // namespace DigikamBqmRedEyeCorrectionPlugin

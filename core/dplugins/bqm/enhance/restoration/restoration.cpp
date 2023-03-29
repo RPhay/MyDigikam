@@ -6,7 +6,7 @@
  * Date        : 2009-02-19
  * Description : Restoration batch tool.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,7 +31,7 @@
 #include "dimg.h"
 #include "dactivelabel.h"
 
-namespace Digikam
+namespace DigikamBqmRestorationPlugin
 {
 
 Restoration::Restoration(QObject* const parent)
@@ -165,4 +165,4 @@ void Restoration::cancel()
     BatchTool::cancel();
 }
 
-} // namespace Digikam
+} // namespace DigikamBqmRestorationPlugin

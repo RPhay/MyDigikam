@@ -23,7 +23,7 @@
 
 using namespace Digikam;
 
-namespace DigikamBqmRestorationPlugin
+namespace DigikamBqmRedEyeCorrectionPlugin
 {
 
 class RedEyeCorrection : public BatchTool
@@ -58,6 +58,6 @@ private:
     RedEyeCorrectionSettings* m_settingsView;
 };
 
-} // namespace DigikamBqmRestorationPlugin
+} // namespace DigikamBqmRedEyeCorrectionPlugin
 
 #endif // DIGIKAM_BQM_RED_EYE_CORRECTION_H

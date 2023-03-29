@@ -6,7 +6,7 @@
  * Date        : 2009-02-19
  * Description : Restoration batch tool.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,7 +24,7 @@ class QComboBox;
 
 using namespace Digikam;
 
-namespace Digikam
+namespace DigikamBqmRestorationPlugin
 {
 
 class Restoration : public BatchTool
@@ -67,6 +67,6 @@ private:
     GreycstorationFilter* m_cimgIface;
 };
 
-} // namespace Digikam
+} // namespace DigikamBqmRestorationPlugin
 
 #endif // DIGIKAM_BQM_RESTORATION_H
