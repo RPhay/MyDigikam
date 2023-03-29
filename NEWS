@@ -344,4 +344,5 @@ BUGFIXES:
 299 ==> 467496 - Various crashes on Windows: update libde265 >= 1.0.11 and libaom >= v3.6.0.
 300 ==> 466156 - digiKam crash on Windows 10, if you click on "Show Fullscreen" of thumbnail element, and closing this.
 301 ==> 467854 - Upgrade libheif in Windows build.
-302 ==> 
+302 ==> 467906 - digiKam is crash when use slideshow.
+303 ==> 
