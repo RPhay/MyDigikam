@@ -333,10 +333,9 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
         if (imageIDs.size() == 1)
         {
-            const int topId         = AlbumManager::instance()->findTopId(destAlbum->id());
-            const QList<int> tagIds = ItemInfo(imageIDs.first()).tagIds();
+            const int topId = AlbumManager::instance()->findTopId(destAlbum->id());
 
-            Q_FOREACH (int tid, tagIds)
+            Q_FOREACH (int tid, ItemInfo(imageIDs.first()).tagIds())
             {
                 if (AlbumManager::instance()->findTopId(tid) == topId)
                 {
@@ -399,7 +398,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             popMenu.setMouseTracking(true);
             QAction* const choice = popMenu.exec(QCursor::pos());
             assign                = (choice == assignAction);
-            set                   = (setAction && choice == setAction);
+            set                   = (setAction && (choice == setAction));
         }
 
         if      (assign)
