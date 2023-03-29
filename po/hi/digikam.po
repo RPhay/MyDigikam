@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 00:45+0000\n"
+"POT-Creation-Date: 2023-03-29 00:44+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -20146,7 +20146,7 @@ msgstr "पूर्वावलोकन"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:199
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:389
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:388
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:107
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
@@ -42644,1143 +42644,1143 @@ msgid "Error message: %1"
 msgstr "फ़ाइल सहेजने में त्रुटि हुई"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:39
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Default Language"
 msgctxt "@info: country code"
 msgid "Default Language"
 msgstr "डिफ़ॉल्ट भाषा"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:43
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Afrikaans (South Africa)"
 msgctxt "@info: country code"
 msgid "Afrikaans (South Africa)"
 msgstr "अफ्रीकी (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:44
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Amharic (Ethiopia)"
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
 msgstr "अम्हारिक (इथियोपिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (UAE)"
 msgctxt "@info: country code"
 msgid "Arabic (UAE)"
 msgstr "अरबी (यूएई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:47
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Bahrain)"
 msgctxt "@info: country code"
 msgid "Arabic (Bahrain)"
 msgstr "अरबी (बहारीन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:48
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Algeria)"
 msgctxt "@info: country code"
 msgid "Arabic (Algeria)"
 msgstr "अरबी (अल्जीरिया"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:49
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Egypt)"
 msgctxt "@info: country code"
 msgid "Arabic (Egypt)"
 msgstr "अरबी (मिस्र)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:50
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Arabic (Iraq)"
 msgstr "अरबी (इराक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
 msgstr "अरबी (इराक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Jordan)"
 msgctxt "@info: country code"
 msgid "Arabic (Jordan)"
 msgstr "अरबी (जॉर्डन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:53
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Kuwait)"
 msgctxt "@info: country code"
 msgid "Arabic (Kuwait)"
 msgstr "अरबी (कुवैत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:54
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Lebanon)"
 msgctxt "@info: country code"
 msgid "Arabic (Lebanon)"
 msgstr "अरबी (लेबनान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:55
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Libya)"
 msgctxt "@info: country code"
 msgid "Arabic (Libya)"
 msgstr "अरबी (लीबिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:56
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Morocco)"
 msgctxt "@info: country code"
 msgid "Arabic (Morocco)"
 msgstr "अरबी (मोरक्को)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:57
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Saudi Arabia)"
 msgctxt "@info: country code"
 msgid "Arabic (Mauritania)"
 msgstr "अरबी (सऊदी अरब)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Oman)"
 msgctxt "@info: country code"
 msgid "Arabic (Oman)"
 msgstr "अरबी (ओमन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:60
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Qatar)"
 msgctxt "@info: country code"
 msgid "Arabic (Qatar)"
 msgstr "अरबी (क़तर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:61
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Saudi Arabia)"
 msgctxt "@info: country code"
 msgid "Arabic (Saudi Arabia)"
 msgstr "अरबी (सऊदी अरब)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:62
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Jordan)"
 msgctxt "@info: country code"
 msgid "Arabic (Sudan)"
 msgstr "अरबी (जॉर्डन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:63
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Syria)"
 msgctxt "@info: country code"
 msgid "Arabic (Somalia)"
 msgstr "अरबी (सीरिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:64
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Syria)"
 msgctxt "@info: country code"
 msgid "Arabic (Syria)"
 msgstr "अरबी (सीरिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:65
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Arabic (Chad)"
 msgstr "अरबी (इराक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:66
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Tunisia)"
 msgctxt "@info: country code"
 msgid "Arabic (Tunisia)"
 msgstr "अरबी (ट्यूनीशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:67
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Yemen)"
 msgctxt "@info: country code"
 msgid "Arabic (Yemen)"
 msgstr "अरबी (यमन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:68
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Assamese (India)"
 msgctxt "@info: country code"
 msgid "Assamese (India)"
 msgstr "असमी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
 msgstr "बशकीर (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Bengali (Bangladesh)"
 msgstr "बंगाली (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:72
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:76
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Bengali (India)"
 msgctxt "@info: country code"
 msgid "Bengali (India)"
 msgstr "बंगाली (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:73
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Bengali (Singapore)"
 msgstr "अंग्रेजी (सिंगापोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:74
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Belarusian (Belarus)"
 msgstr "गॉसियन फ़ीका"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:75
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:81
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Bulgarian (Bulgaria)"
 msgctxt "@info: country code"
 msgid "Bulgarian (Bulgaria)"
 msgstr "बुल्गारियाई (बुल्गारिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:77
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tibetan (Bhutan)"
 msgctxt "@info: country code"
 msgid "Tibetan (Bhutan)"
 msgstr "तिब्बती (भूटान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:78
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Breton (France)"
 msgctxt "@info: country code"
 msgid "Breton (France)"
 msgstr "ब्रेटन (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:80
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Bosnia and Herzegovina"
 msgctxt "@info: country code"
 msgid "Bosnian (Bosnia and Herzegovina)"
 msgstr "बोस्निया और हर्जेगोविना"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:82
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Catalan (Andorra)"
 msgctxt "@info: country code"
 msgid "Catalan (Andorra)"
 msgstr "केटालन (अंडोरा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:83
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Catalan (Spain)"
 msgctxt "@info: country code"
 msgid "Catalan (Spain)"
 msgstr "केटालन (स्पेन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:84
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Catalan (France)"
 msgctxt "@info: country code"
 msgid "Catalan (France)"
 msgstr "केटालन (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:85
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Cebuano (Philippines)"
 msgstr "अंग्रेजी (फिलिप्पीन्स)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
 msgstr "उत्तरी मरीआना आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Corsican (France)"
 msgctxt "@info: country code"
 msgid "Corsican (France)"
 msgstr "कोर्सिकन (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:89
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Czech (Czech Republic)"
 msgctxt "@info: country code"
 msgid "Czech (Czechia)"
 msgstr "चेक (चेक रिपब्लिक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:90
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Welsh (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Welsh (United Kingdom)"
 msgstr "वेल्श (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:91
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Danish (Denmark)"
 msgctxt "@info: country code"
 msgid "Danish (Denmark)"
 msgstr "दानिश (डेनमार्क)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:92
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "Danish (Greenland)"
 msgstr "अंग्रेजी (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:93
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "German (Austria)"
 msgctxt "@info: country code"
 msgid "German (Austria)"
 msgstr "जर्मन (आस्ट्रिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:94
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "German (Switzerland)"
 msgstr "जर्मन अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:95
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "German (Germany)"
 msgctxt "@info: country code"
 msgid "German (Germany)"
 msgstr "जर्मन (जर्मनी)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:96
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Danish (Denmark)"
 msgctxt "@info: country code"
 msgid "German (Denmark)"
 msgstr "दानिश (डेनमार्क)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:97
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "German (Liechtenstein)"
 msgstr "जर्मन अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:98
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "German (Luxembourg)"
 msgctxt "@info: country code"
 msgid "German (Luxembourg)"
 msgstr "जर्मन (लक्समबर्ग)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:99
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Greek (Greece)"
 msgctxt "@info: country code"
 msgid "Greek (Cyprus)"
 msgstr "ग्रीक (ग्रीस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:100
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Greek (Greece)"
 msgctxt "@info: country code"
 msgid "Greek (Greece)"
 msgstr "ग्रीक (ग्रीस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:101
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Antigua and Barbuda"
 msgctxt "@info: country code"
 msgid "English (Antigua and Barbuda)"
 msgstr "एन्टिगुआ और बारबूडा"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:102
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Anguilla)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:103
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "American Samoa"
 msgctxt "@info: country code"
 msgid "English (American Samoa)"
 msgstr "अमेरिकी सामोआ"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:104
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Australia)"
 msgstr "अंग्रेजी (आस्ट्रेलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:105
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Barbados)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:106
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Bermuda)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:107
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Brunei)"
 msgstr "अंग्रेजी (बेलिज)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:108
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Bahamas)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:109
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Botswana)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:110
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Belize)"
 msgstr "अंग्रेजी (बेलिज)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:111
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Canada)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:112
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Caribbean)"
 msgstr "अंग्रेजी (कैरिबियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:113
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Cook Islands)"
 msgstr "अंग्रेजी (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:114
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cameroon)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:115
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Dominica)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:116
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Eritrea)"
 msgstr "अंग्रेजी (कैरिबियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:117
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Ethiopia)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:118
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Fiji)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:119
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Falkland Islands"
 msgctxt "@info: country code"
 msgid "English (Falkland Islands)"
 msgstr "फाकलैंड आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:120
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Micronesia)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:121
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "English (United Kingdom)"
 msgstr "अंग्रेजी (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:122
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Grenada)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:123
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Ghana)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:124
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Gibraltar)"
 msgstr "अंग्रेजी (आस्ट्रेलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Gambia)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Guam)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Guyana)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Ireland)"
 msgstr "अंग्रेजी (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:129
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Israel)"
 msgstr "अंग्रेजी (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:130
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (India)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:131
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "British Indian Ocean Territory"
 msgctxt "@info: country code"
 msgid "English (British Indian Ocean Territ)"
 msgstr "ब्रिटिश भारतीय महासागर क्षेत्र"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:132
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Jamaica)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:133
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Kenya)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:134
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Kiribati)"
 msgstr "अंग्रेजी (कैरिबियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:135
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (St. Kitts-Nevis)"
 msgstr "अंग्रेजी (संयुक्त राज्य अमेरिका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:136
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Cayman Islands)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:137
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "English (St. Lucia)"
 msgstr "अंग्रेजी (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:138
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Liberia)"
 msgstr "अंग्रेजी (कैरिबियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:139
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Lesotho)"
 msgstr "अंग्रेजी (आस्ट्रेलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:140
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Northern Mariana Islands"
 msgctxt "@info: country code"
 msgid "English (Northern Mariana Islands)"
 msgstr "उत्तरी मरीआना आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:141
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (Montserrat)"
 msgstr "अंग्रेजी (संयुक्त राज्य अमेरिका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:142
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malta)"
 msgstr "अंग्रेजी (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:143
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Mauritius)"
 msgstr "अंग्रेजी (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:144
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malawi)"
 msgstr "अंग्रेजी (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:145
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Malaysia)"
 msgstr "अंग्रेजी (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:146
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Namibia)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:147
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Norfolk Island"
 msgctxt "@info: country code"
 msgid "English (Norfolk Island)"
 msgstr "नॉरफाक आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:148
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nigeria)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:149
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Nauru)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:150
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Niue)"
 msgstr "अंग्रेजी (बेलिज)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:151
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (New Zealand)"
 msgctxt "@info: country code"
 msgid "English (New Zealand)"
 msgstr "अंग्रेजी (न्यूजीलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:152
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Papua New Guinea"
 msgctxt "@info: country code"
 msgid "English (Papua New Guinea)"
 msgstr "पापुआ न्यू गियाना"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:153
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "English (Philippines)"
 msgstr "अंग्रेजी (फिलिप्पीन्स)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:154
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Caribbean)"
 msgctxt "@info: country code"
 msgid "English (Pakistan)"
 msgstr "अंग्रेजी (कैरिबियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:155
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Pitcairn)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:156
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Puerto Rico)"
 msgctxt "@info: country code"
 msgid "English (Puerto Rico)"
 msgstr "स्पेनी (प्यूर्टो रिको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:157
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Malaysia)"
 msgctxt "@info: country code"
 msgid "English (Palau)"
 msgstr "अंग्रेजी (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:158
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Rwanda)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:159
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Solomon Islands"
 msgctxt "@info: country code"
 msgid "English (Solomon Islands)"
 msgstr "सोलोमन आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:160
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (Seychelles)"
 msgstr "अंग्रेजी (बेलिज)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:161
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "English (Singapore)"
 msgstr "अंग्रेजी (सिंगापोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:162
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Belize)"
 msgctxt "@info: country code"
 msgid "English (St. Helena)"
 msgstr "अंग्रेजी (बेलिज)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:163
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "English (Sierra Leone)"
 msgstr "अंग्रेजी (सिंगापोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:164
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Somalia)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:165
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (New Zealand)"
 msgctxt "@info: country code"
 msgid "English (Swaziland)"
 msgstr "अंग्रेजी (न्यूजीलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:166
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Turks and Caicos Islands"
 msgctxt "@info: country code"
 msgid "English (Turks and Caicos Islands)"
 msgstr "तुर्क तथा कैकोस आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:167
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Ireland)"
 msgctxt "@info: country code"
 msgid "English (Tokelau)"
 msgstr "अंग्रेजी (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:168
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (India)"
 msgctxt "@info: country code"
 msgid "English (Tonga)"
 msgstr "अंग्रेजी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:169
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Trinidad)"
 msgctxt "@info: country code"
 msgid "English (Trinidad)"
 msgstr "अंग्रेज़ी (ट्रिनिडाड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:170
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Uganda)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:171
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United States)"
 msgctxt "@info: country code"
 msgid "English (United States)"
 msgstr "अंग्रेजी (संयुक्त राज्य अमेरिका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "St. Vincent and the Grenadines"
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
 msgstr "सेंट विंसेंट तथा ग्रेनेडाइन्स"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "British Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (British Virgin Islands)"
 msgstr "वर्जिन आइलैंड, ब्रिटिश"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:174
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "US Virgin Islands"
 msgctxt "@info: country code"
 msgid "English (U.S. Virgin Islands)"
 msgstr "वर्जिन आइलैंड, यू.एस."
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:175
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Canada)"
 msgctxt "@info: country code"
 msgid "English (Vanuatu)"
 msgstr "अंग्रेजी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:176
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "English (Western Samoa)"
 msgstr "अंग्रेजी (आस्ट्रेलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:177
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "English (South Africa)"
 msgstr "अंग्रेजी (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:178
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "English (Zambia)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:179
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Zimbabwe)"
 msgctxt "@info: country code"
 msgid "English (Zimbabwe)"
 msgstr "अंग्रेजी (जिम्बाबवे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:180
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Breton (France)"
 msgctxt "@info: country code"
 msgid "Esperanto (France)"
 msgstr "ब्रेटन (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:181
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Spanish (Argentina)"
 msgstr "स्पैनी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:182
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Bolivia)"
 msgctxt "@info: country code"
 msgid "Spanish (Bolivia)"
 msgstr "स्पेनी (बोलिविया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:183
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Chile)"
 msgctxt "@info: country code"
 msgid "Spanish (Chile)"
 msgstr "स्पेनी (चिली)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:184
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Colombia)"
 msgctxt "@info: country code"
 msgid "Spanish (Colombia)"
 msgstr "स्पेनी (कोलम्बिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:185
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Costa Rica)"
 msgctxt "@info: country code"
 msgid "Spanish (Costa Rica)"
 msgstr "स्पेनी (कोस्टा रिका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:186
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Colombia)"
 msgctxt "@info: country code"
 msgid "Spanish (Cuba)"
 msgstr "स्पेनी (कोलम्बिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:187
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Dominican Republic)"
 msgctxt "@info: country code"
 msgid "Spanish (Dominican Republic)"
 msgstr "स्पेनी (डोमिनिकन रिपब्लिक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:188
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Ecuador)"
 msgctxt "@info: country code"
 msgid "Spanish (Ecuador)"
 msgstr "स्पैनी (इक्वाडोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:189
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Spanish (Spain)"
 msgstr "स्पैनी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:190
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Equatorial Guinea"
 msgctxt "@info: country code"
 msgid "Spanish (Equatorial Guinea)"
 msgstr "इक्वेटोरियल गुएना"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:191
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Spanish (Guatemala)"
 msgstr "स्पैनी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:192
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Honduras)"
 msgctxt "@info: country code"
 msgid "Spanish (Honduras)"
 msgstr "स्पेनी (होंडुरास)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:193
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Mexico)"
 msgctxt "@info: country code"
 msgid "Spanish (Mexico)"
 msgstr "स्पेनी (मेक्सिको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:194
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Nicaragua)"
 msgctxt "@info: country code"
 msgid "Spanish (Nicaragua)"
 msgstr "स्पेनी (निकारागुआ)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:195
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Spanish (Panama)"
 msgstr "स्पैनी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:196
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Peru)"
 msgctxt "@info: country code"
 msgid "Spanish (Peru)"
 msgstr "स्पेनी (पेरू)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:197
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Puerto Rico)"
 msgctxt "@info: country code"
 msgid "Spanish (Puerto Rico)"
 msgstr "स्पेनी (प्यूर्टो रिको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:198
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Paraguay)"
 msgctxt "@info: country code"
 msgid "Spanish (Paraguay)"
 msgstr "स्पेनी (पैरागुए)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:199
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (El Salvador)"
 msgctxt "@info: country code"
 msgid "Spanish (El Salvador)"
 msgstr "स्पेनी (अल सल्वाडोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:200
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (United States)"
 msgctxt "@info: country code"
 msgid "Spanish (United States)"
 msgstr "स्पेनी (संयुक्त राज्य अमेरिका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:201
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Uruguay)"
 msgctxt "@info: country code"
 msgid "Spanish (Uruguay)"
 msgstr "स्पेनी (उरूग्वे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:202
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Spanish (Venezuela)"
 msgctxt "@info: country code"
 msgid "Spanish (Venezuela)"
 msgstr "स्पेनी (वेनेजुएला)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:203
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Estonian (Estonia)"
 msgctxt "@info: country code"
 msgid "Estonian (Estonia)"
 msgstr "एस्तोनिया (एस्तोनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:204
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Basque (Basque Country)"
 msgctxt "@info: country code"
 msgid "Basque (Basque Country)"
 msgstr "बास्क (बास्क देश)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:205
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Persian (Iran)"
 msgstr "परसियन (इरान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:206
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Finnish (Finland)"
 msgctxt "@info: country code"
 msgid "Finnish (Finland)"
 msgstr "फिनिश (फिनलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:207
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Filipino (Philippines)"
 msgstr "अंग्रेजी (फिलिप्पीन्स)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:208
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgctxt "@info: contry code"
 #| msgid "Fiji"
 msgctxt "@info: country code"
@@ -43788,1311 +43788,1311 @@ msgid "Fijian (Fiji)"
 msgstr "फिजी"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Faeroese (Faero Islands)"
 msgctxt "@info: country code"
 msgid "Faeroese (Faero Islands)"
 msgstr "फारोसी (फेरो आइलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:210
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Andorra)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:211
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Belgium)"
 msgstr "फ्रांसीसी (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:212
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Burkina Faso"
 msgctxt "@info: country code"
 msgid "French (Burkina Faso)"
 msgstr "बुर्किना फासो"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:213
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Burundi)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:214
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Benin)"
 msgstr "फ्रांसीसी (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:215
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Canada)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:216
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Central African Republic"
 msgctxt "@info: country code"
 msgid "French (Central African Republic)"
 msgstr "सेंट्रल अफ्रीकन रिपब्लिक"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:218
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Congo)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:219
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Switzerland)"
 msgctxt "@info: country code"
 msgid "French (Switzerland)"
 msgstr "फ्रांसीसी (स्विट्जरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:220
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Cameroon)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:222
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Djibouti)"
 msgstr "फ्रांसीसी (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:223
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (France)"
 msgctxt "@info: country code"
 msgid "French (France)"
 msgstr "फ्रांसीसी (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:224
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Gabon)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:225
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Welsh (United Kingdom)"
 msgctxt "@info: country code"
 msgid "French (United Kingdom)"
 msgstr "वेल्श (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:226
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French Guiana"
 msgctxt "@info: country code"
 msgid "French (French Guiana)"
 msgstr "फ्रेंच गुयाना"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:227
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French Guiana"
 msgctxt "@info: country code"
 msgid "French (Guinea)"
 msgstr "फ्रेंच गुयाना"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:228
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Belgium)"
 msgctxt "@info: country code"
 msgid "French (Guadeloupe)"
 msgstr "फ्रांसीसी (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:229
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Haiti)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:230
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Italy)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:231
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Faeroese (Faero Islands)"
 msgctxt "@info: country code"
 msgid "French (Comoros Islands)"
 msgstr "फारोसी (फेरो आइलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:232
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Lebanon)"
 msgctxt "@info: country code"
 msgid "French (Lebanon)"
 msgstr "अरबी (लेबनान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:233
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Luxembourg)"
 msgctxt "@info: country code"
 msgid "French (Luxembourg)"
 msgstr "फ्रांसीसी (लक्समबर्ग)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:234
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Monaco)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:235
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Madagascar)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:236
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Mali)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:237
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (France)"
 msgctxt "@info: country code"
 msgid "French (Martinique)"
 msgstr "फ्रांसीसी (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:238
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "New Caledonia"
 msgctxt "@info: country code"
 msgid "French (New Caledonia)"
 msgstr "न्यू केलेदूनिया"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:239
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French Polynesia"
 msgctxt "@info: country code"
 msgid "French (French Polynesia)"
 msgstr "फ्रेंच पॉलीनेसिया"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:240
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Switzerland)"
 msgctxt "@info: country code"
 msgid "French (St. Pierre and Miquelon)"
 msgstr "फ्रांसीसी (स्विट्जरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:241
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Reunion)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:242
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Rwanda)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:243
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "French (Seychelles)"
 msgstr "खोज"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:244
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Chad)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:245
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Togo)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:246
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Canada)"
 msgctxt "@info: country code"
 msgid "French (Vanuatu)"
 msgstr "फ्रांसीसी (कनाडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:247
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "French (Wallis and Futuna)"
 msgstr "फाकलैंड आइलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:248
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French (Monaco)"
 msgctxt "@info: country code"
 msgid "French (Mayotte)"
 msgstr "फ्रांसीसी (मोनेको)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:249
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Frisian (Netherlands)"
 msgctxt "@info: country code"
 msgid "Frisian (Netherlands)"
 msgstr "फ्रीसीयाई (नीदरलैंड्स)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:250
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Irish (United Kingdom)"
 msgstr "अंग्रेजी (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:251
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Irish (Ireland)"
 msgctxt "@info: country code"
 msgid "Irish (Ireland)"
 msgstr "आइरिश (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:252
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Welsh (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Gaelic (United Kingdom)"
 msgstr "वेल्श (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:253
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Galician (Galicia)"
 msgctxt "@info: country code"
 msgid "Galician (Galicia)"
 msgstr "गैलिशियन (गैलिशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:254
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Gujarati (India)"
 msgctxt "@info: country code"
 msgid "Gujarati (India)"
 msgstr "गुजराती (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:255
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Manx (United Kingdom)"
 msgstr "अंग्रेजी (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:256
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Iraq)"
 msgctxt "@info: country code"
 msgid "Hausa (Chad)"
 msgstr "अरबी (इराक)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Hebrew (Israel)"
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
 msgstr "हिब्रू (इज़राइल)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Hindi (India)"
 msgctxt "@info: country code"
 msgid "Hindi (India)"
 msgstr "हिन्दी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:260
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Hmong (Laos)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Croatian (Bosnia and Herzegovina, Latin)"
 msgctxt "@info: country code"
 msgid "Croatian (Bosnia and Herzegovina, Latin)"
 msgstr "क्रोएशियाई (बोस्निया तथा हर्जेगोविना, लातिन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:262
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Croatian (Croatia)"
 msgctxt "@info: country code"
 msgid "Croatian (Croatia)"
 msgstr "क्रोएशियाई (क्रोएशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Catalan (France)"
 msgctxt "@info: country code"
 msgid "Haitian Creole (France)"
 msgstr "केटालन (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:264
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Hungarian (Hungary)"
 msgctxt "@info: country code"
 msgid "Hungarian (Hungary)"
 msgstr "हंगेरियाई (हंगरी)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:265
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Hungarian (Slovenia)"
 msgstr "स्लोवेनियाई (स्लोवेनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:266
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Armenian (Armenia)"
 msgctxt "@info: country code"
 msgid "Armenian (Armenia)"
 msgstr "आर्मेनियाई (आर्मेनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Indonesian (Bahasa Indonesia)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:268
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Yoruba (Nigeria)"
 msgctxt "@info: country code"
 msgid "Igbo (Nigeria)"
 msgstr "योरूबा (नाइजीरिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:269
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Sichuan Yi (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:270
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Icelandic (Iceland)"
 msgctxt "@info: country code"
 msgid "Icelandic (Iceland)"
 msgstr "आइसलैंडिक (आइसलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:271
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Italian (Switzerland)"
 msgstr "इतालवी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:272
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Croatian (Croatia)"
 msgctxt "@info: country code"
 msgid "Italian (Croatia)"
 msgstr "क्रोएशियाई (क्रोएशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:273
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Italian (Italy)"
 msgstr "इतालवी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:274
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Italian (Slovenia)"
 msgstr "स्लोवेनियाई (स्लोवेनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:275
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Catalan (Spain)"
 msgctxt "@info: country code"
 msgid "Italian (San Marino)"
 msgstr "केटालन (स्पेन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Hebrew (Israel)"
 msgctxt "@info: country code"
 msgid "Hebrew (Israel)"
 msgstr "हिब्रू (इज़राइल)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:277
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Japanese (Japan)"
 msgctxt "@info: country code"
 msgid "Japanese (Japan)"
 msgstr "जापानी (जापान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "(Indonesian)"
 msgctxt "@info: country code"
 msgid "Javanese (Indonesia)"
 msgstr "(इंडोनेशियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:280
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Georgian (Georgia)"
 msgctxt "@info: country code"
 msgid "Georgian (Georgia)"
 msgstr "ज्यार्जियाई (ज्यार्जिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:281
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Kazakh (Kazakhstan)"
 msgctxt "@info: country code"
 msgid "Kazakh (Kazakhstan)"
 msgstr "कजाख (कज़ाखिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:282
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Greenlandic (Greenland)"
 msgctxt "@info: country code"
 msgid "Greenlandic (Greenland)"
 msgstr "ग्रीनलैंडिक (ग्रीनलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:283
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Khmer (Cambodia)"
 msgctxt "@info: country code"
 msgid "Khmer (Cambodia)"
 msgstr "ख्मेर (कम्बोडिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:284
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Kannada (India)"
 msgctxt "@info: country code"
 msgid "Kannada (India)"
 msgstr "कन्नड़ (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:285
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Korean (South Korea)"
 msgstr "अधिक"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:286
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Korean (North Korea)"
 msgstr "अधिक"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Kyrgyz (Kyrgyzstan)"
 msgctxt "@info: country code"
 msgid "Kyrgyz (Kyrgyzstan)"
 msgstr "किर्गिज (किर्गिजिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:288
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (United Kingdom)"
 msgctxt "@info: country code"
 msgid "Cornish (United Kingdom)"
 msgstr "अंग्रेजी (यूनाइटेड किंगडम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:289
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Irish (Ireland)"
 msgctxt "@info: country code"
 msgid "Kurdish (Iran)"
 msgstr "आइरिश (आयरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:290
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Latin (Italy)"
 msgstr "इतालवी अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:291
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Luxembourgish (Luxembourg)"
 msgctxt "@info: country code"
 msgid "Luxembourgish (Luxembourg)"
 msgstr "लक्सम्बर्गिश (लक्समबर्ग)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:292
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Lingala (Democratic Republic of Congo)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:293
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Mongolian (Mongolia)"
 msgctxt "@info: country code"
 msgid "Lingala (Congo)"
 msgstr "मंगोलियाई (मंगोलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:294
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Lao (Lao PDR)"
 msgctxt "@info: country code"
 msgid "Lao (Lao PDR)"
 msgstr "लाओ (लाओ पीडीआर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:295
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Lithuanian (Lithuania)"
 msgctxt "@info: country code"
 msgid "Lithuanian (Lithuania)"
 msgstr "लिथुआनियाई (लिथुआनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:296
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Latvian (Latvia)"
 msgctxt "@info: country code"
 msgid "Latvian (Latvia)"
 msgstr "लाटवियाई (लाटविया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:297
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Malay (Malaysia)"
 msgctxt "@info: country code"
 msgid "Malagasy (Madagascar)"
 msgstr "मलय (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:298
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Meadow Mari (Russia)"
 msgstr "तातार (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:299
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Maori (New Zealand)"
 msgctxt "@info: country code"
 msgid "Maori (New Zealand)"
 msgstr "माओरी (न्यूजीलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:300
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Macedonian (Macedonia)"
 msgctxt "@info: country code"
 msgid "Macedonian (Macedonia)"
 msgstr "मकदूनियाई (मकदूनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:301
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Malayalam (India)"
 msgctxt "@info: country code"
 msgid "Malayalam (India)"
 msgstr "मलयालम (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:302
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Mongolian (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:303
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Mongolian (Mongolia)"
 msgctxt "@info: country code"
 msgid "Mongolian (Mongolia)"
 msgstr "मंगोलियाई (मंगोलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:304
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Marathi (India)"
 msgctxt "@info: country code"
 msgid "Marathi (India)"
 msgstr "मराठी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:305
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Hill Mari (Russia)"
 msgstr "तातार (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:306
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Malay (Brunei Darussalam)"
 msgctxt "@info: country code"
 msgid "Malay (Brunei Darussalam)"
 msgstr "मलय (ब्रूनेई दारेस्सलाम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:307
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Malay (Malaysia)"
 msgctxt "@info: country code"
 msgid "Malay (Malaysia)"
 msgstr "मलय (मलेशिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:308
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Malay (Singapore)"
 msgstr "अंग्रेजी (सिंगापोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:309
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Maltese (Malta)"
 msgctxt "@info: country code"
 msgid "Maltese (Malta)"
 msgstr "माल्टीज (माल्टा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:310
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Burmese (Myanmar)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:311
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Norwegian Bokmål (Norway)"
 msgctxt "@info: country code"
 msgid "Norwegian Bokmål (Norway)"
 msgstr "नॉरवेजियाई बोकमाल (नॉरवे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:312
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Nepali (Nepal)"
 msgctxt "@info: country code"
 msgid "Nepali (Nepal)"
 msgstr "नेपाली (नेपाली)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:313
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Netherlands Antilles"
 msgctxt "@info: country code"
 msgid "Dutch (Netherlands Antilles)"
 msgstr "नीदरलैंड एन्टीलीस"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:314
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Dutch (Belgium)"
 msgctxt "@info: country code"
 msgid "Dutch (Aruba)"
 msgstr "डच (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:315
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Dutch (Belgium)"
 msgctxt "@info: country code"
 msgid "Dutch (Belgium)"
 msgstr "डच (बेल्जियम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:316
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Dutch (Netherlands)"
 msgstr "डच अनुवाद"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:317
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Dutch (Suriname)"
 msgstr "सनराइज"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:318
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Norwegian Bokmål (Norway)"
 msgctxt "@info: country code"
 msgid "Norwegian (Norway)"
 msgstr "नॉरवेजियाई बोकमाल (नॉरवे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:319
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Norwegian Nynorsk (Norway)"
 msgctxt "@info: country code"
 msgid "Norwegian Nynorsk (Norway)"
 msgstr "नॉरवेजियाई नायनोर्स्क (नॉर्वे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:320
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sesotho sa Leboa (South Africa)"
 msgctxt "@info: country code"
 msgid "Sesotho sa Leboa (South Africa)"
 msgstr "सेसोथो सा लेबोआ (दक्षिण अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:321
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Jamaica)"
 msgctxt "@info: country code"
 msgid "Chewa (Zambia)"
 msgstr "अंग्रेजी (जमैका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:322
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Occitan (France)"
 msgctxt "@info: country code"
 msgid "Occitan (France)"
 msgstr "ओसिटान (फ्रांस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:323
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Oriya (India)"
 msgctxt "@info: country code"
 msgid "Oriya (India)"
 msgstr "उड़िया (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:324
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Punjabi (India)"
 msgctxt "@info: country code"
 msgid "Punjabi (India)"
 msgstr "पंजाबी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:325
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Papiamento (Aruba-Dutch Caribbean)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:326
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Polish (Poland)"
 msgctxt "@info: country code"
 msgid "Polish (Poland)"
 msgstr "पोलिश (पोलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:327
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Pashto (Afghanistan)"
 msgctxt "@info: country code"
 msgid "Pashto (Afghanistan)"
 msgstr "पश्तो (अफगानिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:328
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Portuguese (Portugal)"
 msgctxt "@info: country code"
 msgid "Portuguese (Angola)"
 msgstr "पुर्तगाली (पुर्तगाल)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:329
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Portuguese (Brazil)"
 msgctxt "@info: country code"
 msgid "Portuguese (Brazil)"
 msgstr "पुर्तगाली (ब्राजील)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:330
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Faeroese (Faero Islands)"
 msgctxt "@info: country code"
 msgid "Portuguese (Cape Verde Islands)"
 msgstr "फारोसी (फेरो आइलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:331
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Guinea-Bissau"
 msgctxt "@info: country code"
 msgid "Portuguese (Guinea-Bissau)"
 msgstr "गुएना-बिसाऊ"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:332
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Portuguese (Brazil)"
 msgctxt "@info: country code"
 msgid "Portuguese (Mozambique)"
 msgstr "पुर्तगाली (ब्राजील)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:333
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Portuguese (Portugal)"
 msgctxt "@info: country code"
 msgid "Portuguese (Portugal)"
 msgstr "पुर्तगाली (पुर्तगाल)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:334
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Portuguese (São Tomé e Principe)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Otomi Querétaro (Mexico)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:336
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Romansh (Switzerland)"
 msgctxt "@info: country code"
 msgid "Romansh (Switzerland)"
 msgstr "रोमान्श (स्विट्जरलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:337
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Romanian (Romania)"
 msgctxt "@info: country code"
 msgid "Romanian (Romania)"
 msgstr "रोमानियाई (रोमानिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:338
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Russian (Russia)"
 msgctxt "@info: country code"
 msgid "Russian (Russia)"
 msgstr "रूसी (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:339
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Kinyarwanda (Rwanda)"
 msgctxt "@info: country code"
 msgid "Kinyarwanda (Rwanda)"
 msgstr "किन्यारवांडा (रवांडा)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:340
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sanskrit (India)"
 msgctxt "@info: country code"
 msgid "Sanskrit (India)"
 msgstr "संस्कृत (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:341
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Hindi (India)"
 msgctxt "@info: country code"
 msgid "Sindhi (India)"
 msgstr "हिन्दी (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:342
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Sindhi (Pakistan)"
 msgstr "उर्दू (पाकिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:343
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sami (Northern, Finland)"
 msgctxt "@info: country code"
 msgid "Sami (Northern, Finland)"
 msgstr "सामी (उत्तरी, फिनलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:344
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sami (Northern, Norway)"
 msgctxt "@info: country code"
 msgid "Sami (Northern, Norway)"
 msgstr "सामी (उत्तरी, नॉर्वे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:345
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sami (Northern, Sweden)"
 msgctxt "@info: country code"
 msgid "Sami (Northern, Sweden)"
 msgstr "सामी (उत्तरी, स्वीडन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:346
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Sinhala (Sri Lanka)"
 msgctxt "@info: country code"
 msgid "Sinhala (Sri Lanka)"
 msgstr "सिंहली (श्री लंका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:347
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Slovak (Slovakia)"
 msgctxt "@info: country code"
 msgid "Slovak (Slovakia)"
 msgstr "स्लोवाक (स्लोवाकिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:348
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Slovenian (Slovenia)"
 msgctxt "@info: country code"
 msgid "Slovenian (Slovenia)"
 msgstr "स्लोवेनियाई (स्लोवेनिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:349
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "American Samoa"
 msgctxt "@info: country code"
 msgid "Samoan (Samoa)"
 msgstr "अमेरिकी सामोआ"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:350
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Zimbabwe)"
 msgctxt "@info: country code"
 msgid "Shona (Zimbabwe)"
 msgstr "अंग्रेजी (जिम्बाबवे)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:351
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Arabic (Syria)"
 msgctxt "@info: country code"
 msgid "Somali  (Somalia)"
 msgstr "अरबी (सीरिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Albanian (Albania)"
 msgctxt "@info: country code"
 msgid "Albanian (Albania)"
 msgstr "अल्बानियाई (अल्बानिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:353
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Croatian (Bosnia and Herzegovina, Latin)"
 msgctxt "@info: country code"
 msgid "Serbian (Bosnia-Herzegovina)"
 msgstr "क्रोएशियाई (बोस्निया तथा हर्जेगोविना, लातिन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:354
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Serbia)"
 msgstr "परसियन (इरान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:355
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Serbia and Montenegro)"
 msgstr "परसियन (इरान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:356
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Persian (Iran)"
 msgctxt "@info: country code"
 msgid "Serbian (Yugoslavia)"
 msgstr "परसियन (इरान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:357
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Swaziland"
 msgctxt "@info: country code"
 msgid "Swati (Swaziland)"
 msgstr "स्वाजीलैंड"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:358
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (South Africa)"
 msgctxt "@info: country code"
 msgid "Swati (South Africa)"
 msgstr "अंग्रेजी (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:359
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Australia)"
 msgctxt "@info: country code"
 msgid "Sotho (Lesotho)"
 msgstr "अंग्रेजी (आस्ट्रेलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:360
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "(Indonesian)"
 msgctxt "@info: country code"
 msgid "Sundanese (Indonesia)"
 msgstr "(इंडोनेशियाई)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:361
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Swedish (Finland)"
 msgctxt "@info: country code"
 msgid "Swedish (Finland)"
 msgstr "स्वीडिश (फिनलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:362
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Swedish (Sweden)"
 msgctxt "@info: country code"
 msgid "Swedish (Sweden)"
 msgstr "स्वीडिश (स्वीडन)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:363
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Swahili (Kenya)"
 msgctxt "@info: country code"
 msgid "Swahili (Kenya)"
 msgstr "स्वाहिली (केन्या)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:364
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Swahili (Kenya)"
 msgctxt "@info: country code"
 msgid "Swahili (Tanzania)"
 msgstr "स्वाहिली (केन्या)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:365
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tamil (India)"
 msgctxt "@info: country code"
 msgid "Tamil (India)"
 msgstr "तमिल (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:366
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Singapore)"
 msgctxt "@info: country code"
 msgid "Tamil (Singapore)"
 msgstr "अंग्रेजी (सिंगापोर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:367
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Telugu (India)"
 msgctxt "@info: country code"
 msgid "Telugu (India)"
 msgstr "तेलुगु (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:368
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tajikistan"
 msgctxt "@info: country code"
 msgid "Tajik (Tajikistan)"
 msgstr "ताजिकिस्तान"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:369
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Thai (Thailand)"
 msgctxt "@info: country code"
 msgid "Thai (Thailand)"
 msgstr "थाई (थाइलैंड)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:370
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Turkmen (Turkmenistan)"
 msgctxt "@info: country code"
 msgid "Turkmen (Turkmenistan)"
 msgstr "तुर्कमेन (तुर्कमेनिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "English (Philippines)"
 msgctxt "@info: country code"
 msgid "Tagalog (Philippines)"
 msgstr "अंग्रेजी (फिलिप्पीन्स)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:373
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Setswana Tswana (South Africa)"
 msgctxt "@info: country code"
 msgid "Setswana Tswana (Botswana)"
 msgstr "सेत्सवाना त्सवाना (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:374
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Setswana Tswana (South Africa)"
 msgctxt "@info: country code"
 msgid "Setswana Tswana (South Africa)"
 msgstr "सेत्सवाना त्सवाना (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:375
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Mongolian (Mongolia)"
 msgctxt "@info: country code"
 msgid "Tongan (Tonga)"
 msgstr "मंगोलियाई (मंगोलिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:376
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Bulgarian (Bulgaria)"
 msgctxt "@info: country code"
 msgid "Turkish (Bulgaria)"
 msgstr "बुल्गारियाई (बुल्गारिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:377
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Turkish (Turkey)"
 msgctxt "@info: country code"
 msgid "Turkish (Cyprus)"
 msgstr "तुर्की (तुर्की)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:378
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Turkish (Turkey)"
 msgctxt "@info: country code"
 msgid "Turkish (Turkey)"
 msgstr "तुर्की (तुर्की)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:379
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Tatar (Russia)"
 msgstr "तातार (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:380
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "French Polynesia"
 msgctxt "@info: country code"
 msgid "Tahitian (French Polynesia)"
 msgstr "फ्रेंच पॉलीनेसिया"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:381
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Tatar (Russia)"
 msgctxt "@info: country code"
 msgid "Udmurt (Russia)"
 msgstr "तातार (रुस)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Uighur (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Ukrainian (Ukraine)"
 msgctxt "@info: country code"
 msgid "Ukrainian (Ukraine)"
 msgstr "उक्रेनियाई (उक्रेन) "
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:384
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Urdu (India)"
 msgctxt "@info: country code"
 msgid "Urdu (India)"
 msgstr "उर्दू (भारत)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:385
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Urdu (Pakistan)"
 msgctxt "@info: country code"
 msgid "Urdu (Pakistan)"
 msgstr "उर्दू (पाकिस्तान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:386
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Uzbekistan"
 msgctxt "@info: country code"
 msgid "Uzbek (Uzbekistan)"
 msgstr "उज्बेकिस्तान"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:387
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Vietnamese (Vietnam)"
 msgctxt "@info: country code"
 msgid "Vietnamese (Vietnam)"
 msgstr "विएतनामी (विएतनाम)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:388
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Wolof (Senegal)"
 msgctxt "@info: country code"
 msgid "Wolof (Senegal)"
 msgstr "वोलोफ (सेनेगल)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:389
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "isiXhosa Xhosa (South Africa)"
 msgctxt "@info: country code"
 msgid "IsiXhosa Xhosa (South Africa)"
 msgstr "इसीखोसा खोसा (दक्षिणी अफ्रीका)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "German (Germany)"
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
 msgstr "जर्मन (जर्मनी)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Yoruba (Nigeria)"
 msgctxt "@info: country code"
 msgid "Yoruba (Nigeria)"
 msgstr "योरूबा (नाइजीरिया)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Yucatec Maya (Mexico)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
-#, kde-format
+#, kde-kuit-format
 msgctxt "@info: country code"
 msgid "Chinese (People's Republic of China)"
 msgstr ""
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
 msgstr "चीनी (हांग कांग एसएआर, पीआरसी)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Chinese (Macao SAR)"
 msgctxt "@info: country code"
 msgid "Chinese (Macao SAR)"
 msgstr "चीनी (मकाऊ एसएआर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:396
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Chinese (Singapore)"
 msgctxt "@info: country code"
 msgid "Chinese (Singapore)"
 msgstr "चीनी (सिंगापुर)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:397
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Chinese (Taiwan)"
 msgctxt "@info: country code"
 msgid "Chinese (Taiwan)"
 msgstr "चीनी (ताईवान)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:398
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "Chinese (Hong Kong SAR, PRC)"
 msgctxt "@info: country code"
 msgid "Simplified Chinese (People's Republic of China)"
 msgstr "चीनी (हांग कांग एसएआर, पीआरसी)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:399
-#, fuzzy, kde-format
+#, fuzzy, kde-kuit-format
 #| msgid "isiZulu Zulu (South Africa)"
 msgctxt "@info: country code"
 msgid "isiZulu Zulu (South Africa)"
@@ -48329,7 +48329,7 @@ msgid "Add Bookmark"
 msgstr "कैमरा जोड़ें..."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:106
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:100
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:102
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
@@ -49578,72 +49578,72 @@ msgid "You can add or remove favorite stacks here."
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:121
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:90
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:99
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:101
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "फ़ोल्डर जोड़ें..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:117
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:119
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "फ़ोल्डर जोड़ें..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:118
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:120
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "सूची में नई वस्तु जोड़ें"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:135
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:137
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "अचयनित"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:136
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:138
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:153
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:155
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "छवि फ़ाइलें"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:154
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:156
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "इस सूची में से मौजूदा चयनिद मूल्य को मिटाएँ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:171
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "नई छवियों के लिए ढूंढें"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "कोई चयन नहीं"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:358
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -49651,7 +49651,7 @@ msgid ""
 "and all nested items if any?"
 msgstr "क्या आप वाक़ई चयनित खोज \"%1\" को मिटाना चाहते हैं?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:666
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -49871,7 +49871,7 @@ msgstr "मिटाकर लिखें"
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "छवि टैग हटाया जा रहा है. कृपया प्रतीक्षा करें..."
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:343
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:342
 #, kde-format
 msgid ""
 "<p>Enter your renaming pattern here. Use the access buttons to quickly add "
@@ -49879,31 +49879,31 @@ msgid ""
 "button.</p>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:350
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:349
 #: core/utilities/import/widgets/scriptingsettings.cpp:85
 #, kde-format
 msgid "Show a list of all available options"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:354
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:353
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #, fuzzy, kde-format
 msgid "Modifiers"
 msgstr "परिवर्धितः"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:356
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:355
 #, kde-format
 msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:370
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:369
 #, fuzzy, kde-format
 msgid "Renaming Options"
 msgstr "इंटरफ़ेस विकल्प"
 
-#: core/utilities/advancedrename/advancedrenamewidget.cpp:391
+#: core/utilities/advancedrename/advancedrenamewidget.cpp:390
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr ""
