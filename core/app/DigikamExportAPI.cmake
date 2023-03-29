@@ -68,6 +68,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorcomposer.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorblend.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloaderobserver.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloadersettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/historyimageid.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/filteraction.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgbuiltinfilter.h
