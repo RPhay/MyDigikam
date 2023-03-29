@@ -216,7 +216,8 @@ void DXmlGuiWindow::unminimizeAndActivateWindow()
 
 void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
 {
-
+    KWindowConfig::restoreWindowSize(win, group);
+/*
 #ifdef Q_OS_WIN
 
     int  w   = group.readEntry(QLatin1String("DK Width"),     win->width());
@@ -248,12 +249,13 @@ void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
     KWindowConfig::restoreWindowSize(win, group);
 
 #endif
-
+*/
 }
 
 void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 {
-
+    KWindowConfig::saveWindowSize(win, group);
+/*
 #ifdef Q_OS_WIN
 
     group.writeEntry(QLatin1String("DK Width"),     win->width());
@@ -268,12 +270,12 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
     KWindowConfig::saveWindowSize(win, group);
 
 #endif
-
+*/
 }
 
 void DXmlGuiWindow::restoreWindowSize()
 {
-
+/*
 #ifdef Q_OS_WIN
 
     if (m_winLoaded)
@@ -291,12 +293,12 @@ void DXmlGuiWindow::restoreWindowSize()
     restoreWindowSize(windowHandle(), group);
 
 #endif
-
+*/
 }
 
 void DXmlGuiWindow::saveWindowSize()
 {
-
+/*
 #ifdef Q_OS_WIN
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -305,7 +307,7 @@ void DXmlGuiWindow::saveWindowSize()
     saveWindowSize(windowHandle(), group);
 
 #endif
-
+*/
 }
 
 void DXmlGuiWindow::setGoodDefaultWindowSize(QWindow* const win)
