@@ -348,7 +348,7 @@ BUGFIXES:
 303 ==> 467911 - digiKam 8.0.0 crashes after second invocation of G'MIC-Qt
 304 ==> 467871 - When adding thumbnail to parent tag, not require parent tag to be applied.
 305 ==> 467916 - This version has lost the ability to drag/drop image thumbnails onto Smiley Face icons in "People".
-306 ==> 
+306 ==> 467923 - Crash when switching to 'Timeline' from "People" during face detection.
 307 ==> 
 308 ==> 
 309 ==> 
