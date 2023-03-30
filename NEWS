@@ -349,7 +349,7 @@ BUGFIXES:
 304 ==> 467871 - When adding thumbnail to parent tag, not require parent tag to be applied.
 305 ==> 467916 - This version has lost the ability to drag/drop image thumbnails onto Smiley Face icons in "People".
 306 ==> 467923 - Crash when switching to 'Timeline' from "People" during face detection.
-307 ==> 
+307 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
 308 ==> 
 309 ==> 
 310 ==> 
