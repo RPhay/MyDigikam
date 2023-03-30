@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 00:44+0000\n"
+"POT-Creation-Date: 2023-03-30 00:46+0000\n"
 "PO-Revision-Date: 2023-03-08 22:52+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -233,9 +233,8 @@ msgstr "&Siirrä tänne"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:235
-#: core/app/dragdrop/tagdragdrop.cpp:284 core/app/dragdrop/tagdragdrop.cpp:344
-#: core/app/dragdrop/tagdragdrop.cpp:418
+#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
+#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
 msgid "C&ancel"
 msgstr "&Peru"
@@ -352,19 +351,19 @@ msgstr "Tuonti"
 msgid "M&erge Here"
 msgstr "&Siirrä tänne"
 
-#: core/app/dragdrop/tagdragdrop.cpp:233 core/app/dragdrop/tagdragdrop.cpp:342
+#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Määritä tunnisteen pienoiskuvaksi"
 
-#: core/app/dragdrop/tagdragdrop.cpp:278
+#: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "Muuta kasvojen nimi: ”%2” → ”%3”"
 msgstr[1] "Muuta kasvojen nimet: ”%2” → ”%3”"
 
-#: core/app/dragdrop/tagdragdrop.cpp:416
+#: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Aseta tunnisteet ”%1” tietueille"
@@ -2693,7 +2692,7 @@ msgstr "Päätyökalurivi"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:971
+#: core/libs/album/manager/albummanager_talbum.cpp:992
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -27766,7 +27765,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Haluatko yhdistää luokitukset ”%1” ja ”%2”?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Älä kysy uudelleen tässä istunnossa"
@@ -27776,7 +27775,7 @@ msgstr "Älä kysy uudelleen tässä istunnossa"
 msgid "No such tag"
 msgstr "Sellaista tunnistetta ei ole"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1128
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"

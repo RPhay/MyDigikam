@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 00:44+0000\n"
+"POT-Creation-Date: 2023-03-30 00:46+0000\n"
 "PO-Revision-Date: 2023-03-23 14:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -240,9 +240,8 @@ msgstr "Buraya &Taşı"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:235
-#: core/app/dragdrop/tagdragdrop.cpp:284 core/app/dragdrop/tagdragdrop.cpp:344
-#: core/app/dragdrop/tagdragdrop.cpp:418
+#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
+#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
 msgid "C&ancel"
 msgstr "İ&ptal"
@@ -356,19 +355,19 @@ msgstr "İçe aktarılıyor"
 msgid "M&erge Here"
 msgstr "Buraya &Birleştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:233 core/app/dragdrop/tagdragdrop.cpp:342
+#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Etiket Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/tagdragdrop.cpp:278
+#: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] "'%2' olan yüz adını '%3' olarak değiştir"
 msgstr[1] "'%2' olan yüz adlarını '%3' olarak değiştir"
 
-#: core/app/dragdrop/tagdragdrop.cpp:416
+#: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Ögelere '%1' Etiket(ler)ini Ata"
@@ -2647,7 +2646,7 @@ msgstr "Ana Araç Çubuğu"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:971
+#: core/libs/album/manager/albummanager_talbum.cpp:992
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -28031,7 +28030,7 @@ msgstr ""
 "etiketleri tüm resimlerden gerçekten kaldırmak istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -28042,7 +28041,7 @@ msgstr "Tekrar sorma"
 msgid "No such tag"
 msgstr "Böyle bir etiket yok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1128
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"

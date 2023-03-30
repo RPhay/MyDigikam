@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 00:44+0000\n"
+"POT-Creation-Date: 2023-03-30 00:46+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -234,9 +234,8 @@ msgstr "इहां खिसकाव (&M)"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:235
-#: core/app/dragdrop/tagdragdrop.cpp:284 core/app/dragdrop/tagdragdrop.cpp:344
-#: core/app/dragdrop/tagdragdrop.cpp:418
+#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
+#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
 msgid "C&ancel"
 msgstr "खारिज करव (&a)"
@@ -351,19 +350,19 @@ msgstr "आयात"
 msgid "M&erge Here"
 msgstr "इहां खिसकाव (&M)"
 
-#: core/app/dragdrop/tagdragdrop.cpp:233 core/app/dragdrop/tagdragdrop.cpp:342
+#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "टैग छोटेफोटू के रूप मं सेट करव"
 
-#: core/app/dragdrop/tagdragdrop.cpp:278
+#: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:416
+#: core/app/dragdrop/tagdragdrop.cpp:387
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "टैग '%1' ए चीज मन मआबंटित करव"
@@ -2699,7 +2698,7 @@ msgstr "मुख्य औजार पट्टी"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:971
+#: core/libs/album/manager/albummanager_talbum.cpp:992
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -26164,7 +26163,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "का आप मन संग्रह \"%1\" ल अपन संग्रह सूची से मिटाना चाहथो ?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "दुबारा मत पूछव (&a)"
@@ -26174,7 +26173,7 @@ msgstr "दुबारा मत पूछव (&a)"
 msgid "No such tag"
 msgstr "अइसन कोनो टैग नइ हे"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1128
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"

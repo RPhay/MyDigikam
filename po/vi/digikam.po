@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-29 00:44+0000\n"
+"POT-Creation-Date: 2023-03-30 00:46+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -203,9 +203,8 @@ msgstr "&Chuyển vào đây"
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
-#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:235
-#: core/app/dragdrop/tagdragdrop.cpp:284 core/app/dragdrop/tagdragdrop.cpp:344
-#: core/app/dragdrop/tagdragdrop.cpp:418
+#: core/app/dragdrop/tagdragdrop.cpp:83 core/app/dragdrop/tagdragdrop.cpp:233
+#: core/app/dragdrop/tagdragdrop.cpp:282 core/app/dragdrop/tagdragdrop.cpp:396
 #, kde-format
 msgid "C&ancel"
 msgstr "T&hôi"
@@ -320,18 +319,18 @@ msgstr "Nhập"
 msgid "M&erge Here"
 msgstr "&Chuyển vào đây"
 
-#: core/app/dragdrop/tagdragdrop.cpp:233 core/app/dragdrop/tagdragdrop.cpp:342
+#: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
 msgstr "Đặt là ảnh mẫu thẻ"
 
-#: core/app/dragdrop/tagdragdrop.cpp:278
+#: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
 
-#: core/app/dragdrop/tagdragdrop.cpp:416
+#: core/app/dragdrop/tagdragdrop.cpp:387
 #, fuzzy, kde-format
 msgid "Assign Tag(s) '%1' to Items"
 msgstr "Gán thẻ « %1 » cho mục"
@@ -2620,7 +2619,7 @@ msgstr "Thanh công cụ chính"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:971
+#: core/libs/album/manager/albummanager_talbum.cpp:992
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -26147,7 +26146,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Siêu dữ liệu"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1112
+#: core/libs/album/manager/albummanager_talbum.cpp:1133
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "Đừng &hỏi lại"
@@ -26157,7 +26156,7 @@ msgstr "Đừng &hỏi lại"
 msgid "No such tag"
 msgstr "Không có thẻ như vậy"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1107
+#: core/libs/album/manager/albummanager_talbum.cpp:1128
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
