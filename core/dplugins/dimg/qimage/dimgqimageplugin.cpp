@@ -179,6 +179,8 @@ DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) con
 
 DImgLoaderSettings* DImgQImagePlugin::exportWidget(const QString& format) const
 {
+    qCDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "Export widget for format" << format;
+
     if      (format.toUpper() == QLatin1String("JXL"))
     {
         return (new DImgJXLExportSettings());
