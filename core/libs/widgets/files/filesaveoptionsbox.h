@@ -24,6 +24,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -44,9 +45,13 @@ public:
         JPEG,
         PNG,
         TIFF,
+#ifdef HAVE_JASPER
         JP2K,
+#endif
         PGF,
+#ifdef HAVE_X265
         HEIF,
+#endif
         JXL,
         WEBP,
         AVIF
