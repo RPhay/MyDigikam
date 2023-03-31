@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:46+0000\n"
+"POT-Creation-Date: 2023-03-31 00:44+0000\n"
 "PO-Revision-Date: 2023-03-26 17:29+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -41983,7 +41983,7 @@ msgstr "Автоматично презаписване"
 msgid "Skip automatically"
 msgstr "Автоматично пропускане"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:116
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
 #, kde-format
 msgid "No options available"
 msgstr "Няма налични настройки"

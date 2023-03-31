@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:46+0000\n"
+"POT-Creation-Date: 2023-03-31 00:44+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -38760,7 +38760,7 @@ msgstr ""
 msgid "Skip automatically"
 msgstr "Balikkan menegak"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:116
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
 #, kde-format
 msgid "No options available"
 msgstr ""

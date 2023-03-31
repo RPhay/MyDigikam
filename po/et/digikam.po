@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:46+0000\n"
+"POT-Creation-Date: 2023-03-31 00:44+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -44248,7 +44248,7 @@ msgstr "Kirjutatakse automaatselt üle"
 msgid "Skip automatically"
 msgstr "Jäetakse automaatselt vahele"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:116
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
 #, kde-format
 msgid "No options available"
 msgstr "Valikud puuduvad"

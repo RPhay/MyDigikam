@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:46+0000\n"
+"POT-Creation-Date: 2023-03-31 00:44+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -40374,7 +40374,7 @@ msgstr "फाइल ल मेटाय के लिखव?"
 msgid "Skip automatically"
 msgstr "फाइल ल मेटाय के लिखव?"
 
-#: core/libs/widgets/files/filesaveoptionsbox.cpp:116
+#: core/libs/widgets/files/filesaveoptionsbox.cpp:115
 #, kde-format
 msgid "No options available"
 msgstr "कोई विकल्प नइ मिलत हे."
