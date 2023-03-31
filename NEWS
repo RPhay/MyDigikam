@@ -350,6 +350,6 @@ BUGFIXES:
 305 ==> 467916 - This version has lost the ability to drag/drop image thumbnails onto Smiley Face icons in "People".
 306 ==> 467923 - Crash when switching to 'Timeline' from "People" during face detection.
 307 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
-308 ==> 
+308 ==> 468002 - UTF8 Encoding is not supported in IPTC when using exiftool as backend.
 309 ==> 
 310 ==> 
