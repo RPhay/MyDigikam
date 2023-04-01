@@ -28,6 +28,7 @@
 #include <QStyle>
 #include <QTimer>
 #include <QElapsedTimer>
+#include <QGroupBox>
 
 // KDE includes
 
@@ -64,7 +65,6 @@ public:
       : includeAlbumsLabel     (nullptr),
         similarityLabel        (nullptr),
         restrictResultsLabel   (nullptr),
-        refImageSelMethodLabel (nullptr),
         albumTagRelationLabel  (nullptr),
         similarityRange        (nullptr),
         searchResultRestriction(nullptr),
@@ -86,7 +86,6 @@ public:
     QLabel*              similarityLabel;
     QLabel*              restrictResultsLabel;
     QLabel*              albumTagRelationLabel;
-    QLabel*              refImageSelMethodLabel;
 
     DIntRangeBox*        similarityRange;
     SqueezedComboBox*    searchResultRestriction;
@@ -206,11 +205,14 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->refImageSelMethod->setCurrentIndex(d->refImageSelMethod->findData((unsigned int)refSelMethod));
     d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method", "Select method for reference image selection"));
 
-    d->refImageSelMethodLabel = new QLabel(i18nc("@label", "Reference Image Selection Method:"));
-    d->refImageSelMethodLabel->setBuddy(d->refImageSelMethod);
-
     d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"), nullptr, AlbumSelectors::AlbumType::PhysAlbum);
     d->refImageAlbumSelector->setVisible(refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder || refSelMethod == HaarIface::RefImageSelMethod::PreferFolder);
+
+    auto* refImageselectionGroup = new QGroupBox(i18nc("@group", "Reference Image Selection Method"));
+    auto* layout = new QVBoxLayout;
+    layout->addWidget(d->refImageSelMethod);
+    layout->addWidget(d->refImageAlbumSelector);
+    refImageselectionGroup->setLayout(layout);
 
     QString tip = i18nc("@info",
                         "Use this option to decide about the relation of the selected albums and tags.\n"
@@ -239,19 +241,17 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     QGridLayout* const mainLayout = new QGridLayout();
     mainLayout->addWidget(d->listView,                0, 0, 1, -1);
-    mainLayout->addWidget(d->refImageSelMethodLabel,  1, 0, 1,  -1);
-    mainLayout->addWidget(d->refImageSelMethod,       2, 0, 1, -1);
-    mainLayout->addWidget(d->refImageAlbumSelector,   3, 0, 1, -1);
-    mainLayout->addWidget(d->albumTagRelationLabel,   4, 0, 1,  2);
-    mainLayout->addWidget(d->albumTagRelation,        4, 2, 1, -1);
-    mainLayout->addWidget(d->albumSelectors,          5, 0, 1, -1);
-    mainLayout->addWidget(d->similarityLabel,         6, 0, 1,  1);
-    mainLayout->addWidget(d->similarityRange,         6, 2, 1,  1);
-    mainLayout->addWidget(d->restrictResultsLabel,    7, 0, 1,  2);
-    mainLayout->addWidget(d->searchResultRestriction, 7, 2, 1, -1);
-    mainLayout->addWidget(d->updateFingerPrtBtn,      8, 0, 1, -1);
-    mainLayout->addWidget(d->findDuplicatesBtn,       9, 0, 1, -1);
-    mainLayout->addWidget(d->removeDuplicatesBtn,     10, 0, 1, -1);
+    mainLayout->addWidget(refImageselectionGroup,     1, 0, 1, -1);
+    mainLayout->addWidget(d->albumTagRelationLabel,   2, 0, 1,  2);
+    mainLayout->addWidget(d->albumTagRelation,        2, 2, 1, -1);
+    mainLayout->addWidget(d->albumSelectors,          3, 0, 1, -1);
+    mainLayout->addWidget(d->similarityLabel,         4, 0, 1,  1);
+    mainLayout->addWidget(d->similarityRange,         4, 2, 1,  1);
+    mainLayout->addWidget(d->restrictResultsLabel,    5, 0, 1,  2);
+    mainLayout->addWidget(d->searchResultRestriction, 5, 2, 1, -1);
+    mainLayout->addWidget(d->updateFingerPrtBtn,      6, 0, 1, -1);
+    mainLayout->addWidget(d->findDuplicatesBtn,       7, 0, 1, -1);
+    mainLayout->addWidget(d->removeDuplicatesBtn,     8, 0, 1, -1);
 
     mainLayout->setRowStretch(0, 10);
     mainLayout->setColumnStretch(2, 10);
@@ -489,7 +489,6 @@ void FindDuplicatesView::enableControlWidgets(bool val)
     d->refImageSelMethod->setEnabled(val);
 
     d->albumTagRelationLabel->setEnabled(val);
-    d->refImageSelMethodLabel->setEnabled(val);
     d->restrictResultsLabel->setEnabled(val);
     d->similarityLabel->setEnabled(val);
 }
