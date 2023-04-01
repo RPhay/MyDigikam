@@ -360,7 +360,14 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image comment" << nameSpace;
                     }
                 }
-                else if (!setExifComment(defaultComment))
+                else if (entry.namespaceName == QLatin1String("Exif.Photo.UserComment"))
+                {
+                    if (!setExifComment(defaultComment, false))
+                    {
+                        return false;
+                    }
+                }
+                else if (!setExifTagString(nameSpace, defaultComment))
                 {
                     return false;
                 }

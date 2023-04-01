@@ -61,7 +61,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0005]
-alternativeName=Exif.Photo.UserComment
 index=5
 isDefault=true
 isDisabled=false
@@ -76,11 +75,11 @@ tagPaths=1
 index=6
 isDefault=true
 isDisabled=false
-namespaceName=Iptc.Application2.Caption
+namespaceName=Exif.Photo.UserComment
 nsType=3
 secondNameOpts=0
 specialOpts=0
-subspace=1
+subspace=0
 tagPaths=1
 
 [Metadata][readCaptionNamespaces][#0007]
@@ -92,6 +91,17 @@ nsType=3
 secondNameOpts=0
 specialOpts=0
 subspace=0
+tagPaths=1
+
+[Metadata][readCaptionNamespaces][#0008]
+index=8
+isDefault=true
+isDisabled=false
+namespaceName=Iptc.Application2.Caption
+nsType=3
+secondNameOpts=0
+specialOpts=0
+subspace=1
 tagPaths=1
 
 [Metadata][readColor labelNamespaces][#0000]
@@ -395,7 +405,6 @@ subspace=2
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0005]
-alternativeName=Exif.Photo.UserComment
 index=5
 isDefault=true
 isDisabled=false
@@ -410,11 +419,11 @@ tagPaths=1
 index=6
 isDefault=true
 isDisabled=false
-namespaceName=Iptc.Application2.Caption
+namespaceName=Exif.Photo.UserComment
 nsType=3
 secondNameOpts=0
 specialOpts=0
-subspace=1
+subspace=0
 tagPaths=1
 
 [Metadata][writeCaptionNamespaces][#0007]
@@ -426,6 +435,17 @@ nsType=3
 secondNameOpts=0
 specialOpts=0
 subspace=0
+tagPaths=1
+
+[Metadata][writeCaptionNamespaces][#0008]
+index=8
+isDefault=true
+isDisabled=false
+namespaceName=Iptc.Application2.Caption
+nsType=3
+secondNameOpts=0
+specialOpts=0
+subspace=1
 tagPaths=1
 
 [Metadata][writeColor labelNamespaces][#0000]
