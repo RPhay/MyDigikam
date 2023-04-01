@@ -47,19 +47,20 @@
 # Yuri Efremov <yur.arh@gmail.com>, 2012.
 # Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020, 2022, 2023.
 # Мария Шикунова <trasnslation-team@basealt.ru>, 2020, 2022.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-31 00:44+0000\n"
-"PO-Revision-Date: 2023-02-19 13:34+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
-"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"PO-Revision-Date: 2023-03-31 09:21+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -2887,10 +2888,9 @@ msgid "Clear all faces on this image"
 msgstr "Удалить все метки лиц с этого изображения"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Отметить все неизвестные лица как игнорируемые"
+msgstr "Отметить все неподтверждённые лица как игнорируемые"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3427,13 +3427,12 @@ msgstr ""
 "основанная на компоненте KF5::Sonnet;"
 
 #: core/app/views/stack/welcomepageview.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"В диалогах настройки приложений digiKam и Showfoto в разделе«Прочее» "
+"В диалогах настройки приложений digiKam и Showfoto в разделе «Прочее» "
 "добавлена панель управления параметрами проверки орфографии;"
 
 #: core/app/views/stack/welcomepageview.cpp:159
@@ -3445,19 +3444,15 @@ msgstr ""
 "альтернативных языках;"
 
 #: core/app/views/stack/welcomepageview.cpp:160
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"В диалогах настройки приложений digiKam и Showfoto в разделе«Прочее» "
+"В диалогах настройки приложений digiKam и Showfoto в разделе «Прочее» "
 "добавлена панель управления параметрами локализации;"
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add settings to list prefered alternative/translated languages in text "
-#| "edit widget."
+#, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
@@ -3470,8 +3465,8 @@ msgstr ""
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
-"Добавлена возможность назначать параметры сортировки по качеству изображений "
-"как глобально, так и с "
+"Добавлена возможность повсеместно использовать как глобальные, так и "
+"пользовательские параметры сортировки по качеству изображений;"
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3537,6 +3532,12 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Новые возможности для работы с цифровыми негативами: поддержка Phase One/"
+"Leaf IIQ-S v2, файлы Canon CR3 / RawBurst Canon CRM, мозаичные побитово "
+"упакованные (и 16-битные распакованные) DNG; (нестандартно) разрешены сжатые "
+"по алгоритму LZ77 целочисленные файлы DNG; Canon EOS R3, R7 и R10, Fujifilm "
+"X-H2S, X-T30 II, OM System OM-1, Leica M11, Sony A7-IV (ILCE-7M4), DJI Mavic "
+"3;"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -25430,11 +25431,9 @@ msgid "Visit Piwigo website"
 msgstr "Посетить веб-сайт проекта Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgid "Remote Albums"
-msgstr "Удалить альбом"
+msgstr "Сетевые альбомы"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
@@ -25451,9 +25450,7 @@ msgid "Reload album list"
 msgstr "Обновить список альбомов"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "piwigo account settings"
 msgid "Name:"
 msgstr "Имя:"
@@ -25462,7 +25459,7 @@ msgstr "Имя:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "URL-адрес:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
@@ -52363,12 +52360,10 @@ msgstr "Удалить неподтверждённые результаты и 
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
 #: core/utilities/maintenance/maintenancedlg.cpp:321
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Clear unconfirmed results and rescan"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
-msgstr "Удалить неподтверждённые результаты и обработать заново"
+msgstr "Удалить все предыдущие результаты и обработать заново"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
@@ -60584,8 +60579,7 @@ msgstr ""
 "p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Окно импорта"
@@ -61535,20 +61529,16 @@ msgstr ""
 "royalty-free.</item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Повторно считать метаданные из выбранных файлов"
+msgstr "Сохранить расширенный профиль метаданных"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Удалить метаданные из файла"
+msgstr "Загрузить расширенный профиль метаданных"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format
@@ -61621,18 +61611,14 @@ msgid "Revert Changes"
 msgstr "Отменить изменения"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Сохранение файла"
+msgstr "Сохранение профиля"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Профиль"
+msgstr "Загрузка профиля"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
