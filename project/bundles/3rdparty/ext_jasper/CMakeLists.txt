@@ -20,6 +20,7 @@ ExternalProject_Add(ext_jasper
                -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                ${GLOBAL_PROFILE}
                -DCMAKE_SYSTEM_PREFIX_PATH=${PREFIX_ext_jasper}
+               -DJAS_ENABLE_MULTITHREADING_SUPPORT=ON
                -DJAS_ENABLE_SHARED=ON
                -DJAS_ENABLE_LIBJPEG=ON
                -DJAS_ENABLE_LIBHEIF=OFF
