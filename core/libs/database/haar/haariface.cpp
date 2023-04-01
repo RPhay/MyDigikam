@@ -21,7 +21,7 @@
 
 #define ENABLE_DEBUG_DUPLICATES 0
 #if ENABLE_DEBUG_DUPLICATES
-#   define DEBUG_DUPLICATES(x) std::cout << x << std::endl;
+#   define DEBUG_DUPLICATES(x) qCDebug(DIGIKAM_DATABASE_LOG) << x;
 #else
 #   define DEBUG_DUPLICATES(x)
 #endif
