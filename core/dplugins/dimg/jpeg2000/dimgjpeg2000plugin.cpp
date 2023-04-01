@@ -81,10 +81,7 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
 
     if (!jas_init_library())
     {
-        if (!jas_init_thread())
-        {
-            m_initJasper = true;
-        }
+        m_initJasper = true;
     }
 
 #else
@@ -104,7 +101,6 @@ void DImgJPEG2000Plugin::cleanUp()
 
 #if JAS_VERSION_MAJOR >= 3
 
-    jas_cleanup_thread();
     jas_cleanup_library();
 
 #endif
