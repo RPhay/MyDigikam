@@ -238,11 +238,13 @@ const QSet<qlonglong>& SearchesDBJobInfo::imageIds() const
     return m_imageIds;
 }
 
-const QSet<qlonglong>& SearchesDBJobInfo::refImageIds() const {
+const QSet<qlonglong>& SearchesDBJobInfo::refImageIds() const
+{
     return m_refImageIds;
 }
 
-HaarIface::RefImageSelMethod SearchesDBJobInfo::refImageSelectionMethod() const {
+HaarIface::RefImageSelMethod SearchesDBJobInfo::refImageSelectionMethod() const
+{
     return m_refImageSelectionMethod;
 }
 

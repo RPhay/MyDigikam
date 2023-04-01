@@ -831,8 +831,10 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 const bool useReferenceImages = (refImageSelectionMethod == RefImageSelMethod::PreferFolder) || (refImageSelectionMethod == RefImageSelMethod::ExcludeFolder);
 
                 bool referenceFound = false;
-                if (useReferenceImages) {
-                    for (auto it = refs.begin(); it != refs.end(); it++) {
+                if (useReferenceImages)
+                {
+                    for (auto it = refs.begin(); it != refs.end(); it++)
+                    {
 #if ENABLE_DEBUG_DUPLICATES
                         {
                             ItemInfo info(*it);
@@ -841,7 +843,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             DEBUG_DUPLICATES("\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
                         }
 #endif
-                        if (*it == *images2ScanIterator) {
+                        if (*it == *images2ScanIterator)
+                        {
                             // image of images2ScanIterator is already in the references present, so take it as the
                             // reference
                             DEBUG_DUPLICATES("\tReference found!");
@@ -852,7 +855,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                 }
 
 
-                if (!useReferenceImages || (!referenceFound && refImageSelectionMethod == RefImageSelMethod::PreferFolder) || (referenceFound && refImageSelectionMethod == RefImageSelMethod::ExcludeFolder)) {
+                if (!useReferenceImages || (!referenceFound && refImageSelectionMethod == RefImageSelMethod::PreferFolder) || (referenceFound && refImageSelectionMethod == RefImageSelMethod::ExcludeFolder))
+                {
                     DEBUG_DUPLICATES("\tChecking Duplicates")
                     Q_FOREACH (const qlonglong& refId, duplicates)
                     {
@@ -870,8 +874,10 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                                                 (quint64)info.dimensions().height();
 
                         bool referenceFound = false;
-                        if (useReferenceImages) {
-                            for (auto it = refs.begin(); it != refs.end(); it++) {
+                        if (useReferenceImages)
+                        {
+                            for (auto it = refs.begin(); it != refs.end(); it++)
+                            {
 #if ENABLE_DEBUG_DUPLICATES
                                 {
                                     ItemInfo info(*it);
@@ -880,7 +886,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                                     DEBUG_DUPLICATES("\t\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
                                 }
 #endif
-                                if (*it == refId) {
+                                if (*it == refId)
+                                {
                                     DEBUG_DUPLICATES("\t\tReference found!");
                                     referenceFound = true;
                                     break;
@@ -913,7 +920,8 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             }
 #endif
 
-                            if (preferFolderCond || excludeFolderCond) {
+                            if (preferFolderCond || excludeFolderCond)
+                            {
                                 break;
                             }
                         }

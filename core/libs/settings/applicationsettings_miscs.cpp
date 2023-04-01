@@ -338,7 +338,8 @@ void ApplicationSettings::setDuplicatesReferenceImageSelectionMethod(HaarIface::
     d->duplicatesSearchLastReferenceImageSelectionMethod = val;
 }
 
-HaarIface::RefImageSelMethod ApplicationSettings::getDuplicatesRefImageSelMethod() const {
+HaarIface::RefImageSelMethod ApplicationSettings::getDuplicatesRefImageSelMethod() const
+{
     return d->duplicatesSearchLastReferenceImageSelectionMethod;
 }
 
