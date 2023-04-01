@@ -352,7 +352,7 @@ BUGFIXES:
 307 ==> 467968 - Advanced slideshow using opengl re-displays some jpegs, sometimes crashes.
 308 ==> 468002 - UTF8 Encoding is not supported in IPTC when using exiftool as backend.
 309 ==> 468016 - Caption information is written to Exif UserComment and no option exists to disable.
-310 ==> 
+310 ==> 468041 - Simple Rename of a Collection in Collection list.
 311 ==> 
 312 ==> 
 313 ==> 
