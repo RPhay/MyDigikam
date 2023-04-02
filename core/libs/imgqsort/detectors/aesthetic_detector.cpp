@@ -6,7 +6,7 @@
  * Date        : 28/08/2021
  * Description : Image Quality Parser - Aesthetic detection based on deep learning
  *
- * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -40,18 +40,33 @@ AestheticDetector::~AestheticDetector()
 
 float AestheticDetector::detect(const cv::Mat& image) const
 {
-    cv::Mat input = preprocess(image);
-
-    if (!s_model.empty())
+    try
     {
-        s_model.setInput(input);
-        cv::Mat out = s_model.forward();
+        cv::Mat input = preprocess(image);
 
-        return postProcess(out);
+        if (!s_model.empty())
+        {
+            s_model.setInput(input);
+            cv::Mat out = s_model.forward();
+
+            return postProcess(out);
+        }
+        else
+        {
+            qCCritical(DIGIKAM_DIMG_LOG) << "Cannot load Aesthetic DNN model";
+
+            return (-1.0F);
+        }
     }
-    else
+    catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Cannot load Aesthetic DNN model";
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+
+        return (-1.0F);
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
 
         return (-1.0F);
     }

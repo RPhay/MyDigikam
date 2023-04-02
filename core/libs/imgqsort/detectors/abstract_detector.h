@@ -6,7 +6,7 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser - Abstract class for detector
  *
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
