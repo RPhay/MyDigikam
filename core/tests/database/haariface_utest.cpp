@@ -112,14 +112,16 @@ HaarIfaceTest::HaarIfaceTest(QObject* const parent)
     qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 }
 
-void HaarIfaceTest::initTestCase() {
+void HaarIfaceTest::initTestCase()
+{
     startSqlite(QDir(filesPath));
     ScanController::instance()->completeCollectionScan();
     ScanController::instance()->allowToScanDeferredFiles();
     AlbumManager::instance()->startScan();
 }
 
-void HaarIfaceTest::cleanupTestCase() {
+void HaarIfaceTest::cleanupTestCase()
+{
     stopSql();
 }
 
@@ -150,7 +152,8 @@ void HaarIfaceTest::startSqlite(const QDir& dbDir)
     QTest::qWait(3000);
 }
 
-void HaarIfaceTest::stopSql() {
+void HaarIfaceTest::stopSql()
+{
     qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down SQlite database";
     ScanController::instance()->shutDown();
     AlbumManager::instance()->cleanUp();
@@ -174,7 +177,8 @@ void HaarIfaceTest::stopSql() {
  * \brief HaarIfaceTest::testOriginal
  * Original behaviour
  */
-void HaarIfaceTest::testOriginal() {
+void HaarIfaceTest::testOriginal()
+{
     AlbumList all = AlbumManager::instance()->allPAlbums();
 
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::OlderOrLarger;
@@ -213,7 +217,8 @@ void HaarIfaceTest::testOriginal() {
  * \brief HaarIfaceTest::testExcludeRefSelectpotentialDuplicates
  * The selected folder shall not be used as reference
  */
-void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates() {
+void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::ExcludeFolder;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -221,9 +226,11 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates() {
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
-    for (auto* a: all) {
+    for (auto* a: all)
+    {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
-        if (path.startsWith(QStringLiteral("/potentialDuplicates"))) {
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
             // potentialDuplicates and subfolders
             referenceAlbums << a;
         }
@@ -260,7 +267,8 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates() {
  * \brief HaarIfaceTest::testPreferFolderSelectpotentialDuplicates
  * The selected folder is prefered as reference
  */
-void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates() {
+void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::PreferFolder;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -268,9 +276,11 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates() {
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
-    for (auto* a: all) {
+    for (auto* a: all)
+    {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
-        if (path.startsWith(QStringLiteral("/potentialDuplicates"))) {
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
             // potentialDuplicates and subfolders
             referenceAlbums << a;
         }
@@ -303,7 +313,8 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates() {
     }
 }
 
-void HaarIfaceTest::testPreferNewerCreationDate() {
+void HaarIfaceTest::testPreferNewerCreationDate()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::NewerCreationDate;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -311,9 +322,11 @@ void HaarIfaceTest::testPreferNewerCreationDate() {
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
-    for (auto* a: all) {
+    for (auto* a: all)
+    {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
-        if (path.startsWith(QStringLiteral("/potentialDuplicates"))) {
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
             // potentialDuplicates and subfolders
             referenceAlbums << a;
         }
@@ -334,7 +347,8 @@ void HaarIfaceTest::testPreferNewerCreationDate() {
     QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) != QStringLiteral("Collection/potentialDuplicates/4.png"));
 }
 
-void HaarIfaceTest::testPreferNewerModificationDate() {
+void HaarIfaceTest::testPreferNewerModificationDate()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::NewerModificationDate;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -342,9 +356,11 @@ void HaarIfaceTest::testPreferNewerModificationDate() {
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
-    for (auto* a: all) {
+    for (auto* a: all)
+    {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
-        if (path.startsWith(QStringLiteral("/potentialDuplicates"))) {
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
             // potentialDuplicates and subfolders
             referenceAlbums << a;
         }
@@ -369,7 +385,8 @@ void HaarIfaceTest::testPreferNewerModificationDate() {
     QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) != QStringLiteral("Collection/potentialDuplicates/4.png"));
 }
 
-void HaarIfaceTest::testPreferFolderWhole() {
+void HaarIfaceTest::testPreferFolderWhole()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::PreferFolder;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -394,7 +411,8 @@ void HaarIfaceTest::testPreferFolderWhole() {
  * Only the potentialDuplicates folder is selected, but not the subfolders
  * In this case, also the subfolders shall be considered
  */
-void HaarIfaceTest::testRecursiveFolderSelection() {
+void HaarIfaceTest::testRecursiveFolderSelection()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::PreferFolder;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -402,9 +420,11 @@ void HaarIfaceTest::testRecursiveFolderSelection() {
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
-    for (auto* a: all) {
+    for (auto* a: all)
+    {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
-        if (path == QStringLiteral("/potentialDuplicates")) {
+        if (path == QStringLiteral("/potentialDuplicates"))
+        {
             // potentialDuplicates
             referenceAlbums << a;
             break;
