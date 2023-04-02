@@ -49,8 +49,8 @@ trap HostUploadLogFiles ERR exit
 
 ORIG_WD="`pwd`"
 
-. ./config.sh
 . ./common.sh
+. ./config.sh
 StartScript
 ChecksRunAsRoot
 ChecksCPUCores

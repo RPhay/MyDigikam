@@ -32,8 +32,8 @@ echo "-----------------------------------------------------"
 #################################################################################################
 # Pre-processing checks
 
-. ./config.sh
 . ./common.sh
+. ./config.sh
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores

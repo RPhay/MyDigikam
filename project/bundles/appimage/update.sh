@@ -49,8 +49,8 @@ ORIG_WD="`pwd`"
 #################################################################################################
 # Pre-processing checks
 
-. ./config.sh
 . ./common.sh
+. ./config.sh
 StartScript
 ChecksRunAsRoot
 ChecksCPUCores

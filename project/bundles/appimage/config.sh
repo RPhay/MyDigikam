@@ -9,7 +9,7 @@
 
 ########################################################################
 
-. ./common.sh
+# NOTE: include common.sh header first.
 CheckSystemReleaseID
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
