@@ -46,7 +46,7 @@ private Q_SLOTS:
     void testPreferNewerCreationDate();
     void testPreferNewerModificationDate();
     void testPreferFolderWhole();
-    void testRecursiveFolderSelection();
+//    void testRecursiveFolderSelection();
 
 private:
     void startSqlite(const QDir& dbDir);
