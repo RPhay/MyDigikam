@@ -94,10 +94,6 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
 
 DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 {
-}
-
-void DImgJPEG2000Plugin::cleanUp()
-{
 
 #if JAS_VERSION_MAJOR >= 3
 
