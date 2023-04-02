@@ -357,6 +357,6 @@ BUGFIXES:
 310 ==> 468041 - Simple Rename of a Collection in Collection list.
 311 ==> 468050 - Language changed to my system default even en-US set.
 312 ==> 468040 - Search for New Entries causes Error from Jasper 4.0.0.
-313 ==> 
+313 ==> 468083 - The program will crash.
 314 ==> 
 315 ==> 
