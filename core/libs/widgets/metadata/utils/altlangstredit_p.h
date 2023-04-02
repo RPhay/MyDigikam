@@ -39,6 +39,7 @@
 
 // KDE includes
 
+#include <klazylocalizedstring.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -52,7 +53,7 @@
 namespace Digikam
 {
 
-typedef QMap<QString, QString> LanguageCodeMap;
+typedef QMap<QString, KLazyLocalizedString> LanguageCodeMap;
 
 extern const LanguageCodeMap s_rfc3066ForXMP;
 

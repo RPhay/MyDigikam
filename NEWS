@@ -353,7 +353,7 @@ BUGFIXES:
 308 ==> 468002 - UTF8 Encoding is not supported in IPTC when using exiftool as backend.
 309 ==> 468016 - Caption information is written to Exif UserComment and no option exists to disable.
 310 ==> 468041 - Simple Rename of a Collection in Collection list.
-311 ==> 
+311 ==> 468050 - Language changed to my system default even en-US set.
 312 ==> 
 313 ==> 
 314 ==> 

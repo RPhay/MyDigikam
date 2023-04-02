@@ -83,7 +83,7 @@ QString AltLangStrEdit::languageNameRFC3066(const QString& code)
 
     if (it != s_rfc3066ForXMP.end())
     {
-        return it.value();
+        return KLocalizedString(it.value()).toString();
     }
 
     return QString();
@@ -181,7 +181,7 @@ void AltLangStrEdit::slotSelectionChanged()
 
     d->valueEdit->blockSignals(false);
 
-    d->languageCB->setToolTip(s_rfc3066ForXMP.value(d->currentLanguage));
+    d->languageCB->setToolTip(KLocalizedString(s_rfc3066ForXMP.value(d->currentLanguage)).toString());
 
     // NOTE: if no specific language is set, spell-checker failback to auto-detection.
 
