@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 00:44+0000\n"
+"POT-Creation-Date: 2023-04-02 00:44+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -6537,11 +6537,11 @@ msgstr "Nový formát obrázka"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -6562,11 +6562,11 @@ msgstr "áno"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -6763,20 +6763,20 @@ msgstr ""
 "(bez kompresie a veľká veľkosť súborov)</p><p><b>Pozor: JPEG 2000 nie je "
 "bezstratový kompresný formát, keď použijete toto nastavenie.</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:116
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:112
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Obrázok JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:131
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:127
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:136
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:132
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6790,23 +6790,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Obrázok JPEG 2000"
 
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:190
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Obrázok JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:194
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:190
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
