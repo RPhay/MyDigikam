@@ -358,5 +358,11 @@ BUGFIXES:
 311 ==> 468050 - Language changed to my system default even en-US set.
 312 ==> 468040 - Search for New Entries causes Error from Jasper 4.0.0.
 313 ==> 468083 - The program will crash.
-314 ==> 
+314 ==> 468049 - digiKam crash when image quality sorter used - terminate called after throwing an instance of 'cv::Exception'.
 315 ==> 
+316 ==> 
+317 ==> 
+318 ==> 
+319 ==> 
+320 ==> 
+321 ==> 
