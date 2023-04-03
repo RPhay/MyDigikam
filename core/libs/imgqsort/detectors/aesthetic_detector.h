@@ -16,6 +16,10 @@
 #ifndef DIGIKAM_AESTHETIC_DETECTOR_H
 #define DIGIKAM_AESTHETIC_DETECTOR_H
 
+// Qt includes
+
+#include <QMutex>
+
 // Local includes
 
 #include "abstract_detector.h"
@@ -44,12 +48,14 @@ private:
 
 public:
 
-    static cv::dnn::Net s_model;
-
-public:
-
     static bool s_loadModel();
     static void s_unloadModel();
+    static bool s_isEmptyModel();
+
+private:
+
+    static cv::dnn::Net s_model;
+    static QMutex       s_modelMutex;
 };
 
 } // namespace Digikam

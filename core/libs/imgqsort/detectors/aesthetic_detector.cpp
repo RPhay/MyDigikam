@@ -19,6 +19,7 @@
 
 #include <QStandardPaths>
 #include <QUrl>
+#include <QMutexLocker>
 
 // Local includes
 
@@ -27,7 +28,8 @@
 namespace Digikam
 {
 
-cv::dnn::Net AestheticDetector::s_model = cv::dnn::Net();
+cv::dnn::Net AestheticDetector::s_model      = cv::dnn::Net();
+QMutex       AestheticDetector::s_modelMutex = QMutex();
 
 AestheticDetector::AestheticDetector()
     : AbstractDetector()
@@ -42,6 +44,8 @@ float AestheticDetector::detect(const cv::Mat& image) const
 {
     try
     {
+        QMutexLocker locker(&s_modelMutex);
+
         cv::Mat input = preprocess(image);
 
         if (!s_model.empty())
@@ -128,20 +132,22 @@ float AestheticDetector::postProcess(const cv::Mat& modelOutput) const
 
 bool AestheticDetector::s_loadModel()
 {
-    if (!s_model.empty())
+    try
     {
-        return true;
-    }
+        QMutexLocker locker(&s_modelMutex);
 
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+        if (!s_model.empty())
+        {
+            return true;
+        }
 
-    QString nnmodel = appUrl.toLocalFile() + QLatin1String("weights_inceptionv3_299.pb");
+        QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+        QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
+        appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
 
-    if (QFileInfo::exists(nnmodel))
-    {
-        try
+        QString nnmodel = appUrl.toLocalFile() + QLatin1String("weights_inceptionv3_299.pb");
+
+        if (QFileInfo::exists(nnmodel))
         {
             qCDebug(DIGIKAM_DIMG_LOG) << "Aesthetic detector model:" << nnmodel;
 
@@ -163,35 +169,36 @@ bool AestheticDetector::s_loadModel()
 
 #endif
 
+            return true;
         }
-        catch (cv::Exception& e)
+        else
         {
-            qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+            qCCritical(DIGIKAM_DIMG_LOG) << "Cannot found Aesthetic DNN model" << nnmodel;
+            qCCritical(DIGIKAM_DIMG_LOG) << "Aesthetic detection feature cannot be used!";
 
             return false;
         }
-        catch (...)
-        {
-           qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
-
-           return false;
-        }
     }
-    else
+    catch (cv::Exception& e)
     {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Cannot found Aesthetic DNN model" << nnmodel;
-        qCCritical(DIGIKAM_DIMG_LOG) << "Aesthetic detection feature cannot be used!";
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
 
         return false;
     }
+    catch (...)
+    {
+       qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
 
-    return true;
+       return false;
+    }
 }
 
 void AestheticDetector::s_unloadModel()
 {
     try
     {
+        QMutexLocker locker(&s_modelMutex);
+
         if (!s_model.empty())
         {
             s_model = cv::dnn::Net();
@@ -204,6 +211,28 @@ void AestheticDetector::s_unloadModel()
     catch (...)
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+    }
+}
+
+bool AestheticDetector::s_isEmptyModel()
+{
+    try
+    {
+        QMutexLocker locker(&s_modelMutex);
+
+        return (s_model.empty());
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+
+        return true;
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+
+        return true;
     }
 }
 

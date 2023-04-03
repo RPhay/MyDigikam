@@ -83,7 +83,7 @@ void ImageQualityParser::startAnalyse()
     {
         if (d->imq.detectAesthetic)
         {
-            if (AestheticDetector::s_model.empty())
+            if (AestheticDetector::s_isEmptyModel())
             {
                 AestheticDetector::s_loadModel();
             }
