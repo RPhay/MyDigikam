@@ -151,11 +151,7 @@ public:
 
         // --------------------------------------------------------
 
-        if (!album->isAlbumRoot())
-        {
-            cmh.addActionRenameAlbum(d->albumModificationHelper, album);
-        }
-
+        cmh.addActionRenameAlbum(d->albumModificationHelper, album);
         cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
         cmh.addSeparator();
 

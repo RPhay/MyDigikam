@@ -51,7 +51,7 @@ void ContextMenuHelper::addActionEditAlbum(AlbumModificationHelper* const helper
 void ContextMenuHelper::addActionRenameAlbum(AlbumModificationHelper* const helper, PAlbum* const album)
 {
     QAction* const action = d->copyFromMainCollection(QLatin1String("album_rename"));
-    addAction(action, !(album->isRoot() || album->isAlbumRoot()));
+    addAction(action, !album->isRoot());
     helper->bindAlbum(action, album);
 
     connect(action, SIGNAL(triggered()),
