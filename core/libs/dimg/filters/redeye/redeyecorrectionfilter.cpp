@@ -264,7 +264,7 @@ FilterAction RedEyeCorrectionFilter::filterAction()
 {
     DefaultFilterAction<RedEyeCorrectionFilter> action;
     d->settings.writeToFilterAction(action);
-    return std::move(action);
+    return action;
 }
 
 void RedEyeCorrectionFilter::readParameters(const FilterAction& action)
