@@ -41,6 +41,7 @@ ImageEditor    : Update G'MIC-Qt tool to last version 3.2.2.
                  Finalize G'MIC-Qt MacOS port and improve stability of plugin.
 General        : Add libjasper >= 4.0 support in the bundles for JPEG-2000 support.
 General        : Update ExifTool to 12.59 in bundles.
+General        : Update internal Libraw from snapshot 20230403.
 
 *****************************************************************************************************
 BUGFIXES:
