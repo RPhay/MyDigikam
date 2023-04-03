@@ -131,6 +131,12 @@ extern "C"
 
 #include "digikam_opencv.h"
 
+// defined in OpenCV core/private.hpp
+namespace cv
+{
+const char* currentParallelFramework();
+}
+
 namespace Digikam
 {
 
@@ -404,17 +410,17 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         file.close();
     }
 
-    // --- OpenCV::OpenCL features
-
-    QTreeWidgetItem* const opencvHead = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: opencv opencl info", "OpenCV::OpenCL"));
+    QTreeWidgetItem* const opencvHead = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: opencv info", "OpenCV Configuration"));
     listView()->addTopLevelItem(opencvHead);
+
+    // --- OpenCV::OpenCL features
 
     try
     {
         if (!cv::ocl::haveOpenCL() || !cv::ocl::useOpenCL())
         {
             new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+                                i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
 
             return;
         }
@@ -425,12 +431,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         if (platforms.empty())
         {
             new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+                                i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
 
             return;
         }
 
-        QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL platform"));
+        QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
 
         for (size_t i = 0 ; i < platforms.size() ; i++)
         {
@@ -455,10 +461,10 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         if (!device.available())
         {
             new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(CONTEXT, "OCL device") << SUPPORTED_NO);
+                                i18nc(CONTEXT, "OpenCL device") << SUPPORTED_NO);
         }
 
-        QTreeWidgetItem* const ocldev = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL Device"));
+        QTreeWidgetItem* const ocldev = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device"));
         QString deviceTypeStr         = openCVGetDeviceTypeString(device);
 
         new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Type")                       << deviceTypeStr);
@@ -484,7 +490,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? SUPPORTED_YES : SUPPORTED_NO;
         new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Host unified memory")        << isUnifiedMemoryStr);
 
-        QTreeWidgetItem* const ocldevext = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL Device extensions"));
+        QTreeWidgetItem* const ocldevext = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device extensions"));
         QString extensionsStr            = QString::fromStdString(device.extensions());
         int pos                          = 0;
 
@@ -500,7 +506,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
             if (pos2 > pos)
             {
                 QString extensionName = extensionsStr.mid(pos, pos2 - pos);
-                new QTreeWidgetItem(ocldevext, QStringList() << extensionName);
+                new QTreeWidgetItem(ocldevext, QStringList() << extensionName << SUPPORTED_YES);
             }
 
             pos = pos2 + 1;
@@ -521,8 +527,56 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     }
     catch (...)
     {
-        new QTreeWidgetItem(opencvHead, QStringList() <<
-                            i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
+    }
+
+    // --- OpenCV::Hardware features
+
+    try
+    {
+        QTreeWidgetItem* const ocvhdw = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Hardware features"));
+        int count                     = 0;
+
+        for (int i = 0 ; i < CV_HARDWARE_MAX_FEATURE ; i++)
+        {
+            QString name = QString::fromStdString(cv::getHardwareFeatureName(i));
+
+            if (name.isEmpty())
+            {
+                continue;
+            }
+
+            bool enabled = cv::checkHardwareSupport(i);
+
+            if (enabled)
+            {
+                count++;
+                new QTreeWidgetItem(ocvhdw, QStringList() << name << (enabled ? SUPPORTED_YES : SUPPORTED_NO));
+            }
+        }
+    }
+    catch (...)
+    {
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Hardware features availability") << SUPPORTED_NO);
+    }
+
+    // --- OpenCV::Threads features
+
+    try
+    {
+        QTreeWidgetItem* const ocvthreads = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Threads features"));
+
+        QString parallelFramework = QString::fromStdString(cv::currentParallelFramework());
+
+        if (!parallelFramework.isEmpty())
+        {
+            new QTreeWidgetItem(ocvthreads, QStringList() << i18nc(CONTEXT, "Number of Threads") << QString::number(cv::getNumThreads()));
+            new QTreeWidgetItem(ocvthreads, QStringList() << i18nc(CONTEXT, "Parallel framework") << parallelFramework);
+        }
+    }
+    catch (...)
+    {
+        new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "Threads features availability") << SUPPORTED_NO);
     }
 }
 
