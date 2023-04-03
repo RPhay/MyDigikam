@@ -78,17 +78,18 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DWITH_IMGCODEC_HDR=OFF
                 -DWITH_IMGCODEC_SUNRASTER=OFF
                 -DWITH_IMGCODEC_PXM=OFF
+                -DCV_TRACE=OFF
+                -DCV_ENABLE_INTRINSICS=OFF
+                -DCV_DISABLE_OPTIMIZATION=ON
                 -DWITH_CUDA=OFF
                 -DWITH_CUFFT=OFF
                 -DWITH_CUBLAS=OFF
                 -DWITH_NVCUVID=OFF
-                -DWITH_OPENCL=OFF
-                -DWITH_OPENCL_SVM=OFF
-                -DWITH_OPENCLAMDFFT=OFF
-                -DWITH_OPENCLAMDBLAS=OFF
-                -DCV_ENABLE_INTRINSICS=OFF
-                -DCV_DISABLE_OPTIMIZATION=ON
-                -DCV_TRACE=OFF
+                -DWITH_OPENCL=ON
+                -DWITH_OPENCL_SVM=ON
+                -DWITH_OPENCLAMDFFT=ON
+                -DWITH_OPENCLAMDBLAS=ON
+                -DWITH_OPENCL_D3D11_NV=ON
 )
 
 JoinListAsString("${Opencv_Conf}" " " BASH_OPTIONS)
@@ -132,7 +133,7 @@ elseif(APPLE)
         ALWAYS 0
     )
 
-else() #Linux
+else() # Linux
 
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -141,9 +142,6 @@ else() #Linux
         GIT_TAG 4.6.0
 
         INSTALL_DIR ${EXTPREFIX_opencv}
-
-        # To fix broken compilation under Linux 32 bits
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/opencv-mmpause-linux.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_opencv}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
