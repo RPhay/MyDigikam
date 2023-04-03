@@ -280,7 +280,16 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
     QString oldTitle(album->title());
 
     QPointer<QInputDialog> textDlg = new QInputDialog(d->dialogParent);
-    textDlg->setWindowTitle(i18nc("@title:window", "Rename Album (%1)", oldTitle));
+
+    if (!album->isAlbumRoot())
+    {
+        textDlg->setWindowTitle(i18nc("@title:window", "Rename Album (%1)", oldTitle));
+    }
+    else
+    {
+        textDlg->setWindowTitle(i18nc("@title:window", "Rename Album Root (%1)", oldTitle));
+    }
+
     textDlg->setLabelText(i18n("Enter new album name:"));
     textDlg->resize(450, textDlg->sizeHint().height());
     textDlg->setInputMode(QInputDialog::TextInput);
@@ -298,11 +307,25 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
 
     if (title != oldTitle)
     {
-        QString errMsg;
-
-        if (!AlbumManager::instance()->renamePAlbum(album, title, errMsg))
+        if (album->isAlbumRoot())
         {
-            QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
+            CollectionLocation location =
+                CollectionManager::instance()->
+                    locationForAlbumRootId(album->albumRootId());
+
+            if (!location.isNull())
+            {
+                CollectionManager::instance()->setLabel(location, title);
+            }
+        }
+        else
+        {
+            QString errMsg;
+
+            if (!AlbumManager::instance()->renamePAlbum(album, title, errMsg))
+            {
+                QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
+            }
         }
     }
 }

@@ -535,7 +535,7 @@ void DigikamApp::slotAlbumSelected(Album* album)
             bool isNormalAlbum   = !isRoot && !isAlbumRoot;
 
             d->deleteAction->setEnabled(isNormalAlbum);
-            d->renameAction->setEnabled(isNormalAlbum);
+            d->renameAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->propsEditAction->setEnabled(isNormalAlbum);
             d->openInFileManagerAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->newAction->setEnabled(isNormalAlbum || isAlbumRoot);

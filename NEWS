@@ -361,8 +361,8 @@ BUGFIXES:
 313 ==> 468083 - The program will crash.
 314 ==> 468049 - digiKam crash when image quality sorter used - terminate called after throwing an instance of 'cv::Exception'.
 315 ==> 431115 - Enable GPU optimizations support for OpenCV.
-316 ==> 
-317 ==> 
+316 ==> 468041 - Simple Rename of a Collection in Collection list.
+317 ==> 468120 - Where to rename the root album collection.
 318 ==> 
 319 ==> 
 320 ==> 
