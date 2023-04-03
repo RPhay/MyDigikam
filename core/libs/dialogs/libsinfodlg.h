@@ -25,6 +25,11 @@
 #include "digikam_export.h"
 #include "infodlg.h"
 
+namespace cv::ocl
+{
+    class Device;
+}
+
 namespace Digikam
 {
 
@@ -45,6 +50,9 @@ protected:
 private:
 
     QString checkTriState(int value) const;
+
+    QString openCVBytesToStringRepr(size_t value) const;
+    QString openCVGetDeviceTypeString(const cv::ocl::Device& device);
 };
 
 } // namespace Digikam

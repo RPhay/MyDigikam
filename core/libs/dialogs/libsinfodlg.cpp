@@ -129,6 +129,8 @@ extern "C"
 }
 #endif
 
+#include "digikam_opencv.h"
+
 namespace Digikam
 {
 
@@ -401,6 +403,127 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
         file.close();
     }
+
+    // --- OpenCV::OpenCL features
+
+    QTreeWidgetItem* const opencvHead = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: opencv opencl info", "OpenCV::OpenCL"));
+    listView()->addTopLevelItem(opencvHead);
+
+    try
+    {
+        if (!cv::ocl::haveOpenCL() || !cv::ocl::useOpenCL())
+        {
+            new QTreeWidgetItem(opencvHead, QStringList() <<
+                                i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+
+            return;
+        }
+
+        std::vector<cv::ocl::PlatformInfo> platforms;
+        cv::ocl::getPlatfomsInfo(platforms);
+
+        if (platforms.empty())
+        {
+            new QTreeWidgetItem(opencvHead, QStringList() <<
+                                i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+
+            return;
+        }
+
+        QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL platform"));
+
+        for (size_t i = 0 ; i < platforms.size() ; i++)
+        {
+            const cv::ocl::PlatformInfo* platform = &platforms[i];
+            QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
+
+            cv::ocl::Device current_device;
+
+            for (int j = 0 ; j < platform->deviceNumber() ; j++)
+            {
+                platform->getDevice(current_device, j);
+                QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
+
+                new QTreeWidgetItem(plfrm, QStringList()
+                    << deviceTypeStr << QString::fromStdString(current_device.name()) +
+                       QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
+            }
+        }
+
+        const cv::ocl::Device& device = cv::ocl::Device::getDefault();
+
+        if (!device.available())
+        {
+            new QTreeWidgetItem(opencvHead, QStringList() <<
+                                i18nc(CONTEXT, "OCL device") << SUPPORTED_NO);
+        }
+
+        QTreeWidgetItem* const ocldev = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL Device"));
+        QString deviceTypeStr         = openCVGetDeviceTypeString(device);
+
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Type")                       << deviceTypeStr);
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Name")                       << QString::fromStdString(device.name()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Version")                    << QString::fromStdString(device.version()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Driver version")             << QString::fromStdString(device.driverVersion()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Address bits")               << QString::number(device.addressBits()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Compute units")              << QString::number(device.maxComputeUnits()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max work group size")        << QString::number(device.maxWorkGroupSize()));
+
+        QString localMemorySizeStr = openCVBytesToStringRepr(device.localMemSize());
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Local memory size")          << localMemorySizeStr);
+
+        QString maxMemAllocSizeStr = openCVBytesToStringRepr(device.maxMemAllocSize());
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max memory allocation size") << maxMemAllocSizeStr);
+
+        QString doubleSupportStr = (device.doubleFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Double support")             << doubleSupportStr);
+
+        QString halfSupportStr = (device.halfFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Half support")               << halfSupportStr);
+
+        QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? SUPPORTED_YES : SUPPORTED_NO;
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Host unified memory")        << isUnifiedMemoryStr);
+
+        QTreeWidgetItem* const ocldevext = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OCL Device extensions"));
+        QString extensionsStr            = QString::fromStdString(device.extensions());
+        int pos                          = 0;
+
+        while (pos < extensionsStr.size())
+        {
+            int pos2 = extensionsStr.indexOf(QLatin1Char(' '), pos);
+
+            if (pos2 == -1)
+            {
+                pos2 = extensionsStr.size();
+            }
+
+            if (pos2 > pos)
+            {
+                QString extensionName = extensionsStr.mid(pos, pos2 - pos);
+                new QTreeWidgetItem(ocldevext, QStringList() << extensionName);
+            }
+
+            pos = pos2 + 1;
+        }
+
+        QString haveAmdBlasStr = cv::ocl::haveAmdBlas() ? SUPPORTED_YES : SUPPORTED_NO;
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Blas")                  << haveAmdBlasStr);
+
+        QString haveAmdFftStr  = cv::ocl::haveAmdFft() ? SUPPORTED_YES : SUPPORTED_NO;
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Fft")                   << haveAmdFftStr);
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width char")   << QString::number(device.preferredVectorWidthChar()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width short")  << QString::number(device.preferredVectorWidthShort()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width int")    << QString::number(device.preferredVectorWidthInt()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width long")   << QString::number(device.preferredVectorWidthLong()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width float")  << QString::number(device.preferredVectorWidthFloat()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width double") << QString::number(device.preferredVectorWidthDouble()));
+        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width half")   << QString::number(device.preferredVectorWidthHalf()));
+    }
+    catch (...)
+    {
+        new QTreeWidgetItem(opencvHead, QStringList() <<
+                            i18nc(CONTEXT, "OCL availability") << SUPPORTED_NO);
+    }
 }
 
 LibsInfoDlg::~LibsInfoDlg()
@@ -426,6 +549,72 @@ QString LibsInfoDlg::checkTriState(int value) const
             return i18nc("@info: tri state", "Unknown");
         }
     }
+}
+
+QString LibsInfoDlg::openCVBytesToStringRepr(size_t value) const
+{
+    size_t b = value % 1024;
+    value /= 1024;
+
+    size_t kb = value % 1024;
+    value /= 1024;
+
+    size_t mb = value % 1024;
+    value /= 1024;
+
+    size_t gb = value;
+
+    QString s;
+    QTextStream stream(&s);
+
+    if (gb > 0)
+    {
+        stream << gb << " GB ";
+    }
+
+    if (mb > 0)
+    {
+        stream << mb << " MB ";
+    }
+
+    if (kb > 0)
+    {
+        stream << kb << " KB ";
+    }
+
+    if (b > 0)
+    {
+        stream << b << " B";
+    }
+
+    if (s[s.size() - 1] == QLatin1Char(' '))
+    {
+        s = s.mid(0, s.size() - 1);
+    }
+
+    return s;
+}
+
+QString LibsInfoDlg::openCVGetDeviceTypeString(const cv::ocl::Device& device)
+{
+    if (device.type() == cv::ocl::Device::TYPE_CPU)
+    {
+        return QLatin1String("CPU");
+    }
+
+    if (device.type() == cv::ocl::Device::TYPE_GPU)
+    {
+        if (device.hostUnifiedMemory())
+        {
+            return QLatin1String("iGPU");
+        }
+        else
+        {
+            return QLatin1String("dGPU");
+        }
+    }
+
+    return QLatin1String("unknown");
 }
 
 } // namespace Digikam
