@@ -421,109 +421,112 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
         {
             new QTreeWidgetItem(opencvHead, QStringList() <<
                                 i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
-
-            return;
         }
-
-        std::vector<cv::ocl::PlatformInfo> platforms;
-        cv::ocl::getPlatfomsInfo(platforms);
-
-        if (platforms.empty())
+        else
         {
-            new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
+            std::vector<cv::ocl::PlatformInfo> platforms;
+            cv::ocl::getPlatfomsInfo(platforms);
 
-            return;
-        }
-
-        QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
-
-        for (size_t i = 0 ; i < platforms.size() ; i++)
-        {
-            const cv::ocl::PlatformInfo* platform = &platforms[i];
-            QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
-
-            cv::ocl::Device current_device;
-
-            for (int j = 0 ; j < platform->deviceNumber() ; j++)
+            if (platforms.empty())
             {
-                platform->getDevice(current_device, j);
-                QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
+                new QTreeWidgetItem(opencvHead, QStringList() <<
+                                    i18nc(CONTEXT, "OpenCL availability") << SUPPORTED_NO);
 
-                new QTreeWidgetItem(plfrm, QStringList()
-                    << deviceTypeStr << QString::fromStdString(current_device.name()) +
-                       QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
+            }
+            else
+            {
+                QTreeWidgetItem* const oclplfrm = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL platform"));
+
+                for (size_t i = 0 ; i < platforms.size() ; i++)
+                {
+                    const cv::ocl::PlatformInfo* platform = &platforms[i];
+                    QTreeWidgetItem* const plfrm = new QTreeWidgetItem(oclplfrm, QStringList() << QString::fromStdString(platform->name()));
+
+                    cv::ocl::Device current_device;
+
+                    for (int j = 0 ; j < platform->deviceNumber() ; j++)
+                    {
+                        platform->getDevice(current_device, j);
+                        QString deviceTypeStr = openCVGetDeviceTypeString(current_device);
+
+                        new QTreeWidgetItem(plfrm, QStringList()
+                            << deviceTypeStr << QString::fromStdString(current_device.name()) +
+                               QLatin1String(" (") + QString::fromStdString(current_device.version()) + QLatin1Char(')'));
+                    }
+                }
+
+                const cv::ocl::Device& device = cv::ocl::Device::getDefault();
+
+                if (!device.available())
+                {
+                    new QTreeWidgetItem(opencvHead, QStringList() <<
+                                        i18nc(CONTEXT, "OpenCL device") << SUPPORTED_NO);
+                }
+                else
+                {
+                    QTreeWidgetItem* const ocldev = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device"));
+                    QString deviceTypeStr         = openCVGetDeviceTypeString(device);
+
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Type")                       << deviceTypeStr);
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Name")                       << QString::fromStdString(device.name()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Version")                    << QString::fromStdString(device.version()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Driver version")             << QString::fromStdString(device.driverVersion()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Address bits")               << QString::number(device.addressBits()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Compute units")              << QString::number(device.maxComputeUnits()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max work group size")        << QString::number(device.maxWorkGroupSize()));
+
+                    QString localMemorySizeStr = openCVBytesToStringRepr(device.localMemSize());
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Local memory size")          << localMemorySizeStr);
+
+                    QString maxMemAllocSizeStr = openCVBytesToStringRepr(device.maxMemAllocSize());
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max memory allocation size") << maxMemAllocSizeStr);
+
+                    QString doubleSupportStr = (device.doubleFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Double support")             << doubleSupportStr);
+
+                    QString halfSupportStr = (device.halfFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Half support")               << halfSupportStr);
+
+                    QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? SUPPORTED_YES : SUPPORTED_NO;
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Host unified memory")        << isUnifiedMemoryStr);
+
+                    QString haveAmdBlasStr = cv::ocl::haveAmdBlas() ? SUPPORTED_YES : SUPPORTED_NO;
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Blas")                  << haveAmdBlasStr);
+
+                    QString haveAmdFftStr  = cv::ocl::haveAmdFft() ? SUPPORTED_YES : SUPPORTED_NO;
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Fft")                   << haveAmdFftStr);
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width char")   << QString::number(device.preferredVectorWidthChar()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width short")  << QString::number(device.preferredVectorWidthShort()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width int")    << QString::number(device.preferredVectorWidthInt()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width long")   << QString::number(device.preferredVectorWidthLong()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width float")  << QString::number(device.preferredVectorWidthFloat()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width double") << QString::number(device.preferredVectorWidthDouble()));
+                    new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width half")   << QString::number(device.preferredVectorWidthHalf()));
+
+                    QTreeWidgetItem* const ocldevext = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device extensions"));
+                    QString extensionsStr            = QString::fromStdString(device.extensions());
+                    int pos                          = 0;
+
+                    while (pos < extensionsStr.size())
+                    {
+                        int pos2 = extensionsStr.indexOf(QLatin1Char(' '), pos);
+
+                        if (pos2 == -1)
+                        {
+                            pos2 = extensionsStr.size();
+                        }
+
+                        if (pos2 > pos)
+                        {
+                            QString extensionName = extensionsStr.mid(pos, pos2 - pos);
+                            new QTreeWidgetItem(ocldevext, QStringList() << extensionName << SUPPORTED_YES);
+                        }
+
+                        pos = pos2 + 1;
+                    }
+                }
             }
         }
-
-        const cv::ocl::Device& device = cv::ocl::Device::getDefault();
-
-        if (!device.available())
-        {
-            new QTreeWidgetItem(opencvHead, QStringList() <<
-                                i18nc(CONTEXT, "OpenCL device") << SUPPORTED_NO);
-        }
-
-        QTreeWidgetItem* const ocldev = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device"));
-        QString deviceTypeStr         = openCVGetDeviceTypeString(device);
-
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Type")                       << deviceTypeStr);
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Name")                       << QString::fromStdString(device.name()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Version")                    << QString::fromStdString(device.version()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Driver version")             << QString::fromStdString(device.driverVersion()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Address bits")               << QString::number(device.addressBits()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Compute units")              << QString::number(device.maxComputeUnits()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max work group size")        << QString::number(device.maxWorkGroupSize()));
-
-        QString localMemorySizeStr = openCVBytesToStringRepr(device.localMemSize());
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Local memory size")          << localMemorySizeStr);
-
-        QString maxMemAllocSizeStr = openCVBytesToStringRepr(device.maxMemAllocSize());
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Max memory allocation size") << maxMemAllocSizeStr);
-
-        QString doubleSupportStr = (device.doubleFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Double support")             << doubleSupportStr);
-
-        QString halfSupportStr = (device.halfFPConfig() > 0) ? SUPPORTED_YES : SUPPORTED_NO;
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Half support")               << halfSupportStr);
-
-        QString isUnifiedMemoryStr = device.hostUnifiedMemory() ? SUPPORTED_YES : SUPPORTED_NO;
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Host unified memory")        << isUnifiedMemoryStr);
-
-        QTreeWidgetItem* const ocldevext = new QTreeWidgetItem(opencvHead, QStringList() << i18nc(CONTEXT, "OpenCL Device extensions"));
-        QString extensionsStr            = QString::fromStdString(device.extensions());
-        int pos                          = 0;
-
-        while (pos < extensionsStr.size())
-        {
-            int pos2 = extensionsStr.indexOf(QLatin1Char(' '), pos);
-
-            if (pos2 == -1)
-            {
-                pos2 = extensionsStr.size();
-            }
-
-            if (pos2 > pos)
-            {
-                QString extensionName = extensionsStr.mid(pos, pos2 - pos);
-                new QTreeWidgetItem(ocldevext, QStringList() << extensionName << SUPPORTED_YES);
-            }
-
-            pos = pos2 + 1;
-        }
-
-        QString haveAmdBlasStr = cv::ocl::haveAmdBlas() ? SUPPORTED_YES : SUPPORTED_NO;
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Blas")                  << haveAmdBlasStr);
-
-        QString haveAmdFftStr  = cv::ocl::haveAmdFft() ? SUPPORTED_YES : SUPPORTED_NO;
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Has AMD Fft")                   << haveAmdFftStr);
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width char")   << QString::number(device.preferredVectorWidthChar()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width short")  << QString::number(device.preferredVectorWidthShort()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width int")    << QString::number(device.preferredVectorWidthInt()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width long")   << QString::number(device.preferredVectorWidthLong()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width float")  << QString::number(device.preferredVectorWidthFloat()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width double") << QString::number(device.preferredVectorWidthDouble()));
-        new QTreeWidgetItem(ocldev, QStringList() << i18nc(CONTEXT, "Preferred vector width half")   << QString::number(device.preferredVectorWidthHalf()));
     }
     catch (...)
     {
