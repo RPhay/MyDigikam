@@ -200,7 +200,6 @@ protected:
      */
     void editKeyboardShortcuts(KActionCollection* const extraac = nullptr, const QString& actitle = QString());
 
-    void showEvent(QShowEvent* e)              override;
     void closeEvent(QCloseEvent* e)            override;
     void keyPressEvent(QKeyEvent* e)           override;
     bool eventFilter(QObject* obj, QEvent* ev) override;
@@ -287,10 +286,6 @@ private:
      * Common code to run before closing window.
      */
     void checkFullScreenBeforeClosing();
-
-private:
-
-    bool m_winLoaded;
 
 private:
 
