@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:43+0000\n"
+"POT-Creation-Date: 2023-04-04 00:44+0000\n"
 "PO-Revision-Date: 2023-03-16 16:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2814,7 +2814,7 @@ msgstr "Zobrazit na celou obrazovku"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:269
+#: core/libs/album/treeview/albumselectiontreeview.cpp:265
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -25378,14 +25378,22 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:286
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Přejmenovat album (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:284
+#: core/libs/album/engine/albummodificationhelper.cpp:290
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Rename Album (%1)"
+msgctxt "@title:window"
+msgid "Rename Album Root (%1)"
+msgstr "Přejmenovat album (%1)"
+
+#: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
 #, kde-format
 msgid "Enter new album name:"
@@ -26032,7 +26040,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Štítky alba"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -26040,51 +26048,51 @@ msgstr "Štítky alba"
 msgid "Expand Selected Nodes"
 msgstr "Rozvinout vybrané uzly"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Rozvinout všechna alba"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Sbalit vybrané zpětně"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:224
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Svinout všechna alba"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:227
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Najít duplicity..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:230
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Vyhledat obličeje"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:233
 #, kde-format
 msgid "Repair hidden Items"
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:240
+#: core/libs/album/treeview/albumselectiontreeview.cpp:236
 #, kde-format
 msgid "Refresh"
 msgstr "Obnovit"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#: core/libs/album/treeview/albumselectiontreeview.cpp:301
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Vyhledat obličeje"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:306
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -28373,7 +28381,7 @@ msgstr "<i>Vzorkovací frekvence:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodek:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28397,61 +28405,69 @@ msgstr ""
 msgid "Items List"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:141
+#: core/libs/dialogs/libsinfodlg.cpp:149
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:142
+#: core/libs/dialogs/libsinfodlg.cpp:150
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:156
+#: core/libs/dialogs/libsinfodlg.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Vlastnosti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Knihovny"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:281
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:362
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:413
+#, fuzzy, kde-format
+#| msgctxt "@item: component info"
+#| msgid "FFmpeg Configuration"
+msgctxt "@item: opencv info"
+msgid "OpenCV Configuration"
+msgstr "Nastavení FFmoeg"
+
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

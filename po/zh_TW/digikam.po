@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:43+0000\n"
+"POT-Creation-Date: 2023-04-04 00:44+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -3073,7 +3073,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:269
+#: core/libs/album/treeview/albumselectiontreeview.cpp:265
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -27392,7 +27392,7 @@ msgid ""
 "</p>"
 msgstr "刪除檔案 <filename>%1</filename> 失敗。您要繼續嗎？"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:286
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -27400,7 +27400,14 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "重新命名相簿 (%1)"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:284
+#: core/libs/album/engine/albummodificationhelper.cpp:290
+#, fuzzy, kde-format
+#| msgid "Rename Album (%1)"
+msgctxt "@title:window"
+msgid "Rename Album Root (%1)"
+msgstr "重新命名相簿 (%1)"
+
+#: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
 #, kde-format
 msgid "Enter new album name:"
@@ -28111,7 +28118,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "新增相簿"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -28119,57 +28126,57 @@ msgstr "新增相簿"
 msgid "Expand Selected Nodes"
 msgstr "展開選取的節點"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Expand all Albums"
 msgstr "複製相簿..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "遞迴折疊選取的項目"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:224
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse all Albums"
 msgstr "複製相簿..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:227
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "尋找重複檔..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "掃描新增的影像"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:233
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
 msgid "Repair hidden Items"
 msgstr "項目排序(&S)"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:240
+#: core/libs/album/treeview/albumselectiontreeview.cpp:236
 #, kde-format
 msgid "Refresh"
 msgstr "重新整理"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#: core/libs/album/treeview/albumselectiontreeview.cpp:301
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "掃描新增的影像"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:306
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -30533,7 +30540,7 @@ msgstr "<i>影格率：</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>影像編解碼器：</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30560,21 +30567,21 @@ msgstr "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "影像歷史紀錄"
 
-#: core/libs/dialogs/libsinfodlg.cpp:141
+#: core/libs/dialogs/libsinfodlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:142
+#: core/libs/dialogs/libsinfodlg.cpp:150
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:156
+#: core/libs/dialogs/libsinfodlg.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -30582,14 +30589,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "專題"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:186
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "相簿櫃"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30597,7 +30604,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30605,27 +30612,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:413
+#, fuzzy, kde-format
+#| msgid "Camera Configuration"
+msgctxt "@item: opencv info"
+msgid "OpenCV Configuration"
+msgstr "相機配置"
+
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

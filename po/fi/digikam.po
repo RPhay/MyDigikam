@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-03 00:43+0000\n"
-"PO-Revision-Date: 2023-03-08 22:52+0200\n"
+"POT-Creation-Date: 2023-04-04 00:44+0000\n"
+"PO-Revision-Date: 2023-03-14 13:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -2926,7 +2926,7 @@ msgstr "Näytä koko näytöllä"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:269
+#: core/libs/album/treeview/albumselectiontreeview.cpp:265
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -27210,7 +27210,7 @@ msgid ""
 "</p>"
 msgstr "Tiedoston <b>%1</b> poisto epäonnistui. Haluatko jatkaa?"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:283
+#: core/libs/album/engine/albummodificationhelper.cpp:286
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
@@ -27218,7 +27218,14 @@ msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Muuta albumin ”%1” nimeä"
 
-#: core/libs/album/engine/albummodificationhelper.cpp:284
+#: core/libs/album/engine/albummodificationhelper.cpp:290
+#, fuzzy, kde-format
+#| msgid "Rename Album (%1)"
+msgctxt "@title:window"
+msgid "Rename Album Root (%1)"
+msgstr "Muuta albumin ”%1” nimeä"
+
+#: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
 #, kde-format
 msgid "Enter new album name:"
@@ -27940,7 +27947,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Uusi albumi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:219
+#: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:726
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -27948,55 +27955,55 @@ msgstr "Uusi albumi"
 msgid "Expand Selected Nodes"
 msgstr "Laajenna valitut solmut"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:222
+#: core/libs/album/treeview/albumselectiontreeview.cpp:218
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Expand all Albums"
 msgstr "Kopioi albumi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:225
+#: core/libs/album/treeview/albumselectiontreeview.cpp:221
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Ei valittua albumia"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:228
+#: core/libs/album/treeview/albumselectiontreeview.cpp:224
 #, fuzzy, kde-format
 #| msgid "Copy Album"
 msgid "Collapse all Albums"
 msgstr "Kopioi albumi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:231
+#: core/libs/album/treeview/albumselectiontreeview.cpp:227
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Etsi kaksoiskappaleita…"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "Etsi uusia kuvia"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:237
+#: core/libs/album/treeview/albumselectiontreeview.cpp:233
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Korjaa piilotetut kohteet"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:240
+#: core/libs/album/treeview/albumselectiontreeview.cpp:236
 #, kde-format
 msgid "Refresh"
 msgstr "Päivitä"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#: core/libs/album/treeview/albumselectiontreeview.cpp:301
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Etsi uusia kuvia"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:306
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Etsitäänkö alikansioistakin?"
@@ -30409,7 +30416,7 @@ msgstr "<i>Kuvanopeus:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokoodekki:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30436,19 +30443,19 @@ msgstr ""
 msgid "Items List"
 msgstr "Kuvahistoria"
 
-#: core/libs/dialogs/libsinfodlg.cpp:141
+#: core/libs/dialogs/libsinfodlg.cpp:149
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/libs/dialogs/libsinfodlg.cpp:142
+#: core/libs/dialogs/libsinfodlg.cpp:150
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:156
+#: core/libs/dialogs/libsinfodlg.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -30456,7 +30463,7 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Ominaisuus"
 
-#: core/libs/dialogs/libsinfodlg.cpp:178
+#: core/libs/dialogs/libsinfodlg.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Library"
@@ -30464,7 +30471,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Kirjasto"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:281
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30472,7 +30479,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30480,25 +30487,32 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:416
+#: core/libs/dialogs/libsinfodlg.cpp:413
+#, fuzzy, kde-format
+#| msgid "Camera Configuration"
+msgctxt "@item: opencv info"
+msgid "OpenCV Configuration"
+msgstr "Kameran asetukset"
+
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Kyllä"
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ei"
 
-#: core/libs/dialogs/libsinfodlg.cpp:426
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -43219,10 +43233,9 @@ msgid "A KDE Family Project"
 msgstr "KDE-perheen projekti"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "© 2002–2022 digiKamin kehitysryhmä"
+msgstr "© 2002–2023 digiKamin kehitysryhmä"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -49048,9 +49061,7 @@ msgid "Shona"
 msgstr "šona"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:388
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Sindhi"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Sindhi"
 msgstr "sindhi"
@@ -49062,137 +49073,103 @@ msgid "Sinhala"
 msgstr "sinhala"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Slovak"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Slovak"
 msgstr "slovakki"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:397
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Slovenian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Slovenian"
 msgstr "sloveeni"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Somali"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Somali"
 msgstr "somali"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Spanish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Spanish"
 msgstr "espanja"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Sundanese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Sundanese"
 msgstr "sunda"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:409
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Swahili"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Swahili"
 msgstr "suahili"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Swedish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Swedish"
 msgstr "ruotsi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:415
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tagalog"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tagalog"
 msgstr "tagalog"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tahitian"
-msgstr "kroatia"
+msgstr "tahiti"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:421
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tajik"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tajik"
 msgstr "tadžikki"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tamil"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tamil"
 msgstr "tamili"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:427
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tatar"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tatar"
 msgstr "tataari"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:430
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Telugu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Telugu"
 msgstr "telugu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Thai"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Thai"
 msgstr "thai"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:436
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tonga"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tongan"
-msgstr "Tonga"
+msgstr "tonga"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:439
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Turkish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Turkish"
 msgstr "turkki"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Turkmen"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Turkmen"
 msgstr "turkmeeni"
@@ -49204,73 +49181,55 @@ msgid "Udmurt"
 msgstr "udmurtti"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Uighur (PRC)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Uighur"
-msgstr "Uiguuri (Kiina)"
+msgstr "uiguuri"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:451
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Ukrainian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Ukrainian"
 msgstr "ukraina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:454
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Urdu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Urdu"
 msgstr "urdu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:457
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Uzbek"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Uzbek"
 msgstr "uzbekki"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:460
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Vietnamese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Vietnamese"
 msgstr "vietnam"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:463
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Welsh"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Welsh"
 msgstr "kymri"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:466
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Xhosa"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
 msgstr "xhosa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Yiddish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
 msgstr "jiddiš"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Yoruba"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
 msgstr "joruba"
@@ -49282,9 +49241,7 @@ msgid "Yucatec Maya"
 msgstr "jukateekkimaya"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:478
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Zulu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Zulu"
 msgstr "zulu"
@@ -49341,17 +49298,13 @@ msgid "Error: Unable to extract Yandex SID from web version."
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Basque (Basque Country)"
+#, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr "Baski (Baskimaa)"
+msgstr "Koodi (kieli-maa)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: translator language name"
 msgid "Name"
 msgstr "Nimi"
@@ -49363,17 +49316,16 @@ msgid "Enter here a string to search in languages list..."
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:147
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
-msgstr "Etsi kaksoiskappaleet"
+msgstr "Näytä vain valitut kohteet (%1/%2)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:228
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "Aseta tässä sisällön kieli."
+msgstr "Valitse tekstinmuokkauksen vaihtoehtoiset kielet"
 
 #: core/libs/widgets/text/localizeconfig.cpp:233
 #, kde-format
@@ -49382,11 +49334,10 @@ msgid "Online Translator:"
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:235
-#, fuzzy, kde-format
-#| msgid "Select here the editorial type of content."
+#, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
-msgstr "Aseta tähän sisällön toimituksellinen tyyppi."
+msgstr "Valitse tässä kääntämisen verkkomoottori"
 
 #: core/libs/widgets/text/localizeconfig.cpp:242
 #, kde-kuit-format
@@ -49416,29 +49367,25 @@ msgid "Open localize setup"
 msgstr ""
 
 #: core/libs/widgets/text/localizeselector.cpp:150
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr "Siirry kohteeseen %1"
+msgstr "Käännä kielelle %1"
 
 #: core/libs/widgets/text/localizeselector.cpp:163
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select language to translate with %1"
-msgstr "Aseta tässä sisällön kieli."
+msgstr "Valitse kieli, johon %1 kääntää"
 
 #: core/libs/widgets/text/localizeselector.cpp:262
-#, fuzzy, kde-format
-#| msgid "Remove this Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr "Poista tämä tunniste"
+msgstr "Poista tämä kohde"
 
 #: core/libs/widgets/text/localizeselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Clear List"
+#, kde-format
 msgctxt "@action"
 msgid "Clear List"
 msgstr "Tyhjennä luettelo"
@@ -49483,35 +49430,28 @@ msgid "Available Language Dictionaries"
 msgstr "Wiktionary"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:121
-#, fuzzy, kde-format
-#| msgid "Codec"
+#, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Koodekki"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title: DPlugin properties"
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nimi"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
+#, kde-format
 msgctxt "@title"
 msgid "Available Backends"
-msgstr "Vapaana:"
+msgstr "Käytettävissä olevat taustajärjestelmät"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "List of detected faces that need not be recognized"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr "Ohitettu"
+msgstr "Sivuutetut sanat"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:154
 #, fuzzy, kde-format
@@ -49529,25 +49469,22 @@ msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr "Tässä kirjanmerkittyjä sijaintia voi lisätä ja poistaa."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:162
-#, fuzzy, kde-format
-#| msgid "&Add..."
+#, kde-format
 msgctxt "@action"
 msgid "&Add..."
-msgstr "&Lisää…"
+msgstr "L&isää…"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:163
-#, fuzzy, kde-format
-#| msgid "&Remove"
+#, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Poista"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:164
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action"
 msgid "&Replace"
-msgstr "&Korvaa"
+msgstr "K&orvaa"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:106
 #, kde-format
@@ -49798,17 +49735,13 @@ msgid "Icon Size: %1"
 msgstr "Kuvakekoko: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Uusi kirjanmerkki"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Muokkaa kirjanmerkkiä"
@@ -49920,9 +49853,7 @@ msgid "Edit current bookmark from the list"
 msgstr "Muokkaa luettelon nykyistä kirjanmerkkiä"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Add New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Lisää uusi kirjanmerkki"
@@ -49937,9 +49868,7 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Bookmark Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Vahvista kirjanmerkin poistaminen"
@@ -50045,8 +49974,7 @@ msgstr "Poista tiedosto"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
 msgstr "Virhe tallennettaessa tiedostoa"
@@ -50083,11 +50011,10 @@ msgid "Cannot delete \"%1\""
 msgstr "Ei voida poistaa: ”%1”"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "Avaa kuvia kansiosta"
+msgstr "Avaa kansiosta kuvia"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -50095,8 +50022,7 @@ msgid "There is no item to process."
 msgstr "Ei käsiteltäviä kohteita."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error Loading File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Virhe ladattaessa tiedostoa"
@@ -50164,11 +50090,10 @@ msgid "Effec&ts"
 msgstr "&Tehosteet"
 
 #: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Muokkaa"
+msgstr "Asetukset"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
@@ -50665,11 +50590,10 @@ msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:352
 #: core/utilities/setup/misc/setupmisc.cpp:361
-#, fuzzy, kde-format
-#| msgid "Normalize"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
-msgstr "Normalisoi"
+msgstr "Paikanna"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:384
 #: core/utilities/setup/misc/setupmisc.cpp:400
@@ -51131,50 +51055,40 @@ msgstr[0] "%1 tiedosto"
 msgstr[1] "%1 tiedostoa"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Uusi suosikkikohde"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Muokkaa suosikkikohdetta"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Uusi suosikkikansio"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Muokkaa suosikkikansiota"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
-#, fuzzy, kde-format
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
-msgstr "Keskiarvoa ei voitu laskea."
+msgstr "Keskiarvoa ei voitu laskea"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
-#, fuzzy, kde-format
-#| msgid "Could not calculate date average for this album."
+#, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
-msgstr "Albumille ei voitu laskea päiväysten keskiarvoa."
+msgstr "Tälle suosikille ei voitu laskea päiväysten keskiarvoa."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:69
 #, kde-format
@@ -51238,12 +51152,10 @@ msgid "Search in Favorites..."
 msgstr "Etsi suosikeista…"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:359
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Item Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
-msgstr "Vahvista kohteiden poistaminen"
+msgstr "Vahvista kohteen poistaminen"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:360
 #, kde-format
@@ -51425,8 +51337,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Odota…</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "K&eskeytä"
@@ -51439,8 +51350,7 @@ msgstr "Käsitellään…"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Muutetaan kuvien nimiä"
@@ -51462,15 +51372,13 @@ msgstr[1] ""
 "Haluatko muuttaa kuvan nimeä uudelleen vai korvata nämä tiedostot?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Rename Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Muuta nimeä uudelleen"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Korvaa"
@@ -51544,11 +51452,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
-msgstr "Tiedot"
+msgstr "Tietoa"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:29
 #, kde-format
@@ -51659,7 +51566,7 @@ msgstr ""
 #, kde-format
 msgctxt "start of the range"
 msgid "From:"
-msgstr ""
+msgstr "Mistä:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, toTheEndCheckBox)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:33
@@ -51670,11 +51577,10 @@ msgstr "loppuun"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:43
-#, fuzzy, kde-format
-#| msgid "Two"
+#, kde-format
 msgctxt "end of the range"
 msgid "To:"
-msgstr "Kaksi"
+msgstr "Mihin:"
 
 #: core/utilities/advancedrename/parser/modifiers/removedoublesmodifier.cpp:32
 #, fuzzy, kde-format
@@ -52666,11 +52572,10 @@ msgstr ""
 "kuvasi talletetaan tänne."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Luo juurialbumi?"
+msgstr "Luodaanko juurialbumi?"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -52682,8 +52587,7 @@ msgstr ""
 "luoda tämän kansion nyt?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "Juurialbumin luonti epäonnistui"
@@ -53531,8 +53435,7 @@ msgid "Bookmark comment"
 msgstr "Tee kommentista kirjanmerkki"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Muokkaa maantieteellisen sijainnin kirjanmerkkejä"
@@ -53601,8 +53504,7 @@ msgstr "Kommentti"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, fuzzy, kde-format
-#| msgid "Loading Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Ladataan kirjanmerkkiä"
@@ -53618,8 +53520,7 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Avaa tiedosto"
@@ -53636,8 +53537,7 @@ msgid "Imported %1"
 msgstr "Tuotiin %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Tallenna tiedosto"
@@ -53648,17 +53548,15 @@ msgid "%1 Bookmarks.xbel"
 msgstr "Siirry sijaintiin"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "Vientivirhe"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "error saving bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "virhe tallennettaessa kirjanmerkkejä"
+msgstr "Virhe kirjanmerkkejä tallennettaessa"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -53713,11 +53611,9 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Näytä kartalla reitit valitsemalla tämä asetus"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "vain valittuun välilehteen"
+msgstr "Käytä vain valittuja kuvia"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
 #, fuzzy, kde-format
@@ -53818,8 +53714,7 @@ msgid "Correlating images -"
 msgstr "Korreloidaan kuvia –"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Korrelointi epäonnistui"
@@ -53832,8 +53727,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Korrelointi onnistui"
@@ -53847,8 +53741,7 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Correlation finished"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Korrelointi valmis"
@@ -53989,8 +53882,7 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
+#, kde-format
 msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr "GPS-synkronointi"
@@ -54265,17 +54157,14 @@ msgid "Less options"
 msgstr "Vähemmän valintoja"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "Tulosta &kuvatekstit "
+msgstr "Kirjoita sijainnit luokituksiksi"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Kirjoita merkintä metatietoihin, jos mahdollista"
+msgstr "Kirjoita sijainnit metatietoihin"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -54293,11 +54182,10 @@ msgid "Retrieving RG info -"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Lisää uusi tunniste…"
+msgstr "Lisää uusi luokitus"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -54334,10 +54222,9 @@ msgid "File is empty."
 msgstr "Tiedosto on tyhjä."
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:274
-#, fuzzy, kde-format
-#| msgid "No GPX element found - probably not a GPX file."
+#, kde-format
 msgid "Probably not a GPX file."
-msgstr "GPX-elementtiä ei löydy: todennäköisesti ei ole GPX-tiedosto."
+msgstr "Todennäköisesti ei GPX-tiedosto."
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:286
 #, fuzzy, kde-format
@@ -54512,8 +54399,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Nimi on jo olemassa"
@@ -54794,11 +54680,10 @@ msgstr "Korostusväri:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
-msgstr "Virhe profiilissa"
+msgstr "Profiilivirhe"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
@@ -54882,10 +54767,9 @@ msgstr "Tietoa tästä työkalusta…"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:112
-#, fuzzy, kde-format
-#| msgid "Online Handbook..."
+#, kde-format
 msgid "Tool online handbook..."
-msgstr "Käsikirja verkossa…"
+msgstr "Työkalun käsikirja verkossa…"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
@@ -55269,9 +55153,7 @@ msgid "Information about image size"
 msgstr "Tietoja kuvan koosta"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Saving image..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Tallennetaan kuvaa…"
@@ -55293,9 +55175,7 @@ msgstr ""
 "Oletko varma?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Varoitus"
@@ -55531,11 +55411,10 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:928
-#, fuzzy, kde-format
-#| msgid "No Image in Current Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
-msgstr "Valittu albumi ei sisällä kuvia"
+msgstr "Nykyisessä albumissa ei ole kuvia"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:929
 #, kde-format
@@ -57637,8 +57516,7 @@ msgid "Scan for faces in %1 images"
 msgstr "Etsi uusia kuvia"
 
 #: core/utilities/maintenance/facesdetector.cpp:305
-#, fuzzy, kde-format
-#| msgid "Updating faces database."
+#, kde-format
 msgid "Updating faces database"
 msgstr "Päivitetään kasvotietokantaa"
 
@@ -57648,8 +57526,7 @@ msgid "Finger-prints"
 msgstr "Sormenjäljet"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:197
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Ylläpito"
@@ -57716,10 +57593,9 @@ msgid "Also clean up the faces database."
 msgstr "Tyhjennä myös kasvotietokanta."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:238
-#, fuzzy, kde-format
-#| msgid "Also clean up the thumbnail database."
+#, kde-format
 msgid "Also clean up the similarity database."
-msgstr "Tyhjennä myös pienoiskuvatietokanta."
+msgstr "Tyhjennä myös samankaltaisuustietokanta."
 
 #: core/utilities/maintenance/maintenancedlg.cpp:239
 #, fuzzy, kde-format
@@ -58427,15 +58303,13 @@ msgid "History"
 msgstr "Historia"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "New Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Uusi työnkulku"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "Edit Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Muokkaa työnkulkua"
@@ -58485,11 +58359,10 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "Eräajojen hallinta"
+msgstr "Eräajohallinta"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:116
 #, kde-format
@@ -58514,11 +58387,10 @@ msgid "Edit Workflow"
 msgstr "Muokkaa työnkulkua"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:271
-#, fuzzy, kde-format
-#| msgid "Save Workflow"
+#, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
-msgstr "Tallenna työnkulku"
+msgstr "Päivitä työnkulku"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:272
 #, kde-format
@@ -58527,9 +58399,7 @@ msgid "Delete Workflow"
 msgstr "Poista työnkulku"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Workflow?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Poistetaanko työnkulku?"
@@ -59041,10 +58911,9 @@ msgid "Not Geo-located"
 msgstr "Ei geopaikannettu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "Valtio:"
+msgstr "Maa"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, fuzzy, kde-format
@@ -59053,10 +58922,9 @@ msgid "Country shown in the item"
 msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Provinssi:"
+msgstr "Provinssi"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
 #, fuzzy, kde-format
@@ -59065,10 +58933,9 @@ msgid "Province shown in the item"
 msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Kaupunki:"
+msgstr "Kaupunki"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, fuzzy, kde-format
@@ -59077,10 +58944,9 @@ msgid "City shown in the item"
 msgstr "Syötä tähän sisällön sijainti kaupungin sisällä."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Sublocation:"
+#, kde-format
 msgid "Sublocation"
-msgstr "Alisijainti:"
+msgstr "Alisijainti"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
 #, fuzzy, kde-format
@@ -59466,8 +59332,7 @@ msgid "Hide Options"
 msgstr "Piilota valinnat"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, fuzzy, kde-format
-#| msgid "Delete Search?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Poistetaanko haku?"
@@ -59562,11 +59427,10 @@ msgid "Try"
 msgstr "Kokeile"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
-msgstr "Tarkennettu haku"
+msgstr "Tarkka haku"
 
 #: core/utilities/setup/album/setupalbumview.cpp:153
 #: core/utilities/setup/camera/setupcamera.cpp:469
@@ -59997,10 +59861,9 @@ msgid "Manage categories to sort and re-arrange album tree-view."
 msgstr ""
 
 #: core/utilities/setup/album/setupcategory.cpp:89
-#, fuzzy, kde-format
-#| msgid "Set here the contact city."
+#, kde-format
 msgid "Set here the new category"
-msgstr "Syötä tähän yhteystiedoista kaupunki."
+msgstr "Aseta tässä uusi luokka"
 
 #: core/utilities/setup/album/setupcategory.cpp:92
 #, kde-format
@@ -60165,8 +60028,7 @@ msgstr ""
 "uudelleen?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Kameran asetukset"
@@ -60321,11 +60183,10 @@ msgstr ""
 "href='https://www.figuiere.net/digicam/'>tästä osoitteesta</a>.</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:85
-#, fuzzy, kde-format
-#| msgid "Edit Import Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "Muokkaa tuontisuotimia"
+msgstr "Muokkaa tuontisuodattimia"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
@@ -60563,8 +60424,7 @@ msgid "<p>Set this option to preview each item while downloading.</p>"
 msgstr "Valitse tämä nähdäksesi tiedoston päiväyksen."
 
 #: core/utilities/setup/camera/setupcamera.cpp:567
-#, fuzzy, kde-format
-#| msgid "Import Window"
+#, kde-format
 msgctxt "@title:tab import tool GUI settings"
 msgid "Import Window"
 msgstr "Tuonti-ikkuna"
@@ -60715,12 +60575,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Updates the path of the collection."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr "Päivittää kokoelman sijainnin."
+msgstr "Lisää kokoelmaan sijainti."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:115
 #, kde-format
@@ -60741,43 +60599,36 @@ msgstr "Kokoelmia ei voitu lisätä seuraavista sijainneista:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:658
 #: core/utilities/setup/collections/setupcollectionview.cpp:1488
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Valitse kokoelman sisältävä kansio"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:695
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr "Virhe lisättäessä kokoelmaa"
+msgstr "Virhe lisättäessä kokoelmaan"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:696
-#, fuzzy, kde-format
-#| msgid "A linked item already exists."
+#, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr "Linkitetty tietue on jo olemassa."
+msgstr "Sijainnissa ”%1” on jo kokoelma."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:855
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr "Poistetaanko kokoelma?"
+msgstr "Poistetaanko sijainti kokoelmasta?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:856
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you want to remove the collection \"%1\" from your list of collections?"
+#, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
-msgstr "Haluatko varmasti poistaa kokoelman ”%1” käytöstä?"
+msgstr "Haluatko varmasti poistaa lisätyn sijainnin ”%1” kokoelmasta ”%2”?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:863
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Poistetaanko kokoelma?"
@@ -60870,18 +60721,16 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Olet jo lisännyt kokoelman, jossa ”%1” sijaitsee."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1566
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Virhe lisättäessä kokoelmaa"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1575
-#, fuzzy, kde-format
-#| msgid "Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
-msgstr "Kokoelman lisääminen"
+msgstr "Kokoelman lisäys"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1579
 #, kde-format
@@ -60889,8 +60738,7 @@ msgid "Your new collection will be created with this name:"
 msgstr "Uusi kokoelma luodaan nimellä:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1660
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Valitse luokka"
@@ -60901,11 +60749,10 @@ msgid "Your collection will use this category:"
 msgstr "Kokoelmasi käyttää tätä luokkaa:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:174
-#, fuzzy, kde-format
-#| msgid "Download required files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr "Ladataan vaadittuja tiedostoja"
+msgstr "Lataa vaaditut tiedostot"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:204
 #, kde-format
@@ -60931,8 +60778,7 @@ msgid "All files were downloaded successfully."
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:275
-#, fuzzy, kde-format
-#| msgid "Download error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Latausvirhe"
@@ -60957,8 +60803,7 @@ msgstr ""
 "Voit yrittää uudelleen tai jatkaa latausta seuraavalla käynnistyskerralla."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:284
-#, fuzzy, kde-format
-#| msgid "Try again"
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Yritä uudelleen"
