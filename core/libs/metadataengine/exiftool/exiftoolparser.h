@@ -145,7 +145,7 @@ public:
      */
     bool applyChanges(const QString& path,
                       const QString& exvTempFile,
-                      bool hasExif = true, bool hasIptc = true);
+                      bool hasExif = true, bool hasIptcCSet = false);
 
     /**
      * Return a list of readable file format extensions.

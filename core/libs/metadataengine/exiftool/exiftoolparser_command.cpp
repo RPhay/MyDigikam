@@ -142,7 +142,7 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES));
 }
 
-bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFile, bool hasExif, bool hasIptc)
+bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFile, bool hasExif, bool hasIptcCSet)
 {
     if (exvTempFile.isEmpty())
     {
@@ -174,16 +174,16 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
 
+    if (hasIptcCSet)
+    {
+        cmdArgs << QByteArray("-codedcharacterset=UTF8");
+    }
+
     if (hasExif)
     {
         cmdArgs << QByteArray("-TagsFromFile");
         cmdArgs << QByteArray("@");
         cmdArgs << QByteArray("-makernotes");
-    }
-
-    if (hasIptc)
-    {
-        cmdArgs << QByteArray("-codedcharacterset=UTF8");
     }
 
     cmdArgs << QByteArray("-overwrite_original");
