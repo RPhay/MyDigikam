@@ -363,7 +363,7 @@ BUGFIXES:
 315 ==> 431115 - Enable GPU optimizations support for OpenCV.
 316 ==> 468041 - Simple Rename of a Collection in Collection list.
 317 ==> 468120 - Where to rename the root album collection.
-318 ==> 
+318 ==> 467675 - digiKam fail to export to WEBP format.
 319 ==> 
 320 ==> 
 321 ==> 
