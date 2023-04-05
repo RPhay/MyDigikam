@@ -136,11 +136,13 @@ void ImageWindow::closeEvent(QCloseEvent* e)
     DXmlGuiWindow::closeEvent(e);
 }
 
-void ImageWindow::showEvent(QShowEvent*)
+void ImageWindow::showEvent(QShowEvent* e)
 {
     // Restore the visibility of the thumbbar and start autosaving again.
 
     thumbBar()->restoreVisibility();
+
+    EditorWindow::showEvent(e);
 }
 
 bool ImageWindow::queryClose()

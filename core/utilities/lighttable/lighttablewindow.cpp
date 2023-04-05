@@ -118,11 +118,13 @@ void LightTableWindow::closeEvent(QCloseEvent* e)
     DXmlGuiWindow::closeEvent(e);
 }
 
-void LightTableWindow::showEvent(QShowEvent*)
+void LightTableWindow::showEvent(QShowEvent* e)
 {
     // Restore the visibility of the thumbbar and start autosaving again.
 
     d->barViewDock->restoreVisibility();
+
+    DXmlGuiWindow::showEvent(e);
 }
 
 /**

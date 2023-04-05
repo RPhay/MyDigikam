@@ -19,7 +19,6 @@ namespace Digikam
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
-      m_winLoaded  (false),
       d            (new Private)
 {
     m_animLogo = nullptr;
@@ -29,8 +28,6 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
 
 DXmlGuiWindow::~DXmlGuiWindow()
 {
-    saveWindowSize();
-
     delete d;
 }
 
@@ -42,13 +39,6 @@ void DXmlGuiWindow::setConfigGroupName(const QString& name)
 QString DXmlGuiWindow::configGroupName() const
 {
     return d->configGroupName;
-}
-
-void DXmlGuiWindow::showEvent(QShowEvent* e)
-{
-    restoreWindowSize();
-
-    KXmlGuiWindow::showEvent(e);
 }
 
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
@@ -276,15 +266,7 @@ void DXmlGuiWindow::restoreWindowSize()
 
 #ifdef Q_OS_WIN
 
-    if (m_winLoaded)
-    {
-        return;
-    }
-
     winId();
-
-    m_winLoaded               = true;
-
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
 

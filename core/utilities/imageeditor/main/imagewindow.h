@@ -73,7 +73,7 @@ Q_SIGNALS:
 
 protected:
 
-    void showEvent(QShowEvent*)                                         override;
+    void showEvent(QShowEvent* e)                                       override;
     void dropEvent(QDropEvent* e)                                       override;
     void closeEvent(QCloseEvent* e)                                     override;
     void dragMoveEvent(QDragMoveEvent* e)                               override;

@@ -1095,8 +1095,8 @@ void DigikamApp::preloadWindows()
         d->splashScreen->setMessage(i18nc("@info: setup", "Loading tools..."));
     }
 
-    QueueMgrWindow::queueManagerWindow();
     ImageWindow::imageWindow();
+    QueueMgrWindow::queueManagerWindow();
     LightTableWindow::lightTableWindow();
 
     d->tagsActionManager->registerTagsActionCollections();

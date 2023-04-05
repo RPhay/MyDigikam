@@ -71,7 +71,7 @@ private:
     void customizedFullScreenMode(bool set)             override;
     void showSideBars(bool visible)                     override;
     void closeEvent(QCloseEvent* e)                     override;
-    void showEvent(QShowEvent*)                         override;
+    void showEvent(QShowEvent* e)                       override;
 
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
