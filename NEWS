@@ -394,8 +394,8 @@ BUGFIXES:
 346 ==> 249483 - Camera UI is slow, when listing pictures from the camera (100% CPU usage).
 347 ==> 221166 - digiKam crash when scanning large collection during copy.
 348 ==> 177977 - Camera Download: Show details instead of thumbnails.
-349 ==> 
-350 ==> 
+349 ==> 292801 - Template with unused fields pro-actively overwriting existing fields.
+350 ==> 466664 - digiKam doesn't display tags from video (.mp4) files.
 351 ==> 
 
 
