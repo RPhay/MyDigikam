@@ -396,6 +396,17 @@ BUGFIXES:
 348 ==> 177977 - Camera Download: Show details instead of thumbnails.
 349 ==> 292801 - Template with unused fields pro-actively overwriting existing fields.
 350 ==> 466664 - digiKam doesn't display tags from video (.mp4) files.
-351 ==> 
+351 ==> 122049 - Batch resize is always asking to overwrite on batch processing.
+352 ==> 159573 - Batch resizing: Resize Images - Prepare to print: aspect ratio is not preserved
+353 ==> 201259 - digiKam, batch resized image.
+354 ==> 201334 - digiKam batch resize images.
+355 ==> 
+356 ==> 
+357 ==> 
+358 ==> 
+359 ==> 
+360 ==> 
+361 ==> 
+
 
 
