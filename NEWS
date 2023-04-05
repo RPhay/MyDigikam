@@ -385,6 +385,17 @@ BUGFIXES:
 337 ==> 288627 - digiKam crashes while trying to load images from a USB drive.
 338 ==> 287662 - Import screen crashes.
 339 ==> 286220 - Crashes on importing certain assets.
-340 ==> 
-341 ==> 
+340 ==> 286121 - digiKam is locked when importing items from Nokia N9 celular.
+341 ==> 285728 - digiKam crash after importing from an SD card.
+342 ==> 284707 - digiKam crashed upon opening import screen.
+343 ==> 282747 - digiKam crashes when import images from usb-camera.
+344 ==> 282701 - Crash when "download/delete all images" from sd-card.
+345 ==> 270307 - No option to disable importing certain file types.
+346 ==> 249483 - Camera UI is slow, when listing pictures from the camera (100% CPU usage).
+347 ==> 221166 - digiKam crash when scanning large collection during copy.
+348 ==> 177977 - Camera Download: Show details instead of thumbnails.
+349 ==> 
+350 ==> 
+351 ==> 
+
 
