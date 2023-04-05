@@ -366,4 +366,5 @@ BUGFIXES:
 318 ==> 467675 - digiKam fail to export to WEBP format.
 319 ==> 465038 - Scanning for faces always crashes.
 320 ==> 467116 - digiKam crashed on exit. Even the appimage not only the deb version.
-321 ==> 
+321 ==> 467448 - digiKam Crash when closing the app.
+322 ==> 
