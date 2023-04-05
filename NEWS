@@ -368,7 +368,14 @@ BUGFIXES:
 320 ==> 467116 - digiKam crashed on exit. Even the appimage not only the deb version.
 321 ==> 467448 - digiKam Crash when closing the app.
 322 ==> 268694 - Wish gps visualizer.
-323 ==> 
-324 ==> 
-325 ==> 
-
+323 ==> 282163 - digiKam crashed while browsing new images
+324 ==> 222828 - Automatic import from camera.
+325 ==> 140715 - Import only new photos broken.
+326 ==> 139333 - Selection of new items does not work in camera gui.
+327 ==> 093602 - New photos on camera no more detected.
+328 ==> 
+329 ==> 
+330 ==> 
+331 ==> 
+332 ==> 
+333 ==> 
