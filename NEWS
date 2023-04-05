@@ -373,9 +373,18 @@ BUGFIXES:
 325 ==> 140715 - Import only new photos broken.
 326 ==> 139333 - Selection of new items does not work in camera gui.
 327 ==> 093602 - New photos on camera no more detected.
-328 ==> 
-329 ==> 
-330 ==> 
-331 ==> 
-332 ==> 
-333 ==> 
+328 ==> 305850 - Selecting Digikam as Application to open Newly Inserted SD card Results in Crash.
+329 ==> 298187 - Import tool crash.
+330 ==> 298111 - Crash when try to import from digicam set as USB.
+331 ==> 297231 - digiKam crash importing.
+332 ==> 296282 - Importing from old install drive from root of old digikam folder.
+333 ==> 295897 - digiKam crashes when importing images from camera.
+334 ==> 292108 - Fuji crash.
+335 ==> 289285 - digiKam crash.
+336 ==> 288982 - digiKam crashes while showing thumbnails from imported data.
+337 ==> 288627 - digiKam crashes while trying to load images from a USB drive.
+338 ==> 287662 - Import screen crashes.
+339 ==> 286220 - Crashes on importing certain assets.
+340 ==> 
+341 ==> 
+
