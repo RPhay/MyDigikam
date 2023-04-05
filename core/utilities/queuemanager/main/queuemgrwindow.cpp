@@ -75,8 +75,6 @@ QueueMgrWindow::QueueMgrWindow()
 
     populateToolsList();
     slotQueueContentsChanged();
-
-    restoreWindowSize();
 }
 
 QueueMgrWindow::~QueueMgrWindow()

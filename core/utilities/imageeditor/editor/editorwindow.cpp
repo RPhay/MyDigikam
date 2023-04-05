@@ -67,8 +67,7 @@ EditorWindow::EditorWindow(const QString& name, QWidget* const parent)
     d->exposureSettings            = new ExposureSettingsContainer();
     d->toolIface                   = new EditorToolIface(this);
     m_IOFileSettings               = new IOFileSettings();
-
-    restoreWindowSize();
+    //d->waitingLoop                 = new QEventLoop(this);
 }
 
 EditorWindow::~EditorWindow()

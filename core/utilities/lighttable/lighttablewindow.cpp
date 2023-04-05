@@ -70,8 +70,6 @@ LightTableWindow::LightTableWindow()
 
     applySettings();
     setAutoSaveSettings(configGroupName(), true);
-
-    restoreWindowSize();
 }
 
 LightTableWindow::~LightTableWindow()
