@@ -410,7 +410,7 @@ BUGFIXES:
 362 ==> 184388 - More complex border style settings in Border tool.
 363 ==> 194722 - Only sharpen one channel, e.g. the "value" channel of HSV.
 364 ==> 215899 - Interactive chromatic aberration correction in digiKam image editor.
-365 ==> 
+365 ==> 468115 - digiKam 8.0.0-Beta1 hasn't imported tags.
 366 ==> 
 367 ==> 
 368 ==> 
