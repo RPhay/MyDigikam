@@ -406,7 +406,7 @@ BUGFIXES:
 358 ==> 306792 - Crashed during resizing a Tif-File.
 359 ==> 151171 - Need support for adjusting in HSV and HSL colorspaces.
 360 ==> 160012 - Add vibrance and fill light features in ImageEditor.
-361 ==> 
+361 ==> 174177 - Proposal for implementing smart unsharp masking.
 362 ==> 
 363 ==> 
 364 ==> 
