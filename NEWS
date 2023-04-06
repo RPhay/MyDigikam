@@ -402,11 +402,22 @@ BUGFIXES:
 354 ==> 201334 - digiKam batch resize images.
 355 ==> 468157 - digiKam is crash when use slideshow.
 356 ==> 468164 - Collections or Albums = Confusion for Beginners.
-357 ==> 
-358 ==> 
+357 ==> 209002 - Should be able to lock the aspect ratio when resizing.
+358 ==> 306792 - Crashed during resizing a Tif-File.
 359 ==> 
 360 ==> 
 361 ==> 
+362 ==> 
+363 ==> 
+364 ==> 
+365 ==> 
+366 ==> 
+367 ==> 
+368 ==> 
+369 ==> 
+370 ==> 
+371 ==> 
+
 
 
 
