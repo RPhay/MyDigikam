@@ -404,7 +404,7 @@ BUGFIXES:
 356 ==> 468164 - Collections or Albums = Confusion for Beginners.
 357 ==> 209002 - Should be able to lock the aspect ratio when resizing.
 358 ==> 306792 - Crashed during resizing a Tif-File.
-359 ==> 
+359 ==> 151171 - Need support for adjusting in HSV and HSL colorspaces.
 360 ==> 
 361 ==> 
 362 ==> 
