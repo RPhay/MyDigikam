@@ -400,7 +400,7 @@ BUGFIXES:
 352 ==> 159573 - Batch resizing: Resize Images - Prepare to print: aspect ratio is not preserved
 353 ==> 201259 - digiKam, batch resized image.
 354 ==> 201334 - digiKam batch resize images.
-355 ==> 
+355 ==> 468157 - digiKam is crash when use slideshow.
 356 ==> 
 357 ==> 
 358 ==> 
