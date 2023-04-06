@@ -408,7 +408,7 @@ BUGFIXES:
 360 ==> 160012 - Add vibrance and fill light features in ImageEditor.
 361 ==> 174177 - Proposal for implementing smart unsharp masking.
 362 ==> 184388 - More complex border style settings in Border tool.
-363 ==> 
+363 ==> 194722 - Only sharpen one channel, e.g. the "value" channel of HSV.
 364 ==> 
 365 ==> 
 366 ==> 
