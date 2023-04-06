@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-05 00:45+0000\n"
-"PO-Revision-Date: 2023-03-15 06:33+0100\n"
+"POT-Creation-Date: 2023-04-06 00:44+0000\n"
+"PO-Revision-Date: 2023-04-05 06:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -938,9 +938,9 @@ msgid ""
 msgstr ""
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1098
-#: core/utilities/imageeditor/main/imagewindow.cpp:1123
-#: core/utilities/imageeditor/main/imagewindow.cpp:1155
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "ალბომი \"%1\""
@@ -1305,7 +1305,7 @@ msgstr "ბაზის გასუფთავება..."
 msgid "Loading albums..."
 msgstr "ალბომების ჩატვირთვა..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1313,92 +1313,92 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 msgstr[1] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "მონიშნული ჩანაწერის გარეშე (%1 [%2] ჩანაწერი)"
 msgstr[1] "მონიშნული ჩანაწერის გარეშე (%1 [%2] ჩანაწერი)"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 ჩანაწერი მონიშნულია (%3/%4)"
 msgstr[1] "%1/%2 ჩანაწერი მონიშნულია (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] ჩანაწერი მონიშნულია (%4/%5)"
 msgstr[1] "%1/%2 [%3] ჩანაწერი მონიშნულია (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] ჩანაწერი მონიშნულია (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] ჩანაწერი მონიშნულია (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 %2-დან)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 %2-დან [%3] )"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "1 ელემენტი დამალულია"
 msgstr[1] "%1 ელემენტი დამალულია"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "მეტამონაცემების ფაილში ჩაწერა"
 msgstr[1] "მონიშნულ ფაილებში მეტამონაცემების ჩაწერა"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1826,7 +1826,7 @@ msgid "Change the filename of the currently selected item."
 msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:469
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2434,21 +2434,21 @@ msgid "Main Tools"
 msgstr "მთავარი ხელსაწყოები"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr ""
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2615
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "გატანა"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -2946,8 +2946,8 @@ msgid "no item"
 msgstr "ელემენტების გარეშე"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -10098,7 +10098,7 @@ msgid "Scan Images"
 msgstr "გამოსახულებების სკანირება"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1804
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
@@ -10130,8 +10130,8 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -14472,7 +14472,7 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:572
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -19607,7 +19607,7 @@ msgstr "დაკვრა"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
 msgstr "შეჩერება"
@@ -24788,12 +24788,10 @@ msgid "Rename Album (%1)"
 msgstr "ალბომის გადარქმევა (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "ალბომის გადარქმევა (%1)"
+msgstr "ალბომის საწყისის გადარქმევა (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -27585,12 +27583,10 @@ msgid "Manifests"
 msgstr "მანიფესტები"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "FFmpeg-ის მორგება"
+msgstr "OpenCV-ის მორგება"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -28918,10 +28914,10 @@ msgid "Moss"
 msgstr ""
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:96
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item: texture type"
 msgid "Stone"
-msgstr ""
+msgstr "სტოუნი"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:98
 #, kde-format
@@ -29531,7 +29527,7 @@ msgid "Remove Black Frame"
 msgstr ""
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "სიის გასუფთავება"
@@ -34454,7 +34450,7 @@ msgid "Description"
 msgstr "აღწერა"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -36119,7 +36115,7 @@ msgstr "სინათლის მაგიდა"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "პაკეტური დამუშავების მმართველი"
@@ -40191,7 +40187,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:89
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -46307,7 +46303,7 @@ msgid "Unknown"
 msgstr "უცნობია"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:488
+#: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -46319,7 +46315,7 @@ msgid "Delete File"
 msgstr "ფაილის წაშლა"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -46336,8 +46332,8 @@ msgid "Remote file handling is not supported"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:571
-#: core/utilities/imageeditor/main/imagewindow.cpp:686
+#: core/utilities/imageeditor/main/imagewindow.cpp:573
+#: core/utilities/imageeditor/main/imagewindow.cpp:688
 #, kde-format
 msgid "Image saved successfully"
 msgstr ""
@@ -47628,7 +47624,7 @@ msgid "&Abort"
 msgstr "გაუქმება"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "დამუშავება..."
@@ -48568,7 +48564,7 @@ msgstr "სახის ცვლილებების გამოყენ�
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -50923,49 +50919,49 @@ msgstr "ცდა"
 msgid "Try all settings."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, kde-format
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "&პირველი"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, kde-format
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&ბოლო"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:245
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:252
+#: core/utilities/imageeditor/editor/editorwindow.cpp:251
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -50973,7 +50969,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:259
+#: core/utilities/imageeditor/editor/editorwindow.cpp:258
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -50981,158 +50977,158 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:264
+#: core/utilities/imageeditor/editor/editorwindow.cpp:263
 #, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "ფორმატში შენახვა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr "PNG"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:269
+#: core/utilities/imageeditor/editor/editorwindow.cpp:268
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr "PGF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:273
+#: core/utilities/imageeditor/editor/editorwindow.cpp:272
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:278
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr "HEIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:285
+#: core/utilities/imageeditor/editor/editorwindow.cpp:284
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr "JXL"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:289
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr "WEBP"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:295
+#: core/utilities/imageeditor/editor/editorwindow.cpp:294
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr "AVIF"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:303
 #, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "გატანა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:314
+#: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr "ცვლილებების გაუქმება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:315
+#: core/utilities/imageeditor/editor/editorwindow.cpp:314
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:328
+#: core/utilities/imageeditor/editor/editorwindow.cpp:327
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "ნაგულისხმები პროგრამით გახსნა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:352
+#: core/utilities/imageeditor/editor/editorwindow.cpp:351
 #, kde-format
 msgctxt "@action"
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:370
+#: core/utilities/imageeditor/editor/editorwindow.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Redo"
 msgstr "ბრძანების აღდგენა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, kde-format
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:392
+#: core/utilities/imageeditor/editor/editorwindow.cpp:391
 #, kde-format
 msgctxt "@action"
 msgid "Select None"
 msgstr "მონიშვნის მოხსნა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:406
+#: core/utilities/imageeditor/editor/editorwindow.cpp:405
 #, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "100%-მდე გადიდება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:412
+#: core/utilities/imageeditor/editor/editorwindow.cpp:411
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "ფანჯარაში ჩატევა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:419
+#: core/utilities/imageeditor/editor/editorwindow.cpp:418
 #, kde-format
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "&მონიშნულში ჩატევა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:424
+#: core/utilities/imageeditor/editor/editorwindow.cpp:423
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This option can be used to zoom the image to the current selection area."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:451
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51140,13 +51136,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:459
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:461
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51154,32 +51150,32 @@ msgid ""
 "to avoid over-exposing the image."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:469
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "ფერით-მართული ხედი"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:476
+#: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:481
+#: core/utilities/imageeditor/editor/editorwindow.cpp:480
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "მონიშნულამდე ამოჭრა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:492
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51187,71 +51183,71 @@ msgid ""
 "enable this action."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:500
+#: core/utilities/imageeditor/editor/editorwindow.cpp:499
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "ჰორიზონტალურად გადაბრუნება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:508
+#: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "ვერტიკალურად გადაბრუნება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
 msgstr "მარცხნივ შებრუნება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
 msgstr "მარჯვნივ შებრუნება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:558
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/imageeditor/editor/editorwindow.cpp:557
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
 msgstr "წინა გამოსახულება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:588
+#: core/utilities/imageeditor/editor/editorwindow.cpp:587
 #, kde-format
 msgctxt "@label"
 msgid "No selection"
 msgstr "არაფერია მონიშნული"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:591
+#: core/utilities/imageeditor/editor/editorwindow.cpp:590
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:595
 #, kde-format
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "ინფორმაცია სურათის ზომის შესახებ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1086
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1085
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "სურათის შენახვა..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1087
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1086
 #, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1107
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51259,13 +51255,13 @@ msgid ""
 "Are you sure?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1113
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1112
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "გაფრთხილება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1223
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1222
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51273,7 +51269,7 @@ msgid ""
 "Do you want to save it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1374
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1373
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51281,25 +51277,25 @@ msgid ""
 "All changes will be lost."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1451
 #, kde-format
 msgctxt "@info"
 msgid "No selection"
 msgstr "არაფერია მონიშნული"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
 msgstr "ჩატვირთვა:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1500
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1499
 #, kde-format
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "\"%1\"-ის ჩატვირთვის შეცდომა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1542
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1541
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51308,13 +51304,13 @@ msgid ""
 "configuration in digiKam's setup."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1599
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1598
 #, kde-format
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Შენახვა:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1620
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51324,31 +51320,31 @@ msgid ""
 "\"%2\"."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1754
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1753
 #, kde-format
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1950
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1957
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1956
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2204
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2203
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51356,32 +51352,32 @@ msgid ""
 "you want to overwrite it?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2298
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "ფაილი \"%1\" სახელით უკვე არსებობს. შევცვალო?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2325
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2404
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2403
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2408
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2407
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2412
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51389,119 +51385,119 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2463
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2465
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2556
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2555
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "ტრასფორმირება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2570
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2569
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "დეკორაცია"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2577
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2576
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "ეფექტები"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2583
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "ფერები"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2591
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2590
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "გაუმჯობესება"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2754
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2753
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "გამხსნელი პროგრამა"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2768
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2767
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "სხვა..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2777
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "გამხსნელი პროგრამა..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:183
+#: core/utilities/imageeditor/main/imagewindow.cpp:185
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "გამოსახულების რედაქტორი - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:187
+#: core/utilities/imageeditor/main/imagewindow.cpp:189
 #, kde-format
 msgid "Image Editor"
 msgstr "გამოსახულებების რედაქტორი"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:357
+#: core/utilities/imageeditor/main/imagewindow.cpp:359
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "უცნობია"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:358
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "მიმდინარე ალბომში სურათი არ არის"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:929
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
 "The image editor will be closed."
 msgstr ""
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "ფაილი ხელმიუწვდომელია"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1201
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -51741,7 +51737,7 @@ msgstr ""
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr ""
@@ -52034,391 +52030,391 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "სკრიპტები"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "მორგება"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "ინფორმაცია"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "ჩაჭერა"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "ყველაფრის მონიშვნა"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "მონიშვნის მოხსნა"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "მონიშვნის ინვერსია"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "ჩამოტვირთვა"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "ახლის გადმოწერა"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "მონიშნულის გადმოწერა"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "ყველას გადმოწერა"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "გადმოწერა და ახლის წაშლა"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "გადმოწერა და მონიშნულის წაშლა"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "გადმოწერა და ყველას წაშლა"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "ატვირთვა..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "დაბლოკვის გადართვა"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "გადმოწერილად მონიშვნა"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "მონიშნულის წაშლა"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "ყველას წაშლა"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "ახლის წაშლა"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "ხედები"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "ესკიზები"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "ჩანაწერის გადახედვა"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "რუკა"
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&ჩანაწერების დალაგება"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "სახელით"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "ბილიკი"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "თარიღით"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "ზომით"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "შეფასებით"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "ზრდის მიხედვით"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Დაღმავალი"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "გაშლილი სია"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "საქაღალდით"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "ფორმატით"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "თარიღით"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "ფანჯარაში ჩატევა"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "100%-მდე გადიდება"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "ისტორიის ჩვენება"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "მინიატურის პანელის დამატება"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "გამეორება"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "გადახედვის რეჟიმიდან გასვლა"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "შემდეგი გამოსახულება"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "პირველი გამოსახულება"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "ბოლო გამოსახულება"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "მზადაა"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52426,13 +52422,13 @@ msgid ""
 "and turned on."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52442,7 +52438,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52450,13 +52446,13 @@ msgid ""
 "Please enter a new filename (without extension):"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "ფაილი უკვე არსებობს"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52464,7 +52460,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52473,7 +52469,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52481,7 +52477,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52489,17 +52485,17 @@ msgid ""
 "camera pictures into."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52508,7 +52504,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52522,19 +52518,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "გაფრთხილება"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "დისკზე არასაკმარისი ადგილია"
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52547,8 +52543,8 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -52556,13 +52552,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 msgstr[1] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -52570,22 +52566,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -52593,19 +52589,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -53654,203 +53650,203 @@ msgstr ""
 msgid "Thumbs"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
 msgid "Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
 msgstr "რიგის პარამეტრები"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr "მართვის პანელი"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, kde-format
 msgid "Assigned Tools"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, kde-format
 msgid "Tool Settings"
 msgstr "ხელსაწყოების პარამეტრები"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, kde-format
 msgid "Run"
 msgstr "გაშვება"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr "ყველას გაშვება"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr "ახალი რიგი"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, kde-format
 msgid "Remove Queue"
 msgstr "რიგის წაშლა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, kde-format
 msgid "Remove items"
 msgstr "ჩანაწერების წაშლა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, kde-format
 msgid "Remove processed items"
 msgstr "დამუშავებული ჩანაწერების წაშლა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Clear Queue"
 msgstr "რიგის გასუფთავება"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, kde-format
 msgid "Move up"
 msgstr "აწევა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
 msgid "Move down"
 msgstr "ქვემოთ ჩამოწევა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Remove tool"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, kde-format
 msgid "Current Queue: "
 msgstr "მიმდინარე რიგი: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, kde-format
 msgid "No items"
 msgstr "საგნები არაა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, kde-format
 msgid "No tasks"
 msgstr "ამოცანების გარეშე"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 ამოცანა"
 msgstr[1] "%1 ამოცანა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "სულ: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "მზადაა"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, kde-format
 msgid "There is no queue to be run."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Failed to process item..."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, kde-format
 msgid "Process Cancelled..."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, kde-format
 msgid "Batch queue finished"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
 msgid "All batch queues finished"
 msgstr ""
@@ -57308,7 +57304,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
-msgstr ""
+msgstr "დიახ, მესმის"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:281
 #, kde-format
@@ -57320,13 +57316,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Baloo Desktop Search"
-msgstr ""
+msgstr "Baloo სამუშაო მაგიდაზე ძებნა"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:35
 #, kde-format
 msgctxt "@option"
 msgid "Store metadata from digiKam in Baloo"
-msgstr ""
+msgstr "DigiKam-ის მეტამონაცემების Baloo-ში შენახვა"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:36
 #, kde-format
@@ -57340,7 +57336,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Read metadata from Baloo"
-msgstr ""
+msgstr "მეტამონაცემების Baloo-დან წაკითხვა"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:41
 #, kde-format
@@ -57365,7 +57361,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Baloo"
-msgstr ""
+msgstr "Baloo"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:32
 #, kde-kuit-format
@@ -57400,7 +57396,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Captions and title"
-msgstr ""
+msgstr "წარწერა და სათაური"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:51
 #, kde-format
@@ -57452,7 +57448,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Timestamps"
-msgstr ""
+msgstr "დროის შტამპები"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:72
 #, kde-format
@@ -57466,7 +57462,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata templates (Copyright etc.)"
-msgstr ""
+msgstr "მეტამონაცემების შაბლონები (საავტორო უფლებები და ა.შ.)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:77
 #, kde-format
@@ -57493,7 +57489,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Geolocation information (GPS)"
-msgstr ""
+msgstr "გეოლოკაციის ინფორმაცია (GPS)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:87
 #, kde-format
@@ -57507,7 +57503,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing Metadata"
-msgstr ""
+msgstr "მეტამონაცემების წაკითხვა და ჩაწერა"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
 #, kde-format
@@ -57528,7 +57524,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Write metadata to DNG files"
-msgstr ""
+msgstr "DNG ფაილების მეტამონაცემების ჩაწერა"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:122
 #, kde-format
@@ -57639,7 +57635,7 @@ msgstr "ხედები"
 #, kde-format
 msgctxt "@label"
 msgid "When rotating a file"
-msgstr ""
+msgstr "ფაილის სემობრუნებისას"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:35
 #, kde-format
@@ -58183,7 +58179,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
-msgstr ""
+msgstr "მინიშნება"
 
 #: core/utilities/setup/setup.cpp:169
 #, kde-format
@@ -58378,7 +58374,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:181
 #, kde-format
 msgid "Enable Color Management"
-msgstr ""
+msgstr "ფერების მართვის ცართვა"
 
 #: core/utilities/setup/setupicc.cpp:182
 #, kde-format

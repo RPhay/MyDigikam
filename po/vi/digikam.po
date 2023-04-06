@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-05 00:45+0000\n"
+"POT-Creation-Date: 2023-04-06 00:44+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -958,9 +958,9 @@ msgstr ""
 "của máy ảnh.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:353
-#: core/utilities/imageeditor/main/imagewindow.cpp:1098
-#: core/utilities/imageeditor/main/imagewindow.cpp:1123
-#: core/utilities/imageeditor/main/imagewindow.cpp:1155
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Tập « %1 »"
@@ -1327,7 +1327,7 @@ msgstr "Tạo thư mục ?"
 msgid "Loading albums..."
 msgstr "Đang phân tách mọi tập ảnh"
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, fuzzy, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1339,82 +1339,82 @@ msgstr ""
 "hợp này, tính năng « Quản lí màu » bị tắt đến khi bạn giải quyết vấn đề này."
 "</p></qt>"
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, fuzzy, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, fuzzy, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "16 bit"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Ghi siêu dữ liệu vào mỗi tệp"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1865,7 +1865,7 @@ msgid "Change the filename of the currently selected item."
 msgstr "Thay đổi tên tập của mục được chọn hiện thời."
 
 #: core/app/main/digikamapp_setup.cpp:469
-#: core/utilities/imageeditor/editor/editorwindow.cpp:336
+#: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, fuzzy, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
@@ -2496,14 +2496,14 @@ msgid "Main Tools"
 msgstr "Thanh công cụ chính"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2598
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, fuzzy, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Thuộc tính"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2615
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title Export Tools"
@@ -2511,7 +2511,7 @@ msgid "Export"
 msgstr "Xuất"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2622
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title Import Tools"
@@ -3020,8 +3020,8 @@ msgid "no item"
 msgstr "Chưa có ngày"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, fuzzy, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -10626,7 +10626,7 @@ msgid "Scan Images"
 msgstr "Chọn ảnh khung đen"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1804
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title:window"
@@ -10663,8 +10663,8 @@ msgstr ""
 "« %2 »."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title:window"
@@ -15104,7 +15104,7 @@ msgstr "Điều chỉnh:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/utilities/imageeditor/editor/editorwindow.cpp:572
+#: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Cancel"
@@ -20365,7 +20365,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, fuzzy, kde-format
 msgid "Stop"
 msgstr "Đá"
@@ -30719,7 +30719,7 @@ msgid "Remove Black Frame"
 msgstr "Khung khối..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, fuzzy, kde-format
 msgid "Clear List"
 msgstr "Danh sách máy ảnh"
@@ -35819,7 +35819,7 @@ msgid "Description"
 msgstr "Mô tả"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -37530,7 +37530,7 @@ msgstr "Bảng ánh sáng"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr ""
@@ -41767,7 +41767,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Nhà phát triển"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:89
 #, fuzzy, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -48161,7 +48161,7 @@ msgid "Unknown"
 msgstr "Không rõ"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:488
+#: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, fuzzy, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -48173,7 +48173,7 @@ msgid "Delete File"
 msgstr "Xoá tệp"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title:window"
@@ -48191,8 +48191,8 @@ msgid "Remote file handling is not supported"
 msgstr "Định dạng tệp ảnh đích « %1 » không được hỗ trợ."
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:571
-#: core/utilities/imageeditor/main/imagewindow.cpp:686
+#: core/utilities/imageeditor/main/imagewindow.cpp:573
+#: core/utilities/imageeditor/main/imagewindow.cpp:688
 #, fuzzy, kde-format
 msgid "Image saved successfully"
 msgstr "Đang tải về tệp %1..."
@@ -49543,7 +49543,7 @@ msgid "&Abort"
 msgstr "&Huỷ bỏ"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, fuzzy, kde-format
 msgid "Processing..."
 msgstr "Thuộc tính"
@@ -50485,7 +50485,7 @@ msgstr "Áp dụng thay đổi ?"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:566
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #, kde-format
 msgctxt "@action"
 msgid "OK"
@@ -52888,51 +52888,51 @@ msgstr "Hoạ tiết"
 msgid "Try all settings."
 msgstr "Thiết lập chung"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:219
+#: core/utilities/imageeditor/editor/editorwindow.cpp:218
 #, fuzzy, kde-format
 #| msgid "&First"
 msgctxt "@action; go to first item"
 msgid "&First"
 msgstr "Đầ&u"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:226
+#: core/utilities/imageeditor/editor/editorwindow.cpp:225
 #, fuzzy, kde-format
 #| msgid "&Last"
 msgctxt "@action; go to last item"
 msgid "&Last"
 msgstr "&Cuối"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:233
+#: core/utilities/imageeditor/editor/editorwindow.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Open Original"
 msgstr "Gốc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:245
+#: core/utilities/imageeditor/editor/editorwindow.cpp:244
 #, fuzzy, kde-format
 msgctxt "@action Save changes to current version"
 msgid "Save Changes"
 msgstr "Lưu ảnh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:246
+#: core/utilities/imageeditor/editor/editorwindow.cpp:245
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the modifications to the current version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:251
+#: core/utilities/imageeditor/editor/editorwindow.cpp:250
 #, kde-format
 msgctxt "@action Save changes to a newly created version"
 msgid "Save As New Version"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:252
+#: core/utilities/imageeditor/editor/editorwindow.cpp:251
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the current modifications to a new version of the file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:258
+#: core/utilities/imageeditor/editor/editorwindow.cpp:257
 #, fuzzy, kde-format
 msgctxt ""
 "@action Save changes to a newly created version, specifying the filename and "
@@ -52940,7 +52940,7 @@ msgctxt ""
 msgid "Save New Version As..."
 msgstr "&Lưu dạng..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:259
+#: core/utilities/imageeditor/editor/editorwindow.cpp:258
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52948,151 +52948,151 @@ msgid ""
 "filename and format"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:264
+#: core/utilities/imageeditor/editor/editorwindow.cpp:263
 #, fuzzy, kde-format
 msgctxt "@action Save As New Version...Save in format..."
 msgid "Save in Format"
 msgstr "Ngày ảnh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:266
+#: core/utilities/imageeditor/editor/editorwindow.cpp:265
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:267
+#: core/utilities/imageeditor/editor/editorwindow.cpp:266
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "TIFF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:268
+#: core/utilities/imageeditor/editor/editorwindow.cpp:267
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PNG"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:269
+#: core/utilities/imageeditor/editor/editorwindow.cpp:268
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "PGF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:273
+#: core/utilities/imageeditor/editor/editorwindow.cpp:272
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "JPEG 2000"
 msgstr "Chất lượng JPEG 2000:"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:278
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "HEIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:285
+#: core/utilities/imageeditor/editor/editorwindow.cpp:284
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "JXL"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:290
+#: core/utilities/imageeditor/editor/editorwindow.cpp:289
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "WEBP"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:295
+#: core/utilities/imageeditor/editor/editorwindow.cpp:294
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "AVIF"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:304
+#: core/utilities/imageeditor/editor/editorwindow.cpp:303
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export"
 msgstr "Xuất"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:305
+#: core/utilities/imageeditor/editor/editorwindow.cpp:304
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:314
+#: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
 msgctxt "@action"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:315
+#: core/utilities/imageeditor/editor/editorwindow.cpp:314
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard all current changes to this file"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:328
+#: core/utilities/imageeditor/editor/editorwindow.cpp:327
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
 msgstr "Mở mục đã chọn trong bộ sửa ảnh."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Open the item with default assigned application."
 msgstr "Mở mục đã chọn trong bộ sửa ảnh."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:352
+#: core/utilities/imageeditor/editor/editorwindow.cpp:351
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@action"
 msgid "Undo"
 msgstr "Huỷ bước"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:370
+#: core/utilities/imageeditor/editor/editorwindow.cpp:369
 #, fuzzy, kde-format
 #| msgid "Redo"
 msgctxt "@action"
 msgid "Redo"
 msgstr "Làm lại"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:387
+#: core/utilities/imageeditor/editor/editorwindow.cpp:386
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: create a selection containing the full image"
 msgid "Select All"
 msgstr "Chọn tất cả"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:392
+#: core/utilities/imageeditor/editor/editorwindow.cpp:391
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action"
 msgid "Select None"
 msgstr "Chọn Không gì"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:406
+#: core/utilities/imageeditor/editor/editorwindow.cpp:405
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Zoom to 100%"
 msgstr "Phóng to 1:1 (không thay đổi)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:412
+#: core/utilities/imageeditor/editor/editorwindow.cpp:411
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action"
 msgid "Fit to &Window"
 msgstr "Vừa khít cửa &sổ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:419
+#: core/utilities/imageeditor/editor/editorwindow.cpp:418
 #, fuzzy, kde-format
 #| msgid "Fit to &Selection"
 msgctxt "@action"
 msgid "Fit to &Selection"
 msgstr "&Vừa khít vùng chọn"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:424
+#: core/utilities/imageeditor/editor/editorwindow.cpp:423
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to zoom the image to the current selection area."
@@ -53102,14 +53102,14 @@ msgid ""
 msgstr ""
 "Tuỳ chọn này có thể được dùng để thu/phóng ảnh vào vùng chọn hiện thời."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:448
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
 msgstr "Cái chỉ chụp non"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:451
+#: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53119,14 +53119,14 @@ msgstr ""
 "<p>Bật tuỳ chọn này để hiển thị toàn bộ màu đen trên ô xem thử, thì giúp đỡ "
 "bạn tránh chụp non ảnh."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:459
+#: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
 msgstr "Cái chỉ phơi quá lâu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:461
+#: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53136,32 +53136,32 @@ msgstr ""
 "<p>Bật tuỳ chọn này để hiển thị toàn bộ màu trắng trên ô xem thử, thì giúp "
 "đỡ bạn tránh phơi ảnh quá lâu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:469
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/imageeditor/editor/editorwindow.cpp:468
+#: core/utilities/import/main/importui.cpp:488
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
 msgstr "Ô xem đã Quản lí Màu"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:476
+#: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
 msgstr "Kiểm lỗi mềm"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:481
+#: core/utilities/imageeditor/editor/editorwindow.cpp:480
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
 msgstr "Kiểm lỗi mềm"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:489
+#: core/utilities/imageeditor/editor/editorwindow.cpp:488
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Crop to Selection"
 msgstr "&Vừa khít vùng chọn"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:492
+#: core/utilities/imageeditor/editor/editorwindow.cpp:491
 #, fuzzy, kde-format
 #| msgid ""
 #| "This option can be used to crop the image. Select a region of the image "
@@ -53174,21 +53174,21 @@ msgstr ""
 "Tuỳ chọn này có thể được dùng để xén ảnh. Hãy chọn một vùng trên ảnh để bật "
 "hành động này."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:500
+#: core/utilities/imageeditor/editor/editorwindow.cpp:499
 #, fuzzy, kde-format
 #| msgid "Flip Horizontally"
 msgctxt "@action"
 msgid "Flip Horizontally"
 msgstr "Lật ngang"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:508
+#: core/utilities/imageeditor/editor/editorwindow.cpp:507
 #, fuzzy, kde-format
 #| msgid "Flip Vertically"
 msgctxt "@action"
 msgid "Flip Vertically"
 msgstr "Lật dọc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:518
+#: core/utilities/imageeditor/editor/editorwindow.cpp:517
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, fuzzy, kde-format
 #| msgid "Rotate Left"
@@ -53196,7 +53196,7 @@ msgctxt "@action"
 msgid "Rotate Left"
 msgstr "Xoay trái"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:526
+#: core/utilities/imageeditor/editor/editorwindow.cpp:525
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, fuzzy, kde-format
 #| msgid "Rotate Right"
@@ -53204,47 +53204,47 @@ msgctxt "@action"
 msgid "Rotate Right"
 msgstr "Xoay phải"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:558
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/imageeditor/editor/editorwindow.cpp:557
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
 msgstr "Ảnh trước"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:588
+#: core/utilities/imageeditor/editor/editorwindow.cpp:587
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@label"
 msgid "No selection"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:591
+#: core/utilities/imageeditor/editor/editorwindow.cpp:590
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
 msgstr "Thông tin về vùng chọn hiện thời"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:595
 #, fuzzy, kde-format
 #| msgid "Information about image size"
 msgctxt "@info"
 msgid "Information about image size"
 msgstr "Thông tin về kích cỡ của ảnh"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1086
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1085
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Đang tải ảnh..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1087
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1086
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Please wait for the image to be saved..."
 msgstr "Hãy đời trong khi lưu ảnh..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1108
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1107
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53254,14 +53254,14 @@ msgstr ""
 "Sắp xoá tệp « %1 »\n"
 "Bạn có chắc chưa?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1113
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1112
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1223
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1222
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53271,7 +53271,7 @@ msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1374
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1373
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53281,21 +53281,21 @@ msgstr ""
 "Ảnh « %1 » đã bị sửa đổi.\n"
 "Bạn có muốn lưu nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1451
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Chưa chọn gì"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1472
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Đang tải: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1500
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1499
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display picture\n"
@@ -53306,7 +53306,7 @@ msgstr ""
 "Không thể hiển thị ảnh\n"
 "« %1 »"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1542
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1541
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53319,14 +53319,14 @@ msgstr ""
 "kiểm tra lại cấu hình quản lí màu trong thiết lập của digiKam, để thẩm tra "
 "đường dẫn ICC."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1599
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Đang lưu: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1621
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1620
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -53345,32 +53345,32 @@ msgstr ""
 "vào\n"
 "« %2 » ."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1754
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1753
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Lỗi liệt kê tệp nằm trong %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1950
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "<p>Ở đây hãy đặt cách điều chỉnh lại độ tương phản của ảnh đích."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1957
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1956
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2204
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2203
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2279
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -53382,7 +53382,7 @@ msgid ""
 msgstr ""
 "Bạn không có quyền ghi tệp tên « %1 ». Bạn có chắc muốn ghi đè lên nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2298
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -53391,26 +53391,26 @@ msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Tệp tên « %1 » đã có. Bạn có chắc muốn ghi đè lên nó không?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2325
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Lỗi ghi đè lên tệp gốc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2404
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2403
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Ô xem đả quản lí màu đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2408
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2407
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Ô xem đả quản lí màu bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2412
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53419,114 +53419,114 @@ msgid ""
 msgstr ""
 "Chưa cấu hình khả năng Quản lí Màu, vì vậy không có sẵn Ô xem đã Quản lí Màu."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Cái chỉ chụp non đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2450
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Cái chỉ chụp non bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2463
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Cái chỉ phơi quá lâu đã bật"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2465
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Cái chỉ phơi quá lâu bị tắt"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2556
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2555
 #, fuzzy, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Chuyể&n dạng"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2570
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2569
 #, fuzzy, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "T&rang trí"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2577
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2576
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Hiệu ứng che mờ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2584
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2583
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Màu sắc"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2591
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2590
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "&Tăng cường"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2754
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2753
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Mở bằng"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2768
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2767
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Kéo cắt..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2777
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
 #, fuzzy, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Mở bằng"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:183
+#: core/utilities/imageeditor/main/imagewindow.cpp:185
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Bộ sửa ảnh — %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:187
+#: core/utilities/imageeditor/main/imagewindow.cpp:189
 #, kde-format
 msgid "Image Editor"
 msgstr "Bộ sửa ảnh"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:357
+#: core/utilities/imageeditor/main/imagewindow.cpp:359
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:358
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:928
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, fuzzy, kde-format
 #| msgid "No Image in Current Album"
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Không có ảnh trong tập ảnh hiện có"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:929
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -53535,13 +53535,13 @@ msgstr ""
 "Không có ảnh cần hiển thị trong tập ảnh hiện có.\n"
 "Như thế thì bộ sửa ảnh sẽ đóng."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1200
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Không có sẵn hồ sơ..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1201
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -53801,7 +53801,7 @@ msgstr "Lỗi tải lên tệp « %1 »."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -54147,400 +54147,400 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "<p>Đặt phương pháp digiKam thay đổi tên của tệp một khi tải về"
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Tuỳ chọn thay tên tệp"
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Tự động tạo tập ảnh"
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Thao tác khi yêu cầu (chỉ JPEG)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Tuy chọn giao diện"
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Làm mịn:"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "Thiết lập"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, fuzzy, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "T&hôi"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Thông tin"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, fuzzy, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Tự nhiên"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Chọn tất cả"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Chọn Không gì"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Đảo vùng chọn"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Chọ&n mục mới"
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Chọ&n mục mới"
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Tải về"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Tải về"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Tải về các điều chọn"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Tải về hết"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Tải về hết"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Tải về các điều chọn"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Tải về hết"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Tải lên..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Bật/tắt khoá"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Tải về"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Xoá"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Xoá các điều chọn"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Xoá tất cả"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Xoá tệp"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "&Xem"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Ảnh trước"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Sắp xếp ảnh"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Theo tên"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Theo đường dẫn"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Theo ngày"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Theo kích cỡ tệp"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Theo đánh giá"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Tải về các điều chọn"
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Thiết lập ảnh"
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Giải mã RAW"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Giải mã RAW"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "&Sắp xếp ảnh"
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Danh sách máy ảnh"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Theo thư mục"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Ngày ảnh"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Theo ngày"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Vừa khít cửa &sổ"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Phóng to 1:1 (không thay đổi)"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Vẽ lưới"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Thử lại"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Thoát khỏi chế độ xem thử"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Ảnh kế"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Ảnh đầu"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Ảnh cuối"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Đang thôi thao tác hiện thời, xin hãy đợi..."
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Bạn có muốn đóng hộp thoại này và thôi thao tác đang chạy không?"
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Đang ngắt kết nối tới máy ảnh, hãy đợi..."
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Sẵn sàng"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54550,13 +54550,13 @@ msgstr ""
 "Lỗi kết nối tới máy ảnh. Hãy kiểm tra xem nó đã được kết nối và bật. Bạn có "
 "muốn thử lại không?"
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Chọn ảnh cần tải lên"
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54566,7 +54566,7 @@ msgid ""
 "Available free space: %2"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54576,13 +54576,13 @@ msgstr ""
 "Thư mục máy ảnh <b>%1</b> đã chứa mục <b>%2</b><br>Hãy nhập vào tên tệp mới "
 "(không có phần mở rộng):"
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Tệp đã có"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54590,7 +54590,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54599,7 +54599,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54607,7 +54607,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54617,19 +54617,19 @@ msgstr ""
 "<p>Hãy chọn trong thư viện digiKam tập ảnh đích vào đó cần nhập khẩu các ảnh "
 "của máy ảnh.</p>"
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54641,7 +54641,7 @@ msgstr ""
 "này sẽ không bị xoá. Nếu bạn thực sự muốn xoá những mục này, hãy bỏ khoá "
 "chúng rồi thử lại."
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54655,20 +54655,20 @@ msgid_plural ""
 msgstr[0] ""
 "Sắp xoá ảnh này. Tệp bị xoá không thể được phục hồi. Bạn có chắc chưa?"
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54681,46 +54681,46 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, fuzzy, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr " (%2 trên %3)"
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -54728,19 +54728,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Tải về"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Một tệp cùng tên (%1) đã có trong thư mục %2"
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -55828,203 +55828,203 @@ msgstr "Theo tập hợp"
 msgid "Thumbs"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, fuzzy, kde-format
 msgid "Queues"
 msgstr "Quique"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, fuzzy, kde-format
 msgid "Queue Settings"
 msgstr "Thiết lập chung"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, fuzzy, kde-format
 msgid "Assigned Tools"
 msgstr "Thẻ đã gán"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, fuzzy, kde-format
 msgid "Tool Settings"
 msgstr "Thiết lập cục bộ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, fuzzy, kde-format
 msgid "Run"
 msgstr "Mặt trời"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, fuzzy, kde-format
 msgid "Remove Queue"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, fuzzy, kde-format
 msgid "Remove items"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, fuzzy, kde-format
 msgid "Remove processed items"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, fuzzy, kde-format
 msgid "Clear Queue"
 msgstr "Chuẩn"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, fuzzy, kde-format
 msgid "Move up"
 msgstr "Chuyển"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, fuzzy, kde-format
 msgid "Move down"
 msgstr "Chuyển"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, fuzzy, kde-format
 msgid "Remove tool"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, fuzzy, kde-format
 msgid "Current Queue: "
 msgstr "Xoá tìm kiếm"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, fuzzy, kde-format
 msgid "No items"
 msgstr "Chưa có ngày"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, fuzzy, kde-format
 msgid "No tasks"
 msgstr "16 bit"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, fuzzy, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "16 bit"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "%1 (%2)"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Sẵn sàng"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Đang xử lí ảnh mẫu lớn"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, fuzzy, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, fuzzy, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Đang xử lí ảnh mẫu ít"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, fuzzy, kde-format
 msgid "Failed to process item..."
 msgstr "Lỗi bật/tắt tệp khoá « %1 »."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, fuzzy, kde-format
 msgid "Process Cancelled..."
 msgstr "Thuộc tính"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, fuzzy, kde-format
 msgid "Batch queue finished"
 msgstr "Tiến trình liệt kê các thư mục đã chạy xong."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, fuzzy, kde-format
 msgid "All batch queues finished"
 msgstr "Tiến trình liệt kê các thư mục đã chạy xong."
