@@ -438,6 +438,11 @@ void ExifToolProcess::changeExifToolProgram(const QString& etExePath)
     if      (d->etExePath.isEmpty() || d->etExePath == exifToolBin())
     {
         d->etExePath = QStandardPaths::findExecutable(exifToolBin());
+
+        if (d->etExePath.isEmpty())
+        {
+            d->etExePath = exifToolBin();
+        }
     }
     else if (QFileInfo(d->etExePath).isDir())
     {
