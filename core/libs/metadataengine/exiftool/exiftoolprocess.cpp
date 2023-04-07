@@ -437,7 +437,20 @@ void ExifToolProcess::changeExifToolProgram(const QString& etExePath)
 
     if      (d->etExePath.isEmpty() || d->etExePath == exifToolBin())
     {
-        d->etExePath = QStandardPaths::findExecutable(QLatin1String("exiftool"));
+
+#ifdef Q_OS_WIN
+
+        QStringList possiblePaths({QLatin1String("C:/Program Files/digiKam"),
+                                   QLatin1String("C:/Program Files/digiKam/bin")});
+
+        d->etExePath = QStandardPaths::findExecutable(exifToolBin(), possiblePaths);
+
+#else
+
+        d->etExePath = QStandardPaths::findExecutable(exifToolBin());
+
+#endif
+
     }
     else if (QFileInfo(d->etExePath).isDir())
     {
