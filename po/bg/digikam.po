@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-06 00:44+0000\n"
-"PO-Revision-Date: 2023-03-26 17:29+0200\n"
+"PO-Revision-Date: 2023-04-06 18:03+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -26667,12 +26667,10 @@ msgid "Rename Album (%1)"
 msgstr "Преименуване на албум (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Преименуване на албум (%1)"
+msgstr "Преименуване на албум Основен (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -29853,12 +29851,10 @@ msgid "Manifests"
 msgstr "Манифести"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "Конфигурация на FFmpeg"
+msgstr "Конфигурация на OpenCV"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format

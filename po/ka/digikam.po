@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-06 00:44+0000\n"
-"PO-Revision-Date: 2023-04-05 06:54+0200\n"
+"PO-Revision-Date: 2023-04-06 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -6133,7 +6133,7 @@ msgstr "შემობრუნება"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
-msgstr ""
+msgstr "სურათების მობრუნების ხელსაწყო"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
 #, kde-kuit-format
@@ -6285,7 +6285,7 @@ msgstr "არა"
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
-msgstr ""
+msgstr "ჩამტვირთავი ImageMagick"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
 #, kde-format
@@ -28914,7 +28914,7 @@ msgid "Moss"
 msgstr ""
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: texture type"
 msgid "Stone"
 msgstr "სტოუნი"
