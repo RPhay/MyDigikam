@@ -19,6 +19,8 @@ namespace Digikam
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
+      m_winLoaded  (false),
+      m_maximized  (false),
       d            (new Private)
 {
     m_animLogo = nullptr;
@@ -41,15 +43,32 @@ QString DXmlGuiWindow::configGroupName() const
     return d->configGroupName;
 }
 
+void DXmlGuiWindow::showEvent(QShowEvent* e)
+{
+    KXmlGuiWindow::showEvent(e);
+
+    restoreWindowSize();
+}
+
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
     checkFullScreenBeforeClosing();
 
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
+
+#ifdef Q_OS_WIN
+
+        m_maximized = (windowState() &
+                       Qt::WindowMaximized);
+
+#endif
+
         e->ignore();
         return;
     }
+
+    saveWindowSize();
 
     KXmlGuiWindow::closeEvent(e);
 }
@@ -201,10 +220,19 @@ void DXmlGuiWindow::unminimizeAndActivateWindow()
         setWindowState(windowState() & ~Qt::WindowMinimized);
     }
 
+#ifdef Q_OS_WIN
+
+    if (m_maximized)
+    {
+        setWindowState(windowState() | Qt::WindowMaximized);
+    }
+
+#endif
+
     setWindowState(windowState() | Qt::WindowActive);
 }
 
-void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
+bool DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
 {
 
 #ifdef Q_OS_WIN
@@ -233,9 +261,13 @@ void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
         win->resize(w, h);
     }
 
+    return max;
+
 #else
 
     KWindowConfig::restoreWindowSize(win, group);
+
+    return false;
 
 #endif
 
@@ -266,11 +298,15 @@ void DXmlGuiWindow::restoreWindowSize()
 
 #ifdef Q_OS_WIN
 
-    winId();
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(configGroupName());
+    if (!m_winLoaded)
+    {
+        winId();
 
-    restoreWindowSize(windowHandle(), group);
+        m_winLoaded               = true;
+        KSharedConfig::Ptr config = KSharedConfig::openConfig();
+        KConfigGroup group        = config->group(configGroupName());
+        m_maximized               = restoreWindowSize(windowHandle(), group);
+    }
 
 #endif
 
@@ -280,6 +316,16 @@ void DXmlGuiWindow::saveWindowSize()
 {
 
 #ifdef Q_OS_WIN
+
+    if (configGroupName() == QLatin1String("General Settings"))
+    {
+        m_maximized = (windowState() & Qt::WindowMaximized);
+    }
+
+    if (m_maximized)
+    {
+        windowHandle()->setWindowState(Qt::WindowMaximized);
+    }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
