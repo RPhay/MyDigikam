@@ -317,11 +317,6 @@ void DXmlGuiWindow::saveWindowSize()
 
 #ifdef Q_OS_WIN
 
-    if (configGroupName() == QLatin1String("General Settings"))
-    {
-        m_maximized = (windowState() & Qt::WindowMaximized);
-    }
-
     if (m_maximized)
     {
         windowHandle()->setWindowState(Qt::WindowMaximized);
