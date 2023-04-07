@@ -315,7 +315,7 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
     QPointer<QInputDialog> textDlg = new QInputDialog(d->parent);
 
     textDlg->setWindowTitle(i18nc("@title:window", "Enter Flickr Login URL"));
-    textDlg->setLabelText(i18n("Enter the full URL from the external browser "
+    textDlg->setLabelText(i18n("Copy the full URL from the external browser "
                                "that contains the \"oauth_token\" entry:"));
     textDlg->resize(770, textDlg->sizeHint().height());
     textDlg->setInputMode(QInputDialog::TextInput);
