@@ -415,9 +415,10 @@ BUGFIXES:
 367 ==> 468246 - Spelling error in setup text - "finguerprints".
 368 ==> 468283 - digiKam closes after closing slideshow.
 369 ==> 468284 - Non-functional recursive advanced search.
-370 ==> 
-371 ==> 
-
+370 ==> 465607 - digiKam quits when assigning tag to an unknown faces.
+371 ==> 465905 - Crash when adding a face tag.
+372 ==> 466856 - Face Matching.
+373 ==> 
 
 
 
