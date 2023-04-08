@@ -413,8 +413,8 @@ BUGFIXES:
 365 ==> 468115 - digiKam 8.0.0-Beta1 hasn't imported tags.
 366 ==> 467912 - Image Editor ignores former window size at startup.
 367 ==> 468246 - Spelling error in setup text - "finguerprints".
-368 ==> 
-369 ==> 
+368 ==> 468283 - digiKam closes after closing slideshow.
+369 ==> 468284 - Non-functional recursive advanced search.
 370 ==> 
 371 ==> 
 
