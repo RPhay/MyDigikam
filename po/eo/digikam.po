@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-06 00:44+0000\n"
-"PO-Revision-Date: 2023-03-25 16:19+0100\n"
+"POT-Creation-Date: 2023-04-08 00:44+0000\n"
+"PO-Revision-Date: 2023-04-07 10:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -4709,10 +4709,10 @@ msgid ""
 "Adobe.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
-"<para >Ĉi Ĉi tiu Ĝenerala ilo povas konverti RAW-bildajn datumojn al DNG-"
-"formato.</para><para >La Cifereca Negativo estas senperda RAW-bildformato "
-"kreita de Adobe.</para><para >Vidu detalojn pri ĉi tiu formato el <a "
-"href='https://en.wikipedia.org/wiki/Digital_Negative'>ĉi tiu paĝo</a>.</para>"
+"<para>Ĉi tiu Ĝenerala ilo povas konverti RAW-bildajn datumojn al DNG-formato."
+"</para><para>La Cifereca Negativo estas senperda RAW-bildformato kreita de "
+"Adobe.</para><para>Vidu detalojn pri ĉi tiu formato el <a href='https://en."
+"wikipedia.org/wiki/Digital_Negative'>ĉi tiu paĝo</a>.</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
 #, kde-format
@@ -6490,7 +6490,7 @@ msgstr ""
 "<p>La kvalita valoro por HEIF-bildoj:</p><p><b>1</b>: malalta kvalito (alta "
 "kunpremo kaj malgranda dosiergrandeco)<br/><b>50</b>: meza kvalito<br/"
 "><b>75</b>: bona kvalito (defaŭlte)<br/><b>100</b>: altkvalita (neniu "
-"kunpremo kaj granda dosiergrandeco)</p><p>< b>Noto: HEIF ne estas senperda "
+"kunpremo kaj granda dosiergrandeco)</p><p><b>Noto: HEIF ne estas senperda "
 "bildkunprema formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
@@ -6685,7 +6685,7 @@ msgid ""
 "JPEG'>JPEG</a> is a lossy image compression format.</i></font>"
 msgstr ""
 "<font color='red'><i>Averto: <a href='https://en.wikipedia.org/wiki/"
-"JPEG'>JPEG</a> estas perdforma kunprema bildo.</i>< /tiparo>"
+"JPEG'>JPEG</a> estas perdforma kunprema bildo.</i></tiparo>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
 #, kde-format
@@ -6730,12 +6730,12 @@ msgstr ""
 "grandan sentemon de la okulo al kolorrezolucio. Kiom perceptebla estas la "
 "diferenco dependas de la bildo - grandaj fotoj ĝenerale montros neniun "
 "diferencon, dum akraj, malgrandigitaj pikselaj grafikaĵoj povas perdi bonan "
-"kolordetalon.</p><p><b>4:4:4</b > - Neniu kroma subspecimeno, plej "
-"altkvalita sed plej malalta kunpremo.</p><p><b>4:2:2</b> - Kromo duonigita "
-"horizontale, meza kunpremo, meza kvalito.</p><p><p> b>4:2:0</b> - Chroma "
-"kvaronigita en 2x2 blokoj, alta kunpremo sed malalta kvalito.</"
-"p><p><b>4:1:1</b> - Chroma kvaronigita en 4x1 blokoj, alta kunpremo sed "
-"malalta kvalito.</p><p><b>Noto: JPEG ĉiam uzas perdan kunpremadon.</b></p>"
+"kolordetalon.</p><p><b>4:4:4</b> - Neniu kroma subspecimeno, plej altkvalita "
+"sed plej malalta kunpremo.</p><p><b>4:2:2</b> - Kromo duonigita horizontale, "
+"meza kunpremo, meza kvalito.</p><p><p> b>4:2:0</b> - Chroma kvaronigita en "
+"2x2 blokoj, alta kunpremo sed malalta kvalito.</p><p><b>4:1:1</b> - Chroma "
+"kvaronigita en 4x1 blokoj, alta kunpremo sed malalta kvalito.</p><p><b>Noto: "
+"JPEG ĉiam uzas perdan kunpremadon.</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:47
 #, kde-format
@@ -6897,7 +6897,7 @@ msgstr ""
 "<p>La kvalita valoro por PGF-bildoj:</p><p><b>1</b>: altkvalita (neniu "
 "kunpremo kaj granda dosiergrandeco)<br/><b>3</b>: bona kvalito (defaŭlte)<br/"
 "><b>6</b>: meza kvalito<br/><b>9</b>: malalta kvalito (alta kunpremo kaj "
-"malgranda dosiergrandeco)</p><p>< b>Noto: PGF ne estas senperda bildkunprema "
+"malgranda dosiergrandeco)</p><p><b>Noto: PGF ne estas senperda bildkunprema "
 "formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:47
@@ -6955,10 +6955,10 @@ msgid ""
 "compression format.</b></p>"
 msgstr ""
 "<p>La kunprema valoro por PNG-bildoj:</p><p><b>1</b>: malalta kunpremado "
-"(granda dosiergrando sed mallonga kunpremdaŭro - defaŭlte)<br/><b>5</b >: "
+"(granda dosiergrando sed mallonga kunpremdaŭro - defaŭlte)<br/><b>5</b>: "
 "meza kunpremo<br/><b>9</b>: alta kunpremo (malgranda dosiergrandeco sed "
 "longa kunpremado)</p><p><b>Noto: PNG ĉiam estas senperda bildkunprema "
-"formato.< /b></p>"
+"formato.</b></p>"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:47
 #, kde-format
@@ -7028,7 +7028,7 @@ msgstr ""
 "<p>La kvalita valoro por AVIF-bildoj:</p><p><b>1</b>: malalta kvalito (alta "
 "kunpremo kaj malgranda dosiergrandeco)<br/><b>50</b>: meza kvalito<br/"
 "><b>75</b>: bona kvalito (defaŭlte)<br/><b>99</b>: altkvalita (neniu "
-"kunpremo kaj granda dosiergrandeco)</p><p>< b>Noto: AVIF ne estas senperda "
+"kunpremo kaj granda dosiergrandeco)</p><p><b>Noto: AVIF ne estas senperda "
 "bildkunprema formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:68
@@ -7127,7 +7127,7 @@ msgstr ""
 "<p>La kvalita valoro por WEB-bildoj:</p><p><b>1</b>: malalta kvalito (alta "
 "kunpremo kaj malgranda dosiergrandeco)<br/><b>50</b>: meza kvalito<br/"
 "><b>75</b>: bona kvalito (defaŭlte)<br/><b>99</b>: altkvalita (neniu "
-"kunpremo kaj granda dosiergrandeco)</p><p>< b>Noto: WEBP ne estas senperda "
+"kunpremo kaj granda dosiergrandeco)</p><p><b>Noto: WEBP ne estas senperda "
 "bildkunprema formato kiam vi uzas ĉi tiun agordon.</b></p>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:47
@@ -8291,7 +8291,7 @@ msgstr ""
 "<p>Kiel Uzi:<br/><br/>* Premu <b>s</b> por ŝanĝi al font-elekta reĝimo, kaj "
 "elektu fontpunkton sur bildo.<br/>* Premu <b>s. </b> denove kaj komencu "
 "klonadon.<br/>* Premu <b>[</b> kaj <b>]</b> por ŝanĝi la grandecon de la "
-"peniko.<br/>* Premu <b>CTRL+Musrado< /b> por zomi en/malproksimigi.<br/>* "
+"peniko.<br/>* Premu <b>CTRL+Musrado</b> por zomi en/malproksimigi.<br/>* "
 "Premu <b>m</b> por panorami la bildon se bildo estas pli granda ol "
 "vidfenestro.<br/>* Premu <b>l</b> por komenci laso reĝimo. Komencu desegni "
 "la limon aŭ senĉese aŭ diskrete, poste duoble alklaku aŭ premu l denove por "
@@ -9198,9 +9198,9 @@ msgstr ""
 "distordas la foton per horizontalaj ondoj.</p><p><b>Ondoj Vertikalaj </b>: "
 "distordas la foton per vertikalaj ondoj.</p><p><b>Bloko-Ondoj 1</b>: dividas "
 "la bildon en ĉelojn kaj aspektigas ĝin kvazaŭ ĝi estas rigardata tra vitraj "
-"blokoj.< /p><p><b>Bloko-Ondoj 2</b>: kiel Bloko-Ondoj 1 sed kun alia versio "
+"blokoj.</p><p><b>Bloko-Ondoj 2</b>: kiel Bloko-Ondoj 1 sed kun alia versio "
 "de vitroblokoj distordo.</p><p><b>Cirklaj Ondoj 1</b>: distordas la foton "
-"per cirklaj ondoj.</p><p><b>Cirklaj Ondoj 2</b> >: alia vario de la efiko de "
+"per cirklaj ondoj.</p><p><b>Cirklaj Ondoj 2</b>: alia vario de la efiko de "
 "Cirklaj Ondoj.</p><p><b>Polusaj Koordinatoj</b>: konvertas la foton de "
 "rektangulaj al polusaj koordinatoj.</p><p><b>Nepolusaj Koordinatoj</"
 "p><p><b>Nepolusaj Koordinatoj</b> b>: la efiko de Polusa Koordinato "
@@ -10152,11 +10152,11 @@ msgstr ""
 "povas vidi ĉi-sube korespondan liston de tradiciaj fotpaperaj grandecoj kaj "
 "bildforma rikolto:</p><p> p><b>2:3</b>: 10x15cm, 20x30cm, 30x45cm, 4x6\", "
 "8x12\", 12x18\", 16x24\", 20x30\"</p><p><b>3: 4</b>: 6x8cm, 15x20cm, "
-"18x24cm, 30x40cm, 3.75x5\", 4.5x6\", 6x8\", 7.5x10\", 9x12\"</p><p><b>4:5< /"
+"18x24cm, 30x40cm, 3.75x5\", 4.5x6\", 6x8\", 7.5x10\", 9x12\"</p><p><b>4:5</"
 "b>: 20x25cm, 40x50cm, 8x10\", 16x20\"</p><p><b>5:7</b>: 15x21cm, 30x42cm, "
 "5x7\"</p><p><b> 7:10</b>: 21x30cm, 42x60cm, 3.5x5\"</p><p><b>8:5</b>: ofta "
 "larĝekrana ekrano (kiel 1680x1050)</p><p> <b>2:1</b>, <b>3:1</b>, <b>4:1</"
-"b>: oftaj panoramaj grandecoj</p><p><b>16:9< /b>: ofta televidekrano (kiel "
+"b>: oftaj panoramaj grandecoj</p><p><b>16:9</b>: ofta televidekrano (kiel "
 "HDTV aŭ Full-HD)</p><p>La papera <b>Formato DIN A</b> uzas la rilatumon "
 "1:1.414</p><p>La <p> b>Ora Proporcio</b> estas 1:1.618. Kunmetaĵo sekvanta "
 "ĉi tiun regulon estas konsiderata vide harmonia sed eble ne taŭgas por presi "
@@ -10787,7 +10787,7 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj akiri novajn bildojn de cifereca skanilo.</"
 "p><p>Multaj skaniloj estas subtenataj per la Sane-biblioteko.</p><p>Cela "
-"bildo povas esti afiŝita kiel rikolto kaj turni.</ p >"
+"bildo povas esti afiŝita kiel rikolto kaj turni.</p>"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
@@ -11020,9 +11020,9 @@ msgstr "Konservante ŝanĝojn -"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:816
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:840
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
@@ -11591,7 +11591,7 @@ msgid ""
 msgstr ""
 "<p>Specifikas kiel la punktoj estas montrataj<dl><dt>krampo al grundo "
 "(defaŭlte)</dt><dd>Indikas ignori altecan specifon</dd><dt>rilate al grundo</"
-"dt><dd >Fiktas la altecon de la elemento relative al la reala grunda alteco "
+"dt><dd>Fiktas la altecon de la elemento relative al la reala grunda alteco "
 "de aparta loko.</dd><dt>absoluta</dt><dd>Fiktas la altecon de la koordinato "
 "relative al la marnivelo, sendepende de la reala alteco de la tereno sub la "
 "elemento.</ dd></dl></p>"
@@ -15516,7 +15516,7 @@ msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj komponi erojn kaj krei kalendaron kun viaj "
 "plej bonaj fotoj.</p><p>Malsamaj kalendara aranĝo estas disponeblaj kaj vi "
 "povas integri liston de datoj el ICS-formato por reliefigi feriajn tempojn.</"
-"p ><p>Fine, la ilo proponos eksporti la rezulton al via presilo aŭ en PDF-"
+"p><p>Fine, la ilo proponos eksporti la rezulton al via presilo aŭ en PDF-"
 "dosiero.</p>"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
@@ -15578,11 +15578,11 @@ msgstr ""
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
 "weight:400; font-style:kursivo;\">\n"
-"< p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Vi povas elŝuti kalendaro "
 "por via lando de <a href=\"www.icalshare.com\"><span style=\" teksto-"
-"ornamado: substreko; koloro:#0057ae;\">www.icalshare.com</span>< /a> aŭ "
-"aliaj retejoj.</p>\n"
+"ornamado: substreko; koloro:#0057ae;\">www.icalshare.com</span></a> aŭ aliaj "
+"retejoj.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent: 0; text-indent:0px;\">Ĉi tio estas tute "
 "laŭvola. Ĉiuj eventoj de ĉi tiu kalendaro estos ruĝe presitaj.</p></body></"
@@ -16961,8 +16961,8 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj retroprocezi erojn (kiel regrandigi) antaŭ "
 "krei html-galerion konforma al W3C.</p><p>Eroj por prilabori povas esti "
-"elektitaj unuope aŭ grupe per elekto de albumoj.< /p><p>Tema HTML-ŝablono "
-"kun malsama aranĝo povas esti uzata por kunmeti dosierojn en galerio.</p>"
+"elektitaj unuope aŭ grupe per elekto de albumoj.</p><p>Tema HTML-ŝablono kun "
+"malsama aranĝo povas esti uzata por kunmeti dosierojn en galerio.</p>"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
@@ -17080,7 +17080,7 @@ msgid ""
 "can be customized with a nice theme.</p></qt>"
 msgstr ""
 "<qt><p><h1><b>Bonvenon al HTML Galerio-ilo</b></h1></p><p>Ĉi tiu asistanto "
-"gvidos vin rapide eksporti</p><p></p ><p>viaj bildoj kiel malgranda senmova "
+"gvidos vin rapide eksporti</p><p></p><p>viaj bildoj kiel malgranda senmova "
 "HTML-fotogalerio.</p><p>Ĉi tiu ilo plene konformas kun <a href='https://en."
 "wikipedia.org/wiki/HTML'>HTML kaj CSS normoj</a></p><p>kaj la eligo povas "
 "esti personecigita per bela temo.</p></qt>"
@@ -17306,7 +17306,7 @@ msgid ""
 "project.</p></qt>"
 msgstr ""
 "<qt><p><h1><b>Bonvenon al jAlbum-eksportilo</b></h1></p><p>Tiu asistanto "
-"gvidos vin rapide eksporti</p><p></p ><p>viaj bildoj kiel projekto jAlbum.</"
+"gvidos vin rapide eksporti</p><p></p><p>viaj bildoj kiel projekto jAlbum.</"
 "p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
@@ -17519,7 +17519,7 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj kunhavigi erojn en la loka reto per DLNA-"
 "servilo.</p><p>Iro por kunhavigi povas esti elektitaj unuope aŭ grupe per "
-"elekto de albumoj.</p><p >Multaj specoj de elektronikaj aparatoj povas "
+"elekto de albumoj.</p><p>Multaj specoj de elektronikaj aparatoj povas "
 "subteni DLNA, kiel tablojdoj, poŝtelefonoj, televidilo, ktp.</p>"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
@@ -19008,7 +19008,7 @@ msgid ""
 msgstr ""
 "<qt><h1>Panorama Antaŭrigardo</h1><p>Desegnu rektangulon se vi volas tondi "
 "la bildon.</p><p>Premante la butonon <i>Sekva</i> poste lanĉos la finan "
-"kudradon. procezo.</ p ></ qt >"
+"kudradon. procezo.</p></qt>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:564
 #, kde-format
@@ -19362,7 +19362,7 @@ msgstr "Sekva foto"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:127
 #, kde-format
 msgid "Ne&xt >>"
-msgstr "Sekva >>"
+msgstr "Sek&va >>"
 
 #. i18n: ectx: property (text), widget (QLabel, LblCropPhoto)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:156
@@ -20021,7 +20021,7 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj retroprocezi erojn (kiel regrandigi) antaŭ "
 "ol sendi retpoŝte.</p><p>Erojn por procesi oni povas elekti unuope aŭ grupe "
-"per elekto de albumoj.< /p><p>Malsama retpoŝtklienta aplikaĵo povas esti "
+"per elekto de albumoj.</p><p>Malsama retpoŝtklienta aplikaĵo povas esti "
 "uzata por prilabori dosierojn en la reto.</p>"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
@@ -20195,7 +20195,7 @@ msgid ""
 "value)<br/><b>100</b>: no compression</p>"
 msgstr ""
 "<p><b>1</b>: tre alta kunpremo<br/><b>25</b>: alta kunpremo<br/><b>50</b>: "
-"meza kunpremo<br/>< b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</"
+"meza kunpremo<br/><b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</"
 "b>: neniu kunpremo</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
@@ -20336,7 +20336,7 @@ msgstr ""
 "<qt><p><h1><b>Bonvenon al Video Slideshow-ilo</b></h1></p><p>Ĉi tiu "
 "asistanto gvidos vin eksporti</p><p>viajn bildojn kiel videofluo.</p><p>Vi "
 "povas rapide generi <a href='https://en.wikipedia.org/wiki/Time-"
-"lapse_photography'>Time-lapse</a> filmon el bildoj</p ><p>kaptita per "
+"lapse_photography'>Time-lapse</a> filmon el bildoj</p><p>kaptita per "
 "tripiedo muntita fotilo kontrolita per <a href='https://en.wikipedia.org/"
 "wiki/Intervalometer#Photography'>intervalometro</a>.</p><p></p><p><p>Vi "
 "povas ankaŭ krei videoprezenton kun transiraj</p><p>efektoj kaj sonspuroj "
@@ -21845,7 +21845,7 @@ msgstr "Eksporti al &Kesto..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:432
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:417
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1182
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
@@ -22380,7 +22380,7 @@ msgstr ""
 "<p>La nova kunprema valoro de JPEG-bildoj sendotaj:</p><p><b>1</b>: tre alta "
 "kunpremo<br/><b>25</b>: alta kunpremo<br /><b>50</b>: meza kunpremo<br/"
 "><b>75</b>: malalta kunpremo (defaŭlta valoro)<br/><b>100</b>: neniu "
-"kunpremo</p >"
+"kunpremo</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, kde-format
@@ -22677,109 +22677,122 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "Eksporti al &Flickr..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:340
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:317
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Flickr Login URL"
+msgstr ""
+
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
+#, kde-format
+msgid ""
+"Copy the full URL from the external browser that contains the \"oauth_token"
+"\" entry:"
+msgstr ""
+
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "Akiro de la maksimuma permesita dosiergrandeco."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:630
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:661
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "Dosiera Grandeco superas la maksimuman permesitan dosiergrandon."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:716
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
 #, kde-format
 msgid "No photo specified"
 msgstr "Neniu foto specifita"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:720
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
 #, kde-format
 msgid "General upload failure"
 msgstr "Ĝenerala malsukceso de alŝuto"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:724
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:755
 #, kde-format
 msgid "Filesize was zero"
 msgstr "Dosiergrandeco estis nulo"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:728
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "Dosiertipo ne estis rekonita"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:732
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Uzanto superis alŝutan limon"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:736
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
 #, kde-format
 msgid "Invalid signature"
 msgstr "Nevalida subskribo"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:740
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
 #, kde-format
 msgid "Missing signature"
 msgstr "Mankas subskribo"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:744
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Ensaluto Malsukcesa/Nevalida aŭtsignalo"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:748
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Nevalida API-ŝlosilo"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:752
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Servo nuntempe nedisponebla"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:756
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Nevalida Frob"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:760
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Formato \"xxx\" ne trovita"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:764
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Metodo \"xxx\" ne trovita"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:768
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Nevalida SOAP-koverto"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:772
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Nevalida XML-RPC-Metoda Voko"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:776
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "La POST-metodo nun estas postulata por ĉiuj agordintoj"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:780
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
@@ -22787,7 +22800,7 @@ msgstr "La POST-metodo nun estas postulata por ĉiuj agordintoj"
 msgid "Unknown error"
 msgstr "Nekonata eraro"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:786
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:817
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -22796,17 +22809,17 @@ msgstr ""
 "Eraro Okazis: %1\n"
 "Ne povas daŭrigi."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "Kreado de PhotoSet malsukcesis:"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1070
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1101
 #, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr "Malsukcesis alporti liston de foto-aroj."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1210
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1241
 #, kde-format
 msgid "Failed to query photo information"
 msgstr "Malsukcesis konsulti foto-informojn"
@@ -25636,7 +25649,7 @@ msgstr "SmugMug-voko malsukcesis: %1\n"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
 #, kde-format
 msgid "&lt;none&gt;"
-msgstr "<neniu>"
+msgstr "&lt;neniu&gt;"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:671
 #, kde-format
@@ -26247,12 +26260,10 @@ msgid "Rename Album (%1)"
 msgstr "Renomi Albumon (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Renomi Albumon (%1)"
+msgstr "Renomi Albuman Radikon (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -27167,7 +27178,7 @@ msgstr "Enigu la titolon de la albumo ĉi tie..."
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
-msgstr "Albumo & dato:"
+msgstr "&Dato de albumo:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
@@ -28438,7 +28449,7 @@ msgstr ""
 "sistemo. Estas kvar datumbazoj: unu por ĉiuj kolekto-propraĵoj, unu por "
 "stoki kunpremitajn bildetojn, unu por stoki vizaĝ-rekonajn metadatumojn, kaj "
 "unu por stoki similajn fingrospurojn.<br/>Skriba aliro necesas por povi "
-"redakti bildajn trajtojn.</p ><p>Datumbazoj estas digiKam-kernaj motoroj. "
+"redakti bildajn trajtojn.</p><p>Datumbazoj estas digiKam-kernaj motoroj. "
 "Zorgu uzi lokon gastigita de rapida aparataro (ekz. SSD aŭ NVMe) kun sufiĉe "
 "libera spaco precipe por bildetoj datumbazo.</p><p>Noto: fora dosiersistemo "
 "kiel NFS, ne povas esti uzata ĉi tie. Pro kaŭzoj de rendimento, ankaŭ "
@@ -29342,7 +29353,7 @@ msgstr "Kopii al la poŝo"
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
 msgstr ""
-"<font size=\"5\">%1</font><br/><b>Versio %2</b><p>%3</p><p><i>%4</i ></p>"
+"<font size=\"5\">%1</font><br/><b>Versio %2</b><p>%3</p><p><i>%4</i></p>"
 
 #: core/libs/dialogs/infodlg.cpp:117
 #, kde-format
@@ -29392,12 +29403,10 @@ msgid "Manifests"
 msgstr "Manifestoj"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "FFmpeg Agordo"
+msgstr "OpenCV-Agordo"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -37689,7 +37698,7 @@ msgid ""
 msgstr ""
 "<title>Paso</title><para>Fiksu ĉi tie la enirpermesilojn uzatajn de la meza "
 "filtrilo aplikata post interpolado al Ruĝa-Verda kaj Blua-Verda kanaloj.</"
-"para><para >Tiu ĉi agordo disponeblas nur por specifaj Kvalitaj opcioj: "
+"para><para>Tiu ĉi agordo disponeblas nur por specifaj Kvalitaj opcioj: "
 "<emphasis strong='true'>Dulineara</emphasis>, <emphasis strong='true'>VNG</"
 "emphasis>, <emphasis strong='true'>PPG</emphasis>, <emphasis strong='true'> "
 "AHD</emphasis>, <emphasis strong='true'>DCB</emphasis>, kaj <emphasis "
@@ -37858,8 +37867,8 @@ msgstr ""
 "para><para><list><item><emphasis strong='true'>Fila blanka</emphasis>: "
 "tranĉu ĉiujn lumaĵojn al solida blanka</item><item><emphasis "
 "strong='true'>Unclip</emphasis>: lasi lumaĵojn netonditaj en diversaj "
-"nuancoj de rozo</item><item><emphasis strong='true'>Miksaĵo</emphasis >:"
-"Miksi tonditajn kaj netonditajn valorojn kune por laŭpaŝa fado al blanka</"
+"nuancoj de rozo</item><item><emphasis strong='true'>Miksaĵo</emphasis>:Miksi "
+"tonditajn kaj netonditajn valorojn kune por laŭpaŝa fado al blanka</"
 "item><item><emphasis strong='true'>Rekonstrui</emphasis>: rekonstruu "
 "lumaĵojn uzante nivelvaloron</item></list></para>"
 
@@ -37914,7 +37923,12 @@ msgid "Highlight:"
 msgstr "Elstarigi:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:452
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "<title>Highlight</title><para>Amount of highlight preservation for "
+#| "exposure correction before interpolation in E.V. Only take effect if "
+#| "Shift Correction is> 1.0 E.V</para>"
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Highlight</title><para>Amount of highlight preservation for exposure "
@@ -37923,7 +37937,7 @@ msgid ""
 msgstr ""
 "<title>Elstaraĵo</title><para>Kvanto de elstaraĵo konservado por "
 "malkovrokorekto antaŭ interpolado en E.V. Nur efiki se Shift Correction "
-"estas > 1.0 E.V</para>"
+"estas> 1.0 E.V</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:456
 #, kde-format
@@ -39422,8 +39436,8 @@ msgid ""
 msgstr ""
 "<p>La kampo Ĝusta uzado-kondiĉoj devus esti uzata por listigi instrukciojn "
 "pri kiel rimedo povas esti laŭleĝe uzata.</p><p>Kun XMP, vi povas inkluzivi "
-"pli ol unu ĝustan uzadon-ĉenon uzante malsamajn lingvojn.</p> ><p>Ĉi tiu "
-"kampo ne ekzistas kun IPTC.</p>"
+"pli ol unu ĝustan uzadon-ĉenon uzante malsamajn lingvojn.</p><p>Ĉi tiu kampo "
+"ne ekzistas kun IPTC.</p>"
 
 #: core/libs/template/templatepanel.cpp:185
 #: core/libs/template/templateviewer.cpp:153
@@ -41705,7 +41719,7 @@ msgid ""
 "colors be vivid and contrast well with each other rather than a specific "
 "color.</p></li></ul>"
 msgstr ""
-"<ekz> <p><b>Percepta intenco</b> igas la plenan gamon de la bildo esti "
+"<ul><li><p><b>Percepta intenco</b> igas la plenan gamon de la bildo esti "
 "kunpremita aŭ vastigita por plenigi la gamon de la cela aparato, tiel ke "
 "griza ekvilibro estas konservita sed kolorimetra precizeco eble ne estu "
 "konservita.</p><p>En aliaj vortoj, se certaj koloroj en bildo falas ekster "
@@ -41724,12 +41738,12 @@ msgstr ""
 "estas alĝustigitaj al la plej proksima koloro kiu povas esti igita, dum ĉiuj "
 "aliaj koloroj estas lasitaj senŝanĝaj. Pruva intenco ne konservas la blankan "
 "punkton.</p></li><li><p><b>Saturiĝa intenco</b> konservas la saturiĝon de "
-"koloroj en la bildo je la ebla kosto de nuanco kaj heleco.< /p><p>Efektivigo "
+"koloroj en la bildo je la ebla kosto de nuanco kaj heleco.</p><p>Efektivigo "
 "de ĉi tiu intenco restas iom problema, kaj la ICC daŭre laboras pri metodoj "
 "por atingi la deziratajn efikojn.</p><p>Tiu intenco estas plej taŭga por "
 "komercaj grafikaĵoj kiel diagramoj, kie ĝi estas pli grave, ke la koloroj "
-"estu viglaj kaj bone kontrasti unu kun la alia prefere ol specifa koloro.</ "
-"p ></ li ></ ul >"
+"estu viglaj kaj bone kontrasti unu kun la alia prefere ol specifa koloro.</"
+"p></li></ul>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
 #, kde-format
@@ -42718,7 +42732,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Ellaboranto (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:89
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -51782,7 +51796,7 @@ msgstr ""
 "digiKam-mondo, ni rekomendas legi la <b>digiKam-manlibron</b> per la menuo "
 "<b>Helpo/Manlibro</b> (vi devas instali la apartan digiKam-dokumentan "
 "pakon.) Vi ankaŭ povas legu la manlibron rete de la <a href='https://docs."
-"digikam.org/en/index.html'>diligenta retejo</a>.</p><p>Premu <b>Finigu</b > "
+"digikam.org/en/index.html'>diligenta retejo</a>.</p><p>Premu <b>Fini</b> "
 "fermi tiun ĉi asistanton. digiKam skanos vian kolekton por registri ĉiujn "
 "albumojn en la datumbazo. Eroj inkluzivitaj en albumoj estas kolektitaj post "
 "startetapo en fono.</p><p><i>Noto:</i> depende de via kolektograndeco, ĉi "
@@ -56525,7 +56539,7 @@ msgstr ""
 "<qt><i>Noto: Se aktivigita, la Kerna DB ĉiam estas purigita. Vi povas elekti "
 "pliajn datumbazojn por purigado.<br/> Se vi elektas unu el la subaj elektoj, "
 "la procezo povas daŭri multe da tempo kaj povas provizore frostigi "
-"digiKam<br/> por certigi, ke neniu datumbaza korupto okazas.</i ></qt>"
+"digiKam<br/> por certigi, ke neniu datumbaza korupto okazas.</i></qt>"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:236
 #, kde-format
@@ -58876,8 +58890,8 @@ msgstr ""
 "p> <p>Vi povas aldoni al la jam aprezinda listo de formatoj, kiujn digiKam "
 "traktas, aldonante la etendon de la tipo, kiun vi volas aldoni. Multoblaj "
 "etendaĵoj devas esti apartigitaj per punktokomo aŭ spaco.</p><p><b><u>Noto:</"
-"u> ŝanĝoj faritaj en ĉi tiu vido faros datumbazan resanadon en la fono.</"
-"b>< /p>"
+"u> ŝanĝoj faritaj en ĉi tiu vido faros datumbazan resanadon en la fono.</b></"
+"p>"
 
 #: core/utilities/setup/album/setupmime.cpp:103
 #, kde-format
@@ -59179,7 +59193,7 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>Por agordi <b>Ĝeneralan PTP USB-Aparaton</b><br/>(kiu uzas Picture "
-"Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpcamera\">%1</a > el la "
+"Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpcamera\">%1</a> el la "
 "fotillisto.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:235
@@ -59190,7 +59204,7 @@ msgid ""
 "camera list.</p>"
 msgstr ""
 "<p>Por agordi <b>Ĝeneralan PTP/IP-Reton-Aparaton</b><br/>(kiu uzas Picture "
-"Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpipcamera\">%1< /a> el la "
+"Transfer Protocol), bonvolu<br/>uzi <a href=\"ptpipcamera\">%1</a> el la "
 "fotillisto.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:242
@@ -60122,7 +60136,7 @@ msgid ""
 msgstr ""
 "<para><interface>Nedetrua Redaktado kaj Versiado</interface> permesas krei "
 "malsamajn versiojn de bildo, dum ĉiam konservante la originalan bildon.</"
-"para> <para > Ĉiuj paŝoj de la redakta historio estas registritaj kaj povas "
+"para> <para> Ĉiuj paŝoj de la redakta historio estas registritaj kaj povas "
 "alireblas poste.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:129
@@ -60204,9 +60218,9 @@ msgid ""
 msgstr ""
 "<para>Antaŭ ĉio, la <emphasis>originala bildo neniam estos anstataŭita.</"
 "emphasis> Anstataŭe, kiam bildo estas redaktata, nova dosiero estas kreita: "
-"La <interface>nuna versio</interface>.</para> > <para >Vi povas ankaŭ krei "
+"La <interface>nuna versio</interface>.</para> <para>Vi povas ankaŭ krei "
 "plurajn <interface>versiojn</interface> devenantajn el la sama "
-"<interface>origina bildo</interface>.</para> <para >Krom ĉi tiuj dosieroj "
+"<interface>origina bildo</interface>.</para> <para>Krom ĉi tiuj dosieroj "
 "reprezentantaj aktualan version, digiKam povas prenu kaj konservu pliajn, "
 "<interface>mezajn momentfotojn</interface> dum la redakta procezo. Tio povas "
 "esti utila se vi volas konservi la mezajn paŝojn por posta aliro, ekzemple "
@@ -60258,8 +60272,8 @@ msgstr ""
 "<para>Se bildo estis redaktita, nur la <interface>aktualaj versioj</"
 "interface> estos montritaj en la ĉefa bildeto-vido. De la <interface>dekstra "
 "flanka kolumno</interface>, vi ĉiam havas aliron al ĉiuj kaŝitaj dosieroj.</"
-"para> <para >Per la ĉi tieaj opcioj, vi povas elekti por ĉiam montri iujn "
-"dosierojn.</para> <para >Se vi aktivigas nedetruan redaktadon kaj "
+"para> <para>Per la ĉi tieaj opcioj, vi povas elekti por ĉiam montri iujn "
+"dosierojn.</para> <para>Se vi aktivigas nedetruan redaktadon kaj "
 "bildversiadon unuafoje, ĝi funkcios nur por ĵus konservitaj bildoj.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:311
@@ -60769,7 +60783,7 @@ msgstr ""
 "<para>Krom la piksela enhavo, bilddosieroj kutime enhavas diversajn "
 "metadatenojn. Multaj el la parametroj, kiujn vi povas uzi en digiKam por "
 "administri dosierojn, kiel taksadon aŭ komenton, povas esti skribitaj al la "
-"metadatumoj de la dosieroj.</para> <para >Stokado en metadatumoj permesas "
+"metadatumoj de la dosieroj.</para> <para>Stokado en metadatumoj permesas "
 "konservi ĉi tiun informon kiam oni movas aŭ sendas la dosierojn. dosierojn "
 "al malsamaj sistemoj.</para>"
 
@@ -61119,7 +61133,7 @@ msgstr ""
 "<para>Dosiero povas esti rotaciita en du manieroj:<nl/> Vi povas ŝanĝi la "
 "enhavon, rearanĝante la individuajn pikselojn de la bildaj datumoj.<nl/> Aŭ "
 "vi povas agordi flagon, ke la dosiero devas esti turnita antaŭ ĝi. montriĝas."
-"</para> <para >Elektu ĉi tiun opcion se vi ĉiam volas agordi nur flagon. Ĉi "
+"</para> <para>Elektu ĉi tiun opcion se vi ĉiam volas agordi nur flagon. Ĉi "
 "tio estas malpli trudema, sed postulas subtenon se la dosiero estas alirita "
 "per alia programaro. Certigu permesi agordi la flagon en la metadatumoj se "
 "vi volas kunhavigi viajn dosierojn ekster digiKam.</para>"
@@ -61145,7 +61159,7 @@ msgstr ""
 "<para>Dosiero povas esti rotaciita en du manieroj:<nl/> Vi povas ŝanĝi la "
 "enhavon, rearanĝante la individuajn pikselojn de la bildaj datumoj.<nl/> Aŭ "
 "vi povas agordi flagon, ke la dosiero devas esti turnita antaŭ ĝi. montriĝas."
-"</para> <para >Elektu ĉi tiun opcion se vi volas, ke la dosiero estu turnita "
+"</para> <para>Elektu ĉi tiun opcion se vi volas, ke la dosiero estu turnita "
 "ŝanĝante la enhavon. Ĉi tio estas senperda operacio por JPEG-dosieroj. Por "
 "aliaj formatoj ĝi estas perda operacio, kiun vi devas eksplicite ebligi. Ĝi "
 "ne estas subtena por RAW kaj aliaj nurlegeblaj formatoj, kiuj estos "
@@ -61956,7 +61970,7 @@ msgid ""
 "<ul><li>Checked: Color Management is enabled</li><li>Unchecked: Color "
 "Management is disabled</li></ul>"
 msgstr ""
-"<ekz> <li>Markigita: Kolora Administrado estas ebligita</li><li>Nemarkita: "
+"<ul><li>Markigita: Kolora Administrado estas ebligita</li><li>Nemarkita: "
 "Kolora Administrado estas malŝaltita</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:189
@@ -62313,7 +62327,7 @@ msgstr ""
 "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
 "Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
 "local/share/icc/</li><li>~/.color/icc/</li></ul>En via sistemo, nuntempe ĉi "
-"tiuj vojoj ekzistas kaj estas skanita:<tld/>%2</ekz>"
+"tiuj vojoj ekzistas kaj estas skanita:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format

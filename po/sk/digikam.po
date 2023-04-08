@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-06 00:44+0000\n"
+"POT-Creation-Date: 2023-04-08 00:44+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -10944,9 +10944,9 @@ msgstr "Zmeny sa ukladajú -"
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:816
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:840
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
@@ -21820,7 +21820,7 @@ msgstr "Exportovať do &Boxu..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:432
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:417
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1151
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1182
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:448
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:450
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:721
@@ -22671,110 +22671,123 @@ msgctxt "@action"
 msgid "Export to &Flickr..."
 msgstr "Exportovať na &Flickr..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:340
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:317
+#, kde-format
+msgctxt "@title:window"
+msgid "Enter Flickr Login URL"
+msgstr ""
+
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
+#, kde-format
+msgid ""
+"Copy the full URL from the external browser that contains the \"oauth_token"
+"\" entry:"
+msgstr ""
+
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
 msgid "Getting the maximum allowed file size."
 msgstr "Zisťujem maximálnu povolenú veľkosť."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:630
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:661
 #, kde-format
 msgid "File Size exceeds maximum allowed file size."
 msgstr "Veľkosť súboru prekračuje maximálnu povolenú veľkosť."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:716
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgid "No photo specified"
 msgstr "Neurčené"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:720
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
 #, fuzzy, kde-format
 msgid "General upload failure"
 msgstr "EXIF rotácia súboru %1..."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:724
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:755
 #, kde-format
 msgid "Filesize was zero"
 msgstr "Veľkosť súboru bola nulová"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:728
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:759
 #, kde-format
 msgid "Filetype was not recognized"
 msgstr "Typ súboru sa nepodarilo rozpoznať"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:732
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Používateľ prekročil limit odosielania"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:736
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
 #, kde-format
 msgid "Invalid signature"
 msgstr "Neplatný podpis"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:740
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
 #, kde-format
 msgid "Missing signature"
 msgstr "Chýbajúci podpis"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:744
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:775
 #, kde-format
 msgid "Login Failed / Invalid auth token"
 msgstr "Prihlásenie skončilo s chybou / Neplatný overovací token"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:748
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Neplatný kľúč API"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:752
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Služba momentálne nie je dostupná"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:756
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Neplatný frob"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:760
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Formát \"xxx\" nebol nájdený"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:764
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Metóda \"xxx\" nebola nájdená"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:768
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Neplatná SOAP obálka"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:772
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Neplatné volanie metódy XML-RPC"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:776
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:807
 #, kde-format
 msgid "The POST method is now required for all setters"
 msgstr "Je vyžadovaná metóda POST"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:780
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
@@ -22782,7 +22795,7 @@ msgstr "Je vyžadovaná metóda POST"
 msgid "Unknown error"
 msgstr "Neznáma chyba"
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:786
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:817
 #, kde-format
 msgid ""
 "Error Occurred: %1\n"
@@ -22791,12 +22804,12 @@ msgstr ""
 "Došlo k chybe: %1\n"
 "Nedá sa pokračovať."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #, fuzzy, kde-format
 msgid "PhotoSet creation failed: "
 msgstr "Prihlásenie zlyhalo."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1070
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1101
 #, fuzzy, kde-format
 msgid "Failed to fetch list of photo sets."
 msgstr ""
@@ -22805,7 +22818,7 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1210
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1241
 #, fuzzy, kde-format
 msgid "Failed to query photo information"
 msgstr "Informácie o dokumente sa nedajú uložiť."
@@ -43362,7 +43375,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Vývojár (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:89
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
