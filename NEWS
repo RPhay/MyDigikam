@@ -418,7 +418,51 @@ BUGFIXES:
 370 ==> 465607 - digiKam quits when assigning tag to an unknown faces.
 371 ==> 465905 - Crash when adding a face tag.
 372 ==> 466856 - Face Matching.
-373 ==> 
-
-
-
+373 ==> 383552 - Add filename when mimetype is processed when database is created for the first time.
+374 ==> 360485 - Prevent to rescans image collection after to change system time zone.
+375 ==> 346715 - Assigning tags in side panel not possible PLUS multiple tags are not applied.
+376 ==> 343373 - Application crashed on downloading photos.
+377 ==> 317862 - New file not detected.
+378 ==> 240663 - digiKam: Bug on startup ; Fatal IO error 9.
+379 ==> 229834 - Reinsert large amount of images into database (rescan menu).
+380 ==> 224715 - digiKam crash while editing photos.
+381 ==> 220043 - digiKam crashed when scanned for new images.
+382 ==> 219813 - Unexpected shut down when doing "New Album for selection".
+383 ==> 186326 - Problem running a 1:1 copy of albumtree and digikam db.
+384 ==> 184091 - Crash at startup if albums moved between collections externally.
+385 ==> 182995 - Crash when deleting empty album.
+386 ==> 179141 - digiKam crashes when exiting.
+387 ==> 178223 - Crash on external deletion of image.
+388 ==> 165851 - Photo album management instead of photo directory management.
+389 ==> 158565 - digiKam ignores files created through external applications like gimp.
+390 ==> 151163 - digiKam fails to start after upgrade to Ubuntu.
+391 ==> 112848 - digiKam fails on startup with large pictures folder.
+392 ==> 149364 - Crashes when I attempt to save one or more images.
+393 ==> 147882 - Startup of digikam is very slow. Can take up to 5 minutes!
+394 ==> 147750 - Crash SIGSEGV every time I want to scan my HD.
+395 ==> 146887 - Album names get created with *spaces* in the filesystem.
+396 ==> 140586 - digiKam crash while switching to another album.
+397 ==> 138091 - Crash when import foto.
+398 ==> 133335 - Eternal loop when application starts.
+399 ==> 131972 - Crash when closing Digikam [backtrace].
+400 ==> 127414 - Large albums cause digikam to hang.
+401 ==> 127182 - Crash when scanning jpeg images.
+402 ==> 116247 - Usability/Technical language: don't bother user with database sync issues.
+403 ==> 113080 - "Automatic" Photo and album permissions.
+404 ==> 112426 - Problems moving photos to album with whitespace in its name.
+405 ==> 109943 - Secure password protected albums - View protection.
+406 ==> 109355 - Adding a photo fails when filename contains '%'.
+407 ==> 099896 - Copying images destroys file date.
+408 ==> 096941 - Add images without an album - images don't show in digiKam.
+409 ==> 091829 - Sub albums not supported.
+410 ==> 091424 - Crashing if out of diskspace.
+411 ==> 091290 - Database is not excaping ' in names of albums.
+412 ==> 089798 - Can't copy/move files to an album name that contains an apostrophe.
+413 ==> 
+414 ==> 
+415 ==> 
+416 ==> 
+417 ==> 
+418 ==> 
+419 ==> 
+420 ==> 
