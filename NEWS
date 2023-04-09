@@ -460,7 +460,7 @@ BUGFIXES:
 412 ==> 089798 - Can't copy/move files to an album name that contains an apostrophe.
 413 ==> 460270 - New Install, with appimage, "connecting to database hangs forever.
 414 ==> 445307 - Unable to recover digiKam data on ubuntu 20.04 with Mysql server 8.0.27.
-415 ==> 
+415 ==> 461734 - macOS GUI improvements.
 416 ==> 
 417 ==> 
 418 ==> 
