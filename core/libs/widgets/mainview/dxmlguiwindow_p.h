@@ -47,6 +47,7 @@
 #include <QResource>
 #include <QStandardPaths>
 #include <QDesktopServices>
+#include <QDialogButtonBox>
 
 #ifdef HAVE_QWEBENGINE
 #   include "webbrowserdlg.h"

@@ -144,6 +144,20 @@ void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, cons
                             KShortcutsEditor::LetterShortcutsAllowed, this);
     dialog.addCollection(actionCollection(), i18nc("general keyboard shortcuts", "General"));
 
+    QDialogButtonBox* const btnbox = dialog.findChild<QDialogButtonBox*>();
+
+    if (btnbox)
+    {
+        btnbox->setStandardButtons(btnbox->standardButtons() | QDialogButtonBox::Help);
+
+        connect(btnbox->button(QDialogButtonBox::Help), &QPushButton::clicked,
+                this, []()
+            {
+                openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("shortcuts_settings"));
+            }
+        );
+    }
+
     if (extraac)
     {
         dialog.addCollection(extraac, actitle);
