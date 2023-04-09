@@ -86,11 +86,26 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DWITH_CUBLAS=OFF
                 -DWITH_NVCUVID=OFF
                 -DWITH_OPENCL=ON
-                -DWITH_OPENCL_SVM=OFF
                 -DWITH_OPENCLAMDFFT=ON
                 -DWITH_OPENCLAMDBLAS=ON
                 -DWITH_OPENCL_D3D11_NV=ON
 )
+
+# See https://github.com/opencv/opencv/issues/23458#issuecomment-1495841155
+# OPenCL SVM support under MacOS is not functional.
+
+if(APPLE)
+
+    set(Opencv_Conf ${Opencv_Conf}
+                    -DWITH_OPENCL_SVM=OFF
+    )
+else()
+
+    set(Opencv_Conf ${Opencv_Conf}
+                    -DWITH_OPENCL_SVM=ON
+    )
+
+endif()
 
 JoinListAsString("${Opencv_Conf}" " " BASH_OPTIONS)
 
