@@ -57,9 +57,11 @@ const QString additionalInformation()
     QString gitBra       = QLatin1String(GITBRANCH);
     QString ret          = i18n("IRC: %1 - #digikam\n"
                                 "Feedback: %2\n\n"
-                                "Build date: %3 (target: %4)",
+                                "Documentation: %3\n"
+                                "Build date: %4 (target: %5)",
                                 QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                                 QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
+                                QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"),
                                 QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                                 QLatin1String(digikam_build_type));
 
@@ -74,11 +76,13 @@ const QString additionalInformation()
         ret = i18n(
                    "IRC: %1 - #digikam\n"
                    "Feedback: %2\n\n"
-                   "Build date: %3 (target: %4)\n"
-                   "Revision: %5\n"
-                   "Branch: %6",
+                   "Documentation: %3\n"
+                   "Build date: %4 (target: %5)\n"
+                   "Revision: %6\n"
+                   "Branch: %7",
                    QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                    QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
+                   QString::fromLatin1("<a href='https://docs.digikam.org/en/index.html'>docs.digikam.org</a>"),
                    QLocale().toString(digiKamBuildDate(), QLocale::ShortFormat),
                    QLatin1String(digikam_build_type),
                    QString::fromLatin1("<a href='https://invent.kde.org/graphics/digikam/commit/%1'>%2</a>").arg(gitVer).arg(gitVer),
