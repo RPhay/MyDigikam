@@ -155,6 +155,13 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 
 #endif
 
+#ifdef Q_OS_MACOS
+
+    // See bug #461734
+    app.setAttribute(Qt::AA_DontShowIconsInMenus, true);
+
+#endif
+
     // if we have some local breeze icon resource, prefer it
 
     DXmlGuiWindow::setupIconTheme();
