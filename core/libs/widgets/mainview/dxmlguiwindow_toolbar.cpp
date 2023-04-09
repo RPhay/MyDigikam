@@ -24,6 +24,20 @@ void DXmlGuiWindow::slotConfToolbars()
 
     KEditToolBar dlg(factory(), this);
 
+    QDialogButtonBox* const btnbox = dlg.findChild<QDialogButtonBox*>();
+
+    if (btnbox)
+    {
+        btnbox->setStandardButtons(btnbox->standardButtons() | QDialogButtonBox::Help);
+
+        connect(btnbox->button(QDialogButtonBox::Help), &QPushButton::clicked,
+                this, []()
+            {
+                openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("toolbars_settings"));
+            }
+        );
+    }
+
     connect(&dlg, SIGNAL(newToolbarConfig()),
             this, SLOT(slotNewToolbarConfig()));
 
