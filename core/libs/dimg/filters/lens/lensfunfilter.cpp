@@ -223,15 +223,20 @@ void LensFunFilter::filterImage()
     // Init lensfun lib, we are working on the full image.
 
     lfPixelFormat colorDepth = m_orgImage.bytesDepth() == 4 ? LF_PF_U8 : LF_PF_U16;
+    double focalLength       = d->iface->settings().focalLength;
+    double cropFactor        = d->iface->settings().cropFactor;
 
     d->modifier              = lfModifier::Create(d->iface->usedLens(),
-                                                  d->iface->settings().cropFactor,
+                                                  cropFactor,
                                                   m_orgImage.width(),
                                                   m_orgImage.height());
 
+    focalLength              = cropFactor > 1.0 ? focalLength * cropFactor
+                                                : focalLength;
+
     int modflags             = d->modifier->Initialize(d->iface->usedLens(),
                                                        colorDepth,
-                                                       d->iface->settings().focalLength,
+                                                       focalLength,
                                                        d->iface->settings().aperture,
                                                        d->iface->settings().subjectDistance,
                                                        1.0, /* no scaling */
