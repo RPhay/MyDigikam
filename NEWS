@@ -461,7 +461,7 @@ BUGFIXES:
 413 ==> 460270 - New Install, with appimage, "connecting to database hangs forever.
 414 ==> 445307 - Unable to recover digiKam data on ubuntu 20.04 with Mysql server 8.0.27.
 415 ==> 461734 - macOS GUI improvements.
-416 ==> 
+416 ==> 462281 - digiKam freezes after removing directory from the database.
 417 ==> 
 418 ==> 
 419 ==> 
