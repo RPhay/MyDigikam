@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-08 00:44+0000\n"
-"PO-Revision-Date: 2023-04-04 10:47+0200\n"
+"PO-Revision-Date: 2023-04-08 17:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -23033,7 +23033,7 @@ msgstr "Naar &Flickr exporteren..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Voer aanmeld-URL in voor Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -23041,6 +23041,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Kopieer de volledige URL uit de externe browser die het item \"oauth_token\" "
+"bevat:"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format

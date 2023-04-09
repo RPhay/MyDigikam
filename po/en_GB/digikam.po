@@ -36,7 +36,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-08 00:44+0000\n"
-"PO-Revision-Date: 2023-03-26 14:33+0100\n"
+"PO-Revision-Date: 2023-04-08 11:08+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -22615,7 +22615,7 @@ msgstr "Export to &Flickr..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Enter Flickr Login URL"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -22623,6 +22623,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Copy the full URL from the external browser that contains the \"oauth_token"
+"\" entry:"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -26188,12 +26190,10 @@ msgid "Rename Album (%1)"
 msgstr "Rename Album (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Rename Album (%1)"
+msgstr "Rename Album Root (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -29325,12 +29325,10 @@ msgid "Manifests"
 msgstr "Manifests"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "FFmpeg Configuration"
+msgstr "OpenCV Configuration"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
