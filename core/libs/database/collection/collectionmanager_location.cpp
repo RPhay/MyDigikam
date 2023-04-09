@@ -168,6 +168,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
 
         locker.unlock();
+
         Q_EMIT locationPropertiesChanged(*albumLoc);
     }
     else
@@ -205,6 +206,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
 
         locker.unlock();
+
         Q_EMIT locationPropertiesChanged(*albumLoc);
     }
 
@@ -487,29 +489,31 @@ CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(c
 
 void CollectionManager::removeLocation(const CollectionLocation& location)
 {
+    QWriteLocker locker(&d->lock);
+
+    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
+
+    if (!albumLoc)
     {
-        QWriteLocker locker(&d->lock);
-
-        AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-        if (!albumLoc)
-        {
-            return;
-        }
-
-        // Ensure that all albums are set to orphan and no images will be permanently deleted,
-        // as would do only calling deleteAlbumRoot by a Trigger
-
-        CoreDbAccess access;
-        QList<int> albumIds = access.db()->getAlbumsOnAlbumRoot(albumLoc->id());
-        ChangingDB changing(d);
-        CollectionScanner scanner;
-        CoreDbTransaction transaction(&access);
-        scanner.safelyRemoveAlbums(albumIds);
-        access.db()->deleteAlbumRoot(albumLoc->id());
+        return;
     }
 
+    // Ensure that all albums are set to orphan and no images will be permanently deleted,
+    // as would do only calling deleteAlbumRoot by a Trigger
+
+    CoreDbAccess access;
+    QList<int> albumIds = access.db()->getAlbumsOnAlbumRoot(albumLoc->id());
+    ChangingDB changing(d);
+    CollectionScanner scanner;
+    CoreDbTransaction transaction(&access);
+    locker.unlock();
+    scanner.safelyRemoveAlbums(albumIds);
+    locker.relock();
+    access.db()->deleteAlbumRoot(albumLoc->id());
+
     // Do not Q_EMIT the locationRemoved signal here, it is done in updateLocations()
+
+    locker.unlock();
 
     updateLocations();
 }
@@ -595,6 +599,7 @@ void CollectionManager::migrateToVolume(const CollectionLocation& location, cons
     albumLoc->identifier = identifier;
 
     locker.unlock();
+
     updateLocations();
 }
 
