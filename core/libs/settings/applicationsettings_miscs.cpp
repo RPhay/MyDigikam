@@ -488,7 +488,8 @@ QFont ApplicationSettings::getApplicationFont() const
     return d->applicationFont;
 }
 
-bool ApplicationSettings::getHelpBoxNotificationSeen() {
+bool ApplicationSettings::getHelpBoxNotificationSeen()
+{
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("Notification Messages");
     bool value              = group.readEntry("HelpBoxNotifSeen", false);
@@ -496,7 +497,8 @@ bool ApplicationSettings::getHelpBoxNotificationSeen() {
     return value;
 }
 
-void ApplicationSettings::setHelpBoxNotificationSeen(bool val) {
+void ApplicationSettings::setHelpBoxNotificationSeen(bool val)
+{
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("Notification Messages");
 

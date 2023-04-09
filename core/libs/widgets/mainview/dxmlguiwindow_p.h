@@ -41,6 +41,7 @@
 #include <QDomDocument>
 #include <QUrlQuery>
 #include <QIcon>
+#include <QPushButton>
 #include <QDir>
 #include <QFileInfo>
 #include <QResource>

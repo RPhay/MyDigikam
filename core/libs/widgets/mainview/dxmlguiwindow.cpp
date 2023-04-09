@@ -95,7 +95,44 @@ void DXmlGuiWindow::slotConfNotifications()
 
 #ifdef HAVE_KNOTIFYCONFIG
 
-    KNotifyConfigWidget::configure(this);
+    QDialog* const dialog             = new QDialog(this);
+    dialog->setWindowTitle(i18n("Configure Notifications"));
+
+    KNotifyConfigWidget* const w      = new KNotifyConfigWidget(dialog);
+
+    QDialogButtonBox* const buttonBox = new QDialogButtonBox(dialog);
+    buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel| QDialogButtonBox::Help);
+    buttonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
+
+    QVBoxLayout* const layout         = new QVBoxLayout(dialog);
+    layout->addWidget(w);
+    layout->addWidget(buttonBox);
+
+    connect(buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
+            w, SLOT(save()));
+
+    connect(buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            w, SLOT(save()));
+
+    connect(buttonBox->button(QDialogButtonBox::Help), &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("notifications_settings"));
+        }
+    );
+
+    connect(w, SIGNAL(changed(bool)),
+            buttonBox->button(QDialogButtonBox::Apply), SLOT(setEnabled(bool)));
+
+    connect(buttonBox, SIGNAL(accepted()),
+            dialog, SLOT(accept()));
+
+    connect(buttonBox, SIGNAL(rejected()),
+            dialog, SLOT(reject()));
+
+    w->setApplication(QString());
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->show();
 
 #endif
 
