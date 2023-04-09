@@ -462,7 +462,8 @@ BUGFIXES:
 414 ==> 445307 - Unable to recover digiKam data on ubuntu 20.04 with Mysql server 8.0.27.
 415 ==> 461734 - macOS GUI improvements.
 416 ==> 462281 - digiKam freezes after removing directory from the database.
-417 ==> 
-418 ==> 
-419 ==> 
-420 ==> 
+417 ==> 430924 - Mac External Display menus in wrong location.
+418 ==> 462847 - The installation goes without problems but the program doesn’t start.
+419 ==> 463536 - digiKam 7.9 and 7.8 do not start on macOS 12.6.2.
+420 ==> 463940 - Unable to launch digiKam 7.9.0 on macOS 10.14.6 (Mojave).
+421 ==> 
