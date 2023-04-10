@@ -406,7 +406,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
 
     QRect faceRect = QRect();
 
-    if (album->type() == Album::TAG && static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person()))
+    if ((album->type() == Album::TAG) && static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person()))
     {
         QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(id);
 
