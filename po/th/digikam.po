@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:44+0000\n"
+"POT-Creation-Date: 2023-04-10 00:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2753,7 +2753,7 @@ msgstr "&ช่วยเหลือ"
 msgid "Main Toolbar"
 msgstr "แถบเครื่องมือหลัก"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2763,47 +2763,47 @@ msgstr "แถบเครื่องมือหลัก"
 msgid "digiKam"
 msgstr "ดิจิแคม"
 
-#: core/app/main/main.cpp:174 core/showfoto/main/main.cpp:140
+#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "ถนอมทรัพย์ นพบูรณ์"
 
-#: core/app/main/main.cpp:175 core/showfoto/main/main.cpp:141
+#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: core/app/main/main.cpp:183
+#: core/app/main/main.cpp:190
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "เปิดกล่องกล้องที่ <path>"
 
-#: core/app/main/main.cpp:186
+#: core/app/main/main.cpp:193
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "เปิดกล่องกล้องสำหรับอุปกรณ์พร้อมด้วยค่า Solid UDI <udi>"
 
-#: core/app/main/main.cpp:189
+#: core/app/main/main.cpp:196
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "ตรวจจับอุปกรณ์กล้องที่เชื่อมต่อผ่าน gphoto2 และเปิดอัตโนมัติ"
 
-#: core/app/main/main.cpp:191
+#: core/app/main/main.cpp:198
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:194
+#: core/app/main/main.cpp:201
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "เริ่มการใช้งาน digikam ด้วยแฟ้มฐานข้อมูลที่พบในไดเรกทอรี <dir>"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:228
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2811,7 +2811,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:270
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2821,7 +2821,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "ทั้งนี้ยังไม่พบว่ามีการติดตั้งมอดูลสำหรับใช้งานฐานข้อมูลใด ๆ บนเครื่องของคุณ"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:279
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2831,7 +2831,7 @@ msgstr ""
 "ไม่พบมอดูลฐานข้อมูล SQLite ของ Qt4 โปรดทำการติดตั้งมันก่อน !\n"
 "มอดูลสำหรับใช้งานฐานข้อมูลต่าง ๆ ที่ถูกติดตั้งไว้แล้วคือ:"
 
-#: core/app/main/main.cpp:312
+#: core/app/main/main.cpp:319
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2890,7 +2890,8 @@ msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)"
 msgstr ""
 "ติดต่อผ่านบริการ IRC:\n"
 "แม่ข่าย irc.freenode.net - ห้อง #digikam\n"
@@ -2900,15 +2901,16 @@ msgstr ""
 "\n"
 "วันที่สร้างโปรแกรม: %1"
 
-#: core/app/utils/digikam_version.cpp:75
+#: core/app/utils/digikam_version.cpp:77
 #, fuzzy, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 msgstr ""
 "ติดต่อผ่านบริการ IRC:\n"
 "แม่ข่าย irc.freenode.net - ห้อง #digikam\n"
@@ -27846,33 +27848,33 @@ msgstr "อัลบั้มใ&หม่"
 msgid "Create new album"
 msgstr "สร้างอัลบั้มใหม่"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:227
+#: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "ขออภัย ดิจิแคมยังไม่รองรับคลังภาพแบบที่อยู่ URL ทางไกล"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:245
-#: core/libs/database/collection/collectionmanager_location.cpp:448
+#: core/libs/database/collection/collectionmanager_location.cpp:247
+#: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "โฟลเดอร์ที่เลือกอาจจะยังไม่มีอยู่ หรืออาจจะไม่สามารถอ่านได้"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:260
+#: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
 msgstr "มีคลังภาพที่บรรจุโฟลเดอร์ \"%1\" ไว้ภายในอยู่แล้ว"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:282
+#: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
 msgstr "สื่อจัดเก็บข้อมูลสามารถแสดงตัวเป็นเอกภาพ"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:294
+#: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
 msgstr "คลังภาพนี้ มีตำแหน่งที่เก็บอยู่ในฮาร์ดดิสก์ของคุณ"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:332
+#: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -27889,7 +27891,7 @@ msgstr ""
 "กรุณาตั้งป้ายชื่อของแผ่นซีดีและดีวีดีของคุณให้แตกต่างและมั่นใจได้ว่าจะไม่ซ้ำกับแผ่นอื่น ๆ ด้วย "
 "หากคุณต้องการใช้งานมันร่วมกับ digiKam"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:347
+#: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -27900,14 +27902,14 @@ msgstr ""
 "ที่คุณได้ตั้งไว้ได้ในโปรแกรมเขียนแผ่นของคุณ ในอนาคต หากคุณต้องการใช้งานมันร่วมกับ digiKam "
 "โปรดตั้งป้ายชื่อของแผ่นซีดีและดีวีดีของคุณให้แตกต่างและมั่นใจได้ว่าจะไม่ซ้ำกับแผ่นอื่น ๆ ด้วย"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:363
+#: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
 "(\"%1\")"
 msgstr "นี่เป็นสื่อจัดเก็บข้อมูลแบบถอดเสียบที่จะแสดงตัวโดยใช้ป้ายชื่อของมัน (\"%1\")"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:379
+#: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -27917,7 +27919,7 @@ msgstr ""
 "รายการนี้จะแสดงตัวด้วยพาธที่มันถูกพบบนระบบของคุณ (\"%1\") เท่านั้น "
 "แต่จะไม่มีการใช้การแสดงค่าประจำตัวอื่นๆ (ค่า UUID, ป้ายชื่อ)"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:396
+#: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -27928,7 +27930,7 @@ msgstr ""
 "มันจะถูกเพิ่มเข้ามาโดยการใช้พาธของแฟ้มเท่านั้นเพื่อใช้เป็นค่าสำหรับแสดงตัว "
 "ซึ่งมันจะทำงานได้ดีกับฮาร์ดดิสก์ที่อยู่ภายในระบบของคุณเอง"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:421
+#: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -27937,7 +27939,7 @@ msgstr ""
 "คุณต้องทำการเมานท์พื้นที่ใช้งานร่วมกันของแซมบ้ามาไว้บนระบบของคุณก่อน "
 "เนื่องจากดิจิแคมยังไม่รองรับการใช้ที่อยู่ URL ในรูปแบบ smb://"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:426
+#: core/libs/database/collection/collectionmanager_location.cpp:428
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your network storage must be set up to be accessible as files and folders "
@@ -27949,12 +27951,12 @@ msgstr ""
 "พื้นที่จัดเก็บข้อมูลบนเครือข่ายจะต้องถูกต้องค่าให้สามารถเข้าถึงได้ทั้งแฟ้มและโฟลเดอร์ "
 "ผ่านทางระบบปฏิบัติการ ทั้งนี้ดิจิแคมยังไม่รองรับการใช้ที่อยู่ URL ทางไกลแต่อย่างใด"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:463
+#: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr "มีคลังภาพที่ใช้พื้นที่ใช้งานร่วมกันบนเครือข่ายตัวเดียวกันนี้อยู่ก่อนแล้ว"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:476
+#: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -32417,80 +32419,80 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "แก้ความบิดเบือนจากเลนส์โดยอัตโนมัติ"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:381
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "กล้อง \"%1\""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:383
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "เลนส์: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:385
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "ระยะห่างจากตัวแบบ:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:387
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "ขนาดรูรับแสง: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:389
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "ทางยาวโฟกัส:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "ความเปรียบต่าง:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:400
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "เปิดใช้งาน"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "ปรับแก้ค่าสี BCG ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "ปรับแก้ค่าสี HSL ให้ถูกต้อง"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -43187,7 +43189,12 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "ผู้พัฒนา (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#, fuzzy, kde-format
+msgid "Configure Notifications"
+msgstr "การปรับแต่งค่ากล้อง"
+
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -50350,20 +50357,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "โฟลเดอร์: "
 
-#: core/showfoto/main/main.cpp:131
+#: core/showfoto/main/main.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:149
+#: core/showfoto/main/main.cpp:156
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "แฟ้มหรือโฟลเดอร์ที่จะเปิด"
 
-#: core/showfoto/main/main.cpp:180
+#: core/showfoto/main/main.cpp:187
 #, kde-format
 msgctxt "#info"
 msgid ""

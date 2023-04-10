@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:44+0000\n"
+"POT-Creation-Date: 2023-04-10 00:44+0000\n"
 "PO-Revision-Date: 2023-03-16 16:32+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2598,7 +2598,7 @@ msgstr "Nápo&věda"
 msgid "Main Toolbar"
 msgstr "Hlavní panel nástrojů"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2608,46 +2608,46 @@ msgstr "Hlavní panel nástrojů"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:174 core/showfoto/main/main.cpp:140
+#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Vít Pelčák"
 
-#: core/app/main/main.cpp:175 core/showfoto/main/main.cpp:141
+#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: core/app/main/main.cpp:183
+#: core/app/main/main.cpp:190
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Otevřít dialog fotoaparátu v \"path\""
 
-#: core/app/main/main.cpp:186
+#: core/app/main/main.cpp:193
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Otevřít dialog fotoaparátu pro přístroj se Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:189
+#: core/app/main/main.cpp:196
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automaticky detekovat a otevřít připojený fotoaparát gphoto2"
 
-#: core/app/main/main.cpp:191
+#: core/app/main/main.cpp:198
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Spustit digiKam se souborem databáze SQLite nalezeným v adresáři \"dir\""
 
-#: core/app/main/main.cpp:194
+#: core/app/main/main.cpp:201
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Spustit digiKam s konfiguračním souborem \"config\""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:228
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2655,7 +2655,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2663,7 +2663,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:279
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2674,7 +2674,7 @@ msgstr ""
 "nainstalujte je.\n"
 "Moduly databází nainstalované na vašem počítači jsou vypsány níže."
 
-#: core/app/main/main.cpp:312
+#: core/app/main/main.cpp:319
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2728,27 +2728,41 @@ msgid "All supported files (%1)"
 msgstr "Všechny podporované soubory (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Zpětná vazba: %2\n"
 "\n"
 "Datum sestavení: %3 (cíl: %4)"
 
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
+#: core/app/utils/digikam_version.cpp:77
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)\n"
+#| "Revision: %5\n"
+#| "Branch: %6"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Zpětná vazba: %2\n"
@@ -26514,33 +26528,33 @@ msgstr "&Nové album"
 msgid "Create new album"
 msgstr "Vytvořit nové album"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:227
+#: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "Bohužel, digiKam nepodporuje vzdálené URL jako sbírky."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:245
-#: core/libs/database/collection/collectionmanager_location.cpp:448
+#: core/libs/database/collection/collectionmanager_location.cpp:247
+#: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "Zvolená složka neexistuje nebo je nečitelná"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:260
+#: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
 msgstr "Sbírka obsahující složku \"%1\" již existuje"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:282
+#: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
 msgstr "Úložné zařízení lze jednoznačně označit."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:294
+#: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
 msgstr "Sbírka je umístěna na pevném disku"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:332
+#: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -26557,7 +26571,7 @@ msgstr ""
 "identifikovat. Příště prosím pro svá CD či DVD použijte jednoznačné popisky, "
 "pokud je přejete používat v digiKamu."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:347
+#: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -26568,7 +26582,7 @@ msgstr ""
 "určili ve svém programu k vypalování CD. Až budete vypalovat další CD pro "
 "použití s digiKamem, nezapomeňte jim dát jednoznačný popisek."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:363
+#: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -26577,7 +26591,7 @@ msgstr ""
 "Toto je vyjmutelné úložné zařízení, které bude rozpoznáno podle svého "
 "popisku (\"%1\")"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:379
+#: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -26588,7 +26602,7 @@ msgstr ""
 "vašem počítači (\"%1\"). Není dostupná žádná bližší informace k "
 "rozpoznání(jako UUID nebo popisek)."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:396
+#: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -26599,7 +26613,7 @@ msgstr ""
 "se s tím, že bude identifikováno pouze na základě své cesty. Tento postup "
 "bude fungovat dobře pro váš místní pevný disk."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:421
+#: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -26608,7 +26622,7 @@ msgstr ""
 "Musíte připojit místní sdílení Samba. Bohužel, digiKam momentálně "
 "nepodporuje smb:// URL. "
 
-#: core/libs/database/collection/collectionmanager_location.cpp:426
+#: core/libs/database/collection/collectionmanager_location.cpp:428
 #, kde-format
 msgid ""
 "Your network storage must be set up to be accessible as files and folders "
@@ -26617,12 +26631,12 @@ msgstr ""
 "Vaše síťové úložiště musí být nastaveno tak, aby byly soubory a složky "
 "dostupné pomocí operačního systému. digiKam nepodporuje vzdálené URL."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:463
+#: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr "Na síťovém disku se stejnou cestou již sbírka existuje."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:476
+#: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -31071,79 +31085,79 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Nástroj pro automatickou korekci objektivu"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:381
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Fotoaparát: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:383
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Objektiv: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:385
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Vzdálenost subjektu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:387
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Clona: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:389
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Ohnisková vzdálenost: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Koeficient ořezu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "povoleno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Korekce CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:400
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "zakázáno"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Korekce VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Korekce DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -41615,7 +41629,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Vývojář (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Notifications"
+msgstr "Nastavit tento sloupec"
+
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -47693,19 +47713,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Složky"
 
-#: core/showfoto/main/main.cpp:131
+#: core/showfoto/main/main.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:149
+#: core/showfoto/main/main.cpp:156
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Soubor(y) nebo složka(y) k otevření"
 
-#: core/showfoto/main/main.cpp:180
+#: core/showfoto/main/main.cpp:187
 #, kde-format
 msgctxt "#info"
 msgid ""

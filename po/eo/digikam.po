@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:44+0000\n"
-"PO-Revision-Date: 2023-04-07 10:09+0100\n"
+"POT-Creation-Date: 2023-04-10 00:44+0000\n"
+"PO-Revision-Date: 2023-04-09 23:45+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1490,8 +1490,8 @@ msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Vi elektis helan kolorskemon. Ni ŝanĝas al malhela ikona temo. La ikona temo "
-"disponeblas post rekomenco de digiKam."
+"Vi elektis helan kolorskemon. Ni ŝanĝas al malhela piktograma temo. La "
+"piktograma temo disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_config.cpp:111
 #: core/showfoto/main/showfoto_config.cpp:191
@@ -1500,8 +1500,8 @@ msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Vi elektis malhelan kolorskemon. Ni ŝanĝas al hela ikona temo. La ikona temo "
-"disponeblas post rekomenco de digiKam."
+"Vi elektis malhelan kolorskemon. Ni ŝanĝas al hela piktograma temo. La "
+"piktograma temo disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
 #, kde-format
@@ -2597,7 +2597,7 @@ msgstr "&Helpo"
 msgid "Main Toolbar"
 msgstr "Ĉefa ilobreto"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2607,34 +2607,34 @@ msgstr "Ĉefa ilobreto"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:174 core/showfoto/main/main.cpp:140
+#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Axel Rousseau,Oliver Kellogg"
 
-#: core/app/main/main.cpp:175 core/showfoto/main/main.cpp:141
+#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
-#: core/app/main/main.cpp:183
+#: core/app/main/main.cpp:190
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Malfermi fotilan dialogon ĉe \"vojo\""
 
-#: core/app/main/main.cpp:186
+#: core/app/main/main.cpp:193
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Malfermi fotilan dialogon por la aparato kun Solid UDI \"udi\""
 
-#: core/app/main/main.cpp:189
+#: core/app/main/main.cpp:196
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Aŭtomate detekti kaj malfermi konektitan fotilon gphoto2"
 
-#: core/app/main/main.cpp:191
+#: core/app/main/main.cpp:198
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2642,12 +2642,12 @@ msgstr ""
 "Komenci digikam per la datumbaza dosiero SQLite trovita en la dosierujo \"dir"
 "\""
 
-#: core/app/main/main.cpp:194
+#: core/app/main/main.cpp:201
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Komenci digikam per la agorda dosiero \"config\""
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:228
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2658,7 +2658,7 @@ msgstr ""
 "instali la 64-bitan version de digiKam por akiri pli bonan sperton kun "
 "digiKam.</p>"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2669,7 +2669,7 @@ msgstr ""
 "ĝin.\n"
 "Ne estas datumbaza kromaĵo instalita en via komputilo."
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:279
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2680,7 +2680,7 @@ msgstr ""
 "ĝin.\n"
 "Datumbazaj aldonaĵoj instalitaj sur via komputilo estas listigitaj malsupre."
 
-#: core/app/main/main.cpp:312
+#: core/app/main/main.cpp:319
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2736,27 +2736,41 @@ msgid "All supported files (%1)"
 msgstr "Ĉiuj subtenataj dosieroj (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reago: %2\n"
 "\n"
 "Konstrua dato: %3 (celo: %4)"
 
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
+#: core/app/utils/digikam_version.cpp:77
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)\n"
+#| "Revision: %5\n"
+#| "Branch: %6"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reago: %2\n"
@@ -6685,7 +6699,7 @@ msgid ""
 "JPEG'>JPEG</a> is a lossy image compression format.</i></font>"
 msgstr ""
 "<font color='red'><i>Averto: <a href='https://en.wikipedia.org/wiki/"
-"JPEG'>JPEG</a> estas perdforma kunprema bildo.</i></tiparo>"
+"JPEG'>JPEG</a> estas perdforma kunprema bildo.</i></font>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
 #, kde-format
@@ -6732,8 +6746,8 @@ msgstr ""
 "diferencon, dum akraj, malgrandigitaj pikselaj grafikaĵoj povas perdi bonan "
 "kolordetalon.</p><p><b>4:4:4</b> - Neniu kroma subspecimeno, plej altkvalita "
 "sed plej malalta kunpremo.</p><p><b>4:2:2</b> - Kromo duonigita horizontale, "
-"meza kunpremo, meza kvalito.</p><p><p> b>4:2:0</b> - Chroma kvaronigita en "
-"2x2 blokoj, alta kunpremo sed malalta kvalito.</p><p><b>4:1:1</b> - Chroma "
+"meza kunpremo, meza kvalito.</p><p><b>4:2:0</b> - Chroma kvaronigita en 2x2 "
+"blokoj, alta kunpremo sed malalta kvalito.</p><p><b>4:1:1</b> - Chroma "
 "kvaronigita en 4x1 blokoj, alta kunpremo sed malalta kvalito.</p><p><b>Noto: "
 "JPEG ĉiam uzas perdan kunpremadon.</b></p>"
 
@@ -9203,9 +9217,9 @@ msgstr ""
 "per cirklaj ondoj.</p><p><b>Cirklaj Ondoj 2</b>: alia vario de la efiko de "
 "Cirklaj Ondoj.</p><p><b>Polusaj Koordinatoj</b>: konvertas la foton de "
 "rektangulaj al polusaj koordinatoj.</p><p><b>Nepolusaj Koordinatoj</"
-"p><p><b>Nepolusaj Koordinatoj</b> b>: la efiko de Polusa Koordinato "
-"renversita.</p><p><b>Kahelo</b>: dividas la foton en kvadratajn blokojn kaj "
-"movas ilin hazarde enen de la bildo.</p>"
+"p><p><b>Nepolusaj Koordinatoj</b>: la efiko de Polusa Koordinato renversita."
+"</p><p><b>Kahelo</b>: dividas la foton en kvadratajn blokojn kaj movas ilin "
+"hazarde enen de la bildo.</p>"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:154
 #, kde-format
@@ -10158,10 +10172,10 @@ msgstr ""
 "larĝekrana ekrano (kiel 1680x1050)</p><p> <b>2:1</b>, <b>3:1</b>, <b>4:1</"
 "b>: oftaj panoramaj grandecoj</p><p><b>16:9</b>: ofta televidekrano (kiel "
 "HDTV aŭ Full-HD)</p><p>La papera <b>Formato DIN A</b> uzas la rilatumon "
-"1:1.414</p><p>La <p> b>Ora Proporcio</b> estas 1:1.618. Kunmetaĵo sekvanta "
-"ĉi tiun regulon estas konsiderata vide harmonia sed eble ne taŭgas por presi "
+"1:1.414</p><p>La <b>Ora Proporcio</b> estas 1:1.618. Kunmetaĵo sekvanta ĉi "
+"tiun regulon estas konsiderata vide harmonia sed eble ne taŭgas por presi "
 "sur norma fotografia papero.</p><p>La <b>Nuna Bildformato</b> prenas "
-"bildformaton de la aktuale malfermita bildo.</p> p>"
+"bildformaton de la aktuale malfermita bildo.</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:320
 #, kde-format
@@ -11206,12 +11220,12 @@ msgstr "Kreo de lokmarko '%1'"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:331
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
-msgstr "Ne eblis konservi ikonon por bildo '%1' al '%2'"
+msgstr "Ne eblis konservi piktogramon por bildo '%1' al '%2'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:335
 #, kde-format
 msgid "Creation of icon '%1'"
-msgstr "Kreo de ikono '%1'"
+msgstr "Kreo de piktogramo '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:362
 #, kde-format
@@ -11302,9 +11316,9 @@ msgid ""
 "When using GoogleMaps, all images must have complete URLs, icons are "
 "squared, and when drawing a track, only line track is exported."
 msgstr ""
-"Kiam oni uzas GoogleMaps, ĉiuj bildoj devas havi kompletajn URL-ojn, ikonoj "
-"estas kvadrataj, kaj kiam oni desegnas trakon, nur linia trako estas "
-"eksportita."
+"Kiam oni uzas GoogleMaps, ĉiuj bildoj devas havi kompletajn URL-ojn, "
+"piktogramoj estas kvadrataj, kaj kiam oni desegnas trakon, nur linia trako "
+"estas eksportita."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:82
 #, kde-format
@@ -11339,12 +11353,12 @@ msgid ""
 "altitude of the coordinate relative to sea level, regardless of the actual "
 "elevation of the terrain beneath the element.</dd></dl></p>"
 msgstr ""
-"<p>Specifikas kiel bildoj estas montrataj<dl><dt>krampo al grundo "
-"(defaŭlte)</dt><dd>Indikas ignori altecspecifon</dd><dt>rilate al grundo</"
-"dt><dd> Agordas la altecon de la elemento relative al la reala grunda alteco "
-"de aparta loko.</dd><dt>absoluta</dt><dd>Fiktas la altecon de la koordinato "
-"relative al la marnivelo, sendepende de la reala alteco de la tereno sub la "
-"elemento.</ dd></dl></p>"
+"<p>Specifas kiel bildoj estas montrataj<dl><dt>krampo al grundo (defaŭlte)</"
+"dt><dd>Indikas ignori altecspecifon</dd><dt>rilate al grundo</dt><dd> Metas "
+"la altecon de la elemento relative al la reala grunda alteco de aparta loko."
+"</dd><dt>absoluta</dt><dd>Metas la altecon de la koordinato relative al la "
+"marnivelo, sendepende de la reala alteco de la tereno sub la elemento.</dd></"
+"dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:100
 #, kde-format
@@ -11375,7 +11389,7 @@ msgstr "Grandecoj"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:129
 #, kde-format
 msgid "Icon Size:"
-msgstr "Ikono Grandeco:"
+msgstr "Piktograma Grandeco:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:134
 #, kde-format
@@ -11589,12 +11603,12 @@ msgid ""
 "altitude of the coordinate relative to sea level, regardless of the actual "
 "elevation of the terrain beneath the element.</dd></dl></p>"
 msgstr ""
-"<p>Specifikas kiel la punktoj estas montrataj<dl><dt>krampo al grundo "
+"<p>Specifas kiel la punktoj estas montrataj<dl><dt>krampo al grundo "
 "(defaŭlte)</dt><dd>Indikas ignori altecan specifon</dd><dt>rilate al grundo</"
-"dt><dd>Fiktas la altecon de la elemento relative al la reala grunda alteco "
-"de aparta loko.</dd><dt>absoluta</dt><dd>Fiktas la altecon de la koordinato "
+"dt><dd>Metas la altecon de la elemento relative al la reala grunda alteco de "
+"aparta loko.</dd><dt>absoluta</dt><dd>Metas la altecon de la koordinato "
 "relative al la marnivelo, sendepende de la reala alteco de la tereno sub la "
-"elemento.</ dd></dl></p>"
+"elemento.</dd></dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
@@ -20338,9 +20352,9 @@ msgstr ""
 "povas rapide generi <a href='https://en.wikipedia.org/wiki/Time-"
 "lapse_photography'>Time-lapse</a> filmon el bildoj</p><p>kaptita per "
 "tripiedo muntita fotilo kontrolita per <a href='https://en.wikipedia.org/"
-"wiki/Intervalometer#Photography'>intervalometro</a>.</p><p></p><p><p>Vi "
-"povas ankaŭ krei videoprezenton kun transiraj</p><p>efektoj kaj sonspuroj "
-"por montri sur televida ekrano.</p></qt>"
+"wiki/Intervalometer#Photography'>intervalometro</a>.</p><p></p><p>Vi povas "
+"ankaŭ krei videoprezenton kun transiraj</p><p>efektoj kaj sonspuroj por "
+"montri sur televida ekrano.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:87
 #, kde-format
@@ -27406,33 +27420,33 @@ msgstr "&Nova Albumo"
 msgid "Create new album"
 msgstr "Krei novan albumon"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:227
+#: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "Pardonu, digiKam ne subtenas forajn URL-ojn kiel kolektojn."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:245
-#: core/libs/database/collection/collectionmanager_location.cpp:448
+#: core/libs/database/collection/collectionmanager_location.cpp:247
+#: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "La elektita dosierujo ne ekzistas aŭ ne estas legebla"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:260
+#: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
 msgstr "Jam ekzistas kolekto enhavanta la dosierujon \"%1\""
 
-#: core/libs/database/collection/collectionmanager_location.cpp:282
+#: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
 msgstr "La stokadmedioj povas esti unike identigitaj."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:294
+#: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
 msgstr "La kolekto troviĝas sur via malmola disko"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:332
+#: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -27449,7 +27463,7 @@ msgstr ""
 "agordi unikan etikedon sur viaj KD-oj kaj DVD-oj se vi intencas uzi ilin kun "
 "digiKam."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:347
+#: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -27460,7 +27474,7 @@ msgstr ""
 "starigis en via KD-bruliga aplikaĵo. Se vi kreos pliajn KD-ojn por uzo kun "
 "digikam estonte, bonvolu memori doni al ili ankaŭ unikan etikedon."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:363
+#: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -27469,7 +27483,7 @@ msgstr ""
 "Ĉi tio estas forprenebla stokado, kiu estos identigita per sia etikedo "
 "(\"%1\")"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:379
+#: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -27480,7 +27494,7 @@ msgstr ""
 "sistemo (\"%1\"). Neniuj pli specifaj rimedoj de identigo (UUID, etikedo) "
 "estas haveblaj."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:396
+#: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -27491,7 +27505,7 @@ msgstr ""
 "estos aldonita uzante la dosiervojon kiel la solan identigilon. Ĉi tio bone "
 "funkcios por via loka malmola disko."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:421
+#: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -27500,7 +27514,7 @@ msgstr ""
 "Vi devas loke munti vian Samba-parton. Pardonu, digiKam nuntempe ne subtenas "
 "smb:// URL-ojn."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:426
+#: core/libs/database/collection/collectionmanager_location.cpp:428
 #, kde-format
 msgid ""
 "Your network storage must be set up to be accessible as files and folders "
@@ -27509,12 +27523,12 @@ msgstr ""
 "Via retstokado devas esti agordita por esti alirebla kiel dosieroj kaj "
 "dosierujoj per la operaciumo. digiKam ne subtenas forajn URL-ojn."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:463
+#: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr "Jam ekzistas kolekto por reto kun la sama vojo."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:476
+#: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -28743,12 +28757,12 @@ msgid ""
 "settings</p>"
 msgstr ""
 "<p>Noto: kun Linukso-servilo, datumbazo povas esti pravalorizita sekvante la "
-"subajn komandojn:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-"- u radiko</p><p>...</p><p>Enigu SQL-kodon al Mysql-instilo por lanĉi "
-"digiKam-datumbazon kun koncedaj privilegioj (vidu malantaŭe)</p><p>...</ "
-"p><p>ĉesi</p><p>NOTU: Se vi havas enorman kolekton, vi devus lanĉi MySQL-"
-"servilon per mysql --max_allowed_packet=128M AŬ en my.ini aŭ ~/.my.cnf, "
-"ŝanĝu la agordojn </p>"
+"subajn komandojn:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -"
+"u radiko</p><p>...</p><p>Enigu SQL-kodon al Mysql-instilo por lanĉi digiKam-"
+"datumbazon kun koncedaj privilegioj (vidu malantaŭe)</p><p>...</p><p>ĉesi</"
+"p><p>NOTU: Se vi havas enorman kolekton, vi devus lanĉi MySQL-servilon per "
+"mysql --max_allowed_packet=128M AŬ en my.ini aŭ ~/.my.cnf, ŝanĝu la agordojn "
+"</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
 #, kde-format
@@ -32033,79 +32047,79 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Lensa Aŭtomata Korekta Ilo"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:381
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Fotilo: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:383
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Lenso: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:385
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Subjekta Distanco: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:387
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Aperturo: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:389
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Fokusa distanco: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Tondfaktoro: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "ebligita"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA Korekto: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:400
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "malfunkciigita"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG Korekto: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST-Korekto: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -32201,8 +32215,8 @@ msgid ""
 msgstr ""
 "<p>Elektu la histograman skalon.</p><p>Se la maksimumaj nombroj de la bildo "
 "estas malgrandaj, vi povas uzi la <b>linian</b>-skalon.</p><p><b>Logaritman</"
-"p> b> skalo povas esti uzata kiam la maksimumaj kalkuloj estas grandaj; se "
-"ĝi estas uzata, ĉiuj valoroj (malgrandaj kaj grandaj) estos videblaj sur la "
+"b> skalo povas esti uzata kiam la maksimumaj kalkuloj estas grandaj; se ĝi "
+"estas uzata, ĉiuj valoroj (malgrandaj kaj grandaj) estos videblaj sur la "
 "grafikaĵo.</p>"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:92
@@ -36106,9 +36120,9 @@ msgstr ""
 "<b>Elŝutu</b> por akiri la dosieron...</p><p>Noto: el la panelo Agordo/Misc. "
 "vi povas ŝanĝi por kontroli semajnan antaŭ-eldonaĵon.<br/>Pre-eldonaj "
 "versioj estas dediĉitaj por rapide testi novajn funkciojn.<br/>Ne estas "
-"rekomendita uzi antaŭ-eldonojn en produktado ĉar cimoj povas resti,<br/ "
-">krom se vi scias, kion vi faras.</p><p>Premu <b>Agordu</b> se vi volas "
-"agordi ĝisdatigajn opciojn de agorda dialogo.</p>"
+"rekomendita uzi antaŭ-eldonojn en produktado ĉar cimoj povas resti,<br/>krom "
+"se vi scias, kion vi faras.</p><p>Premu <b>Agordu</b> se vi volas agordi "
+"ĝisdatigajn opciojn de agorda dialogo.</p>"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:328
 #, kde-format
@@ -38736,7 +38750,7 @@ msgstr "Redakti Etikedtitolon"
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
-msgstr "Restarigi Etikedan Ikonon"
+msgstr "Restarigi Etikedan Piktogramon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager.cpp:723
@@ -38961,7 +38975,8 @@ msgstr "Redaktu titolon el elektita etikedo."
 #: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
-msgstr "Restarigi ikonon al elektitaj etikedoj. Funkcias kun multobla elekto."
+msgstr ""
+"Restarigi piktogramon al elektitaj etikedoj. Funkcias kun multobla elekto."
 
 #: core/libs/tags/manager/tagsmanager.cpp:752
 #, kde-format
@@ -39093,16 +39108,16 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Por krei novajn etikedojn, vi povas uzi la jenajn regulojn:</"
-"p><p><ul><li>'/' povas esti uzata por krei etikedhierarkion.<br/>Ekz.: <i> "
+"p><p><ul><li>'/' povas esti uzata por krei etikedhierarkion.<br/>Ekz.: <i>"
 "\"Lando/Urbo/Parizo\"</i></li><li>',' povas esti uzata por krei pli ol unu "
-"etikedhierarkion samtempe.<br/>Ekz.: <i>\" Urbo/Parizo, Monumento/Notre-Dame"
-"\"</i></li><li>Se etikedhierarkio komenciĝas per '/', radika etikedalbumo "
-"estas uzata kiel gepatro.</li></ul></ul></ul> p>"
+"hierarkio de etikedoj samtempe.<br/>Ekz.: <i>\"Urbo/Parizo, Monumento/Notre-"
+"Dame\"</i></li><li>Se etikedhierarkio komenciĝas per '/', radika "
+"etikedalbumo estas uzata kiel gepatro.</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:182
 #, kde-format
 msgid "&Icon:"
-msgstr "&Ikono:"
+msgstr "P&iktogramo:"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:206
 #, kde-format
@@ -42359,7 +42374,7 @@ msgstr "Yingjie Liu"
 #: core/libs/widgets/mainview/daboutdata.cpp:202
 #, kde-format
 msgid "Face-engine improvements and manual icon-view sort"
-msgstr "Pliboniĝoj de vizaĝmotoro kaj mana ikono-vida ordigo"
+msgstr "Pliboniĝoj de vizaĝmotoro kaj mana piktogramo-vida ordigo"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:207
 #, kde-format
@@ -42577,7 +42592,7 @@ msgstr "Risto Saukonpaa"
 #: core/libs/widgets/mainview/daboutdata.cpp:344
 #, kde-format
 msgid "Design, icons, logo, banner, mockup, beta tester"
-msgstr "Dezajno, ikonoj, emblemo, standardo, maketo, beta-testilo"
+msgstr "Dezajno, piktogramoj, emblemo, standardo, maketo, beta-testilo"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:348
 #, kde-format
@@ -42664,7 +42679,7 @@ msgstr "Hans Karlsson"
 #: core/libs/widgets/mainview/daboutdata.cpp:404
 #, kde-format
 msgid "digiKam website banner and application icons"
-msgstr "digiKam-reteja standardo kaj aplikaĵikonoj"
+msgstr "digiKam-reteja standardo kaj aplikaĵpiktogramoj"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
@@ -42694,7 +42709,7 @@ msgstr "Tung Nguyen"
 #: core/libs/widgets/mainview/daboutdata.cpp:420
 #, kde-format
 msgid "Bug reports, feedback and icons"
-msgstr "Cimraportoj, sugestoj kaj ikonoj"
+msgstr "Cimraportoj, sugestoj kaj piktogramoj"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:426
 #, kde-format
@@ -42732,7 +42747,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Ellaboranto (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Notifications"
+msgstr "Agordi ĉi tiun kolumnon"
+
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -48656,7 +48677,7 @@ msgstr "Ĉiuj subtenataj dosieroj"
 #, kde-format
 msgctxt "@info"
 msgid "Icon Size: %1"
-msgstr "Ikono Grandeco: %1"
+msgstr "Piktogram-Grandeco: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:101
 #, kde-format
@@ -48842,19 +48863,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dosierujoj"
 
-#: core/showfoto/main/main.cpp:131
+#: core/showfoto/main/main.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:149
+#: core/showfoto/main/main.cpp:156
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Dosiero(j) aŭ dosierujo(j) por malfermi"
 
-#: core/showfoto/main/main.cpp:180
+#: core/showfoto/main/main.cpp:187
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -49418,7 +49439,7 @@ msgstr "Piktogrametoso (ŝanĝoj post rekomenco):"
 #: core/utilities/setup/misc/setupmisc.cpp:232
 #, kde-format
 msgid "Set this option to choose the default icon theme."
-msgstr "Agordu ĉi tiun opcion por elekti la defaŭltan ikonetoson."
+msgstr "Agordu ĉi tiun opcion por elekti la defaŭltan piktogrametoson."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
 #: core/utilities/setup/misc/setupmisc.cpp:236
@@ -49855,8 +49876,8 @@ msgid ""
 "entry in the hierarchy without extra property."
 msgstr ""
 "\"Preferata Ero\" estas hierarkia eniro gastiganta altnivelajn trajtojn kiel "
-"dato, ikono, priskribo kaj bildlisto. \"Preferata Dosierujo\" estas simpla "
-"eniro en la hierarkio sen kroma posedaĵo."
+"dato, piktogramo, priskribo kaj bildlisto. \"Preferata Dosierujo\" estas "
+"simpla eniro en la hierarkio sen kroma posedaĵo."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
@@ -50158,7 +50179,7 @@ msgstr "Stako-Vido"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Icon Size"
-msgstr "Ikono Grandeco"
+msgstr "Piktograma Grandeco"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:353
 #, kde-format
@@ -51666,7 +51687,7 @@ msgid ""
 "view:</p></qt>"
 msgstr ""
 "<qt><p>Difinu kiel bildoj estu malfermitaj kiam maldekstre alklaku en la "
-"ikona vido:</p></qt>"
+"piktograma vido:</p></qt>"
 
 #: core/utilities/firstrun/openfilepage.cpp:75
 #, kde-format
@@ -51818,8 +51839,8 @@ msgid ""
 "<qt><p>Set here if you want to show contextual tooltips in icon-view and "
 "folder-view:</p></qt>"
 msgstr ""
-"<qt><p>Agordu ĉi tie, se vi volas montri kuntekstajn konsiletojn en ikono-"
-"vido kaj dosierujo-vido:</p></qt>"
+"<qt><p>Agordu ĉi tie, se vi volas montri kuntekstajn konsiletojn en "
+"piktogram-vido kaj dosierujo-vido:</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:74
 #, kde-format
@@ -51844,9 +51865,9 @@ msgstr ""
 "<qt><p><i>Noto:</i> konsiletoj montras fotojn kaj digiKam-metadatenojn sur "
 "la flugo, dum la muso moviĝas super eroj. Ĉi tio povas esti utila dum "
 "elektado de eroj. Konsiletoj estas montrataj en la vido de albumaj "
-"dosierujoj, vido de album-ikono, vido de fotila piktogramo, listo de stapla "
-"vico kaj dikfingrobreto. El la dialogo de agordo de digiKam, vi povas agordi "
-"la enhavon de ĉi tiuj konsiletoj kaj la uzataj tiparoj.</p></qt>"
+"dosierujoj, vido de album-piktogramo, vido de fotila piktogramo, listo de "
+"stapla vico kaj dikfingrobreto. El la dialogo de agordo de digiKam, vi povas "
+"agordi la enhavon de ĉi tiuj konsiletoj kaj la uzataj tiparoj.</p></qt>"
 
 #: core/utilities/firstrun/welcomepage.cpp:40
 #, kde-format
@@ -52587,7 +52608,7 @@ msgid ""
 "reference.</p><p>Note: positive offsets count eastwards from zero longitude "
 "(GMT), they are 'ahead of time'.</p>"
 msgstr ""
-"<p>Fiktas la horzonon, laŭ kiu la fotilo estis agordita dum fotado, tiel ke "
+"<p>Metas la horzonon, laŭ kiu la fotilo estis agordita dum fotado, tiel ke "
 "la tempomarkoj de la bildoj povas esti konvertitaj al GMT por kongrui kun la "
 "GPSa temporeferenco.</p><p>Noto: pozitivaj kompensoj kalkulas orienten de "
 "nula longitudo (GMT), ili estas 'antaŭtempe'.</p>"
@@ -56142,7 +56163,7 @@ msgid ""
 "p><p>If there are no expressions full path is added to the command.</p>"
 msgstr ""
 "<p>Ĉi tiuj esprimoj povas esti uzataj por personecigi la komandlinion:</"
-"p><p><b>%file</b>: plena vojo de la importita dosiero</p><p><b>%filename< /"
+"p><p><b>%file</b>: plena vojo de la importita dosiero</p><p><b>%filename</"
 "b>: dosiernomo de la importita dosiero</p><p><b>%path</b>: vojo de la "
 "importita dosiero</p><p><b>%orgfilename</b>: originalo dosiernomo</p><p><b>"
 "%orgpath</b>: originala vojo</p><p>Se ne estas esprimoj plena vojo estas "
@@ -58600,8 +58621,8 @@ msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
 "geolocation information."
 msgstr ""
-"Agordu ĉi tiun opcion por montri ikonon super la bildeto se objekto havas "
-"informojn pri geolokigo."
+"Agordu ĉi tiun opcion por montri piktogramon super la bildeto se objekto "
+"havas informojn pri geolokigo."
 
 #: core/utilities/setup/album/setupalbumview.cpp:214
 #: core/utilities/setup/camera/setupcamera.cpp:503
@@ -58644,7 +58665,8 @@ msgstr "Piktogramvida tiparo:"
 #: core/utilities/setup/album/setupalbumview.cpp:223
 #, kde-format
 msgid "Select here the font used to display text in icon views."
-msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en ikonaj vidoj."
+msgstr ""
+"Elektu ĉi tie la tiparon uzatan por montri tekston en piktogramaj vidoj."
 
 #: core/utilities/setup/album/setupalbumview.cpp:225
 #, kde-format
@@ -58683,7 +58705,7 @@ msgstr "Piktogramoj"
 #: core/utilities/setup/album/setupalbumview.cpp:268
 #, kde-format
 msgid "Tree View icon size:"
-msgstr "Grando de ikono de Arba Vido:"
+msgstr "Grando de piktogramo de Arba Vido:"
 
 #: core/utilities/setup/album/setupalbumview.cpp:275
 #, kde-format
@@ -58691,8 +58713,8 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr ""
-"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la ikonoj de "
-"Arbo-Vido en la flankaj bretoj de digiKam."
+"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la piktogramoj "
+"de Arbo-Vido en la flankaj bretoj de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:278
 #, kde-format
@@ -58705,8 +58727,8 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
-"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la ikonoj de "
-"Arbo-Vido en la flanka kolumno de homoj de digiKam."
+"Agordu ĉi tiun opcion por agordi la grandecon en pikseloj de la piktogramoj "
+"de Arbo-Vido en la flanka kolumno de homoj de digiKam."
 
 #: core/utilities/setup/album/setupalbumview.cpp:289
 #, kde-format
@@ -58729,8 +58751,8 @@ msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr ""
-"Agordu ĉi tiun opcion por montri laŭ la nomo de la albumo la nombron da ikon-"
-"videblaj eroj ene."
+"Agordu ĉi tiun opcion por montri laŭ la nomo de la albumo la nombron da "
+"piktogram-videblaj eroj ene."
 
 #: core/utilities/setup/album/setupalbumview.cpp:305
 #, kde-format
@@ -58805,7 +58827,7 @@ msgstr "Montri piktogramojn kaj tekston super antaŭrigardo"
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
-"Malmarku ĉi tion se vi ne volas vidi ikonojn kaj tekston en la bilda "
+"Malmarku ĉi tion se vi ne volas vidi piktogramojn kaj tekston en la bilda "
 "antaŭprezento."
 
 #: core/utilities/setup/album/setupalbumview.cpp:348
@@ -59382,7 +59404,7 @@ msgstr "Importi Filtrilojn"
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
 msgid "Icon-View Options"
-msgstr "Ikono-Vidi Opcioj"
+msgstr "Piktogram-Vidaj Opcioj"
 
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
@@ -59430,7 +59452,7 @@ msgstr "Komenci bildredaktilon"
 #: core/utilities/setup/camera/setupcamera.cpp:511
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
-msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en Ikonaj Vidoj."
+msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en Piktogram-Vidoj."
 
 #: core/utilities/setup/camera/setupcamera.cpp:533
 #, kde-format
@@ -61450,7 +61472,7 @@ msgid ""
 "you eg. want to entitle albums with ISO dates (201006 or 20090523) and the "
 "albums should be sorted according to these dates.</qt>"
 msgstr ""
-"<qt>Fiktas la manieron kiel kordoj estas komparitaj ene de digiKam. Ĉi tio "
+"<qt>Metas la manieron kiel kordoj estas komparitaj ene de digiKam. Ĉi tio "
 "ekz. influas la ordigon de la arbaj vidoj.<br/><b>Natura</b> provas kompari "
 "ŝnurojn en maniero kiu konsideru iujn normalajn konvenciojn kaj ekz. "
 "rezultigas ordigi nombrojn nature eĉ se ili havas malsaman nombron da "
@@ -62505,7 +62527,7 @@ msgstr "Elektu ĉi tie la tiparon uzatan por montri tekston en konsiletoj."
 #: core/utilities/setup/setuptooltip.cpp:196
 #, kde-format
 msgid "Show icon-view and thumb-bar items' tool-tips"
-msgstr "Montri ilo-konsiletojn de eroj de ikon-vido kaj dikfingro-breto"
+msgstr "Montri ilo-konsiletojn de eroj de piktogram-vido kaj dikfingro-breto"
 
 #: core/utilities/setup/setuptooltip.cpp:197
 #, kde-format
@@ -62514,7 +62536,7 @@ msgid ""
 "icon-view or thumb-bar item."
 msgstr ""
 "Agordu ĉi tiun opcion por montri bildajn informojn kiam la muso ŝvebas super "
-"ikono-vido aŭ dikfingro-breto."
+"piktogramo-vido aŭ dikfingro-breto."
 
 #: core/utilities/setup/setuptooltip.cpp:200
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:44+0000\n"
+"POT-Creation-Date: 2023-04-10 00:44+0000\n"
 "PO-Revision-Date: 2023-03-27 11:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2542,7 +2542,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2552,7 +2552,7 @@ msgstr "主工具栏"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:174 core/showfoto/main/main.cpp:140
+#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2560,7 +2560,7 @@ msgstr ""
 "Tyson Tan (谭代山/钛山), CoelacanthusHex, Feng Chao, Funda Wang, Guo Yunhe, "
 "millionart, Ni Hui, sanfanling, Weng Xuetian, YFdyh000, 李子"
 
-#: core/app/main/main.cpp:175 core/showfoto/main/main.cpp:141
+#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2570,33 +2570,33 @@ msgstr ""
 "shuizhuyuanluo@126.com, xujia19@gmail.com, wengxt@gmail.com, YFdyh000@kde."
 "org, bingling00@kde.org"
 
-#: core/app/main/main.cpp:183
+#: core/app/main/main.cpp:190
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "打开位于 \"path\" 的相机对话框"
 
-#: core/app/main/main.cpp:186
+#: core/app/main/main.cpp:193
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "打开 Solid UDI 为 \"udi\" 设备的相机对话框"
 
-#: core/app/main/main.cpp:189
+#: core/app/main/main.cpp:196
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自动检测并打开已连接的 gphoto2 相机"
 
-#: core/app/main/main.cpp:191
+#: core/app/main/main.cpp:198
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "启动 digiKam 时使用在 \"dir\" 目录中发现的 SQLite 数据库文件"
 
-#: core/app/main/main.cpp:194
+#: core/app/main/main.cpp:201
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "启动 digiKam 时使用名为 \"config\" 的配置文件"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:228
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2606,7 +2606,7 @@ msgstr ""
 "<p>您正在 64 位 Windows 操作系统中运行 32 位版本的 digiKam。</p><p>请安装 64 "
 "位版本的 digiKam 以获得更好的使用体验。</p>"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2616,7 +2616,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机并未安装任何数据库插件。"
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:279
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2626,7 +2626,7 @@ msgstr ""
 "Qt SQLite 运行时组件或 MySQL 数据库插件不可用。请安装该组件。\n"
 "本机已安装的数据库插件如下："
 
-#: core/app/main/main.cpp:312
+#: core/app/main/main.cpp:319
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2682,27 +2682,41 @@ msgid "All supported files (%1)"
 msgstr "所有支持的文件 (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)"
 msgstr ""
 "IRC 频道：%1 - #digikam\n"
 "提交反馈：%2\n"
 "\n"
 "构建日期：%3 (目标平台：%4)"
 
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
+#: core/app/utils/digikam_version.cpp:77
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)\n"
+#| "Revision: %5\n"
+#| "Branch: %6"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 msgstr ""
 "IRC 频道：%1 - #digikam\n"
 "提交反馈：%2\n"
@@ -26648,33 +26662,33 @@ msgstr "新建相册(&N)"
 msgid "Create new album"
 msgstr "创建新相册"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:227
+#: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "对不起，digiKam 不支持远程 URL 作为相册集合。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:245
-#: core/libs/database/collection/collectionmanager_location.cpp:448
+#: core/libs/database/collection/collectionmanager_location.cpp:247
+#: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "所选文件夹不存在或不可读"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:260
+#: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
 msgstr "已存在包含文件夹“%1”的相册集合"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:282
+#: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
 msgstr "该存储媒介可被唯一识别。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:294
+#: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
 msgstr "此相册集合位于您的本机存储设备中"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:332
+#: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -26689,7 +26703,7 @@ msgstr ""
 "分。请不要向该光盘中添加文件，否则软件将无法识别出该光盘。请在将来为用于 "
 "digiKam 的每张光盘设置不同的名称标记。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:347
+#: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -26699,7 +26713,7 @@ msgstr ""
 "这是一张 CD/DVD 光盘，它通过光盘刻录程序设置的名称标记 (“%1”) 进行识别。如果"
 "您将来还要为 digiKam 制作更多光盘，请记得为每张光盘设置不同的名称标记。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:363
+#: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -26707,7 +26721,7 @@ msgid ""
 msgstr ""
 "这是一个可移动存储媒介，它将被按照其名称标记进行识别。它的名称标记是 (“%1”)"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:379
+#: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -26717,7 +26731,7 @@ msgstr ""
 "此条目只能通过它在系统中的路径进行识别，该路径为 (“%1”)。其他更加特定的识别方"
 "法 (UUID、标签等) 对此条目不可用。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:396
+#: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -26727,7 +26741,7 @@ msgstr ""
 "无法在您的系统中识别位于此路径的存储媒介。它在添加时将使用文件路径作为其唯一"
 "的识别方式。这对于本地存储设备而言不会构成问题。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:421
+#: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -26736,7 +26750,7 @@ msgstr ""
 "对不起，digiKam 目前不支持 smb:// URL。请先将 Samba 共享位置挂载到本地，然后"
 "再添加它们。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:426
+#: core/libs/database/collection/collectionmanager_location.cpp:428
 #, kde-format
 msgid ""
 "Your network storage must be set up to be accessible as files and folders "
@@ -26745,12 +26759,12 @@ msgstr ""
 "digiKam 不支持远程 URL。请先将您的网络存储位置通过操作系统挂载到本机，成为可"
 "访问的文件和文件夹。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:463
+#: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr "已存在相同路径的网络共享相册集合。"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:476
+#: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -31101,79 +31115,79 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "镜头畸变校正工具"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:381
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "相机：%1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:383
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "镜头：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:385
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "主体距离：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:387
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "光圈：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:389
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "焦距：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "焦距转换率：<numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "启用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "色差校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:400
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "禁用"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "暗角校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "畸变校正：%1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -41545,7 +41559,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "开发者 (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Notifications"
+msgstr "配置此列"
+
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -47641,19 +47661,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "文件夹"
 
-#: core/showfoto/main/main.cpp:131
+#: core/showfoto/main/main.cpp:138
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:149
+#: core/showfoto/main/main.cpp:156
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要打开的文件或文件夹"
 
-#: core/showfoto/main/main.cpp:180
+#: core/showfoto/main/main.cpp:187
 #, kde-format
 msgctxt "#info"
 msgid ""

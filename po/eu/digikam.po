@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:44+0000\n"
+"POT-Creation-Date: 2023-04-10 00:44+0000\n"
 "PO-Revision-Date: 2023-02-26 17:16+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2620,7 +2620,7 @@ msgstr "&Laguntza"
 msgid "Main Toolbar"
 msgstr "Tresna-barra nagusia"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2630,35 +2630,35 @@ msgstr "Tresna-barra nagusia"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:174 core/showfoto/main/main.cpp:140
+#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Iñaki Larrañaga Murgoitio"
 
-#: core/app/main/main.cpp:175 core/showfoto/main/main.cpp:141
+#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dooteo@euskalgnu.org"
 
-#: core/app/main/main.cpp:183
+#: core/app/main/main.cpp:190
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Ireki kameraren elkarrizketa-koadroa «bide-izenen»ean"
 
-#: core/app/main/main.cpp:186
+#: core/app/main/main.cpp:193
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 "Ireki kameraren elkarrizketa-koadroa Solid UDI \"udi\" duen gailuarentzat"
 
-#: core/app/main/main.cpp:189
+#: core/app/main/main.cpp:196
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Automatikoki hauteman eta ireki konektatutako gphoto2 kamera bat"
 
-#: core/app/main/main.cpp:191
+#: core/app/main/main.cpp:198
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2666,12 +2666,12 @@ msgstr ""
 "Abiarazi «digiKam» \"dir\" direktorioan aurkitutako SQLite datu-base "
 "fitxategiarekin"
 
-#: core/app/main/main.cpp:194
+#: core/app/main/main.cpp:201
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Abiarazi «digiKam» konfiguratzeko \"config\" fitxategiarekin"
 
-#: core/app/main/main.cpp:221
+#: core/app/main/main.cpp:228
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2682,7 +2682,7 @@ msgstr ""
 "p><p>Mesedez, instalatu digiKam-en 64 biteko bertsioa, digiKam-ekin "
 "esperientzia hobea izateko.</p>"
 
-#: core/app/main/main.cpp:263
+#: core/app/main/main.cpp:270
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2693,7 +2693,7 @@ msgstr ""
 "Instalatu ezazu.\n"
 "Zure ordenagailuan ez dago instalatuta datu-base pluginik."
 
-#: core/app/main/main.cpp:272
+#: core/app/main/main.cpp:279
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2705,7 +2705,7 @@ msgstr ""
 "Zure ordenagailuan instalatutako datu-base pluginak beheran zerrendatuta "
 "daude."
 
-#: core/app/main/main.cpp:312
+#: core/app/main/main.cpp:319
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -2762,27 +2762,41 @@ msgid "All supported files (%1)"
 msgstr "Onartutako fitxategi guztiak (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Erreakzioak: %2\n"
 "\n"
 "Eraikitze data: %3 (jomuga: %4)"
 
-#: core/app/utils/digikam_version.cpp:75
-#, kde-format
+#: core/app/utils/digikam_version.cpp:77
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Build date: %3 (target: %4)\n"
+#| "Revision: %5\n"
+#| "Branch: %6"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Documentation: %3\n"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Erreakzioak: %2\n"
@@ -28258,33 +28272,33 @@ msgstr "Album &berria"
 msgid "Create new album"
 msgstr "Sortu album berria"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:227
+#: core/libs/database/collection/collectionmanager_location.cpp:229
 #, kde-format
 msgid "Sorry, digiKam does not support remote URLs as collections."
 msgstr "digiKam-ek ez ditu urruneko URLak onartzen bilduma gisa."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:245
-#: core/libs/database/collection/collectionmanager_location.cpp:448
+#: core/libs/database/collection/collectionmanager_location.cpp:247
+#: core/libs/database/collection/collectionmanager_location.cpp:450
 #, kde-format
 msgid "The selected folder does not exist or is not readable"
 msgstr "Hautatutako karpeta ez da existitzen edo ez da irakurgarria"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:260
+#: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
 msgstr "Badago lehendik ere \"%1\" karpeta duen bilduma"
 
-#: core/libs/database/collection/collectionmanager_location.cpp:282
+#: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
 msgstr "Biltegiratzeko euskarria esklusiboki identifika daiteke."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:294
+#: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
 msgid "The collection is located on your harddisk"
 msgstr "Bilduma disko gogorrean kokatuta dago."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:332
+#: core/libs/database/collection/collectionmanager_location.cpp:334
 #, kde-format
 msgid ""
 "This is a CD/DVD, which is identified by the label that you can set in your "
@@ -28301,7 +28315,7 @@ msgstr ""
 "etiketa esklusiboak zure CD eta DVDei, hauek digiKam-ekin erabiltzeko asmoa "
 "baduzu bederen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:347
+#: core/libs/database/collection/collectionmanager_location.cpp:349
 #, kde-format
 msgid ""
 "This is a CD/DVD. It will be identified by the label (\"%1\")that you have "
@@ -28313,7 +28327,7 @@ msgstr ""
 "digiKam-ekin erabiltzeko, gogoratu hauei etiketa esklusibo bat ematea baita "
 "ere."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:363
+#: core/libs/database/collection/collectionmanager_location.cpp:365
 #, kde-format
 msgid ""
 "This is a removable storage medium that will be identified by its label "
@@ -28322,7 +28336,7 @@ msgstr ""
 "Biltegiratze aldagarriaren euskarri bat da, bere etiketarengatik (\"%1\") "
 "identifikatuko dena."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:379
+#: core/libs/database/collection/collectionmanager_location.cpp:381
 #, kde-format
 msgid ""
 "This entry will only be identified by the path where it is found on your "
@@ -28333,7 +28347,7 @@ msgstr ""
 "identifikatuko da.Ez dago identifikatzeko (UUID, etiketa) zehaztasun "
 "gehiagorik."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:396
+#: core/libs/database/collection/collectionmanager_location.cpp:398
 #, kde-format
 msgid ""
 "It is not possible on your system to identify the storage medium of this "
@@ -28344,7 +28358,7 @@ msgstr ""
 "identifikatzea. Fitxategiaren bide-izena erabiliko da soilik "
 "identifikatzaile gisa. Lokaleko disko-gogorrarekin ongi funtzionatuko du."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:421
+#: core/libs/database/collection/collectionmanager_location.cpp:423
 #, kde-format
 msgid ""
 "You need to locally mount your Samba share. Sorry, digiKam does currently "
@@ -28353,7 +28367,7 @@ msgstr ""
 "Samba-ren partekatzea lokalki muntatuta egon behar du. Oraingoz digiKam-ek "
 "ez du smb:// URLrik onartzen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:426
+#: core/libs/database/collection/collectionmanager_location.cpp:428
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your network storage must be set up to be accessible as files and folders "
@@ -28366,13 +28380,13 @@ msgstr ""
 "sistema eragilearen bidez atzitzeko. digiKam-ek ez du urruneko URLrik "
 "onartzen."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:463
+#: core/libs/database/collection/collectionmanager_location.cpp:465
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
 msgstr ""
 "Bide-izen berdinean badago lehendik ere sarean partekatutako bilduma bat."
 
-#: core/libs/database/collection/collectionmanager_location.cpp:476
+#: core/libs/database/collection/collectionmanager_location.cpp:478
 #, kde-format
 msgid ""
 "The network share will be identified by the path you selected. If the path "
@@ -33094,80 +33108,80 @@ msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Lentearen zuzenketa automatikoa"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:381
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "\"%1\" kamera"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:383
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Lentea: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:385
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Gaiaren distantzia:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:387
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Irekidura: "
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:389
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Fokuaren luzera:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:391
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
 #, fuzzy, kde-format
 #| msgid "Contrast:"
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Kontrastea:"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "gaituta"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:393
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "DKG zuzenketa"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:400
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
 #, fuzzy, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "desgaituta"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "DKG zuzenketa"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "ÑSA zuzenketa"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -44341,7 +44355,13 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Garatzailea (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:108
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
+#, fuzzy, kde-format
+#| msgid "Configure this column"
+msgid "Configure Notifications"
+msgstr "konfigurazioa zutabe hau"
+
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -51345,21 +51365,21 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Karpeta"
 
-#: core/showfoto/main/main.cpp:131
+#: core/showfoto/main/main.cpp:138
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:149
+#: core/showfoto/main/main.cpp:156
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Ireki beharreko fitxategia(k) edo karpeta(k)"
 
-#: core/showfoto/main/main.cpp:180
+#: core/showfoto/main/main.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
