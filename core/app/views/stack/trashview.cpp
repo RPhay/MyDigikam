@@ -420,7 +420,7 @@ QUrl TrashView::lastSelectedItemUrl() const
 
 void TrashView::selectLastSelected()
 {
-    if (d->model->isEmpty())
+    if      (d->model->isEmpty())
     {
         d->lastSelectedItem  = DTrashItemInfo();
         d->lastSelectedIndex = QModelIndex();
