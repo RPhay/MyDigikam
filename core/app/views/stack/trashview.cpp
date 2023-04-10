@@ -110,6 +110,7 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->setShowGrid(false);
     d->tableView->setSortingEnabled(true);
     d->tableView->sortByColumn(DTrashItemModel::DTrashTimeStamp, Qt::DescendingOrder);
+    d->tableView->setContextMenuPolicy(Qt::CustomContextMenu);
 
     // Action Buttons
 
@@ -165,6 +166,9 @@ TrashView::TrashView(QWidget* const parent)
     connect(d->deleteAction, SIGNAL(triggered()),
             this, SLOT(slotDeleteSelectedItems()));
 
+    connect(this, SIGNAL(signalEmptytrash()),
+            this, SLOT(slotDeleteAllItems()));
+
     connect(d->deleteAllAction, SIGNAL(triggered()),
             this, SLOT(slotDeleteAllItems()));
 
@@ -173,6 +177,9 @@ TrashView::TrashView(QWidget* const parent)
 
     connect(d->tableView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotChangeLastSelectedItem(QModelIndex,QModelIndex)));
+
+    connect(d->tableView, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotContextMenuEmptyTrash(QPoint)));
 }
 
 TrashView::~TrashView()
@@ -372,6 +379,7 @@ void TrashView::slotDataChanged()
         d->undoButton->setEnabled(false);
         d->deleteButton->setEnabled(false);
         d->restoreButton->setEnabled(false);
+
         return;
     }
 
@@ -383,7 +391,19 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
 {
     d->lastSelectedIndex = curr;
     d->lastSelectedItem  = d->model->itemForIndex(curr);
+
     Q_EMIT selectionChanged();
+}
+
+void TrashView::slotContextMenuEmptyTrash(const QPoint& pos)
+{
+    QMenu* const emptyTrashMenu = new QMenu(this);
+    emptyTrashMenu->addSection(i18n("Delete"));
+    emptyTrashMenu->addAction(d->deleteAllAction);
+    emptyTrashMenu->addAction(d->deleteAction);
+    emptyTrashMenu->popup(d->tableView->viewport()->mapToGlobal(pos));
+
+    return;
 }
 
 void TrashView::setThumbnailSize(const ThumbnailSize& thumbSize)

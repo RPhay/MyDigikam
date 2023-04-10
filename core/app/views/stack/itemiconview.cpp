@@ -297,6 +297,9 @@ void ItemIconView::setupConnections()
     connect(d->albumManager, SIGNAL(signalAlbumsCleared()),
             this, SLOT(slotAlbumsCleared()));
 
+    connect(d->albumManager, SIGNAL(signalEmptyTrash()),
+            d->trashView, SIGNAL(signalEmptytrash()));
+
     // -- IconView Connections -------------------------------------
 
     connect(d->iconView->model(), SIGNAL(rowsInserted(QModelIndex,int,int)),

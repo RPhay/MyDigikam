@@ -488,6 +488,7 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void signalPAlbumsDirty(const QHash<int, int>&);
+    void signalEmptyTrash();
 
     //@}
 
