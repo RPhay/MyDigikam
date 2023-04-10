@@ -105,7 +105,7 @@ public:
     QVariant data(const QModelIndex& index, int role)                       const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
-    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
+    void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)               override;
 
 public Q_SLOTS:
 

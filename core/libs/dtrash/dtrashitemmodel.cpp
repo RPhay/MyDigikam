@@ -144,11 +144,17 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
         QVariant var = QPixmap();
+
         return var;
+
 #else
+
         return QVariant(QVariant::Pixmap);
+
 #endif
+
     }
 
     if ((role == Qt::ToolTipRole) && (index.column() == DTrashRelPath))

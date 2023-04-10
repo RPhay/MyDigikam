@@ -151,7 +151,7 @@ void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName
     {
         // Failback to date encoded as string using locale.
         // This is an older way to store date in JSOn, which do not support change in locale.
-        // This is wy ISO format is now used.
+        // This is why ISO format is now used.
 
         itemInfo.deletionTimestamp  = QDateTime::fromString(
                                       fileInfoObj.value(DELETIONTIMESTAMP_JSON_KEY).toString());
@@ -233,7 +233,8 @@ QString DTrash::createJsonRecordForFile(qlonglong imageId,
 }
 
 QString DTrash::getAvialableJsonFilePathInTrash(const QString& collectionPath,
-                                                const QString& baseName, int version)
+                                                const QString& baseName,
+                                                int version)
 {
     QString pathToCreateJsonFile = collectionPath + QLatin1Char('/')                        +
                                    TRASH_FOLDER + QLatin1Char('/')                          +
