@@ -139,6 +139,7 @@ void ItemIconView::slotDispatchImageSelected()
     if (viewMode() == StackedView::TrashViewMode)
     {
         d->rightSideBar->itemChanged(d->trashView->lastSelectedItemUrl());
+
         return;
     }
 
@@ -151,6 +152,7 @@ void ItemIconView::slotDispatchImageSelected()
     if (list.isEmpty())
     {
         d->stackedview->setPreviewItem();
+
         Q_EMIT signalImageSelected(list, allImages);
         Q_EMIT signalNoCurrentItem();
     }

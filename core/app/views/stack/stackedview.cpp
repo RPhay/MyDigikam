@@ -48,7 +48,7 @@
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
 #   include "mapwidgetview.h"
@@ -75,7 +75,7 @@ public:
 
         mediaPlayerView (nullptr),
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
 
@@ -105,7 +105,7 @@ public:
 
     MediaPlayerView*  mediaPlayerView;
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
 
@@ -155,7 +155,7 @@ StackedView::StackedView(QWidget* const parent)
     d->mediaPlayerView->setObjectName(QLatin1String("main_media_player"));
     d->mediaPlayerView->setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
     d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
     d->stackMap[addWidget(d->imagePreviewView)] = PreviewImageMode;
@@ -173,7 +173,7 @@ StackedView::StackedView(QWidget* const parent)
 
     d->stackMap[addWidget(d->mediaPlayerView)]  = MediaPlayerMode;
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
     setViewMode(IconViewMode);
     setAttribute(Qt::WA_DeleteOnClose);
@@ -235,7 +235,8 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
+
 }
 
 StackedView::~StackedView()
@@ -253,6 +254,7 @@ void StackedView::readSettings()
 void StackedView::setDockArea(QMainWindow* dockArea)
 {
     // Attach the thumbbar dock to the given dock area and place it initially on top.
+
     d->dockArea = dockArea;
     d->thumbBarDock->setParent(d->dockArea);
     d->dockArea->addDockWidget(Qt::TopDockWidgetArea, d->thumbBarDock);
@@ -271,6 +273,7 @@ ItemThumbnailBar* StackedView::thumbBar() const
 
 void StackedView::slotEscapePreview()
 {
+
 #ifdef HAVE_MEDIAPLAYER
 
     if (viewMode() == MediaPlayerMode)
@@ -318,7 +321,7 @@ MediaPlayerView* StackedView::mediaPlayerView() const
     return d->mediaPlayerView;
 }
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
 bool StackedView::isInSingleFileMode() const
 {
@@ -344,11 +347,12 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
     {
         if (viewMode() == MediaPlayerMode)
         {
+
 #ifdef HAVE_MEDIAPLAYER
 
             d->mediaPlayerView->setCurrentItem();
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
         }
         else if (viewMode() == PreviewImageMode)
@@ -374,7 +378,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
             setViewMode(MediaPlayerMode);
             d->mediaPlayerView->setCurrentItem(info.fileUrl(), !previous.isNull(), !next.isNull());
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
         }
         else // Static image or Raw image.
@@ -388,7 +392,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 
                 d->mediaPlayerView->setCurrentItem();
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
             }
 
@@ -400,6 +404,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
         }
 
         // do not touch the selection, only adjust current info
+
         QModelIndex currentIndex = d->thumbBar->imageSortFilterModel()->indexForItemInfo(info);
         d->thumbBar->selectionModel()->setCurrentIndex(currentIndex, QItemSelectionModel::NoUpdate);
     }
@@ -479,6 +484,7 @@ void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorized
     QModelIndex currentIndex              = toModel->indexForItemInfo(from->currentInfo());
 
     // sync selection
+
     QItemSelection selection              = from->selectionModel()->selection();
     QItemSelection newSelection;
 
@@ -494,6 +500,7 @@ void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorized
     if (currentIndex.isValid())
     {
         // set current info
+
         to->setCurrentIndex(currentIndex);
     }
 
@@ -582,6 +589,7 @@ bool StackedView::minZoom()
 void StackedView::setZoomFactor(double z)
 {
     // Giving a null anchor means to use the current view center
+
     d->imagePreviewView->layout()->setZoomFactor(z, QPoint());
 }
 
