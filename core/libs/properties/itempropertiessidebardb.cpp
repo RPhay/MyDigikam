@@ -48,6 +48,7 @@
 #include "itempropertiesversionstab.h"
 #include "itemposition.h"
 #include "tagscache.h"
+#include "dtrash.h"
 
 #ifdef HAVE_MARBLE
 #   include "itempropertiesgpstab.h"
@@ -150,7 +151,7 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url,
     // Special case if item come from a trash view. ItemInfo will be empty as item is removed from the database.
     // We need to use the DMetadata based method to populated the properties view.
 
-    if (url.path().contains(QLatin1String(".dtrash")))
+    if (url.path().contains(DTrash::TRASH_FOLDER))
     {
         ItemPropertiesSideBar::itemChanged(url);
 
