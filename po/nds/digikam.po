@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:44+0000\n"
+"POT-Creation-Date: 2023-04-11 00:45+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1421,7 +1421,7 @@ msgstr ""
 "blifft de Funkschoon \"Klöörpleeg\" utmaakt, bet Du disse Saak richt hest.</"
 "p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3260,7 +3260,7 @@ msgstr "Filtern"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:603
+#: core/app/views/stack/itemiconview_items.cpp:605
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3316,87 +3316,95 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "&Warktüüch"
 
-#: core/app/views/stack/trashview.cpp:116
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "Torüchnehmen"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, fuzzy, kde-format
 msgid "Restore"
 msgstr "Wedderherstellen"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:123
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Opstunns utsöcht Weert vun de List wegmaken"
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete..."
 msgstr "Wegdoon"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:132
 #, fuzzy, kde-format
 #| msgid "Delete File Permanently"
 msgid "Selected Items Permanently"
 msgstr "Datei duerhaftig wegdoon"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:135
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgid "All Items Permanently"
 msgstr "Duerhaftig wegdoon"
 
-#: core/app/views/stack/trashview.cpp:245
+#: core/app/views/stack/trashview.cpp:252
 #, fuzzy, kde-format
 msgid "Confirm Undo"
 msgstr "Instellen"
 
-#: core/app/views/stack/trashview.cpp:246
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:253
+#: core/app/views/stack/trashview.cpp:278
 #, fuzzy, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
 msgstr[1] "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
 
-#: core/app/views/stack/trashview.cpp:270
+#: core/app/views/stack/trashview.cpp:277
 #, fuzzy, kde-format
 msgid "Confirm Restore"
 msgstr "Korrelatschoon:"
 
-#: core/app/views/stack/trashview.cpp:299
-#: core/app/views/stack/trashview.cpp:349
+#: core/app/views/stack/trashview.cpp:306
+#: core/app/views/stack/trashview.cpp:356
 #, fuzzy, kde-format
 msgid "Confirm Deletion"
 msgstr "Korrelatschoon:"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:307
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
 msgstr[1] "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
 
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:357
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Büst Du seker, wat Du de utsöchte Söök \"%1\" wegdoon wullt?"
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:401
+#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#, kde-format
+msgid "Delete"
+msgstr "Wegdoon"
+
+#: core/app/views/stack/trashview.cpp:459
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -4275,7 +4283,7 @@ msgstr "Tieteenheit:"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:254
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -27736,6 +27744,12 @@ msgstr ""
 msgid "Context menu"
 msgstr "Rechtsklickmenü"
 
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
+#: core/libs/database/utils/ifaces/dio.cpp:822
+#, kde-format
+msgid "Empty Trash"
+msgstr ""
+
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, fuzzy, kde-format
 msgctxt "@info: generate album name for exporting"
@@ -29231,22 +29245,10 @@ msgstr "Biller sekern"
 msgid "Move Files"
 msgstr "Video-Dateien"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, kde-format
-msgid "Delete"
-msgstr "Wegdoon"
-
 #: core/libs/database/utils/ifaces/dio.cpp:817
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Wedderherstellen"
-
-#: core/libs/database/utils/ifaces/dio.cpp:822
-#, kde-format
-msgid "Empty Trash"
-msgstr ""
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
@@ -35102,12 +35104,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Hülp"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:259
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "Smuck Parkett"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Opstelltiet"
@@ -38276,7 +38278,7 @@ msgstr "<i>nich ännert</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:595
+#: core/libs/properties/itempropertiessidebardb.cpp:605
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38287,7 +38289,7 @@ msgstr "nich verföögbor"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #: core/libs/properties/itempropertiestab.cpp:467
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38299,7 +38301,7 @@ msgstr "Nee"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38567,8 +38569,8 @@ msgstr "Nich afstimmt"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:620
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:630
+#: core/libs/properties/itempropertiessidebardb.cpp:643
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38583,7 +38585,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3MPx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:642
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38591,7 +38593,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:684
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38599,7 +38601,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -38619,7 +38621,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verlöven: "
 
-#: core/libs/properties/itempropertiessidebardb.cpp:625
+#: core/libs/properties/itempropertiessidebardb.cpp:635
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

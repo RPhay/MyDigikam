@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:44+0000\n"
+"POT-Creation-Date: 2023-04-11 00:45+0000\n"
 "PO-Revision-Date: 2023-02-26 17:16+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1359,7 +1359,7 @@ msgstr ""
 "nahi baduzu, hautatu \"Bai\" hemen, bestela hautatu \"Ez\", eta \"Kolore "
 "kudeaketa\" eginbidea desgaitu egingo da arazo hau ebazten duzun arte.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3091,7 +3091,7 @@ msgstr "Iragazkiak"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Ezin ireki erroko albuma. Ez da kokaleku fisikoa."
 
-#: core/app/views/stack/itemiconview_items.cpp:603
+#: core/app/views/stack/itemiconview_items.cpp:605
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3153,83 +3153,91 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Tresnak"
 
-#: core/app/views/stack/trashview.cpp:116
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "Desegin"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Lehengoratu bakarrik zakarrontziko azken sarrera."
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Restore"
 msgstr "Leheneratu"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Lehengoratu zakarrontzitik fitxategi-hautapena."
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Delete..."
 msgstr "Ezabatu..."
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:132
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Hautatutako elementuak betiko"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Elementu denak betiko"
 
-#: core/app/views/stack/trashview.cpp:245
+#: core/app/views/stack/trashview.cpp:252
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Berretsi desegitea"
 
-#: core/app/views/stack/trashview.cpp:246
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:253
+#: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Ziur zaude elementu %1 lehengoratu nahi duzula?"
 msgstr[1] "Ziur zaude %1 elementu lehengoratu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:270
+#: core/app/views/stack/trashview.cpp:277
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Berretsi leheneratzea"
 
-#: core/app/views/stack/trashview.cpp:299
-#: core/app/views/stack/trashview.cpp:349
+#: core/app/views/stack/trashview.cpp:306
+#: core/app/views/stack/trashview.cpp:356
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Berretsi ezabatzea"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:307
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Ziur zaude elementu %1 betiko ezabatu nahi duzula?"
 msgstr[1] "Ziur zaude %1 elementu betiko ezabatu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:357
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ziur zaude elementu GUZTIAK behin betiko ezabatu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:401
+#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#, kde-format
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: core/app/views/stack/trashview.cpp:459
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elementu hautatuta"
@@ -4104,7 +4112,7 @@ msgstr "Unitatea"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:254
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -27602,6 +27610,13 @@ msgstr ""
 msgid "Context menu"
 msgstr "Testuinguruko menua"
 
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
+#: core/libs/database/utils/ifaces/dio.cpp:822
+#, fuzzy, kde-format
+#| msgid "Trash"
+msgid "Empty Trash"
+msgstr "Hustu zakarrontzia"
+
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, fuzzy, kde-format
 #| msgid "Rating: "
@@ -29139,24 +29154,11 @@ msgstr "Mugitu irudiak"
 msgid "Move Files"
 msgstr "Mugitu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, kde-format
-msgid "Delete"
-msgstr "Ezabatu"
-
 #: core/libs/database/utils/ifaces/dio.cpp:817
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
 msgstr "Leheneratu"
-
-#: core/libs/database/utils/ifaces/dio.cpp:822
-#, fuzzy, kde-format
-#| msgid "Trash"
-msgid "Empty Trash"
-msgstr "Hustu zakarrontzia"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
@@ -35214,12 +35216,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Laguntza"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:259
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "Parket apaingarria"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Ezabatze-ordua"
@@ -38477,7 +38479,7 @@ msgstr "<i>aldatu gabea</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:595
+#: core/libs/properties/itempropertiessidebardb.cpp:605
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38488,7 +38490,7 @@ msgstr "ez dago eskuragarri"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #: core/libs/properties/itempropertiestab.cpp:467
 #, fuzzy, kde-format
 #| msgid "No"
@@ -38500,7 +38502,7 @@ msgstr "Ez"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -38768,8 +38770,8 @@ msgstr "Kalibratu gabea"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:620
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:630
+#: core/libs/properties/itempropertiessidebardb.cpp:643
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38784,7 +38786,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:642
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38792,7 +38794,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:684
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38800,7 +38802,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -38820,7 +38822,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Bertsioak"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:625
+#: core/libs/properties/itempropertiessidebardb.cpp:635
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

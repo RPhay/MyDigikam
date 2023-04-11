@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:44+0000\n"
+"POT-Creation-Date: 2023-04-11 00:45+0000\n"
 "PO-Revision-Date: 2023-04-06 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1313,7 +1313,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2967,7 +2967,7 @@ msgstr "ფილტრები"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:603
+#: core/app/views/stack/itemiconview_items.cpp:605
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3023,83 +3023,91 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "ხელსაწყოები"
 
-#: core/app/views/stack/trashview.cpp:116
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "მონიშნული ფაილების აღდგენა სანაგვე ყუთიდან."
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Delete..."
 msgstr "წაშლა..."
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:132
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "მონიშნული ელემენტი სამუდამოდ"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "All Items Permanently"
 msgstr "ყველა ელემენტი სამუდამოდ"
 
-#: core/app/views/stack/trashview.cpp:245
+#: core/app/views/stack/trashview.cpp:252
 #, kde-format
 msgid "Confirm Undo"
 msgstr "დაადასტურეთ გაუქმება"
 
-#: core/app/views/stack/trashview.cpp:246
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:253
+#: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
 msgstr[1] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
 
-#: core/app/views/stack/trashview.cpp:270
+#: core/app/views/stack/trashview.cpp:277
 #, kde-format
 msgid "Confirm Restore"
 msgstr "დაადასტურეთ აღდგენა"
 
-#: core/app/views/stack/trashview.cpp:299
-#: core/app/views/stack/trashview.cpp:349
+#: core/app/views/stack/trashview.cpp:306
+#: core/app/views/stack/trashview.cpp:356
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "წაშლის დადასტურება"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:307
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:357
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:401
+#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#, kde-format
+msgid "Delete"
+msgstr "წაშლა"
+
+#: core/app/views/stack/trashview.cpp:459
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
@@ -3936,7 +3944,7 @@ msgstr "განყოფილება"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:254
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -25274,6 +25282,12 @@ msgstr ""
 msgid "Context menu"
 msgstr "კონტექსტური მენიუ"
 
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
+#: core/libs/database/utils/ifaces/dio.cpp:822
+#, kde-format
+msgid "Empty Trash"
+msgstr "ნაგვის დაცარიელება"
+
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
 msgctxt "@info: generate album name for exporting"
@@ -26581,22 +26595,10 @@ msgstr "გამოსახულებების გადატანა"
 msgid "Move Files"
 msgstr "ფაილების გადატანა"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, kde-format
-msgid "Delete"
-msgstr "წაშლა"
-
 #: core/libs/database/utils/ifaces/dio.cpp:817
 #, kde-format
 msgid "Restore Trash"
 msgstr "ნაგვის ყუთიდან აღდგენა"
-
-#: core/libs/database/utils/ifaces/dio.cpp:822
-#, kde-format
-msgid "Empty Trash"
-msgstr "ნაგვის დაცარიელება"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
@@ -31887,12 +31889,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "დახმარება"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:259
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, kde-format
 msgid "Relative Path"
 msgstr "შეფარდებითი ბილიკი"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Deletion Time"
 msgstr "წაშლის დრო"
@@ -34864,7 +34866,7 @@ msgstr "შეუცვლელი"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:595
+#: core/libs/properties/itempropertiessidebardb.cpp:605
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -34874,7 +34876,7 @@ msgstr "მიუწვდომელი"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -34885,7 +34887,7 @@ msgstr "არა"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -35116,8 +35118,8 @@ msgstr "კალიბრაციის გარეშე"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:620
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:630
+#: core/libs/properties/itempropertiessidebardb.cpp:643
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -35130,21 +35132,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:642
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:684
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 ( %2 )"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -35162,7 +35164,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "ვერსიები"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:625
+#: core/libs/properties/itempropertiessidebardb.cpp:635
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

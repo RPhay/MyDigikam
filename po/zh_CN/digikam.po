@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:44+0000\n"
-"PO-Revision-Date: 2023-03-27 11:58\n"
+"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"PO-Revision-Date: 2023-04-10 14:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1307,7 +1307,7 @@ msgstr ""
 "<p>ICC 色彩特性文件所在的文件夹无效。</p><p>要重新设置该文件夹，请选择“是”。"
 "如果选择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2999,7 +2999,7 @@ msgstr "筛选"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "无法打开根相册。因为它不是物理位置。"
 
-#: core/app/views/stack/itemiconview_items.cpp:603
+#: core/app/views/stack/itemiconview_items.cpp:605
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3059,81 +3059,89 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "工具"
 
-#: core/app/views/stack/trashview.cpp:116
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "撤销"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "还原回收站中的最近一个条目。"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Restore"
 msgstr "还原"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "还原回收站中选中的文件"
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Delete..."
 msgstr "删除..."
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "永久移除回收站中选中项目的或者所有项目。"
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:132
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "彻底删除所选项"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "All Items Permanently"
 msgstr "彻底删除所有项"
 
-#: core/app/views/stack/trashview.cpp:245
+#: core/app/views/stack/trashview.cpp:252
 #, kde-format
 msgid "Confirm Undo"
 msgstr "确认撤销"
 
-#: core/app/views/stack/trashview.cpp:246
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:253
+#: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "您确定要还原 %1 项吗？"
 
-#: core/app/views/stack/trashview.cpp:270
+#: core/app/views/stack/trashview.cpp:277
 #, kde-format
 msgid "Confirm Restore"
 msgstr "确认还原"
 
-#: core/app/views/stack/trashview.cpp:299
-#: core/app/views/stack/trashview.cpp:349
+#: core/app/views/stack/trashview.cpp:306
+#: core/app/views/stack/trashview.cpp:356
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "确认删除"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:307
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "您确定要彻底删除 %1 项吗？"
 
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:357
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您确定要彻底删除所有项目吗？"
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:401
+#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#, kde-format
+msgid "Delete"
+msgstr "删除"
+
+#: core/app/views/stack/trashview.cpp:459
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
@@ -3991,7 +3999,7 @@ msgstr "单位"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:254
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -22003,14 +22011,14 @@ msgstr "导出到 Flickr(&F)..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "输入 Flickr 登录 URL"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
 msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
-msgstr ""
+msgstr "从外部浏览器复制包含“oauth_token”字段的完整 URL："
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -25549,12 +25557,10 @@ msgid "Rename Album (%1)"
 msgstr "重命名相册 (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "重命名相册 (%1)"
+msgstr "重命名相册根 (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -26074,6 +26080,12 @@ msgstr ""
 #, kde-format
 msgid "Context menu"
 msgstr "右键菜单"
+
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
+#: core/libs/database/utils/ifaces/dio.cpp:822
+#, kde-format
+msgid "Empty Trash"
+msgstr "清空回收站"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
@@ -27469,22 +27481,10 @@ msgstr "移动图像"
 msgid "Move Files"
 msgstr "移动文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, kde-format
-msgid "Delete"
-msgstr "删除"
-
 #: core/libs/database/utils/ifaces/dio.cpp:817
 #, kde-format
 msgid "Restore Trash"
 msgstr "还原回收站"
-
-#: core/libs/database/utils/ifaces/dio.cpp:822
-#, kde-format
-msgid "Empty Trash"
-msgstr "清空回收站"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
@@ -28567,12 +28567,10 @@ msgid "Manifests"
 msgstr "清单"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "FFmpeg 配置"
+msgstr "OpenCV 配置"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -32973,12 +32971,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "帮助"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:259
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, kde-format
 msgid "Relative Path"
 msgstr "相对路径"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Deletion Time"
 msgstr "删除时间"
@@ -36035,7 +36033,7 @@ msgstr "未更改"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:595
+#: core/libs/properties/itempropertiessidebardb.cpp:605
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36045,7 +36043,7 @@ msgstr "不可用"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -36056,7 +36054,7 @@ msgstr "否"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -36287,8 +36285,8 @@ msgstr "未校准"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:620
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:630
+#: core/libs/properties/itempropertiessidebardb.cpp:643
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36301,21 +36299,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:642
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 位/像素"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:684
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -36333,7 +36331,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "版本"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:625
+#: core/libs/properties/itempropertiessidebardb.cpp:635
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
