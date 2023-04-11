@@ -469,13 +469,11 @@ void TrashView::selectLastSelected()
     {
         d->tableView->selectRow(0);
         d->lastSelectedIndex = d->model->index(0, 0);
-        d->tableView->scrollTo(QModelIndex(), QAbstractItemView::EnsureVisible);
     }
     else
     {
         d->tableView->selectRow(d->lastSelectedIndex.row());
         d->lastSelectedIndex = d->model->index(d->lastSelectedIndex.row(), 0);
-        d->tableView->scrollTo(d->lastSelectedIndex, QAbstractItemView::EnsureVisible);
     }
 
     if (!d->lastSelectedIndex.isValid())
@@ -485,6 +483,7 @@ void TrashView::selectLastSelected()
     else
     {
         d->lastSelectedItem = d->model->itemForIndex(d->lastSelectedIndex);
+        d->tableView->scrollTo(d->lastSelectedIndex, QAbstractItemView::EnsureVisible);
     }
 
     Q_EMIT selectionChanged();
