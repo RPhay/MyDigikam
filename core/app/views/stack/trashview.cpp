@@ -19,6 +19,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QTableView>
+#include <QToolButton>
 #include <QPushButton>
 #include <QHeaderView>
 #include <QListView>
@@ -55,8 +56,8 @@ public:
           btnsLayout        (nullptr),
           tableView         (nullptr),
           undoButton        (nullptr),
-          restoreButton     (nullptr),
           deleteButton      (nullptr),
+          restoreAction     (nullptr),
           deleteAction      (nullptr),
           deleteAllAction   (nullptr),
           thumbSize         (ThumbnailSize::Large)
@@ -71,8 +72,8 @@ public:
     QHBoxLayout*               btnsLayout;
     QTableView*                tableView;
     QPushButton*               undoButton;
-    QPushButton*               restoreButton;
     QPushButton*               deleteButton;
+    QAction*                   restoreAction;
     QAction*                   deleteAction;
     QAction*                   deleteAllAction;
 
@@ -114,17 +115,20 @@ TrashView::TrashView(QWidget* const parent)
 
     // Action Buttons
 
-    d->undoButton      = new QPushButton(i18n("Undo"),                   this);
+    d->undoButton      = new QPushButton(i18n("Undo"), this);
     d->undoButton->setToolTip(i18n("Restore only the last entry in the trash-bin."));
     d->undoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
     d->undoButton->setEnabled(false);
 
-    d->restoreButton   = new QPushButton(i18n("Restore"),                this);
-    d->restoreButton->setToolTip(i18n("Restore selection of files from the trash-bin."));
-    d->restoreButton->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-    d->restoreButton->setEnabled(false);
+    QToolButton* const restoreButton = new QToolButton(this);
+    d->restoreAction                 = new QAction(i18n("Restore"), this);
+    d->restoreAction->setToolTip(i18n("Restore selection of files from the trash-bin."));
+    d->restoreAction->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+    d->restoreAction->setEnabled(false);
+    restoreButton->setDefaultAction(d->restoreAction);
+    restoreButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
-    d->deleteButton    = new QPushButton(i18n("Delete..."),              this);
+    d->deleteButton    = new QPushButton(i18n("Delete..."), this);
     d->deleteButton->setToolTip(i18n("Remove permanently the items selection or all items from the trash-bin."));
     d->deleteButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     d->deleteButton->setEnabled(false);
@@ -146,8 +150,11 @@ TrashView::TrashView(QWidget* const parent)
     d->mainLayout->addWidget(d->tableView);
 
     d->btnsLayout->addWidget(d->undoButton);
-    d->btnsLayout->addWidget(d->restoreButton);
+    d->btnsLayout->addStretch();
+    d->btnsLayout->addWidget(restoreButton);
+    d->btnsLayout->addStretch();
     d->btnsLayout->addWidget(d->deleteButton);
+    d->btnsLayout->setStretchFactor(restoreButton, 5);
 
     d->mainLayout->addLayout(d->btnsLayout);
     d->mainLayout->setContentsMargins(QMargins());
@@ -157,7 +164,7 @@ TrashView::TrashView(QWidget* const parent)
     connect(d->undoButton, SIGNAL(released()),
             this, SLOT(slotUndoLastDeletedItems()));
 
-    connect(d->restoreButton, SIGNAL(released()),
+    connect(d->restoreAction, SIGNAL(triggered()),
             this, SLOT(slotRestoreSelectedItems()));
 
     connect(d->deleteAction, SIGNAL(triggered()),
@@ -201,12 +208,12 @@ void TrashView::slotSelectionChanged()
 {
     if (d->tableView->selectionModel()->hasSelection())
     {
-        d->restoreButton->setEnabled(true);
+        d->restoreAction->setEnabled(true);
         d->deleteAction->setEnabled(true);
     }
     else
     {
-        d->restoreButton->setEnabled(false);
+        d->restoreAction->setEnabled(false);
         d->deleteAction->setEnabled(false);
     }
 
@@ -378,7 +385,7 @@ void TrashView::slotDataChanged()
     {
         d->undoButton->setEnabled(false);
         d->deleteButton->setEnabled(false);
-        d->restoreButton->setEnabled(false);
+        d->restoreAction->setEnabled(false);
 
         return;
     }
@@ -398,6 +405,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
 void TrashView::slotContextMenuEmptyTrash(const QPoint& pos)
 {
     QMenu* const emptyTrashMenu = new QMenu(this);
+    emptyTrashMenu->addAction(d->restoreAction);
     emptyTrashMenu->addSection(i18n("Delete"));
     emptyTrashMenu->addAction(d->deleteAllAction);
     emptyTrashMenu->addAction(d->deleteAction);
