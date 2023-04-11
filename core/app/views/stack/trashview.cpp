@@ -66,24 +66,24 @@ public:
 
 public:
 
-    DTrashItemModel*            model;
-    ThumbnailAligningDelegate*  thumbDelegate;
-    QVBoxLayout*                mainLayout;
-    QHBoxLayout*                btnsLayout;
-    QTableView*                 tableView;
-    QPushButton*                undoButton;
-    QPushButton*                deleteButton;
-    QAction*                    restoreAction;
-    QAction*                    deleteAction;
-    QAction*                    deleteAllAction;
+    DTrashItemModel*               model;
+    ThumbnailAligningDelegate*     thumbDelegate;
+    QVBoxLayout*                   mainLayout;
+    QHBoxLayout*                   btnsLayout;
+    QTableView*                    tableView;
+    QPushButton*                   undoButton;
+    QPushButton*                   deleteButton;
+    QAction*                       restoreAction;
+    QAction*                       deleteAction;
+    QAction*                       deleteAllAction;
 
-    QModelIndex                 lastSelectedIndex;
+    QModelIndex                    lastSelectedIndex;
 
-    QHash<QString, QModelIndex> lastSelectedCache;
+    QHash<QString, DTrashItemInfo> lastTrashItemCache;
 
-    DTrashItemInfo              lastSelectedItem;
-    QModelIndexList             selectedIndexesToRemove;
-    ThumbnailSize               thumbSize;
+    DTrashItemInfo                 lastSelectedItem;
+    QModelIndexList                selectedIndexesToRemove;
+    ThumbnailSize                  thumbSize;
 };
 
 TrashView::TrashView(QWidget* const parent)
@@ -404,9 +404,9 @@ void TrashView::slotDataChanged()
 
 void TrashView::slotLoadingStarted()
 {
-    if (!d->model->trashAlbumPath().isEmpty() && d->lastSelectedIndex.isValid())
+    if (!d->model->trashAlbumPath().isEmpty() && !d->lastSelectedItem.isNull())
     {
-        d->lastSelectedCache[d->model->trashAlbumPath()] = d->lastSelectedIndex;
+        d->lastTrashItemCache[d->model->trashAlbumPath()] = d->lastSelectedItem;
     }
 }
 
@@ -414,12 +414,13 @@ void TrashView::slotLoadingFinished()
 {
     if (!d->model->trashAlbumPath().isEmpty())
     {
-        QModelIndex index = d->lastSelectedCache.value(d->model->trashAlbumPath());
+        DTrashItemInfo item = d->lastTrashItemCache.value(d->model->trashAlbumPath());
+        QModelIndex index   = d->model->indexForItem(item);
 
         if (index.isValid())
         {
             d->lastSelectedIndex = index;
-            d->lastSelectedItem  = d->model->itemForIndex(index);
+            d->lastSelectedItem  = item;
 
             selectLastSelected();
         }
