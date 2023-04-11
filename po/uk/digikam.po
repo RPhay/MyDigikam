@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:44+0000\n"
-"PO-Revision-Date: 2023-04-08 08:43+0300\n"
+"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"PO-Revision-Date: 2023-04-10 15:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1351,7 +1351,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:432
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2775,12 +2775,7 @@ msgid "All supported files (%1)"
 msgstr "усі файли, що підтримуються (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2791,17 +2786,11 @@ msgstr ""
 "IRC: %1 — #digikam\n"
 "Відгуки: %2\n"
 "\n"
-"Дата збирання: %3 (ціль: %4)"
+"Документація : %3\n"
+"Дата збирання: %4 (ціль: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2814,9 +2803,10 @@ msgstr ""
 "IRC: %1 — #digikam\n"
 "Відгуки: %2\n"
 "\n"
-"Дата збирання: %3 (ціль: %4)\n"
-"Модифікація: %5\n"
-"Гілка: %6"
+"Документація: %3\n"
+"Дата збирання: %4 (ціль: %5)\n"
+"Модифікація: %6\n"
+"Гілка: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3107,7 +3097,7 @@ msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 "Не вдалося відкрити кореневий альбом. Цей альбом немає фізичної адреси."
 
-#: core/app/views/stack/itemiconview_items.cpp:603
+#: core/app/views/stack/itemiconview_items.cpp:605
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3170,53 +3160,53 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Інструменти"
 
-#: core/app/views/stack/trashview.cpp:116
+#: core/app/views/stack/trashview.cpp:117
 #, kde-format
 msgid "Undo"
 msgstr "Вернути"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:118
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Відновити лише останній запис зі смітника."
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:122
 #, kde-format
 msgid "Restore"
 msgstr "Відновити"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:123
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Відновити позначені файли зі смітника"
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Delete..."
 msgstr "Вилучити…"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Вилучити остаточно позначені записи або усі записи зі смітника."
 
-#: core/app/views/stack/trashview.cpp:131
+#: core/app/views/stack/trashview.cpp:132
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Позначені записи остаточно"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:135
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Усі записи остаточно"
 
-#: core/app/views/stack/trashview.cpp:245
+#: core/app/views/stack/trashview.cpp:252
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Підтвердження скасування"
 
-#: core/app/views/stack/trashview.cpp:246
-#: core/app/views/stack/trashview.cpp:271
+#: core/app/views/stack/trashview.cpp:253
+#: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3225,18 +3215,18 @@ msgstr[1] "Ви справді хочете відновити %1 записи?"
 msgstr[2] "Ви справді хочете відновити %1 записів?"
 msgstr[3] "Ви справді хочете відновити запис?"
 
-#: core/app/views/stack/trashview.cpp:270
+#: core/app/views/stack/trashview.cpp:277
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Підтвердження відновлення"
 
-#: core/app/views/stack/trashview.cpp:299
-#: core/app/views/stack/trashview.cpp:349
+#: core/app/views/stack/trashview.cpp:306
+#: core/app/views/stack/trashview.cpp:356
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Підтвердити вилучення"
 
-#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:307
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3245,12 +3235,20 @@ msgstr[1] "Ви справді хочете вилучити %1 записи о�
 msgstr[2] "Ви справді хочете вилучити %1 записів остаточно?"
 msgstr[3] "Ви справді хочете вилучити запис остаточно?"
 
-#: core/app/views/stack/trashview.cpp:350
+#: core/app/views/stack/trashview.cpp:357
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ви справді хочете вилучити усе це остаточно?"
 
-#: core/app/views/stack/trashview.cpp:439
+#: core/app/views/stack/trashview.cpp:401
+#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
+#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
+#, kde-format
+msgid "Delete"
+msgstr "Вилучити"
+
+#: core/app/views/stack/trashview.cpp:459
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Позначено %1 з %2 записів"
@@ -4152,7 +4150,7 @@ msgstr "Одиниці"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:254
+#: core/libs/dtrash/dtrashitemmodel.cpp:260
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -27344,6 +27342,12 @@ msgstr ""
 msgid "Context menu"
 msgstr "Контекстне меню"
 
+#: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
+#: core/libs/database/utils/ifaces/dio.cpp:822
+#, kde-format
+msgid "Empty Trash"
+msgstr "Спорожнити смітник"
+
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
 #, kde-format
 msgctxt "@info: generate album name for exporting"
@@ -28808,22 +28812,10 @@ msgstr "Пересунути зображення"
 msgid "Move Files"
 msgstr "Пересунути файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:63
-#: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
-#, kde-format
-msgid "Delete"
-msgstr "Вилучити"
-
 #: core/libs/database/utils/ifaces/dio.cpp:817
 #, kde-format
 msgid "Restore Trash"
 msgstr "Відновити зі смітника"
-
-#: core/libs/database/utils/ifaces/dio.cpp:822
-#, kde-format
-msgid "Empty Trash"
-msgstr "Спорожнити смітник"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
@@ -34613,12 +34605,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Довідка"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:259
+#: core/libs/dtrash/dtrashitemmodel.cpp:265
 #, kde-format
 msgid "Relative Path"
 msgstr "Відносний шлях"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/libs/dtrash/dtrashitemmodel.cpp:270
 #, kde-format
 msgid "Deletion Time"
 msgstr "Час вилучення"
@@ -37762,7 +37754,7 @@ msgstr "без змін"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:595
+#: core/libs/properties/itempropertiessidebardb.cpp:605
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37772,7 +37764,7 @@ msgstr "недоступне"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -37783,7 +37775,7 @@ msgstr "Ні"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38020,8 +38012,8 @@ msgstr "Некалібрована"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:620
-#: core/libs/properties/itempropertiessidebardb.cpp:633
+#: core/libs/properties/itempropertiessidebardb.cpp:630
+#: core/libs/properties/itempropertiessidebardb.cpp:643
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38034,21 +38026,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Мпк)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:642
+#: core/libs/properties/itempropertiessidebardb.cpp:652
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 біт/піксель"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:674
+#: core/libs/properties/itempropertiessidebardb.cpp:684
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:689
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38066,7 +38058,7 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Версії"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:625
+#: core/libs/properties/itempropertiessidebardb.cpp:635
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -43568,10 +43560,9 @@ msgid "Developer (2004)"
 msgstr "Розробник (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Налаштувати цей стовпчик"
+msgstr "Налаштувати сповіщення"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
