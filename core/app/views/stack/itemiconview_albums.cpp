@@ -165,6 +165,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
     }
 
     Album* const album = albums.first();
+
     Q_EMIT signalAlbumSelected(album);
 
     if (d->useAlbumHistory && !d->labelsSearchHandler->isRestoringSelectionFromHistory())
@@ -187,7 +188,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
 
     d->iconView->openAlbum(albums);
 
-    if (album->isRoot())
+    if      (album->isRoot())
     {
         d->stackedview->setViewMode(StackedView::WelcomePageMode);
     }
@@ -431,7 +432,7 @@ void ItemIconView::slotRefresh()
             d->stackedview->mediaPlayerView()->reload();
             break;
 
-#endif //HAVE_MEDIAPLAYER
+#endif // HAVE_MEDIAPLAYER
 
         default:
             Album* const album = currentAlbum();
