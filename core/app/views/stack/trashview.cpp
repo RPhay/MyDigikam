@@ -421,10 +421,10 @@ void TrashView::slotLoadingFinished()
         {
             d->lastSelectedIndex = index;
             d->lastSelectedItem  = item;
-
-            selectLastSelected();
         }
     }
+
+    selectLastSelected();
 }
 
 void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModelIndex&)
@@ -463,18 +463,28 @@ void TrashView::selectLastSelected()
 {
     if      (d->model->isEmpty())
     {
-        d->lastSelectedItem  = DTrashItemInfo();
         d->lastSelectedIndex = QModelIndex();
     }
     else if (!d->lastSelectedIndex.isValid())
     {
         d->tableView->selectRow(0);
+        d->lastSelectedIndex = d->model->index(0, 0);
         d->tableView->scrollTo(QModelIndex(), QAbstractItemView::EnsureVisible);
     }
     else
     {
         d->tableView->selectRow(d->lastSelectedIndex.row());
+        d->lastSelectedIndex = d->model->index(d->lastSelectedIndex.row(), 0);
         d->tableView->scrollTo(d->lastSelectedIndex, QAbstractItemView::EnsureVisible);
+    }
+
+    if (!d->lastSelectedIndex.isValid())
+    {
+        d->lastSelectedItem = DTrashItemInfo();
+    }
+    else
+    {
+        d->lastSelectedItem = d->model->itemForIndex(d->lastSelectedIndex);
     }
 
     Q_EMIT selectionChanged();
