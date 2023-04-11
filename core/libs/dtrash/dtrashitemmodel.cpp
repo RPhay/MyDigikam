@@ -61,6 +61,8 @@ public:
     IOJobsThread*        itemsLoadingThread;
     ThumbnailLoadThread* thumbnailThread;
 
+    QString              trashAlbumPath;
+
     QStringList          failedThumbnails;
     QStringList          collectionThumbs;
     DTrashItemInfoList   data;
@@ -370,12 +372,20 @@ void DTrashItemModel::clearCurrentData()
 
 void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 {
+    Q_EMIT signalLoadingStarted();
+
+    d->trashAlbumPath = colPath;
+
     clearCurrentData();
 
     d->itemsLoadingThread = IOJobsManager::instance()->startDTrashItemsListingForCollection(colPath);
 
     connect(d->itemsLoadingThread, SIGNAL(collectionTrashItemInfo(DTrashItemInfo)),
             this, SLOT(append(DTrashItemInfo)),
+            Qt::QueuedConnection);
+
+    connect(d->itemsLoadingThread, SIGNAL(signalFinished()),
+            this, SIGNAL(signalLoadingFinished()),
             Qt::QueuedConnection);
 }
 
@@ -438,6 +448,11 @@ void DTrashItemModel::changeThumbSize(int size)
     }
 
     QTimer::singleShot(100, this, SLOT(refreshLayout()));
+}
+
+QString DTrashItemModel::trashAlbumPath() const
+{
+    return d->trashAlbumPath;
 }
 
 } // namespace Digikam

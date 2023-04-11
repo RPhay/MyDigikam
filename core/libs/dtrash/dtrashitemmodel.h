@@ -106,6 +106,7 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
     void sort(int column, Qt::SortOrder order = Qt::AscendingOrder)               override;
+    QString trashAlbumPath()                                                const;
 
 public Q_SLOTS:
 
@@ -137,6 +138,8 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void dataChange();
+    void signalLoadingStarted();
+    void signalLoadingFinished();
 
 private:
 

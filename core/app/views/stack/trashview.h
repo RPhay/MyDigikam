@@ -76,6 +76,8 @@ private Q_SLOTS:
     void slotRemoveAllItemsFromModel();
     void slotDeleteAllItems();
     void slotDataChanged();
+    void slotLoadingStarted();
+    void slotLoadingFinished();
     void slotChangeLastSelectedItem(const QModelIndex& curr, const QModelIndex& prev);
     void slotContextMenuEmptyTrash(const QPoint& pos);
 

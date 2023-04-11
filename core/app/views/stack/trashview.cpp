@@ -66,22 +66,24 @@ public:
 
 public:
 
-    DTrashItemModel*           model;
-    ThumbnailAligningDelegate* thumbDelegate;
-    QVBoxLayout*               mainLayout;
-    QHBoxLayout*               btnsLayout;
-    QTableView*                tableView;
-    QPushButton*               undoButton;
-    QPushButton*               deleteButton;
-    QAction*                   restoreAction;
-    QAction*                   deleteAction;
-    QAction*                   deleteAllAction;
+    DTrashItemModel*            model;
+    ThumbnailAligningDelegate*  thumbDelegate;
+    QVBoxLayout*                mainLayout;
+    QHBoxLayout*                btnsLayout;
+    QTableView*                 tableView;
+    QPushButton*                undoButton;
+    QPushButton*                deleteButton;
+    QAction*                    restoreAction;
+    QAction*                    deleteAction;
+    QAction*                    deleteAllAction;
 
-    QModelIndex                lastSelectedIndex;
+    QModelIndex                 lastSelectedIndex;
 
-    DTrashItemInfo             lastSelectedItem;
-    QModelIndexList            selectedIndexesToRemove;
-    ThumbnailSize              thumbSize;
+    QHash<QString, QModelIndex> lastSelectedCache;
+
+    DTrashItemInfo              lastSelectedItem;
+    QModelIndexList             selectedIndexesToRemove;
+    ThumbnailSize               thumbSize;
 };
 
 TrashView::TrashView(QWidget* const parent)
@@ -178,6 +180,12 @@ TrashView::TrashView(QWidget* const parent)
 
     connect(d->model, SIGNAL(dataChange()),
             this, SLOT(slotDataChanged()));
+
+    connect(d->model, SIGNAL(signalLoadingStarted()),
+            this, SLOT(slotLoadingStarted()));
+
+    connect(d->model, SIGNAL(signalLoadingFinished()),
+            this, SLOT(slotLoadingFinished()));
 
     connect(d->tableView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotChangeLastSelectedItem(QModelIndex,QModelIndex)));
@@ -392,6 +400,30 @@ void TrashView::slotDataChanged()
 
     d->undoButton->setEnabled(true);
     d->deleteButton->setEnabled(true);
+}
+
+void TrashView::slotLoadingStarted()
+{
+    if (!d->model->trashAlbumPath().isEmpty() && d->lastSelectedIndex.isValid())
+    {
+        d->lastSelectedCache[d->model->trashAlbumPath()] = d->lastSelectedIndex;
+    }
+}
+
+void TrashView::slotLoadingFinished()
+{
+    if (!d->model->trashAlbumPath().isEmpty())
+    {
+        QModelIndex index = d->lastSelectedCache.value(d->model->trashAlbumPath());
+
+        if (index.isValid())
+        {
+            d->lastSelectedIndex = index;
+            d->lastSelectedItem  = d->model->itemForIndex(index);
+
+            selectLastSelected();
+        }
+    }
 }
 
 void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModelIndex&)
