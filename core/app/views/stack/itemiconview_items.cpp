@@ -138,7 +138,16 @@ void ItemIconView::slotDispatchImageSelected()
 {
     if (viewMode() == StackedView::TrashViewMode)
     {
-        d->rightSideBar->itemChanged(d->trashView->lastSelectedItemUrl());
+        QUrl url = d->trashView->lastSelectedItemUrl();
+
+        if (url.isValid())
+        {
+            d->rightSideBar->itemChanged(url);
+        }
+        else
+        {
+            d->rightSideBar->slotNoCurrentItem();
+        }
 
         return;
     }
