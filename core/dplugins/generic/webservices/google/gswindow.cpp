@@ -486,13 +486,16 @@ void GSWindow::slotStartTransfer()
     {
         case GoogleService::GDrive:
         case GoogleService::GPhotoExport:
+        {
             if (d->widget->imagesList()->imageUrls().isEmpty())
             {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
                                       i18nc("@info", "No image selected. Please select which images should be uploaded."));
                 return;
             }
+
             break;
+        }
 
         case GoogleService::GPhotoImport:
             break;
@@ -501,6 +504,7 @@ void GSWindow::slotStartTransfer()
     switch (d->service)
     {
         case GoogleService::GDrive:
+        {
             if (!(d->talker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
@@ -523,9 +527,14 @@ void GSWindow::slotStartTransfer()
                     return;
                 }
             }
+
             break;
+        }
 
         default:
+        {
+            d->gphotoTalker->cancel();
+
             if (!(d->gphotoTalker->authenticated()))
             {
                 QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
@@ -563,6 +572,7 @@ void GSWindow::slotStartTransfer()
 
                 return;
             }
+        }
     }
 
     typedef QPair<QUrl, GSPhoto> Pair;

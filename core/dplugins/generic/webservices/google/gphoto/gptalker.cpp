@@ -106,6 +106,7 @@ public:
     QString                albumIdToUpload;
     QString                albumIdToImport;
     QString                previousImageId;
+    QString                currDescription;
 
     QStringList            descriptionList;
     QStringList            uploadTokenList;
@@ -308,8 +309,8 @@ bool GPTalker::addPhoto(const QString& photoPath,
     QUrl url(d->apiUrl.arg(QLatin1String("uploads")));
 
     // Save album ID and description to upload
-    d->descriptionList << info.description;
-    d->albumIdToUpload  = albumId;
+    d->currDescription = info.description;
+    d->albumIdToUpload = albumId;
 
     QString path(photoPath);
 
@@ -859,6 +860,8 @@ void GPTalker::parseResponseAddPhoto(const QByteArray& data)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "response" << data;
 
     d->uploadTokenList << QString::fromUtf8(data);
+    d->descriptionList << d->currDescription;
+
     Q_EMIT signalAddPhotoDone(1, QString());
 }
 

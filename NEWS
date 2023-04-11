@@ -466,4 +466,5 @@ BUGFIXES:
 418 ==> 462847 - The installation goes without problems but the program doesn’t start.
 419 ==> 463536 - digiKam 7.9 and 7.8 do not start on macOS 12.6.2.
 420 ==> 463940 - Unable to launch digiKam 7.9.0 on macOS 10.14.6 (Mojave).
-421 ==> 
+421 ==> 468383 - Wrong description in google photos after upload.
+422 ==> 
