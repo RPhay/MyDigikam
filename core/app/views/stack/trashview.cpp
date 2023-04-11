@@ -154,9 +154,6 @@ TrashView::TrashView(QWidget* const parent)
 
     // Signals and Slots connections
 
-    connect(d->tableView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(slotSelectionChanged()));
-
     connect(d->undoButton, SIGNAL(released()),
             this, SLOT(slotUndoLastDeletedItems()));
 
@@ -177,6 +174,9 @@ TrashView::TrashView(QWidget* const parent)
 
     connect(d->tableView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotChangeLastSelectedItem(QModelIndex,QModelIndex)));
+
+    connect(d->tableView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            this, SLOT(slotSelectionChanged()));
 
     connect(d->tableView, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotContextMenuEmptyTrash(QPoint)));
