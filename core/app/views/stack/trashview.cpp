@@ -438,6 +438,7 @@ void TrashView::slotChangeLastSelectedItem(const QModelIndex& curr, const QModel
 void TrashView::slotContextMenuEmptyTrash(const QPoint& pos)
 {
     QMenu* const emptyTrashMenu = new QMenu(this);
+    emptyTrashMenu->addSection(i18n("Selection"));
     emptyTrashMenu->addAction(d->restoreAction);
     emptyTrashMenu->addSection(i18n("Delete"));
     emptyTrashMenu->addAction(d->deleteAllAction);
