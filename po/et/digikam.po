@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"POT-Creation-Date: 2023-04-12 00:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1437,7 +1437,7 @@ msgstr ""
 "määrata, vali \"Jah\", vastasel juhul \"Ei\". Viimasel juhul on "
 "\"värvihalduse\" võimalused välja lülitatud, kuni sa probleemi lahendad.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3318,12 +3318,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtrid"
 
-#: core/app/views/stack/itemiconview_albums.cpp:317
+#: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Juuralbumi avamine nurjus. See ei ole füüsiline asukoht."
 
-#: core/app/views/stack/itemiconview_items.cpp:605
+#: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3384,84 +3384,84 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Tööriistad"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Undo"
 msgstr "Võta tagasi"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Restore"
 msgstr "Taasta"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Valitud piltide eemaldamine nimekirjast"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:133
 #, kde-format
 msgid "Delete..."
 msgstr "Kustuta ..."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:132
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Valitud elemendid jäädavalt"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:141
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Kõik elemendid jäädavalt"
 
-#: core/app/views/stack/trashview.cpp:252
+#: core/app/views/stack/trashview.cpp:267
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Tagasivõtmise kinnitus"
 
-#: core/app/views/stack/trashview.cpp:253
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:268
+#: core/app/views/stack/trashview.cpp:293
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Kas tõesti taastada %1 element?"
 msgstr[1] "Kas tõesti taastada %1 elementi?"
 
-#: core/app/views/stack/trashview.cpp:277
+#: core/app/views/stack/trashview.cpp:292
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Taastamise kinnitus"
 
-#: core/app/views/stack/trashview.cpp:306
-#: core/app/views/stack/trashview.cpp:356
+#: core/app/views/stack/trashview.cpp:321
+#: core/app/views/stack/trashview.cpp:371
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Kustutamise kinnitus"
 
-#: core/app/views/stack/trashview.cpp:307
+#: core/app/views/stack/trashview.cpp:322
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Kas tõesti kustutada %1 element jäädavalt?"
 msgstr[1] "Kas tõesti kustutada %1 elementi jäädavalt?"
 
-#: core/app/views/stack/trashview.cpp:357
+#: core/app/views/stack/trashview.cpp:372
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Kas tõesti kustutada KÕIK elemendid jäädavalt?"
 
-#: core/app/views/stack/trashview.cpp:401
+#: core/app/views/stack/trashview.cpp:442
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3469,7 +3469,7 @@ msgstr "Kas tõesti kustutada KÕIK elemendid jäädavalt?"
 msgid "Delete"
 msgstr "Kustuta"
 
-#: core/app/views/stack/trashview.cpp:459
+#: core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elementi valitud"
@@ -4401,7 +4401,7 @@ msgstr "Ühik"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:262
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -11963,15 +11963,15 @@ msgstr "Muudatuste salvestamine -"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:570
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1003
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1212
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -23523,7 +23523,7 @@ msgid "Start upload to Box"
 msgstr "Üleslaadimise alustamine Boxi"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, fuzzy, kde-format
 #| msgid "No image selected. Please select which images should be uploaded."
@@ -23533,13 +23533,13 @@ msgstr "Ühtegi pilti pole valitud. Palun vali pildid, mida üles laadida."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:541
+#: core/dplugins/generic/webservices/google/gswindow.cpp:955
+#: core/dplugins/generic/webservices/google/gswindow.cpp:976
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1024
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1074
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1267
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -23551,8 +23551,8 @@ msgid "Warning"
 msgstr "Hoiatus"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:533
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, fuzzy, kde-format
 #| msgid "Authentication failed. Click \"Continue\" to authenticate."
@@ -23562,12 +23562,12 @@ msgstr "Autentimine nurjus. Autentimiseks klõpsa \"Jätka\"."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:515
+#: core/dplugins/generic/webservices/google/gswindow.cpp:545
+#: core/dplugins/generic/webservices/google/gswindow.cpp:960
+#: core/dplugins/generic/webservices/google/gswindow.cpp:981
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1030
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1272
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -23580,12 +23580,12 @@ msgstr "Jätka"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:537
-#: core/dplugins/generic/webservices/google/gswindow.cpp:951
-#: core/dplugins/generic/webservices/google/gswindow.cpp:972
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
+#: core/dplugins/generic/webservices/google/gswindow.cpp:516
+#: core/dplugins/generic/webservices/google/gswindow.cpp:546
+#: core/dplugins/generic/webservices/google/gswindow.cpp:961
+#: core/dplugins/generic/webservices/google/gswindow.cpp:982
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1273
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -23598,7 +23598,7 @@ msgstr "Loobu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:613
+#: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, fuzzy, kde-format
 #| msgid "%v / %m"
@@ -24395,13 +24395,13 @@ msgid "File Size exceeds maximum allowed file size."
 msgstr "Failisuurus ületab maksimaalset lubatut."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:492
 #, kde-format
 msgid "No photo specified"
 msgstr "Fotot pole määratud"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:495
 #, kde-format
 msgid "General upload failure"
 msgstr "Üldine üleslaadimise nurjumine"
@@ -24417,19 +24417,19 @@ msgid "Filetype was not recognized"
 msgstr "Failitüüpi ei tuntud ära"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:504
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Kasutaja ületas üleslaadimise piirangu"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:507
 #, kde-format
 msgid "Invalid signature"
 msgstr "Vigane allkiri"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:510
 #, kde-format
 msgid "Missing signature"
 msgstr "Puuduv allkiri"
@@ -24440,43 +24440,43 @@ msgid "Login Failed / Invalid auth token"
 msgstr "Sisselogimine nurjus / Vigane autentimispääsmik"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:516
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Vigane API võti"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Teenus ei ole praegu kättesaadav"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Vigane frob"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:525
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Vormingut \"xxx\" ei leitud"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:528
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Meetodit \"xxx\" ei leitud"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:531
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Vigane SOAP ümbris"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:534
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Vigane XML-RPC meetodi väljakutse"
@@ -24487,7 +24487,7 @@ msgid "The POST method is now required for all setters"
 msgstr "Kõik setterid nõuavad nüüd POST-meetodit"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
@@ -24764,27 +24764,27 @@ msgstr ""
 msgid "Failed to create folder"
 msgstr "Kataloogi loomine nurjus"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:497
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
 msgid "File-size was zero"
 msgstr "Failisuurus oli null"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:500
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:501
 #, kde-format
 msgid "File-type was not recognized"
 msgstr "Failitüüpi ei tuntud ära"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:513
 #, kde-format
 msgid "Login failed / Invalid auth token"
 msgstr "Sisselogimine nurjus / Vigane autentimispääsmik"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:537
 #, kde-format
 msgid "The POST method is now required for all setters."
 msgstr "Kõik setterid nõuavad nüüd POST-meetodit."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid ""
 "Error occurred: %1\n"
@@ -24793,7 +24793,7 @@ msgstr ""
 "Tekkis tõrge: %1\n"
 "Rohkem pole midagi võimalik teha."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:782
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, kde-format
 msgid "Failed to fetch photo-set list"
 msgstr "Fotokogude loendi tõmbamine nurjus"
@@ -25068,21 +25068,21 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google Drive'i väljakutsumine nurjus: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:621
+#: core/dplugins/generic/webservices/google/gswindow.cpp:631
 #, fuzzy, kde-format
 #| msgid "Google Drive export"
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google Drive'i eksport"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:627
+#: core/dplugins/generic/webservices/google/gswindow.cpp:637
 #, fuzzy, kde-format
 #| msgid "Google Photo export"
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Google Photos eksport"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:946
+#: core/dplugins/generic/webservices/google/gswindow.cpp:956
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save photo: %1\n"
@@ -25095,7 +25095,7 @@ msgstr ""
 "Foto salvestamine nurjus: %1\n"
 "Kas jätkata?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:977
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to download photo: %1\n"
@@ -25108,14 +25108,14 @@ msgstr ""
 "Foto allalaadimine nurjus: %1\n"
 "Kas jätkata?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:994
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1004
 #, fuzzy, kde-format
 #| msgid "Failed to save image to %1"
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Pildi salvestamine asukohta %1 nurjus"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1025
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload photo to %1.\n"
@@ -25131,7 +25131,7 @@ msgstr ""
 "%2\n"
 "Kas jätkata?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1075
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to finish uploading photo to %1.\n"
@@ -25147,14 +25147,14 @@ msgstr ""
 "%2\n"
 "Sinu kontosse ei laaditud üles ühtegi pilti."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1080
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action:button"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, fuzzy, kde-format
 #| msgid ""
 #| "Google Drive call failed:\n"
@@ -25167,7 +25167,7 @@ msgstr ""
 "Google Drive'i väljakutsumine nurjus:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, fuzzy, kde-format
 #| msgid ""
 #| "Google Photos call failed:\n"
@@ -25180,7 +25180,7 @@ msgstr ""
 "Google Photos väljakutsumine nurjus:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, fuzzy, kde-format
 #| msgid ""
 #| "You will be logged out of your account, click \"Continue\" to "
@@ -36342,12 +36342,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Abi"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:267
 #, kde-format
 msgid "Relative Path"
 msgstr "Suhteline asukoht"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:272
 #, kde-format
 msgid "Deletion Time"
 msgstr "Kustutamisaeg"
@@ -39706,7 +39706,7 @@ msgstr "<i>muutmata</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:605
+#: core/libs/properties/itempropertiessidebardb.cpp:606
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -39717,7 +39717,7 @@ msgstr "pole kättesaadav"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:655
 #: core/libs/properties/itempropertiestab.cpp:467
 #, fuzzy, kde-format
 #| msgid "No"
@@ -39729,7 +39729,7 @@ msgstr "Ei"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -39998,8 +39998,8 @@ msgstr "Kalibreerimata"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:630
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:631
+#: core/libs/properties/itempropertiessidebardb.cpp:644
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -40014,7 +40014,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -40022,7 +40022,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:684
+#: core/libs/properties/itempropertiessidebardb.cpp:685
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -40030,28 +40030,28 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:94
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, fuzzy, kde-format
 #| msgid "Captions"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Allkirjad"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versioonid"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:635
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

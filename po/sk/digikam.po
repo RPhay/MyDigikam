@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"POT-Creation-Date: 2023-04-12 00:46+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1349,7 +1349,7 @@ msgstr ""
 "nastaviť, vyberte „Áno“, inak vyberte „Nie“. V tom prípade bude, „Správa "
 "farieb“ vypnutá až kým tento problém nevyriešite.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3074,12 +3074,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Filtre"
 
-#: core/app/views/stack/itemiconview_albums.cpp:317
+#: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Nedá sa otvoriť koreňový album. Nejedná sa o fyzické umiestnenie."
 
-#: core/app/views/stack/itemiconview_items.cpp:605
+#: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3138,55 +3138,55 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Nástroje"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Undo"
 msgstr "Vrátiť späť"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Odstrániť vybrané obrázky zo zoznamu"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:133
 #, kde-format
 msgid "Delete..."
 msgstr "Odstrániť..."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:132
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Označené položky natrvalo"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:141
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Všetky položky natrvalo"
 
-#: core/app/views/stack/trashview.cpp:252
+#: core/app/views/stack/trashview.cpp:267
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Potvrdiť krok späť"
 
-#: core/app/views/stack/trashview.cpp:253
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:268
+#: core/app/views/stack/trashview.cpp:293
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3194,18 +3194,18 @@ msgstr[0] "Ste si istý, že chcete obnoviť %1 položku?"
 msgstr[1] "Ste si istý, že chcete obnoviť %1 položky?"
 msgstr[2] "Ste si istý, že chcete obnoviť %1 položiek?"
 
-#: core/app/views/stack/trashview.cpp:277
+#: core/app/views/stack/trashview.cpp:292
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Potvrdiť obnovenie"
 
-#: core/app/views/stack/trashview.cpp:306
-#: core/app/views/stack/trashview.cpp:356
+#: core/app/views/stack/trashview.cpp:321
+#: core/app/views/stack/trashview.cpp:371
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Potvrdiť odstránenie"
 
-#: core/app/views/stack/trashview.cpp:307
+#: core/app/views/stack/trashview.cpp:322
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3213,12 +3213,12 @@ msgstr[0] "Ste si istý, že chcete trvalo odstrániť %1 položku?"
 msgstr[1] "Ste si istý, že chcete trvalo odstrániť %1 položky?"
 msgstr[2] "Ste si istý, že chcete trvalo odstrániť %1 položiek?"
 
-#: core/app/views/stack/trashview.cpp:357
+#: core/app/views/stack/trashview.cpp:372
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ste si istý, že chcete nevratne odstrániť VŠETKY položky?"
 
-#: core/app/views/stack/trashview.cpp:401
+#: core/app/views/stack/trashview.cpp:442
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3226,7 +3226,7 @@ msgstr "Ste si istý, že chcete nevratne odstrániť VŠETKY položky?"
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: core/app/views/stack/trashview.cpp:459
+#: core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 vybraných položiek"
@@ -4094,7 +4094,7 @@ msgstr "Jednotka"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:262
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -10964,15 +10964,15 @@ msgstr "Zmeny sa ukladajú -"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:570
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1003
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1212
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -21893,7 +21893,7 @@ msgid "Start upload to Box"
 msgstr "Spustiť odosielenie do Boxu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -21903,13 +21903,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:541
+#: core/dplugins/generic/webservices/google/gswindow.cpp:955
+#: core/dplugins/generic/webservices/google/gswindow.cpp:976
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1024
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1074
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1267
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -21920,8 +21920,8 @@ msgid "Warning"
 msgstr "Upozornenie"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:533
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -21932,12 +21932,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:515
+#: core/dplugins/generic/webservices/google/gswindow.cpp:545
+#: core/dplugins/generic/webservices/google/gswindow.cpp:960
+#: core/dplugins/generic/webservices/google/gswindow.cpp:981
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1030
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1272
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -21950,12 +21950,12 @@ msgstr "Pokračovať"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:537
-#: core/dplugins/generic/webservices/google/gswindow.cpp:951
-#: core/dplugins/generic/webservices/google/gswindow.cpp:972
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
+#: core/dplugins/generic/webservices/google/gswindow.cpp:516
+#: core/dplugins/generic/webservices/google/gswindow.cpp:546
+#: core/dplugins/generic/webservices/google/gswindow.cpp:961
+#: core/dplugins/generic/webservices/google/gswindow.cpp:982
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1273
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -21968,7 +21968,7 @@ msgstr "Zrušiť"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:613
+#: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -22710,14 +22710,14 @@ msgid "File Size exceeds maximum allowed file size."
 msgstr "Veľkosť súboru prekračuje maximálnu povolenú veľkosť."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:492
 #, fuzzy, kde-format
 #| msgid "Unspecified"
 msgid "No photo specified"
 msgstr "Neurčené"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:495
 #, fuzzy, kde-format
 msgid "General upload failure"
 msgstr "EXIF rotácia súboru %1..."
@@ -22733,19 +22733,19 @@ msgid "Filetype was not recognized"
 msgstr "Typ súboru sa nepodarilo rozpoznať"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:504
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Používateľ prekročil limit odosielania"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:507
 #, kde-format
 msgid "Invalid signature"
 msgstr "Neplatný podpis"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:510
 #, kde-format
 msgid "Missing signature"
 msgstr "Chýbajúci podpis"
@@ -22756,43 +22756,43 @@ msgid "Login Failed / Invalid auth token"
 msgstr "Prihlásenie skončilo s chybou / Neplatný overovací token"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:516
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Neplatný kľúč API"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Služba momentálne nie je dostupná"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Neplatný frob"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:525
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Formát \"xxx\" nebol nájdený"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:528
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Metóda \"xxx\" nebola nájdená"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:531
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Neplatná SOAP obálka"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:534
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Neplatné volanie metódy XML-RPC"
@@ -22803,7 +22803,7 @@ msgid "The POST method is now required for all setters"
 msgstr "Je vyžadovaná metóda POST"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
@@ -23081,27 +23081,27 @@ msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 msgid "Failed to create folder"
 msgstr "Nepodarilo sa vytvoriť priečinok"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:497
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
 msgid "File-size was zero"
 msgstr "Nulová veľkosť súboru"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:500
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:501
 #, kde-format
 msgid "File-type was not recognized"
 msgstr "Typ súboru sa nepodarilo rozpoznať"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:513
 #, kde-format
 msgid "Login failed / Invalid auth token"
 msgstr "Prihlásenie skončilo s chybou / Neplatný overovací token"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:537
 #, kde-format
 msgid "The POST method is now required for all setters."
 msgstr "Je vyžadovaná metóda POST."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid ""
 "Error occurred: %1\n"
@@ -23110,7 +23110,7 @@ msgstr ""
 "Došlo k chybe: %1\n"
 "Nie je možné pokračovať."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:782
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, kde-format
 msgid "Failed to fetch photo-set list"
 msgstr "Chyba počas načítavania zoznamu fotografií"
@@ -23379,19 +23379,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Definujte kritériá hľadania"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:621
+#: core/dplugins/generic/webservices/google/gswindow.cpp:631
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Export na Disk Google"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:627
+#: core/dplugins/generic/webservices/google/gswindow.cpp:637
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Export na Fotky Google"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:946
+#: core/dplugins/generic/webservices/google/gswindow.cpp:956
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23399,7 +23399,7 @@ msgid ""
 "Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:977
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23407,7 +23407,7 @@ msgid ""
 "Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:994
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1004
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
@@ -23417,7 +23417,7 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1025
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23426,7 +23426,7 @@ msgid ""
 "Do you want to continue?"
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1075
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23435,14 +23435,14 @@ msgid ""
 "No image uploaded to your account."
 msgstr "Štítok '%2' je priradený jednej položke. Chcete pokračovať?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1080
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action:button"
 msgid "OK"
 msgstr "OK"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23450,7 +23450,7 @@ msgid ""
 "%1"
 msgstr "Definujte kritériá hľadania"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -23458,7 +23458,7 @@ msgid ""
 "%1"
 msgstr "Definujte kritériá hľadania"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -34134,12 +34134,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Pomocník"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:267
 #, kde-format
 msgid "Relative Path"
 msgstr "Relatívna cesta"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:272
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Čas vytvorenia"
@@ -37535,7 +37535,7 @@ msgstr "nezmenený"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:605
+#: core/libs/properties/itempropertiessidebardb.cpp:606
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37545,7 +37545,7 @@ msgstr "nedostupné"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:655
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -37556,7 +37556,7 @@ msgstr "Nie"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37789,8 +37789,8 @@ msgstr "Nekalibrované"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:630
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:631
+#: core/libs/properties/itempropertiessidebardb.cpp:644
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37803,39 +37803,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:684
+#: core/libs/properties/itempropertiessidebardb.cpp:685
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:94
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Titulky"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verzie"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:635
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
