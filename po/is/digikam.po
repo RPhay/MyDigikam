@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"POT-Creation-Date: 2023-04-12 00:46+0000\n"
 "PO-Revision-Date: 2023-03-21 14:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -1347,7 +1347,7 @@ msgstr ""
 "veldu þá \"Já\", annars \"Nei\". Í því tilfelli verður \"Stýring litasniða\" "
 "gerð óvirk þar til þú leysir þetta vandamál.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3065,12 +3065,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Síur"
 
-#: core/app/views/stack/itemiconview_albums.cpp:317
+#: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Get ekki opnað rótaralbúm. Þetta er ekki gild staðsetning."
 
-#: core/app/views/stack/itemiconview_items.cpp:605
+#: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3132,83 +3132,83 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Verkfæri"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Undo"
 msgstr "Afturkalla"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Endurheimta aðeins síðustu færsluna úr ruslinu."
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Restore"
 msgstr "Endurheimta"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Endurheimta valdar skrár úr ruslinu."
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:133
 #, kde-format
 msgid "Delete..."
 msgstr "Eyða..."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Fjarlægja endanlega valin eða öll atriði úr ruslinu."
 
-#: core/app/views/stack/trashview.cpp:132
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Völdum atriðum endanlega"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:141
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Öllum atriðum endanlega"
 
-#: core/app/views/stack/trashview.cpp:252
+#: core/app/views/stack/trashview.cpp:267
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Staðfesta afturköllun"
 
-#: core/app/views/stack/trashview.cpp:253
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:268
+#: core/app/views/stack/trashview.cpp:293
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Ertu viss um að þú viljir endurheimta %1 atriði?"
 msgstr[1] "Ertu viss um að þú viljir endurheimta %1 atriði?"
 
-#: core/app/views/stack/trashview.cpp:277
+#: core/app/views/stack/trashview.cpp:292
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Staðfesta endurheimtingu"
 
-#: core/app/views/stack/trashview.cpp:306
-#: core/app/views/stack/trashview.cpp:356
+#: core/app/views/stack/trashview.cpp:321
+#: core/app/views/stack/trashview.cpp:371
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Staðfesta eyðingu"
 
-#: core/app/views/stack/trashview.cpp:307
+#: core/app/views/stack/trashview.cpp:322
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Ertu viss um að þú viljir eyða %1 atriði endanlega?"
 msgstr[1] "Ertu viss um að þú viljir eyða %1 atriðum endanlega?"
 
-#: core/app/views/stack/trashview.cpp:357
+#: core/app/views/stack/trashview.cpp:372
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ertu viss um að þú viljir eyða öllum atriðum endanlega?"
 
-#: core/app/views/stack/trashview.cpp:401
+#: core/app/views/stack/trashview.cpp:442
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3216,7 +3216,7 @@ msgstr "Ertu viss um að þú viljir eyða öllum atriðum endanlega?"
 msgid "Delete"
 msgstr "Eyða"
 
-#: core/app/views/stack/trashview.cpp:459
+#: core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 atriði valin"
@@ -4103,7 +4103,7 @@ msgstr "Eining"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:262
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -11076,15 +11076,15 @@ msgstr "Vista breytingar -"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:570
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1003
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1212
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -21947,7 +21947,7 @@ msgid "Start upload to Box"
 msgstr "Hefja sendingu í Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -21956,13 +21956,13 @@ msgstr "Engin mynd valin. Veldu hvaða myndir ætti að senda inn."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:541
+#: core/dplugins/generic/webservices/google/gswindow.cpp:955
+#: core/dplugins/generic/webservices/google/gswindow.cpp:976
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1024
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1074
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1267
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -21973,8 +21973,8 @@ msgid "Warning"
 msgstr "Aðvörun"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:533
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -21983,12 +21983,12 @@ msgstr "Auðkenning mistókst. Ýttu á 'Áfram' til að auðkenna."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:515
+#: core/dplugins/generic/webservices/google/gswindow.cpp:545
+#: core/dplugins/generic/webservices/google/gswindow.cpp:960
+#: core/dplugins/generic/webservices/google/gswindow.cpp:981
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1030
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1272
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22000,12 +22000,12 @@ msgstr "Halda áfram"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:537
-#: core/dplugins/generic/webservices/google/gswindow.cpp:951
-#: core/dplugins/generic/webservices/google/gswindow.cpp:972
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
+#: core/dplugins/generic/webservices/google/gswindow.cpp:516
+#: core/dplugins/generic/webservices/google/gswindow.cpp:546
+#: core/dplugins/generic/webservices/google/gswindow.cpp:961
+#: core/dplugins/generic/webservices/google/gswindow.cpp:982
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1273
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -22017,7 +22017,7 @@ msgstr "Hætta við"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:613
+#: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -22750,13 +22750,13 @@ msgid "File Size exceeds maximum allowed file size."
 msgstr "Stærð skráar er meiri en leyfileg hámarks skráastærð."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:492
 #, kde-format
 msgid "No photo specified"
 msgstr "Engin mynd tilgreind"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:495
 #, kde-format
 msgid "General upload failure"
 msgstr "Almenn villa við sendingu"
@@ -22772,19 +22772,19 @@ msgid "Filetype was not recognized"
 msgstr "Skráartegund var ekki þekkt"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:504
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Notandi fór fram yfir upphleðslutakmarkanir"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:507
 #, kde-format
 msgid "Invalid signature"
 msgstr "Ógild undirritun"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:510
 #, kde-format
 msgid "Missing signature"
 msgstr "Vantar undirritun"
@@ -22795,43 +22795,43 @@ msgid "Login Failed / Invalid auth token"
 msgstr "Innskráning mistókst / Ógilt auðkennistákn"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:516
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Ógildur API-lykill"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Þjónustan er tímabundið ekki tiltæk"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Ógilt Frob"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:525
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Sniðið \"xxx\" finnst ekki"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:528
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Aðferðin \"xxx\" finnst ekki"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:531
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Ógilt SOAP envelope"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:534
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Ógilt XML-RPC Method Call"
@@ -22842,7 +22842,7 @@ msgid "The POST method is now required for all setters"
 msgstr "POST-aðferðarinnar er núna krafist fyrir alla"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
@@ -23116,27 +23116,27 @@ msgstr ""
 msgid "Failed to create folder"
 msgstr "Mistókst að búa til möppu"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:497
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
 msgid "File-size was zero"
 msgstr "Skráastærðin var núll"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:500
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:501
 #, kde-format
 msgid "File-type was not recognized"
 msgstr "Skráagerðin var ekki þekkt"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:513
 #, kde-format
 msgid "Login failed / Invalid auth token"
 msgstr "Innskráning mistókst / Ógild staðfesting"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:537
 #, kde-format
 msgid "The POST method is now required for all setters."
 msgstr "POST-aðferðarinnar er núna krafist fyrir alla."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid ""
 "Error occurred: %1\n"
@@ -23145,7 +23145,7 @@ msgstr ""
 "Villa kom upp: %1\n"
 "Get ekki haldið áfram."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:782
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, kde-format
 msgid "Failed to fetch photo-set list"
 msgstr "Mistókst að ná í lista með myndarunum"
@@ -23403,19 +23403,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google Drive skipun mistókst: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:621
+#: core/dplugins/generic/webservices/google/gswindow.cpp:631
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google Drive útflutningur"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:627
+#: core/dplugins/generic/webservices/google/gswindow.cpp:637
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Google Photo útflutningur"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:946
+#: core/dplugins/generic/webservices/google/gswindow.cpp:956
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23425,7 +23425,7 @@ msgstr ""
 "Mistókst að vista mynd. %1\n"
 "Viltu halda áfram?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:977
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23435,13 +23435,13 @@ msgstr ""
 "Mistókst að ná í mynd. %1\n"
 "Viltu halda áfram?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:994
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1004
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Tókst ekki að vista mynd í %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1025
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23453,7 +23453,7 @@ msgstr ""
 "%2\n"
 "Viltu halda áfram?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1075
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23465,13 +23465,13 @@ msgstr ""
 "%2\n"
 "Engin mynd var send inn á notandaaðganginn þinn."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1080
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Í lagi"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23481,7 +23481,7 @@ msgstr ""
 "Google Drive skipun mistókst: \n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23491,7 +23491,7 @@ msgstr ""
 "Google Photos skipun mistókst:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -34010,12 +34010,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Hjálp"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:267
 #, kde-format
 msgid "Relative Path"
 msgstr "Afstæð slóð"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:272
 #, kde-format
 msgid "Deletion Time"
 msgstr "Eyðingartími"
@@ -37118,7 +37118,7 @@ msgstr "óbreytt"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:605
+#: core/libs/properties/itempropertiessidebardb.cpp:606
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37128,7 +37128,7 @@ msgstr "ekki tiltækt"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:655
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -37139,7 +37139,7 @@ msgstr "Nei"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37372,8 +37372,8 @@ msgstr "Ókvarðað"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:630
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:631
+#: core/libs/properties/itempropertiessidebardb.cpp:644
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37386,39 +37386,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:684
+#: core/libs/properties/itempropertiessidebardb.cpp:685
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:94
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Skýringatextar"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Útgáfur"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:635
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

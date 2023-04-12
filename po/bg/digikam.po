@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"POT-Creation-Date: 2023-04-12 00:46+0000\n"
 "PO-Revision-Date: 2023-04-06 18:03+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1353,7 +1353,7 @@ msgstr ""
 "фунционалността \"Управление на цветовете\" ще бъде изключена докато този "
 "приблем бъде разрешен.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3082,13 +3082,13 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "Филтри"
 
-#: core/app/views/stack/itemiconview_albums.cpp:317
+#: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 "Не може да се отвори основният албум. Той не е физическо местоположение."
 
-#: core/app/views/stack/itemiconview_items.cpp:605
+#: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3150,84 +3150,84 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "Инструменти"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Undo"
 msgstr "Отмяна"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Възстановяване само на последния елемент в кошчето. "
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:127
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Възстановяване на избрани файлове от кошчето"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:133
 #, kde-format
 msgid "Delete..."
 msgstr "Изтриване..."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 "Необратимо изтриване на избраните елементи или всички елементи от кошчето."
 
-#: core/app/views/stack/trashview.cpp:132
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Избрани елементи за постоянно"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:141
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Всички елементи за постоянно"
 
-#: core/app/views/stack/trashview.cpp:252
+#: core/app/views/stack/trashview.cpp:267
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Потвърдете отмяната"
 
-#: core/app/views/stack/trashview.cpp:253
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:268
+#: core/app/views/stack/trashview.cpp:293
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Сигурни ли сте, че искате да възстановите %1 елемент?"
 msgstr[1] "Сигурни ли сте, че искате да възстановите %1 елемента?"
 
-#: core/app/views/stack/trashview.cpp:277
+#: core/app/views/stack/trashview.cpp:292
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Потвърдете възстановяването"
 
-#: core/app/views/stack/trashview.cpp:306
-#: core/app/views/stack/trashview.cpp:356
+#: core/app/views/stack/trashview.cpp:321
+#: core/app/views/stack/trashview.cpp:371
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Потвърждение на изтриването"
 
-#: core/app/views/stack/trashview.cpp:307
+#: core/app/views/stack/trashview.cpp:322
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Сигурни ли сте, че искате да изтриете %1 елемент за постоянно?"
 msgstr[1] "Сигурни ли сте, че искате да изтриете %1 елемента за постоянно?"
 
-#: core/app/views/stack/trashview.cpp:357
+#: core/app/views/stack/trashview.cpp:372
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Сигурни ли сте, че искате да изтриете ВСИЧКИ елементи за постоянно?"
 
-#: core/app/views/stack/trashview.cpp:401
+#: core/app/views/stack/trashview.cpp:442
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3235,7 +3235,7 @@ msgstr "Сигурни ли сте, че искате да изтриете ВС
 msgid "Delete"
 msgstr "Изтриване"
 
-#: core/app/views/stack/trashview.cpp:459
+#: core/app/views/stack/trashview.cpp:509
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Маркирани са %1/%2 елемента"
@@ -4133,7 +4133,7 @@ msgstr "Единица"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:262
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -11264,15 +11264,15 @@ msgstr "Запазване на промените -"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:570
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1003
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1212
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -22278,7 +22278,7 @@ msgid "Start upload to Box"
 msgstr "Стартиране на качването в Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -22288,13 +22288,13 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:541
+#: core/dplugins/generic/webservices/google/gswindow.cpp:955
+#: core/dplugins/generic/webservices/google/gswindow.cpp:976
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1024
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1074
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1267
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -22305,8 +22305,8 @@ msgid "Warning"
 msgstr "Предупреждение"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:533
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -22317,12 +22317,12 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:515
+#: core/dplugins/generic/webservices/google/gswindow.cpp:545
+#: core/dplugins/generic/webservices/google/gswindow.cpp:960
+#: core/dplugins/generic/webservices/google/gswindow.cpp:981
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1030
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1272
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -22334,12 +22334,12 @@ msgstr "Продължаване"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:537
-#: core/dplugins/generic/webservices/google/gswindow.cpp:951
-#: core/dplugins/generic/webservices/google/gswindow.cpp:972
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
+#: core/dplugins/generic/webservices/google/gswindow.cpp:516
+#: core/dplugins/generic/webservices/google/gswindow.cpp:546
+#: core/dplugins/generic/webservices/google/gswindow.cpp:961
+#: core/dplugins/generic/webservices/google/gswindow.cpp:982
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1273
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -22351,7 +22351,7 @@ msgstr "Отказ"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:613
+#: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -23099,13 +23099,13 @@ msgid "File Size exceeds maximum allowed file size."
 msgstr "Размерът на файла надвишава максимално допустимия размер на файла."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:492
 #, kde-format
 msgid "No photo specified"
 msgstr "Няма посочена снимка"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:495
 #, kde-format
 msgid "General upload failure"
 msgstr "Цялостен неуспех при качване"
@@ -23121,19 +23121,19 @@ msgid "Filetype was not recognized"
 msgstr "Типът на файла не е разпознат"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:504
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr "Потребителят е превишил лимита за качване"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:507
 #, kde-format
 msgid "Invalid signature"
 msgstr "Невалиден подпис"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:510
 #, kde-format
 msgid "Missing signature"
 msgstr "Липсващ подпис"
@@ -23144,43 +23144,43 @@ msgid "Login Failed / Invalid auth token"
 msgstr "Влизането в системата е неуспешно / Невалиден токен за автентичност"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:516
 #, kde-format
 msgid "Invalid API Key"
 msgstr "Невалиден API ключ"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "Услугата в момента е недостъпна"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
 #, kde-format
 msgid "Invalid Frob"
 msgstr "Невалиден Frob"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:525
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "Форматът \"xxx\" не е намерен"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:528
 #, kde-format
 msgid "Method \"xxx\" not found"
 msgstr "Метод \"xxx\" не е намерен"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:531
 #, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "Невалиден SOAP плик"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:534
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr "Невалидно извикване на XML-RPC метод"
@@ -23191,7 +23191,7 @@ msgid "The POST method is now required for all setters"
 msgstr "Методът POST вече се изисква за всички задаващи устройства"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
@@ -23465,27 +23465,27 @@ msgstr ""
 msgid "Failed to create folder"
 msgstr "Грешка при създаване на папка"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:497
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
 msgid "File-size was zero"
 msgstr "Размерът на файла беше нула"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:500
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:501
 #, kde-format
 msgid "File-type was not recognized"
 msgstr "Типът на файла не е разпознат"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:513
 #, kde-format
 msgid "Login failed / Invalid auth token"
 msgstr "Влизането в системата е неуспешно / Невалиден токен за автентичност"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:537
 #, kde-format
 msgid "The POST method is now required for all setters."
 msgstr "Методът POST вече се изисква за всички задаващи."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid ""
 "Error occurred: %1\n"
@@ -23494,7 +23494,7 @@ msgstr ""
 "Възникна грешка: %1\n"
 "Невъзможно е продължаването по-нататък."
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:782
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, kde-format
 msgid "Failed to fetch photo-set list"
 msgstr "Не успя да изтегли списък с фотокомплекти"
@@ -23759,19 +23759,19 @@ msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Неуспешно повикване на Google Drive: %1\n"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:621
+#: core/dplugins/generic/webservices/google/gswindow.cpp:631
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Експортиране в Google Drive"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:627
+#: core/dplugins/generic/webservices/google/gswindow.cpp:637
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "Експортиране в Google Photo"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:946
+#: core/dplugins/generic/webservices/google/gswindow.cpp:956
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23781,7 +23781,7 @@ msgstr ""
 "Неуспешно запазване на снимка: %1\n"
 "Искате ли да продължите?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:977
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23791,13 +23791,13 @@ msgstr ""
 "Неуспешно изтегляне на снимка: %1\n"
 "Искате ли да продължите?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:994
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1004
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "Неуспешно запазване на изображение в %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1025
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23809,7 +23809,7 @@ msgstr ""
 "%2\n"
 "Искате ли да продължите?"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1075
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23821,13 +23821,13 @@ msgstr ""
 "%2\n"
 "Няма качена снимка в профила ви."
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1080
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Добре"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23837,7 +23837,7 @@ msgstr ""
 "Неуспешно повикване на Google Drive:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23847,7 +23847,7 @@ msgstr ""
 "Неуспешно повикване на Google Photos:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -34488,12 +34488,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Помощ"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:267
 #, kde-format
 msgid "Relative Path"
 msgstr "Релативен път"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:272
 #, kde-format
 msgid "Deletion Time"
 msgstr "Време на изтриване"
@@ -37611,7 +37611,7 @@ msgstr "непроменен"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:605
+#: core/libs/properties/itempropertiessidebardb.cpp:606
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37621,7 +37621,7 @@ msgstr "неналично"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:655
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -37632,7 +37632,7 @@ msgstr "Не"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37867,8 +37867,8 @@ msgstr "Некалибриран"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:630
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:631
+#: core/libs/properties/itempropertiessidebardb.cpp:644
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37881,39 +37881,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:684
+#: core/libs/properties/itempropertiessidebardb.cpp:685
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:94
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Надписи"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Версии"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:635
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

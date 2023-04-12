@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:45+0000\n"
+"POT-Creation-Date: 2023-04-12 00:46+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -1381,7 +1381,7 @@ msgstr ""
 "<p>يبدو مجلّد لاحات ICC غير صالحًا.</p><p>إن أردت تجريب ضبطه مجدّدًا، فاختر "
 "”نعم“، وإلّا فاختر ”لا“، وستُعطّل ميزة ”إدارة الألوان“ حتّى تحلّ هذه المشكلة.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:452
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3126,12 +3126,12 @@ msgctxt "Filters as in Search type Filters"
 msgid "Filters"
 msgstr "المرشّحات"
 
-#: core/app/views/stack/itemiconview_albums.cpp:317
+#: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "تعذّر فتح الألبوم الجذر، فهو ليس مكانًا فيزيائيًّا."
 
-#: core/app/views/stack/itemiconview_items.cpp:605
+#: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -3191,59 +3191,59 @@ msgctxt "@title: item icon view"
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/app/views/stack/trashview.cpp:117
+#: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Undo"
 msgstr "تراجع"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:126
 #, kde-format
 msgid "Restore"
 msgstr "استعد"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "أزل الصّور المحدّدة من القائمة"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:133
 #, kde-format
 msgid "Delete..."
 msgstr "احذف..."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:134
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:132
+#: core/app/views/stack/trashview.cpp:138
 #, fuzzy, kde-format
 #| msgid "Delete File Permanently"
 msgid "Selected Items Permanently"
 msgstr "احذف الملفّ نهائيًّا"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:141
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgid "All Items Permanently"
 msgstr "احذف نهائيًّا"
 
-#: core/app/views/stack/trashview.cpp:252
+#: core/app/views/stack/trashview.cpp:267
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgid "Confirm Undo"
 msgstr "أكّد"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:253
-#: core/app/views/stack/trashview.cpp:278
+#: core/app/views/stack/trashview.cpp:268
+#: core/app/views/stack/trashview.cpp:293
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete ALL items permanently?"
 msgid "Are you sure you want to restore %1 item?"
@@ -3255,20 +3255,20 @@ msgstr[3] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيّ�
 msgstr[4] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 msgstr[5] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
-#: core/app/views/stack/trashview.cpp:277
+#: core/app/views/stack/trashview.cpp:292
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgid "Confirm Restore"
 msgstr "أكّد الحذف"
 
-#: core/app/views/stack/trashview.cpp:306
-#: core/app/views/stack/trashview.cpp:356
+#: core/app/views/stack/trashview.cpp:321
+#: core/app/views/stack/trashview.cpp:371
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "أكّد الحذف"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:307
+#: core/app/views/stack/trashview.cpp:322
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete ALL items permanently?"
 msgid "Are you sure you want to delete %1 item permanently?"
@@ -3281,12 +3281,12 @@ msgstr[4] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيّ�
 msgstr[5] "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
 # تجربة لاستخدام تنسيق الثخين بدل الأحرف الكبيرة
-#: core/app/views/stack/trashview.cpp:357
+#: core/app/views/stack/trashview.cpp:372
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا؟"
 
-#: core/app/views/stack/trashview.cpp:401
+#: core/app/views/stack/trashview.cpp:442
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3294,7 +3294,7 @@ msgstr "أمتأكّد من حذف <b>كلّ</b> العناصر نهائيًّا
 msgid "Delete"
 msgstr "احذف"
 
-#: core/app/views/stack/trashview.cpp:459
+#: core/app/views/stack/trashview.cpp:509
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -4157,7 +4157,7 @@ msgstr "الوحدة"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:260
+#: core/libs/dtrash/dtrashitemmodel.cpp:262
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Thumbnail"
@@ -10845,15 +10845,15 @@ msgstr "يحفظ الصّور -"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:570
 #: core/dplugins/generic/webservices/google/gswindow.cpp:362
 #: core/dplugins/generic/webservices/google/gswindow.cpp:403
 #: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/google/gswindow.cpp:491
-#: core/dplugins/generic/webservices/google/gswindow.cpp:993
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1202
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1219
+#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1003
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1212
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1229
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
 #: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
@@ -21792,7 +21792,7 @@ msgid "Start upload to Box"
 msgstr "اختر صورة لرفعها"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
-#: core/dplugins/generic/webservices/google/gswindow.cpp:492
+#: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
 #, kde-format
 msgctxt "@info"
@@ -21801,13 +21801,13 @@ msgstr "لا صور محدّدة. فضلًا اختر أيّ الصّور الت
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:252
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
-#: core/dplugins/generic/webservices/google/gswindow.cpp:507
-#: core/dplugins/generic/webservices/google/gswindow.cpp:532
-#: core/dplugins/generic/webservices/google/gswindow.cpp:945
-#: core/dplugins/generic/webservices/google/gswindow.cpp:966
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1014
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1064
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1257
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:541
+#: core/dplugins/generic/webservices/google/gswindow.cpp:955
+#: core/dplugins/generic/webservices/google/gswindow.cpp:976
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1024
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1074
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1267
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
@@ -21819,8 +21819,8 @@ msgid "Warning"
 msgstr "تحذير"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
-#: core/dplugins/generic/webservices/google/gswindow.cpp:508
-#: core/dplugins/generic/webservices/google/gswindow.cpp:533
+#: core/dplugins/generic/webservices/google/gswindow.cpp:512
+#: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
 #, kde-format
 msgctxt "@info"
@@ -21829,12 +21829,12 @@ msgstr "فشل الاستيثاق. انقر \"تابع\" للاستيثاق."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/google/gswindow.cpp:515
+#: core/dplugins/generic/webservices/google/gswindow.cpp:545
+#: core/dplugins/generic/webservices/google/gswindow.cpp:960
+#: core/dplugins/generic/webservices/google/gswindow.cpp:981
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1030
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1272
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
@@ -21847,12 +21847,12 @@ msgstr "تابع"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/google/gswindow.cpp:512
-#: core/dplugins/generic/webservices/google/gswindow.cpp:537
-#: core/dplugins/generic/webservices/google/gswindow.cpp:951
-#: core/dplugins/generic/webservices/google/gswindow.cpp:972
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1021
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1263
+#: core/dplugins/generic/webservices/google/gswindow.cpp:516
+#: core/dplugins/generic/webservices/google/gswindow.cpp:546
+#: core/dplugins/generic/webservices/google/gswindow.cpp:961
+#: core/dplugins/generic/webservices/google/gswindow.cpp:982
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1031
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1273
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
@@ -21865,7 +21865,7 @@ msgstr "ألغِ"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:285
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
-#: core/dplugins/generic/webservices/google/gswindow.cpp:613
+#: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
 #, kde-format
 msgctxt "@info: progress bar"
@@ -22603,13 +22603,13 @@ msgid "File Size exceeds maximum allowed file size."
 msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:747
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:491
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:492
 #, kde-format
 msgid "No photo specified"
 msgstr "لا صور محدّدة"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:751
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:494
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -22628,19 +22628,19 @@ msgid "Filetype was not recognized"
 msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:763
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:503
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:504
 #, kde-format
 msgid "User exceeded upload limit"
 msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:767
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:506
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:507
 #, kde-format
 msgid "Invalid signature"
 msgstr "التّوقيع غير صالح"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:771
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:509
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:510
 #, kde-format
 msgid "Missing signature"
 msgstr "التّوقيع ناقص"
@@ -22651,44 +22651,44 @@ msgid "Login Failed / Invalid auth token"
 msgstr "فشل الولوج / علامة الاستيثاق غير صالحة"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:779
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:516
 #, fuzzy, kde-format
 msgid "Invalid API Key"
 msgstr "غير صحيح الملف الشخصي"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:783
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:518
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
 msgstr "الخدمة غير متوفّرة حاليًّا."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:521
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
 #, fuzzy, kde-format
 msgid "Invalid Frob"
 msgstr "غير صحيح الملف الشخصي"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:791
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:524
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:525
 #, kde-format
 msgid "Format \"xxx\" not found"
 msgstr "لم يُعثر على النّسق \"xxx\""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:795
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:527
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:528
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgid "Method \"xxx\" not found"
 msgstr "تعذّر العثور على التّجميعة"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:799
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:530
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:531
 #, fuzzy, kde-format
 msgid "Invalid SOAP envelope"
 msgstr "غير صحيح الملف الشخصي"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:803
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:533
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:534
 #, kde-format
 msgid "Invalid XML-RPC Method Call"
 msgstr ""
@@ -22699,7 +22699,7 @@ msgid "The POST method is now required for all setters"
 msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:811
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:539
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:540
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:228
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:293
 #, kde-format
@@ -22980,34 +22980,34 @@ msgstr "فشل رفع الملفّ <b>%1</b>. أتريد المتابعة؟"
 msgid "Failed to create folder"
 msgstr "فشل إنشاء المجلّد"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:497
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
 msgid "File-size was zero"
 msgstr "حجم الملفّ كان صفر"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:500
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:501
 #, kde-format
 msgid "File-type was not recognized"
 msgstr "لم أتعرّف على نوع الملفّ"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:513
 #, kde-format
 msgid "Login failed / Invalid auth token"
 msgstr "فشل الولوج / علامة الاستيثاق غير صالحة"
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:537
 #, kde-format
 msgid "The POST method is now required for all setters."
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:543
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:544
 #, kde-format
 msgid ""
 "Error occurred: %1\n"
 "Unable to proceed further."
 msgstr ""
 
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:782
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, fuzzy, kde-format
 msgid "Failed to fetch photo-set list"
 msgstr "فشل إلى طبع ملفّ"
@@ -23286,20 +23286,20 @@ msgstr ""
 "فشل البحث:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:621
+#: core/dplugins/generic/webservices/google/gswindow.cpp:631
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "مصدّر «غوغل درايف»"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:627
+#: core/dplugins/generic/webservices/google/gswindow.cpp:637
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgctxt "@info"
 msgid "Google Photo export"
 msgstr "خرائط «غوغل»"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:946
+#: core/dplugins/generic/webservices/google/gswindow.cpp:956
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23309,7 +23309,7 @@ msgstr ""
 "فشل حفظ الصّورة: %1\n"
 "أتريد المتابعة؟"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:967
+#: core/dplugins/generic/webservices/google/gswindow.cpp:977
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23319,13 +23319,13 @@ msgstr ""
 "فشل تنزيل الصّورة: %1\n"
 "أتريد المتابعة؟"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:994
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1004
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
 msgstr "فشل حفظ الصّورة إلى %1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1015
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1025
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -23337,7 +23337,7 @@ msgstr ""
 "%2\n"
 "أتريد المتابعة؟"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1065
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1075
 #, fuzzy, kde-format
 #| msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgctxt "@info"
@@ -23347,14 +23347,14 @@ msgid ""
 "No image uploaded to your account."
 msgstr "فشل رفع الملفّ <b>%1</b>. أتريد المتابعة؟"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1070
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1080
 #, fuzzy, kde-format
 #| msgid "OK"
 msgctxt "@action:button"
 msgid "OK"
 msgstr "حسنًا"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1203
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1213
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your search failed:\n"
@@ -23367,7 +23367,7 @@ msgstr ""
 "فشل البحث:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1220
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1230
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your search failed:\n"
@@ -23380,7 +23380,7 @@ msgstr ""
 "فشل البحث:\n"
 "%1"
 
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1258
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -33785,12 +33785,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "مساعدة"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:267
 #, kde-format
 msgid "Relative Path"
 msgstr "المسار النّسبيّ"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:272
 #, kde-format
 msgid "Deletion Time"
 msgstr "وقت الحذف"
@@ -36910,7 +36910,7 @@ msgstr "غير معدل"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:605
+#: core/libs/properties/itempropertiessidebardb.cpp:606
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36920,7 +36920,7 @@ msgstr "غير متوفّر"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:655
 #: core/libs/properties/itempropertiestab.cpp:467
 #, kde-format
 msgctxt "@info: item properties"
@@ -36931,7 +36931,7 @@ msgstr "لا"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:654
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37170,8 +37170,8 @@ msgstr "غير معاير"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:630
-#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:631
+#: core/libs/properties/itempropertiessidebardb.cpp:644
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37184,39 +37184,39 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3م.بكسل)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:652
+#: core/libs/properties/itempropertiessidebardb.cpp:653
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 بت في بكسل"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:684
+#: core/libs/properties/itempropertiessidebardb.cpp:685
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "ال&صورة"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:689
+#: core/libs/properties/itempropertiessidebardb.cpp:690
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 آيزو"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:94
+#: core/libs/properties/itempropertiessidebardb.cpp:95
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "الواصفات"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "الإصدارات"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:635
+#: core/libs/properties/itempropertiessidebardb.cpp:636
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
