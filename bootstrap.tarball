@@ -48,7 +48,7 @@ cmake -G "Unix Makefiles" . \
 # Source code is not compiled and it's expected to compile at release time.
 # So, no check about this point is performed.
 
-make -j4 || exit 1
+make -j10| exit 1
 
 # If all is fine clean-up build and continue.
 
