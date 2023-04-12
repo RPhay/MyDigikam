@@ -137,7 +137,7 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 200 user-reports closed on bugzilla.");
+    newFeatures << i18n("More than 400 user-reports closed on bugzilla.");
     newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
     newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
     newFeatures << i18n("Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.");
