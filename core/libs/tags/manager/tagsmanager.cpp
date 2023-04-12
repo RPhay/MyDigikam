@@ -842,7 +842,7 @@ void TagsManager::setupActions()
     d->mainToolbar->addWidget(d->organizeButton);
     d->mainToolbar->addWidget(d->syncexportButton);
 
-    QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), QString());
+    QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), i18n("Help"));
     helpButton->setToolTip(i18nc("@info", "Online help about tags management"));
 
     connect(helpButton, &QPushButton::clicked,

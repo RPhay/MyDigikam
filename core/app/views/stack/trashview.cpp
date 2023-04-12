@@ -117,6 +117,16 @@ TrashView::TrashView(QWidget* const parent)
 
     // Action Buttons
 
+    QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), i18n("Help"));
+    helpButton->setToolTip(i18nc("@info", "Online help about trash-bin"));
+
+    connect(helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
+        }
+    );
+
     d->undoButton      = new QPushButton(i18n("Undo"), this);
     d->undoButton->setToolTip(i18n("Restore only the last entry in the trash-bin."));
     d->undoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
@@ -151,6 +161,7 @@ TrashView::TrashView(QWidget* const parent)
 
     d->mainLayout->addWidget(d->tableView);
 
+    d->btnsLayout->addWidget(helpButton);
     d->btnsLayout->addWidget(d->undoButton);
     d->btnsLayout->addStretch();
     d->btnsLayout->addWidget(restoreButton);
