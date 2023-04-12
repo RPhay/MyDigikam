@@ -23,6 +23,7 @@
 #include <QPushButton>
 #include <QMenu>
 #include <QAction>
+#include <QIcon>
 
 // KDE includes
 
@@ -63,9 +64,10 @@ void DWizardDlg::setPlugin(DPlugin* const tool)
         setButtonText(QWizard::HelpButton, i18nc("@action:button", "Help"));
 
         QPushButton* const help       = reinterpret_cast<QPushButton*>(button(QWizard::HelpButton));
+        help->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
         QMenu* const menu             = new QMenu(help);
-        QAction* const handbookAction = menu->addAction(i18n("Online Handbook..."));
-        QAction* const aboutAction    = menu->addAction(i18n("About..."));
+        QAction* const handbookAction = menu->addAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Online Handbook..."));
+        QAction* const aboutAction    = menu->addAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("About..."));
         help->setMenu(menu);
 
         connect(handbookAction, SIGNAL(triggered()),

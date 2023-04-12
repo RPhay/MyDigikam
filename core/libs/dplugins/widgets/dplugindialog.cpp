@@ -20,6 +20,7 @@
 #include <QPushButton>
 #include <QPointer>
 #include <QMenu>
+#include <QIcon>
 #include <QAction>
 
 // KDE includes
@@ -65,10 +66,11 @@ void DPluginDialog::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         QPushButton* const help       = m_buttons->addButton(QDialogButtonBox::Help);
+        help->setIcon(QIcon::fromTheme(QLatin1String("help-browser")));
         help->setText(i18nc("@action: button", "Help"));
         QMenu* const menu             = new QMenu(help);
-        QAction* const handbookAction = menu->addAction(i18n("Online Handbook..."));
-        QAction* const aboutAction    = menu->addAction(i18n("About..."));
+        QAction* const handbookAction = menu->addAction(QIcon::fromTheme(QLatin1String("globe")), i18n("Online Handbook..."));
+        QAction* const aboutAction    = menu->addAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("About..."));
         help->setMenu(menu);
 
         connect(handbookAction, SIGNAL(triggered()),
