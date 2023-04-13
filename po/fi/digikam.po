@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:46+0000\n"
+"POT-Creation-Date: 2023-04-13 00:46+0000\n"
 "PO-Revision-Date: 2023-03-14 13:46+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1042,7 +1042,7 @@ msgstr "Nimi:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:270
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1398,7 +1398,7 @@ msgstr ""
 "valitse ”Kyllä”, muuten valitse ”Ei”. Värinhallinta -ominaisuus on poissa "
 "käytöstä kunnes tämä ongelma on ratkaistu.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2688,7 +2688,7 @@ msgstr "Päätyökalurivi"
 
 # pmap: =:gen=digiKamin:
 # pmap: =:elat=digiKamista:
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3225,84 +3225,103 @@ msgid "Tools"
 msgstr "Työkalut"
 
 #: core/app/views/stack/trashview.cpp:120
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Help"
+msgid "Help"
+msgstr "Ohje"
+
+#: core/app/views/stack/trashview.cpp:121
+#, kde-format
+msgctxt "@info"
+msgid "Online help about trash-bin"
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Undo"
 msgstr "Kumoa"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Palauta roskakorista vain viimeisin tietue."
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:136
 #, kde-format
 msgid "Restore"
 msgstr "Palauta"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:137
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Poista luettelosta valitut kuvat"
 
-#: core/app/views/stack/trashview.cpp:133
+#: core/app/views/stack/trashview.cpp:143
 #, kde-format
 msgid "Delete..."
 msgstr "Poista…"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:144
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Poista roskakorista pysyvästi valinta tai kaikki tietueet."
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:148
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Valitut kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:141
+#: core/app/views/stack/trashview.cpp:151
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Kaikki kohteet pysyvästi"
 
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:278
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Vahvista kumoaminen"
 
-#: core/app/views/stack/trashview.cpp:268
-#: core/app/views/stack/trashview.cpp:293
+#: core/app/views/stack/trashview.cpp:279
+#: core/app/views/stack/trashview.cpp:304
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Haluatko varmasti palauttaa %1 kohteen?"
 msgstr[1] "Haluatko varmasti palauttaa %1 kohdetta?"
 
-#: core/app/views/stack/trashview.cpp:292
+#: core/app/views/stack/trashview.cpp:303
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Vahvista palauttaminen"
 
-#: core/app/views/stack/trashview.cpp:321
-#: core/app/views/stack/trashview.cpp:371
+#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:382
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Vahvista poisto"
 
-#: core/app/views/stack/trashview.cpp:322
+#: core/app/views/stack/trashview.cpp:333
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Haluatko varmasti poistaa %1 kohteen pysyvästi?"
 msgstr[1] "Haluatko varmasti poistaa %1 kohdetta pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:372
+#: core/app/views/stack/trashview.cpp:383
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Haluatko varmasti poistaa KAIKKI kohteet pysyvästi?"
 
-#: core/app/views/stack/trashview.cpp:442
+#: core/app/views/stack/trashview.cpp:452
+#, kde-format
+msgid "Selection"
+msgstr "Valinta"
+
+#: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3310,7 +3329,7 @@ msgstr "Haluatko varmasti poistaa KAIKKI kohteet pysyvästi?"
 msgid "Delete"
 msgstr "Poista"
 
-#: core/app/views/stack/trashview.cpp:509
+#: core/app/views/stack/trashview.cpp:521
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 kohdetta valittu"
@@ -3318,7 +3337,7 @@ msgstr "%1/%2 kohdetta valittu"
 #: core/app/views/stack/welcomepageview.cpp:140
 #, fuzzy, kde-format
 #| msgid "More than 1300 user-reports closed on bugzilla."
-msgid "More than 200 user-reports closed on bugzilla."
+msgid "More than 400 user-reports closed on bugzilla."
 msgstr "Yli 1 300 vikailmoitusta hoidettu Bugzillasta."
 
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -3344,24 +3363,29 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Lisää eräajohallintaan JPEG-XL-, WebP- ja AVIF-muunnokset."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
+#| "versionned images in editor."
 msgid ""
-"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-"versionned images in editor."
+"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"format to store versionned images in editor."
 msgstr ""
 "Tue JPEG-XL:ää, WebP:tä ja AVIF:ää häviöttöminä kuvamuotoina kuvien "
 "versioituun tallentamiseen muokkaimessa."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, kde-format
-msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, fuzzy, kde-format
+#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr "Lisää työkaluriville hampurilaisvalikko, jos päävalikko on piilotettu."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, fuzzy, kde-format
 #| msgctxt "@info:whatsthis"
 #| msgid "Turn on this option to write metadata into DNG files."
-msgid "Add new option to write metadata to files with ExifTool backend."
+msgid ""
+"Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr "Valitse tämä, niin DNG-tiedostoihin tallennetaan metatiedot."
 
 #: core/app/views/stack/welcomepageview.cpp:148
@@ -3371,150 +3395,200 @@ msgstr "Valitse tämä, niin DNG-tiedostoihin tallennetaan metatiedot."
 #| "Turn on this option to write metadata into RAW files. This feature is "
 #| "delegate to ExifTool backend and is disabled by default."
 msgid ""
-"Optional write metadata operations to DNG and RAW files are now always "
-"delegated to ExifTool Backend."
+"Metadata: optional write metadata operations to DNG and RAW files are now "
+"always delegated to ExifTool Backend."
 msgstr ""
 "Valitse tämä, niin metatiedot kirjoitetaan RAW-tiedostoihin. Piirre käyttää "
 "ExifTool-taustajärjestelmää ja on oletuksena poissa käytöstä."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, kde-format
-msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, fuzzy, kde-format
+#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgid ""
+"Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr "Optimoi metatietomuokkausliitännäisen asettelu käytettävyyssyistä."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
-"Add increment file counter to sequence numbering with option [c] or [c,step]."
+"Metadata: add new options to save and load configuration profiles in Avanced "
+"Metadata Settings Pannel."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:151
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add increment file counter to sequence numbering with option [c] or [c,"
+#| "step]."
+msgid ""
+"Advanced Rename: add increment file counter to sequence numbering from with "
+"option [c] or [c,step]."
 msgstr ""
 "Lisää tiedostolaskuri sekventiaaliseen numerointiin valinnalla [c] tai [c,"
 "askel]."
 
-#: core/app/views/stack/welcomepageview.cpp:151
-#, kde-format
-msgid "Add random text sequence numbering with option [r]."
-msgstr ""
-
 #: core/app/views/stack/welcomepageview.cpp:152
-#, kde-format
-msgid ""
-"Add configurable first character for the unique modifier with {unique:n,c}."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add increment file counter to sequence numbering with option [c] or [c,"
+#| "step]."
+msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
+"Lisää tiedostolaskuri sekventiaaliseen numerointiin valinnalla [c] tai [c,"
+"askel]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
-msgid "Add search for items by number of face regions."
-msgstr "Etsi kohteita kasvojen alueiden määrän mukaan"
+#, kde-format
+msgid ""
+"Advanced Rename: add configurable first character for the unique modifier "
+"with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, fuzzy, kde-format
-#| msgid "Return items without face regions"
-msgid "Add search for items without face regions."
-msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
+#| msgid "Return items by number of face regions"
+msgid "Advanced Search: add search for items by number of face regions."
+msgstr "Etsi kohteita kasvojen alueiden määrän mukaan"
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, kde-format
-msgid "Add support for cross-platform network paths."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Advanced Search: add search for items without face regions."
+msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:157
+#, kde-format
+msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:165
+#, kde-format
+msgid "Add support for float16 (half float) images in the TIFF Loader."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid ""
+"Add new maintenance tool to perform <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
+"images using deep learning model</a>."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid ""
-"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
-"\">Aesthetic Detection to classify images using deep learning model</a>."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
-msgid ""
-"Add new tool to assign pick label automatically by parsing image quality."
-msgstr ""
-"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
-"tämä asetus."
-
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
-msgid "Add new tool to assign rating, pick, and color labels in batch."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
-msgid "Add new tool to assign titles and captions in batch."
-msgstr ""
-"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
-"tämä asetus."
-
 #: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
 msgid ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-"from DocBook to Sphinx/ReStructuredText framework."
+"Queue Manager: add new tool to assign pick label automatically by parsing "
+"image quality."
 msgstr ""
+"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
+"tämä asetus."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, kde-format
-msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgid ""
+"Queue Manager: add new tool to assign rating, pick, and color labels in "
+"batch."
 msgstr ""
+"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
+"tämä asetus."
 
 #: core/app/views/stack/welcomepageview.cpp:170
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgid "Queue Manager: add new tool to assign titles and captions in batch."
+msgstr ""
+"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
+"tämä asetus."
+
+#: core/app/views/stack/welcomepageview.cpp:171
+#, kde-format
+msgid ""
+"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:172
+#, kde-format
+msgid ""
+"Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+"improve stability of plugin."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:173
+#, fuzzy, kde-format
+#| msgid ""
+#| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
+#| "CR3 and Sony A7R4 support."
+msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+msgstr ""
+"Päivittää sisäisen RAW-moottorin viimeisimpään Libraw 0.20.0 -julkaisuun, "
+"joka sisältää Canon CR3- ja Sony A7R4 -tuet."
+
+#: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3524,27 +3598,27 @@ msgid ""
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:185
+#: core/app/views/stack/welcomepageview.cpp:189
 #, kde-format
 msgid "...and much more."
 msgstr "…sekä paljon muuta."
 
-#: core/app/views/stack/welcomepageview.cpp:191
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:198
 #, kde-format
 msgid "New Features"
 msgstr "Uusia ominaisuuksia"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:200
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:201
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3555,17 +3629,17 @@ msgid ""
 msgstr ""
 "Tämän digiKam-julkaisun uusia ominaisuuksia (digiKam 5.x:ään verrattuna):"
 
-#: core/app/views/stack/welcomepageview.cpp:205
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
 
-#: core/app/views/stack/welcomepageview.cpp:207
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3575,7 +3649,7 @@ msgstr ""
 "digiKam on avoimen lähdekoodin valokuvahallintaohjelma, joka on suunniteltu "
 "digikuvien tuontiin, järjestämiseen, ehostamiseen, etsimiseen ja vientiin."
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3585,12 +3659,12 @@ msgstr ""
 "Olet nyt digiKamin albuminäkymässä. Albumeihin tiedostosi tallennetaan, ja "
 "ne vastaavat kiintolevyn kansioita."
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:214
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3604,7 +3678,7 @@ msgstr ""
 "href=\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
 "\">ohjeista</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:216
 #, fuzzy, kde-format
 #| msgid ""
 #| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
@@ -3616,34 +3690,34 @@ msgstr ""
 "<a href=\"http://www.digikam.org\">digiKamin kotisivulta</a> löytyy tietoa "
 "digiKamin uusista versioista."
 
-#: core/app/views/stack/welcomepageview.cpp:262
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Tervetuloa käyttämään digiKamia (versio %1)."
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:269
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Kiitokset taustakuvasta"
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Author:"
 msgstr "Tekijä:"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Sijainti:"
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:275
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:276
 #, kde-format
 msgid "Lens:"
 msgstr "Linssi:"
@@ -34897,7 +34971,7 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Käyttäjä6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -34905,15 +34979,15 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "Ohje"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Käsikirja verkossa…"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "About..."
@@ -34991,7 +35065,7 @@ msgstr ""
 "PPM-muotoon. Tämä tuottaa suurimmat tiedostot laadun kärsimättä. Kuvaa ei "
 "pakata.</p>"
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -40143,11 +40217,10 @@ msgstr ""
 "varoen."
 
 #: core/libs/tags/manager/tagsmanager.cpp:846
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
-msgid "Help"
-msgstr "Ohje"
+msgid "Online help about tags management"
+msgstr ""
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -52429,6 +52502,12 @@ msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "Tyhjennä varmistamattomat tulokset ja etsi uudelleen"
 
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Ohje"
+
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@option:radio"
@@ -64619,17 +64698,6 @@ msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 #~ "New tool to share items on the network with a Motion JPEG stream server."
 #~ msgstr "Järjestä arvion mukaan"
 
-#, fuzzy
-#~| msgid ""
-#~| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
-#~| "CR3 and Sony A7R4 support."
-#~ msgid ""
-#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-#~ "including Canon CR3 and Sony A7R4 support."
-#~ msgstr ""
-#~ "Päivittää sisäisen RAW-moottorin viimeisimpään Libraw 0.20.0 -julkaisuun, "
-#~ "joka sisältää Canon CR3- ja Sony A7R4 -tuet."
-
 #~ msgid ""
 #~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
 #~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
@@ -67670,9 +67738,6 @@ msgstr "Haluatko palauttaa kaikki videoasetukset oletusarvoihinsa?"
 
 #~ msgid "All"
 #~ msgstr "Kaikki"
-
-#~ msgid "Selection"
-#~ msgstr "Valinta"
 
 #~ msgctxt ""
 #~ "This is a column which will contain the amount of HotPixels found in the "

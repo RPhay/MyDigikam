@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:46+0000\n"
+"POT-Creation-Date: 2023-04-13 00:46+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -1069,7 +1069,7 @@ msgstr "名稱："
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:270
+#: core/app/views/stack/welcomepageview.cpp:274
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1429,7 +1429,7 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:502
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2842,7 +2842,7 @@ msgstr ""
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:254
+#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3356,85 +3356,102 @@ msgid "Tools"
 msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:120
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#, kde-format
+msgid "Help"
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:121
+#, kde-format
+msgctxt "@info"
+msgid "Online help about trash-bin"
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Undo"
 msgstr "復原"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:126
+#: core/app/views/stack/trashview.cpp:136
 #, fuzzy, kde-format
 msgid "Restore"
 msgstr "修復"
 
-#: core/app/views/stack/trashview.cpp:127
+#: core/app/views/stack/trashview.cpp:137
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "從清單中移除目前選擇的數值"
 
-#: core/app/views/stack/trashview.cpp:133
+#: core/app/views/stack/trashview.cpp:143
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete..."
 msgstr "刪除"
 
-#: core/app/views/stack/trashview.cpp:134
+#: core/app/views/stack/trashview.cpp:144
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:138
+#: core/app/views/stack/trashview.cpp:148
 #, fuzzy, kde-format
 #| msgid "Delete File Permanently"
 msgid "Selected Items Permanently"
 msgstr "永久刪除檔案"
 
-#: core/app/views/stack/trashview.cpp:141
+#: core/app/views/stack/trashview.cpp:151
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgid "All Items Permanently"
 msgstr "永久刪除"
 
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:278
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgid "Confirm Undo"
 msgstr "確認"
 
-#: core/app/views/stack/trashview.cpp:268
-#: core/app/views/stack/trashview.cpp:293
+#: core/app/views/stack/trashview.cpp:279
+#: core/app/views/stack/trashview.cpp:304
 #, fuzzy, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:292
+#: core/app/views/stack/trashview.cpp:303
 #, fuzzy, kde-format
 msgid "Confirm Restore"
 msgstr "關聯性："
 
-#: core/app/views/stack/trashview.cpp:321
-#: core/app/views/stack/trashview.cpp:371
+#: core/app/views/stack/trashview.cpp:332
+#: core/app/views/stack/trashview.cpp:382
 #, fuzzy, kde-format
 msgid "Confirm Deletion"
 msgstr "關聯性："
 
-#: core/app/views/stack/trashview.cpp:322
+#: core/app/views/stack/trashview.cpp:333
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:372
+#: core/app/views/stack/trashview.cpp:383
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:442
+#: core/app/views/stack/trashview.cpp:452
+#, kde-format
+msgid "Selection"
+msgstr "選擇區域"
+
+#: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
@@ -3442,7 +3459,7 @@ msgstr "您確定要刪除選擇的工作流「%1」？"
 msgid "Delete"
 msgstr "刪除"
 
-#: core/app/views/stack/trashview.cpp:509
+#: core/app/views/stack/trashview.cpp:521
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -3451,7 +3468,7 @@ msgstr "%2/%1 個項目已選擇"
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
-msgid "More than 200 user-reports closed on bugzilla."
+msgid "More than 400 user-reports closed on bugzilla."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:141
@@ -3478,13 +3495,13 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
 msgid ""
-"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-"versionned images in editor."
+"Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"format to store versionned images in editor."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
-msgid "Add hamburger menu to tool-bar if main menu is hidden."
+msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:147
@@ -3492,7 +3509,8 @@ msgstr ""
 #| msgctxt "@info:whatsthis"
 #| msgid ""
 #| "Turn on this option to save, as specified, metadata to XMP sidecar files."
-msgid "Add new option to write metadata to files with ExifTool backend."
+msgid ""
+"Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr "開啟此選項，將指定的中繼資料寫入 XMP 邊車檔。"
 
 #: core/app/views/stack/welcomepageview.cpp:148
@@ -3503,144 +3521,178 @@ msgstr "開啟此選項，將指定的中繼資料寫入 XMP 邊車檔。"
 #| "feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
 #| "experimental, and is disabled by default."
 msgid ""
-"Optional write metadata operations to DNG and RAW files are now always "
-"delegated to ExifTool Backend."
+"Metadata: optional write metadata operations to DNG and RAW files are now "
+"always delegated to ExifTool Backend."
 msgstr ""
 "開啟這個選項可將中繼資料寫進 RAW TIFF/EP 檔案裡。這項功能需要 Exiv2 共用函式"
 "庫，版本 >= 0.18.0。仍屬於實驗性質，預設是停用的。"
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
-msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgid ""
+"Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
-"Add increment file counter to sequence numbering with option [c] or [c,step]."
+"Metadata: add new options to save and load configuration profiles in Avanced "
+"Metadata Settings Pannel."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
-msgid "Add random text sequence numbering with option [r]."
+msgid ""
+"Advanced Rename: add increment file counter to sequence numbering from with "
+"option [c] or [c,step]."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
-msgid ""
-"Add configurable first character for the unique modifier with {unique:n,c}."
+msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return pictures whose file name contains"
-msgid "Add search for items by number of face regions."
-msgstr "回傳檔案名稱含有相關文字的圖片"
+#, kde-format
+msgid ""
+"Advanced Rename: add configurable first character for the unique modifier "
+"with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, fuzzy, kde-format
-#| msgid "Return pictures with tag"
-msgid "Add search for items without face regions."
-msgstr "回傳此標籤的圖片"
+#| msgid "Return pictures whose file name contains"
+msgid "Advanced Search: add search for items by number of face regions."
+msgstr "回傳檔案名稱含有相關文字的圖片"
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, kde-format
-msgid "Add support for cross-platform network paths."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Advanced Search: add search for items without face regions."
+msgstr "回傳此標籤的圖片"
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgid "Collections: add support for cross-platform network paths."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:157
+#, kde-format
+msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:158
+#: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:159
+#: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:160
+#: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:161
+#: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:162
+#: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:163
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:165
+#, kde-format
+msgid "Add support for float16 (half float) images in the TIFF Loader."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid ""
+"Add new maintenance tool to perform <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
+"images using deep learning model</a>."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid ""
-"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
-"\">Aesthetic Detection to classify images using deep learning model</a>."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
-msgid ""
-"Add new tool to assign pick label automatically by parsing image quality."
-msgstr "啟用這個選項會依影像品質自動指定挑選標籤。"
-
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
-msgid "Add new tool to assign rating, pick, and color labels in batch."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
-msgid "Add new tool to assign titles and captions in batch."
-msgstr "啟用這個選項會依影像品質自動指定挑選標籤。"
-
 #: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
 msgid ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-"from DocBook to Sphinx/ReStructuredText framework."
-msgstr ""
+"Queue Manager: add new tool to assign pick label automatically by parsing "
+"image quality."
+msgstr "啟用這個選項會依影像品質自動指定挑選標籤。"
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, kde-format
-msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgid ""
+"Queue Manager: add new tool to assign rating, pick, and color labels in "
+"batch."
+msgstr "啟用這個選項會依影像品質自動指定挑選標籤。"
 
 #: core/app/views/stack/welcomepageview.cpp:170
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgid "Queue Manager: add new tool to assign titles and captions in batch."
+msgstr "啟用這個選項會依影像品質自動指定挑選標籤。"
+
+#: core/app/views/stack/welcomepageview.cpp:171
+#, kde-format
+msgid ""
+"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:172
+#, kde-format
+msgid ""
+"Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
+"improve stability of plugin."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:173
+#, kde-format
+msgid "Update internal RAW engine to last Libraw snapshot 20230403."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
 msgid ""
 "New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
@@ -3650,44 +3702,44 @@ msgid ""
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:185
+#: core/app/views/stack/welcomepageview.cpp:189
 #, kde-format
 msgid "...and much more."
 msgstr "...以及更多。"
 
-#: core/app/views/stack/welcomepageview.cpp:191
+#: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:194
+#: core/app/views/stack/welcomepageview.cpp:198
 #, fuzzy, kde-format
 msgid "New Features"
 msgstr "專題"
 
-#: core/app/views/stack/welcomepageview.cpp:196
+#: core/app/views/stack/welcomepageview.cpp:200
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:197
+#: core/app/views/stack/welcomepageview.cpp:201
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 6.x):"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:205
+#: core/app/views/stack/welcomepageview.cpp:209
 #, fuzzy, kde-format
 msgid "About"
 msgstr "關於"
 
-#: core/app/views/stack/welcomepageview.cpp:207
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:208
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3695,7 +3747,7 @@ msgid ""
 "computer."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:209
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3703,56 +3755,56 @@ msgid ""
 "disk."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:210
+#: core/app/views/stack/welcomepageview.cpp:214
 #, fuzzy, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:215
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:216
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:262
+#: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "歡迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:265
+#: core/app/views/stack/welcomepageview.cpp:269
 #, fuzzy, kde-format
 #| msgid "Background opacity:"
 msgid "Background Image Credits"
 msgstr "背景不透明度："
 
-#: core/app/views/stack/welcomepageview.cpp:268
+#: core/app/views/stack/welcomepageview.cpp:272
 #, fuzzy, kde-format
 #| msgid "Author"
 msgid "Author:"
 msgstr "作者"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:273
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "地點："
 
-#: core/app/views/stack/welcomepageview.cpp:271
+#: core/app/views/stack/welcomepageview.cpp:275
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgid "Camera:"
 msgstr "相機"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "camera lens"
 #| msgid "Lens:"
@@ -35293,22 +35345,22 @@ msgctxt "@title"
 msgid "User6"
 msgstr "使用者"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, fuzzy, kde-format
 #| msgid "Kipi Plugins Handbook"
 msgid "Online Handbook..."
 msgstr "Kipi 外掛程式手冊"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:71
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:68
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, fuzzy, kde-format
 msgid "About..."
 msgstr "關於"
@@ -35383,7 +35435,7 @@ msgid ""
 "the largest files, without losing quality. Image is not compressed.</p>"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:63
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
@@ -40560,10 +40612,9 @@ msgid ""
 msgstr "只會從資料庫刪除所有的標籤，而不會與檔案同步。請小心使用。"
 
 #: core/libs/tags/manager/tagsmanager.cpp:846
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
 #, kde-format
 msgctxt "@info"
-msgid "Help"
+msgid "Online help about tags management"
 msgstr ""
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
@@ -54331,6 +54382,12 @@ msgstr "清除未確認的結果並重新掃描"
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
 msgstr "清除未確認的結果並重新掃描"
+
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:143
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
@@ -69668,9 +69725,6 @@ msgstr "重設所有設定值為預設值。"
 
 #~ msgid "All"
 #~ msgstr "全部"
-
-#~ msgid "Selection"
-#~ msgstr "選擇區域"
 
 #~ msgid ""
 #~ "Use this button to add a new black frame file which will be used by the "
