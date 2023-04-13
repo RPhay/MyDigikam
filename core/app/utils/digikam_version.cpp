@@ -56,8 +56,8 @@ const QString additionalInformation()
     QString gitVer       = QLatin1String(GITVERSION);
     QString gitBra       = QLatin1String(GITBRANCH);
     QString ret          = i18n("IRC: %1 - #digikam\n"
-                                "Feedback: %2\n\n"
-                                "Documentation: %3\n"
+                                "Feedback: %2\n"
+                                "Documentation: %3\n\n"
                                 "Build date: %4 (target: %5)",
                                 QString::fromLatin1("<a href='https://libera.chat/'>irc.libera.chat</a>"),
                                 QString::fromLatin1("<a href='https://mail.kde.org/mailman/listinfo/digikam-users'>digikam-user@kde.org</a>"),
