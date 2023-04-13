@@ -147,7 +147,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Metadata: add new option to write metadata to files with ExifTool backend.");
     newFeatures << i18n("Metadata: optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.");
     newFeatures << i18n("Metadata: optimize layout of Metadata Edit plugin for a better usability.");
-    newFeatures << i18n("Metadata: add new options to save and load configuration profiles in Avanced Metadata Settings Pannel.");
+    newFeatures << i18n("Metadata: add new options to save and load configuration profiles in Advanced Metadata Settings Panel.");
     newFeatures << i18n("Advanced Rename: add increment file counter to sequence numbering from with option [c] or [c,step].");
     newFeatures << i18n("Advanced Rename: add random text sequence numbering with option [r].");
     newFeatures << i18n("Advanced Rename: add configurable first character for the unique modifier with {unique:n,c}.");
