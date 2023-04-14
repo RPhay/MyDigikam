@@ -44,6 +44,7 @@ public:
     explicit Private()
       : state               (0),
         progressBarSize     (3),
+        timer               (nullptr),
         version             (QLatin1String(digikam_version_short)),
         messageColor        (Qt::white),
         versionColor        (Qt::white),
@@ -53,6 +54,8 @@ public:
 
     int     state;
     int     progressBarSize;
+
+    QTimer* timer;
 
     QString message;
     QString version;
@@ -87,16 +90,18 @@ DSplashScreen::DSplashScreen()
 
     setPixmap(splash);
 
-    QTimer* const timer = new QTimer(this);
+    d->timer = new QTimer(this);
 
-    connect(timer, SIGNAL(timeout()),
+    connect(d->timer, SIGNAL(timeout()),
             this, SLOT(slotAnimate()));
 
-    timer->start(150);
+    d->timer->start(150);
 }
 
 DSplashScreen::~DSplashScreen()
 {
+    d->timer->stop();
+
     delete d;
 }
 

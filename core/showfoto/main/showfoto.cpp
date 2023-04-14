@@ -189,8 +189,6 @@ void Showfoto::show()
     if (d->splash)
     {
         d->splash->finish(this);
-        delete d->splash;
-        d->splash = nullptr;
     }
 
     // Display application window.
@@ -224,6 +222,12 @@ void Showfoto::show()
             group.writeEntry(QLatin1String("EnableCM"), false);
             config->sync();
         }
+    }
+
+    if (d->splash)
+    {
+        delete d->splash;
+        d->splash = nullptr;
     }
 }
 

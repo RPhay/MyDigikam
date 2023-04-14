@@ -321,8 +321,6 @@ void DigikamApp::show()
     if (d->splashScreen)
     {
         d->splashScreen->finish(this);
-        delete d->splashScreen;
-        d->splashScreen = nullptr;
     }
 
     // Display application window.
@@ -375,6 +373,12 @@ void DigikamApp::show()
         }
 
         QTimer::singleShot(1000, tool, SLOT(start()));
+    }
+
+    if (d->splashScreen)
+    {
+        delete d->splashScreen;
+        d->splashScreen = nullptr;
     }
 }
 
