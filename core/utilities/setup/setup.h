@@ -41,9 +41,13 @@ public:
         CollectionsPage,
         AlbumViewPage,
         ToolTipPage,
+
 #ifdef HAVE_MEDIAPLAYER
+
         VideoPage,
+
 #endif
+
         MetadataPage,
         TemplatePage,
         EditorPage,

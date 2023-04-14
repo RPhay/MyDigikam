@@ -64,7 +64,13 @@ public:
         page_collections        (nullptr),
         page_albumView          (nullptr),
         page_tooltip            (nullptr),
+
+#ifdef HAVE_MEDIAPLAYER
+
         page_video              (nullptr),
+
+#endif
+
         page_metadata           (nullptr),
         page_template           (nullptr),
         page_lighttable         (nullptr),
@@ -78,9 +84,13 @@ public:
         collectionsPage         (nullptr),
         albumViewPage           (nullptr),
         tooltipPage             (nullptr),
+
 #ifdef HAVE_MEDIAPLAYER
+
         videoPage               (nullptr),
+
 #endif
+
         metadataPage            (nullptr),
         templatePage            (nullptr),
         lighttablePage          (nullptr),
@@ -97,7 +107,13 @@ public:
     DConfigDlgWdgItem*       page_collections;
     DConfigDlgWdgItem*       page_albumView;
     DConfigDlgWdgItem*       page_tooltip;
+
+#ifdef HAVE_MEDIAPLAYER
+
     DConfigDlgWdgItem*       page_video;
+
+#endif
+
     DConfigDlgWdgItem*       page_metadata;
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
@@ -269,7 +285,13 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
     group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
+
+#ifdef HAVE_MEDIAPLAYER
+
     group.writeEntry(QLatin1String("Video Tab"),       (int)d->videoPage->activeTab());
+
+#endif
+
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
     group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
     group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
@@ -577,7 +599,13 @@ void Setup::showPage(Setup::Page page)
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
         d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
         d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
+
+#ifdef HAVE_MEDIAPLAYER
+
         d->videoPage->setActiveTab((SetupVideo::VideoTab)group.readEntry(QLatin1String("Video Tab"), (int)SetupVideo::Decoder));
+
+#endif
+
         d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
         d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
         d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));

@@ -8,4 +8,5 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 468439 - Option to search for images with identical file names.
-002 ==> 
+002 ==> 468500 - Compilation failed with -DENABLE_MEDIAPLAYER=OFF.
+003 ==> 
