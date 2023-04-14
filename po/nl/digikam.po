@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:46+0000\n"
-"PO-Revision-Date: 2023-04-10 17:39+0200\n"
+"POT-Creation-Date: 2023-04-14 00:44+0000\n"
+"PO-Revision-Date: 2023-04-13 13:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2786,12 +2786,18 @@ msgid "All supported files (%1)"
 msgstr "Alle ondersteunde bestanden (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Documentation: %3\n"
+#| "Build date: %4 (target: %5)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
@@ -3170,9 +3176,7 @@ msgstr "Hulpmiddelen"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Help"
 
@@ -3180,7 +3184,7 @@ msgstr "Help"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Online hulp over de prullenbak"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3278,10 +3282,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 items geselecteerd"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Meer dan 200 gebruikersrapporten in bugzilla gesloten."
+msgstr "Meer dan 400 gebruikersrapporten in bugzilla gesloten."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3310,113 +3313,109 @@ msgstr ""
 "Converteren van JPEG-XL, WEBP en AVIF toegevoegd in takenwachtrijbeheer."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Ondersteuning voor JPEG-XL, HEIF, WEBP en AVIF als afbeeldingsformaat zonder "
-"verlies om afbeeldingen met versie in bewerker op te slaan."
+"Versiebeheer: ondersteuning toevoegen voor JPEG-XL, HEIF, WEBP en AVIF als "
+"afbeeldingsformaat zonder verlies om afbeeldingen met versie in bewerker op "
+"te slaan."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "Hamburgermenu toegevoegd aan werkbalk als hoofdmenu verborgen is."
+msgstr ""
+"Bruikbaarheid: hamburgermenu toegevoegd aan werkbalk als hoofdmenu verborgen "
+"is."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Nieuwe optie toevoegen om metagegevens naar bestanden te schrijven met "
-"ExifTool-backend."
+"Metagegevens: nieuwe optie toevoegen om metagegevens naar bestanden te "
+"schrijven met ExifTool-backend."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Het optioneel schrijven van metagegevens naar DNG- en RAW-bestanden is nu "
-"altijd gedelegeerd naar de ExifTool-backend ."
+"Metagegevens; het optioneel schrijven van metagegevens naar DNG- en RAW-"
+"bestanden is nu altijd gedelegeerd naar de ExifTool-backend ."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Indeling van plug-in voor bewerken van metagegevens is geoptimaliseerd voor "
-"een betere bruikbaarheid"
+"Metagegevens: indeling van plug-in voor bewerken van metagegevens is "
+"geoptimaliseerd voor een betere bruikbaarheid"
 
 #: core/app/views/stack/welcomepageview.cpp:150
-#, kde-format
-msgid ""
-"Metadata: add new options to save and load configuration profiles in Avanced "
-"Metadata Settings Pannel."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#| "Metadata: add new options to save and load configuration profiles in "
+#| "Avanced Metadata Settings Pannel."
+msgid ""
+"Metadata: add new options to save and load configuration profiles in "
+"Advanced Metadata Settings Panel."
+msgstr ""
+"Metagegevens: nieuwe opties toevoegen om configuratieprofielen op te slaan "
+"in paneel Geavanceerde instellingen voor metagegevens."
+
+#: core/app/views/stack/welcomepageview.cpp:151
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Teller voor ophogen van opvolgende nummering van bestanden met optie [c] of "
-"[c,step] toegevoegd."
+"Geavanceerd hernoemen: teller voor ophogen van opvolgende nummering van "
+"bestanden met optie [c] of [c,step] toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "Willekeurige nummering van tekstreeksen met optie [r] toegevoegd."
+msgstr ""
+"Geavanceerd hernoemen: willekeurige nummering van tekstreeksen met optie [r] "
+"toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Te configureren eerste teken voor de unieke modifier met {unique:n,c} "
-"toegevoegd."
+"Geavanceerd hernoemen: te configureren eerste teken voor de unieke modifier "
+"met {unique:n,c} toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Zoeken naar items op nummer van gezichtsgebieden toegevoegd."
+msgstr ""
+"Geavanceerd zoeken: zoeken naar items op nummer van gezichtsgebieden "
+"toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Zoeken naar items zonder gezichtsgebieden toevoegen"
+msgstr ""
+"Geavanceerd zoeken: zoeken naar items zonder gezichtsgebieden toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Ondersteuning voor cross-platform netwerkpaden toevoegen."
+msgstr ""
+"Verzamelingen: ondersteuning voor cross-platform netwerkpaden toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Ondersteuning voor modus SQLite WAL (Write-Ahead-Logging) toevoegen."
+msgstr ""
+"Database: ondersteuning voor modus SQLite WAL (Write-Ahead-Logging) "
+"toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3473,26 +3472,26 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Instellingen voor pictogramweergave toevoegen om zichtbaarheid van labels "
+"boven miniaturen aan te passen."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Ondersteuning toevoegen voor float16 (half float) afbeeldingen in de lader "
+"van TIFF."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"<a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
-"\">Estetische detectie om afbeeldingen te classificeren met deep-"
-"learningmodel</a> toevoegen."
+"Nieuw hulpmiddel voor onderhoud om <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">Estetische detectie om afbeeldingen "
+"te classificeren met deep-learningmodel</a> toevoegen."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3504,44 +3503,39 @@ msgstr ""
 "QuocHungTran\">om OCR uit te voeren op gescande tekst</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Een nieuw hulpmiddel om pick-label automatisch toe te kennen bij bepalen "
-"afbeeldingskwaliteit."
+"Wachtrijbeheerder: nieuw hulpmiddel toevoegen om pick-label automatisch toe "
+"te kennen bij bepalen afbeeldingskwaliteit."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Nieuw hulpmiddel toevoegen om waardering, pick- en kleurlabels in bulk toe "
-"te kennen."
+"Wachtrijbeheerder: nieuw hulpmiddel toevoegen om waardering, keuze- en "
+"kleurlabels in bulk toe te kennen."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Nieuw hulpmiddel toevoegen om titels en opschriften in bulk toe te kennen."
+"Wachtrijbeheerder: nieuw hulpmiddel toevoegen om titels en opschriften in "
+"bulk toe te kennen."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Handleiding "
-"herschrijven</a> van DocBook naar framework Sphinx/ReStructuredText."
+"Documentatie: <a href=\" https://docs.digikam.org/en/index.html"
+"\">Handleiding herschrijven</a> van DocBook naar framework Sphinx/"
+"ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3549,12 +3543,14 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"G'MIC-Qt hulpmiddel bijwerken naar laatste versie 3.2.2 en overzetten naar "
+"MacOS afronden en stabiliteit van plug-in verbeteren."
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr "Interne RAW-engine bijgewerkt tot laatste stabiele Libraw 0.21.1."
+msgstr ""
+"Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -39675,7 +39671,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Online hulp over de beheer van tags"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format

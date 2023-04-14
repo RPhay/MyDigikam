@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:46+0000\n"
+"POT-Creation-Date: 2023-04-14 00:44+0000\n"
 "PO-Revision-Date: 2023-03-27 22:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2830,8 +2830,8 @@ msgstr "Tous les fichiers pris en charge (%1)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)"
 msgstr ""
 "IRC : %1 - #digikam\n"
@@ -3313,7 +3313,8 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Voulez-vous vraiment supprimer TOUS les éléments définitivement ?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Selection"
 msgid "Selection"
 msgstr "Sélection"
 
@@ -3421,8 +3422,8 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
-"Metadata: add new options to save and load configuration profiles in Avanced "
-"Metadata Settings Pannel."
+"Metadata: add new options to save and load configuration profiles in "
+"Advanced Metadata Settings Panel."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151

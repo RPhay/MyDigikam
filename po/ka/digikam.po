@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:46+0000\n"
+"POT-Creation-Date: 2023-04-14 00:44+0000\n"
 "PO-Revision-Date: 2023-04-11 04:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2681,8 +2681,8 @@ msgstr "ყველა მხარდაჭერილი ფაილი (%1
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)"
 msgstr ""
 
@@ -3193,8 +3193,8 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
-"Metadata: add new options to save and load configuration profiles in Avanced "
-"Metadata Settings Pannel."
+"Metadata: add new options to save and load configuration profiles in "
+"Advanced Metadata Settings Panel."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151

@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:46+0000\n"
-"PO-Revision-Date: 2023-04-11 01:44+0200\n"
+"POT-Creation-Date: 2023-04-14 00:44+0000\n"
+"PO-Revision-Date: 2023-04-14 02:17+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2792,12 +2792,18 @@ msgid "All supported files (%1)"
 msgstr "Todos los archivos permitidos (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "IRC: %1 - #digikam\n"
+#| "Feedback: %2\n"
+#| "\n"
+#| "Documentation: %3\n"
+#| "Build date: %4 (target: %5)"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)"
 msgstr ""
 "IRC: %1 - #digikam\n"
@@ -3178,9 +3184,7 @@ msgstr "Herramientas"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Ayuda"
 
@@ -3188,7 +3192,7 @@ msgstr "Ayuda"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Ayuda en línea sobre la papelera"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3269,11 +3273,9 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "¿Seguro que desea borrar todos los elementos permanentemente?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "Seleccionar"
+msgstr "Selección"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
@@ -3289,10 +3291,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementos seleccionados"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Se han cerrado más de 200 informes de usuario en bugzilla."
+msgstr "Se han cerrado más de 400 informes de usuario en bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3324,118 +3325,109 @@ msgstr ""
 "lotes."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Permitir los formatos de imagen JPEG-XL, HEIF, WEBP y AVIF sin pérdidas para "
-"guardar versiones de imágenes en el editor."
+"Sistema de versiones: permitir el uso de JPEG-XL, HEIF, WEBP y AVIF como "
+"formatos de imagen sin pérdidas para guardar versiones de imágenes en el "
+"editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"Se ha añadido el menú hamburguesa a la barra de herramientas cuando se "
-"oculta el menú principal."
+"Usabilidad: se ha añadido el menú hamburguesa a la barra de herramientas "
+"cuando se oculta el menú principal."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Se ha añadido una nueva opción para escribir metadatos en los archivos con "
-"el motor ExifTool."
+"Metadatos: se ha añadido una nueva opción para escribir metadatos en los "
+"archivos con el motor ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Las operaciones opcionales de escritura de metadatos en archivos DNG y RAW "
-"se delegan ahora siempre en el motor ExifTool."
+"Metadatos: las operaciones opcionales de escritura de metadatos en archivos "
+"DNG y RAW se delegan ahora siempre en el motor ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Se ha optimizado el diseño del complemento de edición de metadatos para que "
-"tenga una mejor usabilidad."
+"Metadatos: se ha optimizado el diseño del complemento de edición de "
+"metadatos para que tenga una mejor usabilidad."
 
 #: core/app/views/stack/welcomepageview.cpp:150
-#, kde-format
-msgid ""
-"Metadata: add new options to save and load configuration profiles in Avanced "
-"Metadata Settings Pannel."
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#| "Metadata: add new options to save and load configuration profiles in "
+#| "Avanced Metadata Settings Pannel."
+msgid ""
+"Metadata: add new options to save and load configuration profiles in "
+"Advanced Metadata Settings Panel."
+msgstr ""
+"Metadatos: se han añadido nuevas opciones para guardar y cargar perfiles de "
+"configuración en el panel de preferencias avanzadas de metadatos."
+
+#: core/app/views/stack/welcomepageview.cpp:151
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Se ha añadido contador de archivos incremental a la numeración secuencial "
-"con la opción [c] o [c,step]."
+"Cambio de nombre avanzado: se ha añadido un contador de archivos incremental "
+"a la numeración secuencial con la opción [c] o [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
-"Se ha añadido numeración secuencial de texto aleatorio con la opción [r]."
+"Cambio de nombre avanzado: se ha añadido numeración secuencial de texto "
+"aleatorio con la opción [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Se ha añadido configuración del primer carácter para el modificador único "
-"con {unique:n,c}."
+"Cambio de nombre avanzado: se ha añadido configuración del primer carácter "
+"para el modificador único con {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Se ha añadido búsqueda de elementos por número de regiones de cara."
+msgstr ""
+"Búsqueda avanzada: se ha añadido búsqueda de elementos por número de "
+"regiones de cara."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Se ha añadido búsqueda de elementos sin regiones de cara."
+msgstr ""
+"Búsqueda avanzada: se ha añadido búsqueda de elementos sin regiones de cara."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Se ha añadido compatibilidad con rutas de red multiplataforma."
+msgstr ""
+"Colecciones: se ha añadido compatibilidad con rutas de red multiplataforma."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
-"Se ha añadido compatibilidad con el modo WAL (registro de escritura "
-"anticipada) de SQLite."
+"Base de datos: se ha añadido compatibilidad con el modo WAL (registro de "
+"escritura anticipada) de SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3492,26 +3484,27 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Se han añadido preferencias a la vista de iconos para personalizar la "
+"visibilidad de etiquetas sobre las miniaturas."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Se ha añadido compatibilidad para imágenes float16 (coma flotante de media "
+"precisión) en el cargador de TIFF."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Se ha añadido <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-"PhuocKhanhLe\">detección estética para clasificar las imágenes usando un "
-"modelo de aprendizaje profundo</a>."
+"Se ha añadido una nueva herramienta de mantenimiento para realizar <a href="
+"\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">detección "
+"estética para clasificar las imágenes usando un modelo de aprendizaje "
+"profundo</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3524,46 +3517,39 @@ msgstr ""
 "escaneado</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Se ha añadido una nueva herramienta para asignar un emblema de recogida "
-"automáticamente analizando la calidad de la imagen."
+"Gestor de colas: se ha añadido una nueva herramienta para asignar un emblema "
+"de recogida automáticamente analizando la calidad de la imagen."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Se ha añadido una nueva herramienta para asignar puntuaciones y emblemas de "
-"recogida y de color en el modo por lotes."
+"Gestor de colas: se ha añadido una nueva herramienta para asignar "
+"puntuaciones y emblemas de recogida y de color en el modo por lotes."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Se ha añadido una nueva herramienta para asignar títulos y pies de foto por "
-"lotes."
+"Gestor de colas: se ha añadido una nueva herramienta para asignar títulos y "
+"pies de foto por lotes."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"Se ha <a href=\" https://docs.digikam.org/en/index.html\">reescrito el "
-"manual</a> para migrarlo de DocBook a la infraestructura Sphinx/"
-"ReStructuredText."
+"Documentación: se ha <a href=\"https://docs.digikam.org/en/index.html"
+"\">reescrito el manual</a> para migrarlo de DocBook a la infraestructura "
+"Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3571,14 +3557,16 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Se ha actualizado la herramienta G'MIC-Qt a la última versión 3.2.2, se ha "
+"finalizado la adaptación a macOS y se ha mejorado la estabilidad del "
+"complemento."
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
 msgstr ""
-"Se ha actualizado el motor RAW interno a la última versión estable de Libraw "
-"0.21.1."
+"Se ha actualizado el motor RAW interno a la última copia disponible de "
+"Libraw 20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -39773,7 +39761,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Ayuda en línea sobre la gestión de etiquetas"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
