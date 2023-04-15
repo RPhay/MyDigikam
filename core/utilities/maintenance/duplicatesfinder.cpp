@@ -66,17 +66,23 @@ public:
     SearchesDBJobsThread*        job;
 };
 
-DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tags, int albumTagRelation, int minSimilarity,
-                                   int maxSimilarity, int searchResultRestriction, HaarIface::RefImageSelMethod method,
-                                   const AlbumList &referenceImageAlbum, ProgressItem* const parent)
+DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
+                                   const AlbumList& tags,
+                                   int albumTagRelation,
+                                   int minSimilarity,
+                                   int maxSimilarity,
+                                   int searchResultRestriction,
+                                   HaarIface::RefImageSelMethod method,
+                                   const AlbumList& referenceImageAlbum,
+                                   ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
       d(new Private)
 {
-    d->minSimilarity            = minSimilarity;
-    d->maxSimilarity            = maxSimilarity;
-    d->albumTagRelation         = albumTagRelation;
-    d->searchResultRestriction  = searchResultRestriction;
-    d->method                   = method;
+    d->minSimilarity           = minSimilarity;
+    d->maxSimilarity           = maxSimilarity;
+    d->albumTagRelation        = albumTagRelation;
+    d->searchResultRestriction = searchResultRestriction;
+    d->method                  = method;
 
     Q_FOREACH (Album* const a, albums)
     {
@@ -119,8 +125,8 @@ void DuplicatesFinder::slotStart()
     double maxThresh = d->maxSimilarity / 100.0;
 
     const HaarIface::AlbumTagRelation relation = static_cast<HaarIface::AlbumTagRelation>(d->albumTagRelation);
-    QSet<qlonglong> imageIds = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
-    QSet<qlonglong> referenceImageIds = HaarIface::imagesFromAlbumsAndTags(d->referenceAlbumsList, {}, HaarIface::AlbumExclusive);
+    QSet<qlonglong> imageIds                   = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
+    QSet<qlonglong> referenceImageIds          = HaarIface::imagesFromAlbumsAndTags(d->referenceAlbumsList, {}, HaarIface::AlbumExclusive);
 
     SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate, d->method, std::move(referenceImageIds)); // Finding the duplicates
 
