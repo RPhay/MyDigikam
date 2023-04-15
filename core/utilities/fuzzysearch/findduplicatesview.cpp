@@ -205,8 +205,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                                          (int)HaarIface::AlbumTagRelation::TagExclusive);
     d->albumTagRelation->setCurrentIndex(ApplicationSettings::instance()->getDuplicatesAlbumTagRelation());
 
-    const auto refSelMethod = ApplicationSettings::instance()->getDuplicatesRefImageSelMethod();
-    d->refImageSelMethod      = new SqueezedComboBox();
+    const auto refSelMethod            = ApplicationSettings::instance()->getDuplicatesRefImageSelMethod();
+    d->refImageSelMethod               = new SqueezedComboBox();
     d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
                                                 "Older or Larger"),
                                           (int)HaarIface::RefImageSelMethod::OlderOrLarger);
@@ -226,8 +226,9 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method",
                                              "Select method for reference image selection"));
 
-    d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"),
-                                                  nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+    d->refImageAlbumSelector           = new AlbumSelectors(i18nc("@label", "Reference"),
+                                                            QLatin1String("Select Reference"),
+                                                            nullptr, AlbumSelectors::AlbumType::PhysAlbum);
     d->refImageAlbumSelector->setVisible((refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder) ||
                                          (refSelMethod == HaarIface::RefImageSelMethod::PreferFolder));
 
@@ -254,7 +255,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(relation));
 
-    d->removeDuplicatesBtn   = new QPushButton(i18nc("@action", "Remove Duplicates"));
+    d->removeDuplicatesBtn = new QPushButton(i18nc("@action", "Remove Duplicates"));
     d->removeDuplicatesBtn->setIcon(QIcon::fromTheme(QLatin1String("user-trash")));
     d->removeDuplicatesBtn->setWhatsThis(i18nc("@info", "Use this button to delete all duplicate images."));
 
