@@ -188,22 +188,43 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
      */
 
     d->albumTagRelation      = new SqueezedComboBox();
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Only selected tab") ,  HaarIface::AlbumTagRelation::NoMix);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "One of"),              HaarIface::AlbumTagRelation::Union);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Both"),                HaarIface::AlbumTagRelation::Intersection);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Albums but not tags"), HaarIface::AlbumTagRelation::AlbumExclusive);
-    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation", "Tags but not albums"), HaarIface::AlbumTagRelation::TagExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation",
+                                               "Only selected tab"),
+                                         (int)HaarIface::AlbumTagRelation::NoMix);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation",
+                                               "One of"),
+                                         (int)HaarIface::AlbumTagRelation::Union);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation",
+                                               "Both"),
+                                         (int)HaarIface::AlbumTagRelation::Intersection);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation",
+                                               "Albums but not tags"),
+                                         (int)HaarIface::AlbumTagRelation::AlbumExclusive);
+    d->albumTagRelation->addSqueezedItem(i18nc("@label:listbox similarity album tag relation",
+                                               "Tags but not albums"),
+                                         (int)HaarIface::AlbumTagRelation::TagExclusive);
     d->albumTagRelation->setCurrentIndex(ApplicationSettings::instance()->getDuplicatesAlbumTagRelation());
 
     const auto refSelMethod = ApplicationSettings::instance()->getDuplicatesRefImageSelMethod();
     d->refImageSelMethod      = new SqueezedComboBox();
-    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Older or Larger") ,  (unsigned int)HaarIface::RefImageSelMethod::OlderOrLarger);
-    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer selected folder as reference") ,  (unsigned int)HaarIface::RefImageSelMethod::PreferFolder);
-    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer other than selected folder as reference") , (unsigned int)HaarIface::RefImageSelMethod::ExcludeFolder);
-    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer Newer Creation Date") , (unsigned int)HaarIface::RefImageSelMethod::NewerCreationDate);
-    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method", "Prefer Newer Modification Date") , (unsigned int)HaarIface::RefImageSelMethod::NewerModificationDate);
-    d->refImageSelMethod->setCurrentIndex(d->refImageSelMethod->findData((unsigned int)refSelMethod));
-    d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method", "Select method for reference image selection"));
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
+                                                "Older or Larger"),
+                                          (int)HaarIface::RefImageSelMethod::OlderOrLarger);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
+                                                "Prefer selected folder as reference"),
+                                          (int)HaarIface::RefImageSelMethod::PreferFolder);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
+                                                "Prefer other than selected folder as reference"),
+                                          (int)HaarIface::RefImageSelMethod::ExcludeFolder);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
+                                                "Prefer Newer Creation Date"),
+                                          (int)HaarIface::RefImageSelMethod::NewerCreationDate);
+    d->refImageSelMethod->addSqueezedItem(i18nc("@label:listbox similarity reference selection method",
+                                                "Prefer Newer Modification Date"),
+                                          (int)HaarIface::RefImageSelMethod::NewerModificationDate);
+    d->refImageSelMethod->setCurrentIndex(d->refImageSelMethod->findData((int)refSelMethod));
+    d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method",
+                                             "Select method for reference image selection"));
 
     d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"),
                                                   nullptr, AlbumSelectors::AlbumType::PhysAlbum);
@@ -211,7 +232,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                                          (refSelMethod == HaarIface::RefImageSelMethod::PreferFolder));
 
     auto* const refImageselectionGroup = new QGroupBox(i18nc("@group", "Reference Image Selection Method"));
-    auto* const layout = new QVBoxLayout;
+    auto* const layout                 = new QVBoxLayout;
     layout->addWidget(d->refImageSelMethod);
     layout->addWidget(d->refImageAlbumSelector);
     refImageselectionGroup->setLayout(layout);
@@ -343,6 +364,7 @@ void FindDuplicatesView::populateTreeView()
         if (salbum && salbum->isDuplicatesSearch() && !salbum->extraData(this))
         {
             // Adding item to listView by creating an item and passing listView as parent
+
             FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(d->listView, salbum);
             salbum->setExtraData(this, item);
         }
@@ -525,7 +547,7 @@ void FindDuplicatesView::slotFindDuplicates()
         tags   = d->albumSelectors->selectedTags();
     }
 
-    const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->itemData(d->refImageSelMethod->currentIndex()).toUInt();
+    const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->itemData(d->refImageSelMethod->currentIndex()).toInt();
 
     if (referenceImageSelectionMethod != HaarIface::RefImageSelMethod::OlderOrLarger)
     {
@@ -572,8 +594,9 @@ void FindDuplicatesView::slotApplicationSettingsChanged()
 
 void FindDuplicatesView::slotReferenceSelectionMethodChanged(int index)
 {
-   auto method = static_cast<HaarIface::RefImageSelMethod>(d->refImageSelMethod->itemData(index).toUInt());
-   d->refImageAlbumSelector->setVisible(method == HaarIface::RefImageSelMethod::ExcludeFolder || method == HaarIface::RefImageSelMethod::PreferFolder);
+   auto method = static_cast<HaarIface::RefImageSelMethod>(d->refImageSelMethod->itemData(index).toInt());
+   d->refImageAlbumSelector->setVisible((method == HaarIface::RefImageSelMethod::ExcludeFolder) ||
+                                        (method == HaarIface::RefImageSelMethod::PreferFolder));
 }
 
 void FindDuplicatesView::slotComplete()

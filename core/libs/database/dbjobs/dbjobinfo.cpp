@@ -198,7 +198,7 @@ SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
 SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds,
                                      bool isAlbumUpdate,
                                      HaarIface::RefImageSelMethod referenceSelectionMethod,
-                                     QSet<qlonglong> &&refImageIds)
+                                     QSet<qlonglong>&& refImageIds)
     : DBJobInfo                 (),
       m_duplicates              (true),
       m_albumUpdate             (isAlbumUpdate),
