@@ -300,10 +300,13 @@ void AVDecoder::setCodecContext(void* codecCtx)
 
     d.is_open = false;
 
-    if (!ctx && d.codec_ctx)
+    if (!ctx)
     {
-        avcodec_free_context(&d.codec_ctx);
-        d.codec_ctx = nullptr;
+        if (d.codec_ctx)
+        {
+            avcodec_free_context(&d.codec_ctx);
+            d.codec_ctx = nullptr;
+        }
 
         return;
     }
