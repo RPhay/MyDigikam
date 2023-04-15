@@ -36,8 +36,6 @@
 #include "dbjobsmanager.h"
 #include "applicationsettings.h"
 
-#include <iostream>
-
 namespace Digikam
 {
 

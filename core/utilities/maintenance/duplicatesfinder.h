@@ -23,10 +23,10 @@
 
 // Local includes
 
+#include "digikam_gui_export.h"
 #include "album.h"
 #include "maintenancetool.h"
 #include "haariface.h"
-#include "digikam_gui_export.h"
 
 namespace Digikam
 {

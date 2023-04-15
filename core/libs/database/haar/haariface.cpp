@@ -17,7 +17,6 @@
  * ============================================================ */
 
 #include "haariface_p.h"
-#include <iostream>
 
 #define ENABLE_DEBUG_DUPLICATES 0
 #if ENABLE_DEBUG_DUPLICATES
