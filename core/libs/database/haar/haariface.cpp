@@ -790,7 +790,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
             ItemInfo info(*images2ScanIterator);
             const QString path = info.filePath();
             const QString name = info.name();
-            DEBUG_DUPLICATES("Iterate image: " << name.toStdString() << "Path: " << path.toStdString());
+            DEBUG_DUPLICATES("Iterate image: " << name << "Path: " << path);
         }
 #endif
 
@@ -840,7 +840,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             ItemInfo info(*it);
                             const QString path = info.filePath();
                             const QString name = info.name();
-                            DEBUG_DUPLICATES("\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                            DEBUG_DUPLICATES("\tReference image: " << name << "Path: " << path << ", Id: " << info.id());
                         }
 #endif
                         if (*it == *images2ScanIterator)
@@ -865,7 +865,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             ItemInfo info(refId);
                             const QString path = info.filePath();
                             const QString name = info.name();
-                            DEBUG_DUPLICATES("\t\tDuplicates: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                            DEBUG_DUPLICATES("\t\tDuplicates: " << name << "Path: " << path << ", Id: " << info.id());
                         }
 #endif
 
@@ -883,7 +883,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                                     ItemInfo info(*it);
                                     const QString path = info.filePath();
                                     const QString name = info.name();
-                                    DEBUG_DUPLICATES("\t\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+                                    DEBUG_DUPLICATES("\t\tReference image: " << name << "Path: " << path << ", Id: " << info.id());
                                 }
 #endif
                                 if (*it == refId)
@@ -916,7 +916,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                             {
                                 const QString path = info.filePath();
                                 const QString name = info.name();
-                                DEBUG_DUPLICATES("\t\tUse as eference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id() << "Pixelsize: " << infoPixelSize << ", File size: " << refFileSize << ", Datetime: " << refDateTime.toString().toStdString());
+                                DEBUG_DUPLICATES("\t\tUse as eference image: " << name << "Path: " << path << ", Id: " << info.id() << "Pixelsize: " << infoPixelSize << ", File size: " << refFileSize << ", Datetime: " << refDateTime);
                             }
 #endif
 
@@ -956,7 +956,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
             ItemInfo info(i.key());
             const QString path = info.filePath();
             const QString name = info.name();
-            DEBUG_DUPLICATES("\t\tReference image: " << name.toStdString() << "Path: " << path.toStdString() << ", Id: " << info.id());
+            DEBUG_DUPLICATES("\t\tReference image: " << name << "Path: " << path << ", Id: " << info.id());
         }
     }
 #endif
