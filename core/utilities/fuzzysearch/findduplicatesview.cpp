@@ -101,7 +101,7 @@ public:
     ProgressItem*        progressItem;
 
     AlbumSelectors*      albumSelectors;
-    AlbumSelectors* refImageAlbumSelector;
+    AlbumSelectors*      refImageAlbumSelector;
 
     ApplicationSettings* settings;
 
@@ -205,11 +205,13 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     d->refImageSelMethod->setCurrentIndex(d->refImageSelMethod->findData((unsigned int)refSelMethod));
     d->refImageSelMethod->setWhatsThis(i18nc("@label:listbox similarity reference selection method", "Select method for reference image selection"));
 
-    d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"), nullptr, AlbumSelectors::AlbumType::PhysAlbum);
-    d->refImageAlbumSelector->setVisible(refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder || refSelMethod == HaarIface::RefImageSelMethod::PreferFolder);
+    d->refImageAlbumSelector = new AlbumSelectors(i18nc("@label", "Reference"), QLatin1String("Select Reference"),
+                                                  nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+    d->refImageAlbumSelector->setVisible((refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder) ||
+                                         (refSelMethod == HaarIface::RefImageSelMethod::PreferFolder));
 
-    auto* refImageselectionGroup = new QGroupBox(i18nc("@group", "Reference Image Selection Method"));
-    auto* layout = new QVBoxLayout;
+    auto* const refImageselectionGroup = new QGroupBox(i18nc("@group", "Reference Image Selection Method"));
+    auto* const layout = new QVBoxLayout;
     layout->addWidget(d->refImageSelMethod);
     layout->addWidget(d->refImageAlbumSelector);
     refImageselectionGroup->setLayout(layout);
@@ -522,6 +524,7 @@ void FindDuplicatesView::slotFindDuplicates()
     }
 
     const auto referenceImageSelectionMethod = (HaarIface::RefImageSelMethod)d->refImageSelMethod->itemData(d->refImageSelMethod->currentIndex()).toUInt();
+
     if (referenceImageSelectionMethod != HaarIface::RefImageSelMethod::OlderOrLarger)
     {
         referenceImageSelector = d->refImageAlbumSelector->selectedAlbums();
