@@ -284,13 +284,15 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->settings, SIGNAL(setupChanged()),
             this, SLOT(slotApplicationSettingsChanged()));
 
-    connect(d->refImageSelMethod, QOverload<int>::of(&SqueezedComboBox::currentIndexChanged), this, &FindDuplicatesView::slotReferenceSelectionMethodChanged);
+    connect(d->refImageSelMethod, QOverload<int>::of(&SqueezedComboBox::currentIndexChanged),
+            this, &FindDuplicatesView::slotReferenceSelectionMethodChanged);
 }
 
 FindDuplicatesView::~FindDuplicatesView()
 {
     d->albumSelectors->saveState();
     d->refImageAlbumSelector->saveState();
+
     delete d;
 }
 
@@ -308,8 +310,8 @@ void FindDuplicatesView::initAlbumUpdateConnections()
     connect(AlbumManager::instance(), SIGNAL(signalAlbumsCleared()),
             this, SLOT(slotClear()));
 
-    connect(AlbumManager::instance(),SIGNAL(signalUpdateDuplicatesAlbums(QList<SAlbum*>,QList<qlonglong>)),
-            this,SLOT(slotUpdateDuplicates(QList<SAlbum*>,QList<qlonglong>)));
+    connect(AlbumManager::instance(), SIGNAL(signalUpdateDuplicatesAlbums(QList<SAlbum*>,QList<qlonglong>)),
+            this, SLOT(slotUpdateDuplicates(QList<SAlbum*>,QList<qlonglong>)));
 }
 
 void FindDuplicatesView::setActive(bool val)
