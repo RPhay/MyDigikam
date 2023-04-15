@@ -249,6 +249,7 @@ PRINT_COMPONENT_COMPILE_STATUS("MySQL Internal Support"  ENABLE_INTERNALMYSQL)
 PRINT_COMPONENT_COMPILE_STATUS("DBUS Support"            ENABLE_DBUS)
 PRINT_COMPONENT_COMPILE_STATUS("App. Style Support"      ENABLE_APPSTYLES)
 PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"      ENABLE_QWEBENGINE)
+PRINT_COMPONENT_COMPILE_STATUS("Media Player Support"    ENABLE_MEDIAPLAYER)
 
 # ==============================================================================
 
