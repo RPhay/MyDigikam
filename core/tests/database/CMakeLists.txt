@@ -155,5 +155,3 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/haariface_utest.cpp
 
               GUI
 )
-
-add_compile_definitions(haariface_utest PRIVATE digikamgui_EXPORT)
