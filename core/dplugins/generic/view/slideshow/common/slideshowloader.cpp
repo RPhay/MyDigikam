@@ -6,7 +6,7 @@
  * Date        : 2005-04-21
  * Description : slide show tool using preview of pictures.
  *
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2004 by Enrico Ros <eros dot kde at email dot it>
  * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
@@ -177,9 +177,14 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
 
     d->errorView->installEventFilter(this);
     d->imageView->installEventFilter(this);
-    d->videoView->installEventFilter(this);
     d->endView->installEventFilter(this);
     d->osd->installEventFilter(this);
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->videoView->installEventFilter(this);
+
+#endif
 
     // ---------------------------------------------------------------
 
