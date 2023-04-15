@@ -10,4 +10,5 @@ BUGFIXES:
 001 ==> 468439 - Option to search for images with identical file names.
 002 ==> 468500 - Compilation failed with -DENABLE_MEDIAPLAYER=OFF.
 003 ==> 468480 - Crash when playing fourth video.
-004 ==> 
+004 ==> 468542 - Using Exiftool as metadata engine to update camera model does not show within Image properties.
+005 ==> 
