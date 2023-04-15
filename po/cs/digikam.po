@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
-"PO-Revision-Date: 2023-03-16 16:32+0100\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1322,7 +1322,7 @@ msgstr "Vyčistit databázi..."
 msgid "Loading albums..."
 msgstr "Načítají se alba..."
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1333,7 +1333,7 @@ msgstr ""
 "určit znovu, zvolte zde \"Ano\", jinak zvolte \"Ne\" a funkce \"Správa barev"
 "\" bude vypnuta, dokud se tento problém nevyřeší.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1341,7 +1341,7 @@ msgstr[0] "Není vybrána žádná položka (%1 položka)"
 msgstr[1] "Není vybrána žádná položka (%1 položky)"
 msgstr[2] "Není vybrána žádná položka (%1 položek)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1349,7 +1349,7 @@ msgstr[0] "Není vybrána žádná položka (%1 [%2] položka)"
 msgstr[1] "Není vybrána žádná položka (%1 [%2] položky)"
 msgstr[2] "Není vybrána žádná položka (%1 [%2] položek)"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1360,7 +1360,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Není vybrána žádná položka (%1 položek. Se seskupenými položkami: %2)"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1368,7 +1368,7 @@ msgstr[0] "Vybrána 1/%2 položek (%3/%4)"
 msgstr[1] "Vybrány %1/%2 položek (%3/%4)"
 msgstr[2] "Vybráno %1/%2 položek (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1376,7 +1376,7 @@ msgstr[0] "Vybrána 1/%2 [%3] položek (%4/%5)"
 msgstr[1] "Vybrány %1/%2 [%3] položek (%4/%5)"
 msgstr[2] "Vybráno %1/%2 [%3] položek (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1384,7 +1384,7 @@ msgstr[0] "1/%2 položka vybrána. Celkem se seskupenými položkami: %3"
 msgstr[1] "%1/%2 položky vybrány. Celkem se seskupenými položkami: %3"
 msgstr[2] "%1/%2 položek vybráno. Celkem se seskupenými položkami: %3"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1392,7 +1392,7 @@ msgstr[0] "Vybrána 1/%2 [%3/%4] položka (%5/%6)"
 msgstr[1] "Vybrány %1/%2 [%3/%4] položky (%5/%6)"
 msgstr[2] "Vybráno %1/%2 [%3/%4] položek (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1400,22 +1400,22 @@ msgstr[0] "1/%2 položka vybrána. Se seskupenými položkami: %3/%4"
 msgstr[1] "%1/%2 položky vybrány. Se seskupenými položkami: %3/%4"
 msgstr[2] "%1/%2 položek vybráno. Se seskupenými položkami: %3/%4"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 z %2)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 z %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1423,7 +1423,7 @@ msgstr[0] "%1 skrytá položka"
 msgstr[1] "%1 skryté položky"
 msgstr[2] "%1 skrytých položek"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1431,7 +1431,7 @@ msgstr[0] "Zapsat metadata do souboru"
 msgstr[1] "Zapsat metadata do vybraných souborů"
 msgstr[2] "Zapsat metadata do vybraných souborů"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2728,12 +2728,7 @@ msgid "All supported files (%1)"
 msgstr "Všechny podporované soubory (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2743,18 +2738,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Zpětná vazba: %2\n"
+"Dokumentace: %3\n"
 "\n"
-"Datum sestavení: %3 (cíl: %4)"
+"Datum sestavení: %4 (cíl: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2767,9 +2756,10 @@ msgstr ""
 "IRC: %1 - #digikam\n"
 "Zpětná vazba: %2\n"
 "\n"
-"Datum sestavení: %3 (cíl: %4)\n"
-"Revize: %5\n"
-"Větev: %6"
+"Dokumentace: %3\n"
+"Datum sestavení: %4 (cíl: %5)\n"
+"Revize: %6\n"
+"Větev: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3111,9 +3101,7 @@ msgstr "Nástroje"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Nápověda"
 
@@ -3121,7 +3109,7 @@ msgstr "Nápověda"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Nápověda online o odpadkovém koši"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3202,11 +3190,9 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Opravdu si přejete VŠECHNY položky navždy smazat?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "Vybrat"
+msgstr "Výběr"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
@@ -21985,7 +21971,7 @@ msgstr "Exportovat do &Flickru..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Zadejte URL přihlášení do Flickru"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -25477,7 +25463,7 @@ msgstr "Přejmenovat album (%1)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr ""
+msgstr "Přejmenovat kořen alba (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -28531,7 +28517,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr ""
+msgstr "Nastavení openCV"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -38027,7 +38013,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Nápověda online o správě značek"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -41076,7 +41062,7 @@ msgid "Mod.: %1"
 msgstr "Změn.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -41684,10 +41670,9 @@ msgid "Developer (2004)"
 msgstr "Vývojář (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Nastavit tento sloupec"
+msgstr "Nastavit upozornění"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -47793,7 +47778,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "Načítají se motivy..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -47804,13 +47789,13 @@ msgstr ""
 "znovu, zvolte zde \"Ano\", jinak zvolte \"Ne\" a funkce \"Správa barev\" "
 "bude vypnuta, dokud se tento problém nevyřeší.</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -47939,7 +47924,7 @@ msgstr "&Ozdobit"
 msgid "Effec&ts"
 msgstr "Efek&ty"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -60400,13 +60385,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Databáze"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60414,13 +60399,13 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Sbírky"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60428,13 +60413,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pohledy"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60442,13 +60427,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Nástrojové tipy"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60456,13 +60441,13 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60470,13 +60455,13 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60486,13 +60471,13 @@ msgstr ""
 "Správa informací ukládaných do obrázku\n"
 "Nastavení vztahů mezi obrázky a metadaty"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Šablony"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60500,13 +60485,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor obrázků"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60514,13 +60499,13 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Správa barev"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60530,13 +60515,13 @@ msgstr ""
 "Nastavení správy barev\n"
 "Přizpůsobení nastavení správy barev"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Prohlížecí stolek"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60546,13 +60531,13 @@ msgstr ""
 "Nastavení prohlížecího stolku\n"
 "Přizpůsobení nástroje k porovnávání fotografií"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Seřazovač kvality obrázků"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60560,27 +60545,29 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparáty"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Camera Settings\n"
 "Manage your camera devices"
 msgstr ""
+"Nastavení fotoaparátu\n"
+"Spravujte své fotoaparáty"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Moduly"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60588,13 +60575,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Různé"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

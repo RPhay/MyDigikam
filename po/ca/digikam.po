@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
-"PO-Revision-Date: 2023-04-13 12:33+0200\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"PO-Revision-Date: 2023-04-14 17:11+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1321,7 +1321,7 @@ msgstr "Neteja la base de dades..."
 msgid "Loading albums..."
 msgstr "S'estan carregant els àlbums..."
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1333,92 +1333,92 @@ msgstr ""
 "característica de «Gestió del color» quedarà inactivada fins que resoleu "
 "aquesta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Cap element seleccionat (%1 [%2] element)"
 msgstr[1] "Cap element seleccionat (%1 [%2] elements)"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Cap element seleccionat (%1 element. Amb elements agrupats: %2)"
 msgstr[1] "Cap element seleccionat (%1 elements. Amb elements agrupats: %2)"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 element seleccionat (%3/%4)"
 msgstr[1] "%1/%2 elements seleccionats (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] element seleccionat (%4/%5)"
 msgstr[1] "%1/%2 [%3] elements seleccionats (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 element seleccionat. Total amb elements agrupats: %3"
 msgstr[1] "%1/%2 elements seleccionats. Total amb elements agrupats: %3"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] element seleccionat (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elements seleccionats (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 element seleccionat. Amb elements agrupats: %3/%4"
 msgstr[1] "%1/%2 elements seleccionats. Amb elements agrupats: %3/%4"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total amb elements agrupats: %3)"
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 element ocult"
 msgstr[1] "%1 elements ocults"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escriu les metadades al fitxer"
 msgstr[1] "Escriu les metadades als fitxers seleccionats"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2739,13 +2739,7 @@ msgid "All supported files (%1)"
 msgstr "Tots els fitxers admesos (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2755,8 +2749,8 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Comentaris: %2\n"
-"\n"
 "Documentació: %3\n"
+"\n"
 "Data de construcció: %4 (objectiu: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
@@ -3308,16 +3302,13 @@ msgstr ""
 "a millorar la usabilitat."
 
 #: core/app/views/stack/welcomepageview.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "Metadata: add new options to save and load configuration profiles in "
-#| "Avanced Metadata Settings Pannel."
+#, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
 "Metadades: afegir opcions noves per a desar i carregar perfils de "
-"configuració al plafó de configuració de Metadades avançades."
+"configuració al plafó de configuració avançada de Metadades."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
@@ -42833,7 +42824,7 @@ msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -49618,7 +49609,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "S'estan carregant els temes..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49630,13 +49621,13 @@ msgstr ""
 "característica de «Gestió del color» quedarà inactivada fins que resolgueu "
 "aquesta qüestió</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49765,7 +49756,7 @@ msgstr "&Decora"
 msgid "Effec&ts"
 msgstr "Efec&tes"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62640,13 +62631,13 @@ msgstr ""
 "efecte després de reiniciar. Algunes depenen del maquinari i podrien no "
 "tenir cap efecte.</b>"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de dades"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62656,13 +62647,13 @@ msgstr ""
 "Configuració de la base de dades\n"
 "Personalitza la configuració de la base de dades"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Col·leccions"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62672,13 +62663,13 @@ msgstr ""
 "Configuració de les col·leccions\n"
 "Estableix les ubicacions dels àlbums principals"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistes"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62688,13 +62679,13 @@ msgstr ""
 "Configuració de les vistes a l'aplicació\n"
 "Personalitza l'aspecte de les vistes"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Consell d'eina"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62704,13 +62695,13 @@ msgstr ""
 "Configuració dels consells d'eina\n"
 "Personalitza la informació en els consells d'eina dels elements"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Vídeo"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62720,13 +62711,13 @@ msgstr ""
 "Configuració de la vista prèvia de vídeo\n"
 "Personalitza la configuració per a reproduir fitxers multimèdia de vídeo"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadades"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62736,13 +62727,13 @@ msgstr ""
 "Gestió de la informació incrustada de les imatges\n"
 "Configura les relacions entre imatges i metadades"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Plantilles"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62752,13 +62743,13 @@ msgstr ""
 "Plantilles de metadades\n"
 "Gestiona la col·lecció de les plantilles de metadades"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62768,13 +62759,13 @@ msgstr ""
 "Configuració de l'editor d'imatges\n"
 "Personalitza la configuració de l'editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestió del color"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62784,13 +62775,13 @@ msgstr ""
 "Configuració de la gestió del color\n"
 "Personalitza la configuració de la gestió del color"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62800,13 +62791,13 @@ msgstr ""
 "Configuració de la taula de llum\n"
 "Personalitza l'eina emprada en comparar les imatges"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62817,13 +62808,13 @@ msgstr ""
 "Personalitza la configuració predeterminada per realitzar el triatge "
 "d'imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Càmeres"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62833,13 +62824,13 @@ msgstr ""
 "Configuració de la càmera\n"
 "Gestiona els dispositius de càmera"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Connectors"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62849,13 +62840,13 @@ msgstr ""
 "Configuració dels connectors\n"
 "Estableix els connectors que seran accessibles des de l'aplicació"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Miscel·lània"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

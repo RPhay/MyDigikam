@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
-"PO-Revision-Date: 2023-04-13 13:42+0200\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"PO-Revision-Date: 2023-04-14 09:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1370,7 +1370,7 @@ msgstr "Database opschonen..."
 msgid "Loading albums..."
 msgstr "Albums laden..."
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1381,92 +1381,92 @@ msgstr ""
 "kies \"Ja\", anders \"Nee\". Bij \"Nee\", zal \"Kleurbeheer\" uitgezet "
 "worden totdat dit is opgelost.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Geen item geselecteerd (%1 item)"
 msgstr[1] "Geen item geselecteerd (%1 items)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Geen item geselecteerd (%1 [%2] item)"
 msgstr[1] "Geen item geselecteerd (%1 [%2] items)"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Geen item geselecteerd (%1 item. Met gegroepeerde items: %2)"
 msgstr[1] "Geen item geselecteerd (%1 items. Met gegroepeerde items: %2)"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 item geselecteerd (%3/%4)"
 msgstr[1] "%1/%2 items geselecteerd (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] item geselecteerd (%4/%5)"
 msgstr[1] "%1/%2 [%3] items geselecteerd (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 item geselecteerd. Totaal met gegroepeerde items: %3"
 msgstr[1] "%1/%2 items geselecteerd. Totaal met gegroepeerde items: %3"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] item geselecteerd (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] items geselecteerd (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 items geselecteerd. Met gegroepeerde items: %3/%4"
 msgstr[1] "%1/%2 items geselecteerd. Met gegroepeerde items: %3/%4"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 van %2)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 van %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 van %2. Totaal met gegroepeerde items: %3)"
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 item verborgen"
 msgstr[1] "%1 items verborgen"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Metagegevens naar bestand schrijven"
 msgstr[1] "Metagegevens naar geselecteerde bestanden schrijven"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2786,13 +2786,7 @@ msgid "All supported files (%1)"
 msgstr "Alle ondersteunde bestanden (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2802,8 +2796,8 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Terugkoppeling: %2\n"
-"\n"
 "Documentatie: %3\n"
+"\n"
 "Bouwdatum: %4 (doel: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
@@ -3355,10 +3349,7 @@ msgstr ""
 "geoptimaliseerd voor een betere bruikbaarheid"
 
 #: core/app/views/stack/welcomepageview.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "Metadata: add new options to save and load configuration profiles in "
-#| "Avanced Metadata Settings Pannel."
+#, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
@@ -42774,7 +42765,7 @@ msgid "Mod.: %1"
 msgstr "Mod.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -49544,7 +49535,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "Thema's laden..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49555,13 +49546,13 @@ msgstr ""
 "kies \"Ja\", anders \"Nee\". Bij \"Nee\", zal \"Kleurbeheer\" uitgezet "
 "worden totdat dit is opgelost</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49690,7 +49681,7 @@ msgstr "&Decoratie"
 msgid "Effec&ts"
 msgstr "Effec&ten"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62554,13 +62545,13 @@ msgstr ""
 "na de herstart. Sommige instellingen zijn afhankelijk van hardware en kunnen "
 "geen effect hebben.</b>"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Database"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62570,13 +62561,13 @@ msgstr ""
 "Database-instellingen\n"
 "Pas de database-instellingen aan"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Verzamelingen"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62586,13 +62577,13 @@ msgstr ""
 "Instellingen voor verzamelingen\n"
 "Stel de locaties in van hoofdalbums"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Weergaven"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62602,13 +62593,13 @@ msgstr ""
 "Instellingen voor weergave in de applicatie\n"
 "Pas het uiterlijk aan van weergaven"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Tekstballon"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62618,13 +62609,13 @@ msgstr ""
 "Instellingen voor tekstballonnen\n"
 "Pas informatie in tekstballonnen van items aan"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62634,13 +62625,13 @@ msgstr ""
 "Instellingen voor het videovoorbeeld\n"
 "Pas de instellingen aan voor afspelen van videomedia"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metagegevens"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62650,13 +62641,13 @@ msgstr ""
 "Beheer van ingebedde informatie in afbeeldingen\n"
 "Stel relaties in tussen afbeeldingen en metagegevens"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sjablonen"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62666,13 +62657,13 @@ msgstr ""
 "Metagegevenssjablonen\n"
 "Beheer uw verzameling metagegevenssjablonen"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Afbeeldingsbewerker"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62682,13 +62673,13 @@ msgstr ""
 "instellingen voor afbeeldingsbewerker\n"
 "Pas de instellingen van de afbeeldingsbewerker aan"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Kleurbeheer"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62698,13 +62689,13 @@ msgstr ""
 "Instellingen voor kleurbeheer\n"
 "Pas de instellingen voor kleurbeheer aan"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Lichttafel"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62714,13 +62705,13 @@ msgstr ""
 "Lichttafelinstellingen\n"
 "Pas het hulpmiddel aan voor het vergelijken van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Sorteerder op kwaliteit van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62730,13 +62721,13 @@ msgstr ""
 "Instellingen voor sorteren op kwaliteit\n"
 "Pas de standaard instellingen aan om de kwaliteit te beoordelen"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Camera's"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62746,13 +62737,13 @@ msgstr ""
 "Camera-instellingen\n"
 "Beheer uw camera's"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62762,13 +62753,13 @@ msgstr ""
 "Instellingen voor plug-in\n"
 "Stel in welke plug-ins toegankelijk zijn vanuit toepassing"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversen"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

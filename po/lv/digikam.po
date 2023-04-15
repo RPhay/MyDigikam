@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1353,7 +1353,7 @@ msgstr "Lasa datubāzi"
 msgid "Loading albums..."
 msgstr "Ielādē albumus..."
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1364,7 +1364,7 @@ msgstr ""
 "izvēlieties \"Jā\", pretējā gadījumā izvēlieties \"Nē\", un \"Krāsu "
 "pārvaldība\" tiks atslēgta, līdz jūs atrisināsiet šo problēmu.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1372,7 +1372,7 @@ msgstr[0] "Nekas nav atlasīts (no %1)"
 msgstr[1] "Nekas nav atlasīts (no %1)"
 msgstr[2] "Nekas nav atlasīts (no %1)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1380,7 +1380,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1388,7 +1388,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1398,7 +1398,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1408,7 +1408,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1416,7 +1416,7 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1426,7 +1426,7 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēts %1/%2"
 msgstr[2] "izvēlēts %1/%2"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1434,22 +1434,22 @@ msgstr[0] "Nekas nav izvēlēts"
 msgstr[1] "Nekas nav izvēlēts"
 msgstr[2] "Nekas nav izvēlēts"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1. no %2)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1. no %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1459,7 +1459,7 @@ msgstr[0] "%1 vienība"
 msgstr[1] "%1 vienības"
 msgstr[2] "%1 vienību"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1467,7 +1467,7 @@ msgstr[0] "Ierakstīt metadatus attēlā"
 msgstr[1] "Ierakstīt metadatus atlasītajos attēlos"
 msgstr[2] "Ierakstīt metadatus atlasītajos attēlos"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -41908,7 +41908,7 @@ msgid "Mod.: %1"
 msgstr "mainīts: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -49661,7 +49661,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "Ielādē rīkus..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49673,13 +49673,13 @@ msgstr ""
 "tiks atslēgta iespēja \"Krāsu pārvaldība\", līdz jūs atrisināsiet šo "
 "problēmu</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Nezināms"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49810,7 +49810,7 @@ msgstr "&Atkodēt"
 msgid "Effec&ts"
 msgstr "Efek&ti"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -62230,14 +62230,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Datubāze"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -62247,13 +62247,13 @@ msgid ""
 msgstr ""
 "<qt>Datubāzes iestatījumi<br/><i>Pielāgojiet datubāzes iestatījumus</i></qt>"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kolekcijas"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -62266,13 +62266,13 @@ msgstr ""
 "<qt>Kolekciju iestatījumi<br/><i>Iestata saknes albumus un datubāzes vietu</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Skats"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -62284,14 +62284,14 @@ msgid ""
 msgstr ""
 "<qt>Albumu skata iestatījumi<br/><i>Pielāgo albumu skata izskatu</i></qt>"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Izlecošie padomi"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -62304,13 +62304,13 @@ msgstr ""
 "<qt>Albuma vienību izlecošo padomu iestatījumi<br/><i>Pielāgo padomos rādīto "
 "informāciju</i></qt>"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62318,14 +62318,14 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadati"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -62338,14 +62338,14 @@ msgstr ""
 "<qt>Attēlos iegultās informācijas pārvaldība<br/><i>Konfigurēt atbilstību "
 "starp attēliem un metadatiem</i></qt>"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sagataves"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -62358,14 +62358,14 @@ msgstr ""
 "<qt>Metadatu sagataves<br/><i>Pārvalda jūsu metadatu sagatavju kolekciju</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Attēlu redaktors"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -62377,14 +62377,14 @@ msgstr ""
 "<qt>Attēlu redaktora iestatījumi<br/><i>Pielāgo attēlu redaktora uzvedību</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Krāsu pārvaldība"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -62394,14 +62394,14 @@ msgstr ""
 "<qt>Krāsu pārvaldības iestatījumi<br/><i>Pielāgo krāsu pārvaldības "
 "iestatījumus</i></qt>"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Gaismas galds"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -62414,13 +62414,13 @@ msgstr ""
 "<qt>Gaismas galda iestatījumi<br/><i>Pielāgo attēlu salīdzināšanas rīku</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Attēlu redaktors"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62428,14 +62428,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparāti"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -62444,14 +62444,14 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>Fotoaparātu iestatījumi<br/><i>Pārvalda jūsu fotoaparātus</i></qt>"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, fuzzy, kde-format
 #| msgid "Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Spraudņi"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Plug-in Settings<br/><i>Set which plugins will be accessible from "
@@ -62464,14 +62464,14 @@ msgstr ""
 "<qt>Spraudņu atlase<br/><i>Norādiet, kuri spraudņi lietotnē būs pieejami</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Dažādi"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

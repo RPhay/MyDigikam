@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -1419,7 +1419,7 @@ msgstr "資料庫..."
 msgid "Loading albums..."
 msgstr "剖析所有相簿"
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1429,13 +1429,13 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1443,7 +1443,7 @@ msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1451,7 +1451,7 @@ msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1459,7 +1459,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1467,7 +1467,7 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1475,7 +1475,7 @@ msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1483,7 +1483,7 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1491,23 +1491,23 @@ msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr "(第 %1 張，共 %2 張)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1515,7 +1515,7 @@ msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 個項目"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1523,7 +1523,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "將中繼資料寫入選擇的影像"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -43873,7 +43873,7 @@ msgid "Mod.: %1"
 msgstr "例：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -51797,7 +51797,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "正在載入佈景主題..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -51807,13 +51807,13 @@ msgstr ""
 "<p>此 ICC 描述擋路徑似乎無效。</p><p>如果您想現在設定，點選「是」，不然請選"
 "「否」。這種情況下會停用「色彩管理」的功能直到您解決這個問題</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -51952,7 +51952,7 @@ msgstr "裝飾"
 msgid "Effec&ts"
 msgstr "效果"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -64984,14 +64984,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "資料庫"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -65000,14 +65000,14 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>資料庫設定值<br/><i>自訂資料庫設定值</i></qt>"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "收藏"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -65018,14 +65018,14 @@ msgid ""
 "Set root albums locations"
 msgstr "<qt>收藏設定值<br/><i>設定相簿和資料庫的位置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -65036,14 +65036,14 @@ msgid ""
 "Customize the look of the views"
 msgstr "<qt>相簿檢視設定值<br/><i>自訂相簿清單的樣式</i></qt>"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "工具提示"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -65054,14 +65054,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr "<qt>相簿項目工具提示設定值<br/><i>自訂工具提示中的資訊</i></qt>"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "影片"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -65070,14 +65070,14 @@ msgid ""
 "Customize settings to play video media"
 msgstr "<qt>投影片放映設定<br/><i>自訂投影片放映設定值</i></qt>"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -65088,14 +65088,14 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "<qt>內嵌的影像資訊管理<br/><i>自訂影像和中繼資料之間的關聯</i></qt>"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "範本"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -65106,14 +65106,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "<qt>中繼資料範本<br/><i>管理您的中繼資料範本收藏</i></qt>"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -65123,14 +65123,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr "<qt>影像編輯器設定值<br/><i>自訂影像編輯器行為</i></qt>"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -65141,14 +65141,14 @@ msgid ""
 "Customize the color management settings"
 msgstr "<qt>色彩管理設定<br/><i>自訂色彩管理設定值</i></qt>"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -65159,14 +65159,14 @@ msgid ""
 "Customize tool used to compare images"
 msgstr "<qt>數位光桌設定值<br/><i>用於比較影像的自訂工具</i></qt>"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -65176,14 +65176,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "<qt>影像編輯器設定值<br/><i>自訂影像編輯器行為</i></qt>"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "相機"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -65192,14 +65192,14 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>相機設定值<br/><i>管理您的相機裝置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, fuzzy, kde-format
 #| msgid "Loading..."
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "載入中..."
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -65210,14 +65210,14 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr "<qt>收藏設定值<br/><i>設定相簿和資料庫的位置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

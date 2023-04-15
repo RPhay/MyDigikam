@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
 "PO-Revision-Date: 2023-04-10 14:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1297,7 +1297,7 @@ msgstr "清理数据库..."
 msgid "Loading albums..."
 msgstr "正在加载相册..."
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1307,82 +1307,82 @@ msgstr ""
 "<p>ICC 色彩特性文件所在的文件夹无效。</p><p>要重新设置该文件夹，请选择“是”。"
 "如果选择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "无选中项 (共 %1 项)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "无选中项 (共 %1 [%2] 项)"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "无选中项 (共 %1 项，含已分组项：%2)"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "已选择 %1/%2 个项目 (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "已选择 %1/%2 [%3] 个项目 (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "已选择 %1/%2 个项目。含已分组项目：%3"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "已选择 %1/%2 [%3/%4] 个项目 (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "已选择 %1/%2 个项目，含已分组项：%3/%4"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (第 %1 项，共 %2 项)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (第 %1 项，共 %2 [%3] 项)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (第 %1 项，共 %2 项，含已分组项：%3)"
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 隐藏项"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "将元数据写入所选文件"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -41032,7 +41032,7 @@ msgid "Mod.: %1"
 msgstr "修改于：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -47772,7 +47772,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "正在加载主题..."
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -47782,13 +47782,13 @@ msgstr ""
 "<p>ICC 色彩特性文件路径无效。</p><p>要重新设置路径，请选择“是”。如果选"
 "择“否”，色彩管理功能将被禁用，直至问题被解决为止。</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -47917,7 +47917,7 @@ msgstr "装饰(&D)"
 msgid "Effec&ts"
 msgstr "特效(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -60135,13 +60135,13 @@ msgstr ""
 "<b>提示：所有这些设置必须在重新启动程序后生效。某些设置的生效与否取决于硬件配"
 "置。</b>"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "数据库"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60149,13 +60149,13 @@ msgid ""
 "Customize database settings"
 msgstr "数据库设置"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "相册集合"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60163,13 +60163,13 @@ msgid ""
 "Set root albums locations"
 msgstr "相册集合设置"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "视图"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60177,13 +60177,13 @@ msgid ""
 "Customize the look of the views"
 msgstr "视图设置"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "悬停信息框"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60191,13 +60191,13 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr "相册项目悬停信息框设置"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "视频"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60205,13 +60205,13 @@ msgid ""
 "Customize settings to play video media"
 msgstr "视频预览设置"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "元数据"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60219,13 +60219,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "图像元数据管理设置"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "元数据模板"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60233,13 +60233,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "元数据模板"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "图像编辑器"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60247,13 +60247,13 @@ msgid ""
 "Customize the image editor settings"
 msgstr "图像编辑器设置"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60261,13 +60261,13 @@ msgid ""
 "Customize the color management settings"
 msgstr "色彩管理设置"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "看片台"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60275,13 +60275,13 @@ msgid ""
 "Customize tool used to compare images"
 msgstr "看片台设置"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "图像品质分类器"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60289,13 +60289,13 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "图像品质分类器设置"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "相机"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60303,13 +60303,13 @@ msgid ""
 "Manage your camera devices"
 msgstr "相机设置"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "插件"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60317,13 +60317,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr "插件设置"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

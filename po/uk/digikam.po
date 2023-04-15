@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-14 00:44+0000\n"
-"PO-Revision-Date: 2023-04-13 07:41+0300\n"
+"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"PO-Revision-Date: 2023-04-14 17:43+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1339,7 +1339,7 @@ msgstr "Спорожнити базу даних…"
 msgid "Loading albums..."
 msgstr "Завантаження списку альбомів…"
 
-#: core/app/main/digikamapp.cpp:336
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1351,7 +1351,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1360,7 +1360,7 @@ msgstr[1] "Нічого не вибрано (%1 пункти)"
 msgstr[2] "Нічого не вибрано (%1 пунктів)"
 msgstr[3] "Нічого не вибрано (1 пункт)"
 
-#: core/app/main/digikamapp.cpp:623
+#: core/app/main/digikamapp.cpp:627
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1369,7 +1369,7 @@ msgstr[1] "Нічого не позначено (%1 [%2] записи)"
 msgstr[2] "Нічого не позначено (%1 [%2] записів)"
 msgstr[3] "Нічого не позначено (%1 [%2] запис)"
 
-#: core/app/main/digikamapp.cpp:628
+#: core/app/main/digikamapp.cpp:632
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1378,7 +1378,7 @@ msgstr[1] "Нічого не позначено (%1 записи. Зі згру�
 msgstr[2] "Нічого не позначено (%1 записів. Зі згрупованим записами: %2)"
 msgstr[3] "Нічого не позначено (%1 запис. Зі згрупованим записами: %2)"
 
-#: core/app/main/digikamapp.cpp:639
+#: core/app/main/digikamapp.cpp:643
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1387,7 +1387,7 @@ msgstr[1] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[2] "Позначено %1 з %2 записів (%3 з %4)"
 msgstr[3] "Позначено один запис з %2 (%3 з %4)"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:656
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1396,7 +1396,7 @@ msgstr[1] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[2] "Позначено %1 з %2 [%3] записів (%4 з %5)"
 msgstr[3] "Позначено один запис з %2 [%3] (%4 з %5)"
 
-#: core/app/main/digikamapp.cpp:660
+#: core/app/main/digikamapp.cpp:664
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1405,7 +1405,7 @@ msgstr[1] "Позначено %1 із %2 записів. Загалом, зі з
 msgstr[2] "Позначено %1 із %2 записів. Загалом, зі згрупованими записами: %3"
 msgstr[3] "Позначено один запис з %2. Загалом, зі згрупованими записами: %3"
 
-#: core/app/main/digikamapp.cpp:668
+#: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1414,7 +1414,7 @@ msgstr[1] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[2] "Позначено %1 з %2 [%3 з %4] записів (%5 з %6)"
 msgstr[3] "Позначено один запис з %2 [%3 з %4] (%5 з %6)"
 
-#: core/app/main/digikamapp.cpp:677
+#: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1423,22 +1423,22 @@ msgstr[1] "Позначено %1 із %2 записів. Зі згрупован
 msgstr[2] "Позначено %1 із %2 записів. Зі згрупованими записами: %3 із %4"
 msgstr[3] "Позначено один запис з %2. Зі згрупованими записами: %3 із %4"
 
-#: core/app/main/digikamapp.cpp:708
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:722
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Загалом, зі згрупованими записами: %3)"
 
-#: core/app/main/digikamapp.cpp:737
+#: core/app/main/digikamapp.cpp:741
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1447,7 +1447,7 @@ msgstr[1] "Приховано %1 записи"
 msgstr[2] "Приховано %1 записів"
 msgstr[3] "Приховано один запис"
 
-#: core/app/main/digikamapp.cpp:787
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1456,7 +1456,7 @@ msgstr[1] "Записати метадані до позначених файл�
 msgstr[2] "Записати метадані до позначених файлів"
 msgstr[3] "Записати метадані до файла"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -2775,13 +2775,7 @@ msgid "All supported files (%1)"
 msgstr "усі файли, що підтримуються (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2791,8 +2785,8 @@ msgid ""
 msgstr ""
 "IRC: %1 — #digikam\n"
 "Відгуки: %2\n"
-"\n"
 "Документація : %3\n"
+"\n"
 "Дата збирання: %4 (ціль: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
@@ -43001,7 +42995,7 @@ msgid "Mod.: %1"
 msgstr "Змін.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
-#: core/showfoto/main/showfoto.cpp:241
+#: core/showfoto/main/showfoto.cpp:245
 #: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
@@ -49774,7 +49768,7 @@ msgstr ""
 msgid "Loading themes..."
 msgstr "Завантаження тем…"
 
-#: core/showfoto/main/showfoto.cpp:206
+#: core/showfoto/main/showfoto.cpp:204
 #, kde-format
 msgid ""
 "<p>The ICC profile path seems to be invalid.</p><p>If you want to set it "
@@ -49786,13 +49780,13 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему</p>"
 
-#: core/showfoto/main/showfoto.cpp:240
+#: core/showfoto/main/showfoto.cpp:244
 #, kde-format
 msgctxt "unknown image dimensions"
 msgid "Unknown"
 msgstr "Невідомо"
 
-#: core/showfoto/main/showfoto.cpp:265
+#: core/showfoto/main/showfoto.cpp:269
 #: core/utilities/imageeditor/main/imagewindow.cpp:490
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
@@ -49921,7 +49915,7 @@ msgstr "Дек&орування"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62868,13 +62862,13 @@ msgstr ""
 "перезапуску програми. Працездатність деяких параметрів залежить від "
 "використаного обладнання.</b>"
 
-#: core/utilities/setup/setup.cpp:153
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База даних"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62884,13 +62878,13 @@ msgstr ""
 "Параметри бази даних\n"
 "Налаштуйте параметри бази даних"
 
-#: core/utilities/setup/setup.cpp:158
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Збірки"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62900,13 +62894,13 @@ msgstr ""
 "Параметри збірки\n"
 "За допомогою цієї панелі ви зможете налаштувати шляхи до кореневих альбомів"
 
-#: core/utilities/setup/setup.cpp:163
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62916,13 +62910,13 @@ msgstr ""
 "Параметри панелей перегляду програми\n"
 "За допомогою цієї панелі ви зможете налаштувати компоненти панелей перегляду"
 
-#: core/utilities/setup/setup.cpp:168
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Підказки"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62932,13 +62926,13 @@ msgstr ""
 "Параметри підказок записів\n"
 "За допомогою цієї панелі ви зможете налаштувати вміст підказок записів"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "відео"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62948,13 +62942,13 @@ msgstr ""
 "Параметри перегляду відео\n"
 "Налаштуйте параметри відтворення відеоданих"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/utilities/setup/setup.cpp:183
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62965,13 +62959,13 @@ msgstr ""
 "За допомогою цієї панелі ви можете вказати дії, які буде виконано з "
 "метаданими зображень"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблони"
 
-#: core/utilities/setup/setup.cpp:188
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62981,13 +62975,13 @@ msgstr ""
 "Шаблони метаданих\n"
 "Керуйте вашою збіркою шаблонів метаданих"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62997,13 +62991,13 @@ msgstr ""
 "Параметри редактора зображень\n"
 "За допомогою цієї панелі ви зможете налаштувати поведінку редактора зображень"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Керування кольорами"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63013,13 +63007,13 @@ msgstr ""
 "Параметри керування кольорами\n"
 "За допомогою цієї панелі ви зможете налаштувати параметри керування кольорами"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63030,13 +63024,13 @@ msgstr ""
 "За допомогою цієї панелі ви зможете налаштувати поведінку стола з "
 "підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63046,13 +63040,13 @@ msgstr ""
 "Параметри засобу упорядковування за якістю\n"
 "Налаштування типовий параметрів для визначення якості зображень"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Фотоапарати"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63062,13 +63056,13 @@ msgstr ""
 "Параметри фотоапаратів\n"
 "За допомогою цієї панелі ви зможете вказати нові пристрої цифрових фотокамер"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Додатки"
 
-#: core/utilities/setup/setup.cpp:221
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63078,13 +63072,13 @@ msgstr ""
 "Параметри додатків\n"
 "Встановлення переліку доступних для програми додатків"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: core/utilities/setup/setup.cpp:226
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""
