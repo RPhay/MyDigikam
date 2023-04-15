@@ -898,7 +898,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
                         const bool preferFolderCond = referenceFound && refImageSelectionMethod == RefImageSelMethod::PreferFolder;
                         const bool excludeFolderCond = !referenceFound && refImageSelectionMethod == RefImageSelMethod::ExcludeFolder;
                         const bool newerCreationCond = refImageSelectionMethod == RefImageSelMethod::NewerCreationDate && (!refDateTime.isValid() || (info.dateTime() >  refDateTime));
-                        const bool newerModCond = refImageSelectionMethod == RefImageSelMethod::NewerCreationDate && (!refModDateTime.isValid() || (info.modDateTime() >  refModDateTime));
+                        const bool newerModCond = refImageSelectionMethod == RefImageSelMethod::NewerModificationDate && (!refModDateTime.isValid() || (info.modDateTime() >  refModDateTime));
                         const bool olderOrLargerCond =  refImageSelectionMethod == RefImageSelMethod::OlderOrLarger && (!refDateTime.isValid() ||
                                                         (infoPixelSize    >  refPixelSize) ||
                                                         ((infoPixelSize   == refPixelSize) && (info.fileSize() >  refFileSize)) ||
