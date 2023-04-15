@@ -46,25 +46,26 @@ class Q_DECL_HIDDEN DuplicatesFinder::Private
 public:
 
     explicit Private()
-      : minSimilarity(90),
-        maxSimilarity(100),
-        albumTagRelation(0),
+      : minSimilarity          (90),
+        maxSimilarity          (100),
+        albumTagRelation       (0),
         searchResultRestriction(0),
-        isAlbumUpdate(false),
-        job(nullptr)
+        method                 (HaarIface::OlderOrLarger),
+        isAlbumUpdate          (false),
+        job                    (nullptr)
     {
     }
 
-    int                   minSimilarity;
-    int                   maxSimilarity;
-    int                   albumTagRelation;
-    int                   searchResultRestriction;
+    int                          minSimilarity;
+    int                          maxSimilarity;
+    int                          albumTagRelation;
+    int                          searchResultRestriction;
     HaarIface::RefImageSelMethod method;
-    bool                  isAlbumUpdate;
-    QList<int>            albumsIdList;
-    QList<int>            tagsIdList;
-    QList<int>            referenceAlbumsList;
-    SearchesDBJobsThread* job;
+    bool                         isAlbumUpdate;
+    QList<int>                   albumsIdList;
+    QList<int>                   tagsIdList;
+    QList<int>                   referenceAlbumsList;
+    SearchesDBJobsThread*        job;
 };
 
 DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tags, int albumTagRelation, int minSimilarity,

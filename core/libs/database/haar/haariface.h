@@ -96,11 +96,11 @@ public:
      */
     enum class RefImageSelMethod: unsigned int
     {
-        OlderOrLarger = 0, // Original
-        PreferFolder = 1, // Prefer select folder to be the reference
-        ExcludeFolder = 2, // Prefer image not in the selected folder
-        NewerCreationDate = 3, // Prefer newer creation date image
-        NewerModificationDate = 4, // Prefer newer modification date image
+        OlderOrLarger         = 0,      ///< Original
+        PreferFolder          = 1,      ///< Prefer select folder to be the reference
+        ExcludeFolder         = 2,      ///< Prefer image not in the selected folder
+        NewerCreationDate     = 3,      ///< Prefer newer creation date image
+        NewerModificationDate = 4       ///< Prefer newer modification date image
     };
 
     using DuplicatesResultsMap = QMap<qlonglong, QPair<double, QList<qlonglong> > >;
