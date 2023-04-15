@@ -136,7 +136,10 @@ class DIGIKAM_DATABASE_EXPORT SearchesDBJobInfo : public DBJobInfo
 public:
 
     explicit SearchesDBJobInfo(QList<int>&& searchIds);
-    SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate, HaarIface::RefImageSelMethod referenceSelectionMethod, QSet<qlonglong>&& refImageIds);
+    SearchesDBJobInfo(QSet<qlonglong>&& imageIds,
+                      bool isAlbumUpdate,
+                      HaarIface::RefImageSelMethod referenceSelectionMethod,
+                      QSet<qlonglong>&& refImageIds);
 
     bool isDuplicatesJob()            const;
     bool isAlbumUpdate()              const;
@@ -158,15 +161,15 @@ public:
 
 public:
 
-    bool             m_duplicates;
-    bool             m_albumUpdate;
-    int              m_searchResultRestriction;
-    QList<int>       m_searchIds;
-    QSet<qlonglong>  m_imageIds;
-    double           m_minThreshold;
-    double           m_maxThreshold;
-    QSet<qlonglong>  m_refImageIds; // Image ids of the reference images if duplicates are available
-    HaarIface::RefImageSelMethod              m_refImageSelectionMethod;
+    bool                         m_duplicates;
+    bool                         m_albumUpdate;
+    int                          m_searchResultRestriction;
+    QList<int>                   m_searchIds;
+    QSet<qlonglong>              m_imageIds;
+    double                       m_minThreshold;
+    double                       m_maxThreshold;
+    QSet<qlonglong>              m_refImageIds; // Image ids of the reference images if duplicates are available
+    HaarIface::RefImageSelMethod m_refImageSelectionMethod;
 };
 
 // ---------------------------------------------

@@ -195,7 +195,10 @@ SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
 {
 }
 
-SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpdate, HaarIface::RefImageSelMethod referenceSelectionMethod, QSet<qlonglong> &&refImageIds)
+SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds,
+                                     bool isAlbumUpdate,
+                                     HaarIface::RefImageSelMethod referenceSelectionMethod,
+                                     QSet<qlonglong> &&refImageIds)
     : DBJobInfo                 (),
       m_duplicates              (true),
       m_albumUpdate             (isAlbumUpdate),
@@ -203,8 +206,8 @@ SearchesDBJobInfo::SearchesDBJobInfo(QSet<qlonglong>&& imageIds, bool isAlbumUpd
       m_imageIds                (std::move(imageIds)),
       m_minThreshold            (0.4),
       m_maxThreshold            (1),
-      m_refImageSelectionMethod (referenceSelectionMethod),
-      m_refImageIds             (std::move(refImageIds))
+      m_refImageIds             (std::move(refImageIds)),
+      m_refImageSelectionMethod (referenceSelectionMethod)
 {
 }
 
