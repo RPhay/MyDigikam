@@ -141,23 +141,23 @@ public:
                       HaarIface::RefImageSelMethod referenceSelectionMethod,
                       QSet<qlonglong>&& refImageIds);
 
-    bool isDuplicatesJob()            const;
-    bool isAlbumUpdate()              const;
+    bool isDuplicatesJob()                                 const;
+    bool isAlbumUpdate()                                   const;
 
-    const QList<int>& searchIds()     const;
-    const QSet<qlonglong>& imageIds() const;
+    const QList<int>& searchIds()                          const;
+    const QSet<qlonglong>& imageIds()                      const;
 
     HaarIface::RefImageSelMethod refImageSelectionMethod() const;
-    const QSet<qlonglong>& refImageIds() const;
+    const QSet<qlonglong>& refImageIds()                   const;
 
     void setMinThreshold(double t);
-    double minThreshold()             const;
+    double minThreshold()                                  const;
 
     void setMaxThreshold(double t);
-    double maxThreshold()             const;
+    double maxThreshold()                                  const;
 
     void setSearchResultRestriction(int type);
-    int searchResultRestriction()     const;
+    int searchResultRestriction()                          const;
 
 public:
 
