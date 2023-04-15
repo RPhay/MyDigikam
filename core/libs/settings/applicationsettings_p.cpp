@@ -151,104 +151,104 @@ ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfig
 }
 
 ApplicationSettings::Private::Private(ApplicationSettings* const qq)
-    : showSplash                            (false),
-      useTrash                              (false),
-      showTrashDeleteDialog                 (false),
-      showPermanentDeleteDialog             (false),
-      sidebarApplyDirectly                  (false),
-      useNativeFileDialog                   (false),
-      drawFramesToGrouped                   (true),
-      expandNewCurrentItem                  (false),
-      scrollItemToCenter                    (false),
-      showOnlyPersonTagsInPeopleSidebar     (false),
-      detectFacesInNewImages                (false),
-      iconShowName                          (false),
-      iconShowSize                          (false),
-      iconShowDate                          (false),
-      iconShowModDate                       (false),
-      iconShowTitle                         (false),
-      iconShowComments                      (false),
-      iconShowResolution                    (false),
-      iconShowTags                          (false),
-      iconShowOverlays                      (false),
-      iconShowFullscreen                    (false),
-      iconShowRating                        (false),
-      iconShowPickLabel                     (false),
-      iconShowColorLabel                    (false),
-      iconShowImageFormat                   (false),
-      iconShowCoordinates                   (false),
-      iconShowAspectRatio                   (false),
-      showToolTips                          (false),
-      tooltipShowFileName                   (false),
-      tooltipShowFileDate                   (false),
-      tooltipShowFileSize                   (false),
-      tooltipShowImageType                  (false),
-      tooltipShowImageDim                   (false),
-      tooltipShowImageAR                    (false),
-      tooltipShowPhotoMake                  (false),
-      tooltipShowPhotoLens                  (false),
-      tooltipShowPhotoDate                  (false),
-      tooltipShowPhotoFocal                 (false),
-      tooltipShowPhotoExpo                  (false),
-      tooltipShowPhotoMode                  (false),
-      tooltipShowPhotoFlash                 (false),
-      tooltipShowPhotoWb                    (false),
-      tooltipShowAlbumName                  (false),
-      tooltipShowTitles                     (false),
-      tooltipShowComments                   (false),
-      tooltipShowTags                       (false),
-      tooltipShowLabelRating                (false),
-      tooltipShowVideoAspectRatio           (false),
-      tooltipShowVideoAudioBitRate          (false),
-      tooltipShowVideoAudioChannelType      (false),
-      tooltipShowVideoAudioCodec            (false),
-      tooltipShowVideoDuration              (false),
-      tooltipShowVideoFrameRate             (false),
-      tooltipShowVideoVideoCodec            (false),
-      showAlbumToolTips                     (false),
-      tooltipShowAlbumTitle                 (false),
-      tooltipShowAlbumDate                  (false),
-      tooltipShowAlbumCollection            (false),
-      tooltipShowAlbumCategory              (false),
-      tooltipShowAlbumCaption               (false),
-      tooltipShowAlbumPreview               (false),
-      previewShowIcons                      (true),
-      showThumbbar                          (false),
-      showFolderTreeViewItemsCount          (false),
-      treeThumbnailSize                     (0),
-      treeThumbFaceSize                     (0),
-      thumbnailSize                         (0),
-      ratingFilterCond                      (0),
-      recursiveAlbums                       (false),
-      recursiveTags                         (false),
-      allGroupsOpen                         (false),
-      scanAtStart                           (true),
-      cleanAtStart                          (true),
-      databaseDirSetAtCmd                   (false),
-      albumMonitoring                       (false),
-      updateType                            (0),
-      updateWithDebug                       (false),
-      sidebarTitleStyle                     (DMultiTabBar::AllIconsText),
-      albumSortRole                         (ApplicationSettings::ByFolder),
-      albumSortChanged                      (false),
-      imageSortOrder                        (0),
-      imageSorting                          (0),
-      imageSeparationMode                   (0),
-      imageSeparationSortOrder              (0),
-      itemLeftClickAction                   (ApplicationSettings::ShowPreview),
-      syncToDigikam                         (false),
-      syncToBaloo                           (false),
-      faceDetectionAccuracy                 (0.7),
-      faceDetectionYoloV3                   (false),
-      stringComparisonType                  (ApplicationSettings::Natural),
-      minimumSimilarityBound                (40),
-      duplicatesSearchLastMinSimilarity     (90),
-      duplicatesSearchLastMaxSimilarity     (100),
-      duplicatesSearchLastAlbumTagRelation  (0),
-      duplicatesSearchLastRestrictions      (0),
+    : showSplash                                        (false),
+      useTrash                                          (false),
+      showTrashDeleteDialog                             (false),
+      showPermanentDeleteDialog                         (false),
+      sidebarApplyDirectly                              (false),
+      useNativeFileDialog                               (false),
+      drawFramesToGrouped                               (true),
+      expandNewCurrentItem                              (false),
+      scrollItemToCenter                                (false),
+      showOnlyPersonTagsInPeopleSidebar                 (false),
+      detectFacesInNewImages                            (false),
+      iconShowName                                      (false),
+      iconShowSize                                      (false),
+      iconShowDate                                      (false),
+      iconShowModDate                                   (false),
+      iconShowTitle                                     (false),
+      iconShowComments                                  (false),
+      iconShowResolution                                (false),
+      iconShowTags                                      (false),
+      iconShowOverlays                                  (false),
+      iconShowFullscreen                                (false),
+      iconShowRating                                    (false),
+      iconShowPickLabel                                 (false),
+      iconShowColorLabel                                (false),
+      iconShowImageFormat                               (false),
+      iconShowCoordinates                               (false),
+      iconShowAspectRatio                               (false),
+      showToolTips                                      (false),
+      tooltipShowFileName                               (false),
+      tooltipShowFileDate                               (false),
+      tooltipShowFileSize                               (false),
+      tooltipShowImageType                              (false),
+      tooltipShowImageDim                               (false),
+      tooltipShowImageAR                                (false),
+      tooltipShowPhotoMake                              (false),
+      tooltipShowPhotoLens                              (false),
+      tooltipShowPhotoDate                              (false),
+      tooltipShowPhotoFocal                             (false),
+      tooltipShowPhotoExpo                              (false),
+      tooltipShowPhotoMode                              (false),
+      tooltipShowPhotoFlash                             (false),
+      tooltipShowPhotoWb                                (false),
+      tooltipShowAlbumName                              (false),
+      tooltipShowTitles                                 (false),
+      tooltipShowComments                               (false),
+      tooltipShowTags                                   (false),
+      tooltipShowLabelRating                            (false),
+      tooltipShowVideoAspectRatio                       (false),
+      tooltipShowVideoAudioBitRate                      (false),
+      tooltipShowVideoAudioChannelType                  (false),
+      tooltipShowVideoAudioCodec                        (false),
+      tooltipShowVideoDuration                          (false),
+      tooltipShowVideoFrameRate                         (false),
+      tooltipShowVideoVideoCodec                        (false),
+      showAlbumToolTips                                 (false),
+      tooltipShowAlbumTitle                             (false),
+      tooltipShowAlbumDate                              (false),
+      tooltipShowAlbumCollection                        (false),
+      tooltipShowAlbumCategory                          (false),
+      tooltipShowAlbumCaption                           (false),
+      tooltipShowAlbumPreview                           (false),
+      previewShowIcons                                  (true),
+      showThumbbar                                      (false),
+      showFolderTreeViewItemsCount                      (false),
+      treeThumbnailSize                                 (0),
+      treeThumbFaceSize                                 (0),
+      thumbnailSize                                     (0),
+      ratingFilterCond                                  (0),
+      recursiveAlbums                                   (false),
+      recursiveTags                                     (false),
+      allGroupsOpen                                     (false),
+      scanAtStart                                       (true),
+      cleanAtStart                                      (true),
+      databaseDirSetAtCmd                               (false),
+      albumMonitoring                                   (false),
+      updateType                                        (0),
+      updateWithDebug                                   (false),
+      sidebarTitleStyle                                 (DMultiTabBar::AllIconsText),
+      albumSortRole                                     (ApplicationSettings::ByFolder),
+      albumSortChanged                                  (false),
+      imageSortOrder                                    (0),
+      imageSorting                                      (0),
+      imageSeparationMode                               (0),
+      imageSeparationSortOrder                          (0),
+      itemLeftClickAction                               (ApplicationSettings::ShowPreview),
+      syncToDigikam                                     (false),
+      syncToBaloo                                       (false),
+      faceDetectionAccuracy                             (0.7),
+      faceDetectionYoloV3                               (false),
+      stringComparisonType                              (ApplicationSettings::Natural),
+      minimumSimilarityBound                            (40),
+      duplicatesSearchLastMinSimilarity                 (90),
+      duplicatesSearchLastMaxSimilarity                 (100),
+      duplicatesSearchLastAlbumTagRelation              (0),
+      duplicatesSearchLastRestrictions                  (0),
       duplicatesSearchLastReferenceImageSelectionMethod (HaarIface::RefImageSelMethod::OlderOrLarger),
-      groupingOperateOnAll                  (ApplicationSettings::OperationModes()),
-      q                                     (qq)
+      groupingOperateOnAll                              (ApplicationSettings::OperationModes()),
+      q                                                 (qq)
 {
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {
@@ -274,124 +274,124 @@ void ApplicationSettings::Private::init()
     albumCategoryNames.append(i18nc("@item: album categories", "Miscellaneous"));
     albumCategoryNames.sort();
 
-    albumSortRole                        = ApplicationSettings::ByFolder;
-    imageSortOrder                       = ItemSortSettings::SortByFileName;
-    imageSorting                         = ItemSortSettings::AscendingOrder;
-    imageSeparationMode                  = ItemSortSettings::CategoryByAlbum;
-    imageSeparationSortOrder             = ItemSortSettings::AscendingOrder;
+    albumSortRole                                     = ApplicationSettings::ByFolder;
+    imageSortOrder                                    = ItemSortSettings::SortByFileName;
+    imageSorting                                      = ItemSortSettings::AscendingOrder;
+    imageSeparationMode                               = ItemSortSettings::CategoryByAlbum;
+    imageSeparationSortOrder                          = ItemSortSettings::AscendingOrder;
 
-    itemLeftClickAction                  = ApplicationSettings::ShowPreview;
+    itemLeftClickAction                               = ApplicationSettings::ShowPreview;
 
-    thumbnailSize                        = ThumbnailSize::Medium;
-    treeThumbnailSize                    = 22;
-    treeThumbFaceSize                    = 48;
-    treeviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    thumbnailSize                                     = ThumbnailSize::Medium;
+    treeThumbnailSize                                 = 22;
+    treeThumbFaceSize                                 = 48;
+    treeviewFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
-    updateType                           = 0;
-    updateWithDebug                      = false;
-    sidebarTitleStyle                    = DMultiTabBar::AllIconsText;
+    updateType                                        = 0;
+    updateWithDebug                                   = false;
+    sidebarTitleStyle                                 = DMultiTabBar::AllIconsText;
 
-    ratingFilterCond                     = ItemFilterSettings::GreaterEqualCondition;
+    ratingFilterCond                                  = ItemFilterSettings::GreaterEqualCondition;
 
-    showSplash                           = true;
-    useTrash                             = true;
-    showTrashDeleteDialog                = true;
-    showPermanentDeleteDialog            = true;
-    sidebarApplyDirectly                 = false;
-    useNativeFileDialog                  = false;
-    drawFramesToGrouped                  = true;
-    expandNewCurrentItem                 = true;
-    scrollItemToCenter                   = false;
-    showOnlyPersonTagsInPeopleSidebar    = false;
-    detectFacesInNewImages               = false;
+    showSplash                                        = true;
+    useTrash                                          = true;
+    showTrashDeleteDialog                             = true;
+    showPermanentDeleteDialog                         = true;
+    sidebarApplyDirectly                              = false;
+    useNativeFileDialog                               = false;
+    drawFramesToGrouped                               = true;
+    expandNewCurrentItem                              = true;
+    scrollItemToCenter                                = false;
+    showOnlyPersonTagsInPeopleSidebar                 = false;
+    detectFacesInNewImages                            = false;
 
-    iconShowName                         = true;
-    iconShowSize                         = false;
-    iconShowDate                         = true;
-    iconShowModDate                      = false;
-    iconShowTitle                        = true;
-    iconShowComments                     = true;
-    iconShowResolution                   = false;
-    iconShowAspectRatio                  = false;
-    iconShowTags                         = true;
-    iconShowOverlays                     = true;
-    iconShowFullscreen                   = true;
-    iconShowRating                       = true;
-    iconShowPickLabel                    = false;
-    iconShowColorLabel                   = true;
-    iconShowImageFormat                  = true;
-    iconShowCoordinates                  = true;
-    iconviewFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-    toolTipsFont                         = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-    showToolTips                         = false;
-    tooltipShowFileName                  = true;
-    tooltipShowFileDate                  = false;
-    tooltipShowFileSize                  = false;
-    tooltipShowImageType                 = false;
-    tooltipShowImageDim                  = true;
-    tooltipShowImageAR                   = true;
-    tooltipShowPhotoMake                 = true;
-    tooltipShowPhotoLens                 = true;
-    tooltipShowPhotoDate                 = true;
-    tooltipShowPhotoFocal                = true;
-    tooltipShowPhotoExpo                 = true;
-    tooltipShowPhotoMode                 = true;
-    tooltipShowPhotoFlash                = false;
-    tooltipShowPhotoWb                   = false;
-    tooltipShowAlbumName                 = false;
-    tooltipShowTitles                    = false;
-    tooltipShowComments                  = true;
-    tooltipShowTags                      = true;
-    tooltipShowLabelRating               = true;
+    iconShowName                                      = true;
+    iconShowSize                                      = false;
+    iconShowDate                                      = true;
+    iconShowModDate                                   = false;
+    iconShowTitle                                     = true;
+    iconShowComments                                  = true;
+    iconShowResolution                                = false;
+    iconShowAspectRatio                               = false;
+    iconShowTags                                      = true;
+    iconShowOverlays                                  = true;
+    iconShowFullscreen                                = true;
+    iconShowRating                                    = true;
+    iconShowPickLabel                                 = false;
+    iconShowColorLabel                                = true;
+    iconShowImageFormat                               = true;
+    iconShowCoordinates                               = true;
+    iconviewFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    toolTipsFont                                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    showToolTips                                      = false;
+    tooltipShowFileName                               = true;
+    tooltipShowFileDate                               = false;
+    tooltipShowFileSize                               = false;
+    tooltipShowImageType                              = false;
+    tooltipShowImageDim                               = true;
+    tooltipShowImageAR                                = true;
+    tooltipShowPhotoMake                              = true;
+    tooltipShowPhotoLens                              = true;
+    tooltipShowPhotoDate                              = true;
+    tooltipShowPhotoFocal                             = true;
+    tooltipShowPhotoExpo                              = true;
+    tooltipShowPhotoMode                              = true;
+    tooltipShowPhotoFlash                             = false;
+    tooltipShowPhotoWb                                = false;
+    tooltipShowAlbumName                              = false;
+    tooltipShowTitles                                 = false;
+    tooltipShowComments                               = true;
+    tooltipShowTags                                   = true;
+    tooltipShowLabelRating                            = true;
 
-    tooltipShowVideoAspectRatio          = true;
-    tooltipShowVideoAudioBitRate         = true;
-    tooltipShowVideoAudioChannelType     = true;
-    tooltipShowVideoAudioCodec           = true;
-    tooltipShowVideoDuration             = true;
-    tooltipShowVideoFrameRate            = true;
-    tooltipShowVideoVideoCodec           = true;
+    tooltipShowVideoAspectRatio                       = true;
+    tooltipShowVideoAudioBitRate                      = true;
+    tooltipShowVideoAudioChannelType                  = true;
+    tooltipShowVideoAudioCodec                        = true;
+    tooltipShowVideoDuration                          = true;
+    tooltipShowVideoFrameRate                         = true;
+    tooltipShowVideoVideoCodec                        = true;
 
-    showAlbumToolTips                    = false;
-    tooltipShowAlbumTitle                = true;
-    tooltipShowAlbumDate                 = true;
-    tooltipShowAlbumCollection           = true;
-    tooltipShowAlbumCategory             = true;
-    tooltipShowAlbumCaption              = true;
-    tooltipShowAlbumPreview              = false;
+    showAlbumToolTips                                 = false;
+    tooltipShowAlbumTitle                             = true;
+    tooltipShowAlbumDate                              = true;
+    tooltipShowAlbumCollection                        = true;
+    tooltipShowAlbumCategory                          = true;
+    tooltipShowAlbumCaption                           = true;
+    tooltipShowAlbumPreview                           = false;
 
-    previewShowIcons                     = true;
-    showThumbbar                         = true;
+    previewShowIcons                                  = true;
+    showThumbbar                                      = true;
 
-    recursiveAlbums                      = false;
-    recursiveTags                        = true;
-    allGroupsOpen                        = false;
+    recursiveAlbums                                   = false;
+    recursiveTags                                     = true;
+    allGroupsOpen                                     = false;
 
-    showFolderTreeViewItemsCount         = false;
+    showFolderTreeViewItemsCount                      = false;
 
-    syncToDigikam                        = false;
-    syncToBaloo                          = false;
-    albumSortChanged                     = false;
+    syncToDigikam                                     = false;
+    syncToBaloo                                       = false;
+    albumSortChanged                                  = false;
 
-    faceDetectionAccuracy                = 0.7;
-    faceDetectionYoloV3                  = false;
+    faceDetectionAccuracy                             = 0.7;
+    faceDetectionYoloV3                               = false;
 
-    minimumSimilarityBound               = 40;
-    duplicatesSearchLastMinSimilarity    = 90;
-    duplicatesSearchLastMaxSimilarity    = 100;
-    duplicatesSearchLastAlbumTagRelation = 0;
-    duplicatesSearchLastRestrictions     = 0;
+    minimumSimilarityBound                            = 40;
+    duplicatesSearchLastMinSimilarity                 = 90;
+    duplicatesSearchLastMaxSimilarity                 = 100;
+    duplicatesSearchLastAlbumTagRelation              = 0;
+    duplicatesSearchLastRestrictions                  = 0;
     duplicatesSearchLastReferenceImageSelectionMethod = HaarIface::RefImageSelMethod::OlderOrLarger;
 
-    scanAtStart                          = true;
-    cleanAtStart                         = true;
-    databaseDirSetAtCmd                  = false;
-    albumMonitoring                      = false;
-    stringComparisonType                 = ApplicationSettings::Natural;
+    scanAtStart                                       = true;
+    cleanAtStart                                      = true;
+    databaseDirSetAtCmd                               = false;
+    albumMonitoring                                   = false;
+    stringComparisonType                              = ApplicationSettings::Natural;
 
-    applicationStyle                     = qApp->style()->objectName();
-    applicationIcon                      = QString();
-    applicationFont                      = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    applicationStyle                                  = qApp->style()->objectName();
+    applicationIcon                                   = QString();
+    applicationFont                                   = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
 
     for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {

@@ -282,14 +282,16 @@ void ApplicationSettings::readSettings()
 
     // ---------------------------------------------------------------------
 
-    group                    = config->group(d->configGroupDuplicatesSearch);
+    group                                                = config->group(d->configGroupDuplicatesSearch);
 
-    d->minimumSimilarityBound                = group.readEntry(d->configMinimumSimilarityBound,               40);
-    d->duplicatesSearchLastMinSimilarity     = group.readEntry(d->configDuplicatesSearchLastMinSimilarity,    90);
-    d->duplicatesSearchLastMaxSimilarity     = group.readEntry(d->configDuplicatesSearchLastMaxSimilarity,    100);
-    d->duplicatesSearchLastAlbumTagRelation  = group.readEntry(d->configDuplicatesSearchLastAlbumTagRelation, 0);
-    d->duplicatesSearchLastRestrictions      = group.readEntry(d->configDuplicatesSearchLastRestrictions,     0);
-    d->duplicatesSearchLastReferenceImageSelectionMethod = (HaarIface::RefImageSelMethod)group.readEntry(d->configDuplicatesSearchReferenceSelectionMethod, (unsigned int)HaarIface::RefImageSelMethod::OlderOrLarger);
+    d->minimumSimilarityBound                            = group.readEntry(d->configMinimumSimilarityBound,               40);
+    d->duplicatesSearchLastMinSimilarity                 = group.readEntry(d->configDuplicatesSearchLastMinSimilarity,    90);
+    d->duplicatesSearchLastMaxSimilarity                 = group.readEntry(d->configDuplicatesSearchLastMaxSimilarity,    100);
+    d->duplicatesSearchLastAlbumTagRelation              = group.readEntry(d->configDuplicatesSearchLastAlbumTagRelation, 0);
+    d->duplicatesSearchLastRestrictions                  = group.readEntry(d->configDuplicatesSearchLastRestrictions,     0);
+    int method                                           = group.readEntry(d->configDuplicatesSearchReferenceSelectionMethod,
+                                                                           (int)HaarIface::RefImageSelMethod::OlderOrLarger);
+    d->duplicatesSearchLastReferenceImageSelectionMethod = (HaarIface::RefImageSelMethod)method;
 
     // ---------------------------------------------------------------------
 
@@ -316,126 +318,126 @@ void ApplicationSettings::saveSettings()
 
     KConfigGroup group = config->group(d->configGroupDefault);
 
-    group.writeEntry(d->configAlbumCollectionsEntry,                   d->albumCategoryNames);
-    group.writeEntry(d->configAlbumSortRoleEntry,                      (int)d->albumSortRole);
-    group.writeEntry(d->configImageSortOrderEntry,                     (int)d->imageSortOrder);
-    group.writeEntry(d->configImageSortingEntry,                       (int)d->imageSorting);
-    group.writeEntry(d->configImageSeparationModeEntry,                (int)d->imageSeparationMode);
-    group.writeEntry(d->configImageSeparationSortOrderEntry,           (int)d->imageSeparationSortOrder);
+    group.writeEntry(d->configAlbumCollectionsEntry,                    d->albumCategoryNames);
+    group.writeEntry(d->configAlbumSortRoleEntry,                       (int)d->albumSortRole);
+    group.writeEntry(d->configImageSortOrderEntry,                      (int)d->imageSortOrder);
+    group.writeEntry(d->configImageSortingEntry,                        (int)d->imageSorting);
+    group.writeEntry(d->configImageSeparationModeEntry,                 (int)d->imageSeparationMode);
+    group.writeEntry(d->configImageSeparationSortOrderEntry,            (int)d->imageSeparationSortOrder);
 
-    group.writeEntry(d->configItemLeftClickActionEntry,                (int)d->itemLeftClickAction);
-    group.writeEntry(d->configDefaultIconSizeEntry,                    (int)d->thumbnailSize);
-    group.writeEntry(d->configDefaultTreeIconSizeEntry,                (int)d->treeThumbnailSize);
-    group.writeEntry(d->configDefaultTreeFaceSizeEntry,                (int)d->treeThumbFaceSize);
-    group.writeEntry(d->configTreeViewFontEntry,                       d->treeviewFont);
-    group.writeEntry(d->configRatingFilterConditionEntry,              d->ratingFilterCond);
-    group.writeEntry(d->configAlbumMonitoringEntry,                    d->albumMonitoring);
-    group.writeEntry(d->configRecursiveAlbumsEntry,                    d->recursiveAlbums);
-    group.writeEntry(d->configRecursiveTagsEntry,                      d->recursiveTags);
-    group.writeEntry(d->configAllGroupsOpenEntry,                      d->allGroupsOpen);
-    group.writeEntry(d->configThemeEntry,                              d->currentTheme);
-    group.writeEntry(d->configUpdateType,                              d->updateType);
-    group.writeEntry(d->configSidebarTitleStyleEntry,                  (int)d->sidebarTitleStyle);
+    group.writeEntry(d->configItemLeftClickActionEntry,                 (int)d->itemLeftClickAction);
+    group.writeEntry(d->configDefaultIconSizeEntry,                     (int)d->thumbnailSize);
+    group.writeEntry(d->configDefaultTreeIconSizeEntry,                 (int)d->treeThumbnailSize);
+    group.writeEntry(d->configDefaultTreeFaceSizeEntry,                 (int)d->treeThumbFaceSize);
+    group.writeEntry(d->configTreeViewFontEntry,                        d->treeviewFont);
+    group.writeEntry(d->configRatingFilterConditionEntry,               d->ratingFilterCond);
+    group.writeEntry(d->configAlbumMonitoringEntry,                     d->albumMonitoring);
+    group.writeEntry(d->configRecursiveAlbumsEntry,                     d->recursiveAlbums);
+    group.writeEntry(d->configRecursiveTagsEntry,                       d->recursiveTags);
+    group.writeEntry(d->configAllGroupsOpenEntry,                       d->allGroupsOpen);
+    group.writeEntry(d->configThemeEntry,                               d->currentTheme);
+    group.writeEntry(d->configUpdateType,                               d->updateType);
+    group.writeEntry(d->configSidebarTitleStyleEntry,                   (int)d->sidebarTitleStyle);
 
-    group.writeEntry(d->configIconShowNameEntry,                       d->iconShowName);
-    group.writeEntry(d->configIconShowSizeEntry,                       d->iconShowSize);
-    group.writeEntry(d->configIconShowDateEntry,                       d->iconShowDate);
-    group.writeEntry(d->configIconShowModificationDateEntry,           d->iconShowModDate);
-    group.writeEntry(d->configIconShowTitleEntry,                      d->iconShowTitle);
-    group.writeEntry(d->configIconShowCommentsEntry,                   d->iconShowComments);
-    group.writeEntry(d->configIconShowResolutionEntry,                 d->iconShowResolution);
-    group.writeEntry(d->configIconShowAspectRatioEntry,                d->iconShowAspectRatio);
-    group.writeEntry(d->configIconShowTagsEntry,                       d->iconShowTags);
-    group.writeEntry(d->configIconShowOverlaysEntry,                   d->iconShowOverlays);
-    group.writeEntry(d->configIconShowFullscreenEntry,                 d->iconShowFullscreen);
-    group.writeEntry(d->configIconShowRatingEntry,                     d->iconShowRating);
-    group.writeEntry(d->configIconShowPickLabelEntry,                  d->iconShowPickLabel);
-    group.writeEntry(d->configIconShowColorLabelEntry,                 d->iconShowColorLabel);
-    group.writeEntry(d->configIconShowImageFormatEntry,                d->iconShowImageFormat);
-    group.writeEntry(d->configIconShowCoordinatesEntry,                d->iconShowCoordinates);
-    group.writeEntry(d->configIconViewFontEntry,                       d->iconviewFont);
+    group.writeEntry(d->configIconShowNameEntry,                        d->iconShowName);
+    group.writeEntry(d->configIconShowSizeEntry,                        d->iconShowSize);
+    group.writeEntry(d->configIconShowDateEntry,                        d->iconShowDate);
+    group.writeEntry(d->configIconShowModificationDateEntry,            d->iconShowModDate);
+    group.writeEntry(d->configIconShowTitleEntry,                       d->iconShowTitle);
+    group.writeEntry(d->configIconShowCommentsEntry,                    d->iconShowComments);
+    group.writeEntry(d->configIconShowResolutionEntry,                  d->iconShowResolution);
+    group.writeEntry(d->configIconShowAspectRatioEntry,                 d->iconShowAspectRatio);
+    group.writeEntry(d->configIconShowTagsEntry,                        d->iconShowTags);
+    group.writeEntry(d->configIconShowOverlaysEntry,                    d->iconShowOverlays);
+    group.writeEntry(d->configIconShowFullscreenEntry,                  d->iconShowFullscreen);
+    group.writeEntry(d->configIconShowRatingEntry,                      d->iconShowRating);
+    group.writeEntry(d->configIconShowPickLabelEntry,                   d->iconShowPickLabel);
+    group.writeEntry(d->configIconShowColorLabelEntry,                  d->iconShowColorLabel);
+    group.writeEntry(d->configIconShowImageFormatEntry,                 d->iconShowImageFormat);
+    group.writeEntry(d->configIconShowCoordinatesEntry,                 d->iconShowCoordinates);
+    group.writeEntry(d->configIconViewFontEntry,                        d->iconviewFont);
 
-    group.writeEntry(d->configToolTipsFontEntry,                       d->toolTipsFont);
-    group.writeEntry(d->configShowToolTipsEntry,                       d->showToolTips);
-    group.writeEntry(d->configToolTipsShowFileNameEntry,               d->tooltipShowFileName);
-    group.writeEntry(d->configToolTipsShowFileDateEntry,               d->tooltipShowFileDate);
-    group.writeEntry(d->configToolTipsShowFileSizeEntry,               d->tooltipShowFileSize);
-    group.writeEntry(d->configToolTipsShowImageTypeEntry,              d->tooltipShowImageType);
-    group.writeEntry(d->configToolTipsShowImageDimEntry,               d->tooltipShowImageDim);
-    group.writeEntry(d->configToolTipsShowImageAREntry,                d->tooltipShowImageAR);
-    group.writeEntry(d->configToolTipsShowPhotoMakeEntry,              d->tooltipShowPhotoMake);
-    group.writeEntry(d->configToolTipsShowPhotoLensEntry,              d->tooltipShowPhotoLens);
-    group.writeEntry(d->configToolTipsShowPhotoDateEntry,              d->tooltipShowPhotoDate);
-    group.writeEntry(d->configToolTipsShowPhotoFocalEntry,             d->tooltipShowPhotoFocal);
-    group.writeEntry(d->configToolTipsShowPhotoExpoEntry,              d->tooltipShowPhotoExpo);
-    group.writeEntry(d->configToolTipsShowPhotoModeEntry,              d->tooltipShowPhotoMode);
-    group.writeEntry(d->configToolTipsShowPhotoFlashEntry,             d->tooltipShowPhotoFlash);
-    group.writeEntry(d->configToolTipsShowPhotoWBEntry,                d->tooltipShowPhotoWb);
-    group.writeEntry(d->configToolTipsShowAlbumNameEntry,              d->tooltipShowAlbumName);
-    group.writeEntry(d->configToolTipsShowTitlesEntry,                 d->tooltipShowTitles);
-    group.writeEntry(d->configToolTipsShowCommentsEntry,               d->tooltipShowComments);
-    group.writeEntry(d->configToolTipsShowTagsEntry,                   d->tooltipShowTags);
-    group.writeEntry(d->configToolTipsShowLabelRatingEntry,            d->tooltipShowLabelRating);
+    group.writeEntry(d->configToolTipsFontEntry,                        d->toolTipsFont);
+    group.writeEntry(d->configShowToolTipsEntry,                        d->showToolTips);
+    group.writeEntry(d->configToolTipsShowFileNameEntry,                d->tooltipShowFileName);
+    group.writeEntry(d->configToolTipsShowFileDateEntry,                d->tooltipShowFileDate);
+    group.writeEntry(d->configToolTipsShowFileSizeEntry,                d->tooltipShowFileSize);
+    group.writeEntry(d->configToolTipsShowImageTypeEntry,               d->tooltipShowImageType);
+    group.writeEntry(d->configToolTipsShowImageDimEntry,                d->tooltipShowImageDim);
+    group.writeEntry(d->configToolTipsShowImageAREntry,                 d->tooltipShowImageAR);
+    group.writeEntry(d->configToolTipsShowPhotoMakeEntry,               d->tooltipShowPhotoMake);
+    group.writeEntry(d->configToolTipsShowPhotoLensEntry,               d->tooltipShowPhotoLens);
+    group.writeEntry(d->configToolTipsShowPhotoDateEntry,               d->tooltipShowPhotoDate);
+    group.writeEntry(d->configToolTipsShowPhotoFocalEntry,              d->tooltipShowPhotoFocal);
+    group.writeEntry(d->configToolTipsShowPhotoExpoEntry,               d->tooltipShowPhotoExpo);
+    group.writeEntry(d->configToolTipsShowPhotoModeEntry,               d->tooltipShowPhotoMode);
+    group.writeEntry(d->configToolTipsShowPhotoFlashEntry,              d->tooltipShowPhotoFlash);
+    group.writeEntry(d->configToolTipsShowPhotoWBEntry,                 d->tooltipShowPhotoWb);
+    group.writeEntry(d->configToolTipsShowAlbumNameEntry,               d->tooltipShowAlbumName);
+    group.writeEntry(d->configToolTipsShowTitlesEntry,                  d->tooltipShowTitles);
+    group.writeEntry(d->configToolTipsShowCommentsEntry,                d->tooltipShowComments);
+    group.writeEntry(d->configToolTipsShowTagsEntry,                    d->tooltipShowTags);
+    group.writeEntry(d->configToolTipsShowLabelRatingEntry,             d->tooltipShowLabelRating);
 
-    group.writeEntry(d->configToolTipsShowVideoAspectRatioEntry,       d->tooltipShowVideoAspectRatio);
-    group.writeEntry(d->configToolTipsShowVideoAudioBitRateEntry,      d->tooltipShowVideoAudioBitRate);
-    group.writeEntry(d->configToolTipsShowVideoAudioChannelTypeEntry,  d->tooltipShowVideoAudioChannelType);
-    group.writeEntry(d->configToolTipsShowVideoAudioCodecEntry,        d->tooltipShowVideoAudioCodec);
-    group.writeEntry(d->configToolTipsShowVideoDurationEntry,          d->tooltipShowVideoDuration);
-    group.writeEntry(d->configToolTipsShowVideoFrameRateEntry,         d->tooltipShowVideoFrameRate);
-    group.writeEntry(d->configToolTipsShowVideoVideoCodecEntry,        d->tooltipShowVideoVideoCodec);
+    group.writeEntry(d->configToolTipsShowVideoAspectRatioEntry,        d->tooltipShowVideoAspectRatio);
+    group.writeEntry(d->configToolTipsShowVideoAudioBitRateEntry,       d->tooltipShowVideoAudioBitRate);
+    group.writeEntry(d->configToolTipsShowVideoAudioChannelTypeEntry,   d->tooltipShowVideoAudioChannelType);
+    group.writeEntry(d->configToolTipsShowVideoAudioCodecEntry,         d->tooltipShowVideoAudioCodec);
+    group.writeEntry(d->configToolTipsShowVideoDurationEntry,           d->tooltipShowVideoDuration);
+    group.writeEntry(d->configToolTipsShowVideoFrameRateEntry,          d->tooltipShowVideoFrameRate);
+    group.writeEntry(d->configToolTipsShowVideoVideoCodecEntry,         d->tooltipShowVideoVideoCodec);
 
-    group.writeEntry(d->configShowAlbumToolTipsEntry,                  d->showAlbumToolTips);
-    group.writeEntry(d->configToolTipsShowAlbumTitleEntry,             d->tooltipShowAlbumTitle);
-    group.writeEntry(d->configToolTipsShowAlbumDateEntry,              d->tooltipShowAlbumDate);
-    group.writeEntry(d->configToolTipsShowAlbumCollectionEntry,        d->tooltipShowAlbumCollection);
-    group.writeEntry(d->configToolTipsShowAlbumCategoryEntry,          d->tooltipShowAlbumCategory);
-    group.writeEntry(d->configToolTipsShowAlbumCaptionEntry,           d->tooltipShowAlbumCaption);
-    group.writeEntry(d->configToolTipsShowAlbumPreviewEntry,           d->tooltipShowAlbumPreview);
+    group.writeEntry(d->configShowAlbumToolTipsEntry,                   d->showAlbumToolTips);
+    group.writeEntry(d->configToolTipsShowAlbumTitleEntry,              d->tooltipShowAlbumTitle);
+    group.writeEntry(d->configToolTipsShowAlbumDateEntry,               d->tooltipShowAlbumDate);
+    group.writeEntry(d->configToolTipsShowAlbumCollectionEntry,         d->tooltipShowAlbumCollection);
+    group.writeEntry(d->configToolTipsShowAlbumCategoryEntry,           d->tooltipShowAlbumCategory);
+    group.writeEntry(d->configToolTipsShowAlbumCaptionEntry,            d->tooltipShowAlbumCaption);
+    group.writeEntry(d->configToolTipsShowAlbumPreviewEntry,            d->tooltipShowAlbumPreview);
 
     if (d->previewSettings.quality == PreviewSettings::HighQualityPreview)
     {
-        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,        true);
-        group.writeEntry(d->configPreviewRawUseLoadingDataEntry,       (int)d->previewSettings.rawLoading);
+        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,         true);
+        group.writeEntry(d->configPreviewRawUseLoadingDataEntry,        (int)d->previewSettings.rawLoading);
     }
     else
     {
-        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,        false);
+        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,         false);
     }
 
-    group.writeEntry(d->configPreviewConvertToEightBitEntry,           d->previewSettings.convertToEightBit);
-    group.writeEntry(d->configPreviewShowIconsEntry,                   d->previewShowIcons);
-    group.writeEntry(d->configShowThumbbarEntry,                       d->showThumbbar);
-    group.writeEntry(d->configShowFolderTreeViewItemsCountEntry,       d->showFolderTreeViewItemsCount);
+    group.writeEntry(d->configPreviewConvertToEightBitEntry,            d->previewSettings.convertToEightBit);
+    group.writeEntry(d->configPreviewShowIconsEntry,                    d->previewShowIcons);
+    group.writeEntry(d->configShowThumbbarEntry,                        d->showThumbbar);
+    group.writeEntry(d->configShowFolderTreeViewItemsCountEntry,        d->showFolderTreeViewItemsCount);
 
     // ---------------------------------------------------------------------
 
     group = generalConfigGroup();
 
-    group.writeEntry(d->configShowSplashEntry,                         d->showSplash);
-    group.writeEntry(d->configUseTrashEntry,                           d->useTrash);
-    group.writeEntry(d->configShowTrashDeleteDialogEntry,              d->showTrashDeleteDialog);
-    group.writeEntry(d->configShowPermanentDeleteDialogEntry,          d->showPermanentDeleteDialog);
-    group.writeEntry(d->configApplySidebarChangesDirectlyEntry,        d->sidebarApplyDirectly);
-    group.writeEntry(d->configUseNativeFileDialogEntry,                d->useNativeFileDialog);
-    group.writeEntry(d->configDrawFramesToGroupedEntry,                d->drawFramesToGrouped);
-    group.writeEntry(d->configExpandNewCurrentItemEntry,               d->expandNewCurrentItem);
-    group.writeEntry(d->configScrollItemToCenterEntry,                 d->scrollItemToCenter);
-    group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,  d->showOnlyPersonTagsInPeopleSidebar);
-    group.writeEntry(d->configDetectFacesInNewImagesEntry,             d->detectFacesInNewImages);
-    group.writeEntry(d->configStringComparisonTypeEntry,               (int) d->stringComparisonType);
+    group.writeEntry(d->configShowSplashEntry,                          d->showSplash);
+    group.writeEntry(d->configUseTrashEntry,                            d->useTrash);
+    group.writeEntry(d->configShowTrashDeleteDialogEntry,               d->showTrashDeleteDialog);
+    group.writeEntry(d->configShowPermanentDeleteDialogEntry,           d->showPermanentDeleteDialog);
+    group.writeEntry(d->configApplySidebarChangesDirectlyEntry,         d->sidebarApplyDirectly);
+    group.writeEntry(d->configUseNativeFileDialogEntry,                 d->useNativeFileDialog);
+    group.writeEntry(d->configDrawFramesToGroupedEntry,                 d->drawFramesToGrouped);
+    group.writeEntry(d->configExpandNewCurrentItemEntry,                d->expandNewCurrentItem);
+    group.writeEntry(d->configScrollItemToCenterEntry,                  d->scrollItemToCenter);
+    group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,   d->showOnlyPersonTagsInPeopleSidebar);
+    group.writeEntry(d->configDetectFacesInNewImagesEntry,              d->detectFacesInNewImages);
+    group.writeEntry(d->configStringComparisonTypeEntry,                (int) d->stringComparisonType);
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    group.writeEntry(d->configApplicationStyleEntry,                   d->applicationStyle);
+    group.writeEntry(d->configApplicationStyleEntry,                    d->applicationStyle);
 
 #endif
 
-    group.writeEntry(d->configIconThemeEntry,                          d->applicationIcon);
-    group.writeEntry(d->configApplicationFontEntry,                    d->applicationFont);
+    group.writeEntry(d->configIconThemeEntry,                           d->applicationIcon);
+    group.writeEntry(d->configApplicationFontEntry,                     d->applicationFont);
 
-    group.writeEntry(d->configScanAtStartEntry,                        d->scanAtStart);
-    group.writeEntry(d->configCleanAtStartEntry,                       d->cleanAtStart);
+    group.writeEntry(d->configScanAtStartEntry,                         d->scanAtStart);
+    group.writeEntry(d->configCleanAtStartEntry,                        d->cleanAtStart);
 
     // ---------------------------------------------------------------------
 
@@ -445,8 +447,8 @@ void ApplicationSettings::saveSettings()
 
     group = config->group(d->configGroupBaloo);
 
-    group.writeEntry(d->configSyncBalootoDigikamEntry,                 d->syncToDigikam);
-    group.writeEntry(d->configSyncDigikamtoBalooEntry,                 d->syncToBaloo);
+    group.writeEntry(d->configSyncBalootoDigikamEntry,                  d->syncToDigikam);
+    group.writeEntry(d->configSyncDigikamtoBalooEntry,                  d->syncToBaloo);
 
 #endif // HAVE_KFILEMETADATA
 
@@ -459,17 +461,17 @@ void ApplicationSettings::saveSettings()
 
     group = config->group(d->configGroupFaceDetection);
 
-    group.writeEntry(d->configFaceDetectionAccuracyEntry,              d->faceDetectionAccuracy);
-    group.writeEntry(d->configFaceDetectionYoloV3Entry,                d->faceDetectionYoloV3);
+    group.writeEntry(d->configFaceDetectionAccuracyEntry,               d->faceDetectionAccuracy);
+    group.writeEntry(d->configFaceDetectionYoloV3Entry,                 d->faceDetectionYoloV3);
 
     group = config->group(d->configGroupDuplicatesSearch);
 
-    group.writeEntry(d->configMinimumSimilarityBound,                  d->minimumSimilarityBound);
-    group.writeEntry(d->configDuplicatesSearchLastMinSimilarity,       d->duplicatesSearchLastMinSimilarity);
-    group.writeEntry(d->configDuplicatesSearchLastMaxSimilarity,       d->duplicatesSearchLastMaxSimilarity);
-    group.writeEntry(d->configDuplicatesSearchLastAlbumTagRelation,    d->duplicatesSearchLastAlbumTagRelation);
-    group.writeEntry(d->configDuplicatesSearchLastRestrictions,        d->duplicatesSearchLastRestrictions);
-    group.writeEntry(d->configDuplicatesSearchReferenceSelectionMethod,    (unsigned int)d->duplicatesSearchLastReferenceImageSelectionMethod);
+    group.writeEntry(d->configMinimumSimilarityBound,                   d->minimumSimilarityBound);
+    group.writeEntry(d->configDuplicatesSearchLastMinSimilarity,        d->duplicatesSearchLastMinSimilarity);
+    group.writeEntry(d->configDuplicatesSearchLastMaxSimilarity,        d->duplicatesSearchLastMaxSimilarity);
+    group.writeEntry(d->configDuplicatesSearchLastAlbumTagRelation,     d->duplicatesSearchLastAlbumTagRelation);
+    group.writeEntry(d->configDuplicatesSearchLastRestrictions,         d->duplicatesSearchLastRestrictions);
+    group.writeEntry(d->configDuplicatesSearchReferenceSelectionMethod, (int)d->duplicatesSearchLastReferenceImageSelectionMethod);
 
     group = config->group(d->configGroupGrouping);
 

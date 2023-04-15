@@ -345,7 +345,7 @@ public:
     int                                          duplicatesSearchLastMaxSimilarity;
     int                                          duplicatesSearchLastAlbumTagRelation;
     int                                          duplicatesSearchLastRestrictions;
-    HaarIface::RefImageSelMethod     duplicatesSearchLastReferenceImageSelectionMethod;
+    HaarIface::RefImageSelMethod                 duplicatesSearchLastReferenceImageSelectionMethod;
 
     /// Grouping operation settings
     ApplicationSettings::OperationModes          groupingOperateOnAll;

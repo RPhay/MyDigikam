@@ -50,7 +50,7 @@ public:
         maxSimilarity          (100),
         albumTagRelation       (0),
         searchResultRestriction(0),
-        method                 (HaarIface::OlderOrLarger),
+        method                 (HaarIface::RefImageSelMethod::OlderOrLarger),
         isAlbumUpdate          (false),
         job                    (nullptr)
     {
