@@ -255,7 +255,7 @@ void AVDecoder::flush()
     avcodec_flush_buffers(d_func().codec_ctx);
 }
 
-#if LIBAVCODEC_VERSION_MAJOR >= 59  // ffmpeg >= 5
+#ifdef HAVE_FFMPEG_VERSION5  // ffmpeg >= 5
 
 static QHash<AVCodecParameters*, AVCodecContext*> ccs;
 
@@ -302,12 +302,15 @@ void AVDecoder::setCodecContext(void* codecCtx)
 
     if (!ctx)
     {
-        if (d.codec_ctx)
-        {
-            avcodec_free_context(&d.codec_ctx);
-            d.codec_ctx = nullptr;
-        }
 
+#ifdef HAVE_FFMPEG_VERSION5
+
+        ccs.remove(ccs.key(d.codec_ctx));
+
+#endif
+
+        avcodec_free_context(&d.codec_ctx);
+        d.codec_ctx = nullptr;
         return;
     }
 
