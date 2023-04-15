@@ -6,7 +6,7 @@
  * Date        : 2004-09-09
  * Description : digiKam release ID header.
  *
- * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -75,8 +75,8 @@ const QString additionalInformation()
     {
         ret = i18n(
                    "IRC: %1 - #digikam\n"
-                   "Feedback: %2\n\n"
-                   "Documentation: %3\n"
+                   "Feedback: %2\n"
+                   "Documentation: %3\n\n"
                    "Build date: %4 (target: %5)\n"
                    "Revision: %6\n"
                    "Branch: %7",
