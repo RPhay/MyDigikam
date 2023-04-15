@@ -32,7 +32,7 @@
 namespace Digikam
 {
 
-bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, const QString& suggestedAlbumRoot)
+bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, const QString& suggestedAlbumRoot, bool ignoreDisappearedLocations)
 {
     // This is to ensure that the setup does not overrule the command line.
     // TODO: there is a bug that setup is showing something different here.
@@ -371,7 +371,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
             solveManuallyButton->setChecked(true);
         }
 
-        if (dialog->exec())
+        if (!ignoreDisappearedLocations && dialog->exec())
         {
             if      (migrateButton && migrateButton->isChecked())
             {

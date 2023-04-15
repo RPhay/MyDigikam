@@ -120,9 +120,12 @@ public:
      * Returns true on success, false on failure.
      * A return value of false during startup indicates termination of the program
      * (user is informed)
+     *
+     * ignoreDisappearedLocations is intended to be used in tests, because the path of the collection is hardcoded
+     * but when executing the test on different computers the collection might not be available at that path
      */
     bool setDatabase(const DbEngineParameters& params, bool priority,
-                     const QString& suggestedAlbumRoot = QString());
+                     const QString& suggestedAlbumRoot = QString(), bool ignoreDisappearedLocations = false);
 
     /**
      * Sets new database when chosen by the user in setup.

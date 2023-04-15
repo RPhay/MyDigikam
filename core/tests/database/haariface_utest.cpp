@@ -36,6 +36,8 @@
 #include "dtestdatadir.h"
 #include "dbengineparameters.h"
 #include "albummanager.h"
+#include "collectionmanager.h"
+#include "collectionlocation.h"
 #include "facedbaccess.h"
 #include "similaritydbaccess.h"
 #include "similaritydb.h"
@@ -114,7 +116,19 @@ HaarIfaceTest::HaarIfaceTest(QObject* const parent)
 
 void HaarIfaceTest::initTestCase()
 {
-    startSqlite(QDir(filesPath));
+    auto dir = QDir(filesPath);
+    startSqlite(dir);
+
+    // Update collection path, because this is hardcoded
+    for (const auto col: CollectionManager::instance()->allLocations())
+    {
+        CollectionManager::instance()->removeLocation(col);
+    }
+    QVERIFY(dir.cd(QStringLiteral("Collection")));
+    // The new collection is in the same path as the database, but in the "Collection" subfolder
+    const auto collectionPath = dir.absolutePath();
+    CollectionManager::instance()->addLocation(QUrl::fromLocalFile(collectionPath), QStringLiteral("Collection"));
+
     ScanController::instance()->completeCollectionScan();
     ScanController::instance()->allowToScanDeferredFiles();
     AlbumManager::instance()->startScan();
@@ -146,7 +160,7 @@ void HaarIfaceTest::startSqlite(const QDir& dbDir)
     // ------------------------------------------------------------------------------------
 
     qCDebug(DIGIKAM_TESTS_LOG) << "Initializing SQlite database...";
-    QVERIFY2(AlbumManager::instance()->setDatabase(params, false, filesPath),
+    QVERIFY2(AlbumManager::instance()->setDatabase(params, false, filesPath, true),
              "Cannot initialize Sqlite database");
 
     QTest::qWait(3000);
