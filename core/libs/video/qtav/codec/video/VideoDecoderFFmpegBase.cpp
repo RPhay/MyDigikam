@@ -272,13 +272,14 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
         return false;
     }
 
-    int retFrame = avcodec_receive_frame(d.codec_ctx, d.frame);
-
-    if      ((ret == AVERROR(EAGAIN)) && (retFrame == AVERROR(EAGAIN)))
+    if (ret == AVERROR(EAGAIN))
     {
         d.undecoded_size = packet.data.size();
     }
-    else if ((retFrame < 0) && (retFrame != AVERROR(EAGAIN)))
+
+    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
+
+    if ((ret < 0) && (ret != AVERROR(EAGAIN)))
     {
         return false;
     }
