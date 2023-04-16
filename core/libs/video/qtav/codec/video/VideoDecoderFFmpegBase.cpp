@@ -249,12 +249,12 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
 
     int ret;
     d.undecoded_size = 0; // code below always consumes entire packet
-    
+
     if (packet.isEOF())
     {
         AVPacket eofpkt;
         if (av_new_packet(&eofpkt, 0) < 0) return false;
-        
+
         eofpkt.data = nullptr;
         eofpkt.size = 0;
         ret = avcodec_send_packet(d.codec_ctx, &eofpkt);
@@ -264,16 +264,21 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
         ret = avcodec_send_packet(d.codec_ctx, packet.asAVPacket());
     }
 
-    if (ret < 0 && ret != AVERROR_EOF)
+    if ((ret < 0) && (ret != AVERROR_EOF) && (ret != AVERROR(EAGAIN)))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("[VideoDecoder] %s",
                 av_err2str(ret));
         return false;
-    }    
+    }
 
-    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
-    if (ret < 0 && ret != AVERROR(EAGAIN))
+    int retFrame = avcodec_receive_frame(d.codec_ctx, d.frame);
+
+    if      ((ret == AVERROR(EAGAIN)) && (retFrame == AVERROR(EAGAIN)))
+    {
+        d.undecoded_size = packet.data.size();
+    }
+    else if ((retFrame < 0) && (retFrame != AVERROR(EAGAIN)))
     {
         return false;
     }
