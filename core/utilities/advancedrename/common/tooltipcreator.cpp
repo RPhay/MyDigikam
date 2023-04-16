@@ -47,6 +47,7 @@ TooltipCreator& TooltipCreator::getInstance()
 QString TooltipCreator::additionalInformation()
 {
     QStringList infoItems;
+    infoItems << i18n("To apply a modifier, append it to the option, for instance: [file]{upper}");
     infoItems << i18n("Modifiers can be applied to every renaming option.");
     infoItems << i18n("It is possible to assign multiple modifiers to an option, "
                       "they are applied in the order you assign them.");
