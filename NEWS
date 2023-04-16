@@ -12,4 +12,5 @@ BUGFIXES:
 003 ==> 468480 - Crash when playing fourth video.
 004 ==> 468542 - Using Exiftool as metadata engine to update camera model does not show within Image properties.
 005 ==> 468567 - Bad text direction in the Batch Queue Manager.
-006 ==> 
+006 ==> 468565 - Does not sort the Entries with Table view.
+007 ==> 
