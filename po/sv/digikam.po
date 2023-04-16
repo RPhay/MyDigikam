@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"POT-Creation-Date: 2023-04-16 00:45+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2787,8 +2787,8 @@ msgstr ""
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)\n"
 "Revision: %6\n"
 "Branch: %7"
@@ -21833,7 +21833,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Bildspel"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22149,7 +22149,7 @@ msgid "Slideshow"
 msgstr "Bildspel"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
+#: core/libs/settings/applicationsettings_miscs.cpp:440
 #, kde-format
 msgid "Slideshow"
 msgstr "Bildspel"
@@ -37482,7 +37482,7 @@ msgid "Properties"
 msgstr "Egenskaper"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
-#: core/libs/settings/applicationsettings_miscs.cpp:421
+#: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
@@ -39107,47 +39107,47 @@ msgstr "Obehandlat filformat för Phase One digitalkameror"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "obehandlat filformat för Arriflex kamera"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:391
+#: core/libs/settings/applicationsettings_miscs.cpp:401
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Vill du utföra åtgärden för alla objekt i gruppen?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:393
+#: core/libs/settings/applicationsettings_miscs.cpp:403
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Kom ihåg valet för åtgärden"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:424
+#: core/libs/settings/applicationsettings_miscs.cpp:434
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Ljusbord"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:427
+#: core/libs/settings/applicationsettings_miscs.cpp:437
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Köhantering för bakgrundsbehandling"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Namnbyte"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:436
+#: core/libs/settings/applicationsettings_miscs.cpp:446
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Import- och exportverktyg"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:439
+#: core/libs/settings/applicationsettings_miscs.cpp:449
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Verktyg (editor, panorama, kombinera sekvens, kalender, externt program)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:451
+#: core/libs/settings/applicationsettings_miscs.cpp:461
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39156,32 +39156,32 @@ msgstr ""
 "Åtgärder som hör ihop med metadata, beteckningar, betyg, etiketter, "
 "geografisk lokalisering och rotation"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:454
+#: core/libs/settings/applicationsettings_miscs.cpp:464
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Lägger till objekt på ljusbordet"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:457
+#: core/libs/settings/applicationsettings_miscs.cpp:467
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Lägger till objekt i köhantering för bakgrundsbehandling"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:460
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Öppnar objekt i bildspel"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Renaming items"
 msgstr "Byter namn på objekt"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:466
+#: core/libs/settings/applicationsettings_miscs.cpp:476
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr "Skickar objekt till import- och exportverktyg"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:469
+#: core/libs/settings/applicationsettings_miscs.cpp:479
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -39190,49 +39190,49 @@ msgstr ""
 "Flera verktyg inklusive editor, panorama, kombinera sekvens, kalender, HTML-"
 "galleri och öppna med externa program"
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategori"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Resor"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Helgdagar"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Vänner"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natur"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Fest"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Uppgift"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -53465,25 +53465,25 @@ msgstr "Medellikhet"
 msgid "This shows all found duplicate items."
 msgstr "Här visas alla duplicerade objekt som hittades."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Uppdatera fingeravtryck"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Använd knappen för att uppdatera alla bilders fingeravtryck."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Sök duplikat"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -53491,43 +53491,43 @@ msgstr ""
 "Använd knappen för att söka igenom markerade album för att hitta duplicerade "
 "objekt."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Sök i:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Likhetsintervall:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Begränsning:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Ingen"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Begränsa till referensalbum"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Undanta referensalbum"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53539,43 +53539,99 @@ msgstr ""
 "kriterier, såsom att begränsa sökningen till albumet med referensbilden, "
 "eller för att undanta albumet med referensbilden från sökningen."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Begränsa till:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Bara markerad flik"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Något av"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Båda"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Album men inte etiketter"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiketter men inte album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Creation Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Enligt skapad datum"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Modification Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Enligt ändringsdatum"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Information about current image selection"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Information om nuvarande bildmarkering"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference"
+msgstr "Referens:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#, fuzzy, kde-format
+#| msgid "&Choose image selection method:"
+msgctxt "@group"
+msgid "Reference Image Selection Method"
+msgstr "Välj &bildurvalsmetod:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53601,13 +53657,13 @@ msgstr ""
 "markerade etiketterna, men inte albumen.\n"
 "\"Bara markerad flik\" betyder att bara den markerade fliken används."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Ta bort dubbletter"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -58067,7 +58123,7 @@ msgstr "Ansiktsigenkänningsdatabas"
 msgid "Similarity DB"
 msgstr "Likhetsdatabas"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:103
+#: core/utilities/maintenance/duplicatesfinder.cpp:119
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Sök duplicerade objekt"

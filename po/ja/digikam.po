@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"POT-Creation-Date: 2023-04-16 00:45+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2780,8 +2780,8 @@ msgstr ""
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)\n"
 "Revision: %6\n"
 "Branch: %7"
@@ -22007,7 +22007,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22310,7 +22310,7 @@ msgid "Slideshow"
 msgstr "スライドショー"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
+#: core/libs/settings/applicationsettings_miscs.cpp:440
 #, kde-format
 msgid "Slideshow"
 msgstr "スライドショー"
@@ -37862,7 +37862,7 @@ msgid "Properties"
 msgstr "プロパティ"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
-#: core/libs/settings/applicationsettings_miscs.cpp:421
+#: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
@@ -39467,138 +39467,138 @@ msgstr "Tagged Image File Format (version 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Tagged Image File Format (version 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:391
+#: core/libs/settings/applicationsettings_miscs.cpp:401
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:393
+#: core/libs/settings/applicationsettings_miscs.cpp:403
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:424
+#: core/libs/settings/applicationsettings_miscs.cpp:434
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "ライトテーブル"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:427
+#: core/libs/settings/applicationsettings_miscs.cpp:437
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "一括処理マネージャ"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, fuzzy, kde-format
 #| msgid "File Renaming"
 msgid "Renaming"
 msgstr "ファイル名変更"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:436
+#: core/libs/settings/applicationsettings_miscs.cpp:446
 #, fuzzy, kde-format
 msgid "Import/Export tools"
 msgstr "エクスポート"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:439
+#: core/libs/settings/applicationsettings_miscs.cpp:449
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:451
+#: core/libs/settings/applicationsettings_miscs.cpp:461
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:454
+#: core/libs/settings/applicationsettings_miscs.cpp:464
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgid "Adding items to the Light Table"
 msgstr "ライトテーブルに追加"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:457
+#: core/libs/settings/applicationsettings_miscs.cpp:467
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgid "Adding items to the Batch Queue Manager"
 msgstr "一括処理マネージャ"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:460
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgid "Renaming items"
 msgstr "画像の名前を変更しています"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:466
+#: core/libs/settings/applicationsettings_miscs.cpp:476
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_miscs.cpp:469
+#: core/libs/settings/applicationsettings_miscs.cpp:479
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "カテゴリ"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "旅行"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "休日"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "友人"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "自然"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "パーティー"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "To-Do"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -54264,27 +54264,27 @@ msgstr "類似度:"
 msgid "This shows all found duplicate items."
 msgstr "見つかったすべての重複アイテムを表示します。"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "フィンガープリントを更新"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "このボタンを使ってスケッチを消します。"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "重複アイテムを検索"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:133
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -54292,34 +54292,34 @@ msgid "Use this button to scan the selected albums for duplicate items."
 msgstr ""
 "このボタンを押すと、選択したアルバムをスキャンして重複アイテムを探します。"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "検索:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "類似度:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "復元"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "なし"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -54327,7 +54327,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "選択したアルバムをリセット"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -54335,7 +54335,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "選択したアルバムをリセット"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54344,27 +54344,27 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "復元"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "選択したタグを削除"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -54372,20 +54372,74 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "両方"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "ファイルは存在しません"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "アルバムの名前変更に失敗"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Creation Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "作成日で"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Modification Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "更新日で"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#, fuzzy, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "画像サイズに関する情報"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference"
+msgstr "リファレンス:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#, fuzzy, kde-format
+#| msgid "No image selected"
+msgctxt "@group"
+msgid "Reference Image Selection Method"
+msgstr "画像が選択されていません"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54400,13 +54454,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "アイテムを削除"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -58907,7 +58961,7 @@ msgstr "顔認識"
 msgid "Similarity DB"
 msgstr "類似度:"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:103
+#: core/utilities/maintenance/duplicatesfinder.cpp:119
 #, kde-format
 msgid "Find duplicates items"
 msgstr "重複アイテムを検索"

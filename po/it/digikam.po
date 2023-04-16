@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:46+0000\n"
-"PO-Revision-Date: 2023-03-31 22:32+0200\n"
+"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"PO-Revision-Date: 2023-04-14 20:29+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.03.90\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2755,12 +2755,7 @@ msgid "All supported files (%1)"
 msgstr "Tutti i file supportati (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2770,8 +2765,9 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
+"Documentazione: %3\n"
 "\n"
-"Data compilazione: %3 (target: %4)"
+"Data compilazione: %4 (target: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
 #, fuzzy, kde-format
@@ -2779,14 +2775,15 @@ msgstr ""
 #| "IRC: %1 - #digikam\n"
 #| "Feedback: %2\n"
 #| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#| "Documentation: %3\n"
+#| "Build date: %4 (target: %5)\n"
+#| "Revision: %6\n"
+#| "Branch: %7"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)\n"
 "Revision: %6\n"
 "Branch: %7"
@@ -2794,8 +2791,10 @@ msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
 "\n"
-"Data compilazione: %3 (target: %4)\n"
-"Revisione: %5Ramo: %6"
+"Documentazione: %3\n"
+"Data compilazione: %4 (target: %5)\n"
+"Revisione: %6\n"
+"Ramo: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3148,9 +3147,7 @@ msgstr "Strumenti"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Aiuto"
 
@@ -3158,7 +3155,7 @@ msgstr "Aiuto"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Aiuto in linea sul cestino"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3257,10 +3254,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementi selezionati"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Più di 200 segnalazioni di errore di utenti chiuse in Bugzilla."
+msgstr "Più di 400 segnalazioni di errore di utenti chiuse in Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3290,54 +3286,46 @@ msgstr ""
 "serie."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Supporto di JPEG-XL, HEIF, WEBP e AVIF come formato immagine senza perdita "
-"di dati per la memorizzazione di immagini con versione nell'editor."
+"Gestione della versione: aggiunto supporto di JPEG-XL, HEIF, WEBP e AVIF "
+"come formato immagine senza perdita di dati per la memorizzazione di "
+"immagini con versione nell'editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"Aggiunto il menu hamburger alla barra degli strumenti, se il menu principale "
-"è nascosto."
+"Usabilità: aggiunto il menu hamburger alla barra degli strumenti, se il menu "
+"principale è nascosto."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Aggiunta una nuova opzione per scrivere i metadati nei file col motore "
-"ExifTool."
+"Metadati: aggiunta una nuova opzione per scrivere i metadati nei file col "
+"motore ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Le operazioni facoltative di scrittura dei metadati nei file DNG e RAW ora "
-"sono sempre delegate al motore ExifTool."
+"Metadati: le operazioni facoltative di scrittura dei metadati nei file DNG e "
+"RAW ora sono sempre delegate al motore ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Aspetto ottimizzato dell'estensione Modifica metadati al fine di migliorarne "
-"l'uso."
+"Metadati; aspetto ottimizzato dell'estensione Modifica metadati al fine di "
+"migliorarne l'uso."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3345,60 +3333,58 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadati: aggiunta nuove opzioni per salvare e caricare i profili di "
+"configurazione nel pannello delle impostazioni dei metadati avanzati."
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Aggiunto un contatore incrementale di file per la numerazione in sequenza "
-"con opzione [c] o [c,step]."
+"Rinomina avanzata: aggiunto un contatore incrementale di file per la "
+"numerazione in sequenza con opzione [c] o [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "Aggiunta la numerazione in sequenza con testo casuale con opzione [r]."
+msgstr ""
+"Rinomina avanzata: aggiunta la numerazione in sequenza con testo casuale con "
+"opzione [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Aggiunto il primo carattere configurabile per il modificatore univoco con "
-"{unique:n,c}."
+"Rinomina avanzata: aggiunto il primo carattere configurabile per il "
+"modificatore univoco con {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Aggiunta ricerca degli elementi per numero di regioni facciali."
+msgstr ""
+"Ricerca avanzata: aggiunta ricerca degli elementi per numero di regioni "
+"facciali."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Aggiunta ricerca degli elementi senza regioni facciali."
+msgstr ""
+"Ricerca avanzata: aggiunta ricerca degli elementi senza regioni facciali."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Aggiunto supporto per percorsi di rete multi-piattaforma."
+msgstr "Raccolte: aggiunto supporto per percorsi di rete multi-piattaforma."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Aggiunto supporto per la modalità SQLite WAL (Write-Ahead-Logging)."
+msgstr ""
+"Banca dati: aggiunto supporto per la modalità SQLite WAL (Write-Ahead-"
+"Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3455,26 +3441,27 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Aggiunte impostazioni della Vista a icone per personalizzare la visibilità "
+"delle etichette sulle miniature."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Aggiunto supporto per le immagini con virgola mobile a 16 bit (half float) "
+"nel caricatore TIFF."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Aggiunto il <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-"PhuocKhanhLe\">Rilevamento estetico per la classificazione delle immagini "
-"tramite il modello di apprendimento profondo</a>."
+"Aggiunto nuovo strumento di manutenzione per eseguire il <a href=\"https://"
+"community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Rilevamento "
+"estetico per la classificazione delle immagini tramite il modello di "
+"apprendimento profondo</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3487,43 +3474,39 @@ msgstr ""
 "caratteri su un testo scansionato</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Aggiunto nuovo strumento per assegnare automaticamente l'etichetta di scelta "
-"in base all'analisi della qualità dell'immagine."
+"Gestore elaborazione: aggiunto nuovo strumento per assegnare automaticamente "
+"l'etichetta di scelta in base all'analisi della qualità dell'immagine."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Aggiunto nuovo strumento per assegnare valutazioni, scelta ed etichette "
-"colorate in serie."
+"Gestore elaborazione: aggiunto nuovo strumento per assegnare valutazioni, "
+"scelta ed etichette colorate in serie."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
-msgstr "Aggiunto nuovo strumento per assegnare titoli e didascalie in serie."
+msgstr ""
+"Gestore elaborazione: aggiunto nuovo strumento per assegnare titoli e "
+"didascalie in serie."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Riscritto il manuale</a> "
-"dall'infrastruttura DocBook a quella Sphinx/ReStructuredText."
+"Documentazione: <a href=\" https://docs.digikam.org/en/index.html"
+"\">riscritto il manuale</a> dall'infrastruttura DocBook a quella Sphinx/"
+"ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3531,13 +3514,15 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Aggiornato lo strumento G'MIC-Qt all'ultima versione 3.2.2, terminata la "
+"conversione a MacOS e migliorata la stabilità dell'estensione."
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
 msgstr ""
-"Aggiornato il motore interno RAW all'ultimo rilascio stabile Libraw 0.21.1."
+"Aggiornato il motore interno RAW all'ultimo rilascio di Libraw snapshot "
+"20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -21914,7 +21899,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Presentazione"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22240,7 +22225,7 @@ msgid "Slideshow"
 msgstr "Presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
+#: core/libs/settings/applicationsettings_miscs.cpp:440
 #, kde-format
 msgid "Slideshow"
 msgstr "Presentazione"
@@ -23171,7 +23156,7 @@ msgstr "Esporta in &Flickr..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Digita l'URL di accesso a Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -23179,6 +23164,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Copia l'URL completo dal browser esterno che contiene la voce \"oauth_token"
+"\":"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -26787,12 +26774,10 @@ msgid "Rename Album (%1)"
 msgstr "Rinomina album (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Rinomina album (%1)"
+msgstr "Rinomina la radice dell'album (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -29981,12 +29966,10 @@ msgid "Manifests"
 msgstr "Manifesti"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "Configurazione FFmpeg"
+msgstr "Configurazione OpenCV"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -37507,7 +37490,7 @@ msgid "Properties"
 msgstr "Proprietà"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
-#: core/libs/settings/applicationsettings_miscs.cpp:421
+#: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
@@ -39150,48 +39133,48 @@ msgstr "Formato immagine raw Phase One Digital Camera"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Formato immagine raw Arriflex Camera"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:391
+#: core/libs/settings/applicationsettings_miscs.cpp:401
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Vuoi applicare questa operazione a tutti gli elementi del gruppo?"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:393
+#: core/libs/settings/applicationsettings_miscs.cpp:403
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Ricorda la scelta per questa operazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:424
+#: core/libs/settings/applicationsettings_miscs.cpp:434
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:427
+#: core/libs/settings/applicationsettings_miscs.cpp:437
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Rinomina in corso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:436
+#: core/libs/settings/applicationsettings_miscs.cpp:446
 #, kde-format
 msgid "Import/Export tools"
 msgstr "Strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:439
+#: core/libs/settings/applicationsettings_miscs.cpp:449
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Strumenti (editor, panorama, fusione di sovrapposizioni, calendario, "
 "programma esterno)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:451
+#: core/libs/settings/applicationsettings_miscs.cpp:461
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -39200,33 +39183,33 @@ msgstr ""
 "Operazioni collegate a metadati, etichette, valutazioni, tag, "
 "geolocalizzazione e rotazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:454
+#: core/libs/settings/applicationsettings_miscs.cpp:464
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Aggiunta degli elementi al tavolo luminoso"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:457
+#: core/libs/settings/applicationsettings_miscs.cpp:467
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Aggiungi elementi al Gestore elaborazione in serie"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:460
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Apertura degli elementi nella Presentazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Renaming items"
 msgstr "Rinomina degli elementi"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:466
+#: core/libs/settings/applicationsettings_miscs.cpp:476
 #, kde-format
 msgid "Passing items to import/export tools"
 msgstr ""
 "Trasferimento degli elementi agli strumenti d'importazione ed esportazione"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:469
+#: core/libs/settings/applicationsettings_miscs.cpp:479
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -39235,49 +39218,49 @@ msgstr ""
 "Diversi strumenti, incluso editor, panorama, fusione di sovrapposizioni, "
 "calendario, galleria HTML e apertura con programmi esterni"
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Categoria"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Viaggi"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Vacanze"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Amici"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Natura"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Feste"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Da fare"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -39771,7 +39754,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Aiuto in linea sulla gestione dei tag"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -43508,10 +43491,9 @@ msgid "Developer (2004)"
 msgstr "Sviluppatore (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Configura questa colonna"
+msgstr "Configura le notifiche"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -52765,13 +52747,13 @@ msgstr "Somiglianza media:"
 msgid "This shows all found duplicate items."
 msgstr "Questo mostra tutti gli elementi duplicati trovati."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
 #, kde-format
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Aggiorna codici di controllo"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
@@ -52779,55 +52761,55 @@ msgstr ""
 "Usa questo pulsante per aggiornare i codici di controllo di tutte le "
 "immagini."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Trova duplicati"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
 msgstr "Usa questo pulsante per cercare duplicati negli album selezionati."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Ricerca in:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Intervallo di somiglianza:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Limitazione:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Nessuna"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Limita all'album di riferimento"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Escludi album di riferimento"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52839,43 +52821,99 @@ msgstr ""
 "criteri, tipo limitare la ricerca all'album dell'immagine di riferimento, o "
 "escludere l'album dell'immagine di riferimento della ricerca."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Limita a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Solo la scheda selezionata"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Una di"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Entrambe"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Album ma non tag"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Tag ma non album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Creation Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Per data di creazione"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "By Modification Date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Per data di modifica"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Information about current image selection"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Informazioni sull'immagine attualmente selezionata"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference"
+msgstr "Riferimento:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#, fuzzy, kde-format
+#| msgid "&Choose image selection method:"
+msgctxt "@group"
+msgid "Reference Image Selection Method"
+msgstr "Scegli il metodo di selezione delle immagini:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52901,13 +52939,13 @@ msgstr ""
 "selezionati ma non negli album.\n"
 "«Solo scheda selezionata» significa che è usata solo la scheda selezionata."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Rimuovi duplicati"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -57351,7 +57389,7 @@ msgstr "Banca dati riconoscimento facciale"
 msgid "Similarity DB"
 msgstr "Banca dati Somiglianze"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:103
+#: core/utilities/maintenance/duplicatesfinder.cpp:119
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Trova elementi duplicati"

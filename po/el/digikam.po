@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-15 00:46+0000\n"
+"POT-Creation-Date: 2023-04-16 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3101,8 +3101,8 @@ msgstr ""
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentation: %3\n"
+"\n"
 "Build date: %4 (target: %5)\n"
 "Revision: %6\n"
 "Branch: %7"
@@ -23155,7 +23155,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:668
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -23473,7 +23473,7 @@ msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
+#: core/libs/settings/applicationsettings_miscs.cpp:440
 #, kde-format
 msgid "Slideshow"
 msgstr "Παρουσίαση διαφανειών"
@@ -39532,7 +39532,7 @@ msgid "Properties"
 msgstr "Ιδιότητες"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
-#: core/libs/settings/applicationsettings_miscs.cpp:421
+#: core/libs/settings/applicationsettings_miscs.cpp:431
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid "Metadata"
@@ -41263,49 +41263,49 @@ msgstr "Μορφή TIFF (έκδοση 5.0)"
 msgid "Arriflex Camera Raw Image Format"
 msgstr "Μορφή TIFF (έκδοση 5.0)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:391
+#: core/libs/settings/applicationsettings_miscs.cpp:401
 #, kde-format
 msgid "Do you want to do this operation on all group items?"
 msgstr "Θέλετε να γίνει αυτή η λειτουργία για όλα τα αντικείμενα της ομάδας;"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:393
+#: core/libs/settings/applicationsettings_miscs.cpp:403
 #, kde-format
 msgid "Remember choice for this operation"
 msgstr "Απομνημόνευση επιλογής για αυτήν τη λειτουργία"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:424
+#: core/libs/settings/applicationsettings_miscs.cpp:434
 #: core/utilities/lighttable/lighttablewindow.cpp:48
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
 msgstr "Φωτεινός πίνακας"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:427
+#: core/libs/settings/applicationsettings_miscs.cpp:437
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Διαχειριστής ουράς για δέσμες εργασιών"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:433
+#: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
 msgstr "Μετονομασία"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:436
+#: core/libs/settings/applicationsettings_miscs.cpp:446
 #, fuzzy, kde-format
 #| msgid "Import/Export plugins"
 msgid "Import/Export tools"
 msgstr "Πρόσθετα εισαγωγής/εξαγωγής"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:439
+#: core/libs/settings/applicationsettings_miscs.cpp:449
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
 msgstr ""
 "Εργαλεία (επεξεργαστής, πανόραμα, stack blending, ημερολόγιο, εξωτερικό "
 "πρόγραμμα)"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:451
+#: core/libs/settings/applicationsettings_miscs.cpp:461
 #, kde-format
 msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
@@ -41314,33 +41314,33 @@ msgstr ""
 "Λειτουργίες σχρτικές με μεταδεδομένα, τίτλους, αξιολογήσεις, ετικέτες, "
 "γεωγραφική θέση και διαδοχική εναλλαγή"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:454
+#: core/libs/settings/applicationsettings_miscs.cpp:464
 #, kde-format
 msgid "Adding items to the Light Table"
 msgstr "Προσθήκη αντικειμένων στο φωτεινό πίνακα"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:457
+#: core/libs/settings/applicationsettings_miscs.cpp:467
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
 msgstr "Προσθήκη αντικειμένων στο διαχειριστή ουράς για δέσμες εργασιών·"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:460
+#: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid "Opening items in the Slideshow"
 msgstr "Άνοιγμα αντικειμένων στην προβολή διαφανειών"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:463
+#: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
 msgid "Renaming items"
 msgstr "Μετονομασία αντικειμένων"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:466
+#: core/libs/settings/applicationsettings_miscs.cpp:476
 #, fuzzy, kde-format
 #| msgid "Passing items to import/export plugins"
 msgid "Passing items to import/export tools"
 msgstr "Πέρασμα αντικειμένων σε πρόσθετα εισαγωγής/εξαγωγής"
 
-#: core/libs/settings/applicationsettings_miscs.cpp:469
+#: core/libs/settings/applicationsettings_miscs.cpp:479
 #, kde-format
 msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
@@ -41349,56 +41349,56 @@ msgstr ""
 "Πολλά εργαλεία όπως επεξεργαστής, πανόραμα, stack blending, ημερολόγιο, "
 "συλλογή html και άνοιγμα με εξωτερικά προγράμματα"
 
-#: core/libs/settings/applicationsettings_p.cpp:265
+#: core/libs/settings/applicationsettings_p.cpp:267
 #, fuzzy, kde-format
 #| msgid "Category"
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Κατηγορία"
 
-#: core/libs/settings/applicationsettings_p.cpp:266
+#: core/libs/settings/applicationsettings_p.cpp:268
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Ταξίδι"
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Διακοπές"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Friends"
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Φίλοι"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Φύση"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Πάρτι"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Προς υλοποίηση"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -56373,14 +56373,14 @@ msgstr "Ομοιότητα:"
 msgid "This shows all found duplicate items."
 msgstr "Εδώ εμφανίζονται όλα τα διπλά αντικείμενα."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:120
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:127
 #, fuzzy, kde-format
 #| msgid "Update fingerprints"
 msgctxt "@action"
 msgid "Update fingerprints"
 msgstr "Ενημέρωση αποτυπωμάτων"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:122
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:129
 #, fuzzy, kde-format
 #| msgid "Use this button to update all image fingerprints."
 msgctxt "@info"
@@ -56389,14 +56389,14 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για την ενημέρωση όλων των αποτυπωμάτων "
 "εικόνων."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:124
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
 #, fuzzy, kde-format
 #| msgid "Find duplicates"
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Αναζήτηση διπλών εμφανίσεων"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:126
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:133
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -56405,34 +56405,34 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:131
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:138
 #, kde-format
 msgctxt "@label"
 msgid "Search in:"
 msgstr "Αναζήτηση σε:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:149
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Ομοιότητα:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:152
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Αποκατάσταση"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Καθόλου"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -56440,7 +56440,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Επαναφορά επιλεγμένων λευκωμάτων"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:158
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -56448,7 +56448,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Επαναφορά επιλεγμένων λευκωμάτων"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56457,28 +56457,28 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:172
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Αποκατάσταση"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:184
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Αφαίρεση επιλεγμένης ετικέτας"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:185
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Ένας χάρτης"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:186
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
 #, fuzzy, kde-format
 #| msgctxt "toggle child and parent tags"
 #| msgid "Both"
@@ -56486,21 +56486,74 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Και τα δύο"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:187
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Το αρχείο δεν υπάρχει"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:188
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Αποτυχία μετονομασίας του λευκώματος"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Older or Larger"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#, kde-format
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer other than selected folder as reference"
+msgstr ""
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#, fuzzy, kde-format
+#| msgid "Creation date"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Creation Date"
+msgstr "Ημερομηνία δημιουργίας"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#, fuzzy, kde-format
+#| msgid "Modification"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Prefer Newer Modification Date"
+msgstr "Τροποποίηση"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#, fuzzy, kde-format
+#| msgid "Information about current image selection"
+msgctxt "@label:listbox similarity reference selection method"
+msgid "Select method for reference image selection"
+msgstr "Πληροφορίες σχετικά με την τρέχουσα επιλεγμένη εικόνα"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#, fuzzy, kde-format
+#| msgid "Reference:"
+msgctxt "@label"
+msgid "Reference"
+msgstr "Αναφορά:"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#, fuzzy, kde-format
+#| msgid "No image selected"
+msgctxt "@group"
+msgid "Reference Image Selection Method"
+msgstr "Καμία επιλεγμένη εικόνα"
+
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56515,14 +56568,14 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:209
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Αφαίρεση διπλών λέξεων"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -61264,7 +61317,7 @@ msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
 msgid "Similarity DB"
 msgstr "Ομοιότητα"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:103
+#: core/utilities/maintenance/duplicatesfinder.cpp:119
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Αναζήτηση διπλών αντικειμένων"
