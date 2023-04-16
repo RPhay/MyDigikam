@@ -345,7 +345,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(const FileActionItemInfoList& i
         }
     }
 
-    if (hub->willWriteMetadata(DisjointMetadata::FullWriteIfChanged), Qt::DirectConnection)
+    if (hub->willWriteMetadata(DisjointMetadata::FullWriteIfChanged))
     {
         int flags = hub->changedFlags();
 
