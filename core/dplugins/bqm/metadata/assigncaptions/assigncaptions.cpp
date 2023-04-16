@@ -173,9 +173,18 @@ void AssignCaptions::slotAssignSettings2Widget()
     bool cleanup                  = settings()[QLatin1String("CleanUp")].toBool();
 
     d->setTitles->setChecked(setTitles);
-    d->titlesWidget->setValues(titles);
     d->setCaptions->setChecked(setCaptions);
-    d->captionsWidget->setValues(captions);
+
+    if (d->titlesWidget->values() != titles)
+    {
+        d->titlesWidget->setValues(titles);
+    }
+
+    if (d->captionsWidget->values() != captions)
+    {
+        d->captionsWidget->setValues(captions);
+    }
+
     d->cleanupCB->setChecked(cleanup);
 
     d->changeSettings             = true;
