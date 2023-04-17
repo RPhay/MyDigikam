@@ -438,9 +438,9 @@ void AlbumModelTest::cleanup()
     // remove all tags
 
     QString error;
-    bool removed = AlbumManager::instance()->deleteTAlbum(talbumRoot0, error, false);
+    bool removed = AlbumManager::instance()->deleteTAlbum(talbumRoot0, error);
     QVERIFY2(removed, QString::fromUtf8("Error removing a tag: %1").arg(error).toLatin1().constData());
-    removed      = AlbumManager::instance()->deleteTAlbum(talbumRoot1, error, false);
+    removed      = AlbumManager::instance()->deleteTAlbum(talbumRoot1, error);
     QVERIFY2(removed, QString::fromUtf8("Error removing a tag: %1").arg(error).toLatin1().constData());
 
     QCOMPARE(AlbumManager::instance()->allTAlbums().size(), 1);
