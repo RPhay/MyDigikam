@@ -247,14 +247,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "LibLqr support") <<                 SUPPORTED_NO);
 #endif
 
-#ifdef HAVE_VKONTAKTE
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "VKontakte support") <<              SUPPORTED_YES);
-#else
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "VKontakte support") <<              SUPPORTED_NO);
-#endif
-
 #ifdef HAVE_IMAGE_MAGICK
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs") <<             QLatin1String(MagickLibVersionText));
