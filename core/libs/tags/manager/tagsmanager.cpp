@@ -381,6 +381,7 @@ void TagsManager::slotDeleteAction()
     if (result == QMessageBox::Yes)
     {
         QMultiMap<int, TAlbum*>::iterator it;
+        QList<qlonglong> imageIds;
 
         /**
          * QMultimap doesn't provide reverse iterator, -1 is required
@@ -390,11 +391,13 @@ void TagsManager::slotDeleteAction()
         {
             QString errMsg;
 
-            if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg))
+            if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg, &imageIds))
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
             }
         }
+
+        AlbumManager::instance()->askUserForWriteChangedTAlbumToFiles(imageIds);
     }
 }
 
@@ -587,17 +590,20 @@ void TagsManager::slotWipeAll()
         child = root.model()->index(iter++, 0, root);
     }
 
+    QList<qlonglong> imageIds;
     AlbumPointerList<TAlbum>::iterator it;
 
     for (it = tagList.begin() ; it != tagList.end() ; ++it)
     {
         QString errMsg;
 
-        if (!AlbumManager::instance()->deleteTAlbum(*it, errMsg))
+        if (!AlbumManager::instance()->deleteTAlbum(*it, errMsg, &imageIds))
         {
             QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
         }
     }
+
+    AlbumManager::instance()->askUserForWriteChangedTAlbumToFiles(imageIds);
 
     /**
      * Restore settings after tag deletion

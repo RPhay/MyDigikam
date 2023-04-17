@@ -570,7 +570,7 @@ public:
      * @param askUser ask user to write metadata to images
      * operation failed
      */
-    bool deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser = true);
+    bool deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>* imageIds = nullptr);
 
     /**
      * Renames a TAlbum.
@@ -666,6 +666,9 @@ public:
     QList<int> subTags(int tagId, bool recursive = false)                                                const;
     int findTopId(int tagId)                                                                             const;
 
+    void askUserForWriteChangedTAlbumToFiles(TAlbum* const album);
+    void askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& imageIds);
+
 private:
 
     /**
@@ -676,9 +679,6 @@ private:
      * @return <code>true</code> if there is a child with name, else
      *         <code>false</code>
      */
-    void askUserForWriteChangedTAlbumToFiles(TAlbum* const album);
-    void askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& imageIds);
-
     void insertTAlbum(TAlbum* album, TAlbum* parent);
     void removeTAlbum(TAlbum* album);
 

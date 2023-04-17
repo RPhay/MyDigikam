@@ -298,11 +298,16 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
     if (result == QMessageBox::Yes && tag)
     {
         Q_EMIT aboutToDeleteTag(tag);
+        QList<qlonglong> imageIds;
         QString errMsg;
 
-        if (!AlbumManager::instance()->deleteTAlbum(tag, errMsg))
+        if (!AlbumManager::instance()->deleteTAlbum(tag, errMsg, &imageIds))
         {
             QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
+        }
+        else
+        {
+            AlbumManager::instance()->askUserForWriteChangedTAlbumToFiles(imageIds);
         }
     }
 }
@@ -411,6 +416,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
     if (result == QMessageBox::Yes)
     {
         QMultiMap<int, TAlbum*>::iterator it;
+        QList<qlonglong> imageIds;
 
         /**
          * QMultimap doesn't provide reverse iterator, -1 is required
@@ -422,11 +428,13 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
             Q_EMIT aboutToDeleteTag(it.value());
             QString errMsg;
 
-            if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg))
+            if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg, &imageIds))
             {
                 QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
             }
         }
+
+        AlbumManager::instance()->askUserForWriteChangedTAlbumToFiles(imageIds);
     }
 }
 

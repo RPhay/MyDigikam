@@ -358,7 +358,7 @@ AlbumList AlbumManager::findOrCreateTAlbums(const QStringList& tagPaths)
     return resultList;
 }
 
-bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
+bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>* imageIds)
 {
     if (!album)
     {
@@ -392,13 +392,17 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
-    QList<qlonglong> imageIds;
-
-    if (askUser)
+    if (imageIds)
     {
         // Recursively from all tags to delete.
 
-        imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
+        Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInTag(album->id(), true))
+        {
+            if (!imageIds->contains(id))
+            {
+                *imageIds << id;
+            }
+        }
     }
 
     Q_FOREACH (int tagId, toBeDeletedTagIds)
@@ -440,11 +444,6 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, bool askUser)
 
     removeTAlbum(album);
     Q_EMIT signalAlbumsUpdated(Album::TAG);
-
-    if (askUser)
-    {
-        askUserForWriteChangedTAlbumToFiles(imageIds);
-    }
 
     return true;
 }
@@ -691,7 +690,7 @@ bool AlbumManager::mergeTAlbum(TAlbum* album, TAlbum* destAlbum, bool dialog, QS
 
     QApplication::restoreOverrideCursor();
 
-    if (!deleteTAlbum(album, errMsg, false))
+    if (!deleteTAlbum(album, errMsg))
     {
         return false;
     }
