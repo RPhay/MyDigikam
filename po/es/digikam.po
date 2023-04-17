@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-16 00:45+0000\n"
-"PO-Revision-Date: 2023-04-15 01:05+0200\n"
+"PO-Revision-Date: 2023-04-16 12:13+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2807,15 +2807,7 @@ msgstr ""
 "Fecha de compilación: %4 (objetivo: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2827,8 +2819,8 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Comentarios y sugerencias: %2\n"
-"\n"
 "Documentación: %3\n"
+"\n"
 "Fecha de compilación: %4 (objetivo: %5)\n"
 "Revisión: %6\n"
 "Rama: %7"
@@ -52875,57 +52867,49 @@ msgstr "Etiquetas, pero no álbumes"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Más antigua o más grande"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Preferir la carpeta seleccionada como referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Preferir otra carpeta a la seleccionada como referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Por fecha de creación"
+msgstr "Preferir fecha de creación más reciente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Por fecha de modificación"
+msgstr "Preferir fecha de modificación más reciente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Información sobre la selección actual de la imagen"
+msgstr "Método para seleccionar la imagen de referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referencia:"
+msgstr "Referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Es&coja el método de selección de imágenes:"
+msgstr "Método de selección de la imagen de referencia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format

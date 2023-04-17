@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-16 00:45+0000\n"
-"PO-Revision-Date: 2023-04-10 14:10\n"
+"PO-Revision-Date: 2023-04-16 12:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2682,12 +2682,7 @@ msgid "All supported files (%1)"
 msgstr "所有支持的文件 (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2697,8 +2692,9 @@ msgid ""
 msgstr ""
 "IRC 频道：%1 - #digikam\n"
 "提交反馈：%2\n"
+"使用文档：%3\n"
 "\n"
-"构建日期：%3 (目标平台：%4)"
+"构建日期：%4 (目标平台：%5)"
 
 #: core/app/utils/digikam_version.cpp:77
 #, fuzzy, kde-format
@@ -2706,9 +2702,10 @@ msgstr ""
 #| "IRC: %1 - #digikam\n"
 #| "Feedback: %2\n"
 #| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#| "Documentation: %3\n"
+#| "Build date: %4 (target: %5)\n"
+#| "Revision: %6\n"
+#| "Branch: %7"
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2721,9 +2718,10 @@ msgstr ""
 "IRC 频道：%1 - #digikam\n"
 "提交反馈：%2\n"
 "\n"
-"构建日期：%3 (目标平台：%4)\n"
-"修订版本：%5\n"
-"代码分支：%6"
+"使用文档：%3\n"
+"构建日期：%4 (目标平台：%5)\n"
+"修订版本：%6\n"
+"代码分支：%7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3061,9 +3059,7 @@ msgstr "工具"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "帮助"
 
@@ -3071,7 +3067,7 @@ msgstr "帮助"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "获取关于回收站的在线帮助"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3148,11 +3144,9 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您确定要彻底删除所有项目吗？"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "选择"
+msgstr "选中内容"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
@@ -3168,10 +3162,9 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "解决了 200 多个用户上报的程序缺陷。"
+msgstr "解决了 400 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3195,102 +3188,87 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"图像编辑器支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本图像。"
+"版本管理功能：新增支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本"
+"图像。"
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "添加汉堡菜单到工具栏，在主菜单隐藏时显示。"
+msgstr "易用性：添加汉堡菜单到工具栏，在主菜单隐藏时显示。"
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
-msgstr "添加写入元数据到文件的新选项到 ExifTool 后端程序支持。"
+msgstr "元数据：新增写入元数据到文件的新选项到 ExifTool 后端程序支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
-msgstr "DNG 和 RAW 文件的可选元数据操作现在由 ExifTool 后端程序负责进行。"
+msgstr ""
+"元数据：DNG 和 RAW 文件的可选元数据操作现在由 ExifTool 后端程序负责进行。"
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
-msgstr "优化元数据编辑插件的界面布局以提高易用性。"
+msgstr "元数据：优化元数据编辑插件的界面布局以提高易用性。"
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
-msgstr ""
+msgstr "元数据：在高级元数据设置面板新增用于保存和加载配置方案的选项。"
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
-msgstr "添加增量文件计数器为使用 [c] 或者 [c,step] 选项时的文件序列进行编号。"
+msgstr ""
+"高级重命名：新增增量文件计数器，以便为使用 [c] 或者 [c,step] 选项时的文件序列"
+"进行编号。"
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "添加随机文字序列编号选项 [r]。"
+msgstr "高级重命名：新增随机文字序列编号选项 [r]。"
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
-msgstr "为使用了 {unique:n,c} 的唯一修饰符添加可配置第一个字符的功能。"
+msgstr ""
+"高级重命名：为使用了 {unique:n,c} 的唯一修饰符新增了可配置第一个字符的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "添加按照人脸区域数量搜索项目的功能。"
+msgstr "高级重命名：新增按照人脸区域数量搜索项目的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "添加搜索无人脸区域项目的功能。"
+msgstr "高级重命名：新增搜索无人脸区域项目的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "添加对跨平台网络路径的支持。"
+msgstr "相册集合：新增对跨平台网络路径的支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "添加对 SQLite WAL (记录日志前写入) 模式的支持。"
+msgstr "数据库：新增对 SQLite WAL (记录日志前写入) 模式的支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3334,25 +3312,21 @@ msgstr "允许在程序相关的各个位置使用全局或者自定义图像品
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
-msgstr ""
+msgstr "新增图标视图设置以便自定义缩略图的标签可见性。"
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
-msgstr ""
+msgstr "TIFF 加载程序新增对 float16 (半浮点) 图像的支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"添加基于深度学习模型的<a href=\"https://community.kde.org/GSoc/2022/"
+"维护工具新增基于深度学习模型的<a href=\"https://community.kde.org/GSoc/2022/"
 "StatusReports/PhuocKhanhLe\">美感检测</a>功能来对图像品质进行分类。"
 
 #: core/app/views/stack/welcomepageview.cpp:167
@@ -3365,39 +3339,32 @@ msgstr ""
 "QuocHungTran\">为扫描文本进行 OCR</a> 的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
-msgstr "添加用于通过解析图像品质来自动分配挑选标记的新工具。"
+msgstr "队列管理器：新增用于通过解析图像品质来自动分配挑选标记的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
-msgstr "添加用于批量分配评分、挑选标记、颜色标记的新工具。"
+msgstr "队列管理器：新增用于批量分配评分、挑选标记、颜色标记的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
-msgstr "添加批量分配标题和说明文字的新工具。"
+msgstr "队列管理器：新增批量分配标题和说明文字的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">重写 digiKam 使用手册</"
-"a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
+"使用文档：<a href=\" https://docs.digikam.org/en/index.html\">重写 digiKam 使"
+"用手册</a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3405,12 +3372,13 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"更新 G'MIC-Qt 工具到最新的 3.2.2 版，完成相关插件的 macOS 移植，改善其稳定"
+"性。"
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr "更新内建 RAW 引擎到最新稳定版本的 Libraw 0.21.1。"
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 20230403。"
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -38036,7 +38004,7 @@ msgstr "删除数据库中的所有标签。更改不会同步到文件。请谨
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "获取关于标签管理的在线帮助"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -41643,10 +41611,9 @@ msgid "Developer (2004)"
 msgstr "开发者 (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "配置此列"
+msgstr "配置通知"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format

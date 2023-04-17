@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-16 00:45+0000\n"
-"PO-Revision-Date: 2023-04-15 09:00+0200\n"
+"PO-Revision-Date: 2023-04-16 08:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2807,15 +2807,7 @@ msgstr ""
 "Datum izgradnje: %4 (cilj: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2827,10 +2819,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Odziv: %2\n"
-"\n"
 "Dokumentacija: %3\n"
+"\n"
 "Datum izgradnje: %4 (cilj: %5)\n"
-"Rev.: %6 Veja: %7"
+"Rev.: %6\n"
+"Veja: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -52409,57 +52402,49 @@ msgstr "Oznake a ne albumi"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Starejši ali večji"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Izberi raje izbrano mapo kot referenco"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Izberi raje neko drugo mapo namesto izbrane mape kot referenco"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Po datumu/času tvorbe"
+msgstr "Izberi raje novi datum kreiranja"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Po datumu spremembe"
+msgstr "Izberi raje novejši datum spremembe"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Podrobnosti o trenutnem izboru slik"
+msgstr "Izberite metodo za referenčno izbiro slik"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referenca:"
+msgstr "Referenca"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Izberite način izbire slike:"
+msgstr "Referenčna metoda izbire slike"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
