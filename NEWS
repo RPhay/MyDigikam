@@ -15,4 +15,4 @@ BUGFIXES:
 006 ==> 468565 - Does not sort the Entries with Table view.
 007 ==> 468572 - Webm vp9 video not playing.
 008 ==> 468586 - Deleting 2 tags only updates 1 tag to file.
-009 ==> 
+009 ==> 468626 - Error in the description of the Rename options.
