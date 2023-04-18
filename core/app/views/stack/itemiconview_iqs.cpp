@@ -25,7 +25,7 @@ namespace Digikam
 
 void ItemIconView::slotImageQualitySorter()
 {
-    Setup::execSinglePage(this, Setup::ImageQualityPage);
+    Setup::execSinglePage(qApp->activeWindow(), Setup::ImageQualityPage);
 
     QStringList paths;
 
