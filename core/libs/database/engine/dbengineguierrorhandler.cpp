@@ -27,6 +27,7 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
+#include <QTimer>
 
 // KDE includes
 
@@ -166,14 +167,24 @@ bool DbEngineGuiErrorHandler::checkDatabaseConnection()
     d->checker = new DbEngineConnectionChecker(d->parameters);
     QEventLoop loop;
 
+    QTimer timer;
+    timer.setInterval(10000);
+    timer.setSingleShot(true);
+
     connect(d->checker, &DbEngineConnectionChecker::failedAttempt,
+            this, &DbEngineGuiErrorHandler::showProgressDialog);
+
+    connect(&timer, &QTimer::timeout,
             this, &DbEngineGuiErrorHandler::showProgressDialog);
 
     connect(d->checker, &DbEngineConnectionChecker::done,
             &loop, &QEventLoop::quit);
 
     d->checker->start();
+    timer.start();
     loop.exec();
+
+    timer.stop();
 
     delete d->dialog;
 
