@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
 "PO-Revision-Date: 2023-04-16 08:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -45,8 +45,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Lokalize 22.12.3\n"
 
@@ -2656,7 +2656,7 @@ msgstr "Glavna orodna vrstica"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3173,7 +3173,7 @@ msgid "Tools"
 msgstr "Orodja"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
@@ -20987,7 +20987,7 @@ msgstr "Predogled..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -26842,9 +26842,9 @@ msgstr "Dodajanje albuma v podatkovno zbirko ni uspelo"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "Ni takšnih albumov"
@@ -26894,7 +26894,7 @@ msgid "Tag name cannot be empty"
 msgstr "Ime značke ne more biti prazno"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Ime značke ne sme vsebovati '/'"
@@ -26920,13 +26920,13 @@ msgstr "Ni mogoče izbrisati korenske značke"
 msgid "Cannot delete required face tag"
 msgstr "Ni mogoče izbrisati obrazne značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Ni mogoče urediti korenske značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26935,18 +26935,18 @@ msgstr ""
 "Druga značka z enakim imenom že obstaja.\n"
 "Izberite drugo ime."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Poskus premika TAlbum v neznano"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Ni mogoče premakniti korenske značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
@@ -26955,7 +26955,7 @@ msgstr ""
 "Drugi postopki še niso končani.\n"
 "Prosim poskusite kasneje."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26964,38 +26964,38 @@ msgstr ""
 "Druga značka z enakim imenom že obstaja.\n"
 "Ali želite zliti obe znački?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Ni mogoče zliti korenske značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Ni mogoče zliti obrazne značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Zlivate lahko samo značke brez otrok!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ali želite zliti značko '%1' v značko '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne vprašaj več na tej seji"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "Ni take oznake"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27149,7 +27149,7 @@ msgstr "Album z oznakami"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29597,43 +29597,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Knjižnice"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguracija OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -38909,13 +38909,13 @@ msgid "Delete '%1' tag?"
 msgstr "Izbrišem značko '%1'?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Izbriši značko"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38926,18 +38926,18 @@ msgstr ""
 "izbrisali tudi vse njihove pod-značke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Značke '%1' so dodeljene enemu ali več predmetom. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Izbrišem '%1' značk?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38964,7 +38964,7 @@ msgstr[3] ""
 "izbrisalo tudi vse njihove podrejene oznake.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38980,7 +38980,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Oznake obrazov '%2' so dodeljene vsaj enemu predmetu. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -38989,7 +38989,7 @@ msgstr[1] "Odstrani oznaki obraza?"
 msgstr[2] "Odstrani oznake obraza?"
 msgstr[3] "Odstrani oznake obraza?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39053,38 +39053,38 @@ msgid "Delete Tags"
 msgstr "Izbriši značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Uredi imena značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Ponastavi ikono značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbiro"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Razširi drevo značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Strni drevo oznak"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Odstrani značko iz slik"
@@ -39222,7 +39222,7 @@ msgstr[1] "Izbriši oznaki"
 msgstr[2] "Izbriši oznake"
 msgstr[3] "Izbriši oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39234,8 +39234,8 @@ msgstr ""
 "oznake iz slike), lahko pride do <b>izgube oznak</b>.<br/>Ali želite "
 "nadaljevati?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39244,7 +39244,7 @@ msgstr ""
 "Če je vaša zbirka velika, lahko to opravilo traja dlje časa.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39256,7 +39256,7 @@ msgstr ""
 "metapodatkov v datoteke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39265,36 +39265,36 @@ msgstr[1] "Ali resnično želite iz vseh slik odstraniti izbrani znački?"
 msgstr[2] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 msgstr[3] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhroniziraj izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Ustvari značko iz mape"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Označi nedodeljene značke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novo značko k trenutni. Trenutna značka je tista, ki ste jo nazadnje "
 "kliknili."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39303,74 +39303,74 @@ msgstr ""
 "Izbriši izbrane predmete. To deluje tudi z več predmeti, ampak ne bo "
 "izbrisalo korenske značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Odstrani ime izbrane značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponastavi ikono izbranih značk. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Označi vse značke, ki niso dodeljene slikam."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Obrni izbor. Izbrani bodo samo vidni predmeti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Izbrani predmeti bodo razširjeni"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Razširi drevo oznak v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Strni drevo oznak v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši izbrane značke iz slik. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Zapiši značke iz podatkovne zbirke v sliko"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Preberi značke iz slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Izbriši vse značke, ampak le iz podatkovne zbirke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Zapiši značke metapodatkov v sliko."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Preberi značke iz slik v podatkovno zbirko. Obstoječe značke ne bodo "
 "spremenjene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39379,7 +39379,7 @@ msgstr ""
 "Izbriši vse značke, ampak le iz podatkovne zbirke. Uskladitve z datotekami "
 "ne bo. Priporočamo previdnost."
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -50728,7 +50728,7 @@ msgid "Show a list of all available options"
 msgstr "Prikaži seznam vseh razpoložljivih možnosti"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "Spremenilniki"
@@ -50754,10 +50754,16 @@ msgstr "<p>Doda možnosti preimenovanja k nizu, ki bo razčlenjen.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "Spremenilnike lahko uveljavite za vsako možnost preimenovanja."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -50766,7 +50772,7 @@ msgstr ""
 "Možnosti lahko dodelite več spremenilnikov, uveljavljeni bodo v dodeljenem "
 "vrstnem redu."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -50775,7 +50781,7 @@ msgstr ""
 "Uporabljajte gumbe za hitri dostop. Ponudili vam bodo dodatne podrobnosti od "
 "preimenovanju in možnostih spremenilnikov."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51550,18 +51556,21 @@ msgstr ""
 "||e|| = zavedajoč se pripone, ||f|| = zavedajoč se mape)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Številka zaporedja (začetek po meri)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
-#, kde-format
-msgid "Sequence number (custom step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Številka iz zaporedja (začetek po meri)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Številka zaporedja (začetek po meri + korak)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)

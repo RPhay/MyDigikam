@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
 "PO-Revision-Date: 2023-04-16 10:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2601,7 +2601,7 @@ msgstr "Barra d'eines principal"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3121,7 +3121,7 @@ msgid "Tools"
 msgstr "Eines"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
@@ -3489,6 +3489,7 @@ msgstr ""
 "Actualitzar l'eina G'MIC-Qt a la darrera versió 3.2.2 i finalitzar "
 "l'adaptació al MacOS i millorar l'estabilitat del connector."
 
+# skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
@@ -21182,7 +21183,7 @@ msgstr "Vista prèvia..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -27115,9 +27116,9 @@ msgstr "No s'ha pogut afegir l'àlbum a la base de dades"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "No existeix l'àlbum"
@@ -27167,7 +27168,7 @@ msgid "Tag name cannot be empty"
 msgstr "El nom de l'etiqueta no pot estar buit"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "El nom de l'etiqueta no pot contenir «/»"
@@ -27193,13 +27194,13 @@ msgstr "No es pot suprimir l'etiqueta arrel"
 msgid "Cannot delete required face tag"
 msgstr "No es pot suprimir l'etiqueta de cara requerida"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "No es pot editar l'etiqueta arrel"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27208,18 +27209,18 @@ msgstr ""
 "Ja hi ha una altra etiqueta amb el mateix nom.\n"
 "Si us plau, trieu-ne un altre."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "S'intenta moure el TAlbum a enlloc"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "No es pot moure l'etiqueta arrel"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
@@ -27228,7 +27229,7 @@ msgstr ""
 "Els altres processos encara no han finalitzat.\n"
 "Torneu-ho a provar més tard."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27237,38 +27238,38 @@ msgstr ""
 "Ja hi ha una altra etiqueta amb el mateix nom.\n"
 "Voleu fusionar les etiquetes?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "No es pot fusionar l'etiqueta arrel"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "No es pot fusionar l'etiqueta de cara requerida"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Només es pot fusionar una etiqueta sense fills!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Voleu fusionar l'etiqueta «%1» dins l'etiqueta «%2»?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "No ho tornis a preguntar en aquesta sessió"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "No existeix l'etiqueta"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27422,7 +27423,7 @@ msgstr "Retola l'àlbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29892,43 +29893,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuració de l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -39251,13 +39252,13 @@ msgid "Delete '%1' tag?"
 msgstr "Voleu suprimir l'etiqueta «%1»?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Supressió d'etiqueta"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39268,18 +39269,18 @@ msgstr ""
 "les subetiquetes.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Les etiquetes «%1» estan assignades a un o més elements. Voleu continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Voleu suprimir «%1» etiqueta/es?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39298,7 +39299,7 @@ msgstr[1] ""
 "Eliminar-les també eliminarà les filles.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39311,14 +39312,14 @@ msgstr[1] ""
 "Les etiquetes de cara «%2» estan assignades a un element com a mínim. Voleu "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Elimino l'etiqueta de cara?"
 msgstr[1] "Elimino les etiquetes de cara?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39384,38 +39385,38 @@ msgid "Delete Tags"
 msgstr "Suprimeix les etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edita el títol de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reinicia la icona de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverteix la selecció"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Desplega l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Redueix l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Elimina les etiquetes de les imatges"
@@ -39540,7 +39541,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Supressió d'etiqueta"
 msgstr[1] "Supressió d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39552,8 +39553,8 @@ msgstr ""
 "llegiu abans (crideu «Llegeix les etiquetes de la imatge»).<br/>Voleu "
 "continuar?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39562,7 +39563,7 @@ msgstr ""
 "Aquesta operació pot trigar molt de temps segons la mida de la col·lecció.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39574,7 +39575,7 @@ msgstr ""
 "metadades al fitxer.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39583,36 +39584,36 @@ msgstr[0] ""
 msgstr[1] ""
 "Realment voleu eliminar les etiquetes seleccionades de totes les imatges?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronitza l'&exportació"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marca les etiquetes sense assignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Afegeix una etiqueta nova a l'etiqueta actual. L'etiqueta actual és la "
 "darrera etiqueta clicada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39621,78 +39622,78 @@ msgstr ""
 "Suprimeix els elements seleccionats. També funciona amb elements múltiples, "
 "però no suprimeix l'etiqueta arrel."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Edita el títol de l'etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Reinicia la icona de les etiquetes seleccionades. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marca totes les etiquetes no assignades a les imatges."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverteix la selecció. Només se seleccionaran els elements visibles"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Els elements seleccionats es desplegaran"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Desplega l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Redueix l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Suprimeix les etiquetes seleccionades de les imatges. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escriu les etiquetes de la base de dades a la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Llegeix les etiquetes de la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Esborra totes les etiquetes només de la base de dades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escriu les metadades de les etiquetes a la imatge."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Llegeix les etiquetes de la imatge cap a la base de dades. Les etiquetes "
 "existents no quedaran afectades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39701,7 +39702,7 @@ msgstr ""
 "Suprimeix totes les etiquetes només de la base de dades. No se sincronitzarà "
 "amb els fitxers. Procediu amb precaució."
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -51125,7 +51126,7 @@ msgid "Show a list of all available options"
 msgstr "Mostra una llista de totes les opcions disponibles"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "Modificadors"
@@ -51152,10 +51153,16 @@ msgstr "<p>Afegeix opcions de reanomenament a la cadena d'anàlisi.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "Els modificadors es poden aplicar a cada opció de reanomenament."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -51164,7 +51171,7 @@ msgstr ""
 "Es poden assignar diversos modificadors a una opció i seran aplicats en "
 "l'ordre en què els assigneu."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -51173,7 +51180,7 @@ msgstr ""
 "Assegureu-vos que useu els botons d'accés ràpid: poden proporcionar "
 "informació addicional per a les opcions de reanomenament i modificació."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51955,18 +51962,21 @@ msgstr ""
 "aleatori)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Seqüència numèrica (inici personalitzat)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
-#, kde-format
-msgid "Sequence number (custom step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Seqüència numèrica (pas personalitzat)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Seqüència numèrica (inici personalitzat + pas)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)

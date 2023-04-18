@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -2848,7 +2848,7 @@ msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3343,7 +3343,7 @@ msgid "Tools"
 msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr ""
@@ -21335,7 +21335,7 @@ msgstr "មើល​ជាមុន"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -27272,9 +27272,9 @@ msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បន្
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "គ្មាន​អាល់ប៊ុម​ឡើង"
@@ -27324,7 +27324,7 @@ msgid "Tag name cannot be empty"
 msgstr "ឈ្មោះ​ស្លាក​មិន​អាច​ទទេ​ឡើយ"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "ឈ្មោះ​ស្លាក​មិន​អាច​មាន '/' ឡើយ"
@@ -27352,13 +27352,13 @@ msgstr "មិន​អាច​លុប​ស្លាក​ជា Root បា
 msgid "Cannot delete required face tag"
 msgstr "មិន​អាច​លុប​ស្លាក​ជា Root បាន​ទេ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "​មិន​អាច​កែសម្រួល​ស្លាក​ជា root បាន​ទេ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27367,25 +27367,25 @@ msgstr ""
 "ស្លាក​ផ្សេងទៀត​មាន​ឈ្មោះ​នេះ​រួច​​ហើយ ។\n"
 "សូម​ជ្រើស​ឈ្មោះ​ផ្សេង ។"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "មិន​អាច​ផ្លាស់ទី​ស្លាក​ជា root បាន​ទេ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
 "Please try again later."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, fuzzy, kde-format
 #| msgid ""
 #| "Another tag with the same name already exists.\n"
@@ -27397,40 +27397,40 @@ msgstr ""
 "ស្លាក​ផ្សេងទៀត​មាន​ឈ្មោះ​នេះ​រួច​​ហើយ ។\n"
 "សូម​ជ្រើស​ឈ្មោះ​ផ្សេង ។"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "មិន​អាច​ផ្លាស់ទី​ស្លាក​ជា root បាន​ទេ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "មិន​អាច​ផ្លាស់ទី​ស្លាក​ជា root បាន​ទេ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ស្វែងរក \"%1\" ដែល​បាន​ជ្រើស​ឬ ?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "គ្មាន​ស្លាក​ឡើយ"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, fuzzy, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27588,7 +27588,7 @@ msgstr "អាល់ប៊ុម​ថ្មី"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -29984,7 +29984,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "ជីបាល់តា"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29992,7 +29992,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30000,34 +30000,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ប្ដូរ​កន្លែង​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "បាទ/ចាស"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ទេ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -39143,14 +39143,14 @@ msgid "Delete '%1' tag?"
 msgstr "លុប​ស្លាក '%1' ឬ ?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "លុប​ស្លាក"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39158,17 +39158,17 @@ msgid ""
 "Do you want to continue?"
 msgstr "ស្លាក '%2' មាន​ស្លាក​រង %1 ។ លុប​វា​នឹង​លុប​ស្លាក​រង​ផងដែរ ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "លុប​ស្លាក '%1' ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39180,7 +39180,7 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] "ស្លាក '%2' មាន​ស្លាក​រង %1 ។ លុប​វា​នឹង​លុប​ស្លាក​រង​ផងដែរ ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39190,14 +39190,14 @@ msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទៅ​ធាតុ %1 ។ តើ​អ្នក​ចង់​បន្ត​ឬ ?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "យក​ស្លាក​ដែល​បាន​ជ្រើស​ចេញ​​"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgid "Remove the tag corresponding to this face tag from the images?"
@@ -39261,39 +39261,39 @@ msgid "Delete Tags"
 msgstr "លុប​ស្លាក"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "ចំណងជើង​រូបភាព"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "កំណត់​រូបតំណាង​​ស្លាក​ឡើង​វិញ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "ជម្រើស​ដាក់​បញ្ច្រាស​​"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, fuzzy, kde-format
 msgid "Expand Tag Tree"
 msgstr "រួម​បញ្ចូល​មែកធាង​រង​របស់​ស្លាក"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse Tag Tree"
 msgstr "តាម​អាល់ប៊ុម"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "អាន​មូលដ្ឋាន​ទិន្នន័យ​ឡើង​វិញ​ពី​រូបភាព"
@@ -39414,7 +39414,7 @@ msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "លុប​ស្លាក"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39422,15 +39422,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, fuzzy, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "ប្រតិបត្តិការ​នេះ​នឹង​កាត់​បន្ថយ​គុណភាព​ពណ៌​រូបភាព ។ តើ​អ្នក​ចង់​បន្ត​ឬ​ទេ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39438,120 +39438,120 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "តើ​អ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ស្វែងរក \"%1\" ដែល​បាន​ជ្រើស​ឬ ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "នាំចេញ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, fuzzy, kde-format
 msgid "Create Tag from Address Book"
 msgstr "បង្កើត​ស្លាក​ពី​សៀវភៅ​អាសយដ្ឋាន"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "គ្មាន​ដែល​បាន​កំណត់​ពេល​ថ្មីៗ​នេះ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, fuzzy, kde-format
 #| msgid "Remove selected tag"
 msgid "Edit title from selected tag."
 msgstr "យក​ស្លាក​ដែល​បាន​ជ្រើស​ចេញ​​"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, fuzzy, kde-format
 msgid "Expand tag tree completely"
 msgstr "រួម​បញ្ចូល​មែកធាង​រង​របស់​ស្លាក"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, fuzzy, kde-format
 msgid "Collapse tag tree completely"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "សរសេរ​ទិន្នន័យ​មេតា​ទៅ​កាន់​រូបភាព​ដែល​បាន​ជ្រើស"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "អាន​ទិន្នន័យ​​មេតា​​ឡើង​វិញ​ពី​រូបភាព​ដែល​បាន​ជ្រើស"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "សរសេរ​ទិន្នន័យ​មេតា​ទៅ​កាន់​រូបភាព​ដែល​បាន​ជ្រើស"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "សរសេរ​ទិន្នន័យ​មេតា​ទៅ​កាន់​រូបភាព​ដែល​បាន​ជ្រើស"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -51976,7 +51976,7 @@ msgid "Show a list of all available options"
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr ""
@@ -52000,24 +52000,30 @@ msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
-msgid "Modifiers can be applied to every renaming option."
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
+msgid "Modifiers can be applied to every renaming option."
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
 "in the order you assign them."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
 "information about renaming and modifier options."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -52801,17 +52807,17 @@ msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
 #, kde-format
-msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
-msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
-msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)

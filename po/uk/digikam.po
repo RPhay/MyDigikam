@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
 "PO-Revision-Date: 2023-04-16 09:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2638,7 +2638,7 @@ msgstr "Головний пенал"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3161,7 +3161,7 @@ msgid "Tools"
 msgstr "Інструменти"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
@@ -21295,7 +21295,7 @@ msgstr "Перегляд…"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -27236,9 +27236,9 @@ msgstr "Не вдалося додати альбом до бази даних"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "Такого альбому не існує"
@@ -27288,7 +27288,7 @@ msgid "Tag name cannot be empty"
 msgstr "Назва мітки не може бути порожньою"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "Назва мітки не може містити «/»"
@@ -27314,13 +27314,13 @@ msgstr "Неможливо вилучити кореневу мітку"
 msgid "Cannot delete required face tag"
 msgstr "Неможливо вилучити бажану мітку обличчя"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Неможливо змінити кореневу мітку"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27329,18 +27329,18 @@ msgstr ""
 "Вже існує мітка з тією ж назвою.\n"
 "Будь ласка, виберіть іншу назву."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Спроба пересунути TAlbum у нікуди"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Неможливо пересунути кореневу мітку"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
@@ -27349,7 +27349,7 @@ msgstr ""
 "Роботу інших процесів ще не завершено.\n"
 "Будь ласка, повторіть спробу пізніше."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27358,38 +27358,38 @@ msgstr ""
 "Вже існує мітка з тією ж назвою.\n"
 "Хочете об'єднати мітки?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Не можна об'єднувати кореневу мітку"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Неможливо об'єднати бажану мітку обличчя"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Об'єднувати можна лише мітку без дочірніх записів!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Хочете влити мітку «%1» до мітки «%2»?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Більше не питати у цьому сеансі"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "Такої мітки не існує"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27543,7 +27543,7 @@ msgstr "Альбом з позначками"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -30008,43 +30008,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Бібліотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Невідома"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Маніфести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Налаштування OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -39408,13 +39408,13 @@ msgid "Delete '%1' tag?"
 msgstr "Вилучити мітку «%1»?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Вилучити мітку"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39425,19 +39425,19 @@ msgstr ""
 "вилучення підміток.\n"
 "Продовжити виконання дії з вилучення?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Мітки «%1» призначено до одного або декількох зображень. Продовжити "
 "виконання дії?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Вилучити мітки «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39464,7 +39464,7 @@ msgstr[3] ""
 "призведе до вилучення дочірніх міток.\n"
 "Ви справді цього хочете?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39483,7 +39483,7 @@ msgstr[3] ""
 "Мітку обличчя «%2» призначено до принаймні одного запису. Ви справді бажаєте "
 "продовжити?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -39492,7 +39492,7 @@ msgstr[1] "Вилучити мітки облич?"
 msgstr[2] "Вилучити мітки облич?"
 msgstr[3] "Вилучити мітку обличчя?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39556,38 +39556,38 @@ msgid "Delete Tags"
 msgstr "Вилучити мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Редагувати заголовок мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Скинути піктограму мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Розгорнути ієрархію міток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Згорнути ієрархію міток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Вилучити мітку з зображень"
@@ -39730,7 +39730,7 @@ msgstr[1] "Вилучення міток"
 msgstr[2] "Вилучення міток"
 msgstr[3] "Вилучення мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39743,8 +39743,8 @@ msgstr ""
 "«Прочитати мітки» з меню «Зображення»).<br/> Виконати встановлення міток на "
 "основі бази даних?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39753,7 +39753,7 @@ msgstr ""
 "Виконання цієї дії може бути тривалим у великих збірках.\n"
 "Хочете продовжити?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39765,7 +39765,7 @@ msgstr ""
 "програми записати метадані до файлів.\n"
 "Продовжити виконання цієї дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39774,36 +39774,36 @@ msgstr[1] "Ви справді хочете вилучити позначені 
 msgstr[2] "Ви справді хочете вилучити позначені мітки з усіх зображень?"
 msgstr[3] "Ви справді хочете вилучити позначену мітку з усіх зображень?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Впорядкувати"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Синхронізувати &експортовані дані"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Створити мітку з адресної книги"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Позначити непризначені мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Додати нову мітку до поточної мітки. Поточною є мітка, яку було натиснуто "
 "останньою."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39812,77 +39812,77 @@ msgstr ""
 "Вилучити позначені записи. Працює для декількох записів, але не зможе "
 "вилучити кореневу мітку."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Редагувати заголовок з позначеної мітки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Відновити типову піктограму для позначених міток. Цю дію можна виконувати "
 "над декількома мітками одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Позначити усі мітки, які не пов'язано із зображеннями."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Інвертувати позначення. Буде позначено лише видимі записи."
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Позначені пункти буде розгорнуто"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Розгорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Згорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Вилучити позначені мітки з зображень. Цю дію можна виконувати над декількома "
 "зображенням одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Записати мітки з бази даних до зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Прочитати мітки з файлів зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Витерти усі мітки лише з бази даних"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Записати метадані міток до зображень."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Прочитати мітки з зображень до бази даних. Наявні мітки змінено не буде."
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39891,7 +39891,7 @@ msgstr ""
 "Вилучити усі мітки лише з бази даних. Синхронізація з файлами не "
 "виконуватиметься. Будьте обережні!"
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -51298,7 +51298,7 @@ msgid "Show a list of all available options"
 msgstr "Показати список всіх можливих параметрів"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "Модифікатори"
@@ -51325,11 +51325,17 @@ msgstr "<p>Додати параметри перейменування до р�
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr ""
 "Модифікатори можна застосовувати до будь-якого з параметрів перейменування."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -51338,7 +51344,7 @@ msgstr ""
 "Можна використовувати ланцюжки модифікаторів. Їх буде застосовано за "
 "порядком призначення."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -51347,7 +51353,7 @@ msgstr ""
 "Скористайтеся кнопками пришвидшення доступу: за їх допомогою можна отримати "
 "додаткові відомості щодо параметрів перейменування та модифікації."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -52126,18 +52132,21 @@ msgstr ""
 "врахуванням випадковості)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Число з послідовності (початкове значення)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
-#, kde-format
-msgid "Sequence number (custom step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Число з послідовності (нетиповий крок)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Число з послідовності (початкове значення + крок)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
-"PO-Revision-Date: 2023-04-04 09:12+0100\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
+"PO-Revision-Date: 2023-04-17 17:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -2743,7 +2743,7 @@ msgstr "Barra Principal"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -2878,12 +2878,7 @@ msgid "All supported files (%1)"
 msgstr "Todos os ficheiros suportados (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2893,18 +2888,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reacções: %2\n"
+"Documentação: %3\n"
 "\n"
-"Data de compilação: %3 (alvo: %4)"
+"Data de compilação: %4 (alvo: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2916,10 +2905,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reacções: %2\n"
+"Documentação: %3\n"
 "\n"
-"Data de compilação: %3 (alvo: %4)\n"
-"Versão: %5\n"
-"Ramificação: %6"
+"Data de compilação: %4 (alvo: %5)\n"
+"Versão: %6\n"
+"Ramificação: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3271,10 +3261,8 @@ msgid "Tools"
 msgstr "Ferramentas"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#: core/libs/tags/manager/tagsmanager.cpp:851
+#, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
@@ -3282,7 +3270,7 @@ msgstr "Ajuda"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Ajuda 'online' sobre o caixote do lixo"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3362,11 +3350,9 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Tem a certeza que deseja remover TODOS os itens de forma permanente?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "Seleccionar"
+msgstr "Selecção"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
@@ -3382,10 +3368,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 itens seleccionados"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Mais de 200 relatórios fechados no Bugzilla."
+msgstr "Mais de 400 relatórios fechados no Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3415,54 +3400,47 @@ msgstr ""
 "Adição dos conversores para JPEG-XL, WEBP e AVIF no Gestor da Fila em Lote."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Suporte para JPEG-XL, HEIF, WEBP e AVIF como formatos de imagem sem perdas "
-"para guardar as imagens com controlo de versões no editor."
+"Controlo de versões: adição do suporte para JPEG-XL, HEIF, WEBP e AVIF como "
+"formatos de imagem sem perdas para guardar as imagens com controlo de "
+"versões no editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"Adição do menu em hambúrguer na barra de ferramentas, se o menu principal "
-"estiver escondido."
+"Usabilidade: adição do menu em hambúrguer na barra de ferramentas, se o menu "
+"principal estiver escondido."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Adição de uma opção para gravar os meta-dados nos ficheiros com a infra-"
-"estrutura ExifTool."
+"Meta-dados: adição de uma opção para gravar os meta-dados nos ficheiros com "
+"a infra-estrutura ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Gravação opcional das operações com meta-dados nos ficheiros RAW e DNG. Esta "
-"funcionalidade agora é sempre delegada na infra-estrutura do ExifTool."
+"Meta-dados: gravação opcional das operações com meta-dados nos ficheiros RAW "
+"e DNG. Esta funcionalidade agora é sempre delegada na infra-estrutura do "
+"ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Optimização da disposição gráfica do 'plugin' de Edição de Meta-Dados, para "
-"uma melhor usabilidade."
+"Meta-dados: optimização da disposição gráfica do 'plugin' de Edição de Meta-"
+"Dados, para uma melhor usabilidade."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3470,61 +3448,58 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Meta-dados: adiciona novas opções para gravar e carregar os perfis de "
+"configuração no Painel de Configuração Avançada dos Meta-Dados."
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Adição de um contador de ficheiros incremental para sequenciar a numeração "
-"com a opção [c] ou [c,passo]."
+"Mudança de Nome Avançada: adição de um contador de ficheiros incremental "
+"para sequenciar a numeração com a opção [c] ou [c,passo]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "Adição da numeração de sequências de texto aleatórias com a opção [r]."
+msgstr ""
+"Mudança de Nome Avançada: adição da numeração de sequências de texto "
+"aleatórias com a opção [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Adição da configuração do primeiro carácter para o modificador único com o "
-"{unique:n,c}."
+"Mudança de Nome Avançada: adição da configuração do primeiro carácter para o "
+"modificador único com o {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Adição da pesquisa de itens pelo número de regiões de caras."
+msgstr ""
+"Pesquisa Avançada: adição da pesquisa de itens pelo número de regiões de "
+"caras."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Adição da pesquisa de itens sem regiões de caras."
+msgstr "Pesquisa Avançada: adição da pesquisa de itens sem regiões de caras."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Adição do suporte para localizações na rede multi-plataformas."
+msgstr ""
+"Colecções: adição do suporte para localizações na rede multi-plataformas."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
-"Adição do suporte para o modo WAL (Registo com Escrita Antecipada) do SQLite."
+"Base de Dados: adição do suporte para o modo WAL (Registo com Escrita "
+"Antecipada) do SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3581,26 +3556,27 @@ msgstr ""
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Adiciona as configurações da Área de Ícones para personalizar a visibilidade "
+"das legendas sobre as miniaturas."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"Adiciona o suporte para imagens em float16 (vírgula-flutuante reduzida) no "
+"Carregamento de TIFF's."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Adição do <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-"PhuocKhanhLe\">modelo de aprendizagem para classificação de imagens para a "
-"Detecção Estética</a>."
+"Adição de uma nova ferramenta de manutenção para efectuar a <a href="
+"\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Detecção "
+"Estética para a classificação de imagens, usando um modelo de aprendizagem.</"
+"a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3613,44 +3589,38 @@ msgstr ""
 "a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Adição de uma nova ferramenta para atribuir legendas de selecção às imagens, "
-"de acordo com a sua qualidade."
+"Gestor da Fila: adição de uma nova ferramenta para atribuir legendas de "
+"selecção às imagens, de acordo com a sua qualidade."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Adição de uma nova ferramenta para atribuir a classificação, selecção e "
-"legendas de cores em lote."
+"Gestor da Fila: Adição de uma nova ferramenta para atribuir a classificação, "
+"selecção e legendas de cores em lote."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Adição de uma nova ferramenta para atribuir títulos e legendas em lote."
+"Gestor da Fila: adição de uma nova ferramenta para atribuir títulos e "
+"legendas em lote."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Conversão do manual</a> "
-"de DocBook para a plataforma Sphinx/ReStructuredText."
+"Documentação: <a href=\" https://docs.digikam.org/en/index.html\">Conversão "
+"do manual</a> de DocBook para a plataforma Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3658,14 +3628,15 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Actualização da ferramenta G'MIC-Qt para a última versão 3.2.2 e finalização "
+"da migração para macOS e melhoria da estabilidade do 'plugin'."
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
 msgstr ""
-"Actualização do motor interno de RAW para a última versão estável, a Libraw "
-"0.21.1."
+"Actualização do motor interno de RAW para a última versão estável, a "
+"20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -21297,7 +21268,7 @@ msgstr "Antevisão..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -23186,7 +23157,7 @@ msgstr "Exportar para o &Flickr..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Indique o URL de Autenticação do Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -23194,6 +23165,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Copia o URL completo do navegador externo que contém o elemento \"oauth_token"
+"\":"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -27182,9 +27155,9 @@ msgstr "Não foi possível adicionar o álbum à base de dados"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "Álbum não existente"
@@ -27234,7 +27207,7 @@ msgid "Tag name cannot be empty"
 msgstr "O nome da marca não pode estar vazio"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "O nome da marca não pode conter '/'"
@@ -27260,13 +27233,13 @@ msgstr "Não é possível apagar a marca de raiz"
 msgid "Cannot delete required face tag"
 msgstr "Não é possível apagar a marca obrigatória da cara"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Não é possível editar a marca raiz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27275,18 +27248,18 @@ msgstr ""
 "Existe outra marca com o mesmo nome.\n"
 "Por favor escolha outro nome."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "A tentar mover o TAlbum para nenhum lado"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Não é possível mover a marca raiz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
@@ -27295,7 +27268,7 @@ msgstr ""
 "Existem outros processos que ainda não terminaram.\n"
 "Por favor, tente de novo mais tarde."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27304,38 +27277,38 @@ msgstr ""
 "Já existe outra marca com o mesmo nome.\n"
 "Deseja reunir as marcas?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Não é possível reunir a marca-raiz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Não é possível reunir a marca obrigatória da cara"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Só poderá reunir uma marca sem filhas!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Deseja reunir a marca '%1' com a marca '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Não voltar a perguntar nesta sessão"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "Não existe essa marca"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27489,7 +27462,7 @@ msgstr "Álbum das Legendas"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29947,43 +29920,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliotecas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifestos"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuração do OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sim"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Não"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -39265,13 +39238,13 @@ msgid "Delete '%1' tag?"
 msgstr "Apagar a marca '%1'?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Apagar a Marca"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39282,17 +39255,17 @@ msgstr ""
 "apagar as sub-marcas.\n"
 "Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "As marcas '%1' estão atribuídas a um ou mais itens. Deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Apagar as marcas '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39311,7 +39284,7 @@ msgstr[1] ""
 "esta também vai apagar a sub-marca.\n"
 "Tem a certeza que deseja continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39323,14 +39296,14 @@ msgstr[1] ""
 "As marcas de caras '%2' estão atribuídas a pelo menos um item. Deseja "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Remover a marca de cara?"
 msgstr[1] "Remover as marcas de caras?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39395,38 +39368,38 @@ msgid "Delete Tags"
 msgstr "Apagar as Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Editar o Título da Marca"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Repor o Ícone da Marca"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inverter a Selecção"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Incluir a Árvore de Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Fechar a Árvore de Marcas"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Remover a Marca das Imagens"
@@ -39549,7 +39522,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Apagar a marca"
 msgstr[1] "Apagar as marcas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39561,8 +39534,8 @@ msgstr ""
 "se não as leu anteriormente (invocando a opção 'Ler as Marcas da Imagem')."
 "<br/> Deseja prosseguir?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39572,7 +39545,7 @@ msgstr ""
 "colecção.\n"
 "Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39584,43 +39557,43 @@ msgstr ""
 "dados nos ficheiros mais tarde.\n"
 "Deseja continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Deseja remover a marca seleccionada de todas as imagens?"
 msgstr[1] "Deseja remover as marcas seleccionadas de todas as imagens?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organizar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronizar a &Exportação"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Criar a Marca a Partir do Livro de Endereços"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Assinalar as Marcas Não Atribuídas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Adiciona uma marca nova à marca actual. A marca actual é a última marca "
 "carregada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39629,76 +39602,76 @@ msgstr ""
 "Apaga os itens seleccionados. Também irá funcionar com vários itens, mas não "
 "irá apagar a marca de topo."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Editar o título da marca seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Repor o ícone para as marcas seleccionadas. Funciona com a selecção múltipla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Assinala todas as marcas que não estejam associadas a imagens."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverte a selecção. Só serão seleccionados os itens visíveis"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Os itens seleccionados serão expandidos"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Expandir a árvore de marcas por completo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Fechar a árvore de marcas por completo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Apaga as marcas seleccionadas das imagens. Funciona com a selecção múltipla."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Gravar as Marcas da Base de Dados na Imagem"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ler as Marcas da Imagem"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Limpar todas as marcas apenas da base de dados"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Gravar os Meta-Dados das Marcas na Imagem."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Ler as marcas das imagens para a base de dados. As marcas existentes não "
 "serão afectadas"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39707,11 +39680,11 @@ msgstr ""
 "Apaga todas as marcas apenas da base de dados. Não irá sincronizar com os "
 "ficheiros. Proceda com cuidado."
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Ajuda 'online' sobre a gestão de marcas"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -43435,10 +43408,9 @@ msgid "Developer (2004)"
 msgstr "Desenvolvimento (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Configurar esta coluna"
+msgstr "Configurar as Notificações"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -51084,7 +51056,7 @@ msgid "Show a list of all available options"
 msgstr "Mostrar uma lista com todas as opções disponíveis"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "Modificadores"
@@ -51111,11 +51083,17 @@ msgstr "<p>Adicionar as opções de mudança de nome ao texto a processar.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr ""
 "Os modificadores poderão ser aplicados a todas as opções de mudança de nomes."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -51124,7 +51102,7 @@ msgstr ""
 "É possível encadear os modificadores. Estes são aplicados pela ordem que "
 "lhes atribuir."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -51133,7 +51111,7 @@ msgstr ""
 "Certifique-se que usa os botões de acesso rápido: Poderão fornecer "
 "informações adicionais acerca das opções de mudança de nomes e modificação."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51913,18 +51891,21 @@ msgstr ""
 "detecção da extensão, ||f|| = detectar pastas)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Número de sequência (início personalizado)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
-#, kde-format
-msgid "Sequence number (custom step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Número de sequência (passo personalizado)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Número de sequência (passo + início personalizado)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -52774,57 +52755,49 @@ msgstr "Marcas mas não álbuns"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Mais Antigos ou Maiores"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Preferir a pasta seleccionada como referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Preferir outras pastas que não a seleccionada como referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Pela Data de Criação"
+msgstr "Preferir as Datas de Criação Mais Recentes"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Pela Data de Modificação"
+msgstr "Preferir as Datas de Modificação Mais Recentes"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Informações sobre a selecção da imagem actual"
+msgstr "Seleccione o método para a selecção da imagem de referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referência:"
+msgstr "Referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Es&colha o método de selecção da imagem:"
+msgstr "Método de Selecção da Imagem de Referência"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format

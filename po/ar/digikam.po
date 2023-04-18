@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -2708,7 +2708,7 @@ msgstr "شريط الأدوات الرّئيسيّ"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3192,7 +3192,7 @@ msgid "Tools"
 msgstr "أدوات"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/libs/tags/manager/tagsmanager.cpp:851
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Help"
@@ -20735,7 +20735,7 @@ msgstr "عاين..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -26717,9 +26717,9 @@ msgstr "فشلت إضافة الألبوم إلى قاعدة البيانات"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "لا ألبوم كهذا"
@@ -26769,7 +26769,7 @@ msgid "Tag name cannot be empty"
 msgstr "لا يمكن أن يكون اسم الوسم فارغًا"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "لا يمكن أن يحتوي اسم الوسم على ’/‘"
@@ -26797,13 +26797,13 @@ msgstr "لا يمكن حذف الوسم الجذر"
 msgid "Cannot delete required face tag"
 msgstr "لا يمكن حذف الوسم الجذر"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "لا يمكن تحرير الوسم الجذر"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26812,25 +26812,25 @@ msgstr ""
 "هناك وسم آخر له نفس الاسم بالفعل.\n"
 "رجاء اختر اسمًا آخر."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "محاولة نقل TAlbum إلى اللامكان"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "لا يمكن نقل الوسم الجذر"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
 "Please try again later."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, fuzzy, kde-format
 #| msgid ""
 #| "Another tag with the same name already exists.\n"
@@ -26842,24 +26842,24 @@ msgstr ""
 "هناك وسم آخر له نفس الاسم بالفعل.\n"
 "رجاء اختر اسمًا آخر."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "لا يمكن نقل الوسم الجذر"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "لا يمكن نقل الوسم الجذر"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
 #| msgid_plural ""
@@ -26867,19 +26867,19 @@ msgstr ""
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "لا شيء لإزالته."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
 msgstr "لا تسأل مجدّدًا"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "لا وسم كهذا"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
@@ -27039,7 +27039,7 @@ msgstr "احذف الألبوم"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29410,44 +29410,44 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "المكتبات"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ضبط الكمرات"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "لا"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -38419,14 +38419,14 @@ msgid "Delete '%1' tag?"
 msgstr "أأحذف الوسم ’%1‘؟"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "احذف الوسم"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38436,17 +38436,17 @@ msgstr ""
 "للوسم ’%1‘ وسم فرعيّ أو أكثر. حذفه سيحذف أيضًا هذه الوسوم.\n"
 "أتريد المتابعة؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "أُسند الوسم ’%1‘ إلى عنصر واحد أو أكثر. أتريد المتابعة؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "أأحذف الآتي من الوسوم: ’%1‘؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38470,7 +38470,7 @@ msgstr[4] ""
 msgstr[5] ""
 "الوسم \"%2\" لديه %1 وسم فرعي. حذفه سيحذف أيضًا تلك الوسوم. أتودّ المتابعة؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38483,7 +38483,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, fuzzy, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -38494,7 +38494,7 @@ msgstr[3] "إعادة تعيين الشّارة أيقونة"
 msgstr[4] "إعادة تعيين الشّارة أيقونة"
 msgstr[5] "إعادة تعيين الشّارة أيقونة"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, fuzzy, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -38563,39 +38563,39 @@ msgid "Delete Tags"
 msgstr "احذف الوسوم"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "حرّر عنوان الوسم"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "صفّر أيقونة الوسم"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "اعكس التّحديد"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "وسّع شجرة الوسوم"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse Tag Tree"
 msgstr "دفاتر صوري"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "أزل الوسم من الصّور"
@@ -38743,7 +38743,7 @@ msgstr[3] "أأحذف الوسوم %2؟"
 msgstr[4] "أأحذف الوسوم %2؟"
 msgstr[5] "أأحذف الوسوم %2؟"
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -38758,8 +38758,8 @@ msgstr ""
 "<br> قد <b>تفقد وسومًا</b> إن لم تقرأ الوسوم قبلًا (باستخدام ”اقرأ الوسوم من "
 "الصّور“).<br> أتريد المتابعة؟<qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -38768,7 +38768,7 @@ msgstr ""
 "يمكن أن تأخذ هذه العمليّة وقتًا طويلًا وذلك بحسب حجم التّجميعة.\n"
 "أتريد المتابعة؟"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, fuzzy, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -38780,7 +38780,7 @@ msgstr ""
 "لاحقًا.\n"
 "أتريد المتابعة؟"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -38792,117 +38792,117 @@ msgstr[4] "أمتأكّد من إزالة الوسوم المحدّدة من ك�
 msgstr[5] "أمتأكّد من إزالة الوسوم المحدّدة من كلّ الصّور؟"
 
 # عنوان زر نقره يفتح قائمة منسدلة
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "نظّم"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, fuzzy, kde-format
 #| msgid "&Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "ت&صدير"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "أنشئ وسمًا من دفتر العناوين"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, fuzzy, kde-format
 #| msgid "Delete Unassigned Tags"
 msgid "Mark Unassigned Tags"
 msgstr "احذف الوسوم غير المسندة"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr "أضف الوسم الجديد إلى الوسم الحاليّ. الوسم الحاليّ هو آخر وسم قد نُقر."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, fuzzy, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr "احذف العناصر الحاليّة. يعمل أيضًا مع "
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "حرّر الوسم من الوسم المحدّد"
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, fuzzy, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "صفّر أيقونة الوسوم المحدّدة. "
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, fuzzy, kde-format
 #| msgid "Delete all tags that are not assigned to images. Use with caution."
 msgid "Mark all tags that are not assigned to images."
 msgstr "احذف كلّ الوسوم غير المسندة لأيّة صور. استخدمه بحذر."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "اعكس التّحديد. ستُحدّد العناصر المرئيّة فقط"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "ستُوسّع العناصر المحدّدة"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "وسّع شجرة الوسوم مستوًى واحد"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, fuzzy, kde-format
 msgid "Collapse tag tree completely"
 msgstr "نزّل مختار"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "اكتب الوسوم من قاعدة البيانات إلى الصّور"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "اقرأ الوسوم من الصّورة"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "امسح كلّ الوسوم من قاعد البيانات فقط"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "اكتب بيانات الوسوم الوصفيّة في الصّورة."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -50725,7 +50725,7 @@ msgid "Show a list of all available options"
 msgstr "أظهر قائمة بكلّ الخيارات المتوفّرة"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "معدِّلات"
@@ -50751,17 +50751,23 @@ msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "يمكن تطبيق المعدِّلات على كلّ خيارات التّسمية."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
 "in the order you assign them."
 msgstr "يمكن إسناد عدّة معدِّلات إلى الخيار، ستُطبّق بالتّرتيب الذي أسندتهم فيه."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, fuzzy, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -50770,7 +50776,7 @@ msgstr ""
 "تأكّد من استخدام أزرار الوصول السّريع، فهي توفّر معلومات إضافيّة عن التّسمية "
 "وخيارات المعدِّلات."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51544,19 +51550,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
+msgstr "إضافة السلسلة الرقم"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, fuzzy, kde-format
-msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "إضافة السلسلة الرقم"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
+msgstr "إضافة السلسلة الرقم"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19

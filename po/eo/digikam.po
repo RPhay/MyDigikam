@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-16 00:45+0000\n"
-"PO-Revision-Date: 2023-04-09 23:45+0100\n"
+"POT-Creation-Date: 2023-04-18 00:44+0000\n"
+"PO-Revision-Date: 2023-04-17 06:30+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1358,8 +1358,8 @@ msgstr[1] "Neniu ero elektita (%1 [%2] eroj)"
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Neniu ero elektita (%1 ero. Kun grupigitaj eroj: %2)"
+msgstr[1] "Neniu ero elektita (%1 eroj. Kun grupigitaj eroj: %2)"
 
 #: core/app/main/digikamapp.cpp:643
 #, kde-format
@@ -1372,8 +1372,8 @@ msgstr[1] "%1/%2 eroj elektitaj (%3/%4)"
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1/%2 [%3] ero elektita (%4/%5)"
+msgstr[1] "%1/%2 [%3] eroj elektitaj (%4/%5)"
 
 #: core/app/main/digikamapp.cpp:664
 #, kde-format
@@ -1422,15 +1422,15 @@ msgstr[1] "%1 eroj kaŝitaj"
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Skribi metadatumojn al dosiero"
+msgstr[1] "Skribi metadatumojn al elektitaj dosieroj"
 
 #: core/app/main/digikamapp.cpp:793
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Relegi metadatumojn el dosiero"
+msgstr[1] "Relegi metadatumojn el elektitaj dosieroj"
 
 #: core/app/main/digikamapp_camera.cpp:26
 #, kde-format
@@ -1451,7 +1451,7 @@ msgstr "Fotiloj"
 #: core/app/main/digikamapp_camera.cpp:68
 #, kde-format
 msgid "USB Storage Devices"
-msgstr "USB Stokado-Aparatoj"
+msgstr "USB-Konservejaj Aparatoj"
 
 #: core/app/main/digikamapp_camera.cpp:70
 #, kde-format
@@ -1491,7 +1491,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 "Vi elektis helan kolorskemon. Ni ŝanĝas al malhela piktograma temo. La "
-"piktograma temo disponeblas post rekomenco de digiKam."
+"piktograma etoso disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_config.cpp:111
 #: core/showfoto/main/showfoto_config.cpp:191
@@ -1501,7 +1501,7 @@ msgid ""
 "icon theme is available after a restart of digiKam."
 msgstr ""
 "Vi elektis malhelan kolorskemon. Ni ŝanĝas al hela piktograma temo. La "
-"piktograma temo disponeblas post rekomenco de digiKam."
+"piktograma etoso disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
 #, kde-format
@@ -2379,13 +2379,13 @@ msgstr "Aŭtomata Rotacio/Flip Uzante Exif-Informojn"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
-msgstr "Ŝarĝante temojn..."
+msgstr "Ŝarĝante etosojn..."
 
 #: core/app/main/digikamapp_setup.cpp:1083
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
-msgstr "&Temoj"
+msgstr "&Etosoj"
 
 #: core/app/main/digikamapp_setup.cpp:1095
 #, kde-format
@@ -2456,7 +2456,7 @@ msgstr " (%1)"
 #: core/app/main/digikamapp_solid.cpp:636
 #, kde-format
 msgid "Cannot access the storage device.\n"
-msgstr "Ne povas aliri la stokan aparaton.\n"
+msgstr "Ne povas aliri la konservejan aparaton.\n"
 
 #: core/app/main/digikamapp_solid.cpp:667
 #, kde-format
@@ -2601,7 +2601,7 @@ msgstr "Ĉefa ilobreto"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:992
+#: core/libs/album/manager/albummanager_talbum.cpp:991
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -3128,10 +3128,8 @@ msgid "Tools"
 msgstr "Iloj"
 
 #: core/app/views/stack/trashview.cpp:120
-#: core/libs/tags/manager/tagsmanager.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#: core/libs/tags/manager/tagsmanager.cpp:851
+#, kde-format
 msgid "Help"
 msgstr "Helpo"
 
@@ -3139,7 +3137,7 @@ msgstr "Helpo"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Enreta helpo pri rubujo"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3191,8 +3189,8 @@ msgstr "Konfirmi Malfaron"
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĉu vi certas, ke vi volas restaŭri %1 eron?"
+msgstr[1] "Ĉu vi certas, ke vi volas restaŭri %1 erojn?"
 
 #: core/app/views/stack/trashview.cpp:303
 #, kde-format
@@ -3209,8 +3207,8 @@ msgstr "Konfirmi Forigon"
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĉu vi certas, ke vi volas forigi %1 eron porĉiame?"
+msgstr[1] "Ĉu vi certas, ke vi volas forigi %1 erojn porĉiame?"
 
 #: core/app/views/stack/trashview.cpp:383
 #, kde-format
@@ -3218,11 +3216,9 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ĉu vi certas, ke vi volas forigi ĈIUJN erojn porĉiame?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "Elekti"
+msgstr "Elekto"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:807
@@ -3238,10 +3234,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 eroj elektitaj"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Pli ol 200 uzantraportoj fermiĝis sur bugzilla."
+msgstr "Pli ol 400 uzantraportoj fermiĝis sur bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3267,50 +3262,44 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Aldonu JPEG-XL; WEBP, kaj AVIF-transformiloj en Batch Queue Manager."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Subtenu JPEG-XL, HEIF, WEBP kaj AVIF kiel senperdan bildformaton por stoki "
-"versiojn de bildoj en redaktilo."
+"Versiigo: aldoni subtenon de JPEG-XL, HEIF, WEBP kaj AVIF kiel senperda "
+"bildformato por konservi versiigitajn bildojn en redaktilo."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "Aldonu hamburgan menuon al ilobreto se ĉefa menuo estas kaŝita."
+msgstr ""
+"Uzebleco: aldoni hamburgan menuon al ilobreto se ĉefa menuo estas kaŝita."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Aldonu novan opcion por skribi metadatumojn al dosieroj kun ExifTool backend."
+"Metadatenoj: aldoni novan opcion por skribi metadatumojn al dosieroj kun "
+"ExifTool-backend."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Laŭvolaj skribaj metadatumoj al DNG kaj RAW-dosieroj nun ĉiam estas "
-"delegitaj al ExifTool Backend."
+"Metadatenoj: Laŭvolaj metadatumskribaj operacioj celataj al DNG kaj RAW-"
+"dosieroj nun ĉiam estas delegitaj al ExifTool Backend."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
-"Optimumigi aranĝon de Metadatumoj Redakti kromaĵon por pli bona uzebleco."
+"Metadatenoj: optimumigi aranĝon de Metadatum-Redakta kromaĵo por pli bona "
+"uzebleco."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3320,56 +3309,50 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Aldonu pligrandan dosierkalkulilon al sinsekva numerado per opcio [c] aŭ [c,"
-"paŝo]."
+"Altnivela Alinomado: aldoni alkrementan dosierkalkulilon al sinsekva "
+"numerado per opcio [c] aŭ [c,paŝo]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "Aldonu hazardan tekstan sinsekvan numeradon per opcio [r]."
+msgstr ""
+"Altnivela Alinomado: aldoni hazardan tekstan sinsekvan numeradon per opcio "
+"[r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
-msgstr "Aldonu agordeblan unuan signon por la unika modifilo per {unique:n,c}."
+msgstr ""
+"Altnivela Alinomado: aldoni agordeblan unuan signon por la unika modifilo "
+"per {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Aldonu serĉon de eroj laŭ nombro da vizaĝregionoj."
+msgstr "Altnivela Serĉo: aldoni serĉon de eroj laŭ nombro da facregionoj."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Aldonu serĉon pri eroj sen vizaĝregionoj."
+msgstr "Altnivela Serĉo: aldoni serĉon pri eroj sen facregionoj."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Aldonu subtenon por transplatformaj retaj vojoj."
+msgstr "Aroj: aldoni subtenon por transplatformaj retaj vojoj."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Aldonu subtenon por SQLite WAL (Write-Ahead-Logging) reĝimo."
+msgstr ""
+"Datumbazo: aldoni subtenon por SQLite WAL (Write-Ahead-Logging) reĝimo."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3430,19 +3413,15 @@ msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Aldonu <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-"PhuocKhanhLe\">Estetikan Detekton por klasifiki bildojn per profunda lernado-"
-"modelo</a>."
+"Aldoni novan prizorgilon por efektivigi <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">Estetikan Detekton por klasifiki "
+"bildojn per profunda lernado-modelo</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3454,42 +3433,38 @@ msgstr ""
 "StatusReports/QuocHungTran\">por fari OCR super skanita teksto</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Aldonu novan ilon por asigni elektetikedon aŭtomate analizante bildkvaliton."
+"Atendovica mastrumilo: aldoni novan ilon por asigni elektetikedon aŭtomate "
+"per analizado de bildkvalito."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Aldonu novan ilon por asigni taksadon, elekton kaj kolorajn etikedojn en "
-"staplo."
+"Atendovica mastrumilo: aldoni novan ilon por asigni taksadon, elekton kaj "
+"kolorajn etikedojn en staplo."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
-msgstr "Aldonu novan ilon por asigni titolojn kaj subtitolojn en staplo."
+msgstr ""
+"Atendovica mastrumilo: aldoni novan ilon por asigni titolojn kaj subtitolojn "
+"en staplo."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Reskribi manlibron</a> "
-"de DocBook al Sphinx/ReStructuredText kadro."
+"Dokumentaro: <a href=\" https://docs.digikam.org/en/index.html\">Reskribi "
+"manlibron</a> de DocBook al Sphinx/ReStructuredText kadro."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3499,10 +3474,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr "Ĝisdatigi internan RAW-motoron por daŭri stabilan Libraw 0.21.1."
+msgstr "Ĝisdatigi internan RAW-motoron al lasta libraw-momentversio 20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -9303,17 +9277,16 @@ msgstr ""
 "cilindroj, vertikala kaj horizontala.</p><p><b>Karikaturo</b>: distordas la "
 "foton kun la efekto 'Fiŝ-Okuloj' inversigita.</p><p><b>Multoblaj Anguloj </"
 "b>: disigas la foton kiel plurangulŝablono.</p><p><b>Ondoj Horizontala</b>: "
-"distordas la foton per horizontalaj ondoj.</p><p><b>Ondoj Vertikalaj </b>: "
+"distordas la foton per horizontalaj ondoj.</p><p><b>Ondoj Vertikalaj</b>: "
 "distordas la foton per vertikalaj ondoj.</p><p><b>Bloko-Ondoj 1</b>: dividas "
 "la bildon en ĉelojn kaj aspektigas ĝin kvazaŭ ĝi estas rigardata tra vitraj "
 "blokoj.</p><p><b>Bloko-Ondoj 2</b>: kiel Bloko-Ondoj 1 sed kun alia versio "
 "de vitroblokoj distordo.</p><p><b>Cirklaj Ondoj 1</b>: distordas la foton "
 "per cirklaj ondoj.</p><p><b>Cirklaj Ondoj 2</b>: alia vario de la efiko de "
 "Cirklaj Ondoj.</p><p><b>Polusaj Koordinatoj</b>: konvertas la foton de "
-"rektangulaj al polusaj koordinatoj.</p><p><b>Nepolusaj Koordinatoj</"
-"p><p><b>Nepolusaj Koordinatoj</b>: la efiko de Polusa Koordinato renversita."
-"</p><p><b>Kahelo</b>: dividas la foton en kvadratajn blokojn kaj movas ilin "
-"hazarde enen de la bildo.</p>"
+"rektangulaj al polusaj koordinatoj.</p><p><b>Nepolusaj Koordinatoj</b>: la "
+"efiko de Polusa Koordinato renversita.</p><p><b>Kahelo</b>: dividas la foton "
+"en kvadratajn blokojn kaj movas ilin hazarde enen de la bildo.</p>"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:154
 #, kde-format
@@ -20913,7 +20886,7 @@ msgstr "Antaŭrigardo..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:388
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -26754,9 +26727,9 @@ msgstr "Malsukcesis aldoni albumon al datumbazo"
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
 #: core/libs/album/manager/albummanager_talbum.cpp:365
-#: core/libs/album/manager/albummanager_talbum.cpp:458
-#: core/libs/album/manager/albummanager_talbum.cpp:497
-#: core/libs/album/manager/albummanager_talbum.cpp:592
+#: core/libs/album/manager/albummanager_talbum.cpp:457
+#: core/libs/album/manager/albummanager_talbum.cpp:496
+#: core/libs/album/manager/albummanager_talbum.cpp:591
 #, kde-format
 msgid "No such album"
 msgstr "Ne tia albumo"
@@ -26806,7 +26779,7 @@ msgid "Tag name cannot be empty"
 msgstr "La nomo de la etikedo ne povas esti malplena"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:303
-#: core/libs/album/manager/albummanager_talbum.cpp:470
+#: core/libs/album/manager/albummanager_talbum.cpp:469
 #, kde-format
 msgid "Tag name cannot contain '/'"
 msgstr "La nomo de etikedo ne povas enhavi '/'"
@@ -26832,13 +26805,13 @@ msgstr "Ne povas forigi radikan etikedon"
 msgid "Cannot delete required face tag"
 msgstr "Ne povas forigi bezonatan vizaĝetikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:464
-#: core/libs/album/manager/albummanager_talbum.cpp:715
+#: core/libs/album/manager/albummanager_talbum.cpp:463
+#: core/libs/album/manager/albummanager_talbum.cpp:714
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Ne povas redakti radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:478
+#: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26847,18 +26820,18 @@ msgstr ""
 "Alia etikedo kun la sama nomo jam ekzistas.\n"
 "Bonvolu elekti alian nomon."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:503
+#: core/libs/album/manager/albummanager_talbum.cpp:502
 #, kde-format
 msgid "Attempt to move TAlbum to nowhere"
 msgstr "Provu movi TAlbum al nenie"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:509
+#: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
 msgstr "Ne povas movi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:515
-#: core/libs/album/manager/albummanager_talbum.cpp:616
+#: core/libs/album/manager/albummanager_talbum.cpp:514
+#: core/libs/album/manager/albummanager_talbum.cpp:615
 #, kde-format
 msgid ""
 "Other process are not finished yet.\n"
@@ -26867,7 +26840,7 @@ msgstr ""
 "Aliaj procezoj ankoraŭ ne finiĝis.\n"
 "Bonvolu provi denove poste."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:524
+#: core/libs/album/manager/albummanager_talbum.cpp:523
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26876,38 +26849,38 @@ msgstr ""
 "Alia etikedo kun la sama nomo jam ekzistas.\n"
 "Ĉu vi volas kunfandi la etikedojn?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:598
+#: core/libs/album/manager/albummanager_talbum.cpp:597
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Ne povas kunfandi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:604
+#: core/libs/album/manager/albummanager_talbum.cpp:603
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Ne povas kunfandi bezonatan vizaĝetikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:610
+#: core/libs/album/manager/albummanager_talbum.cpp:609
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Nur etikedo sen infanoj povas esti kunfandita!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:629
+#: core/libs/album/manager/albummanager_talbum.cpp:628
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ĉu vi volas kunfandi etikedon '%1' en etikedon '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:633
-#: core/libs/album/manager/albummanager_talbum.cpp:1133
+#: core/libs/album/manager/albummanager_talbum.cpp:632
+#: core/libs/album/manager/albummanager_talbum.cpp:1132
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne demandi denove ĉe ĉi tiu seanco"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:709
+#: core/libs/album/manager/albummanager_talbum.cpp:708
 #, kde-format
 msgid "No such tag"
 msgstr "Ne tia etikedo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1128
+#: core/libs/album/manager/albummanager_talbum.cpp:1127
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -27061,7 +27034,7 @@ msgstr "Etikedoj Albumo"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:215
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29486,43 +29459,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliotekoj"
 
-#: core/libs/dialogs/libsinfodlg.cpp:281
+#: core/libs/dialogs/libsinfodlg.cpp:273
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: core/libs/dialogs/libsinfodlg.cpp:362
+#: core/libs/dialogs/libsinfodlg.cpp:354
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nekonata"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifestoj"
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:405
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV-Agordo"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:588
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Jes"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:593
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:598
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -38025,12 +37998,7 @@ msgid "Highlight:"
 msgstr "Elstarigi:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:452
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<title>Highlight</title><para>Amount of highlight preservation for "
-#| "exposure correction before interpolation in E.V. Only take effect if "
-#| "Shift Correction is> 1.0 E.V</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<title>Highlight</title><para>Amount of highlight preservation for exposure "
@@ -38039,7 +38007,7 @@ msgid ""
 msgstr ""
 "<title>Elstaraĵo</title><para>Kvanto de elstaraĵo konservado por "
 "malkovrokorekto antaŭ interpolado en E.V. Nur efiki se Shift Correction "
-"estas> 1.0 E.V</para>"
+"estas > 1.0 E.V</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:456
 #, kde-format
@@ -38709,13 +38677,13 @@ msgid "Delete '%1' tag?"
 msgstr "Ĉu forigi etikedon '%1'?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:407
+#: core/libs/tags/engine/tagmodificationhelper.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Forviŝi etikedon"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:381
+#: core/libs/tags/engine/tagmodificationhelper.cpp:386
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38726,18 +38694,18 @@ msgstr ""
 "la subetikedojn.\n"
 "Ĉu vi volas daŭrigi?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:398
+#: core/libs/tags/engine/tagmodificationhelper.cpp:403
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Etikedoj '%1' estas asignitaj al unu aŭ pluraj eroj. Ĉu vi volas daŭrigi?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:404
+#: core/libs/tags/engine/tagmodificationhelper.cpp:409
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Ĉu forigi etikedon '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:562
+#: core/libs/tags/engine/tagmodificationhelper.cpp:570
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -38750,7 +38718,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:584
+#: core/libs/tags/engine/tagmodificationhelper.cpp:592
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -38759,14 +38727,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -38828,38 +38796,38 @@ msgid "Delete Tags"
 msgstr "Forigi Etikedojn"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:710
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Redakti Etikedtitolon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:720
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Restarigi Etikedan Piktogramon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:729
 #, kde-format
 msgid "Invert Selection"
 msgstr "Inversigi elekton"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:735
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Vastigi Etikedarbon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Malvastigi Etikedarbon"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:735
+#: core/libs/tags/manager/tagsmanager.cpp:741
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Forigi Etikedon de Bildoj"
@@ -38977,7 +38945,7 @@ msgid_plural "Delete tags"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:501
+#: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -38988,8 +38956,8 @@ msgstr ""
 "datumbazo.<br/> Vi povas <b>perdi etikedojn</b> se vi ne legis etikedojn "
 "antaŭe (vokante Legi Etikedojn el Bildo).<br/> Ĉu vi volas daŭrigi?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:513
-#: core/libs/tags/manager/tagsmanager.cpp:532
+#: core/libs/tags/manager/tagsmanager.cpp:516
+#: core/libs/tags/manager/tagsmanager.cpp:535
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -38998,7 +38966,7 @@ msgstr ""
 "Ĉi operacio povas daŭri longan tempon depende de la grandeco de kolekto.\n"
 "Ĉu vi volas daŭrigi?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:552
+#: core/libs/tags/manager/tagsmanager.cpp:555
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39010,43 +38978,43 @@ msgstr ""
 "dosiero.\n"
 "Ĉu vi volas daŭrigi?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:616
+#: core/libs/tags/manager/tagsmanager.cpp:622
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organizi"
 
-#: core/libs/tags/manager/tagsmanager.cpp:700
+#: core/libs/tags/manager/tagsmanager.cpp:706
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinkronigi &Eksporti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Krei Etikedon el Adreslibro"
 
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:726
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marki Neasignitajn Etikedojn"
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Aldonu novan etikedon al nuna etikedo. Nuna etikedo estas laste klakita "
 "etikedo."
 
-#: core/libs/tags/manager/tagsmanager.cpp:743
+#: core/libs/tags/manager/tagsmanager.cpp:749
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39055,75 +39023,75 @@ msgstr ""
 "Forigi elektitajn erojn. Ankaŭ funkcias kun pluraj eroj, sed ne forigos la "
 "radikan etikedon."
 
-#: core/libs/tags/manager/tagsmanager.cpp:747
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Redaktu titolon el elektita etikedo."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:755
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Restarigi piktogramon al elektitaj etikedoj. Funkcias kun multobla elekto."
 
-#: core/libs/tags/manager/tagsmanager.cpp:752
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marki ĉiujn etikedojn kiuj ne estas asignitaj al bildoj."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Inverti elekton. Nur videblaj eroj estos elektitaj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:757
+#: core/libs/tags/manager/tagsmanager.cpp:763
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Elektitaj eroj estos vastigitaj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:759
+#: core/libs/tags/manager/tagsmanager.cpp:765
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Etendi etikedarbon tute"
 
-#: core/libs/tags/manager/tagsmanager.cpp:761
+#: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Maletendi etikedarbon tute"
 
-#: core/libs/tags/manager/tagsmanager.cpp:763
+#: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Forigi elektita(j)n etikedon(j)n de bildoj. Funkcias kun multobla elekto."
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:817
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Skribi Etikedojn de Datumaro al Bildo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Legi Etikedojn el Bildo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:817
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Forviŝi ĉiujn etikedojn nur el datumbazo"
 
-#: core/libs/tags/manager/tagsmanager.cpp:819
+#: core/libs/tags/manager/tagsmanager.cpp:825
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Skribi Etikedojn Metadatumojn al Bildo."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:827
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Legi etikedojn de Bildoj en datumbazon. Ekzistantaj etikedoj ne estos tuŝitaj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:824
+#: core/libs/tags/manager/tagsmanager.cpp:830
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39132,7 +39100,7 @@ msgstr ""
 "Forigi ĉiujn etikedojn nur el datumbazo. Ne sinkroniĝos kun dosieroj. Sekvu "
 "singarde."
 
-#: core/libs/tags/manager/tagsmanager.cpp:846
+#: core/libs/tags/manager/tagsmanager.cpp:852
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
@@ -42835,10 +42803,9 @@ msgid "Developer (2004)"
 msgstr "Ellaboranto (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Agordi ĉi tiun kolumnon"
+msgstr "Agordi sciigojn"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -50460,7 +50427,7 @@ msgid "Show a list of all available options"
 msgstr "Montri liston de ĉiuj disponeblaj opcioj"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:353
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:109
 #, kde-format
 msgid "Modifiers"
 msgstr "Modifiloj"
@@ -50486,10 +50453,16 @@ msgstr "<p>Aldonu alinomajn elektojn al la analiza ĉeno.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
+msgid ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
+msgstr ""
+
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "Modifiloj povas esti aplikitaj al ĉiu renoma opcio."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -50498,7 +50471,7 @@ msgstr ""
 "Eblas asigni plurajn modifilojn al opcio, ili estas aplikataj en la ordo, "
 "kiun vi atribuas ilin."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:54
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -50507,7 +50480,7 @@ msgstr ""
 "Nepre uzu la butonojn de rapida aliro: Ili povus provizi pliajn informojn "
 "pri renomado kaj modifeblaj opcioj."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51285,18 +51258,21 @@ msgstr ""
 "etendokonscia, ||f|| = dosierujo konscia, ||r|| = hazarda konscia)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start)"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sinsekvo (persona komenco)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
-#, kde-format
-msgid "Sequence number (custom step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom step)"
+msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sinsekvo (persona paŝo)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, kde-format
-msgid "Sequence number (custom start + step)"
+#, fuzzy, kde-format
+#| msgid "Sequence number (custom start + step)"
+msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Sinsekvo (persona komenco + paŝo)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -52156,42 +52132,34 @@ msgid "Prefer other than selected folder as reference"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Laŭ Krea Dato"
+msgstr "Preferi pli novan kreodaton"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Laŭ Dato de Modifo"
+msgstr "Preferi pli novan modifodaton"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Informoj pri aktuala elekto de bildoj"
+msgstr "Elekti metodon por referencbilda elekto"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Referenco:"
+msgstr "Referenco"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "&Elekti bildo-elektan metodon:"
+msgstr "Referencbilda elektmetodo"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
