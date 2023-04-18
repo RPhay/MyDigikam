@@ -253,7 +253,11 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
     if (packet.isEOF())
     {
         AVPacket eofpkt;
-        if (av_new_packet(&eofpkt, 0) < 0) return false;
+
+        if (av_new_packet(&eofpkt, 0) < 0)
+        {
+            return false;
+        }
 
         eofpkt.data = nullptr;
         eofpkt.size = 0;
@@ -283,6 +287,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
     {
         return false;
     }
+
 #endif
 
     d.width  = d.frame->width; // TODO: remove? used in hwdec

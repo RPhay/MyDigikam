@@ -166,17 +166,21 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
     }
 
     return true;
-    
+
 #else // ffmpeg >= 5
 
     int ret;
     d.undecoded_size = 0; // code below always consumes entire packet
-    
+
     if (packet.isEOF())
     {
         AVPacket eofpkt;
-        if (av_new_packet(&eofpkt, 0) < 0) return false;
-        
+
+        if (av_new_packet(&eofpkt, 0) < 0)
+        {
+            return false;
+        }
+
         eofpkt.data = nullptr;
         eofpkt.size = 0;
         ret = avcodec_send_packet(d.codec_ctx, &eofpkt);
@@ -186,21 +190,28 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
         ret = avcodec_send_packet(d.codec_ctx, packet.asAVPacket());
     }
 
-    if (ret < 0 && ret != AVERROR_EOF)
+    if ((ret < 0) && (ret != AVERROR_EOF) && (ret != AVERROR(EAGAIN)))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("[AudioDecoder] %s",
                 av_err2str(ret));
         return false;
-    }    
+    }
+
+    if (ret == AVERROR(EAGAIN))
+    {
+        d.undecoded_size = packet.data.size();
+    }
 
     ret = avcodec_receive_frame(d.codec_ctx, d.frame);
-    if (ret < 0 && ret != AVERROR(EAGAIN))
+
+    if ((ret < 0) && (ret != AVERROR(EAGAIN)))
     {
         return false;
     }
-    
+
     return true;
+
 #endif
 }
 
