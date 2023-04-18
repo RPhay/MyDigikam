@@ -198,7 +198,7 @@ QStringList WelcomePageView::featuresTabContent() const
     QString tabHeader  = i18n("New Features");
     QString tabContent =
         i18n("<h3>%1</h3><ul>%2</ul>",
-             i18n("Some of the new features in this release of digiKam include (compared to digiKam 6.x):"),
+             i18n("Some of the new features in this release of digiKam include (compared to digiKam 7):"),
              featureItems);
 
     return QStringList() << tabHeader << tabContent;
