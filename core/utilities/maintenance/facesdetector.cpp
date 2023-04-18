@@ -267,13 +267,6 @@ void FacesDetector::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
 
     // set label depending on settings

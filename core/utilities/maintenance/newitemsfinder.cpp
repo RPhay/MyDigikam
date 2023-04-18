@@ -69,13 +69,6 @@ void NewItemsFinder::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     setShowAtStart(true);
     setLabel(i18n("Find new items"));
     setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(22));

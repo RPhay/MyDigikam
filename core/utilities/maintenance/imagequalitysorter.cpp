@@ -98,13 +98,6 @@ void ImageQualitySorter::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     setLabel(i18n("Image Quality Sorter"));
 
     ProgressManager::addProgressItem(this);

@@ -80,7 +80,16 @@ void MaintenanceTool::setNotificationEnabled(bool b)
 
 void MaintenanceTool::start()
 {
-    // We delay start to be sure that eventloop connect signals and slots in top level.
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        QTimer::singleShot(2000, this, SLOT(start()));
+
+        return;
+    }
+
+    // We delay start to be sure that eventloop
+    // connect signals and slots in top level.
+
     QTimer::singleShot(0, this, SLOT(slotStart()));
 }
 
@@ -96,6 +105,7 @@ void MaintenanceTool::slotDone()
     if (d->notification)
     {
         // Pop-up a message to bring user when all is done.
+
         DNotificationWrapper(id(),
                              i18n("Process is done.\nDuration: %1", t.toString()),
                              qApp->activeWindow(), label());

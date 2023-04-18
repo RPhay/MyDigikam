@@ -91,13 +91,6 @@ void FingerPrintsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     setLabel(i18n("Finger-prints"));
 
     ProgressManager::addProgressItem(this);

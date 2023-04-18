@@ -111,13 +111,6 @@ void ThumbsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     setLabel(i18n("Thumbs"));
 
     ProgressManager::addProgressItem(this);

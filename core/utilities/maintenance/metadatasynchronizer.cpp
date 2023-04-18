@@ -107,13 +107,6 @@ void MetadataSynchronizer::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    if (ProgressManager::instance()->findItembyId(id()))
-    {
-        slotDone();
-
-        return;
-    }
-
     ProgressManager::addProgressItem(this);
 
     d->imageInfoJob = new ItemInfoJob;
