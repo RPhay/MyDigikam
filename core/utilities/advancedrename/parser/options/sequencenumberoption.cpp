@@ -62,9 +62,12 @@ SequenceNumberOption::SequenceNumberOption()
                                                                       "||e|| = extension aware, "
                                                                       "||f|| = folder aware, "
                                                                       "||r|| = random aware)"));
-    addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start) ||options||: ||e||, ||f||"));
-    addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step) ||options||: ||c||"));
-    addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step) ||options||: ||e||, ||f||"));
+    addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start) "
+                                                                      "||options||: ||e||, ||f||"));
+    addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step) "
+                                                                      "||options||: ||c||"));
+    addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step) "
+                                                                      "||options||: ||e||, ||f||"));
 
     QRegularExpression reg(QLatin1String("(#+)(\\[(c?e?f?r?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
