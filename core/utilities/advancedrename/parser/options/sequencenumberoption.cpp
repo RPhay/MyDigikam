@@ -123,7 +123,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 
             if ((start > 1) || (step > 1))
             {
-                if (extensionAware && !randomAware)
+                if ((extensionAware || folderAware) && !randomAware)
                 {
                     result.append(QLatin1Char(','));
                 }
