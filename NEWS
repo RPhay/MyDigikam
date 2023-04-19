@@ -21,4 +21,5 @@ BUGFIXES:
 011 ==> 466991 - Remove Duplicates Not Active.
 012 ==> 454770 - Progress bar shows checkmark.
 013 ==> 465381 - digiKam (and Showfoto) crashes on start on MacOS 10.13.
-014 ==> 
+014 ==> 450361 - digiKam crashes when running recognize faces with "CFRelease() called with NULL".
+015 ==> 
