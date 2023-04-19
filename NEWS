@@ -19,4 +19,5 @@ BUGFIXES:
 009 ==> 468618 - Image quality sort - blink database settings.
 010 ==> 468624 - Inaccessible remote database causes boot time to take several minutes without even displaying the startup splashscreen.
 011 ==> 466991 - Remove Duplicates Not Active.
-012 ==> 
+012 ==> 454770 - Progress bar shows checkmark.
+013 ==> 
