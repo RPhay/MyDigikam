@@ -508,7 +508,8 @@ bool AdvancedRenameManager::initialize()
 QString AdvancedRenameManager::fileGroupKey(const QString& filename) const
 {
     QFileInfo fi(filename);
-    QString tmp = fi.absoluteFilePath().left(fi.absoluteFilePath().lastIndexOf(fi.suffix()));
+    QString tmp = fi.absolutePath() + QLatin1Char('/');
+    tmp        += fi.completeBaseName().mid(d->cutFileName) + QLatin1Char('.');
 
     return tmp;
 }
