@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-18 00:44+0000\n"
+"POT-Creation-Date: 2023-04-19 00:47+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -3483,7 +3483,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
-"digiKam 6.x):"
+"digiKam 7):"
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:209
@@ -27294,14 +27294,14 @@ msgid ""
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:201
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:212
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
 "digiKam will try to automatically reconnect to the database."
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:233
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:244
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -41161,7 +41161,7 @@ msgid "Gowtham Ashok"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
-#: core/utilities/maintenance/imagequalitysorter.cpp:108
+#: core/utilities/maintenance/imagequalitysorter.cpp:101
 #: core/utilities/maintenance/maintenancedlg.cpp:347
 #, kde-format
 msgid "Image Quality Sorter"
@@ -50068,12 +50068,12 @@ msgstr ""
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -55046,47 +55046,47 @@ msgstr "बम्माँ (&L)"
 msgid "&Right Panel"
 msgstr "दहिन्ना (&R)"
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
-#: core/utilities/maintenance/dbcleaner.cpp:237
-#: core/utilities/maintenance/dbcleaner.cpp:266
-#: core/utilities/maintenance/dbcleaner.cpp:297
-#: core/utilities/maintenance/dbcleaner.cpp:336
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
+#: core/utilities/maintenance/dbcleaner.cpp:130
 #, kde-format
 msgid "analysing databases"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:237
+#: core/utilities/maintenance/dbcleaner.cpp:230
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:266
+#: core/utilities/maintenance/dbcleaner.cpp:259
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:297
+#: core/utilities/maintenance/dbcleaner.cpp:290
 #, kde-format
 msgid "cleaning recognition db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:336
+#: core/utilities/maintenance/dbcleaner.cpp:329
 #, kde-format
 msgid "cleaning similarity db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, kde-format
 msgid "shrinking databases"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:507
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -55096,63 +55096,63 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:520
+#: core/utilities/maintenance/dbcleaner.cpp:513
 #, fuzzy, kde-format
 #| msgctxt "NAME OF TRANSLATORS"
 #| msgid "Your names"
 msgid "Core DB"
 msgstr "संगीता कुमारी"
 
-#: core/utilities/maintenance/dbcleaner.cpp:521
+#: core/utilities/maintenance/dbcleaner.cpp:514
 #, kde-format
 msgid "Thumbnails DB"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:522
+#: core/utilities/maintenance/dbcleaner.cpp:515
 #, kde-format
 msgid "Face Recognition DB"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:523
+#: core/utilities/maintenance/dbcleaner.cpp:516
 #, kde-format
 msgid "Similarity DB"
 msgstr ""
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:119
+#: core/utilities/maintenance/duplicatesfinder.cpp:112
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:285
+#: core/utilities/maintenance/facesdetector.cpp:278
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Scan for faces in album: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/facesdetector.cpp:289
+#: core/utilities/maintenance/facesdetector.cpp:282
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Scan for faces in %1 albums"
 msgstr "रँग"
 
-#: core/utilities/maintenance/facesdetector.cpp:296
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Scan for faces in image: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:293
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Scan for faces in %1 images"
 msgstr "रँग"
 
-#: core/utilities/maintenance/facesdetector.cpp:305
+#: core/utilities/maintenance/facesdetector.cpp:298
 #, kde-format
 msgid "Updating faces database"
 msgstr ""
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:101
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
@@ -55368,29 +55368,29 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancetool.cpp:100
+#: core/utilities/maintenance/maintenancetool.cpp:110
 #, kde-format
 msgid ""
 "Process is done.\n"
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:190
+#: core/utilities/maintenance/metadatasynchronizer.cpp:183
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr ""
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:195
+#: core/utilities/maintenance/metadatasynchronizer.cpp:188
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr ""
 
-#: core/utilities/maintenance/newitemsfinder.cpp:80
+#: core/utilities/maintenance/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr ""
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:121
+#: core/utilities/maintenance/thumbsgenerator.cpp:114
 #, kde-format
 msgid "Thumbs"
 msgstr ""

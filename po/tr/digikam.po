@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-18 00:44+0000\n"
+"POT-Creation-Date: 2023-04-19 00:47+0000\n"
 "PO-Revision-Date: 2023-03-23 14:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3548,7 +3548,7 @@ msgstr "<h3>%1</h3><ul>%2</ul>"
 #| "digiKam 4.x):"
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
-"digiKam 6.x):"
+"digiKam 7):"
 msgstr ""
 "Bu sürümdeki digiKam'ın yeni özelliklerinden bazıları şunlardır (digiKam 4.x "
 "ile karşılaştırıldığında):"
@@ -29307,7 +29307,7 @@ msgstr ""
 "<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'in "
 "çalışan sürümüyle yayımlanan sürümün kurulu olduğundan emin olun."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:201
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:212
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
@@ -29316,7 +29316,7 @@ msgstr ""
 "Veritabanı açılırken hata oluştu.\n"
 "digiKam veritabanına otomatik olarak yeniden bağlanmaya çalışacak."
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:233
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:244
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -44540,7 +44540,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
-#: core/utilities/maintenance/imagequalitysorter.cpp:108
+#: core/utilities/maintenance/imagequalitysorter.cpp:101
 #: core/utilities/maintenance/maintenancedlg.cpp:347
 #, kde-format
 msgid "Image Quality Sorter"
@@ -53683,13 +53683,13 @@ msgstr ""
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sayıyı sırala (özelleşmiş başlangıç)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sayıyı sırala (özelleşmiş başlangıç)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -59290,48 +59290,48 @@ msgstr "&Sol Panel"
 msgid "&Right Panel"
 msgstr "&Sağ Panel"
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
-#: core/utilities/maintenance/dbcleaner.cpp:237
-#: core/utilities/maintenance/dbcleaner.cpp:266
-#: core/utilities/maintenance/dbcleaner.cpp:297
-#: core/utilities/maintenance/dbcleaner.cpp:336
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Veritabanlarını temizle : "
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
+#: core/utilities/maintenance/dbcleaner.cpp:130
 #, kde-format
 msgid "analysing databases"
 msgstr "veritabanları analiz ediliyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:237
+#: core/utilities/maintenance/dbcleaner.cpp:230
 #, kde-format
 msgid "cleaning core db"
 msgstr "çekirdek veritabanı temizleniyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:266
+#: core/utilities/maintenance/dbcleaner.cpp:259
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "küçük resim veritabanları temizleniyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:297
+#: core/utilities/maintenance/dbcleaner.cpp:290
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "tanıma veritabanı temizleniyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:336
+#: core/utilities/maintenance/dbcleaner.cpp:329
 #, fuzzy, kde-format
 #| msgid "cleaning core db"
 msgid "cleaning similarity db"
 msgstr "çekirdek veritabanı temizleniyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, kde-format
 msgid "shrinking databases"
 msgstr "veritabanları daraltılıyor"
 
-#: core/utilities/maintenance/dbcleaner.cpp:507
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -59345,67 +59345,67 @@ msgstr ""
 "</p><p>Veritabanı bozulmasını önlemek için digiKam durdurulacaktır. Küçültme "
 "işlemi tamamlanınca bu bilgi kutusu yok olacaktır.</p> Mevcut Durum:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:520
+#: core/utilities/maintenance/dbcleaner.cpp:513
 #, kde-format
 msgid "Core DB"
 msgstr "Çekirdek Veritabanı"
 
-#: core/utilities/maintenance/dbcleaner.cpp:521
+#: core/utilities/maintenance/dbcleaner.cpp:514
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "Küçük Resimler Veritabanı"
 
-#: core/utilities/maintenance/dbcleaner.cpp:522
+#: core/utilities/maintenance/dbcleaner.cpp:515
 #, kde-format
 msgid "Face Recognition DB"
 msgstr "Yüz Tanıma Veritabanı"
 
-#: core/utilities/maintenance/dbcleaner.cpp:523
+#: core/utilities/maintenance/dbcleaner.cpp:516
 #, fuzzy, kde-format
 #| msgid "Similarity"
 msgid "Similarity DB"
 msgstr "Benzerlik"
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:119
+#: core/utilities/maintenance/duplicatesfinder.cpp:112
 #, kde-format
 msgid "Find duplicates items"
 msgstr "Yinelenen ögeleri bul"
 
-#: core/utilities/maintenance/facesdetector.cpp:285
+#: core/utilities/maintenance/facesdetector.cpp:278
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in album: %1"
 msgstr "Albümlerde ara:"
 
-#: core/utilities/maintenance/facesdetector.cpp:289
+#: core/utilities/maintenance/facesdetector.cpp:282
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scan for faces in %1 albums"
 msgstr "Albümlerde ara:"
 
-#: core/utilities/maintenance/facesdetector.cpp:296
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in image: %1"
 msgstr "Yüzler taranıyor"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:293
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for faces in %1 images"
 msgstr "Yüzler taranıyor"
 
-#: core/utilities/maintenance/facesdetector.cpp:305
+#: core/utilities/maintenance/facesdetector.cpp:298
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Updating faces database"
 msgstr "Yüz veritabanı güncelleniyor."
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:101
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
 #, kde-format
 msgid "Finger-prints"
 msgstr "Parmak izleri"
@@ -59642,7 +59642,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "digiKam Bakımı"
 
-#: core/utilities/maintenance/maintenancetool.cpp:100
+#: core/utilities/maintenance/maintenancetool.cpp:110
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -59651,22 +59651,22 @@ msgstr ""
 "İşleme tamamlandı.\n"
 "Süre: %1"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:190
+#: core/utilities/maintenance/metadatasynchronizer.cpp:183
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "İleti metaverisi veritabanı ile senkronize ediliyor"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:195
+#: core/utilities/maintenance/metadatasynchronizer.cpp:188
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Resim metaverisinden veritabanını güncelle"
 
-#: core/utilities/maintenance/newitemsfinder.cpp:80
+#: core/utilities/maintenance/newitemsfinder.cpp:73
 #, kde-format
 msgid "Find new items"
 msgstr "Yeni ögeler bul"
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:121
+#: core/utilities/maintenance/thumbsgenerator.cpp:114
 #, kde-format
 msgid "Thumbs"
 msgstr "Küçük resimler"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-18 00:44+0000\n"
+"POT-Creation-Date: 2023-04-19 00:47+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3430,10 +3430,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some of the new features in this release of digiKam include (compared to "
+#| "digiKam 6.x):"
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
-"digiKam 6.x):"
+"digiKam 7):"
 msgstr ""
 "이 버전의 digiKam에서 추가된 기능 중 일부는 다음과 같습니다(digiKam 6.x 기"
 "준):"
@@ -28559,14 +28562,14 @@ msgid ""
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:201
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:212
 #, kde-format
 msgid ""
 "Error while opening the database.\n"
 "digiKam will try to automatically reconnect to the database."
 msgstr ""
 
-#: core/libs/database/engine/dbengineguierrorhandler.cpp:233
+#: core/libs/database/engine/dbengineguierrorhandler.cpp:244
 #, kde-format
 msgid ""
 "<p><b>A database error occurred.</b></p>Details:\n"
@@ -43059,7 +43062,7 @@ msgid "Gowtham Ashok"
 msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
-#: core/utilities/maintenance/imagequalitysorter.cpp:108
+#: core/utilities/maintenance/imagequalitysorter.cpp:101
 #: core/utilities/maintenance/maintenancedlg.cpp:347
 #, kde-format
 msgid "Image Quality Sorter"
@@ -52764,13 +52767,13 @@ msgstr "순서 번호 (||options||: ||e|| = 확장자 인식, ||f|| = 폴더 인
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "순서 번호(사용자 정의 시작)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "순서 번호(사용자 정의 시작)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -57886,47 +57889,47 @@ msgstr "왼쪽 패널(&L)"
 msgid "&Right Panel"
 msgstr "오른쪽 패널(&R)"
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
-#: core/utilities/maintenance/dbcleaner.cpp:237
-#: core/utilities/maintenance/dbcleaner.cpp:266
-#: core/utilities/maintenance/dbcleaner.cpp:297
-#: core/utilities/maintenance/dbcleaner.cpp:336
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:130
+#: core/utilities/maintenance/dbcleaner.cpp:230
+#: core/utilities/maintenance/dbcleaner.cpp:259
+#: core/utilities/maintenance/dbcleaner.cpp:290
+#: core/utilities/maintenance/dbcleaner.cpp:329
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, kde-format
 msgid "Clean up the databases : "
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:137
+#: core/utilities/maintenance/dbcleaner.cpp:130
 #, fuzzy, kde-format
 msgid "analysing databases"
 msgstr "<b>만든 날짜</b>:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:237
+#: core/utilities/maintenance/dbcleaner.cpp:230
 #, kde-format
 msgid "cleaning core db"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:266
+#: core/utilities/maintenance/dbcleaner.cpp:259
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "축소판 DB 정리 중"
 
-#: core/utilities/maintenance/dbcleaner.cpp:297
+#: core/utilities/maintenance/dbcleaner.cpp:290
 #, fuzzy, kde-format
 msgid "cleaning recognition db"
 msgstr "선택 반전"
 
-#: core/utilities/maintenance/dbcleaner.cpp:336
+#: core/utilities/maintenance/dbcleaner.cpp:329
 #, fuzzy, kde-format
 msgid "cleaning similarity db"
 msgstr "태그 미리 보기 그림으로 지정하기"
 
-#: core/utilities/maintenance/dbcleaner.cpp:381
+#: core/utilities/maintenance/dbcleaner.cpp:374
 #, fuzzy, kde-format
 msgid "shrinking databases"
 msgstr "<b>만든 날짜</b>:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:507
+#: core/utilities/maintenance/dbcleaner.cpp:500
 #, kde-format
 msgid ""
 "<p>Database shrinking in progress.</p><p>Currently, your databases are being "
@@ -57936,59 +57939,59 @@ msgid ""
 "Status:"
 msgstr ""
 
-#: core/utilities/maintenance/dbcleaner.cpp:520
+#: core/utilities/maintenance/dbcleaner.cpp:513
 #, fuzzy, kde-format
 msgid "Core DB"
 msgstr "날짜:"
 
-#: core/utilities/maintenance/dbcleaner.cpp:521
+#: core/utilities/maintenance/dbcleaner.cpp:514
 #, kde-format
 msgid "Thumbnails DB"
 msgstr "축소판 DB"
 
-#: core/utilities/maintenance/dbcleaner.cpp:522
+#: core/utilities/maintenance/dbcleaner.cpp:515
 #, fuzzy, kde-format
 msgid "Face Recognition DB"
 msgstr "선택 반전"
 
-#: core/utilities/maintenance/dbcleaner.cpp:523
+#: core/utilities/maintenance/dbcleaner.cpp:516
 #, kde-format
 msgid "Similarity DB"
 msgstr ""
 
-#: core/utilities/maintenance/duplicatesfinder.cpp:119
+#: core/utilities/maintenance/duplicatesfinder.cpp:112
 #, kde-format
 msgid "Find duplicates items"
 msgstr ""
 
-#: core/utilities/maintenance/facesdetector.cpp:285
+#: core/utilities/maintenance/facesdetector.cpp:278
 #, fuzzy, kde-format
 msgid "Scan for faces in album: %1"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/facesdetector.cpp:289
+#: core/utilities/maintenance/facesdetector.cpp:282
 #, fuzzy, kde-format
 msgid "Scan for faces in %1 albums"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/facesdetector.cpp:296
+#: core/utilities/maintenance/facesdetector.cpp:289
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in image: %1"
 msgstr "얼굴 스캔"
 
-#: core/utilities/maintenance/facesdetector.cpp:300
+#: core/utilities/maintenance/facesdetector.cpp:293
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Scan for faces in %1 images"
 msgstr "얼굴 스캔"
 
-#: core/utilities/maintenance/facesdetector.cpp:305
+#: core/utilities/maintenance/facesdetector.cpp:298
 #, fuzzy, kde-format
 msgid "Updating faces database"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/fingerprintsgenerator.cpp:101
+#: core/utilities/maintenance/fingerprintsgenerator.cpp:94
 #, kde-format
 msgid "Finger-prints"
 msgstr ""
@@ -58213,7 +58216,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancetool.cpp:100
+#: core/utilities/maintenance/maintenancetool.cpp:110
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -58222,22 +58225,22 @@ msgstr ""
 "작업을 완료했습니다.\n"
 "경과 시간: %1"
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:190
+#: core/utilities/maintenance/metadatasynchronizer.cpp:183
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:195
+#: core/utilities/maintenance/metadatasynchronizer.cpp:188
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/utilities/maintenance/newitemsfinder.cpp:80
+#: core/utilities/maintenance/newitemsfinder.cpp:73
 #, fuzzy, kde-format
 msgid "Find new items"
 msgstr "선택 반전"
 
-#: core/utilities/maintenance/thumbsgenerator.cpp:121
+#: core/utilities/maintenance/thumbsgenerator.cpp:114
 #, kde-format
 msgid "Thumbs"
 msgstr "축소판"
