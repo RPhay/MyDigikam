@@ -18,4 +18,5 @@ BUGFIXES:
 009 ==> 468626 - Error in the description of the Rename options.
 009 ==> 468618 - Image quality sort - blink database settings.
 010 ==> 468624 - Inaccessible remote database causes boot time to take several minutes without even displaying the startup splashscreen.
-011 ==> 
+011 ==> 466991 - Remove Duplicates Not Active.
+012 ==> 
