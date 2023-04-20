@@ -62,6 +62,11 @@ ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     setAcceptDrops(true);
     setDropIndicatorShown(false);
 
+    // Disable QListView::Batched optimization
+    // for the thumbnail bar, see bug #468593
+
+    setLayoutMode(QListView::SinglePass);
+
     setScrollCurrentToCenter(ApplicationSettings::instance()->getScrollItemToCenter());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
 

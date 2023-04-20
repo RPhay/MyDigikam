@@ -66,6 +66,11 @@ ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)
     setAcceptDrops(true);
     setDropIndicatorShown(true);
 
+    // Disable QListView::Batched optimization
+    // for the thumbnail bar, see bug #468593
+
+    setLayoutMode(QListView::SinglePass);
+
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
     this->slotSetupChanged();
