@@ -39,6 +39,7 @@ if(ENABLE_AKONADICONTACTSUPPORT)
 
     find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
                                             OPTIONAL_COMPONENTS
+                                            Akonadi
                                             AkonadiContact      # For KDE Mail Contacts support.
                                             Contacts            # API for contacts/address book data.
     )
