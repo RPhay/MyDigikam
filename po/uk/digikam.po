@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-19 00:47+0000\n"
-"PO-Revision-Date: 2023-04-18 17:25+0300\n"
+"PO-Revision-Date: 2023-04-19 08:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -3572,15 +3572,12 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
-"Серед нових можливостей у цьому випуску digiKam (порівняно із digiKam 6.x):"
+"Серед нових можливостей у цьому випуску digiKam (порівняно із digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format

@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-19 00:47+0000\n"
-"PO-Revision-Date: 2023-04-16 15:46+0200\n"
+"PO-Revision-Date: 2023-04-19 10:41+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3580,16 +3580,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Enige van de nieuwe mogelijkheden in deze uitgave van digiKam omvatten "
-"(vergeleken met digiKam 6.x):"
+"(vergeleken met digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -51076,6 +51073,8 @@ msgstr "<p>Opties voor hernoemen toevoegen aan de ontleedtekenreeks</p>"
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Om een modifier toe te passen, voeg het achter de optie, bijvoorbeeld: [file]"
+"{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -51881,22 +51880,19 @@ msgstr ""
 "bewust van extensie, ||f|| = bewust van map, ||r|| = bewust van willekeurig)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Volgnummer (eigen startwaarde)"
+msgstr "Volgnummer (eigen startwaarde) ||opties||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Volgnummer (aangepaste stap)"
+msgstr "Volgnummer (aangepaste stap) ||opties||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Volgnummer (eigen startwaarde + stap)"
+msgstr "Volgnummer (eigen startwaarde + stap) ||opties||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19

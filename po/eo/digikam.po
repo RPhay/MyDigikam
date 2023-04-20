@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-19 00:47+0000\n"
-"PO-Revision-Date: 2023-04-17 06:30+0100\n"
+"PO-Revision-Date: 2023-04-19 21:49+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1379,22 +1379,22 @@ msgstr[1] "%1/%2 [%3] eroj elektitaj (%4/%5)"
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1/%2 ero elektita. Sumo kun grupigitaj eroj: %3"
+msgstr[1] "%1/%2 eroj elektitaj. Sumo kun grupigitaj eroj: %3"
 
 #: core/app/main/digikamapp.cpp:672
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1/%2 [%3/%4] ero elektita (%5/%6)"
+msgstr[1] "%1/%2 [%3/%4] eroj elektitaj (%5/%6)"
 
 #: core/app/main/digikamapp.cpp:681
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1/%2 ero elektita. Kun grupigitaj eroj: %3/%4"
+msgstr[1] "%1/%2 eroj elektitaj. Kun grupigitaj eroj: %3/%4"
 
 #: core/app/main/digikamapp.cpp:712
 #, kde-format
@@ -1490,7 +1490,7 @@ msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Vi elektis helan kolorskemon. Ni ŝanĝas al malhela piktograma temo. La "
+"Vi elektis helan kolorskemon. Ni ŝanĝas al malhela piktograma etoso. La "
 "piktograma etoso disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_config.cpp:111
@@ -1500,7 +1500,7 @@ msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
-"Vi elektis malhelan kolorskemon. Ni ŝanĝas al hela piktograma temo. La "
+"Vi elektis malhelan kolorskemon. Ni ŝanĝas al hela piktograma etoso. La "
 "piktograma etoso disponeblas post rekomenco de digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
@@ -2157,7 +2157,7 @@ msgstr "Montri Thumbbar"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
-msgstr "Elzomi"
+msgstr "Zomi al 100%"
 
 #: core/app/main/digikamapp_setup.cpp:758
 #, kde-format
@@ -2736,12 +2736,7 @@ msgid "All supported files (%1)"
 msgstr "Ĉiuj subtenataj dosieroj (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2751,18 +2746,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reago: %2\n"
+"Dokumentado: %3\n"
 "\n"
-"Konstrua dato: %3 (celo: %4)"
+"Konstrua dato: %4 (celo: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2774,10 +2763,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Reago: %2\n"
+"Dokumentado: %3\n"
 "\n"
-"Konstrua dato: %3 (celo: %4)\n"
-"Revizio: %5\n"
-"Branĉo: %6"
+"Konstrua dato: %4 (celo: %5)\n"
+"Revizio: %6\n"
+"Branĉo: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3307,6 +3297,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadatenoj: aldonu novajn opciojn por konservi kaj ŝargi agordajn profilojn "
+"en Altnivela Metadatum-Agorda Panelo."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
@@ -3406,11 +3398,13 @@ msgstr "Permesi uzi la agordojn de Ĉiea aŭ Proprigita Bildkvalita Ordigo ĉie.
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Aldoni agordojn de Piktograma Vido por agordi la videblecon de Etikedoj "
+"super bildetoj."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
-msgstr ""
+msgstr "Aldoni subtenon por float16 (duone float) bildoj en la TIFF Loader."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3472,6 +3466,8 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Ĝisdatigi G'MIC-Qt-ilon al lasta versio 3.2.2 kaj finpretigi MacOS-pordon "
+"kaj plibonigi stabilecon de kromaĵo."
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
@@ -3514,16 +3510,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Kelkaj el la novaj funkcioj en ĉi tiu eldono de digiKam inkluzivas (kompare "
-"kun digiKam 6.x):"
+"kun digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -4768,7 +4761,7 @@ msgid ""
 msgstr ""
 "<para>Ĉi tiu ilo de Batch Queue Manager povas konverti bildajn datumojn al "
 "AVIF-formato.</para><para>AV1 Image File Format estas "
-"bilddosierformatospecifo por stoki bildojn aŭ bildsekvencojn kunpremitajn "
+"bilddosierformatospecifo por konservi bildojn aŭ bildsekvencojn kunpremitajn "
 "per AV1 en la ISOBMFF-ujoformato.</para> para><para>Vidu detalojn pri ĉi tiu "
 "formato de <a href='https://en.wikipedia.org/wiki/AVIF'>ĉi tiu paĝo</a>.</"
 "para>"
@@ -4830,10 +4823,10 @@ msgstr ""
 "HEIF.</para><para>Alta Efikeca Bilda Dosiera Formato (HEIF), ankaŭ konata "
 "kiel Alta Efikeca Bilda Kodigo (HEIC), estas dosierformato por individuaj "
 "bildoj. kaj bildsekvencoj. Ĝi estis evoluigita de la Moving Picture Experts "
-"Group (MPEG) kaj ĝi asertas, ke duoble pli da informoj povas esti stokitaj "
-"en HEIF-bildo ol en JPEG-bildo de la sama grandeco, rezultigante pli "
-"bonkvalitan bildon. HEIF ankaŭ subtenas animacion, kaj kapablas konservi pli "
-"da informoj ol vigla GIF je malgranda frakcio de la grandeco.</"
+"Group (MPEG) kaj ĝi asertas, ke duoble pli da informoj povas esti "
+"konservitaj en HEIF-bildo ol en JPEG-bildo de la sama grandeco, rezultigante "
+"pli bonkvalitan bildon. HEIF ankaŭ subtenas animacion, kaj kapablas konservi "
+"pli da informoj ol vigla GIF je malgranda frakcio de la grandeco.</"
 "para><para>Vidu <a href='https://en.wikipedia.org/wiki/"
 "High_Efficiency_Image_File_Format.'>Altefikeca Bilddosiera Formato</a> por "
 "detaloj.</para>"
@@ -5022,9 +5015,10 @@ msgid ""
 msgstr ""
 "<para>Ĉi tiu ilo de Batch Queue Manager povas konverti bildojn al formato "
 "TIFF.</para><para>La Tagged Image File Format estas komputila dosierformato "
-"por stoki rastrumajn grafikajn bildojn, populara inter grafikaj artistoj, la "
-"eldonindustrio kaj fotistoj. .</para><para>Vidu detalojn pri ĉi tiu formato "
-"de <a href='https://en.wikipedia.org/wiki/TIFF'>ĉi tiu paĝo</a>.</para>"
+"por konservi rastrumajn grafikajn bildojn, populara inter grafikaj artistoj, "
+"la eldonindustrio kaj fotistoj. .</para><para>Vidu detalojn pri ĉi tiu "
+"formato de <a href='https://en.wikipedia.org/wiki/TIFF'>ĉi tiu paĝo</a>.</"
+"para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
 #, kde-format
@@ -5140,7 +5134,7 @@ msgstr "Uzanta Skripto: Malsukcesis komenci skripton."
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr "Uzanta Skripto: Skriptoprocezo kraŝis."
+msgstr "Uzanta Skripto: Skriptoprocezo paneis."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
@@ -5397,7 +5391,7 @@ msgstr "Sistema Ripeto"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
 #, kde-format
 msgid "Random Repetition"
-msgstr ""
+msgstr "Hazarda Ripeto"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
@@ -5766,7 +5760,7 @@ msgstr "Ruĝa Okula Korekto"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
-msgstr "Ilo por aŭtomate detekti kaj korekti ruĝan okulan efikon"
+msgstr "Ilo por aŭtomate detekti kaj korekti ruĝ-okulan efikon"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
 #, kde-kuit-format
@@ -5775,8 +5769,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
 msgstr ""
-"<para>Ĉi tiu ilo de Batch Queue Manager povas redukti ruĝan okulan efikon "
-"sur bildoj.</para>"
+"<para>Ĉi tiu ilo de Batch Queue Manager povas redukti ruĝ-okulan efikon sur "
+"bildoj.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
@@ -6292,7 +6286,7 @@ msgstr "Traduki metadatumojn"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
-msgstr "Ilo por traduki ŝnurojn el bildaj metadatenoj"
+msgstr "Ilo por traduki ĉenojn el bildaj metadatenoj"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
 #, kde-kuit-format
@@ -6412,43 +6406,43 @@ msgstr "Antaŭdifinita Longo:"
 #, kde-format
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Eta (1 rastrumero)"
+msgstr[1] "Eta (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:153
 #, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Malgranda (1 rastrumero)"
+msgstr[1] "Malgranda (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:154
 #, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Meza (1 rastrumero)"
+msgstr[1] "Meza (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:155
 #, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Granda (1 rastrumero)"
+msgstr[1] "Granda (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:156
 #, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Grandega (1 rastrumero)"
+msgstr[1] "Grandega (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:157
 #, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Enorma (1 rastrumero)"
+msgstr[1] "Enorma (%1 rastrumeroj)"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:159
 #, kde-format
@@ -6637,7 +6631,7 @@ msgstr ""
 "konata kiel Alta Efikeca Bilda Kodigo (HEIC), estas dosierformato por "
 "individuaj bildoj kaj bildsekvencoj. Ĝi estis evoluigita de la Moving "
 "Picture Experts Group (MPEG) kaj ĝi asertas, ke duoble pli da informoj povas "
-"esti stokitaj en HEIF-bildo ol en JPEG-bildo de la sama grandeco, "
+"esti konservitaj en HEIF-bildo ol en JPEG-bildo de la sama grandeco, "
 "rezultigante pli bonan kvalitan bildon. HEIF ankaŭ subtenas animacion, kaj "
 "kapablas konservi pli da informoj ol vigla GIF je malgranda frakcio de la "
 "grandeco.</para><para>Kodigo HEIC rilatas al laŭvola libde265-kodeko. %1</"
@@ -6850,7 +6844,7 @@ msgstr ""
 "Libjpeg-kodeko.</para><para>Joint Photographic Experts Group (JPEG) estas "
 "ofte uzata metodo de perdkunpremo por ciferecaj bildoj, precipe por tiuj "
 "bildoj produktitaj per cifereca fotado. . La grado de kunpremado povas esti "
-"ĝustigita, permesante elekteblan kompromison inter stokadogrando kaj "
+"ĝustigita, permesante elekteblan kompromison inter konservadogrando kaj "
 "bildkvalito.</para><para>Vidu <a href='https://en.wikipedia.org/wiki/"
 "JPEG'>Komunaj Fotografaj Fakuloj. Grupdokumentado</a> por detaloj.</para>"
 
@@ -7250,10 +7244,10 @@ msgstr ""
 "kaj tial ne pretas esti presitaj aŭ redaktitaj per bitmapa grafikredaktilo. "
 "RAW estas prilaboritaj per kruda transformilo en larĝa gamo interna "
 "kolorspaco kie precizaj alĝustigoj povas esti faritaj antaŭ konvertiĝo al "
-"TIFF aŭ JPEG por stokado, presado, aŭ plia manipulado. Ĉi tio ofte kodas la "
-"bildon en aparato-dependa kolorspaco.</para><para>Vidu <a href='https://en."
-"wikipedia.org/wiki/Raw_image_format'>dokumentado pri Kruda Bilda Dosiero</a> "
-"por detaloj.</para>"
+"TIFF aŭ JPEG por konservado, presado, aŭ plia manipulado. Ĉi tio ofte kodas "
+"la bildon en aparato-dependa kolorspaco.</para><para>Vidu <a href='https://"
+"en.wikipedia.org/wiki/Raw_image_format'>dokumentado pri Kruda Bilda Dosiero</"
+"a> por detaloj.</para>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
 #, kde-format
@@ -7304,9 +7298,9 @@ msgid ""
 msgstr ""
 "<para>Tiu ĉi kromaĵo permesas al uzantoj ŝargi kaj konservi bildon per "
 "Libtiff-kodeko.</para><para>Tagged Image File Format, mallongigita TIFF aŭ "
-"TIF, estas komputila dosierformato por stoki rastrumajn grafikajn bildojn, "
-"populara inter grafikaj artistoj, la eldonindustrio, kaj fotistoj. TIFF "
-"estas vaste subtenata per skanado, faksado, teksttraktado, optika "
+"TIF, estas komputila dosierformato por konservi rastrumajn grafikajn "
+"bildojn, populara inter grafikaj artistoj, la eldonindustrio, kaj fotistoj. "
+"TIFF estas vaste subtenata per skanado, faksado, teksttraktado, optika "
 "signorekono, bildmanipulado, labortabla eldonado kaj paĝ-enpaĝigaj aplikaĵoj."
 "</para><para>Vidu <a href='https://en.wikipedia.org /wiki/TIFF'>Etikedita "
 "Bilda Dosiera Formato dokumentaro</a> por detaloj.</para>"
@@ -8618,7 +8612,7 @@ msgstr "Ruĝa Okulo"
 msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr ""
-"Ĉi tiu ilo de Bilda Redaktilo povas redukti ruĝan okulan efikon sur bildo."
+"Ĉi tiu ilo de Bilda Redaktilo povas redukti ruĝ-okulan efikon sur bildo."
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, kde-format
@@ -8668,7 +8662,7 @@ msgstr ""
 "artefaktojn kiel sensilbruon.<br/><b>Malduktu JPEG. Artefaktoj</b>: reduktu "
 "grandajn bildajn artefaktojn, kiel JPEG-kunpreman mozaikon.<br/><b>Reduki "
 "teksturigon</b>: reduktu bildajn artefaktojn, kiel paperan teksturon, aŭ "
-"Moire-ŝablonojn sur skanitaj bildoj.<br /><b>Persona</b>: Metas agordojn al "
+"Moire-ŝablonojn sur skanitaj bildoj.<br /><b>Propra</b>: Metas agordojn al "
 "plej oftaj valoroj, plene agordeblaj.</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:339
@@ -11075,8 +11069,8 @@ msgstr "Ŝargante metadatenojn -"
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi havas 1 modifitan bildon."
+msgstr[1] "Vi havas %1 modifitajn bildojn."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
 #, kde-format
@@ -11240,8 +11234,8 @@ msgstr ""
 "Ĉi tiu ilo povas redakti GPSajn datumojn, permane aŭ sur mapo. Inversa "
 "geokodigo ankaŭ haveblas per retservoj.\n"
 "\n"
-"Ĉi tiu ilo ankaŭ havas eksportfunkcion al KML por stoki mapspurojn en Google-"
-"formato.\n"
+"Ĉi tiu ilo ankaŭ havas eksportfunkcion al KML por konservi mapspurojn en "
+"Google-formato.\n"
 "\n"
 "Fine, ĉi tiu ilo kapablas legi GPS-spuron de aparato por sinkronigi. geo-"
 "loko de eroj se vi fotilo ne havas enigitan GPS-aparaton."
@@ -11701,8 +11695,8 @@ msgstr "OSM"
 #, kde-format
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 bildo kaptita al '%2'"
+msgstr[1] "%1 bildoj kaptitaj al '%2'"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:162
 #, kde-format
@@ -11771,14 +11765,14 @@ msgstr ""
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 bildo movita al '%2'"
+msgstr[1] "%1 bildoj movitaj al '%2'"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
-msgstr ""
+msgstr "Metadaten-Redaktilo"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:113
 #, kde-format
@@ -11846,8 +11840,8 @@ msgstr "Ĉi tiu kampo estas limigita al:"
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<p>1 signo.</p>"
+msgstr[1] "<p>%1 signoj.</p>"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
@@ -11860,8 +11854,8 @@ msgstr[1] ""
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "restas %1 signo"
+msgstr[1] "restas %1 signoj"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
@@ -11949,7 +11943,7 @@ msgstr "Rezultoj Listoj & Tabelo"
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
-msgstr "Flanka trinkejo & Subtenaj informoj"
+msgstr "Flankbreto & Subtenaj informoj"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
@@ -12019,8 +12013,8 @@ msgstr "Ĉi tiu kampo estas limigita al"
 #, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 signo."
+msgstr[1] "%1 signoj."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
 #, kde-format
@@ -15264,7 +15258,7 @@ msgstr "Rezultoj Listoj & Tabelo"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
-msgstr "Flanka trinkejo & Subtenaj informoj"
+msgstr "Flankbreto & Subtenaj informoj"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
 #, kde-format
@@ -16371,7 +16365,7 @@ msgstr "Ekspona Miksado"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Save"
-msgstr "&Savi"
+msgstr "Kon&servi"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
 #, kde-format
@@ -16813,13 +16807,13 @@ msgstr "Ne eblis krei dosierujon '%1'"
 #, kde-format
 msgctxt "@info"
 msgid "Copying theme"
-msgstr "Kopiante temon"
+msgstr "Kopiante etoson"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:144
 #, kde-format
 msgctxt "@info"
 msgid "Could not copy theme"
-msgstr "Ne eblis kopii la temon"
+msgstr "Ne eblis kopii la etoson"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:153
 #, kde-format
@@ -17045,8 +17039,9 @@ msgid ""
 msgstr ""
 "<p>Ĉi tiu ilo permesas al uzantoj retroprocezi erojn (kiel regrandigi) antaŭ "
 "krei html-galerion konforma al W3C.</p><p>Eroj por prilabori povas esti "
-"elektitaj unuope aŭ grupe per elekto de albumoj.</p><p>Tema HTML-ŝablono kun "
-"malsama aranĝo povas esti uzata por kunmeti dosierojn en galerio.</p>"
+"elektitaj unuope aŭ grupe per elekto de albumoj.</p><p>Etosigebla HTML-"
+"ŝablono kun malsama aranĝo povas esti uzata por kunmeti dosierojn en galerio."
+"</p>"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
@@ -17167,7 +17162,7 @@ msgstr ""
 "gvidos vin rapide eksporti</p><p></p><p>viaj bildoj kiel malgranda senmova "
 "HTML-fotogalerio.</p><p>Ĉi tiu ilo plene konformas kun <a href='https://en."
 "wikipedia.org/wiki/HTML'>HTML kaj CSS normoj</a></p><p>kaj la eligo povas "
-"esti personecigita per bela temo.</p></qt>"
+"esti personecigita per bela etoso.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
@@ -17239,7 +17234,7 @@ msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
 "different parameters are available."
 msgstr ""
-"En ĉi tiu paĝo, vi povas ŝanĝi iujn etoparametrojn. Depende de la temo, "
+"En ĉi tiu paĝo, vi povas ŝanĝi iujn etoparametrojn. Depende de la etoso, "
 "malsamaj parametroj estas disponeblaj."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:145
@@ -17283,12 +17278,12 @@ msgstr "Elekto de Eroj"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
 #, kde-format
 msgid "Theme Selection"
-msgstr "Temo Elekto"
+msgstr "Elekto de Etoso"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:93
 #, kde-format
 msgid "Theme Parameters"
-msgstr "Temaj Parametroj"
+msgstr "Etosaj Parametroj"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:95
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
@@ -17475,9 +17470,9 @@ msgid ""
 "Note: depending of the network features and the configuration, the delay to "
 "discover the server on client devices can take a while."
 msgstr ""
-"La amaskomunikila servilo permesas kunhavigi erojn per la loka reto uzante "
-"%1 normo kaj %2 protokolo. Multaj specoj de elektronikaj aparatoj povas "
-"subteni DLNA, kiel tablojdoj, poŝtelefonoj, televidilo, ktp.\n"
+"La datumportila servilo permesas kunhavigi erojn per la loka reto uzante %1 "
+"normo kaj %2 protokolo. Multaj specoj de elektronikaj aparatoj povas subteni "
+"DLNA, kiel tablojdoj, poŝtelefonoj, televidilo, ktp.\n"
 "\n"
 "Noto: depende de la retaj funkcioj kaj la agordo, la prokrasto por malkovri "
 "la servilon sur klientaj aparatoj povas daŭri iom da tempo."
@@ -17499,8 +17494,8 @@ msgid ""
 "The items list to share has changed. Do you want to start now the media "
 "server with this contents?"
 msgstr ""
-"La listo de eroj por kundividi ŝanĝiĝis. Ĉu vi volas komenci nun la "
-"amaskomunikilaron kun ĉi tiu enhavo?"
+"La listo de eroj por kundividi ŝanĝiĝis. Ĉu vi volas lanĉi nun la "
+"datumportilan servilon kun ĉi tiu enhavo?"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:264
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
@@ -17515,8 +17510,8 @@ msgstr "Servilo funkcias"
 msgctxt "@info"
 msgid "1 album shared"
 msgid_plural "%1 albums shared"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 albumo kundividita"
+msgstr[1] "%1 albumoj kundividitaj"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
@@ -17524,8 +17519,8 @@ msgstr[1] ""
 msgctxt "@info"
 msgid "1 item shared"
 msgid_plural "%1 items shared"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 objekto kundividita"
+msgstr[1] "%1 objektoj kundividitaj"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:268
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
@@ -17663,7 +17658,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Server Port:"
-msgstr "Servila Haveno:"
+msgstr "Servila Pordo:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:65
 #, kde-format
@@ -17699,7 +17694,7 @@ msgstr ""
 "klientojn esti konektitaj sen plia modulo. Plej multaj ĉefaj retumiloj kaj "
 "ludantoj subtenas MJPEG-fluon. Por aliri al fluado de via retumilo, simple "
 "uzu http://adreso:porto kiel url, kun adreso la MJPEG-servilo IP, kaj port "
-"la servila haveno agordita en ĉi tiu agorda dialogo."
+"la servila pordo agordita en ĉi tiu agorda dialogo."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
 #, kde-format
@@ -17964,7 +17959,7 @@ msgstr "Montri bildan takson"
 #, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr ""
+msgstr "Montri la bildrangigon de digiKam ĉe la fundo de la ekrano."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
 #, kde-format
@@ -18029,9 +18024,8 @@ msgstr ""
 "normo, kiu permesas retajn klientojn esti konektitaj sen plia modulo. La "
 "plej multaj ĉefaj retumiloj kaj ludantoj subtenas MJPEG-fluon.</p><p>Por "
 "aliri al fluado de via retumilo, uzu http://address:port kiel url, kun "
-"adreso la MJPEG-adreso, kaj port la MJPEG-haveno agordita en agordo. "
-"dialogo. Pli ol unu komputilo povas esti konektita al la MJPEG-servilo "
-"samtempe.</p>"
+"adreso la MJPEG-adreso, kaj port la MJPEG-pordo agordita en agordo. dialogo. "
+"Pli ol unu komputilo povas esti konektita al la MJPEG-servilo samtempe.</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -20785,8 +20779,8 @@ msgstr "Forigi la ludliston."
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 trako [%2]"
+msgstr[1] "%1 trakoj [%2]"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
 #, kde-format
@@ -21132,15 +21126,15 @@ msgstr "Fona koloro:"
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 bildo [%2]"
+msgstr[1] "%1 bildoj [%2]"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 bildo"
+msgstr[1] "%1 bildoj"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #, kde-format
@@ -22475,7 +22469,7 @@ msgstr "Ĉi tio estas la listo de eroj por kopii al la specifita celo."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Eksporti al Loka Stokado"
+msgstr "Eksporti al Loka konservejo"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
@@ -22516,19 +22510,19 @@ msgstr "Dosiera Kopio"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export items to a local storage"
-msgstr "Ilo por eksporti erojn al loka stokado"
+msgstr "Ilo por eksporti erojn al loka konservejo"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
-msgstr "Ĉi tiu ilo permesas al uzantoj eksporti erojn al loka stokado."
+msgstr "Ĉi tiu ilo permesas al uzantoj eksporti erojn al loka konservejo."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "Eksporti al loka stokado..."
+msgstr "Eksporti al loka konservejo..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
@@ -22570,7 +22564,7 @@ msgstr "<i>ne elektita</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Eksporti al Fora Stokado"
+msgstr "Eksporti al Fora konservejo"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
 #, kde-format
@@ -22607,7 +22601,7 @@ msgstr "Elekti Erojn por Importi..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "Importi el Fora Stokado"
+msgstr "Importi el Fora konservejo"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
 #, kde-format
@@ -22665,13 +22659,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Eksporti al fora stokado..."
+msgstr "Eksporti al fora konservejo..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
-msgstr "Importi el fora stokado..."
+msgstr "Importi el fora konservejo..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
@@ -22765,7 +22759,7 @@ msgstr "Eksporti al &Flickr..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Enigi Flickr-ensalutan URL"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -22773,6 +22767,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Kopiu la plenan URL el la ekstera retumilo, kiu enhavas la enskribon "
+"\"oauth_token\":"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -23375,12 +23371,12 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gswidget.cpp:61
 #, kde-format
 msgid "Combined String"
-msgstr "Kombinita Ŝnuro"
+msgstr "Kombinita ĉeno"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:62
 #, kde-format
 msgid "Build a combined tag string."
-msgstr "Konstrui kombinitan etikedŝnuron."
+msgstr "Konstrui kombinitan etikedĉenon."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
 #, kde-format
@@ -24232,7 +24228,7 @@ msgstr "<i>neniu valida identigo</i>"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:762
 #, kde-format
 msgid "iNaturalist Export"
-msgstr ""
+msgstr "iNaturalist Eksporto"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
@@ -25258,7 +25254,7 @@ msgstr "Alŝutante dosieron %1"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Malsukcesis alŝuti amaskomunikilaron en fora Piwigo."
+msgstr "Malsukcesis alŝuti aŭdvidaĵaron en foran Piwigo."
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
@@ -25377,12 +25373,12 @@ msgstr "Nesubtenata dosiera etendo"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, kde-format
 msgid "Logging in %v%"
-msgstr "Ensaluto %v%"
+msgstr "Ensalutante %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:301
 #, kde-format
 msgid "Logging out %v%"
-msgstr "Elsaluti %v%"
+msgstr "Elsalutante %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:302
 #, kde-format
@@ -27372,29 +27368,29 @@ msgstr "Neniu Etikedo Elektita"
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 etikedo elektita"
+msgstr[1] "%1 etikedoj elektitaj"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:261
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
-msgstr[0] "1 Albumo elektita"
-msgstr[1] "%1 Albumoj elektitaj"
+msgstr[0] "1 albumo elektita"
+msgstr[1] "%1 albumoj elektitaj"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 etikedo ekskludita"
+msgstr[1] "%1 etikedoj ekskluditaj"
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 albumo ekskludita"
+msgstr[1] "%1 albumoj ekskluditaj"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
 #, kde-format
@@ -27515,7 +27511,7 @@ msgstr "Jam ekzistas kolekto enhavanta la dosierujon \"%1\""
 #: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
 msgid "The storage media can be uniquely identified."
-msgstr "La stokadmedioj povas esti unike identigitaj."
+msgstr "La datumportilo povas esti unike identigitaj."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:296
 #, kde-format
@@ -27556,7 +27552,7 @@ msgid ""
 "This is a removable storage medium that will be identified by its label "
 "(\"%1\")"
 msgstr ""
-"Ĉi tio estas forprenebla stokado, kiu estos identigita per sia etikedo "
+"Ĉi tio estas forprenebla datumportilo, kiu estos identigita per sia etikedo "
 "(\"%1\")"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:381
@@ -27596,7 +27592,7 @@ msgid ""
 "Your network storage must be set up to be accessible as files and folders "
 "through the operating system. digiKam does not support remote URLs."
 msgstr ""
-"Via retstokado devas esti agordita por esti alirebla kiel dosieroj kaj "
+"Via retkonservejo devas esti agordita por esti alirebla kiel dosieroj kaj "
 "dosierujoj per la operaciumo. digiKam ne subtenas forajn URL-ojn."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:465
@@ -27620,7 +27616,7 @@ msgid ""
 "\"relative path\" on harddisk partition with \"UUID\"\n"
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
-"\"relativa vojo\" sur diskdisko kun \"UUID\"\n"
+"\"relativa vojo\" sur fiksdisko kun \"UUID\"\n"
 "Dosierujo \"%1\" sur la volumo kun la id \"%2\""
 
 #: core/libs/database/collection/collectionmanager_p.cpp:439
@@ -28086,8 +28082,8 @@ msgstr "RAW bilddosiero (%1)"
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 vizaĝo"
+msgstr[1] "%1 vizaĝoj"
 
 #: core/libs/database/models/itemfiltermodel.cpp:389
 #, kde-format
@@ -28484,9 +28480,9 @@ msgid ""
 "items.</p>"
 msgstr ""
 "<p>Elektu ĉi tie la tipon de datumbaza backend.</p><p><b>SQlite</b> backend "
-"estas por loka datumbaza stokado kun malgrandaj aŭ mezaj kolektograndecoj. "
-"Ĝi estas la defaŭlta kaj rekomendita backend por kolektoj kun malpli ol 100K "
-"eroj.</p>"
+"estas por loka datumbaza konservejo kun malgrandaj aŭ mezaj "
+"kolektograndecoj. Ĝi estas la defaŭlta kaj rekomendita backend por kolektoj "
+"kun malpli ol 100K eroj.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:80
 #, kde-format
@@ -28495,7 +28491,7 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
-"<p><b>MySQL Interna</b> backend estas por loka datumbaza stokado kun "
+"<p><b>MySQL Interna</b> backend estas por loka datumbaza konservejo kun "
 "grandegaj kolektograndecoj. Ĉi tiu backend estas rekomendita por lokaj "
 "kolektoj kun pli ol 100K eroj.</p>"
 
@@ -28507,7 +28503,7 @@ msgid ""
 "collection sizes with more than 100K items.</p>"
 msgstr ""
 "<p><b>MySQL-Servilo</b> backend estas pli fortika solvo precipe por fora kaj "
-"komuna datumbaza stokado. Ankaŭ estas pli efike administri grandegajn "
+"komuna datumbaza konservejo. Ankaŭ estas pli efike administri grandegajn "
 "kolektojn kun pli ol 100K eroj.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
@@ -28525,13 +28521,13 @@ msgid ""
 msgstr ""
 "<p>Fiksu ĉi tie la lokon kie la datumbazaj dosieroj estos konservitaj en via "
 "sistemo. Estas kvar datumbazoj: unu por ĉiuj kolekto-propraĵoj, unu por "
-"stoki kunpremitajn bildetojn, unu por stoki vizaĝ-rekonajn metadatumojn, kaj "
-"unu por stoki similajn fingrospurojn.<br/>Skriba aliro necesas por povi "
-"redakti bildajn trajtojn.</p><p>Datumbazoj estas digiKam-kernaj motoroj. "
-"Zorgu uzi lokon gastigita de rapida aparataro (ekz. SSD aŭ NVMe) kun sufiĉe "
-"libera spaco precipe por bildetoj datumbazo.</p><p>Noto: fora dosiersistemo "
-"kiel NFS, ne povas esti uzata ĉi tie. Pro kaŭzoj de rendimento, ankaŭ "
-"rekomendas ne uzi retajn konservadojn.</p><p></p>"
+"konservi kunpremitajn bildetojn, unu por stoki vizaĝ-rekonajn metadatumojn, "
+"kaj unu por konservi similajn fingrospurojn.<br/>Skriba aliro necesas por "
+"povi redakti bildajn trajtojn.</p><p>Datumbazoj estas digiKam-kernaj "
+"motoroj. Zorgu uzi lokon gastigita de rapida aparataro (ekz. SSD aŭ NVMe) "
+"kun sufiĉe libera spaco precipe por bildetoj datumbazo.</p><p>Noto: fora "
+"dosiersistemo kiel NFS, ne povas esti uzata ĉi tie. Pro kaŭzoj de "
+"rendimento, ankaŭ rekomendas ne uzi retajn konservadojn.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -28560,7 +28556,7 @@ msgstr ""
 "Write-Ahead Log estas reĝimo por uzi rul-antaŭan ĵurnalon kiu registras "
 "transakciojn kiuj estis faritaj sed ankoraŭ ne aplikitaj al la datumbazoj. "
 "Ĝi uzas helpan ĵurnaligitan dosieron por gastigi strukturojn por reakigaj "
-"transakcioj dum kraŝo. La ŝanĝoj unue estas registritaj en la protokolo, "
+"transakcioj dum paneo. La ŝanĝoj unue estas registritaj en la protokolo, "
 "antaŭ ol la ŝanĝoj estas skribitaj al la datumbazo. Ĉi tio igis datumbazajn "
 "petojn atomaj kaj fortikaj en ampleksaj kaj kritikaj uzkazoj."
 
@@ -28662,7 +28658,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:212
 #, kde-format
 msgid "Host Port:"
-msgstr "Gastiga Haveno:"
+msgstr "Gastiga Pordo:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
 #, kde-format
@@ -28671,7 +28667,7 @@ msgid ""
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
 "Agordi la gastigan komputilpordon.\n"
-"Kutime, MySQL-servilo uzas la havenon numeron 3306 defaŭlte"
+"Kutime, MySQL-servilo uzas la pordon numeron 3306 defaŭlte"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
 #, kde-format
@@ -28703,7 +28699,7 @@ msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
-"La kerna datumbazo estas plumba digiKam-ujo uzata por stoki\n"
+"La kerna datumbazo estas plumba digiKam-ujo uzata por konservi\n"
 "albumojn, erojn kaj serĉi metadatumojn."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
@@ -28862,12 +28858,12 @@ msgstr ""
 "al fora <a href=\"https://en.wikipedia.org/wiki/MySQL\">Mysql-datumbaza "
 "servilo</a> (aŭ <a href=\"https://en.wikipedia.org/wiki/MariaDB\">MariaDB</"
 "a>) per reto. Kiel ĉe Sqlite aŭ MySQL interna servilo, 3 datumbazoj estos "
-"stokitaj sur la fora servilo: unu por ĉiuj kolektoj propraĵoj, unu por stoki "
-"kunpremitajn bildetojn, kaj unu por stoki vizaĝrekonajn metadatenojn.</"
-"p><p>Malkiel internaj Sqlite aŭ MySQL. servilo, vi povas agordi la "
-"datumbaznomojn por simpligi viajn sekurkopiojn.</p><p>Datumbazoj estas "
-"digiKam-kernaj motoroj. Por malhelpi rendimentajn problemojn, zorgu uzi "
-"rapidan retan ligon inter la kliento kaj la servilaj komputiloj. Oni "
+"konservitaj sur la fora servilo: unu por ĉiuj kolektoj propraĵoj, unu por "
+"konservi kunpremitajn bildetojn, kaj unu por konservi vizaĝrekonajn "
+"metadatenojn.</p><p>Malkiel internaj Sqlite aŭ MySQL internservilo, vi povas "
+"agordi la datumbaznomojn por simpligi viajn sekurkopiojn.</p><p>Datumbazoj "
+"estas digiKam-kernaj motoroj. Por malhelpi rendimentajn problemojn, zorgu "
+"uzi rapidan retan ligon inter la kliento kaj la servilaj komputiloj. Oni "
 "rekomendas ankaŭ gastigi datumbazajn dosierojn sur rapida aparataro (kiel <a "
 "href=\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a>) kun sufiĉe "
 "da libera spaco, precipe por bildetoj-datumbazo, eĉ se datumoj estas "
@@ -29084,7 +29080,7 @@ msgstr "Gastiganta Nomo"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
-msgstr "Gastiga Haveno"
+msgstr "Gastiga Pordo"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
@@ -29243,8 +29239,8 @@ msgstr "Ĉi tiuj aĵoj estos movitaj al Rubujo."
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>1</b> ero elektita."
+msgstr[1] "<b>%1</b> eroj elektitaj."
 
 #: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
@@ -29261,8 +29257,8 @@ msgstr "Ĉi tiuj albumoj estos movitaj al Rubujo."
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<b>1</b> albumo elektita."
+msgstr[1] "<b>%1</b> albumoj elektitaj."
 
 #: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
@@ -29615,7 +29611,7 @@ msgstr "Priskribo"
 #, kde-format
 msgctxt "@item: device status"
 msgid "States"
-msgstr "ŝtatoj"
+msgstr "Statoj"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:294
 #, kde-format
@@ -38216,7 +38212,7 @@ msgstr ""
 "strong='true'>Neniu</emphasis> : neniu eniga kolorprofilo estas uzata dum "
 "RAW-malkodado.</item><item><emphasis strong='true'>Enigita</emphasis>: uzu "
 "enigitan kolorprofilon el RAW-dosiero, se ĝi ekzistas.</item><item "
-"><emphasis strong='true'>Persona</emphasis>: uzu propran enigokolorspacan "
+"><emphasis strong='true'>Propra</emphasis>: uzu propran enigokolorspacan "
 "profilon.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:603
@@ -38303,7 +38299,7 @@ msgstr ""
 "kolorspaco.</item><item><emphasis strong='true'>Por-Foto</emphasis>: ĉi tiu "
 "kolorspaco estas RGB-kolorspaco, evoluigita de Kodak, kiu ofertas speciale "
 "grandan gamon desegnitan por uzo kun fotografaj eliroj en menso. </"
-"item><item><emphasis strong='true'>Persona</emphasis>: uzu propran eligan "
+"item><item><emphasis strong='true'>Propra</emphasis>: uzu propran eligan "
 "kolorspacan profilon.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:649
@@ -39298,8 +39294,8 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Enigu la Temon-Referencan Numeron ĉi tie. Provizas numeran kodon por indiki "
-"la Teman Nomon plus laŭvolajn Temajn kaj Temajn Detalojn en la lingvo de la "
+"Enigu la Tem-Referencan Numeron ĉi tie. Provizas numeran kodon por indiki la "
+"Teman Nomon plus laŭvolajn Temajn kaj Tem-Detalajn Nomojn en la lingvo de la "
 "servo. Subjekta Referenco estas nombro de la intervalo 01000000 ĝis 17999999 "
 "kaj reprezentas lingvosendependan internacian referencon al Subjekto. "
 "Subjekto estas identigita per sia Referenca Numero kaj ekvivalentaj Nomoj "
@@ -39313,8 +39309,8 @@ msgid ""
 "Enter the Subject Name here. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Enigu la Temon-Nomon ĉi tie. La angla lingvo estas uzata se vi elektis "
-"norman referenckodon XMP/NAA."
+"Enigu la Temo-Nomon ĉi tie. La angla lingvo estas uzata se vi elektis norman "
+"referenckodon XMP/NAA."
 
 #: core/libs/template/subjectedit.cpp:70
 #, kde-format
@@ -39331,7 +39327,7 @@ msgid ""
 "Enter the Subject Detail Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Enigu la Temon Detalan Nomon ĉi tie. La angla lingvo estas uzata se vi "
+"Enigu la Temo-Detalan Nomon ĉi tie. La angla lingvo estas uzata se vi "
 "elektis norman referenckodon XMP/NAA."
 
 #: core/libs/template/templatelist.cpp:72
@@ -41092,7 +41088,7 @@ msgstr "OpenGL-tipo"
 #: core/libs/video/qtav/config/MiscPage.cpp:101
 #, kde-format
 msgid "Windows only"
-msgstr "Vindozo nur"
+msgstr "Vindozo nure"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:102
 #, kde-format
@@ -41213,7 +41209,7 @@ msgstr "serĉi eraron"
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1308
 #, kde-format
 msgid "failed to open media"
-msgstr "malsukcesis malfermi amaskomunikilaron"
+msgstr "malsukcesis malfermi datumportilon"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1334
 #, kde-format
@@ -41669,7 +41665,7 @@ msgstr "Oblikva"
 #: core/libs/widgets/fonts/dfontselect.cpp:81
 #, kde-format
 msgid "System Font"
-msgstr "Sistemo Tiparo"
+msgstr "Sistema Tiparo"
 
 #: core/libs/widgets/fonts/dfontselect.cpp:82
 #, kde-format
@@ -42301,8 +42297,8 @@ msgid ""
 "Mentoring, Port web-service tools to OAuth, factoring web service tools, and "
 "port faces recognition engine to OpenCV neural network"
 msgstr ""
-"Mentorado, Port-retservaj iloj al OAuth, factoring-retservaj iloj, kaj "
-"havenvizaĝa rekonmotoro al OpenCV-neŭrala reto"
+"Mentorado, portado de retservaj iloj al OAuth, factoring-retservajn ilojn, "
+"kaj portado de vizaĝa rekonmotoro al OpenCV-neŭrala reto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:125
 #, kde-format
@@ -42342,7 +42338,7 @@ msgstr "Anjani Kumar"
 #: core/libs/widgets/mainview/daboutdata.cpp:151
 #, kde-format
 msgid "Port to Qt6,"
-msgstr "Haveno al Qt6,"
+msgstr "Portado al Qt6,"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:156
 #, kde-format
@@ -42442,7 +42438,7 @@ msgstr "Yiou Wang"
 #: core/libs/widgets/mainview/daboutdata.cpp:208
 #, kde-format
 msgid "Model/View Port of Image Editor Canvas"
-msgstr "Modelo/Vidhaveno de Bildredaktilo Kanvaso"
+msgstr "Modelo/Vidoporto de Bildredaktila Kanvaso"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:213
 #, kde-format
@@ -42524,7 +42520,7 @@ msgstr "Islamo Wazery"
 #: core/libs/widgets/mainview/daboutdata.cpp:256
 #, kde-format
 msgid "Model/View port of Import Tool and Mentoring"
-msgstr "Modelo/Vidhaveno de Importilo kaj Mentorado"
+msgstr "Model/Vida portado de Importilo kaj Mentorado"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:261
 #, kde-format
@@ -42554,7 +42550,7 @@ msgstr "Viktoro Dodon"
 #: core/libs/widgets/mainview/daboutdata.cpp:274
 #, kde-format
 msgid "XML based GUI port of tools"
-msgstr "XML-bazita GUI-haveno de iloj"
+msgstr "XML-bazita GUI-portado de iloj"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:279
 #, kde-format
@@ -42574,7 +42570,7 @@ msgstr "Ananta Palani"
 #: core/libs/widgets/mainview/daboutdata.cpp:288
 #, kde-format
 msgid "Windows Port and Release Manager"
-msgstr "Vindoza Haveno kaj Release Manager"
+msgstr "Vindoz-porto kaj Release Manager"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:293
 #, kde-format
@@ -42589,7 +42585,7 @@ msgstr "Patrick Spendrin"
 #: core/libs/widgets/mainview/daboutdata.cpp:299
 #, kde-format
 msgid "Developer and Windows port"
-msgstr "Programisto kaj Vindoza haveno"
+msgstr "Programisto kaj Vindoza porto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:304
 #, kde-format
@@ -42599,7 +42595,7 @@ msgstr "Francesco Riosa"
 #: core/libs/widgets/mainview/daboutdata.cpp:305
 #, kde-format
 msgid "LCMS2 library port"
-msgstr "LCMS2-biblioteka haveno"
+msgstr "LCMS2-biblioteka porto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:310
 #, kde-format
@@ -43441,7 +43437,7 @@ msgstr "Apple Bildaj Informoj"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:323
 #, kde-format
 msgid "Apple Property List"
-msgstr "Listo de Posedaĵoj de Apple"
+msgstr "Listo de Proprecoj de Apple"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:327
 #, kde-format
@@ -43533,7 +43529,7 @@ msgstr "Rawzor Bilda Informo"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:395
 #, kde-format
 msgid "Real Media/Video Information"
-msgstr "Reala Amaskomunikilaro/Video Informoj"
+msgstr "Reala Media/Video-Informoj"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:399
 #, kde-format
@@ -43788,7 +43784,7 @@ msgstr "Foto Informoj"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:59
 #, kde-format
 msgid "Global Positioning System"
-msgstr "Ĉiea Pozicia Sistemo"
+msgstr "Tutmonda Pozicia Sistemo"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:63
 #, kde-format
@@ -48649,8 +48645,7 @@ msgstr "Aldoni enhavon al redaktilo"
 #, kde-format
 msgctxt "@info"
 msgid "Enter the customized folder-view path or select from history"
-msgstr ""
-"Enigu la personecigitan dosierujon-vidan vojon aŭ elektu el la historio"
+msgstr "Enigu la personecigitan dosieruj-vidan vojon aŭ elektu el la historio"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:274
 #, kde-format
@@ -49237,7 +49232,7 @@ msgid ""
 "a standard used by most digital cameras today to store technical information "
 "(like aperture and shutter speed) about an image."
 msgstr ""
-"normo uzata de la plej multaj diĝitkameraoj hodiaŭ por stoki teknikajn "
+"normo uzata de la plej multaj diĝitkameraoj hodiaŭ por konservi teknikajn "
 "informojn (kiel aperturo kaj obturatoro) pri bildo."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:129
@@ -49248,7 +49243,7 @@ msgid ""
 "an older standard used in digital photography to store photographer "
 "information in images."
 msgstr ""
-"pli malnova normo uzita en cifereca fotarto por stoki fotistinformojn en "
+"pli malnova normo uzita en cifereca fotarto por konservi fotistinformojn en "
 "bildoj."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:135
@@ -49934,7 +49929,7 @@ msgid ""
 msgstr ""
 "\"Preferata Ero\" estas hierarkia eniro gastiganta altnivelajn trajtojn kiel "
 "dato, piktogramo, priskribo kaj bildlisto. \"Preferata Dosierujo\" estas "
-"simpla eniro en la hierarkio sen kroma posedaĵo."
+"simpla eniro en la hierarkio sen kroma propreco."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, kde-format
@@ -50562,7 +50557,7 @@ msgstr "Defaŭlta valoro..."
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:71
 #, kde-format
 msgid "Set a default value for empty strings"
-msgstr "Agordi defaŭltan valoron por malplenaj ŝnuroj"
+msgstr "Agordi defaŭltan valoron por malplenaj ĉenoj"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/fillmodifierdialogwidget.ui:19
@@ -50784,27 +50779,27 @@ msgstr "Grandeco de bildo de dosiero"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:58
 #, kde-format
 msgid "Format of the media file"
-msgstr "Formato de la amaskomunikila dosiero"
+msgstr "Formato de la datumportila dosiero"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:59
 #, kde-format
 msgid "Type of the media file"
-msgstr "Tipo de la amaskomunikila dosiero"
+msgstr "Tipo de la datumportila dosiero"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
 #, kde-format
 msgid "Rating of the media file"
-msgstr "Taksado de la amaskomunikila dosiero"
+msgstr "Taksado de la datumportila dosiero"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:61
 #, kde-format
 msgid "Height of the media file"
-msgstr "Alteco de la amaskomunikila dosiero"
+msgstr "Alteco de la datumportila dosiero"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
 #, kde-format
 msgid "Width of the media file"
-msgstr "Larĝo de la amaskomunikila dosiero"
+msgstr "Larĝo de la datumportila dosiero"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:63
 #, kde-format
@@ -51261,22 +51256,19 @@ msgstr ""
 "etendokonscia, ||f|| = dosierujo konscia, ||r|| = hazarda konscia)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Sinsekvo (persona komenco)"
+msgstr "Sekvencnumero (propra komenco) ||opcioj||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Sinsekvo (persona paŝo)"
+msgstr "Sekvencnumero (propra paŝo) ||opcioj||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Sinsekvo (persona komenco + paŝo)"
+msgstr "Sekvencnumero (propra komenco + paŝo) ||opcioj||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -51672,12 +51664,12 @@ msgstr ""
 #: core/utilities/firstrun/databasepage.cpp:53
 #, kde-format
 msgid "<b>Configure where you will store databases</b>"
-msgstr "<b>Agordu kie vi stokos datumbazojn</b>"
+msgstr "<b>Agordu kie vi konservos datumbazojn</b>"
 
 #: core/utilities/firstrun/metadatapage.cpp:55
 #, kde-format
 msgid "<b>Configure Metadata Storage to Files</b>"
-msgstr "<b>Agordu Metadatuman Stokadon al Dosieroj</b>"
+msgstr "<b>Agordu Metadatuman konservadon al Dosieroj</b>"
 
 #: core/utilities/firstrun/metadatapage.cpp:64
 #, kde-format
@@ -52489,7 +52481,7 @@ msgstr "Montri superrigardan mapon"
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:452
 #, kde-format
 msgid "Other Marble Themes"
-msgstr "Aliaj Marmoraj Temoj"
+msgstr "Aliaj Marble-Etosoj"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
 #, kde-format
@@ -52772,7 +52764,7 @@ msgid ""
 msgstr ""
 "Agordas la maksimuman tempodiferencon por interpoli GPX-dosierpunktojn al "
 "bildaj tempodatenoj. Se la tempodiferenco superas ĉi tiun agordon, neniu "
-"matĉo estos provita."
+"kongruo estos provita."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
@@ -52787,7 +52779,7 @@ msgid ""
 "attempted."
 msgstr ""
 "Agordas la maksimuman tempodiferencon de GPS-vojpunkto al la bilda tempo por "
-"esti egalita. Se la tempodiferenco superas ĉi tiun agordon, neniu matĉo "
+"esti egalita. Se la tempodiferenco superas ĉi tiun agordon, neniu kongruo "
 "estos provita."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
@@ -53813,7 +53805,7 @@ msgstr "Neniu profilo estas elektita."
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
-msgstr "Savi?"
+msgstr "Ĉu konservi?"
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:73
 #, kde-format
@@ -54969,7 +54961,7 @@ msgid ""
 "disk card readers.\n"
 "\n"
 msgstr ""
-"Ŝoforo \"Muntita Fotilo\" por USB/IEEE1394 amasa stokado fotiloj kaj Flash-"
+"Ŝoforo \"Muntita Fotilo\" por USB/IEEE1394 amaskonservejaj fotiloj kaj Flash-"
 "diskaj kartlegiloj.\n"
 "\n"
 
@@ -55394,7 +55386,7 @@ msgstr "Per Taksado"
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
-msgstr "De Elŝuta Ŝtato"
+msgstr "De Elŝuta Stato"
 
 #: core/utilities/import/main/importui.cpp:423
 #, kde-format
@@ -56082,7 +56074,7 @@ msgstr ""
 "\"Plena Teksto\": la datformato estas en uzantlegebla ĉeno.\n"
 "Ekz.: ĵaŭ la 24-an de aŭgusto 2006\n"
 "\"Lokaj Agordoj\": la datformato dependas pri KDE-kontrolpanelo-agordoj.\n"
-"\"Persona\": uzu personigitan formaton por dato."
+"\"Propra\": uzu personigitan formaton por dato."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:149
 #, kde-format
@@ -58519,7 +58511,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchtabheader.cpp:337
 #, kde-format
 msgid "Edit Stored Search"
-msgstr "Redakti Stokitan Serĉon"
+msgstr "Redakti konservitan Serĉon"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:352
 #, kde-format
@@ -58811,7 +58803,7 @@ msgstr ""
 "Defaŭlte ĉi tiu opcio estas malŝaltita kaj la maksimuma grandeco de bildeto "
 "estas limigita al 256x256 pikseloj. Kiam ĉi tiu opcio estas ebligita, "
 "bildetogrando povas esti etendita ĝis 512x512 pikseloj.\n"
-"Ĉi tiu opcio stokos pli da datumoj en bildetuma datumbazo kaj uzos pli da "
+"Ĉi tiu opcio konservos pli da datumoj en bildetuma datumbazo kaj uzos pli da "
 "sistemmemoro. digiKam devas esti rekomencita por ekvalidi, kaj la opcio "
 "Rekonstrui Bildetojn de Prizorga ilo devas esti prilaborita en tutaj "
 "kolektoj."
@@ -59238,7 +59230,7 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:153
 #, kde-format
 msgid "Camera Port Type"
-msgstr "Fotila Haveno Tipo"
+msgstr "Fotila Pordotipo"
 
 #: core/utilities/setup/camera/cameraselection.cpp:158
 #, kde-format
@@ -59289,7 +59281,7 @@ msgid ""
 "<p>Select the serial port to use on your computer here. This option is only "
 "required if you use a serial camera.</p>"
 msgstr ""
-"<p>Elektu ĉi tie la serian havenon por uzi en via komputilo. Ĉi tiu opcio "
+"<p>Elektu ĉi tie la serian pordon por uzi en via komputilo. Ĉi tiu opcio "
 "estas bezonata nur se vi uzas serian fotilon.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:176
@@ -59305,7 +59297,7 @@ msgstr "Fotila Monto Vojo"
 #: core/utilities/setup/camera/cameraselection.cpp:198
 #, kde-format
 msgid "Note: only for USB/IEEE mass storage cameras."
-msgstr "Noto: nur por USB/IEEE amasa stokado fotiloj."
+msgstr "Noto: nur por USB/IEEE amaskonservaj fotiloj."
 
 #: core/utilities/setup/camera/cameraselection.cpp:204
 #, kde-format
@@ -59323,7 +59315,7 @@ msgid ""
 "drive when mounted<br/>on your desktop), please use<br/><a href=\"umscamera"
 "\">%1</a> from the camera list.</p>"
 msgstr ""
-"<p>Por agordi <b>USB Mass Stokado</b> fotilon<br/>(kiu aspektas kiel "
+"<p>Por agordi <b>USB-Amaskonservan</b> fotilon<br/>(kiu aspektas kiel "
 "forprenebla disko kiam muntita<br/>sur via labortablo), bonvolu uzi<br/><a "
 "href=\"umscamera\">%1</a> el la fotillisto.</p>"
 
@@ -59846,7 +59838,7 @@ msgstr "Lokaj Kolektoj"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Collections on Removable Media"
-msgstr "Kolektoj sur Forpreneblaj Amaskomunikiloj"
+msgstr "Kolektoj sur Forpreneblaj datumportiloj"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:939
 #: core/utilities/setup/collections/setupcollectionview.cpp:1672
@@ -60495,9 +60487,9 @@ msgid ""
 "quality JPEG. </item>"
 msgstr ""
 "<item><emphasis strong='true'>HEIF</emphasis>: Alta Efikeca Bilda "
-"Dosierformato estas ujoformato por stoki individuajn bildojn. HEIF-bildo "
-"uzanta HEVC-kodekon (H.265) postulas malpli stokan spacon ol la ekvivalenta "
-"kvalita JPEG. </item>"
+"Dosierformato estas ujoformato por konservi individuajn bildojn. HEIF-bildo "
+"uzanta HEVC-kodekon (H.265) postulas malpli konservan spacon ol la "
+"ekvivalenta kvalita JPEG. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:536
 #, kde-kuit-format
@@ -60538,7 +60530,7 @@ msgid ""
 "encoding format. </item>"
 msgstr ""
 "<item><emphasis strong='true'>AVIF</emphasis>: AV1 Image File Format estas "
-"specifo por stoki bildojn en la ISOBMFF-ujo (kiel HEIF) kunpremita per "
+"specifo por konservi bildojn en la ISOBMFF-ujo (kiel HEIF) kunpremita per "
 "AOMedia Video 1 (AV1) kodeko, malfermita kaj reĝeca kodeko. libera koda "
 "formato. </item>"
 
@@ -60580,8 +60572,8 @@ msgid ""
 "b>Order is important when reading metadata"
 msgstr ""
 "Altnivela agorda menuo ebligas al vi administri metadatumajn nomspacojn "
-"uzatajn de digiKam por stoki kaj preni etikedojn, taksadon kaj komentojn.<br/"
-"><b>Noto: </b>Ordo estas grava dum legado de metadatumoj."
+"uzatajn de digiKam por konservi kaj preni etikedojn, taksadon kaj komentojn."
+"<br/><b>Noto: </b>Ordo estas grava dum legado de metadatumoj."
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
@@ -60872,7 +60864,7 @@ msgid ""
 "Baloo storage"
 msgstr ""
 "Enŝaltu ĉi tiun opcion por puŝi taksadon, komentojn kaj etikedojn de digiKam "
-"en la Baloo-stokadon"
+"en la Baloo-konservejon"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
 #, kde-format
@@ -60889,8 +60881,8 @@ msgid ""
 "metadata will not be edited automatically."
 msgstr ""
 "Enŝaltu ĉi tiun opcion se vi volas apliki ŝanĝojn al taksado, komentoj kaj "
-"etikedoj faritaj en Baloo al la metadatuma stokado de digiKam. Bonvolu noti, "
-"ke bildatumoj ne estos redaktataj aŭtomate."
+"etikedoj faritaj en Baloo al la metadatuma konservado de digiKam. Bonvolu "
+"rimarki, ke bildaj metadatenoj ne estos redaktataj aŭtomate."
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:63
 #, kde-format
@@ -60925,7 +60917,7 @@ msgstr ""
 "<para>Krom la piksela enhavo, bilddosieroj kutime enhavas diversajn "
 "metadatenojn. Multaj el la parametroj, kiujn vi povas uzi en digiKam por "
 "administri dosierojn, kiel taksadon aŭ komenton, povas esti skribitaj al la "
-"metadatumoj de la dosieroj.</para> <para>Stokado en metadatumoj permesas "
+"metadatumoj de la dosieroj.</para> <para>Konservado en metadatumoj permesas "
 "konservi ĉi tiun informon kiam oni movas aŭ sendas la dosierojn. dosierojn "
 "al malsamaj sistemoj.</para>"
 
@@ -61052,8 +61044,8 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr ""
-"Enŝaltu ĉi tiun opcion por stoki vizaĝajn etikedojn kun vizaĝaj rektanguloj "
-"en la XMP-etikedoj."
+"Enŝaltu ĉi tiun opcion por konservi vizaĝajn etikedojn kun vizaĝaj "
+"rektanguloj en la XMP-etikedoj."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
@@ -61477,7 +61469,7 @@ msgstr ""
 "dosieroj. Aliaj programoj povus uzi malsamajn tipojn, kiuj\n"
 "povas esti specifitaj sube. digiKam nek montros ĉi tiujn\n"
 "nek legos aŭ skribos al ili. Sed kiam ajn kongrua albumo\n"
-"itemo (ekz. \"image.dng\" por \"image.dng.pp3\") estas renomita,\n"
+"ero (ekz. \"image.dng\" por \"image.dng.pp3\") estas renomita,\n"
 "movita, kopiita aŭ forigita, la sama operacio estos farita\n"
 "de ĉi tiuj kromdosieroj.\n"
 "Multoblaj etendaĵoj devas esti apartigitaj per punktokomo aŭ spaco."
@@ -61567,7 +61559,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:50
 #, kde-format
 msgid "String comparison type:"
-msgstr "Ŝnura kompara tipo:"
+msgstr "Ĉenkompara tipo:"
 
 #: core/utilities/setup/misc/setupmisc.cpp:52
 #, kde-format
@@ -61594,7 +61586,7 @@ msgid ""
 msgstr ""
 "<qt>Metas la manieron kiel kordoj estas komparitaj ene de digiKam. Ĉi tio "
 "ekz. influas la ordigon de la arbaj vidoj.<br/><b>Natura</b> provas kompari "
-"ŝnurojn en maniero kiu konsideru iujn normalajn konvenciojn kaj ekz. "
+"ĉenojn en maniero kiu konsideru iujn normalajn konvenciojn kaj ekz. "
 "rezultigas ordigi nombrojn nature eĉ se ili havas malsaman nombron da "
 "ciferoj.<br/><b>Normala</b> uzas pli teknikan aliron. Uzu ĉi tiun stilon se "
 "vi ekz. volas rajtigi albumojn kun ISO-datoj (201006 aŭ 20090523) kaj la "
@@ -62500,7 +62492,7 @@ msgid ""
 "settings, and make this feature easier to use."
 msgstr ""
 "Ĉi tiuj agordoj determinas la kvaliton de bildo kaj konvertas ĝin en "
-"poentaron, konservitan en datumbazo kiel posedaĵo Pick Label. Ĉi tiuj "
+"poentaron, konservitan en datumbazo kiel propreco de Pick Label. Ĉi tiuj "
 "informoj povas esti taksitaj per du manieroj: uzante kvar bazajn faktorojn "
 "sabotantajn la bildojn (malklaraĵo, bruo, malkovro kaj kunpremado), aŭ "
 "uzante profundan lernan neŭralan retan motoron. La unua helpas determini ĉu "
