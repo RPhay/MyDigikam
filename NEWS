@@ -33,7 +33,7 @@ BUGFIXES:
 023 ==> 317616 - There is no way to change the path to collection.
 024 ==> 267131 - SETUP : digiKam config and data cannot be moved, absolute paths embedded in database and digikamrc.
 025 ==> 456188 - Random shutdown of digiKam.
-026 ==> 
+026 ==> 464318 - High RAM usage and crash during database scan.
 027 ==> 
 028 ==> 
 029 ==> 
