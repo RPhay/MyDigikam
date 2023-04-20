@@ -22,4 +22,6 @@ BUGFIXES:
 012 ==> 454770 - Progress bar shows checkmark.
 013 ==> 465381 - digiKam (and Showfoto) crashes on start on MacOS 10.13.
 014 ==> 450361 - digiKam crashes when running recognize faces with "CFRelease() called with NULL".
-015 ==> 
+015 ==> 422208 - digiKam sporadically becomes totally unresponsive (freezes up) when editing Tags.
+016 ==> 
+
