@@ -30,8 +30,8 @@ BUGFIXES:
 020 ==> 468593 - Thumbbar scrolls to 100th image when >100th image is tagged.
 021 ==> 240222 - Add more menu descriptions for main windows as Showfoto into the new online documentation based on Sphinx/ReStructuredText.
 022 ==> 260613 - "save changes" should ask for file-format if the edited picture does not exist yet (imported from RAW).
-023 ==> 
-024 ==> 
+023 ==> 317616 - There is no way to change the path to collection.
+024 ==> 267131 - SETUP : digiKam config and data cannot be moved, absolute paths embedded in database and digikamrc.
 025 ==> 
 026 ==> 
 027 ==> 
