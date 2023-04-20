@@ -29,4 +29,14 @@ BUGFIXES:
 019 ==> 181438 - Error on ICC Path.
 020 ==> 468593 - Thumbbar scrolls to 100th image when >100th image is tagged.
 021 ==> 240222 - Add more menu descriptions for main windows as Showfoto into the new online documentation based on Sphinx/ReStructuredText.
-022 ==> 
+022 ==> 260613 - "save changes" should ask for file-format if the edited picture does not exist yet (imported from RAW).
+023 ==> 
+024 ==> 
+025 ==> 
+026 ==> 
+027 ==> 
+028 ==> 
+029 ==> 
+030 ==> 
+031 ==> 
+
