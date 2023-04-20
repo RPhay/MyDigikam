@@ -24,4 +24,5 @@ BUGFIXES:
 014 ==> 450361 - digiKam crashes when running recognize faces with "CFRelease() called with NULL".
 015 ==> 422208 - digiKam sporadically becomes totally unresponsive (freezes up) when editing Tags.
 016 ==> 403164 - Crash while trying to download videos from camera.
-017 ==> 
+017 ==> 402444 - Crash on "write tags database to image" with explorer window open.
+018 ==> 
