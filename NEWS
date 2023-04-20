@@ -28,4 +28,5 @@ BUGFIXES:
 018 ==> 391044 - digiKam crashed when trying to open a Dir on an iPad via usb.
 019 ==> 181438 - Error on ICC Path.
 020 ==> 468593 - Thumbbar scrolls to 100th image when >100th image is tagged.
-021 ==> 
+021 ==> 240222 - Add more menu descriptions for main windows as Showfoto into the new online documentation based on Sphinx/ReStructuredText.
+022 ==> 
