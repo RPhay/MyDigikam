@@ -36,6 +36,6 @@ add_library(akonadiiface STATIC $<TARGET_OBJECTS:core_akonadiiface_obj>)
 target_link_libraries(akonadiiface PRIVATE Qt${QT_VERSION_MAJOR}::Core KF5::I18n)
 
 if(KF5AkonadiContact_FOUND)
-    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
-    target_link_libraries(akonadiiface PRIVATE KF5::AkonadiContact KF5::Contacts)
+    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContactCore,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_link_libraries(akonadiiface PRIVATE KF5::AkonadiContactCore KF5::Contacts)
 endif()
