@@ -32,7 +32,7 @@ BUGFIXES:
 022 ==> 260613 - "save changes" should ask for file-format if the edited picture does not exist yet (imported from RAW).
 023 ==> 317616 - There is no way to change the path to collection.
 024 ==> 267131 - SETUP : digiKam config and data cannot be moved, absolute paths embedded in database and digikamrc.
-025 ==> 
+025 ==> 456188 - Random shutdown of digiKam.
 026 ==> 
 027 ==> 
 028 ==> 
