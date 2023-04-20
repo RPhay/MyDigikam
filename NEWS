@@ -26,4 +26,5 @@ BUGFIXES:
 016 ==> 403164 - Crash while trying to download videos from camera.
 017 ==> 402444 - Crash on "write tags database to image" with explorer window open.
 018 ==> 391044 - digiKam crashed when trying to open a Dir on an iPad via usb.
-019 ==> 
+019 ==> 181438 - Error on ICC Path.
+020 ==> 
