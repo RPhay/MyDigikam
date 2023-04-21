@@ -9,7 +9,7 @@
  ;
  ; SPDX-FileCopyrightText: 2010      by Julien Narboux <julien at narboux dot fr>
  ; SPDX-FileCopyrightText: 2011-2014 by Ananta Palani  <anantapalani at gmail dot com>
- ; SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
  ; VERSION    : the digiKam version as string.
@@ -18,10 +18,6 @@
  ; OUTPUT     : the output installer file name as string.
  ;
  ; Example: makensis -DVERSION=5.0.0 -DTARGETARCH=32 -DBUNDLEPATH=../bundle digikam.nsi
- ;
- ; Extra NSIS plugin to install in order to run this script :
- ;
- ; Registry   : http://nsis.sourceforge.net/Registry_plug-in
  ;
  ; NSIS script reference can be found at this url:
  ; http://nsis.sourceforge.net/Docs/Chapter4.html

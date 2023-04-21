@@ -1,15 +1,11 @@
 * About
 
-NSIS is an open source Windows installer usable in a cross-compilation envirronnement.
+NSIS is an open source Windows installer usable in a cross-compilation environnement.
 For more info see http://nsis.sourceforge.net/Main_Page
 
 * Requirements
 
 NSIS version >= 3 is required to be compatible with Windows 10.
-
-* Extra NSIS plugin used:
-
-http://nsis.sourceforge.net/Registry_plug-in
 
 * Other projects which provide a NSIS Windows installer:
 
