@@ -35,7 +35,7 @@ BUGFIXES:
 025 ==> 456188 - Random shutdown of digiKam.
 026 ==> 464318 - High RAM usage and crash during database scan.
 027 ==> 376859 - Tag Shortcut Key Combination Conflict Dialog Always Appears.
-028 ==> 
+028 ==> 447593 - Segfault when moving large number of photos between albums.
 029 ==> 
 030 ==> 
 031 ==> 
