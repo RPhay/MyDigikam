@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-08-16
+ * Date        : 2023-08-16
  * Description : Spell-check and localize Settings Container.
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -39,6 +39,7 @@ LocalizeContainer::~LocalizeContainer()
 void LocalizeContainer::readFromConfig(KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);
+    defaultLanguage  = group.readEntry("DefaultLanguage",  QString());      // empty for auto-detect
 
     ignoredWords     = group.readEntry("IgnoredWords", QStringList() << QLatin1String("digiKam")
                                                                      << QLatin1String("Showfoto")
@@ -77,6 +78,7 @@ void LocalizeContainer::readFromConfig(KConfigGroup& group)
 void LocalizeContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
+    group.writeEntry("DefaultLanguage",  defaultLanguage);
     group.writeEntry("IgnoredWords",     ignoredWords);
     group.writeEntry("TranslatorEngine", (int)translatorEngine);
     group.writeEntry("TranslatorLang",   translatorLang);
@@ -88,6 +90,8 @@ QDebug operator<<(QDebug dbg, const LocalizeContainer& inf)
 {
     dbg.nospace() << "[LocalizeContainer] enableSpellCheck("
                   << inf.enableSpellCheck << "), "
+                  << "defaultLanguage("
+                  << inf.defaultLanguage << "), "
                   << "ignoredWords("
                   << inf.ignoredWords << "), "
                   << "translatorEngine("

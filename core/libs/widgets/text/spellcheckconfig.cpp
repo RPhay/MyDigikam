@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-08-16
+ * Date        : 2023-08-16
  * Description : Spell-check Config widget.
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -28,6 +28,7 @@
 #include <QPushButton>
 #include <QListWidget>
 #include <QLineEdit>
+#include <QComboBox>
 #include <QIcon>
 
 // KDE includes
@@ -44,6 +45,7 @@ using namespace Sonnet;
 // Local includes
 
 #include "localizesettings.h"
+#include "altlangstredit.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -56,6 +58,7 @@ public:
     explicit Private()
       : activeSpellCheck (nullptr),
         spellCheckLabel  (nullptr),
+        languageCB       (nullptr),
         dictList         (nullptr),
         backList         (nullptr),
         addWordButton    (nullptr),
@@ -68,6 +71,8 @@ public:
 
     QCheckBox*   activeSpellCheck;
     QLabel*      spellCheckLabel;
+    QComboBox*   languageCB;
+
     QTreeWidget* dictList;              ///< Dictionaries list
     QTreeWidget* backList;              ///< Backends list
     QPushButton* addWordButton;
@@ -102,6 +107,20 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
                                                          "depends of open-source backends, including necessary dictionaries, "
                                                          "to operate sentence analysis in desired languages.</para>"), this);
     d->spellCheckLabel->setWordWrap(true);
+
+    QLabel* const langLabel    = new QLabel(i18nc("@label", "Default Language:"), this);
+    d->languageCB              = new QComboBox(this);
+    d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    d->languageCB->setWhatsThis(i18nc("@info: edit widget default language", "Select the default language here to use with \"x-default\" value."));
+
+    d->languageCB->addItem(i18n("Auto-detect"));
+    d->languageCB->insertSeparator(d->languageCB->count());
+
+    Q_FOREACH (const QString& lg, AltLangStrEdit::allLanguagesRFC3066())
+    {
+        d->languageCB->addItem(lg, lg);
+        d->languageCB->setItemData(d->languageCB->findText(lg), AltLangStrEdit::languageNameRFC3066(lg), Qt::ToolTipRole);
+    }
 
     // ---
 
@@ -149,7 +168,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     QGridLayout* const ignoreWordsLay = new QGridLayout();
     ignoreWordsGroup->setLayout(ignoreWordsLay);
 
-    d->ignoreWordEdit  = new QLineEdit(this);
+    d->ignoreWordEdit = new QLineEdit(this);
     d->ignoreWordEdit->setClearButtonEnabled(true);
     d->ignoreWordEdit->setPlaceholderText(i18nc("@info", "Set here a new word to ignore during spellcheck"));
 
@@ -218,9 +237,11 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->activeSpellCheck, 0, 0, 1, 2);
     grid->addWidget(d->spellCheckLabel,  1, 0, 1, 2);
-    grid->addWidget(dictgroup,           2, 0, 1, 1);
-    grid->addWidget(backgroup,           2, 1, 1, 1);
-    grid->addWidget(ignoreWordsGroup,    3, 0, 1, 2);
+    grid->addWidget(langLabel,           2, 0, 1, 1);
+    grid->addWidget(d->languageCB,       2, 1, 1, 1);
+    grid->addWidget(dictgroup,           3, 0, 1, 1);
+    grid->addWidget(backgroup,           3, 1, 1, 1);
+    grid->addWidget(ignoreWordsGroup,    4, 0, 1, 2);
     grid->setRowStretch(3, 10);
     grid->setColumnStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -248,6 +269,7 @@ void SpellCheckConfig::applySettings()
     LocalizeContainer set;
 
     set.enableSpellCheck = d->activeSpellCheck->isChecked();
+    set.defaultLanguage  = d->languageCB->currentData().toString();
 
     QStringList ignoredWords;
 
@@ -276,6 +298,7 @@ void SpellCheckConfig::readSettings()
     LocalizeContainer set          = config->settings();
 
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
+    d->languageCB->setCurrentIndex(set.defaultLanguage.isEmpty() ? 0 : d->languageCB->findData(set.defaultLanguage));
     d->ignoreWordsBox->insertItems(0, set.ignoredWords);
 }
 

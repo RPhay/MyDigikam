@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2022-08-16
+ * Date        : 2023-08-16
  * Description : Spell-check and localize Settings Container.
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -49,6 +49,7 @@ public:
 
     // SpellCheck settings
     bool                        enableSpellCheck;       ///< Enable spell-checking feature.
+    QString                     defaultLanguage;        ///> Default language code to use with x-default (empty for auto-detection).
     QStringList                 ignoredWords;           ///< Words to ignore with spell-checking.
 
     // Localize settings

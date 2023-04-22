@@ -161,6 +161,15 @@ void DTextEdit::setCurrentLanguage(const QString& lang)
 
         d->spellChecker->highlighter()->rehighlight();
     }
+    else if (!d->container.defaultLanguage.isEmpty())
+    {
+        d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(true);
+        d->spellChecker->highlighter()->setCurrentLanguage(d->container.defaultLanguage);
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+
+        d->spellChecker->highlighter()->rehighlight();
+    }
     else
     {
         d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
