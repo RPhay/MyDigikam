@@ -36,7 +36,17 @@ BUGFIXES:
 026 ==> 464318 - High RAM usage and crash during database scan.
 027 ==> 376859 - Tag Shortcut Key Combination Conflict Dialog Always Appears.
 028 ==> 447593 - Segfault when moving large number of photos between albums.
-029 ==> 
-030 ==> 
-031 ==> 
-
+029 ==> 468781 - digiKam crashes on album creation.
+030 ==> 467461 - digikam crashes on album creation.
+031 ==> 467742 - Crash on album creation.
+032 ==> 
+033 ==> 
+034 ==> 
+035 ==> 
+036 ==> 
+037 ==> 
+038 ==> 
+039 ==> 
+040 ==> 
+041 ==> 
+042 ==> 
