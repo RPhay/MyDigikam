@@ -44,7 +44,7 @@ BUGFIXES:
 034 ==> 468845 - When exporting a selection to local storage and Adjust image properties, images with sidecars are copied without their sidecars.
 035 ==> 382645 - XMP sidecar file should not contain a packet wrapper.
 036 ==> 360714 - JPGEG2000 thumbnails shows as dimension 0x0 pixel - Use ExifTool to get right image properties.
-037 ==> 
+037 ==> 442349 - Folder /Pictures/DigiCam which contains all pictures suddenly changed to file digiKam.
 038 ==> 
 039 ==> 
 040 ==> 
