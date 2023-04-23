@@ -245,10 +245,15 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
         if (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpg"));
-            destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
+            destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
+            destFile = destUrl.toLocalFile();
+
+            if (d->settings.sidecars)
+            {
+                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
+            }
 
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
-            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
 
             if (!img.save(destFile, DImg::JPEG))
             {
@@ -259,9 +264,13 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
         else if (d->settings.imageFormat == FCContainer::PNG)
         {
             destFile.append(QLatin1String(".png"));
-            destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
+            destUrl  = getUrlOrDelete(QUrl::fromLocalFile(destFile));
+            destFile = destUrl.toLocalFile();
 
-            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
+            if (d->settings.sidecars)
+            {
+                getUrlOrDelete(DMetadata::sidecarUrl(destUrl));
+            }
 
             if (!img.save(destFile, DImg::PNG))
             {
@@ -288,15 +297,12 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             meta->setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
         }
 
-        meta->setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-
         if (!meta->save(destFile))
         {
             return false;
         }
 
         DFileOperations::copyModificationTime(orgPath, destFile);
-        destUrl = QUrl::fromLocalFile(destFile);
 
         return true;
     }
