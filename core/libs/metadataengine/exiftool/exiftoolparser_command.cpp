@@ -89,6 +89,9 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(fileInfo);
 
+    cmdArgs << QByteArray("-TagsFromFile");
+    cmdArgs << QByteArray("@");
+
     QByteArray cpyOpt("-all");
 
     if (!copyToAll)
