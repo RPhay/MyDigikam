@@ -111,9 +111,12 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     QLabel* const langLabel    = new QLabel(i18nc("@label", "Default Language:"), this);
     d->languageCB              = new QComboBox(this);
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    d->languageCB->setWhatsThis(i18nc("@info: edit widget default language", "Select the default language here to use with \"x-default\" value."));
+    d->languageCB->setWhatsThis(i18nc("@info: edit widget default language",
+                                      "Select the default language here to use with \"x-default\""
+                                      "value for the alternative language strings."));
 
     d->languageCB->addItem(i18n("Auto-detect"));
+    d->languageCB->setItemData(0, i18nc("@info", "Detect automatically the language by parsing string content"), Qt::ToolTipRole);
     d->languageCB->insertSeparator(d->languageCB->count());
 
     Q_FOREACH (const QString& lg, AltLangStrEdit::allLanguagesRFC3066())
