@@ -40,6 +40,7 @@ public:
 
 private Q_SLOTS:
 
+    void slotSpellcheckActivated(bool);
     void slotIgnoreWordSelectionChanged();
     void slotAddWord();
     void slotDelWord();

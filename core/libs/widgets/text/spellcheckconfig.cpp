@@ -58,7 +58,11 @@ public:
     explicit Private()
       : activeSpellCheck (nullptr),
         spellCheckLabel  (nullptr),
+        languageLabel    (nullptr),
         languageCB       (nullptr),
+        dictGroup        (nullptr),
+        backGroup        (nullptr),
+        ignoreWordsGroup (nullptr),
         dictList         (nullptr),
         backList         (nullptr),
         addWordButton    (nullptr),
@@ -71,7 +75,12 @@ public:
 
     QCheckBox*   activeSpellCheck;
     QLabel*      spellCheckLabel;
+    QLabel*      languageLabel;
     QComboBox*   languageCB;
+
+    QGroupBox*   dictGroup;
+    QGroupBox*   backGroup;
+    QGroupBox*   ignoreWordsGroup;
 
     QTreeWidget* dictList;              ///< Dictionaries list
     QTreeWidget* backList;              ///< Backends list
@@ -108,8 +117,8 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
                                                          "to operate sentence analysis in desired languages.</para>"), this);
     d->spellCheckLabel->setWordWrap(true);
 
-    QLabel* const langLabel    = new QLabel(i18nc("@label", "Default Language:"), this);
-    d->languageCB              = new QComboBox(this);
+    d->languageLabel = new QLabel(i18nc("@label", "Default Language:"), this);
+    d->languageCB    = new QComboBox(this);
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     d->languageCB->setWhatsThis(i18nc("@info: edit widget default language",
                                       "Select the default language here to use with \"x-default\""
@@ -127,11 +136,11 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const dictgroup = new QGroupBox(i18nc("@title", "Available Language Dictionaries"), this);
+    d->dictGroup               = new QGroupBox(i18nc("@title", "Available Language Dictionaries"), this);
     QVBoxLayout* const dictlay = new QVBoxLayout();
-    dictgroup->setLayout(dictlay);
+    d->dictGroup->setLayout(dictlay);
 
-    d->dictList = new QTreeWidget(this);
+    d->dictList                = new QTreeWidget(this);
     d->dictList->setRootIsDecorated(false);
     d->dictList->setItemsExpandable(false);
     d->dictList->setExpandsOnDoubleClick(false);
@@ -148,11 +157,11 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const backgroup = new QGroupBox(i18nc("@title", "Available Backends"), this);
+    d->backGroup               = new QGroupBox(i18nc("@title", "Available Backends"), this);
     QVBoxLayout* const backlay = new QVBoxLayout();
-    backgroup->setLayout(backlay);
+    d->backGroup->setLayout(backlay);
 
-    d->backList = new QTreeWidget(this);
+    d->backList                = new QTreeWidget(this);
     d->backList->setRootIsDecorated(false);
     d->backList->setItemsExpandable(false);
     d->backList->setExpandsOnDoubleClick(false);
@@ -167,9 +176,9 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const ignoreWordsGroup = new QGroupBox(i18nc("@title", "Ignored Words"), this);
+    d->ignoreWordsGroup               = new QGroupBox(i18nc("@title", "Ignored Words"), this);
     QGridLayout* const ignoreWordsLay = new QGridLayout();
-    ignoreWordsGroup->setLayout(ignoreWordsLay);
+    d->ignoreWordsGroup->setLayout(ignoreWordsLay);
 
     d->ignoreWordEdit = new QLineEdit(this);
     d->ignoreWordEdit->setClearButtonEnabled(true);
@@ -203,6 +212,9 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     ignoreWordsLay->setSpacing(spacing);
 
     // --------------------------------------------------------
+
+    connect(d->activeSpellCheck, SIGNAL(toggled(bool)),
+            this, SLOT(slotSpellcheckActivated(bool)));
 
     connect(d->ignoreWordsBox, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotIgnoreWordSelectionChanged()));
@@ -240,11 +252,11 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->activeSpellCheck, 0, 0, 1, 2);
     grid->addWidget(d->spellCheckLabel,  1, 0, 1, 2);
-    grid->addWidget(langLabel,           2, 0, 1, 1);
+    grid->addWidget(d->languageLabel,    2, 0, 1, 1);
     grid->addWidget(d->languageCB,       2, 1, 1, 1);
-    grid->addWidget(dictgroup,           3, 0, 1, 1);
-    grid->addWidget(backgroup,           3, 1, 1, 1);
-    grid->addWidget(ignoreWordsGroup,    4, 0, 1, 2);
+    grid->addWidget(d->dictGroup,        3, 0, 1, 1);
+    grid->addWidget(d->backGroup,        3, 1, 1, 1);
+    grid->addWidget(d->ignoreWordsGroup, 4, 0, 1, 2);
     grid->setRowStretch(3, 10);
     grid->setColumnStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -303,6 +315,18 @@ void SpellCheckConfig::readSettings()
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
     d->languageCB->setCurrentIndex(set.defaultLanguage.isEmpty() ? 0 : d->languageCB->findData(set.defaultLanguage));
     d->ignoreWordsBox->insertItems(0, set.ignoredWords);
+
+    slotSpellcheckActivated(d->activeSpellCheck->isChecked());
+}
+
+void SpellCheckConfig::slotSpellcheckActivated(bool b)
+{
+    d->spellCheckLabel->setEnabled(b);
+    d->languageLabel->setEnabled(b);
+    d->languageCB->setEnabled(b);
+    d->dictGroup->setEnabled(b);
+    d->backGroup->setEnabled(b);
+    d->ignoreWordsGroup->setEnabled(b);
 }
 
 void SpellCheckConfig::slotDelWord()
