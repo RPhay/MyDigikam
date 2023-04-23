@@ -43,7 +43,7 @@ BUGFIXES:
 033 ==> 468726 - digiKam 8.0.0 unable to set default spell check language.
 034 ==> 468845 - When exporting a selection to local storage and Adjust image properties, images with sidecars are copied without their sidecars.
 035 ==> 382645 - XMP sidecar file should not contain a packet wrapper.
-036 ==> 
+036 ==> 360714 - JPGEG2000 thumbnails shows as dimension 0x0 pixel - Use ExifTool to get right image properties.
 037 ==> 
 038 ==> 
 039 ==> 

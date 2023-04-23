@@ -79,6 +79,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     imageSetAttribute(QLatin1String("format"), QLatin1String("JP2"));
 
+#if JAS_VERSION_MAJOR < 3
+
     QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
     QSize size             = metadata->getItemDimensions();
     QString decoderOptions = QLatin1String("max_samples=100000000");
@@ -101,6 +103,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
         return true;
     }
+
+#endif
 
     // -------------------------------------------------------------------
     // Initialize JPEG 2000 API.
@@ -331,6 +335,22 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             return false;
         }
     }
+
+#if JAS_VERSION_MAJOR >= 3
+
+    if (!(m_loadFlags & LoadImageData) && !(m_loadFlags & LoadICCData))
+    {
+        imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
+        imageSetAttribute(QLatin1String("originalBitDepth"),   maximum_component_depth);
+        imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
+
+        jas_image_destroy(jp2_image);
+        cleanupJasper();
+
+        return true;
+    }
+
+#endif
 
     if (maximum_component_depth > 8)
     {
@@ -600,7 +620,6 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     }
 
     imageData() = data.take();
-    imageSetAttribute(QLatin1String("format"),             QLatin1String("JP2"));
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   maximum_component_depth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
