@@ -18,6 +18,29 @@
 
 #include "digikam_debug.h"
 
+// Jasper includes
+
+#ifndef Q_CC_MSVC
+extern "C"
+{
+#endif
+
+#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wshift-negative-value"
+#endif
+
+#include <jasper/jasper.h>
+#include <jasper/jas_version.h>
+
+#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
+
+#ifndef Q_CC_MSVC
+}
+#endif
+
 namespace DigikamJPEG2000DImgPlugin
 {
 
@@ -45,6 +68,36 @@ bool DImgJPEG2000Loader::sixteenBit() const
 bool DImgJPEG2000Loader::isReadOnly() const
 {
     return false;
+}
+
+int DImgJPEG2000Loader::initJasper()
+{
+
+#if JAS_VERSION_MAJOR < 3
+
+    return jas_init();
+
+#else
+
+    return jas_init_thread();
+
+#endif
+
+}
+
+void DImgJPEG2000Loader::cleanupJasper()
+{
+
+#if JAS_VERSION_MAJOR < 3
+
+    jas_cleanup();
+
+#else
+
+    jas_cleanup_thread();
+
+#endif
+
 }
 
 } // namespace DigikamJPEG2000DImgPlugin

@@ -86,17 +86,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     jas_matrix_t*        pixels[4]         = { nullptr };
     jas_image_cmptparm_t component_info[4];
 
-#if JAS_VERSION_MAJOR < 3
-
-    int init = jas_init();
-
-#else
-
-    int init = jas_init_thread();
-
-#endif
-
-    if (init != 0)
+    if (initJasper() != 0)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to init JPEG2000 decoder";
         fclose(file);
@@ -111,15 +101,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 stream";
         fclose(file);
 
-#if JAS_VERSION_MAJOR < 3
-
-        jas_cleanup();
-
-#else
-
-        jas_cleanup_thread();
-
-#endif
+        cleanupJasper();
 
         return false;
     }
@@ -145,15 +127,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to create JPEG2000 image";
         jas_stream_close(jp2_stream);
 
-#if JAS_VERSION_MAJOR < 3
-
-        jas_cleanup();
-
-#else
-
-        jas_cleanup_thread();
-
-#endif
+        cleanupJasper();
 
         return false;
     }
@@ -225,15 +199,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error encoding JPEG2000 image data : Memory Allocation Failed";
             jas_image_destroy(jp2_image);
 
-#if JAS_VERSION_MAJOR < 3
-
-            jas_cleanup();
-
-#else
-
-            jas_cleanup_thread();
-
-#endif
+            cleanupJasper();
 
             return false;
         }
@@ -262,15 +228,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                     jas_matrix_destroy(pixels[i]);
                 }
 
-#if JAS_VERSION_MAJOR < 3
-
-                jas_cleanup();
-
-#else
-
-                jas_cleanup_thread();
-
-#endif
+                cleanupJasper();
 
                 return false;
             }
@@ -331,15 +289,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                     jas_matrix_destroy(pixels[i]);
                 }
 
-#if JAS_VERSION_MAJOR < 3
-
-                jas_cleanup();
-
-#else
-
-                jas_cleanup_thread();
-
-#endif
+                cleanupJasper();
 
                 return false;
             }
@@ -386,15 +336,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
             jas_matrix_destroy(pixels[i]);
         }
 
-#if JAS_VERSION_MAJOR < 3
-
-        jas_cleanup();
-
-#else
-
-        jas_cleanup_thread();
-
-#endif
+        cleanupJasper();
 
         return false;
     }
@@ -412,15 +354,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         jas_matrix_destroy(pixels[i]);
     }
 
-#if JAS_VERSION_MAJOR < 3
-
-    jas_cleanup();
-
-#else
-
-    jas_cleanup_thread();
-
-#endif
+    cleanupJasper();
 
     imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("JP2"));
     saveMetadata(filePath);

@@ -48,6 +48,11 @@ public:
 
 private:
 
+    int  initJasper();
+    void cleanupJasper();
+
+private:
+
     bool m_sixteenBit;
     bool m_hasAlpha;
 };
