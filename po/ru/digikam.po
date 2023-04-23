@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -12146,8 +12146,8 @@ msgstr[3] "<p>1 символ.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -49080,13 +49080,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "С учётом регистра"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Включить фоновую проверку орфографии при наборе текста"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49107,37 +49107,58 @@ msgstr ""
 "модулей с исходным кодом, включая необходимые словари, для анализа "
 "предложений на нужных языках.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "Язык по умолчанию"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, fuzzy, kde-format
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr "<p>Сбросить все параметры в значения по умолчанию"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Auto detect"
+msgid "Auto-detect"
+msgstr "Автоопределение"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Доступные языковые словари"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Код"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Название"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Доступные модули"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Игонорируемые слова"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
@@ -49145,7 +49166,7 @@ msgstr ""
 "Укажите новое слово, которое следует игнорировать во время проверки "
 "орфографии"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
@@ -49153,19 +49174,19 @@ msgstr ""
 "Возможно добавлять или удалять слова, которые будут игнорироваться во время "
 "операций по проверке орфографии."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Добавить..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Удалить"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -66251,10 +66272,6 @@ msgstr "Сбросить все параметры видео до исходн�
 #~ msgstr "Кодировка"
 
 #~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Автоопределение"
-
-#~ msgctxt "@option"
 #~ msgid "System"
 #~ msgstr "Система"
 
@@ -75250,10 +75267,6 @@ msgstr "Сбросить все параметры видео до исходн�
 #~ msgid ""
 #~ "This is the curve drawing of the selected channel from original image"
 #~ msgstr "Кривая, рассчитанная по исходному изображению для выбранного канала"
-
-#, fuzzy
-#~ msgid "Reset the curve to its default values."
-#~ msgstr "<p>Сбросить все параметры в значения по умолчанию"
 
 #~ msgid "Guide color:"
 #~ msgstr "Цвет линий:"

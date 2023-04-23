@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
-"PO-Revision-Date: 2023-04-08 11:08+0100\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
+"PO-Revision-Date: 2023-04-22 11:06+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -2745,12 +2745,7 @@ msgid "All supported files (%1)"
 msgstr "All supported files (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2760,18 +2755,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
+"Documentation: %3\n"
 "\n"
-"Build date: %3 (target: %4)"
+"Build date: %4 (target: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2783,10 +2772,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
+"Documentation: %3\n"
 "\n"
-"Build date: %3 (target: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Build date: %4 (target: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3136,9 +3126,7 @@ msgstr "Tools"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:851
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Help"
 
@@ -3146,7 +3134,7 @@ msgstr "Help"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Online help about wastebin"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3243,10 +3231,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 items selected"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "More than 200 user-reports closed on bugzilla."
+msgstr "More than 400 user-reports closed on bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3271,48 +3258,41 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-"versioned images in editor."
+"Versioning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
+"format to store versioned images in editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "Add hamburger menu to tool-bar if main menu is hidden."
+msgstr "Usability: add hamburger menu to tool-bar if main menu is hidden."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
-msgstr "Add new option to write metadata to files with ExifTool backend."
+msgstr ""
+"Metadata: add new option to write metadata to files with ExifTool backend."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Optional write metadata operations to DNG and RAW files are now always "
-"delegated to ExifTool Backend."
+"Metadata: optional write metadata operations to DNG and RAW files are now "
+"always delegated to ExifTool Backend."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
-msgstr "Optimise layout of Metadata Edit plugin for a better usability."
+msgstr ""
+"Metadata: optimise layout of Metadata Edit plugin for a better usability."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3320,58 +3300,51 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadata: add new options to save and load configuration profiles in "
+"Advanced Metadata Settings Panel."
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Add increment file counter to sequence numbering with option [c] or [c,step]."
+"Advanced Rename: add increment file counter to sequence numbering from with "
+"option [c] or [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
-msgstr "Add random text sequence numbering with option [r]."
+msgstr "Advanced Rename: add random text sequence numbering with option [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Add configurable first character for the unique modifier with {unique:n,c}."
+"Advanced Rename: add configurable first character for the unique modifier "
+"with {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Add search for items by number of face regions."
+msgstr "Advanced Search: add search for items by number of face regions."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Add search for items without face regions."
+msgstr "Advanced Search: add search for items without face regions."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Add support for cross-platform network paths."
+msgstr "Collections: add support for cross-platform network paths."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3425,26 +3398,23 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
-msgstr ""
+msgstr "Add Icon-View settings to customise Labels visibility over thumbnails."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
-msgstr ""
+msgstr "Add support for float16 (half float) images in the TIFF Loader."
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
-"\">Aesthetic Detection to classify images using deep learning model</a>."
+"Add new maintenance tool to perform <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
+"images using deep learning model</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3456,40 +3426,36 @@ msgstr ""
 "QuocHungTran\">to perform OCR over scanned text</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Add new tool to assign pick label automatically by parsing image quality."
+"Queue Manager: add new tool to assign pick label automatically by parsing "
+"image quality."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
-msgstr "Add new tool to assign rating, pick, and colour labels in batch."
+msgstr ""
+"Queue Manager: add new tool to assign rating, pick, and colour labels in "
+"batch."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
-msgstr "Add new tool to assign titles and captions in batch."
+msgstr "Queue Manager: add new tool to assign titles and captions in batch."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-"from DocBook to Sphinx/ReStructuredText framework."
+"Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
+"handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3497,12 +3463,13 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Update G'MIC-Qt tool to last version 3.2.2 and finalise MacOS port and "
+"improve stability of plugin."
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr "Update internal RAW engine to last stable Libraw 0.21.1."
+msgstr "Update internal RAW engine to last Libraw snapshot 20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -3540,16 +3507,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Some of the new features in this release of digiKam include (compared to "
-"digiKam 6.x):"
+"digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -11841,8 +11805,8 @@ msgstr[1] "<p>%1 characters.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -39063,7 +39027,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Online help about tags management"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -42765,10 +42729,9 @@ msgid "Developer (2004)"
 msgstr "Developer (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Configure this column"
+msgstr "Configure Notifications"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -48362,13 +48325,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Case sensitive"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Activate spellcheck in background when entering text"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48388,61 +48351,83 @@ msgstr ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "Default Language"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, fuzzy, kde-format
+#| msgid "Reset current tool settings to default values."
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr "Reset current tool settings to default values."
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Auto detect"
+msgid "Auto-detect"
+msgstr "Auto detect"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Available Language Dictionaries"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Code"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Name"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Available Backends"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Ignored Words"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Set here a new word to ignore during spellcheck"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr "You can add or remove words to ignore while spell-checking operations."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Add..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Remove"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -50407,6 +50392,7 @@ msgstr "<p>Add renaming options to the parse string.</p>"
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"To apply a modifier, append it to the option, for instance: [file]{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -51206,22 +51192,19 @@ msgstr ""
 "aware, ||f|| = folder aware, ||r|| = random aware)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Sequence number (custom start)"
+msgstr "Sequence number (custom start) ||options||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Sequence number (custom step)"
+msgstr "Sequence number (custom step) ||options||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Sequence number (custom start + step)"
+msgstr "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -52059,57 +52042,49 @@ msgstr "Tags but not albums"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Older or Larger"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Prefer selected folder as reference"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Prefer other than selected folder as reference"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "By Creation Date"
+msgstr "Prefer Newer Creation Date"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "By Modification Date"
+msgstr "Prefer Newer Modification Date"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Information about current image selection"
+msgstr "Select method for reference image selection"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Reference:"
+msgstr "Reference"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "&Choose image selection method:"
+msgstr "Reference Image Selection Method"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
@@ -63274,10 +63249,6 @@ msgstr "Do you want to reset all video settings to the default value?"
 #~ msgstr "Charset"
 
 #~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Auto detect"
-
-#~ msgctxt "@option"
 #~ msgid "System"
 #~ msgstr "System"
 
@@ -72804,11 +72775,6 @@ msgstr "Do you want to reset all video settings to the default value?"
 #~ "This is the curve drawing of the selected channel from original image"
 #~ msgstr ""
 #~ "This is the curve drawing of the selected channel from original image"
-
-#, fuzzy
-#~| msgid "Reset current tool settings to default values."
-#~ msgid "Reset the curve to its default values."
-#~ msgstr "Reset current tool settings to default values."
 
 #~ msgid "Guide color:"
 #~ msgstr "Guide colour:"

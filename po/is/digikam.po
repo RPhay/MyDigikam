@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2023-03-21 14:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -11908,8 +11908,8 @@ msgstr[1] "<p>%1 stafi.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -48534,13 +48534,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Háð há/lágstöfum"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Virkja stafsetningaryfirferð í bakgrunni við innslátt texta"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48561,62 +48561,83 @@ msgstr ""
 "bakendum, þar með töldum nauðsynlegum orðasöfnum, til að keyra "
 "setningagreiningu á umbeðnum tungumálum.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "Sjálfgefið tungumál"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, kde-format
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Auto detect"
+msgid "Auto-detect"
+msgstr "Finna sjálfvirkt"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Tiltæk orðasöfn tungumála"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Kóði"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nafn"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Bakendar í boði"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Hunsuð orð"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Veldu hér ný orð til að hunsa við stafsetningaryfirferð."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 "Þú getur bætt við eða fjarlægt orð sem á að hunsa við stafsetningaryfirferð."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "Bæt&a við..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "Fja&rlægja"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -63488,10 +63509,6 @@ msgstr "Viltu frumstilla allar stillingar myndmerkis á sjálfgefin gildi?"
 #~ msgctxt "@label"
 #~ msgid "Charset"
 #~ msgstr "Stafatafla"
-
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Finna sjálfvirkt"
 
 #~ msgctxt "@option"
 #~ msgid "System"

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -11452,8 +11452,8 @@ msgstr[1] ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -47956,13 +47956,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "संवेदनशीलता (आइएसओ):"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -47975,65 +47975,85 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "डिफ़ॉल्ट भाषा"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, fuzzy, kde-format
+#| msgid "<p>Reset all filter parameters to their default values."
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgid "Auto-&Detect"
+msgid "Auto-detect"
+msgstr "अपने आप पता लगाएँ (&D)"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "मैकबाइनरी II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "ऑडियो फ़ाइलें"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "नाम"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "उपलब्ध:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "मॉनीटर:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "<p>यहाँ पर लकीर रंग सेट करें."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "जोड़ें...(&A)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "मिटाएँ (&R)"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -61990,12 +62010,6 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 #~ msgstr "के साथ खोलें"
 
 #, fuzzy
-#~| msgid "Auto-&Detect"
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "अपने आप पता लगाएँ (&D)"
-
-#, fuzzy
 #~ msgctxt "@option"
 #~ msgid "Audio track"
 #~ msgstr "ऑडियो फ़ाइलें"
@@ -66984,11 +66998,6 @@ msgstr "<p>सभी फ़िल्टर पैरामीटर को उ�
 #~ msgid ""
 #~ "This is the curve drawing of the selected channel from original image"
 #~ msgstr "<p>यह मूल छवि में चयनित चैनल का वक्रीय ड्राइंग है"
-
-#, fuzzy
-#~| msgid "<p>Reset all filter parameters to their default values."
-#~ msgid "Reset the curve to its default values."
-#~ msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
 
 #~ msgid "Guide color:"
 #~ msgstr "गाइड रंग:"

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -11958,8 +11958,8 @@ msgstr[3] "<p>%1 simbolis.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -50102,13 +50102,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Skirti raidžių dydį"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50121,27 +50121,46 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "Numatyta kalba"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, kde-format
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgid "Auto-&Detect"
+msgid "Auto-detect"
+msgstr "Automatiškai aptikti"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, fuzzy, kde-format
 #| msgid "Codec"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Kodekas"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@info Storage"
 #| msgid "Available:"
@@ -50149,41 +50168,41 @@ msgctxt "@title"
 msgid "Available Backends"
 msgstr "Prieinama:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Monitoriaus profilis:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Čia nurodykite, kiek reikia rasti nuotraukų, naudojant eskizą."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Pridėti..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Pašalinti"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -64962,12 +64981,6 @@ msgstr "<p>Iš naujo nustatyti numatytąsias reikšmes filtrų parametruose."
 #~ msgctxt "@action: open subtitle file"
 #~ msgid "Open"
 #~ msgstr "Atverti su..."
-
-#, fuzzy
-#~| msgid "Auto-&Detect"
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "Automatiškai aptikti"
 
 #, fuzzy
 #~| msgid "System Font"

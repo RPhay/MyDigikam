@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -11657,8 +11657,8 @@ msgstr[5] "<p>%1 محرف.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -48656,13 +48656,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "حسّاس لحالة الأحرف"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48675,7 +48675,29 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@info: country code"
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "بلا"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, fuzzy, kde-format
+#| msgid "<p>Reset all filter parameters to their default values."
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr "<p>إستعد كلّ ضوابط المرشح إلى قيمها الإفتراضية."
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgctxt "@option"
+#| msgid "Auto detect"
+msgid "Auto-detect"
+msgstr "اكتشف آليًّا"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@item"
 #| msgid "Wiktionary"
@@ -48683,19 +48705,19 @@ msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "ويكاموس"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "الترميز"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "الاسم"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
 #| msgctxt "@info Storage"
 #| msgid "Available:"
@@ -48703,37 +48725,37 @@ msgctxt "@title"
 msgid "Available Backends"
 msgstr "المتوفّر:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "الكلمات المُتجاهَلة:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "أ&ضف..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "أ&زل"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -63375,10 +63397,6 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #~ msgstr "طقم المحارف"
 
 #~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "اكتشف آليًّا"
-
-#~ msgctxt "@option"
 #~ msgid "System"
 #~ msgstr "النظام"
 
@@ -70075,11 +70093,6 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #~ msgid ""
 #~ "This is the curve drawing of the selected channel from original image"
 #~ msgstr "<p> هذا هو منحنى من مُنتقى القناة من أصلي صورة"
-
-#, fuzzy
-#~| msgid "<p>Reset all filter parameters to their default values."
-#~ msgid "Reset the curve to its default values."
-#~ msgstr "<p>إستعد كلّ ضوابط المرشح إلى قيمها الإفتراضية."
 
 #, fuzzy
 #~ msgid "&Save default photographer identity as tags"

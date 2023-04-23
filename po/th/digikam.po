@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-19 00:47+0000\n"
+"POT-Creation-Date: 2023-04-23 00:46+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -11919,8 +11919,8 @@ msgstr[0] "<p>%1 ตัวอักษร</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:385
-#: core/libs/widgets/text/dtextedit.cpp:385
+#: core/libs/widgets/text/dplaintextedit.cpp:394
+#: core/libs/widgets/text/dtextedit.cpp:394
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -49844,13 +49844,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "แยกแยะตัวพิมพ์เล็ก-ใหญ่"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:94
+#: core/libs/widgets/text/spellcheckconfig.cpp:99
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:96
+#: core/libs/widgets/text/spellcheckconfig.cpp:101
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49863,67 +49863,87 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:108
+#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#, fuzzy, kde-format
+#| msgid "Default Language"
+msgctxt "@label"
+msgid "Default Language:"
+msgstr "ภาษาปริยาย"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#, fuzzy, kde-format
+#| msgid "Reset all settings to default values."
+msgctxt "@info: edit widget default language"
+msgid "Select the default language here to use with \"x-default\" value."
+msgstr "ปรับการตั้งค่าทั้งหมดกลับไปใช้ค่าปริยาย"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#, fuzzy, kde-format
+#| msgid "Auto-&Detect"
+msgid "Auto-detect"
+msgstr "ตรวจหา&อัตโนมัติ"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgid "Distortion algorithms"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "อัลกอริธึมการบิดเบือนภาพ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:121
+#: core/libs/widgets/text/spellcheckconfig.cpp:140
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "แฟ้มเสียง"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:122
+#: core/libs/widgets/text/spellcheckconfig.cpp:141
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "ชื่อ"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:129
+#: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "พื้นที่ว่าง:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:167
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "โพรไฟล์ของจอภาพ:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:154
+#: core/libs/widgets/text/spellcheckconfig.cpp:173
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "ตั้งค่าจำนวนของรายการที่จะค้นหาโดยใช้ภาพร่างได้ที่นี่"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:157
+#: core/libs/widgets/text/spellcheckconfig.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:162
+#: core/libs/widgets/text/spellcheckconfig.cpp:181
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "เ&พิ่ม..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:163
+#: core/libs/widgets/text/spellcheckconfig.cpp:182
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "เ&อาออก"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:164
+#: core/libs/widgets/text/spellcheckconfig.cpp:183
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"
@@ -64812,12 +64832,6 @@ msgstr "ปรับค่าทั้งหมดกลับไปใช้ค
 #~ msgstr "เปิดด้วย..."
 
 #, fuzzy
-#~| msgid "Auto-&Detect"
-#~ msgctxt "@option"
-#~ msgid "Auto detect"
-#~ msgstr "ตรวจหา&อัตโนมัติ"
-
-#, fuzzy
 #~| msgid "System Font"
 #~ msgctxt "@option"
 #~ msgid "System"
@@ -72537,11 +72551,6 @@ msgstr "ปรับค่าทั้งหมดกลับไปใช้ค
 #~ msgid ""
 #~ "This is the curve drawing of the selected channel from original image"
 #~ msgstr "นี่เป็นส่วนแสดงกราฟแสดงความถี่ของช่องของภาพที่ถูกเลือกจากภาพต้นฉบับ"
-
-#, fuzzy
-#~| msgid "Reset all settings to default values."
-#~ msgid "Reset the curve to its default values."
-#~ msgstr "ปรับการตั้งค่าทั้งหมดกลับไปใช้ค่าปริยาย"
 
 #~ msgid "Guide color:"
 #~ msgstr "สีเส้นนำทาง:"
