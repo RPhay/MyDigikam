@@ -50,7 +50,7 @@ BUGFIXES:
 040 ==> 464909 - Cannot open other windows.
 041 ==> 468832 - Editing an existing Keyword Tag strips away all IPTC information from the image file.
 042 ==> 448231 - Crash on closing digiKam.
-043 ==> 
+043 ==> 468798 - digiKam not starting after upgrade to 8.0.
 044 ==> 
 045 ==> 
 046 ==> 
