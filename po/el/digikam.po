@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -52518,13 +52518,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Διάκριση ανάμεσα σε κεφαλαία-πεζά"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -52537,59 +52537,67 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Προκαθορισμένο"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, fuzzy, kde-format
 msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
 msgstr ""
 "Επαναφορά ρυθμίσεων του τρέχοντος εργαλείου στις προκαθορισμένες τιμές."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgid "Auto-&Detect"
 msgid "Auto-detect"
 msgstr "Αυτόματη α&νίχνευση"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, fuzzy, kde-format
 #| msgid "Binary"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Εκτελέσιμο"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Όνομα"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Διαθέσιμη:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 #| msgid "Monitor profile:"
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Προφίλ οθόνης:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, fuzzy, kde-format
 #| msgid "Set here the number of items to find using sketch."
 msgctxt "@info"
@@ -52598,27 +52606,27 @@ msgstr ""
 "Καθορίστε εδώ το αριθμό αντικειμένων που θα αναζητηθούν με τη χρήση του "
 "σκίτσου."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Προσθήκη..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "Α&φαίρεση"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"

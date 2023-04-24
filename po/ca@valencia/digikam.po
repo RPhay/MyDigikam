@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
-"PO-Revision-Date: 2023-04-19 13:06+0200\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"PO-Revision-Date: 2023-04-23 10:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -49061,13 +49061,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Distingix entre majúscules i minúscules"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Activa la verificació ortogràfica en segon pla en introduir text"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49089,57 +49089,65 @@ msgstr ""
 "diccionaris necessaris, per a fer funcionar l'anàlisi de les frases en els "
 "idiomes desitjats.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Idioma predeterminat"
+msgstr "Idioma predeterminat:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
-#, kde-format
-msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
-msgstr ""
-
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgid "Auto-detect"
-msgstr "&Detecta automàticament"
+#| msgctxt "@info: edit widget default language"
+#| msgid "Select the default language here to use with \"x-default\" value."
+msgctxt "@info: edit widget default language"
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
+msgstr ""
+"Seleccioneu ací l'idioma predeterminat a utilitzar amb el valor «x-default»."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
+#, kde-format
+msgid "Auto-detect"
+msgstr "Detecta automàticament"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Diccionaris disponibles d'idioma"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Codi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nom"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Dorsals disponibles"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Paraules ignorades"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
@@ -49147,7 +49155,7 @@ msgstr ""
 "Establiu ací una paraula nova que s'ignorarà durant la verificació "
 "ortogràfica"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
@@ -49155,19 +49163,19 @@ msgstr ""
 "Ací podeu afegir o eliminar paraules que s'ignoraran durant les operacions "
 "de verificació ortogràfica."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "Afi&g..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"

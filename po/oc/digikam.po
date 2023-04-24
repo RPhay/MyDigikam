@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -47080,13 +47080,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -47099,84 +47099,92 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "imatges"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
 msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgid "images"
 msgid "Auto-detect"
 msgstr "imatges"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Diàpo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Diaporamà"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Apondre..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, fuzzy, kde-format
 #| msgid "images"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "imatges"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, fuzzy, kde-format
 #| msgid "&Delete"
 msgctxt "@action"

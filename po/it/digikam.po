@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
-"PO-Revision-Date: 2023-04-14 20:29+0200\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"PO-Revision-Date: 2023-04-21 20:29+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2770,15 +2770,7 @@ msgstr ""
 "Data compilazione: %4 (target: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2790,8 +2782,8 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
-"\n"
 "Documentazione: %3\n"
+"\n"
 "Data compilazione: %4 (target: %5)\n"
 "Revisione: %6\n"
 "Ramo: %7"
@@ -3561,16 +3553,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Alcune nuove funzionalità di questo rilascio di digiKam includono (rispetto "
-"a digiKam 6.x):"
+"a digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -49099,7 +49088,7 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Distingui le maiuscole"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
@@ -49107,7 +49096,7 @@ msgstr ""
 "Attiva il correttore ortografico in sottofondo durante la digitazione del "
 "testo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -49128,7 +49117,7 @@ msgstr ""
 "ortografico dipende dai motori open source, inclusi i relativi dizionari, "
 "per operare l'analisi della frase nelle lingue desiderate.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, fuzzy, kde-format
 #| msgctxt "@info: country code"
 #| msgid "Default Language"
@@ -49136,58 +49125,66 @@ msgctxt "@label"
 msgid "Default Language:"
 msgstr "Lingua predefinita"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, fuzzy, kde-format
 #| msgid "Reset current tool settings to default values."
 msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
 msgstr "Riporta tutte le impostazioni degli strumenti ai valori predefiniti."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Auto detect"
 msgid "Auto-detect"
 msgstr "Rilevamento automatico"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Dizionari linguistici disponibili"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Codice"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nome"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Motori disponibili"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Parole ignorate"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 "Imposta qui una nuova parola da ignorare durante il controllo ortografico"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
@@ -49195,19 +49192,19 @@ msgstr ""
 "Puoi aggiungere o rimuovere parole da ignorare durante la correzione "
 "ortografica."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Aggiungi..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Rimuovi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
@@ -51221,6 +51218,8 @@ msgstr "<p>Aggiungi opzioni di rinomina alla stringa in esame.</p>"
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Per applicare un modificatore, aggancialo all'opzione, per esempio: [file]"
+"{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -52027,22 +52026,21 @@ msgstr ""
 "casualità)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Numero sequenziale (partenza personalizzata)"
+msgstr "Numero sequenziale (partenza personalizzata) ||opzioni||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Numero sequenziale (passo personalizzato)"
+msgstr "Numero sequenziale (passo personalizzato) ||opzioni||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Numero sequenziale (partenza personalizzata + passo)"
+msgstr ""
+"Numero sequenziale (partenza personalizzata + passo) ||opzioni||: ||e||, ||"
+"f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -52895,57 +52893,49 @@ msgstr "Tag ma non album"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Più vecchia o più grande"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Preferisci cartella selezionata come riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Preferisci cartella diversa da quella selezionata come riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Per data di creazione"
+msgstr "Preferisci data di creazione più recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Per data di modifica"
+msgstr "Preferisci data di modifica più recente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Informazioni sull'immagine attualmente selezionata"
+msgstr "Scegli il metodo per la selezione dell'immagine di riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Riferimento:"
+msgstr "Riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Scegli il metodo di selezione delle immagini:"
+msgstr "Metodo di selezione dell'immagine di riferimento"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format

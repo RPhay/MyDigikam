@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -50640,13 +50640,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Cásíogair"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -50659,84 +50659,92 @@ msgid ""
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
 #, fuzzy, kde-format
 #| msgid "Default Language"
 msgctxt "@label"
 msgid "Default Language:"
 msgstr "Teanga Réamhshocraithe"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
 msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
 #| msgid "Auto-&Detect"
 msgid "Auto-detect"
 msgstr "Brait&h go hUathoibríoch"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:127
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, fuzzy, kde-format
 #| msgid "MacBinary II"
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "MacBinary II"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Comhbhrúiteoir Fuaime:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, fuzzy, kde-format
 #| msgid "Name"
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Ainm"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Ar Fáil:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Déan Neamhaird den Chlib Seo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, fuzzy, kde-format
 #| msgid "&Add..."
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Cuir Leis..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Bain"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action"

@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 00:46+0000\n"
-"PO-Revision-Date: 2023-04-19 21:49+0100\n"
+"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"PO-Revision-Date: 2023-04-23 09:53+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -33487,8 +33487,8 @@ msgstr "Forigi"
 msgctxt "@info"
 msgid "1 plugin installed"
 msgid_plural "%1 plugins installed"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 kromprogramo instalita"
+msgstr[1] "%1 kromprogramoj instalitaj"
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:168
 #, kde-format
@@ -34178,8 +34178,8 @@ msgstr ""
 #, kde-format
 msgid "1 file awaits synchronization"
 msgid_plural "%1 files await synchronization"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 dosiero atendas sinkronigon"
+msgstr[1] "%1 dosieroj atendas sinkronigon"
 
 #: core/libs/filters/filterstatusbar.cpp:76
 #, kde-format
@@ -36476,56 +36476,56 @@ msgstr "Enigu ĉi tie la nomon de aŭtoro de la bildoteksto."
 msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la bildan apudskribon. "
+msgstr[1] "Vi redaktis la apudskribojn de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image title. "
 msgid_plural "You have edited the titles of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la bildan titolon. "
+msgstr[1] "Vi redaktis la titolojn de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
 msgid_plural "You have edited the date of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la daton de la bildo. "
+msgstr[1] "Vi redaktis la daton de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la elekt-etikedon de la bildo. "
+msgstr[1] "Vi redaktis la elekt-etikedon de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la kolor-etikedon de la bildo. "
+msgstr[1] "Vi redaktis la kolor-etikedon de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
 msgid_plural "You have edited the rating of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la pritakson de la bildo. "
+msgstr[1] "Vi redaktis la pritakson de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
 msgid_plural "You have edited the tags of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Vi redaktis la etikedon de la bildo. "
+msgstr[1] "Vi redaktis la etikedon de %1 bildoj. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:306
 #, kde-format
@@ -36538,8 +36538,8 @@ msgstr "Ĉu vi volas apliki viajn ŝanĝojn?"
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<p>Vi redaktis la metadatenojn de la bildo: </p>"
+msgstr[1] "<p>Vi redaktis la metadatenojn de %1 bildoj: </p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:318
 #, kde-format
@@ -38661,14 +38661,20 @@ msgid_plural ""
 "Tag '%2' has %1 subtags. Deleting this will also delete the subtags.\n"
 "Do you want to continue?"
 msgstr[0] ""
+"Etikedo '%2' havas unu subetikedon. Ĝia forigo ankaŭ forigos la "
+"subetikedon.\n"
+"Ĉu vi volas daŭrigi?"
 msgstr[1] ""
+"Etikedo '%2' havas %1 subetikedojn. Ĝia forigo ankaŭ forigos la "
+"subetikedojn.\n"
+"Ĉu vi volas daŭrigi?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:283
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Etikedo '%2' estas atribuita al unu ero. Ĉu vi volas daŭrigi?"
+msgstr[1] "Etikedo '%2' estas atribuita al %1 eroj. Ĉu vi volas daŭrigi?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
@@ -38724,14 +38730,16 @@ msgid ""
 msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] ""
+"Facetikedo '%2' estas atribuita al almenaŭ unu ero. Ĉu vi volas daŭrigi?"
 msgstr[1] ""
+"Facetikedoj '%2' estas atribuitaj al almenaŭ unu ero. Ĉu vi volas daŭrigi?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:600
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĉu forigi facetikedon?"
+msgstr[1] "Ĉu forigi facetikedojn?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:611
 #, kde-format
@@ -38917,7 +38925,11 @@ msgid_plural ""
 "Tags %2 have one or more subtags. Deleting them will also delete the "
 "subtags. Do you want to continue?"
 msgstr[0] ""
+"Etikedo %2 havas unu aŭ pliajn subetikedojn. Ĝia forigo ankaŭ forigos la "
+"subetikedojn. Ĉu vi volas daŭrigi?"
 msgstr[1] ""
+"Etikedo %2 havas unu aŭ pliajn subetikedojn. Ilia forigo ankaŭ forigos la "
+"subetikedojn. Ĉu vi volas daŭrigi?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:362
 #, kde-format
@@ -38926,23 +38938,25 @@ msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
 msgid_plural ""
 "Tags %2 are assigned to one or more items. Do you want to delete them?"
 msgstr[0] ""
+"Etikedo %2 estas atribuita al unu aŭ pli eroj. Ĉu vi volas forigi ĝin?"
 msgstr[1] ""
+"Etikedoj %2 estas atribuitaj al unu aŭ pli eroj. Ĉu vi volas forigi ilin?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:372
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĉu forigi etikedon %2?"
+msgstr[1] "Ĉu forigi etikedojn %2?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:378
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Forigi etikedon"
+msgstr[1] "Forigi etikedojn"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
@@ -38981,8 +38995,8 @@ msgstr ""
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ĉu vi vere volas forigi la elektitan etikedon el ĉiuj bildoj?"
+msgstr[1] "Ĉu vi vere volas forigi la elektitajn etikedojn el ĉiuj bildoj?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
@@ -39103,7 +39117,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Enreta helpo pri mastrumado de etikedoj"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -42178,7 +42192,11 @@ msgid_plural ""
 "Applying operation to \n"
 "\"%1\" selected pictures"
 msgstr[0] ""
+"Aplikante operacion al\n"
+"la elektita bildo"
 msgstr[1] ""
+"Aplikante operacion al\n"
+"\"%1\" elektitaj bildoj"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:403
 #, kde-format
@@ -42966,7 +42984,7 @@ msgstr "XMP-spektilo"
 #: core/libs/widgets/metadata/config/metadatapanel.cpp:234
 #, kde-format
 msgid "ExifTool viewer"
-msgstr ""
+msgstr "ExifTool-rigardilo"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:95
 #, kde-format
@@ -48397,13 +48415,13 @@ msgctxt "@info: search text bar"
 msgid "Case sensitive"
 msgstr "Usklecodistinga"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:99
+#: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
 msgstr "Aktivigi literumkontrolon en la fono dum enigo de teksto"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:101
+#: core/libs/widgets/text/spellcheckconfig.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -48424,82 +48442,89 @@ msgstr ""
 "inkluzive de necesaj vortaroj, por funkciigi frazanalizon en dezirataj "
 "lingvoj.</para>"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#: core/libs/widgets/text/spellcheckconfig.cpp:120
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Defaŭlta Lingvo"
+msgstr "Defaŭlta Lingvo:"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:114
-#, kde-format
-msgctxt "@info: edit widget default language"
-msgid "Select the default language here to use with \"x-default\" value."
-msgstr ""
-
-#: core/libs/widgets/text/spellcheckconfig.cpp:116
+#: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, fuzzy, kde-format
-#| msgid "Auto-&Detect"
-msgid "Auto-detect"
-msgstr "Aŭtomate-&Detekti"
+#| msgctxt "@info: edit widget default language"
+#| msgid "Select the default language here to use with \"x-default\" value."
+msgctxt "@info: edit widget default language"
+msgid ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
+msgstr "Elektu la defaŭltan lingvon ĉi tie por uzo kun valoro \"x-default\"."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
+#, kde-format
+msgid "Auto-detect"
+msgstr "Aŭtomate detekti"
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:128
+#, kde-format
+msgctxt "@info"
+msgid "Detect automatically the language by parsing string content"
+msgstr ""
+
+#: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
 msgstr "Disponeblaj Lingvaj Vortaroj"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:140
+#: core/libs/widgets/text/spellcheckconfig.cpp:152
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
 msgstr "Kodo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:141
+#: core/libs/widgets/text/spellcheckconfig.cpp:153
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
 msgstr "Nomo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:148
+#: core/libs/widgets/text/spellcheckconfig.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
 msgstr "Disponeblaj Backends"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:167
+#: core/libs/widgets/text/spellcheckconfig.cpp:179
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
 msgstr "Ignoritaj Vortoj"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:173
+#: core/libs/widgets/text/spellcheckconfig.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
 msgstr "Agordu ĉi tie novan vorton por ignori dum literumkontrolo"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:176
+#: core/libs/widgets/text/spellcheckconfig.cpp:188
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
 "Vi povas aldoni aŭ forigi vortojn por ignori dum literumkontrolaj operacioj."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:181
+#: core/libs/widgets/text/spellcheckconfig.cpp:193
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Aldoni..."
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:182
+#: core/libs/widgets/text/spellcheckconfig.cpp:194
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "Fo&rigi"
 
-#: core/libs/widgets/text/spellcheckconfig.cpp:183
+#: core/libs/widgets/text/spellcheckconfig.cpp:195
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
