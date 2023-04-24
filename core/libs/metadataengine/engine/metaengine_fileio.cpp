@@ -185,7 +185,7 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         if (s_metaEngineWarnOrError)
         {
-            return false;
+            //return false;
         }
 
         if (backend)
