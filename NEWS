@@ -46,7 +46,7 @@ BUGFIXES:
 036 ==> 360714 - JPGEG2000 thumbnails shows as dimension 0x0 pixel - Use ExifTool to get right image properties.
 037 ==> 442349 - Folder /Pictures/DigiCam which contains all pictures suddenly changed to file digiKam.
 038 ==> 389179 - Error creating mysql db for internal server (mysql_install_db).
-039 ==> 
+039 ==> 455206 - digiKam hangs on execution on MacOS and doesn't open.
 040 ==> 
 041 ==> 
 042 ==> 
