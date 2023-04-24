@@ -185,7 +185,17 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
         if (s_metaEngineWarnOrError)
         {
-            //return false;
+            d->itemComments().clear();
+            d->exifMetadata().clear();
+            d->iptcMetadata().clear();
+
+#ifdef _XMP_SUPPORT_
+
+            d->xmpMetadata().clear();
+
+#endif // _XMP_SUPPORT_
+
+            return false;
         }
 
         if (backend)

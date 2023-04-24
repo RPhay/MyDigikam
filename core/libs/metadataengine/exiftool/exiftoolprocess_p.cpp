@@ -88,19 +88,21 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     while (pp->canReadLine() && !outReady[channel])
     {
         QByteArray line = pp->readLine();
-
-        if (line.endsWith(QByteArray("\r\n")))
-        {
-            line.remove(line.size() - 2, 1); // Remove '\r' character
-        }
 /*
         qCDebug(DIGIKAM_METAENGINE_LOG) << channel << line;
 */
         if (!outAwait[channel])
         {
-            if (line.startsWith(QByteArray("{await")) && line.endsWith(QByteArray("}\n")))
+            if (line.startsWith(QByteArray("{await")))
             {
-                outAwait[channel] = line.mid(6, line.size() - 8).toInt();
+                if      (line.endsWith(QByteArray("}\n")))
+                {
+                    outAwait[channel] = line.mid(6, line.size() - 8).toInt();
+                }
+                else if (line.endsWith(QByteArray("}\r\n")))
+                {
+                    outAwait[channel] = line.mid(6, line.size() - 9).toInt();
+                }
             }
 
             continue;
@@ -108,9 +110,16 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
         outBuff[channel] += line;
 
-        if (line.endsWith(QByteArray("{ready}\n")))
+        if      (line.endsWith(QByteArray("{ready}\n")))
         {
             outBuff[channel].chop(8);
+            outReady[channel] = true;
+
+            break;
+        }
+        else if (line.endsWith(QByteArray("{ready}\r\n")))
+        {
+            outBuff[channel].chop(9);
             outReady[channel] = true;
 
             break;
