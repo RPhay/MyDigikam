@@ -51,7 +51,7 @@ BUGFIXES:
 041 ==> 468832 - Editing an existing Keyword Tag strips away all IPTC information from the image file.
 042 ==> 448231 - Crash on closing digiKam.
 043 ==> 468798 - digiKam not starting after upgrade to 8.0.
-044 ==> 
+044 ==> 450502 - "Remove entry for this language" deletes all caption, not just the selected one.
 045 ==> 
 046 ==> 
 047 ==> 
