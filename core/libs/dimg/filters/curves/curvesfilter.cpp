@@ -103,7 +103,7 @@ FilterAction CurvesFilter::filterAction()
     DefaultFilterAction<CurvesFilter> action(m_settings.isStoredLosslessly());
     m_settings.writeToFilterAction(action);
 
-    return std::move(action);
+    return action;
 }
 
 void CurvesFilter::readParameters(const FilterAction& action)

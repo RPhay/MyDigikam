@@ -94,7 +94,7 @@ FilterAction BCGFilter::filterAction()
     DefaultFilterAction<BCGFilter> action;
     d->settings.writeToFilterAction(action);
 
-    return std::move(action);
+    return action;
 }
 
 void BCGFilter::readParameters(const FilterAction& action)
