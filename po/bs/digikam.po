@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -38556,7 +38556,7 @@ msgstr "Selektovani folder ne postoji ili se ne može učitati."
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Selektovani folder ne postoji ili se ne može učitati."
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""

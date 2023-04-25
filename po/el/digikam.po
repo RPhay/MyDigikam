@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -38640,7 +38640,7 @@ msgstr "Το αρχείο δεν υπάρχει ή δεν είναι αρχεί�
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Το αρχείο δεν υπάρχει ή δεν είναι αρχείο"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr ""

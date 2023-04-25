@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -36528,7 +36528,7 @@ msgstr "ExifTool не существует или отсутствует раз�
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl не существует или отсутствует разрешение на его выполнение"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Ошибка синхронизации между двумя каналами"

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
-"PO-Revision-Date: 2023-04-19 08:46+0300\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"PO-Revision-Date: 2023-04-24 14:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -36663,7 +36663,7 @@ msgstr "ExifTool немає у системі або файл програми �
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl немає у системі або файл програми не є виконуваним"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Помилка синхронізації між каналами"
@@ -49246,12 +49246,10 @@ msgstr ""
 "аналізом речень бажаної мови.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Типова мова"
+msgstr "Типова мова:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -49260,11 +49258,10 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Тут можна вибрати типову мову, яку буде використано зі значенням «x-default»."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
 msgstr "Автовизначення"
 
@@ -49272,7 +49269,7 @@ msgstr "Автовизначення"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Автоматично визначити мову шляхом обробки вмісту рядка"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format

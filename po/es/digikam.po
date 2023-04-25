@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
-"PO-Revision-Date: 2023-04-23 04:11+0200\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"PO-Revision-Date: 2023-04-24 19:06+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -36577,7 +36577,7 @@ msgstr "ExifTool no existe o carece de permiso de ejecución"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl no existe o carece de permiso de ejecución"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Error de sincronización entre los canales"
@@ -49140,15 +49140,14 @@ msgid "Default Language:"
 msgstr "Idioma predeterminado:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@info: edit widget default language"
-#| msgid "Select the default language here to use with \"x-default\" value."
+#, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
-"Seleccione aquí el idioma predeterminado para usar con el valor «x-default»."
+"Seleccione aquí el idioma predeterminado para usar con el valor «x-default» "
+"para los textos del idioma alternativo."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
@@ -49159,7 +49158,7 @@ msgstr "Detectar automáticamente"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Detectar automáticamente el idioma analizando el contenido del texto"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format

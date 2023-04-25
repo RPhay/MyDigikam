@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
-"PO-Revision-Date: 2023-04-20 09:37+0200\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"PO-Revision-Date: 2023-04-24 09:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -36178,7 +36178,7 @@ msgstr "Manjka orodje ExifTool ali nima dovoljenja za izvajanje"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Manjka Perl ali nima dovoljenja za izvajanje"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Napaka sinhronizacije med kanali"
@@ -48712,12 +48712,10 @@ msgstr ""
 "jezikih.</p>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Privzeti jezik"
+msgstr "Privzeti jezik:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -48726,11 +48724,11 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Izberite tukajšnji privzeti jezik za uporabi pri vrednosti \"x-default\" za "
+"alternativne nize jezikov."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
 msgstr "Samodejno zaznaj"
 
@@ -48738,7 +48736,7 @@ msgstr "Samodejno zaznaj"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Samodejno zaznaj jezik z razčlenjevanjem komponent nizov"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format

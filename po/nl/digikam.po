@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-24 00:45+0000\n"
-"PO-Revision-Date: 2023-04-23 14:33+0200\n"
+"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"PO-Revision-Date: 2023-04-24 12:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -36509,7 +36509,7 @@ msgstr "ExifTool bestaat niet of of toegangsrecht op uitvoeren ontbreekt"
 msgid "Perl does not exists or exec permission is missing"
 msgstr "Perl bestaat niet of of toegangsrecht op uitvoeren ontbreekt"
 
-#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
+#: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:153
 #, kde-format
 msgid "Synchronization error between the channels"
 msgstr "Fout in synchronisatie tussen de kanalen"
@@ -49020,16 +49020,14 @@ msgid "Default Language:"
 msgstr "Standaard taal:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@info: edit widget default language"
-#| msgid "Select the default language here to use with \"x-default\" value."
+#, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
 "De standaard taal hier selecteren om te gebruiken in de waarde van \"x-"
-"default\"."
+"default\" voor de alternatieve taaltekenreeksen."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
@@ -49041,6 +49039,7 @@ msgstr "Auto-detectie"
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
+"Automatisch de taal detecteren door de inhoud van de tekenreeks te ontleden"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
