@@ -214,7 +214,7 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
 
         if (txt.isEmpty() || delCondition)
         {
-            DTextEdit::keyPressEvent(e);
+            QTextEdit::keyPressEvent(e);
 
             return;
         }

@@ -214,7 +214,7 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
 
         if (txt.isEmpty() || delCondition)
         {
-            DPlainTextEdit::keyPressEvent(e);
+            QPlainTextEdit::keyPressEvent(e);
 
             return;
         }

@@ -52,6 +52,6 @@ BUGFIXES:
 042 ==> 448231 - Crash on closing digiKam.
 043 ==> 468798 - digiKam not starting after upgrade to 8.0.
 044 ==> 450502 - "Remove entry for this language" deletes all caption, not just the selected one.
-045 ==> 
+045 ==> 468932 - Segmentation fault when editing IPTC Copyright.
 046 ==> 
 047 ==> 
