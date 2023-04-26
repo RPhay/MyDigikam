@@ -377,9 +377,9 @@ bool Setup::execDialog(Page page)
     return execDialog(nullptr, page);
 }
 
-bool Setup::execDialog(QWidget* const /*parent*/, Page page)
+bool Setup::execDialog(QWidget* const parent, Page page)
 {
-    QPointer<Setup> setup = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup = new Setup(parent);
     setup->showPage(page);
     bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -392,9 +392,9 @@ bool Setup::execSinglePage(Page page)
     return execSinglePage(nullptr, page);
 }
 
-bool Setup::execSinglePage(QWidget* const /*parent*/, Page page)
+bool Setup::execSinglePage(QWidget* const parent, Page page)
 {
-    QPointer<Setup> setup = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup = new Setup(parent);
     setup->showPage(page);
     setup->setFaceType(Plain);
     bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
@@ -403,9 +403,9 @@ bool Setup::execSinglePage(QWidget* const /*parent*/, Page page)
     return success;
 }
 
-bool Setup::execTemplateEditor(QWidget* const /*parent*/, const Template& t)
+bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
 {
-    QPointer<Setup> setup = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup = new Setup(parent);
     setup->showPage(TemplatePage);
     setup->setFaceType(Plain);
     setup->setTemplate(t);
@@ -415,9 +415,9 @@ bool Setup::execTemplateEditor(QWidget* const /*parent*/, const Template& t)
     return success;
 }
 
-bool Setup::execMetadataFilters(QWidget* const /*parent*/, int tab)
+bool Setup::execMetadataFilters(QWidget* const parent, int tab)
 {
-    QPointer<Setup> setup        = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
@@ -444,9 +444,9 @@ bool Setup::execMetadataFilters(QWidget* const /*parent*/, int tab)
     return success;
 }
 
-bool Setup::execExifTool(QWidget* const /*parent*/)
+bool Setup::execExifTool(QWidget* const parent)
 {
-    QPointer<Setup> setup        = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(MetadataPage);
     setup->setFaceType(Plain);
 
@@ -472,9 +472,9 @@ bool Setup::execExifTool(QWidget* const /*parent*/)
     return success;
 }
 
-bool Setup::execLocalize(QWidget* const /*parent*/)
+bool Setup::execLocalize(QWidget* const parent)
 {
-    QPointer<Setup> setup        = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(MiscellaneousPage);
     setup->setFaceType(Plain);
 
@@ -500,9 +500,9 @@ bool Setup::execLocalize(QWidget* const /*parent*/)
     return success;
 }
 
-bool Setup::execImageQualitySorter(QWidget* const /*parent*/)
+bool Setup::execImageQualitySorter(QWidget* const parent)
 {
-    QPointer<Setup> setup        = new Setup(qApp->activeWindow());
+    QPointer<Setup> setup        = new Setup(parent);
     setup->showPage(ImageQualityPage);
     setup->setFaceType(Plain);
 
