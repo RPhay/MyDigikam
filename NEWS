@@ -54,4 +54,7 @@ BUGFIXES:
 044 ==> 450502 - "Remove entry for this language" deletes all caption, not just the selected one.
 045 ==> 468932 - Segmentation fault when editing IPTC Copyright.
 046 ==> 469015 - In 8.0 and 8.1 no tags for country, city, street and so on after Reverse Geocoding.
-047 ==> 
+047 ==> 392562 - Getting Started, Setting up - database, image storage locations.
+048 ==> 
+049 ==> 
+050 ==> 
