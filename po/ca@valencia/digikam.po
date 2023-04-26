@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-25 00:47+0000\n"
-"PO-Revision-Date: 2023-04-23 10:03+0200\n"
+"PO-Revision-Date: 2023-04-24 11:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -49096,15 +49096,14 @@ msgid "Default Language:"
 msgstr "Idioma predeterminat:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@info: edit widget default language"
-#| msgid "Select the default language here to use with \"x-default\" value."
+#, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
-"Seleccioneu ací l'idioma predeterminat a utilitzar amb el valor «x-default»."
+"Seleccioneu ací l'idioma predeterminat a utilitzar amb el valor «x-default» "
+"per a les cadenes de l'idioma alternatiu."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
@@ -49115,7 +49114,7 @@ msgstr "Detecta automàticament"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Detecta automàticament l'idioma analitzant el contingut de les cadenes"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format

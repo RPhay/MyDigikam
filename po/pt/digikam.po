@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-25 00:47+0000\n"
-"PO-Revision-Date: 2023-04-18 09:34+0100\n"
+"PO-Revision-Date: 2023-04-25 21:23+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -3675,16 +3675,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Algumas das novas funcionalidades nesta versão do digiKam incluem (em "
-"comparação com o digiKam 6.x):"
+"comparação com o digiKam 7.x):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -49043,12 +49040,10 @@ msgstr ""
 "desejadas.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Língua por Omissão"
+msgstr "Língua por Omissão:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -49057,18 +49052,19 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Seleccione aqui a língua predefinida a usar com o valor \"x-default\" para "
+"os textos em línguas alternativas."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "Auto-&Detectar"
+msgstr "Auto-detectar"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Detectar automaticamente a língua, processando o conteúdo do texto"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
