@@ -796,8 +796,8 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
     d->hideOptions = !(group->readEntry("Hide options",                false));
     slotHideOptions();
 
-    d->tagsLoc->setChecked(group->readEntry("Tags location",           false));
-    d->metaLoc->setChecked(group->readEntry("Metadata location",       true));
+    d->tagsLoc->setChecked(group->readEntry("Tags location",           true));
+    d->metaLoc->setChecked(group->readEntry("Metadata location",       false));
 }
 
 /**
