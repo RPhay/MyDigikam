@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2023-04-24 12:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -49710,7 +49710,7 @@ msgstr "&Decoratie"
 msgid "Effec&ts"
 msgstr "Effec&ten"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62630,13 +62630,13 @@ msgstr ""
 "na de herstart. Sommige instellingen zijn afhankelijk van hardware en kunnen "
 "geen effect hebben.</b>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Database"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62646,13 +62646,13 @@ msgstr ""
 "Database-instellingen\n"
 "Pas de database-instellingen aan"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Verzamelingen"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62662,13 +62662,13 @@ msgstr ""
 "Instellingen voor verzamelingen\n"
 "Stel de locaties in van hoofdalbums"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Weergaven"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62678,13 +62678,13 @@ msgstr ""
 "Instellingen voor weergave in de applicatie\n"
 "Pas het uiterlijk aan van weergaven"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Tekstballon"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62694,13 +62694,13 @@ msgstr ""
 "Instellingen voor tekstballonnen\n"
 "Pas informatie in tekstballonnen van items aan"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62710,13 +62710,13 @@ msgstr ""
 "Instellingen voor het videovoorbeeld\n"
 "Pas de instellingen aan voor afspelen van videomedia"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metagegevens"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62726,13 +62726,13 @@ msgstr ""
 "Beheer van ingebedde informatie in afbeeldingen\n"
 "Stel relaties in tussen afbeeldingen en metagegevens"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sjablonen"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62742,13 +62742,13 @@ msgstr ""
 "Metagegevenssjablonen\n"
 "Beheer uw verzameling metagegevenssjablonen"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Afbeeldingsbewerker"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62758,13 +62758,13 @@ msgstr ""
 "instellingen voor afbeeldingsbewerker\n"
 "Pas de instellingen van de afbeeldingsbewerker aan"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Kleurbeheer"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62774,13 +62774,13 @@ msgstr ""
 "Instellingen voor kleurbeheer\n"
 "Pas de instellingen voor kleurbeheer aan"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Lichttafel"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62790,13 +62790,13 @@ msgstr ""
 "Lichttafelinstellingen\n"
 "Pas het hulpmiddel aan voor het vergelijken van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Sorteerder op kwaliteit van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62806,13 +62806,13 @@ msgstr ""
 "Instellingen voor sorteren op kwaliteit\n"
 "Pas de standaard instellingen aan om de kwaliteit te beoordelen"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Camera's"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62822,13 +62822,13 @@ msgstr ""
 "Camera-instellingen\n"
 "Beheer uw camera's"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62838,13 +62838,13 @@ msgstr ""
 "Instellingen voor plug-in\n"
 "Stel in welke plug-ins toegankelijk zijn vanuit toepassing"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversen"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid ""

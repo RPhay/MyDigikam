@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -51404,7 +51404,7 @@ msgstr "裝飾(&D)"
 msgid "Effec&ts"
 msgstr "效果"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -64294,13 +64294,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "資料庫"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -64309,13 +64309,13 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>資料庫設定值<br/><i>自訂資料庫設定值</i></qt>"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "收藏"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -64326,13 +64326,13 @@ msgid ""
 "Set root albums locations"
 msgstr "<qt>收藏設定值<br/><i>設定相簿和資料庫的位置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64342,13 +64342,13 @@ msgstr ""
 "應用程式檢視設定值\n"
 "自訂各個檢視的外觀"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "工具提示"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64358,13 +64358,13 @@ msgstr ""
 "項目工具提示設定\n"
 "自訂項目工具提示中的資訊"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "影片"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64374,13 +64374,13 @@ msgstr ""
 "影片預覽設定\n"
 "調整播放影片媒體的設定"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "中繼資料"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -64391,13 +64391,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "<qt>內嵌的影像資訊管理<br/><i>自訂影像和中繼資料之間的關聯</i></qt>"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "範本"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64407,13 +64407,13 @@ msgstr ""
 "中繼資料範本\n"
 "管理您的中繼資料範本收藏"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "影像編輯器"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64423,13 +64423,13 @@ msgstr ""
 "影像編輯器設定\n"
 "自訂影像編輯器設定"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "色彩管理"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -64440,13 +64440,13 @@ msgid ""
 "Customize the color management settings"
 msgstr "<qt>色彩管理設定<br/><i>自訂色彩管理設定值</i></qt>"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "數位光桌"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -64457,14 +64457,14 @@ msgid ""
 "Customize tool used to compare images"
 msgstr "<qt>數位光桌設定值<br/><i>用於比較影像的自訂工具</i></qt>"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -64474,13 +64474,13 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "<qt>影像編輯器設定值<br/><i>自訂影像編輯器行為</i></qt>"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "相機"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64490,14 +64490,14 @@ msgstr ""
 "相機設定\n"
 "管理您的相機裝置"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 #| msgid "Loading..."
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "載入中..."
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -64508,13 +64508,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr "<qt>收藏設定值<br/><i>設定相簿和資料庫的位置</i></qt>"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid ""

@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -48558,7 +48558,7 @@ msgstr ""
 msgid "Effec&ts"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -60572,14 +60572,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "डेटाबेस"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60587,14 +60587,14 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "संग्रह"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60602,14 +60602,14 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "दृश्य"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60617,14 +60617,14 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "साधने"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60632,14 +60632,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "व्हिडीओ"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60647,13 +60647,13 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "संपादित करा..."
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60661,13 +60661,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "नमूने"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60675,14 +60675,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "प्रतिमा"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60690,13 +60690,13 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "रंग पद्धत"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60704,14 +60704,14 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "हलके"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60719,14 +60719,14 @@ msgid ""
 "Customize tool used to compare images"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "प्रतिमा"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60734,14 +60734,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "कॅमेरा"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60749,13 +60749,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "दाखल करत आहे..."
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60763,14 +60763,14 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "किरकोळ"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid ""

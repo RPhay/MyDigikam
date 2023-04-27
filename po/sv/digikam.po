@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -50549,7 +50549,7 @@ msgstr "&Dekorera"
 msgid "Effec&ts"
 msgstr "Effek&ter"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -63484,13 +63484,13 @@ msgstr ""
 "en omstart. Vissa inställningar är hårdvaruberoende och kanske inte får "
 "någon effekt.</b>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Databas"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63500,13 +63500,13 @@ msgstr ""
 "Databasinställningar\n"
 "Anpassa databasinställningar"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Samlingar"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63516,13 +63516,13 @@ msgstr ""
 "Inställningar av samlingar\n"
 "Ställ in platser för rotalbum"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vyer"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63532,13 +63532,13 @@ msgstr ""
 "Inställningar av programvyer\n"
 "Anpassa vyernas utseende"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Verktygstips"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63548,13 +63548,13 @@ msgstr ""
 "Inställningar av objektens verktygstips\n"
 "Anpassa informationen i objektens verktygstips"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63564,13 +63564,13 @@ msgstr ""
 "Inställningar för videoförhandsgranskning\n"
 "Anpassa inställningar för uppspelning av videomedia"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63580,13 +63580,13 @@ msgstr ""
 "Hantering av inbäddad bildinformation\n"
 "Ställ in förhållanden mellan bilder och metadata"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Mallar"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63596,13 +63596,13 @@ msgstr ""
 "Metadatamallar\n"
 "Hantera samlingen av metadatamallar"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Bildredigering"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63612,13 +63612,13 @@ msgstr ""
 "Inställningar av bildeditor\n"
 "Anpassa bildeditorns inställningar"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Färghantering"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63628,13 +63628,13 @@ msgstr ""
 "Inställningar av färghantering\n"
 "Anpassa inställningar av färghantering"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Ljusbord"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63644,13 +63644,13 @@ msgstr ""
 "Inställningar av ljusbord\n"
 "Anpassa verktyg använt för att jämföra bilder"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Bildkvalitetssortering"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -63664,13 +63664,13 @@ msgstr ""
 "Inställningar av bildkvalitetssortering\n"
 "Anpassa inställningar för att utföra bildurval enligt kvalitet"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kameror"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63680,13 +63680,13 @@ msgstr ""
 "Kamerainställningar\n"
 "Hantera dina kameraenheter"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Insticksprogram"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63696,13 +63696,13 @@ msgstr ""
 "Inställningar av insticksprogram\n"
 "Ställ in vilka insticksprogram som ska vara tillgängliga från programmet"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid ""

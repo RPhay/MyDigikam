@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2023-04-24 14:54+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -49941,7 +49941,7 @@ msgstr "Дек&орування"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62944,13 +62944,13 @@ msgstr ""
 "перезапуску програми. Працездатність деяких параметрів залежить від "
 "використаного обладнання.</b>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База даних"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62960,13 +62960,13 @@ msgstr ""
 "Параметри бази даних\n"
 "Налаштуйте параметри бази даних"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Збірки"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62976,13 +62976,13 @@ msgstr ""
 "Параметри збірки\n"
 "За допомогою цієї панелі ви зможете налаштувати шляхи до кореневих альбомів"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62992,13 +62992,13 @@ msgstr ""
 "Параметри панелей перегляду програми\n"
 "За допомогою цієї панелі ви зможете налаштувати компоненти панелей перегляду"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Підказки"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63008,13 +63008,13 @@ msgstr ""
 "Параметри підказок записів\n"
 "За допомогою цієї панелі ви зможете налаштувати вміст підказок записів"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "відео"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63024,13 +63024,13 @@ msgstr ""
 "Параметри перегляду відео\n"
 "Налаштуйте параметри відтворення відеоданих"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63041,13 +63041,13 @@ msgstr ""
 "За допомогою цієї панелі ви можете вказати дії, які буде виконано з "
 "метаданими зображень"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблони"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63057,13 +63057,13 @@ msgstr ""
 "Шаблони метаданих\n"
 "Керуйте вашою збіркою шаблонів метаданих"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63073,13 +63073,13 @@ msgstr ""
 "Параметри редактора зображень\n"
 "За допомогою цієї панелі ви зможете налаштувати поведінку редактора зображень"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Керування кольорами"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63089,13 +63089,13 @@ msgstr ""
 "Параметри керування кольорами\n"
 "За допомогою цієї панелі ви зможете налаштувати параметри керування кольорами"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63106,13 +63106,13 @@ msgstr ""
 "За допомогою цієї панелі ви зможете налаштувати поведінку стола з "
 "підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63122,13 +63122,13 @@ msgstr ""
 "Параметри засобу упорядковування за якістю\n"
 "Налаштування типовий параметрів для визначення якості зображень"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Фотоапарати"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63138,13 +63138,13 @@ msgstr ""
 "Параметри фотоапаратів\n"
 "За допомогою цієї панелі ви зможете вказати нові пристрої цифрових фотокамер"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Додатки"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63154,13 +63154,13 @@ msgstr ""
 "Параметри додатків\n"
 "Встановлення переліку доступних для програми додатків"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid ""

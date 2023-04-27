@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -48832,7 +48832,7 @@ msgstr "&Díszítés"
 msgid "Effec&ts"
 msgstr "Effek&tek"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -60972,14 +60972,14 @@ msgstr ""
 "újraindítást követően lép életbe. Néhány beállítás hardvertől függ, és "
 "lehet, hogy nem lesz hatása.</b>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Adatbázis"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -60989,14 +60989,14 @@ msgid ""
 msgstr ""
 "<qt>Adatbázis beállítások<br/><i>Adatbázis beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Gyűjtemények"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -61006,14 +61006,14 @@ msgid ""
 msgstr ""
 "<qt>Adatbázis beállítások<br/><i>Adatbázis beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Nézetek"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -61026,14 +61026,14 @@ msgstr ""
 "<qt>Egyéb beállítások<br/><i>A digiKam további részei működésének "
 "testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Eszköztipp"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -61046,7 +61046,7 @@ msgstr ""
 "<qt>Bélyegképsáv elemek buboréksúgó beállításai<br/><i>Információk "
 "testreszabása a buboréksúgókban</i></qt>"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgctxt "@item: xmp namespace"
 #| msgid "Video"
@@ -61054,7 +61054,7 @@ msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -61064,14 +61064,14 @@ msgid ""
 msgstr ""
 "<qt>Bemutató beállítások<br/><i>A bemutató beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metaadat"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -61079,14 +61079,14 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sablonok"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -61097,14 +61097,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "<qt>Metaadat sablonok<br/><i>Metaadat sablonok kezelése</i></qt>"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Kép szerkesztő"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -61114,14 +61114,14 @@ msgid ""
 msgstr ""
 "<qt>Adatbázis beállítások<br/><i>Adatbázis beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Szín kezelés"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -61134,14 +61134,14 @@ msgstr ""
 "<qt>A színkezelő beállításai<br/><i>A színkezelő beállításainak "
 "testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Átvilágító asztal"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -61151,14 +61151,14 @@ msgid ""
 msgstr ""
 "<qt>Adatbázis beállítások<br/><i>Adatbázis beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Képminőség rendező"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -61168,14 +61168,14 @@ msgid ""
 msgstr ""
 "<qt>Adatbázis beállítások<br/><i>Adatbázis beállítások testreszabása</i></qt>"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamerák"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -61184,14 +61184,14 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>Kamera Beállítások<br/><i>Kamera eszközök kezelése</i></qt>"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Kipi bővítmények"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -61199,7 +61199,7 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgctxt "@item: album categories"
 #| msgid "Miscellaneous"
@@ -61207,7 +61207,7 @@ msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Vegyes"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

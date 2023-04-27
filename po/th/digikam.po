@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-25 00:47+0000\n"
+"POT-Creation-Date: 2023-04-27 00:46+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -50610,7 +50610,7 @@ msgstr "ตกแต่&งภาพ"
 msgid "Effec&ts"
 msgstr "ทำภาพเบลอ"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -63366,13 +63366,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "โฟลเดอร์เก็บฐานข้อมูล"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:171
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63380,14 +63380,14 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>ตั้งค่าการนำเสนอภาพ<br/><i>ปรับตั้งค่าการนำเสนอภาพตามต้องการ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:174
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "คลังภาพ"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -63400,13 +63400,13 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของคลังภาพ<br/><i>ตั้งค่าตำแหน่งรากของอัลบั้มและตำแหน่งเก็บฐานข้อมูล</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:179
+#: core/utilities/setup/setup.cpp:180
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "แสดงภาพ"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -63418,14 +63418,14 @@ msgid ""
 msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของมุมมองอัลบั้ม<br/><i>ปรับแต่งรูปลักษณ์ของรายการอัลบั้มต่าง ๆ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:184
+#: core/utilities/setup/setup.cpp:185
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "หน้าต่างผุด"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:186
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -63438,13 +63438,13 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของหน้าต่างผุดแสดงข้อมูลของรายการต่าง ๆ<br/"
 "><i>ปรับแต่งข้อมูลรายละเอียดที่จะให้แสดงในหน้าต่างผุดแสดงข้อมูล</i></qt>"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "แสดงภาพ"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:193
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -63453,14 +63453,14 @@ msgid ""
 "Customize settings to play video media"
 msgstr "<qt>ตั้งค่าการนำเสนอภาพ<br/><i>ปรับตั้งค่าการนำเสนอภาพตามต้องการ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:198
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "ข้อมูลกำกับภาพ"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:200
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -63473,14 +63473,14 @@ msgstr ""
 "<qt>การจัดการข้อมูลรายละเอียดที่ฝังแนบมากับภาพ<br/><i>ตั้งค่าความสัมพันธ์ต่าง ๆ "
 "ระหว่างภาพต่าง ๆ กับข้อมูลกำกับภาพ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:203
+#: core/utilities/setup/setup.cpp:204
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "แม่แบบต่าง ๆ"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:205
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -63492,14 +63492,14 @@ msgid ""
 msgstr ""
 "<qt>แม่แบบข้อมูลกำกับภาพ<br/><i>จัดการแม่แบบข้อมูลกำกับภาพของคลังภาพของคุณ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:208
+#: core/utilities/setup/setup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -63511,14 +63511,14 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของเครื่องมือแก้ไขภาพ<br/><i>ปรับแต่งพฤติกรรมของเครื่องมือแก้ไขภาพ</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:213
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "การจัดการระบบสี"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:215
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63528,14 +63528,14 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ เกี่ยวกับการจัดการระบบสี<br/><i>ปรับตั้งค่าต่าง ๆ "
 "ของการจัดการระบบสีตามต้องการ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:218
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "โต๊ะฉายแสง"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -63548,13 +63548,13 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของโต๊ะฉายแสง<br/><i>ปรับแต่งเครื่องมือที่ใช้ในการเปรียบเทียบภาพต่าง ๆ</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:223
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -63566,14 +63566,14 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของเครื่องมือแก้ไขภาพ<br/><i>ปรับแต่งพฤติกรรมของเครื่องมือแก้ไขภาพ</i></"
 "qt>"
 
-#: core/utilities/setup/setup.cpp:228
+#: core/utilities/setup/setup.cpp:229
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "กล้องต่าง ๆ"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:230
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -63582,13 +63582,13 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>ตั้งค่าต่าง ๆ ของกล้อง<br/><i>จัดการอุปกรณ์กล้องต่าง ๆ ของคุณ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:236
+#: core/utilities/setup/setup.cpp:237
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "ส่วนเสริมของ Kipi"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:238
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -63601,14 +63601,14 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของส่วนติดต่อผู้ใช้งานตัวหลักกับส่วนเสริม<br/> "
 "<i>ตั้งค่าว่าจะให้ใช้งานส่วนเสริมตัวใดได้บ้างจากส่วนติดต่อผู้ใช้งานตัวหลัก</i></qt>"
 
-#: core/utilities/setup/setup.cpp:241
+#: core/utilities/setup/setup.cpp:242
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "เบ็ดเตล็ด"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:243
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
