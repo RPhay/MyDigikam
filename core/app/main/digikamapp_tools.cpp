@@ -79,7 +79,7 @@ void DigikamApp::setupSelectToolsAction()
 
 void DigikamApp::slotMaintenance()
 {
-    MaintenanceDlg* const dlg = new MaintenanceDlg(this);
+    QPointer<MaintenanceDlg> dlg = new MaintenanceDlg(this);
 
     if (dlg->exec() == QDialog::Accepted)
     {
@@ -91,8 +91,13 @@ void DigikamApp::slotMaintenance()
         connect(mngr, SIGNAL(signalComplete()),
                 this, SLOT(slotMaintenanceDone()));
 
+        connect(mngr, SIGNAL(signalComplete()),
+                mngr, SLOT(deleteLater()));
+
         mngr->setSettings(dlg->settings());
     }
+
+    delete dlg;
 }
 
 void DigikamApp::slotScanNewItems()
