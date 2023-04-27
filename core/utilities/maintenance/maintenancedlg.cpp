@@ -539,7 +539,7 @@ void MaintenanceDlg::readSettings()
     }
 
     winId();
-    windowHandle()->resize(800, 600);
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 }
