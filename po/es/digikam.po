@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:46+0000\n"
+"POT-Creation-Date: 2023-04-28 00:45+0000\n"
 "PO-Revision-Date: 2023-04-24 19:06+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -49831,7 +49831,7 @@ msgstr "&Decorar"
 msgid "Effec&ts"
 msgstr "Efec&tos"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62752,13 +62752,13 @@ msgstr ""
 "reiniciar. Algunas preferencias dependen del hardware y es posible que no "
 "tengan efecto.</b>"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de datos"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62768,13 +62768,13 @@ msgstr ""
 "Preferencias de la base de datos\n"
 "Personalizar las preferencias de la base de datos"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Colecciones"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62784,13 +62784,13 @@ msgstr ""
 "Preferencias de colecciones\n"
 "Definir las ubicaciones de los álbumes de nivel superior"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistas"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62800,13 +62800,13 @@ msgstr ""
 "Preferencias de las vistas de la aplicación\n"
 "Personalizar el aspecto de las vistas"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Descripciones emergentes"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62816,13 +62816,13 @@ msgstr ""
 "Preferencias de las descripciones emergentes de elementos\n"
 "Personalizar la información de las descripciones emergentes"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Vídeo"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62832,13 +62832,13 @@ msgstr ""
 "Preferencias de la vista previa de vídeo\n"
 "Personalizar las preferencias de la reproducción de vídeo"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadatos"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62848,13 +62848,13 @@ msgstr ""
 "Gestión de la información incorporada en la imagen\n"
 "Configurar las relaciones entre las imágenes y los metadatos"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Plantillas"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62864,13 +62864,13 @@ msgstr ""
 "Plantillas de metadatos\n"
 "Gestionar la colección de plantillas de metadatos"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor de imágenes"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62880,13 +62880,13 @@ msgstr ""
 "Preferencias del editor de imágenes\n"
 "Personalizar las preferencias del editor de imágenes"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestión de color"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62896,13 +62896,13 @@ msgstr ""
 "Preferencias de la gestión de color\n"
 "Personalizar las preferencias de la gestión de color"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Mesa de Luz"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62912,13 +62912,13 @@ msgstr ""
 "Preferencias de la mesa de luz\n"
 "Personalizar la herramienta de comparación de imágenes"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Ordenar por calidad de imagen"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62929,13 +62929,13 @@ msgstr ""
 "Personalizar las preferencias predeterminadas para realizar la elección de "
 "imágenes por calidad"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Cámaras"
 
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62945,13 +62945,13 @@ msgstr ""
 "Preferencias de la cámara\n"
 "Gestión de cámaras"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Complementos"
 
-#: core/utilities/setup/setup.cpp:238
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62961,13 +62961,13 @@ msgstr ""
 "Preferencias de los complementos\n"
 "Indicar los complementos a los que podrá acceder la aplicación"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Otros"
 
-#: core/utilities/setup/setup.cpp:243
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

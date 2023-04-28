@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:46+0000\n"
+"POT-Creation-Date: 2023-04-28 00:45+0000\n"
 "PO-Revision-Date: 2023-04-24 11:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -49784,7 +49784,7 @@ msgstr "&Decora"
 msgid "Effec&ts"
 msgstr "Efec&tes"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62717,13 +62717,13 @@ msgstr ""
 "efecte després de reiniciar. Algunes depenen del maquinari i podrien no "
 "tenir cap efecte.</b>"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de dades"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62733,13 +62733,13 @@ msgstr ""
 "Configuració de la base de dades\n"
 "Personalitza la configuració de la base de dades"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Col·leccions"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62749,13 +62749,13 @@ msgstr ""
 "Configuració de les col·leccions\n"
 "Estableix les ubicacions dels àlbums principals"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistes"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62765,13 +62765,13 @@ msgstr ""
 "Configuració de les vistes a l'aplicació\n"
 "Personalitza l'aspecte de les vistes"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Consell d'eina"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62781,13 +62781,13 @@ msgstr ""
 "Configuració dels consells d'eina\n"
 "Personalitza la informació en els consells d'eina dels elements"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Vídeo"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62797,13 +62797,13 @@ msgstr ""
 "Configuració de la vista prèvia de vídeo\n"
 "Personalitza la configuració per a reproduir fitxers multimèdia de vídeo"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadades"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62813,13 +62813,13 @@ msgstr ""
 "Gestió de la informació incrustada de les imatges\n"
 "Configura les relacions entre imatges i metadades"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Plantilles"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62829,13 +62829,13 @@ msgstr ""
 "Plantilles de metadades\n"
 "Gestiona la col·lecció de les plantilles de metadades"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62845,13 +62845,13 @@ msgstr ""
 "Configuració de l'editor d'imatges\n"
 "Personalitza la configuració de l'editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestió del color"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62861,13 +62861,13 @@ msgstr ""
 "Configuració de la gestió del color\n"
 "Personalitza la configuració de la gestió del color"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62877,13 +62877,13 @@ msgstr ""
 "Configuració de la taula de llum\n"
 "Personalitza l'eina emprada en comparar les imatges"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:223
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62894,13 +62894,13 @@ msgstr ""
 "Personalitza la configuració predeterminada per realitzar el triatge "
 "d'imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Càmeres"
 
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62910,13 +62910,13 @@ msgstr ""
 "Configuració de la càmera\n"
 "Gestiona els dispositius de càmera"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Connectors"
 
-#: core/utilities/setup/setup.cpp:238
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62926,13 +62926,13 @@ msgstr ""
 "Configuració dels connectors\n"
 "Estableix els connectors que seran accessibles des de l'aplicació"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Miscel·lània"
 
-#: core/utilities/setup/setup.cpp:243
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

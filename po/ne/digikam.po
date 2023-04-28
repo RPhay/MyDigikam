@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:46+0000\n"
+"POT-Creation-Date: 2023-04-28 00:45+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -47928,7 +47928,7 @@ msgstr "घुमाउनुहोस्"
 msgid "Effec&ts"
 msgstr "रङ गहिराइ:"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -60081,13 +60081,13 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "फोल्डर सिर्जना गर्नुहुन्छ ?"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60095,14 +60095,14 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:174
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "सङ्कलन"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60110,13 +60110,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:179
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "दृश्य..."
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60124,13 +60124,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:184
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "उपकरण टिप"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60138,13 +60138,13 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:191
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "दृश्य..."
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60152,14 +60152,14 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "मेटाडेटा"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid "Embedded Image Information Management"
 msgctxt "@title"
@@ -60168,13 +60168,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "सम्मिलित छवि सूचना व्यवस्थापन"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "सिर्जना:"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60182,14 +60182,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60197,14 +60197,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "रङ व्यवस्थापन"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60212,13 +60212,13 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:218
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "प्रकाश"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60226,13 +60226,13 @@ msgid ""
 "Customize tool used to compare images"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "छवि सम्पादक"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60240,14 +60240,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:228
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "क्यामेरा"
 
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60255,13 +60255,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:236
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "किपि प्लगइन"
 
-#: core/utilities/setup/setup.cpp:238
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -60269,13 +60269,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:241
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "विविध सेटिङ"
 
-#: core/utilities/setup/setup.cpp:243
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""

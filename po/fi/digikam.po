@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 00:46+0000\n"
+"POT-Creation-Date: 2023-04-28 00:45+0000\n"
 "PO-Revision-Date: 2023-04-14 18:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -50031,7 +50031,7 @@ msgstr "S&omistus"
 msgid "Effec&ts"
 msgstr "&Tehosteet"
 
-#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:163
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:162
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -62540,13 +62540,13 @@ msgstr ""
 "Jotkin asetukset ovat laitteistokohtaisia eikä niillä ehkä ole vaikutusta.</"
 "b>"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Tietokanta"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62556,13 +62556,13 @@ msgstr ""
 "Tietokanta-asetukset\n"
 "Mukauta tietokanta-asetuksia"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:174
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kokoelmat"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62572,13 +62572,13 @@ msgstr ""
 "Kokoelma-asetukset\n"
 "Aseta juurialbumien sijainnit"
 
-#: core/utilities/setup/setup.cpp:180
+#: core/utilities/setup/setup.cpp:179
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Näkymät"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:180
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62588,13 +62588,13 @@ msgstr ""
 "Sovellusnäkymän asetukset\n"
 "Mukauta näkymien ulkoasua"
 
-#: core/utilities/setup/setup.cpp:185
+#: core/utilities/setup/setup.cpp:184
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Työkaluvihje"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:185
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62604,13 +62604,13 @@ msgstr ""
 "Kohteiden työkaluvihjeiden asetukset\n"
 "Mukauta kohteiden työkaluvihjeissä näytettäviä tietoja"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:193
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -62619,13 +62619,13 @@ msgid ""
 "Customize settings to play video media"
 msgstr "<qt>Diaesityksen asetukset</qt>"
 
-#: core/utilities/setup/setup.cpp:199
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metatiedot"
 
-#: core/utilities/setup/setup.cpp:200
+#: core/utilities/setup/setup.cpp:199
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -62638,13 +62638,13 @@ msgstr ""
 "<qt>Metatietojen asetukset<br/><i>Valokuviin talletettujen metatietojen "
 "käsittely</i></qt>"
 
-#: core/utilities/setup/setup.cpp:204
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Mallineet"
 
-#: core/utilities/setup/setup.cpp:205
+#: core/utilities/setup/setup.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62654,13 +62654,13 @@ msgstr ""
 "Metatietomallineet\n"
 "Hallitse kokoelmasi metatietomallineita"
 
-#: core/utilities/setup/setup.cpp:209
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Kuvamuokkain"
 
-#: core/utilities/setup/setup.cpp:210
+#: core/utilities/setup/setup.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62670,13 +62670,13 @@ msgstr ""
 "Kuvamuokkaimen asetukset\n"
 "Muuta kuvamuokkaimen asetuksia"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Värinhallinta"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62686,13 +62686,13 @@ msgstr ""
 "Värinhallinta-asetukset\n"
 "Muuta värinhallinta-asetuksia"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:218
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Valopöytä"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62702,14 +62702,14 @@ msgstr ""
 "Valopöydän asetukset\n"
 "Muuta valokuvien vertailuun käytettyä työkalua"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:223
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Kuvalaatuun perustuva järjestely"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:224
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
@@ -62721,13 +62721,13 @@ msgid ""
 msgstr ""
 "<qt>Kuvamuokkaimen asetukset<br/><i>Mukauta kuvamuokkaimen asetuksia</i></qt>"
 
-#: core/utilities/setup/setup.cpp:229
+#: core/utilities/setup/setup.cpp:228
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamerat"
 
-#: core/utilities/setup/setup.cpp:230
+#: core/utilities/setup/setup.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62737,13 +62737,13 @@ msgstr ""
 "Kamera-asetukset\n"
 "Hallitse kameralaitteita"
 
-#: core/utilities/setup/setup.cpp:237
+#: core/utilities/setup/setup.cpp:236
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Liitännäiset"
 
-#: core/utilities/setup/setup.cpp:238
+#: core/utilities/setup/setup.cpp:237
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62753,13 +62753,13 @@ msgstr ""
 "Liitännäisasetukset\n"
 "Aseta liitännäiset, jotka ovat sovelluksesta käytettävissä"
 
-#: core/utilities/setup/setup.cpp:242
+#: core/utilities/setup/setup.cpp:241
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Sekalaista"
 
-#: core/utilities/setup/setup.cpp:243
+#: core/utilities/setup/setup.cpp:242
 #, kde-format
 msgctxt "@title"
 msgid ""
