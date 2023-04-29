@@ -329,8 +329,8 @@ bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
 void SlideOSD::slotProgressTimer()
 {
     QString str = QString::fromUtf8("(%1/%2)")
-                    .arg(QString::number(d->settings->fileList.indexOf(d->parent->currentItem()) + 1))
-                    .arg(QString::number(d->settings->fileList.count()));
+                    .arg(d->settings->fileList.indexOf(d->parent->currentItem()) + 1)
+                    .arg(d->settings->fileList.count());
 
     if      (isPaused())
     {

@@ -67,7 +67,7 @@ public:
         const int fontSize = qRound(QApplication::font().pointSize() * 1.4);
 
         return (QString::fromLatin1("QLabel { font-size: %1pt; color: %2 }")
-                .arg(QString::number(fontSize), q->palette().color(QPalette::WindowText).name()));
+                .arg(fontSize).arg(q->palette().color(QPalette::WindowText).name()));
     }
 
     QString commentStyleSheet() const

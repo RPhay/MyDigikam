@@ -87,12 +87,11 @@ void RangeModifier::slotTokenTriggered(const QString& token)
 
         if (dlg->ui->toTheEndCheckBox->isChecked())
         {
-            result = QString::fromUtf8("{range:%1,}").arg(QString::number(start));
+            result = QString::fromUtf8("{range:%1,}").arg(start);
         }
         else
         {
-            result = QString::fromUtf8("{range:%1,%2}").arg(QString::number(start))
-                     .arg(QString::number(stop));
+            result = QString::fromUtf8("{range:%1,%2}").arg(start).arg(stop);
         }
     }
 

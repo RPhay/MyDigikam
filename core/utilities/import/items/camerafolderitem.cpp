@@ -81,13 +81,13 @@ QString CameraFolderItem::folderPath() const
 void CameraFolderItem::changeCount(int val)
 {
     d->count += val;
-    setText(0, QString::fromUtf8("%1 (%2)").arg(d->name).arg(QString::number(d->count)));
+    setText(0, QString::fromUtf8("%1 (%2)").arg(d->name).arg(d->count));
 }
 
 void CameraFolderItem::setCount(int val)
 {
     d->count = val;
-    setText(0, QString::fromUtf8("%1 (%2)").arg(d->name).arg(QString::number(d->count)));
+    setText(0, QString::fromUtf8("%1 (%2)").arg(d->name).arg(d->count));
 }
 
 int CameraFolderItem::count() const
