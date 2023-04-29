@@ -61,7 +61,9 @@ SequenceNumberOption::SequenceNumberOption()
                                                                       "||c|| = file counter aware, "
                                                                       "||e|| = extension aware, "
                                                                       "||f|| = folder aware, "
-                                                                      "||r|| = random aware)"));
+                                                                      "||r|| = random aware, "
+                                                                      "||ce|| = counter and extension aware, "
+                                                                      "||re|| = random and extension aware)"));
     addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start) "
                                                                       "||options||: ||e||, ||f||"));
     addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step) "
@@ -69,7 +71,7 @@ SequenceNumberOption::SequenceNumberOption()
     addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step) "
                                                                       "||options||: ||e||, ||f||"));
 
-    QRegularExpression reg(QLatin1String("(#+)(\\[(c?e?f?r?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
+    QRegularExpression reg(QLatin1String("(#+)(\\[(([cefr]?|ce?|re?)?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
 }
 
@@ -179,7 +181,15 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
 
         if (counterAware)
         {
-            index = settings.manager->indexOfFolder(settings.fileUrl.toLocalFile());
+            if (extensionAware)
+            {
+                index = settings.manager->indexOfFileGroup(settings.fileUrl.toLocalFile());
+            }
+            else
+            {
+                index = settings.manager->indexOfFolder(settings.fileUrl.toLocalFile());
+            }
+
             start = settings.manager->indexOfFileCounter(settings.fileUrl.toLocalFile());
         }
 
@@ -190,7 +200,12 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
 
         if (randomAware)
         {
-            random = settings.manager->randomStringOfFile(settings.fileUrl.toLocalFile());
+            if (extensionAware)
+            {
+                index = settings.manager->indexOfFileGroup(settings.fileUrl.toLocalFile());
+            }
+
+            random = settings.manager->randomStringOfIndex(index - 1);
         }
     }
 

@@ -86,11 +86,14 @@ public:
     }
 
     QStringList                          files;
+
+    QList<QString>                       randomList;
+
     QMap<QString, int>                   fileIndexMap;
     QMap<QString, int>                   folderIndexMap;
     QMap<QString, int>                   fileGroupIndexMap;
     QMap<QString, int>                   fileCounterIndexMap;
-    QMap<QString, QString>               fileRandomStringMap;
+
     QMap<QString, QDateTime>             fileDatesMap;
     QMap<QString, QString>               renamedFiles;
 
@@ -414,8 +417,8 @@ bool AdvancedRenameManager::initialize()
             QString random = QUuid::createUuid().toString();
             random.remove(QLatin1Char('-'));
 
-            d->fileIndexMap[file]        = counter++;
-            d->fileRandomStringMap[file] = random.mid(1, 32);
+            d->fileIndexMap[file] = counter++;
+            d->randomList        << random.mid(1, 32);
         }
     }
 
@@ -536,9 +539,14 @@ int AdvancedRenameManager::indexOfFileCounter(const QString& filename)
     return d->fileCounterIndexMap.value(fi.absolutePath(), -1);
 }
 
-QString AdvancedRenameManager::randomStringOfFile(const QString& filename)
+QString AdvancedRenameManager::randomStringOfIndex(int index)
 {
-    return d->fileRandomStringMap.value(filename, QString());
+    if ((index < 0) || (index >= d->randomList.size()))
+    {
+        return QString();
+    }
+
+    return d->randomList.at(index);
 }
 
 QString AdvancedRenameManager::newName(const QString& filename) const
