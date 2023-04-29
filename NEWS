@@ -62,7 +62,7 @@ BUGFIXES:
 052 ==> 401165 - Time to revise Effects tools?
 053 ==> 406631 - Lightroom migration.
 054 ==> 469120 - Advanced Renaming: "Sequence Number" options can not be stacked/combined.
-055 ==> 
+055 ==> 469117 - No explanation for folder aware or random aware options in the Advanced Renaming tool documentation.
 056 ==> 
 057 ==> 
 058 ==> 
@@ -83,3 +83,11 @@ BUGFIXES:
 074 ==> 
 075 ==> 
 076 ==> 
+077 ==> 
+078 ==> 
+079 ==> 
+080 ==> 
+081 ==> 
+082 ==> 
+083 ==> 
+084 ==> 
