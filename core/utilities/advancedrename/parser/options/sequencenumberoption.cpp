@@ -130,14 +130,12 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
             if (!randomAware && !counterAware &&
                 ((start  > 1) || ((start == 1) && (step > 1))))
             {
-                if (!extensionAware && !folderAware)
+                if (extensionAware || folderAware)
                 {
-                    result.append(QString::number(start));
+                    result.append(QLatin1Char(','));
                 }
-                else
-                {
-                    result.append(QString::fromUtf8(",%1").arg(QString::number(start)));
-                }
+
+                result.append(QString::number(start));
             }
 
             if (!randomAware && (step > 1))
