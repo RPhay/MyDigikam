@@ -64,7 +64,7 @@ BUGFIXES:
 054 ==> 469120 - Advanced Renaming: "Sequence Number" options can not be stacked/combined.
 055 ==> 469117 - No explanation for folder aware or random aware options in the Advanced Renaming tool documentation.
 056 ==> 414307 - Two regions are proposed as the same face after recognitions.
-057 ==> 
+057 ==> 414163 - SyncMeta fails for a few files.
 058 ==> 
 059 ==> 
 060 ==> 
@@ -98,3 +98,19 @@ BUGFIXES:
 089 ==> 
 090 ==> 
 091 ==> 
+092 ==> 
+093 ==> 
+094 ==> 
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 
+102 ==> 
+103 ==> 
+104 ==> 
+105 ==> 
+106 ==> 
+107 ==> 
