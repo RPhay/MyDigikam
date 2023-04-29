@@ -65,9 +65,9 @@ BUGFIXES:
 055 ==> 469117 - No explanation for folder aware or random aware options in the Advanced Renaming tool documentation.
 056 ==> 414307 - Two regions are proposed as the same face after recognitions.
 057 ==> 414163 - SyncMeta fails for a few files.
-058 ==> 
-059 ==> 
-060 ==> 
+058 ==> 419956 - Export errors after a certain number of photos in the 2nd pass.
+059 ==> 435573 - Error Message: lost rights on folders.
+060 ==> 421986 - Export crash after a certain number of photos.
 061 ==> 
 062 ==> 
 063 ==> 
