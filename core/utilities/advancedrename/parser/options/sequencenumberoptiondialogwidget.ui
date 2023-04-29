@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
-    <height>484</height>
+    <width>480</width>
+    <height>490</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -117,6 +117,20 @@
     <widget class="QRadioButton" name="randomAware">
      <property name="text">
       <string>Random text aware numbering</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="counterAndExtAware">
+     <property name="text">
+      <string>File counter and extensions aware numbering</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="randomAndExtAware">
+     <property name="text">
+      <string>Random text and exrensions aware numbering</string>
      </property>
     </widget>
    </item>

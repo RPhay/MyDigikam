@@ -92,10 +92,14 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
         int digits          = dlg->ui->digits->value();
         int start           = dlg->ui->start->value();
         int step            = dlg->ui->step->value();
-        bool extensionAware = dlg->ui->extensionAware->isChecked();
-        bool counterAware   = dlg->ui->counterAware->isChecked();
+        bool extensionAware = (dlg->ui->extensionAware->isChecked()    ||
+                               dlg->ui->randomAndExtAware->isChecked() ||
+                               dlg->ui->counterAndExtAware->isChecked());
+        bool counterAware   = (dlg->ui->counterAware->isChecked()      ||
+                               dlg->ui->counterAndExtAware->isChecked());
         bool folderAware    = dlg->ui->folderAware->isChecked();
-        bool randomAware    = dlg->ui->randomAware->isChecked();
+        bool randomAware    = (dlg->ui->randomAware->isChecked()      ||
+                               dlg->ui->randomAndExtAware->isChecked());
 
         result = QString::fromUtf8("%1").arg(QLatin1String("#"), digits, QLatin1Char('#'));
 
@@ -103,9 +107,9 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
         {
             result.append(QLatin1Char('['));
 
-            if (extensionAware)
+            if (folderAware)
             {
-                result.append(QLatin1Char('e'));
+                result.append(QLatin1Char('f'));
             }
 
             if (counterAware)
@@ -113,30 +117,23 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
                 result.append(QLatin1Char('c'));
             }
 
-            if (folderAware)
-            {
-                result.append(QLatin1Char('f'));
-            }
-
             if (randomAware)
             {
                 result.append(QLatin1Char('r'));
             }
 
-            if ((start > 1) || (step > 1))
+            if (extensionAware)
             {
-                if ((extensionAware || folderAware) && !randomAware)
-                {
-                    result.append(QLatin1Char(','));
-                }
-
-                if (!counterAware && !randomAware)
-                {
-                    result.append(QString::number(start));
-                }
+                result.append(QLatin1Char('e'));
             }
 
-            if (step > 1 && !randomAware)
+            if (!randomAware && !counterAware &&
+                ((start  > 1) || ((start == 1) && (step > 1))))
+            {
+                result.append(QString::fromUtf8(",%1").arg(QString::number(start)));
+            }
+
+            if (!randomAware && (step > 1))
             {
                 result.append(QString::fromUtf8(",%1").arg(QString::number(step)));
             }
@@ -215,8 +212,8 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
 
     if (!counterAware)
     {
-        start = match.captured(5).isEmpty() ? settings.startIndex : match.captured(5).toInt();
-        step  = match.captured(7).isEmpty() ? 1 : match.captured(7).toInt();
+        start = match.captured(6).isEmpty() ? settings.startIndex : match.captured(6).toInt();
+        step  = match.captured(8).isEmpty() ? 1 : match.captured(8).toInt();
     }
     else
     {
