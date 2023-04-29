@@ -140,7 +140,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 
             if (!randomAware && (step > 1))
             {
-                result.append(QString::fromUtf8(",%1").arg(QString::number(step)));
+                result.append(QString::fromUtf8(",%1").arg(step));
             }
 
             result.append(QLatin1Char(']'));
