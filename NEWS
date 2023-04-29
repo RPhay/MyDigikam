@@ -58,7 +58,7 @@ BUGFIXES:
 048 ==> 430575 - Crash while scanning collection on NAS via NFS.
 049 ==> 469081 - digikam crash on album creation.
 050 ==> 399902 - Impossibility to modify button names in toolbar.
-051 ==> 
+051 ==> 400440 - Grouping commands to toolbar / auto-groups.
 052 ==> 
 053 ==> 
 054 ==> 
