@@ -74,7 +74,7 @@ BUGFIXES:
 065 ==> 430126 - Can't assign single numpad key as shortcut to action.
 066 ==> 427964 - International characters are replaced with question mark diamond icons.
 067 ==> 433044 - In window to select icon file when changing toolbar icons, mouse is disabled.
-068 ==> 
+068 ==> 433702 - Function Reread metadata from files not executed if SQLite databases are missing.
 069 ==> 
 070 ==> 
 071 ==> 
