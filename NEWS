@@ -71,7 +71,7 @@ BUGFIXES:
 061 ==> 414943 - digiKam shows image twice and isn't usable.
 062 ==> 401542 - I am losing more and more thumbnails in the left pane TAGS view. Everything used to work fine.
 063 ==> 429853 - Aspect Ratio One Pixel Error.
-065 ==> 
+065 ==> 430126 - Can't assign single numpad key as shortcut to action.
 066 ==> 
 067 ==> 
 068 ==> 
