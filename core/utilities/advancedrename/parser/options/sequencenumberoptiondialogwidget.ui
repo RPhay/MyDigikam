@@ -130,7 +130,7 @@
    <item>
     <widget class="QRadioButton" name="randomAndExtAware">
      <property name="text">
-      <string>Random text and exrensions aware numbering</string>
+      <string>Random text and extensions aware numbering</string>
      </property>
     </widget>
    </item>
