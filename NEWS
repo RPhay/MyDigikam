@@ -68,8 +68,8 @@ BUGFIXES:
 058 ==> 419956 - Export errors after a certain number of photos in the 2nd pass.
 059 ==> 435573 - Error Message: lost rights on folders.
 060 ==> 421986 - Export crash after a certain number of photos.
-061 ==> 
-062 ==> 
+061 ==> 414943 - digiKam shows image twice and isn't usable.
+062 ==> 401542 - I am losing more and more thumbnails in the left pane TAGS view. Everything used to work fine.
 063 ==> 
 065 ==> 
 066 ==> 
@@ -114,3 +114,7 @@ BUGFIXES:
 105 ==> 
 106 ==> 
 107 ==> 
+108 ==> 
+109 ==> 
+110 ==> 
+111 ==> 
