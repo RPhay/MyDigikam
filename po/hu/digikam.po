@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -50998,22 +50998,23 @@ msgstr "Sorszám"
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sorszám"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sorszám"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, fuzzy, kde-format
 #| msgid "Sequence number"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -51068,6 +51069,18 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, kde-format
+msgid "File counter and extensions aware numbering"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, kde-format
+msgid "Random text and exrensions aware numbering"
 msgstr ""
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

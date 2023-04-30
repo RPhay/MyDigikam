@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -52834,22 +52834,23 @@ msgstr "Poradové číslo"
 #| "aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Poradové číslo (||možnosti||: ||e|| = závislé na prípone, ||f|| = závislé na "
 "priečinku)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Číslo verzie vlastnej témy"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Číslo verzie vlastnej témy"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, fuzzy, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "číslo sekvencie (vlastný začiatok a krok)"
@@ -52903,6 +52904,18 @@ msgstr "Zmeniť číslovanie zoznamu"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, fuzzy, kde-format
 msgid "Random text aware numbering"
+msgstr "Zmeniť číslovanie zoznamu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+msgid "File counter and extensions aware numbering"
+msgstr "Zmeniť číslovanie zoznamu"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+msgid "Random text and exrensions aware numbering"
 msgstr "Zmeniť číslovanie zoznamu"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

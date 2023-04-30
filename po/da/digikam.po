@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -55252,24 +55252,25 @@ msgstr "Tilføj sekvensnummer"
 #| "aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Sekvensnummer (||options||: ||e|| = opmærksom på filendelser, ||f|| = "
 "opmærksom på mapper)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sekvensnummer (brugerdefineret start)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sekvensnummer (brugerdefineret start)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -55326,6 +55327,20 @@ msgstr "Nummerering som er opmærksom på mapper"
 #, fuzzy, kde-format
 #| msgid "Folder aware numbering"
 msgid "Random text aware numbering"
+msgstr "Nummerering som er opmærksom på mapper"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "Folder aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "Nummerering som er opmærksom på mapper"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Folder aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "Nummerering som er opmærksom på mapper"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
