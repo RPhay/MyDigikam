@@ -314,7 +314,6 @@ protected Q_SLOTS:
     virtual void slotThumbnail(const LoadingDescription&, const QPixmap&);
     virtual void slotImageListChanged();
 
-
 private:
 
     // Disable
