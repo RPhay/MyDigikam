@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2023-03-27 22:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -52494,28 +52494,32 @@ msgid "Sequence number"
 msgstr "Numéro de séquence"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
+#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Numéro de séquence (||options|| : ||c|| = respectant le compteur de "
 "fichiers, ||e|| = respectant l'extension), ||f|| = respectant le dossier, ||"
 "r|| = respectant un ordre aléatoire)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Numéro de séquence (démarrage personnalisé)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom step)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Numéro de séquence (Étape personnalisée)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -52570,6 +52574,20 @@ msgstr "Numérotation tenant compte du compteur de fichiers"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr "Numérotation aléatoire tenant compte du texte"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "File counter aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "Numérotation tenant compte du compteur de fichiers"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Random text aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "Numérotation aléatoire tenant compte du texte"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -50087,20 +50087,21 @@ msgstr ""
 #, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
-msgstr ""
-
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, kde-format
-msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
-msgid "Sequence number (custom step) ||options||: ||c||"
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#, kde-format
+msgid "Sequence number (custom step) ||options||: ||c||"
+msgstr ""
+
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -50155,6 +50156,18 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, kde-format
+msgid "File counter and extensions aware numbering"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, kde-format
+msgid "Random text and exrensions aware numbering"
 msgstr ""
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

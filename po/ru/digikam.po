@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -51981,27 +51981,31 @@ msgid "Sequence number"
 msgstr "Порядковый номер"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
+#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Порядковый номер (||параметры||: ||c|| = с учётом счётчика файлов, ||e|| = с "
 "учётом расширения, ||f|| = с учётом папки, ||r|| = с учётом случайности)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start)"
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Порядковый номер (начальное значение)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom step)"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Порядковый номер (начальный шаг)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, fuzzy, kde-format
 #| msgid "Sequence number (custom start + step)"
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -52056,6 +52060,20 @@ msgstr "Нумерация с учётом счётчика файлов"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr "Случайная нумерация с учётом текста"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "File counter aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "Нумерация с учётом счётчика файлов"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Random text aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "Случайная нумерация с учётом текста"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

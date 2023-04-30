@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
 "PO-Revision-Date: 2023-04-21 20:29+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -52016,26 +52016,30 @@ msgid "Sequence number"
 msgstr "Numero sequenziale"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
+#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Numero sequenziale (||opzioni||: ||c|| = attento al conteggio file, ||e|| = "
 "attento all'estensione, ||f|| = attendo alla cartella, ||r|| = attento alla "
 "casualità)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Numero sequenziale (partenza personalizzata) ||opzioni||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Numero sequenziale (passo personalizzato) ||opzioni||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr ""
@@ -52091,6 +52095,20 @@ msgstr "Numerazione attenta al conteggio file"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr "Numerazione attenta al testo casuale"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "File counter aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "Numerazione attenta al conteggio file"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Random text aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "Numerazione attenta al testo casuale"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

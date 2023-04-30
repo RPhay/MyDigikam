@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
-"PO-Revision-Date: 2023-04-22 11:06+0100\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"PO-Revision-Date: 2023-04-29 12:33+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -48352,34 +48352,31 @@ msgstr ""
 "operate sentence analysis in desired languages.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Default Language"
+msgstr "Default Language:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
-#, fuzzy, kde-format
-#| msgid "Reset current tool settings to default values."
+#, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
-msgstr "Reset current tool settings to default values."
+msgstr ""
+"Select the default language here to use with \"x-default\"value for the "
+"alternative language strings."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "Auto detect"
+msgstr "Auto-detect"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Detect automatically the language by parsing string content"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -51191,25 +51188,29 @@ msgid "Sequence number"
 msgstr "Sequence number"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
+#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
 msgstr "Sequence number (custom start) ||options||: ||e||, ||f||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
 #, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Sequence number (custom step) ||options||: ||c||"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
 msgstr "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -51263,6 +51264,20 @@ msgstr "File counter aware numbering"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr "Random text aware numbering"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "File counter aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "File counter aware numbering"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Random text aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "Random text aware numbering"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

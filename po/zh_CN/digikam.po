@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:45+0000\n"
-"PO-Revision-Date: 2023-04-16 12:31\n"
+"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"PO-Revision-Date: 2023-04-29 08:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2697,15 +2697,7 @@ msgstr ""
 "构建日期：%4 (目标平台：%5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2717,8 +2709,8 @@ msgid ""
 msgstr ""
 "IRC 频道：%1 - #digikam\n"
 "提交反馈：%2\n"
-"\n"
 "使用文档：%3\n"
+"\n"
 "构建日期：%4 (目标平台：%5)\n"
 "修订版本：%6\n"
 "代码分支：%7"
@@ -3288,7 +3280,7 @@ msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加拼写检查配置�
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr "为替代语言文字编辑器控件添加在线翻译服务支持。"
+msgstr "为备选语言文字编辑器控件添加在线翻译服务支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3301,7 +3293,7 @@ msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加本地化配置面�
 msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
-msgstr "为文字编辑控件的偏好替代语言/翻译语言列表添加设置。"
+msgstr "为文字编辑控件的偏好备选语言/翻译语言列表添加设置。"
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
@@ -3416,14 +3408,11 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
-msgstr "此版 digiKam 的主要更新包括 (与 digiKam 6.x 相比)："
+msgstr "这一版 digiKam 的新特性包括 (相比于 digiKam 7x)："
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -6107,7 +6096,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
-msgstr "<para>用于翻译图像 XMP 元数据的替代语言字符串的批处理工具。</para>"
+msgstr "<para>用于翻译图像 XMP 元数据的备选语言字符串的批处理工具。</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
 #, kde-format
@@ -47121,7 +47110,7 @@ msgstr "仅显示所选项目 (%1/%2)"
 #, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr "选择其他语言编辑文本"
+msgstr "选择用于编辑文本的备选语言"
 
 #: core/libs/widgets/text/localizeconfig.cpp:233
 #, kde-format
@@ -47220,17 +47209,15 @@ msgid ""
 msgstr ""
 "<para>启用此项后将对说明、标题、以及其他文本框中输入的内容进行背景拼写检查。"
 "拼写检查功能会自动检测输入框中的当前语言并在拼写出错时提出修改建议。</"
-"para><para>对于可以指定替代语言的条目，上下文语言将被用于解析文本。拼写检查需"
+"para><para>对于可以指定备选语言的条目，上下文语言将被用于解析文本。拼写检查需"
 "要使用自由开源的第三方后端程序以及所需的词典才能在目标语言中进行语句分析。</"
 "para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "默认语言"
+msgstr "默认语言："
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -47238,19 +47225,18 @@ msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
-msgstr ""
+msgstr "在此选择备选语言字符串的“x-default”值使用的默认语言。"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "自动检测(&D)"
+msgstr "自动检测"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "通过解析字符串内容自动检测语言"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -49224,7 +49210,7 @@ msgstr "<p>添加重命名选项到解析字符串。</p>"
 #, kde-format
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
-msgstr ""
+msgstr "如需应用参数，请将参数附加到选项后面，例如：[file]{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -50001,31 +49987,32 @@ msgid "Sequence number"
 msgstr "序列编号"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
+#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "序列编号 (||选项||：||c|| = 文件计数器感知，||e|| = 扩展名感知，||f|| = 文件"
 "夹感知，||r|| = 随机感知)"
 
-#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
-msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "序列编号 (自定义起始编号)"
-
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
-msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "序列编号 (自定义步长)"
+#, kde-format
+msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
+msgstr "序列编号 (自定义起点) ||options||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
+msgid "Sequence number (custom step) ||options||: ||c||"
+msgstr "序列编号 (自定义步长) ||options||: ||c||"
+
+#: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "序列编号 (自定义开始编号与步长)"
+msgstr "序列编号 (自定义起点 + 步长)  ||options||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -50076,6 +50063,20 @@ msgstr "文件计数器感知编号"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
+msgstr "随机文本感知编号"
+
+#. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
+#, fuzzy, kde-format
+#| msgid "File counter aware numbering"
+msgid "File counter and extensions aware numbering"
+msgstr "文件计数器感知编号"
+
+#. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
+#: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "Random text aware numbering"
+msgid "Random text and exrensions aware numbering"
 msgstr "随机文本感知编号"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
@@ -50832,57 +50833,49 @@ msgstr "标签有，相册无"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "更早或者更大"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:214
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "优先使用选中的文件夹作为参考图像来源"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:217
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "优先使用未被选中的文件夹作为参考图像来源"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "按创建日期"
+msgstr "首选较新的创建日期"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "按修改日期"
+msgstr "首选较新的修改日期"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:227
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "当前图像的选区信息"
+msgstr "参考图像选择方式"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "引用："
+msgstr "参考图像"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:235
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "图像选择方式(&C)："
+msgstr "参考图像选择方式"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:242
 #, kde-format
