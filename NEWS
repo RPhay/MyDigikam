@@ -70,7 +70,7 @@ BUGFIXES:
 060 ==> 421986 - Export crash after a certain number of photos.
 061 ==> 414943 - digiKam shows image twice and isn't usable.
 062 ==> 401542 - I am losing more and more thumbnails in the left pane TAGS view. Everything used to work fine.
-063 ==> 
+063 ==> 429853 - Aspect Ratio One Pixel Error.
 065 ==> 
 066 ==> 
 067 ==> 
