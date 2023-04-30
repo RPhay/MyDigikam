@@ -73,7 +73,7 @@ BUGFIXES:
 063 ==> 429853 - Aspect Ratio One Pixel Error.
 065 ==> 430126 - Can't assign single numpad key as shortcut to action.
 066 ==> 427964 - International characters are replaced with question mark diamond icons.
-067 ==> 
+067 ==> 433044 - In window to select icon file when changing toolbar icons, mouse is disabled.
 068 ==> 
 069 ==> 
 070 ==> 
