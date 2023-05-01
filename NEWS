@@ -84,7 +84,7 @@ BUGFIXES:
 075 ==> 438253 - Deleting a large number of tags takes much more than 24h.
 076 ==> 435902 - Error message "insufficient privileges" on the database.
 077 ==> 438203 - Progress bar stuck on 100%, Digikam won't allow further action.
-078 ==> 
+078 ==> 469205 - Image editor -> decorate -> insert text -> OK ===> crash.
 079 ==> 
 080 ==> 
 081 ==> 
