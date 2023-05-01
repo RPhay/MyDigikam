@@ -76,7 +76,7 @@ BUGFIXES:
 067 ==> 433044 - In window to select icon file when changing toolbar icons, mouse is disabled.
 068 ==> 433702 - Function Reread metadata from files not executed if SQLite databases are missing.
 069 ==> 398532 - Setting margins does not work.
-070 ==> 
+070 ==> 442200 - Cannot select homebrew Mariadb.
 071 ==> 
 072 ==> 
 073 ==> 
