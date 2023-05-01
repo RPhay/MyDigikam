@@ -85,8 +85,8 @@ BUGFIXES:
 076 ==> 435902 - Error message "insufficient privileges" on the database.
 077 ==> 438203 - Progress bar stuck on 100%, Digikam won't allow further action.
 078 ==> 469205 - Image editor -> decorate -> insert text -> OK ===> crash.
-079 ==> 
-080 ==> 
+079 ==> 398458 - Places tag hierarchy.
+080 ==> 412255 - Unable to Import photos from camera.
 081 ==> 
 082 ==> 
 083 ==> 
