@@ -75,7 +75,7 @@ BUGFIXES:
 066 ==> 427964 - International characters are replaced with question mark diamond icons.
 067 ==> 433044 - In window to select icon file when changing toolbar icons, mouse is disabled.
 068 ==> 433702 - Function Reread metadata from files not executed if SQLite databases are missing.
-069 ==> 
+069 ==> 398532 - Setting margins does not work.
 070 ==> 
 071 ==> 
 072 ==> 
