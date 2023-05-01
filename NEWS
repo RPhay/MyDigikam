@@ -78,7 +78,7 @@ BUGFIXES:
 069 ==> 398532 - Setting margins does not work.
 070 ==> 442200 - Cannot select homebrew Mariadb.
 071 ==> 444056 - Rotating 10 images takes 4 minutes.
-072 ==> 
+072 ==> 441796 - Tagging faces in full image view while in "Faces" category is not saved.
 073 ==> 
 074 ==> 
 075 ==> 
