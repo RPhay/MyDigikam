@@ -77,7 +77,7 @@ BUGFIXES:
 068 ==> 433702 - Function Reread metadata from files not executed if SQLite databases are missing.
 069 ==> 398532 - Setting margins does not work.
 070 ==> 442200 - Cannot select homebrew Mariadb.
-071 ==> 
+071 ==> 444056 - Rotating 10 images takes 4 minutes.
 072 ==> 
 073 ==> 
 074 ==> 
