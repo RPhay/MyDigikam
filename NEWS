@@ -71,7 +71,7 @@ BUGFIXES:
 061 ==> 414943 - digiKam shows image twice and isn't usable.
 062 ==> 401542 - I am losing more and more thumbnails in the left pane TAGS view. Everything used to work fine.
 063 ==> 429853 - Aspect Ratio One Pixel Error.
-065 ==> 430126 - Can't assign single numpad key as shortcut to action.
+065 ==> 229662 - AutoCorrection "Equalize" fails for some PNGs.
 066 ==> 427964 - International characters are replaced with question mark diamond icons.
 067 ==> 433044 - In window to select icon file when changing toolbar icons, mouse is disabled.
 068 ==> 433702 - Function Reread metadata from files not executed if SQLite databases are missing.
