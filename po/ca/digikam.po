@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
-"PO-Revision-Date: 2023-04-29 12:49+0200\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"PO-Revision-Date: 2023-04-30 11:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -51981,10 +51981,7 @@ msgstr "Número de seqüència"
 
 # skip-rule: t-e_sola
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -51992,7 +51989,8 @@ msgid ""
 msgstr ""
 "Número de seqüència (||opcions||: ||c|| = segons el comptador de fitxers, ||"
 "e|| = segons l'extensió, ||f|| = segons la carpeta, ||r|| = segons text "
-"aleatori)"
+"aleatori, ||ce|| = segons el comptador i l'extensió, ||re|| = segons text "
+"aleatori i l'extensió)"
 
 # skip-rule: t-e_sola
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
@@ -52065,17 +52063,16 @@ msgstr "Numeració segons text aleatori"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numeració segons el comptador de fitxers"
+msgstr "Numeració segons el comptador de fitxers i les extensions"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
-#| msgid "Random text aware numbering"
-msgid "Random text and exrensions aware numbering"
-msgstr "Numeració segons text aleatori"
+#| msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
+msgstr "Numeració segons text aleatori i extensions"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
 "PO-Revision-Date: 2023-03-23 14:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -53788,7 +53788,7 @@ msgstr "Klasöre dikkat eden numaralandırma"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
 #| msgid "Folder aware numbering"
-msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
 msgstr "Klasöre dikkat eden numaralandırma"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

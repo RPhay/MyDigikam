@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
-"PO-Revision-Date: 2023-04-24 14:54+0300\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"PO-Revision-Date: 2023-04-30 17:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -52149,10 +52149,7 @@ msgid "Sequence number"
 msgstr "Число з послідовності"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -52160,7 +52157,8 @@ msgid ""
 msgstr ""
 "Число з послідовності (||параметри||: ||c|| = з врахуванням лічильника "
 "файлів, ||e|| = з врахуванням суфікса, ||f|| = з врахуванням теки, ||r|| = з "
-"врахуванням випадковості)"
+"врахуванням випадковості, ||ce|| = з врахуванням лічильника і суфікса назви, "
+"||re|| = з врахуванням випадковості і суфікса назви)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -52231,17 +52229,16 @@ msgstr "Нумерація з врахуванням випадкового те
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Нумерація з врахуванням лічильника файлів"
+msgstr "Нумерація з врахуванням лічильника та суфікса назв файлів"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
-#| msgid "Random text aware numbering"
-msgid "Random text and exrensions aware numbering"
-msgstr "Нумерація з врахуванням випадкового тексту"
+#| msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
+msgstr "Нумерація з врахуванням випадкового тексту і суфікса назви"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format

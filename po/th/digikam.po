@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -52890,7 +52890,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, kde-format
-msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
 msgstr ""
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

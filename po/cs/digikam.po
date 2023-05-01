@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -50167,7 +50167,7 @@ msgstr "Číslování závislé na příponě"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
 #| msgid "Extension aware numbering"
-msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
 msgstr "Číslování závislé na příponě"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

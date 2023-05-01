@@ -62,15 +62,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
-"PO-Revision-Date: 2023-04-24 12:22+0200\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"PO-Revision-Date: 2023-04-30 13:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -51899,17 +51899,16 @@ msgid "Sequence number"
 msgstr "Volgnummer"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Volgnummer (||opties||: ||c|| = bewust van teller van bestand , ||e|| = "
-"bewust van extensie, ||f|| = bewust van map, ||r|| = bewust van willekeurig)"
+"bewust van extensie, ||f|| = bewust van map, ||r|| = bewust van willekeurig, "
+"||ce|| = teller en bewust van extensie, ||re|| = willekeurig en bewust van "
+"extensie)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51979,17 +51978,16 @@ msgstr "Nummering zich bewust van willekeurige tekst"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Zich bewust van teller van bestand"
+msgstr "Nummering die zich bewust is van teller en extensies"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
-#| msgid "Random text aware numbering"
-msgid "Random text and exrensions aware numbering"
-msgstr "Nummering zich bewust van willekeurige tekst"
+#| msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
+msgstr "Nummering die zich bewust is van willekeurige tekst en extensies"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format

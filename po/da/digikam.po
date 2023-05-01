@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -55340,7 +55340,7 @@ msgstr "Nummerering som er opmærksom på mapper"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
 #| msgid "Folder aware numbering"
-msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
 msgstr "Nummerering som er opmærksom på mapper"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70

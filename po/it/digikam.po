@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-30 00:45+0000\n"
-"PO-Revision-Date: 2023-04-21 20:29+0200\n"
+"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"PO-Revision-Date: 2023-04-25 18:16+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -38185,13 +38185,13 @@ msgid ""
 "and a 99th-percentile white point. This mode is faster than 16-bit decoding."
 "</para>"
 msgstr ""
-"<para>Se abilitato, tutti i file raw saranno decodificati a una profondità "
+"<para>Se abilitato, tutti i file RAW saranno decodificati a una profondità "
 "di colore di 16 bit usando una curva gamma lineare. Per evitare che l'editor "
 "produca immagini scure, si raccomanda di usare la gestione del colore in "
-"questa modalità.</para><para>Se disabilitato, tutti i file raw saranno "
-"decodificati a una profondità di colore di 8 bit con una curva gamma BT.709 "
-"e un punto bianco al 99º percentile. Questa modalità è più veloce della "
-"decodifica a 16 bit.</para>"
+"questa modalità.</para><para>Se disabilitato, tutti i file RAW saranno "
+"decodificati a una profondità di colore di 8 bit con una curva di gamma "
+"BT.709 e un punto di bianco al 99º percentile. Questa modalità è più veloce "
+"della decodifica a 16 bit.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:243
 #, kde-format
@@ -49118,34 +49118,32 @@ msgstr ""
 "per operare l'analisi della frase nelle lingue desiderate.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Lingua predefinita"
+msgstr "Lingua predefinita:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
-#, fuzzy, kde-format
-#| msgid "Reset current tool settings to default values."
+#, kde-format
 msgctxt "@info: edit widget default language"
 msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
-msgstr "Riporta tutte le impostazioni degli strumenti ai valori predefiniti."
+msgstr ""
+"Seleziona qui la lingua predefinita da usare col valore «x-default» per le "
+"stringhe di lingua alternative."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "Rilevamento automatico"
+msgstr "Rileva automaticamente"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
+"Rileva automaticamente la lingua analizzando il contenuto della stringa"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -52108,7 +52106,7 @@ msgstr "Numerazione attenta al conteggio file"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
 #| msgid "Random text aware numbering"
-msgid "Random text and exrensions aware numbering"
+msgid "Random text and extensions aware numbering"
 msgstr "Numerazione attenta al testo casuale"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
@@ -63482,7 +63480,7 @@ msgstr ""
 "grado di funzionare con l'elaborazione estetica dell'immagine. Il secondo "
 "usa un approccio IA basato sul modello %1 per prevedere il punteggio. Il "
 "fatto che l'apprendimento profondo sia una soluzione compiuta e non richiede "
-"impostazioni supercomplesse dei parametri, rende questa funzionalità più "
+"impostazioni super complesse dei parametri, rende questa funzionalità più "
 "facile da usare."
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64
