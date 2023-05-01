@@ -87,7 +87,7 @@ BUGFIXES:
 078 ==> 469205 - Image editor -> decorate -> insert text -> OK ===> crash.
 079 ==> 398458 - Places tag hierarchy.
 080 ==> 412255 - Unable to Import photos from camera.
-081 ==> 
+081 ==> 423392 - Import from android mobile phone does not work.
 082 ==> 
 083 ==> 
 084 ==> 
