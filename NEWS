@@ -82,7 +82,7 @@ BUGFIXES:
 073 ==> 377587 - The --database-directory argument should also be the location of the digikamrc file when used.
 074 ==> 430337 - Failed to create a new people tag.
 075 ==> 438253 - Deleting a large number of tags takes much more than 24h.
-076 ==> 
+076 ==> 435902 - Error message "insufficient privileges" on the database.
 077 ==> 
 078 ==> 
 079 ==> 
