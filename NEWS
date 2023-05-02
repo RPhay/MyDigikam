@@ -92,7 +92,7 @@ BUGFIXES:
 083 ==> 468639 - Compiling 8.0.0 stop on 'make install'.
 084 ==> 469248 - digiKam XMP Sidecar Format has Changed.
 085 ==> 449871 - Flag all database pictures as "already downloaded".
-086 ==> 
+086 ==> 450529 - After a MacOS update all collections settings are lost and have to be remade.
 087 ==> 
 088 ==> 
 089 ==> 
