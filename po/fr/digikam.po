@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
 "PO-Revision-Date: 2023-03-27 22:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2678,7 +2678,7 @@ msgstr "Barre principale"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -27443,7 +27443,7 @@ msgstr "Impossible d'ajouter l'album à la base de données"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Pas d'album de ce type"
@@ -27521,7 +27521,7 @@ msgid "Cannot delete required face tag"
 msgstr "Impossible de supprimer l'étiquette de visage demandée"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Impossible de modifier l'étiquette racine"
@@ -27545,17 +27545,7 @@ msgstr "Tentative de déplacement de l'album vers nulle part"
 msgid "Cannot move root tag"
 msgstr "Impossible de déplacer l'étiquette racine"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-"Les autres processus ne sont pas terminés.\n"
-"Veuillez ré-essayer plus tard."
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27564,39 +27554,39 @@ msgstr ""
 "Une étiquette avec ce nom existe déjà.\n"
 "Voulez-vous les fusionner ? "
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Impossible de fusionner l'étiquette racine"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Impossible de fusionner l'étiquette de visage demandée"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Seule une étiquette sans enfants peut être fusionnée !"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr ""
 "Voulez-vous vraiment fusionner l'étiquette « %1 » dans l'étiquette « %2 » ?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne plus poser la question pour cette session"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Pas d'étiquette de ce type"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -64701,6 +64691,13 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgid ""
+#~ "Other process are not finished yet.\n"
+#~ "Please try again later."
+#~ msgstr ""
+#~ "Les autres processus ne sont pas terminés.\n"
+#~ "Veuillez ré-essayer plus tard."
 
 #~ msgctxt "@title:window"
 #~ msgid "Open a Video"

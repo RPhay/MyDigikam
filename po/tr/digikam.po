@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
-"PO-Revision-Date: 2023-03-23 14:34+0300\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"PO-Revision-Date: 2023-05-01 12:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2646,7 +2646,7 @@ msgstr "Ana Araç Çubuğu"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -7826,7 +7826,7 @@ msgid ""
 "their fullest range, adjusting everything in between.</p>"
 msgstr ""
 "<b>Karşıtlığı Ger</b>:<p>Bu seçenek, en düşük ve en yüksek değerleri tam "
-"aralığa genişleterek ve aradaki her şeyi ayarlayarak bir görselin KYM "
+"aralığa genişleterek ve aradaki her şeyi ayarlayarak bir görselin RGB "
 "değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:158
@@ -7837,7 +7837,7 @@ msgid ""
 "using image histogram properties.</p>"
 msgstr ""
 "<b>Otomatik Pozlama</b>:<p>Bu seçenek, görüntü histogramı özelliklerini "
-"kullanarak en uygun açıklığı ve siyah düzeyini hesaplamak için görselin KYM "
+"kullanarak en uygun açıklığı ve siyah düzeyini hesaplamak için görselin RGB "
 "değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
@@ -17025,7 +17025,7 @@ msgid ""
 "Convert to CIECAM02 color appearance model during the blending process "
 "instead of RGB."
 msgstr ""
-"Harmanlama işlemi sırasında KYM yerine CIECAM02 renk görünüşü modeline "
+"Harmanlama işlemi sırasında RGB yerine CIECAM02 renk görünüşü modeline "
 "dönüştür."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
@@ -27976,7 +27976,7 @@ msgstr "Albüm, veritabanına eklenemedi"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Böyle bir albüm yok"
@@ -28055,7 +28055,7 @@ msgid "Cannot delete required face tag"
 msgstr "Kök etiketi silemezsiniz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Kök etiketi düzenleyemezsiniz"
@@ -28079,15 +28079,7 @@ msgstr "TAlbum olmayan bir yere taşınmaya çalışıldı"
 msgid "Cannot move root tag"
 msgstr "Kök etiketi taşınamaz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, fuzzy, kde-format
 #| msgid ""
 #| "Another tag with the same name already exists.\n"
@@ -28099,24 +28091,24 @@ msgstr ""
 "Aynı ada sahip başka bir etiket zaten mevcut.\n"
 "Lütfen başka bir isim seçin."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Kök etiketi taşınamaz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Kök etiketi taşınamaz"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
 #| msgid_plural ""
@@ -28126,19 +28118,19 @@ msgstr ""
 "Seçili etiketi tüm resimlerden gerçekten kaldırmak istiyor musunuz?Seçili "
 "etiketleri tüm resimlerden gerçekten kaldırmak istiyor musunuz?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
 msgstr "Tekrar sorma"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Böyle bir etiket yok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
@@ -31062,7 +31054,7 @@ msgstr "Sayfa yüklenemedi %1"
 #, kde-format
 msgctxt "Color Model: RGB"
 msgid "RGB"
-msgstr "KYM"
+msgstr "RGB"
 
 #: core/libs/dimg/dimg_metadata.cpp:431
 #, kde-format
@@ -33184,7 +33176,7 @@ msgid ""
 "values where both the original and blurred image's value are low and do the "
 "opposite on high values."
 msgstr ""
-"<b>İşlev</b>: Bu işlev, orijinal KYM kanallarını doygun bulanık görüntü ile "
+"<b>İşlev</b>: Bu işlev, orijinal RGB kanallarını doygun bulanık görüntü ile "
 "birleştirir. Bu işlev, ton eşleme aşamalarının her birinde kullanılır. "
 "Doğrusal veya güçlü olabilir. Temel olarak, bu işlev hem özgün hem de "
 "bulanık görüntü değerinin düşük olduğu değerleri artırır ve yüksek değerleri "
@@ -39319,7 +39311,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
-msgstr "KYM değerini dört renk olarak ara değerle"
+msgstr "RGB değerini dört renk olarak ara değerle"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:244
 #, kde-kuit-format
@@ -39333,7 +39325,7 @@ msgid ""
 "but it eliminates false 2x2 mesh patterns with VNG quality method or mazes "
 "with AHD quality method.</para>"
 msgstr ""
-"<title>KYM'yi dört renk olarak yorumlayın</title><para>Öntanımlı durum tüm "
+"<title>RGB'yi dört renk olarak yorumlayın</title><para>Öntanımlı durum tüm "
 "yeşil piksellerin aynı olduğunu varsaymaktır. Çift -sıra yeşil pikseller mor "
 "ötesi ışığa tek-sıra piksellerden daha duyarlıysa bu fark çıktıda bir örgü "
 "desenine neden olur; bu seçeneği kullanmak bu sorunu minimum ayrıntı "
@@ -40074,14 +40066,14 @@ msgstr ""
 "<title>Çalışma alanı</title><para>RAW veriyi çözünce kullanılacak çıktı renk "
 "uzayını buradan seçin.</para><para><list><item><emphasis strong='true'>Ham "
 "(lineer)</emphasis>: bu kipte, RAW çözerken  hiçbir çıktı renk uzayı "
-"kullanılmaz.</item><item><emphasis strong='true'>sRGB</emphasis>: bu bir KYM "
+"kullanılmaz.</item><item><emphasis strong='true'>sRGB</emphasis>: bu bir RGB "
 "renk uzayıdır, Hewlett-Packard ve Microsoft ile beraber oluşturulmuştur. Web "
 "ve portre fotoğrafçılığı için en iyi seçimdir.</item><item><emphasis "
-"strong='true'>Adobe RGB</emphasis>: bu genişletilmiş KYM renk uzayıdır. "
+"strong='true'>Adobe RGB</emphasis>: bu genişletilmiş RGB renk uzayıdır. "
 "Adobe tarafından geliştirilmiştir. Reklam ve çizgi resim gibi çizim "
 "uygulamaları için kullanılır.</item><item><emphasis strong='true'>Geniş Gam</"
 "emphasis>: bu renk uzayı, Adobe RGB renk uzayının genişletilmiş sürümüdür.</"
-"item><item><emphasis strong='true'>Pro-Photo</emphasis>: bu bir KYM renk "
+"item><item><emphasis strong='true'>Pro-Photo</emphasis>: bu bir RGB renk "
 "uzayıdır. Kodak tarafından gliştirilmiştir. Özellikle geniş gamda fotoğraf "
 "çıktıları sağlar.</item><item><emphasis strong='true'>Özel</emphasis>: özel "
 "bir çıktı renk uzayı profili kullan.</item></list></para>"
@@ -56505,7 +56497,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editortool.cpp:400
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
-msgstr "(%1,%2) KYMA:%3,%4,%5,%6"
+msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 
 #: core/utilities/imageeditor/editor/editortooliface.cpp:95
 #: core/utilities/imageeditor/editor/editortooliface.cpp:211

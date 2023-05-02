@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -2667,7 +2667,7 @@ msgstr "סרגל כלים ראשי"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -25569,7 +25569,7 @@ msgstr "תקלה בעת הוספת האלבום למסד הנתונים"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "אין אוסף-תמונות כזה"
@@ -25648,7 +25648,7 @@ msgid "Cannot delete required face tag"
 msgstr "אין אפשרות למחוק את התוויות הראשית"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "אין אפשרות לערוך את התוויות הראשית"
@@ -25672,15 +25672,7 @@ msgstr ""
 msgid "Cannot move root tag"
 msgstr "אין אפשרות להזיז את התוויות הראשית"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, fuzzy, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -25689,40 +25681,40 @@ msgstr ""
 "אוסף-תמונות בעל אותו שם קיים\n"
 "אנא בחרו שם חדש"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "אין אפשרות להזיז את התוויות הראשית"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "אין אפשרות להזיז את התוויות הראשית"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, fuzzy, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "האם אתם בטוחים שאתם מעוניינים למחוק את חיפוש המסומן \"%1\"?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 msgid "Don't ask again at this session"
 msgstr "אל תשאל &שוב"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "אין תוויות כזו"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"

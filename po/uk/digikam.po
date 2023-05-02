@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
-"PO-Revision-Date: 2023-04-30 17:03+0300\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"PO-Revision-Date: 2023-05-01 09:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -2638,7 +2638,7 @@ msgstr "Головний пенал"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -27238,7 +27238,7 @@ msgstr "Не вдалося додати альбом до бази даних"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Такого альбому не існує"
@@ -27315,7 +27315,7 @@ msgid "Cannot delete required face tag"
 msgstr "Неможливо вилучити бажану мітку обличчя"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Неможливо змінити кореневу мітку"
@@ -27339,17 +27339,7 @@ msgstr "Спроба пересунути TAlbum у нікуди"
 msgid "Cannot move root tag"
 msgstr "Неможливо пересунути кореневу мітку"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-"Роботу інших процесів ще не завершено.\n"
-"Будь ласка, повторіть спробу пізніше."
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27358,38 +27348,38 @@ msgstr ""
 "Вже існує мітка з тією ж назвою.\n"
 "Хочете об'єднати мітки?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Не можна об'єднувати кореневу мітку"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Неможливо об'єднати бажану мітку обличчя"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Об'єднувати можна лише мітку без дочірніх записів!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Хочете влити мітку «%1» до мітки «%2»?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Більше не питати у цьому сеансі"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Такої мітки не існує"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -52235,8 +52225,7 @@ msgstr "Нумерація з врахуванням лічильника та �
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text and exrensions aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
 msgstr "Нумерація з врахуванням випадкового тексту і суфікса назви"
 
@@ -64177,6 +64166,13 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Хочете відновити типові значення для усіх параметрів відео?"
+
+#~ msgid ""
+#~ "Other process are not finished yet.\n"
+#~ "Please try again later."
+#~ msgstr ""
+#~ "Роботу інших процесів ще не завершено.\n"
+#~ "Будь ласка, повторіть спробу пізніше."
 
 #~ msgctxt "@title:window"
 #~ msgid "Open a Video"

@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
-"PO-Revision-Date: 2023-04-24 11:54+0200\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"PO-Revision-Date: 2023-05-01 10:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2600,7 +2600,7 @@ msgstr "Barra d'eines principal"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -27104,7 +27104,7 @@ msgstr "No s'ha pogut afegir l'àlbum a la base de dades"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "No existix l'àlbum"
@@ -27181,7 +27181,7 @@ msgid "Cannot delete required face tag"
 msgstr "No es pot suprimir l'etiqueta de cara requerida"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "No es pot editar l'etiqueta arrel"
@@ -27205,17 +27205,7 @@ msgstr "S'intenta moure TAlbum a enlloc"
 msgid "Cannot move root tag"
 msgstr "No es pot moure l'etiqueta arrel"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-"Els altres processos encara no han finalitzat.\n"
-"Torneu-ho a provar més tard."
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27224,38 +27214,38 @@ msgstr ""
 "Ja hi ha una altra etiqueta amb el mateix nom.\n"
 "Voleu fusionar les etiquetes?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "No es pot fusionar l'etiqueta arrel"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "No es pot fusionar l'etiqueta de cara requerida"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Només es pot fusionar una etiqueta sense fills!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Voleu fusionar l'etiqueta «%1» dins l'etiqueta «%2»?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "No ho tornes a preguntar en esta sessió"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "No existix l'etiqueta"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -51986,10 +51976,7 @@ msgstr "Número de seqüència"
 
 # skip-rule: t-e_sola
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -51997,8 +51984,10 @@ msgid ""
 msgstr ""
 "Número de seqüència (||opcions||: ||c|| = segons el comptador de fitxers, ||"
 "e|| = segons l'extensió, ||f|| = segons la carpeta, ||r|| = segons text "
-"aleatori)"
+"aleatori, ||ce|| = segons el comptador i l'extensió, ||re|| = segons text "
+"aleatori i l'extensió)"
 
+# skip-rule: t-e_sola
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
@@ -52009,6 +51998,7 @@ msgstr "Número de seqüència (inici personalitzat) ||opcions||: ||e||, ||f||"
 msgid "Sequence number (custom step) ||options||: ||c||"
 msgstr "Número de seqüència (pas personalitzat) ||opcions||: ||c||"
 
+# skip-rule: t-e_sola
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
 #, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
@@ -52068,17 +52058,16 @@ msgstr "Numeració segons un text aleatori"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numeració segons el comptador de fitxers"
+msgstr "Numeració segons el comptador de fitxers i les extensions"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
 #, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#| msgid "Random text and extensions aware numbering"
 msgid "Random text and extensions aware numbering"
-msgstr "Numeració segons un text aleatori"
+msgstr "Numeració segons un text aleatori i extensions"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -63950,3 +63939,10 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid ""
+#~ "Other process are not finished yet.\n"
+#~ "Please try again later."
+#~ msgstr ""
+#~ "Els altres processos encara no han finalitzat.\n"
+#~ "Torneu-ho a provar més tard."

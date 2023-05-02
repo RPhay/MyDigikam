@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
 "PO-Revision-Date: 2023-04-21 23:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2621,7 +2621,7 @@ msgstr "Основна лента с инструменти"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -27152,7 +27152,7 @@ msgstr "Грешка при добавяне на албума към базат
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Няма такъв албум"
@@ -27229,7 +27229,7 @@ msgid "Cannot delete required face tag"
 msgstr "Не може да се изтрие необходимият таг на лице"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Основният таг не може да бъде редактиран"
@@ -27253,17 +27253,7 @@ msgstr "Опит за преместване на TAlbum без посочван
 msgid "Cannot move root tag"
 msgstr "Основният таг не може да бъде преместен"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-"Другите процеси все още не са завършени.\n"
-"Моля, опитайте отново по-късно."
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -27272,38 +27262,38 @@ msgstr ""
 "Вече съществува друг таг със същото име.\n"
 "Искате ли да обедините таговете?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Не може да се смеси основем таг"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Не може да се обедини необходимия таг за лице"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Само таг без дъщерни елементи може да бъде обединен!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Искате ли да обедините таг '%1' в таг '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Да не се пита отново в тази сесия"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Няма такъв таг"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -63965,6 +63955,13 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
+
+#~ msgid ""
+#~ "Other process are not finished yet.\n"
+#~ "Please try again later."
+#~ msgstr ""
+#~ "Другите процеси все още не са завършени.\n"
+#~ "Моля, опитайте отново по-късно."
 
 #~ msgctxt "@title:window"
 #~ msgid "Open a Video"

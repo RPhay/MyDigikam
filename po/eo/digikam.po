@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
-"PO-Revision-Date: 2023-04-28 07:15+0100\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"PO-Revision-Date: 2023-05-01 05:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -765,7 +765,7 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"Forigas la vizaĝposedaĵon de la elektita etikedo kaj la vizaĝregionon de la "
+"Forigas la vizaĝproprecon de la elektita etikedo kaj la vizaĝregionon de la "
 "enhavitaj bildoj. Povas ankaŭ maletikedi la bildojn se vi volas."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
@@ -781,7 +781,7 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Forigas la vizaĝposedaĵon de la elektitaj etikedoj kaj la vizaĝregionon de "
+"Forigas la vizaĝproprecon de la elektitaj etikedoj kaj la vizaĝregionon de "
 "la enhavitaj bildoj. Povas ankaŭ maletikedi la bildojn se vi volas."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
@@ -2217,7 +2217,7 @@ msgstr "Aldoni fotilon permane..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
-msgstr "Ŝarĝante fotilojn..."
+msgstr "Ŝargante fotilojn..."
 
 #: core/app/main/digikamapp_setup.cpp:882
 #, kde-format
@@ -2379,7 +2379,7 @@ msgstr "Aŭtomata Rotacio/Flip Uzante Exif-Informojn"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
-msgstr "Ŝarĝante etosojn..."
+msgstr "Ŝargante etosojn..."
 
 #: core/app/main/digikamapp_setup.cpp:1083
 #, kde-format
@@ -2601,7 +2601,7 @@ msgstr "Ĉefa ilobreto"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -11263,7 +11263,7 @@ msgstr "Formato de bildo '%1' estas nekonata"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:134
 #, kde-format
 msgid "Error loading image '%1'"
-msgstr "Eraro dum ŝarĝo de bildo '%1'"
+msgstr "Eraro dum ŝargo de bildo '%1'"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:216
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
@@ -11486,7 +11486,7 @@ msgstr "GPS-interŝanĝa Formato (*.gpx)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
-msgstr "Elekti GPX-dosieron por Ŝarĝi"
+msgstr "Elekti GPX-dosieron ŝargandan"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:165
 #, kde-format
@@ -16762,7 +16762,7 @@ msgstr "Stakitaj Bildoj Ilo"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
 msgid "Error loading RAW image '%1'"
-msgstr "Eraro dum ŝarĝo de RAW-bildo '%1'"
+msgstr "Eraro dum ŝargo de RAW-bildo '%1'"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
@@ -26728,7 +26728,7 @@ msgstr "Malsukcesis aldoni albumon al datumbazo"
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Ne tia albumo"
@@ -26805,7 +26805,7 @@ msgid "Cannot delete required face tag"
 msgstr "Ne povas forigi bezonatan vizaĝetikedon"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Ne povas redakti radikan etikedon"
@@ -26829,17 +26829,7 @@ msgstr "Provu movi TAlbum al nenie"
 msgid "Cannot move root tag"
 msgstr "Ne povas movi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-"Aliaj procezoj ankoraŭ ne finiĝis.\n"
-"Bonvolu provi denove poste."
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
@@ -26848,38 +26838,38 @@ msgstr ""
 "Alia etikedo kun la sama nomo jam ekzistas.\n"
 "Ĉu vi volas kunfandi la etikedojn?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
 msgstr "Ne povas kunfandi radikan etikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, kde-format
 msgid "Cannot merge required face tag"
 msgstr "Ne povas kunfandi bezonatan vizaĝetikedon"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr "Nur etikedo sen infanoj povas esti kunfandita!"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, kde-format
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ĉu vi volas kunfandi etikedon '%1' en etikedon '%2'?"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne demandi denove ĉe ĉi tiu seanco"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Ne tia etikedo"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -30244,7 +30234,7 @@ msgstr "Lumeco"
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr "Nigra kaj Blanka Agorda Dosiero Ŝarĝita"
+msgstr "Nigra & Blanka agorddosiero ŝargenda"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -30481,7 +30471,7 @@ msgstr "Fiksu ĉi tie la flavan/bluan kolorĝustigon de la bildo."
 #: core/libs/dimg/filters/curves/curvesbox.cpp:145
 #, kde-format
 msgid "Curve free mode"
-msgstr "Kurba senpaga reĝimo"
+msgstr "Senkurba reĝimo"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:146
 #, kde-format
@@ -30567,7 +30557,7 @@ msgstr "Alĝustigi Kurbojn"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr "Elekti Gimp-Kurbajn Dosieron por Ŝarĝi"
+msgstr "Elekti Gimp-Kurbajn dosieron ŝargendan"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -30589,7 +30579,7 @@ msgstr "Ne povas konservi en la tekstdosiero de Gimp-kurboj."
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:791
 #, kde-format
 msgid "Loading image..."
-msgstr "Ŝarĝante bildon..."
+msgstr "Ŝargante bildon..."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:198
 #, kde-format
@@ -31542,7 +31532,7 @@ msgstr "Forigi la liston"
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:98
 #, kde-format
 msgid "Loading Frame"
-msgstr "Ŝarĝante Kadron"
+msgstr "Ŝargante Kadron"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:164
 #, kde-format
@@ -32387,7 +32377,7 @@ msgstr "x:%1"
 #, kde-format
 msgctxt "@info: histogram"
 msgid "Loading image..."
-msgstr "Ŝarĝante bildon..."
+msgstr "Ŝargante bildon..."
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:503
 #, kde-format
@@ -43245,7 +43235,7 @@ msgstr "Fleksebla Bilda Transportsistemo"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:155
 #, kde-format
 msgid "Free Lossless Audio Codec"
-msgstr "Senpaga Senperda Aŭdio-Kodeko"
+msgstr "Libera Senperda Aŭdio-Kodeko"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:159
 #, kde-format
@@ -43629,7 +43619,7 @@ msgstr "Nehavebla"
 #, kde-format
 msgctxt "info"
 msgid "Loading in progress"
-msgstr "Ŝarĝo en progreso"
+msgstr "Ŝargo en progreso"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:151
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:125
@@ -43764,7 +43754,7 @@ msgstr "EXIF-binaraj dosieroj (*.exif)"
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
 #, kde-format
 msgid "IPTC Records"
-msgstr "IPTC-Rekordoj"
+msgstr "IPTC-Rikordoj"
 
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:163
 #, kde-format
@@ -48987,7 +48977,7 @@ msgstr ""
 #: core/showfoto/main/showfoto.cpp:86
 #, kde-format
 msgid "Loading themes..."
-msgstr "Ŝarĝante temojn..."
+msgstr "Ŝargante temojn..."
 
 #: core/showfoto/main/showfoto.cpp:204
 #, kde-format
@@ -49071,7 +49061,7 @@ msgstr "Ne estas aĵo por procesi."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "Eraro dum Ŝarĝo de Dosiero"
+msgstr "Eraro dum Ŝargo de Dosiero"
 
 #: core/showfoto/main/showfoto_open.cpp:322
 #, kde-format
@@ -49346,7 +49336,7 @@ msgid ""
 "Here, select whether newly-loaded images are sorted by their date, name, or "
 "size on disk."
 msgstr ""
-"Ĉi tie, elektu ĉu lastatempe ŝarĝitaj bildoj estas ordigitaj laŭ sia dato, "
+"Ĉi tie, elektu ĉu lastatempe ŝargitaj bildoj estas ordigitaj laŭ sia dato, "
 "nomo aŭ grandeco sur disko."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:163
@@ -51292,17 +51282,15 @@ msgid "Sequence number"
 msgstr "Sekvenca numero"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
-"Sekvencnumero (||opcioj||: ||c|| = dosierkalkulilo konscia, ||e|| = "
-"etendokonscia, ||f|| = dosierujo konscia, ||r|| = hazarda konscia)"
+"Sekvencnumero (||opcioj||: ||c|| = dosierkalkulil-konscia, ||e|| = "
+"finaĵokonscia, ||f|| = dosieruj-konscia, ||r|| = hazardokonscia ||ce|| = "
+"nombril- kaj finaĵ-konscia, ||re|| = hazard- kaj finaĵ-konscia)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51372,17 +51360,15 @@ msgstr "Hazarda teksto konscia numerado"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Dosiera nombrilo konscia numerado"
+msgstr "Dosiernombril- kaj finaĵ-konscia numerado"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Hazarda teksto konscia numerado"
+msgstr "Hazardotekst- kaj finaĵ-konscia numerado"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -51877,7 +51863,7 @@ msgid ""
 msgstr ""
 "<qt><p><i>Noto:</i> ŝargi reduktitan version de bildo estas pli rapida sed "
 "povas diferenci de la originalo, precipe kun Raw. En ĉi tiu kazo, JPEG-"
-"versio de Raw antaŭ-prilaborita per fotilo estas ŝarĝita, anstataŭe de la "
+"versio de Raw antaŭ-prilaborita per fotilo estas ŝargita, anstataŭe de la "
 "realaj bildaj datumoj. Ĉi tiu JPEG-bildo estas enigita en la "
 "dosiermetadatenoj kaj estas uzata de la fotilo por montri Krudan bildon pli "
 "rapide al televida ekrano.</p></qt>"
@@ -52657,7 +52643,7 @@ msgstr "Komento"
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
-msgstr "Ŝarĝante legomarkon"
+msgstr "Ŝargante legomarkon"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
@@ -52666,7 +52652,7 @@ msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
 "%3"
 msgstr ""
-"Eraro dum ŝarĝo de legosignoj sur linio %1, kolumno %2:\n"
+"Eraro dum ŝargo de legosignoj sur linio %1, kolumno %2:\n"
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
@@ -53898,7 +53884,7 @@ msgid ""
 "Save the current changes as a new version. The loaded file will remain "
 "unchanged, a new file will be created."
 msgstr ""
-"Konservi la nunajn ŝanĝojn kiel novan version. La ŝarĝita dosiero restos "
+"Konservi la nunajn ŝanĝojn kiel novan version. La ŝargita dosiero restos "
 "senŝanĝa, nova dosiero estos kreita."
 
 #: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:84
@@ -54388,7 +54374,7 @@ msgstr "Neniu elekto"
 #, kde-format
 msgctxt "@label"
 msgid "Loading:"
-msgstr "Ŝarĝante:"
+msgstr "Ŝargante:"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1499
 #, kde-format
@@ -59637,7 +59623,7 @@ msgstr "Antaŭrigardaj Opcioj"
 #: core/utilities/setup/camera/setupcamera.cpp:536
 #, kde-format
 msgid "Embedded preview loads full-sized images"
-msgstr "Enigita antaŭrigardo ŝarĝas plengrandajn bildojn"
+msgstr "Enigita antaŭrigardo ŝargas plengrandajn bildojn"
 
 #: core/utilities/setup/camera/setupcamera.cpp:537
 #, kde-format
@@ -62285,7 +62271,7 @@ msgstr "Konverti ĝin de defaŭlta eniga kolorspaco al laborspaco"
 #: core/utilities/setup/setupicc.cpp:313
 #, kde-format
 msgid "When loading a RAW file with uncalibrated colors"
-msgstr "Kiam vi ŝarĝas RAW-dosieron kun nekalibritaj koloroj"
+msgstr "Kiam vi ŝargas RAW-dosieron kun nekalibritaj koloroj"
 
 #: core/utilities/setup/setupicc.cpp:320
 #, kde-format
@@ -62589,7 +62575,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
-msgstr "Elektante bildeton ŝarĝas la bildon al la dekstra panelo"
+msgstr "Elektante bildeton ŝargas la bildon al la dekstra panelo"
 
 #: core/utilities/setup/setuplighttable.cpp:98
 #, kde-format
@@ -63070,3 +63056,10 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
+
+#~ msgid ""
+#~ "Other process are not finished yet.\n"
+#~ "Please try again later."
+#~ msgstr ""
+#~ "Aliaj procezoj ankoraŭ ne finiĝis.\n"
+#~ "Bonvolu provi denove poste."

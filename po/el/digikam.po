@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:48+0000\n"
+"POT-Creation-Date: 2023-05-02 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2924,7 +2924,7 @@ msgstr "Κύρια γραμμή εργαλείων"
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
-#: core/libs/album/manager/albummanager_talbum.cpp:991
+#: core/libs/album/manager/albummanager_talbum.cpp:977
 #: core/libs/timeadjust/timeadjustsettings.cpp:161
 #, kde-format
 msgid "digiKam"
@@ -28651,7 +28651,7 @@ msgstr "Αποτυχία προσθήκης λευκώματος στη βάση
 #: core/libs/album/manager/albummanager_talbum.cpp:365
 #: core/libs/album/manager/albummanager_talbum.cpp:457
 #: core/libs/album/manager/albummanager_talbum.cpp:496
-#: core/libs/album/manager/albummanager_talbum.cpp:591
+#: core/libs/album/manager/albummanager_talbum.cpp:584
 #, kde-format
 msgid "No such album"
 msgstr "Δεν υπάρχει τέτοιο λεύκωμα"
@@ -28730,7 +28730,7 @@ msgid "Cannot delete required face tag"
 msgstr "Αδυναμία διαγραφής της βασικής ετικέτας"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:463
-#: core/libs/album/manager/albummanager_talbum.cpp:714
+#: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
 msgstr "Αδυναμία επεξεργασίας της βασικής ετικέτας"
@@ -28754,15 +28754,7 @@ msgstr "Προσπάθεια μετακίνησης του TAlbum στο που�
 msgid "Cannot move root tag"
 msgstr "Αδυναμία μετακίνησης βασικής ετικέτας"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:514
-#: core/libs/album/manager/albummanager_talbum.cpp:615
-#, kde-format
-msgid ""
-"Other process are not finished yet.\n"
-"Please try again later."
-msgstr ""
-
-#: core/libs/album/manager/albummanager_talbum.cpp:523
+#: core/libs/album/manager/albummanager_talbum.cpp:516
 #, fuzzy, kde-format
 #| msgid ""
 #| "Another tag with the same name already exists.\n"
@@ -28774,24 +28766,24 @@ msgstr ""
 "Υπάρχει άλλη ετικέτα με το ίδιο όνομα.\n"
 "Παρακαλώ επιλέξτε ένα άλλο όνομα."
 
-#: core/libs/album/manager/albummanager_talbum.cpp:597
+#: core/libs/album/manager/albummanager_talbum.cpp:590
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge root tag"
 msgstr "Αδυναμία μετακίνησης βασικής ετικέτας"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:603
+#: core/libs/album/manager/albummanager_talbum.cpp:596
 #, fuzzy, kde-format
 #| msgid "Cannot move root tag"
 msgid "Cannot merge required face tag"
 msgstr "Αδυναμία μετακίνησης βασικής ετικέτας"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:609
+#: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
 msgid "Only a tag without children can be merged!"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_talbum.cpp:628
+#: core/libs/album/manager/albummanager_talbum.cpp:614
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
 #| msgid_plural ""
@@ -28799,19 +28791,19 @@ msgstr ""
 msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Επιθυμείτε την αφαίρεση της επιλεγμένης ετικέτας από όλες τις εικόνες;"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:632
-#: core/libs/album/manager/albummanager_talbum.cpp:1132
+#: core/libs/album/manager/albummanager_talbum.cpp:618
+#: core/libs/album/manager/albummanager_talbum.cpp:1118
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
 msgstr "Να μη γίνει ερώτηση ξανά"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:708
+#: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
 msgstr "Δεν υπάρχει τέτοια ετικέτα"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1127
+#: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
