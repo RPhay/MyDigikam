@@ -93,7 +93,7 @@ BUGFIXES:
 084 ==> 469248 - digiKam XMP Sidecar Format has Changed.
 085 ==> 449871 - Flag all database pictures as "already downloaded".
 086 ==> 450529 - After a MacOS update all collections settings are lost and have to be remade.
-087 ==> 
+087 ==> 450611 - Advanced search: "Photograph Information > The model of the camera" offers useless truncated model choices for Canon cameras.
 088 ==> 
 089 ==> 
 090 ==> 
