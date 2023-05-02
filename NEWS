@@ -97,7 +97,7 @@ BUGFIXES:
 088 ==> 458027 - Unable to change location of databases in DigiKam 7.7.0 Win 11 installation away from C:\Users\Username\Pictures.
 089 ==> 458820 - digiKam should warn before scanning Placeholder/Cloud files.
 090 ==> 459279 - Contributing to print creator templates.
-091 ==> 
+091 ==> 459695 - digikam does not include Gopro raw images *.GPR.
 092 ==> 
 093 ==> 
 094 ==> 
