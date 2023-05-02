@@ -103,7 +103,7 @@ BUGFIXES:
 094 ==> 460134 - Properties tab does not display the full caption of a picture.
 095 ==> 461585 - Edited Properties of Face Tag not reflected in identityattributes but instead created a new entry.
 096 ==> 463486 - Loading .HEIC images takes too long (approx 7 secs).
-097 ==> 
+097 ==> 469248 - digiKam XMP Sidecar Format has changed.
 098 ==> 
 099 ==> 
 100 ==> 
