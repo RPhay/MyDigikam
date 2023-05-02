@@ -101,7 +101,7 @@ BUGFIXES:
 092 ==> 454541 - Question to translation of digiKam 7.7.0.
 093 ==> 456266 - digiKam 7.7.0 is missing translations in many places, although they have been translated.
 094 ==> 460134 - Properties tab does not display the full caption of a picture.
-095 ==> 
+095 ==> 461585 - Edited Properties of Face Tag not reflected in identityattributes but instead created a new entry.
 096 ==> 
 097 ==> 
 098 ==> 
