@@ -96,7 +96,7 @@ BUGFIXES:
 087 ==> 450611 - Advanced search: "Photograph Information > The model of the camera" offers useless truncated model choices for Canon cameras.
 088 ==> 458027 - Unable to change location of databases in DigiKam 7.7.0 Win 11 installation away from C:\Users\Username\Pictures.
 089 ==> 458820 - digiKam should warn before scanning Placeholder/Cloud files.
-090 ==> 
+090 ==> 459279 - Contributing to print creator templates.
 091 ==> 
 092 ==> 
 093 ==> 
