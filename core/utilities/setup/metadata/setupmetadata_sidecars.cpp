@@ -62,9 +62,6 @@ void SetupMetadata::appendSidecarsTab()
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
             d->writingModeCombo, SLOT(setEnabled(bool)));
 
-    connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
-            d->sidecarFileNameBox, SLOT(setEnabled(bool)));
-
     rwSidecarsLayout->addWidget(rwSidecarsLabel,       0, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->readXMPSidecarBox,  1, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->writeXMPSidecarBox, 2, 0, 1, 3);

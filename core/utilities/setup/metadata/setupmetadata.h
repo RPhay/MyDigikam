@@ -74,6 +74,7 @@ private:
 
 private Q_SLOTS:
 
+    void slotSidecarReadWriteToggled();
     void slotSidecarFileNameToggled(bool);
     void slotExifAutoRotateToggled(bool);
     void slotWriteWithExifToolToggled(bool);
