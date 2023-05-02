@@ -90,7 +90,7 @@ BUGFIXES:
 081 ==> 423392 - Import from android mobile phone does not work.
 082 ==> 448223 - Warning ("Another tag with the same name already exists") when merging several tags appears too soon.
 083 ==> 468639 - Compiling 8.0.0 stop on 'make install'.
-084 ==> 
+084 ==> 469248 - digiKam XMP Sidecar Format has Changed.
 085 ==> 
 086 ==> 
 087 ==> 
