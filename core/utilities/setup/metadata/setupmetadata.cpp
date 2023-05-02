@@ -73,6 +73,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
 
     d->readSettings();
+    slotSidecarReadWriteToggled();
     slotWriteWithExifToolToggled(d->writeWithExifToolBox->isChecked());
 
     // --------------------------------------------------------
@@ -84,6 +85,12 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
+
+    connect(d->readXMPSidecarBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotSidecarReadWriteToggled()));
+
+    connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
+            this, SLOT(slotSidecarReadWriteToggled()));
 
     // --------------------------------------------------------
 
@@ -208,6 +215,14 @@ void SetupMetadata::applySettings()
 bool SetupMetadata::exifAutoRotateHasChanged() const
 {
     return (d->exifAutoRotateOriginal != d->exifRotateBox->isChecked());
+}
+
+void SetupMetadata::slotSidecarReadWriteToggled()
+{
+    bool enabled = (d->readXMPSidecarBox->isChecked() ||
+                    d->writeXMPSidecarBox->isChecked());
+
+    d->sidecarFileNameBox->setEnabled(enabled);
 }
 
 void SetupMetadata::slotSidecarFileNameToggled(bool b)
