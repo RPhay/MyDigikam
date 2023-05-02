@@ -89,7 +89,7 @@ BUGFIXES:
 080 ==> 412255 - Unable to Import photos from camera.
 081 ==> 423392 - Import from android mobile phone does not work.
 082 ==> 448223 - Warning ("Another tag with the same name already exists") when merging several tags appears too soon.
-083 ==> 
+083 ==> 468639 - Compiling 8.0.0 stop on 'make install'.
 084 ==> 
 085 ==> 
 086 ==> 
