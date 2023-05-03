@@ -106,7 +106,7 @@ BUGFIXES:
 097 ==> 469248 - digiKam XMP Sidecar Format has changed.
 098 ==> 462145 - digiKam 7.9.0 hangs when selecting Album "Open in file manager".
 099 ==> 464230 - Faces region scanned, but not used in "Recognize faces", only manually added new ones.
-100 ==> 
+100 ==> 464305 - Group image: Prefer jpgs over raw files.
 101 ==> 
 102 ==> 
 103 ==> 
