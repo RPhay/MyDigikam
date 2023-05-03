@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
 "PO-Revision-Date: 2023-01-02 20:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -62727,7 +62727,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Rozszerzone"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62738,7 +62738,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62748,7 +62748,7 @@ msgstr ""
 "Wyłączenie samo-obracania exif z pewnością wyświetli twoje obrazy w złym "
 "kierunku, więc wyłącz tę opcję tylko wtedy, gdy na pewno tego potrzebujesz."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62760,7 +62760,7 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Yes I understand"
@@ -62768,7 +62768,7 @@ msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Tak, rozumiem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -63375,7 +63375,7 @@ msgstr ""
 "(NAZWAPODSTAWOWWA.xmp), które są używane przez wiele płatnych programów. Nie "
 "włączaj tej opcji dla CiemnegoStołu."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63400,7 +63400,7 @@ msgstr ""
 "rozdzielić\n"
 "średnikiem lub pojedynczym odstępem."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63420,19 +63420,19 @@ msgstr ""
 "*.xyz oraz *.abc. Wewnętrznie\n"
 "wykorzystywany rodzaj pliku przybocznego *.xmp jest zawsze uwzględniany."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Wpisz dodatkowe rozszerzenia plików przybocznych"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Dodatkowe roz&szerzenia plików przybocznych"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

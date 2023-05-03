@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -65817,7 +65817,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65828,7 +65828,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65846,7 +65846,7 @@ msgstr ""
 "eksplicitno trebate. Štoviše, trebaćete regenerisati sve već smještene "
 "sličice preko <interface>Alati/održavanje</interface> menija."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -65858,13 +65858,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, fuzzy, kde-format
 #| msgid "Writing metadata to files"
 msgctxt "@info"
@@ -66553,7 +66553,7 @@ msgstr ""
 "Uključite ovu opciju koju kamera omogućuje za korištenje slike naziva "
 "datoteka bez izmjena."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66568,7 +66568,7 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66581,21 +66581,21 @@ msgid ""
 "used sidecars type *.xmp is always included."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Unesite editorijalne instrukcije za korištenje."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Unesite editorijalne instrukcije za korištenje."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

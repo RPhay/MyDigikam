@@ -35,8 +35,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
-"PO-Revision-Date: 2023-04-29 12:33+0100\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"PO-Revision-Date: 2023-05-02 19:22+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -51178,17 +51178,15 @@ msgid "Sequence number"
 msgstr "Sequence number"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
-"aware, ||f|| = folder aware, ||r|| = random aware)"
+"aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
+"extension aware, ||re|| = random and extension aware)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51258,17 +51256,15 @@ msgstr "Random text aware numbering"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "File counter aware numbering"
+msgstr "File counter and extensions aware numbering"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Random text aware numbering"
+msgstr "Random text and extensions aware numbering"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -60731,7 +60727,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Advanced"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60747,7 +60743,7 @@ msgstr ""
 "no longer be uniquely assigned and will be used for both images, which can "
 "lead to metadata problems."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60757,7 +60753,7 @@ msgstr ""
 "Switching off EXIF auto rotation will most probably show your images in a "
 "wrong orientation, so only change this option if you explicitly require this."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60775,13 +60771,13 @@ msgstr ""
 "If you decide to do so, make a backup of your RAW files. We strongly "
 "recommend not to enable this option."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Yes I Understand"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -61379,7 +61375,7 @@ msgstr ""
 "name (BASENAME.xmp) used by many commercial programs. For Darktable do not "
 "enable this option."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61403,7 +61399,7 @@ msgstr ""
 "on these sidecar files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61423,19 +61419,19 @@ msgstr ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Enter additional sidecars file extensions."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Additional &sidecar file extensions"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

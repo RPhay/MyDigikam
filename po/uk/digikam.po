@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
 "PO-Revision-Date: 2023-05-01 09:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -61899,7 +61899,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Додатково"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61916,7 +61916,7 @@ msgstr ""
 "однозначно пов'язати із файлом зображення — його буде використано для обох "
 "зображень, що може призвести до проблем із обробкою метаданих."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61927,7 +61927,7 @@ msgstr ""
 "помилок у визначенні орієнтації зображень. Тому змінювати типове значення "
 "цього параметра без особливої потреби не варто."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61946,13 +61946,13 @@ msgstr ""
 "копію ваших файлів RAW. Наполегливо рекомендуємо вам не вмикати цю "
 "можливість."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Так, розумію"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62574,7 +62574,7 @@ msgstr ""
 "сумісному із багатьма комерційними програмами форматі (БАЗОВА_НАЗВА.xmp). "
 "Якщо ви користуєтеся Darktable, не позначайте цей пункт."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62599,7 +62599,7 @@ msgstr ""
 "додаткових файлів.\n"
 "Відокремити декілька записів у списку можна крапкою з комою або пробілом."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62619,19 +62619,19 @@ msgstr ""
 "внутрішньому рівні використовується тип додаткових файлів\n"
 "*.xmp, які завжди включаються до обробки."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Тут ви можете вказати додаткові суфікси назв додаткових файлів."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Суфікси назв &додаткових файлів"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

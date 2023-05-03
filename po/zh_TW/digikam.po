@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -63318,7 +63318,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "進階"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63329,7 +63329,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63337,7 +63337,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63349,13 +63349,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, fuzzy, kde-format
 #| msgid "Writing metadata to files"
 msgctxt "@info"
@@ -63983,7 +63983,7 @@ msgid ""
 "enable this option."
 msgstr "開啟這個選項會不修改直接使用相機提供的影像檔名。"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63998,7 +63998,7 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64011,21 +64011,21 @@ msgid ""
 "used sidecars type *.xmp is always included."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "輸入編輯使用須知。"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, fuzzy, kde-format
 #| msgid "Enter the editorial usage instructions."
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "輸入編輯使用須知。"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
