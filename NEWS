@@ -104,7 +104,7 @@ BUGFIXES:
 095 ==> 461585 - Edited Properties of Face Tag not reflected in identityattributes but instead created a new entry.
 096 ==> 463486 - Loading .HEIC images takes too long (approx 7 secs).
 097 ==> 469248 - digiKam XMP Sidecar Format has changed.
-098 ==> 
+098 ==> 462145 - digiKam 7.9.0 hangs when selecting Album "Open in file manager".
 099 ==> 
 100 ==> 
 101 ==> 
