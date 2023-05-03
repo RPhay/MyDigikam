@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -66808,7 +66808,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66819,7 +66819,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -66830,7 +66830,7 @@ msgstr ""
 "probabelmente nunha orientación incorrecta, así que só debería cambiar esta "
 "opción se sabe o que fai."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>Do you really want to enable metadata writing to RAW files?</b></"
@@ -66854,14 +66854,14 @@ msgstr ""
 "ficheiros RAW.</p><p><b>Recomendamos encarecidamente que non active esta "
 "opción.</b></p>"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, fuzzy, kde-format
 #| msgid "Yes I understand"
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Enténdoo"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, fuzzy, kde-format
 #| msgid "You would rather disable writing metadata to RAW files?"
 msgctxt "@info"
@@ -67538,7 +67538,7 @@ msgstr ""
 "ficheiro compatíbel (nome-base.xmp) que usan moitos programas comercias. "
 "Para Darktable non active esta opción."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Add file types to be recognised as sidecars.</p><p>digiKam "
@@ -67570,7 +67570,7 @@ msgstr ""
 "acompañantes.</p> <p>Distintas extensións deben separarse cun punto e coma "
 "(;) ou un espazo.</p>"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Here you can add extra extensions of sidecars files to be processed "
@@ -67594,21 +67594,21 @@ msgstr ""
 "para permitir ficheiros coas extensións *.xyz e *.abc. O tipo de acompañante "
 "*.xmp, que se usa internamente, sempre se inclúe.</p>"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, fuzzy, kde-format
 #| msgid "Enter additional sidecars file extensions."
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Escriba extensións de ficheiro acompañante adicionais."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, fuzzy, kde-format
 #| msgid "Additional &sidecar file extensions"
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Extensións de ficheiro &acompañante adicionais"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

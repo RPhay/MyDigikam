@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
-"PO-Revision-Date: 2023-04-24 09:46+0200\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"PO-Revision-Date: 2023-05-02 11:19+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.2.2\n"
 
@@ -51565,10 +51565,7 @@ msgid "Sequence number"
 msgstr "Zaporedje števil"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -51576,7 +51573,8 @@ msgid ""
 msgstr ""
 "Zaporedje števil (||možnosti ||: ||c|| = zavedajoč se številke datoteke, ||"
 "e|| = zavedajoč se pripone, ||f|| = zavedajoč se mape, ||r|| = zavedajoč se "
-"slučajnosti)"
+"slučajnosti, ||ce|| = zavedajoč se številke in pripone, ||re|| = zavedajoč "
+"se slučajnosti in pripone)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51636,27 +51634,25 @@ msgstr "Številčenje, ki se zaveda mape"
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:112
 #, kde-format
 msgid "File counter aware numbering"
-msgstr "Številčenje, ki se zaveda datotek"
+msgstr "Številčenje, ki se zaveda števca datotek"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:119
 #, kde-format
 msgid "Random text aware numbering"
-msgstr "Slučajno številčenje, ki se zaveda besedila"
+msgstr "Številčenje, ki se zaveda slučajnosti besedila"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Številčenje, ki se zaveda datotek"
+msgstr "Številčenje, ki se zaveda števca datotek in pripone"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Slučajno številčenje, ki se zaveda besedila"
+msgstr "Številčenje, ki se zaveda slučajnega besedila in pripon"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -61175,7 +61171,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61191,7 +61187,7 @@ msgstr ""
 "datoteka ni več edinstveno dodeljena in se bo uporabljala za obe sliki, kar "
 "lahko povzroča težave z metapodatki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61202,7 +61198,7 @@ msgstr ""
 "vaše slike prikazane napačno, zato to možnost izklopite le, če to nujno "
 "potrebno."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61220,13 +61216,13 @@ msgstr ""
 "Če se že za to odločite, naredite vsaj varnostno kopijo surovih datotek "
 "slik. Močno vam priporočamo, da te možnosti ne omogočite."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Da, razumem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -61832,7 +61828,7 @@ msgstr ""
 "(BASENAME.xmp), ki jih uporabljajo mnogi komercialni programi. Ne "
 "vklapljajte te možnosti za program Darktable."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61855,7 +61851,7 @@ msgstr ""
 "tudi v teh priklopnih datotekah.\n"
 "Večkratne razširitve morajo biti ločene s podpičjem ali presledkom."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61875,19 +61871,19 @@ msgstr ""
 "*.xyz in *.abc so razširitve. Priklopne datoteke za\n"
 "interno rabo tipa * .xmp so vedno vključene."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Vnesite dodatne priponke priklopnih datotek."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Dodatne razširitve priklopnih datotek"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

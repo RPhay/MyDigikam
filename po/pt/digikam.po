@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
-"PO-Revision-Date: 2023-04-25 21:23+0100\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"PO-Revision-Date: 2023-05-02 11:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -51901,17 +51901,16 @@ msgid "Sequence number"
 msgstr "Número de sequência"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Número de sequência (||opções||: ||c|| = contador de ficheiros, ||e|| = "
-"detecção da extensão, ||f|| = detectar pastas)"
+"detecção da extensão, ||f|| = detecção das pastas, ||r|| = detecção "
+"aleatória, ||ce|| = detecção do contador e extensão, ||re|| = detecção "
+"aleatória e da extensão)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51982,17 +51981,15 @@ msgstr "Numeração ciente do texto aleatório"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numeração ciente da numeração dos ficheiros"
+msgstr "Numeração ciente da numeração e da extensão dos ficheiros"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Numeração ciente do texto aleatório"
+msgstr "Numeração ciente do texto aleatório e das extensões"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -61570,7 +61567,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61587,7 +61584,7 @@ msgstr ""
 "usado para ambas as imagens, o que poderá originar problemas com os meta-"
 "dados."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61598,7 +61595,7 @@ msgstr ""
 "suas imagens com uma orientação errada, pelo que altere esta opção apenas se "
 "realmente precisar dela."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61616,13 +61613,13 @@ msgstr ""
 "Se optar por fazê-lo, faça uma cópia de segurança dos seus ficheiros RAW. "
 "Recomendamos-lhe com veemência que não active esta opção."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sim, Compreendo"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62241,7 +62238,7 @@ msgstr ""
 "de ficheiros compatível (NOMEBASE.xml) usado com outros programas "
 "comerciais. Para o Darktable não active esta opção."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62267,7 +62264,7 @@ msgstr ""
 "As várias extensões deverão estar separadas por um ponto-e-vírgula ou um "
 "espaço."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62287,19 +62284,19 @@ msgstr ""
 "as extensões *.xyz e *.abc. O tipo de ficheiros acessórios\n"
 "*.xmp, usado internamente, é sempre incluído."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Indique as extensões dos ficheiros acessórios adicionais."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Exten&sões adicionais de ficheiros de ficheiros acessórios"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
@@ -63819,10 +63816,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Deseja repor todas as definições com os seus valores por omissão?"
-
-#~ msgid ""
-#~ "Other process are not finished yet.\n"
-#~ "Please try again later."
-#~ msgstr ""
-#~ "Existem outros processos que ainda não terminaram.\n"
-#~ "Por favor, tente de novo mais tarde."

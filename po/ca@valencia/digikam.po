@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
-"PO-Revision-Date: 2023-05-01 10:17+0200\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"PO-Revision-Date: 2023-05-02 20:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20602,13 +20602,14 @@ msgstr "Exporta per correu electrònic"
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
 #, kde-format
 msgid "Video Slideshow"
-msgstr "Vídeo de passe de diapositives"
+msgstr "Vídeo de presentació de diapositives"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
 #, kde-format
 msgid "A tool to create video slideshow from images"
 msgstr ""
-"Una eina per a crear un vídeo de passe de diapositives a partir d'imatges"
+"Una eina per a crear un vídeo de presentació de diapositives a partir "
+"d'imatges"
 
 # skip-rule: common-diferent_a
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
@@ -20620,8 +20621,8 @@ msgid ""
 "to images to make transitions while to render target video.</p>"
 msgstr ""
 "<p>Esta eina permet als usuaris processar prèviament imatges com fotogrames "
-"per a crear un vídeo de passe de diapositives.</p><p>Els elements que es "
-"processaran es poden seleccionar d'un en un o per grups a través d'una "
+"per a crear un vídeo de presentació de diapositives.</p><p>Els elements que "
+"es processaran es poden seleccionar d'un en un o per grups a través d'una "
 "selecció d'àlbums.</p><p>Es poden aplicar efectes visuals diferents a les "
 "imatges per a fer transicions en renderitzar el vídeo final.</p>"
 
@@ -20629,12 +20630,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
-msgstr "Crea un vídeo de passe de diapositives..."
+msgstr "Crea un vídeo de presentació de diapositives..."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
-msgstr "S'està començant a generar el vídeo del passe de diapositives..."
+msgstr ""
+"S'està començant a generar el vídeo de la presentació de diapositives..."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
@@ -20649,12 +20651,12 @@ msgstr "%1 fluxos d'àudio d'entrada que s'han de processar:"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
 #, kde-format
 msgid "Video Slideshow is not completed"
-msgstr "El vídeo del passe de diapositives no està complet"
+msgstr "El vídeo de la presentació de diapositives no està complet"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:190
 #, kde-format
 msgid "Video Slideshow completed."
-msgstr "El vídeo del passe de diapositives està complet."
+msgstr "El vídeo de la presentació de diapositives està complet."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:195
 #, kde-format
@@ -20684,8 +20686,8 @@ msgid ""
 "also create a video presentation with transition</p><p>effects and audio "
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Us donem la benvinguda a l'eina de passe de diapositives de "
-"vídeo</b></h1></p><p>Este assistent vos guiarà per a exportar</p><p></"
+"<qt><p><h1><b>Us donem la benvinguda a l'eina de presentació de diapositives "
+"de vídeo</b></h1></p><p>Este assistent vos guiarà per a exportar</p><p></"
 "p><p>les imatges com un flux de vídeo.</p><p>Podeu generar ràpidament una "
 "pel·lícula de <a href='https://ca.wikipedia.org/wiki/"
 "Filmació_a_intervals'>filmació a intervals (Time-lapse)</a></p><p>capturada "
@@ -20759,7 +20761,7 @@ msgid ""
 msgstr ""
 "<i>Una transició és un efecte visual aplicat entre dues imatges. Per a "
 "alguns efectes, la duració pot dependre de valors aleatoris i pot canviar "
-"durant el passe de diapositives.</i>"
+"durant la presentació de diapositives.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:335
 #, kde-format
@@ -20770,12 +20772,13 @@ msgstr "Duració: %1 segons per element, total %2 segons (sense transicions)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
-msgstr "Creeu un vídeo de passe de diapositives"
+msgstr "Creeu un vídeo de presentació de diapositives"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
-msgstr "Us donem la benvinguda a l'eina de vídeo de passe de diapositives"
+msgstr ""
+"Us donem la benvinguda a l'eina de vídeo de presentació de diapositives"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
 #, kde-format
@@ -20785,7 +20788,7 @@ msgstr "Configureu el vídeo"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
 #, kde-format
 msgid "Generating Video Slideshow"
-msgstr "S'està generant el vídeo de passe de diapositives"
+msgstr "S'està generant el vídeo de presentació de diapositives"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
 #, kde-format
@@ -21067,7 +21070,7 @@ msgstr[1] "%1 peces [%2]"
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
 msgstr ""
-"La duració del passe és més gran que la duració de la pista de so. "
+"La duració de la presentació és més gran que la duració de la pista de so. "
 "Suggeriment: afegiu més fitxers de so."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
@@ -21637,7 +21640,7 @@ msgstr "Aleatori"
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
 #, kde-format
 msgid "Slideshow Completed"
-msgstr "Ha finalitzat el passe de diapositives"
+msgstr "Ha finalitzat la presentació de diapositives"
 
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
@@ -21649,7 +21652,7 @@ msgstr "Cliqueu per a eixir..."
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:630
 #, kde-format
 msgid "SlideShow Completed"
-msgstr "Ha finalitzat el passe de diapositives"
+msgstr "Ha finalitzat la presentació de diapositives"
 
 #: core/dplugins/generic/view/presentation/presentationmngr.cpp:103
 #, kde-format
@@ -21684,8 +21687,8 @@ msgid ""
 "\n"
 "You can add a sound-track in background while your presentation."
 msgstr ""
-"Esta eina renderitza una sèrie d'elements com a un passe de diapositives "
-"avançat.\n"
+"Esta eina renderitza una sèrie d'elements com a una presentació de "
+"diapositives avançada.\n"
 "\n"
 "Hi ha disponibles molts efectes de transició basats en OpenGL i el famós "
 "efecte de Ken Burns.\n"
@@ -21703,7 +21706,7 @@ msgstr "Presentació..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
-msgstr "Especificar un retard per al passe de diapositives"
+msgstr "Especificar un retard per a la presentació de diapositives"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
@@ -21800,7 +21803,7 @@ msgstr "Bambolles"
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
-msgstr "Passe de diapositives"
+msgstr "Presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
 #, kde-format
@@ -21808,13 +21811,13 @@ msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
 "is active"
 msgid "Giving a slideshow"
-msgstr "Efectuant un passe de diapositives"
+msgstr "S'està efectuant una presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
-msgstr "Configureu el passe de diapositives"
+msgstr "Configureu la presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
@@ -21837,18 +21840,18 @@ msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "image selected in the images list."
 msgstr ""
-"Si activeu esta opció, el passe de diapositives començarà amb la imatge de "
-"la llista que estiga seleccionada."
+"Si activeu esta opció, la presentació de diapositives començarà amb la "
+"imatge de la llista que estiga seleccionada."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Slideshow runs in a loop"
-msgstr "Executa el passe de diapositives en un bucle"
+msgstr "Executa la presentació de diapositives en un bucle"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
 msgid "Run the slideshow in a loop."
-msgstr "Executa el passe de diapositives en un bucle."
+msgstr "Executa la presentació de diapositives en un bucle."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
@@ -21859,8 +21862,8 @@ msgstr "Barreja les imatges"
 #, kde-format
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
-"Si esta opció està activada, el passe de diapositives s'executarà en ordre "
-"aleatori"
+"Si esta opció està activada, la presentació de diapositives s'executarà en "
+"ordre aleatori"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
 #, kde-format
@@ -22027,8 +22030,8 @@ msgstr "Tipus de lletra de la llegenda:"
 #, kde-format
 msgid "Select here the font used to display text in the slideshow."
 msgstr ""
-"Seleccioneu ací el tipus de lletra emprada per a mostrar el text al passe de "
-"diapositives."
+"Seleccioneu ací el tipus de lletra emprada per a mostrar el text a la "
+"presentació de diapositives."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
 #, kde-format
@@ -22067,18 +22070,18 @@ msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the F2 key.</b>"
 msgstr ""
-"<b>Nota: Este diàleg per a la configuració del passe de diapositives es pot "
-"activar en qualsevol moment amb la tecla F2.</b>"
+"<b>Nota: Este diàleg per a la configuració de la presentació de diapositives "
+"es pot activar en qualsevol moment amb la tecla F2.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
 #, kde-format
 msgid "SlideShow"
-msgstr "Passe de diapositives"
+msgstr "Presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:69
 #, kde-format
 msgid "A tool to render slideshow"
-msgstr "Una eina per a renderitzar un passe de diapositives"
+msgstr "Una eina per a renderitzar una presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
 #, kde-format
@@ -22119,14 +22122,14 @@ msgstr ""
 "td></tr><tr><td></td><td>Tecla <i>Av Pàg</i></td></tr><tr><td></td><td>Tecla "
 "<i>Fletxa dreta</i></td></tr><tr><td></td><td>Roda del ratolí avall</td></"
 "tr><tr><td></td><td>Botó dret del ratolí</td></tr><tr><td>Pausa/Inici:</"
-"td><td>Tecla <i>Espai</i></td></tr><tr><td>Configureu el passe de "
-"diapositives:</td><td>Tecla <i>F2</i></td></tr><tr><td>Oculta/mostra les "
-"propietats:</td><td>Tecla <i>F4</i></td></tr><tr><td>Ix:</td><td>Tecla "
-"<i>Esc</i></td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Propietats "
-"dels elements</h1></b></center></nobr></td></tr><tr><td>Canvi de les "
+"td><td>Tecla <i>Espai</i></td></tr><tr><td>Configureu la presentació de "
+"diapositives:</td> <td>Tecla <i>F2</i></td></tr><tr><td>Oculta/mostra les "
+"propietats:</td> <td>Tecla <i>F4</i></td></tr><tr><td>Ix:</td><td>Tecla "
+"<i>Esc</i></td> </tr><tr><td colspan=\"2\"><nobr><center><b><h1>Propietats "
+"dels elements</h1> </b></center></nobr></td></tr><tr><td>Canvi de les "
 "etiquetes:</td><td>Utilitzeu les dreceres de teclat de les etiquetes</td></"
 "tr><tr><td>Canvi de la valoració:</td><td>Utilitzeu les dreceres de teclat "
-"de les valoracions</td></tr><tr><td>Canvi del rètol de color:</"
+"de les valoracions</td></tr> <tr><td>Canvi del rètol de color:</"
 "td><td>Utilitzeu les dreceres de teclat del rètol de color</td></"
 "tr><tr><td>Canvi del rètol de selecció:</td><td>Utilitzeu les dreceres de "
 "teclat del rètol de selecció</td></tr><tr><td colspan="
@@ -22137,13 +22140,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
-msgstr "Passe de diapositives"
+msgstr "Presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
 #: core/libs/settings/applicationsettings_miscs.cpp:440
 #, kde-format
 msgid "Slideshow"
-msgstr "Passe de diapositives"
+msgstr "Presentació de diapositives"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
@@ -22167,7 +22170,7 @@ msgid ""
 "Click To Exit\n"
 "or press ESC..."
 msgstr ""
-"Ha finalitzat el passe de diapositives.\n"
+"Ha finalitzat la presentació de diapositives.\n"
 "Cliqueu per a eixir\n"
 "o premeu «Esc»..."
 
@@ -39118,7 +39121,7 @@ msgstr "Afegir elements al gestor de la cua per lots"
 #: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
 msgid "Opening items in the Slideshow"
-msgstr "Obrir elements en el passe de diapositives"
+msgstr "Obrir elements en la presentació de diapositives"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:473
 #, kde-format
@@ -42977,7 +42980,7 @@ msgstr ""
 "Reescriu els algoritmes d'ordenació per la qualitat de la imatge, "
 "l'extracció de la informació d'enfocament de la fotografia, detecció "
 "estètica per a classificar les imatges utilitzant un model d'aprenentatge "
-"profund, millora el passe de diapositives i eines de presentació"
+"profund, millora la presentació de diapositives i eines de presentació"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
@@ -43001,7 +43004,8 @@ msgid ""
 "plugins interface"
 msgstr ""
 "Implementació de la clusterització i millores per al Motor de cares, "
-"adaptació de l'eina de passe de diapositives a la interfície de connectors"
+"adaptació de l'eina de presentació de diapositives a la interfície de "
+"connectors"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:177
 #, kde-format
@@ -52064,8 +52068,7 @@ msgstr "Numeració segons el comptador de fitxers i les extensions"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text and extensions aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
 msgstr "Numeració segons un text aleatori i extensions"
 
@@ -61678,7 +61681,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avançat"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61694,7 +61697,7 @@ msgstr ""
 "pot ja no estar assignat de manera única i s'utilitzarà per a les dues "
 "imatges, la qual cosa pot provocar problemes de metadades."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61705,7 +61708,7 @@ msgstr ""
 "imatges en una orientació errònia, per tant, només canvieu esta opció si ho "
 "requeriu explícitament."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61723,13 +61726,13 @@ msgstr ""
 "Si decidiu fer-ho, feu una còpia de seguretat dels fitxers RAW. Vos "
 "recomanem fermament no activar esta opció."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sí, ho entenc"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62354,7 +62357,7 @@ msgstr ""
 "de fitxer compatible (BASENAME.xmp) utilitzat per molts programes "
 "comercials. No activeu esta opció per a Darktable."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62379,7 +62382,7 @@ msgstr ""
 "fitxers laterals.\n"
 "Les diverses extensions s'han de separar amb un punt i coma o un espai."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62398,19 +62401,19 @@ msgstr ""
 "per a permetre fitxers amb les extensions *.xyz i *.abc.\n"
 "Sempre s'inclou el tipus de lateral *.xmp utilitzat internament."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Introduïu les extensions de fitxer dels laterals."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Extensions de fitxer lateral&s addicionals"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
@@ -63939,10 +63942,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid ""
-#~ "Other process are not finished yet.\n"
-#~ "Please try again later."
-#~ msgstr ""
-#~ "Els altres processos encara no han finalitzat.\n"
-#~ "Torneu-ho a provar més tard."

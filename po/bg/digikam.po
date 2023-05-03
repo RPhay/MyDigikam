@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-02 00:45+0000\n"
-"PO-Revision-Date: 2023-04-21 23:01+0200\n"
+"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"PO-Revision-Date: 2023-05-02 23:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -49060,12 +49060,10 @@ msgstr ""
 "изреченията на желаните езици.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Език по подразбиране"
+msgstr "Език по подразбиране:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -49074,11 +49072,11 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Изберете езика по подразбиране, който да използвате със стойността \"x-"
+"default\" за алтернативни езикови низове."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
 msgstr "Автоматично откриване"
 
@@ -49087,6 +49085,7 @@ msgstr "Автоматично откриване"
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
 msgstr ""
+"Автоматично определяне на езика чрез анализиране на съдържанието на низ"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -51957,10 +51956,7 @@ msgid "Sequence number"
 msgstr "Пореден номер"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -51968,7 +51964,8 @@ msgid ""
 msgstr ""
 "Пореден номер (||опции||: ||c|| = познаване на брояча на файловете, ||e|| = "
 "познаване на разширението, ||f|| = познаване на папката, ||r|| = познаване "
-"на случайността)"
+"на случайността, ||ce|| = брояч и разширение||re|| = случайност и с "
+"разширение))"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -52039,17 +52036,15 @@ msgstr "Номериране на случаен текст"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Номериране с отчитане на броя на файловете"
+msgstr "Номериране с отчитане на броя на файловете и разширението"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Номериране на случаен текст"
+msgstr "Номериране на случаен текст и разширение"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -61687,7 +61682,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Разширени"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:222
+#: core/utilities/setup/metadata/setupmetadata.cpp:237
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61704,7 +61699,7 @@ msgstr ""
 "ще се използва и за двете изображения, което може да доведе до проблеми с "
 "метаданните."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:240
+#: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61715,7 +61710,7 @@ msgstr ""
 "изображенията ви в неправилна ориентация, така че променете тази опция само "
 "ако изрично изисквате това."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:263
+#: core/utilities/setup/metadata/setupmetadata.cpp:278
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61733,13 +61728,13 @@ msgstr ""
 "Ако решите да го направите, направете резервно копие на вашите RAW файлове. "
 "Силно препоръчваме да не включвате тази опция."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:271
+#: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Да, разбирам"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:281
+#: core/utilities/setup/metadata/setupmetadata.cpp:296
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62364,7 +62359,7 @@ msgstr ""
 "съвместимо име на файла (BASENAME.xmp), използвано от много търговски "
 "програми. За Darktable не включвайте тази опция."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:82
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62391,7 +62386,7 @@ msgstr ""
 "Няколко разширения трябва да бъдат разделени с точка и запетая или с "
 "интервал."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62411,19 +62406,19 @@ msgstr ""
 "с разширения *.xyz и *.abc. Вътрешно \n"
 "използваните съпътстващите файлове от типа *.xmp са винаги включени."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Въведете допълнителни разширения на съпътстващите файлове."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Допълнителни файлови разширения на съпътстващите файлове"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
