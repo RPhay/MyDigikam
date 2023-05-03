@@ -113,7 +113,7 @@ BUGFIXES:
 104 ==> 467091 - digiKam will not open any files/album.
 105 ==> 467310 - Many translations are missing in digikam 7.9 and 7.10.
 106 ==> 463297 - Face tags not loaded when mysql deleted and import again.
-107 ==> 
+107 ==> 468622 - A slow connection while using a remote database or collection causes digikam to freeze or become unresponsive.
 108 ==> 
 109 ==> 
 110 ==> 
@@ -138,3 +138,13 @@ BUGFIXES:
 129 ==> 
 130 ==> 
 131 ==> 
+132 ==> 
+133 ==> 
+134 ==> 
+135 ==> 
+136 ==> 
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
