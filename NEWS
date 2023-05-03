@@ -116,7 +116,7 @@ BUGFIXES:
 107 ==> 468622 - A slow connection while using a remote database or collection causes digikam to freeze or become unresponsive.
 108 ==> 468637 - Behaviour for network shares does not follow KDE's own recommendation.
 109 ==> 231528 - The first photo should not be automatically selected in icon-views.
-110 ==> 
+110 ==> 469310 - digiKam won't import images that have emoji in the filename.
 111 ==> 
 112 ==> 
 113 ==> 

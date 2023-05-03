@@ -39,7 +39,7 @@ namespace Digikam
 
 int ThumbsDbSchemaUpdater::schemaVersion()
 {
-    return 3;
+    return 4;
 }
 
 // -------------------------------------------------------------------------------------
@@ -229,9 +229,15 @@ bool ThumbsDbSchemaUpdater::makeUpdates()
         {
             updateV1ToV2();
         }
+
         if (d->currentVersion <= 2)
         {
             updateV2ToV3();
+        }
+
+        if (d->currentVersion <= 3)
+        {
+            updateV3ToV4();
         }
     }
 
@@ -292,6 +298,20 @@ bool ThumbsDbSchemaUpdater::updateV2ToV3()
     }
 
     d->currentVersion         = 3;
+    d->currentRequiredVersion = 1;
+
+    return true;
+}
+
+bool ThumbsDbSchemaUpdater::updateV3ToV4()
+{
+    if (!d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("UpdateThumbnailsDBSchemaFromV3ToV4"))))
+    {
+        qCDebug(DIGIKAM_THUMBSDB_LOG) << "Thumbs database: schema upgrade from V3 to V4 failed!";
+        return false;
+    }
+
+    d->currentVersion         = 4;
     d->currentRequiredVersion = 1;
 
     return true;

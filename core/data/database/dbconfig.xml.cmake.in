@@ -1016,6 +1016,10 @@
                 <statement mode="plain">DELETE FROM Settings WHERE keyword='Locale';</statement>
             </dbaction>
 
+            <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
+                <!-- Nothing to do for SQLite -->
+            </dbaction>
+
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
                 <statement mode="plain">CREATE TABLE CustomIdentifiers
                     (identifier TEXT,
@@ -1034,6 +1038,10 @@
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV2ToV3" mode="transaction">
+                <!-- Nothing to do for SQLite -->
+            </dbaction>
+
+            <dbaction name="UpdateThumbnailsDBSchemaFromV3ToV4" mode="transaction">
                 <!-- Nothing to do for SQLite -->
             </dbaction>
 
@@ -1150,7 +1158,7 @@
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS Albums
                     (id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     albumRoot INTEGER NOT NULL,
-                    relativePath LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                    relativePath LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
                     date DATE,
                     caption LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     collection LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
@@ -1163,7 +1171,7 @@
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS Images
                     (id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                     album INTEGER,
-                    name LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+                    name LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
                     status INTEGER NOT NULL,
                     category INTEGER NOT NULL,
                     modificationDate DATETIME,
@@ -1584,14 +1592,14 @@
                     ENGINE InnoDB;
                 </statement>
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS FilePaths
-                    (path LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    (path LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
                     thumbId BIGINT,
                     CONSTRAINT FilePaths_Thumbnails FOREIGN KEY (thumbId) REFERENCES Thumbnails (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     UNIQUE(path(255)))
                     ENGINE InnoDB;
                 </statement>
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS CustomIdentifiers
-                    (identifier LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    (identifier LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
                     thumbId BIGINT,
                     CONSTRAINT CustomIdentifiers_Thumbnails FOREIGN KEY (thumbId) REFERENCES Thumbnails (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     UNIQUE(identifier(255)))
@@ -2704,6 +2712,11 @@
                 <statement mode="plain">DELETE FROM Settings WHERE keyword='Locale';</statement>
             </dbaction>
 
+            <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
+                <statement mode="plain">ALTER TABLE Albums MODIFY COLUMN relativePath LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL;</statement>
+                <statement mode="plain">ALTER TABLE Images MODIFY COLUMN name LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL;</statement>
+            </dbaction>
+
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
                 <statement mode="plain">ALTER TABLE UniqueHashes CHANGE uniqueHash uniqueHash VARCHAR(128);</statement>
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS CustomIdentifiers
@@ -2736,6 +2749,11 @@
                 <statement mode="plain">ALTER TABLE CustomIdentifiers
                     ADD CONSTRAINT CustomIdentifiers_Thumbnails FOREIGN KEY (thumbId) REFERENCES Thumbnails (id) ON DELETE CASCADE ON UPDATE CASCADE;
                 </statement>
+            </dbaction>
+
+            <dbaction name="UpdateThumbnailsDBSchemaFromV3ToV4" mode="transaction">
+                <statement mode="plain">ALTER TABLE FilePaths MODIFY COLUMN path LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</statement>
+                <statement mode="plain">ALTER TABLE CustomIdentifiers MODIFY COLUMN identifier LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</statement>
             </dbaction>
 
             <!-- statements for shrinking the databases -->

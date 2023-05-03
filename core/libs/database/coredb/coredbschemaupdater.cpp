@@ -49,7 +49,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 16;
+    return 17;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
@@ -815,6 +815,14 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
             // add caseSensitivity column to the AlbumRoots table.
 
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV15ToV16"), 16, 5);
+        }
+
+        case 17:
+        {
+            // digiKam for database version 16 can work with version 17,
+            // now using COLLATE utf8mb4_bin for Albums:relativePath and Images:name in MySQL.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV16ToV17"), 17, 5);
         }
 
         default:
