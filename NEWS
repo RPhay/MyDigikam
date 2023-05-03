@@ -115,7 +115,7 @@ BUGFIXES:
 106 ==> 463297 - Face tags not loaded when mysql deleted and import again.
 107 ==> 468622 - A slow connection while using a remote database or collection causes digikam to freeze or become unresponsive.
 108 ==> 468637 - Behaviour for network shares does not follow KDE's own recommendation.
-109 ==> 
+109 ==> 231528 - The first photo should not be automatically selected in icon-views.
 110 ==> 
 111 ==> 
 112 ==> 
@@ -148,3 +148,14 @@ BUGFIXES:
 139 ==> 
 140 ==> 
 141 ==> 
+142 ==> 
+143 ==> 
+144 ==> 
+145 ==> 
+146 ==> 
+147 ==> 
+148 ==> 
+149 ==> 
+150 ==> 
+151 ==> 
+
