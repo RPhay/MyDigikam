@@ -469,7 +469,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             tip += cnt.cellSpecBeg + i18nc("title of the file",
                                            "Title:") + cnt.cellSpecMid +
-                   cnt.breakString(str) + cnt.cellSpecEnd;
+                   cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str) + cnt.cellSpecEnd;
         }
 
         if (settings->getToolTipsShowComments())
@@ -483,7 +483,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             tip += cnt.cellSpecBeg + i18nc("caption of the file",
                                            "Caption:") + cnt.cellSpecMid +
-                   cnt.breakString(str) + cnt.cellSpecEnd;
+                   cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str) + cnt.cellSpecEnd;
         }
 
         if (settings->getToolTipsShowTags())
