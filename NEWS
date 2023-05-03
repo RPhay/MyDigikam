@@ -105,7 +105,7 @@ BUGFIXES:
 096 ==> 463486 - Loading .HEIC images takes too long (approx 7 secs).
 097 ==> 469248 - digiKam XMP Sidecar Format has changed.
 098 ==> 462145 - digiKam 7.9.0 hangs when selecting Album "Open in file manager".
-099 ==> 
+099 ==> 464230 - Faces region scanned, but not used in "Recognize faces", only manually added new ones.
 100 ==> 
 101 ==> 
 102 ==> 
