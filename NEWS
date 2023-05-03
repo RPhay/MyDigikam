@@ -114,7 +114,7 @@ BUGFIXES:
 105 ==> 467310 - Many translations are missing in digikam 7.9 and 7.10.
 106 ==> 463297 - Face tags not loaded when mysql deleted and import again.
 107 ==> 468622 - A slow connection while using a remote database or collection causes digikam to freeze or become unresponsive.
-108 ==> 
+108 ==> 468637 - Behaviour for network shares does not follow KDE's own recommendation.
 109 ==> 
 110 ==> 
 111 ==> 
