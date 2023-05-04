@@ -126,7 +126,7 @@ BUGFIXES:
 117 ==> 466170 - digiKam 7.9.0 (and 7.8.0) crashes on startup.
 118 ==> 466363 - digiKam AppImage 7.9.0 on Debian 12 - cannot start with Wayland.
 119 ==> 425330 - Faces Thumbnail for RAW(NEF) Files references JPEG Preview location not Raw File Location.
-120 ==> 
+120 ==> 099497 - New Online Documentation based on Sphinx/ReStructuredText lacks sections about Export Tools.
 121 ==> 
 122 ==> 
 123 ==> 
