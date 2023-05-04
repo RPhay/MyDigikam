@@ -121,7 +121,7 @@ BUGFIXES:
 112 ==> 432100 - Unable to rename a album with subfolders under Windows.
 113 ==> 456688 - Some HEIC pictures cannot be displayed in digiKam 7.7 while it works for the same picture in version 7.6.
 114 ==> 469224 - digiKam V 8.0.0 update not possible.
-115 ==> 
+115 ==> 268291 - Wrong printing images output when more than 2 items are processed.
 116 ==> 
 117 ==> 
 118 ==> 
