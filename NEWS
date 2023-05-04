@@ -124,7 +124,7 @@ BUGFIXES:
 115 ==> 268291 - Wrong printing images output when more than 2 items are processed.
 116 ==> 467882 - System shut down.
 117 ==> 466170 - digiKam 7.9.0 (and 7.8.0) crashes on startup.
-118 ==> 
+118 ==> 466363 - digiKam AppImage 7.9.0 on Debian 12 - cannot start with Wayland.
 119 ==> 
 120 ==> 
 121 ==> 
