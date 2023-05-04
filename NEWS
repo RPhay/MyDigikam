@@ -119,7 +119,7 @@ BUGFIXES:
 110 ==> 469310 - digiKam won't import images that have emoji in the filename.
 111 ==> 468537 - MariaDB error (dbversion).
 112 ==> 432100 - Unable to rename a album with subfolders under Windows.
-113 ==> 
+113 ==> 456688 - Some HEIC pictures cannot be displayed in digiKam 7.7 while it works for the same picture in version 7.6.
 114 ==> 
 115 ==> 
 116 ==> 
