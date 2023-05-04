@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"POT-Creation-Date: 2023-05-04 00:44+0000\n"
 "PO-Revision-Date: 2023-05-01 05:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -3080,7 +3080,7 @@ msgid "Map Search"
 msgstr "Mapo Serĉo"
 
 #: core/app/views/stack/itemiconview_p.h:181
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1175
 #, kde-format
 msgid "Last Search"
 msgstr "Lasta serĉo"
@@ -4368,7 +4368,7 @@ msgstr "Streĉi Kontrasto"
 #: core/libs/dimg/filters/auto/autoexpofilter.cpp:45
 #, kde-format
 msgid "Auto Exposure"
-msgstr "Aŭtomata Ekspozicio"
+msgstr "Aŭtomata Elmeto"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:65
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:62
@@ -5156,7 +5156,7 @@ msgstr "Uzanta Ŝelo-Skripto"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
-msgstr "Ilo por plenumi kutiman ŝelan skripton"
+msgstr "Ilo por plenumi propran ŝelskripton"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
 #, kde-kuit-format
@@ -6512,7 +6512,7 @@ msgstr "270 gradoj"
 #, kde-format
 msgctxt "@item: angle"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:95
 #, kde-format
@@ -6724,7 +6724,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 "<para>Tiu ĉi kromaĵo permesas al uzantoj ŝargi kaj konservi bildon per "
-"ImageMagick-kodiloj.</para><para>ImageMagick estas senpaga kaj malfermfonta "
+"ImageMagick-kodiloj.</para><para>ImageMagick estas libera kaj malfermfonta "
 "programaro por konverti rastrumajn bildojn kaj vektorajn bildojn. Ĝi povas "
 "legi kaj skribi pli ol 200 bilddosierformatojn.</para><para>Vidu <a "
 "href='https://en.wikipedia.org/wiki/ImageMagick'>dokumentaron de "
@@ -7614,9 +7614,9 @@ msgid ""
 "the RGB values of an image to calculate optimal exposition and black level "
 "using image histogram properties.</p>"
 msgstr ""
-"<b>Aŭtomata Ekspozicio</b>:<p>Ĉi tiu opcio plibonigas la kontraston kaj "
-"brilecon de la RGB-valoroj de bildo por kalkuli optimuman ekspozicion kaj "
-"nigran nivelon per bildaj histogramaj propraĵoj.</p>"
+"<b>Aŭtomata Elmeto</b>:<p>Ĉi tiu opcio plibonigas la kontraston kaj brilecon "
+"de la RGB-valoroj de bildo por kalkuli optimuman elmeton kaj nigran nivelon "
+"per bildaj histogramaj propraĵoj.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
 #, kde-format
@@ -7835,7 +7835,7 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:267
 #, kde-format
 msgid "Exposure correction."
-msgstr "Korekto de ekspozicio."
+msgstr "Korekto de elmeto."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:268
 #, kde-format
@@ -10020,25 +10020,25 @@ msgstr "Ĉi tiu ilo de Bildredaktilo povas turni bildon kun arbitra angulo."
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation..."
-msgstr "Senpaga Rotacio..."
+msgstr "Libera Rotacio..."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
-msgstr "Senpaga Rotacia Starpunkto 1"
+msgstr "Libera Rotacia Starpunkto 1"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
-msgstr "Senpaga Rotacia Starpunkto 2"
+msgstr "Libera Rotacia Starpunkto 2"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
-msgstr "Senpaga Rotacio Aŭtomata Alĝustigo"
+msgstr "Libera Rotacio Aŭtomata Alĝustigo"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #, kde-format
@@ -16130,7 +16130,7 @@ msgstr "Niveloj: <numid>%1</numid>"
 #, kde-format
 msgctxt "@info"
 msgid "Exposure: <numid>%1</numid>"
-msgstr "Ekspozicio: <numid>%1</numid>"
+msgstr "Elmeto: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
 #, kde-format
@@ -16230,7 +16230,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
-msgstr "Kontribuo pri Bone Ekspozicia:"
+msgstr "Kontribuo al Bon-Elmeteco:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, kde-format
@@ -16245,7 +16245,7 @@ msgid ""
 "Set the well-exposedness criterion contribution for the blending process. "
 "Higher values will favor well-exposed pixels."
 msgstr ""
-"Fiksi la bon-ekspozician kriteriokontribuon por la miksadprocezo. Pli altaj "
+"Fiksi la bon-elmetan kriteriokontribuon por la miksadprocezo. Pli altaj "
 "valoroj favoros bone elmontritajn pikselojn."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:157
@@ -16546,7 +16546,7 @@ msgid ""
 "This tool fuses bracketed images with different exposure to make pseudo HDR "
 "Image"
 msgstr ""
-"Ĉi tiu ilo kunfandas enkrampitajn bildojn kun malsama ekspozicio por fari "
+"Ĉi tiu ilo kunfandas enkrampitajn bildojn kun malsama elmeto por fari "
 "pseŭdan HDR-bildon"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
@@ -16596,7 +16596,7 @@ msgstr "ĉi tiu paĝo"
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
-msgstr "Ekspozicio Miksaj Binaroj"
+msgstr "Elmeto-Miksaj Binaroj"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
 #, kde-format
@@ -17878,13 +17878,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show camera exposure and sensitivity"
-msgstr "Montri fotilan ekspozicion kaj sentemon"
+msgstr "Montri fotilan elmeton kaj sentemon"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
 #, kde-format
 msgctxt "@info"
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Montru la fotilan ekspozicion kaj sentemon ĉe la fundo de la ekrano."
+msgstr "Montru la fotilan elmeton kaj sentemon ĉe la fundo de la ekrano."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
 #, kde-format
@@ -19776,7 +19776,7 @@ msgstr "Malfermi en Dosiera Retumilo"
 #, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
 #, kde-format
@@ -21628,12 +21628,12 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:157
 #, kde-format
 msgid "Show camera exposure and sensitivity"
-msgstr "Montri fotilan ekspozicion kaj sentemon"
+msgstr "Montri fotilan elmeton kaj sentemon"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:149
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Montri la fotilan ekspozicion kaj sentemon ĉe la fundo de la ekrano."
+msgstr "Montri la fotilan elmeton kaj sentemon ĉe la fundo de la ekrano."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
@@ -26514,8 +26514,8 @@ msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr ""
-"La kolekto troviĝas sur stoka aparato, kiu ne ĉiam estas ligita. Marku la "
-"kolekton kiel forprenebla kolekto."
+"La kolekto troviĝas sur konserveja aparato, kiu ne ĉiam estas ligita. Marku "
+"la kolekton kiel forprenebla kolekto."
 
 #: core/libs/album/manager/albummanager_database.cpp:343
 #, kde-format
@@ -27798,7 +27798,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Ĝisdatigita skemo al versio %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:848
+#: core/libs/database/coredb/coredbschemaupdater.cpp:856
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27809,12 +27809,12 @@ msgstr ""
 "(\"%2\"). Erarmesaĝo: \"%3\". Bonvolu certigi, ke la dosiero povas esti "
 "kopiita, aŭ forigi ĝin."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:870
+#: core/libs/database/coredb/coredbschemaupdater.cpp:878
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopiita datumbaza dosiero"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:875
+#: core/libs/database/coredb/coredbschemaupdater.cpp:883
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27825,22 +27825,22 @@ msgstr ""
 "sed ĝi ne povas esti malfermita. Bonvolu forigi ambaŭ dosierojn kaj provi "
 "denove, komencante per malplena datumbazo."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:896
+#: core/libs/database/coredb/coredbschemaupdater.cpp:904
 #, kde-format
 msgid "Opened new database file"
 msgstr "Malfermis novan datumbazan dosieron"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:995
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1003
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Preta kreado de tabeloj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Created tables"
 msgstr "Kreis tabelojn"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1027
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1035
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27851,7 +27851,7 @@ msgstr ""
 "procezon de ĝisdatigo de skemo. Bonvolu provi kun malplena datumbazo, aŭ "
 "ripari vian agordon."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1049
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1057
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27870,52 +27870,52 @@ msgstr ""
 "datumbazo nun estos ĉesigita ĉar ni ne volas krei novan datumbazon bazitan "
 "sur malveraj supozoj de rompita instalado."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1084
 #, kde-format
 msgid "Configured one album root"
 msgstr "Agordis unu albumradikon"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1102
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1110
 #, kde-format
 msgid "Imported albums"
 msgstr "Importitaj albumoj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1139
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1147
 #, kde-format
 msgid "Imported images information"
 msgstr "Importitaj bildoj informoj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1169
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1177
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Lasta Serĉo (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1230
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1238
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Pravalorizis kaj importis dosiersufiksan filtrilon"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1252
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1260
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Faris la komencan plenan skanadon"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1276
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1284
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Importitaj kredatoj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1307
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1315
 #, kde-format
 msgid "Imported comments"
 msgstr "Importitaj komentoj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1342
 #, kde-format
 msgid "Imported ratings"
 msgstr "Importitaj taksoj"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Faligis v3-tabloj"
@@ -28511,12 +28511,12 @@ msgid ""
 msgstr ""
 "<p>Fiksu ĉi tie la lokon kie la datumbazaj dosieroj estos konservitaj en via "
 "sistemo. Estas kvar datumbazoj: unu por ĉiuj kolekto-propraĵoj, unu por "
-"konservi kunpremitajn bildetojn, unu por stoki vizaĝ-rekonajn metadatumojn, "
-"kaj unu por konservi similajn fingrospurojn.<br/>Skriba aliro necesas por "
-"povi redakti bildajn trajtojn.</p><p>Datumbazoj estas digiKam-kernaj "
-"motoroj. Zorgu uzi lokon gastigita de rapida aparataro (ekz. SSD aŭ NVMe) "
-"kun sufiĉe libera spaco precipe por bildetoj datumbazo.</p><p>Noto: fora "
-"dosiersistemo kiel NFS, ne povas esti uzata ĉi tie. Pro kaŭzoj de "
+"konservi kunpremitajn bildetojn, unu por konservi vizaĝ-rekonajn "
+"metadatumojn, kaj unu por konservi similajn fingrospurojn.<br/>Skriba aliro "
+"necesas por povi redakti bildajn trajtojn.</p><p>Datumbazoj estas digiKam-"
+"kernaj motoroj. Zorgu uzi lokon gastigita de rapida aparataro (ekz. SSD aŭ "
+"NVMe) kun sufiĉe libera spaco precipe por bildetoj datumbazo.</p><p>Noto: "
+"fora dosiersistemo kiel NFS, ne povas esti uzata ĉi tie. Pro kaŭzoj de "
 "rendimento, ankaŭ rekomendas ne uzi retajn konservadojn.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
@@ -29358,7 +29358,7 @@ msgstr "<i>Fokulo:</i>"
 #: core/libs/dialogs/imagedialog_preview.cpp:276
 #, kde-format
 msgid "<i>Exposure:</i>"
-msgstr "<i>Ekspozicio:</i>"
+msgstr "<i>Elmeto:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:277
 #, kde-format
@@ -30072,8 +30072,8 @@ msgid ""
 "and improves contrast. Ideal for landscapes.</p>"
 msgstr ""
 "<b>Nigra kaj Blanka kun Flava Filtrilo</b>:<p>Simuli nigrablankan filman "
-"ekspozicion per flava filtrilo. Ĉi tio havas la plej naturan tonan korekton, "
-"kaj plibonigas kontraston. Ideala por pejzaĝoj.</p>"
+"elmeton per flava filtrilo. Ĉi tio havas la plej naturan tonan korekton, kaj "
+"plibonigas kontraston. Ideala por pejzaĝoj.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
 #, kde-format
@@ -30535,7 +30535,7 @@ msgid ""
 "If you press this button, custom menu will appear: First option will reset "
 "current channel. Second option will reset all channels."
 msgstr ""
-"Se vi premas ĉi tiun butonon, aperos kutima menuo: Unua opcio restarigos la "
+"Se vi premas ĉi tiun butonon, aperos propra menuo: Unua opcio restarigos la "
 "nunan kanalon. Dua opcio restarigos ĉiujn kanalojn."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:223
@@ -31613,8 +31613,8 @@ msgstr ""
 "uzata de la foriga filtrilo de varmaj pikseloj.</p><p>La metodo de subtraho "
 "de Nigra Kadro estas la plej preciza \"Varmaj pikseloj\" kaj \"Stock Forigo "
 "de pikseloj\". Unue vi devas krei \"Nigra Kadro\" kiel referenco. Ĉi tio "
-"estas facile fari. Kiam vi finos fari viajn longajn ekspoziciajn pafojn, "
-"metu lensĉapon sur la fotilon kaj prenu unu \"malhelan\" bildon kun la sama "
+"estas facile fari. Kiam vi finos fari viajn longajn elmetajn pafojn, metu "
+"lensĉapon sur la fotilon kaj prenu unu \"malhelan\" bildon kun la sama "
 "ekspontempo kiel la bildoj antaŭe. Ĉi tiu bildo estos tute malhela, sed kun "
 "proksima ekzameno vi vidos, ke ĝi havas la Varmajn kaj Ŝtelitajn Pikselojn "
 "(koloraj punktoj). Ĉi tiuj estas poziciigitaj en la samaj lokoj kiel ĉe viaj "
@@ -33115,7 +33115,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Exposure Compensation"
-msgstr "Kompenso por Ekspozicio"
+msgstr "Kompenso por Elmeto"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:285
 #, kde-format
@@ -33136,8 +33136,8 @@ msgid ""
 "With this button, you can automatically adjust Exposure and Black Point "
 "values."
 msgstr ""
-"Per ĉi tiu butono, vi povas aŭtomate ĝustigi la valorojn de Ekspozicio kaj "
-"Nigra Punkto."
+"Per ĉi tiu butono, vi povas aŭtomate ĝustigi la valorojn de Elmeto kaj Nigra "
+"Punkto."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:295
 #, kde-format
@@ -34535,14 +34535,14 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
-msgstr "Uzi kutimajn agordojn"
+msgstr "Uzi proprajn agordojn"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
 msgstr ""
-"Uzi kutimajn parametrojn por plenumi kvalitan ordigon anstataŭ defaŭltan unu."
+"Uzi proprajn parametrojn por plenumi kvalitan ordigon anstataŭ defaŭltan unu."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:124
 #, kde-format
@@ -34727,7 +34727,7 @@ msgstr "Pezo por asigni al Kunprema Algoritmo"
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
-msgstr "Detekti Sub kaj Super Ekspozicio"
+msgstr "Detekti Sub kaj Super Elmeto"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:236
 #, kde-format
@@ -37849,7 +37849,7 @@ msgstr ""
 "fotilo. Se ne havebla, retroiras al defaŭlta neŭtrala blankbalanco.</"
 "item><item><emphasis strong='true'>Aŭtomata</emphasis>: Kalkulas aŭtomatan "
 "blankbalancon averaĝante la tutan bildon.</item><item><emphasis "
-"strong='true'>Manlibro</emphasis>: Agordi kutimajn temperaturojn kaj verdajn "
+"strong='true'>Manlibro</emphasis>: Agordi proprajn temperaturojn kaj verdajn "
 "nivelajn valorojn.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:397
@@ -37956,7 +37956,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Exposure Correction (E.V)"
-msgstr "Korekto de Ekspozicio (E.V)"
+msgstr "Korekto de Elmeto (E.V)"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:436
 #, kde-kuit-format
@@ -38183,7 +38183,7 @@ msgstr "Enigita"
 #, kde-format
 msgctxt "@item:inlistbox Camera Profile"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:592
 #, kde-kuit-format
@@ -38252,7 +38252,7 @@ msgstr "Por-Foto"
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:614
 #, kde-kuit-format
@@ -43654,7 +43654,7 @@ msgstr "Foto"
 #, kde-format
 msgctxt "@action: metadata view"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:169
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:143
@@ -47348,7 +47348,7 @@ msgstr "referenca kodo"
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "Use custom definition"
-msgstr "Uzi kutiman difinon"
+msgstr "Uzi propran difinon"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:169
 #, kde-format
@@ -49797,8 +49797,8 @@ msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
 "the image."
 msgstr ""
-"Agordu ĉi tiun opcion por montri la fotilan ekspozicion kaj sentivecon "
-"uzatajn por preni la bildon."
+"Agordu ĉi tiun opcion por montri la fotilan elmeton kaj sentivecon uzatajn "
+"por preni la bildon."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:161
 #, kde-format
@@ -51103,7 +51103,7 @@ msgstr "Unikso Tempostampo"
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:114
 #, kde-format
@@ -54201,7 +54201,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
-msgstr "Sub-Ekspozicio Indikilo"
+msgstr "Sub-Elmeta Indikilo"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, kde-format
@@ -54211,13 +54211,13 @@ msgid ""
 "to avoid under-exposing the image."
 msgstr ""
 "Agordu ĉi tiun opcion por montri nigran supermetitan sur la bildo. Ĉi tio "
-"helpos vin eviti subekspozicion de la bildo."
+"helpos vin eviti subelmeton de la bildo."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:458
 #, kde-format
 msgctxt "@action"
 msgid "Over-Exposure Indicator"
-msgstr "Super-Ekspozicio Indikilo"
+msgstr "Super-Elmeta Indikilo"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:460
 #, kde-format
@@ -54490,13 +54490,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
-msgstr "Indikilo de Subekspozicio estas ebligita"
+msgstr "Indikilo de Subelmeto estas ebligita"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
-msgstr "Indikilo de Subekspozicio estas malŝaltita"
+msgstr "Indikilo de Subelmeto estas malŝaltita"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2463
 #, kde-format
@@ -54508,7 +54508,7 @@ msgstr "Super-ekspona indikilo estas ebligita"
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
-msgstr "Indikilo de Superekspozicio estas malŝaltita"
+msgstr "Indikilo de Superelmeto estas malŝaltita"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2555
 #, kde-format
@@ -56066,7 +56066,7 @@ msgstr "Lokaj Agordoj"
 #, kde-format
 msgctxt "@item:inlistbox folder date format"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:121
 #, kde-format
@@ -57138,7 +57138,7 @@ msgstr "Bazo"
 #, kde-format
 msgctxt "@title: tool group"
 msgid "Custom"
-msgstr "Kutimo"
+msgstr "Propra"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:194
 #, kde-format
@@ -57961,7 +57961,7 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:481
 #, kde-format
 msgid "Automatic exposure program"
-msgstr "Aŭtomata ekspozicioprogramo"
+msgstr "Aŭtomata elmetoprogramo"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:493
 #, kde-format
@@ -58015,7 +58015,7 @@ msgstr "Mezura Reĝimo"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
 msgid "Method to determine the exposure"
-msgstr "Metodo por determini la ekspozicion"
+msgstr "Metodo por determini la elmeton"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:576
 #: core/utilities/searchwindow/searchfields_createfield.cpp:589
@@ -62760,7 +62760,7 @@ msgstr "Fotila aperturo kaj fokusa distanco"
 #: core/utilities/setup/setuptooltip.cpp:427
 #, kde-format
 msgid "Camera exposure and sensitivity"
-msgstr "Fotila ekspozicio kaj sentemo"
+msgstr "Fotila elmeto kaj sentemo"
 
 #: core/utilities/setup/setuptooltip.cpp:254
 #, kde-format

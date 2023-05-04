@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"POT-Creation-Date: 2023-05-04 00:44+0000\n"
 "PO-Revision-Date: 2023-05-02 11:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -3223,7 +3223,7 @@ msgid "Map Search"
 msgstr "Procura no Mapa"
 
 #: core/app/views/stack/itemiconview_p.h:181
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1175
 #, kde-format
 msgid "Last Search"
 msgstr "Última Procura"
@@ -28230,7 +28230,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Foi actualizado o esquema para a versão %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:848
+#: core/libs/database/coredb/coredbschemaupdater.cpp:856
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28241,12 +28241,12 @@ msgstr ""
 "sua nova localização (\"%2\"). Mensagem de erro: \"%3\". Certifique-se que o "
 "ficheiro pode ser copiado ou apague-o."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:870
+#: core/libs/database/coredb/coredbschemaupdater.cpp:878
 #, kde-format
 msgid "Copied database file"
 msgstr "Foi copiado o ficheiro da base de dados"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:875
+#: core/libs/database/coredb/coredbschemaupdater.cpp:883
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28257,22 +28257,22 @@ msgstr ""
 "(\"%2\") mas não pode ser aberto. Remova por favor ambos os ficheiros e "
 "tente de novo, começando com uma base de dados em branco. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:896
+#: core/libs/database/coredb/coredbschemaupdater.cpp:904
 #, kde-format
 msgid "Opened new database file"
 msgstr "Foi aberto o ficheiro da nova base de dados"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:995
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1003
 #, kde-format
 msgid "Prepared table creation"
 msgstr "A criação das tabelas foi preparada"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Created tables"
 msgstr "Foram criadas as tabelas"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1027
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1035
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28283,7 +28283,7 @@ msgstr ""
 "configuração. A desistir do processo de actualização do esquema. Experimente "
 "por favor com uma base de dados vazia ou repare a sua configuração."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1049
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1057
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28303,52 +28303,52 @@ msgstr ""
 "se querer criar uma base de dados nova baseada em dados falsos de uma "
 "instalação quebrada."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1084
 #, kde-format
 msgid "Configured one album root"
 msgstr "Foi configurada a raiz de um álbum"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1102
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1110
 #, kde-format
 msgid "Imported albums"
 msgstr "Foram importados os álbuns"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1139
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1147
 #, kde-format
 msgid "Imported images information"
 msgstr "Foi importada a informação das imagens"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1169
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1177
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Última Procura (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1230
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1238
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Foi inicializado e importado um filtro de sufixos de ficheiros"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1252
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1260
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Foi feita a análise completa inicial"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1276
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1284
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Foram importadas as datas de criação"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1307
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1315
 #, kde-format
 msgid "Imported comments"
 msgstr "Foram importados os comentários"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1342
 #, kde-format
 msgid "Imported ratings"
 msgstr "Foram importadas as classificações"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Foram retiradas as tabelas da v3"
