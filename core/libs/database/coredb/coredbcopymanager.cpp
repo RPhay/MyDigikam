@@ -262,7 +262,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
 
         Q_FOREACH (QString columnName, columnNames) // krazy:exclude=foreach
         {
-            columnName.remove(QLatin1String(" COLLATE utf8_general_ci"));
+            columnName.remove(QLatin1String(" COLLATE utf8mb4_general_ci"));
 
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: column: ["
                                         << columnName << "] value ["
