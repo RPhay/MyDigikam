@@ -120,7 +120,7 @@ BUGFIXES:
 111 ==> 468537 - MariaDB error (dbversion).
 112 ==> 432100 - Unable to rename a album with subfolders under Windows.
 113 ==> 456688 - Some HEIC pictures cannot be displayed in digiKam 7.7 while it works for the same picture in version 7.6.
-114 ==> 
+114 ==> 469224 - digiKam V 8.0.0 update not possible.
 115 ==> 
 116 ==> 
 117 ==> 
