@@ -3,6 +3,7 @@ digiKam 8.1.0 - Release date: 2023-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Print Creator: add 4 new templates for 6.8 inchs photo paper.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -127,7 +128,7 @@ BUGFIXES:
 118 ==> 466363 - digiKam AppImage 7.9.0 on Debian 12 - cannot start with Wayland.
 119 ==> 425330 - Faces Thumbnail for RAW(NEF) Files references JPEG Preview location not Raw File Location.
 120 ==> 099497 - New Online Documentation based on Sphinx/ReStructuredText lacks sections about Export Tools.
-121 ==> 
+121 ==> 286734 - Some templates for 6x8 inch paper [patch].
 122 ==> 
 123 ==> 
 124 ==> 
