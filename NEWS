@@ -123,7 +123,7 @@ BUGFIXES:
 114 ==> 469224 - digiKam V 8.0.0 update not possible.
 115 ==> 268291 - Wrong printing images output when more than 2 items are processed.
 116 ==> 467882 - System shut down.
-117 ==> 
+117 ==> 466170 - digiKam 7.9.0 (and 7.8.0) crashes on startup.
 118 ==> 
 119 ==> 
 120 ==> 
