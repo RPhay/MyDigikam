@@ -118,7 +118,7 @@ BUGFIXES:
 109 ==> 231528 - The first photo should not be automatically selected in icon-views.
 110 ==> 469310 - digiKam won't import images that have emoji in the filename.
 111 ==> 468537 - MariaDB error (dbversion).
-112 ==> 
+112 ==> 432100 - Unable to rename a album with subfolders under Windows.
 113 ==> 
 114 ==> 
 115 ==> 
