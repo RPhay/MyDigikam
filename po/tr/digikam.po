@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-04 00:44+0000\n"
-"PO-Revision-Date: 2023-05-01 12:42+0300\n"
+"PO-Revision-Date: 2023-05-04 11:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -4728,32 +4728,27 @@ msgstr ""
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "HSL Correction"
+#, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
-msgstr "TDA Düzeltme"
+msgstr "HSL Düzeltme"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Hue / Saturation / Lightness"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
-msgstr "Renk / Doygunluk / Işıklılık"
+msgstr "Ton/Doygunluk/Açıklık değerlerini düzeltmek için bir araç"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust the color curves from images."
-#| "</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk eğrilerini "
-"ayarlayabilir.</p>"
+"<para>Bu toplu iş yöneticisi, görsellerdeki Ton/Doygunluk/Açıklık "
+"değerlerini düzenleyebilir.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
@@ -7794,10 +7789,11 @@ msgid ""
 "becomes as bright as possible without altering its hue. This is often a "
 "\"magic fix\" for images that are dim or washed out.</p>"
 msgstr ""
-"<b>Normalleştir</b>:<p>Bu seçenek, parlaklık değerlerini etkin görüntü "
+"<b>Normalleştir</b>:<p>Bu seçenek, parlaklık değerlerini etkin görsel "
 "boyunca ölçeklendirerek en koyu noktanın siyah olmasını ve en parlak "
 "noktanın tonunu değiştirmeden olabildiğince parlak olmasını sağlar. Bu, "
-"genellikle soluk veya soluk görüntüler için \"sihirli bir düzeltme\"dir.</p>"
+"genellikle soluk veya yıkanmış görünen görseller için \"sihirli bir düzeltme"
+"\"dir.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:138
 #, kde-format
@@ -8117,22 +8113,22 @@ msgstr "Renk Negatifi..."
 #: core/dplugins/editor/colors/hsl/hsltool.cpp:164
 #, kde-format
 msgid "HSL Adjustments"
-msgstr "TDA Ayarlamaları"
+msgstr "HSL Ayarlamaları"
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi, görsellerdeki Ton/Doygunluk/Açıklık değerlerini "
+"düzenleyebilir."
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Hue/Saturation/Lightness..."
+#, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
-msgstr "Renk Özü/Doyma/Hafiflik..."
+msgstr "Ton/Doygunluk/Açıklık"
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:64
 #, fuzzy, kde-format
@@ -12503,7 +12499,7 @@ msgstr ""
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:102
 #, kde-format
 msgid "Saturation:"
-msgstr "Doyma:"
+msgstr "Doygunluk:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:119
 #, kde-format
@@ -12529,8 +12525,8 @@ msgid ""
 "Set here the direction of saturation processing applied by the camera to "
 "take the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından uygulanan canlılık işlem yönünü "
-"buradan belirleyin."
+"Fotoğraf çekmek için kamera tarafından uygulanan doygunluk işleme yönünü "
+"buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:127
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:167
@@ -16841,11 +16837,10 @@ msgid "Exposure: <numid>%1</numid>"
 msgstr "Pozlandırma: %1"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
-#, fuzzy, kde-format
-#| msgid "Saturation: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Saturation: <numid>%1</numid>"
-msgstr "Doygunluk: %1"
+msgstr "Doygunluk: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:50
 #, fuzzy, kde-format
@@ -16861,35 +16856,26 @@ msgid "Automatic Local/Global Image Features Balance (Levels)"
 msgstr "Otomatik Yerel/Genel Resim Özellikleri Dengesi (Düzeyler)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Optimise image features (contrast, saturation, . . .) to be as global as "
-#| "possible."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Optimize image features (contrast, saturation, . . .) to be as global as "
 "possible."
 msgstr ""
-"Resim özelliklerini mümkün olduğu kadar evrensel olacak şekilde (karşıtlık, "
-"doygunluk, . . .) en uygun hale getir."
+"Görsel özelliklerini (karşıtlık, doygunluk vb.) olabildiğince global olacak "
+"biçimde eniyileyin."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Set automatic level selection (maximized) for pyramid blending, i.e. "
-#| "optimise image features (contrast, saturation, . . .) to be as global as "
-#| "possible."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Set automatic level selection (maximized) for pyramid blending, i.e. "
 "optimize image features (contrast, saturation, . . .) to be as global as "
 "possible."
 msgstr ""
-"Piramit karıştırma için otomatik düzey seçimi (büyütülmüş) ayarla, örn.resim "
-"özelliklerini eniyileştirme (parlaklık, doygunluk, . . .) olabildiğince "
-"genel olur."
+"Piramit harmanlama için; örneğin, görsel özelliklerini (karşıtlık, doygunluk "
+"vb.) olabildiğince global olması için eniyilemek üzere otomatik düzey "
+"seçimini (en yüksek) ayarlayın."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:126
 #, kde-format
@@ -16985,8 +16971,8 @@ msgid ""
 "Increasing this value makes pixels with high saturation contribute more to "
 "the final output."
 msgstr ""
-"Bu değeri artırmak yüksek doygunluğa sahip pikselleri son çıktıya daha çok "
-"katkıda bulunur hale getirir."
+"Bu değeri artırmak, yüksek doygunluğa sahip piksellerin nihai çıktıya daha "
+"fazla katkıda bulunmasını sağlar."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:168
 #, kde-format
@@ -27393,7 +27379,7 @@ msgstr "Burada resmin gama ayarlamalarını yapın."
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:225
 #, kde-format
 msgid "Set here the color saturation correction."
-msgstr "Buradan renk doygunluğu düzeltmesini ayarlayın."
+msgstr "Burada renk doygunluğu düzeltmesini ayarlayın."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:227
 #, kde-format
@@ -33073,33 +33059,32 @@ msgstr ""
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:82
 #, kde-format
 msgid "Hue / Saturation / Lightness Filter"
-msgstr "Renk / Doygunluk / Işıklılık Filtresi"
+msgstr "Ton/Doygunluk/Açıklık Süzgeci"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:87
 #, kde-format
 msgid "Select the hue and saturation adjustments of the image."
-msgstr "Burada resmin ton ve parlaklık ayarlarını seçin."
+msgstr "Görselin ton ve doygunluk ayarlarını seçin."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:91
 #, kde-format
 msgid "You can see here a color preview of the hue and saturation adjustments."
-msgstr ""
-"Burada ton ve doygunluk ayarlamalarının renk önizlemesini görebilirsiniz."
+msgstr "Burada ton ve doygunluk ayarlarının renk önizlemesini görebilirsiniz."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:95
 #, kde-format
 msgid "Hue:"
-msgstr "Renk Özü:"
+msgstr "Ton:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:100
 #, kde-format
 msgid "Set here the hue adjustment of the image."
-msgstr "Buradan görüntünün renk tonu ayarlamalarını yapabilirisiniz."
+msgstr "Burada görselin renk tonu ayarlamalarını yapın."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:107
 #, kde-format
 msgid "Set here the saturation adjustment of the image."
-msgstr "Burada görüntünün doyma ayarlamalarını yapabilirsiniz."
+msgstr "Burada görselin doygunluk ayarlamalarını yapın."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:109
 #, kde-format
@@ -33112,18 +33097,18 @@ msgid ""
 "Set here the vibrance adjustment of the image.Vibrance performs selective "
 "saturation on less saturated colors and avoiding skin tones."
 msgstr ""
-"Görüntünün titreşim ayarını buradan yapın.Titreşim daha az doymuş renklerde "
-"seçici doygunluk sergiler ve cilt tonlarından kaçınır."
+"Burada görselin titreşim ayarlarını yapın. Titreşim, daha az doygun "
+"renklerde seçici doygunluk uygular ve renk tonlarından kaçınır."
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:117
 #, kde-format
 msgid "Lightness:"
-msgstr "Işık etkisi:"
+msgstr "Açıklık:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:122
 #, kde-format
 msgid "Set here the lightness adjustment of the image."
-msgstr "Buradan görüntünün ışık ayarlarını yapabilirsiniz."
+msgstr "Burada görselin açıklık ayarlarını yapın."
 
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:67
 #, kde-format
@@ -33208,9 +33193,9 @@ msgid ""
 "increased. The user can choose to lower the saturation on original highlight "
 "and shadows from the image with these parameters."
 msgstr ""
-"<b>Vurgulama doygunluğu</b>: Genellikle (algılanan) doygunluk artırılır. "
-"Kullanıcı orijinal vurgulamadaki doygunluğu ve gölgeleri bu parametrelerle "
-"resimden düşürmeyi seçebilir."
+"<b>Doygunluğu vurgular</b>: Genellikle (algılanan) doygunluk artar. "
+"Kullanıcı, bu parametrelerle görseldeki özgün vurgu ve gölgelerdeki "
+"doygunluğu düşürmeyi seçebilir."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:192
 #, kde-format
@@ -33224,9 +33209,9 @@ msgid ""
 "The user can choose to lower the saturation on original highlight and "
 "shadows from the image with these parameters."
 msgstr ""
-"<b>Gölge doygunluğu</b>: Genellikle (algılanan) doygunluk artırılır. "
-"Kullanıcı orijinal vurgulamadaki doygunluğu ve gölgeleri bu parametrelerle "
-"resimden düşürmeyi seçebilir."
+"<b>Gölge doygunluğu</b>: Genellikle (algılanan) doygunluk artar. Kullanıcı, "
+"bu parametrelerle görseldeki özgün vurgu ve gölgelerdeki doygunluğu "
+"düşürmeyi seçebilir."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:220
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:251
@@ -34530,17 +34515,16 @@ msgid "Set here the shadow noise suppression level."
 msgstr "Gölge gürültüsü bastırma düzeyini buradan ayarla."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:255
-#, fuzzy, kde-format
-#| msgid "Saturation:"
+#, kde-format
 msgctxt "@label: WB settings"
 msgid "Saturation:"
-msgstr "Doyma:"
+msgstr "Doygunluk:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:260
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the saturation value."
-msgstr "Buradan doygunluk değerini ayarlayın."
+msgstr "Burada doygunluk değerini ayarlayın."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, fuzzy, kde-format
@@ -43209,15 +43193,13 @@ msgid "Contrast"
 msgstr "Zıtlık:"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:70
-#, fuzzy, kde-format
-#| msgid "Hue:"
+#, kde-format
 msgctxt "@option"
 msgid "Hue"
-msgstr "Renk Özü:"
+msgstr "Ton"
 
 #: core/libs/video/qtav/config/VideoEQConfigPage.cpp:71
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "@option"
 msgid "Saturation"
 msgstr "Doygunluk"
@@ -44117,7 +44099,7 @@ msgstr "GRİ"
 #, kde-format
 msgctxt "@info: icc profile color space"
 msgid "HSV"
-msgstr "TDD"
+msgstr "HSV"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:382
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:443
@@ -44210,8 +44192,7 @@ msgid "Relative Colorimetric"
 msgstr "Göreli Renkölçer"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:541
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "@info: icc profile redering"
 msgid "Saturation"
 msgstr "Doygunluk"
