@@ -187,12 +187,12 @@ BUGFIXES:
 177 ==> 210522 - digiKam crashed while importing photos.
 178 ==> 465554 - Using of known people in a new environment.
 179 ==> 429397 - % character in hard drive folder name prevents album being displayed.
-180 ==> 
-181 ==> 
-182 ==> 
-183 ==> 
-184 ==> 
-185 ==> 
+180 ==> 382582 - Video stutters when played with MP3 audio track.
+181 ==> 423580 - Video playback stutters on some file formats.
+182 ==> 442802 - Severe playback stutter in videos >30fps with audio.
+183 ==> 440668 - Video playback stutters.
+184 ==> 388475 - Video files are played slower than normal speed.
+185 ==> 415778 - Video stutters every ~10seconds when played from external HD.
 186 ==> 
 187 ==> 
 188 ==> 
