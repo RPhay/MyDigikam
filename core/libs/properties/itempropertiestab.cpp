@@ -41,6 +41,7 @@
 #include "itempropertiestxtlabel.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
+#include "ditemtooltip.h"
 
 namespace Digikam
 {
@@ -105,52 +106,56 @@ public:
     {
     }
 
-    DTextLabelName*  caption;
-    DTextLabelName*  pickLabel;
-    DTextLabelName*  colorLabel;
-    DTextLabelName*  rating;
-    DTextLabelName*  tags;
+    DTextLabelName*   caption;
+    DTextLabelName*   pickLabel;
+    DTextLabelName*   colorLabel;
+    DTextLabelName*   rating;
+    DTextLabelName*   tags;
 
-    DTextLabelValue* labelFile;
-    DTextLabelValue* labelFolder;
-    DTextLabelValue* labelSymlink;
-    DTextLabelValue* labelFileModifiedDate;
-    DTextLabelValue* labelFileSize;
-    DTextLabelValue* labelFileOwner;
-    DTextLabelValue* labelFilePermissions;
+    DTextLabelValue*  labelFile;
+    DTextLabelValue*  labelFolder;
+    DTextLabelValue*  labelSymlink;
+    DTextLabelValue*  labelFileModifiedDate;
+    DTextLabelValue*  labelFileSize;
+    DTextLabelValue*  labelFileOwner;
+    DTextLabelValue*  labelFilePermissions;
 
-    DTextLabelValue* labelImageMime;
-    DTextLabelValue* labelImageDimensions;
-    DTextLabelValue* labelImageRatio;
-    DTextLabelValue* labelImageBitDepth;
-    DTextLabelValue* labelImageColorMode;
-    DTextLabelValue* labelHasSidecar;
+    DTextLabelValue*  labelImageMime;
+    DTextLabelValue*  labelImageDimensions;
+    DTextLabelValue*  labelImageRatio;
+    DTextLabelValue*  labelImageBitDepth;
+    DTextLabelValue*  labelImageColorMode;
+    DTextLabelValue*  labelHasSidecar;
 
-    DTextLabelValue* labelPhotoMake;
-    DTextLabelValue* labelPhotoModel;
-    DTextLabelValue* labelPhotoDateTime;
-    DTextLabelValue* labelPhotoLens;
-    DTextLabelValue* labelPhotoAperture;
-    DTextLabelValue* labelPhotoFocalLength;
-    DTextLabelValue* labelPhotoExposureTime;
-    DTextLabelValue* labelPhotoSensitivity;
-    DTextLabelValue* labelPhotoExposureMode;
-    DTextLabelValue* labelPhotoFlash;
-    DTextLabelValue* labelPhotoWhiteBalance;
+    DTextLabelValue*  labelPhotoMake;
+    DTextLabelValue*  labelPhotoModel;
+    DTextLabelValue*  labelPhotoDateTime;
+    DTextLabelValue*  labelPhotoLens;
+    DTextLabelValue*  labelPhotoAperture;
+    DTextLabelValue*  labelPhotoFocalLength;
+    DTextLabelValue*  labelPhotoExposureTime;
+    DTextLabelValue*  labelPhotoSensitivity;
+    DTextLabelValue*  labelPhotoExposureMode;
+    DTextLabelValue*  labelPhotoFlash;
+    DTextLabelValue*  labelPhotoWhiteBalance;
 
-    DTextLabelValue* labelCaption;
-    DTextLabelValue* labelTags;
-    DTextLabelValue* labelPickLabel;
-    DTextLabelValue* labelColorLabel;
-    DTextLabelValue* labelRating;
+    // NOTE: special case for the caption. See bug #460134
+    QLabel*           labelCaption;
 
-    DTextLabelValue* labelVideoAspectRatio;
-    DTextLabelValue* labelVideoDuration;
-    DTextLabelValue* labelVideoFrameRate;
-    DTextLabelValue* labelVideoVideoCodec;
-    DTextLabelValue* labelVideoAudioBitRate;
-    DTextLabelValue* labelVideoAudioChannelType;
-    DTextLabelValue* labelVideoAudioCodec;
+    DTextLabelValue*  labelTags;
+    DTextLabelValue*  labelPickLabel;
+    DTextLabelValue*  labelColorLabel;
+    DTextLabelValue*  labelRating;
+
+    DTextLabelValue*  labelVideoAspectRatio;
+    DTextLabelValue*  labelVideoDuration;
+    DTextLabelValue*  labelVideoFrameRate;
+    DTextLabelValue*  labelVideoVideoCodec;
+    DTextLabelValue*  labelVideoAudioBitRate;
+    DTextLabelValue*  labelVideoAudioChannelType;
+    DTextLabelValue*  labelVideoAudioCodec;
+
+    DToolTipStyleSheet cnt;
 };
 
 ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
@@ -365,7 +370,9 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
     d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Tags: "),        w5);
 
-    d->labelCaption          = new DTextLabelValue(QString(), w5);
+    d->labelCaption          = new QLabel(QString(), w5);
+    d->labelCaption->setWordWrap(true);
+
     d->labelPickLabel        = new DTextLabelValue(QString(), w5);
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
@@ -440,7 +447,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelPhotoFlash->setAdjustedText();
         d->labelPhotoWhiteBalance->setAdjustedText();
 
-        d->labelCaption->setAdjustedText();
+        d->labelCaption->clear();
         d->labelPickLabel->setAdjustedText();
         d->labelColorLabel->setAdjustedText();
         d->labelRating->setAdjustedText();
@@ -599,7 +606,7 @@ void ItemPropertiesTab::setPhotoWhiteBalance(const QString& str)
 
 void ItemPropertiesTab::showOrHideCaptionAndTags()
 {
-    bool hasCaption    = !d->labelCaption->adjustedText().isEmpty();
+    bool hasCaption    = !d->labelCaption->text().isEmpty();
     bool hasPickLabel  = !d->labelPickLabel->adjustedText().isEmpty();
     bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
@@ -625,7 +632,9 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
 
 void ItemPropertiesTab::setCaption(const QString& str)
 {
-    d->labelCaption->setAdjustedText(str);
+    // NOTE: special case for the caption. See bug #460134
+
+    d->labelCaption->setText(d->cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str));
 }
 
 void ItemPropertiesTab::setColorLabel(int colorId)
