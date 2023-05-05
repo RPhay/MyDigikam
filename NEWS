@@ -133,30 +133,30 @@ BUGFIXES:
 123 ==> 143928 - Camera dialog not shown when plugging in camera and digikam was never started before.
 124 ==> 157681 - Some images are not imported using the import wizard.
 125 ==> 225151 - digiKam camera import picture editor instead of a movie viewer.
-126 ==> 
-127 ==> 
-128 ==> 
-129 ==> 
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
-135 ==> 
-136 ==> 
-137 ==> 
-138 ==> 
-139 ==> 
-140 ==> 
-141 ==> 
-142 ==> 
-143 ==> 
-144 ==> 
-145 ==> 
-146 ==> 
-147 ==> 
-148 ==> 
-149 ==> 
+126 ==> 118002 - Mount/umount command for a "directory browse camera".
+127 ==> 219876 - Collection configuration: Too many remove-buttons after removing one collection.
+128 ==> 145087 - Ctrl-Tab, Ctrl-Shift-Tab don't navigate between widgets.
+129 ==> 295751 - Segfault while importing from camera with digiKam via gphoto2.
+130 ==> 307972 - Crash on all PTP imports attemps.
+131 ==> 278336 - crash while trying to import photos from Camera Nikon 300s.
+132 ==> 282420 - Trying to load images from a Nikon CoolPix L24 via USB Crashes digiKam.
+133 ==> 210932 - digiKam segfaults importing photos from Canon PowerShot SX200 IS.
+134 ==> 295778 - digiKam crash when inporting pics from canon eos 450d.
+135 ==> 279646 - Loading images from camera Canon PS A650is via USB.
+136 ==> 271046 - digiKam crashing when attempting to import from Canon Powershot S5IS.
+137 ==> 280437 - Application crashes when importing CR2 (Canon RAW) files from camera.
+138 ==> 285795 - Canon Powershot SD750 Import Fail.
+139 ==> 250477 - Crash when starting DigiKam w/ Pentax K-X.
+140 ==> 296052 - Import photo's from iphone crashes.
+141 ==> 115168 - digikam: camera download: Unlike other rotation in the program auto rotate is Lossy.
+142 ==> 275750 - digiKam --detect-camera Fails.
+143 ==> 279111 - digiKam crashes when I acess the camera.
+144 ==> 284447 - digiKam crashes when connecting to USB Camera.
+145 ==> 274531 - Photos always marked as new.
+146 ==> 293248 - Crash when trying to import photos from digital camera.
+147 ==> 131959 - digiKam does not recognize "new" images.
+148 ==> 280396 - Crash when trying opening "import --> camera".
+149 ==> 279616 - digiKam crash on startup (or when camera connected).
 150 ==> 
 151 ==> 
 152 ==> 
@@ -169,3 +169,27 @@ BUGFIXES:
 159 ==> 
 160 ==> 
 161 ==> 
+162 ==> 
+163 ==> 
+164 ==> 
+165 ==> 
+166 ==> 
+167 ==> 
+168 ==> 
+169 ==> 
+170 ==> 
+171 ==> 
+172 ==> 
+173 ==> 
+174 ==> 
+175 ==> 
+176 ==> 
+177 ==> 
+178 ==> 
+179 ==> 
+180 ==> 
+181 ==> 
+182 ==> 
+183 ==> 
+184 ==> 
+185 ==> 
