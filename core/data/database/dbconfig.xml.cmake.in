@@ -2713,48 +2713,8 @@
             </dbaction>
 
             <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
-                <statement mode="plain">
-                    DROP PROCEDURE IF EXISTS drop_foreign_key;
-                </statement>
-                <statement mode="plain">
-                    CREATE PROCEDURE drop_foreign_key(IN tableName VARCHAR(64), IN constraintName VARCHAR(64))
-                    BEGIN
-                        IF EXISTS(
-                            SELECT * FROM information_schema.table_constraints
-                            WHERE
-                                table_schema    = DATABASE()                           AND
-                                table_name      = CONVERT(tableName USING latin1)      AND
-                                constraint_name = CONVERT(constraintName USING latin1) AND
-                                constraint_type = 'FOREIGN KEY')
-                        THEN
-                            SET @query = CONCAT(
-                                CONVERT('ALTER TABLE ' USING latin1),
-                                CONVERT(tableName USING latin1),
-                                CONVERT(' DROP FOREIGN KEY ' USING latin1),
-                                CONVERT(constraintName USING latin1),
-                                CONVERT(';'USING latin1)
-                            );
-                            PREPARE stmt FROM @query;
-                            EXECUTE stmt;
-                            DEALLOCATE PREPARE stmt;
-                        END IF;
-                    END;
-                </statement>
-                <statement mode="plain">CALL drop_foreign_key('Albums', 'Albums_AlbumRoots');</statement>
-                <statement mode="plain">CALL drop_foreign_key('Images', 'Images_Albums');</statement>
-
                 <statement mode="plain">ALTER TABLE Albums MODIFY COLUMN relativePath LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL;</statement>
                 <statement mode="plain">ALTER TABLE Images MODIFY COLUMN name LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL;</statement>
-                <statement mode="plain">ALTER TABLE Albums
-                    ADD CONSTRAINT Albums_AlbumRoots FOREIGN KEY (albumRoot) REFERENCES AlbumRoots (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    ADD UNIQUE (albumRoot, relativePath(255)),
-                    ENGINE InnoDB;
-                </statement>
-                <statement mode="plain">ALTER TABLE Images
-                    ADD CONSTRAINT Images_Albums FOREIGN KEY (album) REFERENCES Albums (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    ADD UNIQUE (album, name(255)),
-                    ENGINE InnoDB;
-                </statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
