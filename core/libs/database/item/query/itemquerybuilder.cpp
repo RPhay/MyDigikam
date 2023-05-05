@@ -222,7 +222,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         }
         else
         {
-            fieldQuery.addStringField(QLatin1String("Albums.relativePath COLLATE utf8mb4_general_ci"));
+            fieldQuery.addStringField(QLatin1String("Albums.relativePath COLLATE utf8_general_ci"));
         }
     }
     else if (name == QLatin1String("albumcaption"))
@@ -387,7 +387,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         }
         else
         {
-            fieldQuery.addStringField(QLatin1String("Images.name COLLATE utf8mb4_general_ci"));
+            fieldQuery.addStringField(QLatin1String("Images.name COLLATE utf8_general_ci"));
         }
     }
     else if (name == QLatin1String("modificationdate"))
