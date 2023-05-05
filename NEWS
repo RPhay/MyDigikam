@@ -157,13 +157,13 @@ BUGFIXES:
 147 ==> 131959 - digiKam does not recognize "new" images.
 148 ==> 280396 - Crash when trying opening "import --> camera".
 149 ==> 279616 - digiKam crash on startup (or when camera connected).
-150 ==> 
-151 ==> 
-152 ==> 
-153 ==> 
-154 ==> 
-155 ==> 
-156 ==> 
+150 ==> 279458 - Crash attempting to download images from camera.
+151 ==> 283403 - digiKam crashes while downloading pics from camera.
+152 ==> 284626 - digiKam crashes when click on autodetect camera.
+153 ==> 280604 - Importing pictures from camera brings digikam to crash.
+154 ==> 289806 - digiKam crash when try to import photo from digital.
+155 ==> 270654 - digiKam Crashes when during Configuration You Select Settings, Configure, Camera.
+156 ==> 280927 - digiKam crashed while trying to download pictures from a camera.
 157 ==> 
 158 ==> 
 159 ==> 
@@ -193,3 +193,19 @@ BUGFIXES:
 183 ==> 
 184 ==> 
 185 ==> 
+186 ==> 
+187 ==> 
+188 ==> 
+189 ==> 
+190 ==> 
+191 ==> 
+192 ==> 
+193 ==> 
+194 ==> 
+195 ==> 
+196 ==> 
+197 ==> 
+198 ==> 
+199 ==> 
+200 ==> 
+201 ==> 
