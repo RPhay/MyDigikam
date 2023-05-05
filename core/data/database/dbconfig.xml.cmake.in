@@ -2792,48 +2792,8 @@
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV3ToV4" mode="transaction">
-                <statement mode="plain">
-                    DROP PROCEDURE IF EXISTS drop_foreign_key;
-                </statement>
-                <statement mode="plain">
-                    CREATE PROCEDURE drop_foreign_key(IN tableName VARCHAR(64), IN constraintName VARCHAR(64))
-                    BEGIN
-                        IF EXISTS(
-                            SELECT * FROM information_schema.table_constraints
-                            WHERE
-                                table_schema    = DATABASE()                           AND
-                                table_name      = CONVERT(tableName USING latin1)      AND
-                                constraint_name = CONVERT(constraintName USING latin1) AND
-                                constraint_type = 'FOREIGN KEY')
-                        THEN
-                            SET @query = CONCAT(
-                                CONVERT('ALTER TABLE ' USING latin1),
-                                CONVERT(tableName USING latin1),
-                                CONVERT(' DROP FOREIGN KEY ' USING latin1),
-                                CONVERT(constraintName USING latin1),
-                                CONVERT(';'USING latin1)
-                            );
-                            PREPARE stmt FROM @query;
-                            EXECUTE stmt;
-                            DEALLOCATE PREPARE stmt;
-                        END IF;
-                    END;
-                </statement>
-                <statement mode="plain">CALL drop_foreign_key('FilePaths', 'FilePaths_Thumbnails');</statement>
-                <statement mode="plain">CALL drop_foreign_key('CustomIdentifiers', 'CustomIdentifiers_Thumbnails');</statement>
-
                 <statement mode="plain">ALTER TABLE FilePaths MODIFY COLUMN path LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</statement>
                 <statement mode="plain">ALTER TABLE CustomIdentifiers MODIFY COLUMN identifier LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;</statement>
-                <statement mode="plain">ALTER TABLE FilePaths
-                    ADD CONSTRAINT FilePaths_Thumbnails FOREIGN KEY (thumbId) REFERENCES Thumbnails (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    ADD UNIQUE(path(255)),
-                    ENGINE InnoDB;
-                </statement>
-                <statement mode="plain">ALTER TABLE CustomIdentifiers
-                    ADD CONSTRAINT CustomIdentifiers_Thumbnails FOREIGN KEY (thumbId) REFERENCES Thumbnails (id) ON DELETE CASCADE ON UPDATE CASCADE,
-                    ADD UNIQUE(identifier(255)),
-                    ENGINE InnoDB;
-                </statement>
             </dbaction>
 
             <!-- statements for shrinking the databases -->
