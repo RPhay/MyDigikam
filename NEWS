@@ -165,26 +165,26 @@ BUGFIXES:
 155 ==> 270654 - digiKam Crashes when during Configuration You Select Settings, Configure, Camera.
 156 ==> 280927 - digiKam crashed while trying to download pictures from a camera.
 157 ==> 295062 - Crash on import.
-158 ==> 
-159 ==> 
-160 ==> 
-161 ==> 
-162 ==> 
-163 ==> 
-164 ==> 
-165 ==> 
-166 ==> 
-167 ==> 
-168 ==> 
-169 ==> 
-170 ==> 
-171 ==> 
-172 ==> 
-173 ==> 
-174 ==> 
-175 ==> 
-176 ==> 
-177 ==> 
+158 ==> 210496 - digiKam crashes at downloading images from SD card.
+159 ==> 216311 - digiKam crash when start download.
+160 ==> 215005 - digiKam downloading from camera.
+161 ==> 213692 - digiKam import pictures select new.
+162 ==> 218137 - Crash when starting to download a selected number of photos.
+163 ==> 216389 - digiKam crashes trying to import pictures from USB device (CF-card reader).
+164 ==> 215330 - digiKam crashed downloading pics - fedora constantine.
+165 ==> 213497 - While attempting to import pictures from my CF card using my card reader digiKam crashed and closed.
+166 ==> 218160 - digiKam import picture caplio GX8.
+167 ==> 224066 - SEGV when importing everything from SDCard connected via USB.
+168 ==> 213377 - digiKam, downloading pics of cam causes program to crash.
+169 ==> 223732 - finepix a820 import 1 picture when start import program closed.
+170 ==> 212156 - crash while importing pictures.
+171 ==> 223879 - Picture downloading from camera, crashed.
+172 ==> 218518 - Crashed when downloading from camera.
+173 ==> 212203 - digiKam crashes when importing pictures. No pictures are imported.
+174 ==> 215100 - Crash while importin pictures in digiKam.
+175 ==> 216373 - digiKam crashed when importing files from digital camera.
+176 ==> 216996 - Crash when importing pictures.
+177 ==> 210522 - digiKam crashed while importing photos.
 178 ==> 
 179 ==> 
 180 ==> 
@@ -209,3 +209,26 @@ BUGFIXES:
 199 ==> 
 200 ==> 
 201 ==> 
+202 ==> 
+203 ==> 
+204 ==> 
+205 ==> 
+206 ==> 
+207 ==> 
+208 ==> 
+209 ==> 
+210 ==> 
+211 ==> 
+212 ==> 
+213 ==> 
+214 ==> 
+215 ==> 
+216 ==> 
+217 ==> 
+218 ==> 
+219 ==> 
+220 ==> 
+221 ==> 
+222 ==> 
+223 ==> 
+224 ==> 
