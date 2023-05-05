@@ -129,10 +129,10 @@ BUGFIXES:
 119 ==> 425330 - Faces Thumbnail for RAW(NEF) Files references JPEG Preview location not Raw File Location.
 120 ==> 099497 - New Online Documentation based on Sphinx/ReStructuredText lacks sections about Export Tools.
 121 ==> 286734 - Some templates for 6x8 inch paper [patch].
-122 ==> 
-123 ==> 
-124 ==> 
-125 ==> 
+122 ==> 124864 - digiKam does not recognize the contents of directories.
+123 ==> 143928 - Camera dialog not shown when plugging in camera and digikam was never started before.
+124 ==> 157681 - Some images are not imported using the import wizard.
+125 ==> 225151 - digiKam camera import picture editor instead of a movie viewer.
 126 ==> 
 127 ==> 
 128 ==> 
@@ -159,4 +159,13 @@ BUGFIXES:
 149 ==> 
 150 ==> 
 151 ==> 
-
+152 ==> 
+153 ==> 
+154 ==> 
+155 ==> 
+156 ==> 
+157 ==> 
+158 ==> 
+159 ==> 
+160 ==> 
+161 ==> 
