@@ -164,7 +164,7 @@ BUGFIXES:
 154 ==> 289806 - digiKam crash when try to import photo from digital.
 155 ==> 270654 - digiKam Crashes when during Configuration You Select Settings, Configure, Camera.
 156 ==> 280927 - digiKam crashed while trying to download pictures from a camera.
-157 ==> 
+157 ==> 295062 - Crash on import.
 158 ==> 
 159 ==> 
 160 ==> 
