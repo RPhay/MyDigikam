@@ -193,26 +193,26 @@ BUGFIXES:
 183 ==> 440668 - Video playback stutters.
 184 ==> 388475 - Video files are played slower than normal speed.
 185 ==> 415778 - Video stutters every ~10seconds when played from external HD.
-186 ==> 
-187 ==> 
-188 ==> 
-189 ==> 
-190 ==> 
-191 ==> 
-192 ==> 
-193 ==> 
-194 ==> 
-195 ==> 
-196 ==> 
-197 ==> 
-198 ==> 
-199 ==> 
-200 ==> 
-201 ==> 
-202 ==> 
-203 ==> 
-204 ==> 
-205 ==> 
+186 ==> 212657 - Application crashed when downloading photos from camera.
+187 ==> 212496 - Crash when importing from my SD-card.
+188 ==> 215622 - digiKam crash when starting to download fotos.
+189 ==> 211960 - Attempt to download photos from camera with digiKam.
+190 ==> 211966 - digiKam crash import canon.
+191 ==> 213029 - Clicked on download/delete, and digiKam crashed.
+192 ==> 220089 - digiKam crash while attemping import from a usb device.
+193 ==> 216172 - digiKam crashed when trying to download images from a CF-card.
+194 ==> 212665 - Crash importing pictures from USB card reader (consistently).
+195 ==> 222778 - digiKam crash when importing photos from a card reader.
+196 ==> 221861 - digiKam crash on download selected files.
+197 ==> 220046 - digiKam crash while importing from SD-Card.
+198 ==> 223059 - digiKam crashed when importing from SD card in USB reader.
+199 ==> 214778 - digiKam crashes when downloading photos from imaging device.
+200 ==> 214132 - Crash when importing selected images form camera.
+201 ==> 212943 - digiKam importing from card reader (Built In).
+202 ==> 219088 - Crash after trying to download images from the camera.
+203 ==> 215697 - "Download selected" from Canon PS A580 with digiKam
+204 ==> 217085 - digiKam download from xdcard.
+205 ==> 216131 - digiKam picture download crash.
 206 ==> 
 207 ==> 
 208 ==> 
@@ -232,3 +232,4 @@ BUGFIXES:
 222 ==> 
 223 ==> 
 224 ==> 
+
