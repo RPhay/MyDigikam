@@ -33,6 +33,7 @@
 #include <QApplication>
 #include <QDomDocument>
 #include <QJsonDocument>
+#include <QMimeDatabase>
 #include <QTemporaryFile>
 
 // KDE includes

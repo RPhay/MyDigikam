@@ -160,6 +160,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 
     d->prepareProcess();
 
+    QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
     QString suffix(fileInfo.suffix().toUpper());
 
@@ -173,6 +174,15 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
+
+    if (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")))
+    {
+        cmdArgs << QByteArray("-api");
+        cmdArgs << QByteArray("QuickTimeHandler=1");
+        cmdArgs << QByteArray("-itemlist:title<xmp:title");
+        cmdArgs << QByteArray("-itemlist:keyword<xmp:tagslist");
+        cmdArgs << QByteArray("-itemlist:description<xmp:description");
+    }
 
     if (hasIptcCSet)
     {
