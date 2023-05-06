@@ -180,7 +180,9 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         cmdArgs << QByteArray("-api");
         cmdArgs << QByteArray("QuickTimeHandler=1");
         cmdArgs << QByteArray("-itemlist:title<xmp:title");
-        cmdArgs << QByteArray("-itemlist:keyword<xmp:tagslist");
+        cmdArgs << QByteArray("-itemlist:keyword<xmp:keyword");
+        cmdArgs << QByteArray("-microsoft:category<xmp:tagslist");
+        cmdArgs << QByteArray("-itemlist:comment<xmp:description");
         cmdArgs << QByteArray("-itemlist:description<xmp:description");
     }
 
