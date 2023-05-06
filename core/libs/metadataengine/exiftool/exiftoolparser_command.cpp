@@ -162,7 +162,18 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 
     QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
-    QString suffix(fileInfo.suffix().toUpper());
+    QString suffix = fileInfo.suffix().toUpper();
+    bool isVideo   = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
+
+    if (isVideo)
+    {
+        cmdArgs << QByteArray("-api");
+        cmdArgs << QByteArray("QuickTimeHandler=1");
+        cmdArgs << QByteArray("-itemlist:title=");
+        cmdArgs << QByteArray("-itemlist:comment=");
+        cmdArgs << QByteArray("-microsoft:category=");
+        cmdArgs << QByteArray("-itemlist:description=");
+    }
 
     if (suffix != QLatin1String("JXL"))
     {
@@ -175,12 +186,9 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
 
-    if (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")))
+    if (isVideo)
     {
-        cmdArgs << QByteArray("-api");
-        cmdArgs << QByteArray("QuickTimeHandler=1");
         cmdArgs << QByteArray("-itemlist:title<xmp:title");
-        cmdArgs << QByteArray("-itemlist:keyword<xmp:keyword");
         cmdArgs << QByteArray("-microsoft:category<xmp:tagslist");
         cmdArgs << QByteArray("-itemlist:comment<xmp:description");
         cmdArgs << QByteArray("-itemlist:description<xmp:description");
