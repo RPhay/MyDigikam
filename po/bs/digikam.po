@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:44+0000\n"
+"POT-Creation-Date: 2023-05-06 00:44+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3424,7 +3424,7 @@ msgid "Map Search"
 msgstr "Pretraga po mapi"
 
 #: core/app/views/stack/itemiconview_p.h:181
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1175
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search"
 msgstr "Posljednja pretraga"
@@ -29845,7 +29845,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Ažurirajte shemu na verziju %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:856
+#: core/libs/database/coredb/coredbschemaupdater.cpp:848
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -29856,12 +29856,12 @@ msgstr ""
 "Poruka o grešci:\"%3\". Molimo da provjerite da fajl može biti kopiran ili "
 "ga obrišite."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:878
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid "Copied database file"
 msgstr "Kopirana datoteka baze podataka"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:883
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -29872,22 +29872,22 @@ msgstr ""
 "ali se ne može otvoriti. Molimo  Vas  da obrišete oba fajla i pokušate poovo,"
 "počinjući sa praznom bazom podataka. "
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:904
+#: core/libs/database/coredb/coredbschemaupdater.cpp:896
 #, kde-format
 msgid "Opened new database file"
 msgstr "Otvorena nova datoteka baze podataka"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1003
+#: core/libs/database/coredb/coredbschemaupdater.cpp:995
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Pripremljene kreacije tablica"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Created tables"
 msgstr "Stvorene tablice"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1035
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1027
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -29898,7 +29898,7 @@ msgstr ""
 "Odustajem od procesa ažuriranja sheme. Molimo, pokušajte sa praznom bazom "
 "podataka, ili popravite Vašu konfiguraciju."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1057
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1049
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -29925,52 +29925,52 @@ msgstr ""
 "želimo kreirati novu bazu podataka zasnovanu na pogrešnim pretpostavkama iz "
 "neispravne instalacije."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1084
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
 msgid "Configured one album root"
 msgstr "Konfigurisan jedan korijen albuma"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1110
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1102
 #, kde-format
 msgid "Imported albums"
 msgstr "Uvezeni albumi"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1147
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1139
 #, kde-format
 msgid "Imported images information"
 msgstr "Ubačene informacije o slikama"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1177
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1169
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Zadnja Pretraga (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1238
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1230
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Inicijalizovan i uvezen filter datoteka prema sufiksu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1260
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Obavljeno inicijalno skeniranje"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1284
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1276
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Uvezeni datumi kreiranja"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1315
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1307
 #, kde-format
 msgid "Imported comments"
 msgstr "Ubačeni komentari"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1342
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported ratings"
 msgstr "Ubačene ocjene"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Spuštene v3 tablice"
@@ -39469,7 +39469,7 @@ msgid "Geolocation"
 msgstr "Geolokacija"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:171
+#: core/libs/properties/itempropertiestab.cpp:176
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@label: item properties"
@@ -39477,7 +39477,7 @@ msgid "File: "
 msgstr "Datoteka: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:172
+#: core/libs/properties/itempropertiestab.cpp:177
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgctxt "@label: item properties"
@@ -39485,7 +39485,7 @@ msgid "Folder: "
 msgstr "Direktorij: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:174
+#: core/libs/properties/itempropertiestab.cpp:179
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgctxt "@label: item properties"
@@ -39493,7 +39493,7 @@ msgid "Date: "
 msgstr "Datum: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:175
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Size: "
 msgctxt "@label: item properties"
@@ -39515,7 +39515,7 @@ msgid "Writable: "
 msgstr "Moguće zapisati: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:218
+#: core/libs/properties/itempropertiestab.cpp:223
 #, fuzzy, kde-format
 #| msgid "Type: "
 msgctxt "@label: item properties"
@@ -39523,7 +39523,7 @@ msgid "Type: "
 msgstr "Tip: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:219
+#: core/libs/properties/itempropertiestab.cpp:224
 #, fuzzy, kde-format
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
@@ -39532,8 +39532,8 @@ msgstr "Dimenzije: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:220
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:225
+#: core/libs/properties/itempropertiestab.cpp:323
 #, fuzzy, kde-format
 #| msgid "Aspect Ratio: "
 msgctxt "@label: item properties"
@@ -39562,7 +39562,7 @@ msgid "Camera File Properties"
 msgstr "Svojstva datoteke kamere"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:258
+#: core/libs/properties/itempropertiestab.cpp:263
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -39570,7 +39570,7 @@ msgid "Make: "
 msgstr "Napraviti: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:259
+#: core/libs/properties/itempropertiestab.cpp:264
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -39578,7 +39578,7 @@ msgid "Model: "
 msgstr "Model: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:265
 #, fuzzy, kde-format
 #| msgid "Created: "
 msgctxt "@label: item properties"
@@ -39586,7 +39586,7 @@ msgid "Created: "
 msgstr "Kreirano: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:261
+#: core/libs/properties/itempropertiestab.cpp:266
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -39594,7 +39594,7 @@ msgid "Lens: "
 msgstr "Leće: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:267
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -39602,7 +39602,7 @@ msgid "Aperture: "
 msgstr "Blenda: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:268
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -39610,7 +39610,7 @@ msgid "Focal: "
 msgstr "Fokus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:269
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -39618,7 +39618,7 @@ msgid "Exposure: "
 msgstr "Ekspozicija: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:270
 #, fuzzy, kde-format
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
@@ -39626,7 +39626,7 @@ msgid "Sensitivity: "
 msgstr "Osjetljivost: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:271
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -39634,7 +39634,7 @@ msgid "Mode/Program: "
 msgstr "Metoda/Program: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:272
 #, fuzzy, kde-format
 #| msgid "Flash: "
 msgctxt "@label: item properties"
@@ -39642,7 +39642,7 @@ msgid "Flash: "
 msgstr "Blic: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:273
 #, fuzzy, kde-format
 #| msgid "White balance: "
 msgctxt "@label: item properties"
@@ -39657,7 +39657,7 @@ msgid "Photograph Properties"
 msgstr "Svojstva fotoaparata"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:322
+#: core/libs/properties/itempropertiestab.cpp:327
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate: "
 msgctxt "@label: item properties"
@@ -39665,7 +39665,7 @@ msgid "Audio Bit Rate: "
 msgstr "Frekvencija Zvučnih Bita: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type: "
 msgctxt "@label: item properties"
@@ -39673,7 +39673,7 @@ msgid "Audio Channel Type: "
 msgstr "Tip Audio Kanala: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:329
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39681,7 +39681,7 @@ msgid "Audio Codec: "
 msgstr "Video kodek: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:324
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgctxt "@label: item properties"
@@ -39689,7 +39689,7 @@ msgid "Duration: "
 msgstr "Trajanje: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:325
 #, fuzzy, kde-format
 #| msgid "Frame Rate: "
 msgctxt "@label: item properties"
@@ -39697,7 +39697,7 @@ msgid "Frame Rate: "
 msgstr "Brzina Videa: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:321
+#: core/libs/properties/itempropertiestab.cpp:326
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39739,7 +39739,7 @@ msgstr "nedostupno"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:467
+#: core/libs/properties/itempropertiestab.cpp:474
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -40080,123 +40080,123 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:173
+#: core/libs/properties/itempropertiestab.cpp:178
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:181
 #, fuzzy, kde-format
 #| msgid "Owner: "
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Vlasnik: "
 
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:182
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Prava: "
 
-#: core/libs/properties/itempropertiestab.cpp:211
+#: core/libs/properties/itempropertiestab.cpp:216
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Svojstve datoteke"
 
-#: core/libs/properties/itempropertiestab.cpp:221
+#: core/libs/properties/itempropertiestab.cpp:226
 #, fuzzy, kde-format
 #| msgid "Bit depth: "
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Dubina bita: "
 
-#: core/libs/properties/itempropertiestab.cpp:222
+#: core/libs/properties/itempropertiestab.cpp:227
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Režim boje: "
 
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:228
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:251
+#: core/libs/properties/itempropertiestab.cpp:256
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Podaci stavke"
 
-#: core/libs/properties/itempropertiestab.cpp:311
+#: core/libs/properties/itempropertiestab.cpp:316
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Svojstva fotoaparata"
 
-#: core/libs/properties/itempropertiestab.cpp:355
+#: core/libs/properties/itempropertiestab.cpp:360
 #, fuzzy, kde-format
 #| msgid "Audio/video properties"
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Audio/video svojstva"
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:367
 #, fuzzy, kde-format
 #| msgid "Caption: "
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Naslov: "
 
-#: core/libs/properties/itempropertiestab.cpp:363
+#: core/libs/properties/itempropertiestab.cpp:368
 #, fuzzy, kde-format
 #| msgid "Pick label: "
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Odaberi labelu: "
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:369
 #, fuzzy, kde-format
 #| msgid "Color label: "
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Oznaka boje: "
 
-#: core/libs/properties/itempropertiestab.cpp:365
+#: core/libs/properties/itempropertiestab.cpp:370
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Ocjena: "
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:371
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Oznake: "
 
-#: core/libs/properties/itempropertiestab.cpp:400
+#: core/libs/properties/itempropertiestab.cpp:407
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "svojstva digiKam-a"
 
-#: core/libs/properties/itempropertiestab.cpp:742
+#: core/libs/properties/itempropertiestab.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:947
+#: core/libs/properties/itempropertiestab.cpp:956
 #, fuzzy, kde-format
 #| msgctxt "width : height (Aspect Ratio)"
 #| msgid "%1:%2 (%3)"
@@ -40204,7 +40204,7 @@ msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:980
+#: core/libs/properties/itempropertiestab.cpp:989
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"

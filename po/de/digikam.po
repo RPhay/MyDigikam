@@ -9,13 +9,14 @@
 # Torbjörn Klatt <torbjoern.k@googlemail.com>, 2011.
 # Frank Steinmetzger <Warp_7@gmx.de>, 2011, 2012, 2021, 2022, 2023.
 # Herbert Kauer <herb.k@web.de>, 2021.
-# Alois Spitzbart <spitz234@hotmail.com>, 2022.
+# Alois Spitzbart <spitz234@hotmail.com>, 2022, 2023.
+# Matthias Erich Popp <oquo8ugh@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:44+0000\n"
-"PO-Revision-Date: 2023-04-19 00:47+0200\n"
+"POT-Creation-Date: 2023-05-06 00:44+0000\n"
+"PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2743,12 +2744,7 @@ msgid "All supported files (%1)"
 msgstr "Alle unterstützten Dateien (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2758,18 +2754,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Rückmeldung: %2\n"
-"\n"
-"Erstellungsdatum: %3 (Ziel: %4)"
+"Dokumentation: %3\n"
+"Erstellungsdatum: %4 (Ziel: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2781,10 +2770,10 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Rückmeldung: %2\n"
-"\n"
-"Erstellungsdatum: %3 (Ziel: %4)\n"
-"Revision: %5\n"
-"Branch: %6"
+"Dokumentation: %3\n"
+"Erstellungsdatum: %4 (Ziel: %5)\n"
+"Revision: %6\n"
+"Branch: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -2811,10 +2800,9 @@ msgid "Clear all faces on this image"
 msgstr "Alle Gesichtsmarkierungen auf diesem Bild löschen"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark all unknown faces as ignored"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Alle unbekannten Gesichter als „Ignoriert“ markieren"
+msgstr "Alle unbestätigten Gesichter als „Ignoriert“ markieren"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3101,7 +3089,7 @@ msgid "Map Search"
 msgstr "Karten-Suche"
 
 #: core/app/views/stack/itemiconview_p.h:181
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1175
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search"
 msgstr "Letzte Suche"
@@ -3148,7 +3136,7 @@ msgstr "Hilfe"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Online-Hilfe zum Papierkorb"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3286,10 +3274,10 @@ msgstr ""
 "die Speicherung von versionierten Bildern im Editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "Hamburger-Menü anzeigen, wenn Hauptmenü ausgeblendet ist."
+msgstr ""
+"Benutzbarkeit: Hamburger-Menü anzeigen, wenn Hauptmenü ausgeblendet ist."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, kde-format
@@ -3322,6 +3310,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadaten: Hinzufügen neuer Optionen zum Speichern und Laden von "
+"Konfigurationsprofilen in den erweiterten Einstellungen für Metadaten."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, fuzzy, kde-format
@@ -3370,16 +3360,17 @@ msgid "Advanced Search: add search for items without face regions."
 msgstr "Suche nach Bildern ohne Gesichtsregionen hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Unterstützung für plattformübergreifende Netzwerkpfade hinzugefügt."
+msgstr ""
+"Sammlungen: Unterstützung für plattformübergreifende Netzwerkpfade "
+"hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Unterstützung für SQLite WAL (Write-Ahead Logging) hinzugefügt."
+msgstr ""
+"Datenbank: Unterstützung für SQLite WAL (Write-Ahead Logging) hinzugefügt."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -23135,7 +23126,7 @@ msgstr "Export zu Flick&r ..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Flickr-Login-Adresse eingeben"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -25541,12 +25532,11 @@ msgstr "Ungültige Antwort vom entfernten Piwigo-Server erhalten (%1)"
 msgid "Visit Piwigo website"
 msgstr "Piwigo-Webseite besuchen"
 
+# Alben auf dem Server?
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgid "Remote Albums"
-msgstr "Album löschen"
+msgstr "Entfernte Alben"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:177
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
@@ -28262,7 +28252,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Schema auf Version %1 aktualisiert."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:856
+#: core/libs/database/coredb/coredbschemaupdater.cpp:848
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28273,12 +28263,12 @@ msgstr ""
 "„%2“. Fehlermeldung: „%3“. Bitte stellen Sie sicher, dass die Datei kopiert "
 "werden kann oder löschen Sie sie."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:878
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid "Copied database file"
 msgstr "Datenbankdatei wurde kopiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:883
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28289,22 +28279,22 @@ msgstr ""
 "aber nicht geöffnet werden. Bitte löschen Sie beide Dateien und versuchen "
 "Sie, mit einer leeren Datenbank noch einmal neu zu beginnen."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:904
+#: core/libs/database/coredb/coredbschemaupdater.cpp:896
 #, kde-format
 msgid "Opened new database file"
 msgstr "Neue Datenbankdatei wurde geöffnet"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1003
+#: core/libs/database/coredb/coredbschemaupdater.cpp:995
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tabellenerstellung vorbereitet"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Created tables"
 msgstr "Tabellen erstellt"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1035
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1027
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28316,7 +28306,7 @@ msgstr ""
 "bitte noch einmal mit einer leeren Datenbank oder reparieren Sie Ihre "
 "Konfiguration."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1057
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1049
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28337,52 +28327,52 @@ msgstr ""
 "erzeugt werden sollte, die auf falschen Annahmen aus einer fehlerhaften "
 "Installation beruht."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1084
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
 msgid "Configured one album root"
 msgstr "Ein Basisalbum wurde konfiguriert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1110
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1102
 #, kde-format
 msgid "Imported albums"
 msgstr "Alben importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1147
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1139
 #, kde-format
 msgid "Imported images information"
 msgstr "Bilderinformationen importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1177
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1169
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Letzte Suche (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1238
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1230
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Datei-Suffix-Filter initialisiert und importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1260
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Die erste Komplettsuche wurde durchgeführt"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1284
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1276
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Erstellungsdaten der Bilder importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1315
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1307
 #, kde-format
 msgid "Imported comments"
 msgstr "Kommentare importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1342
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported ratings"
 msgstr "Bewertungen importiert"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "v3-Tabellen gelöscht"
@@ -35162,7 +35152,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr ""
+msgstr "Ästhetisches Bild mit Deep Learning erkennen"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, kde-format
@@ -35171,6 +35161,9 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"Erkennen, ob das Bild einen ästhetischen Wert hat.\n"
+"Die Funktion zur Erkennung von Ästhetik verwendet ein Deep-Learning-Modell "
+"zur Klassifizierung von Bildern"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
@@ -36124,7 +36117,7 @@ msgstr "Okzitanisch"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Afaan Oromoo"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
@@ -37468,28 +37461,28 @@ msgid "Geolocation"
 msgstr "Geolokalisierung"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:171
+#: core/libs/properties/itempropertiestab.cpp:176
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "Datei: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:172
+#: core/libs/properties/itempropertiestab.cpp:177
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Ordner: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:174
+#: core/libs/properties/itempropertiestab.cpp:179
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Datum: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:175
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -37508,14 +37501,14 @@ msgid "Writable: "
 msgstr "Schreibbar: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:218
+#: core/libs/properties/itempropertiestab.cpp:223
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Typ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:219
+#: core/libs/properties/itempropertiestab.cpp:224
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -37523,8 +37516,8 @@ msgstr "Abmessungen: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:220
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:225
+#: core/libs/properties/itempropertiestab.cpp:323
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -37549,77 +37542,77 @@ msgid "Camera File Properties"
 msgstr "Kamera-Dateieigenschaften"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:258
+#: core/libs/properties/itempropertiestab.cpp:263
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "Marke: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:259
+#: core/libs/properties/itempropertiestab.cpp:264
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "Modell: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:265
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Erstellt: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:261
+#: core/libs/properties/itempropertiestab.cpp:266
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "Objektiv: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:267
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "Blende: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:268
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "Brennweite: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "Belichtung: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:270
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Empfindlichkeit: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:271
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "Modus/Programm: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:272
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Blitz: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:273
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -37632,42 +37625,42 @@ msgid "Photograph Properties"
 msgstr "Fotoeigenschaften"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:322
+#: core/libs/properties/itempropertiestab.cpp:327
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Audio-Bitrate: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Audiokanal-Typ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:329
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Audio-Codec: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:324
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Dauer: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:325
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "Bildwiederholrate: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:321
+#: core/libs/properties/itempropertiestab.cpp:326
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -37704,7 +37697,7 @@ msgstr "nicht verfügbar"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:467
+#: core/libs/properties/itempropertiestab.cpp:474
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -37999,115 +37992,115 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:173
+#: core/libs/properties/itempropertiestab.cpp:178
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:181
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Eigentümer: "
 
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Berechtigungen: "
 
-#: core/libs/properties/itempropertiestab.cpp:211
+#: core/libs/properties/itempropertiestab.cpp:216
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Dateieigenschaften"
 
-#: core/libs/properties/itempropertiestab.cpp:221
+#: core/libs/properties/itempropertiestab.cpp:226
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Farbtiefe: "
 
-#: core/libs/properties/itempropertiestab.cpp:222
+#: core/libs/properties/itempropertiestab.cpp:227
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Farbmodus: "
 
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:228
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Filialdatei:"
 
-#: core/libs/properties/itempropertiestab.cpp:251
+#: core/libs/properties/itempropertiestab.cpp:256
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Eigenschaften für Einträge"
 
-#: core/libs/properties/itempropertiestab.cpp:311
+#: core/libs/properties/itempropertiestab.cpp:316
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Fotoeigenschaften"
 
-#: core/libs/properties/itempropertiestab.cpp:355
+#: core/libs/properties/itempropertiestab.cpp:360
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Audio-/Video-Eigenschaften"
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:367
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Beschriftung: "
 
-#: core/libs/properties/itempropertiestab.cpp:363
+#: core/libs/properties/itempropertiestab.cpp:368
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Auswahlmarkierung: "
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Farbmarkierung: "
 
-#: core/libs/properties/itempropertiestab.cpp:365
+#: core/libs/properties/itempropertiestab.cpp:370
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Bewertung: "
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:371
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Stichwörter: "
 
-#: core/libs/properties/itempropertiestab.cpp:400
+#: core/libs/properties/itempropertiestab.cpp:407
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam-Einstellungen"
 
-#: core/libs/properties/itempropertiestab.cpp:742
+#: core/libs/properties/itempropertiestab.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itempropertiestab.cpp:947
+#: core/libs/properties/itempropertiestab.cpp:956
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:980
+#: core/libs/properties/itempropertiestab.cpp:989
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -39424,10 +39417,9 @@ msgstr "Stichwortbaum ausklappen"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
 #: core/libs/tags/manager/tagsmanager.cpp:738
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse Tag Tree"
-msgstr "Album kopieren"
+msgstr "Stichwortbaum einklappen"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
 #: core/libs/tags/manager/tagsmanager.cpp:741
@@ -39672,16 +39664,14 @@ msgid "Selected items will be expanded"
 msgstr "Die ausgewählten Elemente werden ausgeklappt"
 
 #: core/libs/tags/manager/tagsmanager.cpp:765
-#, fuzzy, kde-format
-#| msgid "Expand tag tree by one level"
+#, kde-format
 msgid "Expand tag tree completely"
-msgstr "Stichwortbaum um eine Ebene ausklappen"
+msgstr "Stichwortbaum vollständig ausklappen"
 
 #: core/libs/tags/manager/tagsmanager.cpp:767
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgid "Collapse tag tree completely"
-msgstr "Das Kopieren ist nicht abgeschlossen"
+msgstr "Stichwortbaum vollständig einklappen"
 
 #: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
@@ -39730,7 +39720,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Online-Hilfe über Stichwortverwaltung"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -39831,8 +39821,7 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Eigenschaften des Stichwortes<br/>„%1“</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Fehler bei der Erstellung des Stichwortes"
@@ -39848,16 +39837,14 @@ msgid "Tag Path"
 msgstr "Stichworthierarchie"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:145
-#, fuzzy, kde-format
-#| msgid "Expand Tag Tree"
+#, kde-format
 msgid "Expand all Tags"
-msgstr "Stichwortbaum ausklappen"
+msgstr "Alle Stichwörter ausklappen"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:150
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse all Tags"
-msgstr "Album kopieren"
+msgstr "Alle Stichwörter einklappen"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
@@ -40456,8 +40443,7 @@ msgid "Cannot create thumbnail for %1"
 msgstr "Das Vorschaubild für %1 lässt sich nicht erstellen."
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Initialisierung der Vorschaubilder-Datenbank ist fehlgeschlagen"
@@ -40468,8 +40454,7 @@ msgid "Error message: %1"
 msgstr "Fehlermeldung: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Determine Time Difference With Clock Photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Zeitunterschied ermitteln mit Hilfe eines Referenzfotos"
@@ -41450,10 +41435,9 @@ msgstr "Das Medienformat wird noch nicht nicht unterstützt"
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:351
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:58
-#, fuzzy, kde-format
-#| msgid "No, auto"
+#, kde-format
 msgid "0: auto"
-msgstr "Nein, automatisch"
+msgstr "0: automatisch"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:378
 #, kde-format
@@ -41613,10 +41597,9 @@ msgid "Reduce buffering"
 msgstr "Strukturen reduzieren"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
-#, fuzzy, kde-format
-#| msgid "Drop size:"
+#, kde-format
 msgid "Probe size"
-msgstr "Tropfengröße:"
+msgstr "Abtastgröße:"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:60
 #, kde-format
@@ -41635,10 +41618,9 @@ msgid "Extra"
 msgstr "Zusätzliche Stichwörter"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, fuzzy, kde-format
-#| msgid "Format"
+#, kde-format
 msgid "AVFormat"
-msgstr "Format"
+msgstr "AVFormat"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
 #, kde-format
@@ -41900,7 +41882,7 @@ msgstr "Werkzeug wurde nicht gefunden ..."
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1899
 #, kde-format
 msgid "interrupted by user"
-msgstr ""
+msgstr "vom Benutzer unterbrochen"
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1910
 #, fuzzy, kde-format
@@ -44843,7 +44825,7 @@ msgstr "Arabisch (Saudi-Arabien)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "Arabisch (Palästinensisches Westjordanland und Gaza)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 msgctxt "@info: country code"
@@ -44898,7 +44880,7 @@ msgstr "Assamesisch (Indien)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "Aserbaidschanisch (Republik Aserbaidschan)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 msgctxt "@info: country code"
@@ -45851,7 +45833,7 @@ msgstr "Französisch (Kanada)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:216
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
-msgstr ""
+msgstr "Französisch (Demokratische Republik Kongo)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
 #, fuzzy
@@ -45877,7 +45859,7 @@ msgstr "Französisch (Schweiz)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:220
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
-msgstr ""
+msgstr "Französisch (Elfenbeinküste)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
 #, fuzzy
@@ -48575,31 +48557,34 @@ msgstr "Entfernte Dateien werden nicht unterstützt"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "Title cannot be empty."
+#, kde-format
 msgid "%1 URL can't be empty."
-msgstr "Der Titel darf nicht leer sein."
+msgstr "%1-Adresse darf nicht leer sein."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
 msgstr ""
+"Fehler: Bing-Zugangsdaten können in der Web-Version nicht gefunden werden."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
 msgstr ""
+"Fehler: Bing-Schlüssel kann nicht aus der Web-Version extrahiert werden."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Fehler: Bing-Token kann nicht aus der Web-Version extrahiert werden."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"Fehler: Es ist nicht möglich, zusätzliche Bing-Informationen aus der Web-"
+"Version zu extrahieren."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -48607,7 +48592,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "Fehler: Kann automatisch erkannte Sprache nicht auswerten"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -48617,6 +48602,9 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Fehler: Die Engine-Systeme haben verdächtigen Datenverkehr von Ihrem "
+"Computer Netzwerk festgestellt. Bitte versuchen Sie Ihre Anfrage später "
+"erneut."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
 #, kde-format

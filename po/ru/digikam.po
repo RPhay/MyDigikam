@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:44+0000\n"
+"POT-Creation-Date: 2023-05-06 00:44+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3189,7 +3189,7 @@ msgid "Map Search"
 msgstr "Поиск по карте"
 
 #: core/app/views/stack/itemiconview_p.h:181
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1175
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search"
 msgstr "Последний поисковый запрос"
@@ -28239,7 +28239,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Схема базы данных обновлена до версии %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:856
+#: core/libs/database/coredb/coredbschemaupdater.cpp:848
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28250,12 +28250,12 @@ msgstr ""
 "(«%2»). Сообщение об ошибке: «%3». Убедитесь, что файл можно скопировать, "
 "или удалите его."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:878
+#: core/libs/database/coredb/coredbschemaupdater.cpp:870
 #, kde-format
 msgid "Copied database file"
 msgstr "Файл базы данных скопирован"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:883
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28266,22 +28266,22 @@ msgstr ""
 "но его невозможно открыть. Удалите оба файла и повторите попытку, запустив "
 "digiKam с пустой базой данных."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:904
+#: core/libs/database/coredb/coredbschemaupdater.cpp:896
 #, kde-format
 msgid "Opened new database file"
 msgstr "Новый файл базы данных открыт"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1003
+#: core/libs/database/coredb/coredbschemaupdater.cpp:995
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Подготовка к созданию таблиц завершена"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
 #, kde-format
 msgid "Created tables"
 msgstr "Таблицы созданы"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1035
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1027
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28292,7 +28292,7 @@ msgstr ""
 "Отмена процесса обновления схемы базы данных. Попробуйте запустить digiKam с "
 "пустой базой данных или исправьте конфигурационный файл."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1057
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1049
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -28311,52 +28311,52 @@ msgstr ""
 "прекращён, поскольку создание новой базы данных, основанное на неверных "
 "допущениях, из нарушенной установки нежелательно."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1084
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
 msgid "Configured one album root"
 msgstr "Настроен один корневой каталог для альбомов"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1110
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1102
 #, kde-format
 msgid "Imported albums"
 msgstr "Импортированы альбомы"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1147
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1139
 #, kde-format
 msgid "Imported images information"
 msgstr "Информация об импортированных изображениях"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1177
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1169
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Последний поисковый запрос (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1238
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1230
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Инициализирован и импортирован фильтр суффиксов файлов"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1260
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Выполнено полное начальное сканирование"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1284
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1276
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Импортированы даты создания"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1315
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1307
 #, kde-format
 msgid "Imported comments"
 msgstr "Импортированы комментарии"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1342
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported ratings"
 msgstr "Импортированы оценки"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1345
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Отброшены таблицы v3"
@@ -37439,28 +37439,28 @@ msgid "Geolocation"
 msgstr "Местоположение"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:171
+#: core/libs/properties/itempropertiestab.cpp:176
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "Файл: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:172
+#: core/libs/properties/itempropertiestab.cpp:177
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Папка: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:174
+#: core/libs/properties/itempropertiestab.cpp:179
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Дата: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:175
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -37479,14 +37479,14 @@ msgid "Writable: "
 msgstr "Возможность записи: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:218
+#: core/libs/properties/itempropertiestab.cpp:223
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Тип: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:219
+#: core/libs/properties/itempropertiestab.cpp:224
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -37494,8 +37494,8 @@ msgstr "Размеры: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:220
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:225
+#: core/libs/properties/itempropertiestab.cpp:323
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -37520,77 +37520,77 @@ msgid "Camera File Properties"
 msgstr "Свойства файла камеры"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:258
+#: core/libs/properties/itempropertiestab.cpp:263
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "Производитель: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:259
+#: core/libs/properties/itempropertiestab.cpp:264
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "Модель: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:265
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Создано: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:261
+#: core/libs/properties/itempropertiestab.cpp:266
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "Объектив: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:267
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "Диафрагма: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:268
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "Фокусное расстояние: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "Экспозиция: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:270
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Чувствительность: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:271
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "Режим/программа: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:272
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Вспышка: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:273
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -37603,42 +37603,42 @@ msgid "Photograph Properties"
 msgstr "Параметры снимка"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:322
+#: core/libs/properties/itempropertiestab.cpp:327
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Битрейт аудиопотока: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Тип аудиоканала: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:329
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Аудиокодек: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:324
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Длительность: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:325
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "Частота кадров: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:321
+#: core/libs/properties/itempropertiestab.cpp:326
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -37675,7 +37675,7 @@ msgstr "недоступно"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:467
+#: core/libs/properties/itempropertiestab.cpp:474
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -37974,115 +37974,115 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Мп)"
 
-#: core/libs/properties/itempropertiestab.cpp:173
+#: core/libs/properties/itempropertiestab.cpp:178
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr "Символическая ссылка:"
 
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:181
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Владелец: "
 
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Права доступа: "
 
-#: core/libs/properties/itempropertiestab.cpp:211
+#: core/libs/properties/itempropertiestab.cpp:216
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Свойства файла"
 
-#: core/libs/properties/itempropertiestab.cpp:221
+#: core/libs/properties/itempropertiestab.cpp:226
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Глубина цвета: "
 
-#: core/libs/properties/itempropertiestab.cpp:222
+#: core/libs/properties/itempropertiestab.cpp:227
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Цветной режим: "
 
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:228
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Дополнительный файл: "
 
-#: core/libs/properties/itempropertiestab.cpp:251
+#: core/libs/properties/itempropertiestab.cpp:256
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Свойства объекта"
 
-#: core/libs/properties/itempropertiestab.cpp:311
+#: core/libs/properties/itempropertiestab.cpp:316
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Свойства снимка"
 
-#: core/libs/properties/itempropertiestab.cpp:355
+#: core/libs/properties/itempropertiestab.cpp:360
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Свойства видео/аудио"
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:367
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Описание: "
 
-#: core/libs/properties/itempropertiestab.cpp:363
+#: core/libs/properties/itempropertiestab.cpp:368
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Ярлык отбора: "
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:369
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Цветовой ярлык: "
 
-#: core/libs/properties/itempropertiestab.cpp:365
+#: core/libs/properties/itempropertiestab.cpp:370
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Оценка: "
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:371
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Метки: "
 
-#: core/libs/properties/itempropertiestab.cpp:400
+#: core/libs/properties/itempropertiestab.cpp:407
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Свойства digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:742
+#: core/libs/properties/itempropertiestab.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " кадров/с"
 
-#: core/libs/properties/itempropertiestab.cpp:947
+#: core/libs/properties/itempropertiestab.cpp:956
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:980
+#: core/libs/properties/itempropertiestab.cpp:989
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
