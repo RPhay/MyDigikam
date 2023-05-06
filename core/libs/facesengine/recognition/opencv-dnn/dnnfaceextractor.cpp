@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QUrl>
 #include <QMutex>
 #include <QString>
 #include <QFileInfo>
@@ -93,16 +92,16 @@ DNNFaceExtractor::~DNNFaceExtractor()
 
 bool DNNFaceExtractor::loadModels()
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine"),
+                                             QStandardPaths::LocateDirectory);
 
 /*
     QString proto   = QLatin1String("ResNet-50-deploy.prototxt");
     QString model   = QLatin1String("ResNet-50-model.caffemodel");
 
-    QString nnproto = appUrl.toLocalFile() + proto;
-    QString nnmodel = appUrl.toLocalFile() + model;
+    QString nnproto = appPath + QLatin1Char('/') + proto;
+    QString nnmodel = appPath + QLatin1Char('/') + model;
 
     if (!nnproto.isEmpty() && !nnmodel.isEmpty())
     {
@@ -123,8 +122,8 @@ bool DNNFaceExtractor::loadModels()
     d->preprocessor = new RecognitionPreprocessor;
     d->preprocessor->init(PreprocessorSelection::OPENFACE);
 
-    QString name    = QLatin1String("openface_nn4.small2.v1.t7");
-    QString nnmodel = appUrl.toLocalFile() + name;
+    QString model   = QLatin1String("openface_nn4.small2.v1.t7");
+    QString nnmodel = appPath + QLatin1Char('/') + model;
 
     if (QFileInfo::exists(nnmodel))
     {
@@ -164,7 +163,7 @@ bool DNNFaceExtractor::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << name;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine DNN model" << model;
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
         return false;

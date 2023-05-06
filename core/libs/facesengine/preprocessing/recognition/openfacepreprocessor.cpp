@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QUrl>
 #include <QFile>
 #include <QTime>
 #include <QString>
@@ -61,12 +60,12 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 
 bool OpenfacePreprocessor::loadModels()
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine"),
+                                             QStandardPaths::LocateDirectory);
 
-    QString name    = QLatin1String("shapepredictor.dat");
-    QString spdata  = appUrl.toLocalFile() + name;
+    QString data    = QLatin1String("shapepredictor.dat");
+    QString spdata  = appPath + QLatin1Char('/') + data;
 
     QFile model(spdata);
     RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
@@ -85,7 +84,7 @@ bool OpenfacePreprocessor::loadModels()
     {
         delete temp;
 
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine model" << name;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found faces engine model" << data;
         qCCritical(DIGIKAM_FACEDB_LOG) << "Faces recognition feature cannot be used!";
 
         return false;

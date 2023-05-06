@@ -22,7 +22,6 @@
 
 // Qt includes
 
-#include <QUrl>
 #include <QList>
 #include <QRect>
 #include <QString>
@@ -50,21 +49,21 @@ DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
 
 bool DNNFaceDetectorYOLO::loadModels()
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+    QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine"),
+                                             QStandardPaths::LocateDirectory);
 
     QString model   = QLatin1String("yolov3-face.cfg");
     QString data    = QLatin1String("yolov3-wider_16000.weights");
 
-    QString nnmodel = appUrl.toLocalFile() + model;
-    QString nndata  = appUrl.toLocalFile() + data;
+    QString nnmodel = appPath + QLatin1Char('/') + model;
+    QString nndata  = appPath + QLatin1Char('/') + data;
 
     if (QFileInfo::exists(nnmodel) && QFileInfo::exists(nndata))
     {
         try
         {
-            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << nnmodel << ", YOLO data:" << nndata;
+            qCDebug(DIGIKAM_FACEDB_LOG) << "YOLO model:" << model << ", YOLO data:" << data;
 
 #ifdef Q_OS_WIN
 

@@ -158,10 +158,21 @@ FilesDownloader::~FilesDownloader()
 
 bool FilesDownloader::checkDownloadFiles() const
 {
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                          QLatin1String("digikam/facesengine"),
+                                          QStandardPaths::LocateDirectory);
+
+    if (path.isEmpty())
+    {
+        return false;
+    }
+
     Q_FOREACH (const DownloadInfo& info, d->files)
     {
-        if (!downloadExists(info))
-        {   // cppcheck-suppress useStlAlgorithm
+        QFileInfo fileInfo(path + QLatin1Char('/') + info.name);
+
+        if (!fileInfo.exists() || (fileInfo.size() != info.size))
+        {
             return false;
         }
     }
@@ -473,11 +484,10 @@ void FilesDownloader::slotDownloadProgress(qint64 bytesReceived, qint64 bytesTot
 
 QString FilesDownloader::getFacesEnginePath() const
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+    appPath        += QLatin1String("/digikam/facesengine");
 
-    return appUrl.toLocalFile();
+    return appPath;
 }
 
 void FilesDownloader::slotHelp()

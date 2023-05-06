@@ -18,7 +18,6 @@
 // Qt includes
 
 #include <QStandardPaths>
-#include <QUrl>
 #include <QMutexLocker>
 
 // Local includes
@@ -141,15 +140,16 @@ bool AestheticDetector::s_loadModel()
             return true;
         }
 
-        QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-        QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-        appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                 QLatin1String("digikam/facesengine"),
+                                                 QStandardPaths::LocateDirectory);
 
-        QString nnmodel = appUrl.toLocalFile() + QLatin1String("weights_inceptionv3_299.pb");
+        QString model   = QLatin1String("weights_inceptionv3_299.pb");
+        QString nnmodel = appPath + QLatin1Char('/') + model;
 
         if (QFileInfo::exists(nnmodel))
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Aesthetic detector model:" << nnmodel;
+            qCDebug(DIGIKAM_DIMG_LOG) << "Aesthetic detector model:" << model;
 
 #ifdef Q_OS_WIN
 

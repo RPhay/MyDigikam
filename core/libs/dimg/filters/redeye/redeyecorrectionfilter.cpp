@@ -21,7 +21,6 @@
 
 // Qt includes
 
-#include <QUrl>
 #include <QFile>
 #include <QDataStream>
 #include <QListIterator>
@@ -102,14 +101,14 @@ void RedEyeCorrectionFilter::filterImage()
     {
         // Loading the shape predictor model
 
-        QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-        QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-        appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
+        QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                 QLatin1String("digikam/facesengine"),
+                                                 QStandardPaths::LocateDirectory);
 
-        QString name    = QLatin1String("shapepredictor.dat");
-        QString path    = appUrl.toLocalFile() + name;
+        QString data    = QLatin1String("shapepredictor.dat");
+        QString spdata  = appPath + QLatin1Char('/') + data;
 
-        QFile model(path);
+        QFile model(spdata);
 
         if (model.open(QIODevice::ReadOnly))
         {
@@ -122,7 +121,7 @@ void RedEyeCorrectionFilter::filterImage()
         }
         else
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Error open file shapepredictor.dat";
+            qCDebug(DIGIKAM_DIMG_LOG) << "Error open file" << data;
             return;
         }
     }
