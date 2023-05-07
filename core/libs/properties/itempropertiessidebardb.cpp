@@ -724,6 +724,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             // -- Caption / Tags ------------------------------------------
 
+            m_propertiesTab->setTitle(info.title());
             m_propertiesTab->setCaption(info.comment());
             m_propertiesTab->setPickLabel(info.pickLabel());
             m_propertiesTab->setColorLabel(info.colorLabel());

@@ -63,6 +63,7 @@ public:
 
     explicit Private()
       : caption                   (nullptr),
+        title                     (nullptr),
         pickLabel                 (nullptr),
         colorLabel                (nullptr),
         rating                    (nullptr),
@@ -92,6 +93,7 @@ public:
         labelPhotoFlash           (nullptr),
         labelPhotoWhiteBalance    (nullptr),
         labelCaption              (nullptr),
+        labelTitle                (nullptr),
         labelTags                 (nullptr),
         labelPickLabel            (nullptr),
         labelColorLabel           (nullptr),
@@ -106,54 +108,56 @@ public:
     {
     }
 
-    DTextLabelName*   caption;
-    DTextLabelName*   pickLabel;
-    DTextLabelName*   colorLabel;
-    DTextLabelName*   rating;
-    DTextLabelName*   tags;
+    DTextLabelName*    caption;
+    DTextLabelName*    title;
+    DTextLabelName*    pickLabel;
+    DTextLabelName*    colorLabel;
+    DTextLabelName*    rating;
+    DTextLabelName*    tags;
 
-    DTextLabelValue*  labelFile;
-    DTextLabelValue*  labelFolder;
-    DTextLabelValue*  labelSymlink;
-    DTextLabelValue*  labelFileModifiedDate;
-    DTextLabelValue*  labelFileSize;
-    DTextLabelValue*  labelFileOwner;
-    DTextLabelValue*  labelFilePermissions;
+    DTextLabelValue*   labelFile;
+    DTextLabelValue*   labelFolder;
+    DTextLabelValue*   labelSymlink;
+    DTextLabelValue*   labelFileModifiedDate;
+    DTextLabelValue*   labelFileSize;
+    DTextLabelValue*   labelFileOwner;
+    DTextLabelValue*   labelFilePermissions;
 
-    DTextLabelValue*  labelImageMime;
-    DTextLabelValue*  labelImageDimensions;
-    DTextLabelValue*  labelImageRatio;
-    DTextLabelValue*  labelImageBitDepth;
-    DTextLabelValue*  labelImageColorMode;
-    DTextLabelValue*  labelHasSidecar;
+    DTextLabelValue*   labelImageMime;
+    DTextLabelValue*   labelImageDimensions;
+    DTextLabelValue*   labelImageRatio;
+    DTextLabelValue*   labelImageBitDepth;
+    DTextLabelValue*   labelImageColorMode;
+    DTextLabelValue*   labelHasSidecar;
 
-    DTextLabelValue*  labelPhotoMake;
-    DTextLabelValue*  labelPhotoModel;
-    DTextLabelValue*  labelPhotoDateTime;
-    DTextLabelValue*  labelPhotoLens;
-    DTextLabelValue*  labelPhotoAperture;
-    DTextLabelValue*  labelPhotoFocalLength;
-    DTextLabelValue*  labelPhotoExposureTime;
-    DTextLabelValue*  labelPhotoSensitivity;
-    DTextLabelValue*  labelPhotoExposureMode;
-    DTextLabelValue*  labelPhotoFlash;
-    DTextLabelValue*  labelPhotoWhiteBalance;
+    DTextLabelValue*   labelPhotoMake;
+    DTextLabelValue*   labelPhotoModel;
+    DTextLabelValue*   labelPhotoDateTime;
+    DTextLabelValue*   labelPhotoLens;
+    DTextLabelValue*   labelPhotoAperture;
+    DTextLabelValue*   labelPhotoFocalLength;
+    DTextLabelValue*   labelPhotoExposureTime;
+    DTextLabelValue*   labelPhotoSensitivity;
+    DTextLabelValue*   labelPhotoExposureMode;
+    DTextLabelValue*   labelPhotoFlash;
+    DTextLabelValue*   labelPhotoWhiteBalance;
 
-    // NOTE: special case for the caption. See bug #460134
-    QLabel*           labelCaption;
+    // NOTE: special case for the caption and title. See bug #460134
+    QLabel*            labelCaption;
+    QLabel*            labelTitle;
 
-    DTextLabelValue*  labelTags;
-    DTextLabelValue*  labelPickLabel;
-    DTextLabelValue*  labelColorLabel;
-    DTextLabelValue*  labelRating;
+    DTextLabelValue*   labelTags;
+    DTextLabelValue*   labelPickLabel;
+    DTextLabelValue*   labelColorLabel;
+    DTextLabelValue*   labelRating;
 
-    DTextLabelValue*  labelVideoAspectRatio;
-    DTextLabelValue*  labelVideoDuration;
-    DTextLabelValue*  labelVideoFrameRate;
-    DTextLabelValue*  labelVideoVideoCodec;
-    DTextLabelValue*  labelVideoAudioBitRate;
-    DTextLabelValue*  labelVideoAudioChannelType;
-    DTextLabelValue*  labelVideoAudioCodec;
+    DTextLabelValue*   labelVideoAspectRatio;
+    DTextLabelValue*   labelVideoDuration;
+    DTextLabelValue*   labelVideoFrameRate;
+    DTextLabelValue*   labelVideoVideoCodec;
+    DTextLabelValue*   labelVideoAudioBitRate;
+    DTextLabelValue*   labelVideoAudioChannelType;
+    DTextLabelValue*   labelVideoAudioCodec;
 
     DToolTipStyleSheet cnt;
 };
@@ -364,12 +368,15 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QWidget* const w5        = new QWidget(this);
     QGridLayout* const glay5 = new QGridLayout(w5);
 
+    d->title                 = new DTextLabelName(i18nc("@label: item properties", "Title: "),     w5);
     d->caption               = new DTextLabelName(i18nc("@label: item properties", "Caption: "),     w5);
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
     d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Tags: "),        w5);
 
+    d->labelTitle            = new QLabel(QString(), w5);
+    d->labelTitle->setWordWrap(true);
     d->labelCaption          = new QLabel(QString(), w5);
     d->labelCaption->setWordWrap(true);
 
@@ -387,16 +394,18 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
         d->labelTags->setElideMode(Qt::ElideRight);
     }
 
-    glay5->addWidget(d->caption,         0, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,    0, 1, 1, 1);
-    glay5->addWidget(d->tags,            1, 0, 1, 1);
-    glay5->addWidget(d->labelTags,       1, 1, 1, 1);
-    glay5->addWidget(d->pickLabel,       2, 0, 1, 1);
-    glay5->addWidget(d->labelPickLabel,  2, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,      3, 0, 1, 1);
-    glay5->addWidget(d->labelColorLabel, 3, 1, 1, 1);
-    glay5->addWidget(d->rating,          4, 0, 1, 1);
-    glay5->addWidget(d->labelRating,     4, 1, 1, 1);
+    glay5->addWidget(d->title,           0, 0, 1, 1);
+    glay5->addWidget(d->labelTitle,      0, 1, 1, 1);
+    glay5->addWidget(d->caption,         1, 0, 1, 1);
+    glay5->addWidget(d->labelCaption,    1, 1, 1, 1);
+    glay5->addWidget(d->tags,            2, 0, 1, 1);
+    glay5->addWidget(d->labelTags,       2, 1, 1, 1);
+    glay5->addWidget(d->pickLabel,       3, 0, 1, 1);
+    glay5->addWidget(d->labelPickLabel,  3, 1, 1, 1);
+    glay5->addWidget(d->colorLabel,      4, 0, 1, 1);
+    glay5->addWidget(d->labelColorLabel, 4, 1, 1, 1);
+    glay5->addWidget(d->rating,          5, 0, 1, 1);
+    glay5->addWidget(d->labelRating,     5, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
     glay5->setColumnStretch(1, 25);
@@ -612,6 +621,7 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
     bool hasTags       = !d->labelTags->adjustedText().isEmpty();
 
+    d->title->setVisible(hasCaption);
     d->caption->setVisible(hasCaption);
     d->labelCaption->setVisible(hasCaption);
     d->pickLabel->setVisible(hasPickLabel);
@@ -628,6 +638,13 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
                                                                       hasTags      ||
                                                                       hasPickLabel ||
                                                                       hasColorLabel);
+}
+
+void ItemPropertiesTab::setTitle(const QString& str)
+{
+    // NOTE: special case for the title. See bug #460134
+
+    d->labelTitle->setText(d->cnt.breakString((str.size() > 100) ? str.left(100) + QLatin1String("...") : str));
 }
 
 void ItemPropertiesTab::setCaption(const QString& str)

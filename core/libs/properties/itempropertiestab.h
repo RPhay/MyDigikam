@@ -77,6 +77,7 @@ public:
     void setVideoFrameRate(const QString& str);
     void setVideoVideoCodec(const QString& str);
 
+    void setTitle(const QString& str);
     void setCaption(const QString& str);
     void setPickLabel(int pickId);
     void setColorLabel(int colorId);

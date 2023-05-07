@@ -351,7 +351,21 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     m_propertiesTab->setVideoAudioChannelType(videoInfo.audioChannelType.isEmpty() ? unavailable : videoInfo.audioChannelType);
     m_propertiesTab->setVideoAudioCodec(videoInfo.audioCodec.isEmpty()             ? unavailable : videoInfo.audioCodec);
 
-    // -- Caption, ratings, tag information ---------------------
+    // -- Title, caption, ratings, tag information ---------------------
+
+    CaptionsMap titles = metaData->getItemTitles();
+    QString title;
+
+    if      (titles.contains(QLatin1String("x-default")))
+    {
+        title = titles.value(QLatin1String("x-default")).caption;
+    }
+    else if (!titles.isEmpty())
+    {
+        title = titles.begin().value().caption;
+    }
+
+    m_propertiesTab->setTitle(title);
 
     CaptionsMap captions = metaData->getItemComments();
     QString caption;
