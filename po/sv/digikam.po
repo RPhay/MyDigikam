@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:44+0000\n"
+"POT-Creation-Date: 2023-05-07 00:47+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -33032,7 +33032,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Konvertering av obehandlade bilder"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Korrigeringsfilter för röda ögon"
@@ -36676,7 +36676,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Visa inställningsdialogrutans sida för att ställa i n uppdateringar."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:186
+#: core/utilities/setup/downloader/filesdownloader.cpp:197
 #, kde-format
 msgid "Download"
 msgstr "Ladda ner"
@@ -61587,14 +61587,14 @@ msgstr "Välj kategori"
 msgid "Your collection will use this category:"
 msgstr "Samlingen kommer att använda följande kategori:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, fuzzy, kde-format
 #| msgid "Download required files"
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Laddar ner nödvändiga filer"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:204
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61614,24 +61614,24 @@ msgstr ""
 "ner till %1. Säkerställ att det finns ungefär %2 tillgängligt. <b>Efter "
 "lyckad nerladdning måste Digikam startas om</b>.</p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:216
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Inaktivera ansiktsgränssnittsfunktionen och fråga inte igen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alla filer laddades ner med lyckat resultat."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:286
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Nerladdningsfel"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61650,29 +61650,29 @@ msgstr ""
 "\n"
 "Du kan försöka igen eller fortsätta nerladdningen efter nästa start."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, fuzzy, kde-format
 #| msgid "Try again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Försök igen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Checksumman är felaktig."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:452
 #, kde-format
 msgid "File write error."
 msgstr "Filskrivfel."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File open error."
 msgstr "Filöppningsfel."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:463
+#: core/utilities/setup/downloader/filesdownloader.cpp:474
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Filen på servern är för stor."

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:44+0000\n"
+"POT-Creation-Date: 2023-05-07 00:47+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -33628,7 +33628,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Kolore-espazioaren bihurketa"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
 #, fuzzy, kde-format
 #| msgid "Red-Eye Correction Tool"
 msgid "RedEye Correction Filter"
@@ -37556,7 +37556,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:186
+#: core/utilities/setup/downloader/filesdownloader.cpp:197
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Deskargatu"
@@ -62938,14 +62938,14 @@ msgstr "Hautatu kategoria"
 msgid "Your collection will use this category:"
 msgstr "Zure bilduma berria izen honekin sortu da:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 fitxategia deskargatzen..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:204
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -62958,24 +62958,24 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:216
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Fitxategi guztiak ondo zama-jaitsi dira."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:286
 #, fuzzy, kde-format
 #| msgid "Download error"
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Zama-jaiste errorea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62987,29 +62987,29 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, fuzzy, kde-format
 #| msgid "Try again"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Saiatu berriro"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Egiaztapen-batura okerra da."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:452
 #, fuzzy, kde-format
 msgid "File write error."
 msgstr "Idazteko akatsa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, fuzzy, kde-format
 msgid "File open error."
 msgstr "Fitxategi irekitze errorea"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:463
+#: core/utilities/setup/downloader/filesdownloader.cpp:474
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Zerbitzariko fitxategia handiegia da."

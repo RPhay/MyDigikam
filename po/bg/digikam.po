@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:44+0000\n"
+"POT-Creation-Date: 2023-05-07 00:47+0000\n"
 "PO-Revision-Date: 2023-05-02 23:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -33048,7 +33048,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Raw конверсия"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Филтър за корекция на червени очи"
@@ -36672,7 +36672,7 @@ msgstr ""
 "Отворете диалогова страница за настройка, за да конфигурирате актуализациите."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:186
+#: core/utilities/setup/downloader/filesdownloader.cpp:197
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
@@ -60801,13 +60801,13 @@ msgstr "Избиране на категория"
 msgid "Your collection will use this category:"
 msgstr "Вашата колекция ще използва тази категория:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Изтегляне на необходимите файлове"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:204
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60828,24 +60828,24 @@ msgstr ""
 "са налични около %2. <b> След успешното изтегляне трябва да рестартирате "
 "digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:216
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 "Деактивиране на функцията за лицево разпознаване и да не се пита отново"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Всички файлове бяха изтеглени успешно."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Грешка при изтегляне"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60865,28 +60865,28 @@ msgstr ""
 "Можете да опитате отново или да продължите изтеглянето при следващото "
 "стартиране."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Повторно опитване"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Контролната сума е неправилна."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:452
 #, kde-format
 msgid "File write error."
 msgstr "Грешка при запис на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File open error."
 msgstr "Грешка при отваряне на файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:463
+#: core/utilities/setup/downloader/filesdownloader.cpp:474
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файлът на сървъра е твърде голям."

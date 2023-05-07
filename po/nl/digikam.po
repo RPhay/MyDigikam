@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:44+0000\n"
+"POT-Creation-Date: 2023-05-07 00:47+0000\n"
 "PO-Revision-Date: 2023-05-01 11:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -33027,7 +33027,7 @@ msgstr "Kan het tekstbestand met ruisverminderingsinstellingen niet opslaan."
 msgid "Raw Conversion"
 msgstr "Rawconversie"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filter voor rode ogen corrigeren"
@@ -36642,7 +36642,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:186
+#: core/utilities/setup/downloader/filesdownloader.cpp:197
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -60718,13 +60718,13 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:204
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60745,23 +60745,23 @@ msgstr ""
 "ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
 "digiKam opnieuw opstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:216
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Functie gezichten-engine uitschakelen en niet meer vragen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60781,28 +60781,28 @@ msgstr ""
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende keer "
 "starten."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:452
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:463
+#: core/utilities/setup/downloader/filesdownloader.cpp:474
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
