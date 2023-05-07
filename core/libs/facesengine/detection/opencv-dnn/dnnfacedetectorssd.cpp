@@ -20,6 +20,7 @@
 #include <QList>
 #include <QRect>
 #include <QString>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 // Local includes
@@ -52,7 +53,7 @@ bool DNNFaceDetectorSSD::loadModels()
     QString nnmodel = appPath + QLatin1Char('/') + model;
     QString nndata  = appPath + QLatin1Char('/') + data;
 
-    if (!nnmodel.isEmpty() && !nndata.isEmpty())
+    if (QFileInfo::exists(nnmodel) && QFileInfo::exists(nndata))
     {
         try
         {
