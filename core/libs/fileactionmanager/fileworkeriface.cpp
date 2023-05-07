@@ -176,6 +176,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         MetaEngine::ImageOrientation currentOrientation = (MetaEngine::ImageOrientation)info.orientation();
         bool isRaw                                      = info.format().startsWith(QLatin1String("RAW"));
         bool isDng                                      = (info.format() == QLatin1String("RAW-DNG"));
+        bool isWritable                                 = QFileInfo(filePath).isWritable();
         bool rotateAsJpeg                               = false;
         bool rotateLossy                                = false;
 
@@ -186,7 +187,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         // Check if rotation by content, as desired, is feasible
         // We'll later check again if it was successful
 
-        if (behavior & MetaEngineSettingsContainer::RotatingPixels)
+        if (isWritable && (behavior & MetaEngineSettingsContainer::RotatingPixels))
         {
             if (format == QLatin1String("JPG") && JPEGUtils::isJpegImage(filePath))
             {

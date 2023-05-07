@@ -259,7 +259,7 @@ BUGFIXES:
 249 ==> 223059 - digiKam crashed when importing from SD card in USB reader.
 250 ==> 211960 - Attempt to download photos from camera with digiKam.
 251 ==> 469409 - digiKam crashes while scanning for new Items.
-252 ==> 
+252 ==> 469450 - digiKam writes metadata to read-only files.
 253 ==> 
 254 ==> 
 255 ==> 
