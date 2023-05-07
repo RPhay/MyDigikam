@@ -258,7 +258,7 @@ BUGFIXES:
 248 ==> 215697 - "Download selected" from Canon PS A580 with digiKam.
 249 ==> 223059 - digiKam crashed when importing from SD card in USB reader.
 250 ==> 211960 - Attempt to download photos from camera with digiKam.
-251 ==> 
+251 ==> 469409 - digiKam crashes while scanning for new Items.
 252 ==> 
 253 ==> 
 254 ==> 
