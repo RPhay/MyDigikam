@@ -738,9 +738,29 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setPickLabel(info.pickLabel());
             m_propertiesTab->setColorLabel(info.colorLabel());
             m_propertiesTab->setRating(info.rating());
-            QList<int> tagIds = info.tagIds();
-            m_propertiesTab->setTags(TagsCache::instance()->tagPaths(tagIds, TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
-                                     TagsCache::instance()->tagNames(tagIds, TagsCache::NoHiddenTags));
+            QList<int> allTagIds = info.tagIds();
+            QList<int> regularTagIds;
+            QList<int> peopleTagIds;
+
+            Q_FOREACH (int t, allTagIds)
+            {
+                if (TagsCache::instance()->properties(t).contains(QLatin1String("person")))
+                {
+                    peopleTagIds << t;
+                }
+                else
+                {
+                    regularTagIds << t;
+                }
+            }
+
+            m_propertiesTab->setTags(
+                                     TagsCache::instance()->tagPaths(regularTagIds, TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
+                                     TagsCache::instance()->tagNames(regularTagIds, TagsCache::NoHiddenTags),
+                                     TagsCache::instance()->tagPaths(peopleTagIds, TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags),
+                                     TagsCache::instance()->tagNames(peopleTagIds, TagsCache::NoHiddenTags)
+                                    );
+
             m_propertiesTab->showOrHideCaptionAndTags();
 
             return;

@@ -94,7 +94,10 @@ public:
     void setPickLabel(int pickId);
     void setColorLabel(int colorId);
     void setRating(int rating);
-    void setTags(const QStringList& tagPaths, const QStringList& tagNames = QStringList());
+    void setTags(const QStringList& tagPaths,
+                 const QStringList& tagNames = QStringList(),
+                 const QStringList& peopleTagPaths = QStringList(),
+                 const QStringList& peopleTagNames = QStringList());
 
     /**
      * Shortens the tag paths by sorting and then cutting identical paths from the second

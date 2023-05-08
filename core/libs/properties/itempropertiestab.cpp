@@ -58,6 +58,7 @@ public:
         colorLabel                (nullptr),
         rating                    (nullptr),
         tags                      (nullptr),
+        peoples                   (nullptr),
         labelFile                 (nullptr),
         labelFolder               (nullptr),
         labelSymlink              (nullptr),
@@ -85,6 +86,7 @@ public:
         labelCaption              (nullptr),
         labelTitle                (nullptr),
         labelTags                 (nullptr),
+        labelPeoples              (nullptr),
         labelPickLabel            (nullptr),
         labelColorLabel           (nullptr),
         labelRating               (nullptr),
@@ -104,6 +106,7 @@ public:
     DTextLabelName*    colorLabel;
     DTextLabelName*    rating;
     DTextLabelName*    tags;
+    DTextLabelName*    peoples;
 
     DTextLabelValue*   labelFile;
     DTextLabelValue*   labelFolder;
@@ -137,6 +140,8 @@ public:
     QLabel*            labelTitle;
 
     DTextLabelValue*   labelTags;
+    DTextLabelValue*   labelPeoples;
+
     DTextLabelValue*   labelPickLabel;
     DTextLabelValue*   labelColorLabel;
     DTextLabelValue*   labelRating;
@@ -358,6 +363,13 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QWidget* const w5        = new QWidget(this);
     QGridLayout* const glay5 = new QGridLayout(w5);
 
+    d->labelPhotoDateTime    = new DTextLabelValue(QString(), w5);
+    fnt                      = d->labelPhotoDateTime->font();
+    fnt.setPointSize(fnt.pointSize() + 4);
+    fnt.setUnderline(true);
+    d->labelPhotoDateTime->setFont(fnt);
+    d->labelPhotoDateTime->setAlignment(Qt::AlignCenter);
+
     d->title                 = new DTextLabelName(i18nc("@label: item properties", "Title: "),       w5);
     d->caption               = new DTextLabelName(i18nc("@label: item properties", "Caption: "),     w5);
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
@@ -373,23 +385,17 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
 
-    d->labelPhotoDateTime    = new DTextLabelValue(QString(), w5);
-    fnt                      = d->labelPhotoDateTime->font();
-    fnt.setPointSize(fnt.pointSize() + 4);
-    d->labelPhotoDateTime->setFont(fnt);
-    d->labelPhotoDateTime->setAlignment(Qt::AlignCenter);
-
-    glay5->addWidget(d->title,              0, 0, 1, 1);
-    glay5->addWidget(d->labelTitle,         0, 1, 1, 1);
-    glay5->addWidget(d->caption,            1, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,       1, 1, 1, 1);
-    glay5->addWidget(d->labelPhotoDateTime, 2, 0, 1, 2);
-    glay5->addWidget(d->pickLabel,          4, 0, 1, 1);
-    glay5->addWidget(d->labelPickLabel,     4, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,         5, 0, 1, 1);
-    glay5->addWidget(d->labelColorLabel,    5, 1, 1, 1);
-    glay5->addWidget(d->rating,             6, 0, 1, 1);
-    glay5->addWidget(d->labelRating,        6, 1, 1, 1);
+    glay5->addWidget(d->labelPhotoDateTime, 0, 0, 1, 2);
+    glay5->addWidget(d->title,              1, 0, 1, 1);
+    glay5->addWidget(d->labelTitle,         1, 1, 1, 1);
+    glay5->addWidget(d->caption,            2, 0, 1, 1);
+    glay5->addWidget(d->labelCaption,       2, 1, 1, 1);
+    glay5->addWidget(d->pickLabel,          3, 0, 1, 1);
+    glay5->addWidget(d->labelPickLabel,     3, 1, 1, 1);
+    glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
+    glay5->addWidget(d->labelColorLabel,    4, 1, 1, 1);
+    glay5->addWidget(d->rating,             5, 0, 1, 1);
+    glay5->addWidget(d->labelRating,        5, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
     glay5->setColumnStretch(1, 25);
@@ -416,8 +422,22 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
         d->labelTags->setElideMode(Qt::ElideRight);
     }
 
-    glay6->addWidget(d->tags,      0, 0, 1, 1);
-    glay6->addWidget(d->labelTags, 0, 1, 1, 1);
+    d->peoples               = new DTextLabelName(i18nc("@label: item properties", "Peoples: "),      w6);
+    d->labelPeoples          = new DTextLabelValue(QString(), w6);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->labelPeoples->setElideMode(Qt::ElideLeft);
+    }
+    else
+    {
+        d->labelPeoples->setElideMode(Qt::ElideRight);
+    }
+
+    glay6->addWidget(d->tags,         0, 0, 1, 1);
+    glay6->addWidget(d->labelTags,    0, 1, 1, 1);
+    glay6->addWidget(d->peoples,      1, 0, 1, 1);
+    glay6->addWidget(d->labelPeoples, 1, 1, 1, 1);
     glay6->setContentsMargins(spacing, spacing, spacing, spacing);
     glay6->setColumnStretch(0, 10);
     glay6->setColumnStretch(1, 25);
@@ -467,11 +487,13 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelPhotoFlash->setAdjustedText();
         d->labelPhotoWhiteBalance->setAdjustedText();
 
+        d->labelTitle->clear();
         d->labelCaption->clear();
         d->labelPickLabel->setAdjustedText();
         d->labelColorLabel->setAdjustedText();
         d->labelRating->setAdjustedText();
         d->labelTags->setAdjustedText();
+        d->labelPeoples->setAdjustedText();
         d->labelPhotoDateTime->setAdjustedText();
 
         d->labelVideoAspectRatio->setAdjustedText();
@@ -632,8 +654,9 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     bool hasPickLabel  = !d->labelPickLabel->adjustedText().isEmpty();
     bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
-    bool hasTags       = !d->labelTags->adjustedText().isEmpty();
     bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
+
+    d->labelPhotoDateTime->setVisible(hasDate);
 
     d->labelTitle->setVisible(hasTitle);
     d->title->setVisible(hasTitle);
@@ -653,10 +676,15 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
                                                              hasDate      ||
                                                              hasColorLabel);
 
+    bool hasTags       = !d->labelTags->adjustedText().isEmpty();
+    bool hasPeoples    = !d->labelPeoples->adjustedText().isEmpty();
+
     d->tags->setVisible(hasTags);
     d->labelTags->setVisible(hasTags);
+    d->peoples->setVisible(hasPeoples);
+    d->labelPeoples->setVisible(hasPeoples);
 
-    widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags);
+    widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags || hasPeoples);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)
@@ -795,10 +823,13 @@ void ItemPropertiesTab::setVideoVideoCodec(const QString& str)
     d->labelVideoVideoCodec->setAdjustedText(str);
 }
 
-void ItemPropertiesTab::setTags(const QStringList& tagPaths, const QStringList& tagNames)
+void ItemPropertiesTab::setTags(const QStringList& regularTagPaths, const QStringList& regularTagNames,
+                                const QStringList& peopleTagPaths, const QStringList& peopleTagNames)
 {
-    Q_UNUSED(tagNames);
-    d->labelTags->setAdjustedText(shortenedTagPaths(tagPaths).join(QLatin1Char('\n')));
+    Q_UNUSED(regularTagNames);
+    Q_UNUSED(peopleTagNames);
+    d->labelTags->setAdjustedText(shortenedTagPaths(regularTagPaths).join(QLatin1Char('\n')));
+    d->labelPeoples->setAdjustedText(shortenedTagPaths(peopleTagPaths).join(QLatin1Char('\n')));
 }
 
 typedef QPair<QString, QVariant> PathValuePair;
