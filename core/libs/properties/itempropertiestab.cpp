@@ -270,7 +270,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     DTextLabelName* const make         = new DTextLabelName(i18nc("@label: item properties", "Make: "),          w3);
     DTextLabelName* const model        = new DTextLabelName(i18nc("@label: item properties", "Model: "),         w3);
-    DTextLabelName* const photoDate    = new DTextLabelName(i18nc("@label: item properties", "Created: "),       w3);
     DTextLabelName* const lens         = new DTextLabelName(i18nc("@label: item properties", "Lens: "),          w3);
     DTextLabelName* const aperture     = new DTextLabelName(i18nc("@label: item properties", "Aperture: "),      w3);
     DTextLabelName* const focalLength  = new DTextLabelName(i18nc("@label: item properties", "Focal: "),         w3);
@@ -282,7 +281,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     d->labelPhotoMake                  = new DTextLabelValue(QString(), w3);
     d->labelPhotoModel                 = new DTextLabelValue(QString(), w3);
-    d->labelPhotoDateTime              = new DTextLabelValue(QString(), w3);
     d->labelPhotoLens                  = new DTextLabelValue(QString(), w3);
     d->labelPhotoAperture              = new DTextLabelValue(QString(), w3);
     d->labelPhotoFocalLength           = new DTextLabelValue(QString(), w3);
@@ -292,28 +290,26 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelPhotoFlash                 = new DTextLabelValue(QString(), w3);
     d->labelPhotoWhiteBalance          = new DTextLabelValue(QString(), w3);
 
-    glay3->addWidget(make,                      0,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoMake,         0,  1, 1, 1);
-    glay3->addWidget(model,                     1,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoModel,        1,  1, 1, 1);
-    glay3->addWidget(photoDate,                 2,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoDateTime,     2,  1, 1, 1);
-    glay3->addWidget(lens,                      3,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoLens,         3,  1, 1, 1);
-    glay3->addWidget(aperture,                  4,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoAperture,     4,  1, 1, 1);
-    glay3->addWidget(focalLength,               5,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoFocalLength,  5,  1, 1, 1);
-    glay3->addWidget(exposureTime,              6,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoExposureTime, 6,  1, 1, 1);
-    glay3->addWidget(sensitivity,               7,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoSensitivity,  7,  1, 1, 1);
-    glay3->addWidget(exposureMode,              8,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoExposureMode, 8,  1, 1, 1);
-    glay3->addWidget(flash,                     9,  0, 1, 1);
-    glay3->addWidget(d->labelPhotoFlash,        9,  1, 1, 1);
-    glay3->addWidget(whiteBalance,              10, 0, 1, 1);
-    glay3->addWidget(d->labelPhotoWhiteBalance, 10, 1, 1, 1);
+    glay3->addWidget(make,                      0, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoMake,         0, 1, 1, 1);
+    glay3->addWidget(model,                     1, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoModel,        1, 1, 1, 1);
+    glay3->addWidget(lens,                      2, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoLens,         2, 1, 1, 1);
+    glay3->addWidget(aperture,                  3, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoAperture,     3, 1, 1, 1);
+    glay3->addWidget(focalLength,               4, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoFocalLength,  4, 1, 1, 1);
+    glay3->addWidget(exposureTime,              5, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoExposureTime, 5, 1, 1, 1);
+    glay3->addWidget(sensitivity,               6, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoSensitivity,  6, 1, 1, 1);
+    glay3->addWidget(exposureMode,              7, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoExposureMode, 7, 1, 1, 1);
+    glay3->addWidget(flash,                     8, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoFlash,        8, 1, 1, 1);
+    glay3->addWidget(whiteBalance,              9, 0, 1, 1);
+    glay3->addWidget(d->labelPhotoWhiteBalance, 9, 1, 1, 1);
     glay3->setContentsMargins(spacing, spacing, spacing, spacing);
     glay3->setColumnStretch(0, 10);
     glay3->setColumnStretch(1, 25);
@@ -372,7 +368,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QWidget* const w5        = new QWidget(this);
     QGridLayout* const glay5 = new QGridLayout(w5);
 
-    d->title                 = new DTextLabelName(i18nc("@label: item properties", "Title: "),     w5);
+    d->title                 = new DTextLabelName(i18nc("@label: item properties", "Title: "),       w5);
     d->caption               = new DTextLabelName(i18nc("@label: item properties", "Caption: "),     w5);
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
@@ -398,18 +394,25 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
         d->labelTags->setElideMode(Qt::ElideRight);
     }
 
-    glay5->addWidget(d->title,           0, 0, 1, 1);
-    glay5->addWidget(d->labelTitle,      0, 1, 1, 1);
-    glay5->addWidget(d->caption,         1, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,    1, 1, 1, 1);
-    glay5->addWidget(d->tags,            2, 0, 1, 1);
-    glay5->addWidget(d->labelTags,       2, 1, 1, 1);
-    glay5->addWidget(d->pickLabel,       3, 0, 1, 1);
-    glay5->addWidget(d->labelPickLabel,  3, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,      4, 0, 1, 1);
-    glay5->addWidget(d->labelColorLabel, 4, 1, 1, 1);
-    glay5->addWidget(d->rating,          5, 0, 1, 1);
-    glay5->addWidget(d->labelRating,     5, 1, 1, 1);
+    d->labelPhotoDateTime    = new DTextLabelValue(QString(), w5);
+    fnt                      = d->labelPhotoDateTime->font();
+    fnt.setPointSize(fnt.pointSize() + 4);
+    d->labelPhotoDateTime->setFont(fnt);
+    d->labelPhotoDateTime->setAlignment(Qt::AlignCenter);
+
+    glay5->addWidget(d->title,              0, 0, 1, 1);
+    glay5->addWidget(d->labelTitle,         0, 1, 1, 1);
+    glay5->addWidget(d->caption,            1, 0, 1, 1);
+    glay5->addWidget(d->labelCaption,       1, 1, 1, 1);
+    glay5->addWidget(d->labelPhotoDateTime, 2, 0, 1, 2);
+    glay5->addWidget(d->tags,               3, 0, 1, 1);
+    glay5->addWidget(d->labelTags,          3, 1, 1, 1);
+    glay5->addWidget(d->pickLabel,          4, 0, 1, 1);
+    glay5->addWidget(d->labelPickLabel,     4, 1, 1, 1);
+    glay5->addWidget(d->colorLabel,         5, 0, 1, 1);
+    glay5->addWidget(d->labelColorLabel,    5, 1, 1, 1);
+    glay5->addWidget(d->rating,             6, 0, 1, 1);
+    glay5->addWidget(d->labelRating,        6, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
     glay5->setColumnStretch(1, 25);
@@ -450,7 +453,6 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
 
         d->labelPhotoMake->setAdjustedText();
         d->labelPhotoModel->setAdjustedText();
-        d->labelPhotoDateTime->setAdjustedText();
         d->labelPhotoLens->setAdjustedText();
         d->labelPhotoAperture->setAdjustedText();
         d->labelPhotoFocalLength->setAdjustedText();
@@ -465,6 +467,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelColorLabel->setAdjustedText();
         d->labelRating->setAdjustedText();
         d->labelTags->setAdjustedText();
+        d->labelPhotoDateTime->setAdjustedText();
 
         d->labelVideoAspectRatio->setAdjustedText();
         d->labelVideoDuration->setAdjustedText();
