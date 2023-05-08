@@ -42,7 +42,8 @@ public:
         ImageProperties,
         PhotoProperties,
         VideoProperties,
-        digiKamProperties
+        digiKamProperties,
+        TagsProperties
     };
 
 public:

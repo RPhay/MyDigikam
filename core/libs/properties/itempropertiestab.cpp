@@ -363,7 +363,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
-    d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Tags: "),        w5);
 
     d->labelTitle            = new QLabel(QString(), w5);
     d->labelTitle->setWordWrap(true);
@@ -373,16 +372,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelPickLabel        = new DTextLabelValue(QString(), w5);
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
-    d->labelTags             = new DTextLabelValue(QString(), w5);
-
-    if (layoutDirection() == Qt::RightToLeft)
-    {
-        d->labelTags->setElideMode(Qt::ElideLeft);
-    }
-    else
-    {
-        d->labelTags->setElideMode(Qt::ElideRight);
-    }
 
     d->labelPhotoDateTime    = new DTextLabelValue(QString(), w5);
     fnt                      = d->labelPhotoDateTime->font();
@@ -395,8 +384,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay5->addWidget(d->caption,            1, 0, 1, 1);
     glay5->addWidget(d->labelCaption,       1, 1, 1, 1);
     glay5->addWidget(d->labelPhotoDateTime, 2, 0, 1, 2);
-    glay5->addWidget(d->tags,               3, 0, 1, 1);
-    glay5->addWidget(d->labelTags,          3, 1, 1, 1);
     glay5->addWidget(d->pickLabel,          4, 0, 1, 1);
     glay5->addWidget(d->labelPickLabel,     4, 1, 1, 1);
     glay5->addWidget(d->colorLabel,         5, 0, 1, 1);
@@ -411,6 +398,34 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     insertItem(ItemPropertiesTab::digiKamProperties,
                w5, QIcon::fromTheme(QLatin1String("edit-text-frame-update")),
                i18nc("@title: item properties", "digiKam Properties"), QLatin1String("DigikamProperties"), true);
+
+    // --------------------------------------------------
+
+    QWidget* const w6        = new QWidget(this);
+    QGridLayout* const glay6 = new QGridLayout(w6);
+
+    d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Keywords: "),      w6);
+    d->labelTags             = new DTextLabelValue(QString(), w6);
+
+    if (layoutDirection() == Qt::RightToLeft)
+    {
+        d->labelTags->setElideMode(Qt::ElideLeft);
+    }
+    else
+    {
+        d->labelTags->setElideMode(Qt::ElideRight);
+    }
+
+    glay6->addWidget(d->tags,      0, 0, 1, 1);
+    glay6->addWidget(d->labelTags, 0, 1, 1, 1);
+    glay6->setContentsMargins(spacing, spacing, spacing, spacing);
+    glay6->setColumnStretch(0, 10);
+    glay6->setColumnStretch(1, 25);
+    glay6->setSpacing(0);
+
+    insertItem(ItemPropertiesTab::TagsProperties,
+               w6, QIcon::fromTheme(QLatin1String("tag")),
+               i18nc("@title: item properties", "Tags"), QLatin1String("TagsProperties"), true);
 
     // --------------------------------------------------
 
@@ -612,29 +627,36 @@ void ItemPropertiesTab::setPhotoWhiteBalance(const QString& str)
 
 void ItemPropertiesTab::showOrHideCaptionAndTags()
 {
+    bool hasTitle      = !d->labelTitle->text().isEmpty();
     bool hasCaption    = !d->labelCaption->text().isEmpty();
     bool hasPickLabel  = !d->labelPickLabel->adjustedText().isEmpty();
     bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
     bool hasTags       = !d->labelTags->adjustedText().isEmpty();
+    bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
 
-    d->title->setVisible(hasCaption);
-    d->caption->setVisible(hasCaption);
+    d->labelTitle->setVisible(hasTitle);
+    d->title->setVisible(hasTitle);
     d->labelCaption->setVisible(hasCaption);
+    d->caption->setVisible(hasCaption);
     d->pickLabel->setVisible(hasPickLabel);
     d->labelPickLabel->setVisible(hasPickLabel);
     d->colorLabel->setVisible(hasColorLabel);
     d->labelColorLabel->setVisible(hasColorLabel);
     d->rating->setVisible(hasRating);
     d->labelRating->setVisible(hasRating);
+
+    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasTitle     ||
+                                                             hasCaption   ||
+                                                             hasRating    ||
+                                                             hasPickLabel ||
+                                                             hasDate      ||
+                                                             hasColorLabel);
+
     d->tags->setVisible(hasTags);
     d->labelTags->setVisible(hasTags);
 
-    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasCaption   ||
-                                                             hasRating    ||
-                                                             hasTags      ||
-                                                             hasPickLabel ||
-                                                             hasColorLabel);
+    widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)
