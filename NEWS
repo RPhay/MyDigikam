@@ -260,7 +260,7 @@ BUGFIXES:
 250 ==> 211960 - Attempt to download photos from camera with digiKam.
 251 ==> 469409 - digiKam crashes while scanning for new Items.
 252 ==> 469450 - digiKam writes metadata to read-only files.
-253 ==> 
+253 ==> 469456 - Rating is not written to metadata for HEIC file types.
 254 ==> 
 255 ==> 
 256 ==> 
