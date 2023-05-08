@@ -139,8 +139,8 @@ public:
     QLabel*            labelCaption;
     QLabel*            labelTitle;
 
-    DTextLabelValue*   labelTags;
-    DTextLabelValue*   labelPeoples;
+    QLabel*            labelTags;
+    QLabel*            labelPeoples;
 
     DTextLabelValue*   labelPickLabel;
     DTextLabelValue*   labelColorLabel;
@@ -411,28 +411,12 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QGridLayout* const glay6 = new QGridLayout(w6);
 
     d->tags                  = new DTextLabelName(i18nc("@label: item properties", "Keywords: "),      w6);
-    d->labelTags             = new DTextLabelValue(QString(), w6);
-
-    if (layoutDirection() == Qt::RightToLeft)
-    {
-        d->labelTags->setElideMode(Qt::ElideLeft);
-    }
-    else
-    {
-        d->labelTags->setElideMode(Qt::ElideRight);
-    }
+    d->labelTags             = new QLabel(QString(), w6);
+    d->labelTags->setWordWrap(true);
 
     d->peoples               = new DTextLabelName(i18nc("@label: item properties", "Peoples: "),      w6);
-    d->labelPeoples          = new DTextLabelValue(QString(), w6);
-
-    if (layoutDirection() == Qt::RightToLeft)
-    {
-        d->labelPeoples->setElideMode(Qt::ElideLeft);
-    }
-    else
-    {
-        d->labelPeoples->setElideMode(Qt::ElideRight);
-    }
+    d->labelPeoples          = new QLabel(QString(), w6);
+    d->labelPeoples->setWordWrap(true);
 
     glay6->addWidget(d->tags,         0, 0, 1, 1);
     glay6->addWidget(d->labelTags,    0, 1, 1, 1);
@@ -492,8 +476,8 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelPickLabel->setAdjustedText();
         d->labelColorLabel->setAdjustedText();
         d->labelRating->setAdjustedText();
-        d->labelTags->setAdjustedText();
-        d->labelPeoples->setAdjustedText();
+        d->labelTags->clear();
+        d->labelPeoples->clear();
         d->labelPhotoDateTime->setAdjustedText();
 
         d->labelVideoAspectRatio->setAdjustedText();
@@ -676,8 +660,8 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
                                                              hasDate      ||
                                                              hasColorLabel);
 
-    bool hasTags       = !d->labelTags->adjustedText().isEmpty();
-    bool hasPeoples    = !d->labelPeoples->adjustedText().isEmpty();
+    bool hasTags       = !d->labelTags->text().isEmpty();
+    bool hasPeoples    = !d->labelPeoples->text().isEmpty();
 
     d->tags->setVisible(hasTags);
     d->labelTags->setVisible(hasTags);
@@ -826,10 +810,10 @@ void ItemPropertiesTab::setVideoVideoCodec(const QString& str)
 void ItemPropertiesTab::setTags(const QStringList& regularTagPaths, const QStringList& regularTagNames,
                                 const QStringList& peopleTagPaths, const QStringList& peopleTagNames)
 {
-    Q_UNUSED(regularTagNames);
-    Q_UNUSED(peopleTagNames);
-    d->labelTags->setAdjustedText(shortenedTagPaths(regularTagPaths).join(QLatin1Char('\n')));
-    d->labelPeoples->setAdjustedText(shortenedTagPaths(peopleTagPaths).join(QLatin1Char('\n')));
+    d->labelTags->setText(regularTagNames.join(QLatin1String(", ")));
+    d->labelPeoples->setText(peopleTagNames.join(QLatin1String(", ")));
+    d->labelTags->setToolTip(shortenedTagPaths(regularTagPaths).join(QLatin1Char('\n')));
+    d->labelPeoples->setToolTip(shortenedTagPaths(peopleTagPaths).join(QLatin1Char('\n')));
 }
 
 typedef QPair<QString, QVariant> PathValuePair;
