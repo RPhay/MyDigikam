@@ -6,7 +6,7 @@
  * Date        : 2006-04-19
  * Description : A tab to display general item information
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "template.h"
 #include "dexpanderbox.h"
 #include "digikam_export.h"
 
@@ -43,7 +44,9 @@ public:
         PhotoProperties,
         VideoProperties,
         digiKamProperties,
-        TagsProperties
+        TagsProperties,
+        LocationProperties,
+        RightProperties
     };
 
 public:
@@ -98,6 +101,7 @@ public:
                  const QStringList& tagNames = QStringList(),
                  const QStringList& peopleTagPaths = QStringList(),
                  const QStringList& peopleTagNames = QStringList());
+    void setTemplate(const Template& t);
 
     /**
      * Shortens the tag paths by sorting and then cutting identical paths from the second

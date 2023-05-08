@@ -6,7 +6,7 @@
  * Date        : 2006-04-19
  * Description : A tab to display general item information
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -87,6 +87,7 @@ public:
         labelTitle                (nullptr),
         labelTags                 (nullptr),
         labelPeoples              (nullptr),
+        labelLocation             (nullptr),
         labelPickLabel            (nullptr),
         labelColorLabel           (nullptr),
         labelRating               (nullptr),
@@ -141,6 +142,8 @@ public:
 
     QLabel*            labelTags;
     QLabel*            labelPeoples;
+
+    QLabel*            labelLocation;
 
     DTextLabelValue*   labelPickLabel;
     DTextLabelValue*   labelColorLabel;
@@ -433,6 +436,24 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
+    QWidget* const w7        = new QWidget(this);
+    QGridLayout* const glay7 = new QGridLayout(w7);
+
+    d->labelLocation         = new QLabel(QString(), w7);
+    d->labelLocation->setWordWrap(true);
+
+    glay7->addWidget(d->labelLocation, 0, 0, 1, 2);
+    glay7->setContentsMargins(spacing, spacing, spacing, spacing);
+    glay7->setColumnStretch(0, 10);
+    glay7->setColumnStretch(1, 25);
+    glay7->setSpacing(0);
+
+    insertItem(ItemPropertiesTab::LocationProperties,
+               w7, QIcon::fromTheme(QLatin1String("globe")),
+               i18nc("@title: item properties", "Location"), QLatin1String("LocationProperties"), true);
+
+    // --------------------------------------------------
+
     addStretch();
 }
 
@@ -479,6 +500,8 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelTags->clear();
         d->labelPeoples->clear();
         d->labelPhotoDateTime->setAdjustedText();
+
+        d->labelLocation->clear();
 
         d->labelVideoAspectRatio->setAdjustedText();
         d->labelVideoDuration->setAdjustedText();
@@ -669,6 +692,10 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     d->labelPeoples->setVisible(hasPeoples);
 
     widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags || hasPeoples);
+
+    bool hasLocation = !d->labelLocation->text().isEmpty();
+
+    widget(ItemPropertiesTab::LocationProperties)->setVisible(hasLocation);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)
@@ -814,6 +841,40 @@ void ItemPropertiesTab::setTags(const QStringList& regularTagPaths, const QStrin
     d->labelPeoples->setText(peopleTagNames.join(QLatin1String(", ")));
     d->labelTags->setToolTip(shortenedTagPaths(regularTagPaths).join(QLatin1Char('\n')));
     d->labelPeoples->setToolTip(shortenedTagPaths(peopleTagPaths).join(QLatin1Char('\n')));
+}
+
+void ItemPropertiesTab::setTemplate(const Template& t)
+{
+    IptcCoreLocationInfo l = t.locationInfo();
+    QStringList places;
+    QString info;
+
+    if (!l.country.isEmpty())
+    {
+        places << l.country;
+    }
+
+    if (!l.provinceState.isEmpty())
+    {
+        places << l.provinceState;
+    }
+
+    if (!l.city.isEmpty())
+    {
+        places << l.city;
+    }
+
+    if (!l.location.isEmpty())
+    {
+        places << l.location;
+    }
+
+    if (!places.isEmpty())
+    {
+        info = places.join(QLatin1String(", "));
+    }
+
+    d->labelLocation->setText(info);
 }
 
 typedef QPair<QString, QVariant> PathValuePair;
