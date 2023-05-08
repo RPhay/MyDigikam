@@ -177,7 +177,6 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     QWidget* const w1                  = new QWidget(this);
     QGridLayout* const glay1           = new QGridLayout(w1);
 
-    DTextLabelName* const file         = new DTextLabelName(i18nc("@label: item properties", "File: "),        w1);
     DTextLabelName* const folder       = new DTextLabelName(i18nc("@label: item properties", "Folder: "),      w1);
     DTextLabelName* const symlink      = new DTextLabelName(i18nc("@label: item properties", "Symlink: "),     w1);
     DTextLabelName* const modifiedDate = new DTextLabelName(i18nc("@label: item properties", "Date: "),        w1);
@@ -186,6 +185,12 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     DTextLabelName* const permissions  = new DTextLabelName(i18nc("@label: item properties", "Permissions: "), w1);
 
     d->labelFile                       = new DTextLabelValue(QString(), w1);
+    QFont fnt = d->labelFile->font();
+    fnt.setBold(true);
+    fnt.setPointSize(fnt.pointSize() + 4);
+    d->labelFile->setFont(fnt);
+    d->labelFile->setAlignment(Qt::AlignCenter);
+
     d->labelFolder                     = new DTextLabelValue(QString(), w1);
     d->labelSymlink                    = new DTextLabelValue(QString(), w1);
     d->labelFileModifiedDate           = new DTextLabelValue(QString(), w1);
@@ -196,8 +201,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelFile->setTextInteractionFlags(Qt::TextSelectableByMouse);
     d->labelFolder->setTextInteractionFlags(Qt::TextSelectableByMouse);
 
-    glay1->addWidget(file,                     0, 0, 1, 1);
-    glay1->addWidget(d->labelFile,             0, 1, 1, 1);
+    glay1->addWidget(d->labelFile,             0, 0, 1, 2);
     glay1->addWidget(folder,                   1, 0, 1, 1);
     glay1->addWidget(d->labelFolder,           1, 1, 1, 1);
     glay1->addWidget(symlink,                  2, 0, 1, 1);
