@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 00:47+0000\n"
+"POT-Creation-Date: 2023-05-08 00:43+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -33859,7 +33859,7 @@ msgstr "پردازش ریزنقشهای کوچک"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:349
+#: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "خرابی در باربینی جهت Exif برای پرونده %1."
@@ -36530,21 +36530,21 @@ msgid "Geolocation"
 msgstr "گزینش"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "&پرونده‌"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:181
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "پوشه"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:183
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgctxt "@label: item properties"
@@ -36552,7 +36552,7 @@ msgid "Date: "
 msgstr "تاریخ: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:184
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -36571,14 +36571,14 @@ msgid "Writable: "
 msgstr "&قابل نوشتن‌"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:227
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "نوع"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:228
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -36586,8 +36586,8 @@ msgstr "ابعاد"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:225
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:229
+#: core/libs/properties/itempropertiestab.cpp:327
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -36612,14 +36612,14 @@ msgid "Camera File Properties"
 msgstr "ویژگیهای پرونده"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:267
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "ساخت"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:268
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -36627,63 +36627,63 @@ msgid "Model: "
 msgstr "مدل: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:269
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "ایجادشده:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:270
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "لنز"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:271
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "روزنه:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:272
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "<b>کانونی </b>:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:269
+#: core/libs/properties/itempropertiestab.cpp:273
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "نمایش:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:274
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "حساسیت )ISO(:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:275
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "حالت/برنامه:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:276
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "فلاش:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:277
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -36697,42 +36697,42 @@ msgid "Photograph Properties"
 msgstr "ویژگیهای عکس"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:331
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "پرونده‌های صوتی"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:332
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "کانال آلفا"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:333
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "پرونده‌های صوتی"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "دوام: %1"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:329
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "ایجادشده:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:326
+#: core/libs/properties/itempropertiestab.cpp:330
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -36772,7 +36772,7 @@ msgstr "ناموجود"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:483
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -37085,119 +37085,126 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 )%2 از %3("
 
-#: core/libs/properties/itempropertiestab.cpp:178
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:185
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "مالک"
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:186
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "&مجوزها‌"
 
-#: core/libs/properties/itempropertiestab.cpp:216
+#: core/libs/properties/itempropertiestab.cpp:220
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "ویژگیهای پرونده"
 
-#: core/libs/properties/itempropertiestab.cpp:226
+#: core/libs/properties/itempropertiestab.cpp:230
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "عمق بیت"
 
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:231
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "حالت رنگ"
 
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:232
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:256
+#: core/libs/properties/itempropertiestab.cpp:260
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "ویژگیهای تصویر"
 
-#: core/libs/properties/itempropertiestab.cpp:316
+#: core/libs/properties/itempropertiestab.cpp:320
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "ویژگیهای عکس"
 
-#: core/libs/properties/itempropertiestab.cpp:360
+#: core/libs/properties/itempropertiestab.cpp:364
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "ویژگیهای پرونده"
 
-#: core/libs/properties/itempropertiestab.cpp:367
+#: core/libs/properties/itempropertiestab.cpp:371
+#, fuzzy, kde-format
+#| msgid "Title:"
+msgctxt "@label: item properties"
+msgid "Title: "
+msgstr "عنوان:"
+
+#: core/libs/properties/itempropertiestab.cpp:372
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "عنوان"
 
-#: core/libs/properties/itempropertiestab.cpp:368
+#: core/libs/properties/itempropertiestab.cpp:373
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "تصویردانه‌ها:"
 
-#: core/libs/properties/itempropertiestab.cpp:369
+#: core/libs/properties/itempropertiestab.cpp:374
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "تندی رنگ:"
 
-#: core/libs/properties/itempropertiestab.cpp:370
+#: core/libs/properties/itempropertiestab.cpp:375
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "رتبه‌بندی:"
 
-#: core/libs/properties/itempropertiestab.cpp:371
+#: core/libs/properties/itempropertiestab.cpp:376
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "برچسبها"
 
-#: core/libs/properties/itempropertiestab.cpp:407
+#: core/libs/properties/itempropertiestab.cpp:416
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "ویژگیهای digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:751
+#: core/libs/properties/itempropertiestab.cpp:768
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:956
+#: core/libs/properties/itempropertiestab.cpp:973
 #, fuzzy, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1 )%2 از %3("
 
-#: core/libs/properties/itempropertiestab.cpp:989
+#: core/libs/properties/itempropertiestab.cpp:1006
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"

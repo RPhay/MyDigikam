@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 00:47+0000\n"
+"POT-Creation-Date: 2023-05-08 00:43+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -33836,7 +33836,7 @@ msgstr "Apstrādā attēlus"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Neizdevās mainīt Exif orientāciju šiem failiem:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:349
+#: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, fuzzy, kde-format
 msgid "Failed to transform these files:"
 msgstr "Neizdevās mainīt Exif orientāciju šiem failiem:"
@@ -36612,28 +36612,28 @@ msgid "Geolocation"
 msgstr "Ģeolokācija"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "Fails: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:181
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Mape: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:183
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Datums: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:184
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -36653,14 +36653,14 @@ msgid "Writable: "
 msgstr "Rakstāms: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:227
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Tips: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:228
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -36668,8 +36668,8 @@ msgstr "Attēla izmērs: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:225
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:229
+#: core/libs/properties/itempropertiestab.cpp:327
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -36695,7 +36695,7 @@ msgid "Camera File Properties"
 msgstr "Fotoaparāta faila īpašības"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:267
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -36703,7 +36703,7 @@ msgid "Make: "
 msgstr "Ražotājs: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:268
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -36711,14 +36711,14 @@ msgid "Model: "
 msgstr "Modelis: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Izveidots: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:270
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -36726,7 +36726,7 @@ msgid "Lens: "
 msgstr "Lēcas: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:271
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -36734,7 +36734,7 @@ msgid "Aperture: "
 msgstr "Atvērtums: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:272
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -36742,7 +36742,7 @@ msgid "Focal: "
 msgstr "Fokuss: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:269
+#: core/libs/properties/itempropertiestab.cpp:273
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -36750,14 +36750,14 @@ msgid "Exposure: "
 msgstr "Ekspozīcija: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:274
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Jutība: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:275
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -36765,14 +36765,14 @@ msgid "Mode/Program: "
 msgstr "Režīms/Programma: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:276
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Zibspuldze: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:277
 #, fuzzy, kde-format
 #| msgid "White balance: "
 msgctxt "@label: item properties"
@@ -36787,42 +36787,42 @@ msgid "Photograph Properties"
 msgstr "Fotogrāfijas īpašības"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:331
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Audio faili"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:332
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Alfa kanāls: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:333
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Audio faili"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Ilgums: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:329
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "<li>Izveidots:</li>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:326
+#: core/libs/properties/itempropertiestab.cpp:330
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -36859,7 +36859,7 @@ msgstr "nav pieejams"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:483
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -37178,116 +37178,124 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpiks)"
 
-#: core/libs/properties/itempropertiestab.cpp:178
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:185
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Īpašnieks: "
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:186
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Atļaujas: "
 
-#: core/libs/properties/itempropertiestab.cpp:216
+#: core/libs/properties/itempropertiestab.cpp:220
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Faila īpašības"
 
-#: core/libs/properties/itempropertiestab.cpp:226
+#: core/libs/properties/itempropertiestab.cpp:230
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Krāsu dziļums: "
 
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:231
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Krāsu režīms: "
 
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:232
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Datu papildfails: "
 
-#: core/libs/properties/itempropertiestab.cpp:256
+#: core/libs/properties/itempropertiestab.cpp:260
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Attēla īpašības"
 
-#: core/libs/properties/itempropertiestab.cpp:316
+#: core/libs/properties/itempropertiestab.cpp:320
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Fotogrāfijas īpašības"
 
-#: core/libs/properties/itempropertiestab.cpp:360
+#: core/libs/properties/itempropertiestab.cpp:364
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Faila īpašības"
 
-#: core/libs/properties/itempropertiestab.cpp:367
+#: core/libs/properties/itempropertiestab.cpp:371
+#, fuzzy, kde-format
+#| msgctxt "@label: album properties"
+#| msgid "Title: "
+msgctxt "@label: item properties"
+msgid "Title: "
+msgstr "Nosaukums: "
+
+#: core/libs/properties/itempropertiestab.cpp:372
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Apraksts: "
 
-#: core/libs/properties/itempropertiestab.cpp:368
+#: core/libs/properties/itempropertiestab.cpp:373
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Atlases iezīme: "
 
-#: core/libs/properties/itempropertiestab.cpp:369
+#: core/libs/properties/itempropertiestab.cpp:374
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Krāsu iezīme: "
 
-#: core/libs/properties/itempropertiestab.cpp:370
+#: core/libs/properties/itempropertiestab.cpp:375
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Vērtējums: "
 
-#: core/libs/properties/itempropertiestab.cpp:371
+#: core/libs/properties/itempropertiestab.cpp:376
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Tagi: "
 
-#: core/libs/properties/itempropertiestab.cpp:407
+#: core/libs/properties/itempropertiestab.cpp:416
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam īpašības"
 
-#: core/libs/properties/itempropertiestab.cpp:751
+#: core/libs/properties/itempropertiestab.cpp:768
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:956
+#: core/libs/properties/itempropertiestab.cpp:973
 #, fuzzy, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1x%2 (%3Mpiks)"
 
-#: core/libs/properties/itempropertiestab.cpp:989
+#: core/libs/properties/itempropertiestab.cpp:1006
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"

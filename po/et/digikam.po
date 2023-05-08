@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 00:47+0000\n"
+"POT-Creation-Date: 2023-05-08 00:43+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -36521,7 +36521,7 @@ msgstr "Elementide töötlemine"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Järgmiste failide EXIF-orientatsiooni uurimine nurjus:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:349
+#: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Järgmiste failide teisendamine nurjus:"
@@ -39500,7 +39500,7 @@ msgid "Geolocation"
 msgstr "Geolokatsioon"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@label: item properties"
@@ -39508,7 +39508,7 @@ msgid "File: "
 msgstr "Fail: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:181
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgctxt "@label: item properties"
@@ -39516,7 +39516,7 @@ msgid "Folder: "
 msgstr "Kataloog: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:183
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgctxt "@label: item properties"
@@ -39524,7 +39524,7 @@ msgid "Date: "
 msgstr "Kuupäev: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:184
 #, fuzzy, kde-format
 #| msgid "Size: "
 msgctxt "@label: item properties"
@@ -39546,7 +39546,7 @@ msgid "Writable: "
 msgstr "Kirjutamisõigusega: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:227
 #, fuzzy, kde-format
 #| msgid "Type: "
 msgctxt "@label: item properties"
@@ -39554,7 +39554,7 @@ msgid "Type: "
 msgstr "Tüüp: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:228
 #, fuzzy, kde-format
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
@@ -39563,8 +39563,8 @@ msgstr "Mõõtmed: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:225
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:229
+#: core/libs/properties/itempropertiestab.cpp:327
 #, fuzzy, kde-format
 #| msgid "Aspect Ratio: "
 msgctxt "@label: item properties"
@@ -39593,7 +39593,7 @@ msgid "Camera File Properties"
 msgstr "Kaamera faili omadused"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:267
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -39601,7 +39601,7 @@ msgid "Make: "
 msgstr "Valmistaja: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:268
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -39609,7 +39609,7 @@ msgid "Model: "
 msgstr "Mudel: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:269
 #, fuzzy, kde-format
 #| msgid "Created: "
 msgctxt "@label: item properties"
@@ -39617,7 +39617,7 @@ msgid "Created: "
 msgstr "Loodud: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:270
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -39625,7 +39625,7 @@ msgid "Lens: "
 msgstr "Objektiiv: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:271
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -39633,7 +39633,7 @@ msgid "Aperture: "
 msgstr "Ava: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:272
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -39641,7 +39641,7 @@ msgid "Focal: "
 msgstr "Fookuskaugus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:269
+#: core/libs/properties/itempropertiestab.cpp:273
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -39649,7 +39649,7 @@ msgid "Exposure: "
 msgstr "Säritus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:274
 #, fuzzy, kde-format
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
@@ -39657,7 +39657,7 @@ msgid "Sensitivity: "
 msgstr "Tundlikkus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:275
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -39665,7 +39665,7 @@ msgid "Mode/Program: "
 msgstr "Režiim/programm: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:276
 #, fuzzy, kde-format
 #| msgid "Flash: "
 msgctxt "@label: item properties"
@@ -39673,7 +39673,7 @@ msgid "Flash: "
 msgstr "Välk: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:277
 #, fuzzy, kde-format
 #| msgid "White balance: "
 msgctxt "@label: item properties"
@@ -39688,7 +39688,7 @@ msgid "Photograph Properties"
 msgstr "Foto omadused"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:331
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate: "
 msgctxt "@label: item properties"
@@ -39696,7 +39696,7 @@ msgid "Audio Bit Rate: "
 msgstr "Heli bitikiirus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:332
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type: "
 msgctxt "@label: item properties"
@@ -39704,7 +39704,7 @@ msgid "Audio Channel Type: "
 msgstr "Helikanali tüüp: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:333
 #, fuzzy, kde-format
 #| msgid "Audio Codec: "
 msgctxt "@label: item properties"
@@ -39712,7 +39712,7 @@ msgid "Audio Codec: "
 msgstr "Helikoodek: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgctxt "@label: item properties"
@@ -39720,7 +39720,7 @@ msgid "Duration: "
 msgstr "Kestus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:329
 #, fuzzy, kde-format
 #| msgid "Frame Rate: "
 msgctxt "@label: item properties"
@@ -39728,7 +39728,7 @@ msgid "Frame Rate: "
 msgstr "Kaadrisagedus: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:326
+#: core/libs/properties/itempropertiestab.cpp:330
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39771,7 +39771,7 @@ msgstr "pole kättesaadav"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:483
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -40111,125 +40111,132 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:178
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:185
 #, fuzzy, kde-format
 #| msgid "Owner: "
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Omanik: "
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:186
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Õigused: "
 
-#: core/libs/properties/itempropertiestab.cpp:216
+#: core/libs/properties/itempropertiestab.cpp:220
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Faili omadused"
 
-#: core/libs/properties/itempropertiestab.cpp:226
+#: core/libs/properties/itempropertiestab.cpp:230
 #, fuzzy, kde-format
 #| msgid "Bit depth: "
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Bitisügavus: "
 
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:231
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Värvimudel: "
 
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:232
 #, fuzzy, kde-format
 #| msgid "Sidecar: "
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Kõrvalfail:"
 
-#: core/libs/properties/itempropertiestab.cpp:256
+#: core/libs/properties/itempropertiestab.cpp:260
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Elemendi omadused"
 
-#: core/libs/properties/itempropertiestab.cpp:316
+#: core/libs/properties/itempropertiestab.cpp:320
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Foto omadused"
 
-#: core/libs/properties/itempropertiestab.cpp:360
+#: core/libs/properties/itempropertiestab.cpp:364
 #, fuzzy, kde-format
 #| msgid "Audio/Video Properties"
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Heli/video omadused"
 
-#: core/libs/properties/itempropertiestab.cpp:367
+#: core/libs/properties/itempropertiestab.cpp:371
+#, fuzzy, kde-format
+#| msgid "Title: "
+msgctxt "@label: item properties"
+msgid "Title: "
+msgstr "Nimi: "
+
+#: core/libs/properties/itempropertiestab.cpp:372
 #, fuzzy, kde-format
 #| msgid "Caption: "
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Allkiri: "
 
-#: core/libs/properties/itempropertiestab.cpp:368
+#: core/libs/properties/itempropertiestab.cpp:373
 #, fuzzy, kde-format
 #| msgid "Pick label: "
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Valikumärgis: "
 
-#: core/libs/properties/itempropertiestab.cpp:369
+#: core/libs/properties/itempropertiestab.cpp:374
 #, fuzzy, kde-format
 #| msgid "Color label: "
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Värvimärgis:  "
 
-#: core/libs/properties/itempropertiestab.cpp:370
+#: core/libs/properties/itempropertiestab.cpp:375
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Hinnang:"
 
-#: core/libs/properties/itempropertiestab.cpp:371
+#: core/libs/properties/itempropertiestab.cpp:376
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Sildid: "
 
-#: core/libs/properties/itempropertiestab.cpp:407
+#: core/libs/properties/itempropertiestab.cpp:416
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKami omadused"
 
-#: core/libs/properties/itempropertiestab.cpp:751
+#: core/libs/properties/itempropertiestab.cpp:768
 #, fuzzy, kde-format
 #| msgid " fps"
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itempropertiestab.cpp:956
+#: core/libs/properties/itempropertiestab.cpp:973
 #, fuzzy, kde-format
 #| msgctxt "width : height (Aspect Ratio)"
 #| msgid "%1:%2 (%3)"
@@ -40237,7 +40244,7 @@ msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:989
+#: core/libs/properties/itempropertiestab.cpp:1006
 #, fuzzy, kde-format
 #| msgctxt "unit file size in bytes"
 #| msgid "B"

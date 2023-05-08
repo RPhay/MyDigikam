@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 00:47+0000\n"
-"PO-Revision-Date: 2023-04-25 18:16+0200\n"
+"POT-Creation-Date: 2023-05-08 00:43+0000\n"
+"PO-Revision-Date: 2023-05-03 22:08+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33612,7 +33612,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: WB settings"
 msgid "Black point:"
-msgstr "Punto nero:"
+msgstr "Punto di nero:"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:245
 #, kde-format
@@ -34706,7 +34706,7 @@ msgstr "Elabora gli oggetti"
 msgid "Failed to revise Exif orientation these files:"
 msgstr "Revisione dell'orientamento Exif non riuscita per questi file:"
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:349
+#: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr "Trasformazione non riuscita per questi file:"
@@ -37484,28 +37484,28 @@ msgid "Geolocation"
 msgstr "Geolocalizzazione"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "File: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:181
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Cartella: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:183
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Data: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:184
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -37524,14 +37524,14 @@ msgid "Writable: "
 msgstr "Scrivibile: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:227
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Tipo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:224
+#: core/libs/properties/itempropertiestab.cpp:228
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -37539,8 +37539,8 @@ msgstr "Dimensioni: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:225
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:229
+#: core/libs/properties/itempropertiestab.cpp:327
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -37565,77 +37565,77 @@ msgid "Camera File Properties"
 msgstr "Proprietà del file della fotocamera"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:267
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "Produttore: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:268
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "Modello: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Creata il: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:270
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "Obiettivo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:271
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "Diaframma: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:272
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "Fuoco: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:269
+#: core/libs/properties/itempropertiestab.cpp:273
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "Esposizione: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:274
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Sensibilità: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:275
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "Modalità/programma: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:276
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Flash: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:277
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -37648,42 +37648,42 @@ msgid "Photograph Properties"
 msgstr "Proprietà della fotografia"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:331
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Bit rate audio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:332
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Tipo di canale audio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:333
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Codec audio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Durata: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:329
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "Velocità fotogrammi: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:326
+#: core/libs/properties/itempropertiestab.cpp:330
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -37720,7 +37720,7 @@ msgstr "non disponibile"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:474
+#: core/libs/properties/itempropertiestab.cpp:483
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -38019,115 +38019,123 @@ msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3 Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:178
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr "Collegamento simbolico: "
 
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:185
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Proprietario: "
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:186
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Permessi: "
 
-#: core/libs/properties/itempropertiestab.cpp:216
+#: core/libs/properties/itempropertiestab.cpp:220
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Proprietà del file"
 
-#: core/libs/properties/itempropertiestab.cpp:226
+#: core/libs/properties/itempropertiestab.cpp:230
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Profondità in bit: "
 
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:231
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Modalità di colore: "
 
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:232
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Sidecar: "
 
-#: core/libs/properties/itempropertiestab.cpp:256
+#: core/libs/properties/itempropertiestab.cpp:260
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Proprietà dell'elemento"
 
-#: core/libs/properties/itempropertiestab.cpp:316
+#: core/libs/properties/itempropertiestab.cpp:320
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Proprietà della fotografia"
 
-#: core/libs/properties/itempropertiestab.cpp:360
+#: core/libs/properties/itempropertiestab.cpp:364
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Proprietà audio/video"
 
-#: core/libs/properties/itempropertiestab.cpp:367
+#: core/libs/properties/itempropertiestab.cpp:371
+#, fuzzy, kde-format
+#| msgctxt "@label: album properties"
+#| msgid "Title: "
+msgctxt "@label: item properties"
+msgid "Title: "
+msgstr "Titolo: "
+
+#: core/libs/properties/itempropertiestab.cpp:372
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Didascalia: "
 
-#: core/libs/properties/itempropertiestab.cpp:368
+#: core/libs/properties/itempropertiestab.cpp:373
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Etichetta di scelta: "
 
-#: core/libs/properties/itempropertiestab.cpp:369
+#: core/libs/properties/itempropertiestab.cpp:374
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Etichetta colorata: "
 
-#: core/libs/properties/itempropertiestab.cpp:370
+#: core/libs/properties/itempropertiestab.cpp:375
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Valutazione: "
 
-#: core/libs/properties/itempropertiestab.cpp:371
+#: core/libs/properties/itempropertiestab.cpp:376
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Tags: "
 msgstr "Tag: "
 
-#: core/libs/properties/itempropertiestab.cpp:407
+#: core/libs/properties/itempropertiestab.cpp:416
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Proprietà di digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:751
+#: core/libs/properties/itempropertiestab.cpp:768
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itempropertiestab.cpp:956
+#: core/libs/properties/itempropertiestab.cpp:973
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:989
+#: core/libs/properties/itempropertiestab.cpp:1006
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -38859,7 +38867,7 @@ msgstr "Adobe RGB"
 #, kde-format
 msgctxt "@item:inlistbox Workspace"
 msgid "Wide Gamut"
-msgstr "Ampio gamut"
+msgstr "Gamut esteso"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:611
 #, kde-format
@@ -38904,7 +38912,7 @@ msgstr ""
 "item><item><emphasis strong='true'>Adobe RGB</emphasis>: questo spazio di "
 "colori è uno spazio RGB esteso, sviluppato dalla Adobe. Si usa in "
 "applicazioni fotografiche come la pubblicità e le belle arti.</"
-"item><item><emphasis strong='true'>Ampio gamut</emphasis>: questo spazio di "
+"item><item><emphasis strong='true'>Gamut esteso</emphasis>: questo spazio di "
 "colori è una versione estesa dello spazio Adobe RGB.</item><item><emphasis "
 "strong='true'>Pro-Photo</emphasis>: questo spazio di colori è uno spazio "
 "RGB, sviluppato dalla Kodak, che offre un gamut particolarmente ampio "
@@ -52004,18 +52012,16 @@ msgid "Sequence number"
 msgstr "Numero sequenziale"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
 "Numero sequenziale (||opzioni||: ||c|| = attento al conteggio file, ||e|| = "
-"attento all'estensione, ||f|| = attendo alla cartella, ||r|| = attento alla "
-"casualità)"
+"attento all'estensione, ||f|| = attento alla cartella, ||r|| = attento alla "
+"casualità, ||ce|| = attento ai conteggi e alle estensioni, ||re|| = attento "
+"alla casualità e alle estensioni)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -52087,17 +52093,15 @@ msgstr "Numerazione attenta al testo casuale"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Numerazione attenta al conteggio file"
+msgstr "Numerazione attenta al conteggio file e alle estensioni"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Numerazione attenta al testo casuale"
+msgstr "Numerazione attenta al testo casuale e alle estensioni"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -63338,7 +63342,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:484
 #, kde-format
 msgid "Use black point compensation"
-msgstr "Usa compensazione del punto nero"
+msgstr "Usa compensazione del punto di nero"
 
 #: core/utilities/setup/setupicc.cpp:485
 #, kde-format
@@ -63347,7 +63351,7 @@ msgid ""
 "maximum black levels of digital files and the black capabilities of various "
 "digital devices.</p>"
 msgstr ""
-"<p>La <b>compensazione del punto nero</b> è un modo di effettuare delle "
+"<p>La <b>compensazione del punto di nero</b> è un modo di effettuare delle "
 "regolazioni tra i livelli massimi del nero dei file digitali e le capacità "
 "di nero dei vari dispositivi digitali.</p>"
 
