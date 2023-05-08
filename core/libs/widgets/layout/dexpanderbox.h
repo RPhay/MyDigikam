@@ -197,6 +197,10 @@ public:
     void setText(const QString& txt);
     QString text()              const;
 
+    void setButtonVisible(bool b);
+    bool buttonIsVisible()      const;
+    void setButtonIcon(const QIcon& icon);
+
     void setIcon(const QIcon &icon);
     QIcon icon()                const;
 
@@ -213,6 +217,7 @@ Q_SIGNALS:
 
     void signalExpanded(bool);
     void signalToggled(bool);
+    void signalButtonPressed();
 
 private Q_SLOTS:
 
@@ -280,6 +285,10 @@ public:
     void setItemIcon(int index, const QIcon &icon);
     QIcon itemIcon(int index)                   const;
 
+    void setButtonVisible(int index, bool b);
+    bool buttonIsVisible(int index)             const;
+    void setButtonIcon(int index, const QIcon& icon);
+
     void setItemToolTip(int index, const QString& tip);
     QString itemToolTip(int index)              const;
 
@@ -304,11 +313,13 @@ Q_SIGNALS:
 
     void signalItemExpanded(int index, bool b);
     void signalItemToggled(int index, bool b);
+    void signalItemButtonPressed(int index);
 
 private Q_SLOTS:
 
     void slotItemExpanded(bool b);
     void slotItemToggled(bool b);
+    void slotItemButtonPressed();
 
 private:
 

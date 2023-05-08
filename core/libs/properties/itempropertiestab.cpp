@@ -48,16 +48,6 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ItemPropertiesTab::Private
 {
-public:
-
-    enum Section
-    {
-        FileProperties = 0,
-        ImageProperties,
-        PhotoProperties,
-        VideoProperties,
-        digiKamProperties
-    };
 
 public:
 
@@ -219,7 +209,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay1->setColumnStretch(1, 25);
     glay1->setSpacing(0);
 
-    insertItem(ItemPropertiesTab::Private::FileProperties,
+    insertItem(ItemPropertiesTab::FileProperties,
                w1, QIcon::fromTheme(QLatin1String("dialog-information")),
                i18nc("@title: item properties", "File Properties"), QLatin1String("FileProperties"), true);
 
@@ -259,7 +249,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay2->setColumnStretch(1, 25);
     glay2->setSpacing(0);
 
-    insertItem(ItemPropertiesTab::Private::ImageProperties,
+    insertItem(ItemPropertiesTab::ImageProperties,
                w2, QIcon::fromTheme(QLatin1String("view-preview")),
                i18nc("@title: item properties", "Item Properties"), QLatin1String("ItemProperties"), true);
 
@@ -315,7 +305,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay3->setColumnStretch(1, 25);
     glay3->setSpacing(0);
 
-    insertItem(ItemPropertiesTab::Private::PhotoProperties,
+    insertItem(ItemPropertiesTab::PhotoProperties,
                w3, QIcon::fromTheme(QLatin1String("camera-photo")),
                i18nc("@title: item properties", "Photograph Properties"), QLatin1String("PhotographProperties"), true);
 
@@ -359,7 +349,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay4->setColumnStretch(1, 25);
     glay4->setSpacing(0);
 
-    insertItem(ItemPropertiesTab::Private::VideoProperties,
+    insertItem(ItemPropertiesTab::VideoProperties,
                w4, QIcon::fromTheme(QLatin1String("video-x-generic")),
                i18nc("@title: item properties", "Audio/Video Properties"), QLatin1String("VideoProperties"), true);
 
@@ -418,7 +408,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay5->setColumnStretch(1, 25);
     glay5->setSpacing(0);
 
-    insertItem(ItemPropertiesTab::Private::digiKamProperties,
+    insertItem(ItemPropertiesTab::digiKamProperties,
                w5, QIcon::fromTheme(QLatin1String("edit-text-frame-update")),
                i18nc("@title: item properties", "digiKam Properties"), QLatin1String("DigikamProperties"), true);
 
@@ -495,11 +485,11 @@ void ItemPropertiesTab::setPhotoInfoDisable(const bool b)
 {
     if (b)
     {
-        widget(ItemPropertiesTab::Private::PhotoProperties)->hide();
+        widget(ItemPropertiesTab::PhotoProperties)->hide();
     }
     else
     {
-        widget(ItemPropertiesTab::Private::PhotoProperties)->show();
+        widget(ItemPropertiesTab::PhotoProperties)->show();
     }
 }
 
@@ -507,11 +497,11 @@ void ItemPropertiesTab::setVideoInfoDisable(const bool b)
 {
     if (b)
     {
-        widget(ItemPropertiesTab::Private::VideoProperties)->hide();
+        widget(ItemPropertiesTab::VideoProperties)->hide();
     }
     else
     {
-        widget(ItemPropertiesTab::Private::VideoProperties)->show();
+        widget(ItemPropertiesTab::VideoProperties)->show();
     }
 }
 
@@ -640,11 +630,11 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     d->tags->setVisible(hasTags);
     d->labelTags->setVisible(hasTags);
 
-    widget(ItemPropertiesTab::Private::digiKamProperties)->setVisible(hasCaption   ||
-                                                                      hasRating    ||
-                                                                      hasTags      ||
-                                                                      hasPickLabel ||
-                                                                      hasColorLabel);
+    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasCaption   ||
+                                                             hasRating    ||
+                                                             hasTags      ||
+                                                             hasPickLabel ||
+                                                             hasColorLabel);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)

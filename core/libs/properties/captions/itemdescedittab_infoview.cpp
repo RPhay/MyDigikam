@@ -42,7 +42,7 @@ void ItemDescEditTab::initInformationView()
     grid2->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
     grid2->setSpacing(d->spacing);
 
-    d->tabWidget->insertTab(Private::INFOS, sv2, i18nc("@title", "Information"));
+    d->tabWidget->insertTab(INFOS, sv2, i18nc("@title", "Information"));
 }
 
 void ItemDescEditTab::slotTemplateSelected()

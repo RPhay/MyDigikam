@@ -36,6 +36,17 @@ class DIGIKAM_EXPORT ItemPropertiesTab : public DExpanderBox
 
 public:
 
+    enum Section
+    {
+        FileProperties = 0,
+        ImageProperties,
+        PhotoProperties,
+        VideoProperties,
+        digiKamProperties
+    };
+
+public:
+
     explicit ItemPropertiesTab(QWidget* const parent);
     ~ItemPropertiesTab() override;
 

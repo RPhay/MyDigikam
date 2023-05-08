@@ -95,7 +95,13 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18nc("@title: database properties", "Captions"));
     appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18nc("@title: database properties", "Versions"));
 
+    m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
+    m_propertiesTab->widget(ItemPropertiesTab::digiKamProperties)->setButtonVisible(true);
+
     // ----------------------------------------------------------
+
+    connect(m_propertiesTab, SIGNAL(signalItemButtonPressed(int)),
+            this, SLOT(slotPropertiesButtonPressed(int)));
 
     connect(this, SIGNAL(signalChangedTab(QWidget*)),
             this, SLOT(slotChangedTab(QWidget*)));
@@ -839,5 +845,22 @@ bool ItemPropertiesSideBarDB::GPSItemInfofromItemInfo(const ItemInfo& imageInfo,
 }
 
 #endif // HAVE_MARBLE
+
+void ItemPropertiesSideBarDB::slotPropertiesButtonPressed(int index)
+{
+    switch (index)
+    {
+        case ItemPropertiesTab::digiKamProperties:
+        {
+            setActiveTab(d->desceditTab);
+            d->desceditTab->setCurrentTab(ItemDescEditTab::DESCRIPTIONS);
+        }
+
+        default:
+        {
+            break;
+        }
+    }
+}
 
 } // namespace Digikam

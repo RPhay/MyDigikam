@@ -66,9 +66,19 @@ ItemDescEditTab::~ItemDescEditTab()
     delete d;
 }
 
+void ItemDescEditTab::setCurrentTab(int index)
+{
+    d->tabWidget->setCurrentIndex(index);
+}
+
+int ItemDescEditTab::currentTab() const
+{
+    return d->tabWidget->currentIndex();
+}
+
 void ItemDescEditTab::readSettings(KConfigGroup& group)
 {
-    d->tabWidget->setCurrentIndex(group.readEntry(QLatin1String("ItemDescEdit Tab"), (int)Private::DESCRIPTIONS));
+    setCurrentTab(group.readEntry(QLatin1String("ItemDescEdit Tab"), (int)DESCRIPTIONS));
     d->titleEdit->setCurrentLanguageCode(group.readEntry(QLatin1String("ItemDescEditTab TitleLang"), QString()));
     d->captionsEdit->setCurrentLanguageCode(group.readEntry(QLatin1String("ItemDescEditTab CaptionsLang"), QString()));
 
@@ -84,7 +94,7 @@ void ItemDescEditTab::readSettings(KConfigGroup& group)
 
 void ItemDescEditTab::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry(QLatin1String("ItemDescEdit Tab"),             d->tabWidget->currentIndex());
+    group.writeEntry(QLatin1String("ItemDescEdit Tab"),             currentTab());
     group.writeEntry(QLatin1String("ItemDescEditTab TitleLang"),    d->titleEdit->currentLanguageCode());
     group.writeEntry(QLatin1String("ItemDescEditTab CaptionsLang"), d->captionsEdit->currentLanguageCode());
 

@@ -24,6 +24,7 @@
 #include <QPainter>
 #include <QStyle>
 #include <QStyleOption>
+#include <QToolButton>
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QCheckBox>
@@ -460,6 +461,7 @@ public:
       : expandByDefault (true),
         checkBox        (nullptr),
         pixmapLabel     (nullptr),
+        btn             (nullptr),
         containerWidget (nullptr),
         grid            (nullptr),
         line            (nullptr),
@@ -473,6 +475,7 @@ public:
 
     QCheckBox*        checkBox;
     QLabel*           pixmapLabel;
+    QToolButton*      btn;
     QWidget*          containerWidget;
     QGridLayout*      grid;
 
@@ -497,12 +500,14 @@ DLabelExpander::DLabelExpander(QWidget* const parent)
     d->checkBox    = new QCheckBox(d->hbox);
     d->pixmapLabel = new QLabel(d->hbox);
     d->clickLabel  = new DClickLabel(d->hbox);
+    d->btn         = new QToolButton(d->hbox);
 
     QHBoxLayout* const hlay = new QHBoxLayout(d->hbox);
     hlay->addWidget(d->arrow);
     hlay->addWidget(d->checkBox);
     hlay->addWidget(d->pixmapLabel);
     hlay->addWidget(d->clickLabel, 10);
+    hlay->addWidget(d->btn);
     hlay->setContentsMargins(QMargins());
     hlay->setSpacing(spacing);
 
@@ -511,6 +516,7 @@ DLabelExpander::DLabelExpander(QWidget* const parent)
 
     d->hbox->setCursor(Qt::PointingHandCursor);
     setCheckBoxVisible(false);
+    setButtonVisible(false);
 
     d->grid->addWidget(d->line, 0, 0, 1, 3);
     d->grid->addWidget(d->hbox, 1, 0, 1, 3);
@@ -526,6 +532,9 @@ DLabelExpander::DLabelExpander(QWidget* const parent)
 
     connect(d->checkBox, &QCheckBox::toggled,
             this, &DLabelExpander::signalToggled);
+
+    connect(d->btn, &QToolButton::pressed,
+            this, &DLabelExpander::signalButtonPressed);
 }
 
 DLabelExpander::~DLabelExpander()
@@ -580,15 +589,33 @@ void DLabelExpander::setIcon(const QIcon& icon)
 
 QIcon DLabelExpander::icon() const
 {
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     return QIcon(d->pixmapLabel->pixmap(Qt::ReturnByValue));
 
 #else
 
-  return QIcon(*d->pixmapLabel->pixmap());
+    return QIcon(*d->pixmapLabel->pixmap());
 
 #endif
+
+}
+
+void DLabelExpander::setButtonVisible(bool b)
+{
+    d->btn->setVisible(b);
+}
+
+bool DLabelExpander::buttonIsVisible() const
+{
+    return d->btn->isVisible();
+}
+
+void DLabelExpander::setButtonIcon(const QIcon& icon)
+{
+    d->btn->setIcon(icon);
+    d->btn->setIconSize(QSize(style()->pixelMetric(QStyle::PM_SmallIconSize), style()->pixelMetric(QStyle::PM_SmallIconSize)));
 }
 
 void DLabelExpander::setWidget(QWidget* const widget)
@@ -709,6 +736,9 @@ public:
 
         parent->connect(exp, SIGNAL(signalToggled(bool)),
                         parent, SLOT(slotItemToggled(bool)));
+
+        parent->connect(exp, SIGNAL(signalButtonPressed()),
+                        parent, SLOT(slotItemButtonPressed()));
     }
 
 public:
@@ -810,11 +840,22 @@ void DExpanderBox::insertItem(int index, QWidget* const w, const QIcon& icon, co
 void DExpanderBox::slotItemExpanded(bool b)
 {
     DLabelExpander* const exp = dynamic_cast<DLabelExpander*>(sender());
-
+ 
     if (exp)
     {
         int index = indexOf(exp);
         Q_EMIT signalItemExpanded(index, b);
+    }
+}
+
+void DExpanderBox::slotItemButtonPressed()
+{
+    DLabelExpander* const exp = dynamic_cast<DLabelExpander*>(sender());
+
+    if (exp)
+    {
+        int index = indexOf(exp);
+        Q_EMIT signalItemButtonPressed(index);
     }
 }
 
@@ -891,6 +932,36 @@ QIcon DExpanderBox::itemIcon(int index) const
     return d->wList[index]->icon();
 }
 
+void DExpanderBox::setButtonVisible(int index, bool b)
+{
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
+    d->wList[index]->setButtonVisible(b);
+}
+
+bool DExpanderBox::buttonIsVisible(int index) const
+{
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return false;
+    }
+
+    return d->wList[index]->buttonIsVisible();
+}
+
+void DExpanderBox::setButtonIcon(int index, const QIcon& icon)
+{
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
+    d->wList[index]->setButtonIcon(icon);
+}
+
 int DExpanderBox::count() const
 {
     return d->wList.count();
@@ -932,7 +1003,6 @@ bool DExpanderBox::isItemEnabled(int index) const
     {
         return false;
     }
-
 
     return d->wList[index]->isEnabled();
 }

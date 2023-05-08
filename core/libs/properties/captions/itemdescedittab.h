@@ -48,6 +48,15 @@ class ItemDescEditTab : public DVBox
 
 public:
 
+    enum DescEditTab
+    {
+        DESCRIPTIONS = 0,
+        TAGS,
+        INFOS
+    };
+
+public:
+
     explicit ItemDescEditTab(QWidget* const parent);
     ~ItemDescEditTab()                      override;
 
@@ -58,6 +67,9 @@ public:
     void writeSettings(KConfigGroup& group);
 
     bool isModified() const;
+
+    void setCurrentTab(int);
+    int  currentTab() const;
 
 Q_SIGNALS:
 

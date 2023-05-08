@@ -98,18 +98,18 @@ void ItemDescEditTab::initDescriptionView()
     grid1->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
     grid1->setSpacing(d->spacing);
 
-    d->tabWidget->insertTab(Private::DESCRIPTIONS, sv, i18nc("@title", "Description"));
+    d->tabWidget->insertTab(DESCRIPTIONS, sv, i18nc("@title", "Description"));
 }
 
 void ItemDescEditTab::setFocusToTitlesEdit()
 {
-    d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);
+    d->tabWidget->setCurrentIndex(DESCRIPTIONS);
     d->titleEdit->textEdit()->setFocus();
 }
 
 void ItemDescEditTab::setFocusToCommentsEdit()
 {
-    d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);
+    d->tabWidget->setCurrentIndex(DESCRIPTIONS);
     d->captionsEdit->altLangStrEdit()->textEdit()->setFocus();
 }
 

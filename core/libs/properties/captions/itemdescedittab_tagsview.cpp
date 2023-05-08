@@ -79,7 +79,7 @@ void ItemDescEditTab::initTagsView()
     grid3->addWidget(tagsSearch,      3, 0, 1, 2);
     grid3->setRowStretch(1, 10);
 
-    d->tabWidget->insertTab(Private::TAGS, sv3, i18nc("@title", "Tags"));
+    d->tabWidget->insertTab(TAGS, sv3, i18nc("@title", "Tags"));
 
     // ---
 
@@ -106,20 +106,20 @@ void ItemDescEditTab::setFocusToTagsView()
 {
     d->lastSelectedWidget = qobject_cast<QWidget*>(d->tagCheckView);
     d->tagCheckView->setFocus();
-    d->tabWidget->setCurrentIndex(Private::TAGS);
+    d->tabWidget->setCurrentIndex(TAGS);
 }
 
 void ItemDescEditTab::setFocusToNewTagEdit()
 {
     // select "Tags" tab and focus the NewTagLineEdit widget
 
-    d->tabWidget->setCurrentIndex(Private::TAGS);
+    d->tabWidget->setCurrentIndex(TAGS);
     d->newTagEdit->setFocus();
 }
 
 void ItemDescEditTab::activateAssignedTagsButton()
 {
-    d->tabWidget->setCurrentIndex(Private::TAGS);
+    d->tabWidget->setCurrentIndex(TAGS);
     d->assignedTagsBtn->click();
 }
 

@@ -102,6 +102,7 @@ private Q_SLOTS:
     void slotFileMetadataChanged(const QUrl& url);
     void slotImageChangeDatabase(const ImageChangeset& changeset);
     void slotImageTagChanged(const ImageTagChangeset& changeset);
+    void slotPropertiesButtonPressed(int);
 
 private:
 

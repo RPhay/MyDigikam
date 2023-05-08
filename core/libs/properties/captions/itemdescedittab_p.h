@@ -85,15 +85,6 @@ class Q_DECL_HIDDEN ItemDescEditTab::Private
 
 public:
 
-    enum DescEditTab
-    {
-        DESCRIPTIONS = 0,
-        TAGS,
-        INFOS
-    };
-
-public:
-
     explicit Private(ItemDescEditTab* const tab);
 
 public:
