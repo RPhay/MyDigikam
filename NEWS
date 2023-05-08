@@ -261,14 +261,23 @@ BUGFIXES:
 251 ==> 469409 - digiKam crashes while scanning for new Items.
 252 ==> 469450 - digiKam writes metadata to read-only files.
 253 ==> 469456 - Rating is not written to metadata for HEIC file types.
-254 ==> 
-255 ==> 
-256 ==> 
-257 ==> 
-258 ==> 
-259 ==> 
-260 ==> 
-261 ==> 
-262 ==> 
-263 ==> 
-264 ==> 
+254 ==> 211017 - Downloading images crashes digiKam.
+255 ==> 212588 - digiKam crash on USB storage import.
+256 ==> 214144 - digiKam crashes while downloading pictures from camera (with wizard).
+257 ==> 224852 - Application: digiKam (digiKam), signal: Segmentation fault [Current thread is 1 (Thread 0xb698d700 (LWP 1595))].
+258 ==> 212131 - digiKam: Happens everytime (since a few weeks) when importing pictures from a CF card to a smb network share. That worked before flawlessly.
+259 ==> 214119 - digiKam crashes when importing pictures from CF card.
+260 ==> 214732 - digiKam crashed when donwloading the pictures from a Rebel XTi.
+261 ==> 210963 - digiKam crashed before importing images from card reader.
+262 ==> 221368 - digiKam Import USB Medion MD 85416.
+263 ==> 224911 - After open the digicam and start the importorter to import a sd cart (16 GB Kingston) the application crashed.
+264 ==> 225015 - Importing jpeg fotos from a Nikon D300 into a pre-created empty sub album.
+265 ==> 213075 - digiKam downloding to new folder crashes.
+266 ==> 213153 - digiKam crashes trying to download one photo from camera.
+267 ==> 215524 - digiKam import create card.
+268 ==> 225000 - digiKam crashes import from card reader.
+269 ==> 210906 - Segfault: digiKam downloading from SD card.
+270 ==> 218669 - digiKam crashes when starting downloading form usb attached camera.
+271 ==> 219416 - Import pictures in digiKam.
+272 ==> 214031 - digiKam crashes while importing new photos.
+273 ==> 
