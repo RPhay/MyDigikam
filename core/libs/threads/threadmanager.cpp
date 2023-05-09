@@ -265,11 +265,13 @@ ThreadManager::ThreadManager()
     d->parkingThread = new ParkingThread(this);
     d->pool          = new QThreadPool(this);
 
-    d->pool->setMaxThreadCount(5);
+    d->pool->setMaxThreadCount(QThread::idealThreadCount() + 1);
 }
 
 ThreadManager::~ThreadManager()
 {
+    d->pool->waitForDone();
+
     delete d;
 }
 
