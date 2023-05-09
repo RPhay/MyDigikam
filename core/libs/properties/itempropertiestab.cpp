@@ -341,6 +341,54 @@ ItemPropertiesTab::~ItemPropertiesTab()
     delete d;
 }
 
+void ItemPropertiesTab::showOrHideCaptionAndTags()
+{
+    bool hasTitle      = !d->labelTitle->text().isEmpty();
+    bool hasCaption    = !d->labelCaption->text().isEmpty();
+    bool hasPickLabel  = !d->labelPickLabel->adjustedText().isEmpty();
+    bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
+    bool hasRating     = !d->labelRating->adjustedText().isEmpty();
+    bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
+
+    d->labelPhotoDateTime->setVisible(hasDate);
+
+    d->labelTitle->setVisible(hasTitle);
+    d->title->setVisible(hasTitle);
+    d->labelCaption->setVisible(hasCaption);
+    d->caption->setVisible(hasCaption);
+    d->pickLabel->setVisible(hasPickLabel);
+    d->labelPickLabel->setVisible(hasPickLabel);
+    d->colorLabel->setVisible(hasColorLabel);
+    d->labelColorLabel->setVisible(hasColorLabel);
+    d->rating->setVisible(hasRating);
+    d->labelRating->setVisible(hasRating);
+
+    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasTitle     ||
+                                                             hasCaption   ||
+                                                             hasRating    ||
+                                                             hasPickLabel ||
+                                                             hasDate      ||
+                                                             hasColorLabel);
+
+    bool hasTags       = !d->labelTags->text().isEmpty();
+    bool hasPeoples    = !d->labelPeoples->text().isEmpty();
+
+    d->tags->setVisible(hasTags);
+    d->labelTags->setVisible(hasTags);
+    d->peoples->setVisible(hasPeoples);
+    d->labelPeoples->setVisible(hasPeoples);
+
+    widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags || hasPeoples);
+
+    bool hasLocation = !d->labelLocation->text().isEmpty();
+
+    widget(ItemPropertiesTab::LocationProperties)->setVisible(hasLocation);
+
+    bool hasRights = !d->labelRights->text().isEmpty();
+
+    widget(ItemPropertiesTab::RightProperties)->setVisible(hasRights);
+}
+
 void ItemPropertiesTab::setCurrentURL(const QUrl& url)
 {
     if (url.isEmpty())
@@ -532,54 +580,6 @@ void ItemPropertiesTab::setPhotoFlash(const QString& str)
 void ItemPropertiesTab::setPhotoWhiteBalance(const QString& str)
 {
     d->labelPhotoWhiteBalance->setAdjustedText(str);
-}
-
-void ItemPropertiesTab::showOrHideCaptionAndTags()
-{
-    bool hasTitle      = !d->labelTitle->text().isEmpty();
-    bool hasCaption    = !d->labelCaption->text().isEmpty();
-    bool hasPickLabel  = !d->labelPickLabel->adjustedText().isEmpty();
-    bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
-    bool hasRating     = !d->labelRating->adjustedText().isEmpty();
-    bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
-
-    d->labelPhotoDateTime->setVisible(hasDate);
-
-    d->labelTitle->setVisible(hasTitle);
-    d->title->setVisible(hasTitle);
-    d->labelCaption->setVisible(hasCaption);
-    d->caption->setVisible(hasCaption);
-    d->pickLabel->setVisible(hasPickLabel);
-    d->labelPickLabel->setVisible(hasPickLabel);
-    d->colorLabel->setVisible(hasColorLabel);
-    d->labelColorLabel->setVisible(hasColorLabel);
-    d->rating->setVisible(hasRating);
-    d->labelRating->setVisible(hasRating);
-
-    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasTitle     ||
-                                                             hasCaption   ||
-                                                             hasRating    ||
-                                                             hasPickLabel ||
-                                                             hasDate      ||
-                                                             hasColorLabel);
-
-    bool hasTags       = !d->labelTags->text().isEmpty();
-    bool hasPeoples    = !d->labelPeoples->text().isEmpty();
-
-    d->tags->setVisible(hasTags);
-    d->labelTags->setVisible(hasTags);
-    d->peoples->setVisible(hasPeoples);
-    d->labelPeoples->setVisible(hasPeoples);
-
-    widget(ItemPropertiesTab::TagsProperties)->setVisible(hasTags || hasPeoples);
-
-    bool hasLocation = !d->labelLocation->text().isEmpty();
-
-    widget(ItemPropertiesTab::LocationProperties)->setVisible(hasLocation);
-
-    bool hasRights = !d->labelRights->text().isEmpty();
-
-    widget(ItemPropertiesTab::RightProperties)->setVisible(hasRights);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)
