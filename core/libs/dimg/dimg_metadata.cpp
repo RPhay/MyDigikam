@@ -225,10 +225,10 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         // So for a JPEG file, we don't store the IPTC preview.
 
         if (
-            storeNewPreview                                   &&
-            (destMimeType.toUpper() != QLatin1String("JPG"))  &&
-            (destMimeType.toUpper() != QLatin1String("JPE"))  &&
-            (destMimeType.toUpper() != QLatin1String("JPEG"))
+            storeNewPreview                                    &&
+            ((destMimeType.toUpper() == QLatin1String("PNG"))  ||
+             (destMimeType.toUpper() == QLatin1String("TIF"))  ||
+             (destMimeType.toUpper() == QLatin1String("TIFF")))
            )
         {
             // Non JPEG file, we update IPTC and XMP preview
@@ -237,8 +237,8 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         }
 
         if (
-            (destMimeType.toUpper() == QLatin1String("TIFF")) ||
-            (destMimeType.toUpper() == QLatin1String("TIF"))
+            (destMimeType.toUpper() == QLatin1String("TIF")) ||
+            (destMimeType.toUpper() == QLatin1String("TIFF"))
            )
         {
             // With TIFF file, we don't store JPEG thumbnail, we even need to erase it and store

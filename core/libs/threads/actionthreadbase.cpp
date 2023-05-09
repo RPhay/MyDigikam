@@ -85,7 +85,7 @@ ActionThreadBase::~ActionThreadBase()
 {
     // Cancel the thread
 
-    cancel();
+    cancel(false);
 
     // Wait for the thread to finish
 
@@ -146,9 +146,16 @@ void ActionThreadBase::slotJobFinished()
     d->condVarJobs.wakeAll();
 }
 
-void ActionThreadBase::cancel()
+void ActionThreadBase::cancel(bool isCancel)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
+    if (isCancel)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
+    }
+    else
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Finish Main Thread";
+    }
 
     QMutexLocker lock(&d->mutex);
 
