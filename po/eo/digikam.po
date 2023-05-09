@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:43+0000\n"
-"PO-Revision-Date: 2023-05-01 05:19+0100\n"
+"POT-Creation-Date: 2023-05-09 00:44+0000\n"
+"PO-Revision-Date: 2023-05-08 09:05+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -31981,7 +31981,7 @@ msgstr "X-deŝovo:"
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:166
 #, kde-format
 msgid "X offset "
-msgstr "X ofseto"
+msgstr "X deŝovo"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:170
 #, kde-format
@@ -31991,7 +31991,7 @@ msgstr "Y-deŝovo:"
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:175
 #, kde-format
 msgid "Y offset "
-msgstr "Y ofseto"
+msgstr "Y deŝovo"
 
 #: core/libs/dimg/filters/lens/lensdistortionfilter.cpp:67
 #, kde-format
@@ -34733,7 +34733,7 @@ msgstr "Detekti Sub kaj Super Elmeto"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
-msgstr "Detekti ĉu la bildoj estas subeksponitaj aŭ troeksponitaj"
+msgstr "Detekti ĉu la bildoj estas subelmetitaj aŭ troelmetitaj"
 
 #: core/libs/iojobs/iojob.cpp:70
 #, kde-format
@@ -36461,7 +36461,7 @@ msgstr "Subtitoloj:"
 msgid "Enter caption author name here."
 msgstr "Enigu ĉi tie la nomon de aŭtoro de la bildoteksto."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:265
+#: core/libs/properties/captions/itemdescedittab.cpp:275
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image caption. "
@@ -36469,7 +36469,7 @@ msgid_plural "You have edited the captions of %1 images. "
 msgstr[0] "Vi redaktis la bildan apudskribon. "
 msgstr[1] "Vi redaktis la apudskribojn de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:271
+#: core/libs/properties/captions/itemdescedittab.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image title. "
@@ -36477,7 +36477,7 @@ msgid_plural "You have edited the titles of %1 images. "
 msgstr[0] "Vi redaktis la bildan titolon. "
 msgstr[1] "Vi redaktis la titolojn de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:277
+#: core/libs/properties/captions/itemdescedittab.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
@@ -36485,7 +36485,7 @@ msgid_plural "You have edited the date of %1 images. "
 msgstr[0] "Vi redaktis la daton de la bildo. "
 msgstr[1] "Vi redaktis la daton de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:283
+#: core/libs/properties/captions/itemdescedittab.cpp:293
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
@@ -36493,7 +36493,7 @@ msgid_plural "You have edited the pick label of %1 images. "
 msgstr[0] "Vi redaktis la elekt-etikedon de la bildo. "
 msgstr[1] "Vi redaktis la elekt-etikedon de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:289
+#: core/libs/properties/captions/itemdescedittab.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
@@ -36501,7 +36501,7 @@ msgid_plural "You have edited the color label of %1 images. "
 msgstr[0] "Vi redaktis la kolor-etikedon de la bildo. "
 msgstr[1] "Vi redaktis la kolor-etikedon de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:295
+#: core/libs/properties/captions/itemdescedittab.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
@@ -36509,7 +36509,7 @@ msgid_plural "You have edited the rating of %1 images. "
 msgstr[0] "Vi redaktis la pritakson de la bildo. "
 msgstr[1] "Vi redaktis la pritakson de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:301
+#: core/libs/properties/captions/itemdescedittab.cpp:311
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
@@ -36517,13 +36517,13 @@ msgid_plural "You have edited the tags of %1 images. "
 msgstr[0] "Vi redaktis la etikedon de la bildo. "
 msgstr[1] "Vi redaktis la etikedon de %1 bildoj. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:306
+#: core/libs/properties/captions/itemdescedittab.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
 msgstr "Ĉu vi volas apliki viajn ŝanĝojn?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:310
+#: core/libs/properties/captions/itemdescedittab.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
@@ -36531,104 +36531,104 @@ msgid_plural "<p>You have edited the metadata of %1 images: </p>"
 msgstr[0] "<p>Vi redaktis la metadatenojn de la bildo: </p>"
 msgstr[1] "<p>Vi redaktis la metadatenojn de %1 bildoj: </p>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:318
+#: core/libs/properties/captions/itemdescedittab.cpp:328
 #, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
 msgstr "<li>titolo</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:323
+#: core/libs/properties/captions/itemdescedittab.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
 msgstr "<li>bildono</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:328
+#: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
 msgstr "<li>dato</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:333
+#: core/libs/properties/captions/itemdescedittab.cpp:343
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
 msgstr "<li>elekti etikedon</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:338
+#: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
 msgstr "<li>kolora etikedo</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:343
+#: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
 msgstr "<li>taksado</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:348
+#: core/libs/properties/captions/itemdescedittab.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
 msgstr "<li>etikedoj</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:353
+#: core/libs/properties/captions/itemdescedittab.cpp:363
 #, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
 msgstr "<p>Ĉu vi volas apliki viajn ŝanĝojn?</p>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:356
+#: core/libs/properties/captions/itemdescedittab.cpp:366
 #, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
 msgstr "Ĉiam apliki ŝanĝojn sen konfirmo"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:359
+#: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Ĉu apliki Ŝanĝojn?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:369
+#: core/libs/properties/captions/itemdescedittab.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
 msgstr "Ĉu apliki ŝanĝojn?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:428
+#: core/libs/properties/captions/itemdescedittab.cpp:438
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr "Legante metadatumojn el dosieroj. Bonvolu atendi..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:460
+#: core/libs/properties/captions/itemdescedittab.cpp:470
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr "Skribante metadatenojn al dosieroj. Bonvolu atendi..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:503
+#: core/libs/properties/captions/itemdescedittab.cpp:513
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr "Legi metadatenojn de dosiero al datumbazo"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:505
-#: core/libs/properties/captions/itemdescedittab.cpp:524
+#: core/libs/properties/captions/itemdescedittab.cpp:515
+#: core/libs/properties/captions/itemdescedittab.cpp:534
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr "Skribi metadatenojn al ĉiu dosiero"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:521
+#: core/libs/properties/captions/itemdescedittab.cpp:531
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr "Legi metadatenojn de ĉiu dosiero al datumbazo"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:529
+#: core/libs/properties/captions/itemdescedittab.cpp:539
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
@@ -36887,28 +36887,27 @@ msgid "Geolocation"
 msgstr "Geolokigo"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr "Dosiero: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:178
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "Dosierujo:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:183
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr "Dato: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:184
+#: core/libs/properties/itempropertiestab.cpp:181
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -36927,14 +36926,14 @@ msgid "Writable: "
 msgstr "Skribebla:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:229
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "Tipo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:230
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -36942,8 +36941,8 @@ msgstr "Dimensioj: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:229
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:231
+#: core/libs/properties/itempropertiestab.cpp:325
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -36968,77 +36967,76 @@ msgid "Camera File Properties"
 msgstr "Fotilaj Dosieraj Propraĵoj"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr "Fari:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:270
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr "Modelo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:269
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr "Kreita: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:271
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr "Lenso:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:272
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "Aperturo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:273
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "Fokulo:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:274
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "Ekspono: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:274
+#: core/libs/properties/itempropertiestab.cpp:275
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "Sentemeco:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:275
+#: core/libs/properties/itempropertiestab.cpp:276
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr "Reĝimo/Programo:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:276
+#: core/libs/properties/itempropertiestab.cpp:277
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "Ekbrilo:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:277
+#: core/libs/properties/itempropertiestab.cpp:278
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -37051,42 +37049,42 @@ msgid "Photograph Properties"
 msgstr "Foto Propraĵoj"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:331
+#: core/libs/properties/itempropertiestab.cpp:329
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "Aŭdiobitrapideco:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:332
+#: core/libs/properties/itempropertiestab.cpp:330
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr "Tipo de Audio-Kanalo:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:333
+#: core/libs/properties/itempropertiestab.cpp:331
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr "Aŭdiokodeko:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:326
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr "Daŭro:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:327
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "Framfrekvenco:"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:330
+#: core/libs/properties/itempropertiestab.cpp:328
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -37112,7 +37110,7 @@ msgstr "senŝanĝe"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:606
+#: core/libs/properties/itempropertiessidebardb.cpp:618
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37122,8 +37120,8 @@ msgstr "neatingebla"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiestab.cpp:524
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -37133,7 +37131,7 @@ msgstr "Ne"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:666
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -37366,8 +37364,8 @@ msgstr "Nekalibrita"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:631
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:656
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37380,21 +37378,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:665
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:685
+#: core/libs/properties/itempropertiessidebardb.cpp:697
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:702
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -37412,129 +37410,151 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versioj"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:648
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:179
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr "Simligo:"
 
-#: core/libs/properties/itempropertiestab.cpp:185
+#: core/libs/properties/itempropertiestab.cpp:182
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Posedanto: "
 
-#: core/libs/properties/itempropertiestab.cpp:186
+#: core/libs/properties/itempropertiestab.cpp:183
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Permesoj: "
 
-#: core/libs/properties/itempropertiestab.cpp:220
+#: core/libs/properties/itempropertiestab.cpp:222
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Dosierecoj"
 
-#: core/libs/properties/itempropertiestab.cpp:230
+#: core/libs/properties/itempropertiestab.cpp:232
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Bida profundo:"
 
-#: core/libs/properties/itempropertiestab.cpp:231
+#: core/libs/properties/itempropertiestab.cpp:233
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Kolora reĝimo:"
 
-#: core/libs/properties/itempropertiestab.cpp:232
+#: core/libs/properties/itempropertiestab.cpp:234
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr "Kromĉaro:"
 
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:262
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Eroj Propraĵoj"
 
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:318
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Foto Propraĵoj"
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:362
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Aŭdio/Video Propraĵoj"
 
-#: core/libs/properties/itempropertiestab.cpp:371
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#: core/libs/properties/itempropertiestab.cpp:376
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
-msgstr "Titolo:"
+msgstr "Titolo: "
 
-#: core/libs/properties/itempropertiestab.cpp:372
+#: core/libs/properties/itempropertiestab.cpp:377
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Titolo:"
 
-#: core/libs/properties/itempropertiestab.cpp:373
+#: core/libs/properties/itempropertiestab.cpp:378
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Elektu etikedon:"
 
-#: core/libs/properties/itempropertiestab.cpp:374
+#: core/libs/properties/itempropertiestab.cpp:379
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Kolora etikedo:"
 
-#: core/libs/properties/itempropertiestab.cpp:375
+#: core/libs/properties/itempropertiestab.cpp:380
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Taksado:"
 
-#: core/libs/properties/itempropertiestab.cpp:376
-#, kde-format
-msgctxt "@label: item properties"
-msgid "Tags: "
-msgstr "Etikedoj:"
-
-#: core/libs/properties/itempropertiestab.cpp:416
+#: core/libs/properties/itempropertiestab.cpp:409
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "digiKam Propraĵoj"
 
-#: core/libs/properties/itempropertiestab.cpp:768
+#: core/libs/properties/itempropertiestab.cpp:416
+#, fuzzy, kde-format
+#| msgctxt "@item: iptc"
+#| msgid "Keywords"
+msgctxt "@label: item properties"
+msgid "Keywords: "
+msgstr "Ĉefvortoj"
+
+#: core/libs/properties/itempropertiestab.cpp:420
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@label: item properties"
+msgid "Peoples: "
+msgstr "Homoj"
+
+#: core/libs/properties/itempropertiestab.cpp:435
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title: item properties"
+msgid "Tags"
+msgstr "Etikedoj"
+
+#: core/libs/properties/itempropertiestab.cpp:453
+#, fuzzy, kde-format
+#| msgid "Location"
+msgctxt "@title: item properties"
+msgid "Location"
+msgstr "Loko"
+
+#: core/libs/properties/itempropertiestab.cpp:826
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr "fps"
 
-#: core/libs/properties/itempropertiestab.cpp:973
+#: core/libs/properties/itempropertiestab.cpp:1068
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:1006
+#: core/libs/properties/itempropertiestab.cpp:1101
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
@@ -40872,7 +40892,7 @@ msgstr "GenericCopy: plej malrapida. Ĝenerala cpu-kopio"
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:350
 #, kde-format
 msgid "Multithread decoding may crash"
-msgstr "Multfadena malkodado povas kraŝi"
+msgstr "Multfadena malkodado povas panei"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:389
 #, kde-format
@@ -41968,7 +41988,7 @@ msgstr "Profila Versio"
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC version used to record the profile"
-msgstr "La ICC-versio kutimis registri la profilon"
+msgstr "La ICC-versio uzata por registri la profilon"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:152
 #, kde-format
@@ -43890,7 +43910,7 @@ msgstr "Baza Laborbileto"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:137
 #, kde-format
 msgid "Dynamic Media"
-msgstr "Dinamika Amaskomunikilaro"
+msgstr "Dinamikaj Aŭdvidaĵoj"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:141
 #, kde-format
@@ -52793,7 +52813,7 @@ msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
-"Agordas la ofseton inter bildaj tempoj kaj trakotempoj. ekz. korekti "
+"Agordas la deŝovon inter bildaj tempoj kaj trakotempoj. ekz. korekti "
 "malĝustan fotilan horloĝon aŭ malsaman horzonon."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
@@ -52876,7 +52896,7 @@ msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
-"Ne eblis korelacii ajnan bildon - bonvolu certigi, ke la agordoj de ofseto "
+"Ne eblis korelacii ajnan bildon - bonvolu certigi, ke la agordoj de deŝovo "
 "kaj interspaco estas ĝustaj."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
@@ -60132,18 +60152,18 @@ msgstr "Agordu la fonkoloron por uzi en la areo de bildredaktilo."
 #: core/utilities/setup/editor/setupeditoriface.cpp:153
 #, kde-format
 msgid "Exposure Indicators"
-msgstr "Eksponaj Indikiloj"
+msgstr "Elmetaj Indikiloj"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:156
 #, kde-format
 msgid "&Under-exposure color: "
-msgstr "S&ubmalkovra koloro:"
+msgstr "S&ubelmeta koloro:"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:159
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
-"Agordu koloron uzatan en bildredaktilo por identigi submalkovritajn "
+"Agordu koloron uzatan en bildredaktilo por identigi subelmetitajn "
 "rastrumerojn."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:162
@@ -60158,7 +60178,7 @@ msgid ""
 "check under exposed pixels."
 msgstr ""
 "Alĝustigu la procentojn de la fundo de bilda histogramo, kiu estos uzata por "
-"kontroli sub elmontritaj pikseloj."
+"kontroli subelmetitajn rastrumerojn."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:171
 #, kde-format
@@ -60169,7 +60189,8 @@ msgstr "Tr&omalkovra koloro:"
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
-"Agordu koloron uzatan en bildredaktilo por identigi troeksponitajn pikselojn."
+"Agordu koloron uzatan en bildredaktilo por identigi troelmetitajn "
+"rastrumerojn."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:177
 #, kde-format
@@ -60183,7 +60204,7 @@ msgid ""
 "check over exposed pixels."
 msgstr ""
 "Alĝustigu la procentojn de la supro de bilda histogramo, kiu estos uzata por "
-"kontroli nekovritajn pikselojn."
+"kontroli troelmetitajn rastrumerojn."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:186
 #, kde-format
@@ -63064,6 +63085,10 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ĉu vi volas restarigi ĉiujn video-agordojn al la defaŭlta valoro?"
+
+#~ msgctxt "@label: item properties"
+#~ msgid "Tags: "
+#~ msgstr "Etikedoj:"
 
 #~ msgid ""
 #~ "Other process are not finished yet.\n"

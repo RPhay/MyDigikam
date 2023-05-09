@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:43+0000\n"
+"POT-Creation-Date: 2023-05-09 00:44+0000\n"
 "PO-Revision-Date: 2021-08-23 13:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -39015,7 +39015,7 @@ msgstr "Legendas: "
 msgid "Enter caption author name here."
 msgstr "Digite aqui o nome do autor do título."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:265
+#: core/libs/properties/captions/itemdescedittab.cpp:275
 #, fuzzy, kde-format
 #| msgid "You have edited the image caption. "
 #| msgid_plural "You have edited the captions of %1 images. "
@@ -39025,7 +39025,7 @@ msgid_plural "You have edited the captions of %1 images. "
 msgstr[0] "Você editou a legenda da imagem. "
 msgstr[1] "Você editou as legendas de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:271
+#: core/libs/properties/captions/itemdescedittab.cpp:281
 #, fuzzy, kde-format
 #| msgid "You have edited the image title. "
 #| msgid_plural "You have edited the titles of %1 images. "
@@ -39035,7 +39035,7 @@ msgid_plural "You have edited the titles of %1 images. "
 msgstr[0] "Você editou o título da imagem. "
 msgstr[1] "Você editou os títulos de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:277
+#: core/libs/properties/captions/itemdescedittab.cpp:287
 #, fuzzy, kde-format
 #| msgid "You have edited the date of the image. "
 #| msgid_plural "You have edited the date of %1 images. "
@@ -39045,7 +39045,7 @@ msgid_plural "You have edited the date of %1 images. "
 msgstr[0] "Você editou a data da imagem. "
 msgstr[1] "Você editou a data de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:283
+#: core/libs/properties/captions/itemdescedittab.cpp:293
 #, fuzzy, kde-format
 #| msgid "You have edited the pick label of the image. "
 #| msgid_plural "You have edited the pick label of %1 images. "
@@ -39055,7 +39055,7 @@ msgid_plural "You have edited the pick label of %1 images. "
 msgstr[0] "Você editou a legenda de seleção da imagem. "
 msgstr[1] "Você editou a legenda de seleção de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:289
+#: core/libs/properties/captions/itemdescedittab.cpp:299
 #, fuzzy, kde-format
 #| msgid "You have edited the color label of the image. "
 #| msgid_plural "You have edited the color label of %1 images. "
@@ -39065,7 +39065,7 @@ msgid_plural "You have edited the color label of %1 images. "
 msgstr[0] "Você editou a legenda de cores da imagem. "
 msgstr[1] "Você editou a legenda de cores de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:295
+#: core/libs/properties/captions/itemdescedittab.cpp:305
 #, fuzzy, kde-format
 #| msgid "You have edited the rating of the image. "
 #| msgid_plural "You have edited the rating of %1 images. "
@@ -39075,7 +39075,7 @@ msgid_plural "You have edited the rating of %1 images. "
 msgstr[0] "Você editou a avaliação da imagem. "
 msgstr[1] "Você editou a avaliação de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:301
+#: core/libs/properties/captions/itemdescedittab.cpp:311
 #, fuzzy, kde-format
 #| msgid "You have edited the tags of the image. "
 #| msgid_plural "You have edited the tags of %1 images. "
@@ -39085,14 +39085,14 @@ msgid_plural "You have edited the tags of %1 images. "
 msgstr[0] "Você editou as etiquetas da imagem. "
 msgstr[1] "Você editou as etiquetas de %1 imagens. "
 
-#: core/libs/properties/captions/itemdescedittab.cpp:306
+#: core/libs/properties/captions/itemdescedittab.cpp:316
 #, fuzzy, kde-format
 #| msgid "Do you want to apply your changes?"
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
 msgstr "Deseja aplicar as suas alterações?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:310
+#: core/libs/properties/captions/itemdescedittab.cpp:320
 #, fuzzy, kde-format
 #| msgid "<p>You have edited the metadata of the image: </p><p><ul>"
 #| msgid_plural "<p>You have edited the metadata of %1 images: </p><p><ul>"
@@ -39102,120 +39102,120 @@ msgid_plural "<p>You have edited the metadata of %1 images: </p>"
 msgstr[0] "<p>Você editou os metadados da imagem: </p><p><ul>"
 msgstr[1] "<p>Você editou os metadados de %1 imagens: </p><p><ul>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:318
+#: core/libs/properties/captions/itemdescedittab.cpp:328
 #, fuzzy, kde-format
 #| msgid "<li>title</li>"
 msgctxt "@info"
 msgid "<li>title</li>"
 msgstr "<li>título</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:323
+#: core/libs/properties/captions/itemdescedittab.cpp:333
 #, fuzzy, kde-format
 #| msgid "<li>caption</li>"
 msgctxt "@info"
 msgid "<li>caption</li>"
 msgstr "<li>legenda</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:328
+#: core/libs/properties/captions/itemdescedittab.cpp:338
 #, fuzzy, kde-format
 #| msgid "<li>date</li>"
 msgctxt "@info"
 msgid "<li>date</li>"
 msgstr "<li>data</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:333
+#: core/libs/properties/captions/itemdescedittab.cpp:343
 #, fuzzy, kde-format
 #| msgid "<li>pick label</li>"
 msgctxt "@info"
 msgid "<li>pick label</li>"
 msgstr "<li>legenda de seleção</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:338
+#: core/libs/properties/captions/itemdescedittab.cpp:348
 #, fuzzy, kde-format
 #| msgid "<li>color label</li>"
 msgctxt "@info"
 msgid "<li>color label</li>"
 msgstr "<li>legenda de cores</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:343
+#: core/libs/properties/captions/itemdescedittab.cpp:353
 #, fuzzy, kde-format
 #| msgid "<li>rating</li>"
 msgctxt "@info"
 msgid "<li>rating</li>"
 msgstr "<li>avaliação</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:348
+#: core/libs/properties/captions/itemdescedittab.cpp:358
 #, fuzzy, kde-format
 #| msgid "<li>tags</li>"
 msgctxt "@info"
 msgid "<li>tags</li>"
 msgstr "<li>etiquetas</li>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:353
+#: core/libs/properties/captions/itemdescedittab.cpp:363
 #, fuzzy, kde-format
 #| msgid "<p>Do you want to apply your changes?</p>"
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
 msgstr "<p>Deseja aplicar as suas alterações?</p>"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:356
+#: core/libs/properties/captions/itemdescedittab.cpp:366
 #, fuzzy, kde-format
 #| msgid "Always apply changes without confirmation"
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
 msgstr "Sempre aplicar as alterações sem confirmação"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:359
+#: core/libs/properties/captions/itemdescedittab.cpp:369
 #, fuzzy, kde-format
 #| msgid "Apply changes?"
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Aplicar as alterações?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:369
+#: core/libs/properties/captions/itemdescedittab.cpp:379
 #, fuzzy, kde-format
 #| msgid "Apply changes?"
 msgctxt "@info"
 msgid "Apply changes?"
 msgstr "Aplicar as alterações?"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:428
+#: core/libs/properties/captions/itemdescedittab.cpp:438
 #, fuzzy, kde-format
 #| msgid "Reading metadata from files. Please wait..."
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr "Lendo os metadados dos arquivos. Por favor, aguarde..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:460
+#: core/libs/properties/captions/itemdescedittab.cpp:470
 #, fuzzy, kde-format
 #| msgid "Writing metadata to files. Please wait..."
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr "Gravando os metadados nos arquivos. Por favor, aguarde..."
 
-#: core/libs/properties/captions/itemdescedittab.cpp:503
+#: core/libs/properties/captions/itemdescedittab.cpp:513
 #, fuzzy, kde-format
 #| msgid "Read metadata from file to database"
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr "Ler metadados do arquivo para o banco de dados"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:505
-#: core/libs/properties/captions/itemdescedittab.cpp:524
+#: core/libs/properties/captions/itemdescedittab.cpp:515
+#: core/libs/properties/captions/itemdescedittab.cpp:534
 #, fuzzy, kde-format
 #| msgid "Write metadata to each file"
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr "Gravar metadados para cada arquivo"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:521
+#: core/libs/properties/captions/itemdescedittab.cpp:531
 #, fuzzy, kde-format
 #| msgid "Read metadata from each file to database"
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr "Ler os metadados de cada arquivo para o banco de dados"
 
-#: core/libs/properties/captions/itemdescedittab.cpp:529
+#: core/libs/properties/captions/itemdescedittab.cpp:539
 #, fuzzy, kde-format
 #| msgid "Assign Tags to &Selected Items"
 msgctxt "@action"
@@ -39502,7 +39502,6 @@ msgid "Geolocation"
 msgstr "Localização geográfica"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 #| msgid "File: "
 msgctxt "@label: item properties"
@@ -39510,7 +39509,7 @@ msgid "File: "
 msgstr "Arquivo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:178
 #, fuzzy, kde-format
 #| msgid "Folder: "
 msgctxt "@label: item properties"
@@ -39518,7 +39517,7 @@ msgid "Folder: "
 msgstr "Pasta: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:183
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgctxt "@label: item properties"
@@ -39526,7 +39525,7 @@ msgid "Date: "
 msgstr "Data: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:184
+#: core/libs/properties/itempropertiestab.cpp:181
 #, fuzzy, kde-format
 #| msgid "Size: "
 msgctxt "@label: item properties"
@@ -39548,7 +39547,7 @@ msgid "Writable: "
 msgstr "Gravável: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:227
+#: core/libs/properties/itempropertiestab.cpp:229
 #, fuzzy, kde-format
 #| msgid "Type: "
 msgctxt "@label: item properties"
@@ -39556,7 +39555,7 @@ msgid "Type: "
 msgstr "Tipo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:228
+#: core/libs/properties/itempropertiestab.cpp:230
 #, fuzzy, kde-format
 #| msgid "Dimensions: "
 msgctxt "@label: item properties"
@@ -39565,8 +39564,8 @@ msgstr "Dimensões: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:229
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:231
+#: core/libs/properties/itempropertiestab.cpp:325
 #, fuzzy, kde-format
 #| msgid "Aspect Ratio: "
 msgctxt "@label: item properties"
@@ -39595,7 +39594,7 @@ msgid "Camera File Properties"
 msgstr "Propriedades do arquivo da câmera"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:269
 #, fuzzy, kde-format
 #| msgid "Make: "
 msgctxt "@label: item properties"
@@ -39603,7 +39602,7 @@ msgid "Make: "
 msgstr "Marca: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:270
 #, fuzzy, kde-format
 #| msgid "Model: "
 msgctxt "@label: item properties"
@@ -39611,7 +39610,6 @@ msgid "Model: "
 msgstr "Modelo: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:269
 #, fuzzy, kde-format
 #| msgid "Created: "
 msgctxt "@label: item properties"
@@ -39619,7 +39617,7 @@ msgid "Created: "
 msgstr "Criada em: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:271
 #, fuzzy, kde-format
 #| msgid "Lens: "
 msgctxt "@label: item properties"
@@ -39627,7 +39625,7 @@ msgid "Lens: "
 msgstr "Lente: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:272
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@label: item properties"
@@ -39635,7 +39633,7 @@ msgid "Aperture: "
 msgstr "Abertura: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:273
 #, fuzzy, kde-format
 #| msgid "Focal: "
 msgctxt "@label: item properties"
@@ -39643,7 +39641,7 @@ msgid "Focal: "
 msgstr "Foco: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:274
 #, fuzzy, kde-format
 #| msgid "Exposure: "
 msgctxt "@label: item properties"
@@ -39651,7 +39649,7 @@ msgid "Exposure: "
 msgstr "Exposição: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:274
+#: core/libs/properties/itempropertiestab.cpp:275
 #, fuzzy, kde-format
 #| msgid "Sensitivity: "
 msgctxt "@label: item properties"
@@ -39659,7 +39657,7 @@ msgid "Sensitivity: "
 msgstr "Sensibilidade: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:275
+#: core/libs/properties/itempropertiestab.cpp:276
 #, fuzzy, kde-format
 #| msgid "Mode/Program: "
 msgctxt "@label: item properties"
@@ -39667,7 +39665,7 @@ msgid "Mode/Program: "
 msgstr "Modo/Programa: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:276
+#: core/libs/properties/itempropertiestab.cpp:277
 #, fuzzy, kde-format
 #| msgid "Flash: "
 msgctxt "@label: item properties"
@@ -39675,7 +39673,7 @@ msgid "Flash: "
 msgstr "Flash: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:277
+#: core/libs/properties/itempropertiestab.cpp:278
 #, fuzzy, kde-format
 #| msgid "White balance: "
 msgctxt "@label: item properties"
@@ -39690,7 +39688,7 @@ msgid "Photograph Properties"
 msgstr "Propriedades da fotografia"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:331
+#: core/libs/properties/itempropertiestab.cpp:329
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate: "
 msgctxt "@label: item properties"
@@ -39698,7 +39696,7 @@ msgid "Audio Bit Rate: "
 msgstr "Taxa de bits do áudio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:332
+#: core/libs/properties/itempropertiestab.cpp:330
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type: "
 msgctxt "@label: item properties"
@@ -39706,7 +39704,7 @@ msgid "Audio Channel Type: "
 msgstr "Tipo de canal de áudio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:333
+#: core/libs/properties/itempropertiestab.cpp:331
 #, fuzzy, kde-format
 #| msgid "Audio Codec: "
 msgctxt "@label: item properties"
@@ -39714,7 +39712,7 @@ msgid "Audio Codec: "
 msgstr "Codec de áudio: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:326
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgctxt "@label: item properties"
@@ -39722,7 +39720,7 @@ msgid "Duration: "
 msgstr "Duração: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:327
 #, fuzzy, kde-format
 #| msgid "Frame Rate: "
 msgctxt "@label: item properties"
@@ -39730,7 +39728,7 @@ msgid "Frame Rate: "
 msgstr "Taxa de quadros: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:330
+#: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
 #| msgid "Video Codec: "
 msgctxt "@label: item properties"
@@ -39761,7 +39759,7 @@ msgstr "<i>inalterado</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:606
+#: core/libs/properties/itempropertiessidebardb.cpp:618
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -39772,8 +39770,8 @@ msgstr "indisponível"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:483
+#: core/libs/properties/itempropertiessidebardb.cpp:667
+#: core/libs/properties/itempropertiestab.cpp:524
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -39784,7 +39782,7 @@ msgstr "Não"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebardb.cpp:666
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -40054,8 +40052,8 @@ msgstr "Não calibrado"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:631
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:643
+#: core/libs/properties/itempropertiessidebardb.cpp:656
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -40070,7 +40068,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:665
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -40078,7 +40076,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:685
+#: core/libs/properties/itempropertiessidebardb.cpp:697
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -40086,7 +40084,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:702
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -40107,138 +40105,160 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Versões"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:648
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:179
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:185
+#: core/libs/properties/itempropertiestab.cpp:182
 #, fuzzy, kde-format
 #| msgid "Owner: "
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "Proprietário: "
 
-#: core/libs/properties/itempropertiestab.cpp:186
+#: core/libs/properties/itempropertiestab.cpp:183
 #, fuzzy, kde-format
 #| msgid "Permissions: "
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "Permissões: "
 
-#: core/libs/properties/itempropertiestab.cpp:220
+#: core/libs/properties/itempropertiestab.cpp:222
 #, fuzzy, kde-format
 #| msgid "File Properties"
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "Propriedades do arquivo"
 
-#: core/libs/properties/itempropertiestab.cpp:230
+#: core/libs/properties/itempropertiestab.cpp:232
 #, fuzzy, kde-format
 #| msgid "Bit depth: "
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "Profundidade de bits: "
 
-#: core/libs/properties/itempropertiestab.cpp:231
+#: core/libs/properties/itempropertiestab.cpp:233
 #, fuzzy, kde-format
 #| msgid "Color mode: "
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "Modo de cores: "
 
-#: core/libs/properties/itempropertiestab.cpp:232
+#: core/libs/properties/itempropertiestab.cpp:234
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:260
+#: core/libs/properties/itempropertiestab.cpp:262
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "Propriedades do item"
 
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:318
 #, fuzzy, kde-format
 #| msgid "Photograph Properties"
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "Propriedades da fotografia"
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:362
 #, fuzzy, kde-format
 #| msgid "Audio/Video Properties"
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "Propriedades do vídeo/áudio"
 
-#: core/libs/properties/itempropertiestab.cpp:371
+#: core/libs/properties/itempropertiestab.cpp:376
 #, fuzzy, kde-format
 #| msgid "Title: "
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Título: "
 
-#: core/libs/properties/itempropertiestab.cpp:372
+#: core/libs/properties/itempropertiestab.cpp:377
 #, fuzzy, kde-format
 #| msgid "Caption: "
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "Legenda: "
 
-#: core/libs/properties/itempropertiestab.cpp:373
+#: core/libs/properties/itempropertiestab.cpp:378
 #, fuzzy, kde-format
 #| msgid "Pick label: "
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr "Legenda de seleção: "
 
-#: core/libs/properties/itempropertiestab.cpp:374
+#: core/libs/properties/itempropertiestab.cpp:379
 #, fuzzy, kde-format
 #| msgid "Color label: "
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "Legenda de cores: "
 
-#: core/libs/properties/itempropertiestab.cpp:375
+#: core/libs/properties/itempropertiestab.cpp:380
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "Avaliação: "
 
-#: core/libs/properties/itempropertiestab.cpp:376
-#, fuzzy, kde-format
-#| msgid "Tags: "
-msgctxt "@label: item properties"
-msgid "Tags: "
-msgstr "Etiquetas: "
-
-#: core/libs/properties/itempropertiestab.cpp:416
+#: core/libs/properties/itempropertiestab.cpp:409
 #, fuzzy, kde-format
 #| msgid "digiKam Properties"
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "Propriedades do digiKam"
 
-#: core/libs/properties/itempropertiestab.cpp:768
+#: core/libs/properties/itempropertiestab.cpp:416
+#, fuzzy, kde-format
+#| msgid "Keywords"
+msgctxt "@label: item properties"
+msgid "Keywords: "
+msgstr "Palavras-chave"
+
+#: core/libs/properties/itempropertiestab.cpp:420
+#, fuzzy, kde-format
+#| msgctxt "Browse images sorted by depicted people"
+#| msgid "People"
+msgctxt "@label: item properties"
+msgid "Peoples: "
+msgstr "Pessoas"
+
+#: core/libs/properties/itempropertiestab.cpp:435
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@title: item properties"
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: core/libs/properties/itempropertiestab.cpp:453
+#, fuzzy, kde-format
+#| msgid "Location"
+msgctxt "@title: item properties"
+msgid "Location"
+msgstr "Localização"
+
+#: core/libs/properties/itempropertiestab.cpp:826
 #, fuzzy, kde-format
 #| msgid " fps"
 msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itempropertiestab.cpp:973
+#: core/libs/properties/itempropertiestab.cpp:1068
 #, fuzzy, kde-format
 #| msgctxt "width : height (Aspect Ratio)"
 #| msgid "%1:%2 (%3)"
@@ -40246,7 +40266,7 @@ msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr "%1:%2 (%3)"
 
-#: core/libs/properties/itempropertiestab.cpp:1006
+#: core/libs/properties/itempropertiestab.cpp:1101
 #, fuzzy, kde-format
 #| msgctxt "unit file size in bytes"
 #| msgid "B"
@@ -68815,6 +68835,12 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Restaurar todas as configurações para os valores padrão."
 
 #, fuzzy
+#~| msgid "Tags: "
+#~ msgctxt "@label: item properties"
+#~ msgid "Tags: "
+#~ msgstr "Etiquetas: "
+
+#, fuzzy
 #~| msgid "Open a preview"
 #~ msgctxt "@title:window"
 #~ msgid "Open a Video"
@@ -72731,12 +72757,6 @@ msgstr "Restaurar todas as configurações para os valores padrão."
 #~ msgctxt "@title:tab"
 #~ msgid "Albums"
 #~ msgstr "Álbuns"
-
-#, fuzzy
-#~| msgctxt "Browse images sorted by depicted people"
-#~| msgid "People"
-#~ msgid "People"
-#~ msgstr "Pessoas"
 
 #~ msgid "Detect and recognize Faces (experimental)"
 #~ msgstr "Detectar e reconhecer rostos (experimental)"
