@@ -462,6 +462,8 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelRights           = new QLabel(QString(), w8);
     d->labelRights->setWordWrap(true);
     d->labelRights->setOpenExternalLinks(true);
+    d->labelRights->setTextFormat(Qt::RichText);
+    d->labelRights->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
 
     glay8->addWidget(d->labelRights, 0, 0, 1, 2);
     glay8->setContentsMargins(spacing, spacing, spacing, spacing);

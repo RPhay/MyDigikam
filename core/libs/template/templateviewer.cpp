@@ -6,7 +6,7 @@
  * Date        : 2009-06-29
  * Description : metadata template viewer.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -126,11 +126,11 @@ public:
     DTextBrowser*    labelContactPostalCode;
     DTextBrowser*    labelContactProvinceState;
     DTextBrowser*    labelContactPhone;
-    DTextLabelValue* labelContactEmail;
-    DTextLabelValue* labelContactWebUrl;
+    QLabel*          labelContactEmail;
+    QLabel*          labelContactWebUrl;
 
     /// IPTC Subjects info.
-    DTextList*      subjectsList;
+    DTextList*       subjectsList;
 };
 
 TemplateViewer::TemplateViewer(QWidget* const parent)
@@ -203,9 +203,9 @@ TemplateViewer::TemplateViewer(QWidget* const parent)
     d->contactPhone              = new DTextLabelName(i18n("Phone:"), w3);
     d->labelContactPhone         = new DTextBrowser(QString(), w3);
     d->contactEmail              = new DTextLabelName(i18nc("@label: template properties", "Email:"), w3);
-    d->labelContactEmail         = new DTextLabelValue(QString(), w3);
+    d->labelContactEmail         = new QLabel(QString(), w3);
     d->contactWebUrl             = new DTextLabelName(i18n("URL:"), w3);
-    d->labelContactWebUrl        = new DTextLabelValue(QString(), w3);
+    d->labelContactWebUrl        = new QLabel(QString(), w3);
 
     d->labelContactEmail->setOpenExternalLinks(true);
     d->labelContactEmail->setTextFormat(Qt::RichText);
@@ -265,8 +265,8 @@ void TemplateViewer::setTemplate(const Template& t)
     d->labelContactCity->setText(t.contactInfo().city);
     d->labelContactCountry->setText(t.contactInfo().country);
     d->labelContactPhone->setText(t.contactInfo().phone);
-    d->labelContactEmail->setAdjustedText(QString::fromUtf8("<a href=\"mailto:%1\">%2</a>").arg(t.contactInfo().email).arg(t.contactInfo().email));
-    d->labelContactWebUrl->setAdjustedText(QString::fromUtf8("<a href=\"%1\">%2</a>").arg(t.contactInfo().webUrl).arg(t.contactInfo().webUrl));
+    d->labelContactEmail->setText(QString::fromUtf8("<a href=\"mailto:%1\">%2</a>").arg(t.contactInfo().email).arg(t.contactInfo().email));
+    d->labelContactWebUrl->setText(QString::fromUtf8("<a href=\"%1\">%2</a>").arg(t.contactInfo().webUrl).arg(t.contactInfo().webUrl));
 
     d->subjectsList->clear();
     d->subjectsList->addItems(t.IptcSubjects());
