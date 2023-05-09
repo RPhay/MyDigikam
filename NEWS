@@ -280,4 +280,8 @@ BUGFIXES:
 270 ==> 218669 - digiKam crashes when starting downloading form usb attached camera.
 271 ==> 219416 - Import pictures in digiKam.
 272 ==> 214031 - digiKam crashes while importing new photos.
-273 ==> 
+273 ==> 463608 - [regression] copy paste feature does not work anymore.
+274 ==> 397110 - Time to render filters is too long with MYSQL.
+275 ==> 398144 - Folders listed in the export interface are only those one which contains at least one picture.
+276 ==> 
+
