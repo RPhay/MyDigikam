@@ -103,6 +103,9 @@ public:
                  const QStringList& peopleTagNames = QStringList());
     void setTemplate(const Template& t);
 
+    ///@{
+    /// Helper methods (itempropertiestab_helpers.cpp)
+
     /**
      * Shortens the tag paths by sorting and then cutting identical paths from the second
      * and following paths (only the first item gives the full path).
@@ -138,6 +141,8 @@ public:
 private:
 
     static double doubleToHumanReadableFraction(double val, long* num, long* den, long maxden = 2);
+
+    ///@}
 
 private:
 
