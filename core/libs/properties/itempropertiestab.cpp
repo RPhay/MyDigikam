@@ -88,6 +88,7 @@ public:
         labelTags                 (nullptr),
         labelPeoples              (nullptr),
         labelLocation             (nullptr),
+        labelRights               (nullptr),
         labelPickLabel            (nullptr),
         labelColorLabel           (nullptr),
         labelRating               (nullptr),
@@ -144,6 +145,7 @@ public:
     QLabel*            labelPeoples;
 
     QLabel*            labelLocation;
+    QLabel*            labelRights;
 
     DTextLabelValue*   labelPickLabel;
     DTextLabelValue*   labelColorLabel;
@@ -454,6 +456,25 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
+    QWidget* const w8        = new QWidget(this);
+    QGridLayout* const glay8 = new QGridLayout(w8);
+
+    d->labelRights           = new QLabel(QString(), w8);
+    d->labelRights->setWordWrap(true);
+    d->labelRights->setOpenExternalLinks(true);
+
+    glay8->addWidget(d->labelRights, 0, 0, 1, 2);
+    glay8->setContentsMargins(spacing, spacing, spacing, spacing);
+    glay8->setColumnStretch(0, 10);
+    glay8->setColumnStretch(1, 25);
+    glay8->setSpacing(0);
+
+    insertItem(ItemPropertiesTab::RightProperties,
+               w8, QIcon::fromTheme(QLatin1String("flag")),
+               i18nc("@title: item properties", "Rights"), QLatin1String("RightsProperties"), true);
+
+    // --------------------------------------------------
+
     addStretch();
 }
 
@@ -492,6 +513,14 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelPhotoFlash->setAdjustedText();
         d->labelPhotoWhiteBalance->setAdjustedText();
 
+        d->labelVideoAspectRatio->setAdjustedText();
+        d->labelVideoDuration->setAdjustedText();
+        d->labelVideoFrameRate->setAdjustedText();
+        d->labelVideoVideoCodec->setAdjustedText();
+        d->labelVideoAudioBitRate->setAdjustedText();
+        d->labelVideoAudioChannelType->setAdjustedText();
+        d->labelVideoAudioCodec->setAdjustedText();
+
         d->labelTitle->clear();
         d->labelCaption->clear();
         d->labelPickLabel->setAdjustedText();
@@ -502,14 +531,7 @@ void ItemPropertiesTab::setCurrentURL(const QUrl& url)
         d->labelPhotoDateTime->setAdjustedText();
 
         d->labelLocation->clear();
-
-        d->labelVideoAspectRatio->setAdjustedText();
-        d->labelVideoDuration->setAdjustedText();
-        d->labelVideoFrameRate->setAdjustedText();
-        d->labelVideoVideoCodec->setAdjustedText();
-        d->labelVideoAudioBitRate->setAdjustedText();
-        d->labelVideoAudioChannelType->setAdjustedText();
-        d->labelVideoAudioCodec->setAdjustedText();
+        d->labelRights->clear();
 
         setEnabled(false);
         return;
@@ -696,6 +718,10 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     bool hasLocation = !d->labelLocation->text().isEmpty();
 
     widget(ItemPropertiesTab::LocationProperties)->setVisible(hasLocation);
+
+    bool hasRights = !d->labelRights->text().isEmpty();
+
+    widget(ItemPropertiesTab::RightProperties)->setVisible(hasRights);
 }
 
 void ItemPropertiesTab::setTitle(const QString& str)
@@ -875,6 +901,56 @@ void ItemPropertiesTab::setTemplate(const Template& t)
     }
 
     d->labelLocation->setText(info);
+
+    // ---
+
+    IptcCoreContactInfo c = t.contactInfo();
+    QStringList rights;
+    info.clear();
+
+    if (!t.authors().isEmpty())
+    {
+        Q_FOREACH (const QString& s, t.authors())
+        {
+            if (!s.isEmpty())
+            {
+                rights << s;
+            }
+        }
+    }
+
+    if (!t.credit().isEmpty())
+    {
+        Q_FOREACH (const QString& s, t.credit())
+        {
+            if (!s.isEmpty())
+            {
+                rights << s;
+            }
+        }
+    }
+
+    if (!t.copyright().contains(QLatin1String("x-default")))
+    {
+        QString s = t.copyright().value(QLatin1String("x-default"));
+
+        if (!s.isEmpty())
+        {
+            rights << s;
+        }
+    }
+
+    if (!c.webUrl.isEmpty())
+    {
+        rights << QString::fromLatin1("<a href='%1'>%1</a>").arg(c.webUrl);
+    }
+
+    if (!rights.isEmpty())
+    {
+        info = rights.join(QLatin1String(", "));
+    }
+
+    d->labelRights->setText(info);
 }
 
 typedef QPair<QString, QVariant> PathValuePair;

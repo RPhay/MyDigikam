@@ -104,6 +104,9 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     m_propertiesTab->widget(ItemPropertiesTab::LocationProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
     m_propertiesTab->widget(ItemPropertiesTab::LocationProperties)->setButtonVisible(true);
 
+    m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonIcon(QIcon::fromTheme(QLatin1String("document-edit")));
+    m_propertiesTab->widget(ItemPropertiesTab::RightProperties)->setButtonVisible(true);
+
     // ----------------------------------------------------------
 
     connect(m_propertiesTab, SIGNAL(signalItemButtonPressed(int)),
@@ -893,6 +896,7 @@ void ItemPropertiesSideBarDB::slotPropertiesButtonPressed(int index)
         }
 
         case ItemPropertiesTab::LocationProperties:
+        case ItemPropertiesTab::RightProperties:
         {
             setActiveTab(d->desceditTab);
             d->desceditTab->setCurrentTab(ItemDescEditTab::INFOS);
