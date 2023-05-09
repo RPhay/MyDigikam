@@ -39,6 +39,7 @@ ItemPropertiesTab::Private::Private()
       labelImageBitDepth        (nullptr),
       labelImageColorMode       (nullptr),
       labelHasSidecar           (nullptr),
+      labelHasGPSInfo           (nullptr),
       labelPhotoMake            (nullptr),
       labelPhotoModel           (nullptr),
       labelPhotoDateTime        (nullptr),

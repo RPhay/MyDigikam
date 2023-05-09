@@ -668,6 +668,8 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setImageBitDepth(i18nc("@info: item properties", "%1 bpp", commonInfo.colorDepth));
             m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18nc("@info: item properties", "Yes")
                                                                                     : i18nc("@info: item properties", "No"));
+            m_propertiesTab->setHasGPSInfo(info.hasCoordinates() ? i18nc("@info: item properties", "Yes")
+                                                                 : i18nc("@info: item properties", "No"));
             m_propertiesTab->setImageColorMode(commonInfo.colorModel.isEmpty() ? unavailable : commonInfo.colorModel);
 
             // -- Photograph information ------------------------------------------

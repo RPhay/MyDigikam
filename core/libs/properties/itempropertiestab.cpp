@@ -90,6 +90,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     DTextLabelName* const bitDepth   = new DTextLabelName(i18nc("@label: item properties", "Bit depth: "),    w2);
     DTextLabelName* const colorMode  = new DTextLabelName(i18nc("@label: item properties", "Color mode: "),   w2);
     DTextLabelName* const hasSidecar = new DTextLabelName(i18nc("@label: item properties", "Sidecar: "),      w2);
+    DTextLabelName* const hasGPSInfo = new DTextLabelName(i18nc("@label: item properties", "GPS: "),          w2);
 
     d->labelImageMime                = new DTextLabelValue(QString(), w2);
     d->labelImageDimensions          = new DTextLabelValue(QString(), w2);
@@ -97,6 +98,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelImageBitDepth            = new DTextLabelValue(QString(), w2);
     d->labelImageColorMode           = new DTextLabelValue(QString(), w2);
     d->labelHasSidecar               = new DTextLabelValue(QString(), w2);
+    d->labelHasGPSInfo               = new DTextLabelValue(QString(), w2);
 
     glay2->addWidget(mime,                    0, 0, 1, 1);
     glay2->addWidget(d->labelImageMime,       0, 1, 1, 1);
@@ -110,6 +112,8 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay2->addWidget(d->labelImageColorMode,  4, 1, 1, 1);
     glay2->addWidget(hasSidecar,              5, 0, 1, 1);
     glay2->addWidget(d->labelHasSidecar,      5, 1, 1, 1);
+    glay2->addWidget(hasGPSInfo,              6, 0, 1, 1);
+    glay2->addWidget(d->labelHasGPSInfo,      6, 1, 1, 1);
     glay2->setContentsMargins(spacing, spacing, spacing, spacing);
     glay2->setColumnStretch(0, 10);
     glay2->setColumnStretch(1, 25);

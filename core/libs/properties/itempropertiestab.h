@@ -75,6 +75,7 @@ public:
     void setImageBitDepth(const QString& str);
     void setImageColorMode(const QString& str);
     void setHasSidecar(const QString& str);
+    void setHasGPSInfo(const QString& str);
 
     void setPhotoMake(const QString& str);
     void setPhotoModel(const QString& str);

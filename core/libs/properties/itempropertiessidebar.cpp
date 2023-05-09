@@ -279,6 +279,9 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18nc("@info: item properties", "%1 bpp", bitDepth));
     m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18nc("@info: item properties", "Yes")
                                                                             : i18nc("@info: item properties", "No"));
+    double alt, lat, lng;
+    m_propertiesTab->setHasGPSInfo(metaData->getGPSInfo(alt, lat, lng) ? i18nc("@info: item properties", "Yes")
+                                                                       : i18nc("@info: item properties", "No"));
 
     // -- Photograph information ------------------------------------------
 

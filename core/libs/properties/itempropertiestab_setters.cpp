@@ -156,6 +156,11 @@ void ItemPropertiesTab::setHasSidecar(const QString& str)
     d->labelHasSidecar->setAdjustedText(str);
 }
 
+void ItemPropertiesTab::setHasGPSInfo(const QString& str)
+{
+    d->labelHasGPSInfo->setAdjustedText(str);
+}
+
 void ItemPropertiesTab::setPhotoMake(const QString& str)
 {
     d->labelPhotoMake->setAdjustedText(str);

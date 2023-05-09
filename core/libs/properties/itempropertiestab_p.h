@@ -77,6 +77,7 @@ public:
     DTextLabelValue*   labelImageBitDepth;
     DTextLabelValue*   labelImageColorMode;
     DTextLabelValue*   labelHasSidecar;
+    DTextLabelValue*   labelHasGPSInfo;
 
     DTextLabelValue*   labelPhotoMake;
     DTextLabelValue*   labelPhotoModel;
