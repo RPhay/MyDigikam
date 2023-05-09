@@ -117,7 +117,7 @@ public:
     /**
      * Cancel processing of current jobs under progress.
      */
-    void cancel();
+    void cancel(bool isCancel = true);
 
 protected:
 
