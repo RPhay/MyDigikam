@@ -180,7 +180,7 @@ LoadingCache::LoadingCache()
     : d(new Private(this))
 {
     DMemoryInfo memory;
-    setCacheSize(qBound(60, int(memory.totalPhysical() * 0.05), 400));
+    setCacheSize(qBound(quint64(60), quint64(memory.totalPhysical() * 0.05), quint64(400)));
     setThumbnailCacheSize(5, 100); // the pixmap number should not be based on system memory, it's graphics memory
 
     // good place to call it here as LoadingCache is a singleton
