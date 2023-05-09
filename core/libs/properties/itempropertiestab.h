@@ -54,11 +54,15 @@ public:
     explicit ItemPropertiesTab(QWidget* const parent);
     ~ItemPropertiesTab() override;
 
+    void showOrHideCaptionAndTags();
+
+    ///@{
+    /// Setter methods (itempropertiestab_setters.cpp)
+
     void setCurrentURL(const QUrl& url = QUrl());
 
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);
-    void showOrHideCaptionAndTags();
 
     void setFileModifiedDate(const QString& str);
     void setFileSize(const QString& str);
@@ -102,6 +106,8 @@ public:
                  const QStringList& peopleTagPaths = QStringList(),
                  const QStringList& peopleTagNames = QStringList());
     void setTemplate(const Template& t);
+
+    ///@}
 
     ///@{
     /// Helper methods (itempropertiestab_helpers.cpp)
