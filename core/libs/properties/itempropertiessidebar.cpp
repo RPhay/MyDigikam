@@ -389,7 +389,12 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     QStringList tagPaths;
     metaData->getItemTagsPath(tagPaths);
     m_propertiesTab->setTags(tagPaths);
-    m_propertiesTab->showOrHideCaptionAndTags();
+
+    // Not supported
+    m_propertiesTab->setVersionnedInfo(QString());
+    m_propertiesTab->setGroupedInfo(QString());
+
+    m_propertiesTab->showOrHideCachedProperties();
 }
 
 void ItemPropertiesSideBar::doLoadState()

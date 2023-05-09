@@ -62,6 +62,8 @@ public:
     DTextLabelName*    rating;
     DTextLabelName*    tags;
     DTextLabelName*    peoples;
+    DTextLabelName*    versionned;
+    DTextLabelName*    grouped;
 
     DTextLabelValue*   labelFile;
     DTextLabelValue*   labelFolder;
@@ -78,6 +80,8 @@ public:
     DTextLabelValue*   labelImageColorMode;
     DTextLabelValue*   labelHasSidecar;
     DTextLabelValue*   labelHasGPSInfo;
+    DTextLabelValue*   labelVersionnedInfo;
+    DTextLabelValue*   labelGroupedInfo;
 
     DTextLabelValue*   labelPhotoMake;
     DTextLabelValue*   labelPhotoModel;

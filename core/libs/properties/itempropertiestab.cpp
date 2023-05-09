@@ -81,39 +81,39 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
-    QWidget* const w2                = new QWidget(this);
-    QGridLayout* const glay2         = new QGridLayout(w2);
+    QWidget* const w2                       = new QWidget(this);
+    QGridLayout* const glay2                = new QGridLayout(w2);
 
-    DTextLabelName* const mime       = new DTextLabelName(i18nc("@label: item properties", "Type: "),         w2);
-    DTextLabelName* const dimensions = new DTextLabelName(i18nc("@label: item properties", "Dimensions: "),   w2);
-    DTextLabelName* const ratio      = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "), w2);
-    DTextLabelName* const bitDepth   = new DTextLabelName(i18nc("@label: item properties", "Bit depth: "),    w2);
-    DTextLabelName* const colorMode  = new DTextLabelName(i18nc("@label: item properties", "Color mode: "),   w2);
-    DTextLabelName* const hasSidecar = new DTextLabelName(i18nc("@label: item properties", "Sidecar: "),      w2);
-    DTextLabelName* const hasGPSInfo = new DTextLabelName(i18nc("@label: item properties", "GPS: "),          w2);
+    DTextLabelName* const mime              = new DTextLabelName(i18nc("@label: item properties", "Type: "),         w2);
+    DTextLabelName* const dimensions        = new DTextLabelName(i18nc("@label: item properties", "Dimensions: "),   w2);
+    DTextLabelName* const ratio             = new DTextLabelName(i18nc("@label: item properties", "Aspect Ratio: "), w2);
+    DTextLabelName* const bitDepth          = new DTextLabelName(i18nc("@label: item properties", "Bit depth: "),    w2);
+    DTextLabelName* const colorMode         = new DTextLabelName(i18nc("@label: item properties", "Color mode: "),   w2);
+    DTextLabelName* const hasSidecar        = new DTextLabelName(i18nc("@label: item properties", "Sidecar: "),      w2);
+    DTextLabelName* const hasGPSInfo        = new DTextLabelName(i18nc("@label: item properties", "GPS: "),          w2);
 
-    d->labelImageMime                = new DTextLabelValue(QString(), w2);
-    d->labelImageDimensions          = new DTextLabelValue(QString(), w2);
-    d->labelImageRatio               = new DTextLabelValue(QString(), w2);
-    d->labelImageBitDepth            = new DTextLabelValue(QString(), w2);
-    d->labelImageColorMode           = new DTextLabelValue(QString(), w2);
-    d->labelHasSidecar               = new DTextLabelValue(QString(), w2);
-    d->labelHasGPSInfo               = new DTextLabelValue(QString(), w2);
+    d->labelImageMime                       = new DTextLabelValue(QString(), w2);
+    d->labelImageDimensions                 = new DTextLabelValue(QString(), w2);
+    d->labelImageRatio                      = new DTextLabelValue(QString(), w2);
+    d->labelImageBitDepth                   = new DTextLabelValue(QString(), w2);
+    d->labelImageColorMode                  = new DTextLabelValue(QString(), w2);
+    d->labelHasSidecar                      = new DTextLabelValue(QString(), w2);
+    d->labelHasGPSInfo                      = new DTextLabelValue(QString(), w2);
 
-    glay2->addWidget(mime,                    0, 0, 1, 1);
-    glay2->addWidget(d->labelImageMime,       0, 1, 1, 1);
-    glay2->addWidget(dimensions,              1, 0, 1, 1);
-    glay2->addWidget(d->labelImageDimensions, 1, 1, 1, 1);
-    glay2->addWidget(ratio,                   2, 0, 1, 1);
-    glay2->addWidget(d->labelImageRatio,      2, 1, 1, 1);
-    glay2->addWidget(bitDepth,                3, 0, 1, 1);
-    glay2->addWidget(d->labelImageBitDepth,   3, 1, 1, 1);
-    glay2->addWidget(colorMode,               4, 0, 1, 1);
-    glay2->addWidget(d->labelImageColorMode,  4, 1, 1, 1);
-    glay2->addWidget(hasSidecar,              5, 0, 1, 1);
-    glay2->addWidget(d->labelHasSidecar,      5, 1, 1, 1);
-    glay2->addWidget(hasGPSInfo,              6, 0, 1, 1);
-    glay2->addWidget(d->labelHasGPSInfo,      6, 1, 1, 1);
+    glay2->addWidget(mime,                      0, 0, 1, 1);
+    glay2->addWidget(d->labelImageMime,         0, 1, 1, 1);
+    glay2->addWidget(dimensions,                1, 0, 1, 1);
+    glay2->addWidget(d->labelImageDimensions,   1, 1, 1, 1);
+    glay2->addWidget(ratio,                     2, 0, 1, 1);
+    glay2->addWidget(d->labelImageRatio,        2, 1, 1, 1);
+    glay2->addWidget(bitDepth,                  3, 0, 1, 1);
+    glay2->addWidget(d->labelImageBitDepth,     3, 1, 1, 1);
+    glay2->addWidget(colorMode,                 4, 0, 1, 1);
+    glay2->addWidget(d->labelImageColorMode,    4, 1, 1, 1);
+    glay2->addWidget(hasSidecar,                5, 0, 1, 1);
+    glay2->addWidget(d->labelHasSidecar,        5, 1, 1, 1);
+    glay2->addWidget(hasGPSInfo,                6, 0, 1, 1);
+    glay2->addWidget(d->labelHasGPSInfo,        6, 1, 1, 1);
     glay2->setContentsMargins(spacing, spacing, spacing, spacing);
     glay2->setColumnStretch(0, 10);
     glay2->setColumnStretch(1, 25);
@@ -240,6 +240,8 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->pickLabel             = new DTextLabelName(i18nc("@label: item properties", "Pick label: "),  w5);
     d->colorLabel            = new DTextLabelName(i18nc("@label: item properties", "Color label: "), w5);
     d->rating                = new DTextLabelName(i18nc("@label: item properties", "Rating: "),      w5);
+    d->versionned            = new DTextLabelName(i18nc("@label: item properties", "Versionned: "),  w5);
+    d->grouped               = new DTextLabelName(i18nc("@label: item properties", "Grouped: "),     w5);
 
     d->labelTitle            = new QLabel(QString(), w5);
     d->labelTitle->setWordWrap(true);
@@ -249,18 +251,24 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     d->labelPickLabel        = new DTextLabelValue(QString(), w5);
     d->labelColorLabel       = new DTextLabelValue(QString(), w5);
     d->labelRating           = new DTextLabelValue(QString(), w5);
+    d->labelVersionnedInfo   = new DTextLabelValue(QString(), w5);
+    d->labelGroupedInfo      = new DTextLabelValue(QString(), w5);
 
-    glay5->addWidget(d->labelPhotoDateTime, 0, 0, 1, 2);
-    glay5->addWidget(d->title,              1, 0, 1, 1);
-    glay5->addWidget(d->labelTitle,         1, 1, 1, 1);
-    glay5->addWidget(d->caption,            2, 0, 1, 1);
-    glay5->addWidget(d->labelCaption,       2, 1, 1, 1);
-    glay5->addWidget(d->pickLabel,          3, 0, 1, 1);
-    glay5->addWidget(d->labelPickLabel,     3, 1, 1, 1);
-    glay5->addWidget(d->colorLabel,         4, 0, 1, 1);
-    glay5->addWidget(d->labelColorLabel,    4, 1, 1, 1);
-    glay5->addWidget(d->rating,             5, 0, 1, 1);
-    glay5->addWidget(d->labelRating,        5, 1, 1, 1);
+    glay5->addWidget(d->labelPhotoDateTime,  0, 0, 1, 2);
+    glay5->addWidget(d->title,               1, 0, 1, 1);
+    glay5->addWidget(d->labelTitle,          1, 1, 1, 1);
+    glay5->addWidget(d->caption,             2, 0, 1, 1);
+    glay5->addWidget(d->labelCaption,        2, 1, 1, 1);
+    glay5->addWidget(d->pickLabel,           3, 0, 1, 1);
+    glay5->addWidget(d->labelPickLabel,      3, 1, 1, 1);
+    glay5->addWidget(d->colorLabel,          4, 0, 1, 1);
+    glay5->addWidget(d->labelColorLabel,     4, 1, 1, 1);
+    glay5->addWidget(d->rating,              5, 0, 1, 1);
+    glay5->addWidget(d->labelRating,         5, 1, 1, 1);
+    glay5->addWidget(d->versionned,          6, 0, 1, 1);
+    glay5->addWidget(d->labelVersionnedInfo, 6, 1, 1, 1);
+    glay5->addWidget(d->grouped,             7, 0, 1, 1);
+    glay5->addWidget(d->labelGroupedInfo,    7, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
     glay5->setColumnStretch(1, 25);
@@ -345,7 +353,7 @@ ItemPropertiesTab::~ItemPropertiesTab()
     delete d;
 }
 
-void ItemPropertiesTab::showOrHideCaptionAndTags()
+void ItemPropertiesTab::showOrHideCachedProperties()
 {
     bool hasTitle      = !d->labelTitle->text().isEmpty();
     bool hasCaption    = !d->labelCaption->text().isEmpty();
@@ -353,6 +361,8 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     bool hasColorLabel = !d->labelColorLabel->adjustedText().isEmpty();
     bool hasRating     = !d->labelRating->adjustedText().isEmpty();
     bool hasDate       = !d->labelPhotoDateTime->adjustedText().isEmpty();
+    bool hasVersionned = !d->labelVersionnedInfo->adjustedText().isEmpty();
+    bool hasGrouped    = !d->labelGroupedInfo->adjustedText().isEmpty();
 
     d->labelPhotoDateTime->setVisible(hasDate);
 
@@ -366,13 +376,19 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     d->labelColorLabel->setVisible(hasColorLabel);
     d->rating->setVisible(hasRating);
     d->labelRating->setVisible(hasRating);
+    d->versionned->setVisible(hasVersionned);
+    d->labelVersionnedInfo->setVisible(hasVersionned);
+    d->grouped->setVisible(hasGrouped);
+    d->labelGroupedInfo->setVisible(hasGrouped);
 
-    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasTitle     ||
-                                                             hasCaption   ||
-                                                             hasRating    ||
-                                                             hasPickLabel ||
-                                                             hasDate      ||
-                                                             hasColorLabel);
+    widget(ItemPropertiesTab::digiKamProperties)->setVisible(hasTitle      ||
+                                                             hasCaption    ||
+                                                             hasRating     ||
+                                                             hasPickLabel  ||
+                                                             hasDate       ||
+                                                             hasColorLabel ||
+                                                             hasVersionned ||
+                                                             hasGrouped);
 
     bool hasTags       = !d->labelTags->text().isEmpty();
     bool hasPeoples    = !d->labelPeoples->text().isEmpty();

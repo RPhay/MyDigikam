@@ -771,7 +771,12 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             m_propertiesTab->setTemplate(info.metadataTemplate());
 
-            m_propertiesTab->showOrHideCaptionAndTags();
+            m_propertiesTab->setVersionnedInfo((info.hasDerivedImages() || info.hasAncestorImages()) ? i18nc("@info: item properties", "Yes")
+                                                                                                     : i18nc("@info: item properties", "No"));
+            m_propertiesTab->setGroupedInfo((info.isGrouped() || info.hasGroupedImages()) ? i18nc("@info: item properties", "Yes")
+                                                                                          : i18nc("@info: item properties", "No"));
+
+            m_propertiesTab->showOrHideCachedProperties();
 
             return;
         }
