@@ -37,7 +37,7 @@ public:
         item          (nullptr),
         fitToSizeMode (ImageZoomSettings::OnlyScaleDown),
         isFitToWindow (true),
-        previousZoom  (1),
+        previousZoom  (1.0),
         zoomMultiplier(1.2),
         maxZoom       (12.0),
         minZoom       (0.1)
