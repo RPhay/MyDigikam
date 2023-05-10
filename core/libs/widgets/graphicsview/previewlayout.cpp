@@ -35,7 +35,7 @@ public:
     explicit Private()
       : view          (nullptr),
         item          (nullptr),
-        fitToSizeMode (ImageZoomSettings::FitToSizeMode::OnlyScaleDown),
+        fitToSizeMode (ImageZoomSettings::OnlyScaleDown),
         isFitToWindow (true),
         previousZoom  (1),
         zoomMultiplier(1.2),
@@ -89,11 +89,11 @@ void SinglePhotoPreviewLayout::setScaleFitToWindow(bool value)
 {
     if (value)
     {
-        d->fitToSizeMode = ImageZoomSettings::FitToSizeMode::AlwaysFit;
+        d->fitToSizeMode = ImageZoomSettings::AlwaysFit;
     }
     else
     {
-        d->fitToSizeMode = ImageZoomSettings::FitToSizeMode::OnlyScaleDown;
+        d->fitToSizeMode = ImageZoomSettings::OnlyScaleDown;
     }
 }
 
