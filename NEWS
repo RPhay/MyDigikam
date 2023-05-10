@@ -317,7 +317,7 @@ BUGFIXES:
 307 ==> 282464 - Image optimization algorithm.
 308 ==> 469581 - digiKam crashes after printing a photo on paper.
 309 ==> 275078 - Fit to window size not working if image is smaller then window size. Add a new option for zooming in preview [patch].
-310 ==> 
+310 ==> 425342 - [Feature Request] Improved zoom options.
 311 ==> 
 312 ==> 
 313 ==> 
