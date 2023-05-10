@@ -321,7 +321,7 @@ BUGFIXES:
 311 ==> 159625 - Allow for operations on combined RGB channels.
 312 ==> 282463 - Quicker image color adjustment.
 313 ==> 251683 - Can not reduce saturation of 'only red'.
-314 ==> 
+314 ==> 224614 - Add fast fix tool for automatic image improvements.
 315 ==> 
 316 ==> 
 317 ==> 
