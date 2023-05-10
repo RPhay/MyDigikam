@@ -314,7 +314,7 @@ BUGFIXES:
 304 ==> 462068 - digiKam starts with window size not the same as when last exited.
 305 ==> 461954 - digiKam 7.9 does not remember last position of window when starting, allways open in a small window in middle of screen.
 306 ==> 469546 - Crash after system upgrade from focal to lunar.
-307 ==> 
+307 ==> 282464 - Image optimization algorithm.
 308 ==> 
 309 ==> 
 310 ==> 
