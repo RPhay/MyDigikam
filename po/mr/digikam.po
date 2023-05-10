@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 00:44+0000\n"
+"POT-Creation-Date: 2023-05-10 00:44+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -35624,14 +35624,14 @@ msgid "File: "
 msgstr "फाईल"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:178
+#: core/libs/properties/itempropertiestab.cpp:36
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr "संचयीका"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:180
+#: core/libs/properties/itempropertiestab.cpp:38
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgctxt "@label: item properties"
@@ -35639,7 +35639,7 @@ msgid "Date: "
 msgstr "दिनांक : "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:181
+#: core/libs/properties/itempropertiestab.cpp:39
 #, fuzzy, kde-format
 #| msgid "Size: "
 msgctxt "@label: item properties"
@@ -35659,14 +35659,14 @@ msgid "Writable: "
 msgstr "शिर्षक :"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:229
+#: core/libs/properties/itempropertiestab.cpp:87
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr "प्रकार"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:230
+#: core/libs/properties/itempropertiestab.cpp:88
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -35674,8 +35674,8 @@ msgstr "परिमाणे"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:231
-#: core/libs/properties/itempropertiestab.cpp:325
+#: core/libs/properties/itempropertiestab.cpp:89
+#: core/libs/properties/itempropertiestab.cpp:187
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -35700,14 +35700,14 @@ msgid "Camera File Properties"
 msgstr "गुणधर्म"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:269
+#: core/libs/properties/itempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:270
+#: core/libs/properties/itempropertiestab.cpp:132
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
@@ -35720,56 +35720,56 @@ msgid "Created: "
 msgstr "तयार केले :"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:271
+#: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:272
+#: core/libs/properties/itempropertiestab.cpp:134
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr "एपेर्चर :"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:273
+#: core/libs/properties/itempropertiestab.cpp:135
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr "एकूण"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:274
+#: core/libs/properties/itempropertiestab.cpp:136
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr "एक्सपोजर वेळ :"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:275
+#: core/libs/properties/itempropertiestab.cpp:137
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr "अक्षराकार संवेदनशील"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:276
+#: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:277
+#: core/libs/properties/itempropertiestab.cpp:139
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr "सुधारले"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:278
+#: core/libs/properties/itempropertiestab.cpp:140
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -35782,21 +35782,21 @@ msgid "Photograph Properties"
 msgstr "गुणधर्म"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:329
+#: core/libs/properties/itempropertiestab.cpp:191
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:330
+#: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:331
+#: core/libs/properties/itempropertiestab.cpp:193
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgctxt "@label: item properties"
@@ -35804,7 +35804,7 @@ msgid "Audio Codec: "
 msgstr "ऑडिओ फाईल्स"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:326
+#: core/libs/properties/itempropertiestab.cpp:188
 #, fuzzy, kde-format
 #| msgid "Duration: "
 msgctxt "@label: item properties"
@@ -35812,14 +35812,14 @@ msgid "Duration: "
 msgstr "कालावधी : "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:327
+#: core/libs/properties/itempropertiestab.cpp:189
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr "नमूना"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:328
+#: core/libs/properties/itempropertiestab.cpp:190
 #, fuzzy, kde-format
 #| msgid "Audio Files"
 msgctxt "@label: item properties"
@@ -35846,7 +35846,7 @@ msgstr "न बदललेले"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:618
+#: core/libs/properties/itempropertiessidebardb.cpp:621
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -35857,8 +35857,12 @@ msgstr "अनुपलब्ध"
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:667
-#: core/libs/properties/itempropertiestab.cpp:524
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:670
+#: core/libs/properties/itempropertiessidebardb.cpp:672
+#: core/libs/properties/itempropertiessidebardb.cpp:775
+#: core/libs/properties/itempropertiessidebardb.cpp:777
+#: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: item properties"
@@ -35869,7 +35873,11 @@ msgstr "नाही"
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:666
+#: core/libs/properties/itempropertiessidebar.cpp:283
+#: core/libs/properties/itempropertiessidebardb.cpp:669
+#: core/libs/properties/itempropertiessidebardb.cpp:671
+#: core/libs/properties/itempropertiessidebardb.cpp:774
+#: core/libs/properties/itempropertiessidebardb.cpp:776
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -36112,8 +36120,8 @@ msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:643
-#: core/libs/properties/itempropertiessidebardb.cpp:656
+#: core/libs/properties/itempropertiessidebardb.cpp:646
+#: core/libs/properties/itempropertiessidebardb.cpp:659
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36126,21 +36134,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:665
+#: core/libs/properties/itempropertiessidebardb.cpp:668
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1bpp"
 
-#: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:697
+#: core/libs/properties/itempropertiessidebar.cpp:315
+#: core/libs/properties/itempropertiessidebardb.cpp:702
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "प्रतिमा"
 
-#: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:702
+#: core/libs/properties/itempropertiessidebar.cpp:320
+#: core/libs/properties/itempropertiessidebardb.cpp:707
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -36159,150 +36167,175 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "विस्तारण:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:648
+#: core/libs/properties/itempropertiessidebardb.cpp:651
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:179
+#: core/libs/properties/itempropertiestab.cpp:37
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:182
+#: core/libs/properties/itempropertiestab.cpp:40
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr "मालक"
 
-#: core/libs/properties/itempropertiestab.cpp:183
+#: core/libs/properties/itempropertiestab.cpp:41
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr "परवानगी"
 
-#: core/libs/properties/itempropertiestab.cpp:222
+#: core/libs/properties/itempropertiestab.cpp:80
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:232
+#: core/libs/properties/itempropertiestab.cpp:90
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr "रंग खोली"
 
-#: core/libs/properties/itempropertiestab.cpp:233
+#: core/libs/properties/itempropertiestab.cpp:91
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr "रंग पद्धत"
 
-#: core/libs/properties/itempropertiestab.cpp:234
+#: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:93
+#, kde-format
+msgctxt "@label: item properties"
+msgid "GPS: "
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:124
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:180
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:224
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:376
+#: core/libs/properties/itempropertiestab.cpp:238
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "शिर्षक :"
 
-#: core/libs/properties/itempropertiestab.cpp:377
+#: core/libs/properties/itempropertiestab.cpp:239
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr "कॅप्शन :"
 
-#: core/libs/properties/itempropertiestab.cpp:378
+#: core/libs/properties/itempropertiestab.cpp:240
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:379
+#: core/libs/properties/itempropertiestab.cpp:241
 #, fuzzy, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr "रंग खोली"
 
-#: core/libs/properties/itempropertiestab.cpp:380
+#: core/libs/properties/itempropertiestab.cpp:242
 #, fuzzy, kde-format
 #| msgid "Rating: "
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr "गुणवत्ताश्रेणी: "
 
-#: core/libs/properties/itempropertiestab.cpp:409
+#: core/libs/properties/itempropertiestab.cpp:243
+#, fuzzy, kde-format
+msgctxt "@label: item properties"
+msgid "Versionned: "
+msgstr "विस्तारण:"
+
+#: core/libs/properties/itempropertiestab.cpp:244
+#, fuzzy, kde-format
+#| msgid "Group"
+msgctxt "@label: item properties"
+msgid "Grouped: "
+msgstr "समूह"
+
+#: core/libs/properties/itempropertiestab.cpp:279
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr "गुणधर्म"
 
-#: core/libs/properties/itempropertiestab.cpp:416
+#: core/libs/properties/itempropertiestab.cpp:286
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@label: item properties"
 msgid "Keywords: "
 msgstr "परवलीचे शब्द"
 
-#: core/libs/properties/itempropertiestab.cpp:420
+#: core/libs/properties/itempropertiestab.cpp:290
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:435
+#: core/libs/properties/itempropertiestab.cpp:305
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "टॅग्स"
 
-#: core/libs/properties/itempropertiestab.cpp:453
+#: core/libs/properties/itempropertiestab.cpp:323
 #, fuzzy, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "स्थान"
 
-#: core/libs/properties/itempropertiestab.cpp:826
-#, kde-format
-msgctxt "@info: item properties"
-msgid " fps"
-msgstr ""
+#: core/libs/properties/itempropertiestab.cpp:344
+#, fuzzy, kde-format
+msgctxt "@title: item properties"
+msgid "Rights"
+msgstr "उजवे"
 
-#: core/libs/properties/itempropertiestab.cpp:1068
+#: core/libs/properties/itempropertiestab_helpers.cpp:209
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:1101
+#: core/libs/properties/itempropertiestab_helpers.cpp:242
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab_setters.cpp:354
+#, kde-format
+msgctxt "@info: item properties"
+msgid " fps"
 msgstr ""
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:76
