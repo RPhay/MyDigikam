@@ -320,7 +320,7 @@ BUGFIXES:
 310 ==> 425342 - [Feature Request] Improved zoom options.
 311 ==> 159625 - Allow for operations on combined RGB channels.
 312 ==> 282463 - Quicker image color adjustment.
-313 ==> 
+313 ==> 251683 - Can not reduce saturation of 'only red'.
 314 ==> 
 315 ==> 
 316 ==> 
