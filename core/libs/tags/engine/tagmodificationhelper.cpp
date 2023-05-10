@@ -7,7 +7,7 @@
  * Description : helper class used to modify tag albums in views
  *
  * SPDX-FileCopyrightText: 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -61,8 +61,8 @@ public:
     {
     }
 
-    AlbumPointer<TAlbum>  parentTag;
-    QWidget*              dialogParent;
+    AlbumPointer<TAlbum> parentTag;
+    QWidget*             dialogParent;
 };
 
 TagModificationHelper::TagModificationHelper(QObject* const parent, QWidget* const dialogParent)
@@ -153,6 +153,7 @@ TAlbum* TagModificationHelper::slotTagNew(TAlbum* parent, const QString& title, 
         Q_FOREACH (Album* const album, tList)
         {
             tag = static_cast<TAlbum*>(album);
+
             Q_EMIT tagCreated(tag);
         }
 
@@ -298,6 +299,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
     if (result == QMessageBox::Yes && tag)
     {
         Q_EMIT aboutToDeleteTag(tag);
+
         QList<qlonglong> imageIds;
         QString errMsg;
 
@@ -426,6 +428,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
         for (it = std::prev(sortedTags.end(), 1) ; it != std::prev(sortedTags.begin(), 1) ; --it)
         {
             Q_EMIT aboutToDeleteTag(it.value());
+
             QString errMsg;
 
             if (!AlbumManager::instance()->deleteTAlbum(it.value(), errMsg, &imageIds))
@@ -441,7 +444,9 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
 void TagModificationHelper::slotMultipleTagDel()
 {
     QList<TAlbum*> lst = boundMultipleTags(sender());
+
     qCDebug(DIGIKAM_GENERAL_LOG) << lst.size();
+
     slotMultipleTagDel(lst);
 }
 
@@ -571,13 +576,13 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                                 "Removing it will also remove the children.\n"
                                 "Do you want to continue?",
                                 "Face tags '%2' have at least one face tag child. "
-                                "Removing it will also remove the children.\n"
+                                "Removing them will also remove the children.\n"
                                 "Do you want to continue?",
                                 tagsWithChildrenCount, tagsWithChildren);
 
         bool removeChildren = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
-                                                     qApp->applicationName(), message,
-                                                     QMessageBox::Yes | QMessageBox::Cancel));
+                                                       qApp->applicationName(), message,
+                                                       QMessageBox::Yes | QMessageBox::Cancel));
 
         if (!removeChildren)
         {
@@ -601,8 +606,8 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
     }
 
     bool removeFaceTag = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
-                                                qApp->applicationName(), message,
-                                                QMessageBox::Yes | QMessageBox::Cancel));
+                                                  qApp->applicationName(), message,
+                                                  QMessageBox::Yes | QMessageBox::Cancel));
 
     if (removeFaceTag)
     {
@@ -613,8 +618,8 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                             allPersonTagsToDelete.size());
 
         bool removeTagFromImages = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
-                                                          qApp->applicationName(), msg,
-                                                          QMessageBox::Yes | QMessageBox::No));
+                                                            qApp->applicationName(), msg,
+                                                            QMessageBox::Yes | QMessageBox::No));
 
         // remove the face region from images and unassign the tag if wished
 
@@ -660,6 +665,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
             props.removeProperties(TagPropertyName::person());
             props.removeProperties(TagPropertyName::faceEngineName());
             QString uuid = props.value(TagPropertyName::faceEngineUuid());
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "Remove person tag properties for tag "
                                          << tAlbum->title() << " with uuid " << uuid;
 
@@ -686,7 +692,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 void TagModificationHelper::slotMultipleFaceTagDel()
 {
     QList<TAlbum*> lst = boundMultipleTags(sender());
+
     qCDebug(DIGIKAM_GENERAL_LOG) << lst.size();
+
     slotMultipleFaceTagDel(lst);
 }
 
@@ -724,7 +732,9 @@ void TagModificationHelper::slotMultipleTagsToFaceTags(const QList<TAlbum*>& tag
 void TagModificationHelper::slotMultipleTagsToFaceTags()
 {
     QList<TAlbum*> lst = boundMultipleTags(sender());
+
     qCDebug(DIGIKAM_GENERAL_LOG) << lst.size();
+
     slotMultipleTagsToFaceTags(lst);
 }
 

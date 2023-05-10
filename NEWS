@@ -303,7 +303,7 @@ BUGFIXES:
 293 ==> 134218 - For some reason when I go to add the camera it freezes up and won't download photos
 294 ==> 175443 - Recognise camera import 350d.
 295 ==> 469526 - No metadata when exporting in AVIF.
-296 ==> 
+296 ==> 469543 - Small typo in core/libs/tags/engine/tagmodificationhelper.cpp:570 i18n plural string.
 297 ==> 
 298 ==> 
 299 ==> 
