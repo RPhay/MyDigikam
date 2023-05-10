@@ -304,10 +304,10 @@ BUGFIXES:
 294 ==> 175443 - Recognise camera import 350d.
 295 ==> 469526 - No metadata when exporting in AVIF.
 296 ==> 469543 - Small typo in core/libs/tags/engine/tagmodificationhelper.cpp:570 i18n plural string.
-297 ==> 
-298 ==> 
-299 ==> 
-300 ==> 
+297 ==> 119255 - Broken connection is not re-established.
+298 ==> 116382 - Downloading images from camera fails.
+299 ==> 137356 - Option to automatically delete copied images and do a one click "download all".
+300 ==> 406280 - Don't auto select thumbnail 1 of n when first opening an album.
 301 ==> 
 302 ==> 
 303 ==> 
