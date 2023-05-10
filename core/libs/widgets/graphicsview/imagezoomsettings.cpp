@@ -31,15 +31,15 @@ namespace Digikam
 {
 
 ImageZoomSettings::ImageZoomSettings()
-    : m_zoom(1),
-      m_zoomConst(1),
+    : m_zoom(1.0),
+      m_zoomConst(1.0),
       m_zoomRatio(qApp->devicePixelRatio())
 {
 }
 
 ImageZoomSettings::ImageZoomSettings(const QSize& imageSize, const QSize& originalSize)
-    : m_zoom(1),
-      m_zoomConst(1),
+    : m_zoom(1.0),
+      m_zoomConst(1.0),
       m_zoomRatio(qApp->devicePixelRatio())
 {
     setImageSize(imageSize, originalSize);
@@ -55,7 +55,7 @@ void ImageZoomSettings::setImageSize(const QSize& size, const QSize& originalSiz
     }
     else
     {
-        m_zoomConst = 1;
+        m_zoomConst = 1.0;
     }
 }
 
@@ -108,7 +108,7 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 {
     if (!frameSize.isValid() || !m_size.isValid())
     {
-        return 1;
+        return 1.0;
     }
 
     double zoom;
@@ -132,7 +132,7 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
         if ((frameSize.width() > originalImageSize().width()) && (frameSize.height() > originalImageSize().height()))
         {
-            zoom = 1;
+            zoom = 1.0;
         }
     }
 
