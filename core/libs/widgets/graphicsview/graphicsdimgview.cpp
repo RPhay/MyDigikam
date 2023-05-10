@@ -57,8 +57,6 @@ public:
     QToolButton*              cornerButton;
     PanIconFrame*             panIconPopup;
 
-
-
     QPoint                    mousePressPos;
     QPoint                    panningScrollPos;
     bool                      movingInProgress;
