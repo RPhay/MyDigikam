@@ -56,6 +56,11 @@ public:
     void setGraphicsView(GraphicsDImgView* const view);
 
     /**
+     * Set to true to scale small images to fit to window.
+     */
+    void setScaleFitToWindow(bool value);
+
+    /**
      * Set the item to layout. For a SinglePhoto layout, typically,
      * you can add only one item.
      */

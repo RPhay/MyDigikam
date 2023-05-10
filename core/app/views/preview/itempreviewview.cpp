@@ -612,7 +612,10 @@ void ItemPreviewView::slotSetupChanged()
     previewItem()->setPreviewSettings(ApplicationSettings::instance()->getPreviewSettings());
 
     d->toolBar->setVisible(ApplicationSettings::instance()->getPreviewShowIcons());
+    setScaleFitToWindow(ApplicationSettings::instance()->getScaleFitToWindow());
     setShowText(ApplicationSettings::instance()->getPreviewShowIcons());
+
+    layout()->updateZoomAndSize();
 
     // pass auto-suggest?
 }

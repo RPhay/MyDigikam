@@ -33,13 +33,14 @@ class Q_DECL_HIDDEN SinglePhotoPreviewLayout::Private
 public:
 
     explicit Private()
-      : view(nullptr),
-        item(nullptr),
-        isFitToWindow(true),
-        previousZoom(1),
+      : view          (nullptr),
+        item          (nullptr),
+        fitToSizeMode (ImageZoomSettings::FitToSizeMode::OnlyScaleDown),
+        isFitToWindow (true),
+        previousZoom  (1),
         zoomMultiplier(1.2),
-        maxZoom(12.0),
-        minZoom(0.1)
+        maxZoom       (12.0),
+        minZoom       (0.1)
     {
     }
 
@@ -55,15 +56,17 @@ public:
 
 public:
 
-    GraphicsDImgView* view;
-    GraphicsDImgItem* item;
+    GraphicsDImgView*                view;
+    GraphicsDImgItem*                item;
 
-    bool              isFitToWindow;
-    double            previousZoom;
+    ImageZoomSettings::FitToSizeMode fitToSizeMode;
 
-    double            zoomMultiplier;
-    double            maxZoom;
-    double            minZoom;
+    bool                             isFitToWindow;
+    double                           previousZoom;
+
+    double                           zoomMultiplier;
+    double                           maxZoom;
+    double                           minZoom;
 };
 
 SinglePhotoPreviewLayout::SinglePhotoPreviewLayout(QObject* const parent)
@@ -80,6 +83,18 @@ SinglePhotoPreviewLayout::~SinglePhotoPreviewLayout()
 void SinglePhotoPreviewLayout::setGraphicsView(GraphicsDImgView* const view)
 {
     d->view = view;
+}
+
+void SinglePhotoPreviewLayout::setScaleFitToWindow(bool value)
+{
+    if (value)
+    {
+        d->fitToSizeMode = ImageZoomSettings::FitToSizeMode::AlwaysFit;
+    }
+    else
+    {
+        d->fitToSizeMode = ImageZoomSettings::FitToSizeMode::OnlyScaleDown;
+    }
 }
 
 void SinglePhotoPreviewLayout::addItem(GraphicsDImgItem* const item)
@@ -250,7 +265,7 @@ void SinglePhotoPreviewLayout::fitToWindow()
 
     d->isFitToWindow = true;
 
-    d->zoomSettings()->fitToSize(d->frameSize(), ImageZoomSettings::OnlyScaleDown);
+    d->zoomSettings()->fitToSize(d->frameSize(), d->fitToSizeMode);
     d->item->sizeHasChanged();
     updateLayout();
     d->item->update();
@@ -306,10 +321,7 @@ void SinglePhotoPreviewLayout::updateLayout()
 
 void SinglePhotoPreviewLayout::updateZoomAndSize()
 {
-    // Set zoom for fit-in-window as minimum, but don't scale up images
-    // that are smaller than the available space, only scale down.
-
-    double fitZoom = d->zoomSettings()->fitToSizeZoomFactor(d->frameSize(), ImageZoomSettings::OnlyScaleDown);
+    double fitZoom = d->zoomSettings()->fitToSizeZoomFactor(d->frameSize(), d->fitToSizeMode);
     double minZoom = qBound(0.01, fitZoom - 0.01, 0.1);
 
     setMinZoomFactor(minZoom);

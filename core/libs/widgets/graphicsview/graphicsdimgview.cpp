@@ -40,13 +40,13 @@ class Q_DECL_HIDDEN GraphicsDImgView::Private
 public:
 
     explicit Private()
-      : scene(nullptr),
-        item(nullptr),
-        layout(nullptr),
-        cornerButton(nullptr),
-        panIconPopup(nullptr),
+      : scene           (nullptr),
+        item            (nullptr),
+        layout          (nullptr),
+        cornerButton    (nullptr),
+        panIconPopup    (nullptr),
         movingInProgress(false),
-        showText(true)
+        showText        (true)
     {
     }
 
@@ -56,6 +56,8 @@ public:
 
     QToolButton*              cornerButton;
     PanIconFrame*             panIconPopup;
+
+
 
     QPoint                    mousePressPos;
     QPoint                    panningScrollPos;
@@ -511,6 +513,11 @@ void GraphicsDImgView::setShowText(bool val)
     d->showText = val;
 }
 
+void GraphicsDImgView::setScaleFitToWindow(bool value)
+{
+    d->layout->setScaleFitToWindow(value);
+}
+
 QRect GraphicsDImgView::visibleArea() const
 {
     return (mapToScene(viewport()->geometry()).boundingRect().toRect());
@@ -518,7 +525,7 @@ QRect GraphicsDImgView::visibleArea() const
 
 void GraphicsDImgView::fitToWindow()
 {
-    layout()->fitToWindow();
+    d->layout->fitToWindow();
     update();
 }
 

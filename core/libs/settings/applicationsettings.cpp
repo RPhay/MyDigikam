@@ -194,6 +194,7 @@ void ApplicationSettings::readSettings()
     }
 
     d->previewSettings.convertToEightBit = group.readEntry(d->configPreviewConvertToEightBitEntry,     true);
+    d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
     d->showThumbbar                      = group.readEntry(d->configShowThumbbarEntry,                 true);
 
@@ -406,6 +407,7 @@ void ApplicationSettings::saveSettings()
     }
 
     group.writeEntry(d->configPreviewConvertToEightBitEntry,            d->previewSettings.convertToEightBit);
+    group.writeEntry(d->configPreviewScaleFitToWindowEntry,             d->scaleFitToWindow);
     group.writeEntry(d->configPreviewShowIconsEntry,                    d->previewShowIcons);
     group.writeEntry(d->configShowThumbbarEntry,                        d->showThumbbar);
     group.writeEntry(d->configShowFolderTreeViewItemsCountEntry,        d->showFolderTreeViewItemsCount);

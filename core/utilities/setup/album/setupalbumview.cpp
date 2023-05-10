@@ -77,6 +77,7 @@ public:
         previewFullView             (nullptr),
         previewRawMode              (nullptr),
         previewConvertToEightBit    (nullptr),
+        previewScaleFitToWindow     (nullptr),
         previewShowIcons            (nullptr),
         showFolderTreeViewItemsCount(nullptr),
         largeThumbsBox              (nullptr),
@@ -115,6 +116,7 @@ public:
     QRadioButton*       previewFullView;
     QComboBox*          previewRawMode;
     QCheckBox*          previewConvertToEightBit;
+    QCheckBox*          previewScaleFitToWindow;
     QCheckBox*          previewShowIcons;
     QCheckBox*          showFolderTreeViewItemsCount;
     QCheckBox*          largeThumbsBox;
@@ -328,6 +330,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->previewConvertToEightBit   = new QCheckBox(i18n("Preview image is converted to 8 bits for a faster viewing"), pwpanel);
     d->previewConvertToEightBit->setWhatsThis(i18n("Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."));
 
+    d->previewScaleFitToWindow    = new QCheckBox(i18n("Preview image is always scaled to fit to window"), pwpanel);
+    d->previewScaleFitToWindow->setWhatsThis(i18n("Uncheck this if you do not want to scale small images to fit to window."));
+
     d->previewShowIcons           = new QCheckBox(i18n("Show icons and text over preview"), pwpanel);
     d->previewShowIcons->setWhatsThis(i18n("Uncheck this if you do not want to see icons and text in the image preview."));
 
@@ -338,8 +343,9 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     grid3->addWidget(rawPreviewLabel,             2, 0, 1, 1);
     grid3->addWidget(d->previewRawMode,           2, 1, 1, 1);
     grid3->addWidget(d->previewConvertToEightBit, 3, 0, 1, 2);
-    grid3->addWidget(d->previewShowIcons,         4, 0, 1, 2);
-    grid3->setRowStretch(5, 10);
+    grid3->addWidget(d->previewScaleFitToWindow,  4, 0, 1, 2);
+    grid3->addWidget(d->previewShowIcons,         5, 0, 1, 2);
+    grid3->setRowStretch(6, 10);
 
     d->previewFastPreview->setChecked(true);
     d->previewRawMode->setCurrentIndex(0);
@@ -430,7 +436,6 @@ void SetupAlbumView::applySettings()
     settings->setIconShowColorLabel(d->iconShowColorLabelBox->isChecked());
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
     settings->setIconViewFont(d->iconViewFontSelect->font());
-
     settings->setItemLeftClickAction(d->leftClickActionComboBox->currentIndex());
 
     PreviewSettings previewSettings;
@@ -440,6 +445,7 @@ void SetupAlbumView::applySettings()
     settings->setPreviewSettings(previewSettings);
 
     settings->setPreviewShowIcons(d->previewShowIcons->isChecked());
+    settings->setScaleFitToWindow(d->previewScaleFitToWindow->isChecked());
     settings->setShowFolderTreeViewItemsCount(d->showFolderTreeViewItemsCount->isChecked());
     settings->saveSettings();
 
@@ -505,6 +511,7 @@ void SetupAlbumView::readSettings()
     d->previewRawMode->setCurrentIndex(d->previewRawMode->findData(previewSettings.rawLoading));
 
     d->previewShowIcons->setChecked(settings->getPreviewShowIcons());
+    d->previewScaleFitToWindow->setChecked(settings->getScaleFitToWindow());
     d->previewConvertToEightBit->setChecked(previewSettings.convertToEightBit);
     d->showFolderTreeViewItemsCount->setChecked(settings->getShowFolderTreeViewItemsCount());
 

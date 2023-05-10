@@ -166,6 +166,7 @@ public:
     static const QString configPreviewLoadFullItemSizeEntry;
     static const QString configPreviewRawUseLoadingDataEntry;
     static const QString configPreviewConvertToEightBitEntry;
+    static const QString configPreviewScaleFitToWindowEntry;
     static const QString configPreviewShowIconsEntry;
     static const QString configShowThumbbarEntry;
     static const QString configShowFolderTreeViewItemsCountEntry;
@@ -274,6 +275,7 @@ public:
 
     /// preview settings
     PreviewSettings                              previewSettings;
+    bool                                         scaleFitToWindow;
     bool                                         previewShowIcons;
     bool                                         showThumbbar;
 

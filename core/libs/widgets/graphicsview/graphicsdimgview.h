@@ -112,6 +112,7 @@ protected:
     void finishPanning();
 
     void setShowText(bool value);
+    void setScaleFitToWindow(bool value);
 
     virtual bool acceptsMouseClick(QMouseEvent* e);
     void scrollContentsBy(int dx, int dy)               override;

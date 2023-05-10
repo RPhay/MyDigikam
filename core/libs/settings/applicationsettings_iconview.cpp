@@ -271,4 +271,14 @@ bool ApplicationSettings::getPreviewShowIcons() const
     return d->previewShowIcons;
 }
 
+void ApplicationSettings::setScaleFitToWindow(bool val)
+{
+    d->scaleFitToWindow = val;
+}
+
+bool ApplicationSettings::getScaleFitToWindow() const
+{
+    return d->scaleFitToWindow;
+}
+
 } // namespace Digikam

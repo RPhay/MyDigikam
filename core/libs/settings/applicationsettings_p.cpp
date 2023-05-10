@@ -103,6 +103,7 @@ const QString ApplicationSettings::Private::configToolTipsShowAlbumPreviewEntry(
 const QString ApplicationSettings::Private::configPreviewLoadFullItemSizeEntry(QLatin1String("Preview Load Full Image Size"));
 const QString ApplicationSettings::Private::configPreviewRawUseLoadingDataEntry(QLatin1String("Preview Raw Use Loading Data"));
 const QString ApplicationSettings::Private::configPreviewConvertToEightBitEntry(QLatin1String("Preview Convert To Eight Bit"));
+const QString ApplicationSettings::Private::configPreviewScaleFitToWindowEntry(QLatin1String("Preview Scale Fit To Window"));
 const QString ApplicationSettings::Private::configPreviewShowIconsEntry(QLatin1String("Preview Show Icons"));
 const QString ApplicationSettings::Private::configShowThumbbarEntry(QLatin1String("Show Thumbbar"));
 const QString ApplicationSettings::Private::configShowFolderTreeViewItemsCountEntry(QLatin1String("Show Folder Tree View Items Count"));
@@ -212,6 +213,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       tooltipShowAlbumCategory                          (false),
       tooltipShowAlbumCaption                           (false),
       tooltipShowAlbumPreview                           (false),
+      scaleFitToWindow                                  (false),
       previewShowIcons                                  (true),
       showThumbbar                                      (false),
       showFolderTreeViewItemsCount                      (false),
@@ -360,6 +362,7 @@ void ApplicationSettings::Private::init()
     tooltipShowAlbumCaption                           = true;
     tooltipShowAlbumPreview                           = false;
 
+    scaleFitToWindow                                  = false;
     previewShowIcons                                  = true;
     showThumbbar                                      = true;
 

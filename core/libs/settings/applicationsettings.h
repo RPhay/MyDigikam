@@ -276,6 +276,9 @@ public:
     void setPreviewShowIcons(bool val);
     bool getPreviewShowIcons() const;
 
+    void setScaleFitToWindow(bool val);
+    bool getScaleFitToWindow() const;
+
     // -- Mime-Types Settings -------------------------------------------------------
 
     QString getImageFileFilter() const;
