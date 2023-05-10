@@ -308,12 +308,12 @@ BUGFIXES:
 298 ==> 116382 - Downloading images from camera fails.
 299 ==> 137356 - Option to automatically delete copied images and do a one click "download all".
 300 ==> 406280 - Don't auto select thumbnail 1 of n when first opening an album.
-301 ==> 
-302 ==> 
-303 ==> 
-304 ==> 
-305 ==> 
-306 ==> 
+301 ==> 462535 - Unexpected behavior when changing captions in bulk.
+302 ==> 449821 - Feature request: Add a "Copy As path" to the context menu of an image.
+303 ==> 460779 - digiKam in the Windows 10 forgets the last opened window size.
+304 ==> 462068 - digiKam starts with window size not the same as when last exited.
+305 ==> 461954 - digiKam 7.9 does not remember last position of window when starting, allways open in a small window in middle of screen.
+306 ==> 469546 - Crash after system upgrade from focal to lunar.
 307 ==> 
 308 ==> 
 309 ==> 
