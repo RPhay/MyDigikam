@@ -308,7 +308,7 @@ BUGFIXES:
 298 ==> 116382 - Downloading images from camera fails.
 299 ==> 137356 - Option to automatically delete copied images and do a one click "download all".
 300 ==> 406280 - Don't auto select thumbnail 1 of n when first opening an album.
-301 ==> 
+301 ==> 469581 - digiKam crashes after printing a photo on paper.
 302 ==> 
 303 ==> 
 304 ==> 
