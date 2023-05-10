@@ -318,7 +318,7 @@ BUGFIXES:
 308 ==> 469581 - digiKam crashes after printing a photo on paper.
 309 ==> 275078 - Fit to window size not working if image is smaller then window size. Add a new option for zooming in preview [patch].
 310 ==> 425342 - [Feature Request] Improved zoom options.
-311 ==> 
+311 ==> 159625 - Allow for operations on combined RGB channels.
 312 ==> 
 313 ==> 
 314 ==> 
