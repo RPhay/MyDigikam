@@ -264,7 +264,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
         }
     }
 
-    for (auto indx: falsePositivePoints)
+    for (const auto& indx : falsePositivePoints)
     {
         falsePositiveCases << dataset[indx];
     }

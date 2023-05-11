@@ -69,7 +69,7 @@ void TagsCacheTest::cleanup()
     auto coredb = Digikam::CoreDbAccess().db();
     auto tags   = coredb->getTagShortInfos();
 
-    for (auto tag : tags)
+    for (const auto& tag : tags)
     {
         coredb->deleteTag(tag.id);
     }
@@ -137,7 +137,7 @@ void TagsCacheTest::testRepeatedNames()
 
     std::set<int> set;
 
-    for (auto id : repeatMeIds)
+    for (const auto& id : repeatMeIds)
     {
         auto result = set.insert(id);
         QVERIFY(result.second);

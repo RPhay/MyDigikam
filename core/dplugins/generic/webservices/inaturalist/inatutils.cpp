@@ -55,7 +55,7 @@ QHttpMultiPart* getMultiPart(const QList<Parameter>& parameters,
 
     QHttpMultiPart* const result   = new QHttpMultiPart(QHttpMultiPart::FormDataType);
 
-    for (auto param : parameters)
+    for (const auto& param : parameters)
     {
         QHttpPart part;
         part.setHeader(QNetworkRequest::ContentDispositionHeader,

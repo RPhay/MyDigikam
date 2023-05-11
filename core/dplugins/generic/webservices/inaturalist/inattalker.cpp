@@ -191,7 +191,7 @@ static Taxon parseTaxon(const QJsonObject& taxon)
 
     if (taxon.contains(ANCESTORS))
     {
-        for (auto ancestorTaxon : taxon[ANCESTORS].toArray())
+        for (const auto& ancestorTaxon : taxon[ANCESTORS].toArray())
         {
             ancestors << parseTaxon(ancestorTaxon.toObject());
         }
@@ -708,7 +708,7 @@ public:
             QJsonArray results = json[RESULTS].toArray();
             QList<Taxon> taxa;
 
-            for (auto result : results)
+            for (const auto& result : results)
             {
                 taxa << parseTaxon(result.toObject());
             }
@@ -793,7 +793,7 @@ public:
 
             for (const auto& key : results.keys())
             {
-                for (auto placeValue : results.value(key).toArray())
+                for (const auto& placeValue : results.value(key).toArray())
                 {
                     QJsonObject place = placeValue.toObject();
                     places.push_front(Place(place[DISPLAY_NAME].toString(),
@@ -973,7 +973,7 @@ public:
 
                 QJsonArray results = json[RESULTS].toArray();
 
-                for (auto resultValue : results)
+                for (const auto& resultValue : results)
                 {
                     QJsonObject result = resultValue.toObject();
 
@@ -1181,7 +1181,7 @@ public:
 
         if (json.contains(RESULTS))
         {
-            for (auto result : json[RESULTS].toArray())
+            for (const auto& result : json[RESULTS].toArray())
             {
                 parseScore(result.toObject(), scores);
             }

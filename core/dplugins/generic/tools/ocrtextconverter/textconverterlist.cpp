@@ -107,7 +107,7 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
     QList<QUrl> urls;
     bool raw = false;
 
-    for (auto const& imageUrl: list)
+    for (const auto& imageUrl : list)
     {
         // Check if the new item already exist in the list.
 

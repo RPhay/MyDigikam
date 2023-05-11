@@ -191,7 +191,7 @@ void ImgurWindow::slotUpload()
 {
     QList<const ImgurImageListViewItem*> pending = d->list->getPendingItems();
 
-    for (auto item : qAsConst(pending))
+    for (const auto& item : qAsConst(pending))
     {
         ImgurTalkerAction action;
         action.type               = ImgurTalkerActionType::IMG_UPLOAD;
@@ -207,7 +207,7 @@ void ImgurWindow::slotAnonUpload()
 {
     QList<const ImgurImageListViewItem*> pending = d->list->getPendingItems();
 
-    for (auto item : qAsConst(pending))
+    for (const auto& item : qAsConst(pending))
     {
         ImgurTalkerAction action;
         action.type               = ImgurTalkerActionType::ANON_IMG_UPLOAD;

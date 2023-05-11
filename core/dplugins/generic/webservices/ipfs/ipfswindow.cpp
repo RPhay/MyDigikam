@@ -151,7 +151,7 @@ void IpfsWindow::slotUpload()
         return;
     }
 
-    for (auto item : qAsConst(pending))
+    for (const auto& item : qAsConst(pending))
     {
         IpfsTalkerAction action;
         action.type               = IpfsTalkerActionType::IMG_UPLOAD;
