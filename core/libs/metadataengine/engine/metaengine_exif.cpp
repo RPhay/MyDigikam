@@ -22,12 +22,6 @@
 
 // Qt includes
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-#   include <QStringEncoder>
-#else
-#   include <QTextCodec>
-#endif
-
 #include <QBuffer>
 
 // KDE includes
@@ -272,13 +266,11 @@ QString MetaEngine::getExifTagComment(const char* exifTagName) const
     return QString();
 }
 
-static bool is7BitAscii(const QByteArray& s)
+static bool is7BitAscii(const QString& s)
 {
-    const int size = s.size();
-
-    for (int i = 0 ; i < size ; ++i)
+    for (int i = 0 ; i < s.size() ; ++i)
     {
-        if (!isascii(s[i]))
+        if (s.at(i).unicode() > 0x7f)
         {
             return false;
         }
@@ -308,30 +300,16 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
             }
 
             // Write as Unicode only when necessary.
+            // Check if it's in the ASCII 7bit range
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-            auto latin1Codec         = QStringEncoder(QStringEncoder::Latin1);
-            QByteArray encodedString = latin1Codec(comment);
-
-            if (!encodedString.isEmpty() && !latin1Codec.hasError())
-#else
-            QTextCodec* const latin1Codec = QTextCodec::codecForName("iso8859-1");
-
-            if (latin1Codec && latin1Codec->canEncode(comment))
-#endif
+            if (is7BitAscii(comment))
             {
-                // We know it's in the ISO-8859-1 8bit range.
-                // Check if it's in the ASCII 7bit range
+                // write as ASCII
 
-                if (is7BitAscii(comment.toLatin1()))
-                {
-                    // write as ASCII
+                QString exifComment(QString::fromLatin1("charset=\"Ascii\" %1").arg(comment));
+                d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
 
-                    QString exifComment(QString::fromLatin1("charset=\"Ascii\" %1").arg(comment));
-                    d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
-
-                    return true;
-                }
+                return true;
             }
 
             // write as Unicode (UCS-2)
