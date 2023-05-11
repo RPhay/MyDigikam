@@ -396,7 +396,7 @@ void SuggestTaxonCompletion::slotTaxonAutoCompletions(const AutoCompletions& tax
 
     d->completionTaxa.clear();
 
-    for (auto taxon : taxa.second)
+    for (const auto& taxon : taxa.second)
     {
         completions.m_taxa << TaxonAndFlags(taxon);
         d->completionTaxa.append(taxon);

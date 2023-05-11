@@ -378,13 +378,13 @@ bool INatTalker::restoreApiToken(const QString& username,
     {
         QDateTime now(QDateTime::currentDateTime());
 
-        for (auto str : cookiesStr.split(QLatin1Char(COOKIE_SEPARATOR)))
+        for (const auto& str : cookiesStr.split(QLatin1Char(COOKIE_SEPARATOR)))
         {
             QList<QNetworkCookie> lst(QNetworkCookie::parseCookies(str.toUtf8()));
 
             Q_ASSERT(lst.count() == 1);
 
-            for (auto cookie : lst)
+            for (const auto& cookie : lst)
             {
                 if (INatBrowserDlg::filterCookie(cookie, true, now))
                 {
