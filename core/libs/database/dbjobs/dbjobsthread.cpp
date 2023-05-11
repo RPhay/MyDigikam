@@ -282,17 +282,18 @@ void SearchesDBJobsThread::slotDuplicatesResults(const HaarIface::DuplicatesResu
 {
     auto searchResults = [&](qlonglong imageId) -> HaarIface::DuplicatesResultsMap::iterator
     {
-        for (auto it = m_results.begin(); it != m_results.end(); ++it)
+        for (auto it = m_results.begin() ; it != m_results.end() ; ++it)
         {
             if ((imageId == it.key()) || (it->second.contains(imageId)))
             {
                 return it;
             }
         }
+
         return m_results.end();
     };
 
-    for (const auto referenceImage : incoming.keys())
+    for (const auto& referenceImage : incoming.keys())
     {
         if (searchResults(referenceImage) == m_results.end())
         {

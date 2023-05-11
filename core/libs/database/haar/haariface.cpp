@@ -838,7 +838,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
                 if (useReferenceImages)
                 {
-                    for (auto it = refs.begin(); it != refs.end(); it++)
+                    for (auto it = refs.begin() ; it != refs.end() ; ++it)
                     {
 
 #if ENABLE_DEBUG_DUPLICATES
@@ -984,7 +984,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
     DEBUG_DUPLICATES("Results:");
 
-    for (auto i=resultsMap.constBegin() ; i != resultsMap.constEnd() ; ++i)
+    for (auto i = resultsMap.constBegin() ; i != resultsMap.constEnd() ; ++i)
     {
         ItemInfo info(i.key());
         const QString path = info.filePath();
