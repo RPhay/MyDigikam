@@ -328,7 +328,7 @@ BUGFIXES:
 318 ==> 425310 - Offers a synthesis view to see assigned tag to the Image Properties tab from the right side bar.
 319 ==> 468927 - Toolbar configuration.
 320 ==> 469620 - The toolbar is reset each time digiKam is closed or opened.
-321 ==> 
+321 ==> 469549 - digiKam doesn't save keyboard shortcuts.
 322 ==> 
 323 ==> 
 324 ==> 
