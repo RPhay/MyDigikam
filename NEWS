@@ -325,7 +325,7 @@ BUGFIXES:
 315 ==> 451783 - Show the changes AutoCorrectionTool wants to make and allow to modify these values as a starting point in the manual editing tools.
 316 ==> 460462 - Adjust effect of "automatic color adjustment".
 317 ==> 446188 - Dedicated "Faces" section added to the Image Properties tab from the Right Sidebar.
-318 ==> 
+318 ==> 425310 - Offers a synthesis view to see assigned tag to the Image Properties tab from the right side bar.
 319 ==> 
 320 ==> 
 321 ==> 
