@@ -416,7 +416,7 @@ void SuggestTaxonCompletion::slotComputerVisionResults(const ImageScores& scores
 
     d->completionTaxa.clear();
 
-    for (auto score : scores.second)
+    for (const auto& score : scores.second)
     {
         if (score.getTaxon().ancestors().isEmpty())
         {

@@ -514,7 +514,7 @@ public:
             QDateTime now(QDateTime::currentDateTime());
             QByteArray saveCookies;
 
-            for (auto cookie : m_cookies)
+            for (const auto& cookie : m_cookies)
             {
                 if (!INatBrowserDlg::filterCookie(cookie, true, now))
                 {

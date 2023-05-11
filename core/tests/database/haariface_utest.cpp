@@ -120,7 +120,7 @@ void HaarIfaceTest::initTestCase()
     startSqlite(dir);
 
     // Update collection path, because this is hardcoded
-    for (const auto col: CollectionManager::instance()->allLocations())
+    for (const auto& col: CollectionManager::instance()->allLocations())
     {
         CollectionManager::instance()->removeLocation(col);
     }
