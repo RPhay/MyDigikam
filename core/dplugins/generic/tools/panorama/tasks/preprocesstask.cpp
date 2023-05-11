@@ -156,13 +156,18 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
         if (saved)
         {
             QScopedPointer<DMetadata> meta(new DMetadata);
-            meta->load(inUrl.toLocalFile());
-            MetaEngine::ImageOrientation orientation = meta->getItemOrientation();
 
-            meta->load(outUrl.toLocalFile());
-            meta->setItemOrientation(orientation);
-            meta->setItemDimensions(QSize(preview.width(), preview.height()));
-            meta->applyChanges(true);
+            if (meta->load(inUrl.toLocalFile()))
+            {
+                MetaEngine::ImageOrientation orientation = meta->getItemOrientation();
+
+                if (meta->load(outUrl.toLocalFile()))
+                {
+                    meta->setItemOrientation(orientation);
+                    meta->setItemDimensions(QSize(preview.width(), preview.height()));
+                    meta->applyChanges(true);
+                }
+            }
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview Image url: " << outUrl << ", saved: " << saved;
