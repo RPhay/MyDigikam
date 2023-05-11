@@ -324,7 +324,7 @@ BUGFIXES:
 314 ==> 224614 - Add fast fix tool for automatic image improvements.
 315 ==> 451783 - Show the changes AutoCorrectionTool wants to make and allow to modify these values as a starting point in the manual editing tools.
 316 ==> 460462 - Adjust effect of "automatic color adjustment".
-317 ==> 
+317 ==> 446188 - Dedicated "Faces" section added to the Image Properties tab from the Right Sidebar.
 318 ==> 
 319 ==> 
 320 ==> 
