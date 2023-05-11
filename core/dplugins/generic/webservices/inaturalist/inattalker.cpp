@@ -791,7 +791,7 @@ public:
             QJsonObject results               = json[RESULTS].toObject();
             QList<Place> places;
 
-            for (auto key : results.keys())
+            for (const auto& key : results.keys())
             {
                 for (auto placeValue : results.value(key).toArray())
                 {
@@ -804,7 +804,7 @@ public:
             std::sort(places.begin(), places.end());
             QStringList placesStrList;
 
-            for (auto place : places)
+            for (const auto& place : places)
             {
                 placesStrList << place.m_name;
             }
@@ -1902,7 +1902,7 @@ void INatTalker::slotTimeout()
         }
     }
 
-    for (auto pair : timeoutList)
+    for (const auto& pair : timeoutList)
     {
         QNetworkReply* const reply            = pair.first;
         d->pendingRequests.remove(reply);
