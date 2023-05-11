@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 00:44+0000\n"
+"POT-Creation-Date: 2023-05-11 00:44+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -307,7 +307,7 @@ msgstr "Mainīt seju tagu"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:717
+#: core/app/views/preview/itempreviewview.cpp:720
 #, kde-format
 msgid "&Cancel"
 msgstr "At&celt"
@@ -318,7 +318,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Piešķirt tagus &izvēlētajām vienībām"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:715
+#: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Piešķirt tagus š&ai vienībai"
@@ -38277,54 +38277,54 @@ msgid ""
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr "Kategorija"
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, fuzzy, kde-format
 #| msgid "Travel"
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr "Ceļojumi"
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, fuzzy, kde-format
 #| msgid "Holidays"
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr "Brīvdienas"
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr "Draugi"
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr "Daba"
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, fuzzy, kde-format
 #| msgid "Party"
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr "Tusiņi"
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, fuzzy, kde-format
 #| msgid "Todo"
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr "Izdarīt"
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:276
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@item: album categories"
@@ -38348,7 +38348,7 @@ msgstr "Izveidot \"%1\" mapē %2"
 msgid "Create \"%1\""
 msgstr "Izveidot \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:261
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -38366,7 +38366,7 @@ msgstr[2] ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:284
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -38374,20 +38374,20 @@ msgstr[0] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[1] "Tags '%2' piešķirts %1 failiem. Vai vēlaties turpināt?"
 msgstr[2] "Tags '%2' piešķirts %1 failu. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Dzēst tagu '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:412
+#: core/libs/tags/engine/tagmodificationhelper.cpp:295
+#: core/libs/tags/engine/tagmodificationhelper.cpp:414
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Dzēst tagu"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:386
+#: core/libs/tags/engine/tagmodificationhelper.cpp:388
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -38397,24 +38397,24 @@ msgstr ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:403
+#: core/libs/tags/engine/tagmodificationhelper.cpp:405
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Dzēst tagu '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
 "Do you want to continue?"
 msgid_plural ""
-"Face tags '%2' have at least one face tag child. Removing it will also "
+"Face tags '%2' have at least one face tag child. Removing them will also "
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
@@ -38427,7 +38427,7 @@ msgstr[2] ""
 "Tags '%2' satur %1 apakštagu. Tā dzēšana izdzēsīs arī visus apakštagus. Vai "
 "vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, fuzzy, kde-format
 #| msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 #| msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -38439,7 +38439,7 @@ msgstr[0] "Tags '%2' piešķirts %1 failam. Vai vēlaties turpināt?"
 msgstr[1] "Tags '%2' piešķirts %1 failiem. Vai vēlaties turpināt?"
 msgstr[2] "Tags '%2' piešķirts %1 failu. Vai vēlaties turpināt?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -38447,7 +38447,7 @@ msgstr[0] "Noņemt sejas tagu?"
 msgstr[1] "Noņemt sejas tagus?"
 msgstr[2] "Noņemt sejas tagus?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -59396,50 +59396,50 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Izvērstā meklēšana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:469
 #, kde-format
 msgid "Show file&name"
 msgstr "Rādīt faila &nosaukumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #: core/utilities/setup/camera/setupcamera.cpp:472
 #, kde-format
 msgid "Show file si&ze"
 msgstr "Rādīt faila i&zmēru"
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #: core/utilities/setup/camera/setupcamera.cpp:473
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila izmēru zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #: core/utilities/setup/camera/setupcamera.cpp:475
 #, kde-format
 msgid "Show camera creation &date"
 msgstr "Rādīt uzņemšanas &datumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #: core/utilities/setup/camera/setupcamera.cpp:476
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu uzņemšanas datumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:163
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, fuzzy, kde-format
 #| msgid "Show image creation date"
 msgid "Show file &modification date"
 msgstr "Rādīt attēla uzņemšanas datumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -59447,99 +59447,99 @@ msgid ""
 "identify quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr "Rādīt attēlu izmēr&us"
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
 "Ieslēdziet šo iespēju, lai rādītu attēlu izmērus pikseļos zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, fuzzy, kde-format
 msgid "Show image aspect ratio"
 msgstr "Saglabāt malu attiecību"
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, fuzzy, kde-format
 msgid "Show image format"
 msgstr "Rādīt attēla vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:179
 #, fuzzy, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu faila nosaukumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #, fuzzy, kde-format
 msgid "Show digiKam tit&le"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, fuzzy, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr "Rādīt digiKam a&prakstus"
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam aprakstus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr "Rādīt digiKam &tagus"
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam tagus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:193
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #, fuzzy, kde-format
 msgid "Show digiKam &pick label"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam vērtējumu zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, fuzzy, kde-format
 msgid "Show digiKam color &label"
 msgstr "Rādīt digiKam &vērtējumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #, fuzzy, kde-format
 #| msgid "Set this option to show the digiKam tags below the image thumbnail."
 msgid ""
@@ -59547,13 +59547,13 @@ msgid ""
 "thumbnail."
 msgstr "Ieslēdziet šo iespēju, lai rādītu digiKam tagus zem sīktēliem."
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr "Rādīt pārklātās pagriešanas pogas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons on the image thumbnail for image "
@@ -59565,12 +59565,12 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:209
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr "Rādīt pārklāto pilnekrāna režīma pogu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:210
 #, fuzzy, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
@@ -59579,13 +59579,13 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:211
+#: core/utilities/setup/album/setupalbumview.cpp:213
 #: core/utilities/setup/camera/setupcamera.cpp:488
 #, fuzzy, kde-format
 msgid "Show Geolocation Indicator"
 msgstr "Zaļš filtrs"
 
-#: core/utilities/setup/album/setupalbumview.cpp:212
+#: core/utilities/setup/album/setupalbumview.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to show overlay buttons on the image thumbnail for image "
@@ -59597,59 +59597,59 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai uz attēla rādītu pārklātās pogas attēla "
 "pagriešanai."
 
-#: core/utilities/setup/album/setupalbumview.cpp:214
+#: core/utilities/setup/album/setupalbumview.cpp:216
 #: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr "Klikšķa uz sīktēla darbība:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:216
+#: core/utilities/setup/album/setupalbumview.cpp:218
 #, kde-format
 msgid "Show Preview"
 msgstr "Rādīt priekšskatījumu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:217
+#: core/utilities/setup/album/setupalbumview.cpp:219
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
 msgstr "Palaist attēlu redaktoru"
 
-#: core/utilities/setup/album/setupalbumview.cpp:218
+#: core/utilities/setup/album/setupalbumview.cpp:220
 #, fuzzy, kde-format
 #| msgid "Show on right panel"
 msgid "Show on Light Table"
 msgstr "Rādīt labajā panelī"
 
-#: core/utilities/setup/album/setupalbumview.cpp:219
+#: core/utilities/setup/album/setupalbumview.cpp:221
 #, fuzzy, kde-format
 #| msgid "Open With Default Application"
 msgid "Open with Default Application"
 msgstr "Atvērt ar noklusējuma lietotni"
 
-#: core/utilities/setup/album/setupalbumview.cpp:220
+#: core/utilities/setup/album/setupalbumview.cpp:222
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr "Izvēlieties, kas notiek, noklikšķinot uz sīktēla."
 
-#: core/utilities/setup/album/setupalbumview.cpp:222
+#: core/utilities/setup/album/setupalbumview.cpp:224
 #: core/utilities/setup/camera/setupcamera.cpp:510
 #, kde-format
 msgid "Icon View font:"
 msgstr "Ikonu skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:223
+#: core/utilities/setup/album/setupalbumview.cpp:225
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in Icon Views."
 msgid "Select here the font used to display text in icon views."
 msgstr "Šeit norādiet fontu, ar kādu attēlot tekstu ikonu skatos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:225
+#: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:226
+#: core/utilities/setup/album/setupalbumview.cpp:228
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -59663,19 +59663,19 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:261
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Ikonas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:268
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -59686,13 +59686,13 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:280
 #, fuzzy, kde-format
 #| msgid "Tree View thumbnail size:"
 msgid "People Tree View icon size:"
 msgstr "Koka skata sīktēla izmērs:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:286
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to configure the size in pixels of the Tree View "
@@ -59703,22 +59703,22 @@ msgid ""
 msgstr ""
 "Šeit varat konfigurēt digiKam sānjoslu koku skatu sīktēlu izmēru, pikseļos."
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, kde-format
 msgid "Tree View font:"
 msgstr "Koka skata fonts:"
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr "Šeit varat norādīt koku skatu fontu."
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr "Koku skatos rādīt elementu skaitu"
 
-#: core/utilities/setup/album/setupalbumview.cpp:293
+#: core/utilities/setup/album/setupalbumview.cpp:295
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set this option to display album information when the mouse hovers over a "
@@ -59730,103 +59730,113 @@ msgstr ""
 "Ieslēdziet šo iespēju, lai, paturot peli uz albuma, tiktu parādīts tā "
 "apraksts."
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr "Skats"
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, fuzzy, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr "Iegultais priekšskatījums ielādē pilna izmēra attēlus."
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, fuzzy, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr "Par. attēli"
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, fuzzy, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr "Automātiska koriģēšana"
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, fuzzy, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr "Parādīt iegulto priekšapskati"
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:326
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:330
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:329
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:331
+#: core/utilities/setup/album/setupalbumview.cpp:333
+#, kde-format
+msgid "Preview image is always scaled to fit to window"
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:334
+#, kde-format
+msgid "Uncheck this if you do not want to scale small images to fit to window."
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #: core/utilities/setup/camera/setupcamera.cpp:548
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:348
+#: core/utilities/setup/album/setupalbumview.cpp:354
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr "Priekšskatījums"
 
-#: core/utilities/setup/album/setupalbumview.cpp:363
+#: core/utilities/setup/album/setupalbumview.cpp:369
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr "Pilnekrāns"
 
-#: core/utilities/setup/album/setupalbumview.cpp:368
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr "MIME tipi"
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:377
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr "Kategorijas"
 
-#: core/utilities/setup/album/setupalbumview.cpp:536
+#: core/utilities/setup/album/setupalbumview.cpp:543
 #, kde-format
 msgctxt "@info"
 msgid ""
