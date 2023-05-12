@@ -90,7 +90,7 @@ DigikamApp::DigikamApp()
 
     if (!ExifToolProcess::isCreated())
     {
-        ExifToolThread* const exifToolThread = new ExifToolThread(this);
+        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
         exifToolThread->start();
     }
 
