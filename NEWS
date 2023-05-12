@@ -330,7 +330,7 @@ BUGFIXES:
 320 ==> 469620 - The toolbar is reset each time digiKam is closed or opened.
 321 ==> 469549 - digiKam doesn't save keyboard shortcuts.
 322 ==> 469535 - No Documentation For DigiKam Command Line Options.
-323 ==> 
+323 ==> 460121 - what about executing exiftool on the NAS instead of the client?
 324 ==> 
 325 ==> 
 326 ==> 
