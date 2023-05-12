@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -18015,17 +18015,17 @@ msgstr ""
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr ""
@@ -34763,7 +34763,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "रंग खोली"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

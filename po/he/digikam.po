@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -17802,17 +17802,17 @@ msgstr "חיבור כשל"
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "כישלון בעת העתקת הקובץ \"%1\" מהמחשב למצלמה."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, fuzzy, kde-format
 msgid "Tiff image creation failed."
 msgstr "הצגת תאריך צילום תמונה"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, fuzzy, kde-format
 msgid "Raw file conversion failed."
 msgstr "מרחב צבע"
@@ -34463,7 +34463,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "תצורת צבע:"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2023-05-04 11:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -19408,17 +19408,17 @@ msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 "Proje dosyası içerisinde bilinmeyen girdi dosyası: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Girdi resmi önizleme oluşturması için yüklenemiyor."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Tiff resmi oluşturması başarısız."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Ham dosya dönüştürmesi başarısız."
@@ -37630,7 +37630,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Renk etiketi"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

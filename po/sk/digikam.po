@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -18626,18 +18626,18 @@ msgstr "Pripojenie zlyhalo."
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Vstupný obrázok nie je možné načítať za účelom vytvorenia náhľadu."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, fuzzy, kde-format
 #| msgid "Show image creation date"
 msgid "Tiff image creation failed."
 msgstr "Zobraziť dátum vytvorenia obrázku"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, fuzzy, kde-format
 msgid "Raw file conversion failed."
 msgstr "požiadavka bola zrušená"
@@ -36428,7 +36428,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Farebná menovka"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

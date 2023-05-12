@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
-"PO-Revision-Date: 2023-05-02 11:05+0100\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"PO-Revision-Date: 2023-05-11 20:00+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -18969,17 +18969,17 @@ msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 "O ficheiro de entrada é desconhecido no projecto: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Não é possível carregar a imagem original para a geração da antevisão."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Não foi possível criar a imagem TIFF."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Não foi possível converter o ficheiro RAW."
@@ -36506,7 +36506,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Legenda de cores"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -38012,7 +38012,7 @@ msgstr "Dados acessórios: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -38033,9 +38033,7 @@ msgid "Audio/Video Properties"
 msgstr "Propriedades do Áudio/Vídeo"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Título: "
@@ -38065,20 +38063,16 @@ msgid "Rating: "
 msgstr "Classificação: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Versão"
+msgstr "Com a Versão: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Agrupar"
+msgstr "Agrupado: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -38087,38 +38081,31 @@ msgid "digiKam Properties"
 msgstr "Propriedades do digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Palavras-Chave"
+msgstr "Palavras-Chave: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Pessoas"
+msgstr "Pessoas: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Marcas"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Localização"
 
 #: core/libs/properties/itempropertiestab.cpp:344
-#, fuzzy, kde-format
-#| msgid "Rights"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Permissões"
@@ -39323,15 +39310,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Apagar as marcas '%1'?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -39342,11 +39321,11 @@ msgid_plural ""
 "Do you want to continue?"
 msgstr[0] ""
 "A marca de cara '%2' tem pelo menos uma sub-marca de caras. Se apagar esta "
-"também vai apagar a sub-marca.\n"
+"também vai apagar as sub-marcas.\n"
 "Tem a certeza que deseja continuar?"
 msgstr[1] ""
 "As marcas de caras '%2' têm pelo menos uma sub-marca de caras. Se apagar "
-"esta também vai apagar a sub-marca.\n"
+"esta também vai apagar as sub-marcas.\n"
 "Tem a certeza que deseja continuar?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:597
@@ -59746,22 +59725,16 @@ msgstr ""
 "para 8 'bits'."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr ""
-"A imagem de antevisão é convertida para 8 bits para uma visualização mais "
-"rápida"
+msgstr "A imagem de antevisão é sempre dimensionada para caber na janela"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Desligue isto se não quiser converter uma imagem de antevisão a 16 'bits' "
-"para 8 'bits'."
+"Desligue isto se não quiser ajustar a escala das imagens pequenas para "
+"caberem na janela."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -63909,7 +63882,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Deseja repor todas as definições com os seus valores por omissão?"
-
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "Marcas: "

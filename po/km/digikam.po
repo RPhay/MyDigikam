@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -19049,19 +19049,19 @@ msgstr "បានបរាជ័យ​ក្នុងការ​បម្លែ
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "មិន​អាច​បើក​ឯកសារ dbconfig.xml <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, fuzzy, kde-format
 #| msgid "Input image cannot be loaded for preview generation"
 msgid "Input image cannot be loaded for preview generation."
 msgstr "រូបភាព​បញ្ចូល​មិនអាច​ត្រូវ​បាន​ផ្ទុក​សម្រាប់​ការ​បង្កើត​ការ​មើល​ជា​មុន​បាន​ទេ"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, fuzzy, kde-format
 #| msgid "Correlation failed"
 msgid "Tiff image creation failed."
 msgstr "បាន​បរាជ័យ​ការ​​ជាប់​ទាក់ទង​"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgid "Raw file conversion failed."
@@ -36525,7 +36525,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "តុល្យភាព​ពណ៌"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

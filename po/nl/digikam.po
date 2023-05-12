@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
-"PO-Revision-Date: 2023-05-10 09:40+0200\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"PO-Revision-Date: 2023-05-11 09:58+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -18896,19 +18896,19 @@ msgstr "Projectbestand heeft een verkeerde structuur."
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Onbekend invoerbestand in het projectbestand: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 "Afbeelding voor invoer kan niet geladen worden voor het aanmaken van het "
 "voorbeeld."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Aanmaken van tiff-bestand is mislukt."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "De conversie van het raw-bestand is mislukt."
@@ -36483,7 +36483,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Kleurlabel"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -39287,15 +39287,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Tag(s) '%1' verwijderen?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -59747,20 +59739,16 @@ msgstr ""
 "naar 8 bits."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr "Voorbeeldweergave is geconverteerd tot 8 bits voor sneller weergeven"
+msgstr "Voorbeeldafbeelding is altijd geschaald om in het venster te passen"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Dit deactiveren als u een 16 bits voorbeeldafbeelding niet wilt converteren "
-"naar 8 bits."
+"Dit deactiveren als u kleine afbeeldingen niet wilt schalen om in het "
+"venster te passen."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547

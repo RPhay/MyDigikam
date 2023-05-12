@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
-"PO-Revision-Date: 2023-05-10 10:15+0200\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"PO-Revision-Date: 2023-05-11 09:15+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18697,17 +18697,17 @@ msgstr "Razčlenitev datoteke projekta ni uspela."
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Neznana vhodna datoteka v datoteki projekta: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Vhodne slike ni mogoče naložiti za ustvarjanje predogleda."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Ustvarjanje slike tiff ni uspelo."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Pretvorba surove datoteke ni uspela."
@@ -36152,7 +36152,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Barvna oznaka"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -38982,15 +38982,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Izbrišem '%1' značk?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -39000,7 +38992,7 @@ msgid_plural ""
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
-"Oznaka obraza '%2' ima še vsaj eno podrejeno oznako. Brisanje tega bo "
+"Oznaka obraza '%2' ima še vsaj eno podrejeno oznako. Brisanje te oznake bo "
 "izbrisalo tudi vse njene podrejene oznake.\n"
 "Ali želite nadaljevati?"
 msgstr[1] ""
@@ -59363,20 +59355,16 @@ msgstr ""
 "bitnega."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr "Slika za predogled se pretvori v 8 bitov za morebitni hitrejši ogled"
+msgstr "Velikost predogledne slike vedno ustreza oknu"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Odstranite potrditev, če ne želite pretvarjati 16 bitni predogled v 8 "
-"bitnega."
+"Odstranite potrditev, če ne želite spreminjati velikosti majhnih slik, da "
+"ustrezajo oknu."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547

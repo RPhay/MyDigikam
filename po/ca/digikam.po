@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
-"PO-Revision-Date: 2023-05-10 08:56+0200\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"PO-Revision-Date: 2023-05-11 08:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18878,19 +18878,19 @@ msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 "Fitxer d'entrada desconegut en el fitxer de projecte: <filename>%1</filename>"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 "La imatge d'entrada no s'ha pogut carregar per a la generació de la vista "
 "prèvia."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr "Ha fallat la creació de la imatge TIFF."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr "Ha fallat la conversió del fitxer RAW."
@@ -36517,7 +36517,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Rètol de color"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -39328,15 +39328,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Voleu suprimir «%1» etiqueta/es?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -59828,8 +59820,8 @@ msgstr "Dades RAW a mida completa (alta qualitat)"
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
-"La vista prèvia de la imatge es converteix a 8 bits per a una visualització "
-"més ràpida"
+"La vista prèvia d'imatges es converteix a 8 bits per a una visualització més "
+"ràpida"
 
 #: core/utilities/setup/album/setupalbumview.cpp:331
 #, kde-format
@@ -59840,22 +59832,18 @@ msgstr ""
 "8 bits."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
 msgstr ""
-"La vista prèvia de la imatge es converteix a 8 bits per a una visualització "
-"més ràpida"
+"La vista prèvia d'imatges sempre es canvia d'escala per ajustar-la a la "
+"finestra"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Desactiveu això si no voleu convertir la vista prèvia d'imatges de 16 bits a "
-"8 bits."
+"Desmarqueu això si no voleu canviar l'escala de les imatges petites per "
+"ajustar-les a la finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547

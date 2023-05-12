@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:44+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -19782,19 +19782,19 @@ msgstr "Forbindelse mislykkedes."
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr "Kunne ikke uploade filen <filename>%1</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, fuzzy, kde-format
 #| msgid "Input image cannot be loaded for preview generation"
 msgid "Input image cannot be loaded for preview generation."
 msgstr "Input-billede kan ikke indlæses til dannelse af forhåndsvisning"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, fuzzy, kde-format
 #| msgid "Show image creation date"
 msgid "Tiff image creation failed."
 msgstr "Vis billedes oprettelsesdato"
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgid "Raw file conversion failed."
@@ -38259,7 +38259,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Farveetiket"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
