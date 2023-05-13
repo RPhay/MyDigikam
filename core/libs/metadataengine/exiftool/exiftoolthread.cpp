@@ -36,9 +36,7 @@ ExifToolThread::~ExifToolThread()
 
 void ExifToolThread::run()
 {
-    ExifToolProcess* const proc = ExifToolProcess::instance();
-    proc->moveToThread(this);
-    proc->initExifTool();
+    ExifToolProcess::create(this);
 
     Q_EMIT exifToolProcessStarted();
 

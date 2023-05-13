@@ -22,8 +22,8 @@ namespace Digikam
 
 QPointer<ExifToolProcess> ExifToolProcess::internalPtr = QPointer<ExifToolProcess>();
 
-ExifToolProcess::ExifToolProcess()
-    : QProcess(nullptr),
+ExifToolProcess::ExifToolProcess(QObject* const parent)
+    : QProcess(parent),
       d       (new Private(this))
 {
     setProcessEnvironment(adjustedEnvironmentForAppImage());
@@ -38,6 +38,15 @@ ExifToolProcess::~ExifToolProcess()
     delete d;
 }
 
+void ExifToolProcess::create(QObject* const parent)
+{
+    if (internalPtr.isNull())
+    {
+        internalPtr = new ExifToolProcess(parent);
+        internalPtr->initExifTool();
+    }
+}
+
 bool ExifToolProcess::isCreated()
 {
     return (!internalPtr.isNull());
@@ -45,11 +54,6 @@ bool ExifToolProcess::isCreated()
 
 ExifToolProcess* ExifToolProcess::instance()
 {
-    if (internalPtr.isNull())
-    {
-        internalPtr = new ExifToolProcess();
-    }
-
     return internalPtr;
 }
 
