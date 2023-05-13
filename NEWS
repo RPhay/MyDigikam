@@ -330,14 +330,14 @@ BUGFIXES:
 320 ==> 469620 - The toolbar is reset each time digiKam is closed or opened.
 321 ==> 469549 - digiKam doesn't save keyboard shortcuts.
 322 ==> 469535 - No Documentation For DigiKam Command Line Options.
-323 ==> 460121 - what about executing exiftool on the NAS instead of the client?
+323 ==> 460121 - What about executing exiftool on the NAS instead of the client?
 324 ==> 469682 - digiKam crashes randomly.
 325 ==> 360476 - Add a new menu entry to open the "Captions/Tags -> Tags" view on the right side.
 326 ==> 383203 - I have some inspirations from my favorite paid(!) application.
 327 ==> 418373 - Add shortcut for Tag apply button.
 328 ==> 290186 - Add a note in documentation bout the "CTRL+draw box" keyboard shortcut to assign a face tag in preview mode.
 329 ==> 140079 - Be able to select Tag with space key into Captions/Tags sidebar.
-330 ==> 
+330 ==> 346780 - Custom keyboard shortcuts aren't restored after restarting digiKam.
 331 ==> 
 332 ==> 
 333 ==> 
