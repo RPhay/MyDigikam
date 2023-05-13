@@ -132,7 +132,7 @@ public:
     /**
      * Constructs a ExifToolProcess.
      */
-    explicit ExifToolProcess(QObject* const parent);
+    explicit ExifToolProcess();
 
     /**
      * Destructs the ExifToolProcess object, i.e., killing the process.
@@ -145,8 +145,13 @@ public:
      */
     static QPointer<ExifToolProcess> internalPtr;
     static ExifToolProcess*          instance();
-    static void                      create(QObject* const parent);
     static bool                      isCreated();
+
+    /**
+     * Setup connections, apply Settings and start ExifTool process.
+     * This function cannot be called from another thread.
+     */
+    void initExifTool();
 
 public:
 
@@ -205,11 +210,6 @@ Q_SIGNALS:
 private:
 
     /**
-     * Setup connections, apply Settings and start process.
-     */
-    void initExifTool();
-
-    /**
      * Starts exiftool in a new process.
      */
     bool startExifTool();
@@ -251,6 +251,11 @@ private Q_SLOTS:
     void slotChangeProgram(const QString& etExePath);
     void slotErrorOccurred(QProcess::ProcessError error);
     void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
+private:
+
+    // Disable
+    explicit ExifToolProcess(QObject*) = delete;
 
 private:
 
