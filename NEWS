@@ -339,7 +339,7 @@ BUGFIXES:
 329 ==> 140079 - Be able to select Tag with space key into Captions/Tags sidebar.
 330 ==> 346780 - Custom keyboard shortcuts aren't restored after restarting digiKam.
 331 ==> 411843 - More columns for tags list view.
-332 ==> 
+332 ==> 388404 - Display same metadata for identical pictures in different locations.
 333 ==> 
 334 ==> 
 335 ==> 
