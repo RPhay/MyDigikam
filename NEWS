@@ -332,7 +332,7 @@ BUGFIXES:
 322 ==> 469535 - No Documentation For DigiKam Command Line Options.
 323 ==> 460121 - what about executing exiftool on the NAS instead of the client?
 324 ==> 469682 - digiKam crashes randomly.
-325 ==> 
+325 ==> 360476 - Add a new menu entry to open the "Captions/Tags -> Tags" view on the right side.
 326 ==> 
 327 ==> 
 328 ==> 
