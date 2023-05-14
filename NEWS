@@ -341,7 +341,7 @@ BUGFIXES:
 331 ==> 411843 - More columns for tags list view.
 332 ==> 388404 - Display same metadata for identical pictures in different locations.
 333 ==> 380378 - Option to automatically group photos.
-334 ==> 
+334 ==> 460904 - Several Images can´t be imported from the network and files are not marked as downloaded.
 335 ==> 
 336 ==> 
 337 ==> 
