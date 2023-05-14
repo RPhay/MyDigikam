@@ -219,16 +219,27 @@ done
 
 #################################################################################################
 # Cleanup symbols in binary files to free space.
+# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
 
 echo -e "\n---------- Strip symbols in binary files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
 
-    find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-    find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)' | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+    DEBUG_EXE_STRIP_ALL="`find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)'`"
+    echo "DEBUG_EXE_STRIP_ALL=$DEBUG_EXE_STRIP_ALL"
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_EXE_STRIP_ALL
 
-    find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
-    find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'  | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
+    DEBUG_DLL_STRIP_ALL="`find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)'`"
+    echo "DEBUG_DLL_STRIP_ALL=$DEBUG_DLL_STRIP_ALL"
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_DLL_STRIP_ALL
+
+    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
+    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
+
+    DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'`"
+    echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
 
 else
 
