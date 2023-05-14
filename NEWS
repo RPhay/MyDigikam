@@ -329,7 +329,7 @@ BUGFIXES:
 319 ==> 468927 - Toolbar configuration.
 320 ==> 469620 - The toolbar is reset each time digiKam is closed or opened.
 321 ==> 469549 - digiKam doesn't save keyboard shortcuts.
-322 ==> 469535 - No Documentation For DigiKam Command Line Options.
+322 ==> 469535 - No Documentation For digiKam Command Line Options.
 323 ==> 460121 - What about executing exiftool on the NAS instead of the client?
 324 ==> 469682 - digiKam crashes randomly.
 325 ==> 360476 - Add a new menu entry to open the "Captions/Tags -> Tags" view on the right side.
@@ -340,7 +340,7 @@ BUGFIXES:
 330 ==> 346780 - Custom keyboard shortcuts aren't restored after restarting digiKam.
 331 ==> 411843 - More columns for tags list view.
 332 ==> 388404 - Display same metadata for identical pictures in different locations.
-333 ==> 
+333 ==> 380378 - Option to automatically group photos.
 334 ==> 
 335 ==> 
 336 ==> 
@@ -350,3 +350,12 @@ BUGFIXES:
 340 ==> 
 341 ==> 
 342 ==> 
+343 ==> 
+344 ==> 
+345 ==> 
+356 ==> 
+347 ==> 
+348 ==> 
+349 ==> 
+350 ==> 
+351 ==> 
