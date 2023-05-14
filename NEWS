@@ -345,7 +345,7 @@ BUGFIXES:
 335 ==> 435011 - Adding facetag on grouped pictures only applies to a single picture.
 336 ==> 469740 - SVG lable icons are not displayed anymore.
 337 ==> 132353 - Support to import albums from iPhoto.
-338 ==> 
+338 ==> 149541 - Support to import albums from KPhotoAlbum.
 339 ==> 
 340 ==> 
 341 ==> 
