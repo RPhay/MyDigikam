@@ -250,7 +250,30 @@ QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 
     if (!cachePix)
     {
-        QPixmap pix = QIcon::fromTheme(name, d->fallBackIcon).pixmap(size);
+        QPixmap pix;
+
+        // We check for a slash to see if it's a path to a file.
+        // This is significantly faster than check with QFileInfo.
+
+        if (name.contains(QLatin1Char('/')))
+        {
+            if (pix.load(name))
+            {
+                pix = pix.scaled(size,
+                                 size,
+                                 Qt::KeepAspectRatio,
+                                 Qt::SmoothTransformation);
+            }
+            else
+            {
+                pix = d->fallBackIcon.pixmap(size);
+            }
+        }
+        else
+        {
+            pix = QIcon::fromTheme(name, d->fallBackIcon).pixmap(size);
+        }
+
         d->iconCache.insert(qMakePair(name, size), new QPixmap(pix));
 
         return pix;
