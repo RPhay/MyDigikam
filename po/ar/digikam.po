@@ -30729,7 +30729,7 @@ msgstr "قرميد"
 #, kde-format
 msgctxt "@item: texture type"
 msgid "Bricks 2"
-msgstr "قرميد ٢"
+msgstr "قرميد 2"
 
 #: core/libs/dimg/filters/decorate/texturesettings.cpp:87
 #, kde-format
@@ -32701,7 +32701,7 @@ msgstr "طبيعي"
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D50"
-msgstr "ضوء النّهار دي٥٠"
+msgstr "ضوء النّهار دي50"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:204
 #, kde-format
@@ -32725,7 +32725,7 @@ msgstr "مصبح زينون"
 #, kde-format
 msgctxt "@item: WB temperature preset"
 msgid "Daylight D65"
-msgstr "ضوء النّهار دي٥٦"
+msgstr "ضوء النّهار دي56"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:208
 #, kde-format
@@ -42575,7 +42575,7 @@ msgstr "Joern Ahrens"
 #: core/libs/widgets/mainview/daboutdata.cpp:439
 #, kde-format
 msgid "Developer (2004-2005)"
-msgstr "تطوير (٢٠٠٤-٢٠٠٥)"
+msgstr "تطوير (2004-2005)"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:438
 #, kde-format
@@ -42590,7 +42590,7 @@ msgstr "Ralf Holzer"
 #: core/libs/widgets/mainview/daboutdata.cpp:445
 #, kde-format
 msgid "Developer (2004)"
-msgstr "تطوير (٢٠٠٤)"
+msgstr "تطوير (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
 #, fuzzy, kde-format
@@ -50435,7 +50435,7 @@ msgstr "هناك ملفّ أو مجلّد له الاسم %1 في %2 بالفع�
 msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
-msgstr[0] "٠ ملف"
+msgstr[0] "0 ملف"
 msgstr[1] "ملفّ واحد"
 msgstr[2] "ملفّان"
 msgstr[3] "%1 ملفّات"
@@ -58757,13 +58757,13 @@ msgstr "ستيرٍٍِِيو"
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
-msgstr "صوت محيطي ٥٫١"
+msgstr "صوت محيطي 5٫1"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
-msgstr "صوت محيطي ٧٫١"
+msgstr "صوت محيطي 7٫1"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
@@ -66330,7 +66330,7 @@ msgstr "صفّر كلّ الإعدادات إلى قيمها الافتراضي�
 #, fuzzy
 #~| msgid "(c) 2002-2017, digiKam developers team"
 #~ msgid "(c) 2002-2019, digiKam developers team"
-#~ msgstr "© ٢٠٠٢-٢٠١٧، فريق مطوّرو «دِجي‌كام»"
+#~ msgstr "© 2002-2017، فريق مطوّرو «دِجي‌كام»"
 
 #, fuzzy
 #~| msgid "&Shuffle images"
