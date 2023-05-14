@@ -257,11 +257,17 @@ QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 
         if (name.contains(QLatin1Char('/')))
         {
-            pix.load(name);
-            pix = pix.scaled(size,
-                             size,
-                             Qt::KeepAspectRatio,
-                             Qt::SmoothTransformation);
+            if (pix.load(name))
+            {
+                pix = pix.scaled(size,
+                                 size,
+                                 Qt::KeepAspectRatio,
+                                 Qt::SmoothTransformation);
+            }
+            else
+            {
+                pix = d->fallBackIcon.pixmap(size);
+            }
         }
         else
         {
