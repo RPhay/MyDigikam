@@ -78,6 +78,8 @@ public:
         tabWidget       (nullptr),
         albumWidget     (nullptr),
         tagWidget       (nullptr),
+        recursiveSelectionAlbum(nullptr),
+        recursiveSelectionTags(nullptr),
         selectionMode   (All)
     {
     }
@@ -93,7 +95,9 @@ public:
     ModelClearButton*            albumClearButton;
     ModelClearButton*            tagClearButton;
 
+    QCheckBox*                   recursiveSelectionAlbum;
     QCheckBox*                   wholeAlbums;
+    QCheckBox*                   recursiveSelectionTags;
     QCheckBox*                   wholeTags;
 
     QTabWidget*                  tabWidget;
@@ -101,6 +105,8 @@ public:
     QWidget*                     tagWidget;
 
     AlbumType                    selectionMode;
+
+    bool allowRecursive{false};
 };
 
 const QString AlbumSelectors::Private::configUseWholeAlbumsEntry(QLatin1String("UseWholeAlbumsEntry"));
@@ -110,10 +116,11 @@ const QString AlbumSelectors::Private::configAlbumTypeEntry(QLatin1String("Album
 AlbumSelectors::AlbumSelectors(const QString& label,
                                const QString& configName,
                                QWidget* const parent,
-                               AlbumType albumType)
+                               AlbumType albumType, bool allowRecursive)
     : QWidget(parent),
       d      (new Private)
 {
+    d->allowRecursive             = allowRecursive;
     d->configName                 = configName;
     setObjectName(d->configName);
 
@@ -169,19 +176,34 @@ void AlbumSelectors::initAlbumWidget()
 {
     d->albumWidget   = new QWidget(this);
     d->wholeAlbums   = new QCheckBox(i18nc("@option", "Whole albums collection"), d->albumWidget);
+    d->recursiveSelectionAlbum = new QCheckBox(i18nc("@option", "Recursive Selection"), d->albumWidget);
+    d->recursiveSelectionAlbum->setChecked(true);
+    if (!d->allowRecursive)
+    {
+        d->recursiveSelectionAlbum->setVisible(false);
+        d->recursiveSelectionAlbum->setChecked(false);
+    }
+
     d->albumSelectCB = new AlbumTreeViewSelectComboBox(d->albumWidget);
     d->albumSelectCB->setToolTip(i18nc("@info:tooltip", "Select all albums that should be processed."));
     d->albumSelectCB->setDefaultModel();
+    d->albumSelectCB->setRecursive(d->allowRecursive ? d->recursiveSelectionAlbum->isChecked() : false);
     d->albumSelectCB->setNoSelectionText(i18nc("@info", "No Album Selected"));
+    //d->albumSelectCB->setAddExcludeTristate(true);
     d->albumSelectCB->addCheckUncheckContextMenuActions();
 
     d->albumClearButton = new ModelClearButton(d->albumSelectCB->view()->albumModel());
     d->albumClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected albums"));
 
+    QHBoxLayout* l = new QHBoxLayout;
+    l->addWidget(d->wholeAlbums);
+    l->addWidget(d->recursiveSelectionAlbum);
+    l->addItem(new QSpacerItem(0, 0, QSizePolicy::Policy::Expanding));
+
     QGridLayout* const pAlbumsGrid = new QGridLayout(d->albumWidget);
-    pAlbumsGrid->addWidget(d->wholeAlbums,      0, 0, 1, 2);
-    pAlbumsGrid->addWidget(d->albumSelectCB,    1, 0, 1, 1);
-    pAlbumsGrid->addWidget(d->albumClearButton, 1, 1, 1, 1);
+    pAlbumsGrid->addLayout(l,                     0, 0, 1, 2);
+    pAlbumsGrid->addWidget(d->albumSelectCB,      1, 0, 1, 1);
+    pAlbumsGrid->addWidget(d->albumClearButton,   1, 1, 1, 1);
     pAlbumsGrid->setSpacing(0);
 
     connect(d->wholeAlbums, SIGNAL(toggled(bool)),
@@ -189,6 +211,10 @@ void AlbumSelectors::initAlbumWidget()
 
     connect(d->wholeAlbums, SIGNAL(toggled(bool)),
             this, SIGNAL(signalSelectionChanged()));
+
+    connect(d->recursiveSelectionAlbum, &QCheckBox::clicked, [this] (bool checked) {
+        d->albumSelectCB->setRecursive(checked);
+    });
 
     connect(d->albumSelectCB->view()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotUpdateClearButtons()));
@@ -202,17 +228,30 @@ void AlbumSelectors::initTagWidget()
 {
     d->tagWidget   = new QWidget(this);
     d->wholeTags   = new QCheckBox(i18nc("@option", "Whole tags collection"), d->tagWidget);
+    d->recursiveSelectionTags = new QCheckBox(i18nc("@option", "Recursive Selection"), d->albumWidget);
+    d->recursiveSelectionTags->setChecked(true);
+    if (!d->allowRecursive)
+    {
+        d->recursiveSelectionTags->setVisible(false);
+        d->recursiveSelectionTags->setChecked(false);
+    }
     d->tagSelectCB = new TagTreeViewSelectComboBox(d->tagWidget);
     d->tagSelectCB->setToolTip(i18nc("@info:tooltip", "Select all tags that should be processed."));
     d->tagSelectCB->setDefaultModel();
+    d->tagSelectCB->setRecursive(d->allowRecursive ? d->recursiveSelectionTags->isChecked() : false);
     d->tagSelectCB->setNoSelectionText(i18nc("@info", "No Tag Selected"));
     d->tagSelectCB->addCheckUncheckContextMenuActions();
 
     d->tagClearButton = new ModelClearButton(d->tagSelectCB->view()->albumModel());
     d->tagClearButton->setToolTip(i18nc("@info:tooltip", "Reset selected tags"));
 
+    QHBoxLayout* l = new QHBoxLayout;
+    l->addWidget(d->wholeTags);
+    l->addWidget(d->recursiveSelectionTags);
+    l->addItem(new QSpacerItem(0, 0, QSizePolicy::Policy::Expanding));
+
     QGridLayout* const tAlbumsGrid = new QGridLayout(d->tagWidget);
-    tAlbumsGrid->addWidget(d->wholeTags,      0, 0, 1, 2);
+    tAlbumsGrid->addLayout(l,                 0, 0, 1, 2);
     tAlbumsGrid->addWidget(d->tagSelectCB,    1, 0, 1, 1);
     tAlbumsGrid->addWidget(d->tagClearButton, 1, 1, 1, 1);
     tAlbumsGrid->setSpacing(0);
@@ -225,6 +264,11 @@ void AlbumSelectors::initTagWidget()
 
     connect(d->tagSelectCB->view()->albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
             this, SLOT(slotUpdateClearButtons()));
+
+    connect(d->recursiveSelectionTags, &QCheckBox::clicked, [this] (bool checked) {
+        d->tagSelectCB->setRecursive(checked);
+    });
+
 
     d->tagSelectCB->view()->setObjectName(d->configName);
     d->tagSelectCB->view()->setEntryPrefix(QLatin1String("TagComboBox-"));

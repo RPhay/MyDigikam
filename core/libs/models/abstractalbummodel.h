@@ -408,6 +408,12 @@ public:
     /// Returns a list of album with partially check state Checked
     QList<Album*> partiallyCheckedAlbums()  const;
 
+    /**
+     * If an item gets checked, all childs get checked as well,
+     * If an item gets unchecked, all childs get unchecked as well
+     */
+    void setRecursive(bool recursive);
+
 public Q_SLOTS:
 
     /// Sets the check state of album to Checked or Unchecked
@@ -437,10 +443,10 @@ public Q_SLOTS:
     /// Inverts the checked state of all albums under the given parent.
     void invertCheckedAlbums(const QModelIndex& parent = QModelIndex());
 
-    /// Sets the checked state recursively for all children of and the given album.
+    /// Sets the checked state recursively for all children of but not for the given album.
     void setCheckStateForChildren(Album* album, Qt::CheckState state);
 
-    /// Sets the checked state recursively for all parents of and the given album.
+    /// Sets the checked state recursively for all parents of but not for the given album.
     void setCheckStateForParents(Album* album, Qt::CheckState state);
 
 Q_SIGNALS:
@@ -460,7 +466,9 @@ protected:
 
     QVariant albumData(Album* a, int role)                                                 const override;
     Qt::ItemFlags flags(const QModelIndex& index)                                          const override;
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
+    // Do not call this function directly, use the setData(..., bool recursive)
+	bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole)       override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role, bool recursive);
 
     void albumCleared(Album* album)                                                              override;
     void allAlbumsCleared()                                                                      override;

@@ -43,6 +43,7 @@ public:
     explicit Private(AlbumSelectComboBox* const q)
       : model                   (nullptr),
         filterModel             (nullptr),
+        recursive               (false),
         isCheckable             (true),
         closeOnActivate         (false),
         showCheckStateSummary   (true),
@@ -58,6 +59,7 @@ public:
     AbstractCheckableAlbumModel* model;
     AlbumFilterModel*            filterModel;
     QString                      noSelectionText;
+    bool                         recursive;
     bool                         isCheckable;
     bool                         closeOnActivate;
     bool                         showCheckStateSummary;
@@ -99,6 +101,7 @@ void AlbumSelectComboBox::setDefaultTagModel()
 void AlbumSelectComboBox::setAlbumModels(AbstractCheckableAlbumModel* model, AlbumFilterModel* filterModel)
 {
     d->model = model;
+    d->model->setRecursive(d->recursive);
 
     if (filterModel)
     {
@@ -200,6 +203,13 @@ void AlbumSelectComboBox::Private::updateCloseOnActivate()
         disconnect(q->view(), SIGNAL(activated(QModelIndex)),
                    q, SLOT(hidePopup()));
     }
+}
+
+void AlbumSelectComboBox::setRecursive(bool recursive)
+{
+    d->recursive = recursive; // used if a new model will be set
+    if (model())
+        model()->setRecursive(recursive);
 }
 
 void AlbumSelectComboBox::setNoSelectionText(const QString& text)

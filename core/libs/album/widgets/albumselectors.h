@@ -54,7 +54,8 @@ public:
     explicit AlbumSelectors(const QString& label,
                             const QString& configName,
                             QWidget* const parent = nullptr,
-                            AlbumType albumType = All);
+                            AlbumType albumType = All,
+                            bool allowRecursive = false);
     ~AlbumSelectors()                         override;
 
     /**

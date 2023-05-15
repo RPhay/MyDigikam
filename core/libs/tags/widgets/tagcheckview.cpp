@@ -123,14 +123,17 @@ void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
     switch (d->toggleAutoTags)
     {
         case Children:
+            albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForChildren(album, state);
             break;
 
         case Parents:
+            albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForParents(album, state);
             break;
 
         case ChildrenAndParents:
+            albumModel()->setCheckState(album, state);
             albumModel()->setCheckStateForChildren(album, state);
             albumModel()->setCheckStateForParents(album, state);
             break;

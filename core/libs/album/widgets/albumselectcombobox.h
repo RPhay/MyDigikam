@@ -68,6 +68,11 @@ public:
     void setShowCheckStateSummary(bool show);
 
     /**
+     * If all subalbums shall be selected when parent will be selected
+     */
+    void setRecursive(bool recursive);
+
+    /**
      * Sets the text that is used to describe the state when no album is selected.
      * This may be something like "Any album" or "No tag selected".
      * Depends on the default line edit implementation of TreeViewLineEditComboBox.

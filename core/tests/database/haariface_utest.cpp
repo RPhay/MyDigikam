@@ -421,58 +421,139 @@ void HaarIfaceTest::testPreferFolderWhole()
 }
 
 /*!
- * \brief HaarIfaceTest::testRecursiveFolderSelection
- * Only the potentialDuplicates folder is selected, but not the subfolders
- * In this case, also the subfolders shall be considered
- *
- * IMPORTANT: This test is not working yet! It will be implemented in a second step.
+ * \brief HaarIfaceTest::testReferenceFolderNotSelected
+ * The reference folder is not in the search folders.
+ * But neverthless the folder shall be checked, otherwise
+ * the duplicates get not found. The Duplicatesfinder will merge interally the
+ * two album lists
+ * The oposite that the folder is in both lists will be tested above, so
+ * no extra test is needed.
  */
-//void HaarIfaceTest::testRecursiveFolderSelection()
-//{
-//    const auto refImageSelMethod = HaarIface::RefImageSelMethod::PreferFolder;
+void HaarIfaceTest::testReferenceFolderNotSelected()
+{
+    const auto refImageSelMethod = HaarIface::RefImageSelMethod::ExcludeFolder;
 
-//    AlbumList all = AlbumManager::instance()->allPAlbums();
+    AlbumList all = AlbumManager::instance()->allPAlbums();
 
-//    AlbumList tags; // empty
-//    AlbumList searchAlbums = all;
-//    AlbumList referenceAlbums;
-//    for (auto* a: all)
-//    {
-//        const auto& path = static_cast<PAlbum*>(a)->albumPath();
-//        if (path == QStringLiteral("/potentialDuplicates"))
-//        {
-//            // potentialDuplicates
-//            referenceAlbums << a;
-//            break;
-//        }
-//    }
+    AlbumList tags; // empty
+    AlbumList searchAlbums;
+    for (auto* a: all)
+    {
+        const auto& path = static_cast<PAlbum*>(a)->albumPath();
+        if (!path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
+            // exclude potential duplicates
+            // Collection/2020
+            // Collection/2021
+            // Collection/2022
+            // Collection/2023
+            searchAlbums << a;
+        }
+    }
 
-//    QHash<ImagePath, QList<ItemInfo>> references;
-//    START_SEARCHING_DUPLICATES;
+    AlbumList referenceAlbums;
+    for (auto* a: all)
+    {
+        const auto& path = static_cast<PAlbum*>(a)->albumPath();
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
+            // potentialDuplicates
+            referenceAlbums << a;
+        }
+    }
 
-//    QCOMPARE(references.count(), 3);
+    QHash<ImagePath, QList<ItemInfo>> references;
+    START_SEARCHING_DUPLICATES;
 
-//    {
-//        QVERIFY(references.contains(QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png")));
-//        auto duplicates = references.value(QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
-//        QCOMPARE(duplicates.count(), 1);
-//        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/2020/LargerSmaller.png"));
-//    }
+    QCOMPARE(references.count(), 3);
 
-//    {
-//        QVERIFY(references.contains(QStringLiteral("Collection/potentialDuplicates/subfolder/2.png")));
-//        auto duplicates = references.value(QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
-//        QCOMPARE(duplicates.count(), 1);
-//        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/2021/2.png"));
-//    }
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2020/LargerSmaller.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+    }
 
-//    {
-//        QVERIFY(references.contains(QStringLiteral("Collection/potentialDuplicates/4.png")));
-//        auto duplicates = references.value(QStringLiteral("Collection/potentialDuplicates/4.png"));
-//        QCOMPARE(duplicates.count(), 1);
-//        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/2023/4.png"));
-//    }
-//}
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2021/2.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
+    }
+
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2023/4.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/4.png"));
+    }
+}
+
+/*!
+ * \brief HaarIfaceTest::testReferenceFolderNotSelected
+ * Similar test to testReferenceFolderNotSelected(), but with the difference,
+ * "Collection/potentialDuplicates/subfolder" is in both, the reference and in the search albums
+ */
+void HaarIfaceTest::testReferenceFolderPartlySelected() {
+    const auto refImageSelMethod = HaarIface::RefImageSelMethod::ExcludeFolder;
+
+    AlbumList all = AlbumManager::instance()->allPAlbums();
+
+    AlbumList tags; // empty
+    AlbumList searchAlbums;
+    for (auto* a: all)
+    {
+        const auto& path = static_cast<PAlbum*>(a)->albumPath();
+        if (!path.startsWith(QStringLiteral("/potentialDuplicates")) || (path.startsWith(QStringLiteral("/potentialDuplicates/subfolder")) &&
+                                                                         !path.contains(QStringLiteral("subsubfolder"))))
+        {
+            // exclude potential duplicates but not the subfolder
+            // Collection/2020
+            // Collection/2021
+            // Collection/2022
+            // Collection/2023
+            // Collection/potentialDuplicates/subfolder
+            searchAlbums << a;
+        }
+    }
+
+    AlbumList referenceAlbums;
+    for (auto* a: all)
+    {
+        const auto& path = static_cast<PAlbum*>(a)->albumPath();
+        if (path.startsWith(QStringLiteral("/potentialDuplicates")))
+        {
+            // potentialDuplicates
+            referenceAlbums << a;
+        }
+    }
+
+    QHash<ImagePath, QList<ItemInfo>> references;
+    START_SEARCHING_DUPLICATES;
+
+    QCOMPARE(references.count(), 3);
+
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2020/LargerSmaller.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+    }
+
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2021/2.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
+    }
+
+    {
+        QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")));
+        auto duplicates = references.value(QStringLiteral("Collection/2023/4.png"));
+        QCOMPARE(duplicates.count(), 1);
+        QCOMPARE(PATHFROMFILEINFO(duplicates.at(0)), QStringLiteral("Collection/potentialDuplicates/4.png"));
+    }
+}
 
 HaarIfaceTest::~HaarIfaceTest()
 {

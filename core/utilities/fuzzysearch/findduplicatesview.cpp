@@ -135,7 +135,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     // ---------------------------------------------------------------
 
-    d->albumSelectors  = new AlbumSelectors(i18nc("@label", "Search in:"), QLatin1String("Find Duplicates View"));
+    d->albumSelectors  = new AlbumSelectors(i18nc("@label", "Search in:"), QLatin1String("Find Duplicates View"),
+                                            nullptr, AlbumSelectors::AlbumType::All, true);
 
     // ---------------------------------------------------------------
 
@@ -228,7 +229,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
 
     d->refImageAlbumSelector           = new AlbumSelectors(i18nc("@label", "Reference"),
                                                             QLatin1String("Select Reference"),
-                                                            nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+                                                            nullptr, AlbumSelectors::AlbumType::PhysAlbum, true);
     d->refImageAlbumSelector->setVisible((refSelMethod == HaarIface::RefImageSelMethod::ExcludeFolder) ||
                                          (refSelMethod == HaarIface::RefImageSelMethod::PreferFolder));
 

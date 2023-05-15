@@ -48,7 +48,7 @@ public:
         maxSimilarity          (100),
         albumTagRelation       (0),
         searchResultRestriction(0),
-        method                 (HaarIface::RefImageSelMethod::OlderOrLarger),
+        refSelMethod           (HaarIface::RefImageSelMethod::OlderOrLarger),
         isAlbumUpdate          (false),
         job                    (nullptr)
     {
@@ -58,7 +58,7 @@ public:
     int                          maxSimilarity;
     int                          albumTagRelation;
     int                          searchResultRestriction;
-    HaarIface::RefImageSelMethod method;
+    HaarIface::RefImageSelMethod refSelMethod;
     bool                         isAlbumUpdate;
     QList<int>                   albumsIdList;
     QList<int>                   tagsIdList;
@@ -82,7 +82,7 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
     d->maxSimilarity           = maxSimilarity;
     d->albumTagRelation        = albumTagRelation;
     d->searchResultRestriction = searchResultRestriction;
-    d->method                  = method;
+    d->refSelMethod                  = method;
 
     Q_FOREACH (Album* const a, albums)
     {
@@ -121,7 +121,18 @@ void DuplicatesFinder::slotStart()
     QSet<qlonglong> imageIds                   = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
     QSet<qlonglong> referenceImageIds          = HaarIface::imagesFromAlbumsAndTags(d->referenceAlbumsList, {}, HaarIface::AlbumExclusive);
 
-    SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate, d->method, std::move(referenceImageIds)); // Finding the duplicates
+    switch(d->refSelMethod) {
+        case HaarIface::RefImageSelMethod::ExcludeFolder:
+        case HaarIface::RefImageSelMethod::PreferFolder:
+            imageIds.unite(referenceImageIds); // All reference images must be also in the search path, otherwise no duplicates are found
+            break;
+        case HaarIface::RefImageSelMethod::NewerCreationDate:
+        case HaarIface::RefImageSelMethod::NewerModificationDate:
+        case HaarIface::RefImageSelMethod::OlderOrLarger:
+            break;
+    }
+
+    SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate, d->refSelMethod, std::move(referenceImageIds)); // Finding the duplicates
 
     jobInfo.setMinThreshold(minThresh);
     jobInfo.setMaxThreshold(maxThresh);
