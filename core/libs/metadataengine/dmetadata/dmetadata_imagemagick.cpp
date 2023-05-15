@@ -6,7 +6,7 @@
  * Date        : 2020-12-23
  * Description : item metadata interface - ImageMagick helpers.
  *
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,29 +31,32 @@
 
 #ifdef HAVE_IMAGE_MAGICK
 
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic push
-#   pragma GCC diagnostic ignored "-Wignored-qualifiers"
-#endif
+// Pragma directives to reduce warnings from ImageMagick header files.
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wignored-qualifiers"
+#       pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#   endif
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wignored-qualifiers"
-#endif
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wignored-qualifiers"
+#       pragma clang diagnostic ignored "-Wkeyword-macro"
+#   endif
 
-#include <Magick++.h>
+#   include <Magick++.h>
 
 using namespace Magick;
 using namespace MagickCore;
 
 // Restore warnings
-#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
-#   pragma GCC diagnostic pop
-#endif
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#       pragma GCC diagnostic pop
+#   endif
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
+#   if defined(Q_CC_CLANG)
+#       pragma clang diagnostic pop
+#   endif
 
 #endif // HAVE_IMAGE_MAGICK
 

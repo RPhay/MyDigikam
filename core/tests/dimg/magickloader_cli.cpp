@@ -27,10 +27,31 @@
 
 // ImageMagick includes
 
+// Pragma directives to reduce warnings from ImageMagick header files.
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wignored-qualifiers"
+#   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wignored-qualifiers"
+#   pragma clang diagnostic ignored "-Wkeyword-macro"
+#endif
+
 #include <Magick++.h>
 
 #if MagickLibVersion < 0x700
 #   include <magick/magick.h>
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
+
+#if defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
 #endif
 
 // Local includes

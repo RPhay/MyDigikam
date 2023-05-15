@@ -61,13 +61,15 @@
 #ifdef HAVE_IMAGE_MAGICK
 
 // Pragma directives to reduce warnings from ImageMagick header files.
-#   if defined(Q_CC_GNU)
+#   if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #       pragma GCC diagnostic push
+#       pragma GCC diagnostic ignored "-Wignored-qualifiers"
 #       pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #   endif
 
 #   if defined(Q_CC_CLANG)
 #       pragma clang diagnostic push
+#       pragma clang diagnostic ignored "-Wignored-qualifiers"
 #       pragma clang diagnostic ignored "-Wkeyword-macro"
 #   endif
 
