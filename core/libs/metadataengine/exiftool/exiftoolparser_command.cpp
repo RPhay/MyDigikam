@@ -163,6 +163,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
     QString suffix = fileInfo.suffix().toUpper();
+/*
     bool isVideo   = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
 
     if (isVideo)
@@ -174,7 +175,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         cmdArgs << QByteArray("-microsoft:category=");
         cmdArgs << QByteArray("-itemlist:description=");
     }
-
+*/
     if (suffix != QLatin1String("JXL"))
     {
         cmdArgs << QByteArray("-xmp:all=");
@@ -185,7 +186,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << QByteArray("-TagsFromFile");
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
-
+/*
     if (isVideo)
     {
         cmdArgs << QByteArray("-itemlist:title<xmp:title");
@@ -193,7 +194,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         cmdArgs << QByteArray("-itemlist:comment<xmp:description");
         cmdArgs << QByteArray("-itemlist:description<xmp:description");
     }
-
+*/
     if (hasIptcCSet)
     {
         cmdArgs << QByteArray("-codedcharacterset=UTF8");
