@@ -80,7 +80,8 @@ public:
         tabWidget              (nullptr),
         albumWidget            (nullptr),
         tagWidget              (nullptr),
-        selectionMode          (All)
+        selectionMode          (All),
+        allowRecursive         (false)
     {
     }
 
@@ -106,7 +107,7 @@ public:
 
     AlbumType                    selectionMode;
 
-    bool allowRecursive{false};
+    bool                         allowRecursive;
 };
 
 const QString AlbumSelectors::Private::configUseWholeAlbumsEntry(QLatin1String("UseWholeAlbumsEntry"));
