@@ -76,13 +76,13 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
                                    const AlbumList& referenceImageAlbum,
                                    ProgressItem* const parent)
     : MaintenanceTool(QLatin1String("DuplicatesFinder"), parent),
-      d(new Private)
+      d                            (new Private)
 {
     d->minSimilarity           = minSimilarity;
     d->maxSimilarity           = maxSimilarity;
     d->albumTagRelation        = albumTagRelation;
     d->searchResultRestriction = searchResultRestriction;
-    d->refSelMethod                  = method;
+    d->refSelMethod            = method;
 
     Q_FOREACH (Album* const a, albums)
     {
@@ -121,15 +121,20 @@ void DuplicatesFinder::slotStart()
     QSet<qlonglong> imageIds                   = HaarIface::imagesFromAlbumsAndTags(d->albumsIdList, d->tagsIdList, relation);
     QSet<qlonglong> referenceImageIds          = HaarIface::imagesFromAlbumsAndTags(d->referenceAlbumsList, {}, HaarIface::AlbumExclusive);
 
-    switch(d->refSelMethod) {
+    switch(d->refSelMethod)
+    {
         case HaarIface::RefImageSelMethod::ExcludeFolder:
         case HaarIface::RefImageSelMethod::PreferFolder:
+        {
             imageIds.unite(referenceImageIds); // All reference images must be also in the search path, otherwise no duplicates are found
             break;
+        }
         case HaarIface::RefImageSelMethod::NewerCreationDate:
         case HaarIface::RefImageSelMethod::NewerModificationDate:
         case HaarIface::RefImageSelMethod::OlderOrLarger:
+        {
             break;
+        }
     }
 
     SearchesDBJobInfo jobInfo(std::move(imageIds), d->isAlbumUpdate, d->refSelMethod, std::move(referenceImageIds)); // Finding the duplicates

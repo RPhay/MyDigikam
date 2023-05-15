@@ -26,9 +26,10 @@ public:
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     explicit Private()
-        : extraFlags(),
-          rootIsCheckable(true),
-          addExcludeTristate(false),
+        : extraFlags                          (),
+          rootIsCheckable                     (true),
+          addExcludeTristate                  (false),
+          recursive                           (false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 
     {
@@ -37,9 +38,10 @@ public:
 #else
 
     explicit Private()
-        : extraFlags(nullptr),
-          rootIsCheckable(true),
-          addExcludeTristate(false),
+        : extraFlags                          (nullptr),
+          rootIsCheckable                     (true),
+          addExcludeTristate                  (false),
+          recursive                           (false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
 
     {
@@ -50,7 +52,7 @@ public:
     Qt::ItemFlags                 extraFlags;
     bool                          rootIsCheckable;
     bool                          addExcludeTristate;
-    bool                          recursive{false};
+    bool                          recursive;
     QHash<Album*, Qt::CheckState> checkedAlbums;
 
     QVector<int> staticVectorContainingCheckStateRole;
@@ -176,7 +178,8 @@ QList<Album*> AbstractCheckableAlbumModel::partiallyCheckedAlbums() const
     return d->checkedAlbums.keys(Qt::PartiallyChecked);
 }
 
-void AbstractCheckableAlbumModel::setRecursive(bool recursive) {
+void AbstractCheckableAlbumModel::setRecursive(bool recursive)
+{
     d->recursive = recursive;
 }
 
@@ -220,7 +223,9 @@ void AbstractCheckableAlbumModel::resetCheckedAlbums(const QModelIndex& parent)
 void AbstractCheckableAlbumModel::setDataForParents(const QModelIndex& child, const QVariant& value, int role)
 {
     if (!child.isValid())
+    {
         return;
+    }
 
     QModelIndex current = parent(child);
 
@@ -339,7 +344,6 @@ Qt::ItemFlags AbstractCheckableAlbumModel::flags(const QModelIndex& index) const
 
 bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-
     return setData(index, value, role, d->recursive);
 }
 
@@ -365,6 +369,7 @@ bool AbstractCheckableAlbumModel::setData(const QModelIndex& index, const QVaria
         {
             setCheckStateForChildren(album, state);
         }
+
         return true;
     }
     else

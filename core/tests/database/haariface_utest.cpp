@@ -120,10 +120,12 @@ void HaarIfaceTest::initTestCase()
     startSqlite(dir);
 
     // Update collection path, because this is hardcoded
+
     for (const auto& col: CollectionManager::instance()->allLocations())
     {
         CollectionManager::instance()->removeLocation(col);
     }
+
     QVERIFY(dir.cd(QStringLiteral("Collection")));
     // The new collection is in the same path as the database, but in the "Collection" subfolder
     const auto collectionPath = dir.absolutePath();
@@ -240,9 +242,11 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
@@ -290,9 +294,11 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
@@ -336,9 +342,11 @@ void HaarIfaceTest::testPreferNewerCreationDate()
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
@@ -370,9 +378,11 @@ void HaarIfaceTest::testPreferNewerModificationDate()
     AlbumList tags; // empty
     AlbumList searchAlbums = all;
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
@@ -437,9 +447,11 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
 
     AlbumList tags; // empty
     AlbumList searchAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (!path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // exclude potential duplicates
@@ -452,9 +464,11 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
     }
 
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates
@@ -501,9 +515,11 @@ void HaarIfaceTest::testReferenceFolderPartlySelected() {
 
     AlbumList tags; // empty
     AlbumList searchAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (!path.startsWith(QStringLiteral("/potentialDuplicates")) || (path.startsWith(QStringLiteral("/potentialDuplicates/subfolder")) &&
                                                                          !path.contains(QStringLiteral("subsubfolder"))))
         {
@@ -518,9 +534,11 @@ void HaarIfaceTest::testReferenceFolderPartlySelected() {
     }
 
     AlbumList referenceAlbums;
+
     for (auto* a: all)
     {
         const auto& path = static_cast<PAlbum*>(a)->albumPath();
+
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates

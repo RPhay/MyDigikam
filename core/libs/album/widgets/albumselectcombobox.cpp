@@ -208,8 +208,11 @@ void AlbumSelectComboBox::Private::updateCloseOnActivate()
 void AlbumSelectComboBox::setRecursive(bool recursive)
 {
     d->recursive = recursive; // used if a new model will be set
-    if (model())
-        model()->setRecursive(recursive);
+
+    if (d->model)
+    {
+        d->model->setRecursive(recursive);
+    }
 }
 
 void AlbumSelectComboBox::setNoSelectionText(const QString& text)
