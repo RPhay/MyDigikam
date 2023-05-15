@@ -89,6 +89,7 @@
 #   define AutoPtr UniquePtr
 #   define AnyError Error
 #   define kerErrorMessage ErrorCode::kerErrorMessage
+#   include <exiv2/photoshop.hpp>
 #endif
 
 #if EXIV2_TEST_VERSION(0,27,4)
