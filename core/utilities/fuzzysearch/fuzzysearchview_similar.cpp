@@ -50,7 +50,7 @@ QWidget* FuzzySearchView::setupFindSimilarPanel() const
 
     d->fuzzySearchAlbumSelectors = new AlbumSelectors(i18nc("@label", "Search in albums:"),
                                                       QLatin1String("Fuzzy Search View"),
-                                                      nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+                                                      nullptr, AlbumSelectors::AlbumType::PhysAlbum, true);
 
     // ---------------------------------------------------------------
 

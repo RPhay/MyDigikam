@@ -92,7 +92,7 @@ QWidget* FuzzySearchView::setupSketchPanel() const
     d->sketchSearchAlbumSelectors = new AlbumSelectors(i18nc("@label",
                                                        "Search in albums:"),
                                                        QLatin1String("Sketch Search View"),
-                                                       nullptr, AlbumSelectors::AlbumType::PhysAlbum);
+                                                       nullptr, AlbumSelectors::AlbumType::PhysAlbum, true);
 
     // ---------------------------------------------------------------
 
