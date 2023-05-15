@@ -4,6 +4,8 @@ digiKam 8.1.0 - Release date: 2023-xx-xx
 NEW FEATURES:
 
 Print Creator: add 4 new templates for 6.8 inchs photo paper.
+General      : Improve usability of Image Properties sidebar tab.
+Libraw       : Update to snapshot 2023-05-14
 
 *****************************************************************************************************
 BUGFIXES:
@@ -347,7 +349,7 @@ BUGFIXES:
 337 ==> 132353 - Support to import albums from iPhoto.
 338 ==> 149541 - Support to import albums from KPhotoAlbum.
 339 ==> 217991 - Support to import albums from Picasa.
-340 ==> 
+340 ==> 469728 - Updating internal libraw to resolve build issue on OpenBSD.
 341 ==> 
 342 ==> 
 343 ==> 
