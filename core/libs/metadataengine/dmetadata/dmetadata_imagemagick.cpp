@@ -31,10 +31,29 @@
 
 #ifdef HAVE_IMAGE_MAGICK
 
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wignored-qualifiers"
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wignored-qualifiers"
+#endif
+
 #include <Magick++.h>
 
 using namespace Magick;
 using namespace MagickCore;
+
+// Restore warnings
+#if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
+#   pragma GCC diagnostic pop
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 #endif // HAVE_IMAGE_MAGICK
 
@@ -207,6 +226,7 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
                     QString tmp = QString::fromUtf8(metadata[i]);
                     output.append(tmp);
                     lbytes     += tmp.size();
+                    Q_UNUSED(lbytes);
 /*
                     qCDebug(DIGIKAM_METAENGINE_LOG) << "Append new metadata line of" << tmp.size() << "bytes";
                     qCDebug(DIGIKAM_METAENGINE_LOG) << metadata[i];
