@@ -350,7 +350,7 @@ BUGFIXES:
 338 ==> 149541 - Support to import albums from KPhotoAlbum.
 339 ==> 217991 - Support to import albums from Picasa.
 340 ==> 469728 - Updating internal libraw to resolve build issue on OpenBSD.
-341 ==> 
+341 ==> 469710 - digiKam 8.0 don't read (don't use) saved Shortcut customization.
 342 ==> 
 343 ==> 
 344 ==> 
