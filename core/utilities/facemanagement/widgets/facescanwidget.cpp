@@ -194,9 +194,8 @@ void FaceScanWidget::setupUi()
 
     // ---- Album tab ---------
 
-    d->albumSelectors                 = new AlbumSelectors(QString(),
-                                                           d->configName, this,
-                                                           AlbumSelectors::AlbumType::All, true);
+    d->albumSelectors                 = new AlbumSelectors(QString(), d->configName,
+                                                           this, AlbumSelectors::AlbumType::All, true);
     addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
     // ---- Settings tab ------
