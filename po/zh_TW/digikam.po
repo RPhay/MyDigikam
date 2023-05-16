@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -2772,7 +2772,7 @@ msgstr "說明(&H)"
 msgid "Main Toolbar"
 msgstr "主工具列"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2782,38 +2782,38 @@ msgstr "主工具列"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, fuzzy, kde-format
 #| msgid "Suriname"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "蘇利南"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, fuzzy, kde-format
 #| msgid "Suriname"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "蘇利南"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "開啟相機對話框於 <path>"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "用 Solid UDI 開啟裝置的相機對話框 <udi>"
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "自動偵測並開啟已連線的 gphoto2 相機"
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
@@ -2821,14 +2821,14 @@ msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "用在目錄 <dir> 中找到的 SQLite 資料庫檔案啟動 digikam"
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start digikam with the SQLite database file found in the directory <dir>"
 msgid "Start digikam with the configuration file \"config\""
 msgstr "用在目錄 <dir> 中找到的 SQLite 資料庫檔案啟動 digikam"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2836,7 +2836,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2846,7 +2846,7 @@ msgstr ""
 "無法使用 Run-time Qt4 SQLite 或 MySQL 資料庫外掛程式 - 請安裝此外掛程式。\n"
 "您的電腦上沒有安裝資料庫外掛程式。"
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, fuzzy, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2856,7 +2856,7 @@ msgstr ""
 "無法使用 Run-time Qt4 SQLite 或 MySQL 資料庫外掛程式 - 請安裝此外掛程式。\n"
 "下面列出您的電腦上已安裝的資料庫外掛程式："
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6839,7 +6839,7 @@ msgstr "顯示影像格式"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6863,7 +6863,7 @@ msgstr "是"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6886,7 +6886,7 @@ msgstr "是"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -6895,20 +6895,20 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "否"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "已開啟閃光"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6919,7 +6919,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -8936,7 +8936,7 @@ msgstr "列印使用的色彩管理"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Settings..."
 msgstr "設定值..."
@@ -28186,36 +28186,36 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "無法計算平均值。"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
 msgstr "沒有選擇任何相簿"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
 msgstr "沒有選擇任何標籤"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "已選擇 %1 個標籤"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "已選擇 %1 本相簿"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "已排除 %1 個標籤"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -28228,84 +28228,92 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "選擇相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "標籤 (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
 #| msgid "Whole albums collection"
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "整個相簿收藏"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "選擇區域"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "選擇要處理的所有相簿。"
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, fuzzy, kde-format
 #| msgid "No Album Selected"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "沒有選擇任何相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "重置選取的相簿"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 #| msgid "Whole tags collection"
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "整個標籤收藏"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "選擇要處理的所有標籤。"
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "沒有選擇任何標籤"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "重置選取的標籤"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "相簿 (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "標籤 (全部)"
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -30228,7 +30236,7 @@ msgstr "<i>影格率：</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>影像編解碼器：</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30255,21 +30263,21 @@ msgstr "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "影像歷史紀錄"
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -30277,14 +30285,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "專題"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "相簿櫃"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30292,7 +30300,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30300,33 +30308,33 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "OpenCV 設定"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "是"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "否"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -43653,7 +43661,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "影像品質排序器"
@@ -51283,20 +51291,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "資料夾："
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "要開啟的檔案或資料夾"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -53863,28 +53871,28 @@ msgstr ""
 "朋友後，<nl/> 它可以辨識中您其它相片中的此人。"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "跳過已掃描的影像"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "再次掃描並合併結果"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "清除未確認的結果並重新掃描"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Clear unconfirmed results and rescan"
@@ -53945,7 +53953,7 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "工作流"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -53953,28 +53961,28 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "搜尋於："
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "精準度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Sensitivity"
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "靈敏度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "地點"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53984,26 +53992,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "在所有的處理器核心上工作"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -54019,7 +54027,7 @@ msgstr ""
 "臉孔偵測是個很花時間的工作。您可以選擇是否要使用您電腦中所有的處理器核心來進"
 "行臉孔偵測，或是只要在單一核心上在背景工作。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -54449,34 +54457,34 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "搜尋於："
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "相似檔："
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "修復"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "無"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "限制於參照相簿"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Reset selected albums"
@@ -54484,7 +54492,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "重置選取的相簿"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54493,98 +54501,98 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "限制於："
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "僅已選分頁"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "其一"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "全部"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, fuzzy, kde-format
 #| msgid "File does not exist"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "檔案不存在"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "重新命名相簿時失敗"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "建立日期"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "修改"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, fuzzy, kde-format
 #| msgid "Information about current image selection"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "關於目前選擇影像的資訊"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
 msgstr "參考："
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 #| msgid "No image selected"
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "沒有選擇影像"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54599,13 +54607,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "移除重覆項目"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -59196,13 +59204,13 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "處理項目從："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores"
@@ -59210,24 +59218,24 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "在所有的處理器核心上工作"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, kde-format
 msgid "Common Options"
 msgstr "一般選項"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr "<qt>沒有選項<br/><i>注意：此工具只處理相簿收藏。</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Scan for new items"
 msgstr "掃描新增的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -59236,103 +59244,103 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the thumbnail database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "Also clean up the faces database."
 msgstr "正在更新臉孔資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Also clean up the similarity database."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
 msgid "Extended clean up and shrink all databases."
 msgstr "初始化縮圖資料庫時失敗"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "掃描已變更或未分類的項目（速度較快）"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "重新建立縮圖"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "重新建立指紋"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, fuzzy, kde-format
 #| msgid "Similarity (in percents): "
 msgid "Similarity range (in percents): "
 msgstr "相似度（百分比）："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "重複項目限制："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "沒有選擇區域"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "限制於參照影像的相簿"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, fuzzy, kde-format
 #| msgid "Find Duplicates Items"
 msgid "Find Duplicate Items"
 msgstr "尋找重覆的項目"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, kde-format
 msgid "Faces data management: "
 msgstr "臉孔資料管理："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "清除並重建所有訓練資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59340,47 +59348,47 @@ msgid ""
 "available faces."
 msgstr "這會清除所有之前訓練過的辨識資料，並從所有可找到的臉孔重新建立它。"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "偵測與辨識臉孔"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgid "Scan Mode: "
 msgstr "掃描型號："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "全部清除並重新掃描"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "只掃描未指定的"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Direction: "
 msgstr "同步方向："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From database to image metadata"
 msgstr "從資料庫同步到影像中繼資料"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, kde-format
 msgid "From image metadata to database"
 msgstr "從影像中繼資料同步到資料庫"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "檢查中繼資料設定面板裡的詳情："
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "將資料庫與中繼資料同步"

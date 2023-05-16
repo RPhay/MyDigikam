@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
 "PO-Revision-Date: 2023-05-11 07:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2634,7 +2634,7 @@ msgstr "&Довідка"
 msgid "Main Toolbar"
 msgstr "Головний пенал"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2644,35 +2644,35 @@ msgstr "Головний пенал"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Іван Петрущак,Юрій Чорноіван"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ivanpetrouchtchak@yahoo.com,yurchor@ukr.net"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Відкрити вікно фотоапарата у «path»"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Відкрити діалогове вікно фотоапарата для пристрою з UDI Solid «udi»"
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Автоматично виявляти і відкривати фотоапарат, з'єднаний за допомогою gphoto2"
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2680,12 +2680,12 @@ msgstr ""
 "Запустити digiKam з використанням файла бази даних SQLite, виявленого у "
 "каталозі «dir»"
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Запустити digikam із вказаним файлом налаштувань «config»"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2696,7 +2696,7 @@ msgstr ""
 "p><p>Будь ласка, встановіть 64-бітову версію digiKam, щоб скористатися усіма "
 "можливостями digiKam на повну силу.</p>"
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2707,7 +2707,7 @@ msgstr ""
 "встановіть його.\n"
 "У вашій системі не встановлено жодного додатка баз даних."
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2718,7 +2718,7 @@ msgstr ""
 "встановіть його.\n"
 "Список встановлених у вашій системі додатків баз даних:"
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6770,7 +6770,7 @@ msgstr "високоефективний файл зображення"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6793,7 +6793,7 @@ msgstr "так"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6815,7 +6815,7 @@ msgstr "так"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -6823,19 +6823,19 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "ні"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Завантажувач ImageMagick"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Завантажувач зображень на основі засобів кодування ImageMagick"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6853,7 +6853,7 @@ msgstr ""
 "para><para>Докладніші відомості можна отримати з <a href='https://uk."
 "wikipedia.org/wiki/ImageMagick'>документації щодо ImageMagick</a>.</para>"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -8974,7 +8974,7 @@ msgstr "Використовувати керування кольорами д�
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
@@ -27855,18 +27855,18 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Не вдалося обчислити середню дату для цього альбому."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
 msgstr "Не вибрано жодного альбому"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Не вибрано жодної мітки"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27875,7 +27875,7 @@ msgstr[1] "Вибрано %1 мітки"
 msgstr[2] "Вибрано %1 міток"
 msgstr[3] "Вибрано 1 мітку"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27884,7 +27884,7 @@ msgstr[1] "Вибрано %1 альбоми"
 msgstr[2] "Вибрано %1 альбомів"
 msgstr[3] "Вибрано 1 альбом"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27893,7 +27893,7 @@ msgstr[1] "Виключено %1 мітки"
 msgstr[2] "Виключено %1 міток"
 msgstr[3] "Виключено одну мітку"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27908,80 +27908,88 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Виберіть альбом"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Альбоми (усі)"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Мітки (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "Уся збірка альбомів"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Theme Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "Вибір теми"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Позначте всі альбоми, які слід обробити."
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Не вибрано жодного альбому"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Скасувати позначення альбомів"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "Уся збірка міток"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Позначте всі мітки, які слід обробити."
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Не вибрано жодної мітки"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Скасувати позначення міток"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Альбоми (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Мітки (Усі)"
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29950,7 +29958,7 @@ msgstr "<i>Частота кадрів:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Відеокодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29974,67 +29982,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Список записів"
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Можливості"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Бібліотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Невідома"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Маніфести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Налаштування OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Так"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ні"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -43305,7 +43313,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
@@ -49809,19 +49817,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Теки"
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Файли і теки, які слід відкрити"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -52381,28 +52389,28 @@ msgstr ""
 "зможе автоматично виконати розпізнавання цих людей на інших фотографіях."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Пропускати вже скановані зображення"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Пересканувати і об'єднати результати"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Вилучити непідтверджені результати і виконати пересканування"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -52464,31 +52472,31 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Процес"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Місця для пошуку"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Точність обличчя"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Чутливість"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Специфічність"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52502,13 +52510,13 @@ msgstr ""
 "але тим менше буде розпізнано облич (буде розпізнано лише обличчя,\n"
 "які є дуже подібними до попередньо визначених за допомогою міток обличчя)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Використовувати модель виявлення YOLO v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52516,14 +52524,14 @@ msgstr ""
 "Виявлення облич за допомогою моделі даних YOLO v3. Якісніші результати, але "
 "повільніша обробка."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Використовувати всі ядра процесора"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52536,7 +52544,7 @@ msgstr ""
 "у системі або працювати у фоновому режимі, використовуючи лише одне ядро "
 "процесора."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53011,37 +53019,37 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "Шукати у:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Діапазон подібності:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Обмеження:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Немає"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Обмежитися альбомом еталонного зображення"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Виключити альбом еталонного зображення"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53053,91 +53061,91 @@ msgstr ""
 "наприклад, обмеження пошуку альбомом еталонного зображення або виключення "
 "альбому еталонного зображення з пошуку."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Обмеження:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Лише позначена вкладка"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "У одному з"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Обидва"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Альбоми, але не мітки"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Мітки, але не альбоми"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr "Давніші або більші"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr "Перевага позначеної теки, як еталонної"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr "Перевага місць поза позначеною текою, як еталонною"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Перевага новішої дати створення"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Перевага новішої дати внесення змін"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Виберіть спосіб вибору еталонного зображення"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Reference"
 msgstr "Зразок"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "Спосіб вибору еталонного зображення"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53164,13 +53172,13 @@ msgstr ""
 "«Лише позначена вкладка» означає, що використовуватиметься лише позначена "
 "вкладка із зображеннями."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Вилучити дублікати"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -57706,24 +57714,24 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "Обробити записи:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Останні збережені активні інструменти і параметри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Використовувати всі ядра процесора (якщо є можливість)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, kde-format
 msgid "Common Options"
 msgstr "Загальні параметри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57732,12 +57740,12 @@ msgstr ""
 "<qt>Немає варіантів<br/><i>Зауваження: цим інструментом можна обробляти лише "
 "збірку альбомів.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Scan for new items"
 msgstr "Виявити нові зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57751,27 +57759,27 @@ msgstr ""
 "тривалішою і може на певний час призупинити роботу digiKam<br/> з метою "
 "запобігти пошкодженню бази даних.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Також ущільнити базу даних мініатюр."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Також ущільнити базу даних облич."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Також ущільнити базу даних подібності."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Розширене чищення і стискання усіх баз даних."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57780,69 +57788,69 @@ msgstr ""
 "За допомогою цього пункту можна очистити (ущільнити) бази даних. Підтримку "
 "ущільнення передбачено для обох типів баз даних, SQLite і MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Виконати спорожнення бази даних"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Шукати змінені або не додані до каталогу записи (швидше)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Заново створити мініатюри"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Заново створити відбитки"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Діапазон подібності (у відсотках): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Обмеження на дублікати:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, kde-format
 msgid "No restriction"
 msgstr "Без обмежень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Обмежити альбомом еталонного зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Виключити альбом еталонного зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Знайти дублікати зображень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, kde-format
 msgid "Faces data management: "
 msgstr "Керування даними щодо облич: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Вилучити і повторно створити всі тренувальні дані"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57853,47 +57861,47 @@ msgstr ""
 "розпізнавання і повторного їх створення на основі даних щодо доступних "
 "зображень облич."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Виявляти і розпізнавати обличчя"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Режим пошуку: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Вилучити усі дані і повторити пошук"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Шукати лише записи без призначень"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Напрямок синхронізації: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From database to image metadata"
 msgstr "з бази даних до метаданих зображення"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, kde-format
 msgid "From image metadata to database"
 msgstr "з метаданих зображення до бази даних"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Докладні дані наведено на панелі налаштовування метаданих: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Синхронізувати метадані з базою даних"

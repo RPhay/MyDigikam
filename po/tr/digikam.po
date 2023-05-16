@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
-"PO-Revision-Date: 2023-05-04 11:53+0300\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
+"PO-Revision-Date: 2023-05-15 22:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2642,7 +2642,7 @@ msgstr "&Yardım"
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2652,48 +2652,48 @@ msgstr "Ana Araç Çubuğu"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "H.Gökhan SARI, Osman Tosun"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "Kamera mesaj kutusunu burada aç <path>"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, fuzzy, kde-format
 #| msgid "Open camera dialog for the device with Solid UDI <udi>"
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Solid UDI <udi> 'ye sahip aygıt için kamera diyalogu aç"
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Bağlı bir gphoto2 kamerayı otomatik olarak algıla ve aç"
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
 "Digikam'i \"dir\" dizininde bulunan SQLite veritabanı dosyasıyla başlat"
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Digikam'ı yapılandırma dosyası \"config\" ile başlat"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2704,7 +2704,7 @@ msgstr ""
 "p><p>Daha iyi bir digiKam deneyimi için lütfen digiKam'in 64 bit sürümünü "
 "kurun.</p>"
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2715,7 +2715,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2726,7 +2726,7 @@ msgstr ""
 "değil; lütfen kurun.\n"
 "Bilgisayarınızda herhangi bir veritabanı eklentisi kurulu değil."
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -3080,7 +3080,7 @@ msgstr ""
 #: core/app/views/stack/itemiconview_p.h:185
 #, kde-format
 msgid "Timeline"
-msgstr "Zaman çizelgesi"
+msgstr "Zaman Akışı"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:430
 #, kde-format
@@ -3100,12 +3100,12 @@ msgstr[1] "%1 öge"
 #, kde-format
 msgctxt "Filters as in Search type Filters"
 msgid "Filters"
-msgstr "Filtreler"
+msgstr "Süzgeçler"
 
 #: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
-msgstr "Kök albümü açamıyor. Fiziki bir konum değil."
+msgstr "Kök albüm açılamıyor. Fiziki bir konum değil."
 
 #: core/app/views/stack/itemiconview_items.cpp:614
 #, kde-format
@@ -3117,17 +3117,17 @@ msgstr ""
 #: core/app/views/stack/itemiconview_p.h:168
 #, kde-format
 msgid "Fuzzy Sketch Search"
-msgstr "Bulanık Çizim Arama"
+msgstr "Çizim Arama (Bulanık)"
 
 #: core/app/views/stack/itemiconview_p.h:172
 #, kde-format
 msgid "Fuzzy Image Search"
-msgstr "Bulanık Resim Araması"
+msgstr "Görsel Arama (Bulanık)"
 
 #: core/app/views/stack/itemiconview_p.h:176
 #, kde-format
 msgid "Map Search"
-msgstr "Harita Araması"
+msgstr "Aramayı Eşlemle"
 
 #: core/app/views/stack/itemiconview_p.h:181
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1167
@@ -3157,8 +3157,8 @@ msgid ""
 "The storage location of this image\n"
 "is currently not available"
 msgstr ""
-"Bu görüntünün saklanma yeri\n"
-" şu anda mevcut değil"
+"Bu görüntünün depolama konumu\n"
+"şu anda yok"
 
 #: core/app/views/stack/itemiconview_views.cpp:223
 #, kde-format
@@ -5322,8 +5322,8 @@ msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
 "the image's aspect ratio instead."
 msgstr ""
-"Filigranın kendi en boy oranını göz ardı etmesini ve bunun yerine görüntünün "
-"en boy oranını kullanmasını istiyorsanız bunu işaretleyin."
+"Filigranın kendi en-boy oranını yok saymasını ve bunun yerine görselin en-"
+"boy oranını kullanmasını istiyorsanız bunu işaretleyin."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
 #, kde-format
@@ -6845,7 +6845,7 @@ msgstr "Yüksek Verimli Görüntü Kodlaması (*.heic *.heif)"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6870,7 +6870,7 @@ msgstr "evet"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6894,7 +6894,7 @@ msgstr "evet"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -6904,21 +6904,21 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "hayır"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Flaş kullanılmış"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, fuzzy, kde-format
 #| msgid "An image loader based on Libheif codec"
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6929,7 +6929,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -9025,7 +9025,7 @@ msgstr "Yazdırma için Renk Yönetimini kullan"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
@@ -21076,7 +21076,7 @@ msgstr "Tercih ettiğiniz harıcı eposta istemcisini buradan seçin."
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #, kde-format
 msgid "Attach a file with items properties"
-msgstr "Öge özellikleriile bir dosya ekle"
+msgstr "Öge özellikleriyle birlikte bir dosya iliştir"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
 #, kde-format
@@ -23451,11 +23451,10 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "Toplu işlenecek resim listesidir."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Yerel Depolamaya Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
@@ -23495,25 +23494,24 @@ msgid "File Copy"
 msgstr "Dosya"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Export by Email"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export items to a local storage"
-msgstr "Eposta ile dışa aktar"
+msgstr "Ögeleri yerel bir depolamaya dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:69
-#, fuzzy, kde-format
-#| msgid "Export by Email"
+#, kde-format
 msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
-msgstr "Eposta ile dışa aktar"
+msgstr ""
+"Bu araç, kullanıcıların ögeleri yerel bir depolamaya dışa aktarmasına izin "
+"verir."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Yerel Depolamaya Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:79
 #, kde-format
@@ -23554,11 +23552,10 @@ msgid "<i>not selected</i>"
 msgstr "Hiçbir betik seçilmedi"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Uzak Depolamaya Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
 #, fuzzy, kde-format
@@ -23594,11 +23591,10 @@ msgid "Select Items to Import..."
 msgstr "Mime Türünü Seç..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Uzak Depolamadan İçe Aktar"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
 #, fuzzy, kde-format
@@ -23652,18 +23648,16 @@ msgid ""
 msgstr "Eposta ile gönder"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:103
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Uzak Depolamaya Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Uzak Depolamadan İçe Aktar"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
@@ -27739,8 +27733,8 @@ msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr ""
-"Koleksiyon her zaman bağlı olmayan bir saklama aygıtında konumlanmış. "
-"Koleksiyonu çıkarılabilir bir koleksiyon olarak işaretleyin."
+"Koleksiyon, her zaman bağlı olmayan bir depolama aygıtında bulunur. "
+"Koleksiyonu kaldırılabilir bir koleksiyon olarak imleyin."
 
 #: core/libs/album/manager/albummanager_database.cpp:343
 #, kde-format
@@ -28619,39 +28613,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Bu albüm için tarih ortalaması hesaplanamadı."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
 msgstr "Albüm Seçilmedi"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Hiç Etiket Seçilmedi"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "1 Etiket seçildi"
 msgstr[1] "%1 Etiket seçildi"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "1 Albüm seçildi"
 msgstr[1] "%1 Albüm seçildi"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "1 Etiket hariç tutuldu"
 msgstr[1] "%1 Etiket hariç tutuldu"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -28665,84 +28659,92 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Albüm Seç"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, fuzzy, kde-format
 #| msgid "Album List"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albüm Listesi"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Etiketler: "
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "Tüm albüm koleksiyonu"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Theme Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "Tema Seçimi"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "İşlenecek tüm albümleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Albüm Seçilmedi"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Seçili albümleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "Tüm etiket koleksiyonu"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "İşlenecek tüm etiketleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Hiç Etiket Seçilmedi"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Seçili etiketleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albümler (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etiketler: "
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 #| msgid "Tags: %1\n"
 msgctxt "@title"
@@ -30764,7 +30766,7 @@ msgstr "<i>FrameRate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30789,68 +30791,68 @@ msgstr "<font size=\"5\">%1</font><br/><b>Sürüm %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "Ögeler Listesi"
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Özellikler"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Kitaplıklar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kamera Yapılandırması"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -44580,7 +44582,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Resim Kalitesi Sıralayıcısı"
@@ -51267,21 +51269,21 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dizin: "
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, fuzzy, kde-format
 #| msgid "Showfoto"
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Resim göster"
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Açılacak dosya(lar) ya da dizin(ler)"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -53937,28 +53939,28 @@ msgstr ""
 "tanımlayacaktır.</qt>"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Önceden taranmış resimleri atla"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Yeniden tara ve sonuçları birleştir"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Onaylanmamış sonuçarı temizle ve yeniden tara"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Clear unconfirmed results and rescan"
@@ -54032,7 +54034,7 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "İş Akışı"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in:"
@@ -54040,27 +54042,27 @@ msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Burada ara:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, fuzzy, kde-format
 #| msgid "Accuracy"
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Doğruluk"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Duyarlılık"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Specific Location"
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Belirli Konum"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -54070,26 +54072,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Tüm işlemci çekirdeklerinde çalış"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -54108,7 +54110,7 @@ msgstr ""
 "çalışmak istediğinizi seçebilirsiniz. Uyarı: Bu özellikler hala deneysel ve "
 "öntanımlı olarak devre dışı bırakılmıştır."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -54614,27 +54616,27 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "Burada ara:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 #| msgid "Similarity range:"
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Benzerlik aralığı:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Restriction:"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Kısıtlama:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Restrict to reference album"
@@ -54642,7 +54644,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Referans albüme kısıtla"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Exclude reference album"
@@ -54650,7 +54652,7 @@ msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Referans albümünü hariç tut"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use this option to restrict the duplicate search with some criteria, as "
@@ -54666,20 +54668,20 @@ msgstr ""
 "albümüne sınırlamak veya aramanın referans görüntü albümünü hariç tutmak "
 "için bu seçeneği kullanın."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, fuzzy, kde-format
 #| msgid "Restrict to:"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Şununla sınırlandır:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Yalnızca seçili sekme"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "One of"
@@ -54687,13 +54689,13 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Biri"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Her ikisi"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Albums but not tags"
@@ -54701,7 +54703,7 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Albümler var ama etiketler yok"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Tags but not albums"
@@ -54709,25 +54711,25 @@ msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiketler var ama albümler yok"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Creation Date"
@@ -54735,7 +54737,7 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Oluşturma Tarihine Göre"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Modification Date"
@@ -54743,7 +54745,7 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Değişiklik Tarihine Göre"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Information about current image selection"
@@ -54751,21 +54753,21 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Geçerli görsel seçimi hakkında bilgi"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
 msgstr "Referans:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 #| msgid "&Choose image selection method:"
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "&Resim seçimi yöntemini seçin:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, fuzzy, kde-format
 #| msgid ""
 #| "Use this option to decide about the relation of the selected albums and "
@@ -54797,14 +54799,14 @@ msgstr ""
 "gerektiği anlamına gelir.<br/><i>Yalnızca seçilen sekme</i> yalnızca seçilen "
 "sekmenin kullanıldığı anlamına gelir."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, fuzzy, kde-format
 #| msgid "Remove duplicate words"
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Tekrarlanan kelimeleri kaldır"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -59510,13 +59512,13 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "Ögeleri şuradan işle:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Work on all processor cores (when it possible)"
@@ -59524,12 +59526,12 @@ msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Bütün işlemci çekirdeklerinde çalış (mümkün olduğunda)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, kde-format
 msgid "Common Options"
 msgstr "Genel Seçenekler"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>No option<br><i>Note: only Albums Collection are processed by this "
@@ -59541,12 +59543,12 @@ msgstr ""
 "<qt>Seçenek Yok<br><i>Not: bu araç tarafından yalnızca Albüm Koleksiyonu "
 "işlenir.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Scan for new items"
 msgstr "Yeni ögeleri tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -59559,29 +59561,29 @@ msgstr ""
 "seçerseniz hiç veritabanı hatası oluşmadığından emin olmak için <br/> işlem "
 "daha fazla zaman alabilir ve digiKam'i geçici olarak dondurabilir</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Aynı zamanda küçük resim veritabanını da temizle"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Ayrıca yüz veritabanını da temizle"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 #| msgid "Also clean up the thumbnail database."
 msgid "Also clean up the similarity database."
 msgstr "Aynı zamanda küçük resim veritabanını da temizle"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, fuzzy, kde-format
 #| msgid "Also clean up the thumbnail database."
 msgid "Extended clean up and shrink all databases."
 msgstr "Aynı zamanda küçük resim veritabanını da temizle"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -59590,69 +59592,69 @@ msgstr ""
 "Bu seçenek veritabanlarını vakumlamaya (küçültme) yol açar. Vakumlama SQLite "
 "ve MySQL tarafından da destekleniyor."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Veritabanı temizleme işlemini gerçekleştir"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Değiştirilen veya kataloglanmamış ögeleri tara (daha hızlı)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Küçük Resimleri Yeniden Oluştur"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Parmak izlerini yeniden oluştur"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Benzerlik aralığı (yüzde cinsinden): "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Yinelenen kısıtlamaları:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, kde-format
 msgid "No restriction"
 msgstr "Kısıtlama yok"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Referans resmin albümüne kısıtla"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Referans resmin albümünü kapsa"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Yinelenen Ögeleri Bul"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, kde-format
 msgid "Faces data management: "
 msgstr "Yüz veri yönetimi: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Tüm eğitim verilerini sil ve yeniden oluştur"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59662,49 +59664,49 @@ msgstr ""
 "Bu, kullanılabilir yüzlerden yeniden inşa ve tanıma için tüm eğitim "
 "verilerini silecektir."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect and recognize faces (experimental)"
 msgid "Detect and recognize Faces"
 msgstr "Yüzleri algıla ve tanı (deneysel)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Tarama Kipi: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tümünü temizle ve tekrar tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Yalnızca atanmamışları tara"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Senkronize Yönü: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Veritabanından resim metaverisine"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Resim metaverisinden veritabanına"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Detaylar için metaveri kurulum panelini kontrol edin: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Metaveriyi ve Veritabanını Senkronize Et"

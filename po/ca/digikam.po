@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
 "PO-Revision-Date: 2023-05-11 08:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2597,7 +2597,7 @@ msgstr "A&juda"
 msgid "Main Toolbar"
 msgstr "Barra d'eines principal"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2607,34 +2607,34 @@ msgstr "Barra d'eines principal"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Josep M. Ferrer, Joan Maspons Ventura"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com, joanmaspons@gmail.com"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Obre el diàleg de la càmera al «camí»"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr "Obre el diàleg de càmera per al dispositiu amb UDI del Solid «udi»"
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "Detecta i obre automàticament una càmera gphoto2 connectada"
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2642,12 +2642,12 @@ msgstr ""
 "Inicia el digiKam amb el fitxer de base de dades SQLite trobat al directori "
 "«dir»"
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Inicia el digiKam amb el fitxer de configuració «config»"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2658,7 +2658,7 @@ msgstr ""
 "bits.</p><p>Instal·leu la versió de 64 bits del digiKam per a obtenir una "
 "experiència millor.</p>"
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2669,7 +2669,7 @@ msgstr ""
 "no està disponible. Si us plau, instal·leu-lo.\n"
 "No hi ha cap connector de base de dades instal·lat a l'ordinador."
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2681,7 +2681,7 @@ msgstr ""
 "Els connectors de base de dades instal·lats al vostre ordinador es llisten a "
 "continuació."
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6714,7 +6714,7 @@ msgstr "Codificació d'imatge d'alta eficiència"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6737,7 +6737,7 @@ msgstr "sí"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6759,7 +6759,7 @@ msgstr "sí"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -6767,19 +6767,19 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "no"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Carregador de l'ImageMagick"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Un carregador d'imatges basat en els codificadors de l'ImageMagick"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6796,7 +6796,7 @@ msgstr ""
 "fitxers d'imatge.</para><para>Per als detalls, vegeu la <a href='https://en."
 "wikipedia.org/wiki/ImageMagick'>documentació de l'ImageMagick</a>.</para>"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -8905,7 +8905,7 @@ msgstr "Usa la gestió del color per a imprimir"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Settings..."
 msgstr "Configuració..."
@@ -27739,39 +27739,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "No s'ha pogut calcular la mitjana per a aquest àlbum."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
 msgstr "No hi ha cap àlbum seleccionat"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
 msgstr "No hi ha cap etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "S'ha seleccionat 1 etiqueta"
 msgstr[1] "S'han seleccionat %1 etiquetes"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "S'ha seleccionat 1 àlbum"
 msgstr[1] "S'han seleccionat %1 àlbums"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "S'ha exclòs 1 etiqueta"
 msgstr[1] "S'han exclòs %1 etiquetes"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -27784,80 +27784,88 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Selecció d'àlbum"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Àlbums (tots)"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Etiquetes (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "Tota la col·lecció d'àlbums"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Theme Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "Selecció del tema"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Seleccioneu tots els àlbums que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "No hi ha cap àlbum seleccionat"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Reinicia els àlbums seleccionats"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "Tota la col·lecció d'etiquetes"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Seleccioneu totes les etiquetes que s'haurien de processar."
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "No hi ha cap etiqueta seleccionada"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Reinicia les etiquetes seleccionades"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Àlbums (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etiquetes (totes)"
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29838,7 +29846,7 @@ msgstr "<i>Velocitat dels fotogrames:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29862,67 +29870,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Llista d'elements"
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Característiques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuració de l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -43138,7 +43146,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
@@ -49656,19 +49664,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Carpetes"
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Fitxer/s o carpeta/es a obrir"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -52219,28 +52227,28 @@ msgstr ""
 "es podrà reconèixer a les persones que es mostren a les fotografies."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Omet les imatges que ja s'han explorat"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Torna a explorar i fusiona els resultats"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Neteja els resultats no confirmats i torna a explorar"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -52302,31 +52310,31 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de treball"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Cerca a"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Precisió de les cares"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Sensibilitat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Especificitat"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52341,13 +52349,13 @@ msgstr ""
 "(només es reconeixeran les cares que siguin molt similars a les cares "
 "etiquetades amb anterioritat)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Usa el model de detecció YOLO v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52355,14 +52363,14 @@ msgstr ""
 "Detecció de cares amb el model de dades YOLO v3. Millors resultats, però més "
 "lent."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Treballa amb tots els nuclis dels processadors"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52374,7 +52382,7 @@ msgstr ""
 "Podeu triar si desitgeu emprar tots els nuclis del processador del sistema\n"
 "o treballar en segon pla, amb només un nucli."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -52839,37 +52847,37 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "Cerca a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Interval de similitud:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restricció:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Cap"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Restringeix a l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Exclou l'àlbum de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52881,92 +52889,92 @@ msgstr ""
 "criteris, com limitar la cerca a l'àlbum de la imatge de referència, o per a "
 "excloure de la cerca l'àlbum de la imatge de referència."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restringeix a:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Només la pestanya seleccionada"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un de"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Ambdós"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Àlbums però no etiquetes"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Etiquetes però no àlbums"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr "Més antiga o més gran"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr "Prefereix la carpeta seleccionada com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 "Prefereix una altra carpeta en lloc de la seleccionada com a referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Prefereix una data de creació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Prefereix una data de modificació més nova"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Selecció del mètode per a la selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, kde-format
 msgctxt "@label"
 msgid "Reference"
 msgstr "Referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "Mètode de selecció de la imatge de referència"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52993,13 +53001,13 @@ msgstr ""
 "«Només la pestanya seleccionada» vol dir que només s'usa la pestanya "
 "seleccionada."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Elimina els duplicats"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -57496,24 +57504,24 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "Processa els elements de:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Usa les últimes eines i opcions de configuració desades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Treballa amb tots els nuclis dels processadors (quan sigui possible)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, kde-format
 msgid "Common Options"
 msgstr "Opcions comunes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -57522,12 +57530,12 @@ msgstr ""
 "<qt>Cap opció<br/><i>Nota: Aquesta eina només processa col·leccions d'àlbums."
 "</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Scan for new items"
 msgstr "Explora per a elements nous"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -57541,27 +57549,27 @@ msgstr ""
 "pot congelar el digiKam temporalment<br/> per tal d'assegurar que no es "
 "produeix cap corrupció a la base de dades.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "També es neteja la base de dades de miniatures."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "També es neteja la base de dades de cares."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "També es neteja la base de dades de similitud."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Neteja estesa i redueix totes les bases de dades."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -57570,69 +57578,69 @@ msgstr ""
 "Aquesta opció condueix al buidatge (encongiment) de les bases de dades. El "
 "buidatge funciona per a SQLite i MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Realitza la neteja de la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Explora per a elements modificats o sense catalogar (més ràpid)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstrueix les miniatures"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstrueix les empremtes digitals"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Interval de similitud (en percentatges):"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restricció en els duplicats:"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, kde-format
 msgid "No restriction"
 msgstr "Sense restricció"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restringeix a l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Exclou l'àlbum de la imatge de referència"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Cerca els elements duplicats"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestió de les dades de cares: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Neteja i reconstrueix totes les dades d'entrenament"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57642,47 +57650,47 @@ msgstr ""
 "Això netejarà totes les dades d'entrenament per al reconeixement i les "
 "reconstrueix a partir de totes les cares disponibles."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Detecta i reconeix les cares"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode d'exploració: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Neteja-ho tot i torna a explorar"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Explora només els no assignats"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direcció de la sincronització: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Des de la base de dades a les metadades de la imatge"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Des de les metadades de la imatge a la base de dades"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Per a més detalls reviseu el plafó de configuració de les metadades: "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Sincronitza les metadades i la base de dades"

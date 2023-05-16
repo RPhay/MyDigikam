@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:45+0000\n"
+"POT-Creation-Date: 2023-05-12 00:45+0000\n"
 "PO-Revision-Date: 2007-09-11 22:44+0200\n"
 "Last-Translator: Northern Sami translation team <l10n-no@lister.huftis.org>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -276,7 +276,7 @@ msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:717
+#: core/app/views/preview/itempreviewview.cpp:720
 #, kde-format
 msgid "&Cancel"
 msgstr ""
@@ -287,7 +287,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:715
+#: core/app/views/preview/itempreviewview.cpp:718
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
@@ -17446,17 +17446,17 @@ msgstr ""
 msgid "Unknown input file in the project file: <filename>%1</filename>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:175
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
+#: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
 msgstr ""
@@ -30392,7 +30392,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr ""
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:95
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr ""
@@ -31909,7 +31909,7 @@ msgstr ""
 msgid "Failed to revise Exif orientation these files:"
 msgstr ""
 
-#: core/libs/fileactionmanager/fileworkeriface.cpp:349
+#: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, kde-format
 msgid "Failed to transform these files:"
 msgstr ""
@@ -33705,7 +33705,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr ""
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1345
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -33864,7 +33864,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:186
+#: core/utilities/setup/downloader/filesdownloader.cpp:197
 #, kde-format
 msgid "Download"
 msgstr ""
@@ -34124,7 +34124,7 @@ msgstr ""
 msgid "Enter caption author name here."
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:265
+#: core/libs/properties/captions/itemdescedittab.cpp:275
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image caption. "
@@ -34132,7 +34132,7 @@ msgid_plural "You have edited the captions of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:271
+#: core/libs/properties/captions/itemdescedittab.cpp:281
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image title. "
@@ -34140,7 +34140,7 @@ msgid_plural "You have edited the titles of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:277
+#: core/libs/properties/captions/itemdescedittab.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
@@ -34148,7 +34148,7 @@ msgid_plural "You have edited the date of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:283
+#: core/libs/properties/captions/itemdescedittab.cpp:293
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
@@ -34156,7 +34156,7 @@ msgid_plural "You have edited the pick label of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:289
+#: core/libs/properties/captions/itemdescedittab.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
@@ -34164,7 +34164,7 @@ msgid_plural "You have edited the color label of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:295
+#: core/libs/properties/captions/itemdescedittab.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
@@ -34172,7 +34172,7 @@ msgid_plural "You have edited the rating of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:301
+#: core/libs/properties/captions/itemdescedittab.cpp:311
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
@@ -34180,13 +34180,13 @@ msgid_plural "You have edited the tags of %1 images. "
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:306
+#: core/libs/properties/captions/itemdescedittab.cpp:316
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:310
+#: core/libs/properties/captions/itemdescedittab.cpp:320
 #, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
@@ -34194,104 +34194,104 @@ msgid_plural "<p>You have edited the metadata of %1 images: </p>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:318
+#: core/libs/properties/captions/itemdescedittab.cpp:328
 #, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:323
+#: core/libs/properties/captions/itemdescedittab.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:328
+#: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:333
+#: core/libs/properties/captions/itemdescedittab.cpp:343
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:338
+#: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:343
+#: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:348
+#: core/libs/properties/captions/itemdescedittab.cpp:358
 #, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:353
+#: core/libs/properties/captions/itemdescedittab.cpp:363
 #, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:356
+#: core/libs/properties/captions/itemdescedittab.cpp:366
 #, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:359
+#: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:369
+#: core/libs/properties/captions/itemdescedittab.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:428
+#: core/libs/properties/captions/itemdescedittab.cpp:438
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:460
+#: core/libs/properties/captions/itemdescedittab.cpp:470
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:503
+#: core/libs/properties/captions/itemdescedittab.cpp:513
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:505
-#: core/libs/properties/captions/itemdescedittab.cpp:524
+#: core/libs/properties/captions/itemdescedittab.cpp:515
+#: core/libs/properties/captions/itemdescedittab.cpp:534
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:521
+#: core/libs/properties/captions/itemdescedittab.cpp:531
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
 msgstr ""
 
-#: core/libs/properties/captions/itemdescedittab.cpp:529
+#: core/libs/properties/captions/itemdescedittab.cpp:539
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
@@ -34544,28 +34544,27 @@ msgid "Geolocation"
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:187
-#: core/libs/properties/itempropertiestab.cpp:171
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
-#: core/libs/properties/itempropertiestab.cpp:172
+#: core/libs/properties/itempropertiestab.cpp:36
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
-#: core/libs/properties/itempropertiestab.cpp:174
+#: core/libs/properties/itempropertiestab.cpp:38
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Date: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:190
-#: core/libs/properties/itempropertiestab.cpp:175
+#: core/libs/properties/itempropertiestab.cpp:39
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Size: "
@@ -34584,14 +34583,14 @@ msgid "Writable: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
-#: core/libs/properties/itempropertiestab.cpp:218
+#: core/libs/properties/itempropertiestab.cpp:87
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Type: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:194
-#: core/libs/properties/itempropertiestab.cpp:219
+#: core/libs/properties/itempropertiestab.cpp:88
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Dimensions: "
@@ -34599,8 +34598,8 @@ msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:195
 #: core/libs/properties/import/importitempropertiestab.cpp:303
-#: core/libs/properties/itempropertiestab.cpp:220
-#: core/libs/properties/itempropertiestab.cpp:318
+#: core/libs/properties/itempropertiestab.cpp:89
+#: core/libs/properties/itempropertiestab.cpp:187
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
@@ -34625,77 +34624,76 @@ msgid "Camera File Properties"
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
-#: core/libs/properties/itempropertiestab.cpp:258
+#: core/libs/properties/itempropertiestab.cpp:131
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
-#: core/libs/properties/itempropertiestab.cpp:259
+#: core/libs/properties/itempropertiestab.cpp:132
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
-#: core/libs/properties/itempropertiestab.cpp:260
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
-#: core/libs/properties/itempropertiestab.cpp:261
+#: core/libs/properties/itempropertiestab.cpp:133
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
-#: core/libs/properties/itempropertiestab.cpp:262
+#: core/libs/properties/itempropertiestab.cpp:134
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
-#: core/libs/properties/itempropertiestab.cpp:263
+#: core/libs/properties/itempropertiestab.cpp:135
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
-#: core/libs/properties/itempropertiestab.cpp:264
+#: core/libs/properties/itempropertiestab.cpp:136
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
-#: core/libs/properties/itempropertiestab.cpp:265
+#: core/libs/properties/itempropertiestab.cpp:137
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
-#: core/libs/properties/itempropertiestab.cpp:266
+#: core/libs/properties/itempropertiestab.cpp:138
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
-#: core/libs/properties/itempropertiestab.cpp:267
+#: core/libs/properties/itempropertiestab.cpp:139
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
-#: core/libs/properties/itempropertiestab.cpp:268
+#: core/libs/properties/itempropertiestab.cpp:140
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
@@ -34708,42 +34706,42 @@ msgid "Photograph Properties"
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:304
-#: core/libs/properties/itempropertiestab.cpp:322
+#: core/libs/properties/itempropertiestab.cpp:191
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
-#: core/libs/properties/itempropertiestab.cpp:323
+#: core/libs/properties/itempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
-#: core/libs/properties/itempropertiestab.cpp:324
+#: core/libs/properties/itempropertiestab.cpp:193
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
-#: core/libs/properties/itempropertiestab.cpp:319
+#: core/libs/properties/itempropertiestab.cpp:188
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Duration: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:308
-#: core/libs/properties/itempropertiestab.cpp:320
+#: core/libs/properties/itempropertiestab.cpp:189
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
 msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
-#: core/libs/properties/itempropertiestab.cpp:321
+#: core/libs/properties/itempropertiestab.cpp:190
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
@@ -34769,7 +34767,7 @@ msgstr ""
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:606
+#: core/libs/properties/itempropertiessidebardb.cpp:621
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -34779,8 +34777,12 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:423
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:655
-#: core/libs/properties/itempropertiestab.cpp:467
+#: core/libs/properties/itempropertiessidebar.cpp:284
+#: core/libs/properties/itempropertiessidebardb.cpp:670
+#: core/libs/properties/itempropertiessidebardb.cpp:672
+#: core/libs/properties/itempropertiessidebardb.cpp:775
+#: core/libs/properties/itempropertiessidebardb.cpp:777
+#: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
 msgid "No"
@@ -34790,7 +34792,11 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:427
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:654
+#: core/libs/properties/itempropertiessidebar.cpp:283
+#: core/libs/properties/itempropertiessidebardb.cpp:669
+#: core/libs/properties/itempropertiessidebardb.cpp:671
+#: core/libs/properties/itempropertiessidebardb.cpp:774
+#: core/libs/properties/itempropertiessidebardb.cpp:776
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -35021,8 +35027,8 @@ msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:631
-#: core/libs/properties/itempropertiessidebardb.cpp:644
+#: core/libs/properties/itempropertiessidebardb.cpp:646
+#: core/libs/properties/itempropertiessidebardb.cpp:659
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -35035,21 +35041,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:653
+#: core/libs/properties/itempropertiessidebardb.cpp:668
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:685
+#: core/libs/properties/itempropertiessidebar.cpp:315
+#: core/libs/properties/itempropertiessidebardb.cpp:702
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebar.cpp:320
+#: core/libs/properties/itempropertiessidebardb.cpp:707
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -35067,124 +35073,172 @@ msgctxt "@title: database properties"
 msgid "Versions"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:636
+#: core/libs/properties/itempropertiessidebardb.cpp:651
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:173
+#: core/libs/properties/itempropertiestab.cpp:37
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Symlink: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:176
+#: core/libs/properties/itempropertiestab.cpp:40
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Owner: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:177
+#: core/libs/properties/itempropertiestab.cpp:41
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Permissions: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:211
+#: core/libs/properties/itempropertiestab.cpp:80
 #, kde-format
 msgctxt "@title: item properties"
 msgid "File Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:221
+#: core/libs/properties/itempropertiestab.cpp:90
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Bit depth: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:222
+#: core/libs/properties/itempropertiestab.cpp:91
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color mode: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:223
+#: core/libs/properties/itempropertiestab.cpp:92
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:251
+#: core/libs/properties/itempropertiestab.cpp:93
+#, kde-format
+msgctxt "@label: item properties"
+msgid "GPS: "
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Item Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:311
+#: core/libs/properties/itempropertiestab.cpp:180
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Photograph Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:355
+#: core/libs/properties/itempropertiestab.cpp:224
 #, kde-format
 msgctxt "@title: item properties"
 msgid "Audio/Video Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:362
+#: core/libs/properties/itempropertiestab.cpp:238
+#, kde-format
+msgctxt "@label: item properties"
+msgid "Title: "
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:239
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Caption: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:363
+#: core/libs/properties/itempropertiestab.cpp:240
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:364
+#: core/libs/properties/itempropertiestab.cpp:241
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Color label: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:365
+#: core/libs/properties/itempropertiestab.cpp:242
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Rating: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:366
+#: core/libs/properties/itempropertiestab.cpp:243
 #, kde-format
 msgctxt "@label: item properties"
-msgid "Tags: "
+msgid "Versionned: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:400
+#: core/libs/properties/itempropertiestab.cpp:244
+#, kde-format
+msgctxt "@label: item properties"
+msgid "Grouped: "
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
 msgctxt "@title: item properties"
 msgid "digiKam Properties"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:742
+#: core/libs/properties/itempropertiestab.cpp:286
 #, kde-format
-msgctxt "@info: item properties"
-msgid " fps"
+msgctxt "@label: item properties"
+msgid "Keywords: "
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:947
+#: core/libs/properties/itempropertiestab.cpp:290
+#, kde-format
+msgctxt "@label: item properties"
+msgid "Peoples: "
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:305
+#, kde-format
+msgctxt "@title: item properties"
+msgid "Tags"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:323
+#, kde-format
+msgctxt "@title: item properties"
+msgid "Location"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab.cpp:344
+#, kde-format
+msgctxt "@title: item properties"
+msgid "Rights"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab_helpers.cpp:209
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab.cpp:980
+#: core/libs/properties/itempropertiestab_helpers.cpp:242
 #, kde-format
 msgctxt "@info: unit file size in bytes"
 msgid "B"
+msgstr ""
+
+#: core/libs/properties/itempropertiestab_setters.cpp:354
+#, kde-format
+msgctxt "@info: item properties"
+msgid " fps"
 msgstr ""
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:76
@@ -36094,49 +36148,49 @@ msgid ""
 "gallery and opening with external programs"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:267
+#: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Category"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:268
+#: core/libs/settings/applicationsettings_p.cpp:270
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Travel"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:269
+#: core/libs/settings/applicationsettings_p.cpp:271
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Holidays"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:270
+#: core/libs/settings/applicationsettings_p.cpp:272
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Friends"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:271
+#: core/libs/settings/applicationsettings_p.cpp:273
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Nature"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:272
+#: core/libs/settings/applicationsettings_p.cpp:274
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Party"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:273
+#: core/libs/settings/applicationsettings_p.cpp:275
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Todo"
 msgstr ""
 
-#: core/libs/settings/applicationsettings_p.cpp:274
+#: core/libs/settings/applicationsettings_p.cpp:276
 #, kde-format
 msgctxt "@item: album categories"
 msgid "Miscellaneous"
@@ -36159,7 +36213,7 @@ msgstr ""
 msgid "Create \"%1\""
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:260
+#: core/libs/tags/engine/tagmodificationhelper.cpp:261
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -36170,26 +36224,26 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:283
+#: core/libs/tags/engine/tagmodificationhelper.cpp:284
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:291
+#: core/libs/tags/engine/tagmodificationhelper.cpp:292
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:294
-#: core/libs/tags/engine/tagmodificationhelper.cpp:412
+#: core/libs/tags/engine/tagmodificationhelper.cpp:295
+#: core/libs/tags/engine/tagmodificationhelper.cpp:414
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:386
+#: core/libs/tags/engine/tagmodificationhelper.cpp:388
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -36197,30 +36251,30 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:403
+#: core/libs/tags/engine/tagmodificationhelper.cpp:405
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:409
+#: core/libs/tags/engine/tagmodificationhelper.cpp:411
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:570
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
 "Do you want to continue?"
 msgid_plural ""
-"Face tags '%2' have at least one face tag child. Removing it will also "
+"Face tags '%2' have at least one face tag child. Removing them will also "
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:592
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -36229,14 +36283,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:600
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:611
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -55309,49 +55363,49 @@ msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:153
+#: core/utilities/setup/album/setupalbumview.cpp:155
 #: core/utilities/setup/camera/setupcamera.cpp:469
 #, kde-format
 msgid "Show file&name"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:154
+#: core/utilities/setup/album/setupalbumview.cpp:156
 #: core/utilities/setup/camera/setupcamera.cpp:470
 #, kde-format
 msgid "Set this option to show the filename below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:156
+#: core/utilities/setup/album/setupalbumview.cpp:158
 #: core/utilities/setup/camera/setupcamera.cpp:472
 #, kde-format
 msgid "Show file si&ze"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:157
+#: core/utilities/setup/album/setupalbumview.cpp:159
 #: core/utilities/setup/camera/setupcamera.cpp:473
 #, kde-format
 msgid "Set this option to show the file size below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:159
+#: core/utilities/setup/album/setupalbumview.cpp:161
 #: core/utilities/setup/camera/setupcamera.cpp:475
 #, kde-format
 msgid "Show camera creation &date"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:160
+#: core/utilities/setup/album/setupalbumview.cpp:162
 #: core/utilities/setup/camera/setupcamera.cpp:476
 #, kde-format
 msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:163
+#: core/utilities/setup/album/setupalbumview.cpp:165
 #, kde-format
 msgid "Show file &modification date"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:164
+#: core/utilities/setup/album/setupalbumview.cpp:166
 #, kde-format
 msgid ""
 "Set this option to show the file modification date below the image thumbnail "
@@ -55359,190 +55413,190 @@ msgid ""
 "identify quickly which items have been modified."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:168
+#: core/utilities/setup/album/setupalbumview.cpp:170
 #, kde-format
 msgid "Show ima&ge dimensions"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:169
+#: core/utilities/setup/album/setupalbumview.cpp:171
 #, kde-format
 msgid ""
 "Set this option to show the image size in pixels below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:172
+#: core/utilities/setup/album/setupalbumview.cpp:174
 #, kde-format
 msgid "Show image aspect ratio"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:173
+#: core/utilities/setup/album/setupalbumview.cpp:175
 #, kde-format
 msgid ""
 "Set this option to show the image aspect ratio below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:176
+#: core/utilities/setup/album/setupalbumview.cpp:178
 #, kde-format
 msgid "Show image format"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:177
+#: core/utilities/setup/album/setupalbumview.cpp:179
 #, kde-format
 msgid "Set this option to show image mime type over image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:179
+#: core/utilities/setup/album/setupalbumview.cpp:181
 #, kde-format
 msgid "Show digiKam tit&le"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:180
+#: core/utilities/setup/album/setupalbumview.cpp:182
 #, kde-format
 msgid "Set this option to show the digiKam title below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:183
+#: core/utilities/setup/album/setupalbumview.cpp:185
 #, kde-format
 msgid "Show digiKam &captions"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:184
+#: core/utilities/setup/album/setupalbumview.cpp:186
 #, kde-format
 msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:187
+#: core/utilities/setup/album/setupalbumview.cpp:189
 #: core/utilities/setup/camera/setupcamera.cpp:491
 #, kde-format
 msgid "Show digiKam &tags"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:188
+#: core/utilities/setup/album/setupalbumview.cpp:190
 #, kde-format
 msgid ""
 "Set this option to show the digiKam tags list below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:191
+#: core/utilities/setup/album/setupalbumview.cpp:193
 #, kde-format
 msgid "Show digiKam &rating"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:192
+#: core/utilities/setup/album/setupalbumview.cpp:194
 #, kde-format
 msgid "Set this option to show the digiKam rating below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:195
+#: core/utilities/setup/album/setupalbumview.cpp:197
 #, kde-format
 msgid "Show digiKam &pick label"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:196
+#: core/utilities/setup/album/setupalbumview.cpp:198
 #, kde-format
 msgid ""
 "Set this option to show the digiKam pick label below the image thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:199
+#: core/utilities/setup/album/setupalbumview.cpp:201
 #, kde-format
 msgid "Show digiKam color &label"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:200
+#: core/utilities/setup/album/setupalbumview.cpp:202
 #, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a border around the "
 "thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:203
+#: core/utilities/setup/album/setupalbumview.cpp:205
 #: core/utilities/setup/camera/setupcamera.cpp:499
 #, kde-format
 msgid "Show rotation overlay buttons"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:204
+#: core/utilities/setup/album/setupalbumview.cpp:206
 #, kde-format
 msgid ""
 "Set this option to show overlay buttons over the image thumbnail to be able "
 "to process left or right image rotation."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:207
+#: core/utilities/setup/album/setupalbumview.cpp:209
 #, kde-format
 msgid "Show fullscreen overlay button"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:208
+#: core/utilities/setup/album/setupalbumview.cpp:210
 #, kde-format
 msgid ""
 "Set this option to show an overlay button over the image thumbnail to open "
 "it in fullscreen mode."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:211
+#: core/utilities/setup/album/setupalbumview.cpp:213
 #: core/utilities/setup/camera/setupcamera.cpp:488
 #, kde-format
 msgid "Show Geolocation Indicator"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:212
+#: core/utilities/setup/album/setupalbumview.cpp:214
 #, kde-format
 msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
 "geolocation information."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:214
+#: core/utilities/setup/album/setupalbumview.cpp:216
 #: core/utilities/setup/camera/setupcamera.cpp:503
 #, kde-format
 msgid "Thumbnail click action:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:216
+#: core/utilities/setup/album/setupalbumview.cpp:218
 #, kde-format
 msgid "Show Preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:217
+#: core/utilities/setup/album/setupalbumview.cpp:219
 #, kde-format
 msgid "Start Image Editor"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:218
+#: core/utilities/setup/album/setupalbumview.cpp:220
 #, kde-format
 msgid "Show on Light Table"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:219
+#: core/utilities/setup/album/setupalbumview.cpp:221
 #, kde-format
 msgid "Open with Default Application"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:220
+#: core/utilities/setup/album/setupalbumview.cpp:222
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:222
+#: core/utilities/setup/album/setupalbumview.cpp:224
 #: core/utilities/setup/camera/setupcamera.cpp:510
 #, kde-format
 msgid "Icon View font:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:223
+#: core/utilities/setup/album/setupalbumview.cpp:225
 #, kde-format
 msgid "Select here the font used to display text in icon views."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:225
+#: core/utilities/setup/album/setupalbumview.cpp:227
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:226
+#: core/utilities/setup/album/setupalbumview.cpp:228
 #, kde-format
 msgid ""
 "Set this option to render icon-view with large thumbnail size, for example "
@@ -55556,155 +55610,165 @@ msgid ""
 "collections."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:261
+#: core/utilities/setup/album/setupalbumview.cpp:263
 #, kde-format
 msgctxt "@title:tab"
 msgid "Icons"
 msgstr "Govažat"
 
-#: core/utilities/setup/album/setupalbumview.cpp:268
+#: core/utilities/setup/album/setupalbumview.cpp:270
 #, kde-format
 msgid "Tree View icon size:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:275
+#: core/utilities/setup/album/setupalbumview.cpp:277
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's sidebars."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:278
+#: core/utilities/setup/album/setupalbumview.cpp:280
 #, kde-format
 msgid "People Tree View icon size:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:286
+#: core/utilities/setup/album/setupalbumview.cpp:288
 #, kde-format
 msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:289
+#: core/utilities/setup/album/setupalbumview.cpp:291
 #, kde-format
 msgid "Tree View font:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:290
+#: core/utilities/setup/album/setupalbumview.cpp:292
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:292
+#: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid "Show a count of items in Tree Views"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:293
+#: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
 msgid ""
 "Set this option to display along the album name the number of icon-view "
 "items inside."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:305
+#: core/utilities/setup/album/setupalbumview.cpp:307
 #, kde-format
 msgctxt "@title:tab"
 msgid "Tree-Views"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:313
+#: core/utilities/setup/album/setupalbumview.cpp:315
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows embedded view if available (faster)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:315
+#: core/utilities/setup/album/setupalbumview.cpp:317
 #, kde-format
 msgctxt "@option:radio"
 msgid "Preview shows the full image"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:317
+#: core/utilities/setup/album/setupalbumview.cpp:319
 #, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding:"
 msgid "Raw images:"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:320
+#: core/utilities/setup/album/setupalbumview.cpp:322
 #, kde-format
 msgctxt "@item Automatic choice of RAW image preview source"
 msgid "Automatic"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:322
+#: core/utilities/setup/album/setupalbumview.cpp:324
 #, kde-format
 msgctxt "@item Embedded preview as RAW image preview source"
 msgid "Embedded preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:324
+#: core/utilities/setup/album/setupalbumview.cpp:326
 #, kde-format
 msgctxt "@item Original, half-size data as RAW image preview source"
 msgid "Raw data in half size"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:326
+#: core/utilities/setup/album/setupalbumview.cpp:328
 #, kde-format
 msgctxt "@item Original, full-size data as RAW image preview source"
 msgid "Raw data in full size (high quality)"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:328
+#: core/utilities/setup/album/setupalbumview.cpp:330
 #, kde-format
 msgid "Preview image is converted to 8 bits for a faster viewing"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:329
+#: core/utilities/setup/album/setupalbumview.cpp:331
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:331
+#: core/utilities/setup/album/setupalbumview.cpp:333
+#, kde-format
+msgid "Preview image is always scaled to fit to window"
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:334
+#, kde-format
+msgid "Uncheck this if you do not want to scale small images to fit to window."
+msgstr ""
+
+#: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:332
+#: core/utilities/setup/album/setupalbumview.cpp:337
 #: core/utilities/setup/camera/setupcamera.cpp:548
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:348
+#: core/utilities/setup/album/setupalbumview.cpp:354
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:363
+#: core/utilities/setup/album/setupalbumview.cpp:369
 #, kde-format
 msgctxt "@title:tab"
 msgid "Full-Screen"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:368
+#: core/utilities/setup/album/setupalbumview.cpp:374
 #, kde-format
 msgctxt "@title:tab"
 msgid "Mime Types"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:371
+#: core/utilities/setup/album/setupalbumview.cpp:377
 #, kde-format
 msgctxt "@title:tab"
 msgid "Categories"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview.cpp:536
+#: core/utilities/setup/album/setupalbumview.cpp:543
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56547,13 +56611,13 @@ msgstr ""
 msgid "Your collection will use this category:"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:174
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:204
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -56566,23 +56630,23 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:216
+#: core/utilities/setup/downloader/filesdownloader.cpp:227
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:266
+#: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:275
+#: core/utilities/setup/downloader/filesdownloader.cpp:286
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:276
+#: core/utilities/setup/downloader/filesdownloader.cpp:287
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -56594,28 +56658,28 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:284
+#: core/utilities/setup/downloader/filesdownloader.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:417
+#: core/utilities/setup/downloader/filesdownloader.cpp:428
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:452
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:448
+#: core/utilities/setup/downloader/filesdownloader.cpp:459
 #, kde-format
 msgid "File open error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:463
+#: core/utilities/setup/downloader/filesdownloader.cpp:474
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""

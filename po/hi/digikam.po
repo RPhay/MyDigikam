@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -2637,7 +2637,7 @@ msgstr "मदद (&H)"
 msgid "Main Toolbar"
 msgstr "मुख्य औज़ार पट्टी"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2647,46 +2647,46 @@ msgstr "मुख्य औज़ार पट्टी"
 msgid "digiKam"
 msgstr "डिज़ीकैम"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, fuzzy, kde-format
 #| msgid "Open camera dialog at <path>"
 msgid "Open camera dialog at \"path\""
 msgstr "कैमरा संवाद यहां दिखाएं <पथ>"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, fuzzy, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr "कैमरा का पता स्वचालित लगाकर उसे खोलें"
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, fuzzy, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, fuzzy, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "डिजिकैम को एलबम रूट में प्रारंभ करें <पथ>"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2694,7 +2694,7 @@ msgid ""
 "with digiKam.</p>"
 msgstr ""
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2702,7 +2702,7 @@ msgid ""
 "There is no database plugin installed on your computer."
 msgstr ""
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2710,7 +2710,7 @@ msgid ""
 "Database plugins installed on your computer are listed below."
 msgstr ""
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6494,7 +6494,7 @@ msgstr "छवि क़िस्म दिखाएं"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6519,7 +6519,7 @@ msgstr "हाँ"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6543,7 +6543,7 @@ msgstr "हाँ"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -6553,20 +6553,20 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "नहीं"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, fuzzy, kde-format
 #| msgid "Flash has been fired"
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "फ्लैश चलाया गया है"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6577,7 +6577,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -8460,7 +8460,7 @@ msgstr "रंग प्रबंधन विन्यास"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, fuzzy, kde-format
 msgid "Settings..."
 msgstr "विन्यास"
@@ -26546,39 +26546,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "औसत की गणना नहीं किया जा सका."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, fuzzy, kde-format
 msgid "No Album Selected"
 msgstr "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, fuzzy, kde-format
 msgid "No Tag Selected"
 msgstr "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, fuzzy, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, fuzzy, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, fuzzy, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, fuzzy, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -26592,82 +26592,90 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "एलबम चुनें"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "टैग्स:"
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "एलबम संग्रह"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "चयन"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "चयनित अलबमों को मिटाया जाने वाला है"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "एलबम संग्रह"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "टैग प्रतीक रीसेट करें"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "टैग्स:"
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -28375,7 +28383,7 @@ msgstr "<b>निर्मित</b>:"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>मॉडल</b>:"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -28398,32 +28406,32 @@ msgstr ""
 msgid "Items List"
 msgstr "छवि संपादक "
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "नहीं"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "विशेषता"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "जिब्राल्टर"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28431,7 +28439,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28439,32 +28447,32 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "कैमरा कॉन्फ़िगरेशन"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "हाँ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "नहीं"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -41157,7 +41165,7 @@ msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, fuzzy, kde-format
 msgid "Image Quality Sorter"
 msgstr "छवि संपादक "
@@ -48563,20 +48571,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "फ़ोल्डर से"
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "खोलने के लिए फ़ाइल फ़ोल्डर"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -51008,28 +51016,28 @@ msgid ""
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "टैग्स पहले से आबंटित है."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear all previous results and rescan"
@@ -51090,32 +51098,32 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "विन्डो में फिट करें (&W)"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, fuzzy, kde-format
 #| msgid "Search:"
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "ढूंढें:"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, fuzzy, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "संवेदनशीलता (आइएसओ):"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, fuzzy, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "जियोलोकेशन"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51125,26 +51133,26 @@ msgid ""
 "(only faces that are very similar to pre-tagged faces are recognized)."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51153,7 +51161,7 @@ msgid ""
 "on your system, or work in the background only on one core."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title:tab"
@@ -51528,39 +51536,39 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "ढूंढें:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "रेगुलरिटी:"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "रीस्टोरेशन"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "चयनित अलबमों को मिटाया जाने वाला है"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "चयनित अलबमों को मिटाया जाने वाला है"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51569,95 +51577,95 @@ msgid ""
 "reference image of the search."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, fuzzy, kde-format
 #| msgid "Restoration"
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "रीस्टोरेशन"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "टैग प्रतीक रीसेट करें"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "दोनों"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "फ़ाइल मौज़ूद नहीं है"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, fuzzy, kde-format
 #| msgid "Failed to rename Album"
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "एलबम का नाम बदलने में असफल"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "निर्माण तिथि"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "जियोलोकेशन"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, fuzzy, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "<p>वर्तमान छवि की रेंडरिंग छोड़ें"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Resize Image"
 msgctxt "@label"
 msgid "Reference"
 msgstr "छवि को नया आकार दें"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "कोई वस्तु चुना नहीं गया"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51672,13 +51680,13 @@ msgid ""
 "\"Only selected tab\" means that only the selected tab is used."
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -55981,36 +55989,36 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "यह टैग मिटाएँ"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, fuzzy, kde-format
 msgid "Common Options"
 msgstr "विन्यास"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, fuzzy, kde-format
 msgid "Scan for new items"
 msgstr "नई छवियों के लिए ढूंढें"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -56019,97 +56027,97 @@ msgid ""
 "> in order to make sure that no database corruption occurs.</i></qt>"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, fuzzy, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, fuzzy, kde-format
 msgid "Also clean up the faces database."
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, fuzzy, kde-format
 msgid "Also clean up the similarity database."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, fuzzy, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "डाटाबेस में टैग जोड़ने में असफल"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, fuzzy, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "सभी लघुछवि फिर से बनाएं..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, fuzzy, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "सभी लघुछवि फिर से बनाएं..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, fuzzy, kde-format
 msgid "Restriction on duplicates:"
 msgstr "/छवियाँ"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgid "No restriction"
 msgstr "कोई चयन नहीं"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, fuzzy, kde-format
 msgid "Restrict to album of reference image"
 msgstr "<p>सभी फ़िल्टर पैरामीटर को उनके डिफ़ॉल्ट मूल्य में रीसेट करें."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, fuzzy, kde-format
 msgid "Find Duplicate Items"
 msgstr "/छवियाँ"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, fuzzy, kde-format
 msgid "Faces data management: "
 msgstr "रंग प्रबंधन"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56117,48 +56125,48 @@ msgid ""
 "available faces."
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgid "Detect and recognize Faces"
 msgstr "सिंक्रोनाइज़"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, fuzzy, kde-format
 msgid "Scan Mode: "
 msgstr "मॉडलः"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, fuzzy, kde-format
 msgid "Sync Direction: "
 msgstr "लेंस सुधार..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, fuzzy, kde-format
 msgid "From database to image metadata"
 msgstr "वस्तुओं अद्यतन किया जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, fuzzy, kde-format
 msgid "From image metadata to database"
 msgstr "फ़ाइलों पर मेटाडाटा लिखा जा रहा है. कृपया इंतजार करें..."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr ""
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, fuzzy, kde-format
 msgid "Sync Metadata and Database"
 msgstr "फ़ाइलों पर मेटाडाटा लिखा जा रहा है. कृपया इंतजार करें..."

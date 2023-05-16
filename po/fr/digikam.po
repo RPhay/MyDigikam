@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-12 00:45+0000\n"
+"POT-Creation-Date: 2023-05-16 00:44+0000\n"
 "PO-Revision-Date: 2023-03-27 22:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2674,7 +2674,7 @@ msgstr "&Aide"
 msgid "Main Toolbar"
 msgstr "Barre principale"
 
-#: core/app/main/main.cpp:172 core/app/views/stack/welcomepageview.cpp:258
+#: core/app/main/main.cpp:187 core/app/views/stack/welcomepageview.cpp:258
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -2684,13 +2684,13 @@ msgstr "Barre principale"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:181 core/showfoto/main/main.cpp:147
+#: core/app/main/main.cpp:196 core/showfoto/main/main.cpp:163
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Joëlle Cornavin, Vincent Pinon, Peter Potrowl, Xavier Besnard"
 
-#: core/app/main/main.cpp:182 core/showfoto/main/main.cpp:148
+#: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -2698,26 +2698,26 @@ msgstr ""
 "jcorn@free.fr, vpinon@kde.org, peter.potrowl@gmail.com, xavier.besnard@neuf."
 "fr"
 
-#: core/app/main/main.cpp:190
+#: core/app/main/main.cpp:205
 #, kde-format
 msgid "Open camera dialog at \"path\""
 msgstr "Ouvrir la boîte de dialogue de l'appareil photo à « l'emplacement »"
 
-#: core/app/main/main.cpp:193
+#: core/app/main/main.cpp:208
 #, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
 msgstr ""
 "Ouvrir la boîte de dialogue de l'appareil photo pour le périphérique avec "
 "« UDI » de « UDI Solid »"
 
-#: core/app/main/main.cpp:196
+#: core/app/main/main.cpp:211
 #, kde-format
 msgid "Automatically detect and open a connected gphoto2 camera"
 msgstr ""
 "Détecter et ouvrir automatiquement un appareil photo connecté utilisant la "
 "bibliothèque « gPhoto2 »."
 
-#: core/app/main/main.cpp:198
+#: core/app/main/main.cpp:213
 #, kde-format
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
@@ -2725,12 +2725,12 @@ msgstr ""
 "Démarrer digiKam avec le fichier de base de données SQLite trouvé dans le "
 "dossier « dir »."
 
-#: core/app/main/main.cpp:201
+#: core/app/main/main.cpp:216
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
 msgstr "Démarrer digiKam avec le fichier configuration « config »"
 
-#: core/app/main/main.cpp:228
+#: core/app/main/main.cpp:243
 #, kde-format
 msgid ""
 "<p>You are running digiKam as a 32-bit version on a 64-bit Windows.</"
@@ -2741,7 +2741,7 @@ msgstr ""
 "bits » de Windows.</p><p>Veuillez installer une version « 64 bits » pour une "
 "meilleure expérience avec DigiKam.</p>"
 
-#: core/app/main/main.cpp:270
+#: core/app/main/main.cpp:285
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin is not available. please install "
@@ -2751,7 +2751,7 @@ msgstr ""
 "L'exécutable Qt SQLite ou MySQL n'est pas disponible, veuillez l'installer.\n"
 "Il n'y a pas de module de base de données installé sur votre ordinateur."
 
-#: core/app/main/main.cpp:279
+#: core/app/main/main.cpp:294
 #, kde-format
 msgid ""
 "Run-time Qt SQLite or MySQL database plugin are not available. Please "
@@ -2762,7 +2762,7 @@ msgstr ""
 "Les modules de base de données installés sur votre ordinateur sont listés ci-"
 "dessous."
 
-#: core/app/main/main.cpp:319
+#: core/app/main/main.cpp:334
 #, kde-format
 msgid ""
 "<p>The given path for the config file is not valid. Either its parent "
@@ -6851,7 +6851,7 @@ msgstr "High Efficiency Image Coding"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -6874,7 +6874,7 @@ msgstr "oui"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -6896,7 +6896,7 @@ msgstr "oui"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -6904,19 +6904,19 @@ msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "non"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:74
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
 msgstr "Chargeur « ImageMagick »"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:89
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
 msgstr "Un chargeur d'images reposant sur les encodeurs « ImageMagick »."
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -6934,7 +6934,7 @@ msgstr ""
 "para><para>Veuillez consulter la documentation <a href='https://fr.wikipedia."
 "org/wiki/ImageMagick'>ImageMagick</a> pour plus de détails.</para>"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -9057,7 +9057,7 @@ msgstr "Utiliser le gestionnaire de couleurs pour l'impression"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
-#: core/utilities/maintenance/maintenancedlg.cpp:365
+#: core/utilities/maintenance/maintenancedlg.cpp:366
 #, kde-format
 msgid "Settings..."
 msgstr "Paramètres…"
@@ -28065,39 +28065,39 @@ msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Impossible de calculer la date moyenne pour cet album."
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:72
-#: core/libs/album/widgets/albumselectcombobox.cpp:88
+#: core/libs/album/widgets/albumselectcombobox.cpp:74
+#: core/libs/album/widgets/albumselectcombobox.cpp:90
 #, kde-format
 msgid "No Album Selected"
 msgstr "Pas d'album sélectionné"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:95
+#: core/libs/album/widgets/albumselectcombobox.cpp:97
 #, kde-format
 msgid "No Tag Selected"
 msgstr "Pas d'étiquette sélectionnée"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:257
+#: core/libs/album/widgets/albumselectcombobox.cpp:270
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "Une étiquette sélectionnée"
 msgstr[1] "%1 étiquettes sélectionnées"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:261
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "Un album sélectionné"
 msgstr[1] "%1 albums sélectionnés"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:283
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "Une étiquette exclue"
 msgstr[1] "%1 étiquettes exclues"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -28110,80 +28110,88 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Sélectionner un album"
 
-#: core/libs/album/widgets/albumselectors.cpp:136
-#: core/libs/album/widgets/albumselectors.cpp:492
+#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:546
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albums (Tous)"
 
-#: core/libs/album/widgets/albumselectors.cpp:139
+#: core/libs/album/widgets/albumselectors.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Étiquettes (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:171
+#: core/libs/album/widgets/albumselectors.cpp:180
 #, kde-format
 msgctxt "@option"
 msgid "Whole albums collection"
 msgstr "Collection entière d'albums"
 
-#: core/libs/album/widgets/albumselectors.cpp:173
+#: core/libs/album/widgets/albumselectors.cpp:181
+#: core/libs/album/widgets/albumselectors.cpp:237
+#, fuzzy, kde-format
+#| msgid "Theme Selection"
+msgctxt "@option"
+msgid "Recursive Selection"
+msgstr "Sélection du thème"
+
+#: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Sélectionnez tous les albums à traiter."
 
-#: core/libs/album/widgets/albumselectors.cpp:175
+#: core/libs/album/widgets/albumselectors.cpp:194
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Aucun album sélectionné"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Réinitialiser les albums sélectionnés"
 
-#: core/libs/album/widgets/albumselectors.cpp:204
+#: core/libs/album/widgets/albumselectors.cpp:236
 #, kde-format
 msgctxt "@option"
 msgid "Whole tags collection"
 msgstr "Collection entière d'étiquettes"
 
-#: core/libs/album/widgets/albumselectors.cpp:206
+#: core/libs/album/widgets/albumselectors.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Sélectionnez toutes les étiquettes à traiter."
 
-#: core/libs/album/widgets/albumselectors.cpp:208
+#: core/libs/album/widgets/albumselectors.cpp:250
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Aucune étiquette sélectionnée"
 
-#: core/libs/album/widgets/albumselectors.cpp:212
+#: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Réinitialiser les étiquettes sélectionnées"
 
-#: core/libs/album/widgets/albumselectors.cpp:493
+#: core/libs/album/widgets/albumselectors.cpp:547
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albums (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:496
+#: core/libs/album/widgets/albumselectors.cpp:550
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Étiquettes (Toutes)"
 
-#: core/libs/album/widgets/albumselectors.cpp:497
+#: core/libs/album/widgets/albumselectors.cpp:551
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -30203,7 +30211,7 @@ msgstr "<i>Taux d'images :</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Codec vidéo :</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:146
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -30228,49 +30236,49 @@ msgstr ""
 msgid "Items List"
 msgstr "Liste des éléments"
 
-#: core/libs/dialogs/libsinfodlg.cpp:149
+#: core/libs/dialogs/libsinfodlg.cpp:151
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Oui"
 
-#: core/libs/dialogs/libsinfodlg.cpp:150
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Non"
 
-#: core/libs/dialogs/libsinfodlg.cpp:164
+#: core/libs/dialogs/libsinfodlg.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Fonctionnalités"
 
-#: core/libs/dialogs/libsinfodlg.cpp:186
+#: core/libs/dialogs/libsinfodlg.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Bibliothèques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:273
+#: core/libs/dialogs/libsinfodlg.cpp:275
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:354
+#: core/libs/dialogs/libsinfodlg.cpp:356
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: core/libs/dialogs/libsinfodlg.cpp:377
+#: core/libs/dialogs/libsinfodlg.cpp:379
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifestes"
 
-#: core/libs/dialogs/libsinfodlg.cpp:405
+#: core/libs/dialogs/libsinfodlg.cpp:407
 #, fuzzy, kde-format
 #| msgctxt "@item: component info"
 #| msgid "FFmpeg Configuration"
@@ -30278,19 +30286,19 @@ msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuration de « FFmpeg »"
 
-#: core/libs/dialogs/libsinfodlg.cpp:588
+#: core/libs/dialogs/libsinfodlg.cpp:590
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Oui"
 
-#: core/libs/dialogs/libsinfodlg.cpp:593
+#: core/libs/dialogs/libsinfodlg.cpp:595
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Non"
 
-#: core/libs/dialogs/libsinfodlg.cpp:598
+#: core/libs/dialogs/libsinfodlg.cpp:600
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -43626,7 +43634,7 @@ msgstr "Gowtham Ashok"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:214
 #: core/utilities/maintenance/imagequalitysorter.cpp:101
-#: core/utilities/maintenance/maintenancedlg.cpp:347
+#: core/utilities/maintenance/maintenancedlg.cpp:348
 #, kde-format
 msgid "Image Quality Sorter"
 msgstr "Tri d'images par qualité"
@@ -50172,19 +50180,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Dossiers"
 
-#: core/showfoto/main/main.cpp:138
+#: core/showfoto/main/main.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:156
+#: core/showfoto/main/main.cpp:172
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Fichier(s) ou dossier(s) à ouvrir"
 
-#: core/showfoto/main/main.cpp:187
+#: core/showfoto/main/main.cpp:203
 #, kde-format
 msgctxt "#info"
 msgid ""
@@ -52754,28 +52762,28 @@ msgstr ""
 "photos."
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:136
-#: core/utilities/maintenance/maintenancedlg.cpp:318
+#: core/utilities/maintenance/maintenancedlg.cpp:319
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Skip images already scanned"
 msgstr "Ignorer les images déjà analysées"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:137
-#: core/utilities/maintenance/maintenancedlg.cpp:319
+#: core/utilities/maintenance/maintenancedlg.cpp:320
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Scan again and merge results"
 msgstr "Analyser à nouveau et fusionner les résultats"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:138
-#: core/utilities/maintenance/maintenancedlg.cpp:320
+#: core/utilities/maintenance/maintenancedlg.cpp:321
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Effacer les résultats non confirmés et analyser à nouveau"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:139
-#: core/utilities/maintenance/maintenancedlg.cpp:321
+#: core/utilities/maintenance/maintenancedlg.cpp:322
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "Clear unconfirmed results and rescan"
@@ -52839,31 +52847,31 @@ msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Flux de traitement"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:199
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Chercher dans"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:206
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Précision pour le visage"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:209
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Sensibilité"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:212
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Spécificité"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52878,13 +52886,13 @@ msgstr ""
 "(Seuls les visages, très proches des visages préenregistrés, seront "
 "reconnus)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Utiliser le modèle de détection « YOLO » v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:231
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52892,14 +52900,14 @@ msgstr ""
 "Reconnaissance faciale avec le modèle de données « YOLO » v3. De meilleurs "
 "résultats mais plus lents."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Travailler sur tous les cœurs de processeurs"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52913,7 +52921,7 @@ msgstr ""
 "présents \n"
 "sur votre système ou travailler en tâche de fond uniquement sur un seul cœur."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:246
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -53410,37 +53418,37 @@ msgctxt "@label"
 msgid "Search in:"
 msgstr "Chercher dans :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:156
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:157
 #, kde-format
 msgctxt "@label"
 msgid "Similarity range:"
 msgstr "Échelle de similarité :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:159
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:160
 #, kde-format
 msgctxt "@label"
 msgid "Restriction:"
 msgstr "Restriction :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:163
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "None"
 msgstr "Aucun"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:164
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Restrict to reference album"
 msgstr "Restreindre à l'album sélectionné"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:165
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
 #, kde-format
 msgctxt "@label:listbox similarity restriction"
 msgid "Exclude reference album"
 msgstr "Exclure l'album de référence"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:166
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53453,61 +53461,61 @@ msgstr ""
 "référence ou au contraire, pour exclure de la recherche l'album de référence "
 "de l'image."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:179
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:180
 #, kde-format
 msgctxt "@label"
 msgid "Restrict to:"
 msgstr "Restreindre à :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:192
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:193
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Only selected tab"
 msgstr "Uniquement l'onglet sélectionné"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:195
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:196
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "One of"
 msgstr "Un parmi"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:198
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:199
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Both"
 msgstr "Les deux"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:201
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:202
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
 msgstr "Des albums mais sans étiquette"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:204
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
 msgstr "Des étiquettes mais sans album"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:211
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:214
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:217
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
 msgstr ""
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:220
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:221
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Creation Date"
@@ -53515,7 +53523,7 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
 msgstr "Par date de création"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:223
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Modification Date"
@@ -53523,7 +53531,7 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
 msgstr "Par date de modification"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:227
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Information about current image selection"
@@ -53531,21 +53539,21 @@ msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
 msgstr "Informations sur la sélection courante d'images"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:229
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:230
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgctxt "@label"
 msgid "Reference"
 msgstr "Référence :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:235
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, fuzzy, kde-format
 #| msgid "&Choose image selection method:"
 msgctxt "@group"
 msgid "Reference Image Selection Method"
 msgstr "&Choisir la méthode de sélection des images :"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:242
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53572,13 +53580,13 @@ msgstr ""
 "« Onglet sélectionné seulement » signifie que seul l'onglet sélectionné est "
 "utilisé."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:258
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Supprimer les doublons"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:260
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:261
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
@@ -58154,24 +58162,24 @@ msgctxt "@label"
 msgid "Process items from:"
 msgstr "Traiter des éléments depuis :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:219
+#: core/utilities/maintenance/maintenancedlg.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
 msgstr "Utiliser les derniers outils et configuration actifs"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:220
+#: core/utilities/maintenance/maintenancedlg.cpp:221
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it's possible)"
 msgstr "Travailler sur tous les cœurs de processeurs (si possible)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:221
+#: core/utilities/maintenance/maintenancedlg.cpp:222
 #, kde-format
 msgid "Common Options"
 msgstr "Options communes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:225
+#: core/utilities/maintenance/maintenancedlg.cpp:226
 #, kde-format
 msgid ""
 "<qt>No option<br/><i>Note: only Albums Collection are processed by this tool."
@@ -58180,12 +58188,12 @@ msgstr ""
 "<qt>Pas d'option<br/><i>Remarque : seule la collection des albums est "
 "traitée par cet outil.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:227
+#: core/utilities/maintenance/maintenancedlg.cpp:228
 #, kde-format
 msgid "Scan for new items"
 msgstr "Effectuer une analyse pour chercher de nouveaux éléments"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:233
+#: core/utilities/maintenance/maintenancedlg.cpp:234
 #, kde-format
 msgid ""
 "<qt><i>Note: If activated, the Core DB is always cleaned. You can select "
@@ -58199,27 +58207,27 @@ msgstr ""
 "temps et geler temporairement digiKam<br/> pour s'assurer qu'aucune "
 "corruption de base de données ne survienne.</i></qt>"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:236
+#: core/utilities/maintenance/maintenancedlg.cpp:237
 #, kde-format
 msgid "Also clean up the thumbnail database."
 msgstr "Nettoyer aussi la base des vignettes."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:237
+#: core/utilities/maintenance/maintenancedlg.cpp:238
 #, kde-format
 msgid "Also clean up the faces database."
 msgstr "Nettoyer aussi la base de reconnaissance faciale."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:238
+#: core/utilities/maintenance/maintenancedlg.cpp:239
 #, kde-format
 msgid "Also clean up the similarity database."
 msgstr "Nettoyer aussi la base de données de similarité."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:239
+#: core/utilities/maintenance/maintenancedlg.cpp:240
 #, kde-format
 msgid "Extended clean up and shrink all databases."
 msgstr "Nettoyage détaillé et compression de toutes les bases de données."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:240
+#: core/utilities/maintenance/maintenancedlg.cpp:241
 #, kde-format
 msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
@@ -58228,71 +58236,71 @@ msgstr ""
 "Cette option conduit au ménage (réduction) des bases de données. Cette "
 "optimisation est gérée par SQLite et MySQL."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:244
+#: core/utilities/maintenance/maintenancedlg.cpp:245
 #, kde-format
 msgid "Perform database cleaning"
 msgstr "Effectuer un ménage des bases de données"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:249
-#: core/utilities/maintenance/maintenancedlg.cpp:256
+#: core/utilities/maintenance/maintenancedlg.cpp:250
+#: core/utilities/maintenance/maintenancedlg.cpp:257
 #, kde-format
 msgid "Scan for changed or non-cataloged items (faster)"
 msgstr ""
 "Effectuer une analyse pour chercher des éléments changés ou non catalogués "
 "(plus rapide)"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:251
+#: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
 msgstr "Reconstruire les vignettes"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:258
+#: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
 msgid "Rebuild Finger-prints"
 msgstr "Reconstruire les empreintes digitales"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:267
+#: core/utilities/maintenance/maintenancedlg.cpp:268
 #, kde-format
 msgid "Similarity range (in percents): "
 msgstr "Échelle de similarité (en pourcentage) : "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:287
+#: core/utilities/maintenance/maintenancedlg.cpp:288
 #, kde-format
 msgid "Restriction on duplicates:"
 msgstr "Restriction sur les doublons :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:291
+#: core/utilities/maintenance/maintenancedlg.cpp:292
 #, kde-format
 msgid "No restriction"
 msgstr "Pas de restriction"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:292
+#: core/utilities/maintenance/maintenancedlg.cpp:293
 #, kde-format
 msgid "Restrict to album of reference image"
 msgstr "Restreindre à l'album de l'image de référence"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:293
+#: core/utilities/maintenance/maintenancedlg.cpp:294
 #, kde-format
 msgid "Exclude album of reference image"
 msgstr "Exclure l'album de l'image de référence"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:307
+#: core/utilities/maintenance/maintenancedlg.cpp:308
 #, kde-format
 msgid "Find Duplicate Items"
 msgstr "Chercher des éléments en double"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:314
+#: core/utilities/maintenance/maintenancedlg.cpp:315
 #, kde-format
 msgid "Faces data management: "
 msgstr "Gestion des données des visages :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:324
+#: core/utilities/maintenance/maintenancedlg.cpp:325
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear and rebuild all training data"
 msgstr "Effacer et reconstruire toutes les données d'apprentissage"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:326
+#: core/utilities/maintenance/maintenancedlg.cpp:327
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58302,47 +58310,47 @@ msgstr ""
 "Cette fonction effacera toutes les données d'apprentissage concernant la "
 "reconnaissance et les reconstruira à partir de tous les visages disponibles."
 
-#: core/utilities/maintenance/maintenancedlg.cpp:329
+#: core/utilities/maintenance/maintenancedlg.cpp:330
 #, kde-format
 msgid "Detect and recognize Faces"
 msgstr "Détecter et reconnaître des visages"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:336
+#: core/utilities/maintenance/maintenancedlg.cpp:337
 #, kde-format
 msgid "Scan Mode: "
 msgstr "Mode analyse :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:341
+#: core/utilities/maintenance/maintenancedlg.cpp:342
 #, kde-format
 msgid "Clean all and re-scan"
 msgstr "Tout effacer et analyser à nouveau"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:342
+#: core/utilities/maintenance/maintenancedlg.cpp:343
 #, kde-format
 msgid "Scan non-assigned only"
 msgstr "Analyser seulement ce qui n'est pas affecté"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:354
+#: core/utilities/maintenance/maintenancedlg.cpp:355
 #, kde-format
 msgid "Sync Direction: "
 msgstr "Direction de synchro :"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:358
+#: core/utilities/maintenance/maintenancedlg.cpp:359
 #, kde-format
 msgid "From database to image metadata"
 msgstr "Depuis la base de données vers les métadonnées des images"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:359
+#: core/utilities/maintenance/maintenancedlg.cpp:360
 #, kde-format
 msgid "From image metadata to database"
 msgstr "Depuis les métadonnées des images vers la base de données"
 
-#: core/utilities/maintenance/maintenancedlg.cpp:362
+#: core/utilities/maintenance/maintenancedlg.cpp:363
 #, kde-format
 msgid "Check metadata setup panel for details: "
 msgstr "Vérifiez les détails du panneau de configuration des métadonnées : "
 
-#: core/utilities/maintenance/maintenancedlg.cpp:367
+#: core/utilities/maintenance/maintenancedlg.cpp:368
 #, kde-format
 msgid "Sync Metadata and Database"
 msgstr "Synchroniser les métadonnées et la base de données"
