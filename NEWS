@@ -352,7 +352,7 @@ BUGFIXES:
 339 ==> 217991 - Support to import albums from Picasa.
 340 ==> 469728 - Updating internal libraw to resolve build issue on OpenBSD.
 341 ==> 469710 - digiKam 8.0 don't read (don't use) saved Shortcut customization.
-342 ==> 
+342 ==> 469758 - Won't use global menus in Flatpak.
 343 ==> 
 344 ==> 
 345 ==> 
