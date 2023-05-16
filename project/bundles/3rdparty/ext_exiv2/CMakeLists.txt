@@ -1,9 +1,8 @@
 # Script to build Exiv2 for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#
 #
 
 set(PREFIX_ext_exiv2 "${EXTPREFIX}")
@@ -14,6 +13,7 @@ set(Exiv2_Conf -DBUILD_SHARED_LIBS=ON
                -DEXIV2_ENABLE_PNG=ON
                -DEXIV2_ENABLE_NLS=ON
                -DEXIV2_ENABLE_BMFF=ON
+               -DEXIV2_ENABLE_BROTLI=ON
                -DEXIV2_ENABLE_PRINTUCS2=ON
                -DEXIV2_ENABLE_LENSDATA=ON
                -DEXIV2_ENABLE_VIDEO=OFF
@@ -21,14 +21,17 @@ set(Exiv2_Conf -DBUILD_SHARED_LIBS=ON
                -DEXIV2_ENABLE_DYNAMIC_RUNTIME=OFF
                -DEXIV2_ENABLE_CURL=OFF
                -DEXIV2_ENABLE_SSH=OFF
+               -DEXIV2_ENABLE_INIH=OFF
                -DEXIV2_BUILD_SAMPLES=OFF
                -DEXIV2_BUILD_PO=OFF
                -DEXIV2_BUILD_EXIV2_COMMAND=OFF
                -DEXIV2_BUILD_UNIT_TESTS=OFF
+               -DEXIV2_BUILD_FUZZ_TESTS=OFF
                -DEXIV2_BUILD_DOC=OFF
                -DEXIV2_TEAM_EXTRA_WARNINGS=OFF
                -DEXIV2_TEAM_WARNINGS_AS_ERRORS=OFF
                -DEXIV2_TEAM_USE_SANITIZERS=OFF
+               -D EXIV2_TEAM_OSS_FUZZ=OFF
                -DEXIV2_TEAM_PACKAGING=OFF
 )
 
@@ -50,8 +53,8 @@ if(MINGW)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-#        GIT_TAG v0.27.5
-        GIT_TAG 0.27-maintenance
+        GIT_TAG v0.28.0
+#       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
@@ -80,8 +83,8 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-#        GIT_TAG v0.27.5
-        GIT_TAG 0.27-maintenance
+        GIT_TAG v0.28.0
+#       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
@@ -107,8 +110,8 @@ else() # Linux
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-#        GIT_TAG v0.27.5
-        GIT_TAG 0.27-maintenance
+        GIT_TAG v0.28.0
+#       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
