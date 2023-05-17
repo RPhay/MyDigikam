@@ -355,7 +355,7 @@ BUGFIXES:
 341 ==> 469710 - digiKam 8.0 don't read (don't use) saved Shortcut customization.
 342 ==> 469758 - Won't use global menus in Flatpak.
 343 ==> 435695 - Add image quality information on properties view from right sidebar.
-344 ==> 
+344 ==> 445740 - [Enhancement] opencl settings.
 345 ==> 
 356 ==> 
 347 ==> 
