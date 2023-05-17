@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 00:44+0000\n"
+"POT-Creation-Date: 2023-05-17 00:44+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1313,7 +1313,7 @@ msgstr "Technické parametre"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Binárne dáta</i>"
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:64
 #, kde-format
 msgid "Initializing..."
 msgstr "Inicializuje sa..."
@@ -1323,22 +1323,22 @@ msgstr "Inicializuje sa..."
 msgid "Load Plugins..."
 msgstr "Načítať pluginy..."
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:162 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Kontroluje sa repozitár ICC..."
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:178
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Databáza skratiek"
 
-#: core/app/main/digikamapp.cpp:188
+#: core/app/main/digikamapp.cpp:200
 #, kde-format
 msgid "Loading albums..."
 msgstr "Načítavam albumy..."
 
-#: core/app/main/digikamapp.cpp:334
+#: core/app/main/digikamapp.cpp:354
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1349,7 +1349,7 @@ msgstr ""
 "nastaviť, vyberte „Áno“, inak vyberte „Nie“. V tom prípade bude, „Správa "
 "farieb“ vypnutá až kým tento problém nevyriešite.</p>"
 
-#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:641 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1357,7 +1357,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 položiek)"
 
-#: core/app/main/digikamapp.cpp:627
+#: core/app/main/digikamapp.cpp:647
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1365,7 +1365,7 @@ msgstr[0] "Nie je vybraná žiadna položka (%1 [%2] položka)"
 msgstr[1] "Nie je vybraná žiadna položka (%1 [%2] položky)"
 msgstr[2] "Nie je vybraná žiadna položka (%1 [%2] položiek)"
 
-#: core/app/main/digikamapp.cpp:632
+#: core/app/main/digikamapp.cpp:652
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1376,7 +1376,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Nie je vybraná žiadna položka (%1 položiek. So zoskupenými položkami: %2)"
 
-#: core/app/main/digikamapp.cpp:643
+#: core/app/main/digikamapp.cpp:663
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected (%3/%4)"
 msgid "1/%2 item selected (%3/%4)"
@@ -1385,7 +1385,7 @@ msgstr[0] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[1] "%1/%2 vybraných položiek (%3/%4)"
 msgstr[2] "%1/%2 vybraných položiek (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:656
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3] items selected (%4/%5)"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1394,7 +1394,7 @@ msgstr[0] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[1] "%1/%2 [%3] vybraných položiek (%4/%5)"
 msgstr[2] "%1/%2 [%3] vybraných položiek (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:664
+#: core/app/main/digikamapp.cpp:684
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1403,7 +1403,7 @@ msgstr[0] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %
 msgstr[1] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 msgstr[2] "%1/%2 vybraných položiek. Celkom vrátane zoskupených položiek: %3"
 
-#: core/app/main/digikamapp.cpp:672
+#: core/app/main/digikamapp.cpp:692
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3/%4] items selected (%5/%6)"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1412,7 +1412,7 @@ msgstr[0] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 msgstr[2] "%1/%2 [%3/%4] vybraných položiek (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:681
+#: core/app/main/digikamapp.cpp:701
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1421,22 +1421,22 @@ msgstr[0] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[1] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 msgstr[2] "%1/%2 vybraných položiek. Vrátane zoskupených položiek: %3/%4"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 z %2)"
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 z %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:730
+#: core/app/main/digikamapp.cpp:750
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 z %2. Celkom vrátane zoskupených položiek: %3)"
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:761
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1444,7 +1444,7 @@ msgstr[0] "1 položka skrytá"
 msgstr[1] "%1 položky skryté"
 msgstr[2] "%1 položiek skrytých"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:811
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1452,7 +1452,7 @@ msgstr[0] "Zapísať metadáta do obrázka"
 msgstr[1] "Zapísať metadáta do vybraných obrázkov"
 msgstr[2] "Zapísať metadáta do vybraných obrázkov"
 
-#: core/app/main/digikamapp.cpp:793
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1465,48 +1465,48 @@ msgstr[2] "Znova načítať metadáta z vybraných obrázkov"
 msgid "Auto-Detecting Camera..."
 msgstr "Automatické hľadanie fotoaparátu..."
 
-#: core/app/main/digikamapp_camera.cpp:40
-#: core/app/main/digikamapp_camera.cpp:55
+#: core/app/main/digikamapp_camera.cpp:44
+#: core/app/main/digikamapp_camera.cpp:63
 #, kde-format
 msgid "Opening Download Dialog..."
 msgstr "Otvára sa dialógové okno sťahovania..."
 
-#: core/app/main/digikamapp_camera.cpp:66
+#: core/app/main/digikamapp_camera.cpp:78
 #, kde-format
 msgid "Cameras"
 msgstr "Fotoaparáty"
 
-#: core/app/main/digikamapp_camera.cpp:68
+#: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "USB Storage Devices"
 msgstr "Úložné zariadenia USB"
 
-#: core/app/main/digikamapp_camera.cpp:70
+#: core/app/main/digikamapp_camera.cpp:82
 #, kde-format
 msgid "Card Readers"
 msgstr "Čítačky kariet"
 
-#: core/app/main/digikamapp_camera.cpp:79
+#: core/app/main/digikamapp_camera.cpp:91
 #, kde-format
 msgid "Add Images..."
 msgstr "Pridať obrázky..."
 
-#: core/app/main/digikamapp_camera.cpp:80
+#: core/app/main/digikamapp_camera.cpp:92
 #, kde-format
 msgid "Adds new items to an Album."
 msgstr "Pridá nové položky do albumu."
 
-#: core/app/main/digikamapp_camera.cpp:87
+#: core/app/main/digikamapp_camera.cpp:99
 #, kde-format
 msgid "Add Folders..."
 msgstr "Pridať priečinky..."
 
-#: core/app/main/digikamapp_camera.cpp:88
+#: core/app/main/digikamapp_camera.cpp:100
 #, kde-format
 msgid "Adds new folders to Album library."
 msgstr "Pridá nové priečinky do albumu."
 
-#: core/app/main/digikamapp_camera.cpp:224
+#: core/app/main/digikamapp_camera.cpp:236
 #, kde-format
 msgid "Images found in %1"
 msgstr "Obrázky nájdené v %1"
@@ -1564,100 +1564,100 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "Inicializuje sa hlavné okno..."
 
-#: core/app/main/digikamapp_setup.cpp:135
+#: core/app/main/digikamapp_setup.cpp:139
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&Späť"
 
-#: core/app/main/digikamapp_setup.cpp:149
+#: core/app/main/digikamapp_setup.cpp:153
 #, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Ďalej"
 
-#: core/app/main/digikamapp_setup.cpp:163
+#: core/app/main/digikamapp_setup.cpp:167
 #, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Obnoviť"
 
-#: core/app/main/digikamapp_setup.cpp:164
+#: core/app/main/digikamapp_setup.cpp:168
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "Aktualizovať aktuálny obsah."
 
-#: core/app/main/digikamapp_setup.cpp:191
+#: core/app/main/digikamapp_setup.cpp:195
 #, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Nový..."
 
-#: core/app/main/digikamapp_setup.cpp:192
+#: core/app/main/digikamapp_setup.cpp:196
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "Vytvorí nový prázdny album v kolekcii."
 
-#: core/app/main/digikamapp_setup.cpp:200
+#: core/app/main/digikamapp_setup.cpp:204
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&Presunúť do albumu..."
 
-#: core/app/main/digikamapp_setup.cpp:201
+#: core/app/main/digikamapp_setup.cpp:205
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Presunie vybrané obrázky do albumu."
 
-#: core/app/main/digikamapp_setup.cpp:208
+#: core/app/main/digikamapp_setup.cpp:212
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "&Kopírovať do..."
 
-#: core/app/main/digikamapp_setup.cpp:209
+#: core/app/main/digikamapp_setup.cpp:213
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Skopíruje vybrané obrázky do cieľového priečinka."
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:220
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Odstrániť album"
 
-#: core/app/main/digikamapp_setup.cpp:223
-#: core/app/main/digikamapp_setup.cpp:458
+#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:462
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Premenovať..."
 
-#: core/app/main/digikamapp_setup.cpp:231
-#: core/app/main/digikamapp_setup.cpp:283
+#: core/app/main/digikamapp_setup.cpp:235
+#: core/app/main/digikamapp_setup.cpp:287
 #, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: core/app/main/digikamapp_setup.cpp:232
+#: core/app/main/digikamapp_setup.cpp:236
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Upraviť vlastnosti albumu a informácie o kolekcii."
 
-#: core/app/main/digikamapp_setup.cpp:240
+#: core/app/main/digikamapp_setup.cpp:244
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Zapísať metadáta do súborov"
 
-#: core/app/main/digikamapp_setup.cpp:241
-#: core/app/main/digikamapp_setup.cpp:417
+#: core/app/main/digikamapp_setup.cpp:245
+#: core/app/main/digikamapp_setup.cpp:421
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1667,14 +1667,14 @@ msgstr ""
 "Aktualizuje metadáta súborov aktuálneho albumu obsahom digiKam databáze "
 "(metadáta súborov budú prepísané údajmi z databáze)."
 
-#: core/app/main/digikamapp_setup.cpp:251
+#: core/app/main/digikamapp_setup.cpp:255
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Znova načítať metadáta zo súborov"
 
-#: core/app/main/digikamapp_setup.cpp:252
-#: core/app/main/digikamapp_setup.cpp:428
+#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:432
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1685,188 +1685,188 @@ msgstr ""
 "Aktualizuje údaje v digiKam databáze metadátami súborov aktuálneho albumu "
 "(informácie v databáze budú prepísané údajmi z metadát súborov)."
 
-#: core/app/main/digikamapp_setup.cpp:262
+#: core/app/main/digikamapp_setup.cpp:266
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Otvoriť v Správcovi súborov"
 
-#: core/app/main/digikamapp_setup.cpp:269
+#: core/app/main/digikamapp_setup.cpp:273
 #, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Správca štítkov"
 
-#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:280
 #, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "N&ový..."
 
-#: core/app/main/digikamapp_setup.cpp:290
+#: core/app/main/digikamapp_setup.cpp:294
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: core/app/main/digikamapp_setup.cpp:297
+#: core/app/main/digikamapp_setup.cpp:301
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Priradiť štítok"
 
-#: core/app/main/digikamapp_setup.cpp:305
+#: core/app/main/digikamapp_setup.cpp:309
 #, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Pohľady"
 
-#: core/app/main/digikamapp_setup.cpp:309
+#: core/app/main/digikamapp_setup.cpp:313
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Miniatúry"
 
-#: core/app/main/digikamapp_setup.cpp:316
+#: core/app/main/digikamapp_setup.cpp:320
 #: core/app/views/stack/itemiconview_views.cpp:278
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Náhľad"
 
-#: core/app/main/digikamapp_setup.cpp:326
+#: core/app/main/digikamapp_setup.cpp:330
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr "Mapa"
 
-#: core/app/main/digikamapp_setup.cpp:335
+#: core/app/main/digikamapp_setup.cpp:339
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Tabuľka"
 
-#: core/app/main/digikamapp_setup.cpp:344
+#: core/app/main/digikamapp_setup.cpp:348
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Otvoriť..."
 
-#: core/app/main/digikamapp_setup.cpp:345
+#: core/app/main/digikamapp_setup.cpp:349
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Otvoriť vybranú položku."
 
-#: core/app/main/digikamapp_setup.cpp:351
+#: core/app/main/digikamapp_setup.cpp:355
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "Otvoriť v predvolenom programe"
 
-#: core/app/main/digikamapp_setup.cpp:352
+#: core/app/main/digikamapp_setup.cpp:356
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "Otvoriť vybranú položku v predvolenom programe."
 
-#: core/app/main/digikamapp_setup.cpp:358
+#: core/app/main/digikamapp_setup.cpp:362
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Editor obrázkov"
 
-#: core/app/main/digikamapp_setup.cpp:359
+#: core/app/main/digikamapp_setup.cpp:363
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Spustiť Editor obrázkov."
 
-#: core/app/main/digikamapp_setup.cpp:366
+#: core/app/main/digikamapp_setup.cpp:370
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Svetelná tabuľa"
 
-#: core/app/main/digikamapp_setup.cpp:372
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "Umiestniť na Svetelnú tabuľu"
 
-#: core/app/main/digikamapp_setup.cpp:373
+#: core/app/main/digikamapp_setup.cpp:377
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "Pridať zvolené položky medzi náhľady svetelnej tabule."
 
-#: core/app/main/digikamapp_setup.cpp:379
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "Pridať na Svetelnú tabuľu"
 
-#: core/app/main/digikamapp_setup.cpp:380
+#: core/app/main/digikamapp_setup.cpp:384
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "Pridá zvolené položky medzi náhľady svetelnej tabule."
 
-#: core/app/main/digikamapp_setup.cpp:388
+#: core/app/main/digikamapp_setup.cpp:392
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Správca dávkového spracovania"
 
-#: core/app/main/digikamapp_setup.cpp:394
+#: core/app/main/digikamapp_setup.cpp:398
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "Pridať do aktuálneho radu"
 
-#: core/app/main/digikamapp_setup.cpp:395
+#: core/app/main/digikamapp_setup.cpp:399
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "Pridá vybrané položky do aktuálneho radu v Správcovi dávok."
 
-#: core/app/main/digikamapp_setup.cpp:401
+#: core/app/main/digikamapp_setup.cpp:405
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "Pridať do nového radu"
 
-#: core/app/main/digikamapp_setup.cpp:402
+#: core/app/main/digikamapp_setup.cpp:406
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "Pridá zvolené položky do nového radu v Správcovi dávok."
 
-#: core/app/main/digikamapp_setup.cpp:409
+#: core/app/main/digikamapp_setup.cpp:413
 #, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Importovať"
 
-#: core/app/main/digikamapp_setup.cpp:416
+#: core/app/main/digikamapp_setup.cpp:420
 #, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Zapísať metadáta do vybraných súborov"
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:431
 #, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Znova načítať metadáta z vybraných súborov"
 
-#: core/app/main/digikamapp_setup.cpp:438
+#: core/app/main/digikamapp_setup.cpp:442
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Hľadať tváre"
 
-#: core/app/main/digikamapp_setup.cpp:443
+#: core/app/main/digikamapp_setup.cpp:447
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Recognize faces"
@@ -1874,99 +1874,99 @@ msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Rozoznávať tváre"
 
-#: core/app/main/digikamapp_setup.cpp:450
+#: core/app/main/digikamapp_setup.cpp:454
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Nájsť podobné..."
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "Nájsť obrázky podobné vybranému referenčnému obrázku."
 
-#: core/app/main/digikamapp_setup.cpp:459
+#: core/app/main/digikamapp_setup.cpp:463
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Zmeniť názov súboru aktuálne vybranej položky."
 
-#: core/app/main/digikamapp_setup.cpp:469
+#: core/app/main/digikamapp_setup.cpp:473
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Presunúť do koša"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:487
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Odstrániť natrvalo"
 
-#: core/app/main/digikamapp_setup.cpp:494
+#: core/app/main/digikamapp_setup.cpp:498
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Trvale odstránit bez potvrdzovania"
 
-#: core/app/main/digikamapp_setup.cpp:502
+#: core/app/main/digikamapp_setup.cpp:506
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Presunúť do koša bez potvrdzovania"
 
-#: core/app/main/digikamapp_setup.cpp:509
+#: core/app/main/digikamapp_setup.cpp:513
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Triediť &albumy"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:514
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Zoradiť albumy v stromovom zobrazení."
 
-#: core/app/main/digikamapp_setup.cpp:529
+#: core/app/main/digikamapp_setup.cpp:533
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Podľa priečinka"
 
-#: core/app/main/digikamapp_setup.cpp:530
+#: core/app/main/digikamapp_setup.cpp:534
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Podľa kategórie"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:535
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Podľa dátumu"
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:540
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Zahrnúť podstrom albumu"
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:542
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
 "Zapnutím tejto voľby zobrazíte pod aktuálnym albumom všetky jeho podalbumy."
 
-#: core/app/main/digikamapp_setup.cpp:543
+#: core/app/main/digikamapp_setup.cpp:547
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Zahrnúť podstrom štítku"
 
-#: core/app/main/digikamapp_setup.cpp:545
+#: core/app/main/digikamapp_setup.cpp:549
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1976,442 +1976,442 @@ msgstr ""
 "Aktivovaním tejto voľby zobrazíte všetky obrázky označené danými štítkami a "
 "jej podštítkami."
 
-#: core/app/main/digikamapp_setup.cpp:550
+#: core/app/main/digikamapp_setup.cpp:554
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Zobraziť všetky zoskupené položky ako otvorené"
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:556
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "Zapnutím tejto voľby zobrazíte všetky zoskupené položky ako otvorené."
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:562
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Triediť položky"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "Hodnota, podľa ktorej sú obrázky z albumu v okne s náhľadmi zotriedené"
 
-#: core/app/main/digikamapp_setup.cpp:564
+#: core/app/main/digikamapp_setup.cpp:568
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Podľa mena"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:569
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Podľa umiestnenia"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Podľa dátumu vytvorenia"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:571
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Podľa dátumu zmeny"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Podľa veľkosti súboru"
 
-#: core/app/main/digikamapp_setup.cpp:569
+#: core/app/main/digikamapp_setup.cpp:573
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Podľa hodnotenia"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Podľa veľkosti súboru"
 
-#: core/app/main/digikamapp_setup.cpp:571
+#: core/app/main/digikamapp_setup.cpp:575
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Podľa pomeru strán"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:576
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Podľa typu tváre"
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Podľa podobnosti"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:578
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Podľa manuálu a názvu"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Podľa manuálu a dátumu"
 
-#: core/app/main/digikamapp_setup.cpp:620
+#: core/app/main/digikamapp_setup.cpp:624
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "&Smer triedenia obrázkov"
 
-#: core/app/main/digikamapp_setup.cpp:621
+#: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Určuje, či majú byť obrázky zoradené vzostupne alebo zostupne."
 
-#: core/app/main/digikamapp_setup.cpp:625
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:629
+#: core/app/main/digikamapp_setup.cpp:684
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Vzostupne"
 
-#: core/app/main/digikamapp_setup.cpp:627
-#: core/app/main/digikamapp_setup.cpp:682
+#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:686
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Zostupne"
 
-#: core/app/main/digikamapp_setup.cpp:637
+#: core/app/main/digikamapp_setup.cpp:641
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Oddeliť položky"
 
-#: core/app/main/digikamapp_setup.cpp:638
+#: core/app/main/digikamapp_setup.cpp:642
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Kategórie, v ktorých sú zobrazené obrázky v okne s náhľadmi"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:647
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Plochý zoznam"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Podľa albumu"
 
-#: core/app/main/digikamapp_setup.cpp:645
+#: core/app/main/digikamapp_setup.cpp:649
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Podľa formátu"
 
-#: core/app/main/digikamapp_setup.cpp:646
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Podľa mesiaca"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:651
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Podľa tvárí"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:679
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Poradie triedenia položiek"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:680
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Spôsob triedenia skupín rozdelených položiek"
 
-#: core/app/main/digikamapp_setup.cpp:697
+#: core/app/main/digikamapp_setup.cpp:701
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:708
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Zrušiť výber"
 
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:715
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Invertovať výber"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:723
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Zobraziť panel náhľadov"
 
-#: core/app/main/digikamapp_setup.cpp:750
+#: core/app/main/digikamapp_setup.cpp:754
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Pôvodná veľkosť"
 
-#: core/app/main/digikamapp_setup.cpp:758
+#: core/app/main/digikamapp_setup.cpp:762
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Prispôsobiť veľkosti &okna"
 
-#: core/app/main/digikamapp_setup.cpp:771
+#: core/app/main/digikamapp_setup.cpp:775
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Pohľad so správou farieb"
 
-#: core/app/main/digikamapp_setup.cpp:789
+#: core/app/main/digikamapp_setup.cpp:793
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Hľadať..."
 
-#: core/app/main/digikamapp_setup.cpp:797
+#: core/app/main/digikamapp_setup.cpp:801
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Pokročilé hľadanie..."
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:809
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Hľadať duplicity..."
 
-#: core/app/main/digikamapp_setup.cpp:815
+#: core/app/main/digikamapp_setup.cpp:819
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Migrácia databázy..."
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:828
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Údržba..."
 
-#: core/app/main/digikamapp_setup.cpp:831
+#: core/app/main/digikamapp_setup.cpp:835
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Hľadať nové položky"
 
-#: core/app/main/digikamapp_setup.cpp:837
+#: core/app/main/digikamapp_setup.cpp:841
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Pridať fotoaparát ručne..."
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:852
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Načítavajú sa fotoaparáty..."
 
-#: core/app/main/digikamapp_setup.cpp:882
+#: core/app/main/digikamapp_setup.cpp:890
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Ukončiť režim náhľadu"
 
-#: core/app/main/digikamapp_setup.cpp:887
+#: core/app/main/digikamapp_setup.cpp:895
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Ďalší obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:893
+#: core/app/main/digikamapp_setup.cpp:901
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Predchádzajúci obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:899
+#: core/app/main/digikamapp_setup.cpp:907
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Prvý obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:904
+#: core/app/main/digikamapp_setup.cpp:912
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Posledný obrázok"
 
-#: core/app/main/digikamapp_setup.cpp:909
+#: core/app/main/digikamapp_setup.cpp:917
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Vys&trihnúť"
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:919
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Vystrihnúť výber do schránky"
 
-#: core/app/main/digikamapp_setup.cpp:930
+#: core/app/main/digikamapp_setup.cpp:938
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Upraviť názvy"
 
-#: core/app/main/digikamapp_setup.cpp:935
+#: core/app/main/digikamapp_setup.cpp:943
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Upraviť komentáre"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:948
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Zobraziť priradené štítky"
 
-#: core/app/main/digikamapp_setup.cpp:949
+#: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Opraviť EXIF štítok orientácie"
 
-#: core/app/main/digikamapp_setup.cpp:952
+#: core/app/main/digikamapp_setup.cpp:960
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normálne"
 
-#: core/app/main/digikamapp_setup.cpp:954
+#: core/app/main/digikamapp_setup.cpp:962
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Prevrátené vodorovne"
 
-#: core/app/main/digikamapp_setup.cpp:956
+#: core/app/main/digikamapp_setup.cpp:964
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Otočené dolu hlavou"
 
-#: core/app/main/digikamapp_setup.cpp:958
+#: core/app/main/digikamapp_setup.cpp:966
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Prevrátené zvisle"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:968
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Otočené vpravo / Prevrátené vodorovne"
 
-#: core/app/main/digikamapp_setup.cpp:962
+#: core/app/main/digikamapp_setup.cpp:970
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Otočené vpravo"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:972
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Otočené vpravo / Prevrátené zvislo"
 
-#: core/app/main/digikamapp_setup.cpp:966
+#: core/app/main/digikamapp_setup.cpp:974
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Otočené vľavo"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1035
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Otočiť"
 
-#: core/app/main/digikamapp_setup.cpp:1031
+#: core/app/main/digikamapp_setup.cpp:1039
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Vľavo"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1046
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Vpravo"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1056
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Prevrátiť"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1060
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontálne"
 
-#: core/app/main/digikamapp_setup.cpp:1059
+#: core/app/main/digikamapp_setup.cpp:1067
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Vertikálne"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Automaticky otočiť/prevrátiť pomocou Exif informácie"
 
-#: core/app/main/digikamapp_setup.cpp:1080
+#: core/app/main/digikamapp_setup.cpp:1088
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Načítam motívy..."
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1095
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Motívy"
 
-#: core/app/main/digikamapp_setup.cpp:1095
+#: core/app/main/digikamapp_setup.cpp:1107
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
