@@ -68,10 +68,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=$MXE_ROOT_DIR/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="22.12.3"
+DK_KA_VERSION="23.04.1"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.104"
+DK_KF5_VERSION="5.106"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5.15"
@@ -87,7 +87,7 @@ DK_VERSION=master
 #DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=1
+DK_DEBUG=0
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
