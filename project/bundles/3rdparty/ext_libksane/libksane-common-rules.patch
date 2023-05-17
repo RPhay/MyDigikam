@@ -1,36 +1,36 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ff7d3e9..a7e9f0d 100644
+index 1706c0d..746696d 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -50,13 +50,13 @@ find_package(KF5I18n ${KF5_VERSION} REQUIRED)
+@@ -56,13 +56,13 @@ find_package(KF${KF_MAJOR_VERSION}I18n ${KF5_VERSION} REQUIRED)
  
  if (NOT WIN32)
-     find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
--    find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
-+#    find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
+     find_package(KF${KF_MAJOR_VERSION}WidgetsAddons ${KF5_VERSION} REQUIRED)
+-    find_package(KF${KF_MAJOR_VERSION}TextWidgets ${KF5_VERSION} REQUIRED)
++#    find_package(KF${KF_MAJOR_VERSION}TextWidgets ${KF5_VERSION} REQUIRED)
  
      # Optional KF5 frameworks
--    find_package(KF5Wallet ${KF5_VERSION})
--    set_package_properties(KF5Wallet PROPERTIES DESCRIPTION "Safe desktop-wide storage for passwords" TYPE OPTIONAL
+-    find_package(KF${KF_MAJOR_VERSION}Wallet ${KF5_VERSION})
+-    set_package_properties(KF${KF_MAJOR_VERSION}Wallet PROPERTIES DESCRIPTION "Safe desktop-wide storage for passwords" TYPE OPTIONAL
 -        PURPOSE "Required to have permanent storage of passwords for scanners"
 -    )
-+#    find_package(KF5Wallet ${KF5_VERSION})
-+#    set_package_properties(KF5Wallet PROPERTIES DESCRIPTION "Safe desktop-wide storage for passwords" TYPE OPTIONAL
++#    find_package(KF${KF_MAJOR_VERSION}Wallet ${KF5_VERSION})
++#    set_package_properties(KF${KF_MAJOR_VERSION}Wallet PROPERTIES DESCRIPTION "Safe desktop-wide storage for passwords" TYPE OPTIONAL
 +#        PURPOSE "Required to have permanent storage of passwords for scanners"
 +#    )
  
      # Check if sane API is available.
      find_package(KSaneCore "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}" REQUIRED)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 9383997..5d9178b 100644
+index cc00d4e..f827d60 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
 @@ -51,7 +51,7 @@ target_link_libraries(KF5Sane
      PRIVATE
-         KF5::I18n
-         KF5::WidgetsAddons
--        KF5::TextWidgets
-+#        KF5::TextWidgets
+         KF${KF_MAJOR_VERSION}::I18n
+         KF${KF_MAJOR_VERSION}::WidgetsAddons
+-        KF${KF_MAJOR_VERSION}::TextWidgets
++#        KF${KF_MAJOR_VERSION}::TextWidgets
          KSane::Core
  )
  

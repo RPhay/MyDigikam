@@ -44,14 +44,14 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="22.12.3"
+DK_KA_VERSION="23.04.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.104"
+DK_KF5_VERSION="5.106"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Qt version to use in bundle. Possible values:
 # - 5.15:     stable Qt5 release.

@@ -54,7 +54,7 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
 # NOTE: The order to compile each component here is very important.
-
+if [ ] ; then
 # core KF5 frameworks dependencies
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
@@ -80,7 +80,7 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
-
+fi
 # Extra support for digiKam
 
 # libksane support
