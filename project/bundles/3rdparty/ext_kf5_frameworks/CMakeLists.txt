@@ -1,6 +1,6 @@
 # Script to build KF6 Frameworks for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -173,11 +173,13 @@ endfunction()
 if(APPLE)
     set(MacosThreadWeaverPatch threadweaver-macports.patch)
     set(MacosKauthBackend -DKAUTH_BACKEND_NAME=Apple)
+    set(MacosCoreAddonsPatch kcoreaddons-macports.patch)
 else()
     set(KCalendarCorePatch kcalendarcore-libical.patch)
 endif()
 
 if(MINGW)
+    set(MacosCoreAddonsPatch kcoreaddons-mingw.patch)
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF)
 else()
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
@@ -191,7 +193,7 @@ InstallKF5Component(extra-cmake-modules ${KF5_VERSION} "${Qt6CommonOptions}"    
 InstallKF5Component(kconfig             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(breeze-icons        ${KF5_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
 InstallKF5Component(solid               ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kcoreaddons         ${KF5_VERSION} "${Qt6CommonOptions}"                       "kcoreaddons-mingw.patch")
+InstallKF5Component(kcoreaddons         ${KF5_VERSION} "${Qt6CommonOptions}"                       "${MacosCoreAddonsPatch}")
 InstallKF5Component(threadweaver        ${KF5_VERSION} "${Qt6CommonOptions}"                       "${MacosThreadWeaverPatch}")
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(karchive            ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
