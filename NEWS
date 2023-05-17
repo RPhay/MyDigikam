@@ -7,6 +7,7 @@ Print Creator: Add 4 new templates for 6.8 inchs photo paper.
 General      : Improve usability of Image Properties sidebar tab.
 Libraw       : Update to snapshot 2023-05-14
 Bundles      : Update Exiv2 to last 0.28 release: https://github.com/Exiv2/exiv2/issues/2406#issuecomment-1529139799
+Bundles      : Update KF5 framework to last 5.106
 
 *****************************************************************************************************
 BUGFIXES:
