@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 00:44+0000\n"
+"POT-Creation-Date: 2023-05-17 00:44+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1278,7 +1278,7 @@ msgstr ""
 msgid "<i>Binary Data</i>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:68
+#: core/app/main/digikamapp.cpp:64
 #, kde-format
 msgid "Initializing..."
 msgstr ""
@@ -1288,22 +1288,22 @@ msgstr ""
 msgid "Load Plugins..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:162 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:170
+#: core/app/main/digikamapp.cpp:178
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Model Warna"
 
-#: core/app/main/digikamapp.cpp:188
+#: core/app/main/digikamapp.cpp:200
 #, fuzzy, kde-format
 msgid "Loading albums..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp.cpp:334
+#: core/app/main/digikamapp.cpp:354
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1311,92 +1311,92 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:641 core/app/views/stack/trashview.cpp:514
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:627
+#: core/app/main/digikamapp.cpp:647
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:632
+#: core/app/main/digikamapp.cpp:652
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:643
+#: core/app/main/digikamapp.cpp:663
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:656
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:664
+#: core/app/main/digikamapp.cpp:684
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:672
+#: core/app/main/digikamapp.cpp:692
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:681
+#: core/app/main/digikamapp.cpp:701
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:712
+#: core/app/main/digikamapp.cpp:732
 #, kde-format
 msgid " (%1 of %2)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:726
+#: core/app/main/digikamapp.cpp:746
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:730
+#: core/app/main/digikamapp.cpp:750
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:741
+#: core/app/main/digikamapp.cpp:761
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:811
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:793
+#: core/app/main/digikamapp.cpp:813
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1408,48 +1408,48 @@ msgstr[1] ""
 msgid "Auto-Detecting Camera..."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:40
-#: core/app/main/digikamapp_camera.cpp:55
+#: core/app/main/digikamapp_camera.cpp:44
+#: core/app/main/digikamapp_camera.cpp:63
 #, kde-format
 msgid "Opening Download Dialog..."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:66
+#: core/app/main/digikamapp_camera.cpp:78
 #, kde-format
 msgid "Cameras"
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:68
+#: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "USB Storage Devices"
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:70
+#: core/app/main/digikamapp_camera.cpp:82
 #, kde-format
 msgid "Card Readers"
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:79
+#: core/app/main/digikamapp_camera.cpp:91
 #, kde-format
 msgid "Add Images..."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:80
+#: core/app/main/digikamapp_camera.cpp:92
 #, kde-format
 msgid "Adds new items to an Album."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:87
+#: core/app/main/digikamapp_camera.cpp:99
 #, kde-format
 msgid "Add Folders..."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:88
+#: core/app/main/digikamapp_camera.cpp:100
 #, kde-format
 msgid "Adds new folders to Album library."
 msgstr ""
 
-#: core/app/main/digikamapp_camera.cpp:224
+#: core/app/main/digikamapp_camera.cpp:236
 #, kde-format
 msgid "Images found in %1"
 msgstr ""
@@ -1501,100 +1501,100 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:135
+#: core/app/main/digikamapp_setup.cpp:139
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "Kem&bali"
 
-#: core/app/main/digikamapp_setup.cpp:149
+#: core/app/main/digikamapp_setup.cpp:153
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "Maju"
 
-#: core/app/main/digikamapp_setup.cpp:163
+#: core/app/main/digikamapp_setup.cpp:167
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "Muat semula"
 
-#: core/app/main/digikamapp_setup.cpp:164
+#: core/app/main/digikamapp_setup.cpp:168
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "&Buang"
 
-#: core/app/main/digikamapp_setup.cpp:191
+#: core/app/main/digikamapp_setup.cpp:195
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "&Baru..."
 
-#: core/app/main/digikamapp_setup.cpp:192
+#: core/app/main/digikamapp_setup.cpp:196
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:200
+#: core/app/main/digikamapp_setup.cpp:204
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "Alih ke atas"
 
-#: core/app/main/digikamapp_setup.cpp:201
+#: core/app/main/digikamapp_setup.cpp:205
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:208
+#: core/app/main/digikamapp_setup.cpp:212
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:209
+#: core/app/main/digikamapp_setup.cpp:213
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:216
+#: core/app/main/digikamapp_setup.cpp:220
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "Padam Fail"
 
-#: core/app/main/digikamapp_setup.cpp:223
-#: core/app/main/digikamapp_setup.cpp:458
+#: core/app/main/digikamapp_setup.cpp:227
+#: core/app/main/digikamapp_setup.cpp:462
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "Namakan semula..."
 
-#: core/app/main/digikamapp_setup.cpp:231
-#: core/app/main/digikamapp_setup.cpp:283
+#: core/app/main/digikamapp_setup.cpp:235
+#: core/app/main/digikamapp_setup.cpp:287
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "Ciri-ciri"
 
-#: core/app/main/digikamapp_setup.cpp:232
+#: core/app/main/digikamapp_setup.cpp:236
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Maklumat Peranti"
 
-#: core/app/main/digikamapp_setup.cpp:240
+#: core/app/main/digikamapp_setup.cpp:244
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:241
-#: core/app/main/digikamapp_setup.cpp:417
+#: core/app/main/digikamapp_setup.cpp:245
+#: core/app/main/digikamapp_setup.cpp:421
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1602,14 +1602,14 @@ msgid ""
 "database (file metadata will be overwritten with data from the database)."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:251
+#: core/app/main/digikamapp_setup.cpp:255
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:252
-#: core/app/main/digikamapp_setup.cpp:428
+#: core/app/main/digikamapp_setup.cpp:256
+#: core/app/main/digikamapp_setup.cpp:432
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1618,285 +1618,285 @@ msgid ""
 "files' metadata)."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:262
+#: core/app/main/digikamapp_setup.cpp:266
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "Buka dalam Pengurus Fail"
 
-#: core/app/main/digikamapp_setup.cpp:269
+#: core/app/main/digikamapp_setup.cpp:273
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "Penapis:"
 
-#: core/app/main/digikamapp_setup.cpp:276
+#: core/app/main/digikamapp_setup.cpp:280
 #, fuzzy, kde-format
 msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "Baru..."
 
-#: core/app/main/digikamapp_setup.cpp:290
+#: core/app/main/digikamapp_setup.cpp:294
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "Padam"
 
-#: core/app/main/digikamapp_setup.cpp:297
+#: core/app/main/digikamapp_setup.cpp:301
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "Nama:"
 
-#: core/app/main/digikamapp_setup.cpp:305
+#: core/app/main/digikamapp_setup.cpp:309
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "Paparkan"
 
-#: core/app/main/digikamapp_setup.cpp:309
+#: core/app/main/digikamapp_setup.cpp:313
 #, fuzzy, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Thumbnail"
 
-#: core/app/main/digikamapp_setup.cpp:316
+#: core/app/main/digikamapp_setup.cpp:320
 #: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "Pralihat"
 
-#: core/app/main/digikamapp_setup.cpp:326
+#: core/app/main/digikamapp_setup.cpp:330
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:335
+#: core/app/main/digikamapp_setup.cpp:339
 #, fuzzy, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "Marmar"
 
-#: core/app/main/digikamapp_setup.cpp:344
+#: core/app/main/digikamapp_setup.cpp:348
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "Buka Dengan..."
 
-#: core/app/main/digikamapp_setup.cpp:345
+#: core/app/main/digikamapp_setup.cpp:349
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp_setup.cpp:351
+#: core/app/main/digikamapp_setup.cpp:355
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:352
+#: core/app/main/digikamapp_setup.cpp:356
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:358
+#: core/app/main/digikamapp_setup.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "Sejarah"
 
-#: core/app/main/digikamapp_setup.cpp:359
+#: core/app/main/digikamapp_setup.cpp:363
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "Akan menghapuskan fail yang dipilih"
 
-#: core/app/main/digikamapp_setup.cpp:366
+#: core/app/main/digikamapp_setup.cpp:370
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "Tinggi"
 
-#: core/app/main/digikamapp_setup.cpp:372
+#: core/app/main/digikamapp_setup.cpp:376
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:373
+#: core/app/main/digikamapp_setup.cpp:377
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:379
+#: core/app/main/digikamapp_setup.cpp:383
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:380
+#: core/app/main/digikamapp_setup.cpp:384
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:388
+#: core/app/main/digikamapp_setup.cpp:392
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "Penapis:"
 
-#: core/app/main/digikamapp_setup.cpp:394
+#: core/app/main/digikamapp_setup.cpp:398
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:395
+#: core/app/main/digikamapp_setup.cpp:399
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:401
+#: core/app/main/digikamapp_setup.cpp:405
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:402
+#: core/app/main/digikamapp_setup.cpp:406
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:409
+#: core/app/main/digikamapp_setup.cpp:413
 #, fuzzy, kde-format
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "Import"
 
-#: core/app/main/digikamapp_setup.cpp:416
+#: core/app/main/digikamapp_setup.cpp:420
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:427
+#: core/app/main/digikamapp_setup.cpp:431
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:438
+#: core/app/main/digikamapp_setup.cpp:442
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:443
+#: core/app/main/digikamapp_setup.cpp:447
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:450
+#: core/app/main/digikamapp_setup.cpp:454
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:459
+#: core/app/main/digikamapp_setup.cpp:463
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Buang Kumpulan"
 
-#: core/app/main/digikamapp_setup.cpp:469
+#: core/app/main/digikamapp_setup.cpp:473
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, fuzzy, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Alihkan ke Tong Sampah"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:487
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Padam Fail"
 
-#: core/app/main/digikamapp_setup.cpp:494
+#: core/app/main/digikamapp_setup.cpp:498
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Tetapkan"
 
-#: core/app/main/digikamapp_setup.cpp:502
+#: core/app/main/digikamapp_setup.cpp:506
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Tetapkan"
 
-#: core/app/main/digikamapp_setup.cpp:509
+#: core/app/main/digikamapp_setup.cpp:513
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:514
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Album"
 
-#: core/app/main/digikamapp_setup.cpp:529
+#: core/app/main/digikamapp_setup.cpp:533
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Carian Baru"
 
-#: core/app/main/digikamapp_setup.cpp:530
+#: core/app/main/digikamapp_setup.cpp:534
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Dengan Kategori"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:535
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Mengikut Tarikh"
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:540
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:542
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:543
+#: core/app/main/digikamapp_setup.cpp:547
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:545
+#: core/app/main/digikamapp_setup.cpp:549
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1904,442 +1904,442 @@ msgid ""
 "sub-tags."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:550
+#: core/app/main/digikamapp_setup.cpp:554
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:556
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:562
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:564
+#: core/app/main/digikamapp_setup.cpp:568
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Mengikut Nama"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:569
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Laluan"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:570
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Kapsyen:"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:571
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Sambungan Gagal"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:572
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Teks"
 
-#: core/app/main/digikamapp_setup.cpp:569
+#: core/app/main/digikamapp_setup.cpp:573
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Kadaran"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:574
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Saiz"
 
-#: core/app/main/digikamapp_setup.cpp:571
+#: core/app/main/digikamapp_setup.cpp:575
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Kekalkan nisbah aspek"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:576
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Sejarah"
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:577
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Nama Fail"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:578
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Manual"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:579
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Manual"
 
-#: core/app/main/digikamapp_setup.cpp:620
+#: core/app/main/digikamapp_setup.cpp:624
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Sejarah"
 
-#: core/app/main/digikamapp_setup.cpp:621
+#: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:625
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:629
+#: core/app/main/digikamapp_setup.cpp:684
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Menaik"
 
-#: core/app/main/digikamapp_setup.cpp:627
-#: core/app/main/digikamapp_setup.cpp:682
+#: core/app/main/digikamapp_setup.cpp:631
+#: core/app/main/digikamapp_setup.cpp:686
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Menurun"
 
-#: core/app/main/digikamapp_setup.cpp:637
+#: core/app/main/digikamapp_setup.cpp:641
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:638
+#: core/app/main/digikamapp_setup.cpp:642
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:647
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Kosongkan Senarai"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:648
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "&Salin di Sini"
 
-#: core/app/main/digikamapp_setup.cpp:645
+#: core/app/main/digikamapp_setup.cpp:649
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Format"
 
-#: core/app/main/digikamapp_setup.cpp:646
+#: core/app/main/digikamapp_setup.cpp:650
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Bulan"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:651
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Sejarah"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:679
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Sejarah"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:680
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:697
+#: core/app/main/digikamapp_setup.cpp:701
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Pilih Semua"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:708
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Pilihan"
 
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:715
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Songsangkan Pilihan"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:723
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Format Fail"
 
-#: core/app/main/digikamapp_setup.cpp:750
+#: core/app/main/digikamapp_setup.cpp:754
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zum kepada 100%"
 
-#: core/app/main/digikamapp_setup.cpp:758
+#: core/app/main/digikamapp_setup.cpp:762
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Import"
 
-#: core/app/main/digikamapp_setup.cpp:771
+#: core/app/main/digikamapp_setup.cpp:775
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Keseimbangan Warna"
 
-#: core/app/main/digikamapp_setup.cpp:789
+#: core/app/main/digikamapp_setup.cpp:793
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Cari:"
 
-#: core/app/main/digikamapp_setup.cpp:797
+#: core/app/main/digikamapp_setup.cpp:801
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Tetapan Lanjutan"
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:809
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "&Buang"
 
-#: core/app/main/digikamapp_setup.cpp:815
+#: core/app/main/digikamapp_setup.cpp:819
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Tetapkan"
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:828
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Jarak:"
 
-#: core/app/main/digikamapp_setup.cpp:831
+#: core/app/main/digikamapp_setup.cpp:835
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:837
+#: core/app/main/digikamapp_setup.cpp:841
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:852
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp_setup.cpp:882
+#: core/app/main/digikamapp_setup.cpp:890
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:887
+#: core/app/main/digikamapp_setup.cpp:895
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:893
+#: core/app/main/digikamapp_setup.cpp:901
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:899
+#: core/app/main/digikamapp_setup.cpp:907
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Sharuzzaman Ahmat Raslan"
 
-#: core/app/main/digikamapp_setup.cpp:904
+#: core/app/main/digikamapp_setup.cpp:912
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Imej"
 
-#: core/app/main/digikamapp_setup.cpp:909
+#: core/app/main/digikamapp_setup.cpp:917
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:919
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Salin ke Klipbod"
 
-#: core/app/main/digikamapp_setup.cpp:930
+#: core/app/main/digikamapp_setup.cpp:938
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Nama Baru"
 
-#: core/app/main/digikamapp_setup.cpp:935
+#: core/app/main/digikamapp_setup.cpp:943
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Ciri Imej"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:948
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Padam"
 
-#: core/app/main/digikamapp_setup.cpp:949
+#: core/app/main/digikamapp_setup.cpp:957
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Pembetulan Warna"
 
-#: core/app/main/digikamapp_setup.cpp:952
+#: core/app/main/digikamapp_setup.cpp:960
 #, fuzzy, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Normal"
 
-#: core/app/main/digikamapp_setup.cpp:954
+#: core/app/main/digikamapp_setup.cpp:962
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Balikkan Mengufuk"
 
-#: core/app/main/digikamapp_setup.cpp:956
+#: core/app/main/digikamapp_setup.cpp:964
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Putaran:"
 
-#: core/app/main/digikamapp_setup.cpp:958
+#: core/app/main/digikamapp_setup.cpp:966
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Balikkan Menegak"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:968
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:962
+#: core/app/main/digikamapp_setup.cpp:970
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:972
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Saiz Semula Imej"
 
-#: core/app/main/digikamapp_setup.cpp:966
+#: core/app/main/digikamapp_setup.cpp:974
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Putar"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1035
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Putar"
 
-#: core/app/main/digikamapp_setup.cpp:1031
+#: core/app/main/digikamapp_setup.cpp:1039
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1046
 #, fuzzy, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Tinggi"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1056
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Balikkan"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1060
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Mengufuk"
 
-#: core/app/main/digikamapp_setup.cpp:1059
+#: core/app/main/digikamapp_setup.cpp:1067
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Menegak"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1077
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1080
+#: core/app/main/digikamapp_setup.cpp:1088
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Muat Naik..."
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1095
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1095
+#: core/app/main/digikamapp_setup.cpp:1107
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
