@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-17 00:44+0000\n"
+"POT-Creation-Date: 2023-05-18 00:45+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1347,7 +1347,7 @@ msgstr ""
 msgid "<i>Binary Data</i>"
 msgstr "<i>ไม่มีข้อมูล</i>"
 
-#: core/app/main/digikamapp.cpp:64
+#: core/app/main/digikamapp.cpp:68
 #, kde-format
 msgid "Initializing..."
 msgstr "กำลังเริ่มการทำงาน..."
@@ -1357,23 +1357,23 @@ msgstr "กำลังเริ่มการทำงาน..."
 msgid "Load Plugins..."
 msgstr "กำลังโหลดส่วนเสริม Kipi"
 
-#: core/app/main/digikamapp.cpp:162 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
 #, fuzzy, kde-format
 msgid "Checking ICC repository..."
 msgstr "กำลังตรวจสอบห้องเก็บโพรไฟล์สี ICC"
 
-#: core/app/main/digikamapp.cpp:178
+#: core/app/main/digikamapp.cpp:170
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "กำลังอ่านฐานข้อมูล"
 
-#: core/app/main/digikamapp.cpp:200
+#: core/app/main/digikamapp.cpp:188
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums..."
 msgstr "กำลังวิเคราะห์อัลบั้มทั้งหมด"
 
-#: core/app/main/digikamapp.cpp:354
+#: core/app/main/digikamapp.cpp:334
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1384,25 +1384,25 @@ msgstr ""
 "ให้เลือกที่ปุ่ม \"ใช่\" หากไม่ต้องการ ให้เลือกที่ปุ่ม \"ไม่ใช่\" ในกรณีนี้ คุณสมบัติ \"การจัดการระบบสี"
 "\" จะถูกปิดการทำงาน จนกว่าคุณจะแก้ปัญหานี้ให้เรียบร้อยเสียก่อน</p>"
 
-#: core/app/main/digikamapp.cpp:641 core/app/views/stack/trashview.cpp:514
+#: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:647
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:652
+#: core/app/main/digikamapp.cpp:632
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:663
+#: core/app/main/digikamapp.cpp:643
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1410,7 +1410,7 @@ msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:656
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1418,13 +1418,13 @@ msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:684
+#: core/app/main/digikamapp.cpp:664
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:692
+#: core/app/main/digikamapp.cpp:672
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1432,29 +1432,29 @@ msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:701
+#: core/app/main/digikamapp.cpp:681
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/app/main/digikamapp.cpp:732
+#: core/app/main/digikamapp.cpp:712
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:746
+#: core/app/main/digikamapp.cpp:726
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (ภาพที่ %1 จาก %2 ภาพ)"
 
-#: core/app/main/digikamapp.cpp:750
+#: core/app/main/digikamapp.cpp:730
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:761
+#: core/app/main/digikamapp.cpp:741
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1462,7 +1462,7 @@ msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 รายการ"
 
-#: core/app/main/digikamapp.cpp:811
+#: core/app/main/digikamapp.cpp:791
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1470,7 +1470,7 @@ msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/app/main/digikamapp.cpp:813
+#: core/app/main/digikamapp.cpp:793
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -1483,48 +1483,48 @@ msgstr[0] "อ่านข้อมูลกำกับจากภาพต่
 msgid "Auto-Detecting Camera..."
 msgstr "ตรวจหาอุปกรณ์กล้องอัตโนมัติ"
 
-#: core/app/main/digikamapp_camera.cpp:44
-#: core/app/main/digikamapp_camera.cpp:63
+#: core/app/main/digikamapp_camera.cpp:40
+#: core/app/main/digikamapp_camera.cpp:55
 #, fuzzy, kde-format
 msgid "Opening Download Dialog..."
 msgstr "เปิดกล่องดาวน์โหลด"
 
-#: core/app/main/digikamapp_camera.cpp:78
+#: core/app/main/digikamapp_camera.cpp:66
 #, kde-format
 msgid "Cameras"
 msgstr "กล้องต่าง ๆ"
 
-#: core/app/main/digikamapp_camera.cpp:80
+#: core/app/main/digikamapp_camera.cpp:68
 #, kde-format
 msgid "USB Storage Devices"
 msgstr "อุปกรณ์จัดเก็บข้อมูลแบบ USB"
 
-#: core/app/main/digikamapp_camera.cpp:82
+#: core/app/main/digikamapp_camera.cpp:70
 #, kde-format
 msgid "Card Readers"
 msgstr "เครื่องอ่านการ์ดข้อมูล"
 
-#: core/app/main/digikamapp_camera.cpp:91
+#: core/app/main/digikamapp_camera.cpp:79
 #, kde-format
 msgid "Add Images..."
 msgstr "เพิ่มภาพต่าง ๆ ..."
 
-#: core/app/main/digikamapp_camera.cpp:92
+#: core/app/main/digikamapp_camera.cpp:80
 #, kde-format
 msgid "Adds new items to an Album."
 msgstr "เพิ่มรายการใหม่ ๆ ไปยังอัลบั้ม"
 
-#: core/app/main/digikamapp_camera.cpp:99
+#: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
 msgid "Add Folders..."
 msgstr "เพิ่มโฟลเดอร์..."
 
-#: core/app/main/digikamapp_camera.cpp:100
+#: core/app/main/digikamapp_camera.cpp:88
 #, kde-format
 msgid "Adds new folders to Album library."
 msgstr "เพิ่มโฟลเดอร์ใหม่ ๆ ไปยังคลังอัลบั้ม"
 
-#: core/app/main/digikamapp_camera.cpp:236
+#: core/app/main/digikamapp_camera.cpp:224
 #, kde-format
 msgid "Images found in %1"
 msgstr "พบภาพใน %1"
@@ -1579,114 +1579,114 @@ msgctxt "@info: setup"
 msgid "Initializing Main View..."
 msgstr "กำลังเริ่มการทำงานของพื้นที่แสดงผลหลัก"
 
-#: core/app/main/digikamapp_setup.cpp:139
+#: core/app/main/digikamapp_setup.cpp:135
 #, fuzzy, kde-format
 #| msgid "&Back"
 msgctxt "@action: setup"
 msgid "&Back"
 msgstr "&ย้อนกลับ"
 
-#: core/app/main/digikamapp_setup.cpp:153
+#: core/app/main/digikamapp_setup.cpp:149
 #, fuzzy, kde-format
 #| msgid "Forward"
 msgctxt "@action: setup"
 msgid "Forward"
 msgstr "ถัดไป"
 
-#: core/app/main/digikamapp_setup.cpp:167
+#: core/app/main/digikamapp_setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Refresh"
 msgctxt "@action: setup"
 msgid "Refresh"
 msgstr "ปรับปรุงใหม่"
 
-#: core/app/main/digikamapp_setup.cpp:168
+#: core/app/main/digikamapp_setup.cpp:164
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
 msgstr "ปรับปรุงเนื้อหารายการทั้งหมดของอัลบั้ม"
 
-#: core/app/main/digikamapp_setup.cpp:195
+#: core/app/main/digikamapp_setup.cpp:191
 #, fuzzy, kde-format
 #| msgid "&New..."
 msgctxt "@action: setup"
 msgid "&New..."
 msgstr "สร้างใ&หม่..."
 
-#: core/app/main/digikamapp_setup.cpp:196
+#: core/app/main/digikamapp_setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "Creates a new empty Album in the collection."
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
 msgstr "สร้างอัลบั้มว่าง ๆ ขึ้นใหม่ในคลังภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:204
+#: core/app/main/digikamapp_setup.cpp:200
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgctxt "@action: setup"
 msgid "&Move to Album..."
 msgstr "&ย้ายไปยังอัลบั้ม..."
 
-#: core/app/main/digikamapp_setup.cpp:205
+#: core/app/main/digikamapp_setup.cpp:201
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
 msgstr "ย้ายภาพต่าง ๆ ที่เลือกไว้ไปยังอัลบั้ม"
 
-#: core/app/main/digikamapp_setup.cpp:212
+#: core/app/main/digikamapp_setup.cpp:208
 #, fuzzy, kde-format
 #| msgid "New Tag..."
 msgctxt "@action: setup"
 msgid "&Copy to..."
 msgstr "สร้างป้ายกำกับใหม่..."
 
-#: core/app/main/digikamapp_setup.cpp:213
+#: core/app/main/digikamapp_setup.cpp:209
 #, fuzzy, kde-format
 #| msgid "Move selected images into an album."
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
 msgstr "ย้ายภาพต่าง ๆ ที่เลือกไว้ไปยังอัลบั้ม"
 
-#: core/app/main/digikamapp_setup.cpp:220
+#: core/app/main/digikamapp_setup.cpp:216
 #, fuzzy, kde-format
 #| msgid "Delete Album"
 msgctxt "@action: setup"
 msgid "Delete Album"
 msgstr "ลบอัลบั้ม"
 
-#: core/app/main/digikamapp_setup.cpp:227
-#: core/app/main/digikamapp_setup.cpp:462
+#: core/app/main/digikamapp_setup.cpp:223
+#: core/app/main/digikamapp_setup.cpp:458
 #, fuzzy, kde-format
 #| msgid "Rename..."
 msgctxt "@action: setup"
 msgid "Rename..."
 msgstr "เปลี่ยนชื่อ..."
 
-#: core/app/main/digikamapp_setup.cpp:235
-#: core/app/main/digikamapp_setup.cpp:287
+#: core/app/main/digikamapp_setup.cpp:231
+#: core/app/main/digikamapp_setup.cpp:283
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action: setup"
 msgid "Properties"
 msgstr "คุณสมบัติ"
 
-#: core/app/main/digikamapp_setup.cpp:236
+#: core/app/main/digikamapp_setup.cpp:232
 #, fuzzy, kde-format
 #| msgid "Edit album properties and collection information."
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "แก้ไขคุณสมบัติของอัลบั้มและข้อมูลรายละเอียดของคลังภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:244
+#: core/app/main/digikamapp_setup.cpp:240
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Images"
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
 msgstr "เขียนข้อมูลกำกับภาพไปยังรูปภาพต่าง ๆ"
 
-#: core/app/main/digikamapp_setup.cpp:245
-#: core/app/main/digikamapp_setup.cpp:421
+#: core/app/main/digikamapp_setup.cpp:241
+#: core/app/main/digikamapp_setup.cpp:417
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates metadata of images in the current album with the contents of "
@@ -1700,15 +1700,15 @@ msgstr ""
 "ปรับปรุงข้อมูลกำกับภาพของภาพต่าง ๆ ในอัลบั้มปัจจุบันโดยใช้ค่าจากฐานข้อมูลของดิจิแคม "
 "(ข้อมูลกำกับภาพจะถูกเขียนทับด้วยข้อมูลจากฐานข้อมูล)"
 
-#: core/app/main/digikamapp_setup.cpp:255
+#: core/app/main/digikamapp_setup.cpp:251
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Images"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Files"
 msgstr "อ่านข้อมูลกำกับจากภาพต่าง ๆ อีกครั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:256
-#: core/app/main/digikamapp_setup.cpp:432
+#: core/app/main/digikamapp_setup.cpp:252
+#: core/app/main/digikamapp_setup.cpp:428
 #, fuzzy, kde-format
 #| msgid ""
 #| "Updates the digiKam database from the metadata of the files in the "
@@ -1723,20 +1723,20 @@ msgstr ""
 "ปรับปรุงฐานข้อมูลของดิจิแคมโดยใช้ข้อมูลกำกับภาพของภาพในอัลบั้มปัจจุบัน "
 "(ข้อมูลรายละเอียดในฐานข้อมูล จะถูกเขียนทับด้วยข้อมูลจากข้อมูลกำกับภาพจากแฟ้ม)"
 
-#: core/app/main/digikamapp_setup.cpp:266
+#: core/app/main/digikamapp_setup.cpp:262
 #, fuzzy, kde-format
 #| msgid "Open in File Manager"
 msgctxt "@action: setup"
 msgid "Open in File Manager"
 msgstr "เปิดในเครื่องมือจัดการแฟ้ม"
 
-#: core/app/main/digikamapp_setup.cpp:273
+#: core/app/main/digikamapp_setup.cpp:269
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Tag Manager"
 msgstr "การจัดการสิทธิ์"
 
-#: core/app/main/digikamapp_setup.cpp:280
+#: core/app/main/digikamapp_setup.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "new tag"
 #| msgid "N&ew..."
@@ -1744,33 +1744,33 @@ msgctxt "@action: new tag"
 msgid "N&ew..."
 msgstr "สร้างใ&หม่..."
 
-#: core/app/main/digikamapp_setup.cpp:294
+#: core/app/main/digikamapp_setup.cpp:290
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action: setup"
 msgid "Delete"
 msgstr "ลบ"
 
-#: core/app/main/digikamapp_setup.cpp:301
+#: core/app/main/digikamapp_setup.cpp:297
 #, fuzzy, kde-format
 #| msgid "Assign Tag"
 msgctxt "@action: setup"
 msgid "Assign Tag"
 msgstr "กำหนดป้ายกำกับ"
 
-#: core/app/main/digikamapp_setup.cpp:309
+#: core/app/main/digikamapp_setup.cpp:305
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Views"
 msgstr "แสดงภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:313
+#: core/app/main/digikamapp_setup.cpp:309
 #, fuzzy, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "ภาพตัวอย่าง"
 
-#: core/app/main/digikamapp_setup.cpp:320
+#: core/app/main/digikamapp_setup.cpp:316
 #: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 #| msgid "Preview"
@@ -1778,182 +1778,182 @@ msgctxt "@action: View the selected image"
 msgid "Preview"
 msgstr "แสดงตัวอย่าง"
 
-#: core/app/main/digikamapp_setup.cpp:330
+#: core/app/main/digikamapp_setup.cpp:326
 #, kde-format
 msgctxt "@action: Switch to map view"
 msgid "Map"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:339
+#: core/app/main/digikamapp_setup.cpp:335
 #, fuzzy, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
 msgstr "เปิดใช้งาน"
 
-#: core/app/main/digikamapp_setup.cpp:348
+#: core/app/main/digikamapp_setup.cpp:344
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open..."
 msgstr "เปิดด้วย..."
 
-#: core/app/main/digikamapp_setup.cpp:349
+#: core/app/main/digikamapp_setup.cpp:345
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
 msgstr "เปิดรายการที่เลือกในเครื่องมือแก้ไขภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:355
+#: core/app/main/digikamapp_setup.cpp:351
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
 msgstr "เปิดรายการที่เลือกในเครื่องมือแก้ไขภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:356
+#: core/app/main/digikamapp_setup.cpp:352
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
 msgstr "เปิดรายการที่เลือกในเครื่องมือแก้ไขภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:362
+#: core/app/main/digikamapp_setup.cpp:358
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@action: setup"
 msgid "Image Editor"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:363
+#: core/app/main/digikamapp_setup.cpp:359
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
 msgstr "เปิดในเครื่องมือแก้ไขภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:370
+#: core/app/main/digikamapp_setup.cpp:366
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@action: setup"
 msgid "Light Table"
 msgstr "โต๊ะฉายแสง"
 
-#: core/app/main/digikamapp_setup.cpp:376
+#: core/app/main/digikamapp_setup.cpp:372
 #, fuzzy, kde-format
 #| msgid "Place onto Light Table"
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
 msgstr "วางไปบนโต๊ะฉายแสง"
 
-#: core/app/main/digikamapp_setup.cpp:377
+#: core/app/main/digikamapp_setup.cpp:373
 #, fuzzy, kde-format
 #| msgid "Place the selected items on the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
 msgstr "นำรายการที่เลือกไปไว้บนแถบตัวอย่างภาพบนโต๊ะฉายแสง"
 
-#: core/app/main/digikamapp_setup.cpp:383
+#: core/app/main/digikamapp_setup.cpp:379
 #, fuzzy, kde-format
 #| msgid "Add to Light Table"
 msgctxt "@action: setup"
 msgid "Add to Light Table"
 msgstr "เพิ่มไปยังโต๊ะฉายแสง"
 
-#: core/app/main/digikamapp_setup.cpp:384
+#: core/app/main/digikamapp_setup.cpp:380
 #, fuzzy, kde-format
 #| msgid "Add selected items to the light table thumbbar."
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
 msgstr "เพิ่มรายการที่เลือกไปไว้บนแถบตัวอย่างภาพบนโต๊ะฉายแสง"
 
-#: core/app/main/digikamapp_setup.cpp:392
+#: core/app/main/digikamapp_setup.cpp:388
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
 msgstr "จัดการคิวประมวลผลกลุ่มภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:398
+#: core/app/main/digikamapp_setup.cpp:394
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action: setup"
 msgid "Add to Current Queue"
 msgstr "เพิ่มเข้าไปยังคิวปัจจุบัน"
 
-#: core/app/main/digikamapp_setup.cpp:399
+#: core/app/main/digikamapp_setup.cpp:395
 #, fuzzy, kde-format
 #| msgid "Add selected items to current queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
 msgstr "เพิ่มรายการที่เลือกไปไว้ยังคิวงานปัจจุบันจากตัวจัดการการประมวลผลกลุ่มภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:405
+#: core/app/main/digikamapp_setup.cpp:401
 #, fuzzy, kde-format
 #| msgid "Add to New Queue"
 msgctxt "@action: setup"
 msgid "Add to New Queue"
 msgstr "เพิ่มเข้าไปยังคิวตัวใหม่"
 
-#: core/app/main/digikamapp_setup.cpp:406
+#: core/app/main/digikamapp_setup.cpp:402
 #, fuzzy, kde-format
 #| msgid "Add selected items to a new queue from batch manager."
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
 msgstr "เพิ่มรายการที่เลือกไปไว้ยังคิวงานตัวใหม่จากตัวจัดการการประมวลผลกลุ่มภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:413
+#: core/app/main/digikamapp_setup.cpp:409
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@action: Import photos from camera"
 msgid "Import"
 msgstr "นำเข้า"
 
-#: core/app/main/digikamapp_setup.cpp:420
+#: core/app/main/digikamapp_setup.cpp:416
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Selected Images"
 msgctxt "@action: setup"
 msgid "Write Metadata to Selected Files"
 msgstr "เขียนข้อมูลกำกับไปยังภาพต่าง ๆ ที่เลือกไว้"
 
-#: core/app/main/digikamapp_setup.cpp:431
+#: core/app/main/digikamapp_setup.cpp:427
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Selected Images"
 msgctxt "@action: setup"
 msgid "Reread Metadata From Selected Files"
 msgstr "อ่านข้อมูลกำกับจากภาพต่าง ๆ ที่เลือกไว้อีกครั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:442
+#: core/app/main/digikamapp_setup.cpp:438
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@action: setup"
 msgid "Scan for Faces"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/app/main/digikamapp_setup.cpp:447
+#: core/app/main/digikamapp_setup.cpp:443
 #, fuzzy, kde-format
 #| msgid "Synchronize"
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "ปรับเทียบข้อมูล"
 
-#: core/app/main/digikamapp_setup.cpp:454
+#: core/app/main/digikamapp_setup.cpp:450
 #, fuzzy, kde-format
 #| msgid "Find Similar..."
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "ค้นหาภาพที่คล้ายกัน..."
 
-#: core/app/main/digikamapp_setup.cpp:455
+#: core/app/main/digikamapp_setup.cpp:451
 #, fuzzy, kde-format
 #| msgid "Find similar images using selected item as reference."
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr "ค้นหาภาพที่คล้ายกัน โดยใช้รายการที่เลือกไว้เป็นตัวอ้างอิง"
 
-#: core/app/main/digikamapp_setup.cpp:463
+#: core/app/main/digikamapp_setup.cpp:459
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "เปลี่ยนชื่อแฟ้มของรายการที่เลือกไว้ในปัจจุบัน"
 
-#: core/app/main/digikamapp_setup.cpp:473
+#: core/app/main/digikamapp_setup.cpp:469
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
@@ -1963,84 +1963,84 @@ msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "ทิ้ง %1 แฟ้มลงถังขยะ"
 
-#: core/app/main/digikamapp_setup.cpp:487
+#: core/app/main/digikamapp_setup.cpp:483
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "ลบออกอย่างถาวร"
 
-#: core/app/main/digikamapp_setup.cpp:498
+#: core/app/main/digikamapp_setup.cpp:494
 #, fuzzy, kde-format
 #| msgid "Delete permanently without confirmation"
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "ลบออกอย่างถาวรโดยไม่ถามยืนยัน"
 
-#: core/app/main/digikamapp_setup.cpp:506
+#: core/app/main/digikamapp_setup.cpp:502
 #, fuzzy, kde-format
 #| msgid "Move to trash without confirmation"
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "ทิ้งลงถังขยะโดยไม่ถามยืนยัน"
 
-#: core/app/main/digikamapp_setup.cpp:513
+#: core/app/main/digikamapp_setup.cpp:509
 #, fuzzy, kde-format
 #| msgid "&Sort Albums"
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "จัดเ&รียงอัลบั้ม"
 
-#: core/app/main/digikamapp_setup.cpp:514
+#: core/app/main/digikamapp_setup.cpp:510
 #, fuzzy, kde-format
 #| msgid "Sort Albums in tree-view."
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "จัดเรียงอัลบั้มแบบมุมมองผังต้นไม้"
 
-#: core/app/main/digikamapp_setup.cpp:533
+#: core/app/main/digikamapp_setup.cpp:529
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "ตามโฟลเดอร์"
 
-#: core/app/main/digikamapp_setup.cpp:534
+#: core/app/main/digikamapp_setup.cpp:530
 #, fuzzy, kde-format
 #| msgid "By Category"
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "ตามหมวดหมู่"
 
-#: core/app/main/digikamapp_setup.cpp:535
+#: core/app/main/digikamapp_setup.cpp:531
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "ตามวันที่"
 
-#: core/app/main/digikamapp_setup.cpp:540
+#: core/app/main/digikamapp_setup.cpp:536
 #, fuzzy, kde-format
 #| msgid "Include Album Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "รวมส่วนย่อยในอัลบั้มด้วย"
 
-#: core/app/main/digikamapp_setup.cpp:542
+#: core/app/main/digikamapp_setup.cpp:538
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้แสดงอัลบั้มย่อยทั้งหมดที่อยู่ภายใต้อัลบั้มปัจจุบันด้วย"
 
-#: core/app/main/digikamapp_setup.cpp:547
+#: core/app/main/digikamapp_setup.cpp:543
 #, fuzzy, kde-format
 #| msgid "Include Tag Sub-Tree"
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "รวมส่วนย่อยภายใต้ผังต้นไม้ของป้ายด้วย"
 
-#: core/app/main/digikamapp_setup.cpp:549
+#: core/app/main/digikamapp_setup.cpp:545
 #, fuzzy, kde-format
 #| msgid ""
 #| "Activate this option to show all images marked by the given tag and all "
@@ -2051,26 +2051,26 @@ msgid ""
 "sub-tags."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้แสดงภาพทั้งหมดที่ถูกปักป้ายที่ให้ รวมถึงที่อยู่ในป้ายย่อยทั้งหมดด้วย"
 
-#: core/app/main/digikamapp_setup.cpp:554
+#: core/app/main/digikamapp_setup.cpp:550
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "จัดก&ลุ่มรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:556
+#: core/app/main/digikamapp_setup.cpp:552
 #, fuzzy, kde-format
 #| msgid "Activate this option to show all sub-albums below the current album."
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้แสดงอัลบั้มย่อยทั้งหมดที่อยู่ภายใต้อัลบั้มปัจจุบันด้วย"
 
-#: core/app/main/digikamapp_setup.cpp:562
+#: core/app/main/digikamapp_setup.cpp:558
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "จัดเ&รียงรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:563
+#: core/app/main/digikamapp_setup.cpp:559
 #, fuzzy, kde-format
 #| msgid ""
 #| "The value by which the images in one album are sorted in the thumbnail "
@@ -2080,124 +2080,124 @@ msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
 msgstr "ค่าของวิธีการจัดเรียงภาพต่าง ๆ ในหนึ่งอัลบั้มในมุมมองภาพตัวอย่าง"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:564
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "ตามชื่อ"
 
-#: core/app/main/digikamapp_setup.cpp:569
+#: core/app/main/digikamapp_setup.cpp:565
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "ตามตำแหน่งที่เก็บภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:566
 #, fuzzy, kde-format
 #| msgid "Creation date"
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "วันที่สร้าง"
 
-#: core/app/main/digikamapp_setup.cpp:571
+#: core/app/main/digikamapp_setup.cpp:567
 #, fuzzy, kde-format
 #| msgid "Modification"
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "การแก้ไข"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:568
 #, fuzzy, kde-format
 #| msgid "By File Size"
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "ตามขนาดแฟ้ม"
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:569
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "ตามระดับความชื่นชอบ"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:570
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "ตามขนาดแฟ้ม"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:571
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "สัดส่วนภาพ:"
 
-#: core/app/main/digikamapp_setup.cpp:576
+#: core/app/main/digikamapp_setup.cpp:572
 #, fuzzy, kde-format
 #| msgid "Show image type"
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "แสดงประเภทรูปแบบของภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:577
+#: core/app/main/digikamapp_setup.cpp:573
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "ระดับความคล้ายกัน:"
 
-#: core/app/main/digikamapp_setup.cpp:578
+#: core/app/main/digikamapp_setup.cpp:574
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "แมนนวล (M)"
 
-#: core/app/main/digikamapp_setup.cpp:579
+#: core/app/main/digikamapp_setup.cpp:575
 #, fuzzy, kde-format
 #| msgid "Manual"
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "แมนนวล (M)"
 
-#: core/app/main/digikamapp_setup.cpp:624
+#: core/app/main/digikamapp_setup.cpp:620
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "การเรียงลำดับรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:625
+#: core/app/main/digikamapp_setup.cpp:621
 #, fuzzy, kde-format
 #| msgid "Defines whether images are sorted in ascending or descending manner."
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "กำหนดว่าจะให้ภาพถูกเรียงลำดับแบบจากน้อยไปหามากหรือจากมากไปหาน้อย"
 
-#: core/app/main/digikamapp_setup.cpp:629
-#: core/app/main/digikamapp_setup.cpp:684
+#: core/app/main/digikamapp_setup.cpp:625
+#: core/app/main/digikamapp_setup.cpp:680
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "จากมากไปหาน้อย"
 
-#: core/app/main/digikamapp_setup.cpp:631
-#: core/app/main/digikamapp_setup.cpp:686
+#: core/app/main/digikamapp_setup.cpp:627
+#: core/app/main/digikamapp_setup.cpp:682
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "จากน้อยไปหามาก"
 
-#: core/app/main/digikamapp_setup.cpp:641
+#: core/app/main/digikamapp_setup.cpp:637
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "จัดเ&รียงรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:642
+#: core/app/main/digikamapp_setup.cpp:638
 #, fuzzy, kde-format
 #| msgid ""
 #| "The categories in which the images in the thumbnail view are displayed"
@@ -2205,226 +2205,226 @@ msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "หมวดหมู่ของภาพต่าง ๆ ในมุมมองภาพตัวอย่างที่ถูกแสดง"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:643
 #, fuzzy, kde-format
 #| msgid "Flat List"
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "ไม่ต้องจัดกลุ่ม"
 
-#: core/app/main/digikamapp_setup.cpp:648
+#: core/app/main/digikamapp_setup.cpp:644
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "ตามอัลบั้มของรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:649
+#: core/app/main/digikamapp_setup.cpp:645
 #, fuzzy, kde-format
 #| msgid "By Format"
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "ตามประเภทของรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:650
+#: core/app/main/digikamapp_setup.cpp:646
 #, fuzzy, kde-format
 #| msgid "Month"
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "เดือน"
 
-#: core/app/main/digikamapp_setup.cpp:651
+#: core/app/main/digikamapp_setup.cpp:647
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "ไม่เลือกเลย"
 
-#: core/app/main/digikamapp_setup.cpp:679
+#: core/app/main/digikamapp_setup.cpp:675
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "การเรียงลำดับรูปภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:676
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "จัดเรียงลำดับภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:701
+#: core/app/main/digikamapp_setup.cpp:697
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "เลือกทั้งหมด"
 
-#: core/app/main/digikamapp_setup.cpp:708
+#: core/app/main/digikamapp_setup.cpp:704
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "ไม่เลือกเลย"
 
-#: core/app/main/digikamapp_setup.cpp:715
+#: core/app/main/digikamapp_setup.cpp:711
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "กลับค่าการเลือก"
 
-#: core/app/main/digikamapp_setup.cpp:723
+#: core/app/main/digikamapp_setup.cpp:719
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "แสดงแถบภาพตัวอย่าง"
 
-#: core/app/main/digikamapp_setup.cpp:754
+#: core/app/main/digikamapp_setup.cpp:750
 #, fuzzy, kde-format
 #| msgid "Zoom to 100%"
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "ปรับขนาดการดูเป็น 100%"
 
-#: core/app/main/digikamapp_setup.cpp:762
+#: core/app/main/digikamapp_setup.cpp:758
 #, fuzzy, kde-format
 #| msgid "Fit to &Window"
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/app/main/digikamapp_setup.cpp:775
+#: core/app/main/digikamapp_setup.cpp:771
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "แสดงผลร่วมกับการจัดการระบบสี"
 
-#: core/app/main/digikamapp_setup.cpp:793
+#: core/app/main/digikamapp_setup.cpp:789
 #, fuzzy, kde-format
 #| msgid "Search..."
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "ค้นหา..."
 
-#: core/app/main/digikamapp_setup.cpp:801
+#: core/app/main/digikamapp_setup.cpp:797
 #, fuzzy, kde-format
 #| msgid "Advanced Search..."
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "ค้นหาอย่างละเอียด..."
 
-#: core/app/main/digikamapp_setup.cpp:809
+#: core/app/main/digikamapp_setup.cpp:805
 #, fuzzy, kde-format
 #| msgid "Find Duplicates..."
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "ค้นหาภาพซ้ำ..."
 
-#: core/app/main/digikamapp_setup.cpp:819
+#: core/app/main/digikamapp_setup.cpp:815
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "ตำแหน่งจัดเก็บแฟ้มฐานข้อมูล"
 
-#: core/app/main/digikamapp_setup.cpp:828
+#: core/app/main/digikamapp_setup.cpp:824
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "มุมหลัก:"
 
-#: core/app/main/digikamapp_setup.cpp:835
+#: core/app/main/digikamapp_setup.cpp:831
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/app/main/digikamapp_setup.cpp:841
+#: core/app/main/digikamapp_setup.cpp:837
 #, fuzzy, kde-format
 #| msgid "Add Camera Manually..."
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "เพิ่มกล้องด้วยตัวเอง..."
 
-#: core/app/main/digikamapp_setup.cpp:852
+#: core/app/main/digikamapp_setup.cpp:848
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "กำลังโหลดกล้อง"
 
-#: core/app/main/digikamapp_setup.cpp:890
+#: core/app/main/digikamapp_setup.cpp:882
 #, fuzzy, kde-format
 #| msgid "Exit Preview Mode"
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "ออกจากการแสดงตัวอย่าง"
 
-#: core/app/main/digikamapp_setup.cpp:895
+#: core/app/main/digikamapp_setup.cpp:887
 #, fuzzy, kde-format
 #| msgid "Next Image"
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "ภาพถัดไป"
 
-#: core/app/main/digikamapp_setup.cpp:901
+#: core/app/main/digikamapp_setup.cpp:893
 #, fuzzy, kde-format
 #| msgid "Previous Image"
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "ภาพก่อน"
 
-#: core/app/main/digikamapp_setup.cpp:907
+#: core/app/main/digikamapp_setup.cpp:899
 #, fuzzy, kde-format
 #| msgid "First Image"
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "ภาพแรกสุด"
 
-#: core/app/main/digikamapp_setup.cpp:912
+#: core/app/main/digikamapp_setup.cpp:904
 #, fuzzy, kde-format
 #| msgid "Last Image"
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "ภาพสุดท้าย"
 
-#: core/app/main/digikamapp_setup.cpp:917
+#: core/app/main/digikamapp_setup.cpp:909
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:919
+#: core/app/main/digikamapp_setup.cpp:911
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "คัดลอกข้อมูลกำกับภาพไปยังคลิปบอร์ด"
 
-#: core/app/main/digikamapp_setup.cpp:938
+#: core/app/main/digikamapp_setup.cpp:930
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "แฟ้มภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:943
+#: core/app/main/digikamapp_setup.cpp:935
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "การจัดการสี..."
 
-#: core/app/main/digikamapp_setup.cpp:948
+#: core/app/main/digikamapp_setup.cpp:940
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "ป้ายกำกับที่กำหนดไว้"
 
-#: core/app/main/digikamapp_setup.cpp:957
+#: core/app/main/digikamapp_setup.cpp:949
 #, fuzzy, kde-format
 #| msgid "Adjust Exif Orientation Tag"
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "แก้ข้อมูลกำกับการหมุนภาพของ Exif"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:952
 #, fuzzy, kde-format
 #| msgctxt "normal exif orientation"
 #| msgid "Normal"
@@ -2432,114 +2432,114 @@ msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "ปกติ"
 
-#: core/app/main/digikamapp_setup.cpp:962
+#: core/app/main/digikamapp_setup.cpp:954
 #, fuzzy, kde-format
 #| msgid "Flipped Horizontally"
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "พลิกทางแนวนอน"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:956
 #, fuzzy, kde-format
 #| msgid "Rotated Upside Down"
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "หมุนกลับหัวภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:966
+#: core/app/main/digikamapp_setup.cpp:958
 #, fuzzy, kde-format
 #| msgid "Flipped Vertically"
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "พลิกทางแนวตั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:968
+#: core/app/main/digikamapp_setup.cpp:960
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Horiz. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "หมุนภาพไปทางขวา / พลิกภาพทางแนวนอน"
 
-#: core/app/main/digikamapp_setup.cpp:970
+#: core/app/main/digikamapp_setup.cpp:962
 #, fuzzy, kde-format
 #| msgid "Rotated Right"
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "หมุนไปทางขวา"
 
-#: core/app/main/digikamapp_setup.cpp:972
+#: core/app/main/digikamapp_setup.cpp:964
 #, fuzzy, kde-format
 #| msgid "Rotated Right / Vert. Flipped"
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "หมุนภาพไปทางขวา / พลิกภาพทางแนวตั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:974
+#: core/app/main/digikamapp_setup.cpp:966
 #, fuzzy, kde-format
 #| msgid "Rotated Left"
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "หมุนไปทางซ้าย"
 
-#: core/app/main/digikamapp_setup.cpp:1035
+#: core/app/main/digikamapp_setup.cpp:1027
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "หมุนภาพ"
 
-#: core/app/main/digikamapp_setup.cpp:1039
+#: core/app/main/digikamapp_setup.cpp:1031
 #, fuzzy, kde-format
 #| msgid "&Left Panel"
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "พาเนลด้านซ้า&ย"
 
-#: core/app/main/digikamapp_setup.cpp:1046
+#: core/app/main/digikamapp_setup.cpp:1038
 #, fuzzy, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "สิทธิ์"
 
-#: core/app/main/digikamapp_setup.cpp:1056
+#: core/app/main/digikamapp_setup.cpp:1048
 #, fuzzy, kde-format
 #| msgid "Flip"
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "พลิกภาพทางแนวตั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:1060
+#: core/app/main/digikamapp_setup.cpp:1052
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "พลิกทางแนวนอน"
 
-#: core/app/main/digikamapp_setup.cpp:1067
+#: core/app/main/digikamapp_setup.cpp:1059
 #, fuzzy, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "พลิกทางแนวตั้ง"
 
-#: core/app/main/digikamapp_setup.cpp:1077
+#: core/app/main/digikamapp_setup.cpp:1069
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr ""
 
-#: core/app/main/digikamapp_setup.cpp:1088
+#: core/app/main/digikamapp_setup.cpp:1080
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "กำลังโหลดชุดตกแต่ง"
 
-#: core/app/main/digikamapp_setup.cpp:1095
+#: core/app/main/digikamapp_setup.cpp:1083
 #, fuzzy, kde-format
 #| msgid "&Themes"
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&ชุดตกแต่ง"
 
-#: core/app/main/digikamapp_setup.cpp:1107
+#: core/app/main/digikamapp_setup.cpp:1095
 #, fuzzy, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
