@@ -358,7 +358,7 @@ BUGFIXES:
 344 ==> 445740 - [Enhancement] OpenCL settings.
 345 ==> 469595 - digiKam 8.0.0 from fedora repository and also local build crash on startup.
 356 ==> 423775 - IPTC title ("Object Name") not getting truncated at 64 characters in certain situations.
-347 ==> 
+347 ==> 426116 - Compact database (unique block instead of loose files).
 348 ==> 
 349 ==> 
 350 ==> 
