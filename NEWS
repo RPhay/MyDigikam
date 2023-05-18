@@ -365,7 +365,7 @@ BUGFIXES:
 351 ==> 456512 - No sound on AppImage previews.
 352 ==> 469963 - Keyboard shortcuts not saved.
 353 ==> 469860 - Dynamic Margins on thumbnails based on information.
-354 ==> 
+354 ==> 380331 - Wishlist: Show/edit star rating and Title/Captions in Preview.
 355 ==> 
 356 ==> 
 357 ==> 
@@ -378,3 +378,8 @@ BUGFIXES:
 364 ==> 
 365 ==> 
 366 ==> 
+367 ==> 
+368 ==> 
+369 ==> 
+370 ==> 
+371 ==> 
