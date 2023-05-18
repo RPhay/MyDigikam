@@ -360,7 +360,7 @@ BUGFIXES:
 356 ==> 423775 - IPTC title ("Object Name") not getting truncated at 64 characters in certain situations.
 347 ==> 426116 - Compact database (unique block instead of loose files).
 348 ==> 438989 - Changing tag symbols under macOS for multiple computers (Windows & macOS).
-349 ==> 
+349 ==> 469929 - I installed digikam 8 on my windows 11 pc, but when I start the application. it does not show a window, neither it shows it works.
 350 ==> 
 351 ==> 
 352 ==> 
