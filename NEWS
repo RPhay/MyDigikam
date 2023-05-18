@@ -364,7 +364,7 @@ BUGFIXES:
 350 ==> 457476 - Software crash.
 351 ==> 456512 - No sound on AppImage previews.
 352 ==> 469963 - Keyboard shortcuts not saved.
-353 ==> 
+353 ==> 469860 - Dynamic Margins on thumbnails based on information.
 354 ==> 
 355 ==> 
 356 ==> 
