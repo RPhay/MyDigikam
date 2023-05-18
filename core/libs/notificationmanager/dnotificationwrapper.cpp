@@ -150,7 +150,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
     }
 
 #endif
-/*
+
 #ifdef Q_OS_DARWIN
 
     // OSX support
@@ -163,7 +163,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
     else
 
 #endif // Q_OS_DARWIN
-*/
+
     {
         // Other Linux Desktops
 
