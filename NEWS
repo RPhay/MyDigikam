@@ -396,17 +396,17 @@ BUGFIXES:
 382 ==> 314608 - digiKam fails to compile.
 383 ==> 337931 - Thumbnail order does not match window order.
 384 ==> 435343 - Crash getting People album property if Thumbnail file removed.
-385 ==> 
-386 ==> 
-387 ==> 
-388 ==> 
-389 ==> 
-390 ==> 
-391 ==> 
-392 ==> 
-393 ==> 
-394 ==> 
-395 ==> 
+385 ==> 329238 - Suppress Thumbnail Creation and Use full Images.
+386 ==> 328460 - Size of thumbnail font fixed to system.
+387 ==> 318965 - Export digikam settings.
+388 ==> 312580 - Crash when exporting to Picasa.
+389 ==> 315228 - Feature Request - Google Picasa tool.
+390 ==> 308252 - Fix keyboard navigation in albums tree-view to validate current album to show in icon-view.
+391 ==> 306136 - Build failed without an explicit error.
+392 ==> 305655 - Detect which pictures are actually new in the camera.
+393 ==> 304687 - Nothing happens when trying to toggle read lock on pictures on CompactFlash (Nikon).
+394 ==> 302971 - Slackware Linux 13.37 compile failed, maybe old cmake or some else?
+395 ==> 302797 - digiKam doesn´t count correctly in albumview.
 396 ==> 
 397 ==> 
 398 ==> 
