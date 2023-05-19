@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -29301,20 +29301,20 @@ msgstr "Video-Dateien"
 msgid "Restore Trash"
 msgstr "Wedderherstellen"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Datenbank warrt torechtmaakt"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Sammeln warrt dörkeken, tööv bitte...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -29328,7 +29328,7 @@ msgstr ""
 "Dit wiest dat Vörankamen bi't Inlesen. Dor warrt all Dateien op de Fastplaat "
 "bi na en Datenbank inmeldt."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2021-11-15 13:45+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27569,19 +27569,19 @@ msgstr ""
 msgid "Restore Trash"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Gyűjtemények beolvasása, kérjük, várjon ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27590,7 +27590,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

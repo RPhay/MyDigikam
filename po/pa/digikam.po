@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -28381,21 +28381,21 @@ msgstr "ਮੂਵੀ ਫਾਇਲਾਂ"
 msgid "Restore Trash"
 msgstr "ਰੀ-ਸਟੋਰੇਸ਼ਨ"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "ਡਾਟਾਬੇਸ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>ਭੰਡਾਰ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ, ਉਡੀਕੋ ਜੀ...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28409,7 +28409,7 @@ msgstr ""
 "ਇਹ ਜਾਂਚ ਨੂੰ ਵੇਖਾਉਦਾ ਹੈ, ਜੋ ਕਿ ਹਾਲੀਂ ਜਾਰੀ ਹੈ। ਜਾਂਚ ਦੌਰਾਨ, ਡਿਸਕ ਉੱਤੇ ਮੌਜੂਦ ਸਭ ਫਾਇਲਾਂ ਨੂੰ ਇੱਕ "
 "ਡਾਟਾਬੇਸ 'ਚ ਜੋੜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

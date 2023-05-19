@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28888,19 +28888,19 @@ msgstr "파일 이동"
 msgid "Restore Trash"
 msgstr "휴지통에서 복원"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "데이터베이스 초기화 중..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28909,7 +28909,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

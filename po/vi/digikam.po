@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -27623,19 +27623,19 @@ msgstr "Tệp phim"
 msgid "Restore Trash"
 msgstr "Phục hồi lại"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Đang quét mục. Hãy đời..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -27647,7 +27647,7 @@ msgstr ""
 "đĩa được đăng kí vào cơ sở dữ liệu. Tiến trình này cần thiết để sắp xếp theo "
 "ngày EXIF, cũng tăng tốc độ của toàn bộ hiệu suất của trình digiKam."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

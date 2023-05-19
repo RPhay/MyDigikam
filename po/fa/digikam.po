@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -28116,19 +28116,19 @@ msgstr "پرونده فیلمها"
 msgid "Restore Trash"
 msgstr "بازگردانی"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "خواندن دادگان"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "در حال پویش فقره‌ها، لطفاً، منتظر بمانید..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -28140,7 +28140,7 @@ msgstr ""
 "می‌شوند. این برای ذخیره در داده‌های exif لازم می‌شود و به کارایی کلی digiKam "
 "سرعت می‌بخشد."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

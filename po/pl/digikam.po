@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2023-05-13 08:51+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -28600,19 +28600,19 @@ msgstr "Przenieś pliki"
 msgid "Restore Trash"
 msgstr "Przywróć kosz"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Zakładanie bazy danych..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Przeszukiwanie zbioru, zaczekaj chwilę..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28624,7 +28624,7 @@ msgstr ""
 "rejestrowane w bazie danych. Pamiętaj, że to okno może się samo pojawić, "
 "jeśli poprzednie przeszukiwanie zbiorów nie zostało ukończone w pełni."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

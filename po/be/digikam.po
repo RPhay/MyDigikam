@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -26991,19 +26991,19 @@ msgstr "Перамясціць файлы"
 msgid "Restore Trash"
 msgstr "Аднавіць са сметніцы"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Ініцыялізацыя базы даных..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27012,7 +27012,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

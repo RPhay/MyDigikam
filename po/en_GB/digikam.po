@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2023-05-02 19:22+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -28262,19 +28262,19 @@ msgstr "Move Files"
 msgid "Restore Trash"
 msgstr "Restore Wastebin"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Initialising database..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Scanning collections, please wait..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28286,7 +28286,7 @@ msgstr ""
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

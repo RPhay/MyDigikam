@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2023-04-14 18:06+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -29221,21 +29221,21 @@ msgstr "Siirrä tiedostot"
 msgid "Restore Trash"
 msgstr "Palauta roskakori"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Alustetaan tietokantaa…"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Kartoitetaan kokoelmia, odota…</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -29249,7 +29249,7 @@ msgstr ""
 "Tässä näkyy tilastoinnin edistyminen, jonka aikana kaikki kiintolevyllä "
 "sijaitsevat kuvat kirjataan tietokantaan. Tämä nopeuttaa digiKamin toimintaa."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28951,21 +28951,21 @@ msgstr "ផ្លាស់ទី​ឯកសារ"
 msgid "Restore Trash"
 msgstr "ផ្លាស់ទី​ឯកសារ​ %1 ទៅ​ធុង​សំរាម"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "កំពុង​រៀបចំ​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28979,7 +28979,7 @@ msgstr ""
 "វឌ្ឍនភាព​​ក្នុង​ការ​វិភាគ​រក​ការ​បង្ហាញ​នេះ ។ អំឡុង​ពេល​វិភាគ​រក ឯកសារ​ទាំងអស់​​នៅ​លើ​ថាស​​ត្រូវ​បាន​ចុះ​ឈ្មោះ​នៅ​"
 "ក្នុង​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"

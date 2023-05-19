@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:45+0000\n"
+"POT-Creation-Date: 2023-05-19 00:44+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28062,19 +28062,19 @@ msgstr "Video faili"
 msgid "Restore Trash"
 msgstr "Atjaunošana"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:120
+#: core/libs/database/utils/scan/scancontroller.cpp:123
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Inicializē datubāzi..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:144
+#: core/libs/database/utils/scan/scancontroller.cpp:147
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Meklē jaunus failus, lūdzu, uzgaidiet..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:146
+#: core/libs/database/utils/scan/scancontroller.cpp:149
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28088,7 +28088,7 @@ msgstr ""
 "Šis parāda skenēšanas progresu. Skenēšanas laikā visi uz diska esošie faili "
 "tiek reģistrēti datubāzē."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:266
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
