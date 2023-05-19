@@ -393,7 +393,7 @@ BUGFIXES:
 379 ==> 340517 - Folders in import dialog read at digikam start, not open dialog.
 380 ==> 337694 - New view with recursive Folder/Album filter.
 381 ==> 332090 - Label filter improvement.
-382 ==> 
+382 ==> 314608 - digiKam fails to compile.
 383 ==> 
 384 ==> 
 385 ==> 
