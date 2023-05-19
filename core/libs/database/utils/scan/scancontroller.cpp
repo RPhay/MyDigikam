@@ -55,16 +55,13 @@ ScanController::ScanController()
     d->eventLoop = new QEventLoop(this);
 
     connect(this, SIGNAL(databaseInitialized(bool)),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     connect(this, SIGNAL(completeScanDone()),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     connect(this, SIGNAL(completeScanCanceled()),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     // create timer to show progress dialog
 
@@ -242,7 +239,7 @@ void ScanController::run()
             scanner.setObserver(&observer);
 
             scanner.completeScan();
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Quit ScanController Event Loop" << d->eventLoop;
+
             Q_EMIT completeScanDone();
 
             if (doScanDeferred)
@@ -355,7 +352,13 @@ void ScanController::updateUniqueHash()
 
     // NOTE: loop is quit by signal
 
-    d->eventLoop->exec();
+    QThread::msleep(10);
+
+    while (!d->idle)
+    {
+        QThread::msleep(10);
+        qApp->processEvents();
+    }
 
     delete d->progressDialog;
     d->progressDialog = nullptr;

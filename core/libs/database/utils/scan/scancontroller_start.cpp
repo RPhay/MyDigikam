@@ -45,7 +45,13 @@ ScanController::Advice ScanController::databaseInitialization()
 
     // NOTE: loop is quit by signal
 
-    d->eventLoop->exec();
+    QThread::msleep(10);
+
+    while (!d->idle)
+    {
+        qApp->processEvents();
+        QThread::msleep(10);
+    }
 
     // setup file watch service for LoadingCache - now that we are sure we have a CoreDbWatch
 
@@ -99,9 +105,19 @@ void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer,
     }
 
     // NOTE: loop is quit by signal
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Enter ScanController Event Loop" << d->eventLoop;
-    d->eventLoop->exec();
-    qCDebug(DIGIKAM_DATABASE_LOG) << "After ScanController Event Loop" << d->eventLoop;
+
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Enter Loop";
+
+    QThread::msleep(10);
+
+    while (!d->idle)
+    {
+        QThread::msleep(10);
+        qApp->processEvents();
+    }
+
+    qCDebug(DIGIKAM_DATABASE_LOG) << "After Loop";
+
     d->needTotalFiles  = false;
     d->performFastScan = true;
 }
