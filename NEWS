@@ -394,7 +394,7 @@ BUGFIXES:
 380 ==> 337694 - New view with recursive Folder/Album filter.
 381 ==> 332090 - Label filter improvement.
 382 ==> 314608 - digiKam fails to compile.
-383 ==> 
+383 ==> 337931 - Thumbnail order does not match window order.
 384 ==> 
 385 ==> 
 386 ==> 

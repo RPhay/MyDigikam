@@ -476,6 +476,8 @@ void LightTableThumbBar::paintEvent(QPaintEvent* e)
 void LightTableThumbBar::slotSetupChanged()
 {
     d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
+    d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
+    d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
 }
 
 } // namespace Digikam
