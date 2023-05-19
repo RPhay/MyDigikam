@@ -372,7 +372,7 @@ BUGFIXES:
 358 ==> 148572 - Improve readability of filename assigned to left or right preview canvas.
 359 ==> 289340 - Allow easy changing photographs both in left and right window pane.
 360 ==> 157310 - LightTable thumb-bar actions with mouse wheel.
-361 ==> 
+361 ==> 321761 - Extend Light table to compare images from two directories.
 362 ==> 
 363 ==> 
 364 ==> 
