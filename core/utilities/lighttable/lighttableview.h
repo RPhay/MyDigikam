@@ -7,7 +7,7 @@
  * Description : a widget to display 2 preview image on
  *               lightable to compare pictures.
  *
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -48,7 +48,7 @@ public:
     ItemInfo leftItemInfo()  const;
     ItemInfo rightItemInfo() const;
 
-    void setPreviewSettings(const PreviewSettings& settings);
+    void   setPreviewSettings(const PreviewSettings& settings);
 
     void   checkForSelection(const ItemInfo& info);
     void   toggleFullScreen(bool set);
@@ -69,6 +69,9 @@ public:
     void   rightReload();
 
 Q_SIGNALS:
+
+    void signalLeftPreviewSelected(bool);
+    void signalRightPreviewSelected(bool);
 
     void signalLeftPreviewLoaded(bool);
     void signalRightPreviewLoaded(bool);
@@ -119,7 +122,7 @@ private Q_SLOTS:
     void slotDeleteLeftItem();
     void slotDeleteRightItem();
 
-private :
+private:
 
     void checkForSyncPreview();
 
@@ -129,7 +132,7 @@ private :
     /// To not sync left panel during right loading.
     bool rightPreviewLoading() const;
 
-private :
+private:
 
     class Private;
     Private* const d;

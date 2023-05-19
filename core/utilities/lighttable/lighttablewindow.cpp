@@ -1074,6 +1074,20 @@ void LightTableWindow::slotLeftSideBarActivateAssignedTags()
     d->leftSideBar->imageDescEditTab()->activateAssignedTagsButton();
 }
 
+void LightTableWindow::slotLeftPreviewSelected(bool b)
+{
+    QFont fnt(d->leftFileName->font());
+    fnt.setBold(b);
+    d->leftFileName->setFont(fnt);
+}
+
+void LightTableWindow::slotRightPreviewSelected(bool b)
+{
+    QFont fnt(d->rightFileName->font());
+    fnt.setBold(b);
+    d->rightFileName->setFont(fnt);
+}
+
 void LightTableWindow::slotToggleColorManagedView()
 {
     if (!IccSettings::instance()->isEnabled())
