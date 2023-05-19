@@ -371,7 +371,7 @@ BUGFIXES:
 357 ==> 448586 - Preview on second screen.
 358 ==> 148572 - Improve readability of filename assigned to left or right preview canvas.
 359 ==> 289340 - Allow easy changing photographs both in left and right window pane.
-360 ==> 
+360 ==> 157310 - LightTable thumb-bar actions with mouse wheel.
 361 ==> 
 362 ==> 
 363 ==> 
@@ -398,3 +398,8 @@ BUGFIXES:
 384 ==> 
 385 ==> 
 386 ==> 
+387 ==> 
+388 ==> 
+389 ==> 
+390 ==> 
+391 ==> 
