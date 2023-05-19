@@ -369,7 +369,7 @@ BUGFIXES:
 355 ==> 468027 - Quick access to crop feature in preview mode.
 356 ==> 418198 - Is there a way to resize these overlay buttons from preview?
 357 ==> 448586 - Preview on second screen.
-358 ==> 
+358 ==> 148572 - Improve readability of filename assigned to left or right preview canvas.
 359 ==> 
 360 ==> 
 361 ==> 
