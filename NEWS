@@ -395,7 +395,7 @@ BUGFIXES:
 381 ==> 332090 - Label filter improvement.
 382 ==> 314608 - digiKam fails to compile.
 383 ==> 337931 - Thumbnail order does not match window order.
-384 ==> 
+384 ==> 435343 - Crash getting People album property if Thumbnail file removed.
 385 ==> 
 386 ==> 
 387 ==> 
@@ -403,3 +403,13 @@ BUGFIXES:
 389 ==> 
 390 ==> 
 391 ==> 
+392 ==> 
+393 ==> 
+394 ==> 
+395 ==> 
+396 ==> 
+397 ==> 
+398 ==> 
+399 ==> 
+400 ==> 
+401 ==> 
