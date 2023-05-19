@@ -373,26 +373,26 @@ BUGFIXES:
 359 ==> 289340 - Allow easy changing photographs both in left and right window pane.
 360 ==> 157310 - LightTable thumb-bar actions with mouse wheel.
 361 ==> 321761 - Extend Light table to compare images from two directories.
-362 ==> 
-363 ==> 
-364 ==> 
-365 ==> 
-366 ==> 
-367 ==> 
-368 ==> 
-369 ==> 
-370 ==> 
-371 ==> 
-372 ==> 
-373 ==> 
-374 ==> 
-375 ==> 
-376 ==> 
-377 ==> 
-378 ==> 
-379 ==> 
-380 ==> 
-381 ==> 
+362 ==> 468040 - Search for New Entries causes Error from Jasper 4.0.0.
+363 ==> 463378 - Applied Tags Don't Get Written To File?
+364 ==> 462825 - Rename tool combobox history not saving in version 7.9.0.
+365 ==> 461618 - No QMySQL Driver.
+366 ==> 457121 - digiKam 7.7.0 FTBFS against libavcodec59.
+367 ==> 450522 - No option to read/write XPTitle and XPComment metadata fields.
+368 ==> 422242 - Cannot read write tags to files.
+369 ==> 421464 - XPkeywords not being updated with Exiv2 - Use ExifTool instead.
+370 ==> 378218 - Build failure around DFontProperties.
+371 ==> 374705 - Export a photo to local drive.
+372 ==> 371552 - Album > New item disabled.
+373 ==> 371208 - Resizing and renaming files.
+374 ==> 360473 - Fails to build.
+375 ==> 350858 - Using maintenance menu does not work properly.
+376 ==> 348275 - Album combobox selection does not survive clicking Reload.
+377 ==> 347467 - Image Quality Sort must be format independent.
+378 ==> 344465 - digiKam either can't detect camera (auto mode) or crashes (PTP) while import.
+379 ==> 340517 - Folders in import dialog read at digikam start, not open dialog.
+380 ==> 337694 - New view with recursive Folder/Album filter.
+381 ==> 332090 - Label filter improvement.
 382 ==> 
 383 ==> 
 384 ==> 
