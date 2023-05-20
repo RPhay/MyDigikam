@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -27623,19 +27623,19 @@ msgstr "Tệp phim"
 msgid "Restore Trash"
 msgstr "Phục hồi lại"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Đang quét mục. Hãy đời..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -27647,7 +27647,7 @@ msgstr ""
 "đĩa được đăng kí vào cơ sở dữ liệu. Tiến trình này cần thiết để sắp xếp theo "
 "ngày EXIF, cũng tăng tốc độ của toàn bộ hiệu suất của trình digiKam."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -27659,17 +27659,17 @@ msgstr "Theo tập hợp"
 msgid "Error"
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "Tập hợp tập ảnh"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Tập"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr ""

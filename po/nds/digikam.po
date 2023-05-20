@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -29301,20 +29301,20 @@ msgstr "Video-Dateien"
 msgid "Restore Trash"
 msgstr "Wedderherstellen"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Datenbank warrt torechtmaakt"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Sammeln warrt dörkeken, tööv bitte...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -29328,7 +29328,7 @@ msgstr ""
 "Dit wiest dat Vörankamen bi't Inlesen. Dor warrt all Dateien op de Fastplaat "
 "bi na en Datenbank inmeldt."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -29340,17 +29340,17 @@ msgstr "Sammeln warrt dörkeken"
 msgid "Error"
 msgstr "Fehler"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "Sammeln-Dörkiek warrt torechtmaakt"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Bi to dörkieken na wegdaan Alben"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, fuzzy, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Biller binnen enkelte Alben warrt dörkeken"

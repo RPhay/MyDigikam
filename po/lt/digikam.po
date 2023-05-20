@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -28890,20 +28890,20 @@ msgstr "Filmų failai"
 msgid "Restore Trash"
 msgstr "Atstatymas"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Paleidžiama duombazė"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>Peržiūrimos kolekcijos, prašome palaukti...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28912,7 +28912,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28924,17 +28924,17 @@ msgstr "Skenuojama kolekcija"
 msgid "Error"
 msgstr "Klaida"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "Pradedama kolekcijų paieška"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Ieškomi pašalinti albumai"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, fuzzy, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Tikrinamos konkrečių albumų nuotraukos"

@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -28116,19 +28116,19 @@ msgstr "پرونده فیلمها"
 msgid "Restore Trash"
 msgstr "بازگردانی"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "خواندن دادگان"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "در حال پویش فقره‌ها، لطفاً، منتظر بمانید..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -28140,7 +28140,7 @@ msgstr ""
 "می‌شوند. این برای ذخیره در داده‌های exif لازم می‌شود و به کارایی کلی digiKam "
 "سرعت می‌بخشد."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28152,17 +28152,17 @@ msgstr "بر اساس مجموعه"
 msgid "Error"
 msgstr "خطا"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "مجموعه آلبوم"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "آلبومها"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr ""

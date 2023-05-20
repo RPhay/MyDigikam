@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27422,19 +27422,19 @@ msgstr "Přesunout soubory"
 msgid "Restore Trash"
 msgstr "Obnovit koš"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Inicializace databáze..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Vyhledávám nové položky, prosím čekejte..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27443,7 +27443,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr ""
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -27455,17 +27455,17 @@ msgstr "Procházení sbírky"
 msgid "Error"
 msgstr "Chyba"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Příprava procházení sbírky..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Vyhledávání odstraněných alb..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Vyhledávání obrázků v jednotlivých albech..."

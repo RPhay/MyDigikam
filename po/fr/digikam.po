@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2023-03-27 22:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -29102,19 +29102,19 @@ msgstr "Déplacer les fichiers"
 msgid "Restore Trash"
 msgstr "Restaurer la corbeille"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "Initialisation de la base de données…"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "Analyse des collections en cours, veuillez patienter…"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29127,7 +29127,7 @@ msgstr ""
 "données. Remarque : cette boîte de dialogue peut apparaître automatiquement "
 "si la numérisation précédente d'une série n'est pas totalement terminée."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -29139,17 +29139,17 @@ msgstr "Analyse d'une collection"
 msgid "Error"
 msgstr "Erreur"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Préparation de l'analyse d'une collection…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Analyse des albums supprimés…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Analyse des images dans des albums individuels…"

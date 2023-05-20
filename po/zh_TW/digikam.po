@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -29217,19 +29217,19 @@ msgstr "影片檔案"
 msgid "Restore Trash"
 msgstr "修復"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "正在初始化資料庫..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "正在掃描收藏，請稍候..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -29241,7 +29241,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr "這裡顯示掃描進度。在掃描時磁碟上的所有檔案都會登記註冊在資料庫裡。"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -29253,17 +29253,17 @@ msgstr "掃描收藏中"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "正在準備收藏掃描..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "正在掃描已刪除的相簿..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "正在掃描個人相簿中的影像..."

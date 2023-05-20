@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28951,21 +28951,21 @@ msgstr "ផ្លាស់ទី​ឯកសារ"
 msgid "Restore Trash"
 msgstr "ផ្លាស់ទី​ឯកសារ​ %1 ទៅ​ធុង​សំរាម"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 #| msgid "Initializing database..."
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "កំពុង​រៀបចំ​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 #| msgid "<b>Scanning collections, please wait...</b>"
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28979,7 +28979,7 @@ msgstr ""
 "វឌ្ឍនភាព​​ក្នុង​ការ​វិភាគ​រក​ការ​បង្ហាញ​នេះ ។ អំឡុង​ពេល​វិភាគ​រក ឯកសារ​ទាំងអស់​​នៅ​លើ​ថាស​​ត្រូវ​បាន​ចុះ​ឈ្មោះ​នៅ​"
 "ក្នុង​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28991,17 +28991,17 @@ msgstr "វិភាគ​រក​សម្រាំង"
 msgid "Error"
 msgstr "កំហុស"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "កំពុង​រៀបចំ​វិភាគ​រក​សម្រាំង..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "កំពុង​វិភាគ​រក​អាល់ប៊ុម​ដែល​បាន​យក​ចេញ..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "កំពុង​វិភាគ​រក​រូបភាព​នៅ​ក្នុង​អាល់ប៊ុម​នីមួយៗ..."

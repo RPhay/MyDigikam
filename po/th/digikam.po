@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-19 00:44+0000\n"
+"POT-Creation-Date: 2023-05-20 00:43+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -28759,19 +28759,19 @@ msgstr "แฟ้มภาพยนตร์"
 msgid "Restore Trash"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:123
+#: core/libs/database/utils/scan/scancontroller.cpp:120
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
 msgstr "กำลังเตรียมฐานข้อมูล"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:147
+#: core/libs/database/utils/scan/scancontroller.cpp:144
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
 msgstr "กำลังค้นหาแฟ้มใหม่ โปรดรอสักครู่..."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:149
+#: core/libs/database/utils/scan/scancontroller.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "This shows the progress of the scan. During the scan, all files on disk "
@@ -28785,7 +28785,7 @@ msgstr ""
 "แสดงความคืบหน้าในการค้นหาในที่ตรงนี้ ระหว่างที่มีการค้นหา "
 "แฟ้มทุกแฟ้มบนดิสก์จะถูกลงทะเบียนไว้ในฐานข้อมูล"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:266
+#: core/libs/database/utils/scan/scancontroller.cpp:263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28797,17 +28797,17 @@ msgstr "การเพิ่มคลังภาพ"
 msgid "Error"
 msgstr "ผิดพลาด"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:222
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "เตรียมการตรวจค้นคลังภาพ"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:250
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "กำลังตรวจค้นอัลบั้มที่ถูกลบไปแล้ว"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:260
 #, fuzzy, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "กำลังตรวจค้นรูปภาพในอัลบั้มส่วนบุคคล"
