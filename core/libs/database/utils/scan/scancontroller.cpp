@@ -240,8 +240,6 @@ void ScanController::run()
 
             scanner.completeScan();
 
-            Q_EMIT completeScanDone();
-
             if (doScanDeferred)
             {
                 d->completeScanDeferredAlbums = scanner.deferredAlbumPaths();
@@ -249,6 +247,9 @@ void ScanController::run()
             }
 
             d->newIdsList = scanner.getNewIdsList();
+
+            Q_EMIT completeScanDone();
+
         }
         else if (doFinishScan)
         {
@@ -274,6 +275,7 @@ void ScanController::run()
             scanner.finishCompleteScan(d->completeScanDeferredAlbums);
 
             d->completeScanDeferredAlbums.clear();
+
             Q_EMIT completeScanDone();
             Q_EMIT collectionScanFinished();
         }
@@ -287,6 +289,7 @@ void ScanController::run()
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
             scanner.partialScan(task);
+
             Q_EMIT partialScanDone(task);
         }
         else if (doUpdateUniqueHash)
@@ -296,6 +299,7 @@ void ScanController::run()
             updater.setCoreDbAccess(&access);
             updater.setObserver(this);
             updater.updateUniqueHash();
+
             Q_EMIT completeScanDone();
         }
     }
