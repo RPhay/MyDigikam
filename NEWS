@@ -407,9 +407,19 @@ BUGFIXES:
 393 ==> 304687 - Nothing happens when trying to toggle read lock on pictures on CompactFlash (Nikon).
 394 ==> 302971 - Slackware Linux 13.37 compile failed, maybe old cmake or some else?
 395 ==> 302797 - digiKam doesn´t count correctly in albumview.
-396 ==> 
-397 ==> 
-398 ==> 
-399 ==> 
-400 ==> 
-401 ==> 
+396 ==> 426857 - Creation date/time not show correctly.
+397 ==> 460111 - Photo with location does not show location.
+398 ==> 462814 - Wrong date when importing images.
+399 ==> 418669 - digiKam do not import image dimensions information in database.
+400 ==> 463425 - Problem with display on the map.
+401 ==> 431121 - Item properties and and photograph properties not shown in main window.
+402 ==> 428526 - Location data not showing.
+403 ==> 424049 - After the import, some metadata was not read from the image.
+404 ==> 
+406 ==> 
+406 ==> 
+407 ==> 
+408 ==> 
+409 ==> 
+410 ==> 
+411 ==> 
