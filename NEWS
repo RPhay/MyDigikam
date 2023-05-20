@@ -416,7 +416,7 @@ BUGFIXES:
 402 ==> 428526 - Location data not showing.
 403 ==> 424049 - After the import, some metadata was not read from the image.
 404 ==> 466868 - Basic Questions re Usage.
-406 ==> 
+406 ==> 469961 - Drag and drop features missing: downstream problem under Ubuntu.
 406 ==> 
 407 ==> 
 408 ==> 
