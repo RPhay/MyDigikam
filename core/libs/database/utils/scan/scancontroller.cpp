@@ -55,16 +55,13 @@ ScanController::ScanController()
     d->eventLoop = new QEventLoop(this);
 
     connect(this, SIGNAL(databaseInitialized(bool)),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     connect(this, SIGNAL(completeScanDone()),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     connect(this, SIGNAL(completeScanCanceled()),
-            d->eventLoop, SLOT(quit()),
-            Qt::QueuedConnection);
+            d->eventLoop, SLOT(quit()));
 
     // create timer to show progress dialog
 
