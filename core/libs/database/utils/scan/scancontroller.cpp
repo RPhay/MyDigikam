@@ -239,7 +239,7 @@ void ScanController::run()
             scanner.setObserver(&observer);
 
             scanner.completeScan();
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Quit ScanController Event Loop" << d->eventLoop;
+
             Q_EMIT completeScanDone();
 
             if (doScanDeferred)

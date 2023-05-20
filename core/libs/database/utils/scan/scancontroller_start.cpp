@@ -99,9 +99,9 @@ void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer,
     }
 
     // NOTE: loop is quit by signal
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Enter ScanController Event Loop" << d->eventLoop;
+
     d->eventLoop->exec();
-    qCDebug(DIGIKAM_DATABASE_LOG) << "After ScanController Event Loop" << d->eventLoop;
+
     d->needTotalFiles  = false;
     d->performFastScan = true;
 }
