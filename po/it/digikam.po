@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-20 00:43+0000\n"
+"POT-Creation-Date: 2023-05-21 00:43+0000\n"
 "PO-Revision-Date: 2023-05-03 22:08+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28073,7 +28073,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "La cartella condivisa è montata in «%1»"
 
-#: core/libs/database/coredb/coredbaccess.cpp:312
+#: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:246
 #: core/libs/facesengine/facedb/facedbaccess.cpp:233
@@ -28830,7 +28830,7 @@ msgstr ""
 "dialogo potrebbe apparire automaticamente se non è stata portata a termine "
 "una precedente scansione completa delle raccolte."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28842,17 +28842,17 @@ msgstr "Analisi della raccolta"
 msgid "Error"
 msgstr "Errore"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:222
+#: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Preparazione all'analisi della raccolta..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:250
+#: core/libs/database/utils/scan/scancontroller_start.cpp:234
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Analisi degli album rimossi..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:260
+#: core/libs/database/utils/scan/scancontroller_start.cpp:244
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Analisi delle immagini nei singoli album..."
@@ -57219,34 +57219,34 @@ msgstr "Imposta qui lo script da eseguire per ogni immagine importata."
 msgid "Drag and drop an image here"
 msgstr "Trascina qui un'immagine"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "Mostra nel pannello sinistro"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "Mostra nel pannello destro"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Modifica"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "Rimuovi elemento"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "Pulisci tutto"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:467
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Trascina qui le immagini"

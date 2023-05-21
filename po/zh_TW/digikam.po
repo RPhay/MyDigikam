@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-20 00:43+0000\n"
+"POT-Creation-Date: 2023-05-21 00:43+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -28469,7 +28469,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "已分享掛載在 <filename>%1</filename> 的目錄"
 
-#: core/libs/database/coredb/coredbaccess.cpp:312
+#: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:246
 #: core/libs/facesengine/facedb/facedbaccess.cpp:233
@@ -29241,7 +29241,7 @@ msgid ""
 "previous scan of collections have not been fully completed."
 msgstr "這裡顯示掃描進度。在掃描時磁碟上的所有檔案都會登記註冊在資料庫裡。"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -29253,17 +29253,17 @@ msgstr "掃描收藏中"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:222
+#: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "正在準備收藏掃描..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:250
+#: core/libs/database/utils/scan/scancontroller_start.cpp:234
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "正在掃描已刪除的相簿..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:260
+#: core/libs/database/utils/scan/scancontroller_start.cpp:244
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "正在掃描個人相簿中的影像..."
@@ -58873,34 +58873,34 @@ msgstr "在此設定對每個匯入影像執行的文稿。"
 msgid "Drag and drop an image here"
 msgstr "拖放一張影像到這裡"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "顯示在左邊面板"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "顯示在右邊面板"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "編輯"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "移除項目"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "清除全部"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:467
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "拖放影像到這裡"

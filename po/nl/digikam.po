@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-20 00:43+0000\n"
+"POT-Creation-Date: 2023-05-21 00:43+0000\n"
 "PO-Revision-Date: 2023-05-16 13:15+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -28039,7 +28039,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "Gedeelde map aangekoppeld op \"%1\""
 
-#: core/libs/database/coredb/coredbaccess.cpp:312
+#: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:246
 #: core/libs/facesengine/facedb/facedbaccess.cpp:233
@@ -28792,7 +28792,7 @@ msgstr ""
 "dialoog kan automatisch verschijnen als een eerdere scan van verzamelingen "
 "niet volledig is voltooid."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28804,17 +28804,17 @@ msgstr "Verzameling scannen"
 msgid "Error"
 msgstr "Fout"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:222
+#: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Voorbereiden van een verzamelingscan..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:250
+#: core/libs/database/utils/scan/scancontroller_start.cpp:234
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Zoeken naar verwijderde albums..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:260
+#: core/libs/database/utils/scan/scancontroller_start.cpp:244
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Zoeken naar afbeeldingen in individuele albums..."
@@ -57088,34 +57088,34 @@ msgstr ""
 msgid "Drag and drop an image here"
 msgstr "Sleep hier een afbeelding naartoe"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "Op linker paneel tonen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "Op rechter paneel tonen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Bewerken"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "Item verwijderen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "Alles wissen"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:467
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Sleep afbeeldingen hier naartoe"
