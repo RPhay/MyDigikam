@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-20 00:43+0000\n"
+"POT-Creation-Date: 2023-05-21 00:43+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -27737,7 +27737,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr ""
 
-#: core/libs/database/coredb/coredbaccess.cpp:312
+#: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:246
 #: core/libs/facesengine/facedb/facedbaccess.cpp:233
@@ -28409,7 +28409,7 @@ msgstr ""
 "ਇਹ ਜਾਂਚ ਨੂੰ ਵੇਖਾਉਦਾ ਹੈ, ਜੋ ਕਿ ਹਾਲੀਂ ਜਾਰੀ ਹੈ। ਜਾਂਚ ਦੌਰਾਨ, ਡਿਸਕ ਉੱਤੇ ਮੌਜੂਦ ਸਭ ਫਾਇਲਾਂ ਨੂੰ ਇੱਕ "
 "ਡਾਟਾਬੇਸ 'ਚ ਜੋੜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28421,17 +28421,17 @@ msgstr "ਭੰਡਾਰ ਦੀ ਖੋਜ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 msgid "Error"
 msgstr "ਗਲਤੀ"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:222
+#: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "ਭੰਡਾਰ ਜਾਂਚ ਦੀ ਤਿਆਰੀ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:250
+#: core/libs/database/utils/scan/scancontroller_start.cpp:234
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "ਹਟਾਈਆਂ ਗਈਆਂ ਐਲਬਮਾਂ ਲਈ ਜਾਂਚ ਜਾਰੀ ਹੈ..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:260
+#: core/libs/database/utils/scan/scancontroller_start.cpp:244
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "ਅੱਡ ਅੱਡ ਐਲਬਮਾਂ ਲਈ ਚਿੱਤਰ ਖੋਜੇ ਜਾ ਰਹੇ ਹਨ..."
@@ -57289,34 +57289,34 @@ msgstr "<p>ਵਰਤਣ ਲਈ ਫੋਂਟ ਰੰਗ ਇੱਥੇ ਦਿਉ।"
 msgid "Drag and drop an image here"
 msgstr "ਇੱਕ ਚਿੱਤਰ ਇੱਥੇ ਚੁੱਕੋ ਅਤੇ ਸੁੱਟੋ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "ਖੱਬੇ ਪੈਨਲ ਉੱਤੇ ਵੇਖੋ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "ਸੱਜੇ ਪੈਨਲ ਉੱਤੇ ਵੇਖੋ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "ਸੋਧ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "ਆਈਟਮ ਹਟਾਓ"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "ਸਭ ਸਾਫ਼"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:467
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "ਇੱਥੇ ਚਿੱਤਰ ਚੁੱਕ ਕੇ ਸੁੱਟੋ"
