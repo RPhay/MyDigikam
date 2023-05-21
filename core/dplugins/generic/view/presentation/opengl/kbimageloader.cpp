@@ -25,6 +25,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "iccmanager.h"
 #include "iccsettings.h"
 #include "digikam_debug.h"
 #include "presentationkb.h"
@@ -88,7 +89,7 @@ KBImageLoader::KBImageLoader(PresentationContainer* const sharedData, int width,
 
     if (settings.enableCM && settings.useManagedPreviews)
     {
-        d->iccProfile = IccProfile(settings.monitorProfile);
+        d->iccProfile = IccProfile(IccManager::displayProfile(d->sharedData->display));
     }
 }
 

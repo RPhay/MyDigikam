@@ -37,7 +37,7 @@ class GLViewerTexture : public QOpenGLTexture
 
 public:
 
-    explicit GLViewerTexture(DInfoInterface* const iface);
+    explicit GLViewerTexture(DInfoInterface* const iface, QWidget* const display);
     ~GLViewerTexture();
 
     bool load(const QString& fn, const QSize& size);

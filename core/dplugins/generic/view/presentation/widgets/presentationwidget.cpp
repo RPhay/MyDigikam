@@ -206,16 +206,17 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
         }
     }
 
-    QRect deskRect  = screen->geometry();
-    d->deskX        = deskRect.x();
-    d->deskY        = deskRect.y();
-    d->deskWidth    = deskRect.width();
-    d->deskHeight   = deskRect.height();
+    QRect deskRect = screen->geometry();
+    d->deskX       = deskRect.x();
+    d->deskY       = deskRect.y();
+    d->deskWidth   = deskRect.width();
+    d->deskHeight  = deskRect.height();
 
     move(d->deskX, d->deskY);
     resize(d->deskWidth, d->deskHeight);
 
-    d->sharedData   = sharedData;
+    d->sharedData          = sharedData;
+    d->sharedData->display = this;
 
     d->slideCtrlWidget = new PresentationCtrlWidget(this, d->sharedData);
     d->slideCtrlWidget->hide();

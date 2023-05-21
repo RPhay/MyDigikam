@@ -79,7 +79,7 @@ private:
     Private(const Private&);
 };
 
-GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
+GLViewerTexture::GLViewerTexture(DInfoInterface* const iface, QWidget* const display)
     : QOpenGLTexture(QOpenGLTexture::TargetRectangle),
       d             (new Private)
 {
@@ -88,7 +88,7 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
 
     if (settings.enableCM && settings.useManagedPreviews)
     {
-        d->iccProfile = IccProfile(IccManager::displayProfile(nullptr));
+        d->iccProfile = IccProfile(IccManager::displayProfile(display));
     }
 
     reset();
