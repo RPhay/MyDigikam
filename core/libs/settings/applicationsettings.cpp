@@ -193,7 +193,7 @@ void ApplicationSettings::readSettings()
         d->previewSettings.quality       = PreviewSettings::FastPreview;
     }
 
-    d->previewSettings.convertToEightBit = group.readEntry(d->configPreviewConvertToEightBitEntry,     true);
+    d->previewSettings.convertToEightBit = group.readEntry(d->configPreviewConvertToEightBitEntry,     false);
     d->scaleFitToWindow                  = group.readEntry(d->configPreviewScaleFitToWindowEntry,      false);
     d->previewShowIcons                  = group.readEntry(d->configPreviewShowIconsEntry,             true);
     d->showThumbbar                      = group.readEntry(d->configShowThumbbarEntry,                 true);

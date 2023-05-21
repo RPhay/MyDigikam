@@ -20,7 +20,7 @@ namespace Digikam
 PreviewSettings::PreviewSettings(Quality quality, RawLoading rawLoading)
     : quality          (quality),
       rawLoading       (rawLoading),
-      convertToEightBit(true)
+      convertToEightBit(false)
 {
 }
 
