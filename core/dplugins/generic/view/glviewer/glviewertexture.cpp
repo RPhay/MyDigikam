@@ -24,6 +24,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "iccmanager.h"
 #include "iccsettings.h"
 #include "iccsettingscontainer.h"
 #include "previewloadthread.h"
@@ -87,7 +88,7 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
 
     if (settings.enableCM && settings.useManagedPreviews)
     {
-        d->iccProfile = IccProfile(settings.monitorProfile);
+        d->iccProfile = IccProfile(IccManager::displayProfile(nullptr));
     }
 
     reset();

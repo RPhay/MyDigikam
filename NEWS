@@ -421,7 +421,7 @@ BUGFIXES:
 406 ==> 461248 - Sort key on Tags.
 407 ==> 365262 - GUI Theme Colors hard to see.
 408 ==> 221065 - Many Icons Don't Show Up in digiKam Under MacOS.
-409 ==> 
+409 ==> 469986 - OpenGL ImageViewer and Presentation do not observe monitor profile.
 410 ==> 
 411 ==> 
 412 ==> 

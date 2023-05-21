@@ -28,6 +28,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "iccmanager.h"
 #include "iccsettings.h"
 #include "digikam_debug.h"
 #include "previewloadthread.h"
@@ -74,7 +75,7 @@ protected:
 
         if (settings.enableCM && settings.useManagedPreviews)
         {
-            IccProfile profile(settings.monitorProfile);
+            IccProfile profile(IccManager::displayProfile(nullptr));
 
             newImage = PreviewLoadThread::loadHighQualitySynchronously(m_path.toLocalFile(),
                                                                        PreviewSettings::RawPreviewAutomatic,
