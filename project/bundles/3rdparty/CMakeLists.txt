@@ -1,9 +1,8 @@
 # Rules to build 3rd-party libraries for digiKam bundles.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#
 #
 
 project(digikam-bundles)
@@ -108,6 +107,71 @@ function(GetKF5ApplicationMd5Sums
 
 endfunction()
 
+# Function to get MD5 sums from download area for a Plasma component
+# The sum is available in ${KF5_PLASMA_MD5SUM}
+function(GetKF5PlasmaMd5Sums
+         name
+         version)
+
+    if(MINGW)
+
+        # Extract MD5 sums of KF5 Plasma component directly from server.
+        execute_process(COMMAND
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/plasma/${version}/${name}-${version}.tar.xz.md5
+                        COMMAND
+                            grep "tar.xz"
+                        COMMAND
+                            cut -d " " -f1
+                        RESULT_VARIABLE
+                            wgetresult
+                        OUTPUT_VARIABLE
+                            md5sm
+                        OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+
+    elseif(APPLE)
+
+        # Extract MD5 sums of KF5 Plasma component directly from server.
+        execute_process(COMMAND
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/plasma/${version}/${name}-${version}.tar.xz.md5
+                        COMMAND
+                            grep "tar.xz"
+                        COMMAND
+                            cut -d " " -f1
+                        RESULT_VARIABLE
+                            wgetresult
+                        OUTPUT_VARIABLE
+                            md5sm
+                        OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+
+    else() # Linux
+
+        # Extract MD5 sums of KF5 Plasma component directly from server.
+        execute_process(COMMAND
+                            wget -q -O - -o /dev/null https://download.kde.org/stable/plasma/${version}/${name}-${version}.tar.xz.md5
+                        COMMAND
+                            grep "tar.xz"
+                        COMMAND
+                            cut -d " " -f1
+                        RESULT_VARIABLE
+                            wgetresult
+                        OUTPUT_VARIABLE
+                            md5sm
+                        OUTPUT_STRIP_TRAILING_WHITESPACE
+        )
+
+    endif()
+
+    message(STATUS "--------------------------------")
+    message(STATUS "KF5 Plasma component: ${name}")
+    message(STATUS "component version   : ${version}")
+    message(STATUS "component  MD5      : ${md5sm}")
+
+    set(${KF5_PLASMA_MD5SUM} ${md5sm} PARENT_SCOPE)
+
+endfunction()
+
 # this list must be dependency-ordered
 
 add_subdirectory(ext_cmake)
@@ -139,6 +203,7 @@ add_subdirectory(ext_uchardet)
 
 add_subdirectory(ext_kf5_frameworks)
 add_subdirectory(ext_libksane)
+add_subdirectory(ext_breeze)
 
 if (${ENABLE_QTVERSION} MATCHES "5.*")
 

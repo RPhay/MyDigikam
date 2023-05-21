@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -88,10 +88,16 @@ DK_URL="http://download.kde.org/stable/digikam"
 # Location to build source code.
 DK_BUILDTEMP=~/dktemp
 
+# KDE Plasma version.
+# See official release here: https://download.kde.org/stable/plasma/
+DK_KP_VERSION="5.27.5"
+
 # KDE Application version.
+# See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="22.12.3"
 
 # KDE KF5 frameworks version.
+# See official release here: https://download.kde.org/stable/frameworks/
 DK_KF5_VERSION="5.104"
 
 # Qt version to use in bundle and provided by Macports.
