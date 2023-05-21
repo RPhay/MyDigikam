@@ -10,7 +10,7 @@ set(EXTPREFIX_breeze "${EXTPREFIX}")
 
 if(MINGW)
 
-    GetKF5ApplicationMd5Sums(breeze ${KP_VERSION})
+    GetKF5PlasmaMd5Sums(breeze ${KP_VERSION})
 
     ExternalProject_Add(ext_breeze
 
@@ -45,7 +45,7 @@ if(MINGW)
 
 elseif(APPLE)
 
-    GetKF5ApplicationMd5Sums(breeze ${KP_VERSION})
+    GetKF5PlasmaMd5Sums(breeze ${KP_VERSION})
 
     ExternalProject_Add(ext_breeze
 
@@ -70,7 +70,7 @@ elseif(APPLE)
 
 else() # Linux
 
-    GetKF5ApplicationMd5Sums(breeze ${KP_VERSION})
+    GetKF5PlasmaMd5Sums(breeze ${KP_VERSION})
 
     ExternalProject_Add(ext_breeze
 
