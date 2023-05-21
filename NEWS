@@ -8,6 +8,7 @@ General      : Improve usability of Image Properties sidebar tab.
 Libraw       : Update to snapshot 2023-05-14
 Bundles      : Update Exiv2 to last 0.28 release: https://github.com/Exiv2/exiv2/issues/2406#issuecomment-1529139799
 Bundles      : Update KF5 framework to last 5.106
+Bundles      : Includes Breeze widgets style in MacOS package to render properly GUI contents..
 
 *****************************************************************************************************
 BUGFIXES:
@@ -418,8 +419,8 @@ BUGFIXES:
 404 ==> 466868 - Basic Questions re Usage.
 406 ==> 469961 - Drag and drop features missing: downstream problem under Ubuntu.
 406 ==> 461248 - Sort key on Tags.
-407 ==> 
-408 ==> 
+407 ==> 365262 - GUI Theme Colors hard to see.
+408 ==> 221065 - Many Icons Don't Show Up in digiKam Under MacOS.
 409 ==> 
 410 ==> 
 411 ==> 
