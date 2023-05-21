@@ -77,6 +77,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKP_VERSION=$DK_KP_VERSION \
                            -DKA_VERSION=$DK_KA_VERSION \
                            -DKF5_VERSION=$DK_KF5_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
@@ -219,6 +220,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DZLIB_ROOT=${CMAKE_PREFIX_PATH} \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+                           -DKP_VERSION=$DK_KP_VERSION \
                            -DKA_VERSION=$DK_KA_VERSION \
                            -DKF5_VERSION=$DK_KF5_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
