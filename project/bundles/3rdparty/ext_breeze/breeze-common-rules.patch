@@ -1,28 +1,28 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index a238ffb0..ee7aee2a 100644
+index 05133a27..41b0e4d7 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -33,7 +33,7 @@ if(WIN32 OR APPLE OR QT_MAJOR_VERSION STREQUAL "5")
+@@ -33,7 +33,7 @@ if(WIN32 OR APPLE)
      set(WITH_DECORATIONS OFF)
  endif()
  
--find_package(KF${QT_MAJOR_VERSION}KCMUtils ${KF_MIN_VERSION} REQUIRED)
-+#find_package(KF${QT_MAJOR_VERSION}KCMUtils ${KF_MIN_VERSION} REQUIRED)
+-find_package(KF5KCMUtils ${KF5_MIN_VERSION} REQUIRED)
++#find_package(KF5KCMUtils ${KF5_MIN_VERSION} REQUIRED)
  
  if(WITH_DECORATIONS)
      find_package(KDecoration2 REQUIRED)
 diff --git a/kstyle/CMakeLists.txt b/kstyle/CMakeLists.txt
-index 293194f3..3fb0cd26 100644
+index 637849f2..95c6859c 100644
 --- a/kstyle/CMakeLists.txt
 +++ b/kstyle/CMakeLists.txt
-@@ -10,7 +10,7 @@ find_package(KF${QT_MAJOR_VERSION} ${KF${QT_MAJOR_VERSION}_MIN_VERSION} REQUIRED
+@@ -10,7 +10,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
      WindowSystem)
  
  find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Quick)
 -set(BREEZE_HAVE_QTQUICK ${Qt${QT_MAJOR_VERSION}Quick_FOUND})
 +#set(BREEZE_HAVE_QTQUICK ${Qt${QT_MAJOR_VERSION}Quick_FOUND})
  if( BREEZE_HAVE_QTQUICK )
-     find_package(KF${QT_MAJOR_VERSION} ${KF${QT_MAJOR_VERSION}_MIN_VERSION} REQUIRED COMPONENTS Kirigami2)
+     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2)
  endif()
 @@ -119,4 +119,4 @@ install(TARGETS breeze DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/styles/)
  install(FILES breeze.themerc  DESTINATION  ${KDE_INSTALL_DATADIR}/kstyle/themes)
