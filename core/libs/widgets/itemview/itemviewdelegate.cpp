@@ -579,10 +579,14 @@ void ItemViewDelegate::drawGeolocationIndicator(QPainter* p, const QRect& r) con
     if (!r.isNull())
     {
         QIcon icon(QIcon::fromTheme(QLatin1String("globe")).pixmap(r.size()));
-        qreal op = p->opacity();
-        p->setOpacity(0.5);
+        QBrush brush = p->brush();
+        p->setOpacity(0.50);
+        p->setPen(QPen(p->background().color()));
+        p->setBrush(QBrush(p->background().color()));
+        p->drawEllipse(r);
+        p->setBrush(brush);
+        p->setOpacity(1.0);
         icon.paint(p, r);
-        p->setOpacity(op);
     }
 }
 
