@@ -333,14 +333,13 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
         !FaceTags::isTheUnconfirmedPerson(tagId)
        )
     {
-        int count = CoreDbAccess().db()->getNumberOfImagesInTagProperties(tagId,
-                                         ImageTagPropertyName::tagRegion());
+        qlonglong faceItemId = CoreDbAccess().db()->getFirstItemWithFaceTag(tagId);
 
         /**
          * If the face just removed was the final face
          * associated with that Tag, reset Tag Icon.
          */
-        if (count == 0)
+        if (faceItemId == -1)
         {
             TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
 
