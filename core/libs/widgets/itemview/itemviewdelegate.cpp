@@ -606,10 +606,7 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
             icon = QIcon::fromTheme(QLatin1String("folder")); //image-stack
         }
 
-        qreal op = p->opacity();
-        p->setOpacity(0.5);
         icon.paint(p, r);
-        p->setOpacity(op);
 
         QString text = QString::number(numberOfGroupedImages + 1);
         p->drawText(r, Qt::AlignCenter, text);
