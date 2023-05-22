@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-20 00:43+0000\n"
+"POT-Creation-Date: 2023-05-22 00:44+0000\n"
 "PO-Revision-Date: 2023-05-16 09:57+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -21534,7 +21534,7 @@ msgid "Image #%1"
 msgstr "Imagem #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:678
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
 #, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -21677,82 +21677,82 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Avançado"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "Nenhum"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "Torcer"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "Misturar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "Cubo"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "Desvanecer"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "Vibração"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "Dentro Fora"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, kde-format
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "Rodar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, kde-format
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "Deslizar"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "Aleatório"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:877
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, kde-format
 msgid "Slideshow Completed"
 msgstr "Apresentação Terminada"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, kde-format
 msgid "Click to Exit..."
 msgstr "Carregue para Sair..."
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:630
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "Apresentação Terminada"
@@ -21829,73 +21829,73 @@ msgstr "Apagar a Imagem"
 msgid "Do you want to move this image to the trash?"
 msgstr "Deseja mover esta imagem para o lixo?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "Tabuleiro de Xadrez"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "Derreter para Baixo"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "Varrer"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
 #, kde-format
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "Mosaico"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
 #, kde-format
 msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "Cubismo"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "Crescente"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "Linhas Horizontais"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "Linhas Verticais"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "Círculo Fora"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "Multi-Círculo Fora"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "Espiral Dentro"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
@@ -28061,7 +28061,7 @@ msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
 msgstr "Pasta partilhada montada em \"%1\""
 
-#: core/libs/database/coredb/coredbaccess.cpp:312
+#: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
 #: core/libs/database/thumbsdb/thumbsdbaccess.cpp:246
 #: core/libs/facesengine/facedb/facedbaccess.cpp:233
@@ -28814,7 +28814,7 @@ msgstr ""
 "aparecer automaticamente se uma análise anterior não tiver terminado por "
 "completo."
 
-#: core/libs/database/utils/scan/scancontroller.cpp:263
+#: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
 msgctxt "@info:status"
 msgid "Scanning collection"
@@ -28826,17 +28826,17 @@ msgstr "A analisar a colecção"
 msgid "Error"
 msgstr "Erro"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:222
+#: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "A preparar a análise da colecção..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:250
+#: core/libs/database/utils/scan/scancontroller_start.cpp:234
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "A procurar pelos álbuns removidos..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:260
+#: core/libs/database/utils/scan/scancontroller_start.cpp:244
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "A digitalizar as imagens nos álbuns individuais..."
@@ -57077,34 +57077,34 @@ msgstr "Escolha aqui o programa que é executado para cada imagem importada."
 msgid "Drag and drop an image here"
 msgstr "Arraste e largue aqui uma imagem"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:260
+#: core/utilities/lighttable/lighttablethumbbar.cpp:262
 #, kde-format
 msgid "Show on left panel"
 msgstr "Mostrar no painel esquerdo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:261
+#: core/utilities/lighttable/lighttablethumbbar.cpp:263
 #, kde-format
 msgid "Show on right panel"
 msgstr "Mostrar no painel direito"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:262
+#: core/utilities/lighttable/lighttablethumbbar.cpp:264
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:444
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:263
+#: core/utilities/lighttable/lighttablethumbbar.cpp:265
 #, kde-format
 msgid "Remove item"
 msgstr "Remover o item"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:264
+#: core/utilities/lighttable/lighttablethumbbar.cpp:266
 #, kde-format
 msgid "Clear all"
 msgstr "Limpar tudo"
 
-#: core/utilities/lighttable/lighttablethumbbar.cpp:467
+#: core/utilities/lighttable/lighttablethumbbar.cpp:469
 #, kde-format
 msgid "Drag and drop images here"
 msgstr "Arraste e largue aqui as imagens"

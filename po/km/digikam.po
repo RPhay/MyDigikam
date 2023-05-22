@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-21 00:43+0000\n"
+"POT-Creation-Date: 2023-05-22 00:44+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -21611,7 +21611,7 @@ msgid "Image #%1"
 msgstr "រូបភាព​នៅ​លើ %1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:678
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
 #, kde-format
 msgid "Ken Burns"
 msgstr "ការ​ដុត​របស់ Ken"
@@ -21770,8 +21770,8 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "កម្រិត​ខ្ពស់"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, fuzzy, kde-format
 #| msgctxt "no rotation"
 #| msgid "None"
@@ -21779,78 +21779,78 @@ msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "គ្មាន"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "ក្រុម"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "ប្រតិទិន"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, kde-format
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "គូប"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, kde-format
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "លេច​បន្តិច​ម្ដង"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, kde-format
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "ញ័រ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, kde-format
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "ចេញ ចូល"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "បង្វិល"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, kde-format
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "ចៃដន្យ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:877
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
 msgstr "ចុច​ដើម្បី​កំណត់"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:630
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
 #, kde-format
 msgid "SlideShow Completed"
 msgstr "បាន​បញ្ចប់​ការ​បញ្ចាំង​ស្លាយ"
@@ -21924,32 +21924,32 @@ msgstr "លុប​ស្លាក"
 msgid "Do you want to move this image to the trash?"
 msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ស្វែងរក \"%1\" ដែល​បាន​ជ្រើស​ឬ ?"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
 #, kde-format
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "ក្ដារ​អុក"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
 #, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "រលាយបាត់"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
 #, kde-format
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "បោស"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
 #, fuzzy, kde-format
 #| msgid "Mosaic"
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "មូសាអ៊ីក"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -21957,45 +21957,45 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "គួប"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
 #, kde-format
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "រីក"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Horizontally first"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "ផ្ដេក​ដំបូង"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
 #, fuzzy, kde-format
 #| msgid "Vertically first"
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "បញ្ឈរ​ដំបូង"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
 #, kde-format
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "រង្វង់​ចេញ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
 #, kde-format
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "រង្វង់​ចេញ​ច្រើន"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
 #, kde-format
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "គួច​ចូល​ក្នុង"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
 #, kde-format
 msgctxt "Filter Effect: Blobs"
 msgid "Blobs"

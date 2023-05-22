@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-21 00:43+0000\n"
+"POT-Creation-Date: 2023-05-22 00:44+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -21596,7 +21596,7 @@ msgid "Image #%1"
 msgstr "%1 の画像"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:678
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
 #, fuzzy, kde-format
 msgid "Ken Burns"
 msgstr "Ken Burns"
@@ -21753,93 +21753,93 @@ msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "高度な設定"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:566
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1021
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "Filter Effect: No effect"
 msgid "None"
 msgstr "なし"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:567
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
 #, fuzzy, kde-format
 #| msgid "Bend"
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
 msgstr "曲げる"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #, fuzzy, kde-format
 #| msgid "Blend"
 msgctxt "Filter Effect: Blend"
 msgid "Blend"
 msgstr "ブレンド"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
 #, fuzzy, kde-format
 #| msgid "Cube"
 msgctxt "Filter Effect: Cube"
 msgid "Cube"
 msgstr "キューブ"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:570
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
 #, fuzzy, kde-format
 #| msgid "Fade"
 msgctxt "Filter Effect: Fade"
 msgid "Fade"
 msgstr "フェード"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:571
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
 #, fuzzy, kde-format
 #| msgid "Flutter"
 msgctxt "Filter Effect: Flutter"
 msgid "Flutter"
 msgstr "ひらひら"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:572
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
 #, fuzzy, kde-format
 #| msgid "In Out"
 msgctxt "Filter Effect: In Out"
 msgid "In Out"
 msgstr "ズームイン/アウト"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:573
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
 #, fuzzy, kde-format
 #| msgid "Rotate"
 msgctxt "Filter Effect: Rotate"
 msgid "Rotate"
 msgstr "回転"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:574
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "Filter Effect: Slide"
 msgid "Slide"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:575
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:576
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1035
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "Filter Effect: Random effect"
 msgid "Random"
 msgstr "ランダム"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:877
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:867
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
 #, fuzzy, kde-format
 msgid "Slideshow Completed"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:878
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:868
+#: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:879
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:632
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, fuzzy, kde-format
 #| msgid "Click to set"
 msgid "Click to Exit..."
 msgstr "クリックで指定"
 
-#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:630
+#: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
 #, fuzzy, kde-format
 #| msgid "Slide Show"
 msgid "SlideShow Completed"
@@ -21917,34 +21917,34 @@ msgstr "タグを削除"
 msgid "Do you want to move this image to the trash?"
 msgstr "メタデータを読み込み中 - %p%"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1022
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
 #, fuzzy, kde-format
 #| msgid "Chess Board"
 msgctxt "Filter Effect: Chess Board"
 msgid "Chess Board"
 msgstr "チェスボード"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Melt Down"
 msgid "Melt Down"
 msgstr "下へ移動"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1024
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
 #, fuzzy, kde-format
 #| msgid "Sweep"
 msgctxt "Filter Effect: Sweep"
 msgid "Sweep"
 msgstr "掃く"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1025
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
 #, fuzzy, kde-format
 #| msgid "Mosaic"
 msgctxt "Filter Effect: Mosaic"
 msgid "Mosaic"
 msgstr "モザイク"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1026
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
 #, fuzzy, kde-format
 #| msgctxt "cubic filter mode"
 #| msgid "Cubic"
@@ -21952,48 +21952,48 @@ msgctxt "Filter Effect: Cubism"
 msgid "Cubism"
 msgstr "三次"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1027
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
 #, fuzzy, kde-format
 #| msgid "Growing"
 msgctxt "Filter Effect: Growing"
 msgid "Growing"
 msgstr "育つ"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1028
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
 #, fuzzy, kde-format
 #| msgid "Horizontal"
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
 msgstr "左右"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
 #, fuzzy, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
 msgstr "上下反転"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
 #, fuzzy, kde-format
 #| msgid "Circle Out"
 msgctxt "Filter Effect: Circle Out"
 msgid "Circle Out"
 msgstr "円を描いて出る"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1031
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
 #, fuzzy, kde-format
 #| msgid "MultiCircle Out"
 msgctxt "Filter Effect: Multi-Circle Out"
 msgid "Multi-Circle Out"
 msgstr "風車"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1032
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
 #, fuzzy, kde-format
 #| msgid "Spiral In"
 msgctxt "Filter Effect: Spiral In"
 msgid "Spiral In"
 msgstr "らせん状に入る"
 
-#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1033
+#: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1034
 #, fuzzy, kde-format
 #| msgid "Blobs"
 msgctxt "Filter Effect: Blobs"
