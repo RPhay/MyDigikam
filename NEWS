@@ -429,11 +429,11 @@ BUGFIXES:
 414 ==> 198201 - digiKam do not work after changing theme.
 415 ==> 385148 - Widgets are almost invisible using most "dark" shipped themes.
 416 ==> 436259 - Most of icons disabled after theme changes - doesn't came back by changing back previous version.
-417 ==> 
-418 ==> 
-419 ==> 
-420 ==> 
-421 ==> 
+417 ==> 470066 - Dark themes make it impossible to see if a photograph is geo‐located.
+418 ==> 413748 - Broken theme on Windows 10 after Digikam update.
+419 ==> 413879 - Buttons without theme colors.
+420 ==> 406408 - Check boxs and radio buttons in dark themes is not visible.
+421 ==> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
 422 ==> 
 423 ==> 
 424 ==> 

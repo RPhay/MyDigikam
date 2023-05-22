@@ -277,7 +277,7 @@ void ShowfotoSettings::readSettings()
 
 #ifdef Q_OS_WIN
 
-    QString defaultStyle       = QLatin1String("Fusion");
+    QString defaultStyle       = QLatin1String("Breeze");
 
 #else
 
@@ -291,7 +291,7 @@ void ShowfotoSettings::readSettings()
 
 #else
 
-    setApplicationStyle(QLatin1String("Fusion"));
+    setApplicationStyle(QLatin1String("Breeze"));
 
 #endif
 
