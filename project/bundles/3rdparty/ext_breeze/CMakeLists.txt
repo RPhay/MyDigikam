@@ -19,7 +19,9 @@ if(MINGW)
                         URL_MD5 ${KF5_PLASMA_MD5SUM}
 
                         INSTALL_DIR ${EXTPREFIX_breeze}
-                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-common-rules.patch
+                        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-common-rules.patch &&
+                                      cp -f ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp <SOURCE_DIR>/kstyle/. &&
+                                      cp -f ${CMAKE_CURRENT_SOURCE_DIR}/*.h <SOURCE_DIR>/kstyle/. 
 
                         CMAKE_ARGS -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN}
                                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
