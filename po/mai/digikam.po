@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-22 00:44+0000\n"
+"POT-Creation-Date: 2023-05-23 00:43+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -40970,7 +40970,7 @@ msgstr ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
 #: core/showfoto/main/showfoto.cpp:245
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -40979,7 +40979,7 @@ msgstr ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:424
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:444
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:317
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:364
 #, kde-format
 msgctxt "unknown image resolution"

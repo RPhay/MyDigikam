@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-22 00:44+0000\n"
-"PO-Revision-Date: 2023-04-29 08:33\n"
+"POT-Creation-Date: 2023-05-23 00:43+0000\n"
+"PO-Revision-Date: 2023-05-22 14:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -26637,11 +26637,10 @@ msgstr "整个相册集合"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive Selection"
-msgstr "主题选择"
+msgstr "递归选择"
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -36433,7 +36432,7 @@ msgstr "附带文件："
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS："
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -36454,9 +36453,7 @@ msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "标题："
@@ -36486,20 +36483,16 @@ msgid "Rating: "
 msgstr "评分："
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "版本"
+msgstr "已版本管理："
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "分组"
+msgstr "已分组："
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -36508,38 +36501,31 @@ msgid "digiKam Properties"
 msgstr "digiKam 属性"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "关键词"
+msgstr "关键词："
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "人物"
+msgstr "人物："
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "标签"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
-msgstr "地理位置"
+msgstr "位置"
 
 #: core/libs/properties/itempropertiestab.cpp:344
-#, fuzzy, kde-format
-#| msgid "Rights"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "版权信息"
@@ -37680,15 +37666,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "删除标签“%1”吗？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -41066,7 +41044,7 @@ msgstr "修改于：%1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
 #: core/showfoto/main/showfoto.cpp:245
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -41075,7 +41053,7 @@ msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:424
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:444
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:317
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:364
 #, kde-format
 msgctxt "unknown image resolution"
@@ -50060,17 +50038,15 @@ msgid "Sequence number"
 msgstr "序列编号"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
 "extension aware, ||re|| = random and extension aware)"
 msgstr ""
-"序列编号 (||选项||：||c|| = 文件计数器感知，||e|| = 扩展名感知，||f|| = 文件"
-"夹感知，||r|| = 随机感知)"
+"序列编号 (||选项||: ||c|| = 文件计数器感知，||e|| = 扩展名感知，||f|| = 文件"
+"夹感知，||r|| = 随机感知，||ce|| = 文件计数器和扩展名感知，||re|| = 随机和扩"
+"展名感知)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -50140,17 +50116,15 @@ msgstr "随机文本感知编号"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "文件计数器感知编号"
+msgstr "文件计数器和扩展名感知编号"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "随机文本感知编号"
+msgstr "随机文本和扩展名感知编号"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -57549,18 +57523,14 @@ msgid ""
 msgstr "如果您不想将 16 位的预览图像转换为 8 位，请不要勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr "预览时将图像转换为 8 位以提高打开速度"
+msgstr "预览图像总是缩放至适合窗口"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
-msgstr "如果您不想将 16 位的预览图像转换为 8 位，请不要勾选此项。"
+msgstr "如果您不想缩放较小图像以适合窗口，请取消勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -61398,14 +61368,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "标签："
-
-#~ msgid ""
-#~ "Other process are not finished yet.\n"
-#~ "Please try again later."
-#~ msgstr ""
-#~ "其他处理进程尚未完成。\n"
-#~ "请稍后重试。"

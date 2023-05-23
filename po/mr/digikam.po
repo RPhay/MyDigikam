@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-22 00:44+0000\n"
+"POT-Creation-Date: 2023-05-23 00:43+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -40780,7 +40780,7 @@ msgstr "सुधारले"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
 #: core/showfoto/main/showfoto.cpp:245
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -40789,7 +40789,7 @@ msgstr ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:424
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:444
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:317
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:364
 #, fuzzy, kde-format
 msgctxt "unknown image resolution"

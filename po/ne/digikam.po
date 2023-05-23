@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-22 00:44+0000\n"
+"POT-Creation-Date: 2023-05-23 00:43+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -40841,7 +40841,7 @@ msgstr "नमुना:"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
 #: core/showfoto/main/showfoto.cpp:245
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, fuzzy, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -40850,7 +40850,7 @@ msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:424
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:444
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:317
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:364
 #, fuzzy, kde-format
 msgctxt "unknown image resolution"

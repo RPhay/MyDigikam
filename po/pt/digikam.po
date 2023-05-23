@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-22 00:44+0000\n"
+"POT-Creation-Date: 2023-05-23 00:43+0000\n"
 "PO-Revision-Date: 2023-05-16 09:57+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -173,7 +173,7 @@ msgstr ""
 "X-POFile-SpellExtra: Queretaro Querétaro Tesseract LSTM Dzongkha Fijan\n"
 "X-POFile-SpellExtra: Oromo deep learning unique Sonnet Sphinx\n"
 "X-POFile-SpellExtra: ReStructuredText IIQ sequenciar filmrolls RawBurst\n"
-"X-POFile-SpellExtra: CRM OM ART\n"
+"X-POFile-SpellExtra: CRM OM ART float MIC oauthtoken default upper ce re\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -42842,7 +42842,7 @@ msgstr "Mod.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:419
 #: core/showfoto/main/showfoto.cpp:245
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:312
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:316
 #: core/utilities/import/items/itemviewimportdelegate.cpp:359
 #, kde-format
 msgctxt "%1 width, %2 height, %3 mpixels"
@@ -42851,7 +42851,7 @@ msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:424
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:444
-#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:317
+#: core/showfoto/thumbbar/showfotoitemviewdelegate.cpp:321
 #: core/utilities/import/items/itemviewimportdelegate.cpp:364
 #, kde-format
 msgctxt "unknown image resolution"
