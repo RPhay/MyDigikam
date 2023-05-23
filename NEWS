@@ -434,8 +434,13 @@ BUGFIXES:
 419 ==> 413879 - Buttons without theme colors.
 420 ==> 406408 - Check boxs and radio buttons in dark themes is not visible.
 421 ==> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
-422 ==> 
+422 ==> 376453 - Labels, Comments and dates disappear when folder is not readable.
 423 ==> 
 424 ==> 
 325 ==> 
 426 ==> 
+427 ==> 
+428 ==> 
+429 ==> 
+430 ==> 
+431 ==> 
