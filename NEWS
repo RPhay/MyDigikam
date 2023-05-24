@@ -437,10 +437,15 @@ BUGFIXES:
 422 ==> 376453 - Labels, Comments and dates disappear when folder is not readable.
 423 ==> 470145 - Keyboard shortcut for assigning ratings (stars) is not persistent.
 424 ==> 138704 - Show selected camera focus points (AF) as graphical overlay of preview canvas.
-325 ==> 
+325 ==> 466893 - Hidden elements in the Pick Label and Color Label locations.
 426 ==> 
 427 ==> 
 428 ==> 
 429 ==> 
 430 ==> 
 431 ==> 
+432 ==> 
+433 ==> 
+434 ==> 
+435 ==> 
+436 ==> 
