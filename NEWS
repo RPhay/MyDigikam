@@ -436,7 +436,7 @@ BUGFIXES:
 421 ==> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
 422 ==> 376453 - Labels, Comments and dates disappear when folder is not readable.
 423 ==> 470145 - Keyboard shortcut for assigning ratings (stars) is not persistent.
-424 ==> 
+424 ==> 138704 - Show selected camera focus points (AF) as graphical overlay of preview canvas.
 325 ==> 
 426 ==> 
 427 ==> 
