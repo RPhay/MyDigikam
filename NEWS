@@ -438,7 +438,7 @@ BUGFIXES:
 423 ==> 470145 - Keyboard shortcut for assigning ratings (stars) is not persistent.
 424 ==> 138704 - Show selected camera focus points (AF) as graphical overlay of preview canvas.
 325 ==> 466893 - Hidden elements in the Pick Label and Color Label locations.
-426 ==> 
+426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
 427 ==> 
 428 ==> 
 429 ==> 
