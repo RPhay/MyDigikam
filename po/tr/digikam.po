@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:43+0000\n"
-"PO-Revision-Date: 2023-05-15 22:47+0300\n"
+"PO-Revision-Date: 2023-05-24 01:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -62,7 +62,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -14499,7 +14499,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgid "Service ID:"
-msgstr "Servis Kimliği:"
+msgstr "Hizmet Kimliği:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, fuzzy, kde-format
@@ -16473,21 +16473,15 @@ msgstr ""
 "tıklayın."
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will "
-#| "guide you to send your items with a mail client application.</p><p>Before "
-#| "to export contents, you will be able to adjust attachments properties "
-#| "accordingly with your mail service capabilities.</p></qt>"
+#, kde-format
 msgid ""
 "<p><h1><b>Welcome to Calendar Tool</b></h1></p><p>This assistant will guide "
 "you to create and print a calendar with a selection of images taken from "
 "your collection.</p>"
 msgstr ""
-"<qt><p><h1><b>Eposta Aracına Hoşgeldiniz</b></h1></p><p>Bıu yardımcı, size "
-"ögelerinizi eposta istemci uygulaması ile yollama konusunda yardımcı olacak."
-"</p><p>İçeriği dışa aktarmadan önce, eposta servis yeteneklerinize göre "
-"eklerin özelliklerini düzenleyebileceksiniz.</p></qt>"
+"<p><h1><b>Takvim aracına hoş geldiniz</b></h1></p><p>Bu asistan, "
+"koleksiyonunuzdan alınan çeşitli görsellerden oluşan bir takvim oluşturmanız "
+"ve yazdırmanız için size rehberlik edecek.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:54
 #, fuzzy, kde-format
@@ -18103,21 +18097,15 @@ msgid "Jalbum completed."
 msgstr "Galeri tamamlandı."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will "
-#| "guide you to send your items with a mail client application.</p><p>Before "
-#| "to export contents, you will be able to adjust attachments properties "
-#| "accordingly with your mail service capabilities.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Eposta Aracına Hoşgeldiniz</b></h1></p><p>Bıu yardımcı, size "
-"ögelerinizi eposta istemci uygulaması ile yollama konusunda yardımcı olacak."
-"</p><p>İçeriği dışa aktarmadan önce, eposta servis yeteneklerinize göre "
-"eklerin özelliklerini düzenleyebileceksiniz.</p></qt>"
+"<qt><p><h1><b>jAlbum dışa aktarma aracına hoş geldiniz</b></h1></p><p>Bu "
+"asistan, görsellerinizi hızlı bir şekilde bir jAlbum projesi olarak</p><p></"
+"p <p>dışa aktarmanız için size rehberlik edecek.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, fuzzy, kde-format
@@ -21052,10 +21040,10 @@ msgid ""
 "export contents, you will be able to adjust attachments properties "
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Eposta Aracına Hoşgeldiniz</b></h1></p><p>Bıu yardımcı, size "
-"ögelerinizi eposta istemci uygulaması ile yollama konusunda yardımcı olacak."
-"</p><p>İçeriği dışa aktarmadan önce, eposta servis yeteneklerinize göre "
-"eklerin özelliklerini düzenleyebileceksiniz.</p></qt>"
+"<qt><p><h1><b>E-posta aracına hoş geldiniz</b></h1></p><p>Bu asistan, "
+"ögelerinizi bir posta istemci uygulamasıyla göndermeniz için size rehberlik "
+"edecek.</p> <p>İçeriği dışa aktarmadan önce, ek özelliklerini posta hizmeti "
+"yeteneklerinize göre ayarlayabileceksiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
 #, kde-format
@@ -23319,40 +23307,38 @@ msgid "Export to Facebook Web Service"
 msgstr "Eposta ile dışa aktar"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr "SmugMug Web servisine gönderimi başlat"
+msgstr "Facebook web hizmetine yüklemeyi başlat"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
 #, kde-format
 msgid "Continue with Facebook"
-msgstr ""
+msgstr "Facebook ile Sürdür"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:310
 #, kde-format
 msgid "Log Out of Facebook"
-msgstr ""
+msgstr "Facebook Oturumunu Kapat"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:325
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:355
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgid "<i>auto create</i>"
-msgstr "Otomatik döndür"
+msgstr "<i>otomatik oluştur</i>"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:330
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
 #, kde-format
 msgid "Facebook Call Failed: %1\n"
-msgstr ""
+msgstr "Facebook Çağrısı Başarısız: %1\n"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:485
 #, kde-format
 msgid "Facebook export"
-msgstr "Facebook dışarıya aktar"
+msgstr "Facebook'a dışa aktar"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:620
 #, fuzzy, kde-format
@@ -23813,7 +23799,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:519
 #, kde-format
 msgid "Service currently unavailable"
-msgstr "Servis şu anda kullanılabilir değil"
+msgstr "Hizmet, şu anda kullanılamıyor"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:787
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:522
@@ -24636,11 +24622,10 @@ msgid "Upload"
 msgstr "Yükle"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr "SmugMug Web servisine gönderimi başlat"
+msgstr "ImageShack web hizmetine yüklemeyi başlat"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
@@ -26863,32 +26848,28 @@ msgid "Maximum dimension:"
 msgstr "Öge boyutları"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr "SmugMug Web Servisinden İçeriye Aktar"
+msgstr "SmugMug Web Hizmetinden İçe Aktar"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
-msgstr "SmugMug Web servisinden indirmeyi başlat"
+msgstr "SmugMug web hizmetinden indirmeyi başlat"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "SmugMug Web Servisine Aktar"
+msgstr "SmugMug Web Hizmetine Dışa Aktar"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
-msgstr "SmugMug Web servisine gönderimi başlat"
+msgstr "SmugMug web hizmetine yüklemeyi başlat"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -27167,22 +27148,18 @@ msgid "%1 - Create Album Failed"
 msgstr "Kök Albüm Dizini Oluşturma İşlemi Başarısız Oldu"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to Email Tool</b></h1></p><p>This assistant will "
-#| "guide you to send your items with a mail client application.</p><p>Before "
-#| "to export contents, you will be able to adjust attachments properties "
-#| "accordingly with your mail service capabilities.</p></qt>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to Web Services Tool</b></h1></p><p>This assistant "
 "will guide you step by step, to export your items to popular Internet data "
 "hosting service.</p><p>Before exporting contents, you will be able to adjust "
 "items' properties according to your remote Web service capabilities.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Eposta Aracına Hoşgeldiniz</b></h1></p><p>Bıu yardımcı, size "
-"ögelerinizi eposta istemci uygulaması ile yollama konusunda yardımcı olacak."
-"</p><p>İçeriği dışa aktarmadan önce, eposta servis yeteneklerinize göre "
-"eklerin özelliklerini düzenleyebileceksiniz.</p></qt>"
+"<qt><p><h1><b>Web Hizmetleri aracına hoş geldiniz</b></h1></p><p>Bu "
+"yarndımcı, ögelerinizi popüler İnternet veri barındırma hizmetine dışa "
+"aktarmanız için size adım adım rehberlik edecek.</p><p>İçeriği dışa "
+"aktarmadan önce, ögelerin özelliklerini uzak web hizmeti yeteneklerinize "
+"göre ayarlayabileceksiniz.</p></qt>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:98
 #, fuzzy, kde-format
@@ -55885,12 +55862,12 @@ msgstr "Tüm adres elemanlarını ekle"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
-msgstr "Dil seçin:"
+msgstr "Dil seç:"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
-msgstr "Servisi seç:"
+msgstr "Hizmet seç:"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
