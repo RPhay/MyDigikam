@@ -45,7 +45,6 @@ public:
 
     explicit Private()
       : jobThread               (nullptr),
-        refreshTimer            (nullptr),
         incrementalTimer        (nullptr),
         recurseAlbums           (false),
         recurseTags             (false),
@@ -56,7 +55,6 @@ public:
 
     QList<Album*>     currentAlbums;
     DBJobsThread*     jobThread;
-    QTimer*           refreshTimer;
     QTimer*           incrementalTimer;
 
     bool              recurseAlbums;
@@ -73,14 +71,8 @@ ItemAlbumModel::ItemAlbumModel(QObject* const parent)
 {
     qRegisterMetaType<QList<ItemListerRecord>>("QList<ItemListerRecord>");
 
-    d->refreshTimer     = new QTimer(this);
-    d->refreshTimer->setSingleShot(true);
-
     d->incrementalTimer = new QTimer(this);
     d->incrementalTimer->setSingleShot(true);
-
-    connect(d->refreshTimer, SIGNAL(timeout()),
-            this, SLOT(slotNextRefresh()));
 
     connect(d->incrementalTimer, SIGNAL(timeout()),
             this, SLOT(slotNextIncrementalRefresh()));
@@ -256,38 +248,14 @@ void ItemAlbumModel::incrementalRefresh()
 
 bool ItemAlbumModel::hasScheduledRefresh() const
 {
-    return (d->refreshTimer->isActive() || d->incrementalTimer->isActive() || hasIncrementalRefreshPending());
-}
-
-void ItemAlbumModel::scheduleRefresh()
-{
-    if (!d->refreshTimer->isActive())
-    {
-        d->incrementalTimer->stop();
-        d->refreshTimer->start(100);
-    }
+    return (d->incrementalTimer->isActive() || hasIncrementalRefreshPending());
 }
 
 void ItemAlbumModel::scheduleIncrementalRefresh()
 {
     if (!hasScheduledRefresh())
     {
-        d->incrementalTimer->start(100);
-    }
-}
-
-void ItemAlbumModel::slotNextRefresh()
-{
-    // Refresh, unless job is running, then postpone restart until job is finished
-    // Rationale: Let the job run, don't stop it possibly several times
-
-    if (d->jobThread)
-    {
-        d->refreshTimer->start(50);
-    }
-    else
-    {
-        refresh();
+        d->incrementalTimer->start(250);
     }
 }
 
@@ -295,7 +263,7 @@ void ItemAlbumModel::slotNextIncrementalRefresh()
 {
     if (d->jobThread)
     {
-        d->incrementalTimer->start(50);
+        d->incrementalTimer->start(100);
     }
     else
     {
@@ -654,7 +622,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
 
     // already scheduled to refresh?
 
-    if (d->refreshTimer->isActive())
+    if (hasScheduledRefresh())
     {
         return;
     }

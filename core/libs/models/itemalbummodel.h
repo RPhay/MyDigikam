@@ -76,14 +76,11 @@ Q_SIGNALS:
 */
 protected Q_SLOTS:
 
-    void scheduleRefresh();
     void scheduleIncrementalRefresh();
+    void slotNextIncrementalRefresh();
 
     void slotResult();
     void slotData(const QList<ItemListerRecord>& records);
-
-    void slotNextRefresh();
-    void slotNextIncrementalRefresh();
 
     void slotCollectionImageChange(const CollectionImageChangeset& changeset);
     void slotSearchChange(const SearchChangeset& changeset);
