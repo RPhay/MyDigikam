@@ -440,7 +440,7 @@ BUGFIXES:
 325 ==> 466893 - Hidden elements in the Pick Label and Color Label locations.
 426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
 427 ==> 284631 - Drag & drop from Preview Mode to Dolphin icon view.
-428 ==> 
+428 ==> 468616 - Customizable statusbar information.
 429 ==> 
 430 ==> 
 431 ==> 
