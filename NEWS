@@ -439,7 +439,7 @@ BUGFIXES:
 424 ==> 138704 - Show selected camera focus points (AF) as graphical overlay of preview canvas.
 325 ==> 466893 - Hidden elements in the Pick Label and Color Label locations.
 426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
-427 ==> 
+427 ==> 284631 - Drag & drop from Preview Mode to Dolphin icon view.
 428 ==> 
 429 ==> 
 430 ==> 
@@ -449,3 +449,8 @@ BUGFIXES:
 434 ==> 
 435 ==> 
 436 ==> 
+437 ==> 
+438 ==> 
+439 ==> 
+440 ==> 
+441 ==> 
