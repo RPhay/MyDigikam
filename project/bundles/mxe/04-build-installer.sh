@@ -228,15 +228,15 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
     DEBUG_EXE_STRIP_ALL="`find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)'`"
     echo "DEBUG_EXE_STRIP_ALL=$DEBUG_EXE_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_EXE_STRIP_ALL
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_EXE_STRIP_ALL
 
     DEBUG_DLL_STRIP_ALL="`find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)'`"
     echo "DEBUG_DLL_STRIP_ALL=$DEBUG_DLL_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_DLL_STRIP_ALL
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP_ALL
 
-    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
-    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
+#    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
+#    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
+#    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
 
     DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'`"
     echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
