@@ -131,17 +131,19 @@ if(ENABLE_MEDIAPLAYER)
 
             if (NOT MSVC)
 
-                set(MEDIAPLAYER_FLAGS -msse4.1)
+                set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse4.1)
 
             endif()
 
-        elseif(SSE2_FOUND)
+        endif()
+
+        if(SSE2_FOUND)
 
             message(STATUS "MediaPlayer will be compiled with SSE2 support       : yes")
 
             if (NOT MSVC)
 
-                set(MEDIAPLAYER_FLAGS -msse2)
+                set(MEDIAPLAYER_FLAGS ${MEDIAPLAYER_FLAGS} -msse2)
 
             endif()
 
@@ -414,10 +416,15 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        if(SSE4_1_FOUND)
+        if(NOT SSE4_1_FOUND AND NOT SSE2_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=0)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=0)
+
+        elseif(SSE4_1_FOUND)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE4_1=1)
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=0)
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SSE2=1)
 
         elseif(SSE2_FOUND)
 
