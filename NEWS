@@ -441,7 +441,7 @@ BUGFIXES:
 426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
 427 ==> 284631 - Drag & drop from Preview Mode to Dolphin icon view.
 428 ==> 468616 - Customizable statusbar information.
-429 ==> 
+429 ==> 470307 - When deleting images, the thumbnail bar does not move to the next image.
 430 ==> 
 431 ==> 
 432 ==> 
