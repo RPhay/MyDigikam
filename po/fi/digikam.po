@@ -46,7 +46,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:43+0000\n"
-"PO-Revision-Date: 2023-04-14 18:06+0300\n"
+"PO-Revision-Date: 2023-05-18 11:50+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -55,7 +55,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2013-01-13 20:43:12+0000\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1422,43 +1422,38 @@ msgstr[1] ""
 "Ei valittuja kohteita (%1 kohdetta. Ryhmiteltyjen kohteiden kanssa: %2)"
 
 #: core/app/main/digikamapp.cpp:643
-#, fuzzy, kde-format
-#| msgid "%1/%2 items selected (%3/%4)"
+#, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
-msgstr[0] "%1/%2 kohdetta valittu (%3/%4)"
+msgstr[0] "%1/%2 kohde valittu (%3/%4)"
 msgstr[1] "%1/%2 kohdetta valittu (%3/%4)"
 
 #: core/app/main/digikamapp.cpp:656
-#, fuzzy, kde-format
-#| msgid "%1/%2 [%3] items selected (%4/%5)"
+#, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
-msgstr[0] "%1/%2 [%3] kohdetta valittu (%4/%5)"
+msgstr[0] "%1/%2 [%3] kohde valittu (%4/%5)"
 msgstr[1] "%1/%2 [%3] kohdetta valittu (%4/%5)"
 
 #: core/app/main/digikamapp.cpp:664
-#, fuzzy, kde-format
-#| msgid "%1/%2 items selected. Total with grouped items: %3"
+#, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
-msgstr[0] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
+msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa yhteensä: %3"
 
 #: core/app/main/digikamapp.cpp:672
-#, fuzzy, kde-format
-#| msgid "%1/%2 [%3/%4] items selected (%5/%6)"
+#, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
-msgstr[0] "%1/%2 [%3/%4] kohdetta valittu (%5/%6)"
+msgstr[0] "%1/%2 [%3/%4] kohde valittu (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] kohdetta valittu (%5/%6)"
 
 #: core/app/main/digikamapp.cpp:681
-#, fuzzy, kde-format
-#| msgid "%1/%2 items selected. With grouped items: %3/%4"
+#, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
-msgstr[0] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
+msgstr[0] "%1/%2 kohde valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 msgstr[1] "%1/%2 kohdetta valittu. Ryhmiteltyjen kohteiden kanssa: %3/%4"
 
 #: core/app/main/digikamapp.cpp:712
@@ -1573,15 +1568,13 @@ msgstr ""
 "digiKamin uudelleenkäynnistyksen jälkeen."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "Valitse käsiteltävä kansio"
+msgstr "Valitse jäsennettävä kansio"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Valitse albumiin tuotavat kansiot"
@@ -1688,18 +1681,16 @@ msgid "Properties"
 msgstr "Ominaisuudet"
 
 #: core/app/main/digikamapp_setup.cpp:232
-#, fuzzy, kde-format
-#| msgid "Edit album properties and collection information."
+#, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
 msgstr "Muokkaa albumin ominaisuuksia ja kokoelman tietoja."
 
 #: core/app/main/digikamapp_setup.cpp:240
-#, fuzzy, kde-format
-#| msgid "Write Metadata to Images"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Write Metadata to Files"
-msgstr "Kirjoita metatiedot kuviin"
+msgstr "Kirjoita metatiedot tiedostoihin"
 
 #: core/app/main/digikamapp_setup.cpp:241
 #: core/app/main/digikamapp_setup.cpp:417
@@ -1925,9 +1916,7 @@ msgid "Scan for Faces"
 msgstr "Etsi kasvoja"
 
 #: core/app/main/digikamapp_setup.cpp:443
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Tunnista kasvot"
@@ -8912,7 +8901,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:137
 #, kde-format
 msgid "Zoom:"
-msgstr "Zoomaus:"
+msgstr "Lähennys:"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:143
 #, kde-format
@@ -61719,6 +61708,12 @@ msgid ""
 "If you decide to do so, make a backup of your RAW files. We strongly "
 "recommend not to enable this option."
 msgstr ""
+"Haluatko varmasti kirjoittaa metatiedot RAW-tiedostoihin? digiKam toteuttaa "
+"tämän ExifTool-taustajärjestelmällä.\n"
+"Eri RAW-muodoissa tunnetaan ongelmia, jotka voivat johtaa RAW-tiedostojen "
+"vioittumiseen.\n"
+"Jos päätät valita tämän, tee RAW-tiedostoistasi varmuuskopiot. Emme "
+"suosittele tätä asetusta käyttöön."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, fuzzy, kde-format
@@ -61963,6 +61958,9 @@ msgid ""
 "Exiv2. This will slowdown a little bit the synchronization of files metadata "
 "with database."
 msgstr ""
+"Valitse tämä, niin metatiedot kirjoitetaan tiedostoihin ExifTool-"
+"taustajärjestelmällä Exiv2:n sijaan. Tämä hidastaa vähän metatietojen "
+"tahdistusta tietokantaan."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -62032,10 +62030,10 @@ msgstr ""
 "automaattisesti, milloin tiedosto on muuttunut."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
-msgstr "Päivitä tiedoston &aikaleima metatietoja muutettaessa"
+msgstr "Tiedostojen muututtua tarkista tiedosto &uudelleen"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
 #, kde-format
@@ -62051,7 +62049,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
-msgstr ""
+msgstr "Huom! Katso ExifTool-taustajärjestelmästä %1"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, fuzzy, kde-format
@@ -62067,6 +62065,8 @@ msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
 msgstr ""
+"Huom! Nämä asetukset edellyttävät, että %1 on käytettävissä. Katso ExifTool-"
+"välilehdeltä lisätietoa."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
 #, fuzzy, kde-format
@@ -62163,6 +62163,14 @@ msgid ""
 "operation, which you need to enable explicitly. It is not support for RAW "
 "and other read-only formats, which will be rotated by flag only.</para>"
 msgstr ""
+"<para>Tiedostoa voi kiertää kahdella tapaa:<nl/>Sisältöä voi muuttaa "
+"järjestämällä kuvatiedon kuvapisteet uudelleen tai<nl/>voidaan asettaa "
+"lippu, joka pyytää kiertämään kuvaa näytettäessä.</para>  <para>Valitse tämä "
+"asetus, jos haluat tiedostoa kierrettävän muuttamalla sisältöä. JPEG-"
+"tiedostoille tämä on häviötön toimenpide. Muille tiedostomuodoille se on "
+"häviöllinen, josta syystä se täytyy nimenomaisesti valita. RAW- ja muille "
+"vain luku -muodoille sitä ei tueta: niitä kierretään vain asettamalla lippu."
+"</para>"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:73
 #, kde-format
@@ -62182,6 +62190,9 @@ msgid ""
 "time the content is rotated. Check this option to allow lossy rotation. If "
 "not enabled, these files will be rotated by flag."
 msgstr ""
+"Joissakin häviöllistä pakkausta käyttävissä tiedostomuodoissa tietoa katoaa "
+"aina, kun sisältöä kierretään. Tämä asetus ottaa häviöllisen kierron "
+"käyttöön. Jollei tätä aseteta, tiedostoja kierretään asettamalla lippu."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:81
 #, kde-format
@@ -62190,6 +62201,8 @@ msgid ""
 "When rotating a file by setting a flag, also change this flag in the file's "
 "metadata"
 msgstr ""
+"Kun kuvaa kierretään asettamalla lippu, muuta lipun arvo myös tiedoston "
+"metatiedoissa"
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:83
 #, kde-format
@@ -62198,6 +62211,9 @@ msgid ""
 "File metadata typically contains a flag describing that a file shall be "
 "shown rotated. Enable this option to allow editing this field. "
 msgstr ""
+"Tiedoston metatiedot sisältävät tavallisesti lipun, joka kertoo, että "
+"tiedosto tulisi näyttää kierrettynä. Valitsemalla tämän asetuksen kenttää "
+"voi muokata."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:107
 #, kde-format
@@ -62218,6 +62234,8 @@ msgid ""
 "Note: These settings affect the album view and not the image editor. The "
 "image editor always changes the image data during the rotation."
 msgstr ""
+"Huom! Nämä asetukset vaikuttavat albuminäkymään, eivät kuvamuokkaimeen. "
+"Kuvamuokkain muuttaa kierrettäessä aina kuvan tietoa."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:134
 #, kde-format
@@ -62370,25 +62388,25 @@ msgstr "Nouda albumin päiväyslähde:"
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Newest Item Date"
-msgstr ""
+msgstr "Uusimman kohteen päiväyksestä"
 
 #: core/utilities/setup/misc/setupmisc.cpp:42
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Oldest Item Date"
-msgstr ""
+msgstr "Vanhimman kohteen päiväyksestä"
 
 #: core/utilities/setup/misc/setupmisc.cpp:43
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Average Date"
-msgstr ""
+msgstr "Keskimääräisestä päiväyksestä"
 
 #: core/utilities/setup/misc/setupmisc.cpp:44
 #, kde-format
 msgctxt "method to get the album date"
 msgid "From The Folder Date"
-msgstr ""
+msgstr "Kansion päiväyksestä"
 
 #: core/utilities/setup/misc/setupmisc.cpp:45
 #, kde-format
@@ -62474,6 +62492,7 @@ msgstr ""
 #, kde-format
 msgid "Fast scan (detects new, deleted and renamed items)"
 msgstr ""
+"Nopea tarkistus (havaitsee uudet, poistetut ja nimeään muuttaneet kohteet)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:77
 #, kde-format
@@ -62488,12 +62507,12 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:83
 #, kde-format
 msgid "Detect faces in newly added images"
-msgstr ""
+msgstr "Tunnista vasta lisätyistä kuvista kasvot"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
 msgid "Remove obsolete core database objects (makes startup slower)"
-msgstr ""
+msgstr "Poista vanhentuneet ydintietokantaoliot (hidastaa käynnistystä)"
 
 #: core/utilities/setup/misc/setupmisc.cpp:86
 #, kde-format
@@ -62594,15 +62613,16 @@ msgctxt "@title:tab"
 msgid "Grouping"
 msgstr "Ryhmittely"
 
+# HUOM! Tässä alkuperäinen on epäselvä sen suhteen, mitä ”from” oikein tarkoittaa. ”Screen factor” on ilmeisesti tässä suunnilleen samaa kuin ”DPI scaling”: näytön mittakaava.
 #: core/utilities/setup/misc/systemsettingswidget.cpp:75
 #, kde-format
 msgid "Use high DPI scaling from the screen factor"
-msgstr ""
+msgstr "Käytä näytöllä suurta DPI-skaalausta"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:76
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
-msgstr ""
+msgstr "Käytä suuren DPI-tarkkuuden bittikarttoja"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
@@ -62700,13 +62720,14 @@ msgid "Video"
 msgstr "Video"
 
 #: core/utilities/setup/setup.cpp:192
-#, fuzzy, kde-format
-#| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Video Preview Settings\n"
 "Customize settings to play video media"
-msgstr "<qt>Diaesityksen asetukset</qt>"
+msgstr ""
+"Videoesikatseluasetukset\n"
+"Mukauta videotoiston asetuksia"
 
 #: core/utilities/setup/setup.cpp:198
 #, kde-format
@@ -62799,16 +62820,14 @@ msgid "Image Quality Sorter"
 msgstr "Kuvalaatuun perustuva järjestely"
 
 #: core/utilities/setup/setup.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"<qt>Kuvamuokkaimen asetukset<br/><i>Mukauta kuvamuokkaimen asetuksia</i></qt>"
+"Kuvanlaatulajittelun asetukset\n"
+"Mukauta kuvalaadun arvioimisen  oletusasetuksia"
 
 #: core/utilities/setup/setup.cpp:228
 #, kde-format
@@ -62869,6 +62888,12 @@ msgid ""
 "to 2.0.\n"
 "Do you want to begin the update?"
 msgstr ""
+"Tiedostotiivisteiden päivitys vie joitakin minuutteja.\n"
+"Varmista, että siirrettävällä tietovälineellä olevat tärkeät kokoelmat on "
+"liitetty.\n"
+"Päivityksen jälkeen tietokantoja ei voi käyttää versiota 2.0 vanhemmalla "
+"digiKamilla.\n"
+"Haluatko aloittaa päivityksen?"
 
 #: core/utilities/setup/setupdatabase.cpp:188
 #, kde-format
@@ -62893,12 +62918,19 @@ msgid ""
 "After the upgrade you cannot use your database with a digiKam version prior "
 "to 2.0."
 msgstr ""
+"Tiedostotiivisteitä käytetään tunnistamaan keskenään yhtenevät tiedostot "
+"sekä näyttämään pienoiskuvia. Nyt käytetään uutta, parannettua "
+"tiivisteenluontialgoritmia. Vanha toimii tosin yhä hyvin,joten päivitystä "
+"vain suositellaan, sitä ei vaadita.\n"
+"Päivityksen jälkeen tietokantaa ei voi käyttää versiota 2.0 vanhemmalla "
+"digiKamilla."
 
 #: core/utilities/setup/setupdatabase.cpp:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <interface>Update File Hashes</interface>"
 msgstr ""
+"Katso lisätietoa <interface>tiedostotiivisteiden päivittämisestä</interface>"
 
 #: core/utilities/setup/setupicc.cpp:181
 #, kde-format
@@ -62943,11 +62975,13 @@ msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected workspace profile.</p>"
 msgstr ""
+"<p>Tällä painikkeella saa yksityiskohtaisempaa tietoa valitusta "
+"työtilaprofiilista.</p>"
 
 #: core/utilities/setup/setupicc.cpp:225
 #, kde-format
 msgid "When the profile of an image does not match the working color space"
-msgstr ""
+msgstr "Kun kuvan profiili ei vastaa työväriavaruutta"
 
 #: core/utilities/setup/setupicc.cpp:233 core/utilities/setup/setupicc.cpp:264
 #, kde-format
@@ -62962,6 +62996,9 @@ msgid ""
 "the embedded profile or discard the embedded profile and assign a different "
 "one.</p>"
 msgstr ""
+"<p>Jos kuvaan upotettu väriprofiili ei vastaa työavaruusprofiilia, digiKam "
+"kysyy, haluatko muuntaa sen työavaruuteen, pitää upotetun profiilin vai "
+"hylätä upotetun profiilin ja osoittaa uuden.</p>"
 
 #: core/utilities/setup/setupicc.cpp:240
 #, kde-format
@@ -63082,6 +63119,10 @@ msgid ""
 "Editor window. <i>Warning</i>: This can slow down rendering of the image, "
 "depending on the speed of your computer.</p>"
 msgstr ""
+"<p>Valitse tämä asetus, jos haluat hyödyntää <b>näytön väriprofiiliasi</b> "
+"kuvien näyttämiseksi kuvamuokkainikkunassa värien sovittamiseksi näyttöösi. "
+"Asetuksen voi aina ottaa käyttöön muokkainikkunasta. <i>Varoitus:</i> Tämä "
+"voi hidastaa kuvanpiirtoa tietokoneen nopeuden mukaan.</p>"
 
 #: core/utilities/setup/setupicc.cpp:382
 #, kde-format
@@ -63106,6 +63147,10 @@ msgid ""
 "conversion of RAW images in 16bit. Some of the options about loading "
 "behavior above refer to this profile.</p>"
 msgstr ""
+"<p>Tämä on syötelaitteen (ts. kameran tai kuvanlukijan) oletusväriprofiili. "
+"Kameran syöteprofiilia suositellaan RAW-kuvien muuntamiseksi 16-bittisiksi "
+"oikein. Jotkin yllä olevista lataustoimintaan liittyvistä asetuksista "
+"viittaavat tähän profiiliin.</p>"
 
 #: core/utilities/setup/setupicc.cpp:412
 #, kde-format
@@ -63127,13 +63172,11 @@ msgid "Output device profile:"
 msgstr "Tulostuslaiteprofiili:"
 
 #: core/utilities/setup/setupicc.cpp:437
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>You can use this button to get more detailed information about the "
 "selected proofing profile.</p>"
-msgstr ""
-"<p>Tästä painikkaasta saa yksityiskohtaista tietoa valitusta "
-"näyttöprofiilista.</p>"
+msgstr "<p>Tällä painikkeella saa lisätietoa valitusta vedosprofiilista.</p>"
 
 #: core/utilities/setup/setupicc.cpp:448
 #, kde-format
@@ -63146,6 +63189,8 @@ msgid ""
 "digiKam looks for ICC profiles in a number of <a href='default'>default "
 "locations</a>. You can specify an additional folder:"
 msgstr ""
+"digiKam etsii ICC-profiileja monista <a href='default'>oletuspaikoista</a>. "
+"Voit määrittää lisäkansion:"
 
 #: core/utilities/setup/setupicc.cpp:461
 #, kde-format
@@ -63685,14 +63730,14 @@ msgid "Set this option to display the album preview."
 msgstr "Tämä valinta näyttää albumin esikatselun."
 
 #: core/utilities/setup/setuptooltip.cpp:390
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show import items' tool-tips"
-msgstr "Näytä albumin tiedot, kun osoitin on sen yllä"
+msgstr "Näytä tuontikohteen työkaluvihjeet"
 
 #: core/utilities/setup/setuptooltip.cpp:391
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import Information"
-msgstr "Kuvan tiedot"
+msgstr "Tuontitiedot"
 
 #: core/utilities/setup/setuptooltip.cpp:396
 #, kde-format
@@ -63700,9 +63745,9 @@ msgid "Item name"
 msgstr "Kohteen nimi"
 
 #: core/utilities/setup/setuptooltip.cpp:397
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item name."
-msgstr "Tämä valinta näyttää albumin nimen."
+msgstr "Näytä kohteen nimi valitsemalla tämä asetus."
 
 #: core/utilities/setup/setuptooltip.cpp:399
 #, kde-format
@@ -63710,9 +63755,9 @@ msgid "Item date"
 msgstr "Kohteen päiväys"
 
 #: core/utilities/setup/setuptooltip.cpp:400
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item date."
-msgstr "Tämä valinta näyttää albumin päiväyksen."
+msgstr "Näytä kohteen päiväys valitsemalla tämä asetus."
 
 #: core/utilities/setup/setuptooltip.cpp:402
 #, kde-format
@@ -63720,9 +63765,9 @@ msgid "Item size"
 msgstr "Kohteen koko"
 
 #: core/utilities/setup/setuptooltip.cpp:403
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item size."
-msgstr "Valitse tämä nähdäksesi tiedoston koon."
+msgstr "Näytä kohteen koko valitsemalla tämä asetus."
 
 #: core/utilities/setup/setuptooltip.cpp:405
 #, kde-format
@@ -63730,9 +63775,9 @@ msgid "Item type"
 msgstr "Kohteen tyyppi"
 
 #: core/utilities/setup/setuptooltip.cpp:406
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item type."
-msgstr "Valitse tämä nähdäksesi tiedoston tyypin."
+msgstr "Näytä kohteen tyyppi valitsemalla tämä asetus."
 
 #: core/utilities/setup/setuptooltip.cpp:408
 #, kde-format
@@ -63740,9 +63785,9 @@ msgid "Item dimensions"
 msgstr "Kohteen mitat"
 
 #: core/utilities/setup/setuptooltip.cpp:409
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the item dimensions."
-msgstr "Valitse tämä nähdäksesi kuvan mitat pikseleissä."
+msgstr "Näytä kohteen mitat valitsemalla tämä asetus."
 
 #: core/utilities/setup/setuptooltip.cpp:412
 #, kde-format
