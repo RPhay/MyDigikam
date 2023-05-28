@@ -284,9 +284,6 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         d->jobThread = nullptr;
     }
 
-    CoreDbUrl url;
-    QList<int> ids;
-
     // stop preloading Thumbnails
 
     imageInfosCleared();
@@ -295,6 +292,9 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
     {
         return;
     }
+
+    CoreDbUrl url;
+    QList<int> ids;
 
     if ((albums.first()->type() == Album::TAG) || (albums.first()->type() == Album::SEARCH))
     {
