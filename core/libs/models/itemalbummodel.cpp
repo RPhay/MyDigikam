@@ -488,6 +488,14 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
 
         addItemInfos(newItemsList);
     }
+
+    // A refresh has just been completed, but another one has already
+    // started, then slow down the refresh significantly.
+
+    if (hasScheduledRefresh())
+    {
+        d->incrementalTimer->start(1000);
+    }
 }
 
 void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
@@ -496,6 +504,8 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     {
         return;
     }
+
+    ItemModel::slotImageChange(changeset);
 
     // already scheduled to refresh?
 
@@ -509,6 +519,8 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     if ((DatabaseFields::Images)changeset.changes() == DatabaseFields::Status)
     {
         scheduleIncrementalRefresh();
+
+        return;
     }
 
     // If we list a search, a change to a property may alter the search result
@@ -564,13 +576,20 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
             }
         }
     }
-
-    ItemModel::slotImageChange(changeset);
 }
 
 void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
 {
     if (d->currentAlbums.isEmpty())
+    {
+        return;
+    }
+
+    ItemModel::slotImageTagChange(changeset);
+
+    // already scheduled to refresh?
+
+    if (hasScheduledRefresh())
     {
         return;
     }
@@ -609,8 +628,6 @@ void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
     {
         scheduleIncrementalRefresh();
     }
-
-    ItemModel::slotImageTagChange(changeset);
 }
 
 void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& changeset)
