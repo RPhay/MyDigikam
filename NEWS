@@ -444,7 +444,7 @@ BUGFIXES:
 429 ==> 470307 - When deleting images, the thumbnail bar does not move to the next image.
 430 ==> 469960 - digiKam-8.1.0-20230517T153157-Win64-debug will not Open after Installation.
 431 ==> 465548 - digiKam crashes with illegal instruction on AMD Athlon II due to SSE detection with CMake.
-432 ==> 
+432 ==> 469453 - Weird display behavior: flickering and lagging.
 433 ==> 
 434 ==> 
 435 ==> 
