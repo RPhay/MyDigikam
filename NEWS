@@ -446,7 +446,7 @@ BUGFIXES:
 431 ==> 465548 - digiKam crashes with illegal instruction on AMD Athlon II due to SSE detection with CMake.
 432 ==> 469453 - Weird display behavior: flickering and lagging.
 433 ==> 470350 - Alphabetical ordering - Why _ is before . ?
-434 ==> 
+434 ==> 470360 - Metadata Edit plugin ignores lazy synchronization / immediately writes metadata.
 435 ==> 
 436 ==> 
 437 ==> 
