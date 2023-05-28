@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:43+0000\n"
-"PO-Revision-Date: 2023-05-20 09:16+0200\n"
+"PO-Revision-Date: 2023-05-27 08:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -3126,6 +3126,8 @@ msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
+"Bieżące zapytanie bazy danych nie zwróciło żadnych wyników. Zmień ustawienia "
+"wyszukiwani lub wybierz album, zawierający cokolwiek."
 
 #: core/app/views/stack/itemiconview_p.h:168
 #, kde-format
@@ -3162,6 +3164,9 @@ msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
+"Zadanie rozpoznawania twarzy jest już wykonywane. Możliwe jest wykonywanie "
+"tylko jednego zadania na raz. Zalecamy zaczekanie na zakończenie "
+"poprzedniego."
 
 #: core/app/views/stack/itemiconview_views.cpp:118
 #, kde-format
@@ -3311,6 +3316,8 @@ msgstr ""
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Dodano przekształcanie na bezstratne obrazy JPEG-XL, WEBP oraz AVIF przy "
+"importowaniu z aparatu."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
@@ -3323,6 +3330,8 @@ msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
+"Wersjonowanie: dodano obsługę JPEG-XL, HEIF, WEBP oraz AVIF jako obrazy "
+"bezstratne do zapisu w trybie wersjonowania w edytorze."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -3351,6 +3360,8 @@ msgstr ""
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Metadane: optymalizacja układu wtyczki edytowania metadanych dla lepszej "
+"używalności."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3358,6 +3369,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Metadane: dodano nowe ustawienia do zapisywania i wczytywania profili "
+"ustawień na pasku ustawień rozszerzonych metadanych."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
@@ -3365,6 +3378,8 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"Rozbudowane przemianowywanie: dodano przyrostowy licznik plików do "
+"numerowania szeregowego \"od\" z ustawieniem [c] lub [c,krok]"
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
@@ -3377,6 +3392,8 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Rozbudowane przemianowywanie: dodano ustawialny pierwszy zna dla słowa "
+"kluczowego unique przy użyciu {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
 #, kde-format
@@ -3407,6 +3424,8 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Dodaj obsługę sprawdzania pisowni w oknie edytowania podpisu przy użyciu "
+"składnika KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3414,18 +3433,20 @@ msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
+"Dodaj pasek sprawdzania pisowni w Ustawienia/Różne dla digiKama oraz "
+"Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr ""
+msgstr "Dodano tłumaczenie z sieci na języki zamienne w oknie edytora tekstu."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
-msgstr ""
+msgstr "Dodaj pasek tłumaczenia w Ustawienia/Różne dla digiKama oraz Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
@@ -3433,12 +3454,16 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Dodaj ustawienia do spisu domyślnych zamiennych/tłumaczonych języków w oknie "
+"do edytowania tekstu."
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Zezwolono na używanie globalnych lub dostosowanych ustawień sortowania "
+"jakości obrazu w każdym miejscu."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3457,6 +3482,9 @@ msgid ""
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
+"Dodano nowe narzędzie porządkujące do wykonywania <a href=\"https://"
+"community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Wykrywania estetyki "
+"do klasyfikowania obrazów przy użyciu modelu głębokiego uczenia</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3464,6 +3492,8 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"Dodano nowe narzędzie <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">do wykonywania OCR na zeskanowanym tekście</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3496,6 +3526,8 @@ msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"Dokumentacja: <a href=\" https://docs.digikam.org/en/index.html\">Przepisano "
+"podręcznik</a> z DocBook na szkielet Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3503,6 +3535,8 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Uaktualniono narzędzie G'MIC-Qt do najświeższej wersji 3.2.2, ukończono port "
+"na MacOSa oraz poprawiono stabilność wtyczki."
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
@@ -3518,6 +3552,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Nowe możliwości RAW : Phase One/Leaf IIQ-S v2 obsługuje rolki filmu Canon "
+"CR3/pliki RawBurst Canon CRM (film) spakowane algorytmem tiled bitowo (oraz "
+"16-bitowe wypakowane) DNG (nie-standard) Pliki DNG spakowane algorytmem "
+"deflate są dozwolone dla Canon EOS R3, R7 and R10 Fujifilm X-H2S, X-T30 II "
+"OM System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:189
 #, kde-format
@@ -5984,6 +6023,9 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"Po zaznaczeniu tego pola, tytuły i podpisy zostaną wyczyszczone i zastąpione "
+"nowymi wartościami,\n"
+"w przeciwnym przypadku stare wartości zostaną scalone z nowymi."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
 #, fuzzy, kde-format
@@ -18255,6 +18297,8 @@ msgid ""
 "Raw line. Treat the image as a single text line,bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
+"Nieprzetworzony wiersz. Traktuj obraz jako pojedynczy wiersz tekstu, "
+"pomijając stosowanie obejść, które są szczególne dla Tesseract."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
@@ -18286,6 +18330,8 @@ msgid ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
 msgstr ""
+"Tesseract jest silnikiem do optycznego rozpoznawania znaków, działającym na "
+"różnych systemach operacyjnych."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
 #, kde-format
@@ -18309,6 +18355,9 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
+"To narzędzie używa %1 silnika o otwartym kodzie do optycznego rozpoznawania "
+"znaków. Program Tesseract oraz żądane człony językowe muszą być wgrane na "
+"twoim systemie."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
 #, kde-format
@@ -18324,6 +18373,10 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"Po czynności rozpoznawania, naciśnij dwukrotnie na jednej rzeczy, aby "
+"wyświetlić tutaj rozpoznany tekst. Możesz sprawdzić poprawność rozpoznanych "
+"słów i poprawić je, gdy zajdzie taka potrzeba. Naciśnij przycisk Zapisz, aby "
+"zapisać swoje zmiany."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
 #, fuzzy, kde-format
@@ -18478,6 +18531,15 @@ msgid ""
 "\n"
 "See details on %1 for more information on Tesseract"
 msgstr ""
+"To narzędzie ma możliwość przekształcania dokumentów na obrazach na postać "
+"tekstową przy użyciu Tesseract, silnika rozpoznawania znaków o otwartym "
+"kodzie, zapoczątkowanym w laboratoriach HP, a obecnie sponsorowanym przez "
+"Google.\n"
+"\n"
+"Obsługuje wiele języków i sposobów ich zapisu (uwzględniając w tym zapis od "
+"prawej do lewej), a także analizę układu strony.\n"
+"\n"
+"Po szczegóły nt. Tesseract zajrzyj na stronę %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
 #, kde-format
@@ -18504,6 +18566,14 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "languagemodule if available."
 msgstr ""
+"Określ język używany do OCR. Domyślny tryb ustawień językowych dla tekstu "
+"cyfrowego w wielu językach,\n"
+"Tesseract może sam rozpoznać języki, używające alfabetu łacińskiego, takie "
+"jak angielski, czy francuski, \n"
+"lecz nie działa on z językami, używającymi hieroglifów, takimi jak chiński, "
+"czy japoński.\n"
+"Zamiast tego możesz użyć trybu wykrywania kierunku, czy zapisu lub "
+"szczególnego członu językowego, jeśli taki jest dostępny."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
 #, kde-format
@@ -22916,6 +22986,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Skopiuj cały adres URL z zewnętrznej przeglądarki, który zawiera wpis "
+"\"oauth_token\":"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -26577,6 +26649,10 @@ msgid ""
 "If you want to start with a new configuration and with a first run wizard, "
 "delete the file %1"
 msgstr ""
+"\n"
+"\n"
+"Jeśli chcesz rozpocząć z nowymi ustawieniami i pomocnikiem pierwszego "
+"uruchomienia, usuń plik %1"
 
 #: core/libs/album/manager/albummanager_database.cpp:148
 #, kde-format
@@ -28458,6 +28534,14 @@ msgid ""
 "Overwrite automatically: conflicting files will be overwritten.\n"
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
+"Pliki lub katalogi o tych samych nazwach już istnieją w katalogu docelowym.\n"
+"\n"
+"Jakie działanie jest podejmowane w przypadku sprzeczności nazw?\n"
+"\n"
+"Dostępne wyjścia to:\n"
+"Przemianuj samoczynnie: plik o sprzecznej nazwie zostanie przemianowany.\n"
+"Zastąp samoczynnie: plik o sprzecznej nazwie zastąpi. \n"
+"Pomiń samoczynnie: plik o sprzecznej nazwie zostanie pominięty."
 
 #: core/libs/database/utils/ifaces/dio.cpp:339
 #, kde-format
@@ -28710,6 +28794,8 @@ msgid ""
 "The WAL (Write-Ahead Log) mode is significantly faster in most scenarios on "
 "supported systems."
 msgstr ""
+"Tryb WAL (Write-Ahead Log, z ang. Dziennik Zapisu Wprzód) jest znacznie "
+"szybszy w większości przypadków na obsługiwanych systemach."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -34820,6 +34906,9 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"Wykryj czy obraz ma estetyczną wartość.\n"
+"Silnik wykrywania estetyki używa modelu głębokiego uczenia do klasyfikowania "
+"obrazów"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
@@ -34834,6 +34923,8 @@ msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
 "exposure, and compression)."
 msgstr ""
+"Wykryj, czy obraz sabotuje na podstawie czterech podstawowych czynników "
+"(rozmycie, szum, naświetlenie i poziom spakowania)."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
@@ -34973,6 +35064,8 @@ msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
+"Nie można przenieść obrazu %1 do kosza zbioru%2\n"
+"Sprawdź uprawnienia do pliku na katalogu kosza \"%2\" w zbiorze obrazów."
 
 #: core/libs/iojobs/iojob.cpp:139
 #, kde-format
@@ -35035,6 +35128,8 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Nie można przenieść katalogu %1 do kosza zbioru.\n"
+"Sprawdź uprawnienia do pliku na katalogu kosza \".dtrash\" w zbiorze obrazów."
 
 #: core/libs/iojobs/iojob.cpp:307
 #, kde-format
@@ -35043,6 +35138,8 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
+"Nie można przenieść obrazu %1 do kosza zbioru.\n"
+"Sprawdź uprawnienia do pliku na katalogu kosza \".dtrash\" w zbiorze obrazów."
 
 #: core/libs/iojobs/iojob.cpp:324
 #, kde-format
@@ -41114,12 +41211,16 @@ msgid ""
 "ZeroCopy: no copy back from GPU to System memory. Directly render the "
 "decoded data on GPU"
 msgstr ""
+"ZeroCopy: bez kopiowania w te i z powrotem z  GPU do pamięci systemowej. "
+"Bezpośrednie wyświetlanie zdekodowanych danych na GPU"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:478
 #, kde-format
 msgid ""
 "DirectCopy: copy back to host memory but video frames and map to GL texture"
 msgstr ""
+"BezpośredniaKopia: skopiuj z powrotem do głównej pamięci, poza klatkami "
+"filmu i mapami do tekstur GL"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:479
 #, kde-format
@@ -41145,6 +41246,8 @@ msgid ""
 "Skipping the loop filter (aka deblocking) usually has determinal effect on "
 "quality. However it provides a big speedup for hi definition streams"
 msgstr ""
+"Pomijanie filtra pętli (znanego również jako deblokowanie) zazwyczaj źle "
+"wpływa na jakość. Jednakże znacznie przyspiesza strumienie HD."
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:384
 #, kde-format
@@ -41152,6 +41255,9 @@ msgid ""
 "Force skipping of idct to speed up decoding for frame types (-1=None, "
 "0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames)"
 msgstr ""
+"Wymuszenie pominięcia idct do przyspieszenia dekodowania rodzajów klatek "
+"(-1=żadne, 0=domyślne, 1=klatki-B, 2=klatki-P, 3=klatki B+P, 4=wszystkie "
+"klatki)"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:386
 #, kde-format
@@ -41165,6 +41271,8 @@ msgid ""
 "Number of decoding threads. Set before open. Maybe no effect for some "
 "decoders"
 msgstr ""
+"Liczba wątków dekodujących. Ustawiana przed otwarciem. Może nie mieć żadnego "
+"wpływu w przypadku niektórych dekoderów"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:390
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:352
@@ -41177,6 +41285,8 @@ msgstr ""
 msgid ""
 "ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"
 msgstr ""
+"KopiowanieZero: najszybsze. Bezpośrednie wyświetlanie bez kopiowania danych "
+"pomiędzy CPU i GPU"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:343
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpegHW.cpp:344
@@ -41221,6 +41331,9 @@ msgid ""
 "BGRA ; YUV420P ; YUYV. OSX superior to 10.7 only supports UYVY, BGRA and "
 "YUV420p"
 msgstr ""
+"Wyjściowy format pikseli z dekodera. Wydajność (od najlepszej): NV12 ; "
+"UYVY ; BGRA ; YUV420P ; YUYV. OSX od 10.7 obsługuje tylko UYVY, BGRA oraz "
+"YUV420p"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
 #, kde-format
@@ -42739,6 +42852,10 @@ msgid ""
 "Extraction, Aesthetic Detection to classify images using deep learning model,"
 "Slideshow and Presentation tools improvement"
 msgstr ""
+"Ponowne przepisanie algorytmów sortownika po jakości obrazu oraz szczegółów "
+"o ogniskowej Wydobywanie, wykrywanie estetyki do klasyfikowania obrazów przy "
+"użyciu modelu głębokiego uczenia, Ulepszenia do narzędzi pokazu slajdów i "
+"prezentacji"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
@@ -48945,6 +49062,8 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Wybierz tutaj domyślny język do użycia z wartością \"x-default\" do "
+"łańcuchów zamiennych języków."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, fuzzy, kde-format
@@ -50477,6 +50596,9 @@ msgid ""
 "date, icon, description, and images list. A \"Favorite Folder\" is a simple "
 "entry in the hierarchy without extra property."
 msgstr ""
+"\"Ulubiona rzecz\" jest wpisem w hierarchii przechowującym rozszerzone "
+"właściwości takie jak: data, ikona, opis oraz spis obrazów. \"Ulubiony "
+"katalog\" jest prostym wpisem w hierarchii bez dodatkowych właściwości."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:180
 #, fuzzy, kde-format
@@ -50581,6 +50703,10 @@ msgid ""
 "file from this list will be automatically shown in editor when favorite is "
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
+"Jest to spis plików przechowywanych przez tę ulubioną rzecz. Obecnie "
+"zaznaczony plik ze spisu zostanie samoczynnie pokazany w edytorze, gdy ta "
+"ulubiona rzecz zostanie otwarta. Jeśli nic nie zostanie wybrane, to zostanie "
+"pokazana pierwsza rzecz ze spisu."
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
@@ -51015,6 +51141,7 @@ msgstr "<p>Dodaj opcje zmiany nazwy do przetwarzającego ciągu znaków.</p>"
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Aby zastosować modyfikator, dołącz go do ustawień, na przykład: [plik]{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -56548,6 +56675,9 @@ msgid ""
 "format in which JPEG image will be converted to a lossless container with "
 "metadata support.</para>"
 msgstr ""
+"<title>Domyślny format pliku obrazu do zapisu bezstratnego</"
+"title><para>Wybierz format pliku, do którego obraz JPEG zostanie "
+"przekształcony jako bezstratny z obsługą metadanych.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
 #, kde-format
@@ -60140,6 +60270,8 @@ msgstr ""
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
+"Użyj odstępu jako znaku rozdzielającego do podania wielu rozszerzeń plików "
+"do pominięcia."
 
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
@@ -60962,6 +61094,10 @@ msgid ""
 "specific options, like compression settings, can be configured on the "
 "<interface>Format Options</interface> tab.</para>"
 msgstr ""
+"<title>Domyślny format pliku do zapisu wersjonowanych obrazów</title><para> "
+"Zaznacz format pliku, w którym edytowane obrazy są domyślnie zapisywane. "
+"Ustawienia zależne od formatu takie jak, poziom spakowania, można dostosować "
+"na karcie <interface>Ustawienia formatu</interface>.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:200
 #, kde-format
@@ -61127,6 +61263,10 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
+"<item><emphasis strong='true'>JPEG-2000</emphasis>: Jest podobny do PGF. "
+"Wczytywanie i zapisywanie jest wolniejsze, poziom spakowania jest lepszy, a "
+"sam format powszechniej obsługiwany, mimo to nadal nieporównywalny do "
+"zwyczajowych formatów takich jak: JPEG, PNG czy TIFF. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:525
 #, kde-kuit-format
@@ -61137,6 +61277,10 @@ msgid ""
 "using HEVC codec (H.265) requires less storage space than the equivalent "
 "quality JPEG. </item>"
 msgstr ""
+"<item><emphasis strong='true'>HEIF</emphasis>: High Efficiency Image File "
+"Format (z ang. Wysokosprawny Format Pliku Obrazu) jest formatem kontenera do "
+"przechowywania obrazów osobno. Obraz HEIF, używający kodeka HEVC (H.265) "
+"wymaga mniej miejsca niż obraz JPEG o równoważnej jakości. </item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:536
 #, kde-kuit-format
@@ -61161,6 +61305,10 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
+"<item><emphasis strong='true'>WEBP</emphasis>: Jest to format obrazu, który "
+"Google opracowało jako zamiennik formatów JPEG, PNG oraz GIF. Pliki są "
+"mniejsze przy tej samej jakości lub o wyższej jakości dla tego samego "
+"rozmiaru pliku. Obsługuje zarówno tryb zapis stratny jak i bezstratny</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:557
 #, kde-kuit-format
@@ -61171,6 +61319,10 @@ msgid ""
 "compressed with AOMedia Video 1 (AV1) codec, an open and royalty-free "
 "encoding format. </item>"
 msgstr ""
+"<item><emphasis strong='true'>AVIF</emphasis>: Format pliku obrazu AV1 jest "
+"zbiorem wytycznych do przechowywania obrazów w kontenerach ISOBMFF (tak jak "
+"HEIF) spakowanych kodekiem AOMedia Video 1 (AV1), formatem kodowania o "
+"otwartym kodzie i niewymagającym opłat licencyjnych. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
 #, kde-format
@@ -61444,6 +61596,11 @@ msgid ""
 "no longer be uniquely assigned and will be used for both images, which can "
 "lead to metadata problems."
 msgstr ""
+"To pole należy włączyć jedynie wtedy, gdy wymieniasz metadane obrazu z "
+"programami, które używają pliku przybocznego BASENAME.xmp. Jeśli posiadasz "
+"obrazy o tej samej nazwie podstawy (np. Obraz.CR2 oraz Obraz.JPG) to wtedy "
+"plik przyboczny nie może już być niepowtarzalnie przypisany i zostanie użyty "
+"do obu obrazów, co może prowadzić do kłopotów z metadanymi,"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
@@ -61466,6 +61623,12 @@ msgid ""
 "If you decide to do so, make a backup of your RAW files. We strongly "
 "recommend not to enable this option."
 msgstr ""
+"Czy na pewno chcesz włączyć zapisywanie metadanych do plików RAW? digiKam "
+"zleca to zadanie narzędziu ExifTool\n"
+"Przy obecności różnych formatów RAW, znane są problemy, które mogą prowadzić "
+"do uszkodzenia plików RAW.\n"
+"Jeśli tak postanowisz, to upewnij się, że masz kopie zapasowe swoich plików "
+"RAW.Zalecamy, aby nie włączać tej opcji."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:286
 #, fuzzy, kde-format
@@ -61716,6 +61879,9 @@ msgid ""
 "Exiv2. This will slowdown a little bit the synchronization of files metadata "
 "with database."
 msgstr ""
+"Zaznacz to pole, aby metadane do plików zapisywać przy użyciu narzędzia "
+"ExifTool zamiast Exiv2. Skutkiem będzie nieznaczne spowolnienie "
+"synchronizacji metadanych plików w bazie danych."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
 #, kde-format
@@ -61822,6 +61988,8 @@ msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
 msgstr ""
+"Uwaga: te ustawienia polegają na dostępności %1. Po szczegóły zajrzyj na "
+"kartę ExifTool."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
 #, fuzzy, kde-format
@@ -62181,6 +62349,8 @@ msgid ""
 "The album date is adjusted depending on the option set when new items are "
 "found during scanning."
 msgstr ""
+"Data albumu jest dostosowywana w zależności od ustawienia przy znajdywaniu "
+"nowych obrazów podczas ich poszukiwania."
 
 #: core/utilities/setup/misc/setupmisc.cpp:50
 #, kde-format
@@ -62282,6 +62452,11 @@ msgid ""
 "this\n"
 "option must be deactivated."
 msgstr ""
+"Zaznacz to pole, aby znacznie przyspieszyć przeszukiwanie. Rozpoznawane są "
+"rzeczy: nowe, usunięte\n"
+"a także przemianowane. Aby umożliwić znalezienie rzeczy, które uległy "
+"zmianie, to\n"
+"ustawienie należy wyłączyć."
 
 #: core/utilities/setup/misc/setupmisc.cpp:83
 #, kde-format
