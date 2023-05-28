@@ -445,7 +445,7 @@ BUGFIXES:
 430 ==> 469960 - digiKam-8.1.0-20230517T153157-Win64-debug will not Open after Installation.
 431 ==> 465548 - digiKam crashes with illegal instruction on AMD Athlon II due to SSE detection with CMake.
 432 ==> 469453 - Weird display behavior: flickering and lagging.
-433 ==> 
+433 ==> 470350 - Alphabetical ordering - Why _ is before . ?
 434 ==> 
 435 ==> 
 436 ==> 
