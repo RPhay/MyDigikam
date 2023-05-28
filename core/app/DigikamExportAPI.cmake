@@ -29,6 +29,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugin.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginaction.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginauthor.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugindimg.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugineditor.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugingeneric.h
               ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginrawimport.h
@@ -67,6 +68,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorpixelaccess.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorcomposer.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorblend.h
+              ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloader.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloaderobserver.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloadersettings.h
               ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/historyimageid.h
