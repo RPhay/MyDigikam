@@ -448,7 +448,7 @@ BUGFIXES:
 433 ==> 470350 - Alphabetical ordering - Why _ is before . ?
 434 ==> 470360 - Metadata Edit plugin ignores lazy synchronization / immediately writes metadata.
 435 ==> 470226 - Created date wrong in import main view and folder creation.
-436 ==> 
+436 ==> 470418 - Optional building of Showfoto.
 437 ==> 
 438 ==> 
 439 ==> 
