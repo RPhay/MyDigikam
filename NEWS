@@ -449,7 +449,7 @@ BUGFIXES:
 434 ==> 470360 - Metadata Edit plugin ignores lazy synchronization / immediately writes metadata.
 435 ==> 470226 - Created date wrong in import main view and folder creation.
 436 ==> 470418 - Optional building of Showfoto.
-437 ==> 
+437 ==> 464165 - How to search geographical tags in the digiKam catalog.
 438 ==> 
 439 ==> 
 440 ==> 
