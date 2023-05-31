@@ -450,7 +450,8 @@ BUGFIXES:
 435 ==> 470226 - Created date wrong in import main view and folder creation.
 436 ==> 470418 - Optional building of Showfoto.
 437 ==> 464165 - How to search geographical tags in the digiKam catalog.
-438 ==> 
-439 ==> 
-440 ==> 
-441 ==> 
+438 ==> 249078 - digiKam should be able to show the available and/or used AF sensors.
+439 ==> 210909 - Add image names in Light Table.
+440 ==> 182912 - Display of focus from photo.
+441 ==> 469948 - Update libaom from 3.6.0 to 3.6.1.
+442 ==> 
