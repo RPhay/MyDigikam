@@ -31,6 +31,8 @@ public:
 
     explicit Private()
     {
+        itemCollator.setNumericMode(true);
+        albumCollator.setNumericMode(true);
     }
 
     QCollator itemCollator;
@@ -68,22 +70,30 @@ ItemSortCollator* ItemSortCollator::instance()
 int ItemSortCollator::itemCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    d->itemCollator.setNumericMode(natural);
-    d->itemCollator.setCaseSensitivity(caseSensitive);
-    d->itemCollator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
-                                                    Qt::CaseInsensitive));
+    if (natural)
+    {
+        d->itemCollator.setCaseSensitivity(caseSensitive);
+        d->itemCollator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
+                                                        Qt::CaseInsensitive));
 
-    return d->itemCollator.compare(a, b);
+        return d->itemCollator.compare(a, b);
+    }
+
+    return QString::compare(a, b, caseSensitive);
 }
 
 int ItemSortCollator::albumCompare(const QString& a, const QString& b,
                                    Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    d->albumCollator.setNumericMode(natural);
-    d->albumCollator.setIgnorePunctuation(false);
-    d->albumCollator.setCaseSensitivity(caseSensitive);
+    if (natural)
+    {
+        d->albumCollator.setCaseSensitivity(caseSensitive);
+        d->albumCollator.setIgnorePunctuation(false);
 
-    return d->albumCollator.compare(a, b);
+        return d->albumCollator.compare(a, b);
+    }
+
+    return QString::compare(a, b, caseSensitive);
 }
 
 } // namespace Digikam

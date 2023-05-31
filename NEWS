@@ -441,15 +441,15 @@ BUGFIXES:
 426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
 427 ==> 284631 - Drag & drop from Preview Mode to Dolphin icon view.
 428 ==> 468616 - Customizable statusbar information.
-429 ==> 
-430 ==> 
-431 ==> 
-432 ==> 
-433 ==> 
-434 ==> 
-435 ==> 
-436 ==> 
-437 ==> 
+429 ==> 470307 - When deleting images, the thumbnail bar does not move to the next image.
+430 ==> 469960 - digiKam-8.1.0-20230517T153157-Win64-debug will not Open after Installation.
+431 ==> 465548 - digiKam crashes with illegal instruction on AMD Athlon II due to SSE detection with CMake.
+432 ==> 469453 - Weird display behavior: flickering and lagging.
+433 ==> 470350 - Alphabetical ordering - Why _ is before . ?
+434 ==> 470360 - Metadata Edit plugin ignores lazy synchronization / immediately writes metadata.
+435 ==> 470226 - Created date wrong in import main view and folder creation.
+436 ==> 470418 - Optional building of Showfoto.
+437 ==> 464165 - How to search geographical tags in the digiKam catalog.
 438 ==> 
 439 ==> 
 440 ==> 

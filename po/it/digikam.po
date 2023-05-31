@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:43+0000\n"
-"PO-Revision-Date: 2023-05-03 22:08+0200\n"
+"PO-Revision-Date: 2023-05-19 12:36+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -13765,7 +13765,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
 #, kde-format
 msgid "Byline:"
-msgstr "Autore:"
+msgstr "Intestazione:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
@@ -13776,7 +13776,7 @@ msgstr "Imposta qui il nome del creatore del contenuto."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
 #, kde-format
 msgid "Byline Title:"
-msgstr "Titolo dell'autore:"
+msgstr "Titolo dell'intestazione:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
@@ -14513,7 +14513,7 @@ msgstr ""
 #: core/libs/template/templateviewer.cpp:199
 #, kde-format
 msgid "State/Province:"
-msgstr "Stato o provincia:"
+msgstr "Regione o provincia:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
 #, kde-format
@@ -14526,8 +14526,8 @@ msgid ""
 "Set here the Province or State of content origin. This field is limited to "
 "32 characters."
 msgstr ""
-"Imposta qui lo stato o provincia di origine del contenuto. Questo campo è "
-"limitato a 32 caratteri."
+"Imposta qui la provincia o la regione di origine del contenuto. Questo campo "
+"è limitato a 32 caratteri."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:161
@@ -27846,11 +27846,10 @@ msgstr "Raccolta di tutti gli album"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive Selection"
-msgstr "Selezione del tema"
+msgstr "Selezione ricorsiva"
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -38079,7 +38078,7 @@ msgstr "Sidecar: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -38100,9 +38099,7 @@ msgid "Audio/Video Properties"
 msgstr "Proprietà audio/video"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Titolo: "
@@ -38132,20 +38129,16 @@ msgid "Rating: "
 msgstr "Valutazione: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Versione"
+msgstr "Con versione: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Gruppo"
+msgstr "Raggruppate: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -38154,37 +38147,31 @@ msgid "digiKam Properties"
 msgstr "Proprietà di digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Parole chiave"
+msgstr "Parole chiave: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Persone"
+msgstr "Persone: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Tag"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Posizione"
 
 #: core/libs/properties/itempropertiestab.cpp:344
-#, fuzzy, kde-format
-#| msgid "Rights"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Diritti"
@@ -39397,15 +39384,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Eliminare «%1» tag?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -40152,8 +40131,8 @@ msgid ""
 "Enter the copyright notice to identify the current owner(s) of the copyright "
 "here."
 msgstr ""
-"Immetti qui la nota di copyright per identificare il/i proprietario/i del "
-"diritto d'autore."
+"Immetti qui la nota del diritto d'autore per identificare il/i proprietario/"
+"i del diritto d'autore."
 
 #: core/libs/template/templatepanel.cpp:154
 #, kde-format
@@ -40181,7 +40160,7 @@ msgid ""
 "more than one copyright string using different languages.</p><p>With IPTC, "
 "this field is limited to 128 characters.</p>"
 msgstr ""
-"<p>La Nota di copyright dovrebbe contenere ogni nota necessaria per "
+"<p>La Nota del diritto d'autore dovrebbe contenere ogni nota necessaria per "
 "attribuire la proprietà intellettuale, e dovrebbe identificare i presenti "
 "proprietari del diritto d'autore della fotografia. Normalmente, questi "
 "sarebbe il fotografo, ma, se l'immagine è stata fatta da un impiegato o come "
@@ -40260,7 +40239,7 @@ msgstr ""
 "un'agenzia. Per aiutare le ricerche successive, si suggerisce di separare le "
 "barre «/» con uno spazio. Usa la forma «fotografo / agenzia» piuttosto che "
 "«fotografo/agenzia». La fonte potrebbe anche essere diversa dal Creatore e "
-"dai nomi elencati nella Nota di copyright.</p><p>Con IPTC,questo campo è "
+"dai nomi elencati nella Nota di copyright.</p><p>Con IPTC, questo campo è "
 "limitato a 32 caratteri.</p>"
 
 #: core/libs/template/templatepanel.cpp:201
@@ -41719,7 +41698,7 @@ msgstr "Altro"
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
 #, kde-format
 msgid "AVFormat"
-msgstr "FormatoAV"
+msgstr "Formato AV"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
 #, kde-format
@@ -59813,7 +59792,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:294
 #, kde-format
 msgid "Show a count of items in Tree Views"
-msgstr "Mostra il conteggio degli elementi in tutte le viste ad albero"
+msgstr "Mostra il conteggio degli elementi nelle viste ad albero"
 
 #: core/utilities/setup/album/setupalbumview.cpp:295
 #, kde-format
@@ -59890,22 +59869,16 @@ msgstr ""
 "16 bit in 8 bit."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr ""
-"L'immagine in anteprima viene convertita in 8 bit per una visualizzazione "
-"più rapida"
+msgstr "L'immagine in anteprima viene sempre adattata alla finestra"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Deseleziona questa opzione se non vuoi convertire l'immagine di anteprima a "
-"16 bit in 8 bit."
+"Deseleziona questa opzione se non vuoi ridimensionare le immagini piccole "
+"alla finestra."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -62452,13 +62425,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "Scrivi nel file XMP sidecar solo per elementi in sola lettura "
+msgstr "Scrivi nel file XMP sidecar solo per elementi in sola lettura"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Scrivi nel file XMP sidecar"
+msgstr "Scrivi solo nel file XMP sidecar"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format

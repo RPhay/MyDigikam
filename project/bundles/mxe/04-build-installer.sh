@@ -221,6 +221,8 @@ done
 #################################################################################################
 # Cleanup symbols in binary files to free space.
 # NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
+# The following code to do lets all debug symbols in each digiKam componets, else size will be largest than 2Gb.
+# only the digiKam/Showfoto executable and shared libraries debug symbols are preserved. All digiKam plugins are stripped.
 
 echo -e "\n---------- Strip symbols in binary files\n"
 

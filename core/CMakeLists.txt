@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 #
@@ -244,12 +244,13 @@ message(STATUS "----------------------------------------------------------------
 message(STATUS " digiKam ${DIGIKAM_VERSION_STRING} dependencies results   <https://www.digikam.org>")
 message(STATUS "")
 
-PRINT_COMPONENT_COMPILE_STATUS("MySQL Database Support"  ENABLE_MYSQLSUPPORT)
-PRINT_COMPONENT_COMPILE_STATUS("MySQL Internal Support"  ENABLE_INTERNALMYSQL)
-PRINT_COMPONENT_COMPILE_STATUS("DBUS Support"            ENABLE_DBUS)
-PRINT_COMPONENT_COMPILE_STATUS("App. Style Support"      ENABLE_APPSTYLES)
-PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"      ENABLE_QWEBENGINE)
-PRINT_COMPONENT_COMPILE_STATUS("Media Player Support"    ENABLE_MEDIAPLAYER)
+PRINT_COMPONENT_COMPILE_STATUS("MySQL Database Support"                     ENABLE_MYSQLSUPPORT)
+PRINT_COMPONENT_COMPILE_STATUS("MySQL Internal Support"                     ENABLE_INTERNALMYSQL)
+PRINT_COMPONENT_COMPILE_STATUS("Showfoto Support"                           ENABLE_SHOWFOTO)
+PRINT_COMPONENT_COMPILE_STATUS("DBUS Support"                               ENABLE_DBUS)
+PRINT_COMPONENT_COMPILE_STATUS("App. Style Support"                         ENABLE_APPSTYLES)
+PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"                         ENABLE_QWEBENGINE)
+PRINT_COMPONENT_COMPILE_STATUS("Media Player Support"                       ENABLE_MEDIAPLAYER)
 
 # ==============================================================================
 
@@ -482,7 +483,10 @@ if(DIGIKAM_CAN_BE_COMPILED)
     add_subdirectory(utilities)
     add_subdirectory(app)
     add_subdirectory(dplugins)
-    add_subdirectory(showfoto)
+
+    if(BUILD_SHOWFOTO)
+        add_subdirectory(showfoto)
+    endif()
 
     if(BUILD_TESTING)
         add_subdirectory(tests)

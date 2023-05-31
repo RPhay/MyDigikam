@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-23 00:43+0000\n"
-"PO-Revision-Date: 2023-05-17 11:58+0100\n"
+"PO-Revision-Date: 2023-05-29 21:25+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -38803,8 +38803,9 @@ msgstr[1] "Ĉu forigi facetikedojn?"
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
-msgstr[0] ""
+msgstr[0] "Ĉu forigi de la bildoj la etikedon kongruantan al ĉi vizaĝetikedo?"
 msgstr[1] ""
+"Ĉu forigi de la bildoj la %1 etikedojn kongruantajn al ĉi tiuj vizaĝetikedoj?"
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:217
 #, kde-format
@@ -50490,7 +50491,13 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
+"Eraro okazis dum alinomado de %1 bildo.\n"
+"Ĉu vi volas alinomi tiun bildon refoje aŭ alinomi tiun bildon per "
+"superskribado?"
 msgstr[1] ""
+"Eraro okazis dum alinomado de %1 bildoj.\n"
+"Ĉu vi volas alinomi tiujn bildojn refoje aŭ alinomi tiujn bildojn per "
+"superskribado?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
 #, kde-format
@@ -52969,7 +52976,11 @@ msgid_plural ""
 "%1 out of %2 images have been correlated. Please check the offset and gap "
 "settings if you think that more images should have been correlated."
 msgstr[0] ""
+"Unu bildo el %2 bildoj estis korelaciita. Bonvolu kontroli la deŝovajn kaj "
+"truajn agordojn se vi opinias ke pli da bildoj devu esti korelaciitaj."
 msgstr[1] ""
+"%1 el %2 bildoj estis korelaciitaj. Bonvolu kontroli la deŝovajn kaj truajn "
+"agordojn se vi opinias ke pli da bildoj devu esti korelaciitaj."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
