@@ -134,8 +134,11 @@ void AlbumSelectComboBox::installView(QAbstractItemView* v)
 
     TreeViewLineEditComboBox::installView(v);
 
+    // cppcheck-suppress nullPointerRedundantCheck
     view()->sortByColumn(0, Qt::AscendingOrder);
+    // cppcheck-suppress nullPointerRedundantCheck
     view()->setSortingEnabled(true);
+    // cppcheck-suppress nullPointerRedundantCheck
     view()->collapseAll();
 }
 
