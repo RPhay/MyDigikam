@@ -2,7 +2,7 @@
 
 # Script to build a bundle MXE installation with all digiKam low level dependencies in a dedicated directory.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -216,6 +216,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKA_VERSION=$DK_KA_VERSION \
+                           -DKP_VERSION=$DK_KP_VERSION \
                            -DKF5_VERSION=$DK_KF5_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
