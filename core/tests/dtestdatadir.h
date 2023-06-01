@@ -153,7 +153,8 @@ protected:
             return;
         }
 
-        m_testDataDir.cd(subdirPath);
+        bool b = m_testDataDir.cd(subdirPath);
+        Q_UNUSED(b);
     }
 };
 
