@@ -127,7 +127,7 @@ void AlbumSelectComboBox::setAlbumModels(AbstractCheckableAlbumModel* model, Alb
 
 void AlbumSelectComboBox::installView(QAbstractItemView* v)
 {
-    if (view())
+    if (!view())
     {
         return;
     }
