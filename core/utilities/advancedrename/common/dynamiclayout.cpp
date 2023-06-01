@@ -65,7 +65,7 @@ DynamicLayout::~DynamicLayout()
 {
     QLayoutItem* item = nullptr;
 
-    while ((item = takeAt(0)))
+    while ((item = this->takeAt(0)))
     {
         delete item;
     }

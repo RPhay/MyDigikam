@@ -7,7 +7,7 @@
  * Description : collections setup tab model/view
  *
  * SPDX-FileCopyrightText: 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -846,6 +846,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
     int result    = QMessageBox::No;
     Item& item    = m_collections[index.internalId()];
     QString label = data(indexForId(internalId, (int)ColumnName), Qt::DisplayRole).toString();
+    Q_UNUSED(result);
 
     // Ask for confirmation
 

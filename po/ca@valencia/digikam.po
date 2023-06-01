@@ -42309,7 +42309,7 @@ msgstr "Ací podeu seleccionar la mida del tipus de lletra que s'utilitzarà."
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr "Jove xef, porte ací per beure whisky amb quinze glaçons d'hidrogen"
+msgstr "Jove xef, porte ací per a beure whisky amb quinze glaçons d'hidrogen"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:488
 #, kde-format
@@ -42488,7 +42488,7 @@ msgstr ""
 "canvis. El propòsit de provatura no conserva el punt blanc.</p></"
 "li><li><p>El <b>propòsit de saturació</b> conserva la saturació dels colors "
 "en la imatge, possiblement sacrificant el to i la claredat.</p><p>La "
-"implementació d'este propòsit és una mica problemàtica, i l'ICC encara està "
+"implementació d'este propòsit és una mica problemàtica, i ICC encara està "
 "treballant en mètodes per a aconseguir els efectes desitjats.</p><p>Este "
 "propòsit és més adequat pels gràfics de negoci, com els diagrames, a on és "
 "més important que els colors siguen vius i que contrasten bé entre ells, que "
@@ -42636,7 +42636,7 @@ msgstr "Versió del perfil"
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC version used to record the profile"
-msgstr "Versió de l'ICC utilitzada per a enregistrar el perfil"
+msgstr "Versió d'ICC utilitzada per a enregistrar el perfil"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:152
 #, kde-format

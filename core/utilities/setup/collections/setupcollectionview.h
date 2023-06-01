@@ -7,7 +7,7 @@
  * Description : collections setup tab model/view
  *
  * SPDX-FileCopyrightText: 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

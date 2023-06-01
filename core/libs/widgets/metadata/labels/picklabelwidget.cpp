@@ -6,7 +6,7 @@
  * Date        : 2011-02-14
  * Description : pick label widget
  *
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -279,19 +279,16 @@ QIcon PickLabelWidget::buildIcon(PickLabel label)
         case RejectedLabel:
         {
             return QIcon::fromTheme(QLatin1String("flag-red"));
-            break;
         }
 
         case PendingLabel:
         {
             return QIcon::fromTheme(QLatin1String("flag-yellow"));
-            break;
         }
 
         case AcceptedLabel:
         {
             return QIcon::fromTheme(QLatin1String("flag-green"));
-            break;
         }
 
         default:
