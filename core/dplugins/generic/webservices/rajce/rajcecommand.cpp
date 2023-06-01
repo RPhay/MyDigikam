@@ -7,7 +7,7 @@
  * Description : A tool to export items to Rajce web service
  *
  * SPDX-FileCopyrightText: 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -469,6 +469,7 @@ AddPhotoCommand::AddPhotoCommand(const QString& tmpDir,
         d->image.load(path);
     }
 
+    // cppcheck-suppress duplicateCondition
     if (d->image.isNull())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Could not read in an image from "
