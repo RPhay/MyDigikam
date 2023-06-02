@@ -62,10 +62,10 @@ public:
 protected:
 
     void registerOption(Rule* option);
-    void unregisterOption(Rule* option);
+    void unregisterOption(const Rule* option);
 
     void registerModifier(Rule* modifier);
-    void unregisterModifier(Rule* modifier);
+    void unregisterModifier(const Rule* modifier);
 
 private:
 

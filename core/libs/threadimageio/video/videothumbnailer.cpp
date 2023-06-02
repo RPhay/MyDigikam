@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010      by Dirk Vanden Boer <dirk dot vdb at gmail dot com>
  * SPDX-FileCopyrightText: 2016-2018 by Maik Qualmann <metzpinguin at gmail dot com>
- * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -231,7 +231,7 @@ void VideoThumbnailer::addFilter(VideoStripFilter* const filter)
     d->filters.append(filter);
 }
 
-void VideoThumbnailer::removeFilter(VideoStripFilter* const filter)
+void VideoThumbnailer::removeFilter(const VideoStripFilter* const filter)
 {
     for (QVector<VideoStripFilter*>::iterator it = d->filters.begin() ;
          it != d->filters.end() ; ++it)

@@ -6,7 +6,7 @@
  * Date        : 2008-12-10
  * Description : misc file operation methods
  *
- * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -101,7 +101,7 @@ public:
      */
     static bool copyFile(const QString& srcFile,
                          const QString& dstFile,
-                         bool* const cancel = nullptr);
+                         const bool* const cancel = nullptr);
 
     /**
      * Copy file modification time from source to destination file.

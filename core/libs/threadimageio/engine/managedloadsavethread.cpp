@@ -7,7 +7,7 @@
  * Description : image file IO threaded interface.
  *
  * SPDX-FileCopyrightText: 2005-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -632,7 +632,7 @@ void ManagedLoadSaveThread::removeLoadingTasks(const LoadingDescription& descrip
     }
 }
 
-void ManagedLoadSaveThread::save(DImg& image, const QString& filePath, const QString& format)
+void ManagedLoadSaveThread::save(const DImg& image, const QString& filePath, const QString& format)
 {
     QMutexLocker lock(threadMutex());
     LoadingTask* loadingTask = nullptr;
