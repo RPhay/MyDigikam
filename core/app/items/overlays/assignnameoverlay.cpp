@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008      by Peter Penz <peter dot penz at gmx dot at>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -54,7 +54,7 @@ public:
     {
     }
 
-    bool isChildWidget(QWidget* widget, QWidget* const parent) const
+    bool isChildWidget(QWidget* widget, const QWidget* const parent) const
     {
         if (!parent)
         {
