@@ -11,7 +11,7 @@
  *               https://grail.cs.washington.edu/wp-content/uploads/2015/08/jacobs-1995.pdf
  *
  * SPDX-FileCopyrightText: 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -145,7 +145,7 @@ public:
 
     /// Load a set of coefficients
 
-    void fill(Haar::Idx* const coefs)
+    void fill(const Haar::Idx* const coefs)
     {
         // For maximum performance, we use a flat array.
         // First 16k for negative values, second 16k for positive values.
