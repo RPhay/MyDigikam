@@ -6,7 +6,7 @@
  * Date        : 2010-02-09
  * Description : Red Eyes auto correction settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -45,7 +45,7 @@ public:
     RedEyeCorrectionContainer settings()        const;
     void setSettings(const RedEyeCorrectionContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 Q_SIGNALS:

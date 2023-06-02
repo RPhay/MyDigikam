@@ -6,7 +6,7 @@
  * Date        : 2009-11-22
  * Description : noise reduction settings view.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -48,17 +48,17 @@ class Q_DECL_HIDDEN NRSettings::Private
 public:
 
     explicit Private()
-      : luminanceBox(nullptr),
-        chrominanceRedBox(nullptr),
+      : luminanceBox      (nullptr),
+        chrominanceRedBox (nullptr),
         chrominanceBlueBox(nullptr),
-        checkAutoEst(nullptr),
-        advExpanderBox(nullptr),
-        thrLumInput(nullptr),
-        softLumInput(nullptr),
-        thrCrInput(nullptr),
-        softCrInput(nullptr),
-        thrCbInput(nullptr),
-        softCbInput(nullptr)
+        checkAutoEst      (nullptr),
+        advExpanderBox    (nullptr),
+        thrLumInput       (nullptr),
+        softLumInput      (nullptr),
+        thrCrInput        (nullptr),
+        softCrInput       (nullptr),
+        thrCbInput        (nullptr),
+        softCbInput       (nullptr)
     {
     }
 
@@ -98,10 +98,10 @@ const QString NRSettings::Private::configCheckAutoEstimationEntry(QLatin1String(
 
 NRSettings::NRSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(parent);
 
@@ -332,7 +332,7 @@ NRContainer NRSettings::defaultSettings() const
     return prm;
 }
 
-void NRSettings::readSettings(KConfigGroup& group)
+void NRSettings::readSettings(const KConfigGroup& group)
 {
     NRContainer prm;
     NRContainer defaultPrm = defaultSettings();
