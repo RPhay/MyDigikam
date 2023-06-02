@@ -6,7 +6,7 @@
  * Date        : 2010-02-10
  * Description : sharp settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -132,7 +132,7 @@ SharpSettings::SharpSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QGridLayout* const grid = new QGridLayout(parent);
 
     QLabel* const label1    = new QLabel(i18n("Method:"));
@@ -458,7 +458,7 @@ SharpContainer SharpSettings::defaultSettings() const
     return prm;
 }
 
-void SharpSettings::readSettings(KConfigGroup& group)
+void SharpSettings::readSettings(const KConfigGroup& group)
 {
     SharpContainer prm;
     SharpContainer defaultPrm = defaultSettings();
