@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:43+0000\n"
+"POT-Creation-Date: 2023-06-02 00:45+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -26089,21 +26089,21 @@ msgid "No Pick"
 msgstr "Žádný výběr"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:316
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:313
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Odmítnuto"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:322
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:319
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "Čeká se"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:328
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:325
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -26452,7 +26452,7 @@ msgstr "Žádné album nebylo vybráno"
 msgid "No Tag Selected"
 msgstr "Žádná značka nebyla vybrána"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -26460,7 +26460,7 @@ msgstr[0] "Vybrána 1 značka"
 msgstr[1] "Vybrány %1 značky"
 msgstr[2] "Vybráno %1 značek"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:278
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -26468,7 +26468,7 @@ msgstr[0] "Vybráno 1 album"
 msgstr[1] "Vybrány %1 alba"
 msgstr[2] "Vybráno %1 alb"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:283
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -26476,7 +26476,7 @@ msgstr[0] "Vyřazena 1 značka"
 msgstr[1] "Vyřazeny %1 značky"
 msgstr[2] "Vyřazeno %1 značek"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:291
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -42909,19 +42909,19 @@ msgctxt "@title: color label menu"
 msgid "Color"
 msgstr "Barva"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:334
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:331
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Žádný"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:403
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "Štítek výběru: %1"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:417
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:414
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
@@ -58686,7 +58686,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "Nebylo možno přidat sbírku z následujících cest:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:658
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1489
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
@@ -58703,135 +58703,135 @@ msgstr ""
 msgid "A collection with the path \"%1\" already exists."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:856
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:856
+#: core/utilities/setup/collections/setupcollectionview.cpp:857
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Odstranit sbírku?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:865
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Přejete si odstranit sbírku \"%1\" ze seznamu sbírek?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:930
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Local Collections"
 msgstr "Místní sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:935
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Sbírky na vyjmutelných zařízeních"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:940
+#: core/utilities/setup/collections/setupcollectionview.cpp:1673
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Sbírky na síťových discích"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:976
+#: core/utilities/setup/collections/setupcollectionview.cpp:977
 #, kde-format
 msgid "Add Collection"
 msgstr "Přidat sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1026
+#: core/utilities/setup/collections/setupcollectionview.cpp:1027
 #, kde-format
 msgid "Col. %1"
 msgstr "Sloupec %1 "
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1122
+#: core/utilities/setup/collections/setupcollectionview.cpp:1123
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Tato sbírka není momentálně dostupná."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1127
+#: core/utilities/setup/collections/setupcollectionview.cpp:1128
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Žádné problémy se nevyskytly, užije si sbírku."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1133
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Tato sbírka je skrytá."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1151
+#: core/utilities/setup/collections/setupcollectionview.cpp:1152
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1179
+#: core/utilities/setup/collections/setupcollectionview.cpp:1180
 #, kde-format
 msgid "Update collection"
 msgstr "Aktualizovat sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1207
+#: core/utilities/setup/collections/setupcollectionview.cpp:1208
 #, kde-format
 msgid "Remove collection"
 msgstr "Odstranit sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1242
+#: core/utilities/setup/collections/setupcollectionview.cpp:1243
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Název"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1247
+#: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Cesta"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1253
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Stav"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1537
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Už jste přidali sbírku obsahující cestu \"%1\" dříve."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1566
+#: core/utilities/setup/collections/setupcollectionview.cpp:1567
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Potíže při přidávání sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1575
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Přidání sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1579
+#: core/utilities/setup/collections/setupcollectionview.cpp:1580
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Nová sbírka bude vytvořena s následujícím názvem:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1660
+#: core/utilities/setup/collections/setupcollectionview.cpp:1661
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Vyberte kategorii"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1664
+#: core/utilities/setup/collections/setupcollectionview.cpp:1665
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""

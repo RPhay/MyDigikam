@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:43+0000\n"
+"POT-Creation-Date: 2023-06-02 00:45+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -27426,21 +27426,21 @@ msgid "No Pick"
 msgstr "Без ярлыка отбора"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:316
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:313
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Отклонено"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:322
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:319
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
 msgstr "В ожидании"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:328
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:325
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
@@ -27792,7 +27792,7 @@ msgstr "Нет выбранных альбомов"
 msgid "No Tag Selected"
 msgstr "Нет выбранных меток"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:270
+#: core/libs/album/widgets/albumselectcombobox.cpp:274
 #, kde-format
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
@@ -27801,7 +27801,7 @@ msgstr[1] "Выбрано %1 метки"
 msgstr[2] "Выбрано %1 меток"
 msgstr[3] "Выбрана одна метка"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:274
+#: core/libs/album/widgets/albumselectcombobox.cpp:278
 #, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
@@ -27810,7 +27810,7 @@ msgstr[1] "Выбрано %1 альбома"
 msgstr[2] "Выбрано %1 альбомов"
 msgstr[3] "Выбран один альбом"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:283
+#: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
@@ -27819,7 +27819,7 @@ msgstr[1] "Исключено %1 метки"
 msgstr[2] "Исключено %1 меток"
 msgstr[3] "Исключена одна метка"
 
-#: core/libs/album/widgets/albumselectcombobox.cpp:287
+#: core/libs/album/widgets/albumselectcombobox.cpp:291
 #, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
@@ -44727,20 +44727,20 @@ msgid "Color"
 msgstr "Цвет"
 
 # utilities/assistants/htmlgallery/wizard/htmloutputpage.cpp:102: "Не открывать" --aspotashev
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:334
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:331
 #, kde-format
 msgctxt "@info: pick label name"
 msgid "None"
 msgstr "Нет"
 
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:406
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:403
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
 msgstr "Ярлык отбора: %1"
 
 # app/album/albumlabelstreeview.cpp:368: поддерево "Pick" -- "Отбор" --aspotashev
-#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:417
+#: core/libs/widgets/metadata/labels/picklabelwidget.cpp:414
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
@@ -60755,7 +60755,7 @@ msgid "It was not possible to add a collection for the following paths:"
 msgstr "Невозможно добавить коллекцию для следующих путей:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:658
-#: core/utilities/setup/collections/setupcollectionview.cpp:1488
+#: core/utilities/setup/collections/setupcollectionview.cpp:1489
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
@@ -60772,135 +60772,135 @@ msgstr "Проблема с добавлением коллекции"
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Коллекция с путём «%1» уже существует."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:856
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Удаление пути из коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:856
+#: core/utilities/setup/collections/setupcollectionview.cpp:857
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Удалить путь «%1» из коллекции «%2»?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Удаление коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:864
+#: core/utilities/setup/collections/setupcollectionview.cpp:865
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Удалить коллекцию «%1» из списка коллекций?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:929
-#: core/utilities/setup/collections/setupcollectionview.cpp:1670
+#: core/utilities/setup/collections/setupcollectionview.cpp:930
+#: core/utilities/setup/collections/setupcollectionview.cpp:1671
 #, kde-format
 msgid "Local Collections"
 msgstr "Локальные коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:934
-#: core/utilities/setup/collections/setupcollectionview.cpp:1671
+#: core/utilities/setup/collections/setupcollectionview.cpp:935
+#: core/utilities/setup/collections/setupcollectionview.cpp:1672
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Коллекции на съёмных носителях"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:939
-#: core/utilities/setup/collections/setupcollectionview.cpp:1672
+#: core/utilities/setup/collections/setupcollectionview.cpp:940
+#: core/utilities/setup/collections/setupcollectionview.cpp:1673
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Коллекции на совместно используемых сетевых ресурсах"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:976
+#: core/utilities/setup/collections/setupcollectionview.cpp:977
 #, kde-format
 msgid "Add Collection"
 msgstr "Добавить коллекцию"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1026
+#: core/utilities/setup/collections/setupcollectionview.cpp:1027
 #, kde-format
 msgid "Col. %1"
 msgstr "Колл. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1122
+#: core/utilities/setup/collections/setupcollectionview.cpp:1123
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Эта коллекция сейчас недоступна."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1127
+#: core/utilities/setup/collections/setupcollectionview.cpp:1128
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Ошибок не найдено, можно использовать эту коллекцию."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1132
+#: core/utilities/setup/collections/setupcollectionview.cpp:1133
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Эта коллекция скрыта."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1151
+#: core/utilities/setup/collections/setupcollectionview.cpp:1152
 #, kde-format
 msgid "Append network path"
 msgstr "Прикрепить путь сети"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1179
+#: core/utilities/setup/collections/setupcollectionview.cpp:1180
 #, kde-format
 msgid "Update collection"
 msgstr "Обновить коллекцию"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1207
+#: core/utilities/setup/collections/setupcollectionview.cpp:1208
 #, kde-format
 msgid "Remove collection"
 msgstr "Удалить коллекцию"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1242
+#: core/utilities/setup/collections/setupcollectionview.cpp:1243
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Имя"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1247
+#: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Путь"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1252
+#: core/utilities/setup/collections/setupcollectionview.cpp:1253
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Состояние"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1536
+#: core/utilities/setup/collections/setupcollectionview.cpp:1537
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Коллекция, содержащая путь«%1», уже была добавлена ранее"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1566
+#: core/utilities/setup/collections/setupcollectionview.cpp:1567
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Ошибка добавления коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1575
+#: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Добавление коллекции"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1579
+#: core/utilities/setup/collections/setupcollectionview.cpp:1580
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Новая коллекция будет создана с этим названием:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1660
+#: core/utilities/setup/collections/setupcollectionview.cpp:1661
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Выбор рубрики"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1664
+#: core/utilities/setup/collections/setupcollectionview.cpp:1665
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "Новая коллекция будет создана с этой рубрикой:"
