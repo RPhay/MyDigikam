@@ -4,7 +4,7 @@
  * Description : a tool to fix automatically camera lens aberrations
  *
  * SPDX-FileCopyrightText: 2008      by Adrian Schroeter <adrian at suse dot de>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -183,7 +183,7 @@ LensFunContainer LensFunSettings::settings() const
     return prm;
 }
 
-void LensFunSettings::readSettings(KConfigGroup& group)
+void LensFunSettings::readSettings(const KConfigGroup& group)
 {
     LensFunContainer prm;
     LensFunContainer defaultPrm = defaultSettings();
