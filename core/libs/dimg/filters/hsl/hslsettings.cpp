@@ -6,7 +6,7 @@
  * Date        : 2010-02-11
  * Description : HSL settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010      by Julien Narboux <julien at narboux dot fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -77,7 +77,7 @@ const QString HSLSettings::Private::configLighnessAdjustmentEntry(QLatin1String(
 
 HSLSettings::HSLSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
@@ -258,7 +258,7 @@ HSLContainer HSLSettings::defaultSettings() const
     return prm;
 }
 
-void HSLSettings::readSettings(KConfigGroup& group)
+void HSLSettings::readSettings(const KConfigGroup& group)
 {
     HSLContainer prm;
     HSLContainer defaultPrm = defaultSettings();
