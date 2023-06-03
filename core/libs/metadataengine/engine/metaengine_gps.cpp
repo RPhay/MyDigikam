@@ -150,7 +150,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
             num = altXmp.section(QLatin1Char('/'), 0, 0).toDouble();
             den = altXmp.section(QLatin1Char('/'), 1, 1).toDouble();
 
-            if (den == 0)
+            if (den == 0.0)
             {
                 return false;
             }
@@ -185,7 +185,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
             num = (double)((*it).toRational(0).first);
             den = (double)((*it).toRational(0).second);
 
-            if (den == 0)
+            if (den == 0.0)
             {
                 return false;
             }
