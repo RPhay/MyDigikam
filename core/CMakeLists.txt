@@ -484,7 +484,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     add_subdirectory(app)
     add_subdirectory(dplugins)
 
-    if(BUILD_SHOWFOTO)
+    if(ENABLE_SHOWFOTO)
         add_subdirectory(showfoto)
     endif()
 
