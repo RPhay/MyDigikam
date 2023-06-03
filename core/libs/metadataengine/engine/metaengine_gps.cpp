@@ -61,84 +61,32 @@ bool MetaEngine::getGPSInfo(double& altitude, double& latitude, double& longitud
 
 bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
 {
-    QMutexLocker lock(&s_metaEngineMutex);
+    *latitude = 0.0;
 
-    try
+    // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
+
+    if (convertFromGPSCoordinateString(getXmpTagString("Xmp.exif.GPSLatitude"), latitude))
     {
-        *latitude = 0.0;
+        return true;
+    }
 
-        // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
+    // Now try to get the reference from Exif.
 
-        if (convertFromGPSCoordinateString(getXmpTagString("Xmp.exif.GPSLatitude"), latitude))
+    const QByteArray latRef = getExifTagData("Exif.GPSInfo.GPSLatitudeRef");
+
+    if (!latRef.isEmpty() && d->decodeGPSCoordinate("Exif.GPSInfo.GPSLatitude", latitude))
+    {
+        if (latRef[0] == 'S')
         {
-            return true;
+            *latitude *= -1.0;
         }
 
-        // Now try to get the reference from Exif.
-        const QByteArray latRef = getExifTagData("Exif.GPSInfo.GPSLatitudeRef");
-
-        if (!latRef.isEmpty())
+        if ((*latitude < -90.0) || (*latitude > 90.0))
         {
-            Exiv2::ExifKey exifKey("Exif.GPSInfo.GPSLatitude");
-            Exiv2::ExifData exifData(d->exifMetadata());
-            Exiv2::ExifData::const_iterator it = exifData.findKey(exifKey);
-
-            if ((it != exifData.end()) && ((*it).count() == 3))
-            {
-                double deg;
-                double min;
-                double sec;
-
-                deg = (double)((*it).toFloat(0));
-
-                if (((*it).toRational(0).second == 0) || (deg == -1.0))
-                {
-                    return false;
-                }
-
-                *latitude = deg;
-
-                min = (double)((*it).toFloat(1));
-
-                if (((*it).toRational(1).second == 0) || (min == -1.0))
-                {
-                    return false;
-                }
-
-                *latitude = *latitude + min/60.0;
-
-                sec = (double)((*it).toFloat(2));
-
-                if (sec != -1.0)
-                {
-                    *latitude = *latitude + sec/3600.0;
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-            if (latRef[0] == 'S')
-            {
-                *latitude *= -1.0;
-            }
-
-            if ((*latitude < -90.0) || (*latitude > 90.0))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
-    }
-    catch (Exiv2::AnyError& e)
-    {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
-    }
-    catch (...)
-    {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+
+        return true;
     }
 
     return false;
@@ -146,90 +94,32 @@ bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
 
 bool MetaEngine::getGPSLongitudeNumber(double* const longitude) const
 {
-    QMutexLocker lock(&s_metaEngineMutex);
+    *longitude = 0.0;
 
-    try
+    // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
+
+    if (convertFromGPSCoordinateString(getXmpTagString("Xmp.exif.GPSLongitude"), longitude))
     {
-        *longitude = 0.0;
+        return true;
+    }
 
-        // Try XMP first. Reason: XMP in sidecar may be more up-to-date than EXIF in original image.
+    // Now try to get the reference from Exif.
 
-        if (convertFromGPSCoordinateString(getXmpTagString("Xmp.exif.GPSLongitude"), longitude))
+    const QByteArray lngRef = getExifTagData("Exif.GPSInfo.GPSLongitudeRef");
+
+    if (!lngRef.isEmpty() && d->decodeGPSCoordinate("Exif.GPSInfo.GPSLongitude", longitude))
+    {
+        if (lngRef[0] == 'W')
         {
-            return true;
+            *longitude *= -1.0;
         }
 
-        // Now try to get the reference from Exif.
-
-        const QByteArray lngRef = getExifTagData("Exif.GPSInfo.GPSLongitudeRef");
-
-        if (!lngRef.isEmpty())
+        if ((*longitude < -180.0) || (*longitude > 180.0))
         {
-            // Longitude decoding from Exif.
-
-            Exiv2::ExifKey exifKey2("Exif.GPSInfo.GPSLongitude");
-            Exiv2::ExifData exifData(d->exifMetadata());
-            Exiv2::ExifData::const_iterator it = exifData.findKey(exifKey2);
-
-            if ((it != exifData.end()) && ((*it).count() == 3))
-            {
-                /// @todo Decoding of latitude and longitude works in the same way,
-                ///       code here can be put in a separate function
-
-                double deg;
-                double min;
-                double sec;
-
-                deg = (double)((*it).toFloat(0));
-
-                if (((*it).toRational(0).second == 0) || (deg == -1.0))
-                {
-                    return false;
-                }
-
-                *longitude = deg;
-
-                min = (double)((*it).toFloat(1));
-
-                if (((*it).toRational(1).second == 0) || (min == -1.0))
-                {
-                    return false;
-                }
-
-                *longitude = *longitude + min/60.0;
-
-                sec = (double)((*it).toFloat(2));
-
-                if (sec != -1.0)
-                {
-                    *longitude = *longitude + sec/3600.0;
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-            if (lngRef[0] == 'W')
-            {
-                *longitude *= -1.0;
-            }
-
-            if ((*longitude < -180.0) || (*longitude > 180.0))
-            {
-                return false;
-            }
-
-            return true;
+            return false;
         }
-    }
-    catch (Exiv2::AnyError& e)
-    {
-        d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
-    }
-    catch (...)
-    {
-        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+
+        return true;
     }
 
     return false;
