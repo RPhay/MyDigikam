@@ -155,7 +155,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
                 return false;
             }
 
-            *altitude = num/den;
+            *altitude = num / den;
 
             if (altRefXmp == QLatin1String("1"))
             {

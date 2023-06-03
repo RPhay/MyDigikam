@@ -970,13 +970,13 @@ bool MetaEngine::Private::decodeGPSCoordinate(const char* exifTagName, double* c
                 return false;
             }
 
-            *coordinate = *coordinate + min/60.0;
+            *coordinate = *coordinate + min / 60.0;
 
             sec = (double)((*it).toFloat(2));
 
             if (sec != -1.0)
             {
-                *coordinate = *coordinate + sec/3600.0;
+                *coordinate = *coordinate + sec / 3600.0;
             }
 
             return true;
