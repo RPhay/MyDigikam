@@ -20,9 +20,6 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
 
-        PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-support.patch
-
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
@@ -43,9 +40,6 @@ else() # MacOS and Linux
         GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
-
-        PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-support.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_DPLUGIN=ON
 
