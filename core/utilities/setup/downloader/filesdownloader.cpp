@@ -59,6 +59,8 @@ public:
                         QLatin1String("https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/") } ),
         mirrorIndex (0),
         redirects   (0),
+        total       (0),
+        count       (0),
         buttons     (nullptr),
         progress    (nullptr),
         faceCheck   (nullptr),
@@ -77,6 +79,8 @@ public:
 
     int                    mirrorIndex;
     int                    redirects;
+    int                    total;
+    int                    count;
 
     QDialogButtonBox*      buttons;
     QProgressBar*          progress;
@@ -206,6 +210,7 @@ void FilesDownloader::startDownload()
         {
             // cppcheck-suppress useStlAlgorithm
             size += info.size;
+            d->total++;
         }
     }
 
@@ -267,6 +272,7 @@ void FilesDownloader::slotDownload()
 
             if (!downloadExists(d->currentInfo))
             {
+                d->count++;
                 download();
 
                 return;
@@ -358,10 +364,12 @@ void FilesDownloader::createRequest(const QUrl& url)
 
 void FilesDownloader::printDownloadInfo(const QUrl& url)
 {
-    QString text = QString::fromUtf8("%1 (%2://%3)")
+    QString text = QString::fromUtf8("%1 (%2://%3) (%4/%5)")
                    .arg(d->currentInfo.name)
                    .arg(url.scheme())
-                   .arg(url.host());
+                   .arg(url.host())
+                   .arg(d->count)
+                   .arg(d->total);
 
     d->nameLabel->setText(text);
 }
