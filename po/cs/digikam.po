@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-02 00:45+0000\n"
-"PO-Revision-Date: 2023-04-14 21:52+0200\n"
+"PO-Revision-Date: 2023-06-05 13:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -2743,15 +2743,7 @@ msgstr ""
 "Datum sestavení: %4 (cíl: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Documentation: %3\n"
-#| "Build date: %4 (target: %5)\n"
-#| "Revision: %6\n"
-#| "Branch: %7"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2763,8 +2755,8 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Zpětná vazba: %2\n"
-"\n"
 "Dokumentace: %3\n"
+"\n"
 "Datum sestavení: %4 (cíl: %5)\n"
 "Revize: %6\n"
 "Větev: %7"
@@ -3451,15 +3443,12 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
-"Některé nové vlastnosti tohoto vydání digiKamu (v porovnání s digiKam 6.x):"
+"Některé nové vlastnosti tohoto vydání digiKamu (v porovnání s digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -26511,11 +26500,10 @@ msgstr "Celá sbírka alb"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive Selection"
-msgstr "Výběr motivu"
+msgstr "Rekurzivní Výběr"
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -36432,7 +36420,7 @@ msgstr "Pomocné soubory (Sidecar):"
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -36453,9 +36441,7 @@ msgid "Audio/Video Properties"
 msgstr "Vlastnosti audia/videa"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Název: "
@@ -36485,20 +36471,16 @@ msgid "Rating: "
 msgstr "Hodnocení: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Verze"
+msgstr "Verzováno: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Skupina"
+msgstr "Seskupeno: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -36507,38 +36489,31 @@ msgid "digiKam Properties"
 msgstr "Vlastnosti digiKamu"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Klíčová slova"
+msgstr "Klíčová slova: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Lidé"
+msgstr "Lidé: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Značky"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Umístění"
 
 #: core/libs/properties/itempropertiestab.cpp:344
-#, fuzzy, kde-format
-#| msgid "Rights"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Práva"
@@ -47343,12 +47318,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Výchozí jazyk"
+msgstr "Výchozí jazyk:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -47359,10 +47332,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "Auto&detekce"
+msgstr "Autodetekce"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
@@ -50155,22 +50127,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Pořadové číslo (vlastní začátek)"
+msgstr "Pořadové číslo (vlastní začátek) ||možnosti||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Pořadové číslo (vlastní krok)"
+msgstr "Pořadové číslo (vlastní krok) ||možnosti||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Pořadové číslo (vlastní začátek + krok)"
+msgstr "Pořadové číslo (vlastní začátek + krok) ||možnosti||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -50225,17 +50194,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "Extension aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Číslování závislé na příponě"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Extension aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Číslování závislé na příponě"
+msgstr ""
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -51017,57 +50984,49 @@ msgstr "Značky ale ne alba"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Starší nebo větší"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Preferovat vybranou složku jako referenční"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Preferovat starší než vybranou složku jako referenční"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Podle data vytvoření"
+msgstr "Preferovat novější datum vytvoření"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Podle data úprav"
+msgstr "Preferovat novější datum úprav"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Informace o aktuálním výběru obrázků"
+msgstr "Vyberte metodu pro výběr referenčního obrázku"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:230
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Reference:"
+msgstr "Reference"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Vyberte metodu výběru o&brázku:"
+msgstr "Metoda výběru referenčního obrázku"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
@@ -57819,19 +57778,14 @@ msgstr ""
 "Zrušte zaškrtnutí pokud si přejete převést 16bitový náhled obrázku na 8bitů."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr "Pro rychlejší zobrazení se náhledy převedou do 8bitové barevné hloubky"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Zrušte zaškrtnutí pokud si přejete převést 16bitový náhled obrázku na 8bitů."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
@@ -61748,7 +61702,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "Značky: "
