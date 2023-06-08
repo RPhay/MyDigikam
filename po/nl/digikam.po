@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 00:45+0000\n"
+"POT-Creation-Date: 2023-06-08 00:44+0000\n"
 "PO-Revision-Date: 2023-05-16 13:15+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -36649,7 +36649,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:197
+#: core/utilities/setup/downloader/filesdownloader.cpp:201
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -60791,13 +60791,13 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:185
+#: core/utilities/setup/downloader/filesdownloader.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:215
+#: core/utilities/setup/downloader/filesdownloader.cpp:220
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60818,23 +60818,23 @@ msgstr ""
 "ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
 "digiKam opnieuw opstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:232
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Functie gezichten-engine uitschakelen en niet meer vragen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:286
+#: core/utilities/setup/downloader/filesdownloader.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60854,28 +60854,28 @@ msgstr ""
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende keer "
 "starten."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:301
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:428
+#: core/utilities/setup/downloader/filesdownloader.cpp:436
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:452
+#: core/utilities/setup/downloader/filesdownloader.cpp:460
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:459
+#: core/utilities/setup/downloader/filesdownloader.cpp:467
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:474
+#: core/utilities/setup/downloader/filesdownloader.cpp:482
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."

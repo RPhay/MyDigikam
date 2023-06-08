@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-02 00:45+0000\n"
+"POT-Creation-Date: 2023-06-08 00:44+0000\n"
 "PO-Revision-Date: 2023-06-03 09:14+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -36412,7 +36412,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Otwórz okno ustawiania uaktualnień."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:197
+#: core/utilities/setup/downloader/filesdownloader.cpp:201
 #, kde-format
 msgid "Download"
 msgstr "Pobierz"
@@ -60547,13 +60547,13 @@ msgstr "Wybierz kategorię"
 msgid "Your collection will use this category:"
 msgstr "Twój zbiór zostanie przypisany do tej kategorii:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:185
+#: core/utilities/setup/downloader/filesdownloader.cpp:189
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Pobierz wymaganie pliki"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:215
+#: core/utilities/setup/downloader/filesdownloader.cpp:220
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -60574,23 +60574,23 @@ msgstr ""
 "pomyślnym pobraniu plików należy ponownie uruchomić program digiKam.</b></p> "
 "<p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:227
+#: core/utilities/setup/downloader/filesdownloader.cpp:232
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Wyłącz silnik rozpoznawania twarzy i nie pytaj o niego ponownie"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Wszystkie pliki zostały pomyślnie pobrane."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:286
+#: core/utilities/setup/downloader/filesdownloader.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Błąd pobierania"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:287
+#: core/utilities/setup/downloader/filesdownloader.cpp:293
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -60610,28 +60610,28 @@ msgstr ""
 "Możesz spróbować ponownie lub wznowić pobieranie po następnym uruchomieniu "
 "programu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:295
+#: core/utilities/setup/downloader/filesdownloader.cpp:301
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Spróbuj ponownie"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:428
+#: core/utilities/setup/downloader/filesdownloader.cpp:436
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Suma sprawdzająca jest niepoprawna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:452
+#: core/utilities/setup/downloader/filesdownloader.cpp:460
 #, kde-format
 msgid "File write error."
 msgstr "Błąd zapisu pliku."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:459
+#: core/utilities/setup/downloader/filesdownloader.cpp:467
 #, kde-format
 msgid "File open error."
 msgstr "Błąd otwarcia pliku."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:474
+#: core/utilities/setup/downloader/filesdownloader.cpp:482
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Plik na serwerze jest za duży."
