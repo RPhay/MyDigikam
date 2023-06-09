@@ -25,10 +25,6 @@ void DigikamApp::autoDetect()
     {
         d->splashScreen->setMessage(i18n("Auto-Detecting Camera..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     QTimer::singleShot(0, this, SLOT(slotCameraAutoDetect()));
 }
@@ -42,10 +38,6 @@ void DigikamApp::downloadFrom(const QString& cameraGuiPath)
         if (d->splashScreen)
         {
             d->splashScreen->setMessage(i18n("Opening Download Dialog..."));
-        }
-        else
-        {
-            qApp->processEvents();
         }
 
         Q_EMIT queuedOpenCameraUiFromPath(cameraGuiPath);
@@ -61,10 +53,6 @@ void DigikamApp::downloadFromUdi(const QString& udi)
         if (d->splashScreen)
         {
             d->splashScreen->setMessage(i18n("Opening Download Dialog..."));
-        }
-        else
-        {
-            qApp->processEvents();
         }
 
         Q_EMIT queuedOpenSolidDevice(udi);

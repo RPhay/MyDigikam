@@ -24,6 +24,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "iccmanager.h"
 #include "iccsettings.h"
 #include "iccsettingscontainer.h"
 #include "previewloadthread.h"
@@ -78,7 +79,7 @@ private:
     Private(const Private&);
 };
 
-GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
+GLViewerTexture::GLViewerTexture(DInfoInterface* const iface, QWidget* const display)
     : QOpenGLTexture(QOpenGLTexture::TargetRectangle),
       d             (new Private)
 {
@@ -87,7 +88,7 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
 
     if (settings.enableCM && settings.useManagedPreviews)
     {
-        d->iccProfile = IccProfile(settings.monitorProfile);
+        d->iccProfile = IccProfile(IccManager::displayProfile(display));
     }
 
     reset();

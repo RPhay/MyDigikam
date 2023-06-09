@@ -66,14 +66,16 @@ AVOutput::~AVOutput()
         // and call FilterManager::uninstallFilter() and FilterManager::instance().unregisterFilter(filter, this)
         // too late that AVOutput is almost be destroyed
 
-        uninstallFilter(*it);
+        this->uninstallFilter(*it);
 
         // 1 filter has 1 target. so if has output filter in manager, the output is this output
 
         /*FilterManager::instance().hasOutputFilter(*it) && */
 
         if ((*it)->isOwnedByTarget() && !(*it)->parent())
+        {
             delete *it;
+        }
 
         ++it;
     }

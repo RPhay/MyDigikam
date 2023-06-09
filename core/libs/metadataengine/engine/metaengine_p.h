@@ -151,6 +151,11 @@ public:
      */
     bool isUtf8(const char* const buffer)                                         const;
 
+    /**
+     * Decodes Latitude or Longitude from EXIF tag name.
+     */
+    bool decodeGPSCoordinate(const char* exifTagName, double* const coordinate)   const;
+
     int getXMPTagsListFromPrefix(const QString& pf, MetaEngine::TagsMap& tagsMap) const;
 
     const Exiv2::ExifData& exifMetadata()                                         const;

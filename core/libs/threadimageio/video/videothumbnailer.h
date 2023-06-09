@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2010      by Dirk Vanden Boer <dirk dot vdb at gmail dot com>
  * SPDX-FileCopyrightText: 2016-2018 by Maik Qualmann <metzpinguin at gmail dot com>
- * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -56,7 +56,7 @@ public:
     void setMaintainAspectRatio(bool enabled);
     void setSmartFrameSelection(bool enabled);
     void addFilter(VideoStripFilter* const filter);
-    void removeFilter(VideoStripFilter* const filter);
+    void removeFilter(const VideoStripFilter* const filter);
     void clearFilters();
 
 private:

@@ -61,7 +61,7 @@ public:
 
     VersionManagerSettings();
 
-    void readFromConfig(KConfigGroup& group);
+    void readFromConfig(const KConfigGroup& group);
     void writeToConfig(KConfigGroup& group) const;
 
 public:

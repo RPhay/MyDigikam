@@ -125,7 +125,7 @@ void Parser::registerOption(Rule* option)
     d->options.append(option);
 }
 
-void Parser::unregisterOption(Rule* option)
+void Parser::unregisterOption(const Rule* option)
 {
     if (!option)
     {
@@ -157,7 +157,7 @@ void Parser::registerModifier(Rule* modifier)
     d->modifiers.append(modifier);
 }
 
-void Parser::unregisterModifier(Rule* modifier)
+void Parser::unregisterModifier(const Rule* modifier)
 {
     if (!modifier)
     {

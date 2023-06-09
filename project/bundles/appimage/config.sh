@@ -2,7 +2,7 @@
 
 # Configuration for script to build AppImage bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -42,16 +42,20 @@ DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
+# KDE Plasma version.
+# See official release here: https://download.kde.org/stable/plasma/
+DK_KP_VERSION="5.27.5"
+
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="22.12.3"
+DK_KA_VERSION="23.04.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.104"
+DK_KF5_VERSION="5.106"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Qt version to use in bundle. Possible values:
 # - 5.15:     stable Qt5 release.

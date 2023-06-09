@@ -109,6 +109,7 @@ public:
     bool                     kbEnableSameSpeed;
     uint                     cacheSize;
 
+    QWidget*                 display;
     DInfoInterface*          iface;
 };
 

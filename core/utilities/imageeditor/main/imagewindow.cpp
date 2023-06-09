@@ -7,7 +7,7 @@
  * Description : digiKam image editor GUI
  *
  * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -50,8 +50,8 @@ ImageWindow::ImageWindow()
 
     // -- Build the GUI -------------------------------
 
-    setupUserArea();
-    setupActions();
+    this->setupUserArea();
+    this->setupActions();
     setupStatusBar();
     createGUI(xmlFile());
     registerPluginsActions();
@@ -70,7 +70,7 @@ ImageWindow::ImageWindow()
 
     // Make signals/slots connections
 
-    setupConnections();
+    this->setupConnections();
 
     // -- Read settings --------------------------------
 

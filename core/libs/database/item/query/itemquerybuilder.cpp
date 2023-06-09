@@ -474,7 +474,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             int denominator = ratioNum.at(1).toInt();
             query                = QString::fromUtf8("ABS((ImageInformation.width/CAST(ImageInformation.height AS DOUBLE)) - ?)  < 0.1");
             sql                 += QString::fromUtf8(" (") + query + QString::fromUtf8(") ");
-            *boundValues << (double)num/denominator;
+            *boundValues << (double)num / denominator;
         }
         else if (readerString.contains(QRegularExpression(QLatin1String("^\\d+(.\\d+)?$"))))
         {
@@ -526,7 +526,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                      QStringList ratioNum = value.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
                      int num              = ratioNum.at(0).toInt();
                      int denominator      = ratioNum.at(1).toInt();
-                     ratioValues << (double)num/denominator;
+                     ratioValues << (double)num / denominator;
                  }
             }
 
@@ -553,7 +553,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                 QStringList ratioNum = value.split(QLatin1Char(':'), QT_SKIP_EMPTY_PARTS);
                 int num              = ratioNum.at(0).toInt();
                 int denominator      = ratioNum.at(1).toInt();
-                *boundValues << (double)num/denominator;
+                *boundValues << (double)num / denominator;
             }
 
             sql += QString::fromUtf8("(VideoMetadata.aspectRatio=? OR ABS((CAST(VideoMetadata.aspectRatio AS DOUBLE) - ?)  < 0.1 )) ");

@@ -64,6 +64,7 @@ PresentationContainer::PresentationContainer()
       kbEnableSameSpeed             (false),
       cacheSize                     (0),
 
+      display                       (nullptr),
       iface                         (nullptr)
 {
 }

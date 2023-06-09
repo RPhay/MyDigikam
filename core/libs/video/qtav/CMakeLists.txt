@@ -147,7 +147,9 @@ if(SSE4_1_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/utils/GPUMemCopy_Frame_SSE4.cpp
     )
 
-elseif(SSE2_FOUND)
+endif()
+
+if(SSE2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/utils/GPUMemCopy_Frame_SSE2.cpp

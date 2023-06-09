@@ -15,6 +15,9 @@ option(ENABLE_QWEBENGINE                 "Build digiKam with QWebEngine (default
 option(ENABLE_MYSQLSUPPORT               "Build digiKam with MySQL dabatase support (default=ON)"                             ON)
 option(ENABLE_INTERNALMYSQL              "Build digiKam with internal MySQL server executable (default=ON)"                   ON)
 
+# Showfoto application
+option(ENABLE_SHOWFOTO                   "Build Showfoto stand-alone image editor (default=ON)"                               ON)
+
 # Developer options:
 option(ENABLE_DIGIKAM_MODELTEST          "Enable ModelTest on some models for debugging (default=OFF)"                        OFF)
 option(ENABLE_SANITIZERS                 "Enable ASAN and UBSAN sanitizers when available (default=OFF)"                      OFF)

@@ -6,7 +6,7 @@
  * Date        : 2006-01-20
  * Description : action categorized view
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -62,11 +62,17 @@ void ActionCategorizedView::adjustGridSize()
 
     setWordWrap(true);
     QStyleOptionViewItem option;
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     initViewItemOption(&option);
+
 #else
+
     option = viewOptions();
+
 #endif
+
     int maxSize = option.decorationSize.width() * 4;
     QFontMetrics fm(option.font);
     QSize grid;
@@ -112,7 +118,6 @@ int ActionCategorizedView::autoScrollDuration(float relativeDifference, QPropert
 
 void ActionCategorizedView::autoScroll(float relativePos, QScrollBar* scrollBar, QPropertyAnimation* animation)
 {
-
     if (scrollBar->minimum() != scrollBar->maximum())
     {
         const float lowerPart = 0.15F;

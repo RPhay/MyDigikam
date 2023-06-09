@@ -7,7 +7,7 @@
  * Description : a widget to display 2 preview image on
  *               lightable to compare pictures.
  *
- * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -319,6 +319,7 @@ void LightTableView::slotLeftZoomFactorChanged(double zoom)
         d->rightPreview->blockSignals(true);
 
         setRightZoomFactor(zoom);
+
         Q_EMIT signalRightZoomFactorChanged(zoom);
 
         d->rightPreview->blockSignals(false);
@@ -336,6 +337,7 @@ void LightTableView::slotRightZoomFactorChanged(double zoom)
         d->leftPreview->blockSignals(true);
 
         setLeftZoomFactor(zoom);
+
         Q_EMIT signalLeftZoomFactorChanged(zoom);
 
         d->leftPreview->blockSignals(false);
@@ -420,6 +422,9 @@ void LightTableView::checkForSelection(const ItemInfo& info)
         d->leftFrame->setStyleSheet(notSelected);
         d->rightFrame->setStyleSheet(notSelected);
 
+        Q_EMIT signalLeftPreviewSelected(false);
+        Q_EMIT signalRightPreviewSelected(false);
+
         return;
     }
 
@@ -427,12 +432,16 @@ void LightTableView::checkForSelection(const ItemInfo& info)
     {
         bool onLeft = (d->leftPreview->getItemInfo() == info);
         d->leftFrame->setStyleSheet(onLeft ? selected : notSelected);
+
+        Q_EMIT signalLeftPreviewSelected(onLeft);
     }
 
     if (!d->rightPreview->getItemInfo().isNull())
     {
         bool onRight = (d->rightPreview->getItemInfo() == info);
         d->rightFrame->setStyleSheet(onRight ? selected : notSelected);
+
+        Q_EMIT signalRightPreviewSelected(onRight);
     }
 }
 

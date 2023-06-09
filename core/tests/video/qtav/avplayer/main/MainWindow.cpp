@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget* const parent)
 
 #if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 
-    QApplication::setStyle(QStyleFactory::create(QLatin1String("Fusion")));
+    QApplication::setStyle(QStyleFactory::create(QLatin1String("Breeze")));
 
 #endif
 

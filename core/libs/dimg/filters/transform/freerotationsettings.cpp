@@ -6,7 +6,7 @@
  * Date        : 2010-03-16
  * Description : Free rotation settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -47,11 +47,11 @@ class Q_DECL_HIDDEN FreeRotationSettings::Private
 public:
 
     explicit Private()
-      : antialiasInput(nullptr),
-        angleInput(nullptr),
-        fineAngleInput(nullptr),
-        autoCropCB(nullptr),
-        backgroundColor(nullptr)
+      : antialiasInput  (nullptr),
+        angleInput      (nullptr),
+        fineAngleInput  (nullptr),
+        autoCropCB      (nullptr),
+        backgroundColor (nullptr)
     {
     }
 
@@ -77,10 +77,10 @@ const QString FreeRotationSettings::Private::configBackgroundColorEntry(QLatin1S
 
 FreeRotationSettings::FreeRotationSettings(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -204,7 +204,7 @@ FreeRotationContainer FreeRotationSettings::defaultSettings() const
     return prm;
 }
 
-void FreeRotationSettings::readSettings(KConfigGroup& group)
+void FreeRotationSettings::readSettings(const KConfigGroup& group)
 {
     d->autoCropCB->setCurrentIndex(group.readEntry(d->configAutoCropTypeEntry,  d->autoCropCB->defaultIndex()));
     d->backgroundColor->setColor(group.readEntry(d->configBackgroundColorEntry, QColor(Qt::black)));

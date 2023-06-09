@@ -283,7 +283,7 @@ void GLViewerWidget::initializeGL()
     for (int i = 0 ; i < CACHESIZE ; ++i)
     {
         d->cache[i].file_index = EMPTY;
-        d->cache[i].texture    = new GLViewerTexture(d->iface);
+        d->cache[i].texture    = new GLViewerTexture(d->iface, this);
     }
 }
 

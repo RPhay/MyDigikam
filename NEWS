@@ -7,6 +7,8 @@ Print Creator: Add 4 new templates for 6.8 inchs photo paper.
 General      : Improve usability of Image Properties sidebar tab.
 Libraw       : Update to snapshot 2023-05-14
 Bundles      : Update Exiv2 to last 0.28 release: https://github.com/Exiv2/exiv2/issues/2406#issuecomment-1529139799
+Bundles      : Update KF5 framework to last 5.106
+Bundles      : Includes Breeze widgets style in MacOS package to render properly GUI contents..
 
 *****************************************************************************************************
 BUGFIXES:
@@ -354,11 +356,106 @@ BUGFIXES:
 341 ==> 469710 - digiKam 8.0 don't read (don't use) saved Shortcut customization.
 342 ==> 469758 - Won't use global menus in Flatpak.
 343 ==> 435695 - Add image quality information on properties view from right sidebar.
-344 ==> 
-345 ==> 
-356 ==> 
-347 ==> 
-348 ==> 
-349 ==> 
-350 ==> 
-351 ==> 
+344 ==> 445740 - [Enhancement] OpenCL settings.
+345 ==> 469595 - digiKam 8.0.0 from fedora repository and also local build crash on startup.
+356 ==> 423775 - IPTC title ("Object Name") not getting truncated at 64 characters in certain situations.
+347 ==> 426116 - Compact database (unique block instead of loose files).
+348 ==> 438989 - Changing tag symbols under macOS for multiple computers (Windows & macOS).
+349 ==> 469929 - I installed digikam 8 on my windows 11 pc, but when I start the application. it does not show a window, neither it shows it works.
+350 ==> 457476 - Software crash.
+351 ==> 456512 - No sound on AppImage previews.
+352 ==> 469963 - Keyboard shortcuts not saved.
+353 ==> 469860 - Dynamic Margins on thumbnails based on information.
+354 ==> 380331 - Wishlist: Show/edit star rating and Title/Captions in Preview.
+355 ==> 468027 - Quick access to crop feature in preview mode.
+356 ==> 418198 - Is there a way to resize these overlay buttons from preview?
+357 ==> 448586 - Preview on second screen.
+358 ==> 148572 - Improve readability of filename assigned to left or right preview canvas.
+359 ==> 289340 - Allow easy changing photographs both in left and right window pane.
+360 ==> 157310 - LightTable thumb-bar actions with mouse wheel.
+361 ==> 321761 - Extend Light table to compare images from two directories.
+362 ==> 468040 - Search for New Entries causes Error from Jasper 4.0.0.
+363 ==> 463378 - Applied Tags Don't Get Written To File?
+364 ==> 462825 - Rename tool combobox history not saving in version 7.9.0.
+365 ==> 461618 - No QMySQL Driver.
+366 ==> 457121 - digiKam 7.7.0 FTBFS against libavcodec59.
+367 ==> 450522 - No option to read/write XPTitle and XPComment metadata fields.
+368 ==> 422242 - Cannot read write tags to files.
+369 ==> 421464 - XPkeywords not being updated with Exiv2 - Use ExifTool instead.
+370 ==> 378218 - Build failure around DFontProperties.
+371 ==> 374705 - Export a photo to local drive.
+372 ==> 371552 - Album > New item disabled.
+373 ==> 371208 - Resizing and renaming files.
+374 ==> 360473 - Fails to build.
+375 ==> 350858 - Using maintenance menu does not work properly.
+376 ==> 348275 - Album combobox selection does not survive clicking Reload.
+377 ==> 347467 - Image Quality Sort must be format independent.
+378 ==> 344465 - digiKam either can't detect camera (auto mode) or crashes (PTP) while import.
+379 ==> 340517 - Folders in import dialog read at digikam start, not open dialog.
+380 ==> 337694 - New view with recursive Folder/Album filter.
+381 ==> 332090 - Label filter improvement.
+382 ==> 314608 - digiKam fails to compile.
+383 ==> 337931 - Thumbnail order does not match window order.
+384 ==> 435343 - Crash getting People album property if Thumbnail file removed.
+385 ==> 329238 - Suppress Thumbnail Creation and Use full Images.
+386 ==> 328460 - Size of thumbnail font fixed to system.
+387 ==> 318965 - Export digikam settings.
+388 ==> 312580 - Crash when exporting to Picasa.
+389 ==> 315228 - Feature Request - Google Picasa tool.
+390 ==> 308252 - Fix keyboard navigation in albums tree-view to validate current album to show in icon-view.
+391 ==> 306136 - Build failed without an explicit error.
+392 ==> 305655 - Detect which pictures are actually new in the camera.
+393 ==> 304687 - Nothing happens when trying to toggle read lock on pictures on CompactFlash (Nikon).
+394 ==> 302971 - Slackware Linux 13.37 compile failed, maybe old cmake or some else?
+395 ==> 302797 - digiKam doesn´t count correctly in albumview.
+396 ==> 426857 - Creation date/time not show correctly.
+397 ==> 460111 - Photo with location does not show location.
+398 ==> 462814 - Wrong date when importing images.
+399 ==> 418669 - digiKam do not import image dimensions information in database.
+400 ==> 463425 - Problem with display on the map.
+401 ==> 431121 - Item properties and and photograph properties not shown in main window.
+402 ==> 428526 - Location data not showing.
+403 ==> 424049 - After the import, some metadata was not read from the image.
+404 ==> 466868 - Basic Questions re Usage.
+406 ==> 469961 - Drag and drop features missing: downstream problem under Ubuntu.
+406 ==> 461248 - Sort key on Tags.
+407 ==> 365262 - GUI Theme Colors hard to see.
+408 ==> 221065 - Many Icons Don't Show Up in digiKam Under MacOS.
+409 ==> 469986 - OpenGL ImageViewer and Presentation do not observe monitor profile.
+410 ==> 414428 - Dark themes for digiKam (Optimal-DK).
+411 ==> 279183 - Themes configuration does not work.
+412 ==> 381855 - Some icons are invisible with Fusion theme.
+413 ==> 262702 - digiKam Causes User to Suddenly Log out in Settings Configure digiKam when you choose Colours and move the Side Bar.
+414 ==> 198201 - digiKam do not work after changing theme.
+415 ==> 385148 - Widgets are almost invisible using most "dark" shipped themes.
+416 ==> 436259 - Most of icons disabled after theme changes - doesn't came back by changing back previous version.
+417 ==> 470066 - Dark themes make it impossible to see if a photograph is geo‐located.
+418 ==> 413748 - Broken theme on Windows 10 after Digikam update.
+419 ==> 413879 - Buttons without theme colors.
+420 ==> 406408 - Check boxs and radio buttons in dark themes is not visible.
+421 ==> 410501 - Dark Themes show white frames with light grey text in menu etc. - not readable.
+422 ==> 376453 - Labels, Comments and dates disappear when folder is not readable.
+423 ==> 470145 - Keyboard shortcut for assigning ratings (stars) is not persistent.
+424 ==> 138704 - Show selected camera focus points (AF) as graphical overlay of preview canvas.
+325 ==> 466893 - Hidden elements in the Pick Label and Color Label locations.
+426 ==> 225807 - Add icon-view customization options from setup dialog into main menu.
+427 ==> 284631 - Drag & drop from Preview Mode to Dolphin icon view.
+428 ==> 468616 - Customizable statusbar information.
+429 ==> 470307 - When deleting images, the thumbnail bar does not move to the next image.
+430 ==> 469960 - digiKam-8.1.0-20230517T153157-Win64-debug will not Open after Installation.
+431 ==> 465548 - digiKam crashes with illegal instruction on AMD Athlon II due to SSE detection with CMake.
+432 ==> 469453 - Weird display behavior: flickering and lagging.
+433 ==> 470350 - Alphabetical ordering - Why _ is before . ?
+434 ==> 470360 - Metadata Edit plugin ignores lazy synchronization / immediately writes metadata.
+435 ==> 470226 - Created date wrong in import main view and folder creation.
+436 ==> 470418 - Optional building of Showfoto.
+437 ==> 464165 - How to search geographical tags in the digiKam catalog.
+438 ==> 249078 - digiKam should be able to show the available and/or used AF sensors.
+439 ==> 210909 - Add image names in Light Table.
+440 ==> 182912 - Display of focus from photo.
+441 ==> 469948 - Update libaom from 3.6.0 to 3.6.1.
+442 ==> 470669 - Displaying geotagged images.
+443 ==> 470735 - digiKam crashes when changing settings, or crating new album.
+444 ==> 470740 - digiKam crashes when trying to add new photos location.
+445 ==> 470823 - Custom Shortcuts do not persist over restart of application.
+446 ==> 

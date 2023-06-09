@@ -77,6 +77,7 @@ rm -f *.rcc > /dev/null
 cmake -DCMAKE_COLOR_MAKEFILE=ON \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
+      -DKP_VERSION=$DK_KP_VERSION \
       -DKF5_VERSION=$DK_KF5_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
@@ -220,6 +221,8 @@ done
 #################################################################################################
 # Cleanup symbols in binary files to free space.
 # NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
+# The following code to do lets all debug symbols in each digiKam componets, else size will be largest than 2Gb.
+# only the digiKam/Showfoto executable and shared libraries debug symbols are preserved. All digiKam plugins are stripped.
 
 echo -e "\n---------- Strip symbols in binary files\n"
 
@@ -227,17 +230,17 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
     DEBUG_EXE_STRIP_ALL="`find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)'`"
     echo "DEBUG_EXE_STRIP_ALL=$DEBUG_EXE_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_EXE_STRIP_ALL
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_EXE_STRIP_ALL
 
     DEBUG_DLL_STRIP_ALL="`find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)'`"
     echo "DEBUG_DLL_STRIP_ALL=$DEBUG_DLL_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all $DEBUG_DLL_STRIP_ALL
+    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP_ALL
 
-    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
-    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
+#    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
+#    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
+#    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
 
-    DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)'`"
+    DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)' | grep -Ev '(libdigikam|digikam.dll|showfoto.dll)'`"
     echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
     ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
 

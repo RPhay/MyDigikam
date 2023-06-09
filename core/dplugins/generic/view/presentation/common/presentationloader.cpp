@@ -28,6 +28,7 @@
 // Local includes
 
 #include "dimg.h"
+#include "iccmanager.h"
 #include "iccsettings.h"
 #include "digikam_debug.h"
 #include "previewloadthread.h"
@@ -49,11 +50,13 @@ public:
 
     LoadThread(LoadedImages* const loadedImages,
                QMutex* const imageLock,
+               QWidget* const display,
                const QUrl& path,
                int width,
                int height)
         : m_imageLock   (imageLock),
           m_loadedImages(loadedImages),
+          m_display     (display),
           m_path        (path),
           m_swidth      (width),
           m_sheight     (height)
@@ -74,7 +77,7 @@ protected:
 
         if (settings.enableCM && settings.useManagedPreviews)
         {
-            IccProfile profile(settings.monitorProfile);
+            IccProfile profile(IccManager::displayProfile(m_display));
 
             newImage = PreviewLoadThread::loadHighQualitySynchronously(m_path.toLocalFile(),
                                                                        PreviewSettings::RawPreviewAutomatic,
@@ -111,6 +114,7 @@ private:
 
     QMutex*       m_imageLock;
     LoadedImages* m_loadedImages;
+    QWidget*      m_display;
     QUrl          m_path;
     QString       m_filename;
     int           m_swidth;
@@ -173,7 +177,7 @@ PresentationLoader::PresentationLoader(PresentationContainer* const sharedData,
     for (uint i = 0 ; (i < uint(d->cacheSize / 2)) && (i < uint(d->sharedData->urlList.count())) ; ++i)
     {
         filePath                    = d->sharedData->urlList[i];
-        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock,
+        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, d->sharedData->display,
                                                      filePath, d->swidth, d->sheight);
         d->threadLock->lock();
         d->loadingThreads->insert(filePath, newThread);
@@ -185,7 +189,7 @@ PresentationLoader::PresentationLoader(PresentationContainer* const sharedData,
     {
         int toLoad                  = (d->currIndex - i) % d->sharedData->urlList.count();
         filePath                    = d->sharedData->urlList[toLoad];
-        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock,
+        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, d->sharedData->display,
                                                      filePath, d->swidth, d->sheight);
         d->threadLock->lock();
         d->loadingThreads->insert(filePath, newThread);
@@ -253,7 +257,8 @@ void PresentationLoader::next()
     d->threadLock->unlock();
 
     QUrl filePath               = d->sharedData->urlList[newBorn];
-    LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, filePath, d->swidth, d->sheight);
+    LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, d->sharedData->display,
+                                                 filePath, d->swidth, d->sheight);
 
     d->threadLock->lock();
 
@@ -295,7 +300,8 @@ void PresentationLoader::prev()
     d->threadLock->unlock();
 
     QUrl filePath               = d->sharedData->urlList[newBorn];
-    LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, filePath, d->swidth, d->sheight);
+    LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, d->sharedData->display,
+                                                 filePath, d->swidth, d->sheight);
 
     d->threadLock->lock();
 
@@ -341,7 +347,8 @@ void PresentationLoader::checkIsIn(int index) const
     else
     {
         QUrl filePath               = d->sharedData->urlList[index];
-        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, filePath, d->swidth, d->sheight);
+        LoadThread* const newThread = new LoadThread(d->loadedImages, d->imageLock, d->sharedData->display,
+                                                     filePath, d->swidth, d->sheight);
 
         d->loadingThreads->insert(d->sharedData->urlList[index], newThread);
         newThread->start();

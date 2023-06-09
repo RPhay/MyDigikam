@@ -6,7 +6,7 @@
  * Date        : 2010-02-26
  * Description : White Balance settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -176,7 +176,7 @@ WBSettings::WBSettings(QWidget* const parent)
       d      (new Private)
 {
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(parent);
     d->temperatureLabel     = new QLabel(QString::fromUtf8("<a href='https://en.wikipedia.org/wiki/Color_temperature'>%1</a> (K): ")
@@ -490,7 +490,7 @@ WBContainer WBSettings::defaultSettings() const
     return prm;
 }
 
-void WBSettings::readSettings(KConfigGroup& group)
+void WBSettings::readSettings(const KConfigGroup& group)
 {
     WBContainer prm;
     prm.black          = group.readEntry(d->configBlackInputEntry,       d->blackInput->defaultValue());

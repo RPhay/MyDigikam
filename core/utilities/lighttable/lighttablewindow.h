@@ -100,6 +100,9 @@ private Q_SLOTS:
     void slotLeftPreviewLoaded(bool);
     void slotRightPreviewLoaded(bool);
 
+    void slotLeftPreviewSelected(bool);
+    void slotRightPreviewSelected(bool);
+
     void slotLeftZoomFactorChanged(double);
     void slotRightZoomFactorChanged(double);
 

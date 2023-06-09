@@ -7,7 +7,7 @@
  * Description : a tool to export items to ImageShack web service
  *
  * SPDX-FileCopyrightText: 2012      by Dodon Victor <dodonvictor at gmail dot com>
- * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -61,7 +61,7 @@ ImageShackWidget::ImageShackWidget(QWidget* const parent,
     getUploadBox()->hide();
     getSizeBox()->hide();
 
-    updateLabels();
+    this->updateLabels();
 }
 
 ImageShackWidget::~ImageShackWidget()

@@ -185,10 +185,12 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
     d->imageInfoModel->setWatchFlags(d->imageFilterModel->suggestedWatchFlags());
     d->imageInfoModel->setThumbnailLoadThread(ThumbnailLoadThread::defaultIconViewThread());
 
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+
     d->imageFilterModel->setCategorizationMode(ItemSortSettings::NoCategories);
-    d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
-    d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
-    d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
+    d->imageFilterModel->setStringTypeNatural(settings->isStringTypeNatural());
+    d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)settings->getImageSortOrder());
+    d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)settings->getImageSorting());
     d->imageFilterModel->setAllGroupsOpen(true); // disable filtering out by group, see bug #308948
     d->imageFilterModel->sort(0);                // an initial sorting is necessary
 
@@ -208,7 +210,7 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
     connect(d->imageInfoModel, SIGNAL(rowsRemoved(QModelIndex,int,int)),
             this, SIGNAL(signalContentChanged()));
 
-    connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
+    connect(settings, SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
 }
 
@@ -475,7 +477,11 @@ void LightTableThumbBar::paintEvent(QPaintEvent* e)
 
 void LightTableThumbBar::slotSetupChanged()
 {
-    d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+
+    d->imageFilterModel->setStringTypeNatural(settings->isStringTypeNatural());
+    d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)settings->getImageSortOrder());
+    d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)settings->getImageSorting());
 }
 
 } // namespace Digikam

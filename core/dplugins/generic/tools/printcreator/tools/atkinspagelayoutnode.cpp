@@ -7,7 +7,7 @@
  * Description : Layouting photos on a page
  *
  * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -64,7 +64,7 @@ AtkinsPageLayoutNode::~AtkinsPageLayoutNode()
     delete m_rightChild;
 }
 
-AtkinsPageLayoutNode &AtkinsPageLayoutNode::operator=(const AtkinsPageLayoutNode& other)
+AtkinsPageLayoutNode& AtkinsPageLayoutNode::operator=(const AtkinsPageLayoutNode& other)
 {
     m_a          = other.m_a;
     m_e          = other.m_e;
@@ -77,7 +77,7 @@ AtkinsPageLayoutNode &AtkinsPageLayoutNode::operator=(const AtkinsPageLayoutNode
     return *this;
 }
 
-void AtkinsPageLayoutNode::takeAndSetChild(AtkinsPageLayoutNode* const oldChild,
+void AtkinsPageLayoutNode::takeAndSetChild(const AtkinsPageLayoutNode* const oldChild,
                                            AtkinsPageLayoutNode* const newChild)
 {
     if      (m_leftChild == oldChild)

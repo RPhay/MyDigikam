@@ -357,6 +357,12 @@ void LightTableWindow::setupConnections()
 
     // View connections ---------------------------------------------
 
+    connect(d->previewView, SIGNAL(signalLeftPreviewSelected(bool)),
+            this, SLOT(slotLeftPreviewSelected(bool)));
+
+    connect(d->previewView, SIGNAL(signalRightPreviewSelected(bool)),
+            this, SLOT(slotRightPreviewSelected(bool)));
+
     connect(d->previewView, SIGNAL(signalLeftPopupTagsView()),
             d->leftSideBar, SLOT(slotPopupTagsView()));
 

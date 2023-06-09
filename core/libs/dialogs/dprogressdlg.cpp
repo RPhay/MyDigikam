@@ -40,13 +40,13 @@ class Q_DECL_HIDDEN DProgressDlg::Private
 public:
 
     explicit Private()
-      : logo(nullptr),
-        title(nullptr),
-        label(nullptr),
-        actionPix(nullptr),
+      : logo       (nullptr),
+        title      (nullptr),
+        label      (nullptr),
+        actionPix  (nullptr),
         actionLabel(nullptr),
-        progress(nullptr),
-        buttons(nullptr)
+        progress   (nullptr),
+        buttons    (nullptr)
     {
     }
 
@@ -64,7 +64,7 @@ public:
 
 DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     setModal(true);
     setWindowTitle(caption);

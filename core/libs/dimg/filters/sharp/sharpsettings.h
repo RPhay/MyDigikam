@@ -6,7 +6,7 @@
  * Date        : 2010-02-10
  * Description : sharp settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -43,17 +43,17 @@ public:
 public:
 
     explicit SharpContainer()
-      : method(SimpleSharp),
-        ssRadius(0),
-        umRadius(1.0),
-        umAmount(1.0),
-        umThreshold(0.05),
-        umLumaOnly(false),
-        rfRadius(1.0),
+      : method       (SimpleSharp),
+        ssRadius     (0),
+        umRadius     (1.0),
+        umAmount     (1.0),
+        umThreshold  (0.05),
+        umLumaOnly   (false),
+        rfRadius     (1.0),
         rfCorrelation(0.5),
-        rfNoise(0.03),
-        rfGauss(0.0),
-        rfMatrix(5)
+        rfNoise      (0.03),
+        rfGauss      (0.0),
+        rfMatrix     (5)
     {
     };
 
@@ -99,7 +99,7 @@ public:
     SharpContainer settings()        const;
     void setSettings(const SharpContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     void loadSettings();

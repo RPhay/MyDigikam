@@ -23,10 +23,6 @@ void DigikamApp::setupView()
     {
         d->splashScreen->setMessage(i18nc("@info: setup", "Initializing Main View..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     d->view = new ItemIconView(this, d->modelCollection);
     setCentralWidget(d->view);
@@ -851,10 +847,6 @@ void DigikamApp::setupActions()
     {
         d->splashScreen->setMessage(i18nc("@info: setup", "Loading cameras..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     loadCameras();
 
@@ -1087,10 +1079,6 @@ void DigikamApp::populateThemes()
     {
         d->splashScreen->setMessage(i18nc("@info: setup", "Loading themes..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     ThemeManager::instance()->setThemeMenuAction(new QMenu(i18nc("@action: setup", "&Themes"), this));
     ThemeManager::instance()->registerThemeActions(this);
@@ -1105,10 +1093,6 @@ void DigikamApp::preloadWindows()
     if (d->splashScreen)
     {
         d->splashScreen->setMessage(i18nc("@info: setup", "Loading tools..."));
-    }
-    else
-    {
-        qApp->processEvents();
     }
 
     ImageWindow::imageWindow();

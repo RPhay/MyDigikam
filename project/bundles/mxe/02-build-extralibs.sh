@@ -2,7 +2,7 @@
 
 # Script to build extra libraries using MEX.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -73,6 +73,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKA_VERSION=$DK_KA_VERSION \
+                           -DKP_VERSION=$DK_KP_VERSION \
                            -DKF5_VERSION=$DK_KF5_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
@@ -111,6 +112,9 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble
 
 # Calendar support
 #${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
+
+# Breeze style support
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_breeze               -- -j$CPU_CORES
 
 # Marble install shared lib at wrong place.
 mv $MXE_INSTALL_PREFIX/libmarble* $MXE_INSTALL_PREFIX/bin || true

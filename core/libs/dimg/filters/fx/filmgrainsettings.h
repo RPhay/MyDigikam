@@ -6,7 +6,7 @@
  * Date        : 2010-03-10
  * Description : Film Grain settings view.
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -44,7 +44,7 @@ public:
     FilmGrainContainer settings()        const;
     void setSettings(const FilmGrainContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 Q_SIGNALS:

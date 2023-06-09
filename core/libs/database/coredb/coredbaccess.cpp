@@ -17,7 +17,6 @@
 
 // Qt includes
 
-#include <QEventLoop>
 #include <QMutex>
 #include <QMutexLocker>
 #include <QSqlDatabase>

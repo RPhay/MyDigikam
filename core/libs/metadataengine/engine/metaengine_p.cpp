@@ -937,6 +937,63 @@ done:
 #undef I
 #undef X
 
+bool MetaEngine::Private::decodeGPSCoordinate(const char* exifTagName, double* const coordinate) const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        std::string exifkey(exifTagName);
+        Exiv2::ExifKey gpsKey(exifkey);
+        Exiv2::ExifData exifData(exifMetadata());
+        Exiv2::ExifData::const_iterator it = exifData.findKey(gpsKey);
+
+        if ((it != exifData.end()) && ((*it).count() == 3))
+        {
+            double deg;
+            double min;
+            double sec;
+
+            deg = (double)((*it).toFloat(0));
+
+            if (((*it).toRational(0).second == 0) || (deg == -1.0))
+            {
+                return false;
+            }
+
+            *coordinate = deg;
+
+            min = (double)((*it).toFloat(1));
+
+            if (((*it).toRational(1).second == 0) || (min == -1.0))
+            {
+                return false;
+            }
+
+            *coordinate = *coordinate + min / 60.0;
+
+            sec = (double)((*it).toFloat(2));
+
+            if (sec != -1.0)
+            {
+                *coordinate = *coordinate + sec / 3600.0;
+            }
+
+            return true;
+        }
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        printExiv2ExceptionError(QLatin1String("Cannot get GPS tag with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine::TagsMap& tagsMap) const
 {
     int i = 0;

@@ -77,6 +77,7 @@ Applications/digiKam.org \
 # Other apps - non-MacOS binaries & libraries to be included with required dylibs
 OTHER_APPS="\
 lib/plugins/imageformats/*.so \
+lib/plugins/styles/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \

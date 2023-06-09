@@ -1,5 +1,5 @@
 /** \mainpage digiKam API reference page.
-    \author (c) 2001-2022 digiKam team.
+    \author (c) 2001-2023 digiKam team.
     \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and macOS.
     \image html logo-digikam.png
 
@@ -454,6 +454,10 @@ There are two configuration sections : the top level and the core.
 
   - \b ENABLE_MYSQLSUPPORT                   : Build digiKam with MySQL dabatase support (default=ON).
   - \b ENABLE_INTERNALMYSQL                  : Build digiKam with internal MySQL server executable (default=ON).
+
+ - Showfoto application options
+
+  - \b ENABLE_SHOWFOTO                       : Build Showfoto stand-alone image editor application (default=ON).
 
  - Developers only options:
 

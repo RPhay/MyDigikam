@@ -3,7 +3,7 @@
 # Script to build extra libraries using Linux host.
 # This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -49,6 +49,7 @@ rm -rf $BUILDING_DIR/* || true
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DEXTERNALS_BUILD_DIR=$BUILDING_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
+      -DKP_VERSION=$DK_KP_VERSION \
       -DKF5_VERSION=$DK_KF5_VERSION \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
@@ -69,6 +70,7 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcrash              -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcodecs             -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kauth               -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_waylandprotocols    -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kguiaddons          -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons      -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kitemviews          -- -j$CPU_CORES
@@ -105,6 +107,8 @@ fi
 # Calendar support
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
 
+# Breeze style support
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_breeze              -- -j$CPU_CORES
 
 # Platform Input Context Qt plugin
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_fcitx-qt            -- -j$CPU_CORES

@@ -59,13 +59,13 @@ DigikamApp::DigikamApp()
         d->splashScreen->show();
     }
 
+    // We need here QCoreApplication::processEvents().
+
+    qApp->processEvents();
+
     if (d->splashScreen)
     {
         d->splashScreen->setMessage(i18n("Initializing..."));
-    }
-    else
-    {
-        qApp->processEvents();
     }
 
     // Ensure creation
@@ -132,10 +132,6 @@ DigikamApp::DigikamApp()
     {
         d->splashScreen->setMessage(i18n("Load Plugins..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     DPluginLoader* const dpl = DPluginLoader::instance();
     dpl->init();
@@ -161,10 +157,6 @@ DigikamApp::DigikamApp()
     {
         d->splashScreen->setMessage(i18n("Checking ICC repository..."));
     }
-    else
-    {
-        qApp->processEvents();
-    }
 
     d->validIccPath = SetupICC::iccRepositoryIsValid();
 
@@ -176,10 +168,6 @@ DigikamApp::DigikamApp()
         if (d->splashScreen)
         {
             d->splashScreen->setMessage(i18n("Clean up Database..."));
-        }
-        else
-        {
-            qApp->processEvents();
         }
 
         QEventLoop loop;
@@ -198,10 +186,6 @@ DigikamApp::DigikamApp()
     if (d->splashScreen)
     {
         d->splashScreen->setMessage(i18n("Loading albums..."));
-    }
-    else
-    {
-        qApp->processEvents();
     }
 
     if (CoreDbAccess().backend()->isOpen())
@@ -337,10 +321,6 @@ void DigikamApp::show()
     if (d->splashScreen)
     {
         d->splashScreen->finish(this);
-    }
-    else
-    {
-        qApp->processEvents();
     }
 
     // Display application window.

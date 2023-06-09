@@ -188,23 +188,23 @@ public:
     QAction*                  navigateByPairAction;
     QAction*                  clearOnCloseAction;
 
-    DAdjustableLabel*         leftFileName;
-    DAdjustableLabel*         rightFileName;
+    DAdjustableLabel*         leftFileName;     ///< File name loaded in left preview and show on status bar.
+    DAdjustableLabel*         rightFileName;    ///< File name loaded in right preview and show on status bar.
 
     SidebarSplitter*          hSplitter;
     ThumbBarDock*             barViewDock;
 
-    LightTableThumbBar*       thumbView;
+    LightTableThumbBar*       thumbView;        ///< Top level view to host thumbar.
 
-    LightTableView*           previewView;
+    LightTableView*           previewView;      ///< Central view including left and right pannels.
 
-    DZoomBar*                 leftZoomBar;
-    DZoomBar*                 rightZoomBar;
+    DZoomBar*                 leftZoomBar;      ///< Zoom bar to control the left preview and show on status bar.
+    DZoomBar*                 rightZoomBar;     ///< Zoom bar to control the right preview and show on status bar.
 
     StatusProgressBar*        statusProgressBar;
 
-    ItemPropertiesSideBarDB*  leftSideBar;
-    ItemPropertiesSideBarDB*  rightSideBar;
+    ItemPropertiesSideBarDB*  leftSideBar;      ///< Side bar to display properties of the left preview and show on the left side..
+    ItemPropertiesSideBarDB*  rightSideBar;     ///< Side bar to display properties of the right preview and show on the right side..
 };
 
 } // namespace Digikam
