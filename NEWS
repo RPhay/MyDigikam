@@ -457,4 +457,5 @@ BUGFIXES:
 442 ==> 470669 - Displaying geotagged images.
 443 ==> 470735 - digiKam crashes when changing settings, or crating new album.
 444 ==> 470740 - digiKam crashes when trying to add new photos location.
-445 ==> 
+445 ==> 470823 - Custom Shortcuts do not persist over restart of application.
+446 ==> 
