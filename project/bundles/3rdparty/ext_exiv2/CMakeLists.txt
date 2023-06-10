@@ -54,10 +54,10 @@ if(MINGW)
 
         # To use official release tag
 #        GIT_TAG v0.28.0
-       GIT_TAG 0.27-maintenance
+        GIT_TAG 0.27-maintenance
 
-        PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
+#        PATCH_COMMAND git reset --hard &&
+#                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-mxe-mmap.patch
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
