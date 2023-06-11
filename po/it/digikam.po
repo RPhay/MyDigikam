@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 00:44+0000\n"
-"PO-Revision-Date: 2023-05-19 12:36+0200\n"
+"PO-Revision-Date: 2023-06-04 00:11+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -26510,7 +26510,7 @@ msgstr "Decodifica RAW"
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:48
 #, kde-format
 msgid "Import Raw Using Libraw"
-msgstr "Importa Raw mediante Libraw"
+msgstr "Importa RAW mediante Libraw"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:63
 #, kde-format
@@ -38454,11 +38454,10 @@ msgid ""
 msgstr ""
 "<title>Affina l'interpolazione</title><para>Questa impostazione è "
 "disponibile solo per poche opzioni di qualità:</"
-"para><para><list><item><emphasis strong='true'>DCB</emphasis>: attiva per "
-"migliorare il filtro dei colori interpolati.</item><item><emphasis "
-"strong='true'>VCD e AHD</emphasis>: attiva l'affinamento dell'interpolazione "
-"dei colori effettivi migliorata (EECI) per migliorare la nitidezza.</item></"
-"list></para>"
+"para><para><list><item><emphasis strong='true'>DCB</emphasis>: attiva il "
+"filtro dei colori interpolati migliorati.</item><item><emphasis "
+"strong='true'>VCD e AHD</emphasis>: attiva l'interpolazione dei colori "
+"effettivi migliorata (EECI) per migliorare la nitidezza.</item></list></para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:367
 #, kde-format
@@ -38551,7 +38550,7 @@ msgid ""
 "para>"
 msgstr ""
 "<para>Imposta qui la componente verde per impostare il livello di rimozione "
-"del colore magenta.</para>"
+"della dominante del colore magenta.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:409
 #, kde-format
@@ -38790,8 +38789,6 @@ msgctxt "@label:listbox"
 msgid "Noise reduction:"
 msgstr "Riduzione dei disturbi:"
 
-# ML XXX Controllare!
-# se si riferisce a "Sotto-campionatura cromatica:" ci vuole "Nessuna"
 #: core/libs/rawengine/drawdecoderwidget.cpp:549
 #, kde-format
 msgctxt "@item:inlistbox Noise Reduction"
@@ -38845,8 +38842,6 @@ msgctxt "@label:listbox"
 msgid "Camera Profile:"
 msgstr "Profilo della fotocamera:"
 
-# ML XXX Controllare!
-# se si riferisce a "Sotto-campionatura cromatica:" ci vuole "Nessuna"
 #: core/libs/rawengine/drawdecoderwidget.cpp:588
 #, kde-format
 msgctxt "@item:inlistbox Camera Profile"
@@ -61112,7 +61107,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:186
 #, kde-format
 msgid "Indicate exposure as pure color"
-msgstr "Indica l'esposizione: come colore puro"
+msgstr "Indica l'esposizione come colore puro"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:187
 #, kde-format
@@ -63224,12 +63219,12 @@ msgid ""
 msgstr ""
 "<p>Se un'immagine non ha un profilo di colore incorporato, digiKam chiederà "
 "quale spazio dei colori dovrà essere usato per interpretare l'immagine e a "
-"quale spazio di colore dovrà essere trasformata per la modifica.</p>"
+"quale spazio dei colori dovrà essere trasformata per la modifica.</p>"
 
 #: core/utilities/setup/setupicc.cpp:269
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr "Presumi che stia usando lo spazio di colore sRGB (standard Internet)"
+msgstr "Presumi che stia usando lo spazio dei colori sRGB (standard Internet)"
 
 #. i18n("<p></p>"));
 #.
@@ -63249,7 +63244,7 @@ msgstr "Presumi che stia usando lo spazio dei colori di lavoro"
 #, kde-format
 msgid "Convert it from default input color space to working space"
 msgstr ""
-"Convertilo dallo spazio di colore di input predefinito allo spazio di lavoro"
+"Convertilo dallo spazio dei colori di input predefinito allo spazio di lavoro"
 
 #: core/utilities/setup/setupicc.cpp:313
 #, kde-format
@@ -63278,7 +63273,7 @@ msgstr "Convertilo dal profilo di input predefinito"
 #: core/utilities/setup/setupicc.cpp:357
 #, kde-format
 msgid "Color Managed View"
-msgstr "Vista di gestione del colore"
+msgstr "Vista di gestione dei colori"
 
 #: core/utilities/setup/setupicc.cpp:362
 #, kde-format
