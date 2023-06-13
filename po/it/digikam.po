@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 00:44+0000\n"
-"PO-Revision-Date: 2023-06-04 00:11+0200\n"
+"PO-Revision-Date: 2023-06-11 16:58+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -42526,8 +42526,8 @@ msgstr ""
 "colori nell'immagine, se necessario a spese della tonalità e della "
 "luminosità.</p><p>L'implementazione di questo obiettivo rimane un po' "
 "problematica, e l'ICC sta ancora lavorando sui metodi per ottenere gli "
-"effetti desiderati.</p><p>Questo intento è adatto soprattutto per la grafica "
-"professionale, come i grafici, dove è più importante che i colori siano "
+"effetti desiderati.</p><p>Quest'obiettivo è adatto soprattutto alla grafica "
+"professionale, tipo i grafici, dove è più importante che i colori siano "
 "vividi e in netto contrasto tra di loro.</p></li></ul>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
@@ -60471,7 +60471,7 @@ msgstr "Estensioni dei file ignorate:"
 #: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
 msgid "Import Filters"
-msgstr "Importa filtri"
+msgstr "Filtri importazione"
 
 #: core/utilities/setup/camera/setupcamera.cpp:466
 #, kde-format
