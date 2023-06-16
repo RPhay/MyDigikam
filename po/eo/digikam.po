@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 00:44+0000\n"
-"PO-Revision-Date: 2023-05-29 21:25+0100\n"
+"PO-Revision-Date: 2023-06-15 21:48+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -13796,7 +13796,7 @@ msgstr "MacBinary II"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:88
 #, kde-format
 msgid "IPTC Unstructured Character Oriented File Format"
-msgstr "IPTC Nestrukturita Karaktero-Orientita Dosierformato"
+msgstr "IPTC Nestrukturita Signo-Orientita Dosierformato"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
@@ -18114,7 +18114,7 @@ msgstr "Trakti la bildon kiel ununuran vorton en cirklo."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr "Trakti la bildon kiel ununuran karakteron."
+msgstr "Trakti la bildon kiel ununuran signon."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
@@ -18168,7 +18168,7 @@ msgstr "Defaŭlte, surbaze de tio, kio estas disponebla."
 msgid ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
-msgstr "Tesseract estas optika karaktera rekonmotoro por diversaj operaciumoj."
+msgstr "Tesseract estas optika signa rekonmotoro por diversaj operaciumoj."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
 #, kde-format
@@ -18190,7 +18190,7 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
-"Ĉi tiu ilo uzas la %1 malfermfontan motoron por realigi Optikajn Karakterajn "
+"Ĉi tiu ilo uzas la %1 malfermfontan motoron por realigi Optikajn Signajn "
 "Rekonojn. Tesseract-programo kaj la dezirataj lingvomoduloj devas esti "
 "instalitaj en via sistemo."
 
@@ -51298,8 +51298,7 @@ msgid ""
 "File extension, prepend with a '.' character, to modify the real file "
 "extension"
 msgstr ""
-"Dosiera etendo, antaŭmeti per '.' karaktero, por modifi la veran dosier-"
-"etendon"
+"Dosiera etendo, antaŭmeti per '.' signo, por modifi la veran dosier-etendon"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:48
 #, kde-format
@@ -55088,7 +55087,7 @@ msgid ""
 "disk card readers.\n"
 "\n"
 msgstr ""
-"Ŝoforo \"Muntita Fotilo\" por USB/IEEE1394 amaskonservejaj fotiloj kaj Flash-"
+"Pelilo \"Muntita Fotilo\" por USB/IEEE1394 amaskonservejaj fotiloj kaj Flash-"
 "diskaj kartlegiloj.\n"
 "\n"
 
@@ -55179,7 +55178,7 @@ msgstr ""
 "La pelilo \"Muntita Fotilo\" estas simpla interfaco al fotildisko muntita "
 "loke en via sistemo.\n"
 "\n"
-"Ĝi ne uzas libgphoto2-ŝoforojn.\n"
+"Ĝi ne uzas libgphoto2-pelilojn.\n"
 "\n"
 "Por raporti ajnajn problemojn kun ĉi tiu pelilo, bonvolu kontakti la digiKam-"
 "teamon ĉe: \n"
@@ -55220,7 +55219,7 @@ msgstr "Manlibro pri Aparato"
 #, kde-format
 msgctxt "@title"
 msgid "About Driver"
-msgstr "Pri Ŝoforo"
+msgstr "Pri Pelilo"
 
 #: core/utilities/import/dialogs/cameramessagebox.cpp:139
 #, kde-format
