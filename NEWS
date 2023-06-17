@@ -458,4 +458,5 @@ BUGFIXES:
 443 ==> 470735 - digiKam crashes when changing settings, or crating new album.
 444 ==> 470740 - digiKam crashes when trying to add new photos location.
 445 ==> 470823 - Custom Shortcuts do not persist over restart of application.
-446 ==> 
+446 ==> 432761 - Reread of XMP metadata leaves tag hierarchy scrambled.
+447 ==> 
