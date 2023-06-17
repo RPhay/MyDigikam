@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 00:44+0000\n"
-"PO-Revision-Date: 2023-06-11 22:00+0300\n"
+"PO-Revision-Date: 2023-06-16 12:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1783,13 +1783,13 @@ msgstr "Seçili ögeyi, öntanımlı olarak atanmış uygulama ile aç."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Image Editor"
-msgstr "Görsel Düzenleyici"
+msgstr "Görsel Düzenleyicisi"
 
 #: core/app/main/digikamapp_setup.cpp:359
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
-msgstr "Görsel düzenleyiciyi aç."
+msgstr "Görsel düzenleyicisini açın."
 
 #: core/app/main/digikamapp_setup.cpp:366
 #, kde-format
@@ -7755,7 +7755,7 @@ msgstr "Renk dengesini ayarla."
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, görüntüden renk düzeylerini ayarlayabilir."
+"Bu Görsel Düzenleyicisi aracı, görselden renk düzeylerini ayarlayabilir."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
 #, kde-format
@@ -7836,7 +7836,7 @@ msgstr ""
 msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, renkleri görüntüden otomatik olarak "
+"Bu Görsel Düzenleyicisi aracı, renkleri görselden kendiliğinden "
 "ayarlayabilir."
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
@@ -7880,7 +7880,7 @@ msgstr "Siyah ve Beyaz"
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
-msgstr "Bu Görüntü Düzenleyici aracı, görüntüyü siyah beyaza dönüştürebilir."
+msgstr "Bu Görsel Düzenleyicisi aracı, görseli siyah beyaza dönüştürebilir."
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
 #, kde-format
@@ -7898,7 +7898,7 @@ msgstr "Kanal Karıştırıcı"
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, görüntüdeki renk kanallarını karıştırabilir."
+"Bu Görsel Düzenleyicisi aracı, görseldeki renk kanallarını karıştırabilir."
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
 #, kde-format
@@ -7910,7 +7910,8 @@ msgstr "Kanal Karıştırıcı..."
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
-msgstr "Bu Görüntü Düzenleyici aracı, görüntüden renk dengesini ayarlayabilir."
+msgstr ""
+"Bu Görsel Düzenleyicisi aracı, görseldeki renk dengesini ayarlayabilir."
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
 #, kde-format
@@ -7929,7 +7930,7 @@ msgstr "8 bite dönüştür"
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, görüntü renk derinliğini 8 bite dönüştürebilir."
+"Bu Görsel Düzenleyicisi aracı, görsel renk derinliğini 8 bite dönüştürebilir."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
 #, kde-format
@@ -7959,7 +7960,7 @@ msgstr ""
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, görüntü renk derinliğini 16 bite "
+"Bu Görsel Düzenleyicisi aracı, görsel renk derinliğini 16 bite "
 "dönüştürebilir."
 
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
@@ -8096,8 +8097,7 @@ msgstr "Renkli negatif filmi taklit etmek için bir araç"
 msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ""
-"Bu görüntü düzenleyici aracı, görüntüden renkli negatif filmi taklit "
-"edebilir."
+"Bu Görsel Düzenleyicisi aracı, görselden renkli negatif filme öykünebilir."
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
 #, kde-format
@@ -8116,7 +8116,7 @@ msgctxt "@info"
 msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
 msgstr ""
-"Bu görsel düzenleyicisi, görsellerdeki Ton/Doygunluk/Açıklık değerlerini "
+"Bu Görsel Düzenleyicisi aracı, görseldeki Ton/Doygunluk/Açıklık değerlerini "
 "düzenleyebilir."
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
@@ -8217,7 +8217,7 @@ msgstr "Beyaz Dengesi"
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, beyaz dengesini görüntüden ayarlayabilir."
+"Bu Görsel Düzenleyicisi aracı, görseldeki beyaz dengesini ayarlayabilir."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
 #, kde-format
@@ -8242,7 +8242,7 @@ msgstr "Görüntünün etrafına kenarlık eklemek için bir araç"
 msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
 msgstr ""
-"Bu Görüntü Düzenleyici aracı, görüntünün etrafına dekoratif kenar "
+"Bu Görsel Düzenleyicisi aracı, görselin çevresine dekoratif kenar "
 "ekleyebilir."
 
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
@@ -9738,8 +9738,8 @@ msgid ""
 "example.</p>"
 msgstr ""
 "Bu, Yağmur Damlası etkisi önizlemesidir.<p>Not: Düzenleyiciden daha önce bir "
-"alan seçimi yaptıysanız filtre tarafından etki kaldırılacaktır. Örnek olarak "
-"bu metodu insan yüzündeki yağmur damlası etkisini kaldırmak için "
+"alan seçimi yaptıysanız efekt, süzgeç tarafından kaldırılır. Örnek olarak bu "
+"yöntemi insan yüzündeki yağmur damlası etkisini kaldırmak için "
 "kullanabilirsiniz.</p>"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:102
@@ -11313,11 +11313,10 @@ msgstr "\"%1\" dosyası kaydedilemedi"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
-msgstr "Coğrafi Konum Düzenleyici"
+msgstr "Coğrafi Konum Düzenleyicisi"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #, kde-format
@@ -11552,11 +11551,10 @@ msgid "Details changed"
 msgstr "Değişen ayrıntılar"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
-msgstr "Coğrafi Konum Düzenleyici"
+msgstr "Coğrafi Konum Düzenle"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
 #, fuzzy, kde-format
@@ -12128,12 +12126,10 @@ msgstr[0] "1 resim '%2' konumuna taşındı"
 msgstr[1] "%1 resim '%2' konumuna taşındı"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Metadata Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
-msgstr "Metaveri Düzenleyicisi"
+msgstr "Üst Veri Düzenleyicisi"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:113
 #, kde-format
@@ -13329,15 +13325,10 @@ msgid "Capture Device Settings"
 msgstr "Sunucu Ayarlarını Uzaktan Yönet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
-msgstr ""
-"<qt>Düzenleyici Pencere Ayarları<br/><i>Düzenleyici pencere ayarlarını "
-"özelleştirin</i></qt>"
+msgstr "Kamera tarafından kullanılan kayıt koşulları"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
 #, fuzzy, kde-format
@@ -15185,11 +15176,10 @@ msgstr ""
 "sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Metadata Editor"
+#, kde-format
 msgctxt "@title"
 msgid "Metadata Edit"
-msgstr "Metaveri Düzenleyicisi"
+msgstr "Üst Veri Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
 #, fuzzy, kde-format
@@ -23561,11 +23551,10 @@ msgid "Import from Remote Storage"
 msgstr "Uzak Depolamadan İçe Aktar"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
-msgstr "Resim düzenleyiciyi başlat"
+msgstr "İçe Aktarmayı Başlat"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
 #, fuzzy, kde-format
@@ -24535,11 +24524,9 @@ msgid "Export to &Imageshack..."
 msgstr "&ImageShack'e Dışa Aktar..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "When closing the editor"
+#, kde-format
 msgid "Authenticating the user"
-msgstr "Düzenleyiciyi kapatırken"
+msgstr "Kullanıcı kimliği doğrulanıyor"
 
 #: core/dplugins/generic/webservices/imageshack/imageshacktalker.cpp:250
 #, kde-format
@@ -27387,7 +27374,7 @@ msgstr "İçeriye Aktar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:321
 #, kde-format
 msgid "Import image to editor using current settings."
-msgstr "Şimdiki ayarları kullanarak görüntüyü düzenleyiciye aktar."
+msgstr "Geçerli ayarları kullanarak görseli düzenleyiciye içe aktar."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:323
 #, kde-format
@@ -27398,7 +27385,8 @@ msgstr "Öntanımlıyı Kullan"
 #, kde-format
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
-"Bu görüntüyü düzenleyiciye yüklerken genel Raw deşifreleme ayarlarını kullan."
+"Bu görseli düzenleyicide yüklemek için genel RAW kod çözme ayarlarını "
+"kullanın."
 
 #: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
@@ -35846,19 +35834,15 @@ msgid "Filter by file type"
 msgstr "Dosya türüne göre filtrele"
 
 #: core/libs/filters/mimefilter.cpp:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Select the file types (MIME types) that you want shown. Note: \"Raster "
-#| "Files\" are formats from raster graphics editors, such as Photoshop, The "
-#| "Gimp, Krita, etc."
+#, kde-format
 msgid ""
 "Select the file types (MIME types) that you want shown. Note: \"Raster "
 "Graphics\" are file formats from raster graphics editors, such as Photoshop, "
 "The Gimp, Krita, etc."
 msgstr ""
 "Gösterilmesini istediğiniz dosya türlerini (MIME türleri) seçin. Not: "
-"\"Raster Dosyaları\", Photoshop, The Gimp, Krita gibi raster grafik "
-"düzenleyicilerinin formatlarıdır."
+"\"Raster Grafikler\", Photoshop, Gimp, Krita vb. gibi raster grafik "
+"düzenleyicilerden alınan dosya biçimleridir."
 
 #: core/libs/filters/ratingfilter.cpp:66
 #, kde-format
@@ -39289,12 +39273,12 @@ msgid ""
 "and a 99th-percentile white point. This mode is faster than 16-bit decoding."
 "</para>"
 msgstr ""
-"<para>Etkinleştirilirse tüm RAW dosyaları 16-bit renk derinliğinde doğrusal "
-"bir gama eğrisi kullanılarak çözülecektir. Düzenleyicide karanlık resimlerin "
-"görüntülenmesini önlemek için, bu kipte Renk Yönetimi'ni kullanmanız "
-"önerilir.</para><para>Devre dışı bırakıldığında, tüm RAW dosyaları, BT.709 "
-"gama eğrisi ve yüzde yüzde-99 beyaz nokta ile 8-bit renk derinliğinde "
-"çözülür. Bu kip 16-bit kod çözmeden daha hızlıdır.</para>"
+"<para>Etkinleştirilirse tüm RAW dosyalarının kodu doğrusal bir gama eğrisi "
+"kullanılarak 16 bit renk derinliğinde çözülür. Düzenleyicide karanlık resim "
+"oluşturmayı önlemek için bu kipte Renk Yönetimi'nin kullanılması önerilir.</"
+"para><para>Devre dışı bırakılırsa tüm RAW dosyalarının kodu BT.709 gama "
+"eğrisi ve 99. yüzdelik beyaz nokta ile 8 bit renk derinliğinde çözülür. Bu "
+"kip, 16 bit kod çözmeden daha hızlıdır.</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:243
 #, kde-format
@@ -40324,8 +40308,7 @@ msgstr "Eklentileri İçe/Dışa aktar"
 #: core/libs/settings/applicationsettings_miscs.cpp:449
 #, kde-format
 msgid "Tools (editor, panorama, stack blending, calendar, external program)"
-msgstr ""
-"Araçlar (düzenleyici, panorama, yığın harmanlama, takvim, harici program)"
+msgstr "Araçlar (düzenleyici, panorama, yığın harmanlama, takvim, dış program)"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:461
 #, kde-format
@@ -40368,8 +40351,8 @@ msgid ""
 "Several tools including the editor, panorama, stack blending, calendar, html "
 "gallery and opening with external programs"
 msgstr ""
-"Düzenleyici, panaroma, yığın karıştırma, takvim, html galerisi ve harici "
-"programlarla açmayı da içeren bazı araçlar"
+"Düzenleyici, panorama, yığın harmanlama, takvim, html galerisi ve dış "
+"programlarla açma gibi çeşitli araçlar"
 
 #: core/libs/settings/applicationsettings_p.cpp:269
 #, kde-format
@@ -41622,7 +41605,7 @@ msgstr "Şablon: "
 #: core/libs/template/templateselector.cpp:68
 #, kde-format
 msgid "Open metadata template editor"
-msgstr "Metaveri şablon düzenleyicisini aç"
+msgstr "Üst veri şablon düzenleyicisini aç"
 
 #: core/libs/template/templateselector.cpp:69
 #, kde-format
@@ -43075,11 +43058,9 @@ msgid "Buffer frames"
 msgstr "H.Gökhan SARI, Osman Tosun"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "Timeout"
-msgstr "Resim düzenleyiciyi aç."
+msgstr "Zaman Aşımı"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:83
 #, fuzzy, kde-format
@@ -43243,11 +43224,9 @@ msgid "interrupted by user"
 msgstr "İptal edildi..."
 
 #: core/libs/video/qtav/ffmpeg/AVDemuxer.cpp:1910
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "timeout"
-msgstr "Resim düzenleyiciyi aç."
+msgstr "zaman aşımı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:160
 #, fuzzy, kde-format
@@ -43262,11 +43241,9 @@ msgid "Open error"
 msgstr "Dışarıya aktarma hatası"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Open the image editor."
+#, kde-format
 msgid "Open timed out"
-msgstr "Resim düzenleyiciyi aç."
+msgstr "Açma zaman aşımına uğradı"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:181
 #, kde-format
@@ -51384,8 +51361,8 @@ msgstr "Düzenleyici Penceresi"
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
-"<qt>Düzenleyici Pencere Ayarları<br/><i>Düzenleyici pencere ayarlarını "
-"özelleştirin</i></qt>"
+"<qt>Düzenleyici Penceresi Ayarları<br/><i>Düzenleyici penceresi davranışını "
+"özelleştir</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
@@ -51918,11 +51895,10 @@ msgid "Generic"
 msgstr "Genel"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:74
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title:tab editor plugins list"
 msgid "Image Editor"
-msgstr "Resim düzenleyici"
+msgstr "Görsel Düzenleyicisi"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:80
 #, fuzzy, kde-format
@@ -52815,9 +52791,9 @@ msgid ""
 "<p>Add a modifier to a renaming option. To activate this button, place the "
 "cursor behind a renaming option or an already assigned modifier.</p>"
 msgstr ""
-"<p>Yeniden adlandırma seçeneğine düzenleyici ekle. Bu düğmeyi etkinleştirmek "
-"için, imleci yeniden adlandırma seçeneğinin ya da daha önceden atanmış "
-"düzenleyicinin arkasına yerleştirin.</p>"
+"<p>Yeniden adlandırma seçeneğine değiştirici ekleyin. Bu düğmeyi "
+"etkinleştirmek için imleci bir yeniden adlandırma seçeneğinin veya zaten "
+"atanmış bir değiştiricinin arkasına getirin.</p>"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:369
 #, kde-format
@@ -52838,7 +52814,7 @@ msgstr ""
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
 msgid "Modifiers can be applied to every renaming option."
-msgstr "Düzenleyiciler her yeniden adlandırma seçeneğine uygulanır."
+msgstr "Değiştiriciler her yeniden adlandırma seçeneğine uygulanabilir."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:52
 #, kde-format
@@ -54221,12 +54197,12 @@ msgid ""
 "quickly, it is often better to use the light table: images can be displayed "
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
-"<qt><p><i>Not:</i> önizleme kullanmak düzenleyici kullanmaya göre her zaman "
-"daha hızlıdır, özellikle bir çekim serisini kontrol ediyorsanız. Fakat, "
-"resimleri önizleme modundayken düzeltemez ya da değiştiremezsiniz. Eğer ki "
-"resimleri hızlı bir şekilde karşılaştırmak istiyorsanız ışık masasını "
-"kullanmak genellikle daha iyidir: resimler yan yana görüntülenebilir ve "
-"senkronize yakınlaştırma ve sürükleme kullanılabilir.</p></qt>"
+"<qt><p><i>Not:</i> Özellikle bir dizi çekimi denetlerken, önizleme kullanmak "
+"her zaman düzenleyiciyi kullanmaktan daha hızlıdır. Ancak, önizleme kipinde "
+"görseli değiştiremez veya düzeltemezsiniz. Görselleri tez karşılaştırmak "
+"istiyorsanız, genellikle ışık tablosunu kullanmanın daha iyi olduğunu "
+"unutmayın: görseller yan yana görüntülenebilir ve eşzamanlı yakınlaştırma ve "
+"kaydırma yapılabilir.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
 #, kde-format
@@ -54276,8 +54252,8 @@ msgstr "<b>Ham Dosya Ele Alınmasını Yapılandır</b>"
 #, kde-format
 msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr ""
-"<qt><p>Ham resimleri düzenleyicide açmak isterseniz buradan ayarlayın:</p></"
-"qt>"
+"<qt><p>RAW görselleri düzenleyicide nasıl açmak istediğinizi buradan "
+"ayarlayın:</p></qt>"
 
 #: core/utilities/firstrun/rawpage.cpp:74
 #, kde-format
@@ -57146,12 +57122,12 @@ msgstr "Birlikte Aç..."
 #: core/utilities/imageeditor/main/imagewindow.cpp:185
 #, kde-format
 msgid "Image Editor - %1"
-msgstr "Görüntü Düzenleyici - %1"
+msgstr "Görsel Düzenleyicisi - %1"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:189
 #, kde-format
 msgid "Image Editor"
-msgstr "Resim düzenleyici"
+msgstr "Görsel Düzenleyicisi"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:359
 #, kde-format
@@ -61665,10 +61641,9 @@ msgid "Show Preview"
 msgstr "Önizleme göster"
 
 #: core/utilities/setup/album/setupalbumview.cpp:219
-#, fuzzy, kde-format
-#| msgid "Start image editor"
+#, kde-format
 msgid "Start Image Editor"
-msgstr "Resim düzenleyiciyi başlat"
+msgstr "Görsel Düzenleyicisini Başlat"
 
 #: core/utilities/setup/album/setupalbumview.cpp:220
 #, fuzzy, kde-format
@@ -62546,7 +62521,7 @@ msgstr "Gömülü önizlemeyi göster"
 #: core/utilities/setup/camera/setupcamera.cpp:506
 #, kde-format
 msgid "Start image editor"
-msgstr "Resim düzenleyiciyi başlat"
+msgstr "Görsel düzenleyicisini başlat"
 
 #: core/utilities/setup/camera/setupcamera.cpp:511
 #, kde-format
@@ -63097,8 +63072,8 @@ msgstr "D&üşük pozlama rengi: "
 #, kde-format
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
-"Görüntü düzenleyicisi içinde az pozlanmış pikselleri göstermek için "
-"kullanılacak rengi özelleştir."
+"Az pozlanmış pikselleri belirlemek için görsel düzenleyicisinde kullanılan "
+"rengi özelleştirin."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:162
 #, kde-format
@@ -63123,8 +63098,8 @@ msgstr "Yüksek p&ozlama rengi: "
 #, kde-format
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
-"Görüntü düzenleyicisi içinde çok pozlanmış pikselleri göstermek için "
-"kullanılacak rengi özelleştir."
+"Aşırı pozlanmış pikselleri belirlemek için görsel düzenleyicisinde "
+"kullanılan rengi özelleştirin."
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:177
 #, kde-format
@@ -63218,7 +63193,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
-msgstr "Ham dosyaları resim düzenleyicide aç"
+msgstr "RAW dosyalarını görsel düzenleyicisinde aç"
 
 #: core/utilities/setup/editor/setupraw.cpp:122
 #, kde-format
@@ -65085,24 +65060,20 @@ msgstr ""
 "i></qt>"
 
 #: core/utilities/setup/setup.cpp:208
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
-msgstr "Resim düzenleyici"
+msgstr "Görsel Düzenleyicisi"
 
 #: core/utilities/setup/setup.cpp:209
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"<qt>Resim Düzenleyicisi Ayarları<br/><i>Resim düzenleyicisi ayarlarını "
-"özelleştirin</i></qt>"
+"Görsel Düzenleyicisi Ayarları\n"
+"Görsel düzenleyicisi ayarlarını özelleştirin"
 
 #: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
@@ -65152,17 +65123,15 @@ msgid "Image Quality Sorter"
 msgstr "Resim Kalitesi Sıralayıcısı"
 
 #: core/utilities/setup/setup.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Image Editor Settings<br/><i>Customize the image editor settings</i></"
-#| "qt>"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"<qt>Resim Düzenleyicisi Ayarları<br/><i>Resim düzenleyicisi ayarlarını "
-"özelleştirin</i></qt>"
+"Görsel Kalitesi Sıralayıcısı Ayarları\n"
+"Kaliteye göre görsel triyajını gerçekleştirmek için öntanımlı ayarları "
+"özelleştirin"
 
 #: core/utilities/setup/setup.cpp:228
 #, fuzzy, kde-format
@@ -65480,12 +65449,12 @@ msgid ""
 "Editor window. <i>Warning</i>: This can slow down rendering of the image, "
 "depending on the speed of your computer.</p>"
 msgstr ""
-"<p>Resimlerinizi Görüntü Düzenleyici penceresinde monitörünüze uyarlanmış "
-"bir renk düzeltmesi ile göstermek için <b>Monitör Renk Profili</b>nizi "
-"kullanmak istiyorsanız bu seçeneği açın. Bu seçeneği, Düzenleyici "
-"Penceresinden istediğiniz zaman değiştirebilirsiniz.<i>Uyarı</i>: Bu, "
-"bilgisayarınızın hızına bağlı olarak görüntünün render olarak işlenmesini "
-"yavaşlatabilir.</p>"
+"<p>Resimlerinizi Görsel Düzenleyicisi penceresinde monitörünüze uyarlanmış "
+"bir renk düzeltmesiyle göstermek üzere <b>Monitör Renk Profilinizi</b> "
+"kullanmak istiyorsanız bu seçeneği açın. Bu seçeneği istediğiniz zaman "
+"Düzenleyici penceresinden değiştirebilirsiniz. <i>Uyarı</i>: Bu, "
+"bilgisayarınızın hızına bağlı olarak görselin oluşturulmasını yavaşlatabilir."
+"</p>"
 
 #: core/utilities/setup/setupicc.cpp:382
 #, kde-format
@@ -65764,7 +65733,7 @@ msgstr "Genel"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Image Editor"
-msgstr "Görüntü Düzenleyici"
+msgstr "Görsel Düzenleyicisi"
 
 #: core/utilities/setup/setupplugins.cpp:85
 #, kde-format
