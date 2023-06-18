@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-08 00:44+0000\n"
-"PO-Revision-Date: 2023-05-22 14:00\n"
+"PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1712,31 +1712,31 @@ msgstr "打开图像编辑器。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
-msgstr "看片台"
+msgstr "多图对比"
 
 #: core/app/main/digikamapp_setup.cpp:372
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
-msgstr "放到看片台"
+msgstr "添加到多图对比"
 
 #: core/app/main/digikamapp_setup.cpp:373
 #, kde-format
 msgctxt "@info: setup"
 msgid "Place the selected items on the light table thumbbar."
-msgstr "将所选项目放到看片台的缩略图栏。"
+msgstr "将所选项目添加到多图对比工具的缩略图栏。"
 
 #: core/app/main/digikamapp_setup.cpp:379
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
-msgstr "添加到看片台"
+msgstr "添加到多图对比"
 
 #: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
-msgstr "将所选项目添加到看片台的缩略图栏。"
+msgstr "将所选项目添加到多图对比工具的缩略图栏。"
 
 #: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
@@ -37485,7 +37485,7 @@ msgstr "记住此操作的选择"
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
-msgstr "看片台"
+msgstr "多图对比"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:437
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
@@ -37519,7 +37519,7 @@ msgstr "与元数据、标签、评分、标签、地理位置和旋转有关的
 #: core/libs/settings/applicationsettings_miscs.cpp:464
 #, kde-format
 msgid "Adding items to the Light Table"
-msgstr "将图片添加到看片台"
+msgstr "添加项目到多图对比"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:467
 #, kde-format
@@ -42447,7 +42447,7 @@ msgstr "可扩展元数据平台 (XMP)"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:451
 #, kde-format
 msgid "ZIP Archive Information"
-msgstr "ZIP 压缩包信息"
+msgstr "ZIP 压缩文件信息"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewitem.cpp:92
 #: core/libs/widgets/metadata/exiv2/metadatalistviewitem.cpp:67
@@ -50567,8 +50567,9 @@ msgid ""
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
 "<qt><p><b>提示：</b>预览视图的打开速度比图像编辑器要快得多，尤其是在浏览一系"
-"列照片时，但它无法更改或者修复图像。如果您想要快速比较不同的图像，不妨使用看"
-"片台。在看片台中你可以把图像并列显示，而且缩放和移动还可以同步进行。</p></qt>"
+"列图像时，但它无法更改或者修复图像。如果您想要快速比较不同的图像，不妨使用多"
+"图对比工具。在多图对比工具中您可以把图像并列显示，而且缩放和移动还可以同步进"
+"行。</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
 #, kde-format
@@ -50580,7 +50581,7 @@ msgstr "<b>配置预览功能</b>"
 msgid ""
 "<qt><p>Set here how images are displayed in preview mode and on the light "
 "table:</p></qt>"
-msgstr "<qt><p>请设置预览模式和看片台的图像显示方式：</p></qt>"
+msgstr "<qt><p>请设置预览模式和多图对比工具的图像显示方式：</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
@@ -54990,7 +54991,7 @@ msgstr "拖放图像到此处"
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
-msgstr[0] "看片台上有 %1 个项目"
+msgstr[0] "多图对比工具中有 %1 个项目"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
 #, kde-format
@@ -55038,12 +55039,12 @@ msgstr "使用默认的应用程序打开该项目。"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
 #, kde-format
 msgid "Remove item from Light Table"
-msgstr "移除看片台中的项目"
+msgstr "移除多图对比工具中的项目"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
 #, kde-format
 msgid "Remove all items from Light Table"
-msgstr "移除看片台中的所有项目"
+msgstr "移除多图对比工具中的所有项目"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:85
 #, kde-format
@@ -55084,12 +55085,12 @@ msgstr "关闭时清除图像"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:121
 #, kde-format
 msgid "Clear light table when it is closed"
-msgstr "关闭看片台时清除图像"
+msgstr "关闭多图对比工具时清除图像"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:122
 #, kde-format
 msgid "Remove all images from the light table when it is closed"
-msgstr "关闭看片台时移除看片台上的所有图像"
+msgstr "关闭多图对比工具时移除其中的所有图像"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:143
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:183
@@ -57364,7 +57365,7 @@ msgstr "启动图像编辑器"
 #: core/utilities/setup/album/setupalbumview.cpp:220
 #, kde-format
 msgid "Show on Light Table"
-msgstr "显示到看片台"
+msgstr "显示到多图对比"
 
 #: core/utilities/setup/album/setupalbumview.cpp:221
 #, kde-format
@@ -60378,7 +60379,7 @@ msgstr "色彩管理设置"
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
-msgstr "看片台"
+msgstr "多图对比工具"
 
 #: core/utilities/setup/setup.cpp:219
 #, kde-format
@@ -60386,7 +60387,7 @@ msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare images"
-msgstr "看片台设置"
+msgstr "多图对比工具设置"
 
 #: core/utilities/setup/setup.cpp:223
 #, kde-format
@@ -60896,7 +60897,8 @@ msgid ""
 "Set this option to automatically synchronize zooming and panning between "
 "left and right panels if the images have the same size."
 msgstr ""
-"勾选此项后，看片台的左右预览视图将在两边图像大小相同时同步进行缩放和平移。"
+"勾选此项后，多图对比工具的左右预览视图将在两边图像大小相同时同步进行缩放和平"
+"移。"
 
 #: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
@@ -60913,7 +60915,7 @@ msgstr "勾选此项后，在缩略图栏里选中项目时将自动将它加载
 #: core/utilities/setup/setuplighttable.cpp:101
 #, kde-format
 msgid "Clear the light table on close"
-msgstr "关闭看片台时清除图像"
+msgstr "关闭多图对比工具时清除图像"
 
 #: core/utilities/setup/setuplighttable.cpp:102
 #, kde-format
@@ -60921,8 +60923,8 @@ msgid ""
 "Set this option to remove all images from the light table when you close it, "
 "or unset it to preserve the images currently on the light table."
 msgstr ""
-"勾选此项后，看片台在关闭时将清除所有图像。不勾选此项则会在关闭后保留看片台的"
-"当前图像。"
+"勾选此项后，多图对比工具在关闭时将清除所有图像。不勾选此项则会在关闭后保留多"
+"图对比工具中的当前图像。"
 
 #: core/utilities/setup/setupplugins.cpp:73
 #, kde-format
