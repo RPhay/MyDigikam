@@ -111,35 +111,40 @@ mkdir -p $BUNDLEDIR/translations
 # Data files ---------------------------------------------------------------------------------
 
 echo -e "\n---------- Marble data"
-cp -r $MXE_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Generics data"
-cp -r $MXE_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/digikam                              $BUNDLEDIR/data             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLEDIR/data             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data             2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/digikam                              $BUNDLEDIR/data                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/showfoto                             $BUNDLEDIR/data                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/solid                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
 
 # Copy digiKam hi-colors PNG icons-set to the bundle
 
-cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data             2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/breeze*                                                                2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/*.qrc                                                                  2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/icons                                $BUNDLEDIR/data                 2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/breeze*                                                                    2>/dev/null
+rm -fr $BUNDLEDIR/data/icons/*.qrc                                                                      2>/dev/null
 
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/                 2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/breeze.rcc       2>/dev/null
-cp    $BUILDDIR/icon-rcc/breeze-icons-dark.rcc                          $BUNDLEDIR/breeze-dark.rcc  2>/dev/null
+cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/breeze.rcc           2>/dev/null
+cp    $BUILDDIR/icon-rcc/breeze-icons-dark.rcc                          $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $MXE_INSTALL_PREFIX/qt5/translations/qt*                          $BUNDLEDIR/translations     2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data             2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/qt5/translations/qt*                          $BUNDLEDIR/translations         2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
-cp -r $MXE_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc              2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share            2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                  2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                2>/dev/null
+
+# See bug 471058
+echo -e "\n---------- Freedesktop"
+mkdir -p $BUNDLEDIR/share/mime/packages/                                                                2>/dev/null
+cp -r /usr/share/mime/packages/freedesktop.org.xml                      $BUNDLEDIR/share/mime/packages  2>/dev/null
 
 echo -e "\n---------- Copy Git Revisions Manifest"
 
@@ -155,32 +160,32 @@ done
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt5 plugins"
-cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/qt5/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- Marble plugins"
-cp -r $MXE_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins          2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
 
 echo -e "\n---------- digiKam and KF5 plugins"
-cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
-cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- DrMinGw run-time"
-cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/                 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/                 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/dbgcore.dll                               $BUNDLEDIR/                 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/                 2>/dev/null
-cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/                 2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/exchndl.dll                               $BUNDLEDIR/                     2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/mgwhelp.dll                               $BUNDLEDIR/                     2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/dbgcore.dll                               $BUNDLEDIR/                     2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.dll                                $BUNDLEDIR/                     2>/dev/null
+cp -r $MXE_INSTALL_PREFIX/bin/symsrv.yes                                $BUNDLEDIR/                     2>/dev/null
 
 # Do not include this file from DrMinGW as it require extra devel dll from Microsoft at run-time.
-#cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/                2>/dev/null
+#cp -r $MXE_INSTALL_PREFIX/bin/dbghelp.dll                               $BUNDLEDIR/                    2>/dev/null
 
 echo -e "\n---------- libgphoto2 drivers"
-mkdir $BUNDLEDIR/libgphoto2                                                                         2>/dev/null
-mkdir $BUNDLEDIR/libgphoto2_port                                                                    2>/dev/null
-cp $MXE_INSTALL_PREFIX/lib/libgphoto2/*/*.dll                           $BUNDLEDIR/libgphoto2       2>/dev/null
-cp $MXE_INSTALL_PREFIX/lib/libgphoto2_port/*/*.dll                      $BUNDLEDIR/libgphoto2_port  2>/dev/null
+mkdir $BUNDLEDIR/libgphoto2                                                                             2>/dev/null
+mkdir $BUNDLEDIR/libgphoto2_port                                                                        2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2/*/*.dll                           $BUNDLEDIR/libgphoto2           2>/dev/null
+cp $MXE_INSTALL_PREFIX/lib/libgphoto2_port/*/*.dll                      $BUNDLEDIR/libgphoto2_port      2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
