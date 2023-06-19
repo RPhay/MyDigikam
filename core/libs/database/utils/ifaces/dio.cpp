@@ -35,7 +35,6 @@
 #include "iteminfo.h"
 #include "diofinders.h"
 #include "albummanager.h"
-#include "tagscache.h"
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "coredbtransaction.h"
@@ -43,6 +42,7 @@
 #include "dmetadata.h"
 #include "metaenginesettings.h"
 #include "scancontroller.h"
+#include "itemscanner.h"
 #include "thumbsdb.h"
 #include "thumbsdbaccess.h"
 #include "iojobsmanager.h"
@@ -596,12 +596,7 @@ void DIO::slotOneProccessed(const QUrl& url)
             // Mark the images as obsolete and remove them
             // from their album and from the grouped
 
-            int originalVersionTag = TagsCache::instance()->
-                getOrCreateInternalTag(InternalTagName::originalVersion());
-            int needTaggingTag     = TagsCache::instance()->
-                getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
-
-            PAlbum* const album    = data->srcAlbum();
+            PAlbum* const album = data->srcAlbum();
 
             if (album)
             {
@@ -622,26 +617,35 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 Q_FOREACH (const qlonglong& removeId, imagesToRemove)
                 {
-                    const QList<qlonglong>& imageIds = access.db()->
-                          getImagesRelatedFrom(removeId, DatabaseRelation::DerivedFrom);
+                    ItemInfo info(removeId);
 
-                    Q_FOREACH (const qlonglong& id, imageIds)
+                    if (info.isNull())
                     {
-                        access.db()->removeItemTag(id, originalVersionTag);
-                        access.db()->addItemTag(id, needTaggingTag);
+                        continue;
                     }
 
-                    access.db()->removeAllImageRelationsFrom(removeId,
-                                                             DatabaseRelation::Grouped);
-                }
+                    const QList<qlonglong>& imageIdsFrom = access.db()->
+                          getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
 
-                if (operation == IOJobData::Trash)
-                {
-                    access.db()->removeItems(imagesToRemove, albumsToDelete);
-                }
-                else
-                {
-                    access.db()->removeItemsPermanently(imagesToRemove, albumsToDelete);
+                    access.db()->removeAllImageRelationsFrom(info.id(),
+                                                             DatabaseRelation::Grouped);
+
+                    if (operation == IOJobData::Trash)
+                    {
+                        access.db()->removeItems(QList<qlonglong>() << info.id(),
+                                                 QList<int>() << info.albumId());
+                    }
+                    else
+                    {
+                        access.db()->removeItemsPermanently(QList<qlonglong>() << info.id(),
+                                                            QList<int>() << info.albumId());
+                    }
+
+                    Q_FOREACH (const qlonglong& id, imageIdsFrom)
+                    {
+                        ItemScanner::resolveImageHistory(id);
+                        ItemScanner::tagItemHistoryGraph(id);
+                    }
                 }
 
                 Q_FOREACH (int albumId, albumsToDelete)
@@ -663,14 +667,9 @@ void DIO::slotOneProccessed(const QUrl& url)
                 if (!info.isNull())
                 {
                     CoreDbAccess access;
-                    const QList<qlonglong>& imageIds = access.db()->
-                          getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
 
-                    Q_FOREACH (const qlonglong& id, imageIds)
-                    {
-                        access.db()->removeItemTag(id, originalVersionTag);
-                        access.db()->addItemTag(id, needTaggingTag);
-                    }
+                    const QList<qlonglong>& imageIdsFrom = access.db()->
+                          getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
 
                     access.db()->removeAllImageRelationsFrom(info.id(),
                                                              DatabaseRelation::Grouped);
@@ -684,6 +683,12 @@ void DIO::slotOneProccessed(const QUrl& url)
                     {
                         access.db()->removeItemsPermanently(QList<qlonglong>() << info.id(),
                                                             QList<int>() << info.albumId());
+                    }
+
+                    Q_FOREACH (const qlonglong& id, imageIdsFrom)
+                    {
+                        ItemScanner::resolveImageHistory(id);
+                        ItemScanner::tagItemHistoryGraph(id);
                     }
                 }
             }
@@ -724,7 +729,13 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         case IOJobData::Restore:
         {
-            ScanController::instance()->scannedInfo(url.toLocalFile());
+            ItemInfo info = ScanController::instance()->scannedInfo(url.toLocalFile());
+
+            if (!info.isNull())
+            {
+                ItemScanner::resolveImageHistory(info.id());
+                ItemScanner::tagItemHistoryGraph(info.id());
+            }
 
             break;
         }

@@ -32,6 +32,7 @@
 
 #include "digikam_debug.h"
 #include "tagscache.h"
+#include "itemscanner.h"
 #include "albummanager.h"
 #include "facescansettings.h"
 #include "applicationsettings.h"
@@ -327,7 +328,6 @@ void AlbumSelectionTreeView::slotRepairHiddenItems()
         return;
     }
 
-    int needTaggingTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
     int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
 
     Q_FOREACH (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
@@ -344,8 +344,8 @@ void AlbumSelectionTreeView::slotRepairHiddenItems()
 
         if (!info.hasDerivedImages() && info.tagIds().contains(originalVersionTag))
         {
-            info.removeTag(originalVersionTag);
-            info.setTag(needTaggingTag);
+            ItemScanner::resolveImageHistory(info.id());
+            ItemScanner::tagItemHistoryGraph(info.id());
         }
     }
 }
