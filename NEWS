@@ -460,4 +460,6 @@ BUGFIXES:
 445 ==> 470823 - Custom Shortcuts do not persist over restart of application.
 446 ==> 432761 - Reread of XMP metadata leaves tag hierarchy scrambled.
 447 ==> 457605 - On large collections digikam often freezes for seconds with 100% CPU while paging through images.
-448 ==> 
+448 ==> 452765 - Option "Use all cores" for face detection only uses one core.
+449 ==> 448843 - Multiple Cores Not Used.
+450 ==> 
