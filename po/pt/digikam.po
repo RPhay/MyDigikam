@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-08 00:44+0000\n"
+"POT-Creation-Date: 2023-06-20 00:46+0000\n"
 "PO-Revision-Date: 2023-05-16 09:57+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -2968,7 +2968,7 @@ msgstr "Mostrar no Ecrã Completo"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:265
+#: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3355,7 +3355,7 @@ msgid "Selection"
 msgstr "Selecção"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:818
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26701,7 +26701,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversão de RAW do UFRaw"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Lixo"
@@ -27313,7 +27313,7 @@ msgid "Context menu"
 msgstr "Menu de contexto"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:822
+#: core/libs/database/utils/ifaces/dio.cpp:833
 #, kde-format
 msgid "Empty Trash"
 msgstr "Esvaziar o Lixo"
@@ -27450,7 +27450,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Álbum das Legendas"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -27458,51 +27458,51 @@ msgstr "Álbum das Legendas"
 msgid "Expand Selected Nodes"
 msgstr "Expandir os Nós Seleccionados"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Expandir Todos os Álbuns"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Fechar os Seleccionados Recursivamente"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:224
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Fechar Todos os Álbuns"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:227
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Procurar os Duplicados..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:230
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Analisar as Caras"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:233
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Reparar os itens escondidos"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:301
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Analisar as Caras"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:303
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Os sub-álbuns também deverão ser digitalizados?"
@@ -28754,37 +28754,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ignorar Automaticamente"
 
-#: core/libs/database/utils/ifaces/dio.cpp:776
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, kde-format
 msgid "Copy Album"
 msgstr "Copiar o Álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:781
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, kde-format
 msgid "Copy Images"
 msgstr "Copiar as Imagens"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:798
 #, kde-format
 msgid "Copy Files"
 msgstr "Copiar os Ficheiros"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:803
 #, kde-format
 msgid "Move Album"
 msgstr "Mover o Álbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:808
 #, kde-format
 msgid "Move Images"
 msgstr "Mover as Imagens"
 
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:813
 #, kde-format
 msgid "Move Files"
 msgstr "Mover os Ficheiros"
 
-#: core/libs/database/utils/ifaces/dio.cpp:817
+#: core/libs/database/utils/ifaces/dio.cpp:828
 #, kde-format
 msgid "Restore Trash"
 msgstr "Repor o Lixo"

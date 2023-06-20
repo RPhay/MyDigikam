@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-08 00:44+0000\n"
+"POT-Creation-Date: 2023-06-20 00:46+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -3076,7 +3076,7 @@ msgstr "Scoir ón mhód lánscáileáin"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:265
+#: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3461,7 +3461,7 @@ msgid "Selection"
 msgstr "<p>Roghnúchán"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:818
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26873,7 +26873,7 @@ msgid "UFRaw Raw Conversion"
 msgstr ""
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27423,7 +27423,7 @@ msgid "Context menu"
 msgstr "Roghchlár comhthéacs"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:822
+#: core/libs/database/utils/ifaces/dio.cpp:833
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27574,7 +27574,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Albam Nua"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -27582,55 +27582,55 @@ msgstr "Albam Nua"
 msgid "Expand Selected Nodes"
 msgstr "Ná Roghnaigh"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Expand all Albums"
 msgstr "De Réir Albaim"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Grúpáil na hÍomhánna Roghnaithe Anseo"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:224
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse all Albums"
 msgstr "De Réir Albaim"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:227
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr ""
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:230
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "Scan le haghaidh Íomhánna Nua"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:233
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "&Sórtáil Íomhánna"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
 msgid "Refresh"
 msgstr "Athnuaigh"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:301
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Scan le haghaidh Íomhánna Nua"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:303
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -28804,43 +28804,43 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/database/utils/ifaces/dio.cpp:776
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "De Réir Albaim"
 
-#: core/libs/database/utils/ifaces/dio.cpp:781
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "&Grúpáil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:798
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&Cóipeáil Anseo"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:803
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgid "Move Album"
 msgstr "Albam Nua"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:808
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Sábháil Íomhánna"
 
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:813
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Comhaid Scannáin"
 
-#: core/libs/database/utils/ifaces/dio.cpp:817
+#: core/libs/database/utils/ifaces/dio.cpp:828
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "Athchóiriú"

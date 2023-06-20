@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-08 00:44+0000\n"
+"POT-Creation-Date: 2023-06-20 00:46+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2822,7 +2822,7 @@ msgstr "पूरा पर्दा मोडमा उपकरणपट्ट
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:265
+#: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -3188,7 +3188,7 @@ msgid "Selection"
 msgstr "चयन"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:818
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, fuzzy, kde-format
@@ -25467,7 +25467,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "कलरस्पेस"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -26007,7 +26007,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:822
+#: core/libs/database/utils/ifaces/dio.cpp:833
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -26149,7 +26149,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "नयाँ एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:732
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -26157,55 +26157,55 @@ msgstr "नयाँ एल्बम"
 msgid "Expand Selected Nodes"
 msgstr "कुनै पनि चयन नगर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Expand all Albums"
 msgstr "मेरो एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:224
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Albums"
 msgstr "मेरो एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:227
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, fuzzy, kde-format
 msgid "Find Duplicates..."
 msgstr "प्रकृति"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:230
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:233
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
 msgid "Refresh"
 msgstr "ताजा पार्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:301
+#: core/libs/album/treeview/albumselectiontreeview.cpp:302
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:302
+#: core/libs/album/treeview/albumselectiontreeview.cpp:303
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -27321,42 +27321,42 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "फाइल अधिलेखन गर्नुहुन्छ ?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:776
+#: core/libs/database/utils/ifaces/dio.cpp:787
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "मेरो एल्बम"
 
-#: core/libs/database/utils/ifaces/dio.cpp:781
+#: core/libs/database/utils/ifaces/dio.cpp:792
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "छवि थप्नुहोस्..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:798
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "यहाँ प्रतिलिपि बनाउनुहोस्"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:803
 #, fuzzy, kde-format
 msgid "Move Album"
 msgstr "नयाँ एल्बम..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:808
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:813
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "चलचित्र फाइल"
 
-#: core/libs/database/utils/ifaces/dio.cpp:817
+#: core/libs/database/utils/ifaces/dio.cpp:828
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "स्याचुरेसन"
