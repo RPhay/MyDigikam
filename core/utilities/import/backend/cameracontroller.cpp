@@ -795,15 +795,44 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             if (!script.isEmpty())
             {
-                qCDebug(DIGIKAM_IMPORTUI_LOG) << "Got a script, processing: " << script;
+                qCDebug(DIGIKAM_IMPORTUI_LOG) << "Got a script, processing:" << script;
 
-                QFileInfo fileInfo(tempFile);
-                QString s = script;
+                QString s;
+
+                if (QFileInfo::exists(script))
+                {
+                    QFile sFile(script);
+
+                    if (!sFile.open(QIODevice::ReadOnly))
+                    {
+                        sendLogMsg(xi18n("Failed to open script for <filename>%1</filename>", file),
+                                         DHistoryView::ErrorEntry,  folder, file);
+                    }
+                    else
+                    {
+                        s = QString::fromUtf8(sFile.readAll());
+                    }
+                }
+
+                if (s.isEmpty())
+                {
+                    s = script;
+                }
+
+                if      (s.endsWith(QLatin1String("\r\n")))
+                {
+                    s.chop(2);
+                }
+                else if (s.endsWith(QLatin1String("\n")))
+                {
+                    s.chop(1);
+                }
 
                 if (s.indexOf(QLatin1Char('%')) > -1)
                 {
                     // %filename must be replaced before %file
 
+                    QFileInfo fileInfo(tempFile);
                     s.replace(QLatin1String("%orgfilename"), file,                Qt::CaseSensitive);
                     s.replace(QLatin1String("%filename"),    fileInfo.fileName(), Qt::CaseSensitive);
                     s.replace(QLatin1String("%orgpath"),     folder,              Qt::CaseSensitive);
@@ -812,25 +841,7 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 }
                 else
                 {
-                    s.append(QLatin1String(" \"") + dest + QLatin1String("\""));
-                }
-
-                // Parse script name
-
-                QTextStream stream(s.toStdString().c_str());
-                QString scriptName;
-                stream >> scriptName;
-                qCDebug(DIGIKAM_IMPORTUI_LOG) << "Script name: " << scriptName;
-
-                // Parse arguments
-
-                QStringList arguments;
-
-                while (!stream.atEnd())
-                {
-                    QString str;
-                    stream >> str;
-                    arguments << str;
+                    s.append(QLatin1String(" \"") + tempFile + QLatin1String("\""));
                 }
 
                 // Start the process
@@ -838,8 +849,34 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 QProcess process;
                 process.setProcessChannelMode(QProcess::SeparateChannels);
                 process.setProcessEnvironment(adjustedEnvironmentForAppImage());
-                process.start(scriptName, QStringList() << arguments);
 
+#ifdef Q_OS_WIN
+
+                QString dir                   = QDir::temp().path();
+                SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/ImportScript-XXXXXX.cmd"));
+                temp->setAutoRemove(false);
+                temp->open();
+                QString scriptPath            = temp->safeFilePath();
+
+                // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
+
+                delete temp;
+
+                QFile tempFile(scriptPath);
+
+                if (tempFile.open(QIODevice::WriteOnly))
+                {
+                    tempFile.write(s.toUtf8());
+                    tempFile.close();
+                }
+
+                process.start(QLatin1String("cmd.exe"), QStringList() << QLatin1String("/C") << scriptPath);
+
+#else
+
+                process.start(QLatin1String("/bin/bash"), QStringList() << QLatin1String("-c") << s);
+
+#endif
                 if (!process.waitForFinished(60000))
                 {
                     sendLogMsg(xi18n("Timeout from script for <filename>%1</filename>", file),
@@ -855,6 +892,13 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "stdout" << process.readAllStandardOutput();
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "stderr" << process.readAllStandardError();
+
+#ifdef Q_OS_WIN
+
+                tempFile.remove();
+
+#endif
+
             }
 
             Q_EMIT signalDownloaded(folder, file, tempFile, CamItemInfo::DownloadedYes);
