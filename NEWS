@@ -462,4 +462,5 @@ BUGFIXES:
 447 ==> 457605 - On large collections digikam often freezes for seconds with 100% CPU while paging through images.
 448 ==> 452765 - Option "Use all cores" for face detection only uses one core.
 449 ==> 448843 - Multiple Cores Not Used.
-450 ==> 
+450 ==> 471240 - Search for camera model EOS 300D does not find all images.
+451 ==> 

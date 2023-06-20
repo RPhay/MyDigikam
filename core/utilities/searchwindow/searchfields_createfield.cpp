@@ -358,13 +358,14 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("Camera"), i18n("The model of the camera"));
 
         QStringList model = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Model);
+        QString wildcard  = QLatin1String("*%1*");
         QMap<QString, QString> modelMap;
 
         for (int i = 0 ; i < model.count() ; ++i)
         {
             QString shortName = model[i];
             ItemPropertiesTab::shortenedModelInfo(shortName);
-            modelMap.insert(shortName, model[i]);
+            modelMap.insert(shortName, wildcard.arg(model[i]));
         }
 
         model.clear();
