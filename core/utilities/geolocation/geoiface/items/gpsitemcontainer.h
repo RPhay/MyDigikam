@@ -189,6 +189,7 @@ protected:
 
     QUrl                   m_url;
     QDateTime              m_dateTime;
+    QStringList            m_databaseTags;
 
     bool                   m_dirty;
     GPSDataContainer       m_gpsData;

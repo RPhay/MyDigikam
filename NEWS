@@ -463,4 +463,5 @@ BUGFIXES:
 448 ==> 452765 - Option "Use all cores" for face detection only uses one core.
 449 ==> 448843 - Multiple Cores Not Used.
 450 ==> 471240 - Search for camera model EOS 300D does not find all images.
-451 ==> 
+451 ==> 471176 - Setting multiple tags on multiple images does not work.
+452 ==> 

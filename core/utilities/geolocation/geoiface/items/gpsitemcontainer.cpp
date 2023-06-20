@@ -824,7 +824,7 @@ QString GPSItemContainer::saveChanges()
 
     // first try to write the information to the image file
 
-    bool success1 = true;
+    bool success = true;
     QScopedPointer<DMetadata> meta(getMetadataForFile());
 
     if (!meta)
@@ -832,7 +832,7 @@ QString GPSItemContainer::saveChanges()
         // TODO: more verbosity!
 
         returnString = i18n("Failed to open file.");
-        success1     = false;
+        success      = false;
     }
     else
     {
@@ -840,85 +840,97 @@ QString GPSItemContainer::saveChanges()
         {
             if (p.shouldWriteAltitude)
             {
-                success1 = meta->setGPSInfo(p.altitude, p.latitude, p.longitude);
+                success = meta->setGPSInfo(p.altitude, p.latitude, p.longitude);
             }
             else
             {
-                success1 = meta->setGPSInfo(nullptr,
-                                            p.latitude, p.longitude);
+                success = meta->setGPSInfo(nullptr,
+                                           p.latitude, p.longitude);
             }
 
             // write all other GPS information here too
 
-            if (success1 && m_gpsData.hasSpeed())
+            if (success && m_gpsData.hasSpeed())
             {
-                success1 = setExifXmpTagDataVariant(meta.data(),
-                                                    "Exif.GPSInfo.GPSSpeedRef",
-                                                    "Xmp.exif.GPSSpeedRef",
-                                                    QVariant(QLatin1String("K")));
+                success = setExifXmpTagDataVariant(meta.data(),
+                                                   "Exif.GPSInfo.GPSSpeedRef",
+                                                   "Xmp.exif.GPSSpeedRef",
+                                                   QVariant(QLatin1String("K")));
 
-                if (success1)
+                if (success)
                 {
                     const qreal speedInMetersPerSecond   = m_gpsData.getSpeed();
 
                     // km/h = 0.001 * m / ( s * 1/(60*60) ) = 3.6 * m/s
 
                     const qreal speedInKilometersPerHour = 3.6 * speedInMetersPerSecond;
-                    success1                             = setExifXmpTagDataVariant(meta.data(), "Exif.GPSInfo.GPSSpeed", "Xmp.exif.GPSSpeed", QVariant(speedInKilometersPerHour));
+                    success                              = setExifXmpTagDataVariant(meta.data(),
+                                                                                    "Exif.GPSInfo.GPSSpeed",
+                                                                                    "Xmp.exif.GPSSpeed",
+                                                                                    QVariant(speedInKilometersPerHour));
                 }
             }
 
-            if (success1 && m_gpsData.hasNSatellites())
+            if (success && m_gpsData.hasNSatellites())
             {
                 /**
                  * @todo According to the EXIF 2.2 spec, GPSSatellites is a free form field which can either hold only the
                  * number of satellites or more details about each satellite used. For now, we just write
                  * the number of satellites. Are we using the correct format for the number of satellites here?
                  */
-                success1 = setExifXmpTagDataVariant(meta.data(),
-                                                    "Exif.GPSInfo.GPSSatellites", "Xmp.exif.GPSSatellites",
-                                                    QVariant(QString::number(m_gpsData.getNSatellites())));
+                success = setExifXmpTagDataVariant(meta.data(),
+                                                   "Exif.GPSInfo.GPSSatellites", "Xmp.exif.GPSSatellites",
+                                                   QVariant(QString::number(m_gpsData.getNSatellites())));
             }
 
-            if (success1 && m_gpsData.hasFixType())
+            if (success && m_gpsData.hasFixType())
             {
-                success1 = setExifXmpTagDataVariant(meta.data(),
-                                                    "Exif.GPSInfo.GPSMeasureMode", "Xmp.exif.GPSMeasureMode",
-                                                    QVariant(QString::number(m_gpsData.getFixType())));
+                success = setExifXmpTagDataVariant(meta.data(),
+                                                   "Exif.GPSInfo.GPSMeasureMode", "Xmp.exif.GPSMeasureMode",
+                                                   QVariant(QString::number(m_gpsData.getFixType())));
             }
 
             // write DOP
 
-            if (success1 && m_gpsData.hasDop())
+            if (success && m_gpsData.hasDop())
             {
-                success1 = setExifXmpTagDataVariant(meta.data(),
-                                                    "Exif.GPSInfo.GPSDOP",
-                                                    "Xmp.exif.GPSDOP",
-                                                    QVariant(m_gpsData.getDop()));
+                success = setExifXmpTagDataVariant(meta.data(),
+                                                   "Exif.GPSInfo.GPSDOP",
+                                                   "Xmp.exif.GPSDOP",
+                                                   QVariant(m_gpsData.getDop()));
             }
 
 
-            if (!success1)
+            if (!success)
             {
                 returnString = i18n("Failed to add GPS info to image.");
             }
         }
 
-        if (m_saveGPS && p.shouldRemoveCoordinates)
+        if (success && m_saveGPS && p.shouldRemoveCoordinates)
         {
             // TODO: remove only the altitude if requested
 
-            success1 = meta->removeGPSInfo();
+            success = meta->removeGPSInfo();
 
-            if (!success1)
+            if (!success)
             {
                 returnString = i18n("Failed to remove GPS info from image");
             }
         }
 
-        if (m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
+        if (success && m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
         {
-            if (m_writeXmpTags)
+            if      (!m_databaseTags.isEmpty())
+            {
+                success = meta->setItemTagsPath(m_databaseTags);
+
+                if (!success)
+                {
+                    returnString = i18n("Failed to save tags to file.");
+                }
+            }
+            else if (m_writeXmpTags)
             {
                 QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
 
@@ -937,28 +949,30 @@ QString GPSItemContainer::saveChanges()
 
                     tag.remove(0, 1);
 
-                    if (!tagSeq.contains(tag))
+                    if (!tag.isEmpty() && !tagSeq.contains(tag))
                     {
                         tagSeq.append(tag);
                     }
                 }
 
-                bool success2 = meta->setXmpTagStringSeq("Xmp.digiKam.TagsList", tagSeq);
+                success = meta->setXmpTagStringSeq("Xmp.digiKam.TagsList", tagSeq);
 
-                if (!success2)
+                if (!success)
                 {
                     returnString = i18n("Failed to save tags to file.");
                 }
-
-                success2 = meta->setXmpTagStringSeq("Xmp.dc.subject", tagSeq);
-
-                if (!success2)
+                else
                 {
-                    returnString = i18n("Failed to save tags to file.");
+                    success = meta->setXmpTagStringSeq("Xmp.dc.subject", tagSeq);
+
+                    if (!success)
+                    {
+                        returnString = i18n("Failed to save tags to file.");
+                    }
                 }
             }
 
-            if (m_writeMetaLoc)
+            if (success && m_writeMetaLoc)
             {
                 IptcCoreLocationInfo locationInfo;
 
@@ -973,9 +987,9 @@ QString GPSItemContainer::saveChanges()
                     }
                 }
 
-                bool success3 = meta->setIptcCoreLocation(locationInfo);
+                success = meta->setIptcCoreLocation(locationInfo);
 
-                if (!success3)
+                if (!success)
                 {
                     returnString = i18n("Failed to save tags to file.");
                 }
@@ -983,14 +997,14 @@ QString GPSItemContainer::saveChanges()
         }
     }
 
-    if (success1)
+    if (success)
     {
         if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc)))
         {
-            success1 = meta->save(m_url.toLocalFile());
+            success = meta->save(m_url.toLocalFile());
         }
 
-        if (!success1)
+        if (!success)
         {
             returnString = i18n("Unable to save changes to file");
         }

@@ -98,6 +98,8 @@ QString ItemGPS::saveChanges()
 
     pos.apply();
 
+    m_databaseTags.clear();
+
     if (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
     {
         QMap<QString, QVariant> attributes;
@@ -125,14 +127,21 @@ QString ItemGPS::saveChanges()
                 setLocationInfo(currentTagPath[j], locationInfo);
             }
 
-            tagsPath.append(singleTagPath);
+            if (!singleTagPath.isEmpty())
+            {
+                tagsPath << singleTagPath;
+            }
         }
 
         if (m_writeXmpTags)
         {
             QList<int> tagIds = TagsCache::instance()->getOrCreateTags(tagsPath);
             CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
-        }
+
+            m_databaseTags    = TagsCache::instance()->tagPaths(m_info.tagIds(),
+                                                                TagsCache::NoLeadingSlash,
+                                                                TagsCache::HiddenTagsPolicy::NoHiddenTags);
+       }
 
         if (m_writeMetaLoc)
         {
