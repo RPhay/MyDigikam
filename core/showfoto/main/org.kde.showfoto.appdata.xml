@@ -56,7 +56,7 @@
   <summary xml:lang="eu">Irudi editorea</summary>
   <summary xml:lang="fi">Kuvamuokkain</summary>
   <summary xml:lang="fr">Éditeur d'image</summary>
-  <summary xml:lang="gl">Editor de imaxes</summary>
+  <summary xml:lang="gl">Editor de imaxes.</summary>
   <summary xml:lang="hi">छवि संपादक</summary>
   <summary xml:lang="hu">Képszerkesztő</summary>
   <summary xml:lang="id">Editor Citra</summary>
@@ -140,7 +140,7 @@
       <caption xml:lang="eu">Showfoto-rekin argazkia editatzea</caption>
       <caption xml:lang="fi">Valokuvan muokkaus Showfotossa</caption>
       <caption xml:lang="fr">Modification de photo dans Showfoto</caption>
-      <caption xml:lang="gl">Editando unha foto en Showfoto</caption>
+      <caption xml:lang="gl">Editando unha foto en Showfoto.</caption>
       <caption xml:lang="hi">शोफोटो में फोटो का संपादन</caption>
       <caption xml:lang="hu">Fénykép szerkesztése Showfotoval</caption>
       <caption xml:lang="id">Pengeditan foto di Showfoto</caption>
