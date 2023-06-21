@@ -819,15 +819,6 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     s = script;
                 }
 
-                if      (s.endsWith(QLatin1String("\r\n")))
-                {
-                    s.chop(2);
-                }
-                else if (s.endsWith(QLatin1String("\n")))
-                {
-                    s.chop(1);
-                }
-
                 if (s.indexOf(QLatin1Char('%')) > -1)
                 {
                     // %filename must be replaced before %file
@@ -841,6 +832,15 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                 }
                 else
                 {
+                    if      (s.endsWith(QLatin1String("\r\n")))
+                    {
+                        s.chop(2);
+                    }
+                    else if (s.endsWith(QLatin1String("\n")))
+                    {
+                        s.chop(1);
+                    }
+
                     s.append(QLatin1String(" \"") + tempFile + QLatin1String("\""));
                 }
 
