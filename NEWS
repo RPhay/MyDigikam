@@ -465,5 +465,5 @@ BUGFIXES:
 450 ==> 471240 - Search for camera model EOS 300D does not find all images.
 451 ==> 471176 - Setting multiple tags on multiple images does not work.
 452 ==> 471267 - Scripts fail to run with AppImage 8.0.0, version 7.10.0 works.
-453 ==> 469961 - Drag and drop features missing: downstream problem under Ubuntu.
+453 ==> 470686 - Draging photos from thumbnail view to folder doesn't work.
 454 ==> 
