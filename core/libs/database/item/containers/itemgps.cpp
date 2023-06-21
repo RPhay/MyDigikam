@@ -140,8 +140,8 @@ QString ItemGPS::saveChanges()
 
             m_databaseTags    = TagsCache::instance()->tagPaths(m_info.tagIds(),
                                                                 TagsCache::NoLeadingSlash,
-                                                                TagsCache::HiddenTagsPolicy::NoHiddenTags);
-       }
+                                                                TagsCache::NoHiddenTags);
+        }
 
         if (m_writeMetaLoc)
         {
