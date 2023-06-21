@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 00:46+0000\n"
+"POT-Creation-Date: 2023-06-21 00:44+0000\n"
 "PO-Revision-Date: 2023-03-21 14:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3679,7 +3679,7 @@ msgstr "Tegund hljóðrásar"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:942
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3687,7 +3687,7 @@ msgstr "Hljóðkóðun"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Duration"
 msgstr "Tímalengd"
@@ -8030,7 +8030,7 @@ msgstr "Litastýring er óvirk..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
-#: core/utilities/searchwindow/searchfields_createfield.cpp:540
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
 #, kde-format
 msgid "White Balance"
 msgstr "Hvítvægi"
@@ -19302,7 +19302,7 @@ msgstr ""
 "pappírsstærðir og mismunandi framsetning er í boði fyrir vinnslu skránna.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:719
 #, kde-format
 msgid "Author"
 msgstr "Höfundur"
@@ -26274,9 +26274,9 @@ msgid "Reset curve to linear"
 msgstr "Endurstilla ferilinn sem línulegan"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:286
-#: core/utilities/searchwindow/searchfields_createfield.cpp:460
-#: core/utilities/searchwindow/searchfields_createfield.cpp:481
-#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:482
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Exposure"
 msgstr "Lýsing"
@@ -51101,14 +51101,14 @@ msgid "Lens of the camera"
 msgstr "Tegund linsu"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:63
-#: core/utilities/searchwindow/searchfields_createfield.cpp:402
+#: core/utilities/searchwindow/searchfields_createfield.cpp:403
 #, kde-format
 msgid "Aperture"
 msgstr "Ljósop"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:64
-#: core/utilities/searchwindow/searchfields_createfield.cpp:422
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, kde-format
 msgid "Focal length"
 msgstr "Brennivídd"
@@ -51119,7 +51119,7 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Brennivídd linsunnar (jafngildi 35mm)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:460
+#: core/utilities/searchwindow/searchfields_createfield.cpp:461
 #, kde-format
 msgid "Exposure time"
 msgstr "Lýsingartími"
@@ -51135,7 +51135,7 @@ msgid "Exposure mode"
 msgstr "Lýsingarhamur"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:69
-#: core/utilities/searchwindow/searchfields_createfield.cpp:504
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "Sensitivity"
 msgstr "Næmi"
@@ -51146,7 +51146,7 @@ msgid "Flash mode"
 msgstr "Leifturljóshamur"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:551
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "White balance"
 msgstr "Hvítvægi"
@@ -51177,14 +51177,14 @@ msgid "Display Aspect Ratio"
 msgstr "Birta stærðarhlutföll"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Hljóðbitahraði"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -53197,24 +53197,25 @@ msgstr "Dagsetning og tími"
 msgid "Failed to open file."
 msgstr "Gat ekki opnað skrá."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:903
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:906
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Gat ekki bætt GPS-upplýsingum í mynd."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:918
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Gat ekki fjarlægt GPS-upplýsingar úr mynd"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:950
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:957
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:980
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:930
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Gat ekki vistað merki í skrá."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1009
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Gat ekki vistað breytingar í skrá"
@@ -55087,7 +55088,7 @@ msgid "Failed to get Metadata for <filename>%1</filename>"
 msgstr "Gat ekki náð í lýsigögn fyrir <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
-#: core/utilities/import/backend/cameracontroller.cpp:952
+#: core/utilities/import/backend/cameracontroller.cpp:996
 #: core/utilities/import/main/importui.cpp:2395
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
@@ -55108,67 +55109,73 @@ msgstr "Gat ekki umbreytt skránni <filename>%1</filename> í DNG"
 msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Sleppti að umbreyta skránni <filename>%1</filename> í DNG"
 
-#: core/utilities/import/backend/cameracontroller.cpp:845
+#: core/utilities/import/backend/cameracontroller.cpp:808
+#, fuzzy, kde-kuit-format
+#| msgid "Failed to run script for <filename>%1</filename>"
+msgid "Failed to open script for <filename>%1</filename>"
+msgstr "Gat ekki keyrt skriftu á <filename>%1</filename>"
+
+#: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
 msgstr "Skrifta féll á tíma fyrir <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:852
+#: core/utilities/import/backend/cameracontroller.cpp:889
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
 msgstr "Gat ekki keyrt skriftu á <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:960
+#: core/utilities/import/backend/cameracontroller.cpp:1004
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
 msgstr "Gat ekki sótt skrána <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:964
+#: core/utilities/import/backend/cameracontroller.cpp:1008
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
 msgstr "Mistókst að ná í skrána <b>%1</b>. Viltu halda áfram?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:981
+#: core/utilities/import/backend/cameracontroller.cpp:1025
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
 msgstr "Gat ekki sent <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:989
+#: core/utilities/import/backend/cameracontroller.cpp:1033
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
 msgstr "Gat ekki sent skrána <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:993
+#: core/utilities/import/backend/cameracontroller.cpp:1037
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
 msgstr "Mistókst að senda skrána <b>%1</b>. Viltu halda áfram?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1008
+#: core/utilities/import/backend/cameracontroller.cpp:1052
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
 msgstr "Gat ekki eytt <filename>%1</filename>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1016
+#: core/utilities/import/backend/cameracontroller.cpp:1060
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
 msgstr "Gat ekki eytt skránni <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1020
+#: core/utilities/import/backend/cameracontroller.cpp:1064
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
 msgstr "Mistókst að eyða skráinni <b>%1</b>. Viltu halda áfram?"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1035
+#: core/utilities/import/backend/cameracontroller.cpp:1079
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
 msgstr "Gat ekki læst <filename>%1</filename>"
 
-#: core/utilities/import/backend/cameracontroller.cpp:1043
+#: core/utilities/import/backend/cameracontroller.cpp:1087
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
 msgstr "Gat ekki víxlað læsingu á skránni <b>%1</b>."
 
-#: core/utilities/import/backend/cameracontroller.cpp:1047
+#: core/utilities/import/backend/cameracontroller.cpp:1091
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Mistókst að víxla læsingu á skránni <b>%1</b>. Viltu halda áfram?"
@@ -58154,463 +58161,463 @@ msgstr "Framleiðandi myndavélar"
 msgid "The model of the camera"
 msgstr "Gerð myndavélar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:388
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
 #, kde-format
 msgid "Lens"
 msgstr "Linsa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:388
+#: core/utilities/searchwindow/searchfields_createfield.cpp:389
 #, kde-format
 msgid "The type of the lens"
 msgstr "Tegund linsunnar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:402
+#: core/utilities/searchwindow/searchfields_createfield.cpp:403
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Ljósop linsu sem f-númer"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:403
+#: core/utilities/searchwindow/searchfields_createfield.cpp:404
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:422
+#: core/utilities/searchwindow/searchfields_createfield.cpp:423
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Brennivídd linsunnar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:423
+#: core/utilities/searchwindow/searchfields_createfield.cpp:424
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:442
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Samsvarandi brennivídd 35mm linsu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:442
+#: core/utilities/searchwindow/searchfields_createfield.cpp:443
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:461
+#: core/utilities/searchwindow/searchfields_createfield.cpp:462
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:481
+#: core/utilities/searchwindow/searchfields_createfield.cpp:482
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Stillingar sjálfvirkrar lýsingar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:493
+#: core/utilities/searchwindow/searchfields_createfield.cpp:494
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Sjálfvirkt eða handstillt lýsing"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:504
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO ljósnæmni filmu (línulegur kvarði, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:528
+#: core/utilities/searchwindow/searchfields_createfield.cpp:529
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Leifturljós"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:528
+#: core/utilities/searchwindow/searchfields_createfield.cpp:529
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Leifturljóshamur"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:540
+#: core/utilities/searchwindow/searchfields_createfield.cpp:541
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Sjálfvirkt eða handstillt hvítvægi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:551
+#: core/utilities/searchwindow/searchfields_createfield.cpp:552
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Hitastig lita sem notað var við stillingu á hvítvægi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:552
+#: core/utilities/searchwindow/searchfields_createfield.cpp:553
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:564
+#: core/utilities/searchwindow/searchfields_createfield.cpp:565
 #, kde-format
 msgid "Metering Mode"
 msgstr "Mælihamur"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:564
+#: core/utilities/searchwindow/searchfields_createfield.cpp:565
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Aðferð til að ákvarða lýsingu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:576
-#: core/utilities/searchwindow/searchfields_createfield.cpp:589
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:590
 #, kde-format
 msgid "Subject Distance"
 msgstr "Fjarlægð viðfangsefnis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:576
+#: core/utilities/searchwindow/searchfields_createfield.cpp:577
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Fjarlægð myndefnis frá linsu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:577
+#: core/utilities/searchwindow/searchfields_createfield.cpp:578
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:589
+#: core/utilities/searchwindow/searchfields_createfield.cpp:590
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Makró, nærmynd eða fjærmynd"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:606
+#: core/utilities/searchwindow/searchfields_createfield.cpp:607
 #, kde-format
 msgid "Altitude range"
 msgstr "Hæðarsvið"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:608
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:629
+#: core/utilities/searchwindow/searchfields_createfield.cpp:630
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Atriði er ekki með GPS-upplýsingar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:630
+#: core/utilities/searchwindow/searchfields_createfield.cpp:631
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Ekki-hnattstaðsett"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "Country"
 msgstr "Land"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Land sem sýnt er í atriðinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, kde-format
 msgid "Province"
 msgstr "Hérað"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#: core/utilities/searchwindow/searchfields_createfield.cpp:657
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Hérað sem sýnt er í atriðinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "City"
 msgstr "Borg/Staður"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "City shown in the item"
 msgstr "Borg sem sýnd er í atriðinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
 msgid "Sublocation"
 msgstr "Nákvæm staðsetning"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Hverfi sem sýnt er í atriðinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:703
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Búið til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:703
 #, kde-format
 msgid "Return items created by"
 msgstr "Finna atriði með búin til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Finna atriði með athugasemdum sem innihalda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:719
 #, kde-format
 msgid "Return items commented by"
 msgstr "Finna atriði með athugasemdum frá"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "Headline"
 msgstr "Fyrirsögn"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Finna atriði með IPTC fyrirsögninni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:734
+#: core/utilities/searchwindow/searchfields_createfield.cpp:735
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titill"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:734
+#: core/utilities/searchwindow/searchfields_createfield.cpp:735
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Finna atriði með IPTC titlinum"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:742
+#: core/utilities/searchwindow/searchfields_createfield.cpp:743
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Finna atriði sem tengd eru öllum þessum orðum:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:750
+#: core/utilities/searchwindow/searchfields_createfield.cpp:751
 #, kde-format
 msgid "Empty Text"
 msgstr "Auður texti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:750
+#: core/utilities/searchwindow/searchfields_createfield.cpp:751
 #, kde-format
 msgid "Return items without text in:"
 msgstr "Finna atriði án texta í:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:752
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Búið til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:753
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Höfundur"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Fyrirsögn"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:757
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titill"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:766
-#: core/utilities/searchwindow/searchfields_createfield.cpp:785
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Stærðarhlutföll"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:767
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Finna atriði með stærðarhlutfallinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, kde-format
 msgid "Pixel Size"
 msgstr "Stærð mynddíls"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Gildi (breidd * hæð) á milli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:775
+#: core/utilities/searchwindow/searchfields_createfield.cpp:776
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:785
+#: core/utilities/searchwindow/searchfields_createfield.cpp:786
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Finna myndskeið með stærðarhlutfalli ramma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:802
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgid "Length of the video"
 msgstr "Lengd myndskeiðs"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:803
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:805
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "sek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:820
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgid "Frame Rate"
 msgstr "Rammatíðni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:820
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Finna myndskeið með rammatíðni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:821
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:822
+#: core/utilities/searchwindow/searchfields_createfield.cpp:823
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "r/sek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:837
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, kde-format
 msgid "Codec"
 msgstr "Myndlyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:837
+#: core/utilities/searchwindow/searchfields_createfield.cpp:838
 #, kde-format
 msgid "Return video codec"
 msgstr "Finna myndmerkislyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:905
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Skila hljóðbitahraða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bás"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:923
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Skila tegund hljóðrásar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:925
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Einóma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Víðóma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround hljóð"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround hljóð"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 -rása runa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Önnur tegund hljóðrásar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:942
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Skila hljóðkóðunarlyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, kde-format
 msgid "Faces"
 msgstr "Andlit"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Finna atriði eftir fjölda andlitasvæða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Finna atriði án andlitasvæða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "No Face Regions"
 msgstr "Engin andlitasvæði"
