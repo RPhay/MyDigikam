@@ -40,9 +40,9 @@ public:
 
     explicit Private()
       : imageInfoJob(nullptr),
-        thread(nullptr),
-        direction(MetadataSynchronizer::WriteFromDatabaseToFile),
-        tagsOnly(false)
+        thread      (nullptr),
+        direction   (MetadataSynchronizer::WriteFromDatabaseToFile),
+        tagsOnly    (false)
     {
     }
 
@@ -64,9 +64,13 @@ MetadataSynchronizer::MetadataSynchronizer(const AlbumList& list, SyncDirection 
       d(new Private)
 {
     if (list.isEmpty())
+    {
         d->palbumList = AlbumManager::instance()->allPAlbums();
+    }
     else
+    {
         d->palbumList = list;
+    }
 
     init(direction);
 }

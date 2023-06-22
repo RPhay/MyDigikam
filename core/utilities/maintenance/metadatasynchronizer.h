@@ -42,28 +42,35 @@ public:
 
 public:
 
-    /** Constructor which sync all pictures metadata from an Albums list. If list is empty, whole Albums collection is processed.
+    /**
+     * Constructor which sync all images metadata from an Albums list.
+     * If list is empty, whole Albums collection is processed.
      */
-    explicit MetadataSynchronizer(const AlbumList& list = AlbumList(), SyncDirection direction = WriteFromDatabaseToFile, ProgressItem* const parent = nullptr);
+    explicit MetadataSynchronizer(const AlbumList& list = AlbumList(),
+                                  SyncDirection direction = WriteFromDatabaseToFile,
+                                  ProgressItem* const parent = nullptr);
 
-    /** Constructor which sync all pictures metadata from an Images list
+    /**
+     * Constructor which sync all images metadata from an Images list
      */
-    explicit MetadataSynchronizer(const ItemInfoList& list, SyncDirection = WriteFromDatabaseToFile, ProgressItem* const parent = nullptr);
+    explicit MetadataSynchronizer(const ItemInfoList& list,
+                                  SyncDirection = WriteFromDatabaseToFile,
+                                  ProgressItem* const parent = nullptr);
 
     void setTagsOnly(bool value);
 
-    ~MetadataSynchronizer() override;
+    ~MetadataSynchronizer()         override;
 
     void setUseMultiCoreCPU(bool b) override;
 
 private Q_SLOTS:
 
-    void slotStart() override;
+    void slotStart()                override;
     void slotParseAlbums();
     void slotAlbumParsed(const ItemInfoList&);
     void slotAdvance();
     void slotOneAlbumIsComplete();
-    void slotCancel() override;
+    void slotCancel()               override;
 
 private:
 
