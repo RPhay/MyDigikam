@@ -444,6 +444,11 @@ void DigikamApp::setupActions()
     connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
     ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
 
+    d->imageRemoveAllFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
+                                               i18nc("@action: setup", "Remove all Faces"), this);
+    connect(d->imageRemoveAllFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRemoveAllFaces()));
+    ac->addAction(QLatin1String("image_remove_all_faces"), d->imageRemoveAllFacesAction);
+
     // -----------------------------------------------------------
 
     d->imageFindSimilarAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
@@ -1116,6 +1121,7 @@ void DigikamApp::initGui()
     d->imageLightTableAction->setEnabled(false);
     d->imageAddLightTableAction->setEnabled(false);
     d->imageScanForFacesAction->setEnabled(false);
+    d->imageRemoveAllFacesAction->setEnabled(false);
     d->imageFindSimilarAction->setEnabled(false);
     d->imageRenameAction->setEnabled(false);
     d->imageDeleteAction->setEnabled(false);

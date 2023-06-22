@@ -287,6 +287,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     cmHelper.addAction(QLatin1String("image_scan_for_faces"));
     cmHelper.addAction(QLatin1String("image_recognize_faces"));
+    cmHelper.addAction(QLatin1String("image_remove_all_faces"));
     cmHelper.addSeparator();
 
     // --------------------------------------------------------

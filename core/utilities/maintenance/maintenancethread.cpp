@@ -31,6 +31,7 @@
 #include "databasetask.h"
 #include "maintenancedata.h"
 #include "imagequalityparser.h"
+#include "metadataremovetask.h"
 
 namespace Digikam
 {
@@ -84,6 +85,29 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
         collection.insert(t, 0);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a metadata task for synchronizing metadata";
+    }
+
+    appendJobs(collection);
+}
+
+void MaintenanceThread::removeMetadata(const ItemInfoList& items, MetadataRemover::RemoveAction action)
+{
+    ActionJobCollection collection;
+
+    data->setItemInfos(items);
+
+    for (int i = 1 ; i <= maximumNumberOfThreads() ; ++i)
+    {
+        MetadataRemoveTask* const t = new MetadataRemoveTask();
+        t->setRemoveAction(action);
+        t->setMaintenanceData(data);
+
+        connect(t, SIGNAL(signalFinished(QImage)),
+                this, SIGNAL(signalAdvance(QImage)));
+
+        collection.insert(t, 0);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a remover task for removing metadata";
     }
 
     appendJobs(collection);

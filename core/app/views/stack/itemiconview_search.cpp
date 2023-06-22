@@ -143,4 +143,11 @@ void ItemIconView::slotImageRecognizeFaces()
     tool->start();
 }
 
+void ItemIconView::slotImageRemoveAllFaces()
+{
+    const ItemInfoList& selected = selectedInfoList(ApplicationSettings::Metadata);
+    MetadataRemover* const tool  = new MetadataRemover(selected, MetadataRemover::Faces);
+    tool->start();
+}
+
 } // namespace Digikam

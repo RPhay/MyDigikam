@@ -234,6 +234,7 @@ public:
         imageReadMetadataAction             (nullptr),
         imageScanForFacesAction             (nullptr),
         imageRecognizeFacesAction           (nullptr),
+        imageRemoveAllFacesAction           (nullptr),
         imageFindSimilarAction              (nullptr),
         imageSetExifOrientation1Action      (nullptr),
         imageSetExifOrientation2Action      (nullptr),
@@ -357,6 +358,7 @@ public:
     QAction*                            imageReadMetadataAction;
     QAction*                            imageScanForFacesAction;
     QAction*                            imageRecognizeFacesAction;
+    QAction*                            imageRemoveAllFacesAction;
     QAction*                            imageFindSimilarAction;
     QAction*                            imageSetExifOrientation1Action;
     QAction*                            imageSetExifOrientation2Action;

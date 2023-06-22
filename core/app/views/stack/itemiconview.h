@@ -275,6 +275,7 @@ public Q_SLOTS:
     void slotImageFindSimilar();
     void slotImageScanForFaces();
     void slotImageRecognizeFaces();
+    void slotImageRemoveAllFaces();
     //@}
 
     // ----------------------------------------------------------------------------------------

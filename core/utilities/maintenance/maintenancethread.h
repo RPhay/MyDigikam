@@ -24,6 +24,7 @@
 
 #include "actionthreadbase.h"
 #include "metadatasynchronizer.h"
+#include "metadataremover.h"
 #include "iteminfo.h"
 #include "identity.h"
 
@@ -47,6 +48,7 @@ public:
     void setUseMultiCore(const bool b);
 
     void syncMetadata(const ItemInfoList& items, MetadataSynchronizer::SyncDirection dir, bool tagsOnly);
+    void removeMetadata(const ItemInfoList& items, MetadataRemover::RemoveAction action);
     void generateThumbs(const QStringList& paths);
     void generateFingerprints(const QList<qlonglong>& itemIds, bool rebuildAll);
     void sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality);
