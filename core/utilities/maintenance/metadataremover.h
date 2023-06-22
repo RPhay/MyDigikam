@@ -38,7 +38,8 @@ public:
     enum RemoveAction
     {
         None = 0,
-        Faces
+        Faces,
+        Tags
     };
 
 public:

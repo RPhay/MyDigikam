@@ -189,6 +189,11 @@ void MetadataRemover::parseList()
         setLabel(i18n("Remove all faces from image"));
         setThumbnail(QIcon::fromTheme(QLatin1String("list-remove-user")).pixmap(22));
     }
+    else if (d->removeAction == Tags)
+    {
+        setLabel(i18n("Remove all tags from image"));
+        setThumbnail(QIcon::fromTheme(QLatin1String("tag-delete")).pixmap(22));
+    }
 
     if (d->imageInfoList.isEmpty())
     {
@@ -200,9 +205,14 @@ void MetadataRemover::parseList()
     {
         QString message;
 
-        if (d->removeAction == MetadataRemover::Faces)
+        if      (d->removeAction == MetadataRemover::Faces)
         {
             message = i18n("All faces are removed from %1 selected images.\n"
+                           "Do you want to continue?", d->imageInfoList.size());
+        }
+        else if (d->removeAction == MetadataRemover::Tags)
+        {
+            message = i18n("All tags are removed from %1 selected images.\n"
                            "Do you want to continue?", d->imageInfoList.size());
         }
 

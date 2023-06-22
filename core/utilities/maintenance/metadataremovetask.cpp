@@ -18,8 +18,12 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "coredboperationgroup.h"
 #include "maintenancedata.h"
+#include "scancontroller.h"
+#include "metadatahub.h"
 #include "faceutils.h"
+#include "tagscache.h"
 #include "iteminfo.h"
 
 namespace Digikam
@@ -84,11 +88,35 @@ void MetadataRemoveTask::run()
             break;
         }
 
-        if (d->removeAction == MetadataRemover::Faces)
+        if      (d->removeAction == MetadataRemover::Faces)
         {
             if (FaceUtils().databaseFaces(item.id()).size() > 0)
             {
                 FaceUtils().removeAllFaces(item.id());
+            }
+        }
+        else if (d->removeAction == MetadataRemover::Tags)
+        {
+            const QList<int>& tagIds = TagsCache::instance()->publicTags(item.tagIds());
+
+            if (!tagIds.isEmpty())
+            {
+                {
+                    CoreDbOperationGroup group;
+                    group.setMaximumTime(200);
+
+                    Q_FOREACH (int tag, tagIds)
+                    {
+                        item.removeTag(tag);
+                        group.allowLift();
+                    }
+                }
+
+                MetadataHub hub;
+                hub.load(item);
+
+                ScanController::FileMetadataWrite writeScope(item);
+                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS));
             }
         }
 
