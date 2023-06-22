@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-21 00:44+0000\n"
-"PO-Revision-Date: 2023-05-16 08:51+0300\n"
+"PO-Revision-Date: 2023-06-21 09:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -55868,10 +55868,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Пропущено перетворення даних файла <filename>%1</filename> на DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Не вдалося запустити скрипт для <filename>%1</filename>"
+msgstr "Не вдалося відкрити скрипт для <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-21 00:44+0000\n"
-"PO-Revision-Date: 2023-05-16 11:00+0200\n"
+"PO-Revision-Date: 2023-06-21 09:08+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -55678,10 +55678,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "S'ha saltat per a convertir el fitxer <filename>%1</filename> a DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Ha fallat en executar l'script de <filename>%1</filename>"
+msgstr "Ha fallat en obrir l'script de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format

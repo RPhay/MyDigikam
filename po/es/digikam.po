@@ -60,14 +60,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-21 00:44+0000\n"
-"PO-Revision-Date: 2023-05-17 13:38+0200\n"
+"PO-Revision-Date: 2023-06-22 01:29+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -55708,10 +55708,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Se ha omitido la conversión del archivo <filename>%1</filename> a DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "No se ha podido ejecutar el guion <filename>%1</filename>"
+msgstr "No se ha podido abrir el guion <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
