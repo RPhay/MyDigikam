@@ -466,4 +466,5 @@ BUGFIXES:
 451 ==> 471176 - Setting multiple tags on multiple images does not work.
 452 ==> 471267 - Scripts fail to run with AppImage 8.0.0, version 7.10.0 works.
 453 ==> 470686 - Draging photos from thumbnail view to folder doesn't work.
-454 ==> 
+454 ==> 471310 - digiKam 8.1.0 Win64 Nightly build fails to folderize imported PNG & HEIC files.
+455 ==> 

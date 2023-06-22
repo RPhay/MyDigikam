@@ -1431,6 +1431,16 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
         QScopedPointer<DMetadata> metadata(new DMetadata(temp));
         QDateTime creationDate = metadata->getItemDateTime();
 
+        if (!creationDate.isValid())
+        {
+            creationDate = tempInfo.birthTime();
+
+            if (!creationDate.isValid())
+            {
+                creationDate = tempInfo.lastModified();
+            }
+        }
+
         if (!createSubAlbums(downloadUrl, tempInfo.suffix(), creationDate))
         {
             downloadUrl = QUrl::fromLocalFile(tempInfo.path());
