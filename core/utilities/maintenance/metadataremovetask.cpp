@@ -86,7 +86,10 @@ void MetadataRemoveTask::run()
 
         if (d->removeAction == MetadataRemover::Faces)
         {
-            FaceUtils().removeAllFaces(item.id());
+            if (FaceUtils().databaseFaces(item.id()).size() > 0)
+            {
+                FaceUtils().removeAllFaces(item.id());
+            }
         }
 
         Q_EMIT signalFinished(QImage());
