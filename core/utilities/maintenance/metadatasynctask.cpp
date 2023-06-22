@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "metadatatask.h"
+#include "metadatasynctask.h"
 
 // Local includes
 
@@ -25,7 +25,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN MetadataTask::Private
+class Q_DECL_HIDDEN MetadataSyncTask::Private
 {
 public:
 
@@ -45,34 +45,34 @@ public:
 
 // -------------------------------------------------------
 
-MetadataTask::MetadataTask()
+MetadataSyncTask::MetadataSyncTask()
     : ActionJob(),
       d        (new Private)
 {
 }
 
-MetadataTask::~MetadataTask()
+MetadataSyncTask::~MetadataSyncTask()
 {
     cancel();
     delete d;
 }
 
-void MetadataTask::setTagsOnly(bool value)
+void MetadataSyncTask::setTagsOnly(bool value)
 {
     d->tagsOnly = value;
 }
 
-void MetadataTask::setDirection(MetadataSynchronizer::SyncDirection dir)
+void MetadataSyncTask::setDirection(MetadataSynchronizer::SyncDirection dir)
 {
     d->direction = dir;
 }
 
-void MetadataTask::setMaintenanceData(MaintenanceData* const data)
+void MetadataSyncTask::setMaintenanceData(MaintenanceData* const data)
 {
     d->data = data;
 }
 
-void MetadataTask::run()
+void MetadataSyncTask::run()
 {
     // While we have data (using this as check for non-null)
 

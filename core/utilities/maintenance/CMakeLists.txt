@@ -11,7 +11,7 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancedata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/iteminfojob.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/iteminfoalbumsjob.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/metadatatask.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadatasynctask.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadatasynchronizer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/duplicatesfinder.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/databasetask.cpp

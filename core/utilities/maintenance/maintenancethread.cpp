@@ -23,8 +23,8 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "metadatatask.h"
 #include "thumbstask.h"
+#include "metadatasynctask.h"
 #include "fingerprintstask.h"
 #include "imagequalitytask.h"
 #include "imagequalitycontainer.h"
@@ -73,7 +73,7 @@ void MaintenanceThread::syncMetadata(const ItemInfoList& items, MetadataSynchron
 
     for (int i = 1 ; i <= maximumNumberOfThreads() ; ++i)
     {
-        MetadataTask* const t = new MetadataTask();
+        MetadataSyncTask* const t = new MetadataSyncTask();
         t->setTagsOnly(tagsOnly);
         t->setDirection(dir);
         t->setMaintenanceData(data);

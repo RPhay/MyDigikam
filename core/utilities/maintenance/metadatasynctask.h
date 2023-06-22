@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_METADATA_TASK_H
-#define DIGIKAM_METADATA_TASK_H
+#ifndef DIGIKAM_METADATA_SYNC_TASK_H
+#define DIGIKAM_METADATA_SYNC_TASK_H
 
 // Qt includes
 
@@ -30,14 +30,14 @@ namespace Digikam
 
 class MaintenanceData;
 
-class MetadataTask : public ActionJob
+class MetadataSyncTask : public ActionJob
 {
     Q_OBJECT
 
 public:
 
-    explicit MetadataTask();
-    ~MetadataTask()         override;
+    explicit MetadataSyncTask();
+    ~MetadataSyncTask()     override;
 
     void setTagsOnly(bool value);
     void setDirection(MetadataSynchronizer::SyncDirection dir);
@@ -54,7 +54,7 @@ protected:
 private:
 
     // Disable
-    MetadataTask(QObject*) = delete;
+    MetadataSyncTask(QObject*) = delete;
 
 private:
 
@@ -64,4 +64,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_METADATA_TASK_H
+#endif // DIGIKAM_METADATA_SYNC_TASK_H
