@@ -196,7 +196,7 @@ void MetadataRemover::parseList()
         return;
     }
 
-    if (d->imageInfoList.size() > 10)
+    if (d->imageInfoList.size() > 1)
     {
         QString message;
 
