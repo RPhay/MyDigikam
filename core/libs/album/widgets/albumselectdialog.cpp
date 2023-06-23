@@ -137,13 +137,8 @@ void AlbumSelectDialog::slotSelectionChanged()
 {
     PAlbum* const currentAlbum = d->albumSel->currentAlbum();
 
-    if (!currentAlbum || (currentAlbum->isRoot()))
-    {
-        d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
-        return;
-    }
-
-    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(true);
+    bool enabled = !(!currentAlbum || currentAlbum->isRoot());
+    d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enabled);
 }
 
 PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albumToSelect, const QString& header)
