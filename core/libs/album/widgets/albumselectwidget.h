@@ -105,6 +105,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotCompleterTimer();
+    void slotSelectionChanged();
     void slotAlbumRenamed(Album*);
     void slotCompleterHighlighted(int albumId);
 

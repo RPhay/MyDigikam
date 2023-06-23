@@ -189,10 +189,13 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
 
     d->albumTreeView->setCurrentAlbums(QList<Album*>() << select, false);
 
+    bool enabled = !(!currentAlbum() || currentAlbum()->isRoot());
+    d->newAlbumBtn->setEnabled(enabled);
+
     // ------------------------------------------------------------------------------------
 
     connect(d->albumTreeView, SIGNAL(currentAlbumChanged(Album*)),
-            this, SIGNAL(itemSelectionChanged()));
+            this, SLOT(slotSelectionChanged()));
 
     connect(AlbumManager::instance(), SIGNAL(signalAlbumRenamed(Album*)),
             this, SLOT(slotAlbumRenamed(Album*)));
@@ -272,7 +275,7 @@ void AlbumSelectWidget::slotAlbumRenamed(Album* album)
 
     if (index.isValid())
     {
-        Q_EMIT itemSelectionChanged();
+        slotSelectionChanged();
     }
 }
 
@@ -293,6 +296,14 @@ void AlbumSelectWidget::slotCompleterTimer()
     {
         d->albumTreeView->setCurrentAlbums(QList<Album*>() << d->complAlbum);
     }
+}
+
+void AlbumSelectWidget::slotSelectionChanged()
+{
+    bool enabled = !(!currentAlbum() || currentAlbum()->isRoot());
+    d->newAlbumBtn->setEnabled(enabled);
+
+    Q_EMIT itemSelectionChanged();
 }
 
 } // namespace Digikam

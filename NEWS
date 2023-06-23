@@ -468,4 +468,5 @@ BUGFIXES:
 453 ==> 470686 - Draging photos from thumbnail view to folder doesn't work.
 454 ==> 471310 - digiKam 8.1.0 Win64 Nightly build fails to folderize imported PNG & HEIC files.
 455 ==> 426700 - Feature Request: Ability to Clear Face Tags from Multiple Selected Images.
-456 ==> 
+456 ==> 471390 - Conflicting behavior in 'new album' button in `import` flow.
+457 ==> 
