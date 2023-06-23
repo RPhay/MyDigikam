@@ -469,4 +469,5 @@ BUGFIXES:
 454 ==> 471310 - digiKam 8.1.0 Win64 Nightly build fails to folderize imported PNG & HEIC files.
 455 ==> 426700 - Feature Request: Ability to Clear Face Tags from Multiple Selected Images.
 456 ==> 471390 - Conflicting behavior in 'new album' button in `import` flow.
-457 ==> 
+457 ==> 471394 - Cannot create new "Album_" under "AlbumS" from toolbar menu.
+458 ==> 
