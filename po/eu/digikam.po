@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-21 00:44+0000\n"
+"POT-Creation-Date: 2023-06-23 00:44+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1439,14 +1439,14 @@ msgid_plural "%1 items hidden"
 msgstr[0] "Elementu ezkutu %1"
 msgstr[1] "%1 elementu ezkutu"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:792
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Idatzi meta-datuak fitxategira"
 msgstr[1] "Idatzi meta-datuak hautatutako fitxategietara"
 
-#: core/app/main/digikamapp.cpp:793
+#: core/app/main/digikamapp.cpp:794
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1626,7 +1626,7 @@ msgid "Delete Album"
 msgstr "Ezabatu albuma"
 
 #: core/app/main/digikamapp_setup.cpp:223
-#: core/app/main/digikamapp_setup.cpp:458
+#: core/app/main/digikamapp_setup.cpp:463
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rename..."
@@ -1870,100 +1870,107 @@ msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Aurpegiak ezagutzea"
 
-#: core/app/main/digikamapp_setup.cpp:450
+#: core/app/main/digikamapp_setup.cpp:448
+#, fuzzy, kde-format
+#| msgid "Remove Face Tags"
+msgctxt "@action: setup"
+msgid "Remove all Faces"
+msgstr "Kendu «aurpegi» etiketak"
+
+#: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
 msgstr "Aurkitu antzekoa..."
 
-#: core/app/main/digikamapp_setup.cpp:451
+#: core/app/main/digikamapp_setup.cpp:456
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
 msgstr ""
 "Aurkitu antzeko irudiak hautatutako elementua erreferentzia gisa erabiliz."
 
-#: core/app/main/digikamapp_setup.cpp:459
+#: core/app/main/digikamapp_setup.cpp:464
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
 msgstr "Aldatu unean hautatutako elementuaren fitxategi-izena."
 
-#: core/app/main/digikamapp_setup.cpp:469
+#: core/app/main/digikamapp_setup.cpp:474
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
 msgstr "Eraman zakarrontzira"
 
-#: core/app/main/digikamapp_setup.cpp:483
+#: core/app/main/digikamapp_setup.cpp:488
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete Permanently"
 msgstr "Ezabatu betiko"
 
-#: core/app/main/digikamapp_setup.cpp:494
+#: core/app/main/digikamapp_setup.cpp:499
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
 msgstr "Ezabatu betiko berrespena eskatu gabe"
 
-#: core/app/main/digikamapp_setup.cpp:502
+#: core/app/main/digikamapp_setup.cpp:507
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
 msgstr "Eraman zakarrontzira berrespena eskatu gabe"
 
-#: core/app/main/digikamapp_setup.cpp:509
+#: core/app/main/digikamapp_setup.cpp:514
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Albums"
 msgstr "&Sailkatu albumak"
 
-#: core/app/main/digikamapp_setup.cpp:510
+#: core/app/main/digikamapp_setup.cpp:515
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
 msgstr "Sailkatu albumak zuhaitz-ikuspegian."
 
-#: core/app/main/digikamapp_setup.cpp:529
+#: core/app/main/digikamapp_setup.cpp:534
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Folder"
 msgstr "Karpetaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:530
+#: core/app/main/digikamapp_setup.cpp:535
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Category"
 msgstr "Kategoriaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:531
+#: core/app/main/digikamapp_setup.cpp:536
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Date"
 msgstr "Dataren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:536
+#: core/app/main/digikamapp_setup.cpp:541
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
 msgstr "Sartu albumaren azpi-zuhaitza"
 
-#: core/app/main/digikamapp_setup.cpp:538
+#: core/app/main/digikamapp_setup.cpp:543
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all sub-albums below the current album."
 msgstr ""
 "Aktibatu aukera hau uneko albumaren barruko azpi-album guztiak erakusteko."
 
-#: core/app/main/digikamapp_setup.cpp:543
+#: core/app/main/digikamapp_setup.cpp:548
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
 msgstr "Sartu etiketen azpi-zuhaitza"
 
-#: core/app/main/digikamapp_setup.cpp:545
+#: core/app/main/digikamapp_setup.cpp:550
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -1973,26 +1980,26 @@ msgstr ""
 "Aktibatu aukera hau emandako etiketa eta haren azpi-etiketekin markatutako "
 "irudi guztiak erakusteko."
 
-#: core/app/main/digikamapp_setup.cpp:550
+#: core/app/main/digikamapp_setup.cpp:555
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show All Grouped Items As Open"
 msgstr "Erakutsi taldekatutako elementu guztiak Irekita gisa"
 
-#: core/app/main/digikamapp_setup.cpp:552
+#: core/app/main/digikamapp_setup.cpp:557
 #, kde-format
 msgctxt "@info: setup"
 msgid "Activate this option to show all grouped items as open."
 msgstr ""
 "Aktibatu aukera hau taldekatutako elementu guztiak irekita gisa erakusteko."
 
-#: core/app/main/digikamapp_setup.cpp:558
+#: core/app/main/digikamapp_setup.cpp:563
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Sort Items"
 msgstr "&Sailkatu elementuak"
 
-#: core/app/main/digikamapp_setup.cpp:559
+#: core/app/main/digikamapp_setup.cpp:564
 #, kde-format
 msgctxt "@info: setup"
 msgid ""
@@ -2000,417 +2007,417 @@ msgid ""
 msgstr ""
 "Album bateko irudiak koadro txikien ikuspegian sailkatzeko erabilitako balioa"
 
-#: core/app/main/digikamapp_setup.cpp:564
+#: core/app/main/digikamapp_setup.cpp:569
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
 msgstr "Izenaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:565
+#: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Path"
 msgstr "Bide-izenaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:566
+#: core/app/main/digikamapp_setup.cpp:571
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
 msgstr "Sortze dataren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:567
+#: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Modification Date"
 msgstr "Aldatze dataren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:568
+#: core/app/main/digikamapp_setup.cpp:573
 #, kde-format
 msgctxt "@action: setup"
 msgid "By File Size"
 msgstr "Fitxategi-neurriaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:569
+#: core/app/main/digikamapp_setup.cpp:574
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Rating"
 msgstr "Balorazioaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:570
+#: core/app/main/digikamapp_setup.cpp:575
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
 msgstr "Irudi-neurriaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:571
+#: core/app/main/digikamapp_setup.cpp:576
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
 msgstr "Itxura proportzioaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:572
+#: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
 msgstr "Aurpegi motaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:573
+#: core/app/main/digikamapp_setup.cpp:578
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Similarity"
 msgstr "Antzekotasunagatik"
 
-#: core/app/main/digikamapp_setup.cpp:574
+#: core/app/main/digikamapp_setup.cpp:579
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
 msgstr "Eskuz eta izenaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:575
+#: core/app/main/digikamapp_setup.cpp:580
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
 msgstr "Eskuz eta dataren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:620
+#: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Sort &Order"
 msgstr "Elementua sailkatzeko &hurrenkera"
 
-#: core/app/main/digikamapp_setup.cpp:621
+#: core/app/main/digikamapp_setup.cpp:626
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
 msgstr "Irudiak gorantz edo beherantz sailkatuko diren zehazten du."
 
-#: core/app/main/digikamapp_setup.cpp:625
-#: core/app/main/digikamapp_setup.cpp:680
+#: core/app/main/digikamapp_setup.cpp:630
+#: core/app/main/digikamapp_setup.cpp:685
 #, kde-format
 msgctxt "@action: setup"
 msgid "Ascending"
 msgstr "Gorantz"
 
-#: core/app/main/digikamapp_setup.cpp:627
-#: core/app/main/digikamapp_setup.cpp:682
+#: core/app/main/digikamapp_setup.cpp:632
+#: core/app/main/digikamapp_setup.cpp:687
 #, kde-format
 msgctxt "@action: setup"
 msgid "Descending"
 msgstr "Beherantz"
 
-#: core/app/main/digikamapp_setup.cpp:637
+#: core/app/main/digikamapp_setup.cpp:642
 #, kde-format
 msgctxt "@action: setup"
 msgid "Separate Items"
 msgstr "Elementu bereiziak"
 
-#: core/app/main/digikamapp_setup.cpp:638
+#: core/app/main/digikamapp_setup.cpp:643
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
 msgstr "Irudiak koadro txikien ikuspegian zein kategoriatan bistaratuko diren"
 
-#: core/app/main/digikamapp_setup.cpp:643
+#: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flat List"
 msgstr "Zerrenda laua"
 
-#: core/app/main/digikamapp_setup.cpp:644
+#: core/app/main/digikamapp_setup.cpp:649
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Album"
 msgstr "Albumaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:645
+#: core/app/main/digikamapp_setup.cpp:650
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Format"
 msgstr "Formatuaren arabera"
 
-#: core/app/main/digikamapp_setup.cpp:646
+#: core/app/main/digikamapp_setup.cpp:651
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
 msgstr "Hilabetearen arabera"
 
-#: core/app/main/digikamapp_setup.cpp:647
+#: core/app/main/digikamapp_setup.cpp:652
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Faces"
 msgstr "Aurpegien arabera"
 
-#: core/app/main/digikamapp_setup.cpp:675
+#: core/app/main/digikamapp_setup.cpp:680
 #, kde-format
 msgctxt "@action: setup"
 msgid "Item Separation Order"
 msgstr "Elementuen bereizketa hurrenkera"
 
-#: core/app/main/digikamapp_setup.cpp:676
+#: core/app/main/digikamapp_setup.cpp:681
 #, kde-format
 msgctxt "@info: setup"
 msgid "The sort order of the groups of separated items"
 msgstr "Bereizitako elementuen taldeen sailkatze hurrenkera"
 
-#: core/app/main/digikamapp_setup.cpp:697
+#: core/app/main/digikamapp_setup.cpp:702
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select All"
 msgstr "Hautatu denak"
 
-#: core/app/main/digikamapp_setup.cpp:704
+#: core/app/main/digikamapp_setup.cpp:709
 #, kde-format
 msgctxt "@action: setup"
 msgid "Select None"
 msgstr "Ez hautatu bat ere"
 
-#: core/app/main/digikamapp_setup.cpp:711
+#: core/app/main/digikamapp_setup.cpp:716
 #, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
 msgstr "Alderantzikatu hautapena"
 
-#: core/app/main/digikamapp_setup.cpp:719
+#: core/app/main/digikamapp_setup.cpp:724
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
 msgstr "Erakutsi koadro txikien barra"
 
-#: core/app/main/digikamapp_setup.cpp:750
+#: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
 msgctxt "@action: setup"
 msgid "Zoom to 100%"
 msgstr "Zoom % 100era"
 
-#: core/app/main/digikamapp_setup.cpp:758
+#: core/app/main/digikamapp_setup.cpp:763
 #, kde-format
 msgctxt "@action: setup"
 msgid "Fit to &Window"
 msgstr "Doitu &leihora"
 
-#: core/app/main/digikamapp_setup.cpp:771
+#: core/app/main/digikamapp_setup.cpp:776
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
 msgstr "Kolore-kudeatuko ikuspegia"
 
-#: core/app/main/digikamapp_setup.cpp:789
+#: core/app/main/digikamapp_setup.cpp:794
 #, kde-format
 msgctxt "@action: setup"
 msgid "Search..."
 msgstr "Bilatu..."
 
-#: core/app/main/digikamapp_setup.cpp:797
+#: core/app/main/digikamapp_setup.cpp:802
 #, kde-format
 msgctxt "@action: setup"
 msgid "Advanced Search..."
 msgstr "Bilaketa aurreratua..."
 
-#: core/app/main/digikamapp_setup.cpp:805
+#: core/app/main/digikamapp_setup.cpp:810
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
 msgstr "Bilatu bikoiztuak..."
 
-#: core/app/main/digikamapp_setup.cpp:815
+#: core/app/main/digikamapp_setup.cpp:820
 #, kde-format
 msgctxt "@action: setup"
 msgid "Database Migration..."
 msgstr "Datu-baseen migrazioa..."
 
-#: core/app/main/digikamapp_setup.cpp:824
+#: core/app/main/digikamapp_setup.cpp:829
 #, kde-format
 msgctxt "@action: setup"
 msgid "Maintenance..."
 msgstr "Mantentzea..."
 
-#: core/app/main/digikamapp_setup.cpp:831
+#: core/app/main/digikamapp_setup.cpp:836
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
 msgstr "Aztertu irudi berri bila"
 
-#: core/app/main/digikamapp_setup.cpp:837
+#: core/app/main/digikamapp_setup.cpp:842
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
 msgstr "Gehitu kamera eskuz..."
 
-#: core/app/main/digikamapp_setup.cpp:848
+#: core/app/main/digikamapp_setup.cpp:853
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading cameras..."
 msgstr "Kamerak zamatzen..."
 
-#: core/app/main/digikamapp_setup.cpp:882
+#: core/app/main/digikamapp_setup.cpp:887
 #, kde-format
 msgctxt "@action: setup"
 msgid "Exit Preview Mode"
 msgstr "Irten aurreikuspegi modutik"
 
-#: core/app/main/digikamapp_setup.cpp:887
+#: core/app/main/digikamapp_setup.cpp:892
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
 msgstr "Hurrengo irudia"
 
-#: core/app/main/digikamapp_setup.cpp:893
+#: core/app/main/digikamapp_setup.cpp:898
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
 msgstr "Aurreko irudia"
 
-#: core/app/main/digikamapp_setup.cpp:899
+#: core/app/main/digikamapp_setup.cpp:904
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
 msgstr "Lehenengo irudia"
 
-#: core/app/main/digikamapp_setup.cpp:904
+#: core/app/main/digikamapp_setup.cpp:909
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
 msgstr "Azken irudia"
 
-#: core/app/main/digikamapp_setup.cpp:909
+#: core/app/main/digikamapp_setup.cpp:914
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cu&t"
 msgstr "Eba&ki"
 
-#: core/app/main/digikamapp_setup.cpp:911
+#: core/app/main/digikamapp_setup.cpp:916
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
 msgstr "Ebaki hautapena arbelera"
 
-#: core/app/main/digikamapp_setup.cpp:930
+#: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Titles"
 msgstr "Editatu tituluak"
 
-#: core/app/main/digikamapp_setup.cpp:935
+#: core/app/main/digikamapp_setup.cpp:940
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
 msgstr "Editatu iruzkinak"
 
-#: core/app/main/digikamapp_setup.cpp:940
+#: core/app/main/digikamapp_setup.cpp:945
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
 msgstr "Erakutsi esleitutako etiketak"
 
-#: core/app/main/digikamapp_setup.cpp:949
+#: core/app/main/digikamapp_setup.cpp:954
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
 msgstr "Doitu Exif orientazio-etiketa"
 
-#: core/app/main/digikamapp_setup.cpp:952
+#: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
 msgctxt "@action: normal exif orientation"
 msgid "Normal"
 msgstr "Arrunta"
 
-#: core/app/main/digikamapp_setup.cpp:954
+#: core/app/main/digikamapp_setup.cpp:959
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Horizontalki iraulita"
 
-#: core/app/main/digikamapp_setup.cpp:956
+#: core/app/main/digikamapp_setup.cpp:961
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
 msgstr "Ahuspez biratuta"
 
-#: core/app/main/digikamapp_setup.cpp:958
+#: core/app/main/digikamapp_setup.cpp:963
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Bertikalki iraulita"
 
-#: core/app/main/digikamapp_setup.cpp:960
+#: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
 msgstr "Eskuinera biratuta / Horiz. iraulita"
 
-#: core/app/main/digikamapp_setup.cpp:962
+#: core/app/main/digikamapp_setup.cpp:967
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Eskuinera biratuta"
 
-#: core/app/main/digikamapp_setup.cpp:964
+#: core/app/main/digikamapp_setup.cpp:969
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
 msgstr "Eskuinera biratuta / Bert. iraulita"
 
-#: core/app/main/digikamapp_setup.cpp:966
+#: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
 msgstr "Ezkerrera biratuta"
 
-#: core/app/main/digikamapp_setup.cpp:1027
+#: core/app/main/digikamapp_setup.cpp:1032
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotate"
 msgstr "Biratu"
 
-#: core/app/main/digikamapp_setup.cpp:1031
+#: core/app/main/digikamapp_setup.cpp:1036
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
 msgstr "Ezker"
 
-#: core/app/main/digikamapp_setup.cpp:1038
+#: core/app/main/digikamapp_setup.cpp:1043
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
 msgstr "Eskuin"
 
-#: core/app/main/digikamapp_setup.cpp:1048
+#: core/app/main/digikamapp_setup.cpp:1053
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Irauli"
 
-#: core/app/main/digikamapp_setup.cpp:1052
+#: core/app/main/digikamapp_setup.cpp:1057
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
 msgstr "Horizontalki"
 
-#: core/app/main/digikamapp_setup.cpp:1059
+#: core/app/main/digikamapp_setup.cpp:1064
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
 msgstr "Bertikalki"
 
-#: core/app/main/digikamapp_setup.cpp:1069
+#: core/app/main/digikamapp_setup.cpp:1074
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
 msgstr "Auto biratu/Irauli Exif informazioa erabiliz"
 
-#: core/app/main/digikamapp_setup.cpp:1080
+#: core/app/main/digikamapp_setup.cpp:1085
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading themes..."
 msgstr "Gaiak zamatzen..."
 
-#: core/app/main/digikamapp_setup.cpp:1083
+#: core/app/main/digikamapp_setup.cpp:1088
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Themes"
 msgstr "&Gaiak"
 
-#: core/app/main/digikamapp_setup.cpp:1095
+#: core/app/main/digikamapp_setup.cpp:1100
 #, kde-format
 msgctxt "@info: setup"
 msgid "Loading tools..."
@@ -3061,7 +3068,7 @@ msgstr ""
 "album berri batean gordeko dira, ezkerrean ezarritako izena erabiliz."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
-#: core/app/views/stack/itemiconview_p.h:185
+#: core/app/views/stack/itemiconview_p.h:186
 #, kde-format
 msgid "Timeline"
 msgstr "Denbora-lerroa"
@@ -3100,22 +3107,22 @@ msgstr ""
 "Datu-baseko uneko itaunak ez du emaitzarik itzuli. Aldatu bilaketa ezarpenak "
 "edo hautatu edukia duen album bat."
 
-#: core/app/views/stack/itemiconview_p.h:168
+#: core/app/views/stack/itemiconview_p.h:169
 #, kde-format
 msgid "Fuzzy Sketch Search"
 msgstr "Zirriborroen bilaketa lausoa"
 
-#: core/app/views/stack/itemiconview_p.h:172
+#: core/app/views/stack/itemiconview_p.h:173
 #, kde-format
 msgid "Fuzzy Image Search"
 msgstr "Irudien bilaketa lausoa"
 
-#: core/app/views/stack/itemiconview_p.h:176
+#: core/app/views/stack/itemiconview_p.h:177
 #, kde-format
 msgid "Map Search"
 msgstr "Mapa bilaketa"
 
-#: core/app/views/stack/itemiconview_p.h:181
+#: core/app/views/stack/itemiconview_p.h:182
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1167
 #, kde-format
 msgid "Last Search"
@@ -38106,7 +38113,7 @@ msgid "Description"
 msgstr "Azalpena"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1885
+#: core/utilities/import/main/importui.cpp:1895
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -57624,7 +57631,7 @@ msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2395
+#: core/utilities/import/main/importui.cpp:2405
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -58448,19 +58455,19 @@ msgstr ""
 "<p>Hautatu digiKam liburutegiko helburuko albuma kamerako irudiak horra "
 "inportatzeko.</p>"
 
-#: core/utilities/import/main/importui.cpp:1448
+#: core/utilities/import/main/importui.cpp:1458
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/main/importui.cpp:1455
+#: core/utilities/import/main/importui.cpp:1465
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/main/importui.cpp:1882
+#: core/utilities/import/main/importui.cpp:1892
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58472,7 +58479,7 @@ msgstr ""
 "soilik). Elementu hauek ez dira ezabatuko. Elementu hauek ezabatzea nahi "
 "izanez gero, desblokeatu itzazu eta saiatu berriro."
 
-#: core/utilities/import/main/importui.cpp:1893
+#: core/utilities/import/main/importui.cpp:1903
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58490,20 +58497,20 @@ msgstr[1] ""
 "%1 irudi ezabatzeko zorian zaude. Ezabatutako fitxategiak ezin dira "
 "berreskuratu. Ziur zaude?"
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1913
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Abisua"
 
-#: core/utilities/import/main/importui.cpp:1947
+#: core/utilities/import/main/importui.cpp:1957
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Ez dago nahikoa leku diskoan"
 
-#: core/utilities/import/main/importui.cpp:1948
+#: core/utilities/import/main/importui.cpp:1958
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58521,8 +58528,8 @@ msgstr ""
 "Aurreikusitako beharrezko lekua: %1\n"
 "Leku libre erabilgarria: %2"
 
-#: core/utilities/import/main/importui.cpp:2213
-#: core/utilities/import/main/importui.cpp:2241
+#: core/utilities/import/main/importui.cpp:2223
+#: core/utilities/import/main/importui.cpp:2251
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -58530,7 +58537,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Ez da elementurik hautatu (elementu %1)"
 msgstr[1] "Ez da elementurik hautatu (%1 elementu)"
 
-#: core/utilities/import/main/importui.cpp:2233
+#: core/utilities/import/main/importui.cpp:2243
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -58538,7 +58545,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 / %2"
 
-#: core/utilities/import/main/importui.cpp:2252
+#: core/utilities/import/main/importui.cpp:2262
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -58546,25 +58553,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 elementu hautatuta"
 msgstr[1] "%2/%1 elementu hautatuta"
 
-#: core/utilities/import/main/importui.cpp:2330
+#: core/utilities/import/main/importui.cpp:2340
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2362
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/main/importui.cpp:2375
+#: core/utilities/import/main/importui.cpp:2385
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Huts egin du \"%1\" fitxategia igotzean."
 
-#: core/utilities/import/main/importui.cpp:2449
+#: core/utilities/import/main/importui.cpp:2459
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -58572,19 +58579,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2457
+#: core/utilities/import/main/importui.cpp:2467
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Markatu deskargatuta gisa"
 
-#: core/utilities/import/main/importui.cpp:2483
+#: core/utilities/import/main/importui.cpp:2493
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Izen bereko fitxategia (%1) badago lehendik ere %2 karpetan."
 
-#: core/utilities/import/main/importui.cpp:2496
+#: core/utilities/import/main/importui.cpp:2506
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -59702,12 +59709,46 @@ msgid ""
 "Duration: %1"
 msgstr ""
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:183
+#: core/utilities/maintenance/metadataremover.cpp:189
+#, fuzzy, kde-format
+msgid "Remove all faces from image"
+msgstr "Irakurri berriro metadatuak irudietatik"
+
+#: core/utilities/maintenance/metadataremover.cpp:194
+#, fuzzy, kde-format
+msgid "Remove all tags from image"
+msgstr "Irakurri berriro metadatuak irudietatik"
+
+#: core/utilities/maintenance/metadataremover.cpp:210
+#, fuzzy, kde-format
+#| msgid ""
+#| "Failed to upload image %1\n"
+#| "Do you want to continue?"
+msgid ""
+"All faces are removed from %1 selected images.\n"
+"Do you want to continue?"
+msgstr ""
+"Huts egin du %1 irudia zama-igotzea\n"
+"Jarraitu nahi duzu?"
+
+#: core/utilities/maintenance/metadataremover.cpp:215
+#, fuzzy, kde-format
+#| msgid ""
+#| "Failed to upload image %1\n"
+#| "Do you want to continue?"
+msgid ""
+"All tags are removed from %1 selected images.\n"
+"Do you want to continue?"
+msgstr ""
+"Huts egin du %1 irudia zama-igotzea\n"
+"Jarraitu nahi duzu?"
+
+#: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, fuzzy, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
 
-#: core/utilities/maintenance/metadatasynchronizer.cpp:188
+#: core/utilities/maintenance/metadatasynchronizer.cpp:192
 #, fuzzy, kde-format
 msgid "Updating database from image metadata"
 msgstr "Datu-basea irudiaren metadatuetatik eguneratzen. Itxaron..."
@@ -67792,13 +67833,6 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 #~ msgid "Cannot update album info"
 #~ msgstr "Ezin eguneratu album informaziorik"
 
-#~ msgid ""
-#~ "Failed to upload image %1\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Huts egin du %1 irudia zama-igotzea\n"
-#~ "Jarraitu nahi duzu?"
-
 #, fuzzy
 #~ msgid "Unknow error"
 #~ msgstr "Errore ezezaguna"
@@ -69423,9 +69457,6 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 
 #~ msgid "Remove Face Tag"
 #~ msgstr "Kendu «aurpegi» etiketa"
-
-#~ msgid "Remove Face Tags"
-#~ msgstr "Kendu «aurpegi» etiketak"
 
 #, fuzzy
 #~| msgid "Error"
