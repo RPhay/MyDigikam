@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-06-21 09:15+0200\n"
+"PO-Revision-Date: 2023-06-23 07:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.3.1\n"
 
@@ -1906,11 +1906,10 @@ msgid "Recognize Faces"
 msgstr "Prepoznaj obraze"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Odstrani črni okvir"
+msgstr "Odstrani vse obraze"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -57288,39 +57287,31 @@ msgstr ""
 "Trajanje: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Odstrani značko iz slik"
+msgstr "Odstrani vse obraze s slike"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Odstrani značko iz slik"
+msgstr "Odstrani vse značke iz slike"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Ni bilo mogoče poslati slike %1\n"
+"Vsi obrazi so bili odstranjeni iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Ni bilo mogoče poslati slike %1\n"
+"Vse značke so bile odstranjene iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187

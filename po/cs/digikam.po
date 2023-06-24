@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-06-05 13:15+0200\n"
+"PO-Revision-Date: 2023-06-23 12:33+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1849,12 +1849,10 @@ msgid "Recognize Faces"
 msgstr "Rozpoznávat obličeje"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Revert all changes"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Vrátit všechny změny"
+msgstr ""
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -42736,7 +42734,7 @@ msgstr "schéma digiKam"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:97
 #, kde-format
 msgid "Exif-specific Properties"
-msgstr "Vlastnosti EXIF"
+msgstr "Vlastnosti Exif"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:101
 #, kde-format
@@ -43045,7 +43043,7 @@ msgstr "Arabsky (Katar)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:61
 msgctxt "@info: country code"
 msgid "Arabic (Saudi Arabia)"
-msgstr "Arabsky (Saudská Arábie)"
+msgstr "Arabsky (Saúdská Arábie)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:62
 msgctxt "@info: country code"
@@ -45851,7 +45849,7 @@ msgstr "Ostrov Svatého Tomáše a Princův ostrov"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Saudi Arabia"
-msgstr "Saudská Arábie"
+msgstr "Saúdská Arábie"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:235
 #, kde-format
@@ -45983,7 +45981,7 @@ msgstr "Tchaj-wan"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tajikistan"
-msgstr "Tadžikistán"
+msgstr "Tádžikistán"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:257
 #, kde-format
@@ -53684,7 +53682,7 @@ msgstr ""
 #: core/utilities/import/backend/cameracontroller.cpp:808
 #, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr ""
+msgstr "Nelze otevřít skript pro <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -53694,7 +53692,7 @@ msgstr "Čas uživatelskému skriptu <filename>%1</filename> vypršel"
 #: core/utilities/import/backend/cameracontroller.cpp:889
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
-msgstr "Nelze spustit skript pro <filename>%1</filename>."
+msgstr "Nelze spustit skript pro <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1004
 #, kde-format
@@ -54755,7 +54753,7 @@ msgid ""
 "Exif information provided by the camera."
 msgstr ""
 "Zaškrtněte tuto volbu, pokud si přejete, aby se obrázky automaticky otáčely "
-"nebo převracely na základě EXIF informace z fotoaparátu."
+"nebo převracely na základě informace Exif z fotoaparátu."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:144
 #, kde-format
@@ -55714,42 +55712,28 @@ msgstr ""
 "Trvání: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Odstranit značku z obrázků"
+msgstr ""
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Odstranit značku z obrázků"
+msgstr ""
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Značka obličeje '%2' je přiřazena nejméně jedné položce. Přejete si "
-"pokračovat?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Značka obličeje '%2' je přiřazena nejméně jedné položce. Přejete si "
-"pokračovat?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format

@@ -5628,7 +5628,7 @@ msgstr "TIFF"
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "Shell Script:"
-msgstr "Script de intérprete de ordes:"
+msgstr "Guión de intérprete de ordes:"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
 #, kde-format
@@ -5637,7 +5637,7 @@ msgid ""
 "filenames (with special characters escaped). These would be substituted "
 "before shell execution."
 msgstr ""
-"Insira un script para executalo. Use $INPUT e $OUTPUT para as rutas do "
+"Insira un guión para executalo. Use $INPUT e $OUTPUT para as rutas do "
 "ficheiro de entrada e do de saída, respectivamente. Os caracteres especiais "
 "estarán escapados nesas rutas. As variábeis substitúense polas rutas antes "
 "da execución do intérprete de ordes."
@@ -5657,7 +5657,7 @@ msgstr ""
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
 msgid "User Script: No script."
-msgstr "Script do usuario: ningún."
+msgstr "Guión do usuario: ningún."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
 #, fuzzy, kde-format
@@ -5668,7 +5668,7 @@ msgstr "Script do usuario: ningún."
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Timeout from script."
-msgstr "Script de usuario: Tempo límite do script."
+msgstr "Guión de usuario: Tempo límite do guión."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:287
 #, fuzzy, kde-format
@@ -5679,17 +5679,17 @@ msgstr "Script do usuario: ningún."
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
 msgid "User Script: Failed to start script."
-msgstr "Script do usuario: non se puido iniciar o script."
+msgstr "Guión do usuario: non se puido iniciar o guión."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr "Script do usuario: o proceso do script quebrou."
+msgstr "Guión do usuario: o proceso do guión quebrou."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
 msgid "User Script: Command not found."
-msgstr "Script do usuario: non se atopou unha das ordes."
+msgstr "Guión do usuario: non se atopou unha das ordes."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, fuzzy, kde-format
@@ -11045,7 +11045,7 @@ msgid ""
 "to freeze the dashed line's position."
 msgstr ""
 "Esta é a vista previa da operación de rotación libre. Se move o cursor do "
-"rato nesta vista previa mostraranse liñas descontinuas, horizontais e "
+"rato nesta vista previa amosaranse liñas descontinuas, horizontais e "
 "verticais, para guialo ao axustar o ángulo de rotación. Prema o botón "
 "esquerdo do rato para fixar a posición das liñas descontinuas."
 
@@ -30405,11 +30405,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is too "
 "recent.) Please use the more recent version of digiKam that you used before. "
 msgstr ""
-"A base de datos empregouse cunha versión máis recente de digiKam e "
-"actualizouse a un esquema de base de datos que non se pode usar con esta "
-"versión. (Isto significa que esta versión de digiKam é vella de máis, ou que "
-"o formato da base de datos é recente de máis). Por favor, use a versión máis "
-"recente de digiKam que usase con anterioridade. "
+"A base de datos usouse cunha versión máis recente de digiKam e actualizouse "
+"a un esquema de base de datos que non se pode usar con esta versión. (Isto "
+"significa que esta versión de digiKam é vella de máis, ou que o formato da "
+"base de datos é recente de máis). Por favor, use a versión máis recente de "
+"digiKam que usase con anterioridade. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:333
 #: core/libs/database/similaritydb/similaritydbschemaupdater.cpp:202
@@ -30937,11 +30937,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
-"A base de datos empregouse cunha versión máis recente de digiKam e "
-"actualizouse a un esquema de base de datos que non se pode usar con esta "
-"versión. (Isto significa que esta versión de digiKam é vella de máis, ou que "
-"o formato da base de datos é recente de máis). Por favor, use a versión máis "
-"recente de digiKam que usase con anterioridade. "
+"A base de datos usouse cunha versión máis recente de digiKam e actualizouse "
+"a un esquema de base de datos que non se pode usar con esta versión. (Isto "
+"significa que esta versión de digiKam é vella de máis, ou que o formato da "
+"base de datos é recente de máis). Por favor, use a versión máis recente de "
+"digiKam que usase con anterioridade. "
 
 #: core/libs/database/tags/facetags.cpp:404
 #, kde-format
@@ -37196,11 +37196,11 @@ msgid ""
 "(This means this digiKam version is too old, or the database format is to "
 "recent.) Please use the more recent version of digiKam that you used before."
 msgstr ""
-"A base de datos empregouse cunha versión máis recente de digiKam e "
-"actualizouse a un esquema de base de datos que non se pode usar con esta "
-"versión. (Isto significa que esta versión de digiKam é vella de máis, ou que "
-"o formato da base de datos é recente de máis). Por favor, use a versión máis "
-"recente de digiKam que usase con anterioridade."
+"A base de datos usouse cunha versión máis recente de digiKam e actualizouse "
+"a un esquema de base de datos que non se pode usar con esta versión. (Isto "
+"significa que esta versión de digiKam é vella de máis, ou que o formato da "
+"base de datos é recente de máis). Por favor, use a versión máis recente de "
+"digiKam que usase con anterioridade."
 
 #: core/libs/facesengine/facedb/facedbschemaupdater.cpp:191
 #, kde-format
@@ -55756,11 +55756,11 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
-"Produciuse un erro ao cambiar o nome de %1 imaxe.\n"
+"Produciuse un erro ao renomear %1 imaxe.\n"
 "Quere cambiar o nome da imaxe de novo ou cambiar o nome da imaxe "
 "sobrescribindo?"
 msgstr[1] ""
-"Produciuse un erro ao cambiar o nome de %1 imaxes.\n"
+"Produciuse un erro ao renomear %1 imaxes.\n"
 "Quere cambiar o nome das imaxes de novo ou cambiar o nome das imaxes "
 "sobrescribindo?"
 
@@ -60510,12 +60510,12 @@ msgstr "Non se puido executar o script para <filename>%1</filename>."
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
 msgid "Timeout from script for <filename>%1</filename>"
-msgstr "Esgotouse o tempo máximo do script para <filename>%1</filename>"
+msgstr "Esgotouse o tempo máximo do guión para <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:889
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
-msgstr "Non se puido executar o script para <filename>%1</filename>."
+msgstr "Non se puido executar o guión para <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1004
 #, kde-format
@@ -62124,7 +62124,7 @@ msgstr ""
 #: core/utilities/import/widgets/scriptingsettings.cpp:78
 #, kde-format
 msgid "Execute script for image:"
-msgstr "Executar o script para a imaxe:"
+msgstr "Executar o guión para a imaxe:"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:82
 #, kde-format
@@ -62134,7 +62134,7 @@ msgstr "Non se seleccionou ningún script."
 #: core/utilities/import/widgets/scriptingsettings.cpp:93
 #, kde-format
 msgid "Set here the script that is executed for every imported image."
-msgstr "Seleccione aquí o script a executar para cada imaxe importada."
+msgstr "Seleccione aquí o guión a executar para cada imaxe importada."
 
 #: core/utilities/lighttable/lighttablepreview.cpp:62
 #, kde-format

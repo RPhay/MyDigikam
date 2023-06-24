@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-06-21 09:22+0300\n"
+"PO-Revision-Date: 2023-06-23 16:27+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1883,11 +1883,10 @@ msgid "Recognize Faces"
 msgstr "Розпізнати обличчя"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Вилучити чорний кадр"
+msgstr "Вилучити усі обличчя"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -57943,40 +57942,32 @@ msgstr ""
 "Тривалість обробки: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Вилучити мітку з зображень"
+msgstr "Вилучити усі обличчя із зображення"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Вилучити мітку з зображень"
+msgstr "Вилучити усі мітки з зображення"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Не вдалося вивантажити зображення %1\n"
-"Бажаєте продовжувати вивантаження?"
+"Усі обличчя вилучено з %1 позначених зображень.\n"
+"Бажаєте продовжити?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Не вдалося вивантажити зображення %1\n"
-"Бажаєте продовжувати вивантаження?"
+"Усі мітки вилучено з %1 позначених зображень.\n"
+"Бажаєте продовжити?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format

@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-06-21 09:08+0200\n"
+"PO-Revision-Date: 2023-06-23 11:28+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1846,11 +1846,10 @@ msgid "Recognize Faces"
 msgstr "Reconeix les cares"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Elimina el marc negre"
+msgstr "Elimina totes les cares"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -57732,42 +57731,32 @@ msgstr ""
 "Durada: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Elimina les etiquetes de les imatges"
+msgstr "Elimina totes les cares de les imatges"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Elimina les etiquetes de les imatges"
+msgstr "Elimina totes les etiquetes de les imatges"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"L'etiqueta de cara «%2» està assignada a un element com a mínim. Voleu "
-"continuar?"
+"S'eliminaran totes les cares de les %1 imatges seleccionades.\n"
+"Voleu continuar?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"L'etiqueta de cara «%2» està assignada a un element com a mínim. Voleu "
-"continuar?"
+"S'eliminaran totes les etiquetes de les %1 imatges seleccionades.\n"
+"Voleu continuar?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format
