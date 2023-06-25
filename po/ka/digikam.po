@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-05-17 04:52+0200\n"
+"PO-Revision-Date: 2023-06-24 07:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1808,12 +1808,10 @@ msgid "Recognize Faces"
 msgstr "ამოცნობილი სიტყვები"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Revert all changes"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "ყველა ცვლილების დაბრუნება"
+msgstr "ყველა სახის წაშლა"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -53870,40 +53868,32 @@ msgid ""
 msgstr ""
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove all items from Light Table"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "სინათლის ცხრილიდან ყველა ჩანაწერის წაშლა"
+msgstr "გამოსახულებიდან ყველა სახის წაშლა"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove all items from Light Table"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "სინათლის ცხრილიდან ყველა ჩანაწერის წაშლა"
+msgstr "გამოსახულებიდან ყველა ჭდის წაშლა"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to save photo: %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"%1-ზე სურათის ატვირთვის შეცდომა.\n"
-"გნებავთ, გავაგრძელო?"
+"%1 მონიშნული გამოსახულებიდან ყველა სახე წაიშლება.\n"
+"გნებავთ, გააგრძელოთ?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to save photo: %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"%1-ზე სურათის ატვირთვის შეცდომა.\n"
-"გნებავთ, გავაგრძელო?"
+"%1 მონიშნული გამოსახულებიდან ყველა ჭდე წაიშლება.\n"
+"გნებავთ, გააგრძელოთ?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format
