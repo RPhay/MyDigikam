@@ -200,6 +200,11 @@ public:
      */
     void setCacheSize(int megabytes);
 
+    /**
+     * Get the cache size in bytes.
+     */
+    quint64 getCacheSize() const;
+
     // ------- Thumbnail cache -----------------------------------
 
     /**

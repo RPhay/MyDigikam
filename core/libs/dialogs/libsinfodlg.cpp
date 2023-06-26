@@ -48,6 +48,7 @@
 #include "dngwriter.h"
 #include "exiftoolparser.h"
 #include "dmemoryinfo.h"
+#include "loadingcache.h"
 #include "itempropertiestab.h"
 
 #ifdef HAVE_LENSFUN
@@ -356,6 +357,11 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                                 i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknown"));
         }
     }
+
+    quint64 cacheSize = LoadingCache::cache()->getCacheSize();
+
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Image cache size") << ItemPropertiesTab::humanReadableBytesCount(cacheSize));
 
     // NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
     //       One section title start with '+'.

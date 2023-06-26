@@ -277,6 +277,11 @@ void LoadingCache::setCacheSize(int megabytes)
     d->imageCache.setMaxCost(megabytes * 1024);
 }
 
+quint64 LoadingCache::getCacheSize() const
+{
+    return (d->imageCache.maxCost() * 1024);
+}
+
 // --- Thumbnails ----
 
 const QImage* LoadingCache::retrieveThumbnail(const QString& cacheKey) const
