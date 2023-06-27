@@ -470,4 +470,5 @@ BUGFIXES:
 455 ==> 426700 - Feature Request: Ability to Clear Face Tags from Multiple Selected Images.
 456 ==> 471390 - Conflicting behavior in 'new album' button in `import` flow.
 457 ==> 471394 - Cannot create new "Album_" under "AlbumS" from toolbar menu.
-458 ==> 
+458 ==> 471489 - Unable to move gif files to trash.
+459 ==> 
