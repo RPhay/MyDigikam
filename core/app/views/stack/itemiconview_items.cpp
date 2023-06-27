@@ -268,8 +268,20 @@ void ItemIconView::slotImageDeletePermanently()
             break;
 
         default:
+        {
+
+#ifdef HAVE_MEDIAPLAYER
+
+            if (viewMode() == StackedView::MediaPlayerMode)
+            {
+                d->stackedview->mediaPlayerView()->escapePreview();
+            }
+
+#endif // HAVE_MEDIAPLAYER
+
             d->iconView->deleteSelected(ItemViewUtilities::DeletePermanently);
             break;
+        }
     }
 }
 
