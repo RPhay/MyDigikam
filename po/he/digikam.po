@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:44+0000\n"
+"POT-Creation-Date: 2023-06-27 00:45+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -28035,7 +28035,7 @@ msgstr "<i>נוצר:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>דגם:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -28059,34 +28059,34 @@ msgstr ""
 msgid "Items List"
 msgstr "עורך תמונה"
 
-#: core/libs/dialogs/libsinfodlg.cpp:151
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "כן"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:153
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "לא"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "טבע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "ספריית אלבום"
 
-#: core/libs/dialogs/libsinfodlg.cpp:275
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28094,7 +28094,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:356
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -28102,34 +28102,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: core/libs/dialogs/libsinfodlg.cpp:379
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:407
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "הגדרות מצלמה"
 
-#: core/libs/dialogs/libsinfodlg.cpp:590
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "כן"
 
-#: core/libs/dialogs/libsinfodlg.cpp:595
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "לא"
 
-#: core/libs/dialogs/libsinfodlg.cpp:600
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

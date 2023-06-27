@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:44+0000\n"
+"POT-Creation-Date: 2023-06-27 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -31581,7 +31581,7 @@ msgstr "<i>FrameRate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>VideoCodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -31608,21 +31608,21 @@ msgstr "<font size=\"5\">%1</font><br/><b>Έκδοση %2</b><p>%3</p>"
 msgid "Items List"
 msgstr "Ιστορικό εικόνων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:151
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:153
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, fuzzy, kde-format
 #| msgctxt "Content type"
 #| msgid "Feature"
@@ -31630,14 +31630,14 @@ msgctxt "@title"
 msgid "Features"
 msgstr "Χαρακτηριστικό"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Βιβλιοθήκη λευκωμάτων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:275
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31645,7 +31645,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:356
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31653,34 +31653,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:379
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:407
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Διαμόρφωση φωτογραφικής μηχανής"
 
-#: core/libs/dialogs/libsinfodlg.cpp:590
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:595
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:600
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

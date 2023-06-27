@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:44+0000\n"
+"POT-Creation-Date: 2023-06-27 00:45+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -29902,7 +29902,7 @@ msgstr "<i>Kadrų dažnis:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Video kodekas:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
 #, fuzzy, kde-format
 #| msgid "Shared Libraries and Components Information"
 msgctxt "@title:window"
@@ -29928,35 +29928,35 @@ msgstr "Versija"
 msgid "Items List"
 msgstr "Paveikslėlių istorija"
 
-#: core/libs/dialogs/libsinfodlg.cpp:151
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Taip"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:153
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, fuzzy, kde-format
 #| msgid "Nature"
 msgctxt "@title"
 msgid "Features"
 msgstr "Gamta"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Gibraltaras"
 
-#: core/libs/dialogs/libsinfodlg.cpp:275
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29964,7 +29964,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:356
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29972,34 +29972,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: core/libs/dialogs/libsinfodlg.cpp:379
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:407
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Fotoaparato konfigūravimas"
 
-#: core/libs/dialogs/libsinfodlg.cpp:590
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Taip"
 
-#: core/libs/dialogs/libsinfodlg.cpp:595
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:600
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

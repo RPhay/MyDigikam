@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:44+0000\n"
-"PO-Revision-Date: 2023-06-23 11:28+0200\n"
+"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"PO-Revision-Date: 2023-06-26 11:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -7894,7 +7894,7 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
-"Marqueu-la per a aplicar l'equilibri de color inclòs en el perfil de la "
+"Marqueu-la per a aplicar l'equilibri de color integrat en el perfil de la "
 "pel·lícula. Desmarqueu-la si el voleu aplicar vosaltres mateixos."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:232
@@ -29851,7 +29851,7 @@ msgstr "<i>Velocitat dels fotogrames:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29875,67 +29875,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Llista d'elements"
 
-#: core/libs/dialogs/libsinfodlg.cpp:151
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:153
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Característiques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Biblioteques"
 
-#: core/libs/dialogs/libsinfodlg.cpp:275
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:356
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: core/libs/dialogs/libsinfodlg.cpp:379
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifests"
 
-#: core/libs/dialogs/libsinfodlg.cpp:407
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Configuració de l'OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:590
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/dialogs/libsinfodlg.cpp:595
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "No"
 
-#: core/libs/dialogs/libsinfodlg.cpp:600
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"

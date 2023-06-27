@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:44+0000\n"
+"POT-Creation-Date: 2023-06-27 00:45+0000\n"
 "PO-Revision-Date: 2023-06-22 20:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -29873,7 +29873,7 @@ msgstr "<i>Скорост на кадрите:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видео кодек:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:148
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
@@ -29897,67 +29897,67 @@ msgstr ""
 msgid "Items List"
 msgstr "Списък с елементи"
 
-#: core/libs/dialogs/libsinfodlg.cpp:151
+#: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
 msgctxt "@item: component is supported/available"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:152
+#: core/libs/dialogs/libsinfodlg.cpp:153
 #, kde-format
 msgctxt "@item: component is not available/supported"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:166
+#: core/libs/dialogs/libsinfodlg.cpp:167
 #, kde-format
 msgctxt "@title"
 msgid "Features"
 msgstr "Свойства"
 
-#: core/libs/dialogs/libsinfodlg.cpp:188
+#: core/libs/dialogs/libsinfodlg.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Libraries"
 msgstr "Библиотеки"
 
-#: core/libs/dialogs/libsinfodlg.cpp:275
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:356
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/dialogs/libsinfodlg.cpp:379
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Манифести"
 
-#: core/libs/dialogs/libsinfodlg.cpp:407
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Конфигурация на OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:590
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Да"
 
-#: core/libs/dialogs/libsinfodlg.cpp:595
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Не"
 
-#: core/libs/dialogs/libsinfodlg.cpp:600
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
