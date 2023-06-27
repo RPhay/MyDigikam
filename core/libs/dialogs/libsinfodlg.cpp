@@ -344,7 +344,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
     if (!memory.isNull())
     {
-        qint64 available = memory.totalPhysical();
+        quint64 available = memory.totalPhysical();
 
         if (available > 0)
         {
