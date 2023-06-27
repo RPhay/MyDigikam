@@ -1390,17 +1390,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
 
             if (!pAlbum)
             {
-                return;
-            }
-
-            CollectionLocation cl = CollectionManager::instance()->locationForAlbumRootId(pAlbum->albumRootId());
-
-            if (!cl.isAvailable() || cl.isNull())
-            {
-                QMessageBox::information(this, qApp->applicationName(),
-                                         i18nc("@info", "Collection selected as the destination album to download "
-                                               "from the camera device is not available. Please select another "
-                                               "one from the album list."));
+                qCDebug(DIGIKAM_IMPORTUI_LOG) << "Destination Album is null";
                 return;
             }
 
@@ -1415,6 +1405,17 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
     if (!pAlbum)
     {
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "Destination Album is null";
+        return;
+    }
+
+    CollectionLocation cl = CollectionManager::instance()->locationForAlbumRootId(pAlbum->albumRootId());
+
+    if (!cl.isAvailable() || cl.isNull())
+    {
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18nc("@info", "Collection selected as the destination album to download "
+                                       "from the camera device is not available. Please select another "
+                                       "destination album."));
         return;
     }
 
