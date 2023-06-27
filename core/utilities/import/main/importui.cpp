@@ -1347,7 +1347,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
 
                 if (!cl.isAvailable() || cl.isNull())
                 {
-                    QMessageBox::information(this,qApp->applicationName(),
+                    QMessageBox::information(this, qApp->applicationName(),
                                              i18nc("@info", "Collection which host your default target album set to process "
                                                    "download from camera device is not available. Please select another one from "
                                                    "camera configuration dialog."));
@@ -1385,14 +1385,25 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
             QString header(i18nc("@info", "Please select the destination album from the digiKam library to "
                                  "import the camera pictures into."));
 
-            album = AlbumSelectDialog::selectAlbum(this, dynamic_cast<PAlbum*>(album), header);
+            album  = AlbumSelectDialog::selectAlbum(this, dynamic_cast<PAlbum*>(album), header);
+            pAlbum = dynamic_cast<PAlbum*>(album);
 
-            if (!album)
+            if (!pAlbum)
             {
                 return;
             }
 
-            pAlbum = dynamic_cast<PAlbum*>(album);
+            CollectionLocation cl = CollectionManager::instance()->locationForAlbumRootId(pAlbum->albumRootId());
+
+            if (!cl.isAvailable() || cl.isNull())
+            {
+                QMessageBox::information(this, qApp->applicationName(),
+                                         i18nc("@info", "Collection selected as the destination album to download "
+                                               "from the camera device is not available. Please select another "
+                                               "one from the album list."));
+                return;
+            }
+
             group.writeEntry(d->configLastTargetAlbum, album->globalID());
         }
     }
