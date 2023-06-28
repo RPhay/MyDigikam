@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
-"PO-Revision-Date: 2023-05-16 11:00+0200\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
+"PO-Revision-Date: 2023-06-26 11:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1845,11 +1845,10 @@ msgid "Recognize Faces"
 msgstr "Reconeix les cares"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Elimina el marc negre"
+msgstr "Elimina totes les cares"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -3065,7 +3064,7 @@ msgstr "Filtres"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "No s'ha pogut obrir l'àlbum principal. No és cap ubicació física."
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -7888,7 +7887,7 @@ msgid ""
 "Check to apply the built-in color balance of the film profile. Un-check if "
 "you want to apply color balance yourself."
 msgstr ""
-"Marqueu-la per a aplicar l'equilibri de color inclòs en el perfil de la "
+"Marqueu-la per a aplicar l'equilibri de color integrat en el perfil de la "
 "pel·lícula. Desmarqueu-la si el voleu aplicar vosaltres mateixos."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:232
@@ -37262,7 +37261,7 @@ msgid "Description"
 msgstr "Descripció"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -55665,7 +55664,7 @@ msgstr "No s'han pogut obtindre les metadades de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "No s'ha pogut descarregar <filename>%1</filename>"
@@ -55686,10 +55685,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "S'ha saltat per a convertir el fitxer <filename>%1</filename> a DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "No s'ha pogut executar l'script de <filename>%1</filename>"
+msgstr "No s'ha pogut obrir l'script de <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -56479,17 +56477,33 @@ msgstr ""
 "Seleccioneu l'àlbum de destinació des de la biblioteca de digiKam al que "
 "s'importaran les imatges de la càmera."
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Collection which host your default target album set to process download "
+#| "from camera device is not available. Please select another one from "
+#| "camera configuration dialog."
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+"La col·lecció que hostatja l'àlbum de destinació predeterminat establit per "
+"a processar les baixades des del dispositiu de la càmera no està disponible. "
+"Seleccioneu-ne una altra des del diàleg de configuració de la càmera."
+
+#: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "No s'ha pogut moure el fitxer lateral de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "No s'ha pogut moure el fitxer de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56501,7 +56515,7 @@ msgstr ""
 "elements no se suprimiran. Si realment els voleu suprimir, desbloquegeu-los "
 "i torneu-ho a provar."
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56521,19 +56535,19 @@ msgstr[1] ""
 "Els fitxers suprimits seran irrecuperables.\n"
 "Esteu segur?"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Avís"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Espai al disc insuficient"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56552,8 +56566,8 @@ msgstr ""
 "Espai lliure disponible: %2\n"
 "Ho intente igualment?"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -56561,13 +56575,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Cap element seleccionat (%1 element)"
 msgstr[1] "Cap element seleccionat (%1 elements)"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "«%1» (%2 de %3)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -56575,22 +56589,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 element seleccionat"
 msgstr[1] "%2/%1 elements seleccionats"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "S'ha omés el fitxer <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Canvia el nom del fitxer a <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "No s'ha pogut guardar el fitxer lateral de <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -56600,19 +56614,19 @@ msgstr ""
 "Ha acabat la baixada de les imatges. Ara podeu desconnectar la càmera mentre "
 "es giren automàticament les imatges"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Ha acabat la baixada de les imatges"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ja hi ha un fitxer amb el mateix nom («%1») en la carpeta «%2»."
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -57733,42 +57747,32 @@ msgstr ""
 "Duració: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Elimina les etiquetes de les imatges"
+msgstr "Elimina totes les cares de les imatges"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Elimina les etiquetes de les imatges"
+msgstr "Elimina totes les etiquetes de les imatges"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"L'etiqueta de cara «%2» està assignada a un element com a mínim. Voleu "
-"continuar?"
+"S'eliminaran totes les cares de les %1 imatges seleccionades.\n"
+"Voleu continuar?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"L'etiqueta de cara «%2» està assignada a un element com a mínim. Voleu "
-"continuar?"
+"S'eliminaran totes les etiquetes de les %1 imatges seleccionades.\n"
+"Voleu continuar?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format

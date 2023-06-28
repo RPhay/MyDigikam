@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3085,7 +3085,7 @@ msgstr "Filtre"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Nedá sa otvoriť koreňový album. Nejedná sa o fyzické umiestnenie."
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -37181,7 +37181,7 @@ msgid "Description"
 msgstr "Popis"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -56526,7 +56526,7 @@ msgstr "Nepodarilo sa zmazať súbor <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Zlyhalo stiahnutie <filename>%1</filename>"
@@ -57338,17 +57338,33 @@ msgstr ""
 "Prosím, vyberte cieľový album z knižnice digiKam, kam sa importujú obrázky z "
 "fotoaparátu."
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Collection which host your default target album set to process download "
+#| "from camera device is not available. Please select another one from "
+#| "camera configuration dialog."
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+"Kolekcia, obsahujúca váš predvolený cieľový album nastavený ako cieľ pri "
+"sťahovaní obrázkov z fotoaparátu, nie je dostupná. Prosím, vyberte inú "
+"zbierku v okne s nastaveniami fotoaparátu."
+
+#: core/utilities/import/main/importui.cpp:1470
 #, fuzzy, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, fuzzy, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57360,7 +57376,7 @@ msgstr ""
 "nebudú zmazané. Ak ich naozaj chcete zmazať, prosím odomknite ich a skúste "
 "to znova."
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57384,19 +57400,19 @@ msgstr[2] ""
 "Odstránené súbory sa nedajú obnoviť.\n"
 "Chcete pokračovať?"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Upozornenie"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nedostatok miesta na disku"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57414,8 +57430,8 @@ msgstr ""
 "Odhad požadovaného miesta na disku: %1\n"
 "Dostupné voľné miesto: %2"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -57424,7 +57440,7 @@ msgstr[0] "Zobraziť vybranú položku"
 msgstr[1] "Nebola vybraná žiadna položka"
 msgstr[2] "Nebola vybraná žiadna položka"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -57432,7 +57448,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 z %3)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -57441,22 +57457,22 @@ msgstr[0] "zvolená %2/%1 položka"
 msgstr[1] "zvolené %2/%1 položky"
 msgstr[2] "zvolených %2/%1 položiek"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, fuzzy, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Nepodarilo sa zamknúť <filename>%1</filename>...."
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, fuzzy, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Nepodarilo sa nahrať súbor <filename>%1</filename>."
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -57466,13 +57482,13 @@ msgstr ""
 "Sťahovanie obrázkov bolo dokončené, môžete odpojiť váš fotoaparát, kým sú "
 "obrazky automaticky otáčané"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "&Označiť ako dôležité"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -57480,7 +57496,7 @@ msgstr ""
 "Súbor s rovnakým názvom (<filename>%1</filename>) už existuje v priečinku "
 "<resource>%2</resource>."
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

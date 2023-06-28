@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2996,7 +2996,7 @@ msgstr "筛选"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "无法打开根相册。因为它不是物理位置。"
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -35680,7 +35680,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -53510,7 +53510,7 @@ msgstr "无法获取 <filename>%1</filename> 的元数据"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "无法下载 <filename>%1</filename>"
@@ -54304,17 +54304,32 @@ msgid ""
 "camera pictures into."
 msgstr "请从 digiKam 数据库中选择用于导入相机照片的目标相册。"
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Collection which host your default target album set to process download "
+#| "from camera device is not available. Please select another one from "
+#| "camera configuration dialog."
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+"相机设备下载的默认目标相册所在的相册集合不可用。请从相机配置对话框选择另一个"
+"相册集合。"
+
+#: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "无法移动 <filename>%1</filename> 的附带文件"
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "无法移动 <filename>%1</filename> 的文件"
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54325,7 +54340,7 @@ msgstr ""
 "下列项目已被相机锁定 (只读)。它们将不会被删除。如果您确定要删除这些项目，请解"
 "除锁定后重试。"
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54341,19 +54356,19 @@ msgstr[0] ""
 "文件在删除后将无法恢复。\n"
 "您确定要删除吗？"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "存储空间不足"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54372,43 +54387,43 @@ msgstr ""
 "\n"
 "您仍然要尝试下载吗？"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "无选中项 (共 %1 项)"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "“%1”(第 %2 张，共 %3 张)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "已选中 %2/%1 项"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "跳过文件 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "重命名文件为 <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "无法保存 <filename>%1</filename> 的附带文件"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -54416,19 +54431,19 @@ msgid ""
 "are auto-rotated"
 msgstr "图像下载已完成。您可以在图像进行自动旋转处理时断开相机连接。"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "图像下载完成"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "文件名为(“%1”)的文件已存在于文件夹(“%2”)。"
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

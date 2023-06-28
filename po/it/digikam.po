@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2023-06-11 16:58+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3082,7 +3082,7 @@ msgstr "Filtri"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Impossibile aprire la radice dell'album. Non è una posizione fisica."
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -37318,7 +37318,7 @@ msgid "Description"
 msgstr "Descrizione"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -55685,7 +55685,7 @@ msgstr "Impossibile ottenere i metadati per <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Impossibile scaricare il file <filename>%1</filename>"
@@ -56503,17 +56503,33 @@ msgstr ""
 "Seleziona l'album di destinazione dalla libreria di digiKam in cui importare "
 "le immagini della fotocamera."
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "Collection which host your default target album set to process download "
+#| "from camera device is not available. Please select another one from "
+#| "camera configuration dialog."
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+"La raccolta che ospita il tuo album di destinazione predefinito, impostato "
+"per scaricare dalla fotocamera, non è disponibile. Selezionane un'altra "
+"dalla finestra di configurazione della fotocamera."
+
+#: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Impossibile spostare il file sidecar per <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Impossibile spostare il file per <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56525,7 +56541,7 @@ msgstr ""
 "lettura). Questi elementi non saranno eliminati. Se vuoi veramente "
 "eliminarli, prima sbloccali e poi riprova."
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56545,19 +56561,19 @@ msgstr[1] ""
 "I file eliminati non sono recuperabili.\n"
 "Vuoi procedere?"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Attenzione"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Spazio su disco insufficiente"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56577,8 +56593,8 @@ msgstr ""
 "\n"
 "Provare comunque?"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -56586,13 +56602,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Nessun elemento selezionato (%1 elemento)"
 msgstr[1] "Nessun elemento selezionato (%1 elementi)"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "«%1» (%2 su %3)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -56600,22 +56616,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 elemento selezionato"
 msgstr[1] "%2/%1 elementi selezionati"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "File <filename>%1</filename> saltato"
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Rinomina file in <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Impossibile salvare il file sidecar per <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -56625,19 +56641,19 @@ msgstr ""
 "Scaricamento delle immagini terminato, ora puoi scollegare la fotocamera "
 "mentre le immagini vengono ruotate automaticamente"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Scaricamento delle immagini terminato"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Esiste già un file con lo stesso nome («%1») nella cartella «%2»."
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

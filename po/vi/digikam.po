@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3047,7 +3047,7 @@ msgstr "Bộ &lọc"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -35893,7 +35893,7 @@ msgid "Description"
 msgstr "Mô tả"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -54035,7 +54035,7 @@ msgstr "Lỗi tải lên tệp « %1 »."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -54857,19 +54857,27 @@ msgstr ""
 "<p>Hãy chọn trong thư viện digiKam tập ảnh đích vào đó cần nhập khẩu các ảnh "
 "của máy ảnh.</p>"
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+
+#: core/utilities/import/main/importui.cpp:1470
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54881,7 +54889,7 @@ msgstr ""
 "này sẽ không bị xoá. Nếu bạn thực sự muốn xoá những mục này, hãy bỏ khoá "
 "chúng rồi thử lại."
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -54895,20 +54903,20 @@ msgid_plural ""
 msgstr[0] ""
 "Sắp xoá ảnh này. Tệp bị xoá không thể được phục hồi. Bạn có chắc chưa?"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Cảnh báo"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54921,46 +54929,46 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, fuzzy, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr " (%2 trên %3)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Lỗi tải lên tệp « %1 »."
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -54968,19 +54976,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Tải về"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Một tệp cùng tên (%1) đã có trong thư mục %2"
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

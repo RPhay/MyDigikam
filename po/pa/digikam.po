@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3261,7 +3261,7 @@ msgstr "ਫਿਲਟਰ"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -36718,7 +36718,7 @@ msgid "Description"
 msgstr "ਵੇਰਵਾ"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -55840,7 +55840,7 @@ msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ 
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -56646,19 +56646,27 @@ msgid ""
 "camera pictures into."
 msgstr "<p>ਕੈਮਰਾ ਤਸਵੀਰਾਂ ਨੂੰ ਇੰਪੋਰਟ ਕਰਨ ਵਾਸਤੇ ਡਿਜਿਕੈਮ ਲਾਇਬਰੇਰੀ ਤੋਂ ਟਿਕਾਣਾ ਐਲਬਮ ਚੁਣੋ ਜੀ।</p>"
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+
+#: core/utilities/import/main/importui.cpp:1470
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56667,7 +56675,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56684,20 +56692,20 @@ msgstr[1] ""
 "ਇਹ %1 ਤਸਵੀਰਾਂ ਹਟਾਉਣ ਦੀ ਤਿਆਰ ਹੈ। ਹਟਾਈਆਂ ਫਾਇਲਾਂ ਮੁੜ ਕੇ ਮਿਲਣ ਨਹੀਂ ਗਈਆਂ। ਕੀ ਤੁਸੀਂ ਜਾਰੀ "
 "ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "ਚੇਤਾਵਨੀ"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "ਘੱਟ ਡਿਸਕ ਥਾਂ"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56715,8 +56723,8 @@ msgstr ""
 "ਲੋੜੀਦੀ ਡਿਸਕ ਥਾਂ: %1\n"
 "ਉਪਲੱਬਧ ਖਾਲੀ ਥਾਂ: %2"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -56724,7 +56732,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -56732,7 +56740,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%3 ਵਿੱਚ %2)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -56740,25 +56748,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "ਫਾਇਲ \"%1\" ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -56766,19 +56774,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "ਡਾਊਨਲੋਡ: "
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "%2 ਫੋਲਡਰ 'ਚ ਇਸੇ ਨਾਂ (%1) ਫਾਇਲ ਪਹਿਲਾਂ ਵੀ ਮੌਜੂਦ ਹੈ"
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

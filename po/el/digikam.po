@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:45+0000\n"
+"POT-Creation-Date: 2023-06-28 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3414,7 +3414,7 @@ msgstr "Φίλτρα"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Αδυναμία ανοίγματος του λευκώματος ρίζας. Δεν είναι φυσική θέση."
 
-#: core/app/views/stack/itemiconview_items.cpp:614
+#: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -39357,7 +39357,7 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1907
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -59549,7 +59549,7 @@ msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2405
+#: core/utilities/import/main/importui.cpp:2417
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
@@ -60394,19 +60394,30 @@ msgstr ""
 "<p>Παρακαλώ, επιλέξτε το λεύκωμα προορισμού από τη βιβλιοθήκη digiKam για "
 "την εισαγωγή σε αυτό φωτογραφιών από τη φωτογραφική μηχανή.</p>"
 
-#: core/utilities/import/main/importui.cpp:1458
+#: core/utilities/import/main/importui.cpp:1416
+#, fuzzy, kde-format
+msgctxt "@info"
+msgid ""
+"Collection selected as the destination album to download from the camera "
+"device is not available. Please select another destination album."
+msgstr ""
+"Η συλλογή που φιλοξενεί το προκαθορισμένο λεύκωμα για την επεξεργασία λήψης "
+"από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
+"διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
+
+#: core/utilities/import/main/importui.cpp:1470
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1465
+#: core/utilities/import/main/importui.cpp:1477
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1892
+#: core/utilities/import/main/importui.cpp:1904
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60419,7 +60430,7 @@ msgstr ""
 "επιθυμείτε πραγματικά τη διαγραφή τους, παρακαλώ ξεκλειδώστε τα πρώτα και "
 "ξαναπροσπαθήστε."
 
-#: core/utilities/import/main/importui.cpp:1903
+#: core/utilities/import/main/importui.cpp:1915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60437,20 +60448,20 @@ msgstr[1] ""
 "Αυτές οι %1 εικόνες πρόκειται να διαγραφούν. Η διαγραφή αρχείων είναι "
 "οριστική. Είστε σίγουροι;"
 
-#: core/utilities/import/main/importui.cpp:1913
+#: core/utilities/import/main/importui.cpp:1925
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/import/main/importui.cpp:1957
+#: core/utilities/import/main/importui.cpp:1969
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Μη επαρκής χώρος στο δίσκο"
 
-#: core/utilities/import/main/importui.cpp:1958
+#: core/utilities/import/main/importui.cpp:1970
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60468,8 +60479,8 @@ msgstr ""
 "Εκτιμώμενος απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:2223
-#: core/utilities/import/main/importui.cpp:2251
+#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2263
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60477,7 +60488,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2255
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -60485,7 +60496,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 από %3)"
 
-#: core/utilities/import/main/importui.cpp:2262
+#: core/utilities/import/main/importui.cpp:2274
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60493,25 +60504,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/1 αντικείμενο επιλεγμένο"
 msgstr[1] "%2/%1 αντικείμενα επιλεγμένα"
 
-#: core/utilities/import/main/importui.cpp:2340
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2362
+#: core/utilities/import/main/importui.cpp:2374
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2385
+#: core/utilities/import/main/importui.cpp:2397
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2471
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60521,19 +60532,19 @@ msgstr ""
 "Η λήψη εικόνων ολοκληρώθηκε, τώρα μπορείτε να αποσυνδέσετε την κάμερα καθώς "
 "θα πραγματοποιείται η αυτόματη περιστροφή των εικόνων"
 
-#: core/utilities/import/main/importui.cpp:2467
+#: core/utilities/import/main/importui.cpp:2479
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Η λήψη εικόνων ολοκληρώθηκε"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2505
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ένα αρχείο με το ίδιο όνομα (%1) υπάρχει ήδη στο φάκελο %2."
 
-#: core/utilities/import/main/importui.cpp:2506
+#: core/utilities/import/main/importui.cpp:2518
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
