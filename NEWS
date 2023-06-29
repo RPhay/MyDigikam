@@ -472,4 +472,5 @@ BUGFIXES:
 457 ==> 471394 - Cannot create new "Album_" under "AlbumS" from toolbar menu.
 458 ==> 471489 - Unable to move gif files to trash.
 459 ==> 471547 - Make the Select Album dialog remember its size.
-460 ==> 
+460 ==> 471546 - Please support MXF file extensions, format already works, but digikam can't see them.
+461 ==> 
