@@ -32,6 +32,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -41,6 +43,7 @@
 #include "albumselectwidget.h"
 #include "albumthumbnailloader.h"
 #include "collectionmanager.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -68,6 +71,12 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
     : QDialog(parent),
       d      (new Private)
 {
+    setWindowFlags((windowFlags() & ~Qt::Dialog) |
+                   Qt::Window                    |
+                   Qt::WindowCloseButtonHint     |
+                   Qt::WindowMinMaxButtonsHint);
+
+    setObjectName(QLatin1String("Select Album Dialog"));
     setWindowTitle(i18nc("@title:window", "Select Album"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -124,12 +133,23 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
 
     // -------------------------------------------------------------
 
-    resize(500, 500);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
+
+    winId();
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
+
     slotSelectionChanged();
 }
 
 AlbumSelectDialog::~AlbumSelectDialog()
 {
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
+    DXmlGuiWindow::saveWindowSize(windowHandle(), group);
+
     delete d;
 }
 

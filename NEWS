@@ -471,4 +471,5 @@ BUGFIXES:
 456 ==> 471390 - Conflicting behavior in 'new album' button in `import` flow.
 457 ==> 471394 - Cannot create new "Album_" under "AlbumS" from toolbar menu.
 458 ==> 471489 - Unable to move gif files to trash.
-459 ==> 
+459 ==> 471547 - Make the Select Album dialog remember its size.
+460 ==> 
