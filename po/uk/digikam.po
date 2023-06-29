@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-28 00:45+0000\n"
-"PO-Revision-Date: 2023-06-23 16:27+0300\n"
+"PO-Revision-Date: 2023-06-28 09:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -56672,20 +56672,14 @@ msgstr ""
 "імпортувати знімки з фотоапарата."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"Не вдалося знайти збірки, у якій зберігається вказаний вами типовий альбом "
-"для отримання фотографій з пристрою для фотографування. Будь ласка, вкажіть "
-"інший альбом за допомогою діалогового вікна налаштування фотоапарата."
+"Збірка, яку вибрано як альбом призначення для отримання даних з пристрою "
+"фотоапарата, є недоступною. Будь ласка, вкажіть інший альбом призначення."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format

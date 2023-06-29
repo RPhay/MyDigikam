@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-28 00:45+0000\n"
-"PO-Revision-Date: 2023-06-24 01:28+0200\n"
+"PO-Revision-Date: 2023-06-29 01:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -56509,20 +56509,14 @@ msgstr ""
 "las imágenes de la cámara."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"La colección que aloja su álbum de destino por omisión para procesar la "
-"descarga de su cámara no está disponible. Seleccione otra en el diálogo de "
-"configuración de la cámara."
+"La colección seleccionada como álbum de destino para descargar de la cámara "
+"no está disponible. Seleccione otro álbum de destino."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
