@@ -293,6 +293,15 @@ public:
     void addRemoveTagsMenu(const imageIds& ids);
 
     /**
+     * Add "Remove all Tags" action.
+     *
+     * Removes all tags from the selected item ids except face tags.
+     *
+     * @param ids the selected items
+     */
+    void addRemoveAllTags(const imageIds& ids);
+
+    /**
      * Add a menu to create new tags from adressbook entries.
      */
     void addCreateTagFromAddressbookMenu();
@@ -411,6 +420,7 @@ private Q_SLOTS:
     void slotDeselectChildren();
     void slotSelectParents();
     void slotDeselectParents();
+    void slotRemoveAllTags();
 
 private:
 

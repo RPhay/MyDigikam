@@ -80,6 +80,7 @@
 #include "itemviewutilities.h"
 #include "lighttablewindow.h"
 #include "queuemgrwindow.h"
+#include "metadataremover.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
 #include "ratingwidget.h"

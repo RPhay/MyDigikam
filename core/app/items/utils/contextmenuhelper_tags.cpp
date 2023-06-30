@@ -169,6 +169,18 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
             this, SIGNAL(signalRemoveTag(int)));
 }
 
+void ContextMenuHelper::addRemoveAllTags(const imageIds& ids)
+{
+    setSelectedIds(ids);
+
+    QAction* const removeAllTagsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
+                                                     i18nc("@action: context menu", "Remove all Tags"), this);
+    addAction(removeAllTagsAction);
+
+    connect(removeAllTagsAction, SIGNAL(triggered()),
+            this, SLOT(slotRemoveAllTags()));
+}
+
 void ContextMenuHelper::addLabelsAction()
 {
     QMenu* const menuLabels           = new QMenu(i18nc("@action: context menu", "Assign Labe&ls"), d->parent);
@@ -294,6 +306,19 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
             this, SIGNAL(signalGotoTag(int)));
 
     addAction(gotoMenuAction);
+}
+
+void ContextMenuHelper::slotRemoveAllTags()
+{
+    if (d->selectedIds.isEmpty())
+    {
+        return;
+    }
+
+    ItemInfoList infos(d->selectedIds);
+
+    MetadataRemover* const tool = new MetadataRemover(infos, MetadataRemover::Tags);
+    tool->start();
 }
 
 } // namespace Digikam

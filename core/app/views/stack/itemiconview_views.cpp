@@ -317,6 +317,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
     cmHelper.addStandardActionThumbnail(selectedImageIds, currentAlbum());
     cmHelper.addAssignTagsMenu(selectedImageIds);
     cmHelper.addRemoveTagsMenu(selectedImageIds);
+    cmHelper.addRemoveAllTags(selectedImageIds);
     cmHelper.addLabelsAction();
 
     if (d->leftSideBar->getActiveTab() != d->peopleSideBar)

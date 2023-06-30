@@ -521,6 +521,7 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     cmHelper.addAssignTagsMenu(idList);
     cmHelper.addRemoveTagsMenu(idList);
+    cmHelper.addRemoveAllTags(idList);
     cmHelper.addLabelsAction();
 
     // special action handling --------------------------------

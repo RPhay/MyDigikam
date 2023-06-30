@@ -473,4 +473,5 @@ BUGFIXES:
 458 ==> 471489 - Unable to move gif files to trash.
 459 ==> 471547 - Make the Select Album dialog remember its size.
 460 ==> 471546 - Please support MXF file extensions, format already works, but digikam can't see them.
-461 ==> 
+461 ==> 348104 - Remove all tags from selected image(s).
+462 ==> 
