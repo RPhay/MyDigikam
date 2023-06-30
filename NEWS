@@ -8,7 +8,9 @@ General      : Improve usability of Image Properties sidebar tab.
 Libraw       : Update to snapshot 2023-05-14
 Bundles      : Update Exiv2 to last 0.28 release: https://github.com/Exiv2/exiv2/issues/2406#issuecomment-1529139799
 Bundles      : Update KF5 framework to last 5.106
-Bundles      : Includes Breeze widgets style in MacOS package to render properly GUI contents..
+Bundles      : Includes Breeze widgets style in MacOS package to render properly GUI contents.
+Tags         : Add possibility to remove all face tags from selected items.
+Tags         : Add possibility to remove all tags from selected items except face tags.
 
 *****************************************************************************************************
 BUGFIXES:
