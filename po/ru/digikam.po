@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -27835,7 +27835,7 @@ msgstr[1] "Исключено %1 альбома"
 msgstr[2] "Исключено %1 альбомов"
 msgstr[3] "Исключён один альбом"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"

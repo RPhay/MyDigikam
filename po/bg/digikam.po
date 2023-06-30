@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
-"PO-Revision-Date: 2023-06-22 20:34+0200\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"PO-Revision-Date: 2023-06-29 14:49+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1863,11 +1863,10 @@ msgid "Recognize Faces"
 msgstr "Разпознаване на лица"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Премахване на черната рамка"
+msgstr "Премахване на всички лица"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -27817,7 +27816,7 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "Изключен е един албум"
 msgstr[1] "Изключени са %1 албума"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
@@ -56474,20 +56473,14 @@ msgstr ""
 "снимките от фотоапарата."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"Колекция, на която е разположен вашият целеви албум по подразбиране, "
-"настроен да обработва изтегляне от устройство с фотоапарат, не е налична. "
-"Моля, изберете друга от диалоговия прозорец за конфигуриране на фотоапарата."
+"Колекция, избрана като целеви албум за сваляне от камерата, не е налична. "
+"Моля, изберете друг целеви албум."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
@@ -57741,40 +57734,32 @@ msgstr ""
 "Продължителност: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Премахване на таг от изображенията"
+msgstr "Премахване на всички лица от изображението"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Премахване на таг от изображенията"
+msgstr "Премахване на всички  тагове от изображенията"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Таг за лице '%2' е присвоен на поне един елемент. Искате ли да продължите?"
+"Всичките лица са премахнати от %1 избрани изображения.\n"
+"Искате ли да продължите?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Таг за лице '%2' е присвоен на поне един елемент. Искате ли да продължите?"
+"Всичките тагове са премахнати от %1 избрани изображения.\n"
+"Искате ли да продължите?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -26592,7 +26592,7 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "%1/%2 वस्तुएँ चयनित"
 msgstr[1] "%1/%2 वस्तुएँ चयनित"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"

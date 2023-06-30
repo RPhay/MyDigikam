@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
 "PO-Revision-Date: 2023-06-28 10:19+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27792,7 +27792,7 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "1 album uitgesloten"
 msgstr[1] "%1 albums uitgesloten"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"

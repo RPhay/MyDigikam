@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -28007,7 +28007,7 @@ msgstr[1] "Neįtraukti %1 albumai"
 msgstr[2] "Neįtraukta %1 albumų"
 msgstr[3] "Neįtrauktas %1 albumas"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"

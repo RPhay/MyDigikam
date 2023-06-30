@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
-"PO-Revision-Date: 2023-06-11 16:58+0200\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"PO-Revision-Date: 2023-06-28 21:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -565,7 +565,7 @@ msgstr[1] "Cestina %1 file"
 msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
 msgid_plural "Image Quality Sort"
-msgstr[0] "Ordinamento qualità delle immagini"
+msgstr[0] "Ordinamento qualità dell'immagine"
 msgstr[1] "Ordinamento qualità delle immagini"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
@@ -1860,11 +1860,10 @@ msgid "Recognize Faces"
 msgstr "Riconosci i volti"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Rimuovi tag volto"
+msgstr "Rimuovi tutti i volti"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -27826,7 +27825,7 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "Un album escluso"
 msgstr[1] "%1 album esclusi"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
@@ -39205,7 +39204,7 @@ msgstr "Gestore elaborazione in serie"
 #: core/libs/settings/applicationsettings_miscs.cpp:443
 #, kde-format
 msgid "Renaming"
-msgstr "Rinomina in corso"
+msgstr "Rinomina"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:446
 #, kde-format
@@ -50380,7 +50379,7 @@ msgstr "Controllo ortografico"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
-msgstr "Localizza"
+msgstr "Impostazioni regionali"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:384
 #: core/utilities/setup/misc/setupmisc.cpp:400
@@ -55706,10 +55705,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Conversione del file <filename>%1</filename> in DNG saltata"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Impossibile avviare lo script per <filename>%1</filename>"
+msgstr "Impossibile aprire lo script per <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -56504,20 +56502,15 @@ msgstr ""
 "le immagini della fotocamera."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"La raccolta che ospita il tuo album di destinazione predefinito, impostato "
-"per scaricare dalla fotocamera, non è disponibile. Selezionane un'altra "
-"dalla finestra di configurazione della fotocamera."
+"La raccolta selezionata come album di destinazione, impostata per scaricare "
+"dalla fotocamera, non è disponibile. Seleziona un altro album di "
+"destinazione."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
@@ -57769,39 +57762,31 @@ msgstr ""
 "Durata: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Rimuovi tag dalle immagini"
+msgstr "Rimuovi tutti i volti dall'immagine"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Rimuovi tag dalle immagini"
+msgstr "Rimuovi tutti i tag dall'immagine"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Caricamento dell'immagine %1 non riuscito\n"
+"Sono stati rimossi tutti i volti dalle %1 immagini selezionate.\n"
 "Vuoi continuare?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Caricamento dell'immagine %1 non riuscito\n"
+"Sono stati rimossi tutti i tag dalle %1 immagini selezionate.\n"
 "Vuoi continuare?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
@@ -62810,7 +62795,7 @@ msgstr "Usa le finestre di dialogo native dei file del sistema"
 #: core/utilities/setup/misc/setupmisc.cpp:199
 #, kde-format
 msgid "Draw frames around grouped items"
-msgstr "Disegna cornici intorno agli elementi raggruppati"
+msgstr "Disegna cornici attorno agli elementi raggruppati"
 
 #: core/utilities/setup/misc/setupmisc.cpp:206
 #, kde-format

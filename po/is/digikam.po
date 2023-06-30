@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-28 00:45+0000\n"
-"PO-Revision-Date: 2023-03-21 14:20+0000\n"
+"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"PO-Revision-Date: 2023-06-29 16:57+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -1854,11 +1854,10 @@ msgid "Recognize Faces"
 msgstr "Þekkja andlit"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Fjarlægja andlitsmerki"
+msgstr "Fjarlægja öll andlitsmerki"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -2003,7 +2002,7 @@ msgstr "Eftir slóð"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
-msgstr "Eftir stofndegi"
+msgstr "Eftir upprunadagsetningu"
 
 #: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
@@ -2747,12 +2746,7 @@ msgid "All supported files (%1)"
 msgstr "Allar studdar skrár (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2762,18 +2756,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Umsagnir: %2\n"
+"Handbækur: %3\n"
 "\n"
-"Byggingardagsetning: %3 (markmið: %4)"
+"Byggingardagsetning: %4 (markmið: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2785,10 +2773,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Umsagnir: %2\n"
+"Handbækur: %3\n"
 "\n"
-"Byggingardagsetning: %3 (markmið: %4)\n"
-"Útg.: %5\n"
-"Grein: %6"
+"Byggingardagsetning: %4 (markmið: %5)\n"
+"Útg.: %6\n"
+"Grein: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -3141,9 +3130,7 @@ msgstr "Verkfæri"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:851
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Hjálp"
 
@@ -3151,7 +3138,7 @@ msgstr "Hjálp"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Hjálp á netinu um ruslafötuna"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3248,10 +3235,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 atriði valin"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 200 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Meira en 200 villuskýrslum notenda lokað á bugzilla."
+msgstr "Meira en 400 villuskýrslum notenda lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3278,49 +3264,43 @@ msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr "Bætt við JPEG-XL; WEBP og AVIF umbreytum í Magnvinnslustjóra."
 
 #: core/app/views/stack/welcomepageview.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
-#| "versionned images in editor."
+#, kde-format
 msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
-"Stuðningur við JPEG-XL, HEIF, WEBP og AVIF sem taplaus myndsnið til að geyma "
-"myndir í mörgum útgáfum í myndvinnsluforritinu."
+"Útgáfustýring: Stuðningur við JPEG-XL, HEIF, WEBP og AVIF sem taplaus "
+"myndsnið til að geyma myndir í mörgum útgáfum í myndvinnsluforritinu."
 
 #: core/app/views/stack/welcomepageview.cpp:146
-#, fuzzy, kde-format
-#| msgid "Add hamburger menu to tool-bar if main menu is hidden."
+#, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
-msgstr "Birta (hamborgara)-valmynd á verkfærastiku ef aðalvalmynd er falin."
+msgstr ""
+"Notagildi: Birta (hamborgara)-valmynd á verkfærastiku ef aðalvalmynd er "
+"falin."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgid "Add new option to write metadata to files with ExifTool backend."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Bætt við möguleika til að skrifa lýsigögn í skrár með ExifTool-bakenda."
+"Lýsigögn: Bætt við möguleika til að skrifa lýsigögn í skrár með ExifTool-"
+"bakenda."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "Optional write metadata operations to DNG and RAW files are now always "
-#| "delegated to ExifTool Backend."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Valkvæðar aðgerðir til þess að skrifa lýsigögn inn í DNG og RAW-skrár eru "
-"núna alltaf útvistaðar til ExifTool-bakendans."
+"Lýsigögn: Valkvæðar aðgerðir til þess að skrifa lýsigögn inn í DNG og RAW-"
+"skrár eru núna alltaf útvistaðar til ExifTool-bakendans."
 
 #: core/app/views/stack/welcomepageview.cpp:149
-#, fuzzy, kde-format
-#| msgid "Optimize layout of Metadata Edit plugin for a better usability."
+#, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
-msgstr "Bestuð framsetning viðbótar fyrir breytingar á lýsigögnum."
+msgstr "Lýsigögn: Bestuð framsetning viðbótar fyrir breytingar á lýsigögnum."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3330,60 +3310,49 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add increment file counter to sequence numbering with option [c] or [c,"
-#| "step]."
+#, kde-format
 msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
-"Bætt við tölusetningu sem tekur mið af fjölda skráa með rofanum [c] eða [c,"
-"step]."
+"Ítarleg endurnefning: Bætt við tölusetningu sem tekur mið af fjölda skráa "
+"með rofanum [c] eða [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
-#, fuzzy, kde-format
-#| msgid "Add random text sequence numbering with option [r]."
+#, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
-"Bætt við tölusetningu sem tekur mið af tilviljunarkenndum texta með rofanum "
-"[r]."
+"Ítarleg endurnefning: Bætt við tölusetningu sem tekur mið af "
+"tilviljunarkenndum texta með rofanum [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add configurable first character for the unique modifier with {unique:n,"
-#| "c}."
+#, kde-format
 msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
-"Bætt við sérsníðanlegum fyrsta staf fyrir einkvæman breytilykil með {unique:"
-"n,c}."
+"Ítarleg endurnefning: Bætt við sérsníðanlegum fyrsta staf fyrir einkvæman "
+"breytilykil með {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Add search for items by number of face regions."
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Bætt við leit að atriðum eftir fjölda andlitasvæða."
+msgstr "Ítarleg leit: Bætt við leit að atriðum eftir fjölda andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Add search for items without face regions."
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Bætt við leit að atriðum án andlitasvæða."
+msgstr "Ítarleg leit: Bætt við leit að atriðum án andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:156
-#, fuzzy, kde-format
-#| msgid "Add support for cross-platform network paths."
+#, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr "Bættur stuðningur við netslóðir á milli stýrikerfa."
+msgstr "Myndasöfn: Bættur stuðningur við netslóðir á milli stýrikerfa."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "Bætt við stuðningi við SQLite WAL (Write-Ahead-Logging)."
+msgstr "Gagnagrunnur: Bætt við stuðningi við SQLite WAL (Write-Ahead-Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3395,13 +3364,12 @@ msgstr ""
 "einingunni."
 
 #: core/app/views/stack/welcomepageview.cpp:159
-#, fuzzy, kde-format
-#| msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
 msgstr ""
-"Bætt við stillingaspjaldi stafsetningaryfirferðar í Uppsetning/Ýmislegt "
+"Bætt við stillingaspjaldi stafsetningaryfirferðar í Stillingar/Ýmislegt "
 "fyrir digiKam og Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:160
@@ -3411,12 +3379,11 @@ msgid ""
 msgstr "Bætt við stuðningi við þýðingar í viðmótshlutanum fyrir varatungumál."
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+#, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
 msgstr ""
-"Bætt við stillingaspjaldi Localize í Uppsetning/Ýmislegt fyrir digiKam og "
+"Bætt við stillingaspjaldi staðfærslu í Stillingar/Ýmislegt fyrir digiKam og "
 "Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:162
@@ -3443,19 +3410,15 @@ msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:166
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
-#| "PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning "
-#| "model</a>."
+#, kde-format
 msgid ""
 "Add new maintenance tool to perform <a href=\"https://community.kde.org/"
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
-"Bætt við eiginleika til að <a href=\"https://community.kde.org/GSoc/2022/"
-"StatusReports/PhuocKhanhLe\">greina fallegar myndir með vélanáms-reikniriti "
-"(deep learning)</a>."
+"Bætt við nýju viðhaldsverkfæri til að <a href=\"https://community.kde.org/"
+"GSoc/2022/StatusReports/PhuocKhanhLe\">greina fallegar myndir með vélanáms-"
+"reikniriti (deep learning)</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3468,43 +3431,38 @@ msgstr ""
 "texta</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add new tool to assign pick label automatically by parsing image quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Bætt við nýju verkfæri til að úthluta sérmerkingum sem byggjast á myndgæðum."
+"Magnvinnslustjóri: Bætt við nýju verkfæri til að úthluta sérmerkingum sem "
+"byggjast á myndgæðum."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Bætt við verkfæri til að úthluta einkunnum, sérmerkingum og litmerkjum í "
-"magnvinnslu."
+"Magnvinnslustjóri: Bætt við verkfæri til að úthluta einkunnum, sérmerkingum "
+"og litmerkjum í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign titles and captions in batch."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Bætt við verkfæri til að úthluta titlum og skýringatextum í magnvinnslu."
+"Magnvinnslustjóri: Bætt við verkfæri til að úthluta titlum og skýringatextum "
+"í magnvinnslu."
 
 #: core/app/views/stack/welcomepageview.cpp:171
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
-#| "from DocBook to Sphinx/ReStructuredText framework."
+#, kde-format
 msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
-"<a href=\" https://docs.digikam.org/en/index.html\">Endurskrifun handbókar</"
-"a> úr DocBook yfir í Sphinx/ReStructuredText kerfi."
+"Handbækur: <a href=\" https://docs.digikam.org/en/index.html\">Endurskrifun "
+"handbókar</a> úr DocBook yfir í Sphinx/ReStructuredText kerfi."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3514,10 +3472,9 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:173
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr "Uppfært innra RAW-kerfið í nýjustu Libraw 0.21.1."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 20230403."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -3555,16 +3512,13 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 6.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
 "Nokkrir nýir eiginleikar í þessari útgáfu digiKam eru meðal annars (borið "
-"saman við digiKam 6.x):"
+"saman við digiKam 7):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
@@ -14177,7 +14131,7 @@ msgstr "Sett á stafrænt form klukkan"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
 #, kde-format
 msgid "Set here the creation date of digital representation."
-msgstr "Settu hér tökudagsetninguna, þegar stafræna útgáfan varð til."
+msgstr "Settu hér upprunadagsetninguna, þegar stafræna útgáfan varð til."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
 #, kde-format
@@ -22824,7 +22778,7 @@ msgstr "Flytja út til &Flickr..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Flickr Login URL"
-msgstr ""
+msgstr "Settu inn innskráningarslóð Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:318
 #, kde-format
@@ -26417,12 +26371,10 @@ msgid "Rename Album (%1)"
 msgstr "Endurnefna albúm (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Endurnefna albúm (%1)"
+msgstr "Endurnefna grunnalbúm (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -27461,7 +27413,7 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "1 albúm útilokað"
 msgstr[1] "%1 albúm útilokuð"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:71
+#: core/libs/album/widgets/albumselectdialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
@@ -27488,11 +27440,10 @@ msgstr "Heil albúmasöfn"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive Selection"
-msgstr "Val á þema"
+msgstr "Endurkvæmt val"
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -29552,12 +29503,10 @@ msgid "Manifests"
 msgstr "Manifest-eiginleikayfirlýsingar"
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "Uppsetning FFmpeg"
+msgstr "Uppsetning OpenCV"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -37568,7 +37517,7 @@ msgstr "Fylgiskrá: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "GPS: "
-msgstr ""
+msgstr "GPS: "
 
 #: core/libs/properties/itempropertiestab.cpp:124
 #, kde-format
@@ -37589,12 +37538,10 @@ msgid "Audio/Video Properties"
 msgstr "Eiginleikar hljóðs/myndskeiðs"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
-msgstr "Titill:"
+msgstr "Titill: "
 
 #: core/libs/properties/itempropertiestab.cpp:239
 #, kde-format
@@ -37621,20 +37568,16 @@ msgid "Rating: "
 msgstr "Einkunn: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Útgáfa"
+msgstr "Útgáfustýrt: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Hópa"
+msgstr "Hópað: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -37643,37 +37586,31 @@ msgid "digiKam Properties"
 msgstr "Eiginleikar digiKam"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Stikkorð"
+msgstr "Stikkorð: "
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Fólk"
+msgstr "Fólk: "
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Merki"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Staðsetning"
 
 #: core/libs/properties/itempropertiestab.cpp:344
-#, fuzzy, kde-format
-#| msgid "Rights"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Rights"
 msgstr "Réttindi"
@@ -38875,15 +38812,7 @@ msgid "Delete '%1' tag(s)?"
 msgstr "Eyða '%1' merki/merkjum?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:575
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' has at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' have at least one face tag child. Removing it will also "
-#| "remove the children.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
 "the children.\n"
@@ -39298,7 +39227,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Hjálp á netinu um merkjaumsýslu"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -43016,10 +42945,9 @@ msgid "Developer (2004)"
 msgstr "Forritari (2004)"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
-#, fuzzy, kde-format
-#| msgid "Configure this column"
+#, kde-format
 msgid "Configure Notifications"
-msgstr "Stilla þennan dálk"
+msgstr "Stilla tilkynningar"
 
 #: core/libs/widgets/mainview/dxmlguiwindow.cpp:145
 #, kde-format
@@ -48641,12 +48569,10 @@ msgstr ""
 "setningagreiningu á umbeðnum tungumálum.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Sjálfgefið tungumál"
+msgstr "Sjálfgefið tungumál:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -48657,9 +48583,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgid "Auto-detect"
 msgstr "Finna sjálfvirkt"
 
@@ -48667,7 +48591,7 @@ msgstr "Finna sjálfvirkt"
 #, kde-format
 msgctxt "@info"
 msgid "Detect automatically the language by parsing string content"
-msgstr ""
+msgstr "Finna tungumál sjálfkrafa með því að þátta efni strengs"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:139
 #, kde-format
@@ -50705,6 +50629,8 @@ msgstr "<p>Bæta valmöguleikum skráarendurnefninga við þáttunarstrenginn.</
 msgid ""
 "To apply a modifier, append it to the option, for instance: [file]{upper}"
 msgstr ""
+"Til að virkja breytu, skaltu bæta henni aftan við rofann, til dæmis: [file]"
+"{upper}"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
@@ -51495,10 +51421,7 @@ msgid "Sequence number"
 msgstr "Raðnúmer"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:60
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sequence number (||options||: ||c|| = file counter aware, ||e|| = "
-#| "extension aware, ||f|| = folder aware, ||r|| = random aware)"
+#, kde-format
 msgid ""
 "Sequence number (||options||: ||c|| = file counter aware, ||e|| = extension "
 "aware, ||f|| = folder aware, ||r|| = random aware, ||ce|| = counter and "
@@ -51506,25 +51429,24 @@ msgid ""
 msgstr ""
 "Raðnúmer (||rofar||: ||c|| = tekur mið af fjölda skráa, ||e|| = tekur mið af "
 "skráarendingum, ||f|| = tekur mið af möppum, ||r|| = tekur mið af "
-"tilviljanakenndum texta)"
+"tilviljanakenndum texta, ||ce|| = tekur mið af fjölda skráa og "
+"skráarendingum, ||re|| = tekur mið af tilviljanakenndum texta og "
+"skráarendingum)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start)"
+#, kde-format
 msgid "Sequence number (custom start) ||options||: ||e||, ||f||"
-msgstr "Raðnúmer (sérsniðin byrjun)"
+msgstr "Raðnúmer (sérsniðin byrjun) ||rofar||: ||e||, ||f||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:69
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom step)"
+#, kde-format
 msgid "Sequence number (custom step) ||options||: ||c||"
-msgstr "Raðnúmer (sérsniðin þrep)"
+msgstr "Raðnúmer (sérsniðin þrep) ||rofar||: ||c||"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:71
-#, fuzzy, kde-format
-#| msgid "Sequence number (custom start + step)"
+#, kde-format
 msgid "Sequence number (custom start + step) ||options||: ||e||, ||f||"
-msgstr "Raðnúmer (sérsniðin byrjun + þrep)"
+msgstr "Raðnúmer (sérsniðin byrjun + þrep) ||rofar||: ||e||, ||f||"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:19
@@ -51579,17 +51501,16 @@ msgstr "Tölusetning sem tekur mið af tilviljunarkenndum texta"
 
 #. i18n: ectx: property (text), widget (QRadioButton, counterAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:126
-#, fuzzy, kde-format
-#| msgid "File counter aware numbering"
+#, kde-format
 msgid "File counter and extensions aware numbering"
-msgstr "Tölusetning sem tekur mið af fjölda skráa"
+msgstr "Tölusetning sem tekur mið af fjölda skráa og skráarendingum"
 
 #. i18n: ectx: property (text), widget (QRadioButton, randomAndExtAware)
 #: core/utilities/advancedrename/parser/options/sequencenumberoptiondialogwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "Random text aware numbering"
+#, kde-format
 msgid "Random text and extensions aware numbering"
-msgstr "Tölusetning sem tekur mið af tilviljunarkenndum texta"
+msgstr ""
+"Tölusetning sem tekur mið af tilviljunarkenndum texta og skráarendingum"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
@@ -52384,57 +52305,49 @@ msgstr "Merki en ekki albúm"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Eldra eða stærra"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Kjósa fremur valda möppu sem tilvísun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected folder as reference"
-msgstr ""
+msgstr "Kjósa fremur annað en valda möppu sem tilvísun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Eftir stofndegi"
+msgstr "Kjósa fremur nýrri upprunadag"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Eftir breytingardagsetningu"
+msgstr "Kjósa fremur nýrri breytingardagsetningu"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Upplýsingar um núverandi myndval"
+msgstr "Veldu aðferð við val viðmiðunarmyndar"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:230
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Tilvísun:"
+msgstr "Tilvísun"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "Vel&du aðferð við val mynda:"
+msgstr "Aðferð við val viðmiðunarmyndar"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, kde-format
@@ -55117,10 +55030,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Sleppti að umbreyta skránni <filename>%1</filename> í DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Gat ekki keyrt skriftu á <filename>%1</filename>"
+msgstr "Gat ekki opnað skriftu fyrir <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -55907,20 +55819,15 @@ msgid ""
 msgstr "Veldu möppu í digiKam safni til að hlaða inn í myndum úr myndavélinni."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
 "Myndasafnið sem inniheldur albúmið sem þú stilltir til að taka sjálfgefið "
-"við niðurhali frá myndavél er ekki tiltækt. Veldu eitthvað annað albúm í "
-"stillingaglugga fyrir myndavél."
+"við niðurhali frá myndavél er ekki tiltækt. Veldu eitthvað annað albúm til "
+"að taka við myndunum."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
@@ -57163,39 +57070,31 @@ msgstr ""
 "Tímalengd: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Fjarlægja merki af myndum"
+msgstr "Fjarlægja öll andlitsmerki af mynd"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Fjarlægja merki af myndum"
+msgstr "Fjarlægja öll merki af mynd"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Mistókst að senda myndina %1\n"
+"Öll andlitsmerki verða fjarlægð af %1 völdum myndum.\n"
 "Viltu halda áfram?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Mistókst að senda myndina %1\n"
+"Öll merki verða fjarlægð af %1 völdum myndum.\n"
 "Viltu halda áfram?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
@@ -59281,21 +59180,16 @@ msgstr ""
 "bita."
 
 #: core/utilities/setup/album/setupalbumview.cpp:333
-#, fuzzy, kde-format
-#| msgid "Preview image is converted to 8 bits for a faster viewing"
+#, kde-format
 msgid "Preview image is always scaled to fit to window"
-msgstr ""
-"Forskoðunarmynd er umbreytt í 8-bita svo að skoðun gangi hraðar fyrir sig"
+msgstr "Forskoðunarmynd er alltaf kvörðuð svo hún passi í gluggann"
 
 #: core/utilities/setup/album/setupalbumview.cpp:334
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Uncheck this if you do not want to scale small images to fit to window."
 msgstr ""
-"Taktu merkið úr hér ef þú vilt ekki umbreyta 16-bita forskoðunarmynd í 8-"
-"bita."
+"Taktu merkið úr hér ef þú vilt ekki kvarða litlar myndir svo þær passi í "
+"gluggann."
 
 #: core/utilities/setup/album/setupalbumview.cpp:336
 #: core/utilities/setup/camera/setupcamera.cpp:547
