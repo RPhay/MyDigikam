@@ -102,6 +102,7 @@ void MetadataRemoveTask::run()
 
             if (!tagIds.isEmpty())
             {
+                bool tagRemoved = false;
                 QList<int> confirmedFaceTags;
 
                 Q_FOREACH (const FaceTagsIface& face, FaceTagsEditor().confirmedFaceTagsIfaces(item.id()))
@@ -123,14 +124,19 @@ void MetadataRemoveTask::run()
 
                         item.removeTag(tag);
                         group.allowLift();
+
+                        tagRemoved = true;
                     }
                 }
 
-                MetadataHub hub;
-                hub.load(item);
+                if (tagRemoved)
+                {
+                    MetadataHub hub;
+                    hub.load(item);
 
-                ScanController::FileMetadataWrite writeScope(item);
-                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS));
+                    ScanController::FileMetadataWrite writeScope(item);
+                    writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS));
+                }
             }
         }
 
