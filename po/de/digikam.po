@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -286,7 +286,7 @@ msgstr "Gesichtsmarkierung ändern"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "&Abbrechen"
@@ -297,7 +297,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Stichwörter den &ausgewählten Einträgen zuordnen"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Stichwörter &diesem Eintrag zuordnen"
@@ -791,31 +791,38 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "Stichwort &entfernen"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgid "Remove Black Frame"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "Schwarzbild entfernen"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "&Markierung zuweisen"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "Album"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "Datum"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "Stichwort"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"

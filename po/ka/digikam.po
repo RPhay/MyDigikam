@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2023-06-24 07:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -278,7 +278,7 @@ msgstr "სახის ჭდის შეცვლა"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "&შეწყვეტა"
@@ -289,7 +289,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "&ამ ობიექტის ჭდის მინიჭება"
@@ -775,31 +775,39 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "ჭდის &წაშლა"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Remove all Faces"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "ყველა სახის წაშლა"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "&ჭდეების მინიჭება"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "ალბომი"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "თარიღი"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "იარლიყი"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"

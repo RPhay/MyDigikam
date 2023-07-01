@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2023-06-17 04:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -277,7 +277,7 @@ msgstr "更改人脸标签"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "取消(&C)"
@@ -288,7 +288,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "指定标签到所选项(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "指定标签到此项(&T)"
@@ -774,31 +774,38 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "移除标签(&E)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgid "Remove Black Frame"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "移除黑帧"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "指定标记(&L)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "相册"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "日期"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "标签"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"

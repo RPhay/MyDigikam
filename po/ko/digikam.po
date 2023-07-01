@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -278,7 +278,7 @@ msgstr "얼굴 태그 변경"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "취소(&C)"
@@ -289,7 +289,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "선택한 항목에 태그 할당(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "이 항목에 태그 할당(&T)"
@@ -777,31 +777,38 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "태그 삭제(&E)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgid "Remove Face Tags"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "얼굴 태그 삭제"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "레이블 할당(&L)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "앨범"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "날짜"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "태그"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"

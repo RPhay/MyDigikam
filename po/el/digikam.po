@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -355,7 +355,7 @@ msgstr "Αλλαγή κεφαλαίων-πεζών"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "&Ακύρωση"
@@ -366,7 +366,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Ορισμός ετικετών στα ε&πιλεγμένα αντικείμενα"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Ορισμός ετικετών σε αυ&τό το αντικείμενο"
@@ -908,35 +908,42 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "Αφαίρ&εση ετικέτας"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgid "Remove Face Tags"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "Αφαίρεση ετικετών προσώπων"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, fuzzy, kde-format
 #| msgid "Assign Labe&ls"
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "Αντιστοίχιση ετικε&τών"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, fuzzy, kde-format
 #| msgid "Album"
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "Λεύκωμα"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, fuzzy, kde-format
 #| msgid "Tag"
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "Ετικέτα"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, fuzzy, kde-format
 #| msgid "Go To"
 msgctxt "@action: context menu"

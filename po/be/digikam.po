@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -281,7 +281,7 @@ msgstr "Змяніць пазнаку твару"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "&Скасаваць"
@@ -292,7 +292,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Прызначыць пазнакі &абраным элементам"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Прызначыць пазнакі &гэтаму элементу"
@@ -792,31 +792,37 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "&Выдаліць пазнаку"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "Звесткі аб імпартаваных відарысах"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "Прызначыць &адмеціны"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "Альбом"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "Дата"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "Пазнака"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"

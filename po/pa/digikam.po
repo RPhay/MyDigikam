@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:45+0000\n"
+"POT-Creation-Date: 2023-07-01 00:45+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -339,7 +339,7 @@ msgstr "ਕੇਸ ਬਦਲੋ"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
-#: core/app/views/preview/itempreviewview.cpp:720
+#: core/app/views/preview/itempreviewview.cpp:721
 #, kde-format
 msgid "&Cancel"
 msgstr "ਰੱਦ ਕਰੋ(&C)"
@@ -350,7 +350,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "ਚੁਣੀਆਂ ਆਈਟਮਾਂ ਨੂੰ ਟੈਗ ਲਗਾਉ(&S)"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
-#: core/app/views/preview/itempreviewview.cpp:718
+#: core/app/views/preview/itempreviewview.cpp:719
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "ਇਸ ਆਈਟਮ ਨੂੰ ਟੈਗ ਲਗਾਉ(&T)"
@@ -872,35 +872,42 @@ msgctxt "@action: context menu"
 msgid "R&emove Tag"
 msgstr "ਟੈਗ ਹਟਾਓ(&e)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:174
+#: core/app/items/utils/contextmenuhelper_tags.cpp:177
+#, fuzzy, kde-format
+#| msgid "Remove Face Tags"
+msgctxt "@action: context menu"
+msgid "Remove all Tags"
+msgstr "ਮੂੰਹ ਟੈਗ ਹਟਾਓ"
+
+#: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, fuzzy, kde-format
 #| msgid "Assign Labe&ls"
 msgctxt "@action: context menu"
 msgid "Assign Labe&ls"
 msgstr "ਲੇਬਲ ਦਿਓ(&l)"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:239
+#: core/app/items/utils/contextmenuhelper_tags.cpp:251
 #, fuzzy, kde-format
 #| msgid "Album"
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "ਐਲਬਮ"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:240
+#: core/app/items/utils/contextmenuhelper_tags.cpp:252
 #, fuzzy, kde-format
 #| msgid "Date"
 msgctxt "@action: context menu"
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:248
+#: core/app/items/utils/contextmenuhelper_tags.cpp:260
 #, fuzzy, kde-format
 #| msgid "Tag"
 msgctxt "@action: context menu"
 msgid "Tag"
 msgstr "ਟੈਗ"
 
-#: core/app/items/utils/contextmenuhelper_tags.cpp:291
+#: core/app/items/utils/contextmenuhelper_tags.cpp:303
 #, fuzzy, kde-format
 #| msgid "Go To"
 msgctxt "@action: context menu"
