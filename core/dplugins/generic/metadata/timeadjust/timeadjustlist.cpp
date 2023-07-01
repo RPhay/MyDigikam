@@ -39,8 +39,12 @@ TimeAdjustList::TimeAdjustList(QWidget* const parent)
     listView()->setColumn(static_cast<Digikam::DItemsListView::ColumnType>(STATUS),
                           i18n("Status"), true);
 
-    listView()->header()->setSectionResizeMode(QHeaderView::Stretch);
+    listView()->header()->setSectionResizeMode(QHeaderView::Interactive);
     listView()->setSelectionMode(QAbstractItemView::SingleSelection);
+    listView()->header()->resizeSection(0, 120);
+    listView()->header()->resizeSection(1, 200);
+    listView()->header()->resizeSection(2, 200);
+    listView()->header()->resizeSection(3, 200);
     listView()->setUniformRowHeights(true);
 }
 
