@@ -116,16 +116,14 @@ void MetadataRemoveTask::run()
 
                     Q_FOREACH (int tag, tagIds)
                     {
-                        if (confirmedFaceTags.contains(tag)  ||
-                            FaceTags::isSystemPersonTagId(tag))
+                        if (!confirmedFaceTags.contains(tag)  &&
+                            !FaceTags::isSystemPersonTagId(tag))
                         {
-                            continue;
+                            item.removeTag(tag);
+                            group.allowLift();
+
+                            tagRemoved = true;
                         }
-
-                        item.removeTag(tag);
-                        group.allowLift();
-
-                        tagRemoved = true;
                     }
                 }
 
