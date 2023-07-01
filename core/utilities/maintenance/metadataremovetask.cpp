@@ -21,6 +21,7 @@
 #include "coredboperationgroup.h"
 #include "maintenancedata.h"
 #include "scancontroller.h"
+#include "facetagseditor.h"
 #include "metadatahub.h"
 #include "faceutils.h"
 #include "tagscache.h"
@@ -90,7 +91,7 @@ void MetadataRemoveTask::run()
 
         if      (d->removeAction == MetadataRemover::Faces)
         {
-            if (FaceUtils().databaseFaces(item.id()).size() > 0)
+            if (FaceTagsEditor().databaseFaces(item.id()).size() > 0)
             {
                 FaceUtils().removeAllFaces(item.id());
             }
@@ -101,13 +102,20 @@ void MetadataRemoveTask::run()
 
             if (!tagIds.isEmpty())
             {
+                QList<int> confirmedFaceTags;
+
+                Q_FOREACH (const FaceTagsIface& face, FaceTagsEditor().confirmedFaceTagsIfaces(item.id()))
+                {
+                    confirmedFaceTags << face.tagId();
+                }
+
                 {
                     CoreDbOperationGroup group;
                     group.setMaximumTime(200);
 
                     Q_FOREACH (int tag, tagIds)
                     {
-                        if (FaceTags::isPerson(tag)          ||
+                        if (confirmedFaceTags.contains(tag)  ||
                             FaceTags::isSystemPersonTagId(tag))
                         {
                             continue;
