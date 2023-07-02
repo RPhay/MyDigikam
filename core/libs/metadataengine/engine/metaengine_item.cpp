@@ -1310,7 +1310,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
 
         // A little bit compressed preview jpeg image to limit IPTC size.
 
-        preview.save(&buffer, "JPEG");
+        preview.save(&buffer, "JPEG", 5);
         buffer.close();
         qCDebug(DIGIKAM_METAENGINE_LOG) << "JPEG image preview size: (" << preview.width() << "x"
                                         << preview.height() << ") pixels -" << data.size() << "bytes";
@@ -1324,7 +1324,15 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         d->iptcMetadata()["Iptc.Application2.PreviewFormat"]  = 11;  // JPEG
         d->iptcMetadata()["Iptc.Application2.PreviewVersion"] = 1;
 
-        setXmpTagString("Xmp.digiKam.Preview", QString::fromUtf8(data.toBase64()));
+        QByteArray xmpPreview(data.toBase64());
+
+        if (xmpPreview.size() < 65535)
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Set XMP image preview with:"
+                                            << xmpPreview.size() << "bytes";
+
+            setXmpTagString("Xmp.digiKam.Preview", QString::fromUtf8(xmpPreview));
+        }
 
         return true;
     }
