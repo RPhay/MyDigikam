@@ -477,4 +477,5 @@ BUGFIXES:
 460 ==> 471546 - Please support MXF file extensions, format already works, but digikam can't see them.
 461 ==> 348104 - Remove all tags from selected image(s).
 462 ==> 471808 - Time Adjust based on filename sporadically incorrect.
-463 ==> 
+463 ==> 471798 - Manufacturer's Notes' metadata disappears.
+464 ==> 
