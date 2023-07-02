@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:45+0000\n"
-"PO-Revision-Date: 2023-06-29 01:22+0200\n"
+"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"PO-Revision-Date: 2023-07-01 17:51+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -836,12 +836,10 @@ msgid "R&emove Tag"
 msgstr "&Eliminar etiqueta"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Eliminar todas las caras"
+msgstr "Eliminar todas las etiquetas"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -15799,29 +15797,29 @@ msgstr "Marca de tiempo actualizada"
 msgid "Status"
 msgstr "Estado"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr "No se ha podido actualizar la marca de tiempo de los metadatos"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "No se ha podido actualizar la marca de tiempo del archivo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, kde-format
 msgid "Success"
 msgstr "Éxito"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:101
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
 msgstr "no válido"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:125
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, kde-format
 msgid "Please wait ..."
 msgstr "Espere, por favor..."

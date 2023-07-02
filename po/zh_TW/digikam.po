@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:45+0000\n"
+"POT-Creation-Date: 2023-07-02 00:44+0000\n"
 "PO-Revision-Date: 2023-04-22 13:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -15980,32 +15980,32 @@ msgstr "時間"
 msgid "Status"
 msgstr "狀態"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to update metadata timestamp"
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to update file timestamp"
 msgstr "儲存檔案失敗：%1"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, fuzzy, kde-format
 #| msgid "Quick Access List"
 msgid "Success"
 msgstr "快速存取清單"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:101
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:125
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, kde-format
 msgid "Please wait ..."
 msgstr ""

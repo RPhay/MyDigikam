@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:45+0000\n"
+"POT-Creation-Date: 2023-07-02 00:44+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -15502,7 +15502,7 @@ msgstr "Aktualizovaný časový údaj"
 msgid "Status"
 msgstr "Stav"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, fuzzy, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr ""
@@ -15511,25 +15511,25 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Nepodarilo sa aktualizovať časový údaj súboru"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, fuzzy, kde-format
 #| msgid "Public access"
 msgid "Success"
 msgstr "Verejný prístup"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:101
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
 msgstr "neplatné"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:125
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, kde-format
 msgid "Please wait ..."
 msgstr "Čakajte, prosím..."

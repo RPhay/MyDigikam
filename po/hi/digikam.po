@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:45+0000\n"
+"POT-Creation-Date: 2023-07-02 00:44+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -15042,29 +15042,29 @@ msgstr ""
 msgid "Status"
 msgstr "स्थिति"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, fuzzy, kde-format
 msgid "Failed to update file timestamp"
 msgstr "%1 में फ़ाइल सूची बनाना असफल"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, fuzzy, kde-format
 msgid "Success"
 msgstr "त्वरित खोज"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:101
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:125
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, fuzzy, kde-format
 #| msgid "Removing image tags. Please wait..."
 msgid "Please wait ..."

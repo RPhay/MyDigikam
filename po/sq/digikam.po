@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:45+0000\n"
+"POT-Creation-Date: 2023-07-02 00:44+0000\n"
 "PO-Revision-Date: 2009-07-18 03:38+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -14968,29 +14968,29 @@ msgstr ""
 msgid "Status"
 msgstr "Gjendja"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, fuzzy, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Mënyrë ngjyre: "
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
 #, kde-format
 msgid "Success"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:101
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:110
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:125
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, kde-format
 msgid "Please wait ..."
 msgstr ""
