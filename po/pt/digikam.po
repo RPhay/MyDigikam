@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-24 01:45+0100\n"
+"PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -939,12 +939,10 @@ msgid "R&emove Tag"
 msgstr "R&emover a Marca"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Remover Todas as Caras"
+msgstr "Remover Todas as Marcas"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -56394,20 +56392,15 @@ msgstr ""
 "para onde importar as imagens da máquina fotográfica."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
-"A colecção que irá alojar o seu álbum predefinido de destino para processar "
-"a transferência da máquina fotográfica não está disponível. Use por favor "
-"outra na janela de configuração da máquina fotográfica."
+"A colecção seleccionada como álbum de destino para processar a transferência "
+"da máquina fotográfica não está disponível. Use por favor outro álbum de "
+"destino."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
