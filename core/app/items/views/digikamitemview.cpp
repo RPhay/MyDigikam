@@ -504,11 +504,17 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        if (FaceTags::isTheUnknownPerson(faces[i].tagId()))
+        if      (FaceTags::isTheUnknownPerson(faces[i].tagId()))
         {
             // Reject signal was sent from an Unknown Face. Mark as Ignored.
 
             d->editPipeline.editTag(infos[i], faces[i], FaceTags::ignoredPersonTagId());
+        }
+        else if (FaceTags::isTheIgnoredPerson(faces[i].tagId()))
+        {
+            // Reject signal was sent from an Ignored Face. Remove face.
+
+            d->editPipeline.remove(infos[i], faces[i]);
         }
         else
         {
