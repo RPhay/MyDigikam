@@ -20,6 +20,15 @@ set(AOM_Conf -DENABLE_EXAMPLES=OFF
              -DBUILD_SHARED_LIBS=ON
 )
 
+if(MINGW)
+
+    # See bug #471797
+    set(AOM_Conf ${AOM_Conf}
+               -DAOM_TARGET_CPU=generic
+    )
+
+endif()
+
 JoinListAsString("${AOM_Conf}" " " BASH_OPTIONS_AOM)
 
 if(MINGW)
