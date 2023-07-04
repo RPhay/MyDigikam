@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-17 04:11\n"
+"PO-Revision-Date: 2023-07-03 11:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -775,11 +775,10 @@ msgid "R&emove Tag"
 msgstr "移除标签(&E)"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "移除黑帧"
+msgstr "移除所有标签"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -1806,11 +1805,10 @@ msgid "Recognize Faces"
 msgstr "识别人脸"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "移除黑帧"
+msgstr "移除所有人脸"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -53538,10 +53536,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "跳过转换文件 <filename>%1</filename> 到 DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "无法为 <filename>%1</filename> 运行脚本"
+msgstr "无法为 <filename>%1</filename> 打开脚本"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -54312,19 +54309,12 @@ msgid ""
 msgstr "请从 digiKam 数据库中选择用于导入相机照片的目标相册。"
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
-msgstr ""
-"相机设备下载的默认目标相册所在的相册集合不可用。请从相机配置对话框选择另一个"
-"相册集合。"
+msgstr "用于从相机设备下载内容的目标相册的集合不可用。请选择另一个目标相册。"
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
@@ -55527,38 +55517,32 @@ msgstr ""
 "耗时：%1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "从图像中移除标签"
+msgstr "移除图像中的所有人脸"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "从图像中移除标签"
+msgstr "移除图像中的所有标签"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
-msgstr "人脸标签“%2”已被指定到一个或多个项目。您想要继续吗？"
+msgstr ""
+"将要移除 %1 张图像中的所有人脸。\n"
+"您想要继续吗？"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Face tag '%2' is assigned to at least one item. Do you want to continue?"
-#| msgid_plural ""
-#| "Face tags '%2' are assigned to at least one item. Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
-msgstr "人脸标签“%2”已被指定到一个或多个项目。您想要继续吗？"
+msgstr ""
+"将要移除 %1 张图像中的所有标签。\n"
+"您想要继续吗？"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
 #, kde-format

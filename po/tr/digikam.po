@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-17 20:31+0300\n"
+"PO-Revision-Date: 2023-07-04 00:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -14260,7 +14260,7 @@ msgstr "IPTC-NAA Dijital Haber Fotoğrafı Parametre Kaydı (sürüm 4)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
 msgid "IPTC7901 Recommended Message Format"
-msgstr "IPTC7901 Önerilen Mesaj Biçimi"
+msgstr "IPTC7901 Önerilen İleti Biçimi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
@@ -14305,7 +14305,7 @@ msgstr "Birleşik Basın Uluslararası ANPA 1312 değişkesi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "United Press International Down-Load Message"
-msgstr "Birleşik Basın Uluslararası Karşıdan-Yükleme Mesajı"
+msgstr "Birleşik Basın Uluslararası Karşıdan-Yükleme İletisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
 #, kde-format

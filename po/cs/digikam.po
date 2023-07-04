@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-28 14:12+0200\n"
+"PO-Revision-Date: 2023-07-03 12:01+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -784,12 +784,10 @@ msgid "R&emove Tag"
 msgstr "Odstranit zn&ačku"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Odstranit všechny tváře"
+msgstr "Odstranit všechny značky"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
