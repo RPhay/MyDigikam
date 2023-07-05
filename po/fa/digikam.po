@@ -142,7 +142,7 @@ msgstr ""
 "#-#-#-#-#  digikamimageplugin_channelmixer.po "
 "(digikamimageplugin_channelmixer)  #-#-#-#-#\n"
 "X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "#-#-#-#-#  digikamimageplugin_refocus.po (digikamimageplugin_refocus)  #-#-#-"
 "#-#\n"
 "X-Generator: KBabel 1.11.4\n"
@@ -702,6 +702,7 @@ msgstr "تنظیم به عنوان ریزنقش برچسب"
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/app/dragdrop/tagdragdrop.cpp:387
 #, fuzzy, kde-format
@@ -850,6 +851,7 @@ msgctxt "@info:tooltip"
 msgid "1 grouped item.\n"
 msgid_plural "%1 grouped items.\n"
 msgstr[0] "&مرتب‌سازی تصاویر‌"
+msgstr[1] ""
 
 #: core/app/items/overlays/groupindicatoroverlay.cpp:122
 #, fuzzy, kde-format
@@ -926,6 +928,7 @@ msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
 msgid_plural "Move %1 Files to Trash"
 msgstr[0] "حرکت %n پرونده به زباله"
+msgstr[1] ""
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:190
 #, fuzzy, kde-format
@@ -933,6 +936,7 @@ msgctxt "@action:inmenu Pluralized"
 msgid "Image Quality Sort"
 msgid_plural "Image Quality Sort"
 msgstr[0] "ویرایشگر تصویر"
+msgstr[1] ""
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:64
 #, fuzzy, kde-format
@@ -1280,10 +1284,11 @@ msgstr "فهرست دوربین"
 #: core/utilities/import/items/importcategorydrawer.cpp:196
 #: core/utilities/import/items/importcategorydrawer.cpp:217
 #: core/utilities/import/items/importcategorydrawer.cpp:226
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 Item"
 msgid_plural "%1 Items"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:303
 #, fuzzy, kde-format
@@ -1291,6 +1296,7 @@ msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "%1 %2 - %3 فقره"
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:330
 #, kde-format
@@ -1298,6 +1304,7 @@ msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:334
 #, fuzzy, kde-format
@@ -1307,24 +1314,28 @@ msgctxt ""
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:339
 #, fuzzy, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:351
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:355
 #, fuzzy, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "جستجوی پیشرفته"
+msgstr[1] ""
 
 #: core/app/items/utils/itemcategorydrawer.cpp:369
 #, fuzzy, kde-format
@@ -1736,48 +1747,56 @@ msgstr ""
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:632
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:643
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1 مورد برگزیده شده"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:656
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1 مورد برگزیده شده"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:664
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:672
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1 مورد برگزیده شده"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:681
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:712
 #, fuzzy, kde-format
@@ -1801,18 +1820,21 @@ msgstr ""
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:792
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "نوشتن فراداده در هر پرونده"
+msgstr[1] ""
 
 #: core/app/main/digikamapp.cpp:794
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
 msgstr[0] "خواندن فراداده از پرونده برای دادگان"
+msgstr[1] ""
 
 #: core/app/main/digikamapp_camera.cpp:26
 #, fuzzy, kde-format
@@ -3434,10 +3456,11 @@ msgstr "بدون تاریخ"
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/app/views/stack/itemiconview.cpp:201
 #, fuzzy, kde-format
@@ -3574,6 +3597,7 @@ msgstr "تصدیق"
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/app/views/stack/trashview.cpp:303
 #, fuzzy, kde-format
@@ -3591,6 +3615,7 @@ msgstr "همبستگی:"
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/app/views/stack/trashview.cpp:383
 #, kde-format
@@ -6713,36 +6738,42 @@ msgstr "پیش‌تنظیم:"
 msgid "Tiny (1 pixel)"
 msgid_plural "Tiny (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:153
 #, fuzzy, kde-format
 msgid "Small (1 pixel)"
 msgid_plural "Small (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:154
 #, fuzzy, kde-format
 msgid "Medium (1 pixel)"
 msgid_plural "Medium (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:155
 #, fuzzy, kde-format
 msgid "Big (1 pixel)"
 msgid_plural "Big (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:156
 #, fuzzy, kde-format
 msgid "Large (1 pixel)"
 msgid_plural "Large (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:157
 #, fuzzy, kde-format
 msgid "Huge (1 pixel)"
 msgid_plural "Huge (%1 pixels)"
 msgstr[0] "عرض )تصویردانه(:"
+msgstr[1] ""
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:159
 #, kde-format
@@ -11320,6 +11351,7 @@ msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
 #, fuzzy, kde-format
@@ -11927,6 +11959,7 @@ msgstr ""
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:162
 #, fuzzy, kde-format
@@ -11994,6 +12027,7 @@ msgstr ""
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
 #, fuzzy, kde-format
@@ -12069,6 +12103,7 @@ msgstr "این فهرست فقره‌هایی است که در شرف حذف ه�
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
@@ -12082,6 +12117,7 @@ msgstr[0] ""
 msgid "%1 character left"
 msgid_plural "%1 characters left"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
@@ -12242,6 +12278,7 @@ msgstr "این فهرست فقره‌هایی است که در شرف حذف ه�
 msgid "%1 character."
 msgid_plural "%1 characters."
 msgstr[0] "نویسه:"
+msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
 #, fuzzy, kde-format
@@ -17587,6 +17624,7 @@ msgctxt "@info"
 msgid "1 album shared"
 msgid_plural "%1 albums shared"
 msgstr[0] "نمایش نام آلبوم"
+msgstr[1] ""
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
@@ -17597,6 +17635,7 @@ msgctxt "@info"
 msgid "1 item shared"
 msgid_plural "%1 items shared"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:268
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:29
@@ -20716,6 +20755,7 @@ msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
 #, kde-format
@@ -21070,12 +21110,14 @@ msgstr "رنگ زمینه:"
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
 msgstr[0] "تصاویر"
+msgstr[1] ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, fuzzy, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
 msgstr[0] "تصاویر"
+msgstr[1] ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #, kde-format
@@ -27269,24 +27311,28 @@ msgstr "هیچ برچسبی انتخاب نشده"
 msgid "1 Tag selected"
 msgid_plural "%1 Tags selected"
 msgstr[0] "%1 فقره برگزیده شد"
+msgstr[1] ""
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:278
 #, fuzzy, kde-format
 msgid "1 Album selected"
 msgid_plural "%1 Albums selected"
 msgstr[0] "%1 فقره برگزیده شد"
+msgstr[1] ""
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:287
 #, fuzzy, kde-format
 msgid "1 Tag excluded"
 msgid_plural "%1 Tags excluded"
 msgstr[0] "%1 فقره برگزیده شد"
+msgstr[1] ""
 
 #: core/libs/album/widgets/albumselectcombobox.cpp:291
 #, fuzzy, kde-format
 msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] "%1 فقره برگزیده شد"
+msgstr[1] ""
 
 #: core/libs/album/widgets/albumselectdialog.cpp:80
 #, fuzzy, kde-format
@@ -27890,6 +27936,7 @@ msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
 msgstr[0] "برگزیدن هیچ‌کدام"
+msgstr[1] ""
 
 #: core/libs/database/models/itemfiltermodel.cpp:389
 #, fuzzy, kde-format
@@ -28943,6 +28990,7 @@ msgstr "<qt>این آلبومها به لاوک زباله حرکت داده م�
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>%1</b> پرونده، برگزیده شد."
+msgstr[1] ""
 
 #: core/libs/dialogs/deletedialog.cpp:419
 #, fuzzy, kde-format
@@ -28960,6 +29008,7 @@ msgstr "<qt>این آلبومها به لاوک زباله حرکت داده م�
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>%n</b> آلبوم برگزیده شد."
+msgstr[1] ""
 
 #: core/libs/dialogs/deletedialog.cpp:440
 #, fuzzy, kde-format
@@ -29222,12 +29271,14 @@ msgstr "دوربین سوارشده"
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/libs/dialogs/rawcameradlg.cpp:139
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
 #, kde-format
@@ -33213,6 +33264,7 @@ msgctxt "@info"
 msgid "1 plugin installed"
 msgid_plural "%1 plugins installed"
 msgstr[0] "%1 وصله‌های Kipi یافت شد"
+msgstr[1] ""
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:168
 #, fuzzy, kde-format
@@ -33229,6 +33281,7 @@ msgctxt "@info: %1: number of plugins activated"
 msgid "(%1 activated)"
 msgid_plural "(%1 activated)"
 msgstr[0] "پالایه نوفه:"
+msgstr[1] ""
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:190
 #, fuzzy, kde-format
@@ -33238,6 +33291,7 @@ msgctxt "@info"
 msgid "1 plugin found"
 msgid_plural "%1 plugins found"
 msgstr[0] "%1 وصله‌های Kipi یافت شد"
+msgstr[1] ""
 
 #: core/libs/dplugins/setup/dpluginsetup.cpp:194
 #, fuzzy, kde-format
@@ -33915,6 +33969,7 @@ msgstr ""
 msgid "1 file awaits synchronization"
 msgid_plural "%1 files await synchronization"
 msgstr[0] "استفاده از جبران نقطه سیاه"
+msgstr[1] ""
 
 #: core/libs/filters/filterstatusbar.cpp:76
 #, kde-format
@@ -34001,6 +34056,7 @@ msgstr "پالایه نوفه:"
 msgid "1 active filter"
 msgid_plural "%1 active filters"
 msgstr[0] "پالایه نوفه:"
+msgstr[1] ""
 
 #: core/libs/filters/geolocationfilter.cpp:28
 #, fuzzy, kde-format
@@ -35760,6 +35816,7 @@ msgctxt "@info: unconfirmed faces in album"
 msgid " (%1 new)"
 msgid_plural " (%1 new)"
 msgstr[0] "%1 بیت در تصویردانه"
+msgstr[1] ""
 
 #: core/libs/notificationmanager/dnotificationwidget_p.cpp:92
 #, fuzzy, kde-format
@@ -36128,6 +36185,7 @@ msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:281
 #, fuzzy, kde-format
@@ -36135,6 +36193,7 @@ msgctxt "@info"
 msgid "You have edited the image title. "
 msgid_plural "You have edited the titles of %1 images. "
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:287
 #, fuzzy, kde-format
@@ -36142,6 +36201,7 @@ msgctxt "@info"
 msgid "You have edited the date of the image. "
 msgid_plural "You have edited the date of %1 images. "
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:293
 #, fuzzy, kde-format
@@ -36149,6 +36209,7 @@ msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:299
 #, fuzzy, kde-format
@@ -36156,6 +36217,7 @@ msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
 msgstr[0] "<qt><p>تاریخ %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:305
 #, fuzzy, kde-format
@@ -36163,6 +36225,7 @@ msgctxt "@info"
 msgid "You have edited the rating of the image. "
 msgid_plural "You have edited the rating of %1 images. "
 msgstr[0] "<qt><p>درجه‌بندی %n عکس را ویرایش کرده‌اید. "
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:311
 #, fuzzy, kde-format
@@ -36170,6 +36233,7 @@ msgctxt "@info"
 msgid "You have edited the tags of the image. "
 msgid_plural "You have edited the tags of %1 images. "
 msgstr[0] "<qt><p>برچسبهای %n عکس را ویرایش کرده‌اید."
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:316
 #, fuzzy, kde-format
@@ -36183,6 +36247,7 @@ msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
 msgstr[0] "<qt><p>فراداده %n عکس را ویرایش کرده‌اید: </p><ul>"
+msgstr[1] ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
 #, fuzzy, kde-format
@@ -38281,6 +38346,7 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:284
 #, fuzzy, kde-format
@@ -38289,6 +38355,7 @@ msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:292
 #, kde-format
@@ -38338,6 +38405,7 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, fuzzy, kde-format
@@ -38348,12 +38416,14 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, fuzzy, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "بازنشانی شمایل برچسب"
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, fuzzy, kde-format
@@ -38361,6 +38431,7 @@ msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
 msgstr[0] "<p>روش تیز کردن را برای اعمال روی تصویر در اینجا برگزینید."
+msgstr[1] ""
 
 #: core/libs/tags/engine/tagsactionmngr.cpp:217
 #, fuzzy, kde-format
@@ -38544,6 +38615,7 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:362
 #, fuzzy, kde-format
@@ -38554,6 +38626,7 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:372
 #, fuzzy, kde-format
@@ -38561,6 +38634,7 @@ msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
 msgid_plural "Delete tags %2?"
 msgstr[0] "حذف برچسب"
+msgstr[1] ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:378
 #, fuzzy, kde-format
@@ -38568,6 +38642,7 @@ msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "حذف برچسب"
+msgstr[1] ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
@@ -38598,6 +38673,7 @@ msgstr ""
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:703
 #, kde-format
@@ -41750,6 +41826,7 @@ msgstr "پرونده‌های ICC )*.icc; *.icm("
 msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] "تصاویر"
+msgstr[1] ""
 
 #: core/libs/widgets/itemview/itemdelegateoverlay.cpp:339
 #, fuzzy, kde-format
@@ -41761,6 +41838,7 @@ msgid_plural ""
 "Applying operation to \n"
 "\"%1\" selected pictures"
 msgstr[0] "بار کردن فقره برگزیده در ویرایشگر تصویر."
+msgstr[1] ""
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:403
 #, fuzzy, kde-format
@@ -49932,6 +50010,7 @@ msgctxt "@info"
 msgid "%1 file"
 msgid_plural "%1 files"
 msgstr[0] "پالایه نوفه:"
+msgstr[1] ""
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, fuzzy, kde-format
@@ -50207,6 +50286,7 @@ msgstr ""
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "تغییر نام..."
+msgstr[1] ""
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:428
 #, fuzzy, kde-format
@@ -50248,6 +50328,7 @@ msgid_plural ""
 "Do you want to rename these images again or rename these images by "
 "overwriting?"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
 #, fuzzy, kde-format
@@ -52433,6 +52514,7 @@ msgstr ""
 msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, fuzzy, kde-format
@@ -52532,6 +52614,7 @@ msgstr "همبستگی:"
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, fuzzy, kde-format
@@ -52539,6 +52622,7 @@ msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
 msgstr[0] "خطا در ذخیره پرونده"
+msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, fuzzy, kde-format
@@ -52587,12 +52671,14 @@ msgid_plural ""
 "%1 out of %2 images have been correlated. Please check the offset and gap "
 "settings if you think that more images should have been correlated."
 msgstr[0] ""
+msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, fuzzy, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/track_listmodel.cpp:220
 #, fuzzy, kde-format
@@ -55453,6 +55539,7 @@ msgid_plural ""
 "Are you sure?"
 msgstr[0] ""
 "درباره حذف این %1 تصویر. پرونده‌های حذف‌شده غیرقابل بازیافت هستند. مطمئن هستید؟"
+msgstr[1] ""
 
 #: core/utilities/import/main/importui.cpp:1925
 #, fuzzy, kde-format
@@ -55487,6 +55574,7 @@ msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "فقره‌ای برگزیده نشد"
+msgstr[1] ""
 
 #: core/utilities/import/main/importui.cpp:2255
 #, fuzzy, kde-format
@@ -55502,6 +55590,7 @@ msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%1 مورد برگزیده شده"
+msgstr[1] ""
 
 #: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
@@ -56124,6 +56213,7 @@ msgstr "کشیدن و انداختن تصاویر در اینجا"
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
 msgstr[0] "نمایش فقره روی تابلوی راست"
+msgstr[1] ""
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
 #, fuzzy, kde-format
@@ -56775,6 +56865,7 @@ msgstr "بدون تکلیف."
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "تکالیف"
+msgstr[1] ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, fuzzy, kde-format
@@ -57032,6 +57123,7 @@ msgid_plural ""
 msgstr[0] ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
+msgstr[1] ""
 
 #: core/utilities/queuemanager/views/queuepool.cpp:499
 #, kde-format

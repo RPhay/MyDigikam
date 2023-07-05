@@ -19,13 +19,13 @@
 # Richard Frič <Richard.Fric@kdemail.net>, 2006--2011.
 # Roman Paholík <wizzardsk@gmail.com>, 2012--2016.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020.
-# Jozef Riha <jose1711@gmail.com>, 2006, 2021, 2022.
+# Jozef Riha <jose1711@gmail.com>, 2006, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2022-05-12 10:31+0200\n"
+"PO-Revision-Date: 2023-07-04 23:11+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
@@ -1786,7 +1786,7 @@ msgstr "Editor obrázkov"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open the image editor."
-msgstr "Spustiť Editor obrázkov."
+msgstr "Spustiť editor obrázkov."
 
 #: core/app/main/digikamapp_setup.cpp:366
 #, kde-format
@@ -5980,7 +5980,7 @@ msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 #, kde-format
 msgctxt "@title"
 msgid "Apply Metadata Template"
-msgstr "Aplikovať šablónu metadát"
+msgstr "Použiť šablónu metadát"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
 #, fuzzy, kde-format
@@ -6051,10 +6051,10 @@ msgid "XPKeywords"
 msgstr "XPKľúčové slová"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
-msgstr "Ruská federácia"
+msgstr "Komentár a popis"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
 #, kde-format
@@ -8159,25 +8159,25 @@ msgstr "Toto je zoznam položiek, ktoré majú byť zmazané."
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
-msgstr "Aplikovať textúru..."
+msgstr "Použiť textúru..."
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:71
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgid "Vignetting Correction"
-msgstr "Oprava expozície"
+msgstr "Oprava vinetácie"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Vignetting Correction"
-msgstr "Oprava expozície"
+msgstr "Oprava vinetácie"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to correct vignetting"
-msgstr "Filtrovať podľa názvu"
+msgstr "Nástroj na opravu vinetácie"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:64
 #, fuzzy, kde-format
@@ -10892,8 +10892,7 @@ msgstr "Súbor \"%1\" sa nedá uložiť"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Editor geolokácie"
@@ -37139,8 +37138,7 @@ msgid "Rating:"
 msgstr "Hodnotenie:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
-#, fuzzy, kde-format
-#| msgid "Apply"
+#, kde-format
 msgctxt "@action"
 msgid "Apply"
 msgstr "Použiť"
@@ -37160,11 +37158,10 @@ msgid "Revert all changes"
 msgstr "Vrátiť všetky zmeny"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:80
-#, fuzzy, kde-format
-#| msgid "Apply to all versions"
+#, kde-format
 msgctxt "@action"
 msgid "Apply to all versions"
-msgstr "Použiť pre všetky verzie"
+msgstr "Použiť na všetky verzie"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
 #, fuzzy, kde-format
@@ -37203,19 +37200,17 @@ msgstr "Tu si môžete vybrať položku jazyka."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
 #: core/libs/properties/captions/tagsedit.cpp:105
-#, fuzzy, kde-format
-#| msgid "Open Tag Manager"
+#, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "Otvoriť Správcu štítkov"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:111
-#, fuzzy, kde-format
-#| msgid "Enter tag here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr "Sem zadajte štítok..."
+msgstr "Sem zadajte štítok."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:112
@@ -38048,8 +38043,7 @@ msgid "Peoples: "
 msgstr "Ľudia"
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
 msgstr "Štítky"
@@ -41728,7 +41722,7 @@ msgstr "Michal Gašpar,Jozef Říha"
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Timeout"
-msgstr "Spustiť Editor obrázkov."
+msgstr "Spustiť editor obrázkov."
 
 #: core/libs/video/qtav/config/MiscPage.cpp:83
 #, fuzzy, kde-format
@@ -41894,7 +41888,7 @@ msgstr "Proces zrušený..."
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "timeout"
-msgstr "Spustiť Editor obrázkov."
+msgstr "Spustiť editor obrázkov."
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:160
 #, fuzzy, kde-format
@@ -41912,7 +41906,7 @@ msgstr "Chyba OpenGL"
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Open timed out"
-msgstr "Spustiť Editor obrázkov."
+msgstr "Spustiť editor obrázkov."
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:181
 #, kde-format
@@ -60636,7 +60630,7 @@ msgstr "Zobraziť ukážky"
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgid "Start Image Editor"
-msgstr "Spustiť Editor obrázkov"
+msgstr "Spustiť editor obrázkov"
 
 #: core/utilities/setup/album/setupalbumview.cpp:220
 #, fuzzy, kde-format
@@ -61470,7 +61464,7 @@ msgstr "Zobraziť vnorený náhľad"
 #: core/utilities/setup/camera/setupcamera.cpp:506
 #, kde-format
 msgid "Start image editor"
-msgstr "Spustiť Editor obrázkov"
+msgstr "Spustiť editor obrázkov"
 
 #: core/utilities/setup/camera/setupcamera.cpp:511
 #, fuzzy, kde-format
@@ -62080,7 +62074,7 @@ msgstr "Možnosti nástroja"
 #: core/utilities/setup/editor/setupeditoriface.cpp:228
 #, kde-format
 msgid "&Restore the settings of the Image Editor tools"
-msgstr "&Obnoviť pôvodné nastavenia nástrojov Editora obrázkov"
+msgstr "&Obnoviť pôvodné nastavenia nástrojov editora obrázkov"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:230
 #, kde-format
@@ -62120,7 +62114,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
-msgstr "Otváranie súborov RAW v Editore obrázkov"
+msgstr "Otváranie súborov RAW v editore obrázkov"
 
 #: core/utilities/setup/editor/setupraw.cpp:122
 #, kde-format
