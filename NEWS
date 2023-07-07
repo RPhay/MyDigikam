@@ -9,4 +9,11 @@ BUGFIXES:
 
 001 ==> 471934 - "Remove face region" from Ignored sends it to Unknown.
 002 ==> 472019 - Can not edit raw file with ART or Rawtherapee or Darktable 2 Gmic is not present in image editor menues.
-003 ==> 
+003 ==> 472036 - GEO Tag Editor not adding co ordinates.
+004 ==> 
+005 ==> 
+006 ==> 
+007 ==> 
+008 ==> 
+009 ==> 
+010 ==> 
