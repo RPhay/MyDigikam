@@ -51,6 +51,7 @@ public:
     QString handbookSection()                            const override;
     QString handbookChapter()                            const override;
     QString handbookReference()                          const override;
+    QString getRawProgram()                              const override;
 
     void setup(QObject* const)                                 override;
 

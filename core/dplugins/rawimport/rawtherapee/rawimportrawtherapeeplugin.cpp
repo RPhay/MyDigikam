@@ -122,6 +122,11 @@ void RawTherapeeRawImportPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QString RawTherapeeRawImportPlugin::getRawProgram() const
+{
+    return DFileOperations::findExecutable(QLatin1String("rawtherapee"));
+}
+
 bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
@@ -148,7 +153,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     // --------
 
-    d->rawtherapee->setProgram(DFileOperations::findExecutable(QLatin1String("rawtherapee")));
+    d->rawtherapee->setProgram(getRawProgram());
     d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initially as Gimp plugin
                                                << filePath               // Input file
                                                << d->tempName);          // Output file

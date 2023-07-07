@@ -8,4 +8,5 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 471934 - "Remove face region" from Ignored sends it to Unknown.
-002 ==> 
+002 ==> 472019 - Can not edit raw file with ART or Rawtherapee or Darktable 2 Gmic is not present in image editor menues.
+003 ==> 

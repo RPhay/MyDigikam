@@ -24,6 +24,7 @@
 #include <QTabWidget>
 #include <QIcon>
 #include <QPointer>
+#include <QStandardItemModel>
 
 // KDE includes
 
@@ -136,12 +137,31 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
             QString iid  = raw->iid();
             QString name = raw->name();
 
-            if (iid == d->nativeRawImportToolIid)
+            if      (iid == d->nativeRawImportToolIid)
             {
                 name += i18nc("@item: default raw plugin", " (default)");
+                d->rawImportTool->insertItem(0, name, iid);
             }
+            else
+            {
+                d->rawImportTool->addItem(name, iid);
 
-            d->rawImportTool->addItem(name, iid);
+                if (raw->getRawProgram().isEmpty())
+                {
+                    QStandardItemModel* const model =
+                        qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
+
+                   if (model)
+                   {
+                        QStandardItem* const item = model->item(d->rawImportTool->count() - 1);
+
+                        if (item)
+                        {
+                            item->setEnabled(false);
+                        }
+                   }
+                }
+            }
         }
     }
 
@@ -265,8 +285,23 @@ void SetupRaw::readSettings()
         }
     }
 
-    QString iid = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
-    d->rawImportTool->setCurrentIndex(d->rawImportTool->findData(iid));
+    QString iid  = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
+    int rawIndex = d->rawImportTool->findData(iid);
+
+    QStandardItemModel* const model =
+        qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
+
+    if (model)
+    {
+        QStandardItem* const item = model->item(rawIndex);
+
+        if (!item || !item->isEnabled())
+        {
+            rawIndex = d->rawImportTool->findData(d->nativeRawImportToolIid);
+        }
+    }
+
+    d->rawImportTool->setCurrentIndex(rawIndex);
 }
 
 void SetupRaw::slotAboutRawImportPlugin()

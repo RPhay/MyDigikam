@@ -34,6 +34,7 @@
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 #include "dimg.h"
 #include "filteraction.h"
+#include "dfileoperations.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportUFRawPlugin
@@ -122,6 +123,11 @@ void UFRawRawImportPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QString UFRawRawImportPlugin::getRawProgram() const
+{
+    return DFileOperations::findExecutable(QLatin1String("ufraw"));
+}
+
 bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     d->fileInfo = QFileInfo(filePath);
@@ -150,7 +156,7 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
 
     d->fileInfo = QFileInfo(filePath);
 
-    d->ufraw->setProgram(QLatin1String("ufraw"));
+    d->ufraw->setProgram(getRawProgram());
     d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")   // 16 bits per color per pixels
                                          << QLatin1String("--out-type=png")   // PNG output (TIFF output generate multi-layers file)
                                          << QLatin1String("--overwrite")      // Overwrite target temporary file

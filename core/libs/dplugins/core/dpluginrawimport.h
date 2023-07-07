@@ -72,6 +72,11 @@ public:
      */
     virtual bool run(const QString& path, const DRawDecoding& def) = 0;
 
+    /**
+     * Return the path to the raw program, or empty if not found.
+     */
+    virtual QString getRawProgram() const;
+
 Q_SIGNALS:
 
     /**

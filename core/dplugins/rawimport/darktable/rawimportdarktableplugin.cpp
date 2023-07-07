@@ -175,6 +175,11 @@ void DarkTableRawImportPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QString DarkTableRawImportPlugin::getRawProgram() const
+{
+    return DFileOperations::findExecutable(QLatin1String("darktable"));
+}
+
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
@@ -201,7 +206,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     // --------
 
-    d->darktable->setProgram(DFileOperations::findExecutable(QLatin1String("darktable")));
+    d->darktable->setProgram(getRawProgram());
     d->darktable->setArguments(QStringList() << QLatin1String("--library")
                                              << QLatin1String(":memory:")                                  // Run DarkTable to process only one file
                                              << QLatin1String("--luacmd")
