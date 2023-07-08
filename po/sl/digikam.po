@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
 "PO-Revision-Date: 2023-07-03 19:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -26159,7 +26159,7 @@ msgstr "Nastavitve spletnih storitev"
 msgid "Export by Web Service"
 msgstr "Izvoz na spletne storitve"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26168,12 +26168,12 @@ msgstr ""
 "Napaka pri uvozu surove slike s programom ART\n"
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Pretvorba ART surove"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26182,7 +26182,7 @@ msgstr ""
 "Napaka pri uvozu surove slike s programom DarkTable\n"
 "Zaprite to pogovorno okno, da naložite surovo sliko z orodjem za uvoz"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable pretvorba surove"
@@ -26373,7 +26373,7 @@ msgstr ""
 "Uporabi splošne nastavitve dekodiranja surovih slik za nalaganje te slike v "
 "urejevalnik."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26383,12 +26383,12 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee pretvorba surove"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26398,7 +26398,7 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
@@ -60695,7 +60695,7 @@ msgstr ""
 "shranjevanjem slikovnih datotek</li><li>Brez oznake: med shranjevanjem so "
 "uporabljene privzete nastavitve</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60707,49 +60707,49 @@ msgstr ""
 "digitalnega fotoaparata\n"
 "Odprtje takšne datoteke zahteva obširno tolmačenje in obdelovanje podatkov."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Odpri datoteke RAW v urejevalniku slik"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Hitro in preprosto, kot 8 bitna slika"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Z uporabo privzetih nastavitev, v 16 bit"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Vedno odpri orodje za uvažanje datotek RAW in prilagodi nastavitve"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (privzeto)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "O orodju za uvoz surovih slik..."
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Obnašanje surovih (RAW)"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"

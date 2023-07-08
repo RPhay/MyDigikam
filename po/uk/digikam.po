@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
 "PO-Revision-Date: 2023-07-01 09:02+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -26546,7 +26546,7 @@ msgstr "Параметри вебслужби"
 msgid "Export by Web Service"
 msgstr "Експортувати за допомогою вебслужби"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26556,12 +26556,12 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Перетворення цифрових негативів ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26571,7 +26571,7 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Перетворення цифрових негативів DarkTable"
@@ -26767,7 +26767,7 @@ msgstr ""
 "Використати загальні параметри Raw для завантаження цього зображення до "
 "редактора."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26778,12 +26778,12 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Перетворення цифрових негативів RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26793,7 +26793,7 @@ msgstr ""
 "Закрийте це діалогове вікно, щоб завантажити зображення цифрового негатива "
 "за допомогою вбудованого засобу імпортування."
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
@@ -61412,7 +61412,7 @@ msgstr ""
 "змінити параметри збереження файлів зображень.</li><li>Не позначено: "
 "використати під час збереження файлів зображень типові параметри.</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61425,49 +61425,49 @@ msgstr ""
 "Відкриття файла цифрового негатива потребує додаткової інтерпретації та "
 "обробки даних."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Відкриття файлів цифрових негативів у редакторі зображень"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Швидко і просто, як 8-бітове зображення"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "На основі типових параметрів, у 16-бітовому режимі"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Завжди відкривати вікно параметрів імпортування цифрових негативів"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (типовий)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Про цей інструмент імпортування негативів…"
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Поводження з RAW"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"

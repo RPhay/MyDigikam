@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
 "PO-Revision-Date: 2023-07-01 11:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -26414,7 +26414,7 @@ msgstr "Configureu el servei web"
 msgid "Export by Web Service"
 msgstr "Exporta per al servei web"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26424,12 +26424,12 @@ msgstr ""
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Conversió RAW d'ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26439,7 +26439,7 @@ msgstr ""
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Conversió RAW de DarkTable"
@@ -26632,7 +26632,7 @@ msgstr ""
 "Utilitza la configuració general de la descodificació RAW per a carregar "
 "esta imatge en l'editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26642,12 +26642,12 @@ msgstr ""
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversió RAW de RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26657,7 +26657,7 @@ msgstr ""
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW d'UFRaw"
@@ -61200,7 +61200,7 @@ msgstr ""
 "poden canviar la configuració</li><li>Desactivada: quan es guarden fitxers "
 "d'imatge s'utilitza la configuració predeterminada</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61213,50 +61213,50 @@ msgstr ""
 "L'obertura d'un fitxer RAW requerix una gran interpretació i processament de "
 "les dades."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Obri els fitxers RAW en l'editor d'imatges"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Ràpid i senzill, com a imatge de 8 bits"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Utilitza la configuració predeterminada, en 16 bits"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
 "Obri sempre l'eina d'importació RAW per a personalitzar la configuració"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (predeterminat)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Quant a esta eina per a importar RAW..."
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Comportament del RAW"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"

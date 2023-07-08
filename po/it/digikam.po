@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-28 21:14+0200\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
+"PO-Revision-Date: 2023-07-03 20:34+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -799,12 +799,10 @@ msgid "R&emove Tag"
 msgstr "R&imuovi tag"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Rimuovi tutti i volti"
+msgstr "Rimuovi tutti i tag"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -11436,7 +11434,7 @@ msgstr "№ satelliti"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Fix type"
-msgstr "Correggi tipo"
+msgstr "Fissa tipo"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
 #, kde-format
@@ -26473,7 +26471,7 @@ msgstr "Impostazioni del servizio web"
 msgid "Export by Web Service"
 msgstr "Esporta tramite servizio web"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26483,12 +26481,12 @@ msgstr ""
 "Chiudi la finestra di dialogo per caricare l'immagine RAW con lo strumento "
 "di importazione nativo"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Conversione RAW ART"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26498,7 +26496,7 @@ msgstr ""
 "Chiudi la finestra di dialogo per caricare l'immagine RAW con lo strumento "
 "di importazione nativo"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Conversione RAW DarkTable"
@@ -26690,7 +26688,7 @@ msgstr ""
 "Usa le impostazioni di decodifica RAW generali per caricare questa immagine "
 "nell'editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26700,12 +26698,12 @@ msgstr ""
 "Chiudi la finestra di dialogo per caricare l'immagine RAW con lo strumento "
 "di importazione nativo"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversione RAW RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26715,7 +26713,7 @@ msgstr ""
 "Chiudi la finestra di dialogo per caricare l'immagine RAW con lo strumento "
 "di importazione nativo"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Conversione RAW UFRaw"
@@ -54211,12 +54209,12 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
 #, kde-format
 msgid "Zoom in"
-msgstr "Aumenta zoom"
+msgstr "Ingrandisci"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
 #, kde-format
 msgid "Zoom out"
-msgstr "Diminuisci zoom"
+msgstr "Rimpicciolisci"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
 #, kde-format
@@ -61224,7 +61222,7 @@ msgstr ""
 "utilizzate le impostazioni predefinite quando si salvano le immagini</li></"
 "ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61237,50 +61235,50 @@ msgstr ""
 "Aprire un file RAW richiede un'estesa interpretazione ed elaborazione dei "
 "dati."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Apri i file RAW nell'editor di immagini"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Veloce e semplice, come immagine a 8 bit"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Utilizzando le impostazioni predefinite, a 16 bit"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
 "Apri sempre lo strumento di importazione RAW per regolare le impostazioni"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (predefinito)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Informazioni su questo strumento di importazione RAW..."
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Comportamento RAW"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"

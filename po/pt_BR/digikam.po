@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
 "PO-Revision-Date: 2021-08-23 13:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27799,27 +27799,27 @@ msgstr "Configurações do Serviço Web"
 msgid "Export by Web Service"
 msgstr "Exportar por Serviço Web"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "ART Raw Conversion"
 msgstr "Conversão de RAW"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "DarkTable Raw Conversion"
@@ -28008,27 +28008,27 @@ msgstr ""
 "Usar as configurações de decodificação RAW geral para carregar esta imagem "
 "no editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversão de RAW"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "UFRaw Raw Conversion"
@@ -65887,7 +65887,7 @@ msgstr ""
 "quando estiver salvando arquivos de imagens</li><li>Desmarcado: Serão usadas "
 "as configurações padrão ao salvar os arquivos de imagens</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65904,25 +65904,25 @@ msgstr ""
 "do sensor de imagem de uma câmera digital.</p><p>A abertura de um arquivo "
 "RAW necessita de interpretação e processamento elevado dos dados.</p>"
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Abrir os arquivos RAW no editor de imagens"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Rápido e simples, como uma imagem de 8 bits"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Usando as configurações padrão em 16 bits"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
@@ -65930,27 +65930,27 @@ msgstr ""
 "Sempre abrir a ferramenta de importação RAW para personalizar as "
 "configurações"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, fuzzy, kde-format
 #| msgid "Default"
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr "Padrão"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, fuzzy, kde-format
 #| msgid "Behavior"
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Comportamento"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, fuzzy, kde-format
 #| msgid "Default Settings"
 msgctxt "@title:tab"

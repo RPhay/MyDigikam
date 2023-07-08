@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
+"POT-Creation-Date: 2023-07-08 01:12+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -25254,26 +25254,26 @@ msgstr "साधारण सेटिङ"
 msgid "Export by Web Service"
 msgstr "स्याचुरेसन:"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, fuzzy, kde-format
 msgid "ART Raw Conversion"
 msgstr "कलरस्पेस"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, fuzzy, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "कलरस्पेस"
@@ -25456,26 +25456,26 @@ msgstr "पूर्वनिर्धारित प्रोफाइल प�
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, fuzzy, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "कलरस्पेस"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, fuzzy, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "कलरस्पेस"
@@ -58829,7 +58829,7 @@ msgstr ""
 "<ul><li>चेक हुँदा: रङ व्यवस्थापन सक्षम हुन्छ</li><li>अनचेक हुँदा: रङ व्यवस्थापन अक्षम हुन्छ</"
 "li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58838,50 +58838,50 @@ msgid ""
 "Opening a raw file requires extensive data interpretation and processing."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "<p>छवि सम्पादक क्षेत्रमा प्रयोग गर्नका लागि पृष्ठभूमि रङ अनुकूलन गर्नुहोस् ।"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, fuzzy, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "पूर्वनिर्धारित सेटिङ उल्टाउनुहोस्"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, fuzzy, kde-format
 #| msgid "Use default profile"
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr "पूर्वनिर्धारित प्रोफाइल प्रयोग गर्नुहोस्"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr ""
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "व्यवहार"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
