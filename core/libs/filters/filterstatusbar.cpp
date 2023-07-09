@@ -193,11 +193,11 @@ void FilterStatusBar::slotFilterMatches(bool match)
     switch (d->status)
     {
         case Private::NotMatch:
-            pal.setColor(backgroundRole(), QColor(255, 200, 200));
+            pal.setColor(backgroundRole(), QColor(120, 255, 120, 200));
             pal.setColor(foregroundRole(), Qt::black);
             break;
         case Private::Match:
-            pal.setColor(backgroundRole(), QColor(200, 255, 200));
+            pal.setColor(backgroundRole(), QColor(255, 120, 120, 200));
             pal.setColor(foregroundRole(), Qt::black);
             break;
         default: // Private::None
