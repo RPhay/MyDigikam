@@ -52,8 +52,8 @@ public:
         textQueryCompletion          (false),
         hasCaseSensitive             (true),
         highlightOnResult            (true),
-        hasResultColor               (120, 255, 120, 100),
-        hasNoResultColor             (255, 120, 120, 100),
+        hasResultColor               (100, 200, 100),
+        hasNoResultColor             (200, 100, 100),
         completer                    (nullptr),
         searchTimer                  (nullptr)
     {
