@@ -46,10 +46,10 @@ public:
 
 public:
 
-    QSqlDatabase database;
-    int          valid;
-    int          transactionCount;
-    QSqlError    lastError;
+    int       valid;
+    int       transactionCount;
+    QString   connectionName;
+    QSqlError lastError;
 };
 
 // ------------------------------------------------------------------------
@@ -63,13 +63,13 @@ public:
 
     void init(const QString& connectionName, DbEngineLocking* const locking);
 
-    QString connectionName();
-
     QSqlDatabase databaseForThread();
     QSqlError    databaseErrorForThread();
     void         setDatabaseErrorForThread(const QSqlError& lastError);
 
-    QSqlDatabase createDatabaseConnection();
+    QString      connectionName();
+    QString      createDatabaseConnection();
+
     void closeDatabaseForThread();
     bool incrementTransactionCount();
     bool decrementTransactionCount();

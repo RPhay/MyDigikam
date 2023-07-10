@@ -12,7 +12,7 @@ BUGFIXES:
 003 ==> 472036 - GEO Tag Editor not adding co ordinates.
 004 ==> 472094 - Delete icon not visible in find fields.
 005 ==> 472092 - Request "Ignore All" for Images with Many Persons.
-006 ==> 
+006 ==> 472125 - Connections to remote mariadb are aborted when digikam is closed.
 007 ==> 
 008 ==> 
 009 ==> 

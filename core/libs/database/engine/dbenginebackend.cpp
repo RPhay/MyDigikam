@@ -82,26 +82,28 @@ DbEngineThreadData::~DbEngineThreadData()
 
 void DbEngineThreadData::closeDatabase()
 {
-    QString connectionToRemove;
-
-    if (database.isOpen())
+    if (!connectionName.isNull())
     {
-        connectionToRemove = database.connectionName();
+        {
+            QSqlDatabase database = QSqlDatabase::database(connectionName, false);
+
+            if (database.isOpen())
+            {
+                database.close();
+            }
+        }
+
+        // Remove connection
+
+        QSqlDatabase::removeDatabase(connectionName);
     }
 
-    // Destroy object
+    // clear variables
 
-    database         = QSqlDatabase();
     valid            = 0;
     transactionCount = 0;
+    connectionName   = QString();
     lastError        = QSqlError();
-
-    // Remove connection
-
-    if (!connectionToRemove.isNull())
-    {
-        QSqlDatabase::removeDatabase(connectionToRemove);
-    }
 }
 
 BdEngineBackendPrivate::BdEngineBackendPrivate(BdEngineBackend* const backend)
@@ -160,27 +162,35 @@ QSqlDatabase BdEngineBackendPrivate::databaseForThread()
         threadData->closeDatabase();
     }
 
-    if (!threadData->valid || !threadData->database.isOpen())
-    {
-        threadData->database = createDatabaseConnection();
+    QSqlDatabase database;
 
-        if (threadData->database.open())
+    if (!threadData->connectionName.isNull())
+    {
+       database = QSqlDatabase::database(threadData->connectionName, false);
+    }
+
+    if (!threadData->valid || !database.isOpen())
+    {
+        threadData->connectionName = createDatabaseConnection();
+        database                   = QSqlDatabase::database(threadData->connectionName, false);
+
+        if (database.open())
         {
             threadData->valid = currentValidity;
         }
         else
         {
             qCDebug(DIGIKAM_DBENGINE_LOG) << "Error while opening the database. Error was"
-                                          << threadData->database.lastError();
+                                          << database.lastError();
         }
     }
 
-    return threadData->database;
+    return database;
 }
 
-QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
+QString BdEngineBackendPrivate::createDatabaseConnection()
 {
-    QSqlDatabase db        = QSqlDatabase::addDatabase(parameters.databaseType, connectionName());
+    QSqlDatabase database  = QSqlDatabase::addDatabase(parameters.databaseType, connectionName());
     QString connectOptions = parameters.connectOptions;
 
     if (parameters.isSQLite())
@@ -203,14 +213,14 @@ QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
         connectOptions += toAdd.join(QLatin1Char(';'));
     }
 
-    db.setDatabaseName(parameters.databaseNameCore);
-    db.setConnectOptions(connectOptions);
-    db.setHostName(parameters.hostName);
-    db.setPort(parameters.port);
-    db.setUserName(parameters.userName);
-    db.setPassword(parameters.password);
+    database.setDatabaseName(parameters.databaseNameCore);
+    database.setConnectOptions(connectOptions);
+    database.setHostName(parameters.hostName);
+    database.setPort(parameters.port);
+    database.setUserName(parameters.userName);
+    database.setPassword(parameters.password);
 
-    return db;
+    return database.connectionName();
 }
 
 void BdEngineBackendPrivate::closeDatabaseForThread()
