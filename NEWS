@@ -13,7 +13,7 @@ BUGFIXES:
 004 ==> 472094 - Delete icon not visible in find fields.
 005 ==> 472092 - Request "Ignore All" for Images with Many Persons.
 006 ==> 472125 - Connections to remote mariadb are aborted when digikam is closed.
-007 ==> 
+007 ==> 472129 - Indecently large distance between the elements in the "tools" panel.
 008 ==> 
 009 ==> 
 010 ==> 
