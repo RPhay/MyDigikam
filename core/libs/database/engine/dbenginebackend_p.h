@@ -68,7 +68,7 @@ public:
     void         setDatabaseErrorForThread(const QSqlError& lastError);
 
     QString      connectionName();
-    QString      createDatabaseConnection();
+    QSqlDatabase createDatabaseConnection();
 
     void closeDatabaseForThread();
     bool incrementTransactionCount();

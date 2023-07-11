@@ -171,8 +171,8 @@ QSqlDatabase BdEngineBackendPrivate::databaseForThread()
 
     if (!threadData->valid || !database.isOpen())
     {
-        threadData->connectionName = createDatabaseConnection();
-        database                   = QSqlDatabase::database(threadData->connectionName, false);
+        database                   = createDatabaseConnection();
+        threadData->connectionName = database.connectionName();
 
         if (database.open())
         {
@@ -188,7 +188,7 @@ QSqlDatabase BdEngineBackendPrivate::databaseForThread()
     return database;
 }
 
-QString BdEngineBackendPrivate::createDatabaseConnection()
+QSqlDatabase BdEngineBackendPrivate::createDatabaseConnection()
 {
     QSqlDatabase database  = QSqlDatabase::addDatabase(parameters.databaseType, connectionName());
     QString connectOptions = parameters.connectOptions;
@@ -220,7 +220,7 @@ QString BdEngineBackendPrivate::createDatabaseConnection()
     database.setUserName(parameters.userName);
     database.setPassword(parameters.password);
 
-    return database.connectionName();
+    return database;
 }
 
 void BdEngineBackendPrivate::closeDatabaseForThread()
