@@ -81,7 +81,7 @@ static QVector<QListWidgetItem*> splitData(const QDir& dataDir, float splitRatio
             it1    += inc;
 
             std::swap(*(it++), *(it1));
-         }
+        }
 
         // split train/test
 

@@ -145,6 +145,7 @@ target_link_libraries(libmodeltest
 # Unit-tests and CLI tools
 
 add_subdirectory(advancedrename)
+add_subdirectory(autotagassignment)
 add_subdirectory(albummodel)                    # Unit-test based on ModelTest
 add_subdirectory(database)                      # Some unit-tests based on ModelTest
 add_subdirectory(dimg)
