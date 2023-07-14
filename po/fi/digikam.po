@@ -46,7 +46,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:12+0000\n"
-"PO-Revision-Date: 2023-05-18 11:50+0300\n"
+"PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -55,7 +55,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2013-01-13 20:43:12+0000\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -15346,10 +15346,9 @@ msgid "Properties"
 msgstr "Ominaisuudet"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
-#, fuzzy, kde-format
-#| msgid "Enter here a new keyword."
+#, kde-format
 msgid "Set here a new keyword"
-msgstr "Anna tässä uusi avainsana."
+msgstr "Anna tässä uusi hakusana."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
 #, kde-format
@@ -15562,8 +15561,7 @@ msgid "DTD"
 msgstr "DTD"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:93
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Maintenance"
 msgstr "Ylläpito"
@@ -15582,8 +15580,7 @@ msgid "News Management Mode"
 msgstr "Median hallinta"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:96
-#, fuzzy, kde-format
-#| msgid "Package"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Package"
 msgstr "Paketti"
@@ -15595,32 +15592,28 @@ msgid "Schema"
 msgstr "Skeema"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:98
-#, fuzzy, kde-format
-#| msgid "Topic"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Topic"
 msgstr "Aihe"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:99
-#, fuzzy, kde-format
-#| msgid "Topic Set"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Topic Set"
 msgstr "Asetettu aihe"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:143
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@option"
 msgid "Language:"
 msgstr "Kieli:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:144
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the language of content."
-msgstr "Aseta tässä sisällön kieli."
+msgstr "Valitse tässä sisällön kieli."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
 #, kde-format
@@ -15748,9 +15741,7 @@ msgid "Feature"
 msgstr "Ominaisuus"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Forecast"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Forecast"
 msgstr "Ennuste"
@@ -17245,11 +17236,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
-msgstr "Laitetta tunnistetaan, odota…"
+msgstr "Esikäsittely on meneillään, odota."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
@@ -17261,11 +17251,10 @@ msgstr "Tämä voi kestää hetken…"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
-msgstr "Käsittely epäonnistui"
+msgstr "Esikäsittely epäonnistui."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
 #, fuzzy, kde-format
@@ -17296,10 +17285,9 @@ msgid "Error loading RAW image '%1'"
 msgstr "Virhe ladattaessa RAW-kuvaa ”%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
-#, fuzzy, kde-format
-#| msgid "Cannot create thumbnail for %1"
+#, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
-msgstr "Kuvan %1 pienoiskuvaa ei voitu luoda"
+msgstr "Kuvan ”%1” pienoiskuvaa ei voitu tallentaa tiedostoon ”%2”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:45
@@ -17308,10 +17296,9 @@ msgid "unavailable"
 msgstr "ei saatavilla"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
-#, fuzzy, kde-format
-#| msgid "Failed to open file for writing"
+#, kde-format
 msgid "Could not open file '%1' for writing"
-msgstr "Virhe avattaessa tiedostoa kirjoitusta varten"
+msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
@@ -17319,22 +17306,19 @@ msgid "Could not save image to file '%1'"
 msgstr "Kuvaa ei voitu tallentaa tiedostoon ”%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
-#, fuzzy, kde-format
-#| msgid "Could not open: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
-msgstr "Ei voitu avata: %1"
+msgstr "Tiedostosta ”%1” ei löytynyt teemaa"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
-#, fuzzy, kde-format
-#| msgid "Create directories"
+#, kde-format
 msgctxt "@info"
 msgid "Create directories"
 msgstr "Luo kansiot"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
-#, fuzzy, kde-format
-#| msgid "Could not create folder '%1'"
+#, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
 msgstr "Kansion ”%1” luominen epäonnistui"
@@ -17358,36 +17342,31 @@ msgid "Generate images and XML files"
 msgstr "Luo kuvat ja XML-tiedostot"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
-#, fuzzy, kde-format
-#| msgid "Could not create gallery.xml"
+#, kde-format
 msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "gallery.xml:ää ei voitu luoda"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
-#, fuzzy, kde-format
-#| msgid "Generating files for \"%1\""
+#, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Luodaan tiedostoja kohteelle ”%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
-#, fuzzy, kde-format
-#| msgid "Generating HTML files"
+#, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Luodaan HTML-tiedostoja"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
-#, fuzzy, kde-format
-#| msgid "Could not load XSL file '%1'"
+#, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Ei voitu lukea XSL-tiedostoa ”%1”"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
-#, fuzzy, kde-format
-#| msgid "Could not load XML file '%1'"
+#, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Ei voitu lukea XML-tiedostoa ”%1”"
@@ -17399,15 +17378,13 @@ msgid "Error processing XML file"
 msgstr "Virhe käsiteltäessä XML-tiedostoa"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
-#, fuzzy, kde-format
-#| msgid "Could not open '%1' for writing"
+#, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Tiedostoa ”%1” ei voitu avata kirjoitettavaksi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
-#, fuzzy, kde-format
-#| msgid "Downloading remote files for \"%1\""
+#, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Ladataan etätiedostoja kohteelle ”%1”"
@@ -17487,15 +17464,13 @@ msgid "Image Y Resolution"
 msgstr "Kuvan y-tarkkuus"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
-#, fuzzy, kde-format
-#| msgid "Image Resolution Unit"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Kuvan tarkkuuden yksikkö"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
-#, fuzzy, kde-format
-#| msgid "Image Date Time"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Kuvan aika ja päivä"
@@ -17508,15 +17483,13 @@ msgid "YCBCR Positioning"
 msgstr "Asema:"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
-#, fuzzy, kde-format
-#| msgid "Exposure Time"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Valotusaika"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
-#, fuzzy, kde-format
-#| msgid "F Number"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "F-luku"
@@ -17528,29 +17501,25 @@ msgid "Exposure Index"
 msgstr "Valotusindeksi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
-#, fuzzy, kde-format
-#| msgid "ISO Speed Ratings"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO-nopeuslukemat"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
-#, fuzzy, kde-format
-#| msgid "Shutter Speed Value"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Sulkimen nopeuden arvo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
-#, fuzzy, kde-format
-#| msgid "Aperture Value"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Aukon arvo"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
-#, fuzzy, kde-format
-#| msgid "Focal Length"
+#, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Polttoväli"
@@ -17743,9 +17712,7 @@ msgid "Gallery Title:"
 msgstr "Gallerian otsikko:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Kohdekansio:"
@@ -17754,8 +17721,7 @@ msgstr "Kohdekansio:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Kohdekansio"
@@ -17767,8 +17733,7 @@ msgid "Open in Browser:"
 msgstr "Avaa selaimeen:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Ei mikään"
@@ -17814,8 +17779,7 @@ msgid "Author: %1<br/><br/>"
 msgstr "Tekijä: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Create HTML Gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Luo HTML-galleria"
@@ -17863,17 +17827,14 @@ msgid "Could not create folder '%1'"
 msgstr "Kansion ”%1” luominen epäonnistui"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Save in file"
+#, kde-format
 msgid "Create jAlbum project files"
-msgstr "Tallenna tiedostoon"
+msgstr "Luo jAlbum-projektitiedostot"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:134
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to create project files"
-msgstr "Tiedoston luonti epäonnistui…"
+msgstr "Projektitiedostojen luominen epäonnistui"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:151
 #, kde-format
@@ -17941,19 +17902,15 @@ msgid "Jalbum completed."
 msgstr "jAlbum on valmis."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><h1><b>Welcome to Calendar Tool</b></h1></p><p>This assistant will "
-#| "guide you to create and print a calendar with a selection of images taken "
-#| "from your collection.</p>"
+#, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<p><h1><b>Tervetuloa kalenterityökaluun</b></h1></p><p>Tämä ohjattu toiminto "
-"auttaa sinua luomaan ja tulostamaan kalenterin kokoelmasta valituin kuvin.</"
-"p>"
+"<qt><p><h1><b>Tervetuloa jAlbum-vientityökaluun</b></h1></p><p>Tämä "
+"opastettu toiminto antaa viemään kuvasi</p><p></p><p>nopeasti jAlbum-"
+"projektiksi.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
@@ -17967,36 +17924,31 @@ msgid "Project Title:"
 msgstr "Projektin otsikko:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:74
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the project title"
-msgstr "Syötä tähän sisällön tarjoaja."
+msgstr "Aseta tässä projektin otsikko"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, fuzzy, kde-format
-#| msgid "Projects Folder:"
+#, kde-format
 msgid "Projects folder:"
 msgstr "Projektikansio:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "Projektikansio"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, fuzzy, kde-format
-#| msgid "Create jAlbum Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "Luo jAlbum-albumi"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Tervetuloa jAlbum-albumityökaluun"
+msgstr "Tervetuloa jAlbum-vientityökaluun"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, fuzzy, kde-format
@@ -18005,14 +17957,12 @@ msgid "Paths Selection"
 msgstr "Valinta"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid "Generating jAlbum"
-msgstr "Vienti"
+msgstr "Luodaan jAlbumia"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "Jaa tiedostot DLNA-mediapalvelimella"
@@ -18081,14 +18031,12 @@ msgstr "Palvelin on käynnissä"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:265
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:26
-#, fuzzy, kde-format
-#| msgid "1 Album selected"
-#| msgid_plural "%1 Albums selected"
+#, kde-format
 msgctxt "@info"
 msgid "1 album shared"
 msgid_plural "%1 albums shared"
-msgstr[0] "Yksi albumi valittu"
-msgstr[1] "%1 albumia valittu"
+msgstr[0] "Yksi albumi jaettu"
+msgstr[1] "%1 albumia jaettu"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
@@ -18153,9 +18101,7 @@ msgstr "Jaetut kohteet"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Käynnistetään mediapalvelinta"
@@ -18217,31 +18163,26 @@ msgid "Media Server cannot be started!"
 msgstr "Mediapalvelinta ei voi käynnistää!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:178
-#, fuzzy, kde-format
-#| msgid "Media Server have been started"
+#, kde-format
 msgid "MJPEG Server have been started"
-msgstr "Mediapalvelin on käynnistetty"
+msgstr "MJPEG-palvelin on käynnistetty"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:179
-#, fuzzy, kde-format
-#| msgid "Media Server cannot be started!"
+#, kde-format
 msgid "MJPEG Server cannot be started!"
-msgstr "Mediapalvelinta ei voi käynnistää!"
+msgstr "MJPEG-palvelinta ei voida käynnistää!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Jaa tiedostot DLNA-mediapalvelimella"
+msgstr "Jaa tiedostot MJPEG-suoratoistapalvelimella"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
-msgstr "Mediapalvelimen sisältö"
+msgstr "MJPEG-palvelimen sisältö"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:98
 #, fuzzy, kde-format
@@ -18267,7 +18208,7 @@ msgstr "Palvelimen portti:"
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG server IP port."
-msgstr ""
+msgstr "MJPEG-palvelimen IP-portti."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:69
 #, kde-format
@@ -18471,97 +18412,82 @@ msgid "Show the image creation time/date at the bottom of the screen."
 msgstr "Näytä kuvan luontiaika näytön alaosassa."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:310
-#, fuzzy, kde-format
-#| msgid "Show camera aperture and focal length"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera aperture and focal length"
-msgstr "Näytä aukon koko ja polttoväli"
+msgstr "Näytä kameran aukon koko ja polttoväli"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera aperture and focal length at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Näytä aukon koko ja polttoväli ruudun alaosassa."
+msgstr "Näytä näytön alalaidassa kameran aukon koko ja polttoväli."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Show camera exposure and sensitivity"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera exposure and sensitivity"
-msgstr "Näytä valotusaika ja herkkyys"
+msgstr "Näytä kameran valotusaika ja herkkyys"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera exposure and sensitivity at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Näytä valotusaika ja herkkyys ruudun alaosassa"
+msgstr "Näytä näytön alalaidassa kameran valotusaika ja herkkyys."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera make and model"
 msgstr "Näytä kameran merkki ja malli"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:317
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Näytä kameran merkki ja malli ruudun alaosassa"
+msgstr "Näytä näytön alalaidassa kameran merkki ja malli."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:319
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera lens model"
-msgstr "Näytä kameran merkki ja malli"
+msgstr "Näytä kameran linssin malli"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:320
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Näytä kameran merkki ja malli ruudun alaosassa"
+msgstr "Näytä näytön alalaidassa kameran linssin malli."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:322
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption"
-msgstr "Näytä kuvatekstit"
+msgstr "Näytä kuvateksti"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:323
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image caption at the bottom of the screen."
-msgstr "Näytä kuvateksti näytön alaosassa."
+msgstr "Näytä näytön alalaidassa kuvateksti."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image title"
 msgstr "Näytä kuvan otsikko"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:326
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image title at the bottom of the screen."
-msgstr "Näytä kuvan nimi näytön alaosassa."
+msgstr "Näytä näytön alalaidassa kuvan otsikko."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
-#, fuzzy, kde-format
-#| msgid "Show image caption if it hasn't title"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption if it has not title"
-msgstr "Näytä kuvateksti, jos kuva ei sisällä otsikkoa"
+msgstr "Näytä kuvateksti, ellei kuvalla ole otsikkoa"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
 #, fuzzy, kde-format
@@ -18571,31 +18497,28 @@ msgid ""
 msgstr "Näytä kuvateksti näytön alaosassa."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image rating"
-msgstr "Näytä kuvatekstit"
+msgstr "Näytä kuvan arvostelu"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:332
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image rating at the bottom of the screen."
-msgstr "Näytä kuvan tiedostonimi näytön alaosassa."
+msgstr "Näytä näytön alalaidassa digiKamin kuva-arvostelu."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image tags"
-msgstr "Näytä kuvan tunnisteet"
+msgstr "Näytä kuvan luokitukset"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:335
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr "Näytä näytön alalaidassa digiKam kuvaluokitukset."
+msgstr "Näytä näytön alalaidassa digiKamin kuvaluokitukset."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:337
 #, kde-format
@@ -18622,10 +18545,9 @@ msgid "MJPEG Stream Server"
 msgstr "MJPEG-virtapalvelin"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgid "A tool to export items as MJPEG Stream"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu kohteiden MJPEG-suoratoistovientiin"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
 #, fuzzy, kde-format
@@ -18725,11 +18647,10 @@ msgid "Treat the image as a single text line."
 msgstr "Aseta kunkin tiilen reunan koko."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
-msgstr "Aseta kunkin tiilen reunan koko."
+msgstr "Käsittele kuvaa yksittäisenä sanana."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
 #, fuzzy, kde-format
@@ -18739,12 +18660,10 @@ msgid "Treat the image as a single word in a circle."
 msgstr "Aseta kunkin tiilen reunan koko."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Save image as a newly created branch"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr "Tallenna muutokset vasta luotuun haaraan"
+msgstr "Käsittele kuvaa yksittäisenä merkkinä."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
@@ -19090,16 +19009,13 @@ msgid "Use Multi-cores"
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
-#, fuzzy, kde-format
-#| msgid "If this option is enabled, the original image will be shown."
+#, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
-msgstr "Mikäli valitset tämän, alkuperäinen kuva on esillä."
+msgstr "Jos tämä on käytössä, tiedostot käsitellään rinnan"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "default theme name"
-#| msgid "Default"
+#, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "Oletus"
@@ -20462,16 +20378,14 @@ msgid "Crop and Rotate Photos"
 msgstr "Rajaa ja kierrä kuvia"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
-#, fuzzy, kde-format
-#| msgid "Queue Settings"
+#, kde-format
 msgid "Images Output Settings"
-msgstr "Jonoasetukset"
+msgstr "Kuvatulosasetukset"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:117
-#, fuzzy, kde-format
-#| msgid "Rendering intent:"
+#, kde-format
 msgid "Render Printing"
-msgstr "Rasterointiaie:"
+msgstr "Hahmonna tuloste"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:254
 #, kde-format
@@ -20766,10 +20680,9 @@ msgid "Mozilla Foundation Mail Client."
 msgstr "Mozilla-säätiön sähköpostiohjelma."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
-#, fuzzy, kde-format
-#| msgid "Uploading file %1 to camera..."
+#, kde-format
 msgid "Preparing file to export by mail..."
-msgstr "Siirretään ”%1” kameraan…"
+msgstr "Valmistellaan tiedoston lähetystä sähköpostitse…"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
@@ -20925,8 +20838,7 @@ msgid ""
 msgstr "Jos valitset tämän, kaikki metatieto (Exif, IPTC ja XMP) poistetaan."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Lähetä sähköpostitse"
@@ -20982,10 +20894,10 @@ msgstr ""
 "TV:t jne. tukevat DLNA:ta.</p>"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
-msgstr "Anna tämä tunniste"
+msgstr "Luo videoesitys…"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
@@ -20993,16 +20905,14 @@ msgid "Starting to generate video slideshow..."
 msgstr "Aletaan luoda videodiaesitystä…"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
-#, fuzzy, kde-format
-#| msgid "No active process"
+#, kde-format
 msgid "%1 input images to process"
-msgstr "Ei aktiivista prosessia"
+msgstr "%1 käsiteltävää syötekuvaa"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:137
-#, fuzzy, kde-format
-#| msgid "No active process"
+#, kde-format
 msgid "%1 input audio stream to process:"
-msgstr "Ei aktiivista prosessia"
+msgstr "%1 käsiteltävää äänivirtaa:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
 #, kde-format
@@ -21175,12 +21085,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Cannot change wallpaper image from current desktop with\n"
 "%1"
-msgstr "Tiedoston \"%1\" tallennus epäonnistui"
+msgstr ""
+"Nykyisen työpöydän taustakuvaa ei voi muuttaa ohjelmalla\n"
+"%1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
 #, kde-format
@@ -21767,10 +21679,9 @@ msgstr "Portfolion kuvien kokonaismäärä ja esityksen kesto."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_label7)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:106
-#, fuzzy, kde-format
-#| msgid "Remove the current selected value from the list"
+#, kde-format
 msgid "Currently selected image in the portfolio list."
-msgstr "Poista luettelosta valittu arvo"
+msgstr "Portfolioluettelon valittu kuva."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
@@ -21971,11 +21882,10 @@ msgid "Presentation"
 msgstr "Esitys"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Create Schema..."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
-msgstr "Luo skeema…"
+msgstr "Työkalu diaesityksen luomiseksi"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
 #, kde-format
@@ -21997,10 +21907,10 @@ msgstr "Esitys…"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
-msgstr "Anna tämä tunniste"
+msgstr "Aseta kuvaesityksen viive"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
@@ -22010,18 +21920,16 @@ msgstr "Viive:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, fuzzy, kde-format
-#| msgid "Delete image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Poista kuva"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:430
-#, fuzzy, kde-format
-#| msgid "Do you want to do this operation on all group items?"
+#, kde-format
 msgid "Do you want to move this image to the trash?"
-msgstr "Haluatko tehdä tämän toimenpiteen ryhmän kaikille kohteille?"
+msgstr "Haluatko siirtää tämän kuvan roskakoriin?"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1023
 #, kde-format
@@ -22096,8 +22004,7 @@ msgid "Blobs"
 msgstr "Möykyt"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Kuvaesitys"
@@ -22111,17 +22018,15 @@ msgid "Giving a slideshow"
 msgstr "Näytetään kuvaesitystä"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Slideshow Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Kuvaesitysasetukset"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
-#, fuzzy, kde-format
-#| msgid "&Delay between images:"
+#, kde-format
 msgid "Delay between images:"
-msgstr "&Viive kuvien välillä (sekuntia):"
+msgstr "Viive kuvien välillä:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
@@ -22229,16 +22134,14 @@ msgid "Show the camera make and model at the bottom of the screen."
 msgstr "Näytä kameran merkki ja malli ruudun alaosassa"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:154
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgid "Show camera lens model"
-msgstr "Näytä kameran merkki ja malli"
+msgstr "Näytä kameran linssin malli"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:155
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Näytä kameran merkki ja malli ruudun alaosassa"
+msgstr "Näytä näytön alalaidassa kameran linssin malli."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:157
 #, kde-format
@@ -22261,16 +22164,15 @@ msgid "Show the image title at the bottom of the screen."
 msgstr "Näytä kuvan nimi näytön alaosassa."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:163
-#, fuzzy, kde-format
-#| msgid "Show image caption if it hasn't title"
+#, kde-format
 msgid "Show image caption if it has not title"
-msgstr "Näytä kuvateksti, jos kuva ei sisällä otsikkoa"
+msgstr "Näytä kuvateksti, ellei kuvalla ole otsikkoa"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:164
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "Näytä kuvateksti näytön alaosassa."
+msgstr "Näytä näytön alalaidassa kuvateksti, ellei otsikoita ole."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:166
 #, kde-format
@@ -22306,10 +22208,9 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "Näytä kuvan tiedostonimi näytön alaosassa."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:175
-#, fuzzy, kde-format
-#| msgid "Caption:"
+#, kde-format
 msgid "Caption font:"
-msgstr "Kuvateksti:"
+msgstr "Kuvatekstifontti:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:176
 #, fuzzy, kde-format
@@ -22357,8 +22258,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
-#, fuzzy, kde-format
-#| msgid "Slide Show"
+#, kde-format
 msgid "SlideShow"
 msgstr "Kuvaesitys"
 
@@ -22395,8 +22295,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Kuvaesitys"
@@ -22413,16 +22312,14 @@ msgid "Play All"
 msgstr "Toista kaikki"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgid "Play Selection"
-msgstr "Valinta"
+msgstr "Toista valinta"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
-#, fuzzy, kde-format
-#| msgid "With All Sub-Albums"
+#, kde-format
 msgid "Play With Sub-Albums"
-msgstr "Alialbumien kanssa"
+msgstr "Toista alialbumeineen"
 
 #: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
@@ -22515,9 +22412,7 @@ msgid "Failed to list folders"
 msgstr "Kansioiden luettelu epäonnistui"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Box"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Vie Boxiin"
@@ -22534,25 +22429,21 @@ msgstr "Vie Boxiin"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "Aloita lähetys"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image to Upload"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
-msgstr "Valitse siirrettävä kuva"
+msgstr "Aloita lähetys Boxiin"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:493
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:244
-#, fuzzy, kde-format
-#| msgid "No image selected. Please select which images should be uploaded."
+#, kde-format
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "Kuvia ei ole valittu. Valitse, mitkä kuvat tulisi lähettää."
@@ -22579,8 +22470,7 @@ msgstr "Varoitus"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:512
 #: core/dplugins/generic/webservices/google/gswindow.cpp:542
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:252
-#, fuzzy, kde-format
-#| msgid "Authentication failed. Click \"Continue\" to authenticate."
+#, kde-format
 msgctxt "@info"
 msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "Tunnistautuminen epäonnistui. Tunnistaudu napsauttamalla ”Jatka”."
@@ -22597,8 +22487,7 @@ msgstr "Tunnistautuminen epäonnistui. Tunnistaudu napsauttamalla ”Jatka”."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
 msgstr "Jatka"
@@ -22615,8 +22504,7 @@ msgstr "Jatka"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Peru"
@@ -22625,18 +22513,16 @@ msgstr "Peru"
 #: core/dplugins/generic/webservices/google/gswindow.cpp:385
 #: core/dplugins/generic/webservices/google/gswindow.cpp:623
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:284
-#, fuzzy, kde-format
-#| msgid "%v / %m"
+#, kde-format
 msgctxt "@info: progress bar"
 msgid "%v / %m"
 msgstr "%v / %m"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:289
-#, fuzzy, kde-format
-#| msgid "Start export"
+#, kde-format
 msgctxt "@info"
 msgid "Box export"
-msgstr "Aloita vienti"
+msgstr "Box-vienti"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
@@ -22652,20 +22538,22 @@ msgstr "Aloita vienti"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, fuzzy, kde-format
-#| msgid "Uploading Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "Lähetys epäonnistui"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:326
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to Box.\n"
 "%1\n"
 "Do you want to continue?"
-msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
+msgstr ""
+"Kuvan lähettäminen Boxiin epäonnistui.\n"
+"%1\n"
+"Haluatko jatkaa?"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:384
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
@@ -22674,8 +22562,7 @@ msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:426
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "Kirjautuminen epäonnistui"
@@ -22689,16 +22576,17 @@ msgstr "Todennus epäonnistui. Yritetäänkö uudelleen?"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:400
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:405
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Box call failed:\n"
 "%1"
-msgstr "Korkeus"
+msgstr ""
+"Box-kutsu epäonnistui:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:48
-#, fuzzy, kde-format
-#| msgid "Dropbox"
+#, kde-format
 msgctxt "@title"
 msgid "Dropbox"
 msgstr "Dropbox"
@@ -22710,20 +22598,15 @@ msgid "A tool to export to Dropbox web-service"
 msgstr "Työkalu Dropbox-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to Dropbox web-service.</p><p>See "
-#| "Dropbox web site for details: <a href='https://www.dropbox.com/'>https://"
-#| "www.dropbox.com/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Dropbox web-service.\n"
 "\n"
 "See Dropbox web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi viedä kohteita Dropbox-verkkopalveluun.</"
-"p><p>Lisätietoa Dropboxin verkkosivulla: <a href='https://www.dropbox."
-"com/'>https://www.dropbox.com/</a></p>"
+"Tällä työkalulla voi viedä kohteita Dropbox-verkkopalveluun. \n"
+"Lisätietoa Dropboxin sivustolla: %1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:98
 #, kde-format
@@ -22732,15 +22615,13 @@ msgid "Export to &Dropbox..."
 msgstr "Vie &Dropboxiin…"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Dropbox-vienti"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Aloita lähetys Dropboxiin"
@@ -22833,18 +22714,14 @@ msgid "A tool to export to Facebook web-service"
 msgstr "Työkalu Facebook-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to Facebook web-service.</p><p>See "
-#| "Facebook web site for details: <a href='https://www.facebook."
-#| "com/'>https://www.facebook.com/</a></p>"
+#, kde-format
 msgid ""
 "<p>This tool allows users to export items to Facebook web-service.</p><p>See "
 "Facebook web site for details: <a href='https://www.facebook.com/'>https://"
 "www.facebook.com/</a></p>"
 msgstr ""
 "<p>Tällä työkalulla voi viedä kohteita Facebook-verkkopalveluun.</"
-"p><p>Lisätietoa Facebookin verkkosivulla: <a href='https://www.facebook."
+"p><p>Lisätietoa Facebookin sivustolta: <a href='https://www.facebook."
 "com/'>https://www.facebook.com/</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
@@ -22854,8 +22731,7 @@ msgid "Export to &Facebook..."
 msgstr "Vienti &Facebookiin…"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
@@ -22930,15 +22806,13 @@ msgid "Validate previous session..."
 msgstr "Käytetään aiempaa istuntoa…"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "Vie Facebook-verkkopalveluun"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "Aloita lähetys Facebook-verkkopalveluun"
@@ -22956,10 +22830,9 @@ msgstr "Kirjaudu ulos Facebookista"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:325
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:355
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgid "<i>auto create</i>"
-msgstr "Käännä kuva automaattisesti"
+msgstr "<i>luo automaattisesti</i>"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:330
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
@@ -22993,8 +22866,7 @@ msgid "Target location: "
 msgstr "Kohteen sijainti: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Target Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Kohdekansio"
@@ -23005,8 +22877,7 @@ msgid "Sets the target address to copy the items to."
 msgstr "Asettaa kohdeosoitteen, johon kohteet kopioidaan."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Target File behavior:"
+#, kde-format
 msgid "Target file behavior:"
 msgstr "Kohdetiedoston toiminta:"
 
@@ -23041,20 +22912,17 @@ msgid "Use the album path of the items in the target"
 msgstr "Käytä kohteessa tiedostojen albumin sijaintia"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:179
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>1</b>: very high compression<br/><b>25</b>: high compression<br/"
-#| "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
-#| "value)<br/><b>100</b>: no compression</p>"
+#, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
 "high compression<br/><b>25</b>: high compression<br/><b>50</b>: medium "
 "compression<br/><b>75</b>: low compression (default value)<br/><b>100</b>: "
 "no compression</p>"
 msgstr ""
-"<p><b>1</b>: hyvin ankara pakkaus<br/><b>25</b>: ankara pakkaus<br/><b>50</"
-"b>: keskitasoinen pakkaus<br/><b>75</b>: vähäinen pakkaus (oletusarvo)<br/"
-"><b>100</b>: ei pakkausta</p>"
+"<p>Lähetettävien JPEG-kuvien uusi pakkausarvo:</p><p><b>1</b>: hyvin ankara "
+"pakkaus<br/><b>25</b>: ankara pakkaus<br/><b>50</b>: keskitasoinen "
+"pakkaus<br/><b>75</b>: vähäinen pakkaus (oletusarvo)<br/><b>100</b>: ei "
+"pakkausta</p>"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, kde-format
@@ -23062,31 +22930,27 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "Nämä ovat annettuun kohteeseen kopioitavat kohteet."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Vie paikalliseen tallennustilaan"
+msgstr "Vie paikalliseen talletustilaan"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Aloita vienti"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start export to the specified target"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Käynnistä vienti annettuun kohteeseen"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Kopiointi ei ole valmis"
@@ -23101,26 +22965,22 @@ msgstr ""
 "voi nyt yrittää uudelleen."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:49
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@title"
 msgid "File Copy"
-msgstr "Tiedosto"
+msgstr "Tiedoston kopiointi"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export items to a local storage"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu paikalliseen talletustilavientiin"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:69
-#, fuzzy, kde-format
-#| msgid "<p>This tool permit to export items to a local storage.</p>"
+#, kde-format
 msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
-msgstr ""
-"<p>Tällä työkalulla voi viedä kohteita paikalliseen tallennustilaan.</p>"
+msgstr "Tällä työkalulla voi viedä kohteita paikalliseen talletustilaan."
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
 #, kde-format
@@ -23149,8 +23009,7 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "Nämä ovat annettuun kohteeseen lähetettävät kuvat."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Valitse kohde…"
@@ -23162,21 +23021,18 @@ msgid "All Files (*)"
 msgstr "Kaikki tiedostot (*)"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:187
-#, fuzzy, kde-format
-#| msgid "No tags selected"
+#, kde-format
 msgid "<i>not selected</i>"
-msgstr "Ei valittuja tunnisteita"
+msgstr "<i>ei valittu</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Vie etätallennuslaitteeseen"
+msgstr "Vie etätalletustilaan"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Lähetys ei valmis"
@@ -23202,37 +23058,31 @@ msgid "This is the list of images to import into the current album."
 msgstr "Nämä ovat nykyiseen albumiin tuotavat kuvat."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Select items to import..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Valitse tuotavat kohteet…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "Tuo etätallennuslaitteesta"
+msgstr "Tuo etätalletustilasta"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, fuzzy, kde-format
-#| msgid "Start import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Aloita tuonti"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start importing the specified images into the currently selected album."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
-msgstr "Aloita valittujen kuvien tuonti valittuna olevaan albumiin."
+msgstr "Aloita valittujen kuvien tuonti valittuun albumiin."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, fuzzy, kde-format
-#| msgid "Import not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Tuonti ei valmis"
@@ -23248,11 +23098,10 @@ msgstr ""
 "ne ovat yhä luettelossa. Voit nyt yrittää näiden kuvien tuomista uudelleen."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:50
-#, fuzzy, kde-format
-#| msgid "Transform"
+#, kde-format
 msgctxt "@title"
 msgid "File Transfer"
-msgstr "Muunnos"
+msgstr "Tiedostonsiirto"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:65
 #, fuzzy, kde-format
@@ -23338,18 +23187,16 @@ msgid "Enter extra tags, separated by commas."
 msgstr "Syötä lisäluokitukset pilkuin erotettuna."
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:48
-#, fuzzy, kde-format
-#| msgid "Flickr"
+#, kde-format
 msgctxt "@title"
 msgid "Flickr"
 msgstr "Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to PGF format."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Flickr web-service"
-msgstr "Ohjelma kuvien muuntamiseksi pgf-muotoon."
+msgstr "Työkalu Flickr-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:68
 #, fuzzy, kde-format
@@ -23724,16 +23571,14 @@ msgid "Fewer tag options"
 msgstr "Vähemmän tunnisteasetuksia"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "Vie verkkopalveluun %1"
+msgstr "Vie %1-verkkopalveluun"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, fuzzy, kde-format
-#| msgid "Start Uploading"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Aloita lähetys"
@@ -23855,8 +23700,7 @@ msgid "Privacy:"
 msgstr "Yksityisyys:"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:50
-#, fuzzy, kde-format
-#| msgid "Google"
+#, kde-format
 msgctxt "@title"
 msgid "Google"
 msgstr "Google"
@@ -23964,11 +23808,10 @@ msgid "Destination"
 msgstr "Kohde"
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:176
-#, fuzzy, kde-format
-#| msgid "Source:"
+#, kde-format
 msgctxt "@label: source file"
 msgid "Source"
-msgstr "Lähde:"
+msgstr "Lähde"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:55
 #, kde-format
@@ -24008,90 +23851,75 @@ msgid "Build a combined tag string."
 msgstr "Koosta yhdistetty tunnistemerkkijono."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Vie Google Driveen"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, fuzzy, kde-format
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Aloita lähetys Google Driveen"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Vie Google Photos -palveluun"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image to Upload"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Valitse siirrettävä kuva"
+msgstr "Aloitus lähetys Google Photos -palveluun"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "Tuo skannerista…"
+msgstr "Tuo Google Photos -palvelusta"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Start Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
 msgstr "Aloita lataus"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Select Image to Upload"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
-msgstr "Valitse siirrettävä kuva"
+msgstr "Aloita lataus Google Photos -palvelusta"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:363
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Google Photos call failed: %1\n"
-msgstr "Korkeus"
+msgstr "Google Photos -kutsu epäonnistui: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:404
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
-msgstr "Korkeus"
+msgstr "Google Drive -kutsu epäonnistui: %1\n"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:631
-#, fuzzy, kde-format
-#| msgid "Google Drive export"
+#, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
 msgstr "Google Drive -vienti"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:637
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
-msgstr "Google Maps"
+msgstr "Google Photos -vienti"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:956
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to save photo: %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to save photo: %1\n"
@@ -24101,10 +23929,7 @@ msgstr ""
 "Haluatko jatkaa?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:977
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to download photo: %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to download photo: %1\n"
@@ -24114,25 +23939,20 @@ msgstr ""
 "Haluatko jatkaa?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1004
-#, fuzzy, kde-format
-#| msgid "Failed to save image to %1"
+#, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1"
-msgstr "Kuvan tallennus kohteeseen %1 epäonnistui"
+msgstr "Kuvan tallentaminen kohteeseen %1 epäonnistui"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1025
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload photo to %1.\n"
-#| "%2\n"
-#| "Do you want to continue?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to %1.\n"
 "%2\n"
 "Do you want to continue?"
 msgstr ""
-"Kuvan lähetys kohteeseen %1 epäonnistui.\n"
+"Kuvan lähettäminen kohteeseen %1 epäonnistui.\n"
 "%2\n"
 "Haluatko jatkaa?"
 
@@ -24146,17 +23966,13 @@ msgid ""
 msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1080
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "OK"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1213
-#, fuzzy, kde-format
-#| msgid ""
-#| "Google Drive call failed:\n"
-#| "%1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Drive call failed:\n"
@@ -24166,12 +23982,14 @@ msgstr ""
 "%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1230
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Google Photos call failed:\n"
 "%1"
-msgstr "Korkeus"
+msgstr ""
+"Google Photos -kutsu epäonnistui:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1268
 #, kde-format
@@ -24190,8 +24008,7 @@ msgid "ImageShack"
 msgstr "ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "A tool to export to ImageShack web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImageShack web-service"
 msgstr "Työkalu ImageShack-verkkopalveluvientiin"
@@ -24234,25 +24051,22 @@ msgid "Successfully retrieved galleries"
 msgstr "Gallerioiden nouto onnistui"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Make private"
+#, kde-format
 msgctxt "@option"
 msgid "Make private"
 msgstr "Merkitse yksityiseksi"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Tags (optional):"
+#, kde-format
 msgctxt "@label"
 msgid "Tags (optional):"
-msgstr "Tunnisteet (valinnainen):"
+msgstr "Luokitukset (valinnainen):"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Remove information bar on thumbnails"
+#, kde-format
 msgctxt "@option"
 msgid "Remove information bar on thumbnails"
-msgstr "Poista pikkukuvien tietorivi"
+msgstr "Poista pienoiskuvien tietorivi"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwidget.cpp:88
 #, kde-format
@@ -24267,8 +24081,7 @@ msgid "Create new gallery"
 msgstr "Luo uusi galleria"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Export to ImageShack"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Vienti ImageShackiin"
@@ -24276,15 +24089,13 @@ msgstr "Vienti ImageShackiin"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "Lähetä"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to ImageShack web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Aloita lähetys ImageShack-verkkopalveluun"
@@ -24310,11 +24121,13 @@ msgid "Failed to get galleries list: %1\n"
 msgstr "Gallerialuettelon nouto epäonnistui: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
-msgstr "Tunniste ”%2” on annettu yhdelle kohteelle. Haluatko jatkaa?"
+msgstr ""
+"Kuvan lähettäminen ImageShackiin epäonnistui: %1\n"
+"Haluatko jatkaa?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:48
@@ -24339,10 +24152,9 @@ msgid "Imgur Delete URL"
 msgstr "Imgur-poiston verkko-osoite"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:187
-#, fuzzy, kde-format
-#| msgid "Copyright"
+#, kde-format
 msgid "Copy"
-msgstr "Tekijänoikeus"
+msgstr "Kopio"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:48
 #, kde-format
@@ -24351,18 +24163,13 @@ msgid "ImgUr"
 msgstr "ImgUr"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImgUr web-service"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalut Imgur-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to ImgUr web-service.</p><p>You can "
-#| "export items as anonymous or with an user account.</p><p>See ImgUr web "
-#| "site for details: <a href='https://imgur.com/'>https://imgur.com/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to ImgUr web-service.\n"
@@ -24371,10 +24178,11 @@ msgid ""
 "\n"
 "See ImgUr web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi kohteita viedä ImgUr-verkkopalveluun.</p><p>Kohteita "
-"voi viedä nimettömästi tai käyttäjätunnuksella.</p><p>Lisätietoa löytyy "
-"ImgUrin verkkosivuilta: <a href='https://imgur.com/'>https://imgur.com/</a></"
-"p>"
+"Tällä työkalulla voi kohteita viedä Imgur-verkkopalveluun.\n"
+"\n"
+"Kohteita voi viedä nimettömästi tai käyttäjätunnuksella.\n"
+"\n"
+"Lisätietoa löytyy Imgurin sivustolta: %1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:106
 #, kde-format
@@ -24409,31 +24217,27 @@ msgid "Upload Anonymously"
 msgstr "Lähetä nimettömästi"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
-msgstr "Vienti Imgur.comiin"
+msgstr "Vie imgur.comiin"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Aloita lähetys Imguriin"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
-#, fuzzy, kde-format
-#| msgid "Not Tagged"
+#, kde-format
 msgid "<i>Not logged in</i>"
-msgstr "Ei tunnistetta"
+msgstr "<i>Ei kirjauduttu</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
-msgstr "Todennus epäonnistui"
+msgstr "Tunnistautuminen epäonnistui"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:251
 #, kde-format
@@ -24467,19 +24271,16 @@ msgid "Go back to Home page"
 msgstr "Palaa kotisivulle"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "method to compare strings"
-#| msgid "Natural"
+#, kde-format
 msgctxt "@title"
 msgid "iNaturalist"
-msgstr "Luonnollinen"
+msgstr "iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export photos as iNaturalist observations."
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu iNaturalist-havaintojen verkkopalveluvientiin."
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:70
 #, fuzzy, kde-format
@@ -24498,12 +24299,10 @@ msgstr ""
 "com/'>https://twitter.com/</a></p>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Pinterest..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
-msgstr "Vie &Pinterestiin…"
+msgstr "Vie &iNaturalistiin…"
 
 #: core/dplugins/generic/webservices/inaturalist/inatsuggest.cpp:261
 #, kde-format
@@ -24529,11 +24328,9 @@ msgid "invalid name"
 msgstr "virheellinen nimi"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:567
-#, fuzzy, kde-format
-#| msgctxt "method to compare strings"
-#| msgid "Natural"
+#, kde-format
 msgid "iNaturalist"
-msgstr "Luonnollinen"
+msgstr "iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:569
 #, kde-format
@@ -24542,23 +24339,20 @@ msgstr "Kirjaudu"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, fuzzy, kde-format
-#| msgid "ERROR while creating observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "VIRHE luotaessa havaintoa"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, fuzzy, kde-format
-#| msgid "Failed to upload photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
-msgstr "Kuvan lähetys epäonnistui"
+msgstr "VIRHE lähetettäessä kuvaa"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, fuzzy, kde-format
-#| msgid "ERROR while deleting observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "VIRHE poistettaessa havaintoa"
@@ -24740,11 +24534,10 @@ msgid "species"
 msgstr "Määrittämätön"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:219
-#, fuzzy, kde-format
-#| msgid "Hybrid"
+#, kde-format
 msgctxt "taxonomic rank"
 msgid "hybrid"
-msgstr "Hybridi"
+msgstr "hybridi"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:223
 #, fuzzy, kde-format
@@ -24774,20 +24567,16 @@ msgid "infrahybrid"
 msgstr "Infrapuna"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Parameters"
+#, kde-format
 msgctxt "distance"
 msgid "meter"
-msgstr "Parametrit"
+msgstr "metri"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:280
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Parameters"
+#, kde-format
 msgctxt "distance"
 msgid "meters"
-msgstr "Parametrit"
+msgstr "metriä"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:295
 #, kde-format
@@ -24826,10 +24615,9 @@ msgid "seconds"
 msgstr "sekuntia"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:63
-#, fuzzy, kde-format
-#| msgid "This is the list of images to upload to your Flickr account."
+#, kde-format
 msgid "This is the list of images to upload to an iNaturalist observation."
-msgstr "Nämä ovat Flickr-tilille lähetettävät kuvat."
+msgstr "Nämä ovat iNaturalist-havaintona lähetettävät kuvat."
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:66
 #: core/utilities/searchwindow/searchfields_createfield.cpp:158
@@ -24845,10 +24633,9 @@ msgid "Location"
 msgstr "Sijainti"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Iteration:"
+#, kde-format
 msgid "Observation"
-msgstr "Toisto:"
+msgstr "Havainto"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:75
 #, fuzzy, kde-format
@@ -24908,16 +24695,13 @@ msgid "Known observations should be within"
 msgstr "Tunnettujen havaintojen tulisi olla väliltä"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b><h2><a href='http://www.flickr.com'><font color=\"#0065DE\">flick</"
-#| "font><font color=\"#FF0084\">r</font></a> Export</h2></b>"
+#, kde-format
 msgid ""
 "<b><h2><a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></a> Export</"
 "h2></b>"
 msgstr ""
-"<b><h2><a href='http://www.flickr.com'><font color=\"#0065DE\">flick</"
-"font><font color=\"#FF0084\">r</font></a>-vienti</h2></b>"
+"<b><h2><a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></a>-vienti</"
+"h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
 #, fuzzy, kde-format
@@ -24927,10 +24711,9 @@ msgid "Export as %1 Observation"
 msgstr "Vie verkkopalveluun %1"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:531
-#, fuzzy, kde-format
-#| msgid "Fewer tag options"
+#, kde-format
 msgid "Fewer options"
-msgstr "Vähemmän tunnisteasetuksia"
+msgstr "Vähemmän valintoja"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:595
 #, kde-format
@@ -24938,10 +24721,9 @@ msgid "<i>login <b>failed</b></i>"
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:658
-#, fuzzy, kde-format
-#| msgid "<b>Canceled</b>"
+#, kde-format
 msgid "<i>login <b>canceled</b></i>"
-msgstr "<b>Peruttu</b>"
+msgstr "<i>kirjautuminen <b>peruttu</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:715
 #, kde-format
@@ -24949,10 +24731,9 @@ msgid "<i>no valid identification</i>"
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:762
-#, fuzzy, kde-format
-#| msgid "Pinterest export"
+#, kde-format
 msgid "iNaturalist Export"
-msgstr "Pinterest-vienti"
+msgstr "iNaturalist-vienti"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
@@ -25004,26 +24785,22 @@ msgid "IPFS"
 msgstr "IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to IPFS web-service"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu IPFS-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to IPFS web-service.</p><p>See IPFS "
-#| "web site for details: <a href='https://ipfs.io/'>https://ipfs.io/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to IPFS web-service.\n"
 "\n"
 "See IPFS web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi kohteita viedä IPFS-verkkopalveluun.</"
-"p><p>Lisätietoa löytyy IPFS:n verkkosivuilta: <a href='https://ipfs."
-"io/'>https://ipfs.io/</a></p>"
+"Tällä työkalulla voi kohteita viedä IPFS-verkkopalveluun.\n"
+"\n"
+"Lisätietoa löytyy IPFS:n sivustolta: %1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
@@ -25032,15 +24809,13 @@ msgid "Export to &Ipfs..."
 msgstr "Vie IP&FS:ään…"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Export to IPFS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "Vie IPFS:ään"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start upload to IPFS"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "Aloita lähetys IPFS:ään"
@@ -25073,27 +24848,22 @@ msgid "MediaWiki"
 msgstr "MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to MediaWiki web-service"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu MediaWiki-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to MediaWiki web-service.</p><p>See "
-#| "MediaWiki web site for details: <a href='https://www.mediawiki."
-#| "org/'>https://www.mediawiki.org/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to MediaWiki web-service.\n"
 "\n"
 "See MediaWiki web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi kohteita viedä MediaWiki-verkkopalveluun.</"
-"p><p>Lisätietoa löytyy MediaWikin verkkosivuilta: <a href='https://www."
-"mediawiki.org/'>https://www.mediawiki.org/</a></p>"
+"Tällä työkalulla voi kohteita viedä MediaWiki-verkkopalveluun.\n"
+"\n"
+"Lisätietoa löytyy MediaWikin sivustolta: %1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:105
 #, kde-format
@@ -25117,8 +24887,7 @@ msgid "Uploaded via digiKam uploader"
 msgstr "Lähetetty digiKamilla"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid "Select an image"
+#, kde-format
 msgctxt "@info"
 msgid "Select an image"
 msgstr "Valitse kuva"
@@ -25135,19 +24904,17 @@ msgstr ""
 "Tämä on napsautettava linkki, josta voi avata MediaWikin kotisivun selaimeen."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:181
-#, fuzzy, kde-format
-#| msgid "This is the list of images to upload to the wiki."
+#, kde-format
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
 msgstr "Nämä ovat wikiin lähetettävät kuvat."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:207
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:384
-#, fuzzy, kde-format
-#| msgid "This is the login form to your account on the chosen wiki."
+#, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
-msgstr "Tämä on lomake valitun wikin tiliisi kirjautumiseksi."
+msgstr "Tällä lomakkeella kirjaudutaan valitun wikin tilille."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -25354,11 +25121,10 @@ msgid "Change Account"
 msgstr "Vaihda tiliä"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
-#, fuzzy, kde-format
-#| msgid "Logout and change the account used for transfer"
+#, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
-msgstr "Kirjaudu ulos ja vaihda siirtoon käytettyä tiliä"
+msgstr "Kirjaudu ulos ja vaihda siirtoon käytettävää tiliä"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, kde-format
@@ -25385,43 +25151,37 @@ msgid "License:"
 msgstr "Lisenssi:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:399
-#, fuzzy, kde-format
-#| msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
 msgstr "Oma teos, Creative Commons Attribution-Share Alike 4.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
-#, fuzzy, kde-format
-#| msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
 msgstr "Oma teos, monilisenssinen, CC-BY-SA 3.0 ja GFDL"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:403
-#, fuzzy, kde-format
-#| msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
 msgstr "Oma teos, monilisenssinen, CC-BY-SA 3.0 ja vanhempi"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:405
-#, fuzzy, kde-format
-#| msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
 msgstr "Oma teos, Creative Commons Attribution-Share Alike 3.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:407
-#, fuzzy, kde-format
-#| msgid "Own work, Creative Commons Attribution 3.0"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution 3.0"
 msgstr "Oma teos, Creative Commons Attribution 3.0"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:409
-#, fuzzy, kde-format
-#| msgid "Own work, release into public domain under the CC-Zero license"
+#, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
 msgstr "Oma työ, viety public domainiin CC-Zero-lisenssillä"
@@ -25452,8 +25212,7 @@ msgid "First published in the United States before 1923"
 msgstr "Ensijulkaisu Yhdysvalloissa ennen vuotta 1923"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:417
-#, fuzzy, kde-format
-#| msgid "Work of a U.S. government agency"
+#, kde-format
 msgctxt "@item"
 msgid "Work of a U.S. government agency"
 msgstr "Yhdysvaltain hallituksen viraston teos"
@@ -25484,8 +25243,7 @@ msgid "No license specified (not recommended for public wiki sites)"
 msgstr "Ei määrälisenssiä (ei suositella julkisilla wikisivustoilla)"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
-#, fuzzy, kde-format
-#| msgid "Generic categories:"
+#, kde-format
 msgctxt "@label"
 msgid "Generic categories:"
 msgstr "Yleisluokat:"
@@ -25500,8 +25258,7 @@ msgid ""
 msgstr "Tässä kohtaa voit antaa luokkia, jotka lisätään kaikkiin tiedostoihin."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:432
-#, fuzzy, kde-format
-#| msgid "Generic text:"
+#, kde-format
 msgctxt "@label"
 msgid "Generic text:"
 msgstr "Yleisteksti:"
@@ -25532,29 +25289,25 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:464
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgctxt "@option"
 msgid "Options"
-msgstr "Asetukset"
+msgstr "Valinnat"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:465
-#, fuzzy, kde-format
-#| msgid "These are options that will be applied to photos before upload."
+#, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
-msgstr "Nämä valinnat koskevat kuvien muokkausta ennen lähetystä."
+msgstr "Näitä valintoja käytetään kuviin ennen lähettämistä."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:471
-#, fuzzy, kde-format
-#| msgid "Resize photos before uploading"
+#, kde-format
 msgctxt "@option"
 msgid "Resize photos before uploading"
-msgstr "Muuta kuvien kokoa ennen lähetystä"
+msgstr "Muuta kuvien kokoa ennen lähettämistä"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:481
-#, fuzzy, kde-format
-#| msgid "Maximum size:"
+#, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "Enimmäiskoko:"
@@ -25566,25 +25319,22 @@ msgid "JPEG quality:"
 msgstr "JPEG-laatu:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:492
-#, fuzzy, kde-format
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@option"
 msgid "Remove metadata from file"
-msgstr "Poista tiedostoista metatiedot"
+msgstr "Poista tiedostosta metatieto"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:496
-#, fuzzy, kde-format
-#| msgid "Remove coordinates from file"
+#, kde-format
 msgctxt "@option"
 msgid "Remove coordinates from file"
-msgstr "Poista tiedostoista sijainti"
+msgstr "Poista tiedostosta sijainti"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:513
-#, fuzzy, kde-format
-#| msgid "Items Properties"
+#, kde-format
 msgctxt "@item"
 msgid "Items Properties"
-msgstr "Tietueiden ominaisuudet"
+msgstr "Kohteiden ominaisuudet"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:514
 #, kde-format
@@ -25632,27 +25382,22 @@ msgid "OneDrive"
 msgstr "OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "A tool to export to OneDrive web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to OneDrive web-service"
-msgstr "Työkalu kuvien viemiseksi OneDrive-verkkopalveluun"
+msgstr "Työkalu OneDrive-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to OneDrive web-service.</p><p>See "
-#| "OneDrive web site for details: <a href='https://onedrive.live."
-#| "com/'>https://onedrive.live.com/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to OneDrive web-service.\n"
 "\n"
 "See OneDrive web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi viedä tietueita OneDrive-verkkopalveluun.</"
-"p><p>Lisätietoa löytyy OneDriven verkkosivuilta: <a href='https://onedrive."
-"live.com/'>https://onedrive.live.com/</a></p>"
+"Tällä työkalulla voi kohteita viedä OneDrive-verkkopalveluun.\n"
+"\n"
+"Lisätietoa löytyy OneDriven sivustolta: %1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:96
 #, kde-format
@@ -25661,16 +25406,13 @@ msgid "Export to &Onedrive..."
 msgstr "Vie One&Driveen…"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Onedrive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "Vie OneDriveen"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Onedrive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "Aloita lähetys OneDriveen"
@@ -25682,11 +25424,7 @@ msgid "Onedrive export"
 msgstr "OneDrive-vienti"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:325
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload photo to OneDrive.\n"
-#| "%1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Failed to upload photo to OneDrive.\n"
@@ -25715,11 +25453,10 @@ msgid "Pinterest"
 msgstr "Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Pinterest web-service"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu Pinterest-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:68
 #, fuzzy, kde-format
@@ -25755,15 +25492,13 @@ msgid "Failed to list boards"
 msgstr "Tiedoston <filename>%1</filename> poisto epäonnistui."
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Pinterest"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Vie Pinterestiin"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Pinterest"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "Aloita lähetys Pinterestiin"
@@ -25825,11 +25560,10 @@ msgid "Piwigo"
 msgstr "Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Sort by rating"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to Piwigo web-service"
-msgstr "Järjestä arvion mukaan"
+msgstr "Työkalu Piwigo-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:68
 #, fuzzy, kde-format
@@ -26203,8 +25937,7 @@ msgid "Export to Rajce.net"
 msgstr "Vienti Rajce.netiin"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Aloita lähetys Rajce.netiin"
@@ -26492,29 +26225,25 @@ msgid "Maximum dimension:"
 msgstr "Enimmäismitat:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "Tuo SmugMug-verkkopalvelusta"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "Aloita lataus SmugMug-verkkopalvelusta"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "Vie SmugMug-verkkopalveluun"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Aloita lähetys SmugMug-verkkopalveluun"
@@ -26524,8 +26253,7 @@ msgstr "Aloita lähetys SmugMug-verkkopalveluun"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, fuzzy, kde-format
-#| msgid "SmugMug Call Failed: %1\n"
+#, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug-kutsu epäonnistui: %1\n"
 
@@ -26595,20 +26323,16 @@ msgid "A tool to export to Twitter web-service"
 msgstr "Työkalu Twitter-verkkopalveluvientiin"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool permit to export items to Twitter web-service.</p><p>See "
-#| "Twitter web site for details: <a href='https://twitter.com/'>https://"
-#| "twitter.com/</a></p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to Twitter web-service.\n"
 "\n"
 "See Twitter web site for details: %1"
 msgstr ""
-"<p>Tällä työkalulla voi kohteita viedä Twitter-verkkopalveluun.</"
-"p><p>Lisätietoa löytyy Twitterin verkkosivuilta: <a href='https://twitter."
-"com/'>https://twitter.com/</a></p>"
+"Tällä työkalulla voi kohteita viedä Twitter-verkkopalveluun.\n"
+"\n"
+"Lisätietoa löytyy Twitterin sivustolta: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:99
 #, kde-format
@@ -26682,9 +26406,9 @@ msgstr ""
 "%1"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:275
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot open image at %1\n"
-msgstr "Tiedoston \"%1\" tallennus epäonnistui"
+msgstr "Ei voitu avata kuvaa: %1\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
 #, kde-format
@@ -27122,12 +26846,12 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/engine/albummodificationhelper.cpp:254
-#, fuzzy, kde-format
-#| msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
+#, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
-msgstr "Tiedoston <b>%1</b> poisto epäonnistui. Haluatko jatkaa?"
+msgstr ""
+"<p>Albumi, jonka haluat poistaa, ei ole tyhjä.</p><p>Haluatko jatkaa?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:286
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
@@ -27137,11 +26861,10 @@ msgid "Rename Album (%1)"
 msgstr "Muuta albumin nimeä (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:290
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album Root (%1)"
-msgstr "Muuta albumin ”%1” nimeä"
+msgstr "Muuta albumin juuren nimeä (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:293
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -27193,37 +26916,29 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><b>An error occurred during the internal server start.</b></"
-#| "p>Details:\n"
-#| " %1"
+#, kde-format
 msgid ""
 "An error occurred during the internal server start.\n"
 "\n"
 "Details:\n"
 "%1"
 msgstr ""
-"<p><b>Sisäisen palvelimen käynnistyksessä sattui virhe.</b></"
-"p>Yksityiskohdat:\n"
-" %1"
+"Sisäisen palvelimen käynnistyksessä sattui virhe.\n"
+"\n"
+"Yksityiskohdat:\n"
+"%1"
 
 #: core/libs/album/manager/albummanager_database.cpp:164
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
-#| "working database. digiKam will attempt to start now, but it will <b>not</"
-#| "b> be functional. Please check the database settings in the "
-#| "<b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "Failed to open the database.\n"
 "\n"
 "You cannot use digiKam without a working database.\n"
 "Please check the database settings in the next dialog."
 msgstr ""
-"<p>Tietokannan avaaminen epäonnistui.</p><p>Et voi käyttää digiKamia ilman "
-"toimivaa tietokantaa. DigiKam käynnistyy nyt, mutta se <b>ei ole</b> täysin "
-"toiminnallinen. Tarkista tietokannan asetukset.</p>"
+"Tietokannan avaaminen epäonnistui.\n"
+"digiKamia ei voi käyttää ilman toimivaa tietokantaa.\n"
+"Tarkista seuraavassa ikkunassa tietokannan asetukset.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:173
 #, kde-format
@@ -27233,51 +26948,33 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:213
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
-#| "working database. digiKam will attempt to start now, but it will <b>not</"
-#| "b> be functional. Please check the database settings in the "
-#| "<b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
 "working database. digiKam will attempt to start now, but it will <b>not</b> "
 "be functional. Please check the database settings in the <b>configuration "
 "menu</b>.</p>"
 msgstr ""
-"<p>Tietokannan avaaminen epäonnistui.</p><p>Et voi käyttää digiKamia ilman "
-"toimivaa tietokantaa. DigiKam käynnistyy nyt, mutta se <b>ei ole</b> täysin "
-"toiminnallinen. Tarkista tietokannan asetukset.</p>"
+"<p>Tietokannan avaaminen epäonnistui.</p><p>digiKamia ei voi käyttää ilman "
+"toimivaa tietokantaa. digiKam yrittää nyt käynnistyä, mutta se <b>ei ole</b> "
+"täysin toimintakuntoinen. Tarkista <b>asetusvalikosta</b> tietokannan "
+"asetukset.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
-#| "b></p></p><p>You cannot use digiKam without a working database. digiKam "
-#| "will attempt to start now, but it will <b>not</b> be functional. Please "
-#| "check the database settings in the <b>configuration menu</b>.</p>"
+#, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
 "b></p><p>You cannot use digiKam without a working database. digiKam will "
 "attempt to start now, but it will <b>not</b> be functional. Please check the "
 "database settings in the <b>configuration menu</b>.</p>"
 msgstr ""
-"<p>Tietokannan avaaminen epäonnistui virheeseen: </p><p><b>%1</b></p><p>Et "
-"voi käyttää digiKamia ilman toimivaa tietokantaa. DigiKam käynnistyy nyt, "
-"mutta se <b>ei ole</b> täysin toiminnallinen. Tarkista tietokannan asetukset."
-"</p>"
+"<p>Tietokannan avaaminen epäonnistui. Tietokanta ilmoitti virheen: </p><p><b>"
+"%1</b></p><p>digiKamia ei voi käyttää ilman toimivaa tietokantaa. digiKam "
+"yrittää nyt käynnistyä, mutta se <b>ei ole</b> täysin toimintakunnossa. "
+"Tarkista <b>asetusvalikosta</b> tietokannan asetukset.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:255
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your locale has changed since this album was last opened.\n"
-#| "Old locale: %1, new locale: %2\n"
-#| "If you have recently changed your locale, you need not be concerned.\n"
-#| "Please note that if you switched to a locale that does not support some "
-#| "of the filenames in your collection, these files may no longer be found "
-#| "in the collection. If you are sure that you want to continue, click "
-#| "'Yes'. Otherwise, click 'No' and correct your locale setting before "
-#| "restarting digiKam."
+#, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
 "Old character set: %1, new character set: %2\n"
@@ -27291,24 +26988,21 @@ msgid ""
 msgstr ""
 "Merkistöasetus on vaihtunut sen jälkeen, kun albumi on viimeksi avattu.\n"
 "Aiempi asetus: %1, nykyinen asetus: %2\n"
-"Ellei uusi merkistö tue kaikkia merkkejä, joita kokoelman tiedostonimissä "
-"tiedostonimissä on, näitä tiedostoja ei enää löydy kokoelmasta. Jos olet "
-"varma, että haluat jatkaa, valitse ”Kyllä”, muutoin valitse ”Ei”, tarkista "
+"Jos olet hiljattain muuttanut tietokannan merkistöä, ei ole syytä huoleen.\n"
+"Huomaa, että ellei uusi merkistö tue kaikkia kokoelmasi tiedostonimien "
+"merkkejä, näitä tiedostoja ei enää löydy kokoelmasta. Jos  varmasti haluat "
+"jatkaa, valitse ”Kyllä”. Muussa tapauksessa napsauta ”Ei”, tarkista "
 "merkistöasetus ja käynnistä digiKam uudelleen."
 
 #: core/libs/album/manager/albummanager_database.cpp:298
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
-#| "on your system.<br/> Please choose the most appropriate option to handle "
-#| "this situation:</p>"
+#, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
 "your system.<br/> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
 "<p>Kokoelmaa</p><p><b>%1</b><br/>(%2)</p><p>ei tällä hetkellä löydy "
-"järjestelmästäsi.<br/> Valitse sopivin tapa jatkaa tilanteessa:</p>"
+"järjestelmästä.<br/>Valitse sopivin tapa jatkaa tilanteessa:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:317
 #, kde-format
@@ -27339,18 +27033,16 @@ msgstr ""
 "Älä tee mitään nyt. Ratkaisen ongelman tuonnempana itse asetusikkunassa"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
-msgstr "Kokoelmaa ei löydy"
+msgstr "Kokoelmaa ei löytynyt"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
-msgstr "Tietokannan kansio"
+msgstr "Tietokantakansio"
 
 #: core/libs/album/manager/albummanager_database.cpp:460
 #, kde-format
@@ -27369,8 +27061,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Päivitä tietokanta"
@@ -27379,8 +27070,7 @@ msgstr "Päivitä tietokanta"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, fuzzy, kde-format
-#| msgid "Create New Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Luo uusi tietokanta"
@@ -27389,8 +27079,7 @@ msgstr "Luo uusi tietokanta"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Uuden tietokannan kansio"
@@ -27412,8 +27101,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, fuzzy, kde-format
-#| msgid "Copy Current Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopioi nykyinen tietokanta"
@@ -27464,8 +27152,7 @@ msgstr ""
 "p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Käytä olemassa olevaa tiedostoa"
@@ -27489,11 +27176,10 @@ msgstr ""
 "Käynnistetään tyhjällä tietokannalla."
 
 #: core/libs/album/manager/albummanager_database.cpp:751
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "New database"
-msgstr "Uuden tietokannan kansio"
+msgstr "Uusi tietokanta"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
@@ -27647,16 +27333,13 @@ msgid "Cannot move root tag"
 msgstr "Tunnisteiden juurta ei voi siirtää"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:516
-#, fuzzy, kde-format
-#| msgid ""
-#| "Another tag with the same name already exists.\n"
-#| "Please choose another name."
+#, kde-format
 msgid ""
 "Another tag with the same name already exists.\n"
 "Do you want to merge the tags?"
 msgstr ""
-"Tällä nimellä löytyy jo tunniste.\n"
-"Valitse toinen nimi."
+"Tämän niminen luokitus on jo olemassa.\n"
+"Haluatko yhdistää luokitukset?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
@@ -27664,10 +27347,9 @@ msgid "Cannot merge root tag"
 msgstr "Juuriluokitusta ei voi yhdistää"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:596
-#, fuzzy, kde-format
-#| msgid "Cannot move root tag"
+#, kde-format
 msgid "Cannot merge required face tag"
-msgstr "Tunnisteiden juurta ei voi siirtää"
+msgstr "Vaadittua kasvoluokitusta ei voi yhdistää"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:602
 #, kde-format
@@ -27691,16 +27373,13 @@ msgid "No such tag"
 msgstr "Sellaista tunnistetta ei ole"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:1113
-#, fuzzy, kde-format
-#| msgid ""
-#| "This operation can take long time depending on collection size.\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
 "Do you want to write the metadata to %1 files now?"
 msgstr ""
-"Kokoelman koosta riippuen tässä toiminnossa voi kestää kauan.\n"
-"Haluatko jatkaa?"
+"Toimenpide voi kestää taustalla kauan.\n"
+"Haluatko kirjoittaa metatiedot %1 tiedostoon nyt?"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:48
 #, kde-format
@@ -27714,18 +27393,16 @@ msgid "Empty Trash"
 msgstr "Tyhjennä roskakori"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:279
-#, fuzzy, kde-format
-#| msgid "Rating: "
+#, kde-format
 msgctxt "@info: generate album name for exporting"
 msgid "Rating: "
-msgstr "Arvio: "
+msgstr "Arvostelu: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:289
-#, fuzzy, kde-format
-#| msgid "No Rating"
+#, kde-format
 msgctxt "@info: rating label"
 msgid "No Rating"
-msgstr "Ei arviota"
+msgstr "Ei arvostelua"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:305
 #, kde-format
@@ -27734,32 +27411,28 @@ msgid "Colors: "
 msgstr "Värit: "
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:314
-#, fuzzy, kde-format
-#| msgid "No Color"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "No Color"
 msgstr "Ei väriä"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:318
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:458
-#, fuzzy, kde-format
-#| msgid "Red"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Red"
 msgstr "Punainen"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:322
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:462
-#, fuzzy, kde-format
-#| msgid "Orange"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Orange"
 msgstr "Oranssi"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:326
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:466
-#, fuzzy, kde-format
-#| msgid "Yellow"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Yellow"
 msgstr "Keltainen"
@@ -27780,32 +27453,28 @@ msgstr "Sininen"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:338
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:478
-#, fuzzy, kde-format
-#| msgid "Magenta"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:342
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:482
-#, fuzzy, kde-format
-#| msgid "Gray"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Gray"
 msgstr "Harmaa"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:346
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:486
-#, fuzzy, kde-format
-#| msgid "Black"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "Black"
 msgstr "Musta"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:350
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:490
-#, fuzzy, kde-format
-#| msgid "White"
+#, kde-format
 msgctxt "@info: color label name"
 msgid "White"
 msgstr "Valkoinen"
@@ -27826,34 +27495,30 @@ msgstr "Ei poimintaa"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:379
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:313
-#, fuzzy, kde-format
-#| msgid "Rejected"
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Rejected"
 msgstr "Hylätty"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:383
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:319
-#, fuzzy, kde-format
-#| msgid "Pending"
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Pending"
-msgstr "Odottaa ratkaisua"
+msgstr "Odottaa"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:387
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:325
-#, fuzzy, kde-format
-#| msgid "Accepted"
+#, kde-format
 msgctxt "@info: pick label name"
 msgid "Accepted"
 msgstr "Hyväksytty"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:452
-#, fuzzy, kde-format
-#| msgid "Exporting"
+#, kde-format
 msgctxt "@info: search label default title"
 msgid "Exported Labels"
-msgstr "Vienti"
+msgstr "Viedyt selitteet"
 
 #: core/libs/album/treeview/albumlabelssearchhandler.cpp:456
 #, fuzzy, kde-format
@@ -27870,10 +27535,9 @@ msgid "Expand Selected Nodes"
 msgstr "Laajenna valitut solmut"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Expand all Albums"
-msgstr "Kopioi albumi"
+msgstr "Laajenna kaikki albumit"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #: core/libs/tags/widgets/tagfolderview.cpp:140
@@ -27883,10 +27547,9 @@ msgid "Collapse Selected Recursively"
 msgstr "Ei valittua albumia"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:225
-#, fuzzy, kde-format
-#| msgid "Copy Album"
+#, kde-format
 msgid "Collapse all Albums"
-msgstr "Kopioi albumi"
+msgstr "Supista kaikki albumit"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #: core/libs/tags/widgets/tagfolderview.cpp:71
@@ -27895,10 +27558,9 @@ msgid "Find Duplicates..."
 msgstr "Etsi kaksoiskappaleita…"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:231
-#, fuzzy, kde-format
-#| msgid "Scan for New Images"
+#, kde-format
 msgid "Scan for Faces"
-msgstr "Etsi uusia kuvia"
+msgstr "Etsi kasvoja"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, kde-format
@@ -27911,11 +27573,10 @@ msgid "Refresh"
 msgstr "Päivitä"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:302
-#, fuzzy, kde-format
-#| msgid "Scan for New Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr "Etsi uusia kuvia"
+msgstr "Etsi kasvoja"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:303
 #, kde-format
@@ -27955,25 +27616,22 @@ msgid "No Pick"
 msgstr "Ei poimintaa"
 
 #: core/libs/album/treeview/labelstreeview.cpp:410
-#, fuzzy, kde-format
-#| msgid "Rejected Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Rejected Item"
-msgstr "Hylätty"
+msgstr "Hylätty kohde"
 
 #: core/libs/album/treeview/labelstreeview.cpp:411
-#, fuzzy, kde-format
-#| msgid "Pending Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Pending Item"
-msgstr "Odottava"
+msgstr "Odottava kohde"
 
 #: core/libs/album/treeview/labelstreeview.cpp:412
-#, fuzzy, kde-format
-#| msgid "Accepted Item"
+#, kde-format
 msgctxt "@item: pick tree"
 msgid "Accepted Item"
-msgstr "Hyväksytty"
+msgstr "Hyväksytty kohde"
 
 #: core/libs/album/treeview/labelstreeview.cpp:432
 #, kde-format
@@ -28042,49 +27700,44 @@ msgid "White"
 msgstr "Valkoinen"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Uusi albumi"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Muokkaa albumia"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:138
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#, kde-format
 msgctxt "@label: album properties"
 msgid ""
 "\"%1\"\n"
 "Album Properties"
-msgstr "Albumin ominaisuudet"
+msgstr ""
+"”%1”\n"
+"Albumin ominaisuudet"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:146
-#, fuzzy, kde-format
-#| msgid "&Title:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "O&tsikko:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:150
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
-msgstr "Syötä tähän sisällön tarjoaja."
+msgstr "Aseta tässä albumin uusi otsikko"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:155
-#, fuzzy, kde-format
-#| msgid "Ca&tegory:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
-msgstr "&Ryhmä:"
+msgstr "L&uokka:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
@@ -28094,57 +27747,48 @@ msgid "Ch&ild Of:"
 msgstr "Y&läkansio:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:168
-#, fuzzy, kde-format
-#| msgid "Ca&ption:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "&Kuvateksti:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:173
-#, fuzzy, kde-format
-#| msgid "Enter album caption here..."
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
-msgstr "Kirjoita albumin selite tähän…"
+msgstr "Kirjoita tähän albumin kuvateksti…"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:176
-#, fuzzy, kde-format
-#| msgid "Album &date:"
+#, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
-msgstr "&Päiväys:"
+msgstr "Albumin &päiväys:"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "Selects the date of the oldest image"
-#| msgid "&Oldest"
+#, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Vanhin"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:183
-#, fuzzy, kde-format
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
-msgstr "Poista kaikki kaksoiskappalekuvat tällä painikkeella."
+msgstr "Valitse albumin vanhimman kuvan päiväys tällä painikkeella."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "Calculates the average date"
-#| msgid "&Average"
+#, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
-msgstr "K&eskimmäinen"
+msgstr "K&eskiarvo"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:185
-#, fuzzy, kde-format
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
-msgstr "Poista kaikki kaksoiskappalekuvat tällä painikkeella."
+msgstr "Laske albumin kuvien keskimääräinen päiväys tällä painikkeen."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:186
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
@@ -28154,11 +27798,10 @@ msgid "Newest"
 msgstr "Uusin"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:187
-#, fuzzy, kde-format
-#| msgid "Use this button to delete all duplicate images."
+#, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
-msgstr "Poista kaikki kaksoiskappalekuvat tällä painikkeella."
+msgstr "Valitse albumin uusimman kuvan päiväys tällä painikkeella."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
@@ -28167,46 +27810,41 @@ msgid "New Album"
 msgstr "Uusi albumi"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:273
-#, fuzzy, kde-format
-#| msgid "Selected Album (Default)"
+#, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Valittu albumi (oletus)"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:274
-#, fuzzy, kde-format
-#| msgctxt "top level folder of album"
-#| msgid "Root of current collection"
+#, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Nykyisen kokoelman juuri"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:348
-#, fuzzy, kde-format
-#| msgid "Uncategorized Album"
+#, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
-msgstr "Ryhmittelemätön albumi"
+msgstr "Luokittelematon albumi"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:434
-#, fuzzy, kde-format
-#| msgid "Create New Album"
+#, kde-format
 msgctxt "@label: album properties"
 msgid ""
 "Create new Album in\n"
 "\"%1\""
-msgstr "Luo uusi albumi"
+msgstr ""
+"Luo uusi albumi kohteeseen\n"
+"”%1”"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
-msgstr "Keskiarvoa ei voitu laskea."
+msgstr "Keskiarvoa ei voitu laskea"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
-#, fuzzy, kde-format
-#| msgid "Could not calculate date average for this album."
+#, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
 msgstr "Albumille ei voitu laskea päiväysten keskiarvoa."
@@ -28251,26 +27889,23 @@ msgstr[0] "1 albumi jätetty pois"
 msgstr[1] "%1 albumia jätetty pois"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Valitse albumi"
 
 #: core/libs/album/widgets/albumselectors.cpp:145
 #: core/libs/album/widgets/albumselectors.cpp:546
-#, fuzzy, kde-format
-#| msgid "Album is full."
+#, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
-msgstr "Albumi on täynnä."
+msgstr "Albumit (kaikki)"
 
 #: core/libs/album/widgets/albumselectors.cpp:148
-#, fuzzy, kde-format
-#| msgid "Tags: "
+#, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
-msgstr "Tunnisteet: "
+msgstr "Luokitukset (0)"
 
 #: core/libs/album/widgets/albumselectors.cpp:180
 #, fuzzy, kde-format
@@ -28281,11 +27916,10 @@ msgstr "Kaikista albumeista"
 
 #: core/libs/album/widgets/albumselectors.cpp:181
 #: core/libs/album/widgets/albumselectors.cpp:237
-#, fuzzy, kde-format
-#| msgid "Theme Selection"
+#, kde-format
 msgctxt "@option"
 msgid "Recursive Selection"
-msgstr "Teeman valinta"
+msgstr "Rekursiivinen valinta"
 
 #: core/libs/album/widgets/albumselectors.cpp:191
 #, kde-format
@@ -28294,11 +27928,10 @@ msgid "Select all albums that should be processed."
 msgstr "Valitse kaikki käsiteltävät albumit."
 
 #: core/libs/album/widgets/albumselectors.cpp:194
-#, fuzzy, kde-format
-#| msgid "No Album Selected"
+#, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
-msgstr "Ei valittua albumia"
+msgstr "Ei valittuja albumeja"
 
 #: core/libs/album/widgets/albumselectors.cpp:199
 #, kde-format
@@ -28320,11 +27953,10 @@ msgid "Select all tags that should be processed."
 msgstr "Valitse kaikki käsiteltävät luokitukset."
 
 #: core/libs/album/widgets/albumselectors.cpp:250
-#, fuzzy, kde-format
-#| msgid "No Tag Selected"
+#, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
-msgstr "Ei valittua tunnistetta"
+msgstr "Ei valittuja luokituksia"
 
 #: core/libs/album/widgets/albumselectors.cpp:254
 #, kde-format
@@ -28481,14 +28113,14 @@ msgstr ""
 "jako katsotaan olevan poissa käytöstä."
 
 #: core/libs/database/collection/collectionmanager_p.cpp:431
-#, fuzzy, kde-format
-#| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
-#| msgid "Folder \"%1\" on the volume with the id \"%2\""
+#, kde-format
 msgctxt "@info"
 msgid ""
 "\"relative path\" on harddisk partition with \"UUID\"\n"
 "Folder \"%1\" on the volume with the id \"%2\""
-msgstr "Kansio ”%1” taltiolla, jonka tunniste on ”%2”"
+msgstr ""
+"”suhteellinen sijainti” kiintolevyosiolla, jonka ”UUID”\n"
+"Kansio ”%1” taltiolla, jonka tunniste ”%2”"
 
 #: core/libs/database/collection/collectionmanager_p.cpp:439
 #, kde-format
@@ -28499,12 +28131,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/collection/collectionmanager_p.cpp:453
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Shared directory mounted at <b>%1</b>"
+#, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""
-msgstr "Jaettu kansio liitetty sijaintiin <b>%1</b>"
+msgstr "Jaettu kansio, liitospiste ”%1”"
 
 #: core/libs/database/coredb/coredbaccess.cpp:311
 #: core/libs/database/similaritydb/similaritydbaccess.cpp:236
@@ -28929,24 +28559,24 @@ msgid "Intermediate Steps:"
 msgstr "Välivaiheet:"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:855
-#, fuzzy, kde-format
-#| msgctxt "@item filename"
-#| msgid "<qt>%1<br>(Original Image)</qt>"
+#, kde-format
 msgctxt "@item filename"
 msgid ""
 "%1\n"
 "(Original Image)"
-msgstr "<qt>%1<br>(alkuperäinen kuva)</qt>"
+msgstr ""
+"%1\n"
+"(alkuperäinen kuva)"
 
 #: core/libs/database/history/itemhistorygraphmodel.cpp:860
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Source Images"
+#, kde-format
 msgctxt "@item filename"
 msgid ""
 "%1\n"
 "(Source Image)"
-msgstr "Lähdekuvat"
+msgstr ""
+"%1\n"
+"(lähdekuva)"
 
 #: core/libs/database/item/scanner/itemscanner.cpp:193
 #, kde-format
@@ -28955,27 +28585,24 @@ msgid "RAW image file (%1)"
 msgstr "Raw-kuvatiedosto (%1)"
 
 #: core/libs/database/models/itemfiltermodel.cpp:386
-#, fuzzy, kde-format
-#| msgid "Detect Faces"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "%1 Face"
 msgid_plural "%1 Faces"
-msgstr[0] "Tunnista kasvot"
-msgstr[1] "Tunnista kasvot"
+msgstr[0] "%1 kasvot"
+msgstr[1] "%1 kasvot"
 
 #: core/libs/database/models/itemfiltermodel.cpp:389
-#, fuzzy, kde-format
-#| msgid "No flash"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "No face"
-msgstr "Ei salamaa"
+msgstr "Ei kasvoja"
 
 #: core/libs/database/models/itemfiltermodel.cpp:400
-#, fuzzy, kde-format
-#| msgid "Confirm"
+#, kde-format
 msgctxt "@item: filter model"
 msgid "Confirmed"
-msgstr "Vahvista"
+msgstr "Vahvistettu"
 
 #: core/libs/database/models/itemversionsmodel.cpp:95
 #, kde-format
@@ -29049,14 +28676,9 @@ msgid "Invalid database object during database server startup"
 msgstr "Virheellinen tietokantaolio tietokantapalvelinta käynnistettäessä"
 
 #: core/libs/database/server/databaseserver.cpp:661
-#, fuzzy, kde-format
-#| msgid ""
-#| "Database process exited unexpectedly during initial connection."
-#| "<p>Executable: %1</p>”<p>Process error: %2</p>"
+#, kde-format
 msgid "Database process exited unexpectedly during initial connection."
-msgstr ""
-"Tietokantaprosessi sulkeutui odottamattomasti aloitusyhteyden aikana."
-"<p>Sovellus: %1</p>”<p>Virhe: %2</p>"
+msgstr "Tietokantaprosessi sulkeutui odottamattomasti aloitusyhteyden aikana."
 
 #: core/libs/database/server/databaseserver.cpp:667
 #, kde-format
@@ -29149,11 +28771,10 @@ msgstr ""
 "käynnistää digiKam tyhjällä tietokannalla."
 
 #: core/libs/database/utils/ifaces/dio.cpp:329
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
-msgstr "Tiedostonimisuodin:"
+msgstr "Tiedostoristiriita"
 
 #: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
@@ -29169,22 +28790,19 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:339
-#, fuzzy, kde-format
-#| msgid "Rename automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Muuta nimiä automaattisesti"
 
 #: core/libs/database/utils/ifaces/dio.cpp:341
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Korvaa automaattisesti"
 
 #: core/libs/database/utils/ifaces/dio.cpp:343
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ohita automaattisesti"
@@ -29225,32 +28843,28 @@ msgid "Restore Trash"
 msgstr "Palauta roskakori"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:120
-#, fuzzy, kde-format
-#| msgid "Initializing database..."
+#, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
-msgstr "Alustetaan tietokantaa…"
+msgstr "Valmistellaan tietokantaa…"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:144
-#, fuzzy, kde-format
-#| msgid "<b>Scanning collections, please wait...</b>"
+#, kde-format
 msgctxt "@label"
 msgid "Scanning collections, please wait..."
-msgstr "<b>Kartoitetaan kokoelmia, odota…</b>"
+msgstr "Tutkitaan kokoelmia, odota…"
 
 #: core/libs/database/utils/scan/scancontroller.cpp:146
-#, fuzzy, kde-format
-#| msgid ""
-#| "This shows the progress of the scan. During the scan, all files on disk "
-#| "are registered in a database."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This shows the progress of the scan. During the scan, all files on disk are "
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 msgstr ""
-"Tässä näkyy tilastoinnin edistyminen, jonka aikana kaikki kiintolevyllä "
-"sijaitsevat kuvat kirjataan tietokantaan. Tämä nopeuttaa digiKamin toimintaa."
+"Tässä näkyy tutkimisen edistyminen, jonka aikana kiintolevyn kaikki kuvat "
+"kirjataan tietokantaan. Huomaa: tämä ikkuna ilmestyy automaattisesti, ellei "
+"kokoelmien aiempaa tutkimista ollut saatettu loppuun."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:264
 #, kde-format
@@ -29474,30 +29088,23 @@ msgid "Set the host computer name"
 msgstr "Aseta palvelinkoneen nimi"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is the computer name running MySQL server.\n"
-#| "This can be \"localhost\" for a local server, or the network computer\n"
-#| " name (or IP address) in case of remote computer."
+#, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
 "This can be \"localhost\" for a local server, or the network computer\n"
 "name (or IP address) in case of remote computer."
 msgstr ""
-"Tämä on MySQL-palvelua tarjoavan tietokoneen nimi.\n"
-"Käytä paikalliselle palvelulle nimeä ”localhost” tai anna\n"
-"etätietokoneen verkkonimi tai IP-osoite."
+"Tämä on MySQL-palvelinkoneen nimi.\n"
+"Paikalliselle palvelimelle voi olla ”localhost” tai etäkoneelle\n"
+"konenimi tai IP-osoite."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:188
-#, fuzzy, kde-format
-#| msgid ""
-#| "<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
-#| "\">Connect options:</a>"
+#, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Connect options:</a>"
 msgstr ""
-"<a href=\"http://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
+"<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Yhteysasetukset:</a>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
@@ -29525,22 +29132,17 @@ msgid "Set the database account name"
 msgstr "Aseta tietokantatilin nimi"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set the MySQL server account name used\n"
-#| "by digiKam to be connected to the server.\n"
-#| "This account must be available on the remote MySQL server when database "
-#| "have been created."
+#, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
 "by digiKam to be connected to the server.\n"
 "This account must be available on the remote\n"
 "MySQL server when database have been created."
 msgstr ""
-"Aseta digiKamin käyttämän MySQL-palvelutilin\n"
-"nimi.\n"
-"Tämän tilin on oltava etä-MySQL-palvelimessa käytettävissä sen jälkeen, kun "
-"tietokanta on luotu."
+"Aseta digiKamin palvelimeen yhdistettäessä käyttämän\n"
+"MySQL-palvelintilin nimi.\n"
+"Tilin tulee olla MySQL-etäpalvelimessa käytettävissä\n"
+"tietokantaa luotaessa."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
 #, kde-format
@@ -29605,18 +29207,12 @@ msgid "Thumbs Db Name:"
 msgstr "Pienoiskuvatietokannan nimi:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
-#, fuzzy, kde-format
-#| msgid "Set the thumbnails database name"
+#, kde-format
 msgid "Set the thumbnails database name or folder"
-msgstr "Aseta pienoiskuvatietokannan nimi"
+msgstr "Aseta pienoiskuvatietokannan nimi tai kansio"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
-#, fuzzy, kde-format
-#| msgid ""
-#| "The thumbnails database is used by digiKam to host\n"
-#| "image thumbs with wavelets compression images.\n"
-#| "This one can use quickly a lots of space,\n"
-#| "especially if you have huge collections."
+#, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
 "image thumbs with wavelets compression images.\n"
@@ -29627,7 +29223,8 @@ msgstr ""
 "Pienoiskuvatietokantaa digiKam käyttää\n"
 "aallokepakattujen pienoiskuvien tallentamiseen.\n"
 "Tämä voi viedä yhtäkkiä paljon tilaa,\n"
-"etenkin jos kokoelmasi on valtava."
+"etenkin jos kokoelmasi on valtava.\n"
+"SQLite-tietokantaa varten valitse paikallinen kansio."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
 #, kde-format
@@ -29788,16 +29385,14 @@ msgid "Documentation"
 msgstr "Ohjeet"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
-#, fuzzy, kde-format
-#| msgid "Thumbs Db Name:"
+#, kde-format
 msgid "Thumbs Db Folder:"
-msgstr "Pienoiskuvatietokannan nimi:"
+msgstr "Pienoiskuvatietokannan kansio:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Tietokantayhteystesti"
@@ -29849,8 +29444,7 @@ msgstr ""
 "Tämä sijainti asetettiin komentorivivalitsimella (--database-directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Tietokanta-asetukset"
@@ -29881,11 +29475,10 @@ msgid ""
 msgstr "Valitse kansio digiKamin metatietokantaa varten."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
-msgstr "Luo kansio?"
+msgstr "Luodaanko tietokantakansio?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
 #, kde-format
@@ -29897,11 +29490,10 @@ msgstr ""
 "luoda tämän kansion nyt?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "Kansion luonti epäonnistui"
+msgstr "Tietokantakansion luominen epäonnistui"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -29912,8 +29504,7 @@ msgstr ""
 "<p>Kansiota <p>”<b>%1</b>”</p> ei voitu luoda. Valitse uusi kansio.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, fuzzy, kde-format
-#| msgid "No Database Write Access"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Tietokantaan ei ole kirjoitusoikeutta"
@@ -29928,8 +29519,7 @@ msgstr ""
 "kansio.</p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Tietokannan tilastot"
@@ -30251,10 +29841,9 @@ msgid "Select Items"
 msgstr "Valitse kohteet"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:265
-#, fuzzy, kde-format
-#| msgid "<i>Created:</i>"
+#, kde-format
 msgid "<i>Preview:</i>"
-msgstr "<i>Luotu:</i>"
+msgstr "<i>Esikatselu:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
@@ -30327,11 +29916,10 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videokoodekki:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:149
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
-msgstr "Jaettujen kirjastojen ja ohjelmistokomponenttien tiedot"
+msgstr "Tietoa jaetuista kirjastoista ja osista"
 
 #: core/libs/dialogs/infodlg.cpp:74
 #: core/libs/progressmanager/dhistoryview.cpp:149
@@ -30347,11 +29935,9 @@ msgstr ""
 "<font size=\"5\">%1</font><br/><b>Versio %2</b><p>%3</p><p><i>%4</i></p>"
 
 #: core/libs/dialogs/infodlg.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Image History"
+#, kde-format
 msgid "Items List"
-msgstr "Kuvahistoria"
+msgstr "Kohdeluettelo"
 
 #: core/libs/dialogs/libsinfodlg.cpp:152
 #, kde-format
@@ -30366,33 +29952,25 @@ msgid "No"
 msgstr "Ei"
 
 #: core/libs/dialogs/libsinfodlg.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Feature"
+#, kde-format
 msgctxt "@title"
 msgid "Features"
-msgstr "Ominaisuus"
+msgstr "Ominaisuudet"
 
 #: core/libs/dialogs/libsinfodlg.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Library"
+#, kde-format
 msgctxt "@title"
 msgid "Libraries"
-msgstr "Kirjasto"
+msgstr "Kirjastot"
 
 #: core/libs/dialogs/libsinfodlg.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Tuntematon"
 
 #: core/libs/dialogs/libsinfodlg.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Tuntematon"
@@ -30404,11 +29982,10 @@ msgid "Manifests"
 msgstr ""
 
 #: core/libs/dialogs/libsinfodlg.cpp:413
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
-msgstr "Kameran asetukset"
+msgstr "OpenCV-asetukset"
 
 #: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
@@ -30429,11 +30006,10 @@ msgid "Unknown"
 msgstr "Tuntematon"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
-msgstr "Tuetut RAW-kuvia tallentavat kamerat"
+msgstr "Tuettujen RAW-kameroiden luettelo"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
 #, kde-format
@@ -30514,11 +30090,10 @@ msgid "none"
 msgstr "ei mitään"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:278
-#, fuzzy, kde-format
-#| msgid "Andorra"
+#, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
-msgstr "Andorra"
+msgstr "Valmistaja"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:281
 #: core/libs/dialogs/solidhardwaredlg.cpp:402
@@ -30529,8 +30104,7 @@ msgstr "Tuote"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:284
 #: core/libs/dialogs/solidhardwaredlg.cpp:405
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@item: device description"
 msgid "Description"
 msgstr "Kuvaus"
@@ -30576,11 +30150,10 @@ msgid "empty"
 msgstr "tyhjä"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:418
-#, fuzzy, kde-format
-#| msgid "Device model (*):"
+#, kde-format
 msgctxt "@item"
 msgid "Device Removed"
-msgstr "Laitteen malli (*):"
+msgstr "Laite poistettu"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:421
 #, kde-format
@@ -31160,11 +30733,10 @@ msgid "Luminosity"
 msgstr "Värikirkkaus"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr "Mustavalkoasetusten lataustiedosto"
+msgstr "Ladattava mustavalkoasetusten tiedosto"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -31177,11 +30749,10 @@ msgid "Cannot load settings from the Black & White text file."
 msgstr "Mustavalkoasetuksia ei voitu ladata tekstitiedostosta."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr "Mustavalkoasetusten tallennustiedosto"
+msgstr "Tallennettava mustavalkoasetusten tiedosto"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
@@ -31262,8 +30833,7 @@ msgid "Select the blue color gain, as a percentage, for the current channel."
 msgstr "Aseta kehyksen leveys suhteelliseksi (%) kuvan koosta."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:162
-#, fuzzy, kde-format
-#| msgid "&Reset"
+#, kde-format
 msgctxt "@option"
 msgid "&Reset"
 msgstr "&Palauta"
@@ -31276,18 +30846,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:172
-#, fuzzy, kde-format
-#| msgid "Preserve luminosity"
+#, kde-format
 msgctxt "@option"
 msgid "Preserve luminosity"
-msgstr "Säilytä värikirkkaus"
+msgstr "Säilytä kirkkaus"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:173
-#, fuzzy, kde-format
-#| msgid "Enable this option to maintain aspect ratio with new image sizes."
+#, kde-format
 msgctxt "@info"
 msgid "Enable this option is you want preserve the image luminosity."
-msgstr "Tämä valinta säilyttää kuvasuhteen."
+msgstr "Valitse tämä, jos haluat säilyttää kuvan kirkkauden."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:178
 #, fuzzy, kde-format
@@ -31308,10 +30876,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:351
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info: progress"
 msgid "Total: %1 (%)"
-msgstr "%1 (%2)"
+msgstr "Kaikkiaan: %1 (%)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
 #, fuzzy, kde-format
@@ -31365,25 +30933,22 @@ msgid "Set here the cyan/red color adjustment of the image."
 msgstr "Aseta kuvan syaani/punainen-värisäätö."
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:86
-#, fuzzy, kde-format
-#| msgid "Red"
+#, kde-format
 msgctxt "@label: color"
 msgid "Red"
 msgstr "Punainen"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:91
-#, fuzzy, kde-format
-#| msgid "Magenta"
+#, kde-format
 msgctxt "@label: color"
 msgid "Magenta"
 msgstr "Magenta"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:97
-#, fuzzy, kde-format
-#| msgid "Set here the magenta/green color adjustment of the image."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the magenta/green color adjustment of the image."
-msgstr "Aseta kuvan magenta/vihreä-värisäätö."
+msgstr "Aseta tässä kuvan magenta/vihreä-värisäätö."
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:99
 #, kde-format
@@ -31392,8 +30957,7 @@ msgid "Green"
 msgstr "Vihreä"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:104
-#, fuzzy, kde-format
-#| msgid "Yellow"
+#, kde-format
 msgctxt "@label: color"
 msgid "Yellow"
 msgstr "Keltainen"
@@ -31405,11 +30969,10 @@ msgid "Blue"
 msgstr "Sininen"
 
 #: core/libs/dimg/filters/cb/cbsettings.cpp:113
-#, fuzzy, kde-format
-#| msgid "Set here the yellow/blue color adjustment of the image."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the yellow/blue color adjustment of the image."
-msgstr "Aseta kuvan keltainen/sininen-värisäätö."
+msgstr "Aseta tässä kuvan keltainen/sininen-värisäätö."
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:145
 #, kde-format
@@ -31473,16 +31036,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:223
-#, fuzzy, kde-format
-#| msgid "Revert Changes"
+#, kde-format
 msgid "Reset &Channel"
-msgstr "Peru muutokset"
+msgstr "Palauta &kanava"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:224
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgid "Reset &All"
-msgstr "Palauta alkuasetukset"
+msgstr "P&alauta kaikki"
 
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
@@ -31490,8 +31051,7 @@ msgid "Adjust Curves"
 msgstr "Käyrien säätö"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select Gimp Curves File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Valitse ladattava Gimp-käyrätiedosto"
@@ -31502,8 +31062,7 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr ""
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, fuzzy, kde-format
-#| msgid "Gimp Curves File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Tallennettava Gimp-käyrätiedosto"
@@ -31974,8 +31533,7 @@ msgid "Neon"
 msgstr "Neon"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:122
-#, fuzzy, kde-format
-#| msgid "Find Edges"
+#, kde-format
 msgctxt "@item: color effect"
 msgid "Find Edges"
 msgstr "Tunnista reunat"
@@ -32001,19 +31559,16 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "level to use for the effect"
-#| msgid "Level:"
+#, kde-format
 msgctxt "@label: level of the effect"
 msgid "Level:"
 msgstr "Voimakkuus:"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:154
-#, fuzzy, kde-format
-#| msgid "Set here the level of the effect."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the level of the effect."
-msgstr "Aseta tehosteen voimakkuus."
+msgstr "Aseta tässä tehosteen voimakkuus."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:156
 #, fuzzy, kde-format
@@ -32032,8 +31587,7 @@ msgid ""
 msgstr "Tämä arvo määrittää tehosteesta käytettävän tason."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:192
-#, fuzzy, kde-format
-#| msgid "Intensity:"
+#, kde-format
 msgctxt "@label"
 msgid "Intensity:"
 msgstr "Intensiteetti:"
@@ -32046,8 +31600,7 @@ msgid "Set here the intensity of the filter."
 msgstr "Aseta tässä suodattimen intensiteetti."
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:376
-#, fuzzy, kde-format
-#| msgid "Bleach"
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Bleach"
 msgstr "Valkaisu"
@@ -32059,22 +31612,19 @@ msgid "Blue Crush"
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:384
-#, fuzzy, kde-format
-#| msgid "BW Contrast"
+#, kde-format
 msgctxt "@info: effect type"
 msgid "BW Contrast"
 msgstr "Mustavalkokontrasti"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:388
-#, fuzzy, kde-format
-#| msgid "Instant"
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Instant"
 msgstr "Välitön"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:392
-#, fuzzy, kde-format
-#| msgid "Original"
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Original"
 msgstr "Alkuperäinen"
@@ -32086,8 +31636,7 @@ msgid "Punch"
 msgstr ""
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:400
-#, fuzzy, kde-format
-#| msgid "Summer"
+#, kde-format
 msgctxt "@info: effect type"
 msgid "Summer"
 msgstr "Kesä"
@@ -32269,11 +31818,10 @@ msgid "Greycstoration Filter"
 msgstr "Greystoration-suodatin"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:126
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title: general settings"
 msgid "General"
-msgstr "Yleiset"
+msgstr "Perusasetukset"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:128
 #, kde-format
@@ -32345,8 +31893,7 @@ msgid "Sets the noise scale."
 msgstr "Asettaa kohinan mittakaavan."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:190
-#, fuzzy, kde-format
-#| msgid "Advanced Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Advanced Settings"
 msgstr "Lisäasetukset"
@@ -32375,7 +31922,7 @@ msgstr ""
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:205
 #, kde-format
 msgid "Gaussian:"
-msgstr ""
+msgstr "Gauss:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:209
 #, kde-format
@@ -32408,22 +31955,19 @@ msgid "Interpolation:"
 msgstr "Interpolointi:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:223
-#, fuzzy, kde-format
-#| msgid "Nearest Neighbor"
+#, kde-format
 msgctxt "@item: interpolation"
 msgid "Nearest Neighbor"
 msgstr "Lähin naapuri"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:224
-#, fuzzy, kde-format
-#| msgid "Linear"
+#, kde-format
 msgctxt "@item: interpolation"
 msgid "Linear"
 msgstr "Lineaarinen"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:225
-#, fuzzy, kde-format
-#| msgid "Runge-Kutta"
+#, kde-format
 msgctxt "@item: interpolation"
 msgid "Runge-Kutta"
 msgstr "Runge-Kutta"
@@ -32650,8 +32194,7 @@ msgid "Power"
 msgstr "Teho:"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:164
-#, fuzzy, kde-format
-#| msgid "Linear"
+#, kde-format
 msgctxt "@item: function type"
 msgid "Linear"
 msgstr "Lineaarinen"
@@ -34188,17 +33731,13 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title: column"
-#| msgid "Read"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
 msgstr "Luku"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@title: column"
-#| msgid "Write"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Write"
 msgstr "Kirjoitus"
@@ -34211,9 +33750,7 @@ msgid "Type-Mimes"
 msgstr "Vihreä suodatin"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "About %1 Plugin"
+#, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Tietoa liitännäisestä %1"
@@ -34249,11 +33786,10 @@ msgid "Value"
 msgstr "Arvo"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "&Interface"
+#, kde-format
 msgctxt "@item"
 msgid "Interface ID"
-msgstr "&Käyttöliittymä"
+msgstr "Käyttöliittymän tunniste"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:139
 #, kde-format
@@ -34443,36 +33979,31 @@ msgid "These are basic settings for the new %1 album."
 msgstr "Nämä ovat uuden albumin (%1) perusasetukset."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:110
-#, fuzzy, kde-format
-#| msgid "Title of the album that will be created (required)."
+#, kde-format
 msgctxt "@info"
 msgid "Title of the album that will be created (required)."
 msgstr "Luotavan albumin otsikko (vaadittu)."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Date and Time of the album that will be created (optional)."
+#, kde-format
 msgctxt "@info"
 msgid "Date and Time of the album that will be created (optional)."
 msgstr "Luotavan albumin päivä ja aika (valinnaisia)."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:115
-#, fuzzy, kde-format
-#| msgid "Description of the album that will be created (optional)."
+#, kde-format
 msgctxt "@info"
 msgid "Description of the album that will be created (optional)."
 msgstr "Luotavan albumin kuvaus (valinnainen)."
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:117
-#, fuzzy, kde-format
-#| msgid "Location of the album that will be created (optional)."
+#, kde-format
 msgctxt "@info"
 msgid "Location of the album that will be created (optional)."
 msgstr "Luotavan albumin sijainti (valinnainen)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Account Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Tilin valinta"
@@ -34652,9 +34183,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG-laatu:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Aloita"
@@ -34719,12 +34248,10 @@ msgid "Save the list."
 msgstr "Tallenna luettelo."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
-msgstr "Valitse ladattavien kuvien luettelo"
+msgstr "Valitse ladattava kuvatiedostoluettelo"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
 #: core/libs/dplugins/widgets/ditemslist.cpp:663
@@ -34734,12 +34261,10 @@ msgid "All Files (*)"
 msgstr "Kaikki tiedostot (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
-msgstr "Valitse tallennettava kuvaluettelo"
+msgstr "Valitse tallennettavien kuvatiedostoluettelo"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #, kde-format
@@ -34791,9 +34316,7 @@ msgid "User6"
 msgstr "Käyttäjä6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Ohje"
@@ -34807,9 +34330,7 @@ msgstr "Käsikirja verkossa…"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "Tietoa…"
 
@@ -34885,9 +34406,7 @@ msgstr ""
 "pakata.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action:button"
 msgid "Help"
 msgstr "Ohje"
@@ -37245,32 +36764,30 @@ msgstr ""
 "Sulje nykyinen istunto ja päivitä napsauttamalla ”Asenna”…"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:503
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error when loading bookmarks on line %1, column %2:\n"
-#| "%3"
+#, kde-format
 msgid ""
 "Error while trying to download %1\n"
 "pre-release built on %2:\n"
 "\n"
 "\"%3\""
 msgstr ""
-"Virhe ladattaessa kirjanmerkkejä rivillä %1 sarakkeessa %2:\n"
-"%3"
+"Virhe yritettäessä ladata: %1\n"
+"esijulkaisu on koostettu %2:\n"
+"\n"
+"”%3”"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:510
-#, fuzzy, kde-format
-#| msgid ""
-#| "Error when loading bookmarks on line %1, column %2:\n"
-#| "%3"
+#, kde-format
 msgid ""
 "Error while trying to download %1\n"
 "stable version %2:\n"
 "\n"
 "\"%3\""
 msgstr ""
-"Virhe ladattaessa kirjanmerkkejä rivillä %1 sarakkeessa %2:\n"
-"%3"
+"Virhe yritettäessä ladata: %1\n"
+"vakaa versio %2:\n"
+"\n"
+"”%3”"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:602
 #, kde-format
@@ -37422,39 +36939,33 @@ msgstr[0] "Olet muokannut kuvan tunnisteita. "
 msgstr[1] "Olet muokannut %1 kuvan tunnisteita. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:316
-#, fuzzy, kde-format
-#| msgid "Do you want to apply your changes?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
-msgstr "Hyväksytkö muutokset?"
+msgstr "Haluatko ottaa muutokset käyttöön?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:320
-#, fuzzy, kde-format
-#| msgid "<p>You have edited the metadata of the image: </p><p><ul>"
-#| msgid_plural "<p>You have edited the metadata of %1 images: </p><p><ul>"
+#, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] "<p>Kuvan metatietoja on muokattu: </p><p><ul>"
-msgstr[1] "<p>%1 kuvan metatietoja on muokattu: </p><p><ul>"
+msgstr[0] "<p>Kuvan metatietoja on muokattu: </p>"
+msgstr[1] "<p>%1 kuvan metatietoja on muokattu: </p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
-#, fuzzy, kde-format
-#| msgid "<li>title</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
 msgstr "<li>otsikko</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:333
-#, fuzzy, kde-format
-#| msgid "<li>caption</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
 msgstr "<li>kuvateksti</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
-#, fuzzy, kde-format
-#| msgid "<li>date</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
 msgstr "<li>päiväys</li>"
@@ -37474,89 +36985,77 @@ msgid "<li>color label</li>"
 msgstr "<li>värimerkki</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
-#, fuzzy, kde-format
-#| msgid "<li>rating</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr "<li>arvio</li>"
+msgstr "<li>arvostelu</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:358
-#, fuzzy, kde-format
-#| msgid "<li>tags</li>"
+#, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr "<li>tunnisteet</li>"
+msgstr "<li>luokitukset</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:363
-#, fuzzy, kde-format
-#| msgid "<p>Do you want to apply your changes?</p>"
+#, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
-msgstr "<p>Hyväksytkö muutokset?</p>"
+msgstr "<p>Haluatko ottaa muutokset käyttöön?</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:366
-#, fuzzy, kde-format
-#| msgid "Always apply changes without confirmation"
+#, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
-msgstr "Ota muutokset käyttöön aina ilman varmistusta"
+msgstr "Ota muutokset aina käyttöön vahvistuksetta"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
-#, fuzzy, kde-format
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Otetaanko muutokset käyttöön?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:379
-#, fuzzy, kde-format
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
 msgstr "Otetaanko muutokset käyttöön?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:438
-#, fuzzy, kde-format
-#| msgid "Reading metadata from files. Please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
-msgstr "Luetaan metatietoja tiedostoista, odota hetki…"
+msgstr "Luetaan metatietoja tiedostoista, odota…"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:470
-#, fuzzy, kde-format
-#| msgid "Writing metadata to files. Please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
-msgstr "Talletetaan metatietoja tiedostoihin, odota hetki…"
+msgstr "Talletetaan metatietoja tiedostoihin, odota…"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:513
-#, fuzzy, kde-format
-#| msgid "Read metadata from file to database"
+#, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
-msgstr "Lue metatiedot tiedostosta tietokantaan"
+msgstr "Lue metatieto tiedostosta tietokantaan"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:515
 #: core/libs/properties/captions/itemdescedittab.cpp:534
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
-msgstr "Kirjoita metatiedot jokaiseen tiedostoon"
+msgstr "Kirjoita metatiedot kuhunkin tiedostoon"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:531
-#, fuzzy, kde-format
-#| msgid "Read metadata from each file to database"
+#, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
-msgstr "Lue jokaisen tiedoston metatiedot tietokantaan"
+msgstr "Lue kustakin tiedostosta metatiedot tietokantaan"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:539
-#, fuzzy, kde-format
-#| msgid "Assign Tags to &Selected Items"
+#, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
-msgstr "Lisää tunnisteet &valittuihin kuviin"
+msgstr "Yhtenäistä valittujen kohteiden luokitukset"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:36
 #, kde-format
@@ -37565,8 +37064,7 @@ msgid "Title:"
 msgstr "Otsikko:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:43
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgctxt "@label"
 msgid "Date:"
 msgstr "Päiväys:"
@@ -37586,46 +37084,40 @@ msgid "Color Label:"
 msgstr "Värimerkki:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
-#, fuzzy, kde-format
-#| msgid "Rating:"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Arvio:"
+msgstr "Arvostelu:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
-#, fuzzy, kde-format
-#| msgid "Apply"
+#, kde-format
 msgctxt "@action"
 msgid "Apply"
 msgstr "Käytä"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:69
-#, fuzzy, kde-format
-#| msgid "Apply all changes to images"
+#, kde-format
 msgctxt "@info"
 msgid "Apply all changes to images"
-msgstr "Hyväksy kaikki muutokset kuvalle"
+msgstr "Ota käyttöön kaikki muutokset kuviin"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:77
-#, fuzzy, kde-format
-#| msgid "Revert all changes"
+#, kde-format
 msgctxt "@info"
 msgid "Revert all changes"
-msgstr "Peru kaikki muutokset"
+msgstr "Kumoa kaikki muutokset"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:80
-#, fuzzy, kde-format
-#| msgid "Apply to all versions"
+#, kde-format
 msgctxt "@action"
 msgid "Apply to all versions"
 msgstr "Käytä kaikkiin versioihin"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
-#, fuzzy, kde-format
-#| msgid "Apply all changes to all versions of this image"
+#, kde-format
 msgctxt "@info"
 msgid "Apply all changes to all versions of this image"
-msgstr "Hyväksy kaikki muutokset tämän kuvan kaikille versioille"
+msgstr "Ota käyttöön kaikki muutokset kuvan kaikkiin versioihin"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:85
 #, kde-format
@@ -37634,8 +37126,7 @@ msgid "More"
 msgstr "Lisää"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:101
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Description"
 msgstr "Kuvaus"
@@ -37648,36 +37139,28 @@ msgid "Information"
 msgstr "Tietoa"
 
 #: core/libs/properties/captions/itemdescedittab_p.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@info: language edit dialog"
-#| msgid "Select item language here."
+#, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
-msgstr "Valitse tässä kohteen kieli."
+msgstr "Valituilla kohteilla on tässä eri teksti."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
 #: core/libs/properties/captions/tagsedit.cpp:105
-#, fuzzy, kde-format
-#| msgid "Open Tag Manager"
+#, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
-msgstr "Avaa tunnisteiden hallinta"
+msgstr "Avaa luokitusten hallinta"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:111
-#, fuzzy, kde-format
-#| msgid "Enter tag here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr "Kirjoita tunniste tähän."
+msgstr "Kirjoita luokitus tähän."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the text used to create tags here. '/' can be used to create a "
-#| "hierarchy of tags. ',' can be used to create more than one hierarchy at "
-#| "the same time."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Enter the text used to create tags here. '/' can be used to create a "
@@ -37689,24 +37172,21 @@ msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
 #: core/libs/properties/captions/tagsedit.cpp:129
-#, fuzzy, kde-format
-#| msgid "Tags already assigned"
+#, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "Annetut tunnisteet"
+msgstr "Luokitukset on jo kytketty"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:135
-#, fuzzy, kde-format
-#| msgid "Recent Tags"
+#, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
-msgstr "Äskeiset tunnisteet"
+msgstr "Äskettäiset luokitukset"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
 #: core/libs/properties/captions/tagsedit.cpp:293
-#, fuzzy, kde-format
-#| msgid "No Recently Assigned Tags"
+#, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
 msgstr "Ei äskettäin määritettyjä tunnisteita"
@@ -38442,9 +37922,7 @@ msgid "Audio/Video Properties"
 msgstr "Äänen/videon ominaisuudet"
 
 #: core/libs/properties/itempropertiestab.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@label: album properties"
-#| msgid "Title: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Title: "
 msgstr "Otsikko: "
@@ -38475,20 +37953,16 @@ msgid "Rating: "
 msgstr "Arvostelu: "
 
 #: core/libs/properties/itempropertiestab.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Version"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versionned: "
-msgstr "Versio"
+msgstr "Versioitu: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@action: group items"
-#| msgid "Group"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Grouped: "
-msgstr "Ryhmä"
+msgstr "Ryhmitelty: "
 
 #: core/libs/properties/itempropertiestab.cpp:279
 #, kde-format
@@ -38497,31 +37971,25 @@ msgid "digiKam Properties"
 msgstr "digiKamin ominaisuudet"
 
 #: core/libs/properties/itempropertiestab.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Keywords: "
-msgstr "Hakusanat"
+msgstr "Hakusanat:"
 
 #: core/libs/properties/itempropertiestab.cpp:290
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Peoples: "
-msgstr "Ihmiset"
+msgstr "Ihmiset:"
 
 #: core/libs/properties/itempropertiestab.cpp:305
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Tags"
-msgstr "Tunnisteet"
+msgstr "Luokitukset"
 
 #: core/libs/properties/itempropertiestab.cpp:323
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "@title: item properties"
 msgid "Location"
 msgstr "Sijainti"
@@ -40892,22 +40360,19 @@ msgid "XMP: created"
 msgstr "XMP: luotu"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
-#, fuzzy, kde-format
-#| msgid "EXIF: created"
+#, kde-format
 msgid "EXIF: created (fuzzy)"
-msgstr "EXIF: luotu"
+msgstr "Exif: luotu (sumea)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
-#, fuzzy, kde-format
-#| msgid "EXIF: original"
+#, kde-format
 msgid "EXIF: original (fuzzy)"
-msgstr "EXIF: alkuperäinen"
+msgstr "Exif: alkuperäinen (sumea)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:194
-#, fuzzy, kde-format
-#| msgid "EXIF: digitized"
+#, kde-format
 msgid "EXIF: digitized (fuzzy)"
-msgstr "EXIF: digitoitu"
+msgstr "Exif: digitoitu (sumea)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:204
 #, kde-format
@@ -41103,7 +40568,7 @@ msgid "Blobs"
 msgstr "Möykyt"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Transition: Fade"
 msgid "Fade"
 msgstr "Häivytys"
@@ -41181,18 +40646,16 @@ msgid "Swap Bottom to Top"
 msgstr "Vaihda alhaalta ylös"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:125
-#, fuzzy, kde-format
-#| msgid "Blur"
+#, kde-format
 msgctxt "Transition: BlurIn"
 msgid "Blur In"
-msgstr "Sumennus"
+msgstr "Sumennus sisään"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:126
-#, fuzzy, kde-format
-#| msgid "Blur FX"
+#, kde-format
 msgctxt "Transition: BlurOut"
 msgid "Blur Out"
-msgstr "Sumennusefekti"
+msgstr "Sumennus ulos"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:127
 #, kde-format
@@ -41775,10 +41238,9 @@ msgid "GenericCopy: copy back to host memory and each video frame"
 msgstr "GenericCopy: kopioi takaisin koneen muistiin ja kuhunkin videokuvaan"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderCUDA.cpp:888
-#, fuzzy, kde-format
-#| msgid "Media format is not supported yet"
+#, kde-format
 msgid "Codec %1 is not supported by CUDA"
-msgstr "Median tiedostomuotoa ei vielä tueta."
+msgstr "CUDA ei tue koodekkia %1"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderD3D.cpp:398
 #: core/libs/video/qtav/codec/video/VideoDecoderFFmpeg.cpp:389
@@ -41917,11 +41379,10 @@ msgid "Enable %1"
 msgstr "Käytä: %1"
 
 #: core/libs/video/qtav/config/AVFilterConfigPage.cpp:56
-#, fuzzy, kde-format
-#| msgid "Restore Tag Filters"
+#, kde-format
 msgctxt "@info"
 msgid "Registered %1 filters"
-msgstr "Palauta tunnistesuodattimet"
+msgstr "Rekisteröity %1 suodatinta"
 
 #: core/libs/video/qtav/config/AVFilterConfigPage.cpp:61
 #, kde-format
@@ -41935,16 +41396,14 @@ msgid "Enable"
 msgstr "Käytä"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgid "options"
-msgstr "Asetukset"
+msgstr "valinnat"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
-#, fuzzy, kde-format
-#| msgid "Reduce Texturing"
+#, kde-format
 msgid "Reduce buffering"
-msgstr "Vähennä pintakuviointia"
+msgstr "Vähennä puskurointia"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:54
 #, fuzzy, kde-format
@@ -41969,10 +41428,9 @@ msgid "Extra"
 msgstr "Lisätunnisteet"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:74
-#, fuzzy, kde-format
-#| msgid "Format"
+#, kde-format
 msgid "AVFormat"
-msgstr "Muoto"
+msgstr "AVFormat"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
 #, kde-format
@@ -44451,10 +43909,9 @@ msgid "PostScript Information"
 msgstr "PostScript-tiedot"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:363
-#, fuzzy, kde-format
-#| msgid "Login Information"
+#, kde-format
 msgid "PrintIM Information"
-msgstr "Kirjautumistiedot"
+msgstr "PrintIM-tiedot"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:367
 #, kde-format
@@ -48429,10 +47886,9 @@ msgstr "%2 ei tue valittua käyttöliittymäkieltä %1"
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "Title cannot be empty."
+#, kde-format
 msgid "%1 URL can't be empty."
-msgstr "Otsikko ei voi olla tyhjä."
+msgstr "%1-verkko-osoite ei voi olla tyhjä."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -49249,25 +48705,22 @@ msgid "%1 engine does not support TTS"
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:252
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
-msgstr "Etätiedostojen käsittelyä ei tueta"
+msgstr "%2 ei tue valittua kieltä %1"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:271
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
-msgstr "Etätiedostojen käsittelyä ei tueta"
+msgstr "%2 ei tue valittua ääntä %1"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:290
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
-msgstr "Etätiedostojen käsittelyä ei tueta"
+msgstr "%2 ei tue valittua tunnetta %1"
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
@@ -49404,12 +48857,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Default Language"
+#, kde-format
 msgctxt "@label"
 msgid "Default Language:"
-msgstr "Oletuskieli"
+msgstr "Oletuskieli:"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:124
 #, kde-format
@@ -49420,10 +48871,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
-#, fuzzy, kde-format
-#| msgid "Auto-&Detect"
+#, kde-format
 msgid "Auto-detect"
-msgstr "&Tunnista"
+msgstr "Tunnista automaattisesti"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:128
 #, kde-format
@@ -53118,42 +52568,34 @@ msgid "Prefer other than selected folder as reference"
 msgstr ""
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Creation Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Luontipäivän mukaan"
+msgstr "Suosi uudempaa luontipäivää"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Muutospäivän mukaan"
+msgstr "Suosi uudempaa muokkauspäivää"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Information about current image selection"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Select method for reference image selection"
-msgstr "Tietoja nykyisestä kuvavalinnasta"
+msgstr "Valitse viitekuvan valintatapa"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:230
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference"
-msgstr "Viite:"
+msgstr "Viite"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
-#, fuzzy, kde-format
-#| msgid "&Choose image selection method:"
+#, kde-format
 msgctxt "@group"
 msgid "Reference Image Selection Method"
-msgstr "&Valitse kuvanvalintatapa:"
+msgstr "Viitekuvan valintatapa"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:243
 #, fuzzy, kde-format
@@ -55520,9 +54962,7 @@ msgstr ""
 "Kuvamuokkain suljetaan."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1202
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Not Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Tiedosto ei ole saatavilla"
@@ -56559,9 +55999,7 @@ msgstr ""
 "Anna uusi tiedostonimi (päätteettä):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Tiedosto on jo olemassa"
@@ -56609,20 +56047,15 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:1470
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to save sidecar file for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
-"Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
-"Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
+"Tiedoston <filename>%1</filename> oheistiedoston siirtäminen epäonnistui"
 
 #: core/utilities/import/main/importui.cpp:1477
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to save sidecar file for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr ""
-"Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
-"Oheistiedoston luominen tiedostolle <filename>%1</filename> epäonnistui."
+msgstr "Tiedoston <filename>%1</filename> siirtäminen epäonnistui"
 
 #: core/utilities/import/main/importui.cpp:1904
 #, kde-format
@@ -56878,10 +56311,7 @@ msgid "AVIF"
 msgstr "AVIF"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here all options to fix/transform JPEG files automatically as they "
-#| "are downloaded."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set here all options to fix/transform JPEG files automatically as they are "
@@ -56890,17 +56320,14 @@ msgstr ""
 "Aseta, mitä toimenpiteitä JPEG-kuville ladattaessa automaattisesti tehdään."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:142
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option if you want images automatically rotated or flipped "
-#| "using EXIF information provided by the camera."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Enable this option if you want images automatically rotated or flipped using "
 "Exif information provided by the camera."
 msgstr ""
-"Valitse käännetäänkö kuvat automaattisesti oikeaan asentoon kameran "
-"tarjoamien Exif-tietojen perusteella."
+"Valitse, käännetäänkö tai pyöräytetäänkö kuvia automaattisesti kameran Exif-"
+"tietojen perusteella."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:144
 #, fuzzy, kde-format
@@ -57021,11 +56448,10 @@ msgid "Custom"
 msgstr "Mukautettu"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:121
-#, fuzzy, kde-format
-#| msgid "Show a list of all available options"
+#, kde-format
 msgctxt "@info"
 msgid "Show a list of all available options"
-msgstr "Näytä mahdollisten valintojen luettelo"
+msgstr "Näytä kaikki mahdolliset valinnat"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:134
 #, fuzzy, kde-format
@@ -58031,8 +57457,7 @@ msgid "Ready"
 msgstr "Valmis"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, fuzzy, kde-format
-#| msgid "Processing under progress"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Käsittely on käynnissä"
@@ -58071,11 +57496,10 @@ msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, fuzzy, kde-format
-#| msgid "Fit to &Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr "Sovita &valintaan"
+msgstr "Käsiteltyjen kohteiden albumiasetukset"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
@@ -61490,24 +60914,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Lue metatiedot tiedostosta uudelleen"
+msgstr "Tallenna lisämetatietoprofiili"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Poista tiedostoista metatiedot"
+msgstr "Lataa lisämetatietoprofiili"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Varoitus"
@@ -61577,17 +60996,14 @@ msgid "Revert Changes"
 msgstr "Peru muutokset"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:462
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgid "Save Profile"
-msgstr "Tallenna tiedosto"
+msgstr "Tallenna profiili"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgid "Load Profile"
-msgstr "Profiili"
+msgstr "Lataa profiili"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:468
 #, kde-format
@@ -61595,15 +61011,13 @@ msgid "Reset to Default"
 msgstr "Palauta oletukset"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:145
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Uusi XMP-nimiavaruus"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:149
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Muokkaa XMP-nimiavaruutta"
@@ -61781,9 +61195,7 @@ msgstr ""
 "suosittele tätä asetusta käyttöön."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Yes I understand"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Kyllä, ymmärrän"
@@ -62134,12 +61546,10 @@ msgstr ""
 "välilehdeltä lisätietoa."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "ExifTool"
+#, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
-msgstr "Exif-työkalu"
+msgstr "ExifTool-taustajärjestelmä"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:28
 #, kde-format
@@ -62878,8 +62288,7 @@ msgstr ""
 "Muuta valokuvien vertailuun käytettyä työkalua"
 
 #: core/utilities/setup/setup.cpp:223
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Kuvalaatuun perustuva järjestely"
@@ -63344,14 +62753,7 @@ msgstr ""
 "<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -63362,10 +62764,10 @@ msgid ""
 msgstr ""
 "macOS-järjestelmässä oletushakupolkuun kuuluvat:<ul><li>/System/Library/"
 "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
-"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc/</li></ul>Järjestelmästä löytyvät seuraavat kansiot, jotka "
-"tutkitaan:<ul><li>%2</li></ul>"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Seuraavat kansiot löytyivät "
+"järjestelmästä ja tutkitaan:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format
@@ -63397,11 +62799,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64
-#, fuzzy, kde-format
-#| msgid "Sort images by:"
+#, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr "Lajittelujärjestys:"
+msgstr "esteettinen kuvalaatu"
 
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
