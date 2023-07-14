@@ -16,4 +16,6 @@ BUGFIXES:
 007 ==> 472129 - Indecently large distance between the elements in the "tools" panel.
 008 ==> 471961 - Two database dump was made on the same day, but one of them is not read by digiKam.
 009 ==> 472174 - Unable to remove "Unknown" Face Tags from photo.
-010 ==> 
+010 ==> 472235 - digiKam crashes on escaping from [modal] dialogs such as album properties form.
+011 ==> 471438 - Crash when create new album folder.
+012 ==> 
