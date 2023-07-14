@@ -18,4 +18,12 @@ BUGFIXES:
 009 ==> 472174 - Unable to remove "Unknown" Face Tags from photo.
 010 ==> 472235 - digiKam crashes on escaping from [modal] dialogs such as album properties form.
 011 ==> 471438 - Crash when create new album folder.
-012 ==> 
+012 ==> 472253 - Thumbnails of TIFF files show as low resolution with visible colour bands.
+013 ==> 
+014 ==> 
+015 ==> 
+016 ==> 
+017 ==> 
+018 ==> 
+019 ==> 
+020 ==> 
