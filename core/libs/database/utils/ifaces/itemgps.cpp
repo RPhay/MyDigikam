@@ -53,21 +53,16 @@ bool ItemGPS::loadImageData()
         {
             m_gpsData.setAltitude(pos.altitude());
         }
-
-        // mark us as not-dirty, because the data was just loaded:
-
-        m_dirty      = false;
-        m_savedState = m_gpsData;
-
-        emitDataChanged();
-
-        return true;
     }
 
-    // If item do not have any GPS data in database, we will try to load
-    // it from file using standard implementation from GPSItemContainer.
+    // mark us as not-dirty, because the data was just loaded:
 
-    return GPSItemContainer::loadImageData();
+    m_dirty      = false;
+    m_savedState = m_gpsData;
+
+    emitDataChanged();
+
+    return true;
 }
 
 QString ItemGPS::saveChanges()
