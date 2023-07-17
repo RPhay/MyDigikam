@@ -9,8 +9,7 @@ set(ECM_MIN_VERSION     "5.55.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
-execute_process(COMMAND ${CMAKE_COMMAND} --version OUTPUT_VARIABLE VERSION_CMAKE_INFO)
-message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
+message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 # ==============================================================================
 # Information to update before to release this package.
