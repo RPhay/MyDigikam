@@ -29,7 +29,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT ItemGPS : public GPSItemContainer
+class DIGIKAM_GUI_EXPORT ItemGPS : public GPSItemContainer
 {
 
 public:
