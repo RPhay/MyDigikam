@@ -20,7 +20,7 @@ BUGFIXES:
 011 ==> 471438 - Crash when create new album folder.
 012 ==> 472253 - Thumbnails of TIFF files show as low resolution with visible colour bands.
 013 ==> 472269 - Unable to change/remove "Ignored" identity Face Tags and name as a person.
-014 ==> 
+014 ==> 465635 - Geolocate is too slow: it reads way too much data.
 015 ==> 
 016 ==> 
 017 ==> 

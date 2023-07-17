@@ -169,13 +169,6 @@ if(ENABLE_DBUS)
        )
 endif()
 
-if(Marble_FOUND)
-    set(libdatabase_SRCS
-        ${libdatabase_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/item/containers/itemgps.cpp
-       )
-endif()
-
 # enable exceptions
 kde_source_files_enable_exceptions(${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraph.cpp
                                    ${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraphmodel.cpp
@@ -233,6 +226,13 @@ set(libdatabasemain_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/scan/scancontroller_progress.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/scan/scancontroller_stop.cpp
 )
+
+if(Marble_FOUND)
+    set(libdatabasemain_SRCS
+        ${libdatabasemain_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces/itemgps.cpp
+       )
+endif()
 
 # Used by digikamgui
 add_library(gui_digikamdatabasemain_obj OBJECT ${libdatabasemain_SRCS})

@@ -131,9 +131,7 @@ GPSItemContainer::GPSItemContainer(const QUrl& url)
       m_tagList     (),
       m_savedTagList(),
       m_writeXmpTags(true),
-      m_writeMetaLoc(true),
-      m_saveTags    (true),
-      m_saveGPS     (true)
+      m_writeMetaLoc(true)
 {
 }
 
@@ -836,7 +834,7 @@ QString GPSItemContainer::saveChanges()
     }
     else
     {
-        if (m_saveGPS && p.shouldWriteCoordinates)
+        if (p.shouldWriteCoordinates)
         {
             if (p.shouldWriteAltitude)
             {
@@ -907,7 +905,7 @@ QString GPSItemContainer::saveChanges()
             }
         }
 
-        if (success && m_saveGPS && p.shouldRemoveCoordinates)
+        if (success && p.shouldRemoveCoordinates)
         {
             // TODO: remove only the altitude if requested
 
@@ -919,18 +917,9 @@ QString GPSItemContainer::saveChanges()
             }
         }
 
-        if (success && m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
+        if (success && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
         {
-            if      (!m_databaseTags.isEmpty())
-            {
-                success = meta->setItemTagsPath(m_databaseTags);
-
-                if (!success)
-                {
-                    returnString = i18n("Failed to save tags to file.");
-                }
-            }
-            else if (m_writeXmpTags)
+            if (m_writeXmpTags)
             {
                 QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
 
@@ -999,7 +988,7 @@ QString GPSItemContainer::saveChanges()
 
     if (success)
     {
-        if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc)))
+        if (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
         {
             success = meta->save(m_url.toLocalFile());
         }
