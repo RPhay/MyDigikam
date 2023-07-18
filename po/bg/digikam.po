@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-08 01:12+0000\n"
+"POT-Creation-Date: 2023-07-18 00:46+0000\n"
 "PO-Revision-Date: 2023-07-10 14:22+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2954,7 +2954,7 @@ msgstr "Няма албум с етикети"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3883,7 +3883,7 @@ msgstr "Свойства за файла"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
 #, kde-format
 msgid "Filename"
 msgstr "Име на файл"
@@ -3947,7 +3947,7 @@ msgstr "Координати"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Altitude"
 msgstr "Височина"
@@ -4200,7 +4200,7 @@ msgstr "Единица"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:262
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "Thumbnail"
 msgstr "Миниатюра"
@@ -11374,31 +11374,31 @@ msgid "Edit Geolocation"
 msgstr "Редактиране на геолокацията"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Latitude"
 msgstr "Географска ширина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Longitude"
 msgstr "Географска дължина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Speed"
 msgstr "Скорост"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "# satellites"
 msgstr "# сателити"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Fix type"
 msgstr "Вид на корекцията"
@@ -11414,7 +11414,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15776,7 +15776,7 @@ msgstr "Актуализирано клеймо за време"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Status"
 msgstr "Състояние"
@@ -51811,7 +51811,7 @@ msgid "Tilt"
 msgstr "Наклон"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Accuracy"
 msgstr "Точност"
@@ -53714,65 +53714,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#точки"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
 #, kde-format
 msgid "Not available"
 msgstr "Не е налично"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Поправка: %1D"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
 #, kde-format
 msgid "%1d"
 msgstr "%1 д"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "Modified"
 msgstr "Последна промяна"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Date and time"
 msgstr "Дата и час"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
 #, kde-format
 msgid "Failed to open file."
 msgstr "Неуспешно отваряне на файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:906
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Не успя да се добави GPS информация към изображението."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:918
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Неуспешно премахване на GPS информация от изображението"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:930
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Грешка при запазване на таговете във файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1009
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Невъзможно е да се запазят промените във файла"

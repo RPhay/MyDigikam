@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-08 01:12+0000\n"
+"POT-Creation-Date: 2023-07-18 00:46+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -2971,7 +2971,7 @@ msgstr "אוספי-התמונות שלי"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3829,7 +3829,7 @@ msgstr "מאפייני הקובץ"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
 #, fuzzy, kde-format
 msgid "Filename"
 msgstr "שם קובץ"
@@ -3893,7 +3893,7 @@ msgstr "קואורדינטות קוטביות"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, fuzzy, kde-format
 msgid "Altitude"
 msgstr "<b>גובה</b>:"
@@ -4157,7 +4157,7 @@ msgstr "יחידת זמן:"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:262
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, fuzzy, kde-format
 msgid "Thumbnail"
 msgstr "הצגת תמונות-ממוזערות"
@@ -10699,31 +10699,31 @@ msgid "Edit Geolocation"
 msgstr "מיקום-גאוגרפי"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, fuzzy, kde-format
 msgid "Latitude"
 msgstr "<b>גובה</b>:"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, fuzzy, kde-format
 msgid "Longitude"
 msgstr "<b>קו-אורך</b>:"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Speed"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, fuzzy, kde-format
 msgid "Fix type"
 msgstr "סוג מסנן:"
@@ -10739,7 +10739,7 @@ msgid "3-d"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "DOP"
 msgstr ""
@@ -14895,7 +14895,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Status"
 msgstr "מצב"
@@ -49612,7 +49612,7 @@ msgid "Tilt"
 msgstr "רעף"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Accuracy"
 msgstr ""
@@ -51345,65 +51345,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "גופן:"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
 #, fuzzy, kde-format
 msgid "Not available"
 msgstr "אין אפשרויות זמינות"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
 #, kde-format
 msgid "DOP: %1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
 #, fuzzy, kde-format
 msgid "Fix: %1d"
 msgstr "גודל: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
 #, fuzzy, kde-format
 msgid "#Sat: %1"
 msgstr "תווית: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
 #, kde-format
 msgid "%1d"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, fuzzy, kde-format
 msgid "Modified"
 msgstr "שונה:"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, fuzzy, kde-format
 msgid "Date and time"
 msgstr "גודל הקובץ"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
 #, fuzzy, kde-format
 msgid "Failed to open file."
 msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:906
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
 #, fuzzy, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "כשלון בעת ניסיון לטעון את התמונה \"%1\""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:918
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
 #, fuzzy, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "כישלון בעת העתקת קובץ %1 מהמצלמה..."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:930
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
 #, fuzzy, kde-format
 msgid "Failed to save tags to file."
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1009
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
 #, fuzzy, kde-format
 msgid "Unable to save changes to file"
 msgstr "כשל בעת הצגת קבצים ב %1"
