@@ -988,11 +988,7 @@ QString GPSItemContainer::saveChanges()
 
     if (success)
     {
-        if (p.shouldWriteCoordinates || p.shouldRemoveCoordinates ||
-            (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc)))
-        {
-            success = meta->save(m_url.toLocalFile());
-        }
+        success = meta->save(m_url.toLocalFile());
 
         if (!success)
         {
