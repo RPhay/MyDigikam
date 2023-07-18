@@ -21,7 +21,7 @@ BUGFIXES:
 012 ==> 472253 - Thumbnails of TIFF files show as low resolution with visible colour bands.
 013 ==> 472269 - Unable to change/remove "Ignored" identity Face Tags and name as a person.
 014 ==> 465635 - Geolocate is too slow: it reads way too much data.
-015 ==> 
+015 ==> 457272 - Incorrect UI Element Padding under KDE with Breeze Theme at 1.5 scale.
 016 ==> 
 017 ==> 
 018 ==> 
