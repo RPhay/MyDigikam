@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-18 00:46+0000\n"
+"POT-Creation-Date: 2023-07-19 00:47+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -54533,7 +54533,7 @@ msgstr "បាន​បរាជ័យ​ដើម្បី​​យក​ព័
 msgid "Failed to save tags to file."
 msgstr "បាន​បរាជ័យ​ដើម្បី​រក្សាទុក​ស្លាក​ទៅកាន់​ឯកសារ ។"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "មិន​អាច​រក្សាទុក​ការ​ផ្លាស់ប្ដូរ​ទៅ​កាន់​​ឯកសារ​បាន​ឡើយ"

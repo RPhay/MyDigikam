@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-18 00:46+0000\n"
+"POT-Creation-Date: 2023-07-19 00:47+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -57438,7 +57438,7 @@ msgstr "GPS-teabe eemaldamine pildilt nurjus."
 msgid "Failed to save tags to file."
 msgstr "Siltide salvestamine faili nurjus."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Muudatuste salvestamine faili nurjus"

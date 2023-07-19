@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-18 00:46+0000\n"
+"POT-Creation-Date: 2023-07-19 00:47+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -52136,7 +52136,7 @@ msgstr "Lỗi lấy tệp %1 từ máy ảnh"
 msgid "Failed to save tags to file."
 msgstr "Lỗi in tệp: « %1 »"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, fuzzy, kde-format
 msgid "Unable to save changes to file"
 msgstr "Lỗi in tệp: « %1 »"

@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-18 00:46+0000\n"
+"POT-Creation-Date: 2023-07-19 00:47+0000\n"
 "PO-Revision-Date: 2023-06-28 09:31+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -54324,7 +54324,7 @@ msgstr "Impossible de supprimer des informations GPS depuis une image"
 msgid "Failed to save tags to file."
 msgstr "Impossible d'enregistrer des étiquettes dans un fichier."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Impossible d'enregistrer les changements dans un fichier"

@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-18 00:46+0000\n"
+"POT-Creation-Date: 2023-07-19 00:47+0000\n"
 "PO-Revision-Date: 2023-07-01 11:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -53690,7 +53690,7 @@ msgstr "Verwijderen van GPS-informatie uit afbeelding is mislukt"
 msgid "Failed to save tags to file."
 msgstr "Tags opslaan in bestand is mislukt."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:999
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Wijzigingen opslaan in bestand lukt niet"
