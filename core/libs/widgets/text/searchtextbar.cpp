@@ -302,7 +302,12 @@ void SearchTextBar::setIgnoreCase(bool ignore)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    Q_EMIT signalSearchTextSettings(d->settings);
+    // Re-Q_EMIT signal with changed settings
+
+    if (!text().isEmpty())
+    {
+        Q_EMIT signalSearchTextSettings(d->settings);
+    }
 }
 
 } // namespace Digikam

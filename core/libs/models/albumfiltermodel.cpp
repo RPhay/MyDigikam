@@ -109,6 +109,11 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
 
         Q_EMIT hasSearchResult(rowCount(head));
     }
+
+    if (settings.text.isEmpty())
+    {
+        sort(0, sortOrder());
+    }
 }
 
 bool AlbumFilterModel::settingsFilter(const SearchTextSettings& settings) const
