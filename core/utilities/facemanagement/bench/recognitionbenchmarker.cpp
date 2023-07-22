@@ -69,7 +69,7 @@ QString RecognitionBenchmarker::result() const
 }
 
 // TODO: investigate this method
-void RecognitionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
+void RecognitionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     FaceUtils utils;
 

@@ -82,7 +82,7 @@ TrainerWorker::~TrainerWorker()
 /**
  * TODO: investigate this method
  */
-void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
+void TrainerWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
 /*
     qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";

@@ -33,7 +33,7 @@ DatabaseWriter::~DatabaseWriter()
 {
 }
 
-void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
+void DatabaseWriter::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if      (package->databaseFaces.isEmpty())
     {

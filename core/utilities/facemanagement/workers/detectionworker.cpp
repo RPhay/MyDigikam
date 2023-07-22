@@ -32,7 +32,7 @@ DetectionWorker::~DetectionWorker()
     wait();    // protect detector
 }
 
-void DetectionWorker::process(FacePipelineExtendedPackage::Ptr package)
+void DetectionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if (!package->image.isNull())
     {
