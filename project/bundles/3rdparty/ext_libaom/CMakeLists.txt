@@ -24,7 +24,8 @@ if(MINGW)
 
     # See bug #471797
     set(AOM_Conf ${AOM_Conf}
-               -DAOM_TARGET_CPU=generic
+               -DAOM_TARGET_CPU=x86_64
+               -DAOM_TARGET_SYSTEM=Windows
     )
 
 endif()
