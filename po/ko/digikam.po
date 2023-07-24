@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the digikam package.
 # 이정희 <daemul72@gmail.com>, 2020.
-# Shinjo Park <kde@peremen.name>, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-19 00:47+0000\n"
-"PO-Revision-Date: 2022-05-15 22:14+0200\n"
+"PO-Revision-Date: 2023-07-23 22:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -204,7 +204,7 @@ msgstr "취소(&A)"
 #: core/app/dragdrop/albumdragdrop.cpp:213
 #, kde-format
 msgid "Set as Album Thumbnail"
-msgstr "앨범 축소판으로 설정"
+msgstr "앨범 섬네일으로 설정"
 
 #: core/app/dragdrop/albumdragdrop.cpp:208
 #: core/app/dragdrop/albumdragdrop.cpp:324
@@ -312,7 +312,7 @@ msgstr "여기에서 병합(&E)"
 #: core/app/dragdrop/tagdragdrop.cpp:231 core/app/dragdrop/tagdragdrop.cpp:392
 #, kde-format
 msgid "Set as Tag Thumbnail"
-msgstr "태그 축소판으로 설정"
+msgstr "태그 섬네일으로 설정"
 
 #: core/app/dragdrop/tagdragdrop.cpp:276
 #, kde-format
@@ -525,13 +525,13 @@ msgstr "항목 선택"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Album Thumbnail"
-msgstr "앨범 축소판으로 설정"
+msgstr "앨범 섬네일으로 설정"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:141
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
-msgstr "태그 축소판으로 설정"
+msgstr "태그 섬네일으로 설정"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:178
 #, kde-format
@@ -1672,7 +1672,7 @@ msgstr "보기"
 #, kde-format
 msgctxt "@action: Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/app/main/digikamapp_setup.cpp:316
 #: core/app/views/stack/itemiconview_views.cpp:278
@@ -1709,13 +1709,13 @@ msgstr "선택한 항목을 엽니다."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Open With Default Application"
-msgstr "기본 프로그램으로 열기"
+msgstr "기본 앱으로 열기"
 
 #: core/app/main/digikamapp_setup.cpp:352
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
-msgstr "기본 할당된 프로그램으로 선택한 항목을 엽니다."
+msgstr "기본 할당된 앱으로 선택한 항목을 엽니다."
 
 #: core/app/main/digikamapp_setup.cpp:358
 #, kde-format
@@ -1952,7 +1952,7 @@ msgstr "항목 정렬(&S)"
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
-msgstr "축소판 보기에서 앨범의 이미지를 정렬할 때 사용할 기준"
+msgstr "섬네일 보기에서 앨범의 이미지를 정렬할 때 사용할 기준"
 
 #: core/app/main/digikamapp_setup.cpp:569
 #, kde-format
@@ -2062,7 +2062,7 @@ msgstr "항목 구분"
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
-msgstr "축소판 보기에 이미지를 표시할 분류"
+msgstr "섬네일 보기에 이미지를 표시할 분류"
 
 #: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
@@ -2128,7 +2128,7 @@ msgstr "선택 반전"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
-msgstr "축소판 표시줄 표시"
+msgstr "섬네일 표시줄 표시"
 
 #: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
@@ -4116,7 +4116,7 @@ msgstr "단위"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "Thumbnail"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/app/views/tableview/tableview_treeview.cpp:87
 #, kde-format
@@ -8755,7 +8755,7 @@ msgid ""
 "You can see here a thumbnail preview of the distortion correction applied to "
 "a cross pattern."
 msgstr ""
-"여기에서 교차 패턴에 적용된 왜곡 보정을 축소판으로 미리 볼 수 있습니다."
+"여기에서 교차 패턴에 적용된 왜곡 보정을 섬네일으로 미리 볼 수 있습니다."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:114
 #, kde-format
@@ -17195,7 +17195,7 @@ msgstr "RAW 이미지 '%1' 불러오기 오류"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
-msgstr "이미지 '%1'의 축소판을 '%2'(으)로 저장할 수 없습니다."
+msgstr "이미지 '%1'의 섬네일을 '%2'(으)로 저장할 수 없습니다."
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:45
@@ -17596,12 +17596,12 @@ msgstr "원본 이미지 사용"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
 #, kde-format
 msgid "Thumbnail Properties:"
-msgstr "축소판 속성:"
+msgstr "섬네일 속성:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
 #, kde-format
 msgid "Square thumbnails"
-msgstr "사각형 축소판"
+msgstr "사각형 섬네일"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
 #, kde-format
@@ -17930,8 +17930,7 @@ msgctxt "@info"
 msgid ""
 "Set this option to turn-on the DLNA server at application start-up "
 "automatically"
-msgstr ""
-"이 옵션을 사용하면 프로그램을 시작할 때 자동으로 DLNA 서버를 활성화합니다"
+msgstr "이 옵션을 사용하면 앱을 시작할 때 자동으로 DLNA 서버를 활성화합니다"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:168
 #, fuzzy, kde-format
@@ -20746,15 +20745,15 @@ msgid ""
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
 "<qt><p><h1><b>이메일 도구에 오신 것을 환영합니다</b></h1></p><p>이 마법사는 "
-"항목을 이메일 클라이언트 프로그램으로 내보내는 과정을 안내합니다.</p><p>내용"
-"을 내보내기 전에 메일 서비스 기능에 따라 첨부 파일 속성을 조정할 수 있습니다."
-"</p></qt>"
+"항목을 이메일 클라이언트 앱으로 내보내는 과정을 안내합니다.</p><p>내용을 내보"
+"내기 전에 메일 서비스 기능에 따라 첨부 파일 속성을 조정할 수 있습니다.</p></"
+"qt>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
-msgstr "이메일 클라이언트 프로그램 실행 파일"
+msgstr "이메일 클라이언트 앱 실행 파일"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
 #, kde-format
@@ -22848,7 +22847,7 @@ msgstr "현재 서비스를 사용할 수 없습니다."
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:471
 #, kde-format
 msgid "The application has reached the maximum number of requests allowed."
-msgstr "프로그램에서 최대 요청 수를 초과했습니다."
+msgstr "앱에서 최대 요청 수를 초과했습니다."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:508
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:474
@@ -23568,7 +23567,7 @@ msgstr "태그 옵션"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:109
 #, kde-format
 msgid "Use Host Application Tags"
-msgstr "호스트 프로그램 태그 사용"
+msgstr "호스트 앱 태그 사용"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:111
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:472
@@ -29234,7 +29233,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
 #, kde-format
 msgid "Thumbs Db Name:"
-msgstr "축소판 DB 이름:"
+msgstr "섬네일 DB 이름:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
 #, fuzzy, kde-format
@@ -29423,7 +29422,7 @@ msgstr "코어 데이터베이스 이름이 비어 있습니다"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
 #, kde-format
 msgid "The thumbnails database name is empty"
-msgstr "축소판 데이터베이스 이름이 비어 있습니다"
+msgstr "섬네일 데이터베이스 이름이 비어 있습니다"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
 #, kde-format
@@ -29595,7 +29594,7 @@ msgstr "코어 DB 이름"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
-msgstr "축소판 DB 이름"
+msgstr "섬네일 DB 이름"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
@@ -29635,7 +29634,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
@@ -40344,7 +40343,7 @@ msgstr ""
 #: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
 #, kde-format
 msgid "Cannot create thumbnail for %1"
-msgstr "%1의 축소판을 만들 수 없음"
+msgstr "%1의 섬네일을 만들 수 없음"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
 #, fuzzy, kde-format
@@ -40526,7 +40525,7 @@ msgstr "존재하는 타임스탬프만 업데이트"
 #: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "EXIF: Thumbnail"
-msgstr "EXIF: 축소판"
+msgstr "EXIF: 섬네일"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
@@ -43428,7 +43427,7 @@ msgstr "Hans Karlsson"
 #: core/libs/widgets/mainview/daboutdata.cpp:404
 #, kde-format
 msgid "digiKam website banner and application icons"
-msgstr "digiKam 웹사이트 배너 및 프로그램 아이콘"
+msgstr "digiKam 웹사이트 배너 및 앱 아이콘"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:408
 #, kde-format
@@ -43438,7 +43437,7 @@ msgstr "Aaron Seigo"
 #: core/libs/widgets/mainview/daboutdata.cpp:409
 #, kde-format
 msgid "Various usability fixes and general application polishing"
-msgstr "다양한 사용 편의성 수정 및 일반 프로그램 다듬기"
+msgstr "다양한 사용 편의성 수정 및 일반 앱 다듬기"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:414
 #, kde-format
@@ -43607,12 +43606,12 @@ msgstr "전체 화면 모드로 창을 전환할 때 모든 도구 모음을 숨
 #: core/libs/widgets/mainview/fullscreensettings.cpp:70
 #, kde-format
 msgid "Hide &thumbbar"
-msgstr "축소판 표시줄 숨기기(&T)"
+msgstr "섬네일 표시줄 숨기기(&T)"
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:71
 #, kde-format
 msgid "Hide thumbbar view when window switch in full-screen mode."
-msgstr "전체 화면 모드로 창을 전환할 때 축소판 표시줄을 숨깁니다."
+msgstr "전체 화면 모드로 창을 전환할 때 섬네일 표시줄을 숨깁니다."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:73
 #, kde-format
@@ -44553,7 +44552,7 @@ msgstr "위성 항법 시스템"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:63
 #, kde-format
 msgid "Embedded Thumbnail"
-msgstr "내장된 축소판"
+msgstr "내장된 섬네일"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:70
 #, kde-format
@@ -50769,12 +50768,11 @@ msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
-"<qt>기본 인터페이스 플러그인 설정<br/><i>응용 프로그램에서 접근 할 수있는 플"
-"러그인 설정</i></qt>"
+"<qt>기본 인터페이스 플러그인 설정<br/><i>앱에서 접근할 수 있는 플러그인 설정"
+"</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:148
-#, fuzzy, kde-format
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "기타"
@@ -50797,7 +50795,7 @@ msgstr "캡션:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "방향 태그에 따라 회전된 이미지/축소판을 표시합니다(&R)."
+msgstr "방향 태그에 따라 회전된 이미지/섬네일을 표시합니다(&R)."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:98
 #, kde-format
@@ -50927,7 +50925,7 @@ msgstr "이미지 형식 표시(&S)"
 #: core/utilities/setup/camera/setupcamera.cpp:486
 #, kde-format
 msgid "Set this option to show image format over image thumbnail."
-msgstr "이 옵션을 사용하면 이미지 축소판 위에 이미지 형식을 표시합니다."
+msgstr "이 옵션을 사용하면 이미지 섬네일 위에 이미지 형식을 표시합니다."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:178
 #, kde-format
@@ -50944,7 +50942,7 @@ msgstr "이 옵션을 사용하면 이미지에 지리적 위치 정보가 있�
 #: core/utilities/setup/misc/setupmisc.cpp:93
 #, kde-format
 msgid "Scroll current item to center of thumbbar"
-msgstr "현재 항목을 축소판 표시줄 가운데로 스크롤"
+msgstr "현재 항목을 섬네일 표시줄 가운데로 스크롤"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc.cpp:115
@@ -51136,13 +51134,13 @@ msgstr "시스템 아이콘 테마 사용"
 #: core/utilities/setup/misc/setupmisc.cpp:272
 #, kde-format
 msgid "Application font:"
-msgstr "프로그램 글꼴:"
+msgstr "앱 글꼴:"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:318
 #: core/utilities/setup/misc/setupmisc.cpp:273
 #, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "전체 프로그램에서 텍스트를 표시할 때 사용할 글꼴을 선택하십시오."
+msgstr "전체 앱에서 텍스트를 표시할 때 사용할 글꼴을 선택하십시오."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:332
 #: core/utilities/setup/misc/setupmisc.cpp:288
@@ -53415,7 +53413,7 @@ msgstr ""
 #: core/utilities/firstrun/previewpage.cpp:74
 #, kde-format
 msgid "Load reduced version of image"
-msgstr "이미지 축소판 불러오기"
+msgstr "이미지 섬네일 불러오기"
 
 #: core/utilities/firstrun/previewpage.cpp:79
 #, kde-format
@@ -54235,11 +54233,11 @@ msgid ""
 "Please enable reading of sidecar files in the host application or continue "
 "at your own risk."
 msgstr ""
-"호스트 프로그램의 메타데이터 저장소에서 사이드카 파일에 쓰기를 활성화했지만, "
-"읽기를 활성화하지는 않았습니다. 사이드카 파일에 저장된 모든 메타데이터를 덮어"
-"쓸 것입니다.\n"
-"호스트 프로그램에서 사이드카 파일을 읽도록 설정하거나 직접 위험을 감수하고 계"
-"속 진행하십시오."
+"호스트 앱의 메타데이터 저장소에서 사이드카 파일에 쓰기를 활성화했지만, 읽기"
+"를 활성화하지는 않았습니다. 사이드카 파일에 저장된 모든 메타데이터를 덮어쓸 "
+"것입니다.\n"
+"호스트 앱에서 사이드카 파일을 읽도록 설정하거나 직접 위험을 감수하고 계속 진"
+"행하십시오."
 
 #: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:210
 #, kde-format
@@ -54905,7 +54903,7 @@ msgstr "축소"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
 #, kde-format
 msgid "Switch between markers and thumbnails."
-msgstr "마커와 축소판 사이를 전환합니다."
+msgstr "마커와 섬네일 사이를 전환합니다."
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
 #, kde-format
@@ -54925,12 +54923,12 @@ msgstr "숫자 표시"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
 #, kde-format
 msgid "Increase the thumbnail size on the map"
-msgstr "지도의 축소판 크기를 확대합니다"
+msgstr "지도의 섬네일 크기를 확대합니다"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
-msgstr "지도의 축소판 크기를 축소합니다"
+msgstr "지도의 섬네일 크기를 축소합니다"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
@@ -54955,7 +54953,7 @@ msgstr "그룹으로 크기 조절"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
 #, kde-format
 msgid "Create a region selection from a thumbnail"
-msgstr "축소판에서 지역 선택"
+msgstr "섬네일에서 지역 선택"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
@@ -55630,7 +55628,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Open With Default Application"
-msgstr "기본 프로그램으로 열기"
+msgstr "기본 앱으로 열기"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:328
 #, fuzzy, kde-format
@@ -56347,7 +56345,7 @@ msgstr "<filename>%1</filename>에 있는 파일 목록을 가져오지 못했�
 #: core/utilities/import/backend/cameracontroller.cpp:562
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
-msgstr "<filename>%1</filename>에 대한 축소판을 가져오지 못했습니다"
+msgstr "<filename>%1</filename>에 대한 섬네일을 가져오지 못했습니다"
 
 #: core/utilities/import/backend/cameracontroller.cpp:580
 #, kde-kuit-format
@@ -56638,7 +56636,7 @@ msgstr "드라이버 정보"
 #, kde-format
 msgctxt "@title"
 msgid "Thumb"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/utilities/import/dialogs/capturedlg.cpp:70
 #, kde-format
@@ -56868,7 +56866,7 @@ msgstr "보기"
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/utilities/import/main/importui.cpp:369
 #, kde-format
@@ -57014,7 +57012,7 @@ msgstr "기록 표시"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
-msgstr "축소판 표시줄 표시"
+msgstr "섬네일 표시줄 표시"
 
 #: core/utilities/import/main/importui.cpp:537
 #, kde-format
@@ -57894,7 +57892,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Open With Default Application"
-msgstr "기본 프로그램으로 열기"
+msgstr "기본 앱으로 열기"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:68
 #, kde-format
@@ -58047,7 +58045,7 @@ msgstr ""
 #: core/utilities/maintenance/dbcleaner.cpp:259
 #, kde-format
 msgid "cleaning thumbnails db"
-msgstr "축소판 DB 정리 중"
+msgstr "섬네일 DB 정리 중"
 
 #: core/utilities/maintenance/dbcleaner.cpp:290
 #, fuzzy, kde-format
@@ -58082,7 +58080,7 @@ msgstr "날짜:"
 #: core/utilities/maintenance/dbcleaner.cpp:514
 #, kde-format
 msgid "Thumbnails DB"
-msgstr "축소판 DB"
+msgstr "섬네일 DB"
 
 #: core/utilities/maintenance/dbcleaner.cpp:515
 #, fuzzy, kde-format
@@ -58234,7 +58232,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancedlg.cpp:252
 #, kde-format
 msgid "Rebuild Thumbnails"
-msgstr "축소판 재구성"
+msgstr "섬네일 재구성"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:259
 #, kde-format
@@ -58414,7 +58412,7 @@ msgstr "선택 반전"
 #: core/utilities/maintenance/thumbsgenerator.cpp:114
 #, kde-format
 msgid "Thumbs"
-msgstr "축소판"
+msgstr "섬네일"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
@@ -60322,7 +60320,7 @@ msgid ""
 "Set this option to show an icon over the image thumbnail if item has "
 "geolocation information."
 msgstr ""
-"이 옵션을 사용하면 항목에 지리적 위치 정보가 있는 경우 이미지 축소판 위에 아"
+"이 옵션을 사용하면 항목에 지리적 위치 정보가 있는 경우 이미지 섬네일 위에 아"
 "이콘을 표시합니다."
 
 #: core/utilities/setup/album/setupalbumview.cpp:216
@@ -62652,7 +62650,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "방향 태그에 따라 회전된 이미지/축소판을 표시합니다(&R)."
+msgstr "방향 태그에 따라 회전된 이미지/섬네일을 표시합니다(&R)."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:109
 #, kde-format
@@ -63506,7 +63504,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:382
 #, kde-format
 msgid "Use color managed view for previews and thumbnails"
-msgstr "미리 보기 및 축소판에 색 관리된 보기 사용"
+msgstr "미리 보기 및 섬네일에 색 관리된 보기 사용"
 
 #: core/utilities/setup/setupicc.cpp:398
 #, kde-format
@@ -63702,7 +63700,7 @@ msgstr ""
 #: core/utilities/setup/setuplighttable.cpp:96
 #, kde-format
 msgid "Selecting a thumbbar item loads the image to the right panel"
-msgstr "축소판 표시줄 항목을 선택할 때 이미지를 오른쪽 패널로 불러오기"
+msgstr "섬네일 표시줄 항목을 선택할 때 이미지를 오른쪽 패널로 불러오기"
 
 #: core/utilities/setup/setuplighttable.cpp:98
 #, kde-format
@@ -63710,7 +63708,7 @@ msgid ""
 "Set this option to automatically load an image into the right panel when the "
 "corresponding item is selected on the thumbbar."
 msgstr ""
-"이 옵션을 선택하면 축소판 표시줄에서 항목을 선택할 때 이미지를 오른쪽 패널에 "
+"이 옵션을 선택하면 섬네일 표시줄에서 항목을 선택할 때 이미지를 오른쪽 패널에 "
 "자동으로 불러옵니다."
 
 #: core/utilities/setup/setuplighttable.cpp:101
