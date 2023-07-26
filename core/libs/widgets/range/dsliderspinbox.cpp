@@ -183,16 +183,16 @@ void DAbstractSliderSpinBox::paintEvent(QPaintEvent* e)
 
     switch (d->style)
     {
-        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
-            paintFusion(painter);
-            break;
-
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             paintPlastique(painter);
             break;
 
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
             paintBreeze(painter);
+            break;
+
+        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
+            paintFusion(painter);
             break;
 
         default:
