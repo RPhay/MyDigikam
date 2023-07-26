@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-19 00:47+0000\n"
-"PO-Revision-Date: 2023-07-03 20:34+0200\n"
+"PO-Revision-Date: 2023-07-25 19:34+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -12313,31 +12313,31 @@ msgstr "Controllo del guadagno:"
 #, kde-format
 msgctxt "gain control"
 msgid "None"
-msgstr "Senza"
+msgstr "Nessuno"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
-msgstr "Leggero aumento del guadagno"
+msgstr "Aumento leggero"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
-msgstr "Forte aumento del guadagno"
+msgstr "Aumento forte"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
-msgstr "Leggera riduzione del guadagno"
+msgstr "Riduzione leggera"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
-msgstr "Forte riduzione del guadagno"
+msgstr "Riduzione forte"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
 #, kde-format
@@ -12859,7 +12859,7 @@ msgstr "Programma d'azione"
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
-msgstr "Modalità per ritratti"
+msgstr "Modalità ritratto"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:191
 #, kde-format
@@ -13089,7 +13089,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
-msgstr "Tipo di distanza dell'oggetto:"
+msgstr "Tipo di distanza del soggetto:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
 #, kde-format
@@ -13122,8 +13122,8 @@ msgid ""
 "Select here the type of distance between the subject and the image input "
 "equipment."
 msgstr ""
-"Seleziona il tipo di distanza tra il soggetto e il dispositivo di input "
-"dell'immagine."
+"Seleziona il tipo di distanza tra il soggetto e il dispositivo di "
+"acquisizione dell'immagine."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
 #, kde-format
@@ -13279,19 +13279,19 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "Apertura della lente (fattore f):"
+msgstr "Apertura diaframma (fattore f):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr ""
-"Seleziona qui l'apertura della lente usata dalla macchina fotografica per "
+"Seleziona qui l'apertura del diaframma usata dalla macchina fotografica per "
 "scattare la foto."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
 #, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr "Apertura massima della lente (fattore f):"
+msgstr "Apertura massima diaframma (fattore f):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
 #, kde-format
