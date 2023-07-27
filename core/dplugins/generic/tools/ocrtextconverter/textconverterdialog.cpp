@@ -171,7 +171,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     tesseractLabel->setWordWrap(true);
     tesseractLabel->setOpenExternalLinks(true);
 
-    d->binWidget                      = new DBinarySearch(recognitionTab);
+    d->binWidget                  = new DBinarySearch(recognitionTab);
     d->binWidget->addBinary(d->tesseractBin);
 
 #ifdef Q_OS_MACOS
@@ -200,7 +200,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #endif
 
-    d->ocrSettings                    = new TextConverterSettings(recognitionTab);
+    d->ocrSettings                = new TextConverterSettings(recognitionTab);
 
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -214,8 +214,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // --- Review tab --------------------------------------------------------------------------
 
-    DVBox* const reviewTab            = new DVBox(d->tabView);
-    d->textedit                       = new DTextEdit(0, reviewTab);
+    DVBox* const reviewTab = new DVBox(d->tabView);
+    d->textedit            = new DTextEdit(0, reviewTab);
     d->textedit->setPlaceholderText(i18nc("@info", "After to process recognition, "
                                                    "double-click on one item to "
                                                    "display recognized text here. "
@@ -224,7 +224,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
                                                    "button to record your changes."));
     reviewTab->setStretchFactor(d->textedit, 100);
 
-    d->saveTextButton                 = new QPushButton(reviewTab);
+    d->saveTextButton      = new QPushButton(reviewTab);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
     d->saveTextButton->setEnabled(false);
 
