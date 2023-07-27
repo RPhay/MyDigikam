@@ -25,6 +25,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 
 namespace DigikamGenericTextConverterPlugin
@@ -75,7 +76,17 @@ QStringList TesseractBinary::tesseractLanguages() const
     if (val && (process.error() != QProcess::FailedToStart))
     {
         QString output    = QString::fromUtf8(process.readAllStandardOutput());
+
+#ifdef Q_OS_WIN
+
+        QStringList lines = output.split(QLatin1String("\r\n"));
+
+#else
+
         QStringList lines = output.split(QLatin1Char('\n'));
+
+#endif
+
         bool found        = false;
 
         Q_FOREACH (const QString& l, lines)
