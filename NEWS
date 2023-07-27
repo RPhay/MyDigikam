@@ -22,7 +22,7 @@ BUGFIXES:
 013 ==> 472269 - Unable to change/remove "Ignored" identity Face Tags and name as a person.
 014 ==> 465635 - Geolocate is too slow: it reads way too much data.
 015 ==> 457272 - Incorrect UI Element Padding under KDE with Breeze Theme at 1.5 scale.
-016 ==> 
+016 ==> 472704 - Tags are not saved on exit.
 017 ==> 
 018 ==> 
 019 ==> 
