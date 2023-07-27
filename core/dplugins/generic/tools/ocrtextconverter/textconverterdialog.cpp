@@ -187,7 +187,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #ifdef Q_OS_WIN
 
-    d->binWidget->addDirectory(QLatin1String("C:/Program Files/digiKam"));
+    d->binWidget->addDirectory(QLatin1String("C:/Program Files/Tesseract-OCR"));
 
 #endif
 
