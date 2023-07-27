@@ -28,8 +28,9 @@
 
 // Local includes
 
-#include "dbinarysearch.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
+#include "dbinarysearch.h"
 #include "jalbumjar.h"
 #include "jalbumjava.h"
 #include "jalbumwizard.h"

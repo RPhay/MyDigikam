@@ -31,6 +31,7 @@
 // local includes
 
 #include "digikam_globals.h"
+#include "digikam_config.h"
 #include "dbinarysearch.h"
 #include "alignbinary.h"
 #include "enfusebinary.h"

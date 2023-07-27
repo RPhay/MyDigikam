@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
 #include "textconverterlist.h"
