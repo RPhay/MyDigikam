@@ -205,7 +205,7 @@ int OcrTesseractEngine::runOcrProcess()
         return PROCESS_FAILED;
     }
 
-    d->ocrResult = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
+    d->ocrResult = QString::fromUtf8(d->ocrProcess->readAllStandardOutput());
 
     saveOcrResult();
 
