@@ -23,7 +23,7 @@ BUGFIXES:
 014 ==> 465635 - Geolocate is too slow: it reads way too much data.
 015 ==> 457272 - Incorrect UI Element Padding under KDE with Breeze Theme at 1.5 scale.
 016 ==> 472704 - Tags are not saved on exit.
-017 ==> 472683 - showFoto ignores icons scale configured for Digikam when launched outside it.
-018 ==> 
+017 ==> 472683 - Showfoto ignores icons scale configured for Digikam when launched outside it.
+018 ==> 472704 - Tags are not saved on exit.
 019 ==> 
 020 ==> 
