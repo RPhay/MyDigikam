@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-19 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:43+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -2974,7 +2974,7 @@ msgstr "Mostrar no Ecrã Completo"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:93
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
@@ -16746,14 +16746,14 @@ msgstr ""
 "Processar uma antevisão das imagens delimitadas com a configuração actual."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "Pre&definição"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
@@ -16887,19 +16887,19 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Bem-Vindo à Ferramenta de Imagens Empilhadas"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Bem-Vindo à Ferramenta de Imagens Empilhadas"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16909,7 +16909,7 @@ msgstr ""
 "Esta ferramenta funde as imagens delimitadas com diferentes exposições para "
 "criar uma pseudo-imagem HDR"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16919,7 +16919,7 @@ msgstr ""
 "Pode ser usada para reunir uma pilha com focagem delimitada para obter uma "
 "única imagem com um campo de profundidade aumentado."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16929,7 +16929,7 @@ msgstr ""
 "Este assistente ajudá-lo-á a configurar a importação das imagens antes de as "
 "reunir numa só."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16939,20 +16939,20 @@ msgstr ""
 "As imagens delimitadas deverão ser tiradas com a mesma câmara, nas mesmas "
 "condições e, se possível, recorrendo a um tripé."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr "Para mais informações, dê uma vista de olhos em "
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "esta página"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
@@ -17527,7 +17527,7 @@ msgstr ""
 "com um tema bonito.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
@@ -17536,7 +17536,7 @@ msgid "&Choose image selection method:"
 msgstr "Es&colha o método de selecção da imagem:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
@@ -17740,7 +17740,7 @@ msgstr "O jAlbum está completo, mas ocorreram alguns avisos."
 msgid "Jalbum completed."
 msgstr "O jAlbum está completo."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17751,7 +17751,7 @@ msgstr ""
 "assistente guiá-lo-á na exportação</p><p></p><p>rápida das suas imagens como "
 "um projecto do jAlbum.</p></qt>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
@@ -18533,7 +18533,7 @@ msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
 msgstr "A opção por omissão, baseada no que estiver disponível."
 
-#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:43
+#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:44
 #, kde-format
 msgid ""
 "Tesseract is an optical character recognition engine for various operating "
@@ -18542,19 +18542,19 @@ msgstr ""
 "O Tesseract é um motor de reconhecimento óptico de caracteres para diversos "
 "sistemas operativos."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Conversão para Texto por OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:132
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "&Iniciar o OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:164
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18566,13 +18566,13 @@ msgstr ""
 "Reconhecimento Óptico de Caracteres. O Tesseract e os pacotes de línguas "
 "desejados deverão estar instalados no seu sistema."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Reconhecimento de Texto"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18584,55 +18584,55 @@ msgstr ""
 "mostrar aqui o texto reconhecido. Poderá rever as palavras e corrigir se "
 "necessário. Carregue no botão Gravar para guardar as suas alterações."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Gravar"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:233
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
 msgstr "Revisão do Texto"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:383
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:384
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "A processar a %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:457
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "O processo falhou"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:462
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:463
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Processo cancelado"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:470
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:471
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Erro interno"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:521
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:522
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Sucesso"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Conversão para Texto"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:587
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18642,38 +18642,38 @@ msgstr ""
 "A lista não contém nenhuns ficheiros digitais para processar. Tem de os "
 "seleccionar."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:598
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Conversão para Texto"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "&Interromper"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:672
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Interromper o processamento com OCR dos ficheiros RAW."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:676
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "&Iniciar o OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:716
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:678
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:717
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "Iniciar o OCR com a configuração actual."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:721
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18683,13 +18683,13 @@ msgstr ""
 "O programa Tesseract e/ou os módulos de línguas\n"
 "não estão instalados no seu sistema."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:754
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Processar Todos os Itens"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:755
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:756
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -18996,19 +18996,19 @@ msgstr "Não foi possível criar a imagem TIFF."
 msgid "Raw file conversion failed."
 msgstr "Não foi possível converter o ficheiro RAW."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Bem-Vindo à Ferramenta de Panoramas"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:106
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Bem-Vindo à Ferramenta de Panoramas"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19018,7 +19018,7 @@ msgstr ""
 "Esta ferramenta junta várias imagens em conjunto para criar um panorama, "
 "tornando invisível a transição entre imagens."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -19028,37 +19028,37 @@ msgstr ""
 "Este assistente ajudá-lo-á a configurar a importação das imagens antes de as "
 "juntar num panorama."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "As imagens deverão ser tiradas do mesmo ponto de vista."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Para mais informações, dê uma vista de olhos em "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Binários do Panorama"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:181
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Formato do Ficheiro"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:185
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Resultado em JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:190
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19068,7 +19068,7 @@ msgstr ""
 "Selecciona um resultado em JPEG com uma taxa de compressão de 90% "
 "(compressão com perdas, tamanho menor)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19080,13 +19080,13 @@ msgstr ""
 "será menor às custas da perda de informação durante a compressão. Esta é a "
 "forma mais simples de partilhar o resultado, colocá-lo 'online' ou numa loja."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:198
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Resultado em TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19096,7 +19096,7 @@ msgstr ""
 "Selecciona um resultado em TIFF, comprimido com o algoritmo LZW (compressão "
 "sem perdas, tamanho maior)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -50286,26 +50286,26 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Aparência"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:338
-#: core/utilities/setup/misc/setupmisc.cpp:367
-#, kde-format
-msgctxt "@title:tab"
-msgid "System"
-msgstr "Sistema"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
+#: core/showfoto/setup/showfotosetupmisc.cpp:340
 #: core/utilities/setup/misc/setupmisc.cpp:355
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Verificação Ortográfica"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/showfoto/setup/showfotosetupmisc.cpp:346
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Localizar"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/utilities/setup/misc/setupmisc.cpp:367
+#, kde-format
+msgctxt "@title:tab"
+msgid "System"
+msgstr "Sistema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:384
 #: core/utilities/setup/misc/setupmisc.cpp:400
