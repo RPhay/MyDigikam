@@ -27,7 +27,7 @@ BUGFIXES:
 018 ==> 472704 - Tags are not saved on exit.
 019 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
 020 ==> 472734 - Database creation on MariaDB fails.
-021 ==> 
+021 ==> 472692 - Tesseract OCR does not take language selection into account.
 022 ==> 
 023 ==> 
 024 ==> 

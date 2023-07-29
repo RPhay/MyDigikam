@@ -50,6 +50,7 @@
 #include "itemlister.h"
 #include "itemlisterreceiver.h"
 #include "dio.h"
+#include "metadatahub.h"
 #include "fileactionmngr.h"
 #include "tagsactionmngr.h"
 #include "setup.h"
@@ -535,34 +536,40 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 {
     ItemInfo info    = ItemInfo::fromUrl(url);
     QStringList keys = map.keys();
+    int writeFlags   = 0;
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DBInfoIface::setItemInfo() keys:" << keys;
 
     if (map.contains(QLatin1String("orientation")))
     {
-        info.setOrientation(map[QLatin1String("orientation")].toInt());
+        FileActionMngr::instance()->setExifOrientation(QList<ItemInfo>() << info,
+                                                       map[QLatin1String("orientation")].toInt());
         keys.removeAll(QLatin1String("orientation"));
     }
 
     if (map.contains(QLatin1String("rating")))
     {
         info.setRating(map[QLatin1String("rating")].toInt());
+        writeFlags |= MetadataHub::WRITE_RATING;
         keys.removeAll(QLatin1String("rating"));
     }
 
     if (map.contains(QLatin1String("colorlabel")))
     {
         info.setColorLabel(map[QLatin1String("colorlabel")].toInt());
+        writeFlags |= MetadataHub::WRITE_COLORLABEL;
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
     if (map.contains(QLatin1String("picklabel")))
     {
         info.setPickLabel(map[QLatin1String("picklabel")].toInt());
+        writeFlags |= MetadataHub::WRITE_PICKLABEL;
         keys.removeAll(QLatin1String("picklabel"));
     }
 
-    // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
+    // NOTE: For now tag doesn't really exist anywhere else apart from digikam
+    // therefore it's not really necessary to implement accessor method in InfoIface.
 
     if (map.contains(QLatin1String("tag")))
     {
@@ -570,18 +577,21 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
         if (!info.tagIds().contains(tagID))
         {
-            FileActionMngr::instance()->assignTag(info, tagID);
+            info.setTag(tagID);
         }
         else
         {
-            FileActionMngr::instance()->removeTag(info, tagID);
+            info.removeTag(tagID);
         }
+
+        writeFlags |= MetadataHub::WRITE_TAGS;
     }
 
     if (map.contains(QLatin1String("titles")))
     {
         ItemComments comments = info.imageComments(CoreDbAccess());
         comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]), DatabaseComment::Title);
+        writeFlags |= MetadataHub::WRITE_TITLE;
         keys.removeAll(QLatin1String("titles"));
     }
 
@@ -589,6 +599,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     {
         ItemComments comments = info.imageComments(CoreDbAccess());
         comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]), DatabaseComment::Comment);
+        writeFlags |= MetadataHub::WRITE_COMMENTS;
         keys.removeAll(QLatin1String("captions"));
     }
 
@@ -597,6 +608,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         Template tpl = info.metadataTemplate();
         tpl.setCopyright(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrights")]));
         info.setMetadataTemplate(tpl);
+        writeFlags  |= MetadataHub::WRITE_TEMPLATE;
         keys.removeAll(QLatin1String("copyrights"));
     }
 
@@ -605,12 +617,21 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         Template tpl = info.metadataTemplate();
         tpl.setRightUsageTerms(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrightnotices")]));
         info.setMetadataTemplate(tpl);
+        writeFlags  |= MetadataHub::WRITE_TEMPLATE;
         keys.removeAll(QLatin1String("copyrightnotices"));
     }
 
     if (!keys.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Keys not yet supported in DBInfoIface::setItemInfo():" << keys;
+    }
+
+    if (writeFlags)
+    {
+        MetadataHub hub;
+        hub.load(info);
+
+        hub.writeToMetadata(info, (MetadataHub::WriteComponents)writeFlags);
     }
 }
 
