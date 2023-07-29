@@ -26,4 +26,14 @@ BUGFIXES:
 017 ==> 472683 - Showfoto ignores icons scale configured for Digikam when launched outside it.
 018 ==> 472704 - Tags are not saved on exit.
 019 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
-020 ==> 
+020 ==> 472734 - Database creation on MariaDB fails.
+021 ==> 
+022 ==> 
+023 ==> 
+024 ==> 
+025 ==> 
+026 ==> 
+027 ==> 
+028 ==> 
+029 ==> 
+030 ==> 
