@@ -70,7 +70,7 @@ DInfoInterface::DInfoMap DInfoInterface::itemInfo(const QUrl&) const
     return DInfoMap();
 }
 
-void DInfoInterface::setItemInfo(const QUrl&, const DInfoMap&) const
+void DInfoInterface::setItemInfo(const QUrl&, const DInfoMap&)
 {
     qCWarning(DIGIKAM_GENERAL_LOG) << "setItemInfo() not implemented in host interface";
 }

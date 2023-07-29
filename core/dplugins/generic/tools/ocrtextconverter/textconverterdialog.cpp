@@ -278,9 +278,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(d->saveTextButton, SIGNAL(clicked()),
             this, SLOT(slotUpdateText()));
 
-    connect(this, SIGNAL(signalMetadataChangedForUrl(QUrl)),
-            d->iface, SLOT(slotMetadataChangedForUrl(QUrl)));
-
     connect(d->binWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotTesseractBinaryFound(bool)));
 
@@ -360,8 +357,6 @@ void TextConverterDialog::slotUpdateText()
             OcrTesseractEngine::saveXMP(d->currentSelectedItem->url(),
                                         commentsMap,
                                         opt.iface);
-
-            Q_EMIT signalMetadataChangedForUrl(d->currentSelectedItem->url());
         }
     }
 }
@@ -419,8 +414,6 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText;
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
-
-                    Q_EMIT signalMetadataChangedForUrl(ad.fileUrl);
 
                     break;
                 }

@@ -50,7 +50,7 @@
 #include "itemlister.h"
 #include "itemlisterreceiver.h"
 #include "dio.h"
-#include "metadatahub.h"
+#include "disjointmetadata.h"
 #include "fileactionmngr.h"
 #include "tagsactionmngr.h"
 #include "setup.h"
@@ -532,11 +532,12 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
     return map;
 }
 
-void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
+void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map)
 {
     ItemInfo info    = ItemInfo::fromUrl(url);
     QStringList keys = map.keys();
-    int writeFlags   = 0;
+    DisjointMetadata hub;
+    hub.load(info);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DBInfoIface::setItemInfo() keys:" << keys;
 
@@ -549,22 +550,19 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     if (map.contains(QLatin1String("rating")))
     {
-        info.setRating(map[QLatin1String("rating")].toInt());
-        writeFlags |= MetadataHub::WRITE_RATING;
+        hub.setRating(map[QLatin1String("rating")].toInt());
         keys.removeAll(QLatin1String("rating"));
     }
 
     if (map.contains(QLatin1String("colorlabel")))
     {
-        info.setColorLabel(map[QLatin1String("colorlabel")].toInt());
-        writeFlags |= MetadataHub::WRITE_COLORLABEL;
+        hub.setColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
     if (map.contains(QLatin1String("picklabel")))
     {
-        info.setPickLabel(map[QLatin1String("picklabel")].toInt());
-        writeFlags |= MetadataHub::WRITE_PICKLABEL;
+        hub.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
     }
 
@@ -573,51 +571,35 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     if (map.contains(QLatin1String("tag")))
     {
-        int tagID = map[QLatin1String("tag")].toInt();
-
-        if (!info.tagIds().contains(tagID))
-        {
-            info.setTag(tagID);
-        }
-        else
-        {
-            info.removeTag(tagID);
-        }
-
-        writeFlags |= MetadataHub::WRITE_TAGS;
+        hub.setTag(map[QLatin1String("tag")].toInt());
+        keys.removeAll(QLatin1String("tag"));
     }
 
     if (map.contains(QLatin1String("titles")))
     {
-        ItemComments comments = info.imageComments(CoreDbAccess());
-        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]), DatabaseComment::Title);
-        writeFlags |= MetadataHub::WRITE_TITLE;
+        hub.setTitles(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]));
         keys.removeAll(QLatin1String("titles"));
     }
 
     if (map.contains(QLatin1String("captions")))
     {
-        ItemComments comments = info.imageComments(CoreDbAccess());
-        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]), DatabaseComment::Comment);
-        writeFlags |= MetadataHub::WRITE_COMMENTS;
+        hub.setComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]));
         keys.removeAll(QLatin1String("captions"));
     }
 
+    Template tpl = hub.metadataTemplate();
+
     if (map.contains(QLatin1String("copyrights")))
     {
-        Template tpl = info.metadataTemplate();
         tpl.setCopyright(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrights")]));
-        info.setMetadataTemplate(tpl);
-        writeFlags  |= MetadataHub::WRITE_TEMPLATE;
+        hub.setMetadataTemplate(tpl);
         keys.removeAll(QLatin1String("copyrights"));
     }
 
     if (map.contains(QLatin1String("copyrightnotices")))
     {
-        Template tpl = info.metadataTemplate();
         tpl.setRightUsageTerms(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrightnotices")]));
-        info.setMetadataTemplate(tpl);
-        writeFlags  |= MetadataHub::WRITE_TEMPLATE;
+        hub.setMetadataTemplate(tpl);
         keys.removeAll(QLatin1String("copyrightnotices"));
     }
 
@@ -626,12 +608,12 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         qCWarning(DIGIKAM_GENERAL_LOG) << "Keys not yet supported in DBInfoIface::setItemInfo():" << keys;
     }
 
-    if (writeFlags)
-    {
-        MetadataHub hub;
-        hub.load(info);
+    // We write to the database immediately because
+    // the FileActionMngr writes with a delay.
 
-        hub.writeToMetadata(info, (MetadataHub::WriteComponents)writeFlags);
+    if (hub.write(info, DisjointMetadata::PartialWrite))
+    {
+        FileActionMngr::instance()->applyMetadata(QList<ItemInfo>() << info, hub);
     }
 }
 

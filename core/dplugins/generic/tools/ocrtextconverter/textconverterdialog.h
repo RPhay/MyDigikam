@@ -62,10 +62,6 @@ private:
     void plugProcessMenu();
     void unplugProcessMenu();
 
-Q_SIGNALS:
-
-    void signalMetadataChangedForUrl(const QUrl&);
-
 private Q_SLOTS:
 
     void slotDefault();
