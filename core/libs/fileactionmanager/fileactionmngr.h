@@ -67,13 +67,13 @@ public Q_SLOTS:
     void removeTags(const ItemInfo& info, const QList<int>& tagIDs);
     void removeTags(const QList<ItemInfo>& infos, const QList<int>& tagIDs);
 
-    void assignPickLabel(const ItemInfo& infos, int pickId);
+    void assignPickLabel(const ItemInfo& info, int pickId);
     void assignPickLabel(const QList<ItemInfo>& infos, int pickId);
 
-    void assignColorLabel(const ItemInfo& infos, int colorId);
+    void assignColorLabel(const ItemInfo& info, int colorId);
     void assignColorLabel(const QList<ItemInfo>& infos, int colorId);
 
-    void assignRating(const ItemInfo& infos, int rating);
+    void assignRating(const ItemInfo& info, int rating);
     void assignRating(const QList<ItemInfo>& infos, int rating);
 
     void addToGroup(const ItemInfo& pick, const QList<ItemInfo>& infos);
