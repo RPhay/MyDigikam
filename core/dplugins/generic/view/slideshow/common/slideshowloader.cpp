@@ -613,7 +613,7 @@ void SlideShowLoader::keyPressEvent(QKeyEvent* e)
 
     if (e->key() == Qt::Key_F4)
     {
-        d->osd->toggleProperties();
+        d->osd->setVisible(!d->osd->isVisible());
         return;
     }
 

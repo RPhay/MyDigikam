@@ -27,7 +27,7 @@ BUGFIXES:
 018 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
 019 ==> 472734 - Database creation on MariaDB fails.
 020 ==> 472692 - Tesseract OCR does not take language selection into account.
-021 ==> 
+021 ==> 426478 - Slideshow: rating editor cannot be toggled by F4.
 022 ==> 
 023 ==> 
 024 ==> 
