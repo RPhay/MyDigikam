@@ -24,10 +24,10 @@ BUGFIXES:
 015 ==> 457272 - Incorrect UI Element Padding under KDE with Breeze Theme at 1.5 scale.
 016 ==> 472704 - Tags are not saved on exit.
 017 ==> 472683 - Showfoto ignores icons scale configured for Digikam when launched outside it.
-018 ==> 472704 - Tags are not saved on exit.
-019 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
-020 ==> 472734 - Database creation on MariaDB fails.
-021 ==> 472692 - Tesseract OCR does not take language selection into account.
+018 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
+019 ==> 472734 - Database creation on MariaDB fails.
+020 ==> 472692 - Tesseract OCR does not take language selection into account.
+021 ==> 
 022 ==> 
 023 ==> 
 024 ==> 
