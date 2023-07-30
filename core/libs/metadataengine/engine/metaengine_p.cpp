@@ -706,7 +706,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             QByteArray rawComment(exifDatum.size(), '\0');
             exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::bigEndian);
 
-            rawComment          = rawComment.mid(8);
+            rawComment          = rawComment.mid(8);    // remove "UNICODE\0"
             QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
 
             if (utf16String.isValidUtf16())
