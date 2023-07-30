@@ -677,7 +677,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         comment = exifDatum.toString();
 
-        // libexiv2 will prepend "charset=\"SomeCharset\" " if charset is specified
+        // libexiv2 will prepend "charset=SomeCharset " if charset is specified
         // Before conversion to QString, we must know the charset, so we stay with std::string for a while
 
         if ((comment.length() > 8) && (comment.substr(0, 8) == "charset="))
@@ -690,11 +690,11 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             {
                 // extract string between the = and the blank
 
-                charset = comment.substr(8, pos-8);
+                charset = comment.substr(8, pos - 8);
 
                 // get the rest of the string after the charset specification
 
-                comment = comment.substr(pos+1);
+                comment = comment.substr(pos + 1);
             }
         }
 

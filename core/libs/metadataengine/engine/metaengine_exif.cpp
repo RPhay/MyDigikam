@@ -306,7 +306,7 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
             {
                 // write as ASCII
 
-                QString exifComment(QString::fromLatin1("charset=\"Ascii\" %1").arg(comment));
+                QString exifComment(QString::fromLatin1("charset=Ascii %1").arg(comment));
                 d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
 
                 return true;
@@ -314,7 +314,7 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
 
             // write as Unicode (UCS-2)
 
-            QString exifComment(QString::fromUtf8("charset=\"Unicode\" %1").arg(comment));
+            QString exifComment(QString::fromUtf8("charset=Unicode %1").arg(comment));
             d->exifMetadata()["Exif.Photo.UserComment"] = exifComment.toStdString();
         }
 
