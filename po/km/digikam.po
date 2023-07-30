@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:43+0000\n"
+"POT-Creation-Date: 2023-07-30 00:43+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1208,7 +1208,7 @@ msgstr "ទី​ចំហ/​ដែល​​ប្រសព្វ​គ្ន�
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -17674,7 +17674,7 @@ msgstr "ទិសដៅ​ ៖"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@title:window"
@@ -18683,47 +18683,47 @@ msgctxt "@title"
 msgid "Text Review"
 msgstr "តម្រង​អត្ថបទ"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:384
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, fuzzy, kde-format
 #| msgid "Processing file %1 / %2"
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "ដំណើរការ​ឯកសារ %1 / %2"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:457
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, fuzzy, kde-format
 #| msgid "Processing file %1 / %2"
 msgctxt "@info"
 msgid "Process failed"
 msgstr "ដំណើរការ​ឯកសារ %1 / %2"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:463
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, fuzzy, kde-format
 #| msgid "Processing file %1 / %2"
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "ដំណើរការ​ឯកសារ %1 / %2"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:471
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "ថែម​ថយ"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:522
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "ដាក់​បញ្ច្រាស"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:587
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18731,42 +18731,42 @@ msgid ""
 "them."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:598
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "ដាក់​បញ្ច្រាស"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action"
 msgid "&Abort"
 msgstr "បោះបង់​"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:672
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, fuzzy, kde-format
 #| msgid "Database conversion canceled."
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "បាន​បោះបង់​ការ​បម្លែង​មូលដ្ឋាន​ទិន្នន័យ ។"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "ជ្រើស​រូបភាព"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:678
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:717
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, fuzzy, kde-format
 #| msgid "Change the filename of the currently selected item."
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "ប្ដូរ​ឈ្មោះ​ឯកសារ​របស់​ធាតុ​ដែល​​បាន​ជ្រើស​បច្ចុប្បន្ន ។"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:721
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgctxt "@info"
@@ -18775,14 +18775,14 @@ msgid ""
 "are not installed on your system."
 msgstr "មិនមានការ​គាំទ្រ OpenGL នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក​ទេ ។"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:754
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, fuzzy, kde-format
 #| msgid "Process Items"
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "ដំណើរការ​ធាតុ"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:756
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, fuzzy, kde-format
 #| msgid "Process Items"
 msgctxt "@action"
@@ -20228,7 +20228,7 @@ msgstr "ទិសដៅ​ ៖"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, fuzzy, kde-format
 #| msgid "Crop Settings"
 msgid "Output Destination Path"
@@ -22292,10 +22292,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "

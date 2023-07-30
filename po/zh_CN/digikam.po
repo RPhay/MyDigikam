@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:43+0000\n"
+"POT-Creation-Date: 2023-07-30 00:43+0000\n"
 "PO-Revision-Date: 2023-07-23 12:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1079,7 +1079,7 @@ msgstr "光圈/焦距："
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -16667,7 +16667,7 @@ msgstr "目标文件夹："
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -17654,43 +17654,43 @@ msgctxt "@title"
 msgid "Text Review"
 msgstr "文字检查"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:384
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "正在处理 %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:457
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "处理失败"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:463
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "处理已取消"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:471
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "内部错误"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:522
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "成功"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "文字转换程序"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:587
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17698,38 +17698,38 @@ msgid ""
 "them."
 msgstr "列表中不包含任何要处理的数字文件。您需要选择它们。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:598
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "文字转换程序"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "中止(&A)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:672
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "中止对原始文件进行 OCR 处理。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "开始 OCR(&S)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:678
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:717
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "使用当前设置启动 OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:721
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -17739,13 +17739,13 @@ msgstr ""
 "Tesseract 程序或所需的语言模块\n"
 "尚未安装到本机系统。"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:754
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "处理所有项目"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:756
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -19135,7 +19135,7 @@ msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
 msgstr "输出目标路径"
@@ -21114,7 +21114,31 @@ msgid "A tool to render slideshow"
 msgstr "放映图像幻灯片"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
+#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -21128,10 +21152,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "

@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:43+0000\n"
+"POT-Creation-Date: 2023-07-30 00:43+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1168,7 +1168,7 @@ msgstr "Aukko/polttoväli:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -17720,7 +17720,7 @@ msgstr "Kohdekansio:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -18772,43 +18772,43 @@ msgctxt "@title"
 msgid "Text Review"
 msgstr "Tekstin tarkistus"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:384
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "Käsitellään: %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:457
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "Käsittely epäonnistui"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:463
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Käsittely peruttu"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:471
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Sisäinen virhe"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:522
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Onnistui"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Tekstimuunnin"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:587
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, fuzzy, kde-format
 #| msgid "The list does not contain any Raw files to process."
 msgctxt "@info"
@@ -18817,38 +18817,38 @@ msgid ""
 "them."
 msgstr "Luettelo ei sisällä käsiteltäviä RAW-tiedostoja."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:598
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Tekstimuunnin"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "K&eskeytä"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:672
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Keskeytä RAW-tiedostojen tekstintunnistus."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "&Käynnistä tekstintunnistus"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:678
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:717
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "Käynnistä tekstintunnistus nykyisillä asetuksilla."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:721
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, fuzzy, kde-format
 #| msgid "This library is not present on your system."
 msgctxt "@info"
@@ -18857,13 +18857,13 @@ msgid ""
 "are not installed on your system."
 msgstr "Tätä kirjastoa ei löydy järjestelmästä."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:754
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Käsittele kaikki kohteet"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:756
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -20291,7 +20291,7 @@ msgstr "Kohdekansio:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Tuloksen kohdesijainti"
@@ -22282,10 +22282,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "

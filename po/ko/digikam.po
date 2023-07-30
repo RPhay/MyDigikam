@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:43+0000\n"
+"POT-Creation-Date: 2023-07-30 00:43+0000\n"
 "PO-Revision-Date: 2023-07-23 22:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1086,7 +1086,7 @@ msgstr "조리개/초점:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -17654,7 +17654,7 @@ msgstr "대상 폴더:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
 msgctxt "@title:window"
@@ -18735,48 +18735,48 @@ msgctxt "@title"
 msgid "Text Review"
 msgstr "텍스트 필터"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:384
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, fuzzy, kde-format
 #| msgid "Processing %1"
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "%1 처리 중"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:457
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, fuzzy, kde-format
 #| msgid "Processing Failed"
 msgctxt "@info"
 msgid "Process failed"
 msgstr "처리 실패"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:463
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "속성"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:471
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, fuzzy, kde-format
 #| msgid "Internal error"
 msgctxt "@info"
 msgid "Internal error"
 msgstr "내부 오류"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:522
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, fuzzy, kde-format
 #| msgid "Success"
 msgctxt "@info"
 msgid "Success"
 msgstr "성공"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "변환"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:587
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18784,28 +18784,28 @@ msgid ""
 "them."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:598
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "변환"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action"
 msgid "&Abort"
 msgstr "중단(&A)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:672
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, fuzzy, kde-format
 #| msgid "Raw file conversion failed."
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "RAW 파일을 변환할 수 없습니다."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, fuzzy, kde-format
 #| msgctxt "@action: button"
 #| msgid "&Start"
@@ -18813,8 +18813,8 @@ msgctxt "@action"
 msgid "&Start OCR"
 msgstr "시작(&S)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:678
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:717
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, fuzzy, kde-format
 #| msgid ""
 #| "Start importing the specified images into the currently selected album."
@@ -18822,7 +18822,7 @@ msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "현재 선택한 앨범으로 선택한 이미지를 가져옵니다."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:721
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, fuzzy, kde-format
 #| msgid "This library is not present on your system."
 msgctxt "@info"
@@ -18831,13 +18831,13 @@ msgid ""
 "are not installed on your system."
 msgstr "이 라이브러리는 현재 시스템에 없습니다."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:754
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "최근 태그"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:756
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -20330,7 +20330,7 @@ msgstr "대상 폴더:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
 msgstr "출력 대상 경로"
@@ -22346,10 +22346,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
