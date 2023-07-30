@@ -698,11 +698,27 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
         }
 
-        if      (charset == "\"Unicode\"")
+        if      (charset == "Unicode")
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+            QByteArray rawComment(exifDatum.size(), '\0');
+            exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::bigEndian);
+
+            rawComment          = rawComment.mid(8);
+            QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
+
+            if (utf16String.isValidUtf16())
+            {
+                return utf16String;
+            }
+
+#endif
+
             return QString::fromUtf8(comment.data());
         }
-        else if (charset == "\"Jis\"")
+        else if (charset == "Jis")
         {
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
@@ -735,7 +751,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 #endif
 
         }
-        else if (charset == "\"Ascii\"")
+        else if (charset == "Ascii")
         {
             return QString::fromStdString(comment);
         }
