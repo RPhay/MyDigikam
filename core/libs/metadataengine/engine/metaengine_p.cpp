@@ -706,12 +706,14 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             QByteArray rawComment(exifDatum.size(), '\0');
             exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::bigEndian);
 
-            rawComment          = rawComment.mid(8);    // remove "UNICODE\0"
+            // remove "UNICODE\0"
+
+            rawComment          = rawComment.mid(8, rawComment.size() - 8);
             QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
 
             if (utf16String.isValidUtf16())
             {
-                return utf16String;
+                return QString::fromUtf8(utf16String.toUtf8());
             }
 
 #endif
