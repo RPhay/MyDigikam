@@ -306,7 +306,7 @@ void DatabaseSettingsWidget::setupMainArea()
                            "<p>...</p>"
                            "<p>quit</p>"
                            "<p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>"
-                           "SET global log_bin_trust_function_creators=1;<br>"
+                           "SET GLOBAL log_bin_trust_function_creators=1;<br>"
                            "in the mysql prompt. To be able to create MySQL triggers.</p>"
                            "<p>NOTE: If you have an enormous collection, you should start MySQL server with "
                            "mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"));
