@@ -31,7 +31,7 @@ BUGFIXES:
 021 ==> 426478 - Slideshow: rating editor cannot be toggled by F4.
 022 ==> 472841 - Failed to create tables.
 023 ==> 472856 - The storage location of this image is currently not available (Ref: Bug report 438845).
-024 ==> 
+024 ==> 466773 - Conversion raw (Panasonic rw2) to DNG with bugs.
 025 ==> 
 026 ==> 
 027 ==> 
