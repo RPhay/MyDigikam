@@ -38,13 +38,13 @@
 # Stefan Asserhäll <stefan.asserhall@bredband.net>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015.
 # Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2012, 2013, 2014.
 # Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2011, 2014.
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-30 00:43+0000\n"
-"PO-Revision-Date: 2022-10-03 20:07+0200\n"
+"PO-Revision-Date: 2023-07-31 13:54+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -820,11 +820,10 @@ msgid "R&emove Tag"
 msgstr "Ta bort &etikett"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Ta bort ansiktsetiketter"
+msgstr "Ta bort alla etiketter"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -976,8 +975,7 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Välj målkatalog"
@@ -1534,15 +1532,13 @@ msgstr ""
 "Ikontemat är tillgängligt efter omstart av Digikam."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Välj katalog att tolka"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Välj kataloger att importera till album"
@@ -1872,19 +1868,16 @@ msgid "Scan for Faces"
 msgstr "Sök efter ansikten"
 
 #: core/app/main/digikamapp_setup.cpp:443
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
 msgstr "Känn igen ansikten"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Remove Face Tags"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Ta bort ansiktsetiketter"
+msgstr "Ta bort alla ansikten"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
@@ -2771,12 +2764,7 @@ msgid "All supported files (%1)"
 msgstr "Alla filer som stöds (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2786,8 +2774,9 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Återmatning: %2\n"
+"Dokumentation: %3\n"
 "\n"
-"Byggdatum: %3 (mål: %4)"
+"Byggdatum: %4 (mål: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
 #, fuzzy, kde-format
@@ -3164,9 +3153,7 @@ msgstr "Verktyg"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:851
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Hjälp"
 
@@ -3174,7 +3161,7 @@ msgstr "Hjälp"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Direkthjälp om papperskorg"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -25604,7 +25591,7 @@ msgstr "Namn:"
 #, kde-format
 msgctxt "piwigo url settings"
 msgid "Url:"
-msgstr ""
+msgstr "Webbadress:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:195
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:97
@@ -35723,7 +35710,7 @@ msgstr "Tyska"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "Dzongkha"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
@@ -35786,7 +35773,7 @@ msgstr "Finska"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "Fijianska"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
@@ -36151,7 +36138,7 @@ msgstr "Occitanska"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Oromo"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
@@ -48726,19 +48713,17 @@ msgid "Selected translation language %1 is not supported for %2"
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator.cpp:81
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgid "Selected ui language %1 is not supported for %2"
-msgstr "Fjärrhantering av filer stöds inte"
+msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator.cpp:115
 #: core/libs/widgets/text/donlinetranslator.cpp:132
 #: core/libs/widgets/text/donlinetranslator.cpp:215
 #: core/libs/widgets/text/donlinetranslator.cpp:232
-#, fuzzy, kde-format
-#| msgid "Title cannot be empty."
+#, kde-format
 msgid "%1 URL can't be empty."
-msgstr "Rubriken kan inte vara tom."
+msgstr "Webbadressen %1 kan inte vara tom."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -48779,303 +48764,229 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Auto detect"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Automatically detect"
 msgstr "Detektera automatiskt"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Afrikaans"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Albanian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Albanian"
 msgstr "Albanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Amharic"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
 msgstr "Amarinja"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Arabic"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Arabic"
 msgstr "Arabiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:118
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Armenian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Armenian"
 msgstr "Armeniska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Azerbaijani"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Azeerbaijani"
 msgstr "Azerbajdzjanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Basque"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Basque"
 msgstr "Baskiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bashkir"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bashkir"
 msgstr "Bashkir"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Belarus"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Belarusian"
-msgstr "Vitryssland"
+msgstr "Vitryska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:133
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bengali;Bangla"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bengali"
-msgstr "Bengali, Bengaliska"
+msgstr "Bengali"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Estonian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bosnian"
-msgstr "Estländska"
+msgstr "Bosniska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:139
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Bulgarian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Bulgarian"
 msgstr "Bulgariska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Catalan"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Catalan"
 msgstr "Katalanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Chinese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Cantonese"
-msgstr "Kinesiska"
+msgstr "Kantonesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:148
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "Cebuano"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Chinese (Singapore)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Simplified)"
-msgstr "Kinesiska (Singapore)"
+msgstr "Kinesiska (förenklad)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Chinese (Taiwan)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Traditional)"
-msgstr "Kinesiska (Taiwan)"
+msgstr "Kinesiska (traditionell)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Corsican"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Corsican"
 msgstr "Korsikanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Croatian"
 msgstr "Kroatiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:163
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Czech"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Czech"
 msgstr "Tjeckiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Danish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Danish"
 msgstr "Danska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Dutch"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Dutch"
 msgstr "Holländska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "English"
+#, kde-format
 msgctxt "@info: language name"
 msgid "English"
 msgstr "Engelska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Esperanto"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Esperanto"
 msgstr "Esperanto"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Estonian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Estonian"
 msgstr "Estländska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Fiji"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Fijian"
-msgstr "Fiji"
+msgstr "Fijianska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Philippines"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Filipino"
-msgstr "Filippinerna"
+msgstr "Filippinska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Finnish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Finnish"
 msgstr "Finska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "French"
+#, kde-format
 msgctxt "@info: language name"
 msgid "French"
 msgstr "Franska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Frisian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Frisian"
 msgstr "Frisiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Galician"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Galician"
 msgstr "Galiciska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Georgian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Georgian"
 msgstr "Georgiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "German"
+#, kde-format
 msgctxt "@info: language name"
 msgid "German"
 msgstr "Tyska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:205
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Greek"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Greek"
 msgstr "Grekiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Gujarati"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Gujarati"
 msgstr "Gujarati"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Catalan (France)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr "Katalanska (Frankrike)"
+msgstr "Haitisk kreol"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hausa"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Hausa"
 msgstr "Hausa"
@@ -49084,12 +48995,10 @@ msgstr "Hausa"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hawaiian"
-msgstr ""
+msgstr "Hawaiiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hebrew"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Hebrew"
 msgstr "Hebreiska"
@@ -49098,12 +49007,10 @@ msgstr "Hebreiska"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hill Mari"
-msgstr ""
+msgstr "Västmariska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:226
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hindi"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Hindi"
 msgstr "Hindi"
@@ -49112,20 +49019,16 @@ msgstr "Hindi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "Hmong"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Hungarian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Hungarian"
 msgstr "Ungerska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Icelandic"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Icelandic"
 msgstr "Isländska"
@@ -49134,60 +49037,46 @@ msgstr "Isländska"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Igbo"
-msgstr ""
+msgstr "Igbo"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Indonesian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Indonesian"
 msgstr "Indonesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Irish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Irish"
 msgstr "Iriska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:247
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Italian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Italian"
 msgstr "Italienska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Japanese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Japanese"
 msgstr "Japanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:253
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Javanese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Javanese"
 msgstr "Javanesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Kannada"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Kannada"
 msgstr "Kanaresiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Kazakh"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Kazakh"
 msgstr "Kazakiska"
@@ -49196,42 +49085,34 @@ msgstr "Kazakiska"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Khmer"
-msgstr ""
+msgstr "Khmer"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Kinyarwanda"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Kinyarwanda"
 msgstr "Rwanda"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:268
-#, fuzzy, kde-format
-#| msgid "healingClone"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Klingon"
-msgstr "Reparationsduplicering"
+msgstr "Klingonska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:271
-#, fuzzy, kde-format
-#| msgid "healingClone"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Klingon (PlqaD)"
-msgstr "Reparationsduplicering"
+msgstr "Klingonska (piqaD)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:274
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Korean"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Korean"
 msgstr "Koreanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:277
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Kurdish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Kurdish"
 msgstr "Kurdiska"
@@ -49240,106 +49121,82 @@ msgstr "Kurdiska"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "Kirgiziska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Lao"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Lao"
-msgstr "Laos"
+msgstr "Laotiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:286
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Latin"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Latin"
 msgstr "Latin"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Latvia"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Latvian"
-msgstr "Lettland"
+msgstr "Lettiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:292
 #, kde-format
 msgctxt "@info: language name"
 msgid "Levantine Arabic"
-msgstr ""
+msgstr "Levantinsk arabiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:295
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Lithuanian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Lithuanian"
 msgstr "Litauiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:298
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Luxembourg"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Luxembourgish"
-msgstr "Luxemburg"
+msgstr "Luxemburgiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Macedonian"
 msgstr "Makedonska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Malagasy"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Malagasy"
 msgstr "Malagassiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:307
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Malay"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Malay"
 msgstr "Malajiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Malayalam"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Malayalam"
 msgstr "Malayalam"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Maltese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Maltese"
 msgstr "Maltesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Maori"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Maori"
 msgstr "Maoriska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Marathi"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Marathi"
 msgstr "Marathi"
@@ -49348,44 +49205,34 @@ msgstr "Marathi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mari"
-msgstr ""
+msgstr "Mari"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:325
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Mongolian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Mongolian"
 msgstr "Mongoliska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:328
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Myanmar"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Myanmar"
 msgstr "Myanmar"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Nepali"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Nepali"
 msgstr "Nepalesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:334
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Norwegian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Norwegian"
 msgstr "Norska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:337
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Oriya"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Oriya"
 msgstr "Oriya"
@@ -49394,49 +49241,40 @@ msgstr "Oriya"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chichewa"
-msgstr ""
+msgstr "Chichewa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:343
 #, kde-format
 msgctxt "@info: language name"
 msgid "Papiamento"
-msgstr ""
+msgstr "Papiamento"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Pashto;Pushto"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
-msgstr "Pashto, Pashtunska"
+msgstr "Pashto"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
-#, fuzzy, kde-format
-#| msgid "Person"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr "Person"
+msgstr "Persiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Polish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Polish"
 msgstr "Polska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:355
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Portuguese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Portuguese"
 msgstr "Portugisiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:358
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Punjabi"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Punjabi"
 msgstr "Punjabi"
@@ -49445,76 +49283,58 @@ msgstr "Punjabi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Queretaro Otomi"
-msgstr ""
+msgstr "Nordvästlig Otomi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Romanian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Romanian"
 msgstr "Rumänska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:367
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Russian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Russian"
 msgstr "Ryska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:370
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Samoan"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Samoan"
 msgstr "Samoanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:373
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Scotsgaelic"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Scots Gaelic"
-msgstr "Skotsk gäliska"
+msgstr "Skotsk gaeliska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:376
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Cyrillic)"
-msgstr "Persiska (Iran)"
+msgstr "Serbiska (kyrillisk)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:379
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Persian (Iran)"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr "Persiska (Iran)"
+msgstr "Serbiska (latinsk)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Sesotho"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Sesotho"
 msgstr "Sesotho"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:385
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Shona"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Shona"
 msgstr "Shona"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:388
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Sindhi"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Sindhi"
 msgstr "Sindhi"
@@ -49523,140 +49343,106 @@ msgstr "Sindhi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "Singalesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Slovak"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Slovak"
 msgstr "Slovakiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:397
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Slovenian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Slovenian"
 msgstr "Slovenska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:400
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Somali"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Somali"
 msgstr "Somali"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:403
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Spanish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Spanish"
 msgstr "Spanska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Sundanese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Sundanese"
 msgstr "Sundanesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:409
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Swahili"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Swahili"
 msgstr "Swahili"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Swedish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Swedish"
 msgstr "Svenska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:415
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tagalog"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tagalog"
 msgstr "Tagalog"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:418
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Croatian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tahitian"
-msgstr "Kroatiska"
+msgstr "Tahitiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:421
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tajik"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tajik"
 msgstr "Tadzjikiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:424
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tamil"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tamil"
 msgstr "Tamil"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:427
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tatar"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tatar"
 msgstr "Tatariska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:430
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Telugu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Telugu"
 msgstr "Telugu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Thai"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Thai"
 msgstr "Thailändska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:436
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Tonga"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Tongan"
-msgstr "Tonga"
+msgstr "Tonganska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:439
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Turkish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Turkish"
 msgstr "Turkiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:442
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Turkmen"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Turkmen"
 msgstr "Turkmenska"
@@ -49665,7 +49451,7 @@ msgstr "Turkmenska"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr ""
+msgstr "Udmurtiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
 #, fuzzy, kde-format
@@ -49673,68 +49459,52 @@ msgstr ""
 #| msgid "Uighur (PRC)"
 msgctxt "@info: language name"
 msgid "Uighur"
-msgstr "Uiguriska (Folkrepubliken Kina)"
+msgstr "Uiguriska (Folkrepubliken Kina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:451
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Ukrainian"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Ukrainian"
 msgstr "Ukrainska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:454
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Urdu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Urdu"
 msgstr "Urdu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:457
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Uzbek"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Uzbek"
 msgstr "Uzbekiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:460
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Vietnamese"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Vietnamese"
 msgstr "Vietnamesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:463
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Welsh"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Welsh"
 msgstr "Walesiska"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:466
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Xhosa"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
 msgstr "Xhosa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Yiddish"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
 msgstr "Yiddish"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Yoruba"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
 msgstr "Yoruba"
@@ -49743,12 +49513,10 @@ msgstr "Yoruba"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yucatec Maya"
-msgstr ""
+msgstr "Yukatek"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:478
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Zulu"
+#, kde-format
 msgctxt "@info: language name"
 msgid "Zulu"
 msgstr "Zulu"
@@ -49797,12 +49565,12 @@ msgstr "Fjärrhantering av filer stöds inte"
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Fel: Kan inte hitta Yandex SID i webbversionen."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Fel: Kan inte extrahera Yandex SID från webbversionen."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, fuzzy, kde-format
@@ -49844,7 +49612,7 @@ msgstr "Välj innehållets språk här."
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "Nätöversättning:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:235
 #, fuzzy, kde-format
@@ -51146,7 +50914,7 @@ msgstr "Utseende"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
-msgstr ""
+msgstr "Stavningskontroll"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:346
 #: core/utilities/setup/misc/setupmisc.cpp:361
