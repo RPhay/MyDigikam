@@ -30,7 +30,7 @@ BUGFIXES:
 020 ==> 472692 - Tesseract OCR does not take language selection into account.
 021 ==> 426478 - Slideshow: rating editor cannot be toggled by F4.
 022 ==> 472841 - Failed to create tables.
-023 ==> 
+023 ==> 472856 - The storage location of this image is currently not available (Ref: Bug report 438845).
 024 ==> 
 025 ==> 
 026 ==> 
