@@ -195,15 +195,6 @@ void MainWindow::drawObjects(QImage& img, const QMap<QString, QVector<QRect>>& d
             painter.drawRect(rectDraw);
         }
     }
-
-    // for (QMap<QString, QVector<QRect>>::const_iterator it = detectedObjects.constBegin();
-    //     it != detectedObjects.constEnd(); it++)
-    // {
-    //     for (auto rectDraw : it.value())
-    //     {
-    //         painter.drawRect(rectDraw);
-    //     }
-    // }
 }
 
 void MainWindow::slotDetectObjects(const QListWidgetItem* imageItem)
@@ -287,7 +278,6 @@ void MainWindow::slotObjectSelected()
         if (opt->isChecked())
         {
             m_objectSelected.append(QString::fromLatin1("%1").arg(opt->text()));
-            // qDebug() << "Fuck this : " << opt->text().remove(QLatin1Char('&'));
         }
     }
 }
