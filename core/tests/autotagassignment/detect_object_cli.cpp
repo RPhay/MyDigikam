@@ -34,8 +34,14 @@ int main(int argc, char** argv)
 {   
     QCoreApplication app(argc, argv);
 
+    if (argc < 3)
+    {
+        qDebug() << "Bad arguments !!!\nUsage: " 
+                 << argv[0] << "<image_path>" << "<output_image_path>";
+        return 0;
+    }
+
     QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
-    
     QImage img(QString::fromUtf8(argv[1]));
     cv::Mat cvImage = cv::imread(argv[1]);
     
@@ -63,5 +69,5 @@ int main(int argc, char** argv)
         }
     }
  
-    img.save(QLatin1String("/home/quochungtran/Desktop/outputs/outputs_detect.png"), "PNG");
+    img.save(QLatin1String(argv[2]), "PNG");
 }
