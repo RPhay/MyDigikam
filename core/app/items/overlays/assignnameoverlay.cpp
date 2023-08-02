@@ -340,7 +340,17 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
     }
     else if (action.shallCreateNewTag())
     {
-        tagId = FaceTags::getOrCreateTagForPerson(action.newTagName(), -1);
+        QStringList faceNames = action.newTagName().split(QLatin1Char('/'),
+                                                          QT_SKIP_EMPTY_PARTS);
+        if (!faceNames.isEmpty())
+        {
+            tagId             = -1;
+
+            Q_FOREACH (const QString& name, faceNames)
+            {
+                tagId = FaceTags::getOrCreateTagForPerson(name.trimmed(), tagId);
+            }
+        }
     }
 
     if (tagId)

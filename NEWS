@@ -32,7 +32,7 @@ BUGFIXES:
 022 ==> 472841 - Failed to create tables.
 023 ==> 472856 - The storage location of this image is currently not available (Ref: Bug report 438845).
 024 ==> 466773 - Conversion raw (Panasonic rw2) to DNG with bugs.
-025 ==> 
+025 ==> 472914 - Face tag subfolders get converted to backslash instead of forward slash when metadata reread.
 026 ==> 
 027 ==> 
 028 ==> 

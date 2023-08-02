@@ -452,7 +452,17 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
         }
         else if (action.shallCreateNewTag())
         {
-            tagId = FaceTags::getOrCreateTagForPerson(action.newTagName(), action.parentTagId());
+            QStringList faceNames = action.newTagName().split(QLatin1Char('/'),
+                                                              QT_SKIP_EMPTY_PARTS);
+            if (!faceNames.isEmpty())
+            {
+                tagId             = action.parentTagId();
+
+                Q_FOREACH (const QString& name, faceNames)
+                {
+                    tagId = FaceTags::getOrCreateTagForPerson(name.trimmed(), tagId);
+                }
+            }
         }
 
         if (FaceTags::isTheUnknownPerson(tagId))
