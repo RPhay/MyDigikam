@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-30 00:43+0000\n"
+"POT-Creation-Date: 2023-08-02 00:44+0000\n"
 "PO-Revision-Date: 2023-07-23 22:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -29230,7 +29230,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "섬네일 DB 이름:"
@@ -29338,22 +29338,24 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
+"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
+"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
+"ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
 msgid "Requirements"
 msgstr "요구 사항"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "데이터베이스 서버 기술 세부 정보"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29374,134 +29376,134 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, kde-format
 msgid "Documentation"
 msgstr "문서화"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, fuzzy, kde-format
 #| msgid "Thumbs Db Name:"
 msgid "Thumbs Db Folder:"
 msgstr "축소판 DB 이름:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, fuzzy, kde-format
 #| msgid "Database Connection Test"
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "데이터베이스 연결 테스트"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, kde-format
 msgid "Database connection test successful."
 msgstr "데이터베이스 연결 테스트가 성공했습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "서버 호스트 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr "서버 사용자 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
 msgid "The core database name is empty"
 msgstr "코어 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "섬네일 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The face database name is empty"
 msgstr "얼굴 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "유사성 데이터베이스 이름이 비어 있습니다"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "이 경로는 명령줄 옵션(--database-directory)으로 설정되었습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "RAW 그림"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, fuzzy, kde-format
 #| msgid "Database connection test successful."
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "데이터베이스 연결 테스트가 성공했습니다."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "

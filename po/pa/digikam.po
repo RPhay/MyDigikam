@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-30 00:43+0000\n"
+"POT-Creation-Date: 2023-08-02 00:44+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -28717,7 +28717,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, fuzzy, kde-format
 msgid "Thumbs Db Name:"
 msgstr "ਕੈਮਰਾ ਨਾਂ ਜੋੜੋ"
@@ -28817,23 +28817,25 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
+"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
+"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
+"ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, fuzzy, kde-format
 msgid "Requirements"
 msgstr "ਲੋੜੀਦਾ:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, fuzzy, kde-format
 #| msgid "Database connection test"
 msgid "Database Server Technical Details"
 msgstr "ਡਾਟਾਬੇਸ ਕੁਨੈਕਸ਼ਨ ਟੈਸਟ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28854,93 +28856,93 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, fuzzy, kde-format
 msgid "Documentation"
 msgstr "ਡੌਕੂਮੈਂਟ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, fuzzy, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "ਕੈਮਰਾ ਨਾਂ ਜੋੜੋ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, fuzzy, kde-format
 #| msgid "Database connection test"
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "ਡਾਟਾਬੇਸ ਕੁਨੈਕਸ਼ਨ ਟੈਸਟ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, fuzzy, kde-format
 msgid "Database connection test successful."
 msgstr "ਕੋਈ ਡਾਟਾਬੇਸ ਲਿਖਣ ਅਸੈੱਸ ਨਹੀਂ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, fuzzy, kde-format
 msgid "The core database name is empty"
 msgstr "ਵਰਤਣ ਲਈ ਫੋਂਟ ਰੰਗ ਸੈੱਟ ਕਰੋ।"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, fuzzy, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਟੈਗ ਜੋੜਨ ਵਿੱਚ ਅਸਫਲ ਹੈ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, fuzzy, kde-format
 #| msgid "Updating faces database."
 msgid "The face database name is empty"
 msgstr "ਚਿਹਰਾ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, fuzzy, kde-format
 msgid "The similarity database name is empty"
 msgstr "ਵਰਤਣ ਲਈ ਫੋਂਟ ਰੰਗ ਸੈੱਟ ਕਰੋ।"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "ਡਾਟਾਬੇਸ ਮਾਈਗਰੇਸ਼ਨ..."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, fuzzy, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -28949,14 +28951,14 @@ msgstr ""
 "ਤੁਹਾਨੂੰ ਡਿਜਿਕੈਮ ਲਈ ਇੱਕ ਫੋਲਡਰ ਦੀ ਚੋਣ ਕਰਨੀ ਪਵੇਗੀ, ਜਿਸ ਵਿੱਚ ਜਾਣਕਾਰੀ ਸੰਭਾਲੀ ਜਾ ਸਕੇ ਅਤੇ "
 "ਡਾਟਾਬੇਸ ਫਾਇਲ ਵਿੱਚ ਮੇਟਾਡਾਟਾ ਸੰਭਾਲਿਆ ਜਾ ਸਕੇ।"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "ਕੀ ਡਾਟਾਬੇਸ ਫੋਲਡਰ ਬਣਾਉਣਾ ਹੈ?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, fuzzy, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -28965,14 +28967,14 @@ msgstr ""
 "ਤੁਹਾਡਾ ਡਾਟਾਬੇਸ ਰੱਖਣ ਲਈ ਫੋਲਡਰ ਮੌਜੂਦ ਨਹੀਂ ਹੈ: <p><b>%1</b></p>ਕੀ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਕਿ ਡਿਜਿਕੈਮ "
 "ਇਹ ਤੁਹਾਡੇ ਲਈ ਬਣਾਓ?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, fuzzy, kde-format
 #| msgid "Create Database Folder Failed"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "ਡਾਟਾਬੇਸ ਫੋਲਡਰ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, fuzzy, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -28981,14 +28983,14 @@ msgstr ""
 "ਡਿਜਿਕੈਮ ਤੁਹਾਡੀ ਡਾਟਾਬੇਸ ਫਾਇਲ ਰੱਖਣ ਲਈ ਫੋਲਡਰ ਬਣਾ ਨਹੀਂ ਸਕਿਆ ਹੈ।\n"
 "ਵੱਖਰਾ ਟਿਕਾਣਾ ਚੁਣੋ ਜੀ।<p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, fuzzy, kde-format
 #| msgid "No Database Write Access"
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "ਕੋਈ ਡਾਟਾਬੇਸ ਲਿਖਣ ਅਸੈੱਸ ਨਹੀਂ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "

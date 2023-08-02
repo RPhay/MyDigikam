@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-30 00:43+0000\n"
+"POT-Creation-Date: 2023-08-02 00:44+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -29201,7 +29201,7 @@ msgstr ""
 "ja hakumetatiedon tallentamiseen."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Pienoiskuvatietokannan nimi:"
@@ -29320,9 +29320,11 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
+"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
+"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
+"ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>Huomaa: Linux-palvelimessa tietokannan voi alustaa seuraavin komennoin:</"
 "p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>…</"
@@ -29332,17 +29334,17 @@ msgstr ""
 "komennolla ”mysql --max_allowed_packet=128M” tai muuttaa vastaava asetus my."
 "ini- tai ~/.my.cnf-tiedostossa.</p><p></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
 msgid "Requirements"
 msgstr "Vaatimukset"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Tietokantapalvelimen tekniset tiedot"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29379,77 +29381,77 @@ msgstr ""
 "hyödyntäen.</p><p>Ylläpitäjän on ennalta luotava tietokannat etäpalvelimeen. "
 "Lisätietoa on <b>Vaatimukset</b>-välilehdellä.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, kde-format
 msgid "Documentation"
 msgstr "Ohjeet"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Pienoiskuvatietokannan kansio:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Tietokantayhteystesti"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Tietokantayhteystesti onnistui."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "Tietokantayhteystesti epäonnistui. <p>Virhe: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Palvelimen konenimi on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Palvelimen käyttäjätunnus on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Perustietokannan nimi on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Pienoiskuvatietokannan nimi on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Kasvontunnistustietokannan nimi on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Yhdennäköisyystietokannan nimi on tyhjä"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 "Tämä sijainti asetettiin komentorivivalitsimella (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Tietokanta-asetukset"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -29458,7 +29460,7 @@ msgstr ""
 "Tietokantojen nimien asetus ei ole kelvollinen. Virhe on<br/><p>%1</p><br/"
 ">Tarkista asetukset."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -29467,20 +29469,20 @@ msgstr ""
 "Tietokantayhteyden kokeilu epäonnistui: virhe on<br/><p>%1</p><br/>Tarkista "
 "asetukset."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr "Valitse kansio digiKamin metatietokantaa varten."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Luodaanko tietokantakansio?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29489,13 +29491,13 @@ msgstr ""
 "<p>Valitsemaasi kansiota <p>”<b>%1</b>”</p> ei ole olemassa.</p> Haluatko "
 "luoda tämän kansion nyt?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Tietokantakansion luominen epäonnistui"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -29503,13 +29505,13 @@ msgid ""
 msgstr ""
 "<p>Kansiota <p>”<b>%1</b>”</p> ei voitu luoda. Valitse uusi kansio.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Tietokantaan ei ole kirjoitusoikeutta"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "

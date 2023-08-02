@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-30 00:43+0000\n"
+"POT-Creation-Date: 2023-08-02 00:44+0000\n"
 "PO-Revision-Date: 2023-07-30 07:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27910,7 +27910,7 @@ msgstr ""
 "用于存储相册、项目和搜索元数据。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "缩略图数据库名称："
@@ -28011,15 +28011,25 @@ msgstr ""
 "命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Note: with a Linux server, a database can be initialized following the "
+#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
+#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
+#| "digiKam databases with grant privileges (see behind)</p><p>...</"
+#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
+#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
+#| "~/.my.cnf, change the settings</p>"
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
+"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
+"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
+"ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
 "p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
@@ -28028,17 +28038,17 @@ msgstr ""
 "器时使用 mysql --max_allowed_packet=128M 命令，也可以在 my.ini 或 ~/.my.cnf "
 "中更改相关设置。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
 msgid "Requirements"
 msgstr "技术要求"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "数据库服务器技术详情"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28072,103 +28082,103 @@ msgstr ""
 "压缩。</p><p>远程数据库要由服务器管理员事先创建。请在<b>技术要求</b>选项卡查"
 "看有关详情。</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, kde-format
 msgid "Documentation"
 msgstr "技术说明"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "缩略图数据库名文件夹："
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "数据库连接测试"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, kde-format
 msgid "Database connection test successful."
 msgstr "数据库连接测试成功。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "数据库连接测试失败。<p>错误：%1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "服务器主机名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr "服务器用户名为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
 msgid "The core database name is empty"
 msgstr "核心数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "缩略图数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The face database name is empty"
 msgstr "人脸数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "相似性数据库名称为空"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "此路径已被设置为命令行选项 (--database-directory)。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "数据库配置"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr "数据库名称配置无效。错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr "数据库连接测试失败，错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr "您必须为 digiKam 选择一个文件夹，用于存储信息和元数据的数据库文件。"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "您想要创建数据库文件夹吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -28177,13 +28187,13 @@ msgstr ""
 "<p>用于存储数据库的文件夹不存在：</p><p><b>%1</b></p>您想要让 digiKam 现在创"
 "建它吗？"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "创建数据库文件夹失败"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -28192,13 +28202,13 @@ msgstr ""
 "<p>digiKam 无法创建用于存储数据库文件的文件夹。\n"
 " 请选择一个不同的位置。</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "没有数据库写入权限"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
