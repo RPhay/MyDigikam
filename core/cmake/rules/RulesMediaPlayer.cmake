@@ -88,7 +88,7 @@ if(ENABLE_MEDIAPLAYER)
             if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
 
                 set(FFMPEG_VER5_FOUND 1)
-                message(WARNING "FFMPEG API version 5 detected: support is under developement and not yet finalized! "
+                message(WARNING "FFMPEG API version 5 detected: support is under development and not yet finalized! "
                                 "Please install lasted FFMPEG API version 4 LTS instead for a better video experience... "
                                 "More info at https://ffmpeg.org/download.html")
 
