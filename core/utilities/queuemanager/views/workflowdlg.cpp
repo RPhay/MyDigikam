@@ -20,8 +20,6 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QLabel>
-#include <QRegularExpression>
-#include <QValidator>
 #include <QApplication>
 #include <QStyle>
 #include <QStandardPaths>
