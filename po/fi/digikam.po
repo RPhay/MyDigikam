@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27699,19 +27699,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Valkoinen"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Uusi albumi"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Muokkaa albumia"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27721,113 +27721,113 @@ msgstr ""
 "”%1”\n"
 "Albumin ominaisuudet"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "O&tsikko:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Aseta tässä albumin uusi otsikko"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "L&uokka:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, fuzzy, kde-format
 #| msgid "Ch&ild Of:"
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Y&läkansio:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "&Kuvateksti:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Kirjoita tähän albumin kuvateksti…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Albumin &päiväys:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Vanhin"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "Valitse albumin vanhimman kuvan päiväys tällä painikkeella."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "K&eskiarvo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "Laske albumin kuvien keskimääräinen päiväys tällä painikkeen."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Uusin"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "Valitse albumin uusimman kuvan päiväys tällä painikkeella."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Uusi albumi"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Valittu albumi (oletus)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Nykyisen kokoelman juuri"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Luokittelematon albumi"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27837,13 +27837,13 @@ msgstr ""
 "Luo uusi albumi kohteeseen\n"
 "”%1”"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Keskiarvoa ei voitu laskea"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28735,25 +28735,25 @@ msgstr ""
 "epäyhteensopiva tämän version kanssa. Päivitä digiKam uudempaan versioon ja "
 "kokeile uudelleen."
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Ihmiset"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Ei vahvistettu"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -39080,13 +39080,13 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Sekalaiset"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 polussa %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
@@ -39094,7 +39094,7 @@ msgstr ""
 "Luo ”%1”\n"
 "  kohteeseen %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Luo ”%1”"
@@ -57871,40 +57871,40 @@ msgstr ""
 msgid "History"
 msgstr "Historia"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Uusi työnkulku"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Muokkaa työnkulkua"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Luo uusi työnkulku</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Työnkulun ominaisuudet</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Otsikko:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Uusi työnkulku"

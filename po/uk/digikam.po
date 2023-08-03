@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
-"PO-Revision-Date: 2023-07-30 08:36+0300\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"PO-Revision-Date: 2023-08-02 17:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -27714,19 +27714,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Білий"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Новий альбом"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Зміна альбому"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27736,70 +27736,70 @@ msgstr ""
 "«%1»\n"
 "Властивості альбому"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Заголовок:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Тут ви можете встановити заголовок нового альбому"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ка&тегорія:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "&Батьківський пункт:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Пі&дпис:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Тут введіть текст підпису альбому…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Дата альбому:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Най&старіша"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 "Натисніть цю кнопку, щоб вибрати дату найдавнішого зображення з альбому."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Середня"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -27807,45 +27807,45 @@ msgstr ""
 "Натисніть цю кнопку, щоб наказати програмі обчислити середню дату для "
 "зображень з альбому."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Найновіша"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 "Натисніть цю кнопку, щоб вибрати дату найновішого зображення з альбому."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Новий альбом"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Позначений альбом (типово)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Коренева тека поточної збірки"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Альбом без категорії"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27855,13 +27855,13 @@ msgstr ""
 "Створити новий альбом у\n"
 "«%1»"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Не вдалося обчислити середнє"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28772,25 +28772,25 @@ msgstr ""
 "формат бази даних є занадто новим) Будь ласка, використовуйте новішу версію "
 "digiKam, якою ви користувалися раніше. "
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Люди"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Невідомі"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Не підтверджено"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29358,15 +29358,7 @@ msgstr ""
 "на належний).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29382,9 +29374,12 @@ msgstr ""
 "командами:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>…</p><p>Введіть код SQL до рядка запиту Mysql, щоб ініціалізувати "
 "бази даних digiKam із наданими правами доступу (див. нижче)</p><p>…</"
-"p><p>quit</p><p>ЗАУВАЖЕННЯ: якщо ви є власником величезної збірки знімків, "
-"вам доведеться запускати сервер MySQL за допомогою команди mysql --"
-"max_allowed_packet=128M або змінити параметри у my.ini чи ~/.my.cnf</p>"
+"p><p>quit</p><p>ЗАУВАЖЕННЯ: якщо у вас виникають проблеми з сервером MySQL в "
+"Ubuntu, введіть:<br>SET GLOBAL log_bin_trust_function_creators=1;<br>у рядку "
+"запиту mysql, щоб мати змогу створювати перемикачі MySQL.</p><p>ЗАУВАЖЕННЯ: "
+"якщо ви є власником величезної збірки знімків, вам доведеться запускати "
+"сервер MySQL за допомогою команди mysql --max_allowed_packet=128M або "
+"змінити параметри у my.ini чи ~/.my.cnf</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -39426,19 +39421,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 у %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Створити «%1» у %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Створити «%1»"
@@ -58572,40 +58567,40 @@ msgstr "Нижче ви можете бачити журнал виконанн�
 msgid "History"
 msgstr "Журнал"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Новий процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Змінити процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Створити новий процес</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Властивості процесу</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "З&аголовок:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Опис:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Новий процес"

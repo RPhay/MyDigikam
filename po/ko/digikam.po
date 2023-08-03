@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
 "PO-Revision-Date: 2023-07-23 22:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27858,21 +27858,21 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "흰색"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "새 앨범"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "앨범 편집"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgctxt "@label: album properties"
@@ -27881,116 +27881,116 @@ msgid ""
 "Album Properties"
 msgstr "앨범 속성"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "제목(&T):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "콘텐츠 공급자를 설정하십시오."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "분류(&T):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "부모 분류(&I):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, fuzzy, kde-format
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "캡션(&P):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "여기에 앨범 캡션을 입력하십시오..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgid "Album date"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "앨범 날짜"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "평균(&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "새 앨범"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "삭제"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "선택 반전"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, fuzzy, kde-format
 #| msgid "Unauthorized"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "인증되지 않음"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27998,14 +27998,14 @@ msgid ""
 "\"%1\""
 msgstr "<b>만든 날짜</b>:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, fuzzy, kde-format
 #| msgid "Could not authorize"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "인증할 수 없음"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28789,25 +28789,25 @@ msgid ""
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "사람들"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "미확인"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -39271,19 +39271,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "기타"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%2의 %1"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "%2에 \"%1\" 만들기"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "\"%1\" 만들기"
@@ -58957,42 +58957,42 @@ msgstr ""
 msgid "History"
 msgstr "역사"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, fuzzy, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<b>만든 날짜</b>:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, fuzzy, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<big><b>파일 속성</b></big>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "제목(&T):"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "설명:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr ""

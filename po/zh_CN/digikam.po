@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
-"PO-Revision-Date: 2023-07-30 07:09\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"PO-Revision-Date: 2023-08-02 12:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -21114,31 +21114,7 @@ msgid "A tool to render slideshow"
 msgstr "放映图像幻灯片"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -21163,24 +21139,25 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>此工具将一系列项目显示为简易幻灯片。</p><p>幻灯片播放时可以叠加显示各种项"
-"目属性。</p><p>此工具可以递归播放子相册中的内容。</p><p><u>使用方式：</u></"
-"p><table><tr><td colspan=\"2\"><nobr><center><b><h1>基本控制</h1></b></"
-"center></nobr></td></tr><tr><td>上一个项目：</td><td>方向键 - 上</td></"
-"tr><tr><td></td><td>翻页键 - 下</td></tr><tr><td></td><td>方向键 - 左</td></"
-"tr><tr><td></td><td>鼠标滚轮 - 上</td></tr><tr><td></td><td>鼠标左键</td></"
-"tr><tr><td>下一个项目：</td><td>方向键 - 下</td></tr><tr><td></td><td>翻页键 "
-"- 下</td></tr><tr><td></td><td>方向键 - 右</td></tr><tr><td></td><td>鼠标滚"
-"轮 - 下</td></tr><tr><td></td><td>鼠标右键</td></tr><tr><td>暂停/继续</"
-"td><td>空格键</td></tr><tr><td>幻灯片设置：</td><td>F2 键</td></tr><tr><td>显"
-"示/隐藏属性：</td><td>F4 键</td></tr><tr><td>退出幻灯片：</td><td>ESC 键</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>项目属性</h1></b></"
-"center></nobr></td></tr><tr><td>更改标签：</td><td>使用标签键盘快捷键</td></"
-"tr><tr><td>更改评分：</td><td>使用评分键盘快捷键</td></tr><tr><td>更改颜色标"
-"记：</td><td>使用颜色标记键盘快捷键</td></tr><tr><td>更改挑选标记：</td><td>"
-"使用挑选标记键盘快捷键</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>其"
-"他控制</h1></b></center></nobr></td></tr><tr><td>显示本帮助：</td><td>F1 键</"
-"td></tr></table>"
+"<p>用于将一系列项目制作成简易的幻灯片。</p><p>幻灯片在播放时可以在画面上叠加"
+"显示多种项目属性。</p><p>如果相册包含子相册，可以在播放主相册内容时递归播放子"
+"相册的内容。</p><p><u>使用方法：</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>项目导航</h1></b></center></nobr></td></"
+"tr><tr><td>上一个项目：</td><td><i>上箭头</i> 键</td></tr><tr><td></"
+"td><td><i>向上翻页</i> 键</td></tr><tr><td></td><td><i>左箭头</i> 键</td></"
+"tr><tr><td></td><td>鼠标滚轮向上滚动</td></tr><tr><td></td><td>鼠标左键</"
+"td></tr><tr><td>下一个项目：</td><td><i>下箭头</i> 键</td></tr><tr><td></"
+"td><td><i>向下翻页</i> 键</td></tr><tr><td></td><td><i>右箭头</i> 键</td></"
+"tr><tr><td></td><td>鼠标滚轮向下滚动</td></tr><tr><td></td><td>鼠标右键</"
+"td></tr><tr><td>播放/暂停：</td><td><i>空格</i> 键</td></tr><tr><td>幻灯片设"
+"置</td><td><i>F2</i> 键</td></tr><tr><td>显示/隐藏叠加信息</td><td><i>F4</i> "
+"键</td></tr><tr><td>退出</td><td><i>Esc</i> 键</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>项目属性</h1></b></center></nobr></td></"
+"tr><tr><td>更改标签：</td><td>使用标签快捷键</td></tr><tr><td>更改评分：</"
+"td><td>使用评分快捷键</td></tr><tr><td>更改颜色标记：</td><td>使用颜色标记快"
+"捷键</td></tr><tr><td>更改挑选标记：</td><td>使用挑选标记快捷键</td></"
+"tr><tr><td colspan=\"2\"><nobr><center><b><h1>其他</h1></b></center></nobr></"
+"td></tr><tr><td>显示本帮助信息：</td><td><i>F1</i> 键</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, kde-format
@@ -26462,19 +26439,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "白"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "编辑相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26484,112 +26461,112 @@ msgstr ""
 "“%1”\n"
 "相册属性"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "标题(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "在此设置新相册标题"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "分类(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "父相册(&I)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "说明(&P)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "在此输入相册说明..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "相册日期(&D)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "最旧(&O)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "使用此按钮从相册中选择最旧的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "平均(&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "使用此按钮来计算相册图像的平均日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "最新"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "使用此按钮从相册中选择最新的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "所选相册 (默认)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "当前相册集合根目录"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "未分类相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26599,13 +26576,13 @@ msgstr ""
 "创建新相册到\n"
 "“%1”"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -27451,25 +27428,25 @@ msgstr ""
 "该数据库曾经被版本较新的 digiKam 使用过，它的纲目结构已被更新为新版，因此无法"
 "用于此旧版 digiKam。请升级为在此数据库中使用过的新版 digiKam。"
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "人物"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "未确认"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -37644,19 +37621,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 在 %2 之下"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "创建“%1”到 %2 之下"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "创建“%1”"
@@ -56125,40 +56102,40 @@ msgstr "上一次批处理操作的历史记录。"
 msgid "History"
 msgstr "历史记录"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "新建工作流程"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "编辑工作流程"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>新建工作流程</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>工作流程属性</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "标题(&T)："
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "描述："
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "新工作流程"

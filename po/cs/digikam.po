@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
 "PO-Revision-Date: 2023-07-03 12:01+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -26293,19 +26293,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Bílá"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nové album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Upravit album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26315,112 +26315,112 @@ msgstr ""
 "\"%1\"\n"
 "Vlastnosti alba"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Název:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegorie:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Poto&mek:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Titu&lek:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sem vložte popisek alba..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Datum alba:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "N&ejstarší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Průměrné"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Nejnovější"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nové album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Vybrané album (Výchozí)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Kořen současné sbírky"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Nezařazené album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26430,13 +26430,13 @@ msgstr ""
 "Vytvořit nové album v\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Nelze spočítat průměr"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -27316,25 +27316,25 @@ msgstr ""
 "je příliš stará nebo verze formátu databáze je příliš nová.) Použijte prosím "
 "novější verzi digiKamu, kterou jste použili předtím. "
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Lidé"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Nepotvrzeno"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -37586,19 +37586,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Různé"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Vytvořit \"%1\" v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Vytvořit \"%1\""
@@ -56327,40 +56327,40 @@ msgstr "Dole můžete vidět historii posledních provedených dávkových opera
 msgid "History"
 msgstr "Historie"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Nový proces"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Upravit proces"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Vytvořit nový proces</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Vlastnosti procesu</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Název:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Popis:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Nový proces"

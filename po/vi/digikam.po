@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -26580,21 +26580,21 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Tựa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Sửa tập ảnh"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -26602,116 +26602,116 @@ msgid ""
 "Album Properties"
 msgstr "Sửa thuộc tính tập ảnh..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Tựa:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "<p>Ở đây hãy đặt màu của viền chính."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Theo ngày"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Độ xoay:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Hãy nhập đoạn vào đây !"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Ngày tập ảnh:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, fuzzy, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Đặt &lại"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, fuzzy, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "Trung bình"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Chọn tập ảnh"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Đảo vùng chọn"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Tập ảnh chưa phân loại"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -26720,14 +26720,14 @@ msgid ""
 "\"%1\""
 msgstr "Tạo tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Không thể tính trung bình"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -27525,25 +27525,25 @@ msgid ""
 "recent) Please use the more recent version of digikam that you used before. "
 msgstr ""
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, fuzzy, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Tương đối"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, fuzzy, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, fuzzy, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Cấu hình"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, fuzzy, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -37783,19 +37783,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Lặt vặt"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, fuzzy, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 (%2)"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, fuzzy, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "%1 (%2)"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, fuzzy, kde-format
 msgid "Create \"%1\""
 msgstr "tạo : %1"
@@ -56647,41 +56647,41 @@ msgstr ""
 msgid "History"
 msgstr "Biểu đồ tần xuất"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Vừa khít cửa &sổ"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Vừa khít cửa &sổ"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, fuzzy, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Tạo tập ảnh mới trong « <i>%1</i> »</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, fuzzy, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<big><b>Thuộc tính tệp</b></big>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Tựa:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, fuzzy, kde-format
 msgid "Description:"
 msgstr "Mô tả"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr ""

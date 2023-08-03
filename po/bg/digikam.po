@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:44+0000\n"
-"PO-Revision-Date: 2023-07-10 14:22+0200\n"
+"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"PO-Revision-Date: 2023-08-02 22:43+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -22148,31 +22148,7 @@ msgid "A tool to render slideshow"
 msgstr "Инструмент за създаване на слайдшоу"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22197,20 +22173,20 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>Този инструмент визуализира поредица отелементи като обикновено слайдшоу. "
-"</p><p>Множество свойства на елементите могат да се показват като наслагване "
-"по време на работа.</p><p>Този инструмент може да възпроизвежда съдържанието "
-"на албума в рекурсивенрежим с детски албуми, ако има такива.</"
+"<p>Този инструмент визуализира поредица от елементи като обикновено "
+"слайдшоу. </p><p>Множество свойства на елементите могат да се показват като "
+"наслагване по време на работа.</p><p>Този инструмент може да възпроизвежда "
+"съдържанието на албума в рекурсивен режим с дъщерни албуми, ако има такива.</"
 "p><p><u>Използване:</u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Достъп до елемент</h1></b></center></nobr></td></"
 "tr><tr><td>Предишен елемент:</td><td>клавиш <i>Up</i></td></tr><tr><td></"
-"td><td>клавиш <i>PgUp</i></td></tr><tr><td></td><td>клавиш <i>Left</i></td></"
-"tr><tr><td></td><td>Колелцето намишката нагоре </td></tr><tr><td></"
-"td><td>Ляв бутон намишката</td></tr><tr><td>Следващ елемент:</td><td>клавиш "
-"<i>Down</i></td></tr><tr><td></td><td>клавиш <i>PgDown</i></td></"
-"tr><tr><td></td><td>клавиш<i>Right</i></td></tr><tr><td></td><td>Колелцето "
-"намишката надолу</td></tr><tr><td></td><td>Десен бутон намишката</td></"
-"tr><tr><td>Пауза/Старт:</td><td>клавиш <i>Интервал</i></td></"
+"td><td>клавиш <i>PgUp</i></td></tr><tr><td></td><td>клавиш <i>Стрелка "
+"наляво</i></td></tr><tr><td></td><td>Колелцето на мишката нагоре </td></"
+"tr><tr><td></td><td>Ляв бутон на мишката</td></tr><tr><td>Следващ елемент:</"
+"td><td>клавиш <i>Down</i></td></tr><tr><td></td><td>клавиш <i>PgDown</i></"
+"td></tr><tr><td></td><td>клавиш<i>Стрелка надясно</i></td></tr><tr><td></"
+"td><td>Колелцето на мишката надолу</td></tr><tr><td></td><td>Десен бутон на "
+"мишката</td></tr><tr><td>Пауза/Старт:</td><td>клавиш <i>Интервал</i></td></"
 "tr><tr><td>Настройки на слайдшоу:</td><td>клавиш <i>F2</i> </td></"
 "tr><tr><td>Скриване/показване на свойствата:</td><td>клавиш <i>F4</i></td></"
 "tr><tr><td>Изход:</td><td>клавиш <i>Esc</i></td></tr><tr><td colspan="
@@ -27652,19 +27628,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Бяло"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Нов албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Редактиране на албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27674,56 +27650,56 @@ msgstr ""
 "\"%1\"\n"
 "Свойства на албума"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Задайте тук новото заглавие на албума"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "&Категория:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Дъщерен на:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "&Надпис:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Въведете тук заглавието на албума..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Дата на &албум:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Най-старите"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
@@ -27731,14 +27707,14 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-старото изображение от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Средно"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -27746,14 +27722,14 @@ msgstr ""
 "Използвайте този бутон, за да изчислите средната дата на изображенията от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Най-нови"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
@@ -27761,31 +27737,31 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-новото изображение от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Нов албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Избран албум (по подразбиране)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Основна папка на текущата колекция"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Албум без категории"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27795,13 +27771,13 @@ msgstr ""
 "Създаване на нов албум в\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Не може да се изчисли средната стойност"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28713,25 +28689,25 @@ msgstr ""
 "форматът на базата данни е твърде нов) Моля, използвайте по-новата версия на "
 "digikam, която сте използвали преди. "
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Хора"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Непотвърдено"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29295,15 +29271,7 @@ msgstr ""
 "<i><b>паролата</i></b> с правилната).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29320,8 +29288,11 @@ msgstr ""
 "mysqld</p><p># mysql -u root</p><p>...</p><p>Въведете SQL код в промпта на "
 "Mysql, за да инициализирате базите данни на digiKam с привилегии за "
 "предоставяне (виж отзад)</p><p>...</p><p>quit</p><p>ЗАБЕЛЕЖКА: Ако имате "
-"огромна колекция, трябва да стартирате MySQL сървъра с mysql --"
-"max_allowed_packet=128M ИЛИ в my.ini или ~/.my.cnf променете настройките</p>"
+"проблеми с MySQL сървъра в Ubuntu, въведете:<br>SET GLOBAL "
+"log_bin_trust_function_creators=1;<br>в промпта  на mysql.  Да можете да "
+"създавате тригери на MySQL.</p><p>ЗАБЕЛЕЖКА: Ако имате огромна колекция, "
+"трябва да стартирате MySQL сървъра с mysql --max_allowed_packet=128M ИЛИ в "
+"my.ini или ~/.my.cnf променете настройките</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -39297,19 +39268,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 в %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Създаване на \"%1\" в %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Създаване \"%1\""
@@ -58374,40 +58345,40 @@ msgstr ""
 msgid "History"
 msgstr "История"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Нов работен процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Редактиране на работния процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Създаване на нов работен процес</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Свойства на работен процес</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Описание:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Нов работен процес"
@@ -64114,545 +64085,3 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
-
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "Тагове: "
-
-#~ msgid ""
-#~ "Other process are not finished yet.\n"
-#~ "Please try again later."
-#~ msgstr ""
-#~ "Другите процеси все още не са завършени.\n"
-#~ "Моля, опитайте отново по-късно."
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Video"
-#~ msgstr "Отваряне на видеоклип"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an Url"
-#~ msgstr "Отваряне на адрес"
-
-#~ msgctxt "@info"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@info"
-#~ msgid "Drag and drop a file to player\n"
-#~ msgstr "Завлечете файл в плейъра\n"
-
-#~ msgctxt "@info"
-#~ msgid "A: switch aspect ratio"
-#~ msgstr "A: превключване на съотношението"
-
-#~ msgctxt "@info"
-#~ msgid "Double click to switch fullscreen"
-#~ msgstr "Двойно щракване, за да превключите на цял екран"
-
-#~ msgctxt "@info"
-#~ msgid "Shortcut:\n"
-#~ msgstr "Клавишна комбинация:\n"
-
-#~ msgctxt "@info"
-#~ msgid "Space: pause/continue\n"
-#~ msgstr "Интервал: пауза/продължаване\n"
-
-#~ msgctxt "@info"
-#~ msgid "F: fullscreen on/off\n"
-#~ msgstr "F: вкл./изкл. на цял екран\n"
-
-#~ msgctxt "@info"
-#~ msgid "T: stays on top on/off\n"
-#~ msgstr "T: задържане отгоре вкл./изкл.\n"
-
-#~ msgctxt "@info"
-#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-#~ msgstr ""
-#~ "N: показване на следващия кадър. Продължете възпроизвеждането с натискане "
-#~ "на \"Интервал\"\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+O: open a file\n"
-#~ msgstr "Ctrl+O: отваряне на файл\n"
-
-#~ msgctxt "@info"
-#~ msgid "O: On Screen Display\n"
-#~ msgstr "O: Екранни надписи\n"
-
-#~ msgctxt "@info"
-#~ msgid "P: replay\n"
-#~ msgstr "P: повторно изпълнение\n"
-
-#~ msgctxt "@info"
-#~ msgid "Q/ESC: quit\n"
-#~ msgstr "Q/ESC: изход\n"
-
-#~ msgctxt "@info"
-#~ msgid "S: stop\n"
-#~ msgstr "S: стоп\n"
-
-#~ msgctxt "@info"
-#~ msgid "R: rotate 90 degrees"
-#~ msgstr "R: завъртане на 90 градуса"
-
-#~ msgctxt "@info"
-#~ msgid "M: mute on/off\n"
-#~ msgstr "M: вкл./изкл. на звук\n"
-
-#~ msgctxt "@info"
-#~ msgid "C: capture video"
-#~ msgstr "C: заснемане на видео"
-
-#~ msgctxt "@info"
-#~ msgid "Up/Down: volume +/-\n"
-#~ msgstr "Стрелки нагоре/надолу: сила на звука +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+Up/Down: speed +/-\n"
-#~ msgstr "Ctrl+нагоре/надолу: скорост +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
-#~ msgstr "-&gt;/&lt;-: превъртане напред/назад\n"
-
-#~ msgctxt "@title:window"
-#~ msgid "Help"
-#~ msgstr "Помощ"
-
-#~ msgctxt "@action: open new media"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@action: open new stream"
-#~ msgid "Open Url"
-#~ msgstr "Отваряне на адрес (URL)"
-
-#~ msgctxt "@action: about AVPlayer"
-#~ msgid "About"
-#~ msgstr "Относно"
-
-#~ msgctxt "@action: AVPlayer help"
-#~ msgid "Help"
-#~ msgstr "Помощ"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
-#~ "experience with AVPlayer.</p>"
-#~ msgstr ""
-#~ "<p>Използвате AVPlayer като 32-битова версия на 64-битов Windows.</"
-#~ "p><p>Моля, инсталирайте 64-битовата версия на AVPlayer, за да получите по-"
-#~ "добри резултати с AVPlayer.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Media File"
-#~ msgstr "Отваряне на мултимедиен файл"
-
-#~ msgctxt "@option"
-#~ msgid "Aspect ratio"
-#~ msgstr "Съотношение"
-
-#~ msgctxt "@title:window"
-#~ msgid "Player Error"
-#~ msgstr "Грешка на плейъра"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "No media"
-#~ msgstr "Няма диск"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "Невалидна медия"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "Буфериране..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffered"
-#~ msgstr "Буфериран"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loading..."
-#~ msgstr "Зареждане..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loaded"
-#~ msgstr "Заредено"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Stalled"
-#~ msgstr "Застой"
-
-#~ msgctxt "@title:window, media loading state"
-#~ msgid "Buffering... %1% @%2 %3"
-#~ msgstr "Буфериране... %1% @%2 %3"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Capture video frame\n"
-#~ "Save to: %1\n"
-#~ "Format: %2"
-#~ msgstr ""
-#~ "Заснемане на видео\n"
-#~ "Записване в: %1\n"
-#~ "Формат: %2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Subtitle File"
-#~ msgstr "Отваряне на файл със субтитри"
-
-#~ msgctxt "@info"
-#~ msgid "Video renderer is not available on your platform!"
-#~ msgstr ""
-#~ "Програмата за възпроизвеждане на видео (рендър) не е наличен на вашата "
-#~ "платформа!"
-
-#~ msgctxt "@action: audio track"
-#~ msgid "External"
-#~ msgstr "Външен"
-
-#~ msgctxt "@info"
-#~ msgid "Current time"
-#~ msgstr "Текущо време"
-
-#~ msgctxt "@info"
-#~ msgid "Duration"
-#~ msgstr "Продължителност"
-
-#~ msgctxt "@info"
-#~ msgid "Render engine"
-#~ msgstr "Програма за възпроизвеждане (рендър)"
-
-#~ msgctxt "@info"
-#~ msgid "Speed. Ctrl+Up/Down"
-#~ msgstr "Скорост. Ctrl+Стрелка нагоре/надолу"
-
-#~ msgctxt "@info: open new media"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@info: button"
-#~ msgid "Capture"
-#~ msgstr "Прихващане"
-
-#~ msgctxt "@info: button"
-#~ msgid "Volume"
-#~ msgstr "Сила на звука"
-
-#~ msgctxt "@action"
-#~ msgid "Open Url"
-#~ msgstr "Отваряне на адрес (URL)"
-
-#~ msgctxt "@option"
-#~ msgid "Play list"
-#~ msgstr "Изпълнение на списък"
-
-#~ msgctxt "@option"
-#~ msgid "History"
-#~ msgstr "История"
-
-#~ msgctxt "@action"
-#~ msgid "About"
-#~ msgstr "Относно"
-
-#~ msgctxt "@action"
-#~ msgid "Setup"
-#~ msgstr "Настройки"
-
-#~ msgctxt "@option"
-#~ msgid "Speed"
-#~ msgstr "Скорост"
-
-#~ msgctxt "@option"
-#~ msgid "Repeat"
-#~ msgstr "Повторение"
-
-#~ msgctxt "@action"
-#~ msgid "Enable"
-#~ msgstr "Включване"
-
-#~ msgctxt "@info"
-#~ msgid "infinity"
-#~ msgstr "безкрайно"
-
-#~ msgctxt "@label"
-#~ msgid "Times"
-#~ msgstr "Времена"
-
-#~ msgctxt "@label: from time-stamp"
-#~ msgid "From"
-#~ msgstr "От"
-
-#~ msgctxt "@info"
-#~ msgid "negative value means from the end"
-#~ msgstr "отрицателна стойност означава от края"
-
-#~ msgctxt "@label: to time-stamp"
-#~ msgid "To"
-#~ msgstr "До"
-
-#~ msgctxt "@action"
-#~ msgid "Clock"
-#~ msgstr "Часовник"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Auto"
-#~ msgstr "Автоматично"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Audio"
-#~ msgstr "Аудио"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@info"
-#~ msgid "Take effect in next playback"
-#~ msgstr "Влиза в сила при следващото изпълнение"
-
-#~ msgctxt "@option"
-#~ msgid "Subtitle"
-#~ msgstr "Подзаглавие"
-
-#~ msgctxt "@action"
-#~ msgid "Auto load"
-#~ msgstr "Автоматично зареждане"
-
-#~ msgctxt "@action: open subtitle file"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "FFmpeg supports more subtitles but only render plain text\n"
-#~ "LibASS supports 'ass' styles"
-#~ msgstr ""
-#~ "FFmpeg поддържа повече субтитри, но визуализира само обикновен текст\n"
-#~ "LibASS поддържа стилове \"ass\""
-
-#~ msgctxt "@label"
-#~ msgid "Charset"
-#~ msgstr "Кодова таблица"
-
-#~ msgctxt "@option"
-#~ msgid "System"
-#~ msgstr "Система"
-
-#~ msgctxt "@info"
-#~ msgid "Auto detect requires libchardet"
-#~ msgstr "Автоматичното откриване изисква libchardet"
-
-#~ msgctxt "@option"
-#~ msgid "Audio track"
-#~ msgstr "Aудио запис"
-
-#~ msgctxt "@option"
-#~ msgid "Channel"
-#~ msgstr "Канал"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "As input"
-#~ msgstr "Като вход"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Stereo"
-#~ msgstr "Стерео"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Mono (center)"
-#~ msgstr "Моно (центрирано)"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Left"
-#~ msgstr "Наляво"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Right"
-#~ msgstr "Надясно"
-
-#~ msgctxt "@action: aspect ratio"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Window"
-#~ msgstr "Прозорец"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Custom"
-#~ msgstr "Потребителска"
-
-#~ msgctxt "@option"
-#~ msgid "Color space"
-#~ msgstr "Цветово пространство"
-
-#~ msgctxt "@option"
-#~ msgid "Decoder"
-#~ msgstr "Декодер"
-
-#~ msgctxt "@option"
-#~ msgid "Renderer"
-#~ msgstr "Рендерер"
-
-#~ msgctxt "@info"
-#~ msgid "not available on your platform!"
-#~ msgstr "не е налично на платформата!"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an External Audio Track"
-#~ msgstr "Отваряне на външна аудиописта"
-
-#~ msgctxt "@info"
-#~ msgid "Can not use this renderer"
-#~ msgstr "Не може да използва този рендер"
-
-#~ msgctxt "@info"
-#~ msgid "Use Ctrl/Shift + Click to select multiple items"
-#~ msgstr "Използвайте Ctrl/Shift + щракване, за да изберете няколко елемента"
-
-#~ msgctxt "@action: clear playlist"
-#~ msgid "Clear"
-#~ msgstr "Изчистване"
-
-#~ msgctxt "@info"
-#~ msgid "Remove selected items"
-#~ msgstr "Премахване на избрани елементи"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Files"
-#~ msgstr "Избор на файлове"
-
-#~ msgctxt "@option: base"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@option: base"
-#~ msgid "Format"
-#~ msgstr "Формат"
-
-#~ msgctxt "@option: base"
-#~ msgid "Bit rate"
-#~ msgstr "Битов поток"
-
-#~ msgctxt "@option: base"
-#~ msgid "Start time"
-#~ msgstr "Начало на възпроизвеждане"
-
-#~ msgctxt "@option: base"
-#~ msgid "Duration"
-#~ msgstr "Продължителност"
-
-#~ msgctxt "@option: common"
-#~ msgid "Available"
-#~ msgstr "Наличен"
-
-#~ msgctxt "@option: common"
-#~ msgid "Codec"
-#~ msgstr "Кодек"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder"
-#~ msgstr "Декодер"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder detail"
-#~ msgstr "Подробности за декодера"
-
-#~ msgctxt "@option: common"
-#~ msgid "Total time"
-#~ msgstr "Общо време"
-
-#~ msgctxt "@option: common"
-#~ msgid "Start time"
-#~ msgstr "Начало на възпроизвеждане"
-
-#~ msgctxt "@option: common"
-#~ msgid "Bit rate"
-#~ msgstr "Битов поток"
-
-#~ msgctxt "@option: common"
-#~ msgid "Frames"
-#~ msgstr "Кадри"
-
-#~ msgctxt "@option: common"
-#~ msgid "FPS"
-#~ msgstr "FPS"
-
-#~ msgctxt "@option: video"
-#~ msgid "FPS Now"
-#~ msgstr "FPS в момента"
-
-#~ msgctxt "@option: video"
-#~ msgid "Pixel format"
-#~ msgstr "Формат на пикселите"
-
-#~ msgctxt "@option: video"
-#~ msgid "Size"
-#~ msgstr "Размер"
-
-#~ msgctxt "@option: video"
-#~ msgid "Coded size"
-#~ msgstr "Кодиран размер"
-
-#~ msgctxt "@option: video"
-#~ msgid "GOP size"
-#~ msgstr "Размер на група изображения"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample format"
-#~ msgstr "Формат на извадката"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample rate"
-#~ msgstr "Честота на дискретизация"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channels"
-#~ msgstr "Канали"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channel layout"
-#~ msgstr "Разположение на каналите"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Frame size"
-#~ msgstr "Размер на кадъра"
-
-#~ msgctxt "@title:window"
-#~ msgid "Media Info"
-#~ msgstr "Информация за медиа"
-
-#~ msgctxt "@title"
-#~ msgid "Key"
-#~ msgstr "Ключ"
-
-#~ msgctxt "@title"
-#~ msgid "Value"
-#~ msgstr "Стойност"
-
-#~ msgctxt "@item: video info"
-#~ msgid "Metadata"
-#~ msgstr "Метаданни"
-
-#~ msgctxt "@item: video stats"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@option"
-#~ msgid "Metadata"
-#~ msgstr "Метаданни"
-
-#~ msgctxt "@option"
-#~ msgid "Audio"
-#~ msgstr "Аудио"
-
-#~ msgctxt "@action"
-#~ msgid "Ok"
-#~ msgstr "Добре"
-
-#~ msgid "County"
-#~ msgstr "Държава"
