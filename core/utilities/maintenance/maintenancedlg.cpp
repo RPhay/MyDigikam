@@ -68,7 +68,8 @@ public:
         FaceManagement,
         ImageQualitySorter,
         MetadataSync,
-        Stretch
+        Stretch,
+        AutotagsAssignment
     };
 
 public:
@@ -129,6 +130,7 @@ public:
     static const QString configCleanupSimilarityDatabase;
     static const QString configShrinkDatabases;
     static const QString configSyncDirection;
+    static const QString configAutotagsAssignment;
 
     QDialogButtonBox*         buttons;
     QLabel*                   logo;
@@ -184,6 +186,7 @@ const QString MaintenanceDlg::Private::configCleanupThumbDatabase(QLatin1String(
 const QString MaintenanceDlg::Private::configCleanupFacesDatabase(QLatin1String("CleanupFacesDatabase"));
 const QString MaintenanceDlg::Private::configCleanupSimilarityDatabase(QLatin1String("CleanupSimilarityDatabase"));
 const QString MaintenanceDlg::Private::configShrinkDatabases(QLatin1String("ShrinkDatabases"));
+const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
 
 MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     : QDialog(parent),
@@ -369,6 +372,13 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->expanderBox->setCheckBoxVisible(Private::MetadataSync, true);
 
     d->expanderBox->insertStretch(Private::Stretch);
+
+    // --------------------------------------------------------------------------------------
+
+    d->expanderBox->insertItem(Private::AutotagsAssignment, new QLabel(i18n("<qt>No option<br/>"
+                               "<i>Note: Automatical tags assignments.</i></qt>")),
+                               QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Autotags Assignment for new items"), QLatin1String("AutotagsAssignment"), false);
+    d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
     // --------------------------------------------------------------------------------------
 
