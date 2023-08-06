@@ -28,7 +28,7 @@
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Miguel Branco <mgl.branco@gmail.com>, 2009, 2010.
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2015, 2016, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
 #
 # --- kipiplugin_acquireimages
 # translation of kipiplugin_acquireimages.po to galician
@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-03 00:43+0000\n"
-"PO-Revision-Date: 2020-01-12 12:23+0100\n"
+"PO-Revision-Date: 2023-08-05 11:45+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -73,7 +73,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, fuzzy, kde-format
@@ -24429,7 +24429,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:46
 #, kde-format
 msgid "Privacy setting of the album that will be created (required)."
-msgstr "A configuración da intimidade do álbum que se vai crear (requirido)."
+msgstr "A configuración da privacidade do álbum que se vai crear (requirido)."
 
 #: core/dplugins/generic/webservices/facebook/fbnewalbumdlg.cpp:48
 #, kde-format
@@ -25453,7 +25453,7 @@ msgstr "Nivel de acceso"
 msgid ""
 "These are security and privacy settings for the new Google Photos album."
 msgstr ""
-"Esta é a configuración de seguridade e protección da intimidade para o novo "
+"Esta é a configuración de seguridade e protección da privacidade para o novo "
 "álbum de Google Photos."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:70
@@ -25494,7 +25494,7 @@ msgstr "Un álbum non listado que require rexistrarse para podelo ver."
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:154
 #, kde-format
 msgid "Privacy:"
-msgstr "Intimidade:"
+msgstr "Privacidade:"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:50
 #, fuzzy, kde-format
@@ -28006,13 +28006,14 @@ msgstr "Modelo:"
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:134
 #, kde-format
 msgid "Security && Privacy"
-msgstr "Seguridade e intimidade"
+msgstr "Seguridade e privacidade"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:135
 #, kde-format
 msgid "These are security and privacy settings for the new SmugMug album."
 msgstr ""
-"Estas son as opcións de seguridade e intimidade para o novo álbum de SmugMug."
+"Estas son as opcións de seguridade e privacidade para o novo álbum de "
+"SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:137
 #, kde-format
@@ -42637,7 +42638,7 @@ msgstr "Sincronizar a &exportación"
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #, kde-format
 msgid "Create Tag from Address Book"
-msgstr "Crear unha etiqueta a partir do caderno de enderezos"
+msgstr "Crear unha etiqueta a partir da axenda de enderezos"
 
 #: core/libs/tags/manager/tagsmanager.cpp:726
 #, fuzzy, kde-format
@@ -56751,12 +56752,12 @@ msgstr "Numeración consciente do cartafol"
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:70
 #, kde-format
 msgid "Create Tag From Address Book"
-msgstr "Crear unha etiqueta a partir do caderno de enderezos"
+msgstr "Crear unha etiqueta a partir da axenda de enderezos"
 
 #: core/utilities/extrasupport/addressbook/akonadiiface.cpp:73
 #, kde-format
 msgid "No address book entries found"
-msgstr "Non se atoparon entradas no caderno de enderezos."
+msgstr "Non se atoparon entradas na axenda de enderezos."
 
 #: core/utilities/facemanagement/threads/facepipeline_p.cpp:234
 #, kde-format

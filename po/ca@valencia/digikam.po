@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-03 00:43+0000\n"
-"PO-Revision-Date: 2023-07-30 10:49+0200\n"
+"PO-Revision-Date: 2023-08-02 12:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -29234,15 +29234,7 @@ msgstr ""
 "<b><i>contrasenya</i></b> per la correcta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29258,9 +29250,12 @@ msgstr ""
 "ordres següents:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -"
 "u root</p><p>...</p><p>Introduïu el codi SQL a l'indicatiu de MySQL per tal "
 "d'iniciar les bases de dades de digiKam amb atorgament de privilegis (vegeu "
-"abans)</p><p>...</p><p>quit</p><p>NOTA: Si teniu una col·lecció enorme, "
-"haureu d'iniciar el servidor de MySQL amb «mysql --max_allowed_packet=128M "
-"OR in my.ini» o canvieu la configuració a ~/.my.cnf.</p>"
+"abans)</p><p>...</p><p>quit</p><p>NOTA: Si teniu problemes amb un servidor "
+"MySQL a Ubuntu, introduïu:<br>SET GLOBAL log_bin_trust_function_creators=1;"
+"<br>en l'indicador del Mysql per a poder crear activadors de MySQL.</"
+"p><p>NOTA: Si teniu una col·lecció enorme, haureu d'iniciar el servidor de "
+"MySQL amb «mysql --max_allowed_packet=128M OR in my.ini» o canvieu la "
+"configuració a ~/.my.cnf.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
