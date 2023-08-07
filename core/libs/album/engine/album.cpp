@@ -206,18 +206,21 @@ void Album::removeChild(Album* const child)
 
 void Album::clear()
 {
-    m_cacheLock.lockForWrite();
+    QList<Album*> albumsToDelete;
 
-    while (!m_childCache.isEmpty())
     {
-        Album* const album = m_childCache.takeFirst();
-        m_cacheLock.unlock();
+        QWriteLocker locker(&m_cacheLock);
 
-        delete album;
-        m_cacheLock.lockForWrite();
+        while (!m_childCache.isEmpty())
+        {
+            albumsToDelete << m_childCache.takeFirst();
+        }
     }
 
-    m_cacheLock.unlock();
+    while (!albumsToDelete.isEmpty())
+    {
+        delete albumsToDelete.takeFirst();
+    }
 }
 
 int Album::globalID() const
