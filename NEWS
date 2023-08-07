@@ -33,7 +33,7 @@ BUGFIXES:
 023 ==> 472856 - The storage location of this image is currently not available (Ref: Bug report 438845).
 024 ==> 466773 - Conversion raw (Panasonic rw2) to DNG with bugs.
 025 ==> 472914 - Face tag subfolders get converted to backslash instead of forward slash when metadata reread.
-026 ==> 
+026 ==> 473113 - Slideshow should prevent the monitor from powering off during the slideshow.
 027 ==> 
 028 ==> 
 029 ==> 
