@@ -662,7 +662,7 @@ void SlideShowLoader::slotMouseMoveTimeOut()
 
 /**
  * Inspired from Okular's presentation widget
- * TODO: Add OSX and Windows support
+ * TODO: Add OSX support
  */
 void SlideShowLoader::inhibitScreenSaver()
 {
