@@ -77,6 +77,9 @@ public:
     /// Face detection settings.
     FaceScanSettings                        faceSettings;
 
+    /// Autotags assignment.
+    bool                                    autotagsAssignment;
+
     /// Perform Image Quality Sorting.
     bool                                    qualitySort;
     /// Mode to assign Pick Labels to items.

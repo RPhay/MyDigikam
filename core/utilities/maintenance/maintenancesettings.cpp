@@ -36,6 +36,7 @@ MaintenanceSettings::MaintenanceSettings()
       maxSimilarity          (100),
       duplicatesRestriction  (HaarIface::DuplicatesSearchRestrictions::None),
       faceManagement         (false),
+      autotagsAssignment     (false),
       qualitySort            (false),
       qualityScanMode        (true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
       qualitySettingsSelected(ImageQualityConfSelector::GlobalSettings),
@@ -73,6 +74,7 @@ QDebug operator<<(QDebug dbg, const MaintenanceSettings& s)
     dbg.nospace() << "duplicatesRestriction  : " << s.duplicatesRestriction               << QT_ENDL;
     dbg.nospace() << "faceManagement         : " << s.faceManagement                      << QT_ENDL;
     dbg.nospace() << "faceScannedHandling    : " << s.faceSettings.alreadyScannedHandling << QT_ENDL;
+    dbg.nospace() << "AutotagsAssignment     : " << s.autotagsAssignment                  << QT_ENDL;
     dbg.nospace() << "qualitySort            : " << s.qualitySort                         << QT_ENDL;
     dbg.nospace() << "quality                : " << s.quality                             << QT_ENDL;
     dbg.nospace() << "qualityScanMode        : " << s.qualityScanMode                     << QT_ENDL;

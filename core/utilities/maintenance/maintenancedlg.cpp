@@ -66,10 +66,10 @@ public:
         FingerPrints,
         Duplicates,
         FaceManagement,
+        AutotagsAssignment,
         ImageQualitySorter,
         MetadataSync,
-        Stretch,
-        AutotagsAssignment
+        Stretch
     };
 
 public:
@@ -120,6 +120,7 @@ public:
     static const QString configDuplicatesRestriction;
     static const QString configFaceManagement;
     static const QString configFaceScannedHandling;
+    static const QString configAutotagsAssignment;
     static const QString configImageQualitySorter;
     static const QString configQualityScanMode;
     static const QString configQualitySettingsSelected;
@@ -130,7 +131,6 @@ public:
     static const QString configCleanupSimilarityDatabase;
     static const QString configShrinkDatabases;
     static const QString configSyncDirection;
-    static const QString configAutotagsAssignment;
 
     QDialogButtonBox*         buttons;
     QLabel*                   logo;
@@ -176,6 +176,7 @@ const QString MaintenanceDlg::Private::configMaxSimilarity(QLatin1String("maxSim
 const QString MaintenanceDlg::Private::configDuplicatesRestriction(QLatin1String("duplicatesRestriction"));
 const QString MaintenanceDlg::Private::configFaceManagement(QLatin1String("FaceManagement"));
 const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("FaceScannedHandling"));
+const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
 const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
 const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
 const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));
@@ -186,7 +187,6 @@ const QString MaintenanceDlg::Private::configCleanupThumbDatabase(QLatin1String(
 const QString MaintenanceDlg::Private::configCleanupFacesDatabase(QLatin1String("CleanupFacesDatabase"));
 const QString MaintenanceDlg::Private::configCleanupSimilarityDatabase(QLatin1String("CleanupSimilarityDatabase"));
 const QString MaintenanceDlg::Private::configShrinkDatabases(QLatin1String("ShrinkDatabases"));
-const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
 
 MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     : QDialog(parent),
@@ -335,6 +335,13 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
+    d->expanderBox->insertItem(Private::AutotagsAssignment, new QLabel(i18n("<qt>No option<br/>"
+                               "<i>Note: Automatical tags assignments.</i></qt>")),
+                               QIcon::fromTheme(QLatin1String("flag-green")), i18n("Autotags Assignment for new items"), QLatin1String("AutotagsAssignment"), false);
+    d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
+
+    // --------------------------------------------------------------------------------------
+
     d->vbox               = new DVBox;
     DHBox* const hbox11   = new DHBox(d->vbox);
     new QLabel(i18n("Scan Mode: "), hbox11);
@@ -372,13 +379,6 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->expanderBox->setCheckBoxVisible(Private::MetadataSync, true);
 
     d->expanderBox->insertStretch(Private::Stretch);
-
-    // --------------------------------------------------------------------------------------
-
-    d->expanderBox->insertItem(Private::AutotagsAssignment, new QLabel(i18n("<qt>No option<br/>"
-                               "<i>Note: Automatical tags assignments.</i></qt>")),
-                               QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Autotags Assignment for new items"), QLatin1String("AutotagsAssignment"), false);
-    d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
     // --------------------------------------------------------------------------------------
 
@@ -471,6 +471,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
                                                                               : FaceScanSettings::DetectAndRecognize;
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
+    prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
     prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
@@ -531,6 +532,8 @@ void MaintenanceDlg::readSettings()
         d->expanderBox->setChecked(Private::FaceManagement,     group.readEntry(d->configFaceManagement,        prm.faceManagement));
         d->faceScannedHandling->setCurrentIndex(group.readEntry(d->configFaceScannedHandling,                   (int)prm.faceSettings.alreadyScannedHandling));
 
+        d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
+
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
         d->qualitySelector->setSettingsSelected(
@@ -585,6 +588,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configDuplicatesRestriction,      (int)prm.duplicatesRestriction);
         group.writeEntry(d->configFaceManagement,             prm.faceManagement);
         group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
+        group.writeEntry(d->configAutotagsAssignment,         prm.autotagsAssignment);
         group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
@@ -689,6 +693,8 @@ void MaintenanceDlg::slotUseLastSettings(bool checked)
 
         d->expanderBox->setChecked(Private::FaceManagement,     prm.faceManagement);
         d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
+
+        d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
         d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);
