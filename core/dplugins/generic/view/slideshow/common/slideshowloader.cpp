@@ -55,6 +55,10 @@
 #   include "slidevideo.h"
 #endif //HAVE_MEDIAPLAYER
 
+#ifdef Q_OS_WIN
+#   include "winbase.h"
+#endif
+
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
@@ -663,7 +667,11 @@ void SlideShowLoader::slotMouseMoveTimeOut()
 void SlideShowLoader::inhibitScreenSaver()
 {
 
-#ifdef HAVE_DBUS
+#ifdef Q_OS_WIN
+
+    SetThreadExecutionState(ES_DISPLAY_REQUIRED | ES_CONTINUOUS);
+
+#elif defined HAVE_DBUS
 
     QDBusMessage message = QDBusMessage::createMethodCall(QLatin1String("org.freedesktop.ScreenSaver"),
                                                           QLatin1String("/ScreenSaver"),
@@ -686,7 +694,11 @@ void SlideShowLoader::inhibitScreenSaver()
 void SlideShowLoader::allowScreenSaver()
 {
 
-#ifdef HAVE_DBUS
+#ifdef Q_OS_WIN
+
+    SetThreadExecutionState(ES_CONTINUOUS);
+
+#elif defined HAVE_DBUS
 
     if (d->screenSaverCookie != -1)
     {
