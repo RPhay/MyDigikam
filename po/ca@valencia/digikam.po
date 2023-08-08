@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"POT-Creation-Date: 2023-08-08 00:43+0000\n"
 "PO-Revision-Date: 2023-08-02 12:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2838,7 +2838,7 @@ msgstr "Mostra a pantalla completa"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:503
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2930,7 +2930,7 @@ msgid "No Tags Album"
 msgstr "Sense etiquetes d'àlbum"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:576
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -21811,13 +21811,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Bambolles"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Presentació de diapositives"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26662,38 +26662,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW d'UFRaw"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:424
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Busca actual de la línia de temps"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Busca actual aproximada d'imatge"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:785
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Busca actual aproximada de croquis"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:792
 #, kde-format
 msgid "Current Map Search"
 msgstr "Busca actual per mapa"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Search"
 msgstr "Busca actual"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:800
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Busca actual dels duplicats"

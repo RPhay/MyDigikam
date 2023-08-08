@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"POT-Creation-Date: 2023-08-08 00:43+0000\n"
 "PO-Revision-Date: 2023-08-02 12:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2782,7 +2782,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:503
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2871,7 +2871,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:576
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -20857,13 +20857,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "斑点"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -25556,38 +25556,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:424
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:785
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:792
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:800
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"

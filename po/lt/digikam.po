@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"POT-Creation-Date: 2023-08-08 00:43+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3101,7 +3101,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:503
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -3189,7 +3189,7 @@ msgid "No Tags Album"
 msgstr "Eiti į albumus"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:576
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -21977,14 +21977,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Dėmės"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Skaidrių peržiūra"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26909,38 +26909,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Spalvų taisymas"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:424
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Dabartinė paieška laike"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Dabartinė apytikslė nuotraukos paieška"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:785
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Dabartinė apytikslė eskizo paieška"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:792
 #, kde-format
 msgid "Current Map Search"
 msgstr "Paieška dabartiniame žemėlapyje"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Search"
 msgstr "Dabartinė paieška"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:800
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Dabartinė dublikatų paieška"

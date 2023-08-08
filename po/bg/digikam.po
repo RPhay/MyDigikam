@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:43+0000\n"
+"POT-Creation-Date: 2023-08-08 00:43+0000\n"
 "PO-Revision-Date: 2023-08-02 22:43+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2857,7 +2857,7 @@ msgstr "Показване на цял екран"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:503
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2949,7 +2949,7 @@ msgid "No Tags Album"
 msgstr "Няма албум с етикети"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:576
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -21869,13 +21869,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Blobs"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -26708,38 +26708,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Конвертиране UFRaw Raw"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:424
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Кошче"
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Текущо търсене по период от време"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:781
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Текущо ориентировъчно търсене по изображение"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:785
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Текущо ориентировъчно търсене по скица"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:792
 #, kde-format
 msgid "Current Map Search"
 msgstr "Текущо търсене по карта"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Search"
 msgstr "Текущо търсене"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:800
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Текущо търсене на дубликати"
