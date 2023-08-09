@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-08 00:43+0000\n"
-"PO-Revision-Date: 2023-08-02 12:21+0200\n"
+"PO-Revision-Date: 2023-08-08 18:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2321,6 +2321,7 @@ msgctxt "@action: setup"
 msgid "Flipped Vertically"
 msgstr "Invertida verticalment"
 
+# skip-rule: punctuation-period-no
 #: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
@@ -2333,6 +2334,7 @@ msgctxt "@action: setup"
 msgid "Rotated Right"
 msgstr "Girada a la dreta"
 
+# skip-rule: punctuation-period-no
 #: core/app/main/digikamapp_setup.cpp:969
 #, kde-format
 msgctxt "@action: setup"
@@ -10326,6 +10328,7 @@ msgstr ""
 "tecla <b>Maj</b> per a moure la cantonada més propera cap al punter del "
 "ratolí.</p>"
 
+# skip-rule: punctuation-period-no
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:238
 #, kde-format
 msgid "Max. Aspect"
@@ -12058,8 +12061,8 @@ msgstr[1] "<p>%1 caràcters.</p>"
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
-msgstr[0] "queda %1 caràcter."
-msgstr[1] "queden %1 caràcters."
+msgstr[0] "Queda %1 caràcter"
+msgstr[1] "Queden %1 caràcters"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:81
 #, kde-format
@@ -12220,6 +12223,7 @@ msgid_plural "%1 characters."
 msgstr[0] "%1 caràcter."
 msgstr[1] "%1 caràcters."
 
+# skip-rule: punctuation-period-no
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
 #, kde-format
 msgid "Set here the editorial description"
@@ -14149,6 +14153,7 @@ msgstr "Corel Draw [*.CDR]"
 msgid "Destination:"
 msgstr "Destinació:"
 
+# skip-rule: punctuation-period-no
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
 #, kde-format
 msgid "Set here the envelope destination"
@@ -15610,6 +15615,7 @@ msgid "Set here the strings that identify content that recurs."
 msgstr ""
 "Establiu aquí les cadenes que identifiquen el contingut que es repeteix."
 
+# skip-rule: punctuation-period-no
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
 #, kde-format
 msgid "Set here the editorial usage instructions"
@@ -16800,7 +16806,7 @@ msgid ""
 "Image"
 msgstr ""
 "Aquesta eina fusiona imatges amb bràqueting amb exposicions diferents per a "
-"crear una imatge en pseudo HDR."
+"crear una imatge en pseudo HDR"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
@@ -16843,7 +16849,7 @@ msgstr "Per a més informació, consulteu"
 #, kde-format
 msgctxt "@info"
 msgid "this page"
-msgstr "en aquesta pàgina"
+msgstr "aquesta pàgina"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
 #, kde-format
@@ -16857,6 +16863,7 @@ msgctxt "@title:window"
 msgid "Set Bracketed Images"
 msgstr "Establir les imatges amb bràqueting"
 
+# skip-rule: punctuation-colon-no
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
 msgctxt "@info"
@@ -19207,6 +19214,7 @@ msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
 msgstr "Detecta l'horitzó i adapta el projecte perquè sigui horitzontal."
 
+# skip-rule: punctuation-period-no
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
 #, kde-format
 msgctxt "@info: whatsthis"
@@ -29105,7 +29113,7 @@ msgid ""
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
 "Estableix el port de l'ordinador servidor.\n"
-"Normalment, el servidor de MySQL usa el port predeterminat número 3306."
+"Normalment, el servidor de MySQL usa el port predeterminat número 3306"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
 #, kde-format
@@ -31496,7 +31504,7 @@ msgstr "No es permet la transformació integrada"
 #: core/libs/dimg/filters/filteractionfilter.cpp:217
 #, kde-format
 msgid "Filter identifier or version is not supported"
-msgstr "L'identificador de filtre o versió no està admès."
+msgstr "L'identificador de filtre o versió no està admès"
 
 #: core/libs/dimg/filters/fx/blurfilter.cpp:90
 #, kde-format
@@ -35342,7 +35350,7 @@ msgid ""
 "album %2"
 msgstr ""
 "No s'ha pogut moure la carpeta %1 a l'àlbum %2. La carpeta %1 també s'ha "
-"copiat a l'àlbum %2."
+"copiat a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:187
 #, kde-format
@@ -38412,7 +38420,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Refine interpolation"
-msgstr "Refinació de la interpolació:"
+msgstr "Refinació de la interpolació"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:354
 #, kde-kuit-format
@@ -41584,7 +41592,7 @@ msgid ""
 msgstr ""
 "Format dels píxels de sortida del descodificador. Rendiment (de millor a "
 "pitjor): NV12; UYVY; BGRA; YUV420P; YUYV. L'OSX superior a 10.7 només permet "
-"UYVY, BGRA i YUV420p."
+"UYVY, BGRA i YUV420p"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:222
 #, kde-format
@@ -48154,17 +48162,17 @@ msgstr "&Substitueix"
 #: core/libs/widgets/text/donlinetranslator.cpp:57
 #, kde-format
 msgid "Selected source language %1 is not supported for %2"
-msgstr "L'idioma origen seleccionat %1 no està implementat a %2."
+msgstr "L'idioma origen seleccionat %1 no està implementat a %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:69
 #, kde-format
 msgid "Selected translation language %1 is not supported for %2"
-msgstr "L'idioma de traducció seleccionat %1 no està implementat a %2."
+msgstr "L'idioma de traducció seleccionat %1 no està implementat a %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:81
 #, kde-format
 msgid "Selected ui language %1 is not supported for %2"
-msgstr "L'idioma de la IU seleccionat %1 no està implementat a %2."
+msgstr "L'idioma de la IU seleccionat %1 no està implementat a %2"
 
 #: core/libs/widgets/text/donlinetranslator.cpp:115
 #: core/libs/widgets/text/donlinetranslator.cpp:132
@@ -49754,7 +49762,7 @@ msgstr "No s'ha pogut desar el fitxer: %1"
 #: core/showfoto/main/showfoto_iofiles.cpp:80
 #, kde-format
 msgid "Remote file handling is not supported"
-msgstr "La gestió de fitxers remots no està admesa."
+msgstr "La gestió de fitxers remots no està admesa"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
 #: core/utilities/imageeditor/main/imagewindow.cpp:573
@@ -49801,7 +49809,7 @@ msgid ""
 "Remote file handling is not supported"
 msgstr ""
 "Ha fallat en carregar el fitxer: «%1»\n"
-"La gestió de fitxers remots no està admesa."
+"La gestió de fitxers remots no està admesa"
 
 #: core/showfoto/main/showfoto_setup.cpp:22
 #, kde-format
@@ -52799,16 +52807,19 @@ msgstr ""
 "de moment no es recomana que ho feu, d'altra manera serà sota el vostre "
 "propi risc.</p></qt>"
 
+# skip-rule: punctuation-period-no
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
 msgid "Ref. images"
 msgstr "Imatges de ref."
 
+# skip-rule: punctuation-period-no
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:69
 #, kde-format
 msgid "Ref. dates"
 msgstr "Imatges de ref."
 
+# skip-rule: punctuation-period-no
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:70
 #, kde-format
 msgid "Ref. albums"
@@ -52822,7 +52833,7 @@ msgstr "Elements"
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:72
 #, kde-format
 msgid "Avg. similarity"
-msgstr "Similitud mitjana:"
+msgstr "Similitud mitjana"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:78
 #, kde-format
@@ -53534,7 +53545,7 @@ msgstr "Mostra els trajectes en el mapa"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
-msgstr "Establiu aquesta opció per a mostrar els trajectes en el mapa."
+msgstr "Establiu aquesta opció per a mostrar els trajectes en el mapa"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
 #, kde-format
@@ -53545,7 +53556,7 @@ msgstr "Usa només les imatges seleccionades"
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr ""
-"Establiu aquesta opció per a correlacionar només les imatges seleccionades."
+"Establiu aquesta opció per a correlacionar només les imatges seleccionades"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -60577,7 +60588,7 @@ msgstr "Opcions de la vista prèvia"
 #: core/utilities/setup/camera/setupcamera.cpp:536
 #, kde-format
 msgid "Embedded preview loads full-sized images"
-msgstr "La vista prèvia incrustada carregarà les imatges a mida completa."
+msgstr "La vista prèvia incrustada carregarà les imatges a mida completa"
 
 #: core/utilities/setup/camera/setupcamera.cpp:537
 #, kde-format
@@ -61598,7 +61609,7 @@ msgstr ""
 "El menú de configuració avançada permet gestionar els espais de nom de les "
 "metadades emprats pel digiKam per a emmagatzemar i obtenir les etiquetes, "
 "valoracions i comentaris.<br/><b>Nota:</b> L'ordre en llegir metadades és "
-"important."
+"important"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:417
 #, kde-format
@@ -61761,7 +61772,7 @@ msgstr "Assignació de la valoració:"
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Aquest és un espai de nom predeterminat. Els espais de nom predeterminats "
-"només es poden desactivar."
+"només es poden desactivar"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
@@ -62166,7 +62177,7 @@ msgid ""
 msgstr ""
 "En comptes de sincronitzar les metadades, simplement programeu la "
 "sincronització. La sincronització es pot realitzar més tard mitjançant "
-"l'activació d'aplicar els pendents, o a la sortida del digiKam."
+"l'activació d'aplicar els pendents, o a la sortida del digiKam"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:141
 #, kde-format
