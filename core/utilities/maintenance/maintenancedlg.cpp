@@ -336,8 +336,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     // --------------------------------------------------------------------------------------
 
     d->expanderBox->insertItem(Private::AutotagsAssignment, new QLabel(i18n("<qt>No option<br/>"
-                               "<i>Note: Automatical tags assignments.</i></qt>")),
-                               QIcon::fromTheme(QLatin1String("flag-green")), i18n("Autotags Assignment for new items"), QLatin1String("AutotagsAssignment"), false);
+                               "<i>Note: Automatical tags assignments using Deep neural network.</i></qt>")),
+                               QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"), QLatin1String("AutotagsAssignment"), false);
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
     // --------------------------------------------------------------------------------------
