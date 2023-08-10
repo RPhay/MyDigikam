@@ -63,8 +63,6 @@ QVector<QString>  DNNYoloDetector::loadCOCOClass()
         classList.push_back(QString::fromStdString(line));
     }
 
-    qDebug() << "Size of predifined COCO classes" << classList.size();
-
     return classList;
 }
 
