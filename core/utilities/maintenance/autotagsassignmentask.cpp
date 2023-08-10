@@ -22,6 +22,7 @@
 #include "iteminfo.h"
 #include "maintenancedata.h"
 #include "autotagsassign.h"
+#include "tagscache.h"
 
 namespace Digikam
 {
@@ -80,16 +81,24 @@ void AutotagsAssignmentTask::run()
         if (!m_cancel)
         {
             // Run Autotags backend here
+            // Assign Tags in database using API from itemInfo
             ItemInfo info = ItemInfo::fromLocalFile(path);
-            qDebug() << info.filePath();
-
             d->autotagsEngine = new autoTagsAssign();
 
-            // show tags to debug
-            QList<QString> tagsLists = d->autotagsEngine->generateTagsList(path);
-            qDebug() << "Tags :" << tagsLists << "\n";    
+            QList<QString> tagsList = d->autotagsEngine->generateTagsList(path);
+            TagsCache* tagsCache = Digikam::TagsCache::instance();
 
-            // TODO Assign Tags in database using API from itemInfo
+            QString rootTags = QLatin1String("auto/");
+            for (auto tag : tagsList)
+            {
+                QString tagPath = rootTags + tag;
+                if (!tagsCache->hasTag(tagsCache->tagForPath(tagPath)))
+                {
+                    auto id = tagsCache->createTag(tagPath);
+                }
+
+                info.setTag(tagsCache->tagForPath(tagPath));
+            }
 
             d->autotagsEngine = nullptr;
             delete d->autotagsEngine;
