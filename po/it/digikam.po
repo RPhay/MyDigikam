@@ -17,7 +17,7 @@
 # Stefano Ferri <ferriste@gmail.com>, 2013.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2022.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2015.
-# Valter Mura <valtermura@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Valter Mura <valtermura@gmail.com>
 #
 #
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-08 00:43+0000\n"
-"PO-Revision-Date: 2023-07-25 19:34+0200\n"
+"PO-Revision-Date: 2023-08-05 10:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.07.80\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -22170,31 +22170,7 @@ msgid "A tool to render slideshow"
 msgstr "Strumento per eseguire la resa di una presentazione di diapositive"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22234,8 +22210,8 @@ msgstr ""
 "tr><tr><td></td><td>Rotella del mouse giù</td></tr><tr><td></td><td>Pulsante "
 "destro del mouse</td></tr><tr><td>Pausa/Avvio:</td><td>barra <i>spaziatrice</"
 "i></td></tr><tr><td>Impostazioni presentazione:</td><td>tasto <i>F2</i></"
-"td></tr><tr><td>Mostra/nascondi proprietà:</td><td><i>F4</i> key</td></"
-"tr><tr><td>Esci:</td><td>tasto <i>Esc</i></td></tr><tr><td colspan="
+"td></tr><tr><td>Mostra/nascondi sovraimpressioni:</td><td>tasto <i>F4</i></"
+"td></tr><tr><td>Esci:</td><td>tasto <i>Esc</i></td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Proprietà elemento</h1></b></center></nobr></td></"
 "tr><tr><td>Cambia tag:</td><td>usa le scorciatoie da tastiera per i tag</"
 "td></tr><tr><td>Cambia valutazione:</td><td>usa le scorciatoie da tastiera "
@@ -29313,15 +29289,7 @@ msgstr ""
 "quella corretta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29333,14 +29301,17 @@ msgid ""
 "you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
 "ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
-"<p>Nota: con un server Linux, una banca dati può essere inizializzata "
+"<p>Nota: in un server Linux, una banca dati può essere inizializzata "
 "seguendo i comandi sotto riportati:</p><p># su</p><p># systemctl restart "
 "mysqld</p><p># mysql -u root</p><p>...</p><p>Digitate il codice SQL al "
 "prompt di Mysql in modo da inizializzare le banche dati di digiKam con "
 "privilegi di amministrazione (vedi indietro)</p><p>...</p><p>quit</"
-"p><p>NOTA: se possiedi una raccolta molto grande, devi avviare il server "
-"MySQL con mysql --max_allowed_packet=128M OPPURE cambiare le impostazioni in "
-"my.ini o ~/.my.cnf</p>"
+"p><p>NOTA: se hai problemi con un server MySQL in Ubuntu, digita:<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br>nella finestra di prompt mysql, "
+"per poter creare attivatori MySQL.</p><p>NOTA: se possiedi una raccolta "
+"molto grande, devi avviare il server MySQL con mysql --"
+"max_allowed_packet=128M OPPURE cambiare le impostazioni in my.ini o ~/.my."
+"cnf</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -59737,7 +59708,7 @@ msgid ""
 "it in fullscreen mode."
 msgstr ""
 "Abilita questa opzione per mostrare un pulsante per l'apertura in modalità a "
-"schermo intero dell'immagine al di sopra della miniatura."
+"schermo intero dell'immagine sopra la miniatura."
 
 #: core/utilities/setup/album/setupalbumview.cpp:213
 #: core/utilities/setup/camera/setupcamera.cpp:488
@@ -60603,7 +60574,7 @@ msgid ""
 "rotation."
 msgstr ""
 "Abilita questa opzione per mostrare i pulsanti per la rotazione "
-"dell'immagine al di sopra della miniatura."
+"dell'immagine sopra la miniatura."
 
 #: core/utilities/setup/camera/setupcamera.cpp:505
 #, kde-format
