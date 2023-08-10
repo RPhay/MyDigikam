@@ -44,6 +44,19 @@ DNNBaseDetectorModel::~DNNBaseDetectorModel()
 {
 }
 
+QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
+{
+    QMap<QString, QVector<QRect>> results = detectObjects(inputImage);
+    QList<QString> objectNames;
+
+    for(QMap<QString, QVector<QRect>>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
+    {
+        objectNames.append(it.key());
+    }
+
+    return objectNames;
+}
+
 double DNNBaseDetectorModel::showInferenceTime()
 {
     // Put efficiency information.

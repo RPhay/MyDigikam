@@ -31,7 +31,7 @@ class DIGIKAM_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
 public:
 
     explicit DNNYoloDetector(YoloVersions modelVersion = YoloVersions::YOLOV5NANO);
-    ~DNNYoloDetector()                                               override;
+    ~DNNYoloDetector()                                                      override;
 
 public:
 
@@ -41,8 +41,7 @@ public:
 
     bool loadModels();
 
-    void detectObjects(const cv::Mat& inputImage,
-                       QMap<QString, QVector<QRect>>& detectedBoxes) override;
+    QMap<QString, QVector<QRect>>  detectObjects(const cv::Mat& inputImage) override;
 
     QVector<QString>  loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
 

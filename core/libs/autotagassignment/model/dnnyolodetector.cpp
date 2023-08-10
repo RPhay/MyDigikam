@@ -131,17 +131,21 @@ bool DNNYoloDetector::loadModels()
 }
 
 
-void DNNYoloDetector::detectObjects(const::cv::Mat& inputImage,
-                                    QMap <QString, QVector<QRect>>& detectedBoxes)
+QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inputImage)
 {
 
     if (inputImage.empty())
     {
         qDebug() << "Invalid image given, not detecting objects";
-        return;
+        return {};
     }
+
+    QMap<QString, QVector<QRect>> detectedBoxes;
+    
     std::vector<cv::Mat> outs = preprocess(inputImage);
     postprocess(inputImage, outs, detectedBoxes);
+
+    return detectedBoxes;
 }
 
 

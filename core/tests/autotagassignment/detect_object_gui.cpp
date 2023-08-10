@@ -164,10 +164,7 @@ QMap<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath
         return {};
     }
 
-    QMap <QString, QVector<QRect>> detectedObjects;    
-    m_yoloDetector->detectObjects(cvImage, detectedObjects);
-
-    return detectedObjects;
+    return m_yoloDetector->detectObjects(cvImage);
 }
 
 

@@ -51,8 +51,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    QMap <QString, QVector<QRect>> detectedBoxes;    
-    yoloDetector->detectObjects(cvImage, detectedBoxes);
+    QMap <QString, QVector<QRect>> detectedBoxes = yoloDetector->detectObjects(cvImage);
 
     QPainter painter(&img);
     QPen paintPen(Qt::red);
