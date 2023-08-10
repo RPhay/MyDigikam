@@ -84,7 +84,7 @@ ThumbsGenerator::~ThumbsGenerator()
     delete d;
 }
 
-void ThumbsGenerator::init(const bool rebuildAll)
+void ThumbsGenerator::  init(const bool rebuildAll)
 {
     d->rebuildAll = rebuildAll;
     d->thread     = new MaintenanceThread(this);

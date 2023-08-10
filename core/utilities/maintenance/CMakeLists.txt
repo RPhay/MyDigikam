@@ -31,6 +31,8 @@ set(libmaintenance_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancetool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/maintenancethread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/autotagsassignment.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/autotagsassignmentask.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>

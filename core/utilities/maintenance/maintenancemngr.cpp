@@ -36,6 +36,7 @@
 #include "thumbsgenerator.h"
 #include "fingerprintsgenerator.h"
 #include "duplicatesfinder.h"
+#include "autotagsassignment.h"
 #include "imagequalitysorter.h"
 #include "metadatasynchronizer.h"
 #include "dnotificationwrapper.h"
@@ -74,6 +75,7 @@ public:
     FingerPrintsGenerator* fingerPrintsGenerator;
     DuplicatesFinder*      duplicatesFinder;
     MetadataSynchronizer*  metadataSynchronizer;
+    AutotagsAssignment*    autotagsAssignment;
     ImageQualitySorter*    imageQualitySorter;
     FacesDetector*         facesDetector;
     DbCleaner*             databaseCleaner;
@@ -158,10 +160,15 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
         d->facesDetector = nullptr;
         stage7();
     }
+    else if(tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment))
+    {
+        d->autotagsAssignment = nullptr;
+        stage8();
+    }
    else if (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))
     {
         d->imageQualitySorter = nullptr;
-        stage8();
+        stage9();
     }
     else if (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer))
     {
@@ -179,7 +186,8 @@ void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
         (tool == dynamic_cast<ProgressItem*>(d->databaseCleaner))       ||
         (tool == dynamic_cast<ProgressItem*>(d->facesDetector))         ||
         (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))    ||
-        (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer)))
+        (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer))  ||
+        (tool == dynamic_cast<ProgressItem*>(d->autotagsAssignment)))
     {
         cancel();
     }
@@ -327,6 +335,27 @@ void MaintenanceMngr::stage7()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "stage7";
 
+    if (d->settings.autotagsAssignment)
+    {
+        AlbumList list;
+        list << d->settings.albums;
+        list << d->settings.tags;
+
+        d->autotagsAssignment = new AutotagsAssignment((AutotagsAssignment::AutotagsAssignmentScanMode)(0), list);
+        d->autotagsAssignment->setNotificationEnabled(false);
+        d->autotagsAssignment->setUseMultiCoreCPU(d->settings.useMutiCoreCPU);
+        d->autotagsAssignment->start();
+    }
+    else
+    {
+        stage8();
+    }   
+}
+
+void MaintenanceMngr::stage8()
+{
+    qCDebug(DIGIKAM_GENERAL_LOG) << "stage8";
+
     if (d->settings.qualitySort)
     {
         AlbumList list;
@@ -340,13 +369,13 @@ void MaintenanceMngr::stage7()
     }
     else
     {
-        stage8();
+        stage9();
     }
 }
 
-void MaintenanceMngr::stage8()
+void MaintenanceMngr::stage9()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "stage8";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "stage9";
 
     if (d->settings.metadataSync)
     {

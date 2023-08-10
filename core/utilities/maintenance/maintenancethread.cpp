@@ -26,6 +26,7 @@
 #include "thumbstask.h"
 #include "metadatasynctask.h"
 #include "fingerprintstask.h"
+#include "autotagsassignmentask.h"
 #include "imagequalitytask.h"
 #include "imagequalitycontainer.h"
 #include "databasetask.h"
@@ -156,6 +157,28 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a fingerprints task for generating fingerprints";
     }
+
+    appendJobs(collection);
+}
+
+void MaintenanceThread::generateTags(const QStringList& paths)
+{
+    ActionJobCollection collection;
+
+    data->setImagePaths(paths);
+
+    for (int i = 1; i <= maximumNumberOfThreads(); ++i)
+    {
+        AutotagsAssignmentTask* const t = new AutotagsAssignmentTask();
+        t->setMaintenanceData(data);
+
+        connect(t, SIGNAL(signalFinished()),
+                this, SIGNAL(signalAdvance()));
+
+        collection.insert(t, 0);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a image quality task for autotags assignment items.";
+    }   
 
     appendJobs(collection);
 }

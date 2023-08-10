@@ -51,13 +51,14 @@ private Q_SLOTS:
 private:
 
     void stage1();  ///< Find New items
-    void stage2();  ///< Update Thumbnails
-    void stage3();  ///< Build Similarity Finger-prints
-    void stage4();  ///< Find Duplicates
-    void stage5();  ///< Faces Management
-    void stage6();  ///< Image Quality Sorter
-    void stage7();  ///< Metadata Synchronizer
-    void stage8();  ///< Database Cleanup
+    void stage2();  ///< Database Cleanup
+    void stage3();  ///< Update Thumbnails Build 
+    void stage4();  ///< Similarity Finger-prints 
+    void stage5();  ///< Find Duplicates 
+    void stage6();  ///< Faces Management 
+    void stage7();  ///< Image Quality Sorter 
+    void stage8();  ///< Autotags Assignment
+    void stage9();  ///< Metadata Synchronizer
 
     void done();    ///< Called when all scheduled tools are done.
     void cancel();  ///< Called when a tool is canceled.
