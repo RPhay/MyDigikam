@@ -334,6 +334,8 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
     m_buttons->addButton(QDialogButtonBox::Apply);
     m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
     m_buttons->setParent(hbox);
 
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
