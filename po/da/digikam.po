@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:43+0000\n"
+"POT-Creation-Date: 2023-08-12 00:43+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -11596,77 +11596,77 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "To kort - lodret"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortering"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Vis ældste først"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Vis nyeste først"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detaljer"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, fuzzy, kde-format
 #| msgid "GPS Correlator"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS-korrelator"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Fortryd/gendan"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Omvendt geokodning"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Søg"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, fuzzy, kde-format
 #| msgid "KML Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-eksport"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, fuzzy, kde-format
 #| msgid "Loading metadata - %p%"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Indlæser metadata - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -11676,28 +11676,28 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Du har 1 ændret billed."
 msgstr[1] "Du har %1 ændrede billeder."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Ugemte ændringer"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Vil du gemme ændringerne du har foretaget på dem?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, fuzzy, kde-format
 #| msgid "Saving changes - %p%"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Gemmer ændringer - %p%"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11741,14 +11741,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Fejl"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Kunne ikke gemme visse informationer:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -36038,7 +36038,7 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "&Hjælp"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, fuzzy, kde-format
@@ -36046,7 +36046,7 @@ msgstr "&Hjælp"
 msgid "Online Handbook..."
 msgstr "KIPI-plugin håndbog"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, fuzzy, kde-format
 #| msgid "About..."

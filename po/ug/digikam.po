@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:43+0000\n"
+"POT-Creation-Date: 2023-08-12 00:43+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -10820,81 +10820,81 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "تەرتىپلەش"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "ھۆججەت فورماتى"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "تەپسىلاتلار"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "يىلنامە"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "يېنىۋال"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "ئىزدە"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "ئېكسپورت قىل"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "يۈكلەۋاتىدۇ: "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10902,13 +10902,13 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "ئۆزگەرتكەننى ساقلا"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10916,7 +10916,7 @@ msgctxt "@info"
 msgid "Saving changes -"
 msgstr "ئۆزگەرتكەننى ساقلا"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10961,14 +10961,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "خاتالىق"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -33425,14 +33425,14 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "ياردەم(&H)"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr ""
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, fuzzy, kde-format
 msgid "About..."

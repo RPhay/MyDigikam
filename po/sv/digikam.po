@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:43+0000\n"
+"POT-Creation-Date: 2023-08-12 00:43+0000\n"
 "PO-Revision-Date: 2023-08-03 18:03+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -11081,67 +11081,67 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Två kartor - vertikalt"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortering"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Visa äldsta först"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Visa nyaste först"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detaljinformation"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Korrelationsverktyg för GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Ångra/gör om"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Omvänd geografisk kodning"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Sök"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-export"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Läser in metadata -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11149,25 +11149,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Det finns 1 ändrad bild."
 msgstr[1] "Det finns %1 ändrade bilder."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Osparade ändringar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Skulle du vilja spara ändringarna som gjorts?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Sparar ändringar -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11211,13 +11211,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Fel"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Misslyckades spara viss information:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -34052,14 +34052,14 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "Hjälp"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Handbok på nätet..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, kde-format
 msgid "About..."

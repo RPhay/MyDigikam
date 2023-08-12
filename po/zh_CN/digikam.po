@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-08 00:43+0000\n"
+"POT-Creation-Date: 2023-08-12 00:43+0000\n"
 "PO-Revision-Date: 2023-08-02 12:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10637,92 +10637,92 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "双地图-垂直"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "排序"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "最旧在前"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "最新在前"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "详细信息"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS 关联工具"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "撤销/重做"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "反向地理编码"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "搜索"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML 导出"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "正在加载元数据 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 张已修改图像。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "未保存的更改"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您想要保存您所作的更改吗？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10766,13 +10766,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "错误"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "无法保存部分信息："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -32949,14 +32949,14 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "帮助"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "在线使用手册..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, kde-format
 msgid "About..."
