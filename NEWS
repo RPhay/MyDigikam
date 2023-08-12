@@ -36,5 +36,5 @@ BUGFIXES:
 026 ==> 473113 - Slideshow should prevent the monitor from powering off during the slideshow.
 027 ==> 472494 - Export to Google Photos ends up with "too many requests" error.
 028 ==> 473283 - Pressing enter in the geolocation editor search box closes the window instead of searching.
-029 ==> 
+029 ==> 473312 - digiKam crashes when hitting OK for settings -> metadata -> read from sidecars.
 030 ==> 
