@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QCollator>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -33,10 +34,14 @@ public:
     {
         itemCollator.setNumericMode(true);
         albumCollator.setNumericMode(true);
+        itemCollator.setIgnorePunctuation(false);
+        albumCollator.setIgnorePunctuation(false);
+        versionPattern.setPattern(QRegularExpression::anchoredPattern(QLatin1String("(.+?)_v(\\d+)(.*)?")));
     }
 
-    QCollator itemCollator;
-    QCollator albumCollator;
+    QCollator          itemCollator;
+    QCollator          albumCollator;
+    QRegularExpression versionPattern;
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -70,11 +75,9 @@ ItemSortCollator* ItemSortCollator::instance()
 int ItemSortCollator::itemCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if (natural)
+    if (natural && !d->versionPattern.match(a).hasMatch())
     {
         d->itemCollator.setCaseSensitivity(caseSensitive);
-        d->itemCollator.setIgnorePunctuation(a.contains(QLatin1String("_v"),
-                                                        Qt::CaseInsensitive));
 
         return d->itemCollator.compare(a, b);
     }
@@ -88,7 +91,6 @@ int ItemSortCollator::albumCompare(const QString& a, const QString& b,
     if (natural)
     {
         d->albumCollator.setCaseSensitivity(caseSensitive);
-        d->albumCollator.setIgnorePunctuation(false);
 
         return d->albumCollator.compare(a, b);
     }
