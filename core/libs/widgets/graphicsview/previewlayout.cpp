@@ -226,6 +226,7 @@ void SinglePhotoPreviewLayout::setZoomFactor(double z, const QPoint& givenAnchor
 
     d->zoomSettings()->setZoomFactor(z);
     d->item->sizeHasChanged();
+
     updateLayout();
     d->item->update();
 
@@ -267,6 +268,7 @@ void SinglePhotoPreviewLayout::fitToWindow()
 
     d->zoomSettings()->fitToSize(d->frameSize(), d->fitToSizeMode);
     d->item->sizeHasChanged();
+
     updateLayout();
     d->item->update();
 
