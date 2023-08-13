@@ -321,6 +321,11 @@ void SinglePhotoPreviewLayout::updateLayout()
 
 void SinglePhotoPreviewLayout::updateZoomAndSize()
 {
+    if (!d->item || !d->view)
+    {
+        return;
+    }
+
     double fitZoom = d->zoomSettings()->fitToSizeZoomFactor(d->frameSize(), d->fitToSizeMode);
     double minZoom = qBound(0.01, fitZoom - 0.01, 0.1);
 
