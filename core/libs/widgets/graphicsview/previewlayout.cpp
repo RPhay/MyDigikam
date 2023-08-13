@@ -123,7 +123,7 @@ double SinglePhotoPreviewLayout::zoomFactor() const
 {
     if (!d->item || !d->view)
     {
-        return 1;
+        return 1.0;
     }
 
     return d->zoomSettings()->zoomFactor();
@@ -133,7 +133,7 @@ double SinglePhotoPreviewLayout::realZoomFactor() const
 {
     if (!d->item || !d->view)
     {
-        return 1;
+        return 1.0;
     }
 
     return d->zoomSettings()->realZoomFactor();
