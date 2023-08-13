@@ -148,25 +148,25 @@ void GPUMemCopy::copyFrame(void* pSrc, void* pDest, unsigned width, unsigned hei
     if (detect_sse4())
     {
         CopyFrame_SSE4(pSrc, pDest, mCache.buffer, width, height, pitch);
+        return;
     }
+#endif
 
-#elif QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
+#if QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse2())
     {
         CopyFrame_SSE2(pSrc, pDest, mCache.buffer, width, height, pitch);
+        return;
     }
 
-#else
+#endif
 
     Q_UNUSED(pSrc);
     Q_UNUSED(pDest);
     Q_UNUSED(width);
     Q_UNUSED(height);
     Q_UNUSED(pitch);
-
-#endif
-
 }
 
 void* gpu_memcpy(void* dst, const void* src, size_t size)
@@ -178,8 +178,9 @@ void* gpu_memcpy(void* dst, const void* src, size_t size)
     {
         return memcpy_sse4(dst, src, size);
     }
+#endif
 
-#elif QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
+#if QTAV_HAVE(SSE2) && defined(Q_PROCESSOR_X86)
 
     if (detect_sse2())
     {
