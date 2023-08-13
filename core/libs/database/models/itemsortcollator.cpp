@@ -31,17 +31,21 @@ class Q_DECL_HIDDEN ItemSortCollator::Private
 public:
 
     explicit Private()
+      : versionStr(QLatin1String("_v")),
+        versionExp(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)(.+)?")))
     {
         itemCollator.setNumericMode(true);
         albumCollator.setNumericMode(true);
         itemCollator.setIgnorePunctuation(false);
         albumCollator.setIgnorePunctuation(false);
-        versionPattern.setPattern(QRegularExpression::anchoredPattern(QLatin1String("(.+?)_v(\\d+)(.*)?")));
     }
 
-    QCollator          itemCollator;
-    QCollator          albumCollator;
-    QRegularExpression versionPattern;
+    const QString            versionStr;
+    const QRegularExpression versionExp;
+
+    QCollator                itemCollator;
+    QCollator                albumCollator;
+
 };
 
 // -----------------------------------------------------------------------------------------------
@@ -75,7 +79,18 @@ ItemSortCollator* ItemSortCollator::instance()
 int ItemSortCollator::itemCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    if (natural && !d->versionPattern.match(a).hasMatch())
+    bool hasVersion = false;
+
+    // Check if version string is included, this is
+    // faster than always using QRegularExpression.
+
+    if (a.contains(d->versionStr) || b.contains(d->versionStr))
+    {
+        hasVersion = (d->versionExp.match(a).hasMatch() ||
+                      d->versionExp.match(b).hasMatch());
+    }
+
+    if (natural && !hasVersion)
     {
         d->itemCollator.setCaseSensitivity(caseSensitive);
 
