@@ -141,6 +141,10 @@ Q_SIGNALS:
     void signalLoadingStarted();
     void signalLoadingFinished();
 
+private Q_SLOTS:
+
+    void slotLoadItemsFinished();
+
 private:
 
     class Private;

@@ -37,4 +37,14 @@ BUGFIXES:
 027 ==> 472494 - Export to Google Photos ends up with "too many requests" error.
 028 ==> 473283 - Pressing enter in the geolocation editor search box closes the window instead of searching.
 029 ==> 473312 - digiKam crashes when hitting OK for settings -> metadata -> read from sidecars.
-030 ==> 
+030 ==> 473355 - Big trash bin freezes digikam for long time.
+031 ==> 
+032 ==> 
+033 ==> 
+034 ==> 
+035 ==> 
+036 ==> 
+037 ==> 
+038 ==> 
+039 ==> 
+040 ==> 

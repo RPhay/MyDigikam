@@ -46,6 +46,7 @@ public:
       : thumbSize         (ThumbnailSize::Large),
         sortColumn        (DTrashTimeStamp),
         sortOrder         (Qt::DescendingOrder),
+        sortEnabled       (true),
         itemsLoadingThread(nullptr),
         thumbnailThread   (nullptr)
     {
@@ -57,6 +58,7 @@ public:
     int                  sortColumn;
 
     Qt::SortOrder        sortOrder;
+    bool                 sortEnabled;
 
     IOJobsThread*        itemsLoadingThread;
     ThumbnailLoadThread* thumbnailThread;
@@ -193,10 +195,10 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
 void DTrashItemModel::sort(int column, Qt::SortOrder order)
 {
-    d->sortColumn = column;
     d->sortOrder  = order;
+    d->sortColumn = column;
 
-    if (d->data.count() < 2)
+    if (!d->sortEnabled || (d->data.count() < 2))
     {
         return;
     }
@@ -289,10 +291,6 @@ void DTrashItemModel::append(const DTrashItemInfo& itemInfo)
     beginInsertRows(QModelIndex(), d->data.count(), d->data.count());
     d->data.append(itemInfo);
     endInsertRows();
-
-    sort(d->sortColumn, d->sortOrder);
-
-    Q_EMIT dataChange();
 }
 
 void DTrashItemModel::removeItems(const QModelIndexList& indexes)
@@ -374,6 +372,7 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 {
     Q_EMIT signalLoadingStarted();
 
+    d->sortEnabled    = false;
     d->trashAlbumPath = colPath;
 
     clearCurrentData();
@@ -385,7 +384,7 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
             Qt::QueuedConnection);
 
     connect(d->itemsLoadingThread, SIGNAL(signalFinished()),
-            this, SIGNAL(signalLoadingFinished()),
+            this, SLOT(slotLoadItemsFinished()),
             Qt::QueuedConnection);
 }
 
@@ -453,6 +452,15 @@ void DTrashItemModel::changeThumbSize(int size)
 QString DTrashItemModel::trashAlbumPath() const
 {
     return d->trashAlbumPath;
+}
+
+void DTrashItemModel::slotLoadItemsFinished()
+{
+    d->sortEnabled = true;
+    sort(d->sortColumn, d->sortOrder);
+
+    Q_EMIT dataChange();
+    Q_EMIT signalLoadingFinished();
 }
 
 } // namespace Digikam
