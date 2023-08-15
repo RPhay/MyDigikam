@@ -39,7 +39,7 @@ BUGFIXES:
 029 ==> 473312 - digiKam crashes when hitting OK for settings -> metadata -> read from sidecars.
 030 ==> 473355 - Big trash bin freezes digikam for long time.
 031 ==> 473383 - Crash when deleting an album to wastebasket.
-032 ==> 
+032 ==> 473418 - Allow other output file-types in BQM custom user script as JPEG-XL.
 033 ==> 
 034 ==> 
 035 ==> 
