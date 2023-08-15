@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 00:43+0000\n"
+"POT-Creation-Date: 2023-08-15 00:42+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -4098,7 +4098,7 @@ msgstr "Cỡ gạch lát:"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:262
+#: core/libs/dtrash/dtrashitemmodel.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, fuzzy, kde-format
 msgid "Thumbnail"
@@ -33297,12 +33297,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Trợ g&iúp"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:267
+#: core/libs/dtrash/dtrashitemmodel.cpp:269
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "Lát sàn gỗ để trang trí"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:272
+#: core/libs/dtrash/dtrashitemmodel.cpp:274
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Xoá tệp"
