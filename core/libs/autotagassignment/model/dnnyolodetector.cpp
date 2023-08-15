@@ -5,9 +5,9 @@
  * Date        : 2019-08-08
  * Description : Derived class to perform YOLO neural network inference
  *               for face detection (here yolo version 5).
- * 
+ *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
- * 
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -34,7 +34,7 @@ namespace Digikam
 
 DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
     : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(640, 640)),
-      yoloVersion (modelVersion)    
+      yoloVersion (modelVersion)
 {
     loadModels();
     predefinedClasses = loadCOCOClass();
@@ -57,7 +57,7 @@ QVector<QString>  DNNYoloDetector::loadCOCOClass()
 
     std::ifstream ifs(cocoClasses.toStdString());
     std::string line;
-    
+
     while (getline(ifs, line))
     {
         classList.push_back(QString::fromStdString(line));
@@ -78,9 +78,9 @@ bool DNNYoloDetector::loadModels()
     QString appPath =  QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/autotagassignment"),
                                              QStandardPaths::LocateDirectory);
-        
+
     QString model;
-    
+
     switch (yoloVersion)
     {
         case (YoloVersions::YOLOV5NANO):
@@ -93,14 +93,14 @@ bool DNNYoloDetector::loadModels()
         {
             model = appPath + QLatin1Char('/') + QLatin1String("yolov5x.onnx");  ///< bigger model
             break;
-        }    
+        }
     }
 
     if (QFileInfo::exists(model))
     {
         try
         {
-            net = cv::dnn::readNet(model.toStdString());            
+            net = cv::dnn::readNet(model.toStdString());
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
             net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
 
@@ -124,7 +124,7 @@ bool DNNYoloDetector::loadModels()
         qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected detection DNN model" << model;
         return false;
     }
-    
+
     return true;
 }
 
@@ -139,7 +139,7 @@ QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inp
     }
 
     QMap<QString, QVector<QRect>> detectedBoxes;
-    
+
     std::vector<cv::Mat> outs = preprocess(inputImage);
     postprocess(inputImage, outs, detectedBoxes);
 
@@ -177,15 +177,15 @@ void DNNYoloDetector::postprocess(const cv::Mat& inputImage,
     float *data = (float *)outs[0].data;
 
     // Calculate the size of the data array and number of outputs
-    // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)] 
+    // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
     size_t data_size = outs[0].total() * outs[0].channels();
-    int rows         = data_size / 85; 
+    int rows         = data_size / 85;
 
     for (int i = 0; i < rows; ++i)
     {
         float confidence = data[4];
         // Discard bad detections and continue.
-        
+
         if (confidence >= confidenceThreshold)
         {
             float* classes_scores = data + 5;
@@ -204,23 +204,23 @@ void DNNYoloDetector::postprocess(const cv::Mat& inputImage,
                 // Store class ID and confidence in the pre-defined respective vectors.
                 confidences.push_back(confidence);
                 class_ids.push_back(class_id.x);
-                
+
                 // Center.
                 float centerX = data[0];
                 float centerY = data[1];
-                
+
                 // Box dimension.
                 float w    = data[2];
                 float h    = data[3];
-                
+
                 // Bounding box coordinates.
                 int left      = int((centerX - 0.5 * w) * x_factor);
                 int top       = int((centerY - 0.5 * h) * y_factor);
                 int width     = int(w  * x_factor);
                 int height    = int(h  * y_factor);
-                
+
                 // Store good detections in the boxes vector.
-                boxes.push_back(cv::Rect(left, top, width, height));                    
+                boxes.push_back(cv::Rect(left, top, width, height));
             }
         }
         // Jump to the next row.

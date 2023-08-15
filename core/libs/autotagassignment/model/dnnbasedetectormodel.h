@@ -46,12 +46,12 @@ public:
 
     /**
      * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
-     * otherwise the map whose the key is the objects name and their values are empty 
+     * otherwise the map whose the key is the objects name and their values are empty
     */
     virtual QMap<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage)   = 0;
 
     /**
-     * generateObjects return just the predicted objects without locations of objects 
+     * generateObjects return just the predicted objects without locations of objects
     */
     QList<QString> generateObjects(const cv::Mat& inputImage);
 

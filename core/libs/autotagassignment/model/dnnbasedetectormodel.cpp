@@ -60,7 +60,7 @@ QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
 double DNNBaseDetectorModel::showInferenceTime()
 {
     // Put efficiency information.
-    // The function getPerfProfile returns the overall time for     
+    // The function getPerfProfile returns the overall time for
     // inference(t) and the timings for each of the layers(in layersTimes).
     std::vector<double> layersTimes;
     double freq = cv::getTickFrequency() / 1000;
