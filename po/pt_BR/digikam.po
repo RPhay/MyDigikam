@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:42+0000\n"
+"POT-Creation-Date: 2023-08-16 00:43+0000\n"
 "PO-Revision-Date: 2021-08-23 13:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -5219,41 +5219,69 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Tipo de arquivo de saída:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Igual à entrada"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "JPEG 2000"
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, fuzzy, kde-format
+#| msgid "JPEG"
+msgid "JPEG XL"
+msgstr "JPEG"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, kde-format
+msgid "AVIF"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, kde-format
+msgid "HEIF"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, kde-format
+msgid "WEBP"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shell script:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5264,7 +5292,7 @@ msgstr ""
 "arquivos de entrada / saída (caracteres especiais com escape). Estes serão "
 "substituídos antes da execução do shell."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5273,45 +5301,45 @@ msgstr ""
 "<b>Nota:</b> Estão disponíveis as variáveis de ambiente TITLE, COMMENTS, "
 "COLORLABEL, PICKLABEL, RATING e TAGSPATH (separadas por ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Script do usuário: Sem script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: File open error."
 msgstr "Script do usuário: Sem script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: Timeout from script."
 msgstr "Script do usuário: Sem script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: No error."
 msgstr "Script do usuário: Sem script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Script do usuário: Não foi possível iniciar o script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Script do usuário: O processo falhou."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Script do usuário: Comando não encontrado."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: Error code returned %1."

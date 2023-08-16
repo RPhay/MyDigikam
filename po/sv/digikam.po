@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:42+0000\n"
+"POT-Creation-Date: 2023-08-16 00:43+0000\n"
 "PO-Revision-Date: 2023-08-03 18:03+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -5093,41 +5093,76 @@ msgstr ""
 "alfatransparens.</para><para>Se information om formatet på <a href='https://"
 "sv.wikipedia.org/wiki/WebP'>denna sida</a>.</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Typ av utmatningsfil:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Samma som inmatning"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "JPEG 2000"
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "JPEG-XL"
+msgid "JPEG XL"
+msgstr "JPEG-XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "AVIF"
+msgid "AVIF"
+msgstr "AVIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "HEIF"
+msgid "HEIF"
+msgstr "HEIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "WEBP"
+msgid "WEBP"
+msgstr "WEBP"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Skalskript:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5137,7 +5172,7 @@ msgstr ""
 "Skriv in skript att köra. Använd $INPUT och $OUTPUT för inmatnings- och "
 "utmatningsfilnamn (med specialtecken citerade). De ersätts innan skalet körs."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5146,42 +5181,42 @@ msgstr ""
 "<b>Observera:</b> Miljövariablerna TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING och TAGSPATH (åtskilda av ;) är tillgängliga."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Användarskript: Inget skript."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Användarskript: Fel vid försök att öppna fil."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Användarskript: Tidsgräns överskriden från skript."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, kde-format
 msgid "User Script: No error."
 msgstr "Användarskript: Inget fel."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Användarskript: Misslyckades starta skript."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Användarskript: Skriptprocessen kraschade."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Användarskript: Kommandot hittades inte."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Användarskript: Returnerade felkod %1."

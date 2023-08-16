@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:42+0000\n"
+"POT-Creation-Date: 2023-08-16 00:43+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -5286,41 +5286,76 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Wikipediasta</"
 "a>.</p>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Tulostiedoston tyyppi:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Sama kuin syöte"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "JPEG 2000"
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "JPEG-XL"
+msgid "JPEG XL"
+msgstr "JPEG-XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "AVIF"
+msgid "AVIF"
+msgstr "AVIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "HEIF"
+msgid "HEIF"
+msgstr "HEIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "WEBP"
+msgid "WEBP"
+msgstr "WebP"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Komentotulkkiskripti:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5333,7 +5368,7 @@ msgstr ""
 "syötetiedostoksi $INPUT ja tulostiedostoksi $OUTPUT (erityismerkit "
 "lainattuina). Nämä korvataan ennen komentotulkin käynnistämistä."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5344,44 +5379,44 @@ msgstr ""
 "Ympäristömuuttujat TITLE, COMMENTS, COLORLABEL, PICKLABEL, RATING ja "
 "TAGSPATS (;-merkein erotettuna) ovat käytettävissä."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Käyttäjän skripti: Ei skripti."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: File open error."
 msgstr "Käyttäjän skripti: Ei skripti."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Käyttäjän skripti: Skriptin aikakatkaisu."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: No error."
 msgstr "Käyttäjän skripti: Ei skripti."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Käyttäjän skripti: Skriptin käynnistäminen epäonnistui."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Käyttäjän skripti: Skriptiprosessi kaatui."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Käyttäjän skripti: Komentoa ei löytynyt."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: Error code returned %1."

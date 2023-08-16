@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:42+0000\n"
+"POT-Creation-Date: 2023-08-16 00:43+0000\n"
 "PO-Revision-Date: 2023-08-08 18:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -5098,41 +5098,76 @@ msgstr ""
 "para><para>Vegeu els detalls quant a aquest format en <a href='https://en."
 "wikipedia.org/wiki/WebP'>aquesta pàgina</a>.</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Tipus de fitxer de sortida:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "El mateix que l'entrada"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "JPEG 2000"
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "JPEG-XL"
+msgid "JPEG XL"
+msgstr "JPEG-XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "AVIF"
+msgid "AVIF"
+msgstr "AVIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "HEIF"
+msgid "HEIF"
+msgstr "HEIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "WEBP"
+msgid "WEBP"
+msgstr "WEBP"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Script de l'intèrpret d'ordes:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5143,7 +5178,7 @@ msgstr ""
 "d'entrada i sortida (amb els caràcters especials escapats). Aquests se "
 "substituiran abans de l'execució de l'intèrpret d'ordres."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5154,42 +5189,42 @@ msgstr ""
 "selecció), RATING (valoració) i TAGSPATH (ubicació de les etiquetes) "
 "(separades per ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Script d'usuari: Sense script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Script d'usuari: Error d'obertura de fitxer."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Script d'usuari: Temps d'espera exhaurit des de l'script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, kde-format
 msgid "User Script: No error."
 msgstr "Script d'usuari: Sense cap error."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Script d'usuari: Ha fallat en iniciar l'script."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Script d'usuari: El procés de l'script ha fallat."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Script d'usuari: No s'ha trobat l'ordre."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Script d'usuari: Codi d'error retornat %1."

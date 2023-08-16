@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:42+0000\n"
+"POT-Creation-Date: 2023-08-16 00:43+0000\n"
 "PO-Revision-Date: 2023-07-03 12:01+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -4902,41 +4902,70 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Výstupní typ souboru:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Stejný jako vstup"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "JPEG 2000"
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox"
+#| msgid "JPEG-XL"
+msgid "JPEG XL"
+msgstr "JPEG-XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, kde-format
+msgid "AVIF"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, kde-format
+msgid "HEIF"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, kde-format
+msgid "WEBP"
+msgstr ""
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shellový skript:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -4947,7 +4976,7 @@ msgstr ""
 "použijte $INPUT, resp. $OUTPUT (speciální znaky nechť jsou escapovány). Tyto "
 "proměnné budou před spuštěním shellem nahrazeny."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -4956,42 +4985,42 @@ msgstr ""
 "<b>Poznámka:</b> Dostupné jsou proměnné prostředí TITLE, COMMENTS, "
 "COLORLABEL, PICKLABEL, RATING a TAGSPATH (oddělené ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Uživatelský skript: Žádný skript."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: File open error."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Uživatelský skript: Čas vypršel."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, kde-format
 msgid "User Script: No error."
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Uživatelský skript: Spuštění skriptu selhalo."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Uživatelský skript: Proces skriptu spadl."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Uživatelský skript: Příkaz nenalezen."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr ""
