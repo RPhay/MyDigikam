@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-16 00:43+0000\n"
-"PO-Revision-Date: 2023-07-02 06:57+0200\n"
+"PO-Revision-Date: 2023-08-17 06:25+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4291,7 +4291,7 @@ msgstr "შავთეთრში გადაყვანა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
-msgstr ""
+msgstr "შავთეთრში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
 #, kde-kuit-format
@@ -4313,7 +4313,7 @@ msgstr "არხების მიქსერი"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
-msgstr ""
+msgstr "ფერის არხების შერევს ხელსაწყო"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
 #, kde-kuit-format
@@ -4347,7 +4347,7 @@ msgstr "ფერების ბალანსი"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color balance"
-msgstr ""
+msgstr "ფერთა ბალანსის დარეგულირების ხელსაწყო"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
 #, kde-kuit-format
@@ -4378,7 +4378,7 @@ msgstr "8-ბიტზე გადაყვანა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
-msgstr ""
+msgstr "ხელსაწყო ფერების 8-ბიტზე გადასაყვანად"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
 #, kde-kuit-format
@@ -4400,7 +4400,7 @@ msgstr "16-ბიტზე გადაყვანა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
-msgstr ""
+msgstr "ხელსაწყო ფერების 16-ბიტზე გადასაყვანად"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
 #, kde-kuit-format
@@ -4476,7 +4476,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
-msgstr ""
+msgstr "ფერთა მრუდების მორგების ხელსაწყო"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
 #, kde-kuit-format
@@ -4498,7 +4498,7 @@ msgstr "HSL კორექცია"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
-msgstr ""
+msgstr "ტონის, გაჯერებულობის და განათებულობის მორგების ხელსაწყო"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
 #, kde-format
@@ -4541,7 +4541,7 @@ msgstr "ფერების ინვერსია"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
-msgstr ""
+msgstr "გამოსახულების ფერების ინვერსიის ხელსაწყო"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
 #, kde-kuit-format
@@ -4562,7 +4562,7 @@ msgstr "თეთრის ბალანსი"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust white balance"
-msgstr ""
+msgstr "თეთრის ბალანსის დარეგულირების ხელსაწყო"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
 #, kde-kuit-format
@@ -4582,7 +4582,7 @@ msgstr "AVIF-ში გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
-msgstr ""
+msgstr "გამოსახულების AVIF ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
 #, kde-kuit-format
@@ -4605,7 +4605,7 @@ msgstr "RAW-ის DNG-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
-msgstr ""
+msgstr "RAW გამოსახულებების DNG კონტეინერში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
 #, kde-kuit-format
@@ -4627,7 +4627,7 @@ msgstr "HEIF-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
-msgstr ""
+msgstr "გამოსახულების HEIF ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
 #, kde-kuit-format
@@ -4655,7 +4655,7 @@ msgstr "JP2-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
-msgstr ""
+msgstr "გამოსახულების JPEG-2000 ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
 #, kde-kuit-format
@@ -4680,7 +4680,7 @@ msgstr "JPEG-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
-msgstr ""
+msgstr "გამოსახულების JPEG ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
 #, kde-kuit-format
@@ -4704,7 +4704,7 @@ msgstr "JXL-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
-msgstr ""
+msgstr "გამოსახულების JXL ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
 #, kde-kuit-format
@@ -4728,7 +4728,7 @@ msgstr "PGF-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
-msgstr ""
+msgstr "გამოსახულების PGF ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
 #, kde-kuit-format
@@ -4759,7 +4759,7 @@ msgstr "PNG-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
-msgstr ""
+msgstr "გამოსახულების PNG ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
 #, kde-kuit-format
@@ -4782,7 +4782,7 @@ msgstr "TIFF-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
-msgstr ""
+msgstr "გამოსახულების TIFF ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
 #, kde-kuit-format
@@ -4806,7 +4806,7 @@ msgstr "WEBP-ად გარდაქმნა"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
-msgstr ""
+msgstr "გამოსახულების WEBP ფორმატში გადაყვანის ხელსაწყო"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
 #, kde-kuit-format
@@ -4851,37 +4851,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
@@ -4980,7 +4970,7 @@ msgstr "საზღვრის დამატება"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around images"
-msgstr ""
+msgstr "ვიდეოს გარშემო საზღვრის დამატების ხელსაწყო"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
 #, kde-kuit-format
@@ -6532,7 +6522,7 @@ msgstr ""
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
 #, kde-format
 msgid "JPEG 2000 quality:"
-msgstr ""
+msgstr "JPEG 2000 ხარისხი:"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:79
 #, kde-format
@@ -6919,7 +6909,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, kde-format
 msgid "Input intensity."
-msgstr ""
+msgstr "შეყვანის ინტენსივობა"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:208
 #, kde-format
@@ -6929,7 +6919,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
 #, kde-format
 msgid "Output intensity."
-msgstr ""
+msgstr "გამოტანის ინტენსივობა"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:215
 #, kde-format
@@ -6939,13 +6929,13 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:216
 #, kde-format
 msgid "Minimal input intensity."
-msgstr ""
+msgstr "მინიმალური შეყვანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/dplugins/editor/colors/film/filmtool.cpp:275
 #, kde-format
 msgid "Gamma input value."
-msgstr ""
+msgstr "გამის შეყვანის მნიშვნელობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
@@ -6955,7 +6945,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
 #, kde-format
 msgid "Maximal input intensity."
-msgstr ""
+msgstr "მაქსიმალური შეყვანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #, kde-format
@@ -6965,7 +6955,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:234
 #, kde-format
 msgid "Minimal output intensity."
-msgstr ""
+msgstr "მინიმალური გამოტანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
 #, kde-format
@@ -6975,7 +6965,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:240
 #, kde-format
 msgid "Maximal output intensity."
-msgstr ""
+msgstr "მაქსიმალური გამოტანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:241
 #, kde-format
@@ -7446,7 +7436,7 @@ msgstr "ინფორმაცია..."
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:121
 #, kde-format
 msgid "Current Color Space:"
-msgstr ""
+msgstr "მიმდინარე ფერის სივრცე:"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:224
 #: core/dplugins/editor/colors/profileconversion/profileconversiontool.cpp:252
@@ -7471,25 +7461,25 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
-msgstr ""
+msgstr "ფერის სივრცეები"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
-msgstr ""
+msgstr "ფერის სივრცის გადამყვანი"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
-msgstr ""
+msgstr "გამოსახულების ფერები მართული არაა."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
 #, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
-msgstr ""
+msgstr "ფერების მართვა გამორთულია..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
@@ -7554,22 +7544,22 @@ msgstr ""
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:164
 #, kde-format
 msgid "Align text to the left"
-msgstr ""
+msgstr "ტექსტის მარცხნივ სწორება"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:170
 #, kde-format
 msgid "Align text to the right"
-msgstr ""
+msgstr "ტექსტის მარჯვნივ სწორება"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
 #, kde-format
 msgid "Align text to center"
-msgstr ""
+msgstr "ტექსტის ცენტრზე სწორება"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:182
 #, kde-format
 msgid "Align text to a block"
-msgstr ""
+msgstr "ტექსტის ბლოკზე სწორება"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
 #, kde-format
@@ -9796,7 +9786,7 @@ msgstr "ახალი ზომა"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:305
 #, kde-format
 msgid "Preset Resolutions:"
-msgstr ""
+msgstr "პრესეტის გაფართოებები:"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:307
 #, kde-format
@@ -9953,7 +9943,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:391
 #, kde-format
 msgid " Pixel/Inch"
-msgstr ""
+msgstr " პიქსელი/დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:393
 #, kde-format
@@ -11325,25 +11315,25 @@ msgstr "არცერთი"
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain up"
-msgstr ""
+msgstr "მცირე გაძლიერება"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:99
 #, kde-format
 msgctxt "gain control"
 msgid "High gain up"
-msgstr ""
+msgstr "ძლიერი გაძლიერება"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:100
 #, kde-format
 msgctxt "gain control"
 msgid "Low gain down"
-msgstr ""
+msgstr "მცირე შესუსტება"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:101
 #, kde-format
 msgctxt "gain control"
 msgid "High gain down"
-msgstr ""
+msgstr "ძლიერი შესუსტება"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:102
 #, kde-format
@@ -25763,7 +25753,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
-msgstr ""
+msgstr "&საშუალო"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
@@ -38613,7 +38603,7 @@ msgstr ""
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:67
 #, kde-format
 msgid "Save format"
-msgstr ""
+msgstr "შენახვის ფორმატი"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:77
 #, kde-format
@@ -53494,7 +53484,7 @@ msgstr "ნაგავში გადატანა"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
 #, kde-format
 msgid "Delete immediately"
-msgstr ""
+msgstr "დაუყოვნებლივი წაშლა"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:102
 #, kde-format
@@ -53968,7 +53958,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
 msgid "Queues"
-msgstr ""
+msgstr "რიგები"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
