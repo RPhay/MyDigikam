@@ -47,10 +47,18 @@ public:
     cv::Mat prepareForDetection(const DImg& inputImage)        const;
     cv::Mat prepareForDetection(const QImage& inputImage)      const;
     cv::Mat prepareForDetection(const QString& inputImagePath) const;
+    std::vector<cv::Mat> prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const;
+
 
     QList<QString> generateTagsList(const QImage& inputImage);
     QList<QString> generateTagsList(const DImg& inputImage);
     QList<QString> generateTagsList(const QString& inputImagePath);
+    
+    /**
+     * run in batch return the list of tags name corresponding to
+     * NOTE: the batch size is fixed depending on the deep NN model we choose  
+    */
+    QList<QList<QString>> generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const;
 
 private:
 

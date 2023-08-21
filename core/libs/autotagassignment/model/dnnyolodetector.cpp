@@ -23,6 +23,7 @@
 
 #include <QStandardPaths>
 #include <QFileInfo>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -33,7 +34,7 @@ namespace Digikam
 {
 
 DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
-    : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(640, 640)),
+    : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(320, 320)),
       yoloVersion (modelVersion)
 {
     loadModels();
@@ -66,12 +67,10 @@ QVector<QString>  DNNYoloDetector::loadCOCOClass()
     return classList;
 }
 
-
 QVector<QString> DNNYoloDetector::getPredefinedClasses() const
 {
     return predefinedClasses;
 }
-
 
 bool DNNYoloDetector::loadModels()
 {
@@ -85,7 +84,7 @@ bool DNNYoloDetector::loadModels()
     {
         case (YoloVersions::YOLOV5NANO):
         {
-            model = appPath + QLatin1Char('/') + QLatin1String("yolov5n.onnx");  ///< smaller model
+            model = appPath + QLatin1Char('/') + QLatin1String("yolov5n_batch_1_s320.onnx");  ///< smaller model
             break;
         }
 
@@ -128,7 +127,6 @@ bool DNNYoloDetector::loadModels()
     return true;
 }
 
-
 QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inputImage)
 {
 
@@ -138,35 +136,77 @@ QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inp
         return {};
     }
 
-    QMap<QString, QVector<QRect>> detectedBoxes;
-
     std::vector<cv::Mat> outs = preprocess(inputImage);
-    postprocess(inputImage, outs, detectedBoxes);
-
-    return detectedBoxes;
+    return postprocess(inputImage, outs[0]);
 }
 
+QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+{
+    if (inputBatchImages.empty())
+    {
+        qDebug() << "Invalid image list given, not detecting objects";
+        return {};
+    }
+    std::vector<cv::Mat> outs = preprocess(inputBatchImages);
+
+    // outs = [1 x [rows x 85]] 
+    return postprocess(inputBatchImages, outs);
+}
 
 std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
 {
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true,false);
     std::vector<cv::Mat> outs;
-
     mutex.lock();
     {
         net.setInput(inputBlob);
-        net.forward(outs, getOutputsNames());
+        net.forward(outs, getOutputsNames());        
     }
     mutex.unlock();
 
     return outs;
 }
 
-
-void DNNYoloDetector::postprocess(const cv::Mat& inputImage,
-                                  const std::vector<cv::Mat>& outs,
-                                  QMap <QString, QVector<QRect>>& detectedBoxes) const
+std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
 {
+    cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true,false);
+    std::vector<cv::Mat> outs;
+
+    mutex.lock();
+    {
+        QElapsedTimer timer;
+        timer.start();
+
+        net.setInput(inputBlob);
+        net.forward(outs, getOutputsNames());
+
+        int elapsed = timer.elapsed();
+        qDebug() << "Batch forward takes: " << elapsed << " ms";
+    }
+    mutex.unlock();
+
+    return outs;
+}
+
+QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                                  const std::vector<cv::Mat>& outs) const
+{
+    QList<QMap<QString, QVector<QRect>>> detectedBoxesList;
+    
+    // outs = [batch_size x [rows x 85]] 
+    for(int i = 0; i < inputBatchImages.size(); i++)
+    {
+        detectedBoxesList.append(postprocess(inputBatchImages[i], outs[0].row(i)));
+    }
+
+    return detectedBoxesList;
+}
+
+QMap<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& inputImage,
+                                                           const cv::Mat& out) const
+{
+    QMap<QString, QVector<QRect>> detectedBoxes;
+
     std::vector<int>      class_ids;
     std::vector<float>    confidences;
     std::vector<cv::Rect> boxes;
@@ -174,11 +214,11 @@ void DNNYoloDetector::postprocess(const cv::Mat& inputImage,
     float x_factor = float(inputImage.cols) / float(inputImageSize.width);
     float y_factor = float(inputImage.rows) / float(inputImageSize.height);
 
-    float *data = (float *)outs[0].data;
+    float *data = (float *)out.data;
 
     // Calculate the size of the data array and number of outputs
     // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
-    size_t data_size = outs[0].total() * outs[0].channels();
+    size_t data_size = out.total() * out.channels();
     int rows         = data_size / 85;
 
     for (int i = 0; i < rows; ++i)
@@ -237,6 +277,8 @@ void DNNYoloDetector::postprocess(const cv::Mat& inputImage,
         QString label = predefinedClasses[class_ids[id]];
         detectedBoxes[label].push_back(QRect(bbox.x, bbox.y, bbox.width, bbox.height));
     }
+
+    return detectedBoxes;
 }
 
 /** Get the names of the output layers

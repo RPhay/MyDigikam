@@ -38,6 +38,8 @@ public:
 
     MaintenanceData*      data;
     autoTagsAssign*       autotagsEngine;
+    QList<QString>        batchImgPaths;
+    int                   batchSize;
 };
 
 // -------------------------------------------------------
@@ -60,54 +62,53 @@ void AutotagsAssignmentTask::setMaintenanceData(MaintenanceData* const data)
     d->data = data;
 }
 
-void AutotagsAssignmentTask::run()
+void AutotagsAssignmentTask::setBatchSize(int batchSize) const
 {
-    // While we have data (using this as check for non-null)
+    d->batchSize = batchSize;
+}
+
+void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
+{
+    ItemInfo info = ItemInfo::fromLocalFile(pathImage);
     
-    while (d->data)
+    TagsCache* tagsCache = Digikam::TagsCache::instance();
+    QString rootTags = QLatin1String("auto/");
+    for (auto tag : tagsList)
     {
-        if (m_cancel)
+        QString tagPath = rootTags + tag;
+        if (!tagsCache->hasTag(tagsCache->tagForPath(tagPath)))
         {
-            return;
+            auto id = tagsCache->createTag(tagPath);
         }
-
-        QString path = d->data->getImagePath();
-
-        if (path.isEmpty())
-        {
-            break;
-        }
-
-        if (!m_cancel)
-        {
-            // Run Autotags backend here
-            // Assign Tags in database using API from itemInfo
-            ItemInfo info = ItemInfo::fromLocalFile(path);
-            d->autotagsEngine = new autoTagsAssign();
-
-            QList<QString> tagsList = d->autotagsEngine->generateTagsList(path);
-            TagsCache* tagsCache = Digikam::TagsCache::instance();
-
-            QString rootTags = QLatin1String("auto/");
-            for (auto tag : tagsList)
-            {
-                QString tagPath = rootTags + tag;
-                if (!tagsCache->hasTag(tagsCache->tagForPath(tagPath)))
-                {
-                    auto id = tagsCache->createTag(tagPath);
-                }
-
-                info.setTag(tagsCache->tagForPath(tagPath));
-            }
-
-            d->autotagsEngine = nullptr;
-            delete d->autotagsEngine;
-        }
-
-
-        Q_EMIT signalFinished();
+        info.setTag(tagsCache->tagForPath(tagPath));
     }
+}
 
+void AutotagsAssignmentTask::setBatchImages(const QList<QString>& batchImgPaths) const
+{
+    d->batchImgPaths = batchImgPaths;
+}
+
+void AutotagsAssignmentTask::run()
+{    
+    if (!m_cancel)
+    {
+        // Run Autotags backend ere
+        // Assign Tags in databae using API from itemInfo
+        d->autotagsEngine = new autoTagsAssign();
+        QList<QList<QString>> tagsLists = d->autotagsEngine->generateTagsList(d->batchImgPaths, d->batchSize);
+
+        for (int i = 0; i <  d->batchImgPaths.size(); i++)
+        {
+            assignTags(d->batchImgPaths[i], tagsLists[i]);
+        }
+
+        d->autotagsEngine = nullptr;
+        delete d->autotagsEngine;
+    }
+    
+    Q_EMIT signalFinished();
+    
     Q_EMIT signalDone();
 }
 

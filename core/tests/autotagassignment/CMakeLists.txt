@@ -58,3 +58,39 @@ target_link_libraries(detect_object_gui
                       KF5::Service
                       ${COMMON_TEST_LINK}
 )
+
+# -----------------------------------------------------------------------------
+
+set(detect_object_batch_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/detect_object_batch_cli.cpp)
+add_executable(detect_object_batch_cli ${detect_object_batch_cli_SRCS})
+target_link_libraries(detect_object_batch_cli
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
+
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
+                      ${COMMON_TEST_LINK}
+)
+
+
+
+# -----------------------------------------------------------------------------
+
+set(autotagging_batch_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/autotagging_batch_cli.cpp)
+add_executable(autotagging_batch_cli ${autotagging_batch_cli_SRCS})
+target_link_libraries(autotagging_batch_cli
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
+
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
+                      ${COMMON_TEST_LINK}
+)

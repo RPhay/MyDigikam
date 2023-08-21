@@ -37,16 +37,18 @@ public:
     explicit AutotagsAssignmentTask();
     ~AutotagsAssignmentTask()     override;
 
+    void assignTags(const QString& pathImage, const QList<QString>& tagsList);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
+    void setBatchImages(const QList<QString>& batchImgPaths) const;
+    void setBatchSize(int batchSize) const;
 
 Q_SIGNALS:
 
     void signalFinished();
-    void signalFinished(const QImage&);
 
 protected:
 
-    void run()              override;
+    void run()                    override;
 
 private:
 

@@ -35,25 +35,27 @@ public:
 
 public:
 
-    QVector<QString> getPredefinedClasses()                        const;
+    QVector<QString>  getPredefinedClasses()                                           const;
+    bool              loadModels();
+    QVector<QString>  loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
 
 public:
 
-    bool loadModels();
-
-    QMap<QString, QVector<QRect>>  detectObjects(const cv::Mat& inputImage) override;
-
-    QVector<QString>  loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
+    QMap<QString, QVector<QRect>>        detectObjects(const cv::Mat& inputImage)                    override;
+    QList<QMap<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) override;
 
 private:
 
-    std::vector<cv::String> getOutputsNames()                      const;
+    std::vector<cv::String> getOutputsNames()                                          const;
 
     std::vector<cv::Mat> preprocess(const cv::Mat& inputImage);
+    std::vector<cv::Mat> preprocess(const std::vector<cv::Mat>& inputBatchImages);
 
-    void postprocess(const cv::Mat& inputImage,
-                     const std::vector<cv::Mat>& outs,
-                     QMap<QString, QVector<QRect>>& detectedBoxes) const;
+    QMap<QString, QVector<QRect>>        postprocess(const cv::Mat& inputImage,
+                                                     const cv::Mat& out)               const;
+
+    QList<QMap<QString, QVector<QRect>>> postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                     const std::vector<cv::Mat>& outs) const;
 
 private:
 
@@ -64,7 +66,7 @@ private:
 private:
 
     QVector<QString> predefinedClasses;
-    YoloVersions yoloVersion;
+    YoloVersions     yoloVersion;
 };
 
 } // namespace Digikam

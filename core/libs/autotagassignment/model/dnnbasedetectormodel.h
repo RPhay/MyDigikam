@@ -51,9 +51,28 @@ public:
     virtual QMap<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage)   = 0;
 
     /**
-     * generateObjects return just the predicted objects without locations of objects
+     * detectObjects in batch images (fixed batch size)
+    */
+    virtual QList<QMap<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
+
+    /**
+     * generateObjects in one image return just the predicted objects without locations of objects
+     * using for the assignment tagging names 
     */
     QList<QString> generateObjects(const cv::Mat& inputImage);
+
+    /**
+     * generateObjects in batch images return just the predicted objects without locations of objects
+     * using for the assignment tagging names
+    */
+    QList<QList<QString>> generateObjects(const std::vector<cv::Mat>& inputImage);
+
+    /**
+     * return the input Image Size from Deep NN model 
+    */
+   cv::Size getinputImageSize() const;
+
+public: 
 
     double showInferenceTime();
 

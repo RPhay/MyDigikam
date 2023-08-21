@@ -57,6 +57,29 @@ QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
     return objectNames;
 }
 
+QList<QList<QString>> DNNBaseDetectorModel::generateObjects(const std::vector<cv::Mat>& inputBatchImages)
+{
+    QList<QMap<QString, QVector<QRect>>> results = detectObjects(inputBatchImages);
+    QList<QList<QString>> objectNamesList;
+
+    for (auto detectedBoxes: results)
+    {
+        QList<QString> objectNames;
+        for(QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
+        {
+            objectNames.append(it.key());
+        }
+        objectNamesList.append(objectNames);
+    }
+
+    return objectNamesList;
+}
+
+cv::Size DNNBaseDetectorModel::getinputImageSize() const
+{
+    return inputImageSize;
+}
+
 double DNNBaseDetectorModel::showInferenceTime()
 {
     // Put efficiency information.

@@ -62,8 +62,6 @@ autoTagsAssign::~autoTagsAssign()
     delete m_inferenceEngine;
 }
 
-
-// TODO: prepareForDetection give different performances
 cv::Mat autoTagsAssign::prepareForDetection(const DImg& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
@@ -149,6 +147,25 @@ cv::Mat autoTagsAssign::prepareForDetection(const QString& inputImagePath) const
     return cvImage;
 }
 
+std::vector<cv::Mat> autoTagsAssign::prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const
+{
+    std::vector<cv::Mat> result;    
+    for (auto imgPath : inputImagePaths)
+    {
+        result.push_back(prepareForDetection(imgPath));
+    }
+
+    // add black imgs to fullfill the batch size
+    cv::Size inputSize = m_inferenceEngine->getinputImageSize();  
+    while ((result.size() % batchSize) != 0)
+    {   
+        cv::Mat dummycvImg = cv::Mat::zeros(inputSize.height, inputSize.width, CV_8UC3);
+        result.push_back(dummycvImg);
+    }
+
+    return result;
+}
+
 QList<QString> autoTagsAssign::generateTagsList(const QImage& image)
 {
     QList<QString> result;
@@ -211,6 +228,28 @@ QList<QString> autoTagsAssign::generateTagsList(const QString& imagePath)
     {
         cv::Mat cvImage       = prepareForDetection(imagePath);
         result = m_inferenceEngine->generateObjects(cvImage);
+        return result;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return result;
+}
+
+QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const
+{
+    QList<QList<QString>> result;
+
+    try
+    {
+        std::vector<cv::Mat> cvImages = prepareForDetection(inputImagePaths, batchSize);
+        result = m_inferenceEngine->generateObjects(cvImages);
         return result;
     }
     catch (cv::Exception& e)
