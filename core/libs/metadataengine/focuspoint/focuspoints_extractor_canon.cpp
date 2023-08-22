@@ -54,12 +54,12 @@ void set_point_type(FocusPoint& point,
 {
     point.setType(FocusPoint::TypePoint::Inactive);
 
-    if (af_selected.contains(QString::number(index + 1)))
+    if (af_selected.contains(QString::number(index)))
     {
         point.setType( FocusPoint::TypePoint::Selected);
     }
 
-    if (af_infocus.contains(QString::number(index + 1)))
+    if (af_infocus.contains(QString::number(index)))
     {
         point.setType(point.getType() | FocusPoint::TypePoint::Selected);
     }
@@ -148,10 +148,10 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     // Get size of af points
 
-    QVariant afPointWidth      = findValue(TagNameRoot,QLatin1String("AFAreaWidth"));
-    QVariant afPointHeight     = findValue(TagNameRoot,QLatin1String("AFAreaHeight"));
-    QStringList afPointWidths  = findValue(TagNameRoot,QLatin1String("AFAreaWidths"),  true).toStringList();
-    QStringList afPointHeights = findValue(TagNameRoot,QLatin1String("AFAreaHeights"), true).toStringList();
+    QVariant afPointWidth      = findValue(TagNameRoot, QLatin1String("AFAreaWidth"));
+    QVariant afPointHeight     = findValue(TagNameRoot, QLatin1String("AFAreaHeight"));
+    QStringList afPointWidths  = findValue(TagNameRoot, QLatin1String("AFAreaWidths"),  true).toStringList();
+    QStringList afPointHeights = findValue(TagNameRoot, QLatin1String("AFAreaHeights"), true).toStringList();
 
     if (((afPointWidth.isNull())   || (afPointHeight.isNull())) &&
         ((afPointWidths.isEmpty()) || (afPointHeights.isEmpty())))
