@@ -96,13 +96,10 @@ void FocusPointItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, Q
 
     QRectF drawRect = boundingRect();
 
-    if (drawRect.isValid())
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsItem: rectangle:" << drawRect;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "FocusPointsItem: rectangle:" << drawRect;
 
-        painter->setPen(pen);
-        painter->drawRect(drawRect);
-    }
+    painter->setPen(pen);
+    painter->drawRect(drawRect);
 }
 
 void FocusPointItem::setEditable(bool allowEdit)

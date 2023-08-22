@@ -41,8 +41,8 @@ BUGFIXES:
 031 ==> 473383 - Crash when deleting an album to wastebasket.
 032 ==> 473418 - Allow other output file-types in BQM custom user script as JPEG-XL.
 033 ==> 473605 - Add Collection buttons are floating, not going with scrolling.
-034 ==> 
-035 ==> 
+034 ==> 473632 - Lighttable shows incorrect active AF points.
+035 ==> 473635 - Lighttable shows no active AF points for Canon EOS R7.
 036 ==> 
 037 ==> 
 038 ==> 

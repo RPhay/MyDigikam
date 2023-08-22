@@ -173,10 +173,14 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
         return getAFPoints_exif();
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon Makernotes Focus Location:" << af_x_positions
-                                                                                                << af_y_positions
-                                                                                                << afPointWidth
-                                                                                                << afPointHeights;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon makernotes focus Xs/Ys size:" << af_x_positions.size()
+                                                                                                  << af_y_positions.size();
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon makernotes focus W/H value :" << afPointWidth
+                                                                                                  << afPointHeight;
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "FocusPointsExtractor: Canon makernotes focus Ws/Hs size:" << afPointWidths.size()
+                                                                                                  << afPointHeights.size();
 
     // Get type of af points
 
@@ -187,9 +191,15 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
 
     // Get direction
 
-    QString cameraType      = findValue(TagNameRoot, QLatin1String("CameraType")).toString();
+    QString cameraType      = findValue(TagNameRoot, QLatin1String("CameraType")).toString().toUpper();
 
-    int yDirection          = (cameraType.toUpper() == QLatin1String("COMPACT")) ? -1 : 1;
+    int yDirection          = 1;
+
+    if ((cameraType == QLatin1String("COMPACT"))    ||
+        (cameraType == QLatin1String("EOS HIGH-END")))
+    {
+        yDirection = -1;
+    }
 
     ListAFPoints points;
 
@@ -214,7 +224,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_canon() con
                                                                  i
                                                                 );
 
-        if (!point.getSize().isValid())
+        if (!point.getRect().isValid())
         {
             continue;
         }

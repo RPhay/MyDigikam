@@ -169,7 +169,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_exif() cons
                                                        orientation()
                                                       );
 
-    if (afpoint.getSize().isValid())
+    if (afpoint.getRect().isValid())
     {
         points << afpoint;
     }

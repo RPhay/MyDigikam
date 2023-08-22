@@ -85,7 +85,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_sony() cons
                                                         af_y_position
                                                        );
 
-    if (afpoint.getSize().isValid())
+    if (afpoint.getRect().isValid())
     {
         points << afpoint;
     }

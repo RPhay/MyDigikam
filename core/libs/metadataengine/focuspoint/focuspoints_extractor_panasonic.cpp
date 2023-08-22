@@ -91,7 +91,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_panasonic()
                                                              afPointHeight
                                                             );
 
-    if (afpoint.getSize().isValid())
+    if (afpoint.getRect().isValid())
     {
         points << afpoint;
     }

@@ -88,7 +88,7 @@ FocusPointsExtractor::ListAFPoints FocusPointsExtractor::getAFPoints_xmp() const
                                                       af_y_position.toFloat()
                                                      );
 
-    if (afpoint.getSize().isValid())
+    if (afpoint.getRect().isValid())
     {
         points << afpoint;
     }
