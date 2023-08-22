@@ -18,16 +18,11 @@
 
 // Qt includes
 
-#include <QMetaObject>
-#include <QMetaMethod>
-#include <QMetaProperty>
-#include <QPair>
-#include <QHash>
 #include <QList>
 #include <QWidget>
-#include <QAbstractItemView>
-#include <QApplication>
 #include <QInputEvent>
+#include <QApplication>
+#include <QAbstractItemView>
 #include <QAbstractProxyModel>
 
 // Local includes
@@ -115,7 +110,6 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
     else
     {
         result = d->delegate->createItemWidgets(index);
-        d->allocatedWidgets << result;
         d->usedWidgets[index] = result;
 
         Q_FOREACH (QWidget* const widget, result)
@@ -177,7 +171,6 @@ void DWItemDelegatePool::fullClear()
     d->clearing = true;
     qDeleteAll(d->widgetInIndex.keyBegin(), d->widgetInIndex.keyEnd());
     d->clearing = false;
-    d->allocatedWidgets.clear();
     d->usedWidgets.clear();
     d->widgetInIndex.clear();
 }

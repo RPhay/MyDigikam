@@ -18,26 +18,14 @@
 
 // Qt includes
 
-#include <QIcon>
 #include <QSize>
 #include <QStyle>
 #include <QEvent>
-#include <QHoverEvent>
-#include <QFocusEvent>
-#include <QCursor>
 #include <QTimer>
-#include <QBitmap>
-#include <QLayout>
-#include <QPainter>
-#include <QScrollBar>
-#include <QKeyEvent>
+#include <QTreeView>
 #include <QApplication>
 #include <QStyleOption>
-#include <QPaintEngine>
-#include <QCoreApplication>
 #include <QAbstractItemView>
-#include <QAbstractProxyModel>
-#include <QTreeView>
 
 // Local includes
 
@@ -146,8 +134,6 @@ void DWItemDelegatePrivate::updateRowRange(const QModelIndex& parent, int start,
                                                                                                       : DWItemDelegatePool::UpdateWidgets);
             if (isRemoving)
             {
-                widgetPool->d->allocatedWidgets.removeAll(widgetList);
-
                 Q_FOREACH (QWidget* const widget, widgetList)
                 {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
