@@ -121,7 +121,7 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
         Q_FOREACH (QWidget* const widget, result)
         {
             d->widgetInIndex[widget] = index;
-            widget->setParent(d->delegate->d->itemView);
+            widget->setParent(d->delegate->d->itemView->viewport());
             widget->installEventFilter(d->eventListener);
             widget->setVisible(true);
         }

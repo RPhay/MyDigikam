@@ -40,7 +40,7 @@ BUGFIXES:
 030 ==> 473355 - Big trash bin freezes digikam for long time.
 031 ==> 473383 - Crash when deleting an album to wastebasket.
 032 ==> 473418 - Allow other output file-types in BQM custom user script as JPEG-XL.
-033 ==> 
+033 ==> 473605 - Add Collection buttons are floating, not going with scrolling.
 034 ==> 
 035 ==> 
 036 ==> 
