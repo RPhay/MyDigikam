@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-16 00:43+0000\n"
-"PO-Revision-Date: 2023-08-11 13:57+0300\n"
+"PO-Revision-Date: 2023-08-22 23:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -58672,18 +58672,15 @@ msgstr ""
 "alanında kaydedilir."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:152
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to automatically convert all JPEG files to a lossless "
-#| "image format. <b>Note:</b> Image conversion can take a while on a slow "
-#| "computer."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Enable this option to automatically convert all JPEG files to a lossless "
 "image format. Note: Image conversion can take a while on a slow computer."
 msgstr ""
-"Tüm JPEG dosyalarını kayıpsız resim formatına çevirmek için bu seçeneği "
-"aktif hale getirin.<b>Not:</b> Yavaş bilgisayarlarda bu işlem zaman alabilir."
+"Tüm JPEG dosyalarını otomatik olarak kayıpsız bir görsel biçimine "
+"dönüştürmek için bu seçeneği etkinleştirin. Not: Yavaş bir bilgisayarda "
+"görsel dönüştürme biraz zaman alabilir."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:157
 #, kde-kuit-format
@@ -58809,34 +58806,26 @@ msgstr ""
 "ayarlayın."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option if you want to download your pictures into "
-#| "automatically created file extension-based sub-albums of the destination "
-#| "album. This way, you can separate JPEG and RAW files as they are "
-#| "downloaded from your camera."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file extension-based sub-albums of the destination album. This way, "
 "you can separate JPEG and RAW files as they are downloaded from your camera."
 msgstr ""
-"Resimlerinizi hedef albümün otomatik oluşturulan dosya uzantısı tabanlı alt "
-"albümlerine indirmek istiyorsanız bu seçeneği aktif hale getirin. Bu yolla "
-"JPEG ve RAW dosyalarınızı kameradan indirilirken ayırabilirsiniz."
+"Resimlerinizi hedef albümün kendiliğinden oluşturulan dosya uzantısı tabanlı "
+"alt albümlerine indirmek istiyorsanız bu seçeneği etkinleştirin. Bu şekilde "
+"JPEG ve RAW dosyalarını kameranızdan indirilirken ayırabilirsiniz."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option if you want to download your pictures into "
-#| "automatically created file date-based sub-albums of the destination album."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Enable this option if you want to download your pictures into automatically "
 "created file date-based sub-albums of the destination album."
 msgstr ""
-"Resimlerinizi hedef albümün otomatik oluşturulan tarih tabanlı alt "
-"albümlerine indirmek istiyorsanız bu seçeneği aktif hale getirin."
+"Resimlerinizi hedef albümün kendiliğinden oluşturulan dosya tarihine dayalı "
+"alt albümlerine indirmek istiyorsanız bu seçeneği etkinleştirin."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:141
 #, fuzzy, kde-format
