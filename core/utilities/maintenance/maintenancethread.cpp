@@ -177,12 +177,12 @@ void MaintenanceThread::generateTags(const QStringList& paths)
             {
                 for (int j = 0; j < batch_size; j++)
                 {
-                    batchImgPaths.append(paths[j]);
+                    batchImgPaths.append(paths[i+j]);
                 }
             }
             else
             {
-                for (int j = i; i < sizeData; i++)
+                for (int j = i; j < sizeData; j++)
                 {
                     batchImgPaths.append(paths[j]);
                 }
