@@ -36,7 +36,6 @@ public:
     {
         itemCollator.setNumericMode(true);
         albumCollator.setNumericMode(true);
-        itemCollator.setIgnorePunctuation(false);
         albumCollator.setIgnorePunctuation(false);
     }
 
@@ -79,20 +78,21 @@ ItemSortCollator* ItemSortCollator::instance()
 int ItemSortCollator::itemCompare(const QString& a, const QString& b,
                                   Qt::CaseSensitivity caseSensitive, bool natural) const
 {
-    bool hasVersion = false;
-
-    // Check if version string is included, this is
-    // faster than always using QRegularExpression.
-
-    if (a.contains(d->versionStr) || b.contains(d->versionStr))
+    if (natural)
     {
-        hasVersion = (d->versionExp.match(a).hasMatch() ||
-                      d->versionExp.match(b).hasMatch());
-    }
+        bool hasVersion = false;
 
-    if (natural && !hasVersion)
-    {
+        // Check if version string is included, this is
+        // faster than always using QRegularExpression.
+
+        if (a.contains(d->versionStr) || b.contains(d->versionStr))
+        {
+            hasVersion = (d->versionExp.match(a).hasMatch() ||
+                          d->versionExp.match(b).hasMatch());
+        }
+
         d->itemCollator.setCaseSensitivity(caseSensitive);
+        d->itemCollator.setIgnorePunctuation(hasVersion);
 
         return d->itemCollator.compare(a, b);
     }
