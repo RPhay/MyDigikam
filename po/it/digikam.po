@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-16 00:43+0000\n"
-"PO-Revision-Date: 2023-08-05 10:14+0200\n"
+"PO-Revision-Date: 2023-08-17 11:42+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.07.80\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -5152,37 +5152,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
@@ -14418,7 +14408,8 @@ msgstr "Imposta qui l'ora di quando il servizio ha inviato il materiale."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
-msgstr "Imposta qui il fuso di quando il servizio ha inviato il materiale."
+msgstr ""
+"Imposta qui il fuso orario di quando il servizio ha inviato il materiale."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
@@ -14463,7 +14454,7 @@ msgstr "Imposta qui l'ora di creazione della rappresentazione digitale."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
 #, kde-format
 msgid "Set here the time zone of digital representation."
-msgstr "Imposta qui il fuso della rappresentazione digitale."
+msgstr "Imposta qui il fuso orario della rappresentazione digitale."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
@@ -14498,7 +14489,7 @@ msgstr "Imposta l'ora di creazione del contenuto intellettuale."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr "Imposta il fuso del contenuto intellettuale."
+msgstr "Imposta il fuso orario del contenuto intellettuale."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
 #, kde-format
@@ -14622,7 +14613,8 @@ msgstr "Imposta qui l'ora da cui è utilizzabile il contenuto intellettuale."
 #, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
-msgstr "Imposta qui il fuso da cui è utilizzabile il contenuto intellettuale."
+msgstr ""
+"Imposta qui il fuso orario da cui è utilizzabile il contenuto intellettuale."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
 #, kde-format
@@ -14655,7 +14647,8 @@ msgstr ""
 #, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
-"Imposta qui il massimo fuso in cui è utilizzabile il contenuto intellettuale."
+"Imposta qui il massimo fuso orario in cui è utilizzabile il contenuto "
+"intellettuale."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
@@ -14880,12 +14873,12 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Inserisci qui il numero di riferimento dell'oggetto. Fornisce un codice "
-"numerico per indicare il nome dell'oggetto più un suo argomento opzionale e "
-"i nomi dei dettagli dell'oggetto nella lingua del servizio. Il riferimento "
-"dell'oggetto è un numero nell'intervallo tra 01000000 e 17999999 e "
+"Inserisci qui il numero di riferimento del soggetto. Fornisce un codice "
+"numerico per indicare il nome del soggetto più un suo argomento opzionale e "
+"i nomi dei dettagli del soggetto nella lingua del servizio. Il riferimento "
+"del soggetto è un numero nell'intervallo tra 01000000 e 17999999 e "
 "rappresenta un riferimento internazionale indipendente dalla lingua a un "
-"oggetto. Un oggetto viene identificato dal suo numero di riferimento e dai "
+"oggetto. Un soggetto viene identificato dal suo numero di riferimento e dai "
 "nomi corrispondenti presi da un elenco standard fornito dalla IPTC/NAA. Se "
 "si usa un codice di riferimento standard, questi elenchi sono le versioni di "
 "riferimento in lingua inglese. Questo campo è limitato a un codice di 8 "
@@ -14897,7 +14890,7 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Imposta qui il nome dell'oggetto. Se hai selezionato un codice di "
+"Imposta qui il nome del soggetto. Se hai selezionato un codice di "
 "riferimento standard IPTC/NAA viene usata la lingua inglese. Questo campo è "
 "limitato a 64 caratteri."
 
@@ -14907,7 +14900,7 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Imposta qui il nome dell'argomento dell'oggetto. Se hai selezionato un "
+"Imposta qui il nome dell'argomento del soggetto. Se hai selezionato un "
 "codice di riferimento standard IPTC/NAA viene usata la lingua inglese. "
 "Questo campo è limitato a 64 caratteri."
 
@@ -14917,7 +14910,7 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Imposta qui il nome dei dettagli dell'oggetto. Se hai selezionato un codice "
+"Imposta qui il nome dei dettagli del soggetto. Se hai selezionato un codice "
 "di riferimento standard IPTC/NAA viene usata la lingua inglese. Questo campo "
 "è limitato a 64 caratteri."
 
@@ -14933,7 +14926,6 @@ msgctxt "@info"
 msgid "A tool to edit items metadata"
 msgstr "Strumento per modificare metadati degli elementi"
 
-# VM: persona in inglese sbagliata > 'allows'
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
 #, kde-format
 msgctxt "@info"
@@ -15746,12 +15738,12 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Inserisci qui il numero di riferimento dell'oggetto. Fornisce un codice "
-"numerico per indicare il nome dell'oggetto più un suo argomento opzionale e "
-"i nomi dei dettagli dell'oggetto nella lingua del servizio. Il riferimento "
-"dell'oggetto è un numero nell'intervallo tra 01000000 e 17999999 e "
+"Inserisci qui il numero di riferimento del soggetto. Fornisce un codice "
+"numerico per indicare il nome del soggetto più un suo argomento opzionale e "
+"i nomi dei dettagli del soggetto nella lingua del servizio. Il riferimento "
+"del soggetto è un numero nell'intervallo tra 01000000 e 17999999 e "
 "rappresenta un riferimento internazionale indipendente dalla lingua a un "
-"oggetto. Un oggetto viene identificato dal suo numero di riferimento e dai "
+"oggetto. Un soggetto viene identificato dal suo numero di riferimento e dai "
 "nomi corrispondenti presi da un elenco standard fornito dalla XMP/NAA. Se si "
 "usa un codice di riferimento standard, questi elenchi sono le versioni di "
 "riferimento in lingua inglese. Questo campo è limitato a un codice di 8 "
@@ -15763,7 +15755,7 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Imposta qui il nome dell'oggetto. Se hai selezionato un codice di "
+"Imposta qui il nome del soggetto. Se hai selezionato un codice di "
 "riferimento standard XMP/NAA viene usata la lingua inglese."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:69
@@ -15772,7 +15764,7 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Imposta qui il nome dell'argomento dell'oggetto. Se hai selezionato un "
+"Imposta qui il nome dell'argomento del soggetto. Se hai selezionato un "
 "codice di riferimento standard XMP/NAA viene usata la lingua inglese."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:73
@@ -15781,7 +15773,7 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Imposta qui il nome dei dettagli dell'oggetto. Se hai selezionato un codice "
+"Imposta qui il nome dei dettagli del soggetto. Se hai selezionato un codice "
 "di riferimento standard XMP/NAA viene usata la lingua inglese."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
@@ -48144,19 +48136,19 @@ msgstr "Imposta qui il numero del riferimento dell'oggetto"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr "Imposta qui il nome dell'oggetto"
+msgstr "Imposta qui il nome del soggetto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr "Imposta qui il nome dell'argomento dell'oggetto"
+msgstr "Imposta qui il nome dell'argomento del soggetto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:214
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr "Imposta qui il nome del dettaglio dell'oggetto"
+msgstr "Imposta qui il nome del dettaglio del soggetto"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:226
 #, kde-format

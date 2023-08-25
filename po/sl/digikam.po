@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-16 00:43+0000\n"
-"PO-Revision-Date: 2023-08-23 17:11+0200\n"
+"PO-Revision-Date: 2023-08-24 07:06+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1783,7 +1783,7 @@ msgstr "Zemljevid"
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
-msgstr "Miza"
+msgstr "Tabela"
 
 #: core/app/main/digikamapp_setup.cpp:344
 #, kde-format
