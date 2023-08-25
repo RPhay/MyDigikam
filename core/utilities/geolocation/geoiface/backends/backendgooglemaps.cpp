@@ -1646,7 +1646,7 @@ void BackendGoogleMaps::slotInputUserAPIKey()
         }
     }
 
-    QPointer<QInputDialog> const dialog = new QInputDialog(qApp->activeWindow());
+    QPointer<QInputDialog> dialog = new QInputDialog(qApp->activeWindow());
     dialog->setWindowTitle(i18n("Input Google Maps API Key"));
     dialog->resize(450, dialog->sizeHint().height());
     dialog->setInputMode(QInputDialog::TextInput);
