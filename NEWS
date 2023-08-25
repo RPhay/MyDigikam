@@ -46,5 +46,5 @@ BUGFIXES:
 036 ==> 473671 - Google-Maps Geolocation: Map not updating when panned.
 037 ==> 473686 - Lighttable shows incorrect active AF points for Canon EOS R8.
 038 ==> 473450 - Create a field in Digikam Settings GUI: "User's Google Maps API key".
-039 ==> 
+039 ==> 473752 - Cannot filter by video framerate greater than 60fps.
 040 ==> 
