@@ -43,7 +43,7 @@ BUGFIXES:
 033 ==> 473605 - Add Collection buttons are floating, not going with scrolling.
 034 ==> 473632 - Lighttable shows incorrect active AF points.
 035 ==> 473635 - Lighttable shows no active AF points for Canon EOS R7.
-036 ==> 
+036 ==> 473671 - Google-Maps Geolocation: Map not updating when panned.
 037 ==> 
 038 ==> 
 039 ==> 

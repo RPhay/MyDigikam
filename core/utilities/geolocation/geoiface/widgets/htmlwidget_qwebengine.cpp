@@ -127,6 +127,7 @@ HTMLWidget::HTMLWidget(QWidget* const parent)
 
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
 
     d->parent->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
