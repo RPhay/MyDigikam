@@ -18,6 +18,8 @@
 
 // Qt includes
 
+#include <QDir>
+#include <QFile>
 #include <QBuffer>
 #include <QActionGroup>
 #include <QMenu>
@@ -25,6 +27,9 @@
 #include <QResizeEvent>
 #include <QAction>
 #include <QTimer>
+#include <QInputDialog>
+#include <QApplication>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -84,6 +89,15 @@ public:
         showMapTypeControlAction    (nullptr),
         showNavigationControlAction (nullptr),
         showScaleControlAction      (nullptr),
+        inputUserAPIKeyAction       (nullptr),
+        htmlTemplate                (QLatin1String("<html>\n<head>\n"
+                                                   "<script type=\"text/javascript\" src=\"https://maps.google.com/maps/"
+                                                   "api/js?key=%1\"></script>\n"
+                                                   "<script type=\"text/javascript\" src=\"%2\"></script>\n"
+                                                   "</head>\n"
+                                                   "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
+                                                   "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
+                                                   "</body>\n</html>\n")),
         cacheMapType                (QLatin1String("ROADMAP")),
         cacheShowMapTypeControl     (true),
         cacheShowNavigationControl  (true),
@@ -107,7 +121,9 @@ public:
     QAction*                                  showMapTypeControlAction;
     QAction*                                  showNavigationControlAction;
     QAction*                                  showScaleControlAction;
+    QAction*                                  inputUserAPIKeyAction;
 
+    const QString                             htmlTemplate;
     QString                                   cacheMapType;
     bool                                      cacheShowMapTypeControl;
     bool                                      cacheShowNavigationControl;
@@ -200,6 +216,11 @@ void BackendGoogleMaps::createActions()
     d->showScaleControlAction->setCheckable(true);
     d->showScaleControlAction->setChecked(d->cacheShowScaleControl);
     d->showScaleControlAction->setData(QLatin1String("showscalecontrol"));
+
+    d->inputUserAPIKeyAction = new QAction(i18n("Google Maps API Key"), this);
+
+    connect(d->inputUserAPIKeyAction, SIGNAL(triggered()),
+            this, SLOT(slotInputUserAPIKey()));
 }
 
 QString BackendGoogleMaps::backendName() const
@@ -383,6 +404,12 @@ void BackendGoogleMaps::addActionsToConfigurationMenu(QMenu* const configuration
     floatItemsSubMenu->addAction(d->showMapTypeControlAction);
     floatItemsSubMenu->addAction(d->showNavigationControlAction);
     floatItemsSubMenu->addAction(d->showScaleControlAction);
+
+    configurationMenu->addSeparator();
+
+    QMenu* const settingsSubMenu = new QMenu(i18n("Settings"), configurationMenu);
+    configurationMenu->addMenu(settingsSubMenu);
+    settingsSubMenu->addAction(d->inputUserAPIKeyAction);
 
     updateActionAvailability();
 }
@@ -1583,6 +1610,92 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
     {
         const QVariant successClear = d->htmlWidget->runScript(QString::fromLatin1("kgeomapClearTracks();"), false);
     }
+}
+
+void BackendGoogleMaps::slotInputUserAPIKey()
+{
+    QString htmlPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+    htmlPath        += QLatin1String("/digikam/geoiface");
+    QString htmlName = QLatin1String("backend-googlemaps.html");
+    QString htmlFile = htmlPath + QLatin1Char('/') + htmlName;
+    QString oldKey;
+
+    if (QFileInfo::exists(htmlFile))
+    {
+        QFile readFile(htmlFile);
+
+        if (readFile.open(QIODevice::ReadOnly))
+        {
+            QString oldHtml = QString::fromLatin1(readFile.readAll());
+            readFile.close();
+
+            if (!oldHtml.isEmpty())
+            {
+                int firstIdx = oldHtml.indexOf(QLatin1String("key="));
+
+                if (firstIdx != -1)
+                {
+                    int lastIdx = oldHtml.indexOf(QLatin1String("\"></script>"), firstIdx);
+
+                    if (lastIdx > (firstIdx + 4))
+                    {
+                        oldKey = oldHtml.mid(firstIdx + 4, lastIdx - firstIdx - 4);
+                    }
+                }
+            }
+        }
+    }
+
+    QPointer<QInputDialog> const dialog = new QInputDialog(qApp->activeWindow());
+    dialog->setWindowTitle(i18n("Input Google Maps API Key"));
+    dialog->resize(450, dialog->sizeHint().height());
+    dialog->setInputMode(QInputDialog::TextInput);
+    dialog->setTextEchoMode(QLineEdit::Normal);
+    dialog->setLabelText(i18n("API Key:"));
+    dialog->setTextValue(oldKey);
+    int ret = dialog->exec();
+
+    QString key = dialog->textValue();
+    delete dialog;
+
+    if (ret != QDialog::Accepted)
+    {
+        return;
+    }
+
+    if (key.isEmpty())
+    {
+        if (QFileInfo::exists(htmlFile))
+        {
+            QFile::remove(htmlFile);
+        }
+
+        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(htmlName);
+        d->htmlWidget->load(htmlUrl);
+
+        return;
+    }
+
+    QString jsFile   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                              QLatin1String("digikam/geoiface/backend-googlemaps-js.js"));
+
+    QString htmlText = d->htmlTemplate.arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
+
+    if (!QFileInfo::exists(htmlPath))
+    {
+        QDir().mkpath(htmlPath);
+    }
+
+    QFile writeFile(htmlFile);
+
+    if (writeFile.open(QIODevice::WriteOnly))
+    {
+        writeFile.write(htmlText.toLatin1());
+        writeFile.close();
+    }
+
+    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(htmlName);
+    d->htmlWidget->load(htmlUrl);
 }
 
 } // namespace Digikam
