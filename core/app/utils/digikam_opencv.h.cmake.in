@@ -33,6 +33,10 @@
 // Used to find shared Haar Cascade files.
 #define OPENCV_ROOT_PATH "${OpenCV_DIR}"
 
+#ifdef uchar
+#   undef uchar
+#endif
+
 // OpenCV includes
 
 #include <opencv2/core/version.hpp>
