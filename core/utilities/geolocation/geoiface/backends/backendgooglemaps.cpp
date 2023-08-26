@@ -1656,7 +1656,7 @@ void BackendGoogleMaps::slotInputUserAPIKey()
     dialog->setTextValue(oldKey);
 
     int ret     = dialog->exec();
-    QString key = dialog->textValue();
+    QString key = dialog->textValue().trimmed();
 
     delete dialog;
 
