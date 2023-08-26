@@ -1704,10 +1704,10 @@ void BackendGoogleMaps::slotInputUserAPIKey()
     if (writeFile.open(QIODevice::WriteOnly))
     {
         writeFile.write(htmlText.toLatin1());
+        d->keyChanged = true;
         writeFile.close();
     }
 
-    d->keyChanged      = true;
     const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
     d->htmlWidget->load(htmlUrl);
 }
