@@ -20,6 +20,7 @@
 
 #include <QTimer>
 #include <QResizeEvent>
+#include <QWebSettings>
 #include <qwebframe.h>
 
 // Local includes
@@ -66,6 +67,11 @@ HTMLWidget::HTMLWidget(QWidget* const parent)
     setFocusPolicy(Qt::WheelFocus);
     setRenderHint(QPainter::TextAntialiasing);
     page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
+
+    settings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls, true);
+    settings()->setAttribute(QWebSettings::LocalContentCanAccessFileUrls, true);
+    settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
+    settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
 
     d->parent->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
