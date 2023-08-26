@@ -1654,7 +1654,7 @@ void BackendGoogleMaps::slotInputUserAPIKey()
     }
 
     QPointer<QInputDialog> dialog = new QInputDialog(qApp->activeWindow());
-    dialog->setWindowTitle(i18n("Input Google Maps API Key"));
+    dialog->setWindowTitle(i18n("Google Maps API Key"));
     dialog->resize(450, dialog->sizeHint().height());
     dialog->setInputMode(QInputDialog::TextInput);
     dialog->setTextEchoMode(QLineEdit::Normal);
@@ -1684,8 +1684,8 @@ void BackendGoogleMaps::slotInputUserAPIKey()
         return;
     }
 
-    QString jsFile   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                              QLatin1String("digikam/geoiface/backend-googlemaps-js.js"));
+    QString jsFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                            QLatin1String("digikam/geoiface/backend-googlemaps-js.js"));
 
     if (!QFileInfo::exists(jsFile))
     {
