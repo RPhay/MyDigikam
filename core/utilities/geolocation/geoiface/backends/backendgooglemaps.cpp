@@ -27,6 +27,7 @@
 #include <QResizeEvent>
 #include <QAction>
 #include <QTimer>
+#include <QMessageBox>
 #include <QInputDialog>
 #include <QApplication>
 #include <QStandardPaths>
@@ -108,6 +109,7 @@ public:
         cacheMinZoom                (0),
         cacheCenter                 (52.0, 6.0),
         cacheBounds                 (),
+        keyChanged                  (false),
         activeState                 (false),
         widgetIsDocked              (false),
         trackChangeTracker          ()
@@ -135,6 +137,7 @@ public:
     int                                       cacheMinZoom;
     GeoCoordinates                            cacheCenter;
     QPair<GeoCoordinates, GeoCoordinates>     cacheBounds;
+    bool                                      keyChanged;
     bool                                      activeState;
     bool                                      widgetIsDocked;
     QList<TrackManager::TrackChanges>         trackChangeTracker;
@@ -265,6 +268,9 @@ QWidget* BackendGoogleMaps::mapWidget()
 
         connect(d->htmlWidget, SIGNAL(signalHTMLEvents(QStringList)),
                 this, SLOT(slotHTMLEvents(QStringList)));
+
+        connect(d->htmlWidget, SIGNAL(signalMessageEvent(QString)),
+                this, SLOT(slotMessageEvent(QString)));
 
         connect(d->htmlWidget, SIGNAL(selectionHasBeenMade(Digikam::GeoCoordinates::Pair)),
                 this, SLOT(slotSelectionHasBeenMade(Digikam::GeoCoordinates::Pair)));
@@ -1701,8 +1707,19 @@ void BackendGoogleMaps::slotInputUserAPIKey()
         writeFile.close();
     }
 
+    d->keyChanged      = true;
     const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
     d->htmlWidget->load(htmlUrl);
+}
+
+void BackendGoogleMaps::slotMessageEvent(const QString& message)
+{
+    if (d->keyChanged && message.contains(QLatin1String("Billing")))
+    {
+        QMessageBox::information(qApp->activeWindow(),
+                                 i18n("Javascript Message"), message);
+        d->keyChanged = false;
+    }
 }
 
 } // namespace Digikam

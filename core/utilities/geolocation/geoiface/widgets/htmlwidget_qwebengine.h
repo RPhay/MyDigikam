@@ -46,6 +46,7 @@ public:
 Q_SIGNALS:
 
     void signalHTMLEvents(const QStringList& events);
+    void signalMessageEvent(const QString& message);
 
 private Q_SLOTS:
 
@@ -58,6 +59,7 @@ protected:
 private:
 
     QStringList m_events;
+    QString     m_message;
     QTimer*     m_timer;
 };
 
@@ -85,6 +87,7 @@ public:
 Q_SIGNALS:
 
     void signalHTMLEvents(const QStringList& events);
+    void signalMessageEvent(const QString& message);
     void signalJavaScriptReady();
     void selectionHasBeenMade(const Digikam::GeoCoordinates::Pair& coordinatesRect);
 

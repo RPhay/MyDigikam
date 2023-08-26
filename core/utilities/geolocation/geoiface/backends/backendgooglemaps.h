@@ -115,6 +115,7 @@ private Q_SLOTS:
     void slotHTMLInitialized();
     void slotSetCenterTimer();
     void slotInputUserAPIKey();
+    void slotMessageEvent(const QString& message);
     void slotMapTypeActionTriggered(QAction* action);
     void slotHTMLEvents(const QStringList& eventStrings);
     void slotFloatSettingsTriggered(QAction* action);

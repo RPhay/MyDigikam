@@ -56,6 +56,9 @@ void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*le
 {
     if (!message.startsWith(QLatin1String("(event)")))
     {
+        m_message = message;
+        m_timer->start();
+
         return;
     }
 
@@ -69,15 +72,24 @@ void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*le
     }
 
     m_events << eventString;
-
     m_timer->start();
 }
 
 void HTMLWidgetPage::slotSendHTMLEvents()
 {
-    Q_EMIT signalHTMLEvents(m_events);
+    if (!m_message.isEmpty())
+    {
+        Q_EMIT signalMessageEvent(m_message);
 
-    m_events.clear();
+        m_message.clear();
+    }
+
+    if (!m_events.isEmpty())
+    {
+        Q_EMIT signalHTMLEvents(m_events);
+
+        m_events.clear();
+    }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -139,6 +151,9 @@ HTMLWidget::HTMLWidget(QWidget* const parent)
 
     connect(d->hpage, SIGNAL(signalHTMLEvents(QStringList)),
             this, SIGNAL(signalHTMLEvents(QStringList)));
+
+    connect(d->hpage, SIGNAL(signalMessageEvent(QString)),
+            this, SIGNAL(signalMessageEvent(QString)));
 
     if (d->parent)
     {
