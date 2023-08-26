@@ -98,6 +98,7 @@ public:
                                                    "<body onload=\"kgeomapInitialize()\" style=\"padding: 0px; margin: 0px;\">\n"
                                                    "    <div id=\"map_canvas\" style=\"width:100%; height:400px;\"></div>\n"
                                                    "</body>\n</html>\n")),
+        htmlFileName                (QLatin1String("backend-googlemaps.html")),
         cacheMapType                (QLatin1String("ROADMAP")),
         cacheShowMapTypeControl     (true),
         cacheShowNavigationControl  (true),
@@ -124,6 +125,7 @@ public:
     QAction*                                  inputUserAPIKeyAction;
 
     const QString                             htmlTemplate;
+    const QString                             htmlFileName;
     QString                                   cacheMapType;
     bool                                      cacheShowMapTypeControl;
     bool                                      cacheShowNavigationControl;
@@ -276,7 +278,7 @@ QWidget* BackendGoogleMaps::mapWidget()
         }
         else
         {
-            const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(QLatin1String("backend-googlemaps.html"));
+            const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
 
             d->htmlWidget->load(htmlUrl);
         }
@@ -1615,9 +1617,8 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
 void BackendGoogleMaps::slotInputUserAPIKey()
 {
     QString htmlPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
-    htmlPath        += QLatin1String("/digikam/geoiface");
-    QString htmlName = QLatin1String("backend-googlemaps.html");
-    QString htmlFile = htmlPath + QLatin1Char('/') + htmlName;
+    htmlPath        += QLatin1String("/digikam/geoiface/");
+    QString htmlFile = htmlPath + d->htmlFileName;
     QString oldKey;
 
     if (QFileInfo::exists(htmlFile))
@@ -1653,9 +1654,10 @@ void BackendGoogleMaps::slotInputUserAPIKey()
     dialog->setTextEchoMode(QLineEdit::Normal);
     dialog->setLabelText(i18n("API Key:"));
     dialog->setTextValue(oldKey);
-    int ret = dialog->exec();
 
+    int ret     = dialog->exec();
     QString key = dialog->textValue();
+
     delete dialog;
 
     if (ret != QDialog::Accepted)
@@ -1670,7 +1672,7 @@ void BackendGoogleMaps::slotInputUserAPIKey()
             QFile::remove(htmlFile);
         }
 
-        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(htmlName);
+        const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
         d->htmlWidget->load(htmlUrl);
 
         return;
@@ -1678,6 +1680,11 @@ void BackendGoogleMaps::slotInputUserAPIKey()
 
     QString jsFile   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                               QLatin1String("digikam/geoiface/backend-googlemaps-js.js"));
+
+    if (!QFileInfo::exists(jsFile))
+    {
+        return;
+    }
 
     QString htmlText = d->htmlTemplate.arg(key).arg(QUrl::fromLocalFile(jsFile).toString());
 
@@ -1694,7 +1701,7 @@ void BackendGoogleMaps::slotInputUserAPIKey()
         writeFile.close();
     }
 
-    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(htmlName);
+    const QUrl htmlUrl = GeoIfaceGlobalObject::instance()->locateDataFile(d->htmlFileName);
     d->htmlWidget->load(htmlUrl);
 }
 
