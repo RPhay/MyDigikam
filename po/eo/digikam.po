@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:43+0000\n"
+"POT-Creation-Date: 2023-08-26 00:43+0000\n"
 "PO-Revision-Date: 2023-08-18 23:49+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -3651,7 +3651,7 @@ msgstr "Tipo de sonkanalo"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -10014,6 +10014,7 @@ msgstr "Aŭtomata Alĝustigo"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
 #, kde-format
 msgid "Settings"
 msgstr "Agordo"
@@ -51084,14 +51085,14 @@ msgid "Display Aspect Ratio"
 msgstr "Montri Aspektproporcion"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Aŭdio-Bitrapideco"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -52540,51 +52541,70 @@ msgstr ""
 "por fari\n"
 "Neklaran serĉon"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:168
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
 #, kde-format
 msgid "Roadmap"
 msgstr "Vojmapo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
 #, kde-format
 msgid "Satellite"
 msgstr "Satelito"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrido"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:171
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
 #, kde-format
 msgid "Terrain"
 msgstr "Tereno"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Montri Kontrolon de Tipo de Mapo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:194
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Montri Navigada Kontrolo"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Montri Skalan Kontrolon"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:212
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#, fuzzy, kde-format
+#| msgid "Google Maps"
+msgid "Google Maps API Key"
+msgstr "Google mapoj"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
 #, kde-format
 msgid "Google Maps"
 msgstr "Google mapoj"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:380
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Flosigi erojn"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
+#, fuzzy, kde-format
+#| msgid "Google Maps"
+msgid "Input Google Maps API Key"
+msgstr "Google mapoj"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "API URL:"
+msgid "API Key:"
+msgstr "API URL:"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -58442,102 +58462,102 @@ msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Codec"
 msgstr "Kodeko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Return video codec"
 msgstr "Redoni videokodekon"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Redoni Audio-Bitrapidecon"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "kaj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:909
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Redoni Audio-Kanaltipon"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Unuflanka"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Ĉirkaŭa Sono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Ĉirkaŭa Sono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 Kanaloj Sekvenco"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:932
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Alia Kanala Tipo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Redoni Aŭdkodekon"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Faces"
 msgstr "Vizaĝoj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Redoni erojn laŭ nombro da vizaĝregionoj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "kaj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Resendi erojn sen vizaĝaj regionoj"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgid "No Face Regions"
 msgstr "Neniuj Vizaĝaj Regionoj"

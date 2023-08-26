@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:43+0000\n"
+"POT-Creation-Date: 2023-08-26 00:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3571,7 +3571,7 @@ msgstr "Kênh anfa:"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 msgid "Audio Codec"
@@ -9787,6 +9787,7 @@ msgstr "Điều chỉnh:"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
 #, kde-format
 msgid "Settings"
 msgstr "Thiết lập"
@@ -50283,14 +50284,14 @@ msgid "Display Aspect Ratio"
 msgstr "Giữ tỉ lệ hình thể"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #: core/utilities/setup/setuptooltip.cpp:313
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "Tệp âm thanh"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #: core/utilities/setup/setuptooltip.cpp:316
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -51626,51 +51627,67 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:168
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
 #, kde-format
 msgid "Satellite"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:171
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:194
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, fuzzy, kde-format
 msgid "Show Scale Control"
 msgstr "Tăng độ tương phản"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:212
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#, kde-format
+msgid "Google Maps API Key"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:380
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, fuzzy, kde-format
 msgid "Float items"
 msgstr "Chưa có ngày"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
+#, kde-format
+msgid "Input Google Maps API Key"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#, fuzzy, kde-format
+#| msgid "Invalid Profile"
+msgid "API Key:"
+msgstr "Hồ sơ không hợp lệ"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -57495,102 +57512,102 @@ msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Tệp âm thanh"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Tệp âm thanh"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Tệp âm thanh"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, fuzzy, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "Cây nến"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:909
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Hiện kiểu ảnh"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:932
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Kênh anfa:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Tệp âm thanh"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Chọn Không gì"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, fuzzy, kde-format
 msgid "Return items by number of face regions"
 msgstr "Vẽ biếm hoạ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, fuzzy, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "Cây nến"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "Vẽ biếm hoạ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Chưa chọn gì"

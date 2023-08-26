@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:43+0000\n"
+"POT-Creation-Date: 2023-08-26 00:43+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -3615,7 +3615,7 @@ msgstr ""
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Video"
@@ -9657,6 +9657,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
 #, kde-format
 msgid "Settings"
 msgstr "जमावट"
@@ -49867,14 +49868,14 @@ msgid "Display Aspect Ratio"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -51210,50 +51211,65 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:168
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
 #, kde-format
 msgid "Satellite"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:171
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:194
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Scale Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:212
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#, kde-format
+msgid "Google Maps API Key"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
 #, kde-format
 msgid "Google Maps"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:380
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
+#, kde-format
+msgid "Input Google Maps API Key"
+msgstr ""
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#, kde-format
+msgid "API Key:"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
@@ -56950,106 +56966,106 @@ msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Return video codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "क्रमहीन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:909
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgid "Return Audio Channel Type"
-msgstr ""
-
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
-#, kde-format
-msgctxt "@label: audio channel type"
-msgid "Mono"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
-msgid "Stereo"
+msgid "Mono"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
-msgid "5.1 Surround Sound"
+msgid "Stereo"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
-msgid "7.1 Surround Sound"
+msgid "5.1 Surround Sound"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
-msgid "16 Channels Sequence"
+msgid "7.1 Surround Sound"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
+msgid "16 Channels Sequence"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:932
+#, kde-format
+msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgid "Return Audio Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Faces"
 msgstr "रँग"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "क्रमहीन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, fuzzy, kde-format
 #| msgid "Remove item"
 msgid "Return items without face regions"
 msgstr "मद हटाबू"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "No Face Regions"
