@@ -37,16 +37,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
-"PO-Revision-Date: 2023-08-24 07:06+0200\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
+"PO-Revision-Date: 2023-08-26 06:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.3.2\n"
 
@@ -10097,7 +10097,7 @@ msgstr "Samodejna prilagoditev"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
@@ -52808,70 +52808,67 @@ msgstr ""
 "da izvedete\n"
 "megleno iskanje"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Zemljevid cest"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Pokaži nadzornik vrste zemljevida"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Pokaži nadzornik krmarjenja"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Pokaži nadzornik merila"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Maps"
+msgstr "API ključ za Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Lebdeči predmeti"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "Google Maps"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#, kde-format
 msgid "API Key:"
-msgstr "API URL:"
+msgstr "API ključ:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -63567,6 +63564,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
+
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Vhod API ključ za Google Maps"
 
 #~ msgctxt "@label: item properties"
 #~ msgid "Tags: "

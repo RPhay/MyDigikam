@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -10050,7 +10050,7 @@ msgstr "Doitze automatikoa"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -55152,69 +55152,70 @@ msgstr ""
 "zalantzazko bilaketa\n"
 "bat lantzeko"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Errepide-mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satellite"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibridoa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Lurzorua"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, fuzzy, kde-format
 msgid "Show Map Type Control"
 msgstr "Erakutsi mapa-motaren agintea"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, fuzzy, kde-format
 msgid "Show Navigation Control"
 msgstr "Erakutsi nabigatzeko agintea"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, fuzzy, kde-format
 msgid "Show Scale Control"
 msgstr "Erakutsi eskalaren agintea"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Elementu higikorrak"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "Google Maps"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "APIaren URL:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, fuzzy, kde-format
+#| msgid "Select an Image"
+msgid "Javascript Message"
+msgstr "Hautatu irudia"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -66051,6 +66052,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 
 #, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Google Maps"
+
+#, fuzzy
 #~ msgctxt "@label: item properties"
 #~ msgid "Tags: "
 #~ msgstr "Etiketak:"
@@ -72136,11 +72142,6 @@ msgstr "Berrezarri ezarpen guztiak balio lehenetsietara."
 
 #~ msgid "The album collection contains"
 #~ msgstr "Albumaren bildumak hau dauka"
-
-#, fuzzy
-#~| msgid "Select an Image"
-#~ msgid "Script Manager"
-#~ msgstr "Hautatu irudia"
 
 #, fuzzy
 #~| msgid "This image is not color managed."

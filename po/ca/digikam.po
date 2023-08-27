@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
-"PO-Revision-Date: 2023-08-16 10:42+0200\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
+"PO-Revision-Date: 2023-08-26 10:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -10181,7 +10181,7 @@ msgstr "Ajust automàtic"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
@@ -53252,70 +53252,67 @@ msgstr ""
 "per a realitzar una\n"
 "cerca aproximada"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Mapa de carreteres"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satèl·lit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Híbrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Terreny"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Mostra el control del tipus de mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Mostra el control de la navegació"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Mostra el control de l'escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Maps"
+msgstr "Clau de l'API de Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Elements flotants"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "Google Maps"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#, kde-format
 msgid "API Key:"
-msgstr "URL de l'API:"
+msgstr "Clau de l'API:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -64134,3 +64131,7 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~| msgid "Google Maps"
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Entrada de la clau de l'API de Google Maps"

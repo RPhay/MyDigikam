@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -9596,7 +9596,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "संयोजना"
@@ -51785,69 +51785,69 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "गूगल नकाशे"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "गूगल नकाशे"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "गूगल नकाशे"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "URL:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -61842,6 +61842,11 @@ msgstr "मूलभूत मूल्य"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "मूलभूत मूल्य"
+
+#, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "गूगल नकाशे"
 
 #, fuzzy
 #~ msgctxt "@label: item properties"

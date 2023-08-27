@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
 "PO-Revision-Date: 2023-04-10 18:05+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -10115,7 +10115,7 @@ msgstr "Ajustare automată"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Configurări"
@@ -53404,69 +53404,70 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Hartă rutieră"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Arată controlul de tip de hartă"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Arată controlul de navigare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Arată controlul de scalare"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Hărți Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Hărți Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Elemente flotante"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "Hărți Google"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
 #, fuzzy, kde-format
 #| msgid "URL:"
 msgid "API Key:"
 msgstr "URL:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, fuzzy, kde-format
+#| msgid "Select an Image"
+msgid "Javascript Message"
+msgstr "Selectați o imagine"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -63782,6 +63783,11 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Revenire la parametrii impliciți"
 
 #, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Hărți Google"
+
+#, fuzzy
 #~ msgctxt "@label: item properties"
 #~ msgid "Tags: "
 #~ msgstr "Etichete:"
@@ -68523,11 +68529,6 @@ msgstr "Revenire la parametrii impliciți"
 
 #~ msgid "Kipi-plugins"
 #~ msgstr "Extensii Kipi"
-
-#, fuzzy
-#~| msgid "Select an Image"
-#~ msgid "Script Manager"
-#~ msgstr "Selectați o imagine"
 
 #, fuzzy
 #~| msgid "This image is not color managed."

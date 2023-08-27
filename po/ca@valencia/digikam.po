@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:43+0000\n"
-"PO-Revision-Date: 2023-08-16 10:42+0200\n"
+"POT-Creation-Date: 2023-08-27 00:43+0000\n"
+"PO-Revision-Date: 2023-08-26 10:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -10167,7 +10167,7 @@ msgstr "Ajust automàtic"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:410
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
@@ -22904,7 +22904,7 @@ msgid ""
 "used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
 msgstr ""
 "Establix l'adreça de la destinació a on s'han de pujar les imatges. Pot ser "
-"una adreça emprada en Dolphin o Konqueror, p. ex. ftp://elmeu.servidor.org/"
+"una adreça emprada en Dolphin o Konqueror, p. ex., ftp://elmeu.servidor.org/"
 "sub/carpeta."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:83
@@ -28981,10 +28981,11 @@ msgstr ""
 "emmagatzemar les empremtes digitals de similitud.<br/>Cal permís "
 "d'escriptura per a editar les propietats de les imatges.</p><p>Les bases de "
 "dades són motors del nucli de digiKam. Cal tindre cura d'utilitzar un lloc "
-"situat en un maquinari ràpid (p. ex. SSD o NVMe) amb espai lliure suficient, "
-"especialment per a la base de dades de miniatures.</p><p>Nota: Ací no podeu "
-"utilitzar sistemes de fitxers remots, com el NFS. Per motius de rendiment, "
-"també es recomana no utilitzar mitjans d'emmagatzematge de xarxa.</p><p></p>"
+"situat en un maquinari ràpid (p. ex., SSD o NVMe) amb espai lliure "
+"suficient, especialment per a la base de dades de miniatures.</p><p>Nota: "
+"Ací no podeu utilitzar sistemes de fitxers remots, com el NFS. Per motius de "
+"rendiment, també es recomana no utilitzar mitjans d'emmagatzematge de xarxa."
+"</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -33222,7 +33223,7 @@ msgid ""
 "effect of the tool."
 msgstr ""
 "Incrementant la correlació pot ajudar a reduir els defectes. La correlació "
-"pot abastar de 0 a 1. Els valor útils són 0,5 i valors propers a 1, p. ex. "
+"pot abastar de 0 a 1. Els valor útils són 0,5 i valors propers a 1, p. ex., "
 "0,95 o 0,99. L'ús d'un valor alt a la correlació reduirà l'efecte "
 "d'agudització de l'eina."
 
@@ -33243,7 +33244,7 @@ msgstr ""
 "Incrementant el paràmetre de filtre del soroll pot ajudar a reduir els "
 "defectes. El filtre del soroll pot abastar de 0 a 1, però els valors "
 "superiors a 0,1 rarament són útils. Quan el valor del filtre del soroll és "
-"massa baix, p. ex. 0,0 la qualitat de la imatge serà molt pobra. 0,01 és un "
+"massa baix, p. ex., 0,0 la qualitat de la imatge serà molt pobra. 0,01 és un "
 "valor útil. L'ús d'un valor alt a la correlació reduirà l'efecte "
 "d'agudització de l'eina."
 
@@ -42347,7 +42348,7 @@ msgid ""
 "paper size)."
 msgstr ""
 "Ací podeu canviar entre la mida del tipus de lletra fixa i la mida del tipus "
-"de lletra calculable dinàmicament i ajustable a l'entorn canviant (p. ex. "
+"de lletra calculable dinàmicament i ajustable a l'entorn canviant (p. ex., "
 "dimensions del giny, mida de paper)."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:445
@@ -53257,70 +53258,67 @@ msgstr ""
 "per a realitzar una\n"
 "busca aproximada"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:184
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Mapa de carreteres"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:185
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satèl·lit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:186
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Híbrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:187
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Terreny"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:205
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Mostra el control del tipus de mapa"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Mostra el control de la navegació"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Mostra el control de l'escala"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Maps"
+msgstr "Clau de l'API de Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:401
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Elements flotants"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1650
-#, fuzzy, kde-format
-#| msgid "Google Maps"
-msgid "Input Google Maps API Key"
-msgstr "Google Maps"
-
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1654
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#, kde-format
 msgid "API Key:"
-msgstr "URL de l'API:"
+msgstr "Clau de l'API:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -56914,14 +56912,14 @@ msgstr ""
 "<p>Per a personalitzar el format de la data es poden utilitzar estes "
 "expressions:</p><p><b>d</b>: El dia com a nombre sense zero inicial (1 a "
 "31)</p><p><b>dd</b>: El dia com a nombre amb un zero inicial (01 a 31)</"
-"p><p><b>ddd</b>: El nom abreviat de dia localitzat (p. ex. «Dl» a «Dg»)</"
-"p><p><b>dddd</b>: El nom llarg de dia localitzat (p. ex. «Dilluns» a "
+"p><p><b>ddd</b>: El nom abreviat de dia localitzat (p. ex., «Dl» a «Dg»)</"
+"p><p><b>dddd</b>: El nom llarg de dia localitzat (p. ex., «Dilluns» a "
 "«Diumenge»)</p><p><b>M</b>: El mes com a nombre sense zero inicial (1 a 12)</"
 "p><p><b>MM</b>: El mes com a nombre amb zero inicial (01 a 12)</p><p><b>MMM</"
-"b>: El nom abreviat de mes localitzat (p. ex. «Gen» a «Des»)</p><p><b>MMMM</"
-"b>: El nom llarg de mes localitzat (p. ex. «Gener» a «Desembre»)</"
-"p><p><b>yy</b>: L'any com a nombre de 2 dígits (p. ex. 00 a 99)</"
-"p><p><b>yyyy</b>: L'any com a nombre de 4 dígits (p. ex. 2012)</p><p>Tots "
+"b>: El nom abreviat de mes localitzat (p. ex., «Gen» a «Des»)</p><p><b>MMMM</"
+"b>: El nom llarg de mes localitzat (p. ex., «Gener» a «Desembre»)</"
+"p><p><b>yy</b>: L'any com a nombre de 2 dígits (p. ex., 00 a 99)</"
+"p><p><b>yyyy</b>: L'any com a nombre de 4 dígits (p. ex., 2012)</p><p>Tots "
 "els altres caràcters d'entrada es tractaran com a text. Qualsevol seqüència "
 "de caràcters delimitada per cometes simples es tractaran com a text i no "
 "s'utilitzaran com una expressió. Exemples, si la data és 20 de juliol de "
@@ -60095,7 +60093,7 @@ msgstr ""
 "fitxers RAW) que es visualitzaran en la vista d'àlbums. Escriviu «xyz abc» "
 "per a mostrar fitxers amb les extensions *.xyz i *.abc en la vista d'àlbums."
 "</p><p>També podeu eliminar formats de fitxer que s'accepten de manera "
-"predeterminada afegint un signe menys al davant: p. ex. «-gif» eliminarà "
+"predeterminada afegint un signe menys al davant: p. ex., «-gif» eliminarà "
 "tots els fitxers GIF de la vista d'àlbums i qualsevol resta de la base de "
 "dades. Açò no suprimirà els fitxers, només deixaran de mostrar-se a digiKam."
 "</p><p><b>Atenció:</b> l'eliminació dels fitxers de la base de dades "
@@ -60133,7 +60131,7 @@ msgstr ""
 "fitxers amb les extensions *.xyz i *.abc. Clicant en estos fitxers es "
 "reproduiran amb un reproductor de vídeo incrustat.</p><p>També podeu "
 "eliminar els formats de fitxer acceptats de manera predeterminada afegint un "
-"signe menys al davant: p. ex. «-avi» eliminarà tots els fitxers AVI de la "
+"signe menys al davant: p. ex., «-avi» eliminarà tots els fitxers AVI de la "
 "vista d'àlbums i qualsevol resta d'estos de la base de dades. Açò no "
 "suprimirà els fitxers, només deixaran de mostrar-se a digiKam.</"
 "p><p><b>Atenció:</b> l'eliminació dels fitxers de la base de dades comporta "
@@ -60171,7 +60169,7 @@ msgstr ""
 "fitxers amb les extensions *.xyz i *.abc. Clicant en estos fitxers es "
 "reproduiran amb un reproductor d'àudio incrustat.</p><p>També podeu eliminar "
 "els formats de fitxer acceptats de manera predeterminada afegint un signe "
-"menys al davant: p. ex. «-ogg» eliminarà tots els fitxers OGG de la vista "
+"menys al davant: p. ex., «-ogg» eliminarà tots els fitxers OGG de la vista "
 "d'àlbums i qualsevol resta d'estos de la base de dades. Açò no suprimirà els "
 "fitxers, només deixaran de mostrar-se a digiKam.</p><p><b>Atenció:</b> "
 "l'eliminació dels fitxers de la base de dades comporta la pèrdua de totes "
@@ -60798,7 +60796,7 @@ msgstr ""
 "evitar que digiKam inserisca la fotografia original i la seua miniatura "
 "corresponent dues vegades, el @eaDir s'ignorarà de manera predeterminada.</"
 "p><p>Per a tornar a incloure els directoris que s'ignoren de manera "
-"predeterminada, poseu-hi un menys al davant, p. ex. -@eaDir.</p>"
+"predeterminada, poseu-hi un menys al davant, p. ex., -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:164
 #, kde-format
@@ -61884,9 +61882,9 @@ msgid ""
 msgstr ""
 "Només hauríeu d'activar esta opció si esteu intercanviant metadades d'imatge "
 "amb programes que utilitzen el format lateral NOMBASE.xmp. Si teniu imatges "
-"amb el mateix nom base (p. ex. Imatge.CR2 i Imatge.JPG) aleshores el lateral "
-"pot ja no estar assignat de manera única i s'utilitzarà per a les dues "
-"imatges, la qual cosa pot provocar problemes de metadades."
+"amb el mateix nom base (p. ex., Imatge.CR2 i Imatge.JPG) aleshores el "
+"lateral pot ja no estar assignat de manera única i s'utilitzarà per a les "
+"dues imatges, la qual cosa pot provocar problemes de metadades."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:255
 #, kde-format
@@ -64133,3 +64131,6 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
+
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Entrada de la clau de l'API de Google Maps"
