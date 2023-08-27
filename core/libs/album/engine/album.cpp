@@ -138,7 +138,12 @@ Album* Album::childAtRow(int row) const
 {
     QReadLocker locker(&m_cacheLock);
 
-    return m_childCache.value(row, nullptr);
+    if ((row < 0) || (row >= m_childCache.size()))
+    {
+        return nullptr;
+    }
+
+    return m_childCache.at(row);
 }
 
 AlbumList Album::childAlbums(bool recursive)
