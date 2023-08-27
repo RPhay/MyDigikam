@@ -107,7 +107,7 @@ Album* Album::next() const
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
-    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.count()))
+    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.size()))
     {
         return nullptr;
     }
