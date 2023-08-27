@@ -26,6 +26,7 @@ if [[ "$OS_NAME" != "ubuntu" ]] ; then
     exit -1
 fi
 
+
 echo "Check the list of dependencies in the online doc API : https://www.digikam.org/api/index.html#externaldeps"
 echo "-------------------------------------------------------------------"
 
@@ -298,3 +299,44 @@ done
 
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
+
+echo "Remove SNAP and install Firefox package"
+echo "-------------------------------------------------------------------"
+
+sudo systemctl disable snapd.service
+sudo systemctl disable snapd.socket
+sudo systemctl disable snapd.seeded.service
+
+sudo snap remove firefox
+sudo snap remove snap-store
+sudo snap remove gtk-common-themes
+
+if   [[ $OS_VERSION == "22.4" ]] ; then
+
+    sudo snap remove core18
+    sudo snap remove gnome-3-38-2004
+    sudo snap remore bare
+    sudo snap remove snapd-desktop-integration
+
+elif [[ $OS_VERSION == "23.4" ]] ; then
+
+    sudo snap remove core22
+    sudo snap remove gnome-32-2204
+    sudo snap remore bare
+    sudo snap remove snapd
+
+fi
+
+sudo rm -rf /var/cache/snapd/
+sudo apt autoremove --purge snapd
+rm -rf ~/snap
+
+sudo cat > /etc/apt/preferences.d/firefox-no-snap << EOF
+Package: firefox*
+Pin: release o=Ubuntu*
+Pin-Priority: -1
+EOF
+
+sudo add-apt-repository ppa:mozillateam/ppa
+
+sudo apt install firefox
