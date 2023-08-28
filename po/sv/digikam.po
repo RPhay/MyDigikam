@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:43+0000\n"
-"PO-Revision-Date: 2023-08-26 07:36+0200\n"
+"POT-Creation-Date: 2023-08-28 00:43+0000\n"
+"PO-Revision-Date: 2023-08-27 07:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2852,7 +2852,7 @@ msgstr "Visa fullskärm"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:503
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2944,7 +2944,7 @@ msgid "No Tags Album"
 msgstr "Album utan etiketter"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:576
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26418,38 +26418,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw konvertering av obehandlade bilder"
 
-#: core/libs/album/engine/album.cpp:424
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Papperskorg"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Aktuell tidslinjesökning"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Aktuell inexakt bildsökning"
 
-#: core/libs/album/engine/album.cpp:785
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Aktuell inexakt skissökning"
 
-#: core/libs/album/engine/album.cpp:792
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr "Aktuell kartsökning"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "Aktuell sökning"
 
-#: core/libs/album/engine/album.cpp:800
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Aktuell dubblettsökning"
@@ -52737,10 +52737,9 @@ msgid "API Key:"
 msgstr "Programmeringsgränssnittsnyckel:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
-#, fuzzy, kde-format
-#| msgid "Script Manager"
+#, kde-format
 msgid "Javascript Message"
-msgstr "Skripthantering"
+msgstr "Javascript-meddelande"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format

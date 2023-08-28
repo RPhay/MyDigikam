@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:43+0000\n"
-"PO-Revision-Date: 2023-07-23 22:48+0200\n"
+"POT-Creation-Date: 2023-08-28 00:43+0000\n"
+"PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -2678,7 +2678,7 @@ msgstr "TIFF 이미지 (*.tiff *.tif)"
 #: core/app/utils/digikam_globals.cpp:117
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
-msgstr "JPEG 이미지 (*.jpg *.jpeg *.jpe)"
+msgstr "JPEG 그림 (*.jpg *.jpeg *.jpe)"
 
 #: core/app/utils/digikam_globals.cpp:122
 #, kde-format
@@ -2809,7 +2809,7 @@ msgstr "전체 화면 표시"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:503
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2898,7 +2898,7 @@ msgid "No Tags Album"
 msgstr "태그 앨범 없음"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:576
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -27027,38 +27027,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Raw 변환"
 
-#: core/libs/album/engine/album.cpp:424
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "휴지통"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:780
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "색상"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:785
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:792
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:800
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr ""

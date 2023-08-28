@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:43+0000\n"
-"PO-Revision-Date: 2023-08-17 06:25+0200\n"
+"POT-Creation-Date: 2023-08-28 00:43+0000\n"
+"PO-Revision-Date: 2023-08-27 11:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2765,7 +2765,7 @@ msgstr "მთელ ეკრანზე ჩვენება"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:503
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2852,7 +2852,7 @@ msgid "No Tags Album"
 msgstr "ალბომი ჭდეების გარეშე"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:576
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -6909,7 +6909,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, kde-format
 msgid "Input intensity."
-msgstr "შეყვანის ინტენსივობა"
+msgstr "შეყვანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:208
 #, kde-format
@@ -6919,7 +6919,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:209
 #, kde-format
 msgid "Output intensity."
-msgstr "გამოტანის ინტენსივობა"
+msgstr "გამოტანის ინტენსივობა."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:215
 #, kde-format
@@ -7467,7 +7467,7 @@ msgstr "ფერის სივრცეები"
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
-msgstr "ფერის სივრცის გადამყვანი"
+msgstr "ფერის სივრცის გადამყვანი..."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, kde-format
@@ -24844,38 +24844,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:424
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "ნაგავი"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:785
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:792
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "მიმდინარე ძებნა"
 
-#: core/libs/album/engine/album.cpp:800
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr ""
@@ -49716,10 +49716,9 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Maps"
+msgstr "Google Maps-ის API-ის გასაღები"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
@@ -49733,11 +49732,9 @@ msgid "Float items"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "API URL:"
+msgstr "API-ის გასაღები:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
 #, kde-format
