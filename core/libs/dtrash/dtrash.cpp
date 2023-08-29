@@ -228,6 +228,11 @@ QString DTrash::createJsonRecordForFile(qlonglong imageId,
 
     jsonFileForImg.write(jsonDocForImg.toJson());
     jsonFileForImg.close();
+    jsonFileForImg.setPermissions(QFileDevice::ReadOwner  |
+                                  QFileDevice::ReadGroup  |
+                                  QFileDevice::ReadOther  |
+                                  QFileDevice::WriteOwner |
+                                  QFileDevice::WriteGroup);
 
     return jsonFileInfo.baseName();
 }
