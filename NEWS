@@ -49,7 +49,7 @@ BUGFIXES:
 039 ==> 473752 - Cannot filter by video framerate greater than 60fps.
 040 ==> 473801 - Crashes while auto-importing new media files.
 041 ==> 473110 - Assertion failure when new folder is created in album (inside our outside of digiKam).
-042 ==> 
+042 ==> 473913 - digiKam crashes while refreshing albums.
 043 ==> 
 044 ==> 
 045 ==> 
