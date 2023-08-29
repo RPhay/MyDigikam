@@ -305,9 +305,9 @@ void DatabaseSettingsWidget::setupMainArea()
                            "<p>Enter SQL code to Mysql prompt in order to init digiKam databases with grant privileges (see behind)</p>"
                            "<p>...</p>"
                            "<p>quit</p>"
-                           "<p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>"
-                           "SET GLOBAL log_bin_trust_function_creators=1;<br>"
-                           "in the mysql prompt. To be able to create MySQL triggers.</p>"
+                           "<p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux system, "
+                           "use the addition command in the mysql prompt to be able to create MySQL triggers.<br>"
+                           "SET GLOBAL log_bin_trust_function_creators=1;</p>"
                            "<p>NOTE: If you have an enormous collection, you should start MySQL server with "
                            "mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"));
 
