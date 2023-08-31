@@ -529,42 +529,42 @@ public:
     // So we can store up to 64 enums, with 26 flags each.
     static inline unsigned int uniqueKey(Images f)
     {
-        return (int)f | (0 << 26);
+        return (unsigned int)f;
     }
 
     static inline unsigned int uniqueKey(ItemInformation f)
     {
-        return (int)f | (1 << 26);
+        return (unsigned int)f | (1 << 26);
     }
 
     static inline unsigned int uniqueKey(ImageMetadata f)
     {
-        return (int)f | (2 << 26);
+        return (unsigned int)f | (2 << 26);
     }
 
     static inline unsigned int uniqueKey(ItemComments f)
     {
-        return (int)f | (3 << 26);
+        return (unsigned int)f | (3 << 26);
     }
 
     static inline unsigned int uniqueKey(ItemPositions f)
     {
-        return (int)f | (4 << 26);
+        return (unsigned int)f | (4 << 26);
     }
 
     static inline unsigned int uniqueKey(ImageHistoryInfo f)
     {
-        return (int)f | (5 << 26);
+        return (unsigned int)f | (5 << 26);
     }
 
     static inline unsigned int uniqueKey(VideoMetadata f)
     {
-        return (int)f | (6 << 26);
+        return (unsigned int)f | (6 << 26);
     }
 
     static inline unsigned int uniqueKey(CustomEnum f)
     {
-        return      f | (63 << 26);
+        return (unsigned int)f | (63 << 26);
     }
 
     // override relevant methods from QHash
