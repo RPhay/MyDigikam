@@ -228,6 +228,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxml-perl"                        # For static analysis
                    "libxml-libxml-perl"                 # For static analysis
                    "libyaml-libyaml-perl"               # For static analysis
+                   "libyaml-perl"                       # For static analysis
                    "libjson-perl"                       # For static analysis
                    "llvm"                               # For static analysis
                    "clazy"                              # For static analysis
