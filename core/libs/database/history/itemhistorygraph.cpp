@@ -362,7 +362,7 @@ int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
 
     for ( ; index < vs.size() ; ++index)
     {
-        Vertex& v = vs[index];
+        const Vertex& v                      = vs[index];
         const HistoryVertexProperties& props = properties(v);
 
         if (props.infos.isEmpty())
