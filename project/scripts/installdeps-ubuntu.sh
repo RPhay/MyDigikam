@@ -6,7 +6,7 @@
 #
 # SPDX-FileCopyrightText: 2021      by TRAN Quoc Hung <quochungtran1999 at gmail dot com>
 # SPDX-FileCopyrightText: 2021      by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
-# SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2021-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -30,24 +30,24 @@ fi
 echo "Check the list of dependencies in the online doc API : https://www.digikam.org/api/index.html#externaldeps"
 echo "-------------------------------------------------------------------"
 
-# for downloading package information from all configured sources.'
+# To download package information from all configured sources.'
 
 sudo apt-get update
 sudo apt-get upgrade
 
-# benefit from a higher version of certain software , update the key
+# Benefit from a higher version of certain software , update the key
 
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 
-# To fix GPP key error with some reporsitories
+# To fix GPP key error with some repositories
 # See: https://www.skyminds.net/linux-resoudre-les-erreurs-communes-de-cle-gpg-dans-apt/
 
 sudo apt-get update 2>&1 | \
     sed -ne 's?^.*NO_PUBKEY ??p' | \
     xargs -r -- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
 
-# Install dependencies to Checkout Source Code
+# Install dependencies to checkout source code
 
 sudo apt-get install -y git
 
@@ -57,7 +57,7 @@ sudo apt-get install -y perl
 
 echo "-------------------------------------------------------------------"
 
-# Install required dependencies to Compile And Link Source Code
+# Install required dependencies to compile and link source code
 
 required_packages=("cmake"                   # To Compile Source Code
                    "ninja-build"             # To Compile Source Code
@@ -163,7 +163,7 @@ for pkg in ${required_packages[@]}; do
 
 done
 
-# Install optional dependencies to Compile And Link Source Code
+# Install optional dependencies to compile and link source code
 
 optional_packages=("ruby"                               # For i18n extraction
                    "subversion"                         # For i18n extraction
