@@ -29,7 +29,7 @@ if(ENABLE_KFILEMETADATASUPPORT)
 
     find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                         OPTIONAL_COMPONENTS
-                                        FileMetaData            # For Plasma destop file indexer support.
+                                        FileMetaData            # For Plasma desktop file indexer support.
     )
 
 endif()

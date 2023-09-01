@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:43+0000\n"
-"PO-Revision-Date: 2023-08-26 12:30+0300\n"
+"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"PO-Revision-Date: 2023-08-31 01:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -161,7 +161,7 @@ msgstr "Gelecek A&y"
 #, kde-format
 msgctxt "@item: date menu"
 msgid "Y&esterday"
-msgstr "D&ün"
+msgstr "&Dün"
 
 #: core/app/date/ddatepickerpopup.cpp:134
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "Kameradan İndir ve Sil"
 #, kde-format
 msgctxt "@action:inmenu Group images with this image"
 msgid "Group here"
-msgstr "Buraya grupla"
+msgstr "Buraya Grupla"
 
 #: core/app/dragdrop/importdragdrop.cpp:168
 #, kde-format
@@ -287,25 +287,25 @@ msgstr "Dışa aktarılıyor"
 #: core/app/dragdrop/importdragdrop.cpp:170
 #, kde-format
 msgid "Upload to Camera"
-msgstr "Kameraya yükle"
+msgstr "Kameraya Yükle"
 
 #: core/app/dragdrop/itemdragdrop.cpp:65
 #, kde-format
 msgctxt "@action:inmenu Group images with this item"
 msgid "Group here"
-msgstr "Buraya grupla"
+msgstr "Buraya Grupla"
 
 #: core/app/dragdrop/itemdragdrop.cpp:72
 #, kde-format
 msgctxt "@action:inmenu Insert dragged images before this item"
 msgid "Insert Items here"
-msgstr "Buraya ögeleri ekle"
+msgstr "Buraya Ögeleri Ekle"
 
 #: core/app/dragdrop/itemdragdrop.cpp:79
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
-msgstr "Buraya grupla ve albüme taşı"
+msgstr "Buraya Grupla ve Albüme Taşı"
 
 #: core/app/dragdrop/itemdragdrop.cpp:181
 #, kde-format
@@ -332,7 +332,7 @@ msgstr "İ&ptal"
 #: core/app/dragdrop/itemdragdrop.cpp:656
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr "&Seçilen Ögelere Etiket Ata"
+msgstr "&Seçili Ögelere Etiket Ata"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
 #: core/app/views/preview/itempreviewview.cpp:719
@@ -370,7 +370,7 @@ msgstr[1] "'%2' olan yüz adlarını '%3' olarak değiştir"
 #: core/app/dragdrop/tagdragdrop.cpp:387
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr "Ögelere '%1' Etiket(ler)ini Ata"
+msgstr "Ögelere '%1' Etiketlerini Ata"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
@@ -395,7 +395,7 @@ msgstr "Etiketsiz Görseller"
 #: core/app/filters/filtersidebarwidget.cpp:174
 #, kde-format
 msgid "Show images without a tag."
-msgstr "Etiketsiz görselleri göster."
+msgstr "Etiketsiz görselleri gösterin."
 
 #: core/app/filters/filtersidebarwidget.cpp:177
 #, kde-format
@@ -437,7 +437,7 @@ msgstr "Yüz Etiketi Olmayan Görseller"
 #: core/app/filters/filtersidebarwidget.cpp:224
 #, kde-format
 msgid "Show images without a face tag."
-msgstr "Yüz etiketi olmayan görselleri göster."
+msgstr "Yüz etiketi olmayan görselleri gösterin."
 
 #: core/app/filters/filtersidebarwidget.cpp:227
 #, kde-format
@@ -499,7 +499,7 @@ msgstr "Bu Etiketten Olmamalı"
 #: core/app/items/delegate/itemdelegate.cpp:362
 #, kde-format
 msgid "Reference Image"
-msgstr "Başvuru Görseli"
+msgstr "Başvuru Görsel"
 
 #: core/app/items/overlays/facerejectionoverlay.cpp:51
 #, kde-format
@@ -626,14 +626,14 @@ msgstr "Seç"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Children"
-msgstr "Alt ögeler"
+msgstr "Alt Ögeler"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:106
 #: core/app/items/utils/contextmenuhelper_albums.cpp:116
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Parents"
-msgstr "Üst ögeler"
+msgstr "Üst Ögeler"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:110
 #, kde-format
@@ -828,11 +828,10 @@ msgid "R&emove Tag"
 msgstr "Etiketi K&aldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Siyah Çerçeve..."
+msgstr "Tüm Etiketleri Kaldır"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -890,7 +889,7 @@ msgstr "İçe Aktar"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No import tool available"
-msgstr "İçe aktarma aracı yok"
+msgstr "Kullanılabilir içe aktarma aracı yok"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:97
 #, kde-format
@@ -902,7 +901,7 @@ msgstr "Dışa Aktar"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "No export tool available"
-msgstr "Dışa aktarma aracı yok"
+msgstr "Kullanılabilir dışa aktarma aracı yok"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:128
 #, kde-format
@@ -984,11 +983,10 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "Hedef klasörü seç"
+msgstr "Hedef Klasörü Seç"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1100,7 +1098,7 @@ msgstr "Bilinmiyor"
 #: core/app/items/utils/tooltipfiller.cpp:324
 #, kde-format
 msgid "Aspect Ratio:"
-msgstr "En-Boy Oranı:"
+msgstr "En-Boy oranı:"
 
 #: core/app/items/utils/tooltipfiller.cpp:143
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:118
@@ -1156,7 +1154,7 @@ msgstr "%1 ISO"
 #: core/utilities/import/items/importtooltipfiller.cpp:191
 #, kde-format
 msgid "Exposure/Sensitivity:"
-msgstr "Pozlama/Hassaslık:"
+msgstr "Pozlama/Duyarlılık:"
 
 #: core/app/items/utils/tooltipfiller.cpp:268
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:237
@@ -1193,7 +1191,7 @@ msgstr "Süre:"
 #: core/app/items/utils/tooltipfiller.cpp:377
 #, kde-format
 msgid "Frame Rate:"
-msgstr "Kare Hızı:"
+msgstr "Kare hızı:"
 
 #: core/app/items/utils/tooltipfiller.cpp:377
 #, kde-format
@@ -1204,22 +1202,22 @@ msgstr " fps"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:171
 #, kde-format
 msgid "Video Codec:"
-msgstr "Video Kod Çözücüsü:"
+msgstr "Video kod çözücüsü:"
 
 #: core/app/items/utils/tooltipfiller.cpp:410
 #, kde-format
 msgid "Audio Bit Rate:"
-msgstr "Ses Bit Hızı:"
+msgstr "Ses bit hızı:"
 
 #: core/app/items/utils/tooltipfiller.cpp:422
 #, kde-format
 msgid "Audio Channel Type:"
-msgstr "Ses Kanal Türü:"
+msgstr "Ses kanal türü:"
 
 #: core/app/items/utils/tooltipfiller.cpp:434
 #, kde-format
 msgid "Audio Codec:"
-msgstr "Ses Kod Çözücüsü:"
+msgstr "Ses kod çözücüsü:"
 
 #: core/app/items/utils/tooltipfiller.cpp:449
 #, kde-format
@@ -1242,7 +1240,7 @@ msgstr "Başlık:"
 #, kde-format
 msgctxt "caption of the file"
 msgid "Caption:"
-msgstr "Altyazı:"
+msgstr "Alt yazı:"
 
 #: core/app/items/utils/tooltipfiller.cpp:494
 #, kde-format
@@ -1286,7 +1284,7 @@ msgstr "Kategori:"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Caption:"
-msgstr "Altyazı:"
+msgstr "Alt yazı:"
 
 #: core/app/items/utils/tooltipfiller.cpp:626
 #, kde-format
@@ -1319,7 +1317,7 @@ msgstr "Hayır"
 #: core/app/items/utils/tooltipfiller.cpp:686
 #, kde-format
 msgid "Reproducible:"
-msgstr "Yeniden Üretilebilir:"
+msgstr "Yeniden üretilebilir:"
 
 #: core/app/items/utils/tooltipfiller.cpp:698
 #, kde-format
@@ -1358,10 +1356,9 @@ msgid "Checking ICC repository..."
 msgstr "ICC deposu denetleniyor..."
 
 #: core/app/main/digikamapp.cpp:170
-#, fuzzy, kde-format
-#| msgid "Clean up the databases : "
+#, kde-format
 msgid "Clean up Database..."
-msgstr "Veritabanlarını temizle : "
+msgstr "Veritabanını Temizle..."
 
 #: core/app/main/digikamapp.cpp:188
 #, kde-format
@@ -1377,8 +1374,8 @@ msgid ""
 msgstr ""
 "<p>ICC profilleri klasörü geçersiz gibi görünüyor.</p> <p>Bunu yeniden "
 "ayarlamak istiyorsanız \"Evet\"i, değilse \"Hayır\"ı seçin. Eğer \"Hayır\"ı "
-"seçerseniz \"Renk Yönetimi\" desteği siz bu sorunu çözene dek etkisiz hale "
-"gelecektir.</p>"
+"seçerseniz \"Renk Yönetimi\" desteği siz bu sorunu çözene dek devre dışı "
+"bırakılacaktır.</p>"
 
 #: core/app/main/digikamapp.cpp:621 core/app/views/stack/trashview.cpp:514
 #, kde-format
@@ -1475,13 +1472,13 @@ msgstr[1] "Dosyadan Üst Veriyi Yeniden Oku"
 #: core/app/main/digikamapp_camera.cpp:26
 #, kde-format
 msgid "Auto-Detecting Camera..."
-msgstr "Kamera Otomatik Algınlanıyor..."
+msgstr "Kamera otomatik olarak algılanıyor..."
 
 #: core/app/main/digikamapp_camera.cpp:40
 #: core/app/main/digikamapp_camera.cpp:55
 #, kde-format
 msgid "Opening Download Dialog..."
-msgstr "İndirme Penceresi Açılıyor..."
+msgstr "İndirme iletişim kutusu açılıyor..."
 
 #: core/app/main/digikamapp_camera.cpp:66
 #, kde-format
@@ -1544,18 +1541,16 @@ msgstr ""
 "teması, digiKam yeniden başlatıldıktan sonra kullanılabilir."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "Ayrıştırmak için klasör seçin"
+msgstr "Ayrıştırılacak Klasör Seç"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr "Albüme içe aktarmak için klasörler seçin"
+msgstr "Albüme İçe Aktarılacak Klasörler Seç"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -1601,7 +1596,7 @@ msgstr "Yenile"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Refresh the current contents."
-msgstr "Geçerli içeriği yenile."
+msgstr "Geçerli içeriği yenileyin."
 
 #: core/app/main/digikamapp_setup.cpp:191
 #, kde-format
@@ -1637,7 +1632,7 @@ msgstr "Şuraya Ko&pyala..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Copy selected images to a target folder."
-msgstr "Seçili görselleri bir hedef klasöre kopyala."
+msgstr "Seçili görselleri bir hedef klasöre kopyalayın."
 
 #: core/app/main/digikamapp_setup.cpp:216
 #, kde-format
@@ -1663,7 +1658,7 @@ msgstr "Özellikler"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Edit album properties and collection information."
-msgstr "Albüm özelliklerini ve koleksiyon bilgisini düzenle."
+msgstr "Albüm özelliklerini ve koleksiyon bilgisini düzenleyin."
 
 #: core/app/main/digikamapp_setup.cpp:240
 #, kde-format
@@ -1772,7 +1767,7 @@ msgstr "Aç..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item."
-msgstr "Seçili ögeyi aç."
+msgstr "Seçili ögeyi açın."
 
 #: core/app/main/digikamapp_setup.cpp:351
 #, kde-format
@@ -1784,7 +1779,7 @@ msgstr "Öntanımlı Uygulamayla Aç"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Open the selected item with default assigned application."
-msgstr "Seçili ögeyi, öntanımlı olarak atanmış uygulama ile aç."
+msgstr "Seçili ögeyi, öntanımlı olarak atanmış uygulama ile açın."
 
 #: core/app/main/digikamapp_setup.cpp:358
 #, kde-format
@@ -1808,7 +1803,7 @@ msgstr "Light Table"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
-msgstr "Light Table üzerine yerleştir"
+msgstr "Light Table Üzerine Yerleştir"
 
 #: core/app/main/digikamapp_setup.cpp:373
 #, kde-format
@@ -1826,7 +1821,7 @@ msgstr "Light Table'a Ekle"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to the light table thumbbar."
-msgstr "Seçili ögeleri Light Table küçük görsel çubuğuna ekle."
+msgstr "Seçili ögeleri Light Table küçük görsel çubuğuna ekleyin."
 
 #: core/app/main/digikamapp_setup.cpp:388
 #, kde-format
@@ -1844,7 +1839,7 @@ msgstr "Geçerli Kuyruğa Ekle"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to current queue from batch manager."
-msgstr "Seçili ögeleri, toplu iş yöneticisinden geçerli kuyruğa ekle."
+msgstr "Seçili ögeleri, toplu iş yöneticisindeki geçerli kuyruğa ekleyin."
 
 #: core/app/main/digikamapp_setup.cpp:401
 #, kde-format
@@ -1856,7 +1851,7 @@ msgstr "Yeni Kuyruğa Ekle"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Add selected items to a new queue from batch manager."
-msgstr "Seçili ögeleri, toplu iş yöneticisinden yeni kuyruğa ekle."
+msgstr "Seçili ögeleri, toplu iş yöneticisindeki yeni kuyruğa ekleyin."
 
 #: core/app/main/digikamapp_setup.cpp:409
 #, kde-format
@@ -1883,36 +1878,34 @@ msgid "Scan for Faces"
 msgstr "Yüzleri Tara"
 
 #: core/app/main/digikamapp_setup.cpp:443
-#, fuzzy, kde-format
-#| msgid "Synchronize"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
-msgstr "Eşitle"
+msgstr "Yüzleri Tanı"
 
 #: core/app/main/digikamapp_setup.cpp:448
-#, fuzzy, kde-format
-#| msgid "Black Frame..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Siyah Çerçeve..."
+msgstr "Tüm Yüzleri Kaldır"
 
 #: core/app/main/digikamapp_setup.cpp:455
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Similar..."
-msgstr "Benzer Bul..."
+msgstr "Benzerleri Bul..."
 
 #: core/app/main/digikamapp_setup.cpp:456
 #, kde-format
 msgctxt "@info: setup"
 msgid "Find similar images using selected item as reference."
-msgstr "Seçilen ögeyi temel alarak benzer görselleri bul."
+msgstr "Seçilen ögeyi temel alarak benzer görselleri bulun."
 
 #: core/app/main/digikamapp_setup.cpp:464
 #, kde-format
 msgctxt "@info: setup"
 msgid "Change the filename of the currently selected item."
-msgstr "Seçili ögenin dosya adını değiştir."
+msgstr "Seçili ögenin dosya adını değiştirin."
 
 #: core/app/main/digikamapp_setup.cpp:474
 #: core/utilities/imageeditor/editor/editorwindow.cpp:335
@@ -1931,13 +1924,13 @@ msgstr "Kalıcı Olarak Sil"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
-msgstr "Onaylama olmaksızın kalıcı olarak sil"
+msgstr "Onay olmadan kalıcı olarak silin."
 
 #: core/app/main/digikamapp_setup.cpp:507
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
-msgstr "Onaylama olmaksızın çöp kutusuna taşı"
+msgstr "Onay olmadan çöp kutusuna taşıyın."
 
 #: core/app/main/digikamapp_setup.cpp:514
 #, kde-format
@@ -1949,7 +1942,7 @@ msgstr "Albümleri &Sırala"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Sort Albums in tree-view."
-msgstr "Albümleri ağaç görünümünde sırala"
+msgstr "Albümleri ağaç görünümünde sıralayın."
 
 #: core/app/main/digikamapp_setup.cpp:534
 #, kde-format
@@ -2023,14 +2016,13 @@ msgstr "Ögeleri &Sırala"
 msgctxt "@info: setup"
 msgid ""
 "The value by which the images in one album are sorted in the thumbnail view"
-msgstr ""
-"Bir albümdeki hangi resimlerin küçük resim olarak sıralandığının değeri"
+msgstr "Küçük görsel görünümünde bir albümdeki görsellerin sıralandığı değer"
 
 #: core/app/main/digikamapp_setup.cpp:569
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Name"
-msgstr "İsme Göre"
+msgstr "Ada Göre"
 
 #: core/app/main/digikamapp_setup.cpp:570
 #, kde-format
@@ -2042,7 +2034,7 @@ msgstr "Yola Göre"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Creation Date"
-msgstr "Oluşturma Tarihine Göre"
+msgstr "Oluşturulma Tarihine Göre"
 
 #: core/app/main/digikamapp_setup.cpp:572
 #, kde-format
@@ -2066,19 +2058,19 @@ msgstr "Derecelendirmeye Göre"
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Image Size"
-msgstr "Resim Boyutuna Göre"
+msgstr "Görsel Boyutuna Göre"
 
 #: core/app/main/digikamapp_setup.cpp:576
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Aspect Ratio"
-msgstr "En Boy Oranına Göre"
+msgstr "En-Boy Oranına Göre"
 
 #: core/app/main/digikamapp_setup.cpp:577
 #, kde-format
 msgctxt "@action: setup"
 msgid "By Face type"
-msgstr "Yüz tipine göre"
+msgstr "Yüz Türüne Göre"
 
 #: core/app/main/digikamapp_setup.cpp:578
 #, kde-format
@@ -2087,18 +2079,16 @@ msgid "By Similarity"
 msgstr "Benzerliğe Göre"
 
 #: core/app/main/digikamapp_setup.cpp:579
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Name"
-msgstr "El ile"
+msgstr "Elle ve Ada Göre"
 
 #: core/app/main/digikamapp_setup.cpp:580
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Manual and Date"
-msgstr "El ile"
+msgstr "Elle ve Tarihe Göre"
 
 #: core/app/main/digikamapp_setup.cpp:625
 #, kde-format
@@ -2110,7 +2100,7 @@ msgstr "Öge Sı&ralaması"
 #, kde-format
 msgctxt "@info: setup"
 msgid "Defines whether images are sorted in ascending or descending manner."
-msgstr "Resimlerin artan veya azalan biçimde sıralanmasına karar verir."
+msgstr "Görsellerin artan veya azalan biçimde sıralanmasını tanımlar."
 
 #: core/app/main/digikamapp_setup.cpp:630
 #: core/app/main/digikamapp_setup.cpp:685
@@ -2136,7 +2126,7 @@ msgstr "Ögeleri Ayır"
 #, kde-format
 msgctxt "@info: setup"
 msgid "The categories in which the images in the thumbnail view are displayed"
-msgstr "Küçük resim görünümündeki resimlerin gösterildiği kategoriler"
+msgstr "Küçük görsel görünümündeki görsellerin gösterildiği kategoriler"
 
 #: core/app/main/digikamapp_setup.cpp:648
 #, kde-format
@@ -2157,11 +2147,10 @@ msgid "By Format"
 msgstr "Biçime Göre"
 
 #: core/app/main/digikamapp_setup.cpp:651
-#, fuzzy, kde-format
-#| msgid "Month"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Month"
-msgstr "Ay"
+msgstr "Aya Göre"
 
 #: core/app/main/digikamapp_setup.cpp:652
 #, kde-format
@@ -2194,18 +2183,16 @@ msgid "Select None"
 msgstr "Hiçbirini Seçme"
 
 #: core/app/main/digikamapp_setup.cpp:716
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Invert Selection"
-msgstr "Seçimi Tersine Çevir"
+msgstr "Seçimi Ters Çevir"
 
 #: core/app/main/digikamapp_setup.cpp:724
-#, fuzzy, kde-format
-#| msgid "Show Thumbbar"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
-msgstr "Küçük Resim Çubuğunu Göster"
+msgstr "Küçük Görsel Çubuğunu Göster"
 
 #: core/app/main/digikamapp_setup.cpp:755
 #, kde-format
@@ -2220,11 +2207,10 @@ msgid "Fit to &Window"
 msgstr "&Pencereye Sığdır"
 
 #: core/app/main/digikamapp_setup.cpp:776
-#, fuzzy, kde-format
-#| msgid "Color-Managed View"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
-msgstr "Renk Yönetimi Görünümü"
+msgstr "Renk Yönetimli Görünüm"
 
 #: core/app/main/digikamapp_setup.cpp:794
 #, kde-format
@@ -2239,11 +2225,10 @@ msgid "Advanced Search..."
 msgstr "Gelişmiş Arama..."
 
 #: core/app/main/digikamapp_setup.cpp:810
-#, fuzzy, kde-format
-#| msgid "Find Duplicates..."
+#, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
-msgstr "Aynısı Olanları Bul..."
+msgstr "Yinelenmişleri Bul..."
 
 #: core/app/main/digikamapp_setup.cpp:820
 #, kde-format
@@ -2285,25 +2270,25 @@ msgstr "Önizleme Kipinden Çık"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Next Image"
-msgstr "Sonraki Resim"
+msgstr "Sonraki Görsel"
 
 #: core/app/main/digikamapp_setup.cpp:898
 #, kde-format
 msgctxt "@action: setup"
 msgid "Previous Image"
-msgstr "Önceki Resim"
+msgstr "Önceki Görsel"
 
 #: core/app/main/digikamapp_setup.cpp:904
 #, kde-format
 msgctxt "@action: setup"
 msgid "First Image"
-msgstr "İlk Resim"
+msgstr "İlk Görsel"
 
 #: core/app/main/digikamapp_setup.cpp:909
 #, kde-format
 msgctxt "@action: setup"
 msgid "Last Image"
-msgstr "Son Resim"
+msgstr "Son Görsel"
 
 #: core/app/main/digikamapp_setup.cpp:914
 #, kde-format
@@ -2315,7 +2300,7 @@ msgstr "&Kes"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Cut selection to clipboard"
-msgstr "Seçimi kesip panoya yapıştır"
+msgstr "Seçimi Panoya Kes"
 
 #: core/app/main/digikamapp_setup.cpp:935
 #, kde-format
@@ -2327,7 +2312,7 @@ msgstr "Başlıkları Düzenle"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Edit Comments"
-msgstr "Yorumları Düzenle"
+msgstr "Açıklamaları Düzenle"
 
 #: core/app/main/digikamapp_setup.cpp:945
 #, kde-format
@@ -2339,7 +2324,7 @@ msgstr "Atanmış Etiketleri Göster"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
-msgstr "Exif Yönlendirme etiketini ayarla"
+msgstr "Exif Yönlendirme Etiketini Ayarla"
 
 #: core/app/main/digikamapp_setup.cpp:957
 #, kde-format
@@ -2348,8 +2333,7 @@ msgid "Normal"
 msgstr "Normal"
 
 #: core/app/main/digikamapp_setup.cpp:959
-#, fuzzy, kde-format
-#| msgid "Flipped Horizontally"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
 msgstr "Yatay Çevrilmiş"
@@ -2358,38 +2342,37 @@ msgstr "Yatay Çevrilmiş"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
-msgstr "Yukarıdan Aşağıya Çevrik"
+msgstr "Yukarıdan Aşağıya Döndürülmüş"
 
 #: core/app/main/digikamapp_setup.cpp:963
-#, fuzzy, kde-format
-#| msgid "Flipped Vertically"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
-msgstr "Dikey çevrilmiş"
+msgstr "Dikey Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr "Sağa Dönük / Yatay Çevrik"
+msgstr "Sağa Döndürülmüş / Yatay Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:967
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
-msgstr "Sağa Döndürüldü"
+msgstr "Sağa Döndürülmüş"
 
 #: core/app/main/digikamapp_setup.cpp:969
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr "Sağa Dönük / Dikey Çevrik"
+msgstr "Sağa Döndürülmüş / Dikey Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
-msgstr "Sola Döndürüldü"
+msgstr "Sola Döndürülmüş"
 
 #: core/app/main/digikamapp_setup.cpp:1032
 #, kde-format
@@ -2410,8 +2393,7 @@ msgid "Right"
 msgstr "Sağ"
 
 #: core/app/main/digikamapp_setup.cpp:1053
-#, fuzzy, kde-format
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
 msgstr "Çevir"
@@ -2420,13 +2402,13 @@ msgstr "Çevir"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
-msgstr "Yatay olarak"
+msgstr "Yatay Olarak"
 
 #: core/app/main/digikamapp_setup.cpp:1064
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
-msgstr "Dikey olarak"
+msgstr "Dikey Olarak"
 
 #: core/app/main/digikamapp_setup.cpp:1074
 #, kde-format
@@ -2492,7 +2474,7 @@ msgstr "Disk"
 #, kde-format
 msgctxt "<drive type> \"<device name or label>\" at <mount path>"
 msgid "%1 \"%2\" at %3"
-msgstr "%3 de %1 \"%2\""
+msgstr "%3 konumundaki %1 \"%2\""
 
 #: core/app/main/digikamapp_solid.cpp:381
 #, kde-format
@@ -2504,7 +2486,7 @@ msgstr "%1 \"%2\""
 #, kde-format
 msgctxt "<drive type> at <mount path>"
 msgid "%1 at %2"
-msgstr "%1 at %2"
+msgstr "%2 konumundaki %1"
 
 #: core/app/main/digikamapp_solid.cpp:401
 #, kde-format
@@ -2520,7 +2502,7 @@ msgstr "Depolama aygıtına erişilemiyor.\n"
 #: core/app/main/digikamapp_solid.cpp:667
 #, kde-format
 msgid "Images on %1"
-msgstr "%1 içerisindeki resimler"
+msgstr "%1 içindeki görseller"
 
 #: core/app/main/digikamapp_solid.cpp:700
 #, kde-format
@@ -2543,21 +2525,21 @@ msgstr "Ana Araçlar"
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
-msgstr "Son-İşlemler"
+msgstr "İleri İşleme"
 
 #: core/app/main/digikamapp_tools.cpp:50
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
-msgstr "Dışarıya Aktar"
+msgstr "Dışa Aktar"
 
 #: core/app/main/digikamapp_tools.cpp:57
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
-msgstr "İçeriye Aktar"
+msgstr "İçe Aktar"
 
 #. i18n: ectx: Menu (Browse)
 #: core/app/main/digikamui5.rc:7
@@ -2616,7 +2598,7 @@ msgstr "&Araçlar"
 #: core/utilities/lighttable/lighttablewindowui5.rc:61
 #, kde-format
 msgid "I&mport"
-msgstr "İçeriye A&ktar"
+msgstr "İçe A&ktar"
 
 #. i18n: ectx: Menu (Export)
 #: core/app/main/digikamui5.rc:149 core/showfoto/main/showfotoui5.rc:108
@@ -2624,7 +2606,7 @@ msgstr "İçeriye A&ktar"
 #: core/utilities/lighttable/lighttablewindowui5.rc:67
 #, kde-format
 msgid "&Export"
-msgstr "A&ktar"
+msgstr "&Dışa Aktar"
 
 #. i18n: ectx: Menu (settings)
 #: core/app/main/digikamui5.rc:155 core/showfoto/main/showfotoui5.rc:114
@@ -2670,25 +2652,23 @@ msgstr "digiKam"
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "H.Gökhan SARI, Osman Tosun"
+msgstr "H.Gökhan SARI, Osman Tosun, Emir SARI"
 
 #: core/app/main/main.cpp:197 core/showfoto/main/main.cpp:164
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com"
+msgstr "hsa2@difuzyon.net, rainman.neu@gmail.com, emir_sari@icloud.com"
 
 #: core/app/main/main.cpp:205
-#, fuzzy, kde-format
-#| msgid "Open camera dialog at <path>"
+#, kde-format
 msgid "Open camera dialog at \"path\""
-msgstr "Kamera mesaj kutusunu burada aç <path>"
+msgstr "\"Yol\"da Kamera İletişim Kutusunu Aç"
 
 #: core/app/main/main.cpp:208
-#, fuzzy, kde-format
-#| msgid "Open camera dialog for the device with Solid UDI <udi>"
+#, kde-format
 msgid "Open camera dialog for the device with Solid UDI \"udi\""
-msgstr "Solid UDI <udi> 'ye sahip aygıt için kamera diyalogu aç"
+msgstr "Solid UDI \"udi\"li aygıt için kamera iletişim kutusunu Aç"
 
 #: core/app/main/main.cpp:211
 #, kde-format
@@ -2705,7 +2685,7 @@ msgstr ""
 #: core/app/main/main.cpp:216
 #, kde-format
 msgid "Start digikam with the configuration file \"config\""
-msgstr "Digikam'ı yapılandırma dosyası \"config\" ile başlat"
+msgstr "Digikam'ı \"config\" yapılandırma dosyasıyla başlat"
 
 #: core/app/main/main.cpp:243
 #, kde-format
@@ -2714,9 +2694,8 @@ msgid ""
 "p><p>Please install the 64-bit version of digiKam to get a better experience "
 "with digiKam.</p>"
 msgstr ""
-"<p>digiKam'i 64 bit Windows'ta 32 bit sürüm olarak çalıştırıyorsunuz.</"
-"p><p>Daha iyi bir digiKam deneyimi için lütfen digiKam'in 64 bit sürümünü "
-"kurun.</p>"
+"<p>64 bit Windows üzerinde 32 bit digiKam'i çalıştırıyorsunuz.</p><p>Daha "
+"iyi bir digiKam deneyimi için lütfen digiKam'in 64 bit sürümünü kurun.</p>"
 
 #: core/app/main/main.cpp:285
 #, kde-format
@@ -2753,17 +2732,17 @@ msgstr ""
 #: core/app/utils/digikam_globals.cpp:111
 #, kde-format
 msgid "%1 Image (%2)"
-msgstr "%1 Resim (%2)"
+msgstr "%1 Görsel (%2)"
 
 #: core/app/utils/digikam_globals.cpp:115
 #, kde-format
 msgid "TIFF Image (*.tiff *.tif)"
-msgstr "TIFF Resmi (*.tiff *.tif)"
+msgstr "TIFF Görseli (*.tiff *.tif)"
 
 #: core/app/utils/digikam_globals.cpp:117
 #, kde-format
 msgid "JPEG Image (*.jpg *.jpeg *.jpe)"
-msgstr "JPEG Resmi (*.jpg *.jpeg *.jpe)"
+msgstr "JPEG Görseli (*.jpg *.jpeg *.jpe)"
 
 #: core/app/utils/digikam_globals.cpp:122
 #, kde-format
@@ -2778,17 +2757,17 @@ msgstr "Progressive Graphics dosyası (*.pgf)"
 #: core/app/utils/digikam_globals.cpp:132
 #, kde-format
 msgid "High Efficiency Image Coding (*.heic *.heif)"
-msgstr "Yüksek Verimli Görüntü Kodlaması (*.heic *.heif)"
+msgstr "Yüksek Verimli Görsel Kodlaması (*.heic *.heif)"
 
 #: core/app/utils/digikam_globals.cpp:139
 #, kde-format
 msgid "Flexible Image Transport System (*.fts *.fit *.fits)"
-msgstr ""
+msgstr "Esnek Görsel Taşıma Sistemi (*.fts *.fit *.fits)"
 
 #: core/app/utils/digikam_globals.cpp:146
 #, kde-format
 msgid "Raw Images (%1)"
-msgstr "Ham Resimler (%1)"
+msgstr "Ham Görseller (%1)"
 
 #: core/app/utils/digikam_globals.cpp:148
 #, kde-format
@@ -2796,12 +2775,7 @@ msgid "All supported files (%1)"
 msgstr "Desteklenen tüm dosyalar (%1)"
 
 #: core/app/utils/digikam_version.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2811,18 +2785,12 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Geri bildirim: %2\n"
+"Belgelendirme: %3\n"
 "\n"
-"Yapı tarihi: %3 (hedef: %4)"
+"Yapı tarihi: %4 (Hedef: %5)"
 
 #: core/app/utils/digikam_version.cpp:77
-#, fuzzy, kde-format
-#| msgid ""
-#| "IRC: %1 - #digikam\n"
-#| "Feedback: %2\n"
-#| "\n"
-#| "Build date: %3 (target: %4)\n"
-#| "Revision: %5\n"
-#| "Branch: %6"
+#, kde-format
 msgid ""
 "IRC: %1 - #digikam\n"
 "Feedback: %2\n"
@@ -2834,10 +2802,11 @@ msgid ""
 msgstr ""
 "IRC: %1 - #digikam\n"
 "Geri bildirim: %2\n"
+"Belgelendirme: %3\n"
 "\n"
-"Yapı tarihi: %3 (hedef: %4)\n"
-"Revizyon: %5\n"
-"Dal: %6"
+"Yapı tarihi: %4 (Hedef: %5)\n"
+"Revizyon: %6\n"
+"Dal: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/mediaplayerview.cpp:212
@@ -2861,13 +2830,12 @@ msgstr "Yüz Etiketi Ekle"
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Clear all faces on this image"
-msgstr "Bu resimdeki tüm yüzleri sil"
+msgstr "Bu Görseldeki Tüm Yüzleri Temizle"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Mark As Face Tag"
+#, kde-format
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Yüz Etiketi Olarak İşaretle"
+msgstr "Doğrulanmamış Tüm Yüzleri Yok Sayılmış Olarak İmle"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -2877,13 +2845,12 @@ msgstr "Yüz Etiketlerini Göster"
 #: core/app/views/preview/itempreviewview.cpp:219
 #, kde-format
 msgid "Add a focus point"
-msgstr ""
+msgstr "Bir Odak Noktası Ekle"
 
 #: core/app/views/preview/itempreviewview.cpp:221
-#, fuzzy, kde-format
-#| msgid "Show youngest first"
+#, kde-format
 msgid "Show focus points"
-msgstr "İlk olarak en yeni olanı göster"
+msgstr "Odak Noktalarını Göster"
 
 #: core/app/views/preview/itempreviewview.cpp:227
 #, kde-format
@@ -2896,7 +2863,7 @@ msgstr "Tam Ekran Göster"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:503
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2913,8 +2880,7 @@ msgid "Dates"
 msgstr "Tarihler"
 
 #: core/app/views/sidebar/fuzzysearchsidebarwidget.cpp:124
-#, fuzzy, kde-format
-#| msgid "Similarity"
+#, kde-format
 msgctxt "Fuzzy Search images, as duplicates, sketch, searches by similarities"
 msgid "Similarity"
 msgstr "Benzerlik"
@@ -2935,7 +2901,7 @@ msgstr "Etiketler"
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:113
 #, kde-format
 msgid "Scan collection for faces"
-msgstr "Yüzler için koleksiyonu tara"
+msgstr "Yüzler için Koleksiyonu Tara"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:150
 #, kde-format
@@ -2943,6 +2909,8 @@ msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
 "feature, please consider using the Help Box in the Bottom Left Side Panel."
 msgstr ""
+"digiKam'ın yüz yönetimine hoş geldiniz. Bu özelliği ilk kez kullanıyorsanız "
+"sol alt paneldeki yardım kutusuna bir bakın."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:202
 #, kde-format
@@ -2950,7 +2918,7 @@ msgid ""
 "Face recognition is aborted, because there are no identities to recognize. "
 "Please add new identities."
 msgstr ""
-"Tanınacak kimlikler olmadığı için yüz tanıma iptal edildi.Lütfen yeni "
+"Tanınacak kimlikler olmadığı için yüz tanıma iptal edildi. Lütfen yeni "
 "kimlikler ekleyin."
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:222
@@ -2978,7 +2946,7 @@ msgstr "Etiket Yok"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:105
 #, kde-format
 msgid "Existing Tags"
-msgstr "Mevcut Etiketler"
+msgstr "Var Olan Etiketler"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
 #, kde-format
@@ -2986,7 +2954,7 @@ msgid "No Tags Album"
 msgstr "Etiket Albümü Yok"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:576
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3002,7 +2970,7 @@ msgstr "Etiketler"
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:140
 #, kde-format
 msgid "Time Unit:"
-msgstr "Zaman Birimi:"
+msgstr "Zaman birimi:"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:142
 #, kde-format
@@ -3041,10 +3009,10 @@ msgid ""
 "maximal counts are big; if it is used, all values (small and large) will be "
 "visible on the graph.</p>"
 msgstr ""
-"<p>Histogram ölçeğini seçin.</p><p>Resmin azami değerleri küçük ise doğrusal "
-"ölçeği kullanabilirsiniz </p><p>Logaritmik ölçek azami değerler büyük ise "
-"kullanılabilir. Kullanılırsa tüm değerler (küçük ve büyük) grafikte görünür "
-"olacak.</p>"
+"<p>Histogram ölçeğini seçin.</p><p>Tarihin en yüksek sayısı küçükse doğrusal "
+"ölçeği kullanabilirsiniz.</p><p>En yüksek sayılar büyükken logaritmik ölçek "
+"kullanılabilir; kullanılırsa tüm değerler (küçük ve büyük) grafikte "
+"görünecektir.</p>"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:162
 #, kde-format
@@ -3061,7 +3029,7 @@ msgstr "Logaritmik"
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:205
 #, kde-format
 msgid "Clear current selection"
-msgstr "Seçimi temizle"
+msgstr "Geçerli Seçimi Temizle"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:206
 #, kde-format
@@ -3074,7 +3042,7 @@ msgstr "Bu düğmeye basarsanız zaman çizgisindeki geçerli tarih seçimi sili
 #, kde-format
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
-msgstr "\"Aramalar\" görünümüne kaydetmek için mevcut tarihlerin adını girin"
+msgstr "\"Aramalar\" görünümüne kaydetmek için geçerli tarihlerin adını gir"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:215
 #, kde-format
@@ -3087,8 +3055,8 @@ msgid ""
 "If you press this button, the dates selected on the time-line will be saved "
 "to a new search virtual Album using the name set on the left."
 msgstr ""
-"Bu düğmeye basarsanız zaman çizgisi üzerinde seçilen tarihler soldaki adla "
-"yeni bir arama sanal Albümüne kaydedilir."
+"Bu düğmeye basarsanız zaman akışı üzerinde seçili tarihler soldaki adla yeni "
+"bir arama sanal albümüne kaydedilir."
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:399
 #: core/app/views/stack/itemiconview_p.h:186
@@ -3127,6 +3095,8 @@ msgid ""
 "The current query from the database returned no results. Change search "
 "settings or select an album with content."
 msgstr ""
+"Veritabanındaki geçerli sorgu hiçbir sonuç döndürmedi. Arama ayarlarını "
+"değiştirin veya içerikli bir albüm seçin."
 
 #: core/app/views/stack/itemiconview_p.h:169
 #, kde-format
@@ -3151,10 +3121,9 @@ msgstr "Son Arama"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
 #: core/app/views/stack/itemiconview_search.cpp:108
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "FacesDetector"
-msgstr "Yüz Algılama"
+msgstr "Yüz Algılayıcısı"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
 #: core/app/views/stack/itemiconview_search.cpp:110
@@ -3163,6 +3132,8 @@ msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
+"Bir yüz tanıma görevi halihazırda çalışıyor. Aynı anda yalnızca bir görev "
+"çalıştırılabilir. Lütfen bitene kadar bekleyin."
 
 #: core/app/views/stack/itemiconview_views.cpp:118
 #, kde-format
@@ -3171,8 +3142,8 @@ msgid ""
 "The storage location of this image\n"
 "is currently not available"
 msgstr ""
-"Bu görüntünün depolama konumu\n"
-"şu anda yok"
+"Bu görselin depolama konumu\n"
+"şu anda kullanılamıyor"
 
 #: core/app/views/stack/itemiconview_views.cpp:223
 #, kde-format
@@ -3182,9 +3153,7 @@ msgstr "Araçlar"
 
 #: core/app/views/stack/trashview.cpp:120
 #: core/libs/tags/manager/tagsmanager.cpp:851
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Yardım"
 
@@ -3192,7 +3161,7 @@ msgstr "Yardım"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Çöp kutusu hakkında çevrimiçi yardım"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3202,7 +3171,7 @@ msgstr "Geri Al"
 #: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
-msgstr ""
+msgstr "Yalnızca çöp kutusundaki son girdiyi geri yükleyin."
 
 #: core/app/views/stack/trashview.cpp:136
 #, kde-format
@@ -3210,10 +3179,9 @@ msgid "Restore"
 msgstr "Geri Yükle"
 
 #: core/app/views/stack/trashview.cpp:137
-#, fuzzy, kde-format
-#| msgid "Remove selected images from the list"
+#, kde-format
 msgid "Restore selection of files from the trash-bin."
-msgstr "Seçilen resimleri listeden kaldır"
+msgstr "Dosya seçimini çöp kutusundan geri yükleyin."
 
 #: core/app/views/stack/trashview.cpp:143
 #, kde-format
@@ -3224,6 +3192,7 @@ msgstr "Sil..."
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
+"Ögeler seçimini veya tüm ögeleri çöp kutusundan kalıcı olarak kaldırın."
 
 #: core/app/views/stack/trashview.cpp:148
 #, kde-format
@@ -3269,14 +3238,12 @@ msgstr[1] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 #: core/app/views/stack/trashview.cpp:383
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
-msgstr "TÜM kalemleri kalıcı olarak silmek istediğinizden emin misiniz?"
+msgstr "TÜM ögeleri kalıcı olarak silmek istediğinizden emin misiniz?"
 
 #: core/app/views/stack/trashview.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgid "Selection"
-msgstr "Seç"
+msgstr "Seçim"
 
 #: core/app/views/stack/trashview.cpp:454
 #: core/libs/database/utils/ifaces/dio.cpp:818
@@ -3289,34 +3256,36 @@ msgstr "Sil"
 #: core/app/views/stack/trashview.cpp:521
 #, kde-format
 msgid "%1/%2 items selected"
-msgstr "%1/%2 öge seçildi"
+msgstr "%1/%2 öge seçili"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 400 user-reports closed on bugzilla."
-msgstr "Bugzilla'da 1300'den fazla kullanıcı raporu kapatıldı."
+msgstr "Bugzilla'da 400'den fazla kullanıcı raporu kapatıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-msgstr ""
+msgstr "Kod, Qt6 çatısına aktarıldı (halen Qt5 API'si ile uyumlu)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
+msgstr "Her yere JPEG-XL, WEBP ve AVIF dışa aktarma desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Kameradan içe aktarırken kayıpsız JPEG-XL, WEBP ve AVIF biçimlerine "
+"dönüştürme desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Toplu Kuyruk Yöneticisi'ne JPEG-XL, WEBP ve AVIF dönüştürücüleri eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3324,42 +3293,40 @@ msgid ""
 "Versionning: add support of JPEG-XL, HEIF, WEBP, and AVIF as lossless image "
 "format to store versionned images in editor."
 msgstr ""
+"Sürümlendirme: Düzenleyicide; JPEG-XL, HEIF, WEBP ve AVIF sürümlendirilmiş "
+"görsellerini kayıpsız görsel olarak işleme desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Usability: add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Kullanılabilirlik: Ana menü gizliyse araç çubuğuna hamburger menüsüne ekleme "
+"desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to save, as specified, metadata to XMP sidecar files."
+#, kde-format
 msgid ""
 "Metadata: add new option to write metadata to files with ExifTool backend."
 msgstr ""
-"Belirtildiği gibi metaveriyi XMP yan dosyalara yazmak için bu seçeneği açın."
+"Üst veri: ExifTool arka ucuyla dosyalara üst veri yazmak için yeni seçenek "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW TIFF/EP files. This "
-#| "feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
-#| "experimental, and is disabled by default."
+#, kde-format
 msgid ""
 "Metadata: optional write metadata operations to DNG and RAW files are now "
 "always delegated to ExifTool Backend."
 msgstr ""
-"Metaveriyi RAW TIFF/EP dosyalarına yazmak için bu seçeneği açın. Bu özellik "
-"Exiv2 paylaşımlı kitaplık, sürüm >= 0.18.0 gerektirir. Hala deneysel "
-"durumdadır ve öntanımlı olarak kapalıdır."
+"Üst veri: DNG ve RAW dosyalarına isteğe bağlı üst veri yazma işlemleri artık "
+"ExifTool arka ucuna devredildi."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid ""
 "Metadata: optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Üst veri: Daha iyi bir kullanılabilirlik için üst veri düzenleme "
+"eklentisinin yerleşimi eniyilendi."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3367,6 +3334,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Üst veri: Gelişmiş Üst Veri Ayarları panelinde yapılandırma profillerini "
+"kaydetmek ve yüklemek için yeni seçenekler eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
@@ -3374,11 +3343,15 @@ msgid ""
 "Advanced Rename: add increment file counter to sequence numbering from with "
 "option [c] or [c,step]."
 msgstr ""
+"Gelişmiş yeniden adlandırma: [c] veya [c,step] seçeneğiyle sıra "
+"numaralandırmaya artış dosyası sayacı eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid "Advanced Rename: add random text sequence numbering with option [r]."
 msgstr ""
+"Gelişmiş yeniden adlandırma: [r] seçeneğiyle rastgele metin sıralı "
+"numaralandırma seçeneği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, kde-format
@@ -3386,29 +3359,29 @@ msgid ""
 "Advanced Rename: add configurable first character for the unique modifier "
 "with {unique:n,c}."
 msgstr ""
+"Gelişmiş yeniden adlandırma: {unique:n,c} ile benzersiz değiştirici için "
+"yapılandırılabilir ilk karakter eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return pictures whose file name contains"
+#, kde-format
 msgid "Advanced Search: add search for items by number of face regions."
-msgstr "Dosya adı içeren resimleri getir"
+msgstr ""
+"Gelişmiş arama: Yüz bölgelerinin sayısına göre ögeler için arama eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:155
-#, fuzzy, kde-format
-#| msgid "Return pictures with tag"
+#, kde-format
 msgid "Advanced Search: add search for items without face regions."
-msgstr "Etiketli resimleri getir"
+msgstr "Gelişmiş arama: yüz bölgeleri olmayan öğeler için arama ekleyin."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Collections: add support for cross-platform network paths."
-msgstr ""
+msgstr "Koleksiyonlar: Çapraz platform ağ yolları için destek eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+#, kde-format
 msgid "Database: add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr "SQLite WAL (Önden Günlükleme) kipi için destek ekle"
+msgstr "Veritabanı: SQLite WAL (Önden Günlükleme) kipi için destek eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
@@ -3416,25 +3389,28 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"KF5::Sonnet bileşeniyle alt yazı metinlerinde yazım denetimi desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add Spellcheck config panel in Settings/Miscellaneous for digiKam and "
 "Showfoto."
-msgstr ""
+msgstr "digiKam ve FotoGöster için yazım denetimi yapılandırma paneli eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Alternatif Dil metin düzenleyicisi araç takımında çevrimiçi çeviri desteği "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add Localize config panel in Settings/Miscellaneous for digiKam and Showfoto."
-msgstr ""
+msgstr "digiKam ve FotoGöster için yerelleştirme yapılandırma paneli eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
@@ -3442,22 +3418,29 @@ msgid ""
 "Add settings to list preferred alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Metin düzenleyicisi araç takımında tercih edilen alternatif/çevrilmiş diller "
+"ayar listesi eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Her yerde Global veya Özelleştirilmiş Görsel Kalitesi sıralama ayarları "
+"eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Etiketlerin küçük görseller üzerindeki görünürlüğünü ayarlamak için simge "
+"görünümü ayarları eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
 msgstr ""
+"TIFF yükleyicisinde float16 (yarım kayan noktalı değer) desteği eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3466,6 +3449,9 @@ msgid ""
 "GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify "
 "images using deep learning model</a>."
 msgstr ""
+"Derin öğrenme modelini kullanarak görselleri sınıflandırmak için <a href="
+"\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Estetik "
+"Algılama</a> gerçekleştirmek üzere yeni bakım aracı eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, kde-format
@@ -3473,38 +3459,34 @@ msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
+"Taranan metin üzerinde <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">optik karakter tanıma</a> gerçekleştirmek için "
+"yeni bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign pick label automatically by parsing "
 "image quality."
 msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+"Kuyruk Yöneticisi: Görsel kalitesini ayrıştırarak otomatik olarak seçim "
+"etiketi atamak için yeni bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:169
-#, fuzzy, kde-format
-#| msgid "Add new tool to assign rating, pick, and color labels in batch."
+#, kde-format
 msgid ""
 "Queue Manager: add new tool to assign rating, pick, and color labels in "
 "batch."
 msgstr ""
-"Derecelendirme, seçim ve renk etiketlerini toplu olarak atamak için yeni "
-"araç ekleyin."
+"Kuyruk Yöneticisi: Toplu olarak derecelendirme, seçim ve renk etiketleri "
+"atamak için yeni bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgid "Queue Manager: add new tool to assign titles and captions in batch."
 msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+"Kuyruk Yöneticisi: Toplu olarak başlıklar ve alt yazılar atamak için yeni "
+"bir araç eklendi."
 
 #: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
@@ -3512,6 +3494,8 @@ msgid ""
 "Documentation: <a href=\" https://docs.digikam.org/en/index.html\">Rewrite "
 "handbook</a> from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"Belgelendirme: <a href=\" https://docs.digikam.org/en/index.html\">El "
+"Kitabı</a>, DocBook'tan Sphinx/ReStructuredText çatısına aktarıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:172
 #, kde-format
@@ -3519,11 +3503,13 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"G'MIC-Qt aracı güncel 3.2.2 sürümüne güncellenip macOS sürümü tamamlandı ve "
+"eklentinin kararlılığı artırıldı."
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 20230403."
-msgstr ""
+msgstr "İçsel RAW işletkesi, güncel 20230403 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview.cpp:174
 #, kde-format
@@ -3534,11 +3520,16 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Yeni RAW özellikleri: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:189
 #, kde-format
 msgid "...and much more."
-msgstr "...ve daha fazlası."
+msgstr "...ve çok daha fazlası."
 
 #: core/app/views/stack/welcomepageview.cpp:195
 #, kde-format
@@ -3556,15 +3547,12 @@ msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
 #: core/app/views/stack/welcomepageview.cpp:201
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 4.x):"
+#, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 7):"
 msgstr ""
-"Bu sürümdeki digiKam'ın yeni özelliklerinden bazıları şunlardır (digiKam 4.x "
+"digiKam'ın bu sürümündeki yeni özelliklerden bazıları şunlardır (digiKam 7 "
 "ile karşılaştırıldığında):"
 
 #: core/app/views/stack/welcomepageview.cpp:209
@@ -3584,9 +3572,9 @@ msgid ""
 "organize, enhance, search and export your digital images to and from your "
 "computer."
 msgstr ""
-"DigiKam, bilgisayarınıza dijital görüntülerinizi aktarmak, düzenlemek, "
-"geliştirmek, aramak ve vermek için tasarlanmış bir açık kaynaklı fotoğraf "
-"yönetim programıdır."
+"digiKam, sayısal görsellerinizi bilgisayarınıza içe aktarmak, düzenlemek, "
+"geliştirmek, aramak ve dışa aktarmak için tasarlanmış açık kaynaklı bir "
+"fotoğraf yönetim programıdır."
 
 #: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
@@ -3595,8 +3583,8 @@ msgid ""
 "where your files are stored, and are identical to the folders on your hard "
 "disk."
 msgstr ""
-"Şu anda, digiKam'in Albüm görüntüleme modundasınız. Albümler, dosyalarınızın "
-"depolandığı yerlerdir ve sabit diskinizdeki klasörler ile aynıdır."
+"Şu anda digiKam'ın albüm görüntüleme kipindesiniz. Albümler, dosyalarınızın "
+"saklandığı yerlerdir ve sabit diskinizdeki klasörlerle aynıdır."
 
 #: core/app/views/stack/welcomepageview.cpp:214
 #, kde-format
@@ -3604,45 +3592,36 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
-#| "\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"DigiKam'in <a href=\"help:/digikam/index.html\"> belgelendirmesinde </a> "
-"açıklanan birçok güçlü özelliği vardır"
+"digiKam'in <a href=\"https://docs.digikam.org/en/index.html"
+"\">belgelendirmesinde</a> açıklanan pek çok güçlü özelliği vardır"
 
 #: core/app/views/stack/welcomepageview.cpp:216
-#, fuzzy, kde-format
-#| msgid ""
-#| "The <a href=\"http://www.digikam.org\">digiKam homepage</a> provides "
-#| "information about new versions of digiKam."
+#, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
 "information about new versions of digiKam."
 msgstr ""
-"<a href=\"http://www.digikam.org\"> digiKam ana sayfası </a> digiKam'ın yeni "
-"sürümleri hakkında bilgi vermektedir."
+"<a href=\"https://www.digikam.org\">digiKam ana sayfası</a>, digiKam'ın yeni "
+"sürümleri hakkında bilgi sağlar."
 
 #: core/app/views/stack/welcomepageview.cpp:266
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
-msgstr "DigiKam'a Hoşgeldiniz %1"
+msgstr "digiKam %1 sürümüne hoş geldiniz"
 
 #: core/app/views/stack/welcomepageview.cpp:269
 #, kde-format
 msgid "Background Image Credits"
-msgstr "Arka Plan Görseli Bilgileri"
+msgstr "Arka Plan Görseli Bilgisi"
 
 #: core/app/views/stack/welcomepageview.cpp:272
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Author:"
+#, kde-format
 msgid "Author:"
 msgstr "Yazar:"
 
@@ -3653,17 +3632,14 @@ msgid "Location:"
 msgstr "Konum:"
 
 #: core/app/views/stack/welcomepageview.cpp:275
-#, fuzzy, kde-format
-#| msgid "Camera"
+#, kde-format
 msgid "Camera:"
-msgstr "Kamera"
+msgstr "Kamera:"
 
 #: core/app/views/stack/welcomepageview.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "camera lens"
-#| msgid "Lens:"
+#, kde-format
 msgid "Lens:"
-msgstr "Mercekler:"
+msgstr "Mercek:"
 
 #: core/app/views/tableview/tableview.cpp:329
 #, kde-format
@@ -3678,7 +3654,7 @@ msgstr "Gruplamayı yok say"
 #: core/app/views/tableview/tableview.cpp:349
 #, kde-format
 msgid "Show grouping in tree"
-msgstr "Gruplamayı ağaç içinde göster"
+msgstr "Ağaç içinde gruplamayı göster"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:67
 #, kde-format
@@ -3695,16 +3671,15 @@ msgstr "Ses bit hızı"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:91
 #, kde-format
 msgid "Audio channel type"
-msgstr "Ses kanalı tipi"
+msgstr "Ses kanalı türü"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
 #: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgid "Audio Codec"
-msgstr "Video Kodlayıcısı"
+msgstr "Ses Kodlayıcısı"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
@@ -3723,18 +3698,18 @@ msgstr "Kare hızı"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:111
 #, kde-format
 msgid "Video codec"
-msgstr "Video kodlayıcı"
+msgstr "Video kodlayıcısı"
 
 #: core/app/views/tableview/tableview_column_configuration_dialog.cpp:75
 #, kde-format
 msgid "Configure column \"%1\""
-msgstr "\"%1\" Sütununu yapılandır"
+msgstr "\"%1\" sütununu yapılandır"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:68
 #, kde-format
 msgctxt "@title: tableview"
 msgid "digiKam properties"
-msgstr "digiKam özellikleri"
+msgstr "digiKam Özellikleri"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:71
 #, kde-format
@@ -3746,13 +3721,13 @@ msgstr "Derecelendirme"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
-msgstr "Etiket seç"
+msgstr "Etiket Seç"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Color label"
-msgstr "Renk etiketi"
+msgstr "Renk Etiketi"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:77
 #, kde-format
@@ -3761,11 +3736,10 @@ msgid "Title"
 msgstr "Başlık"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:81
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: tableview"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt Yazı"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
 #, kde-format
@@ -3783,13 +3757,13 @@ msgstr "Derecelendirme"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
-msgstr "Etiket seç"
+msgstr "Etiket Seç"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Color label"
-msgstr "Renk etiketi"
+msgstr "Renk Etiketi"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:109
 #, kde-format
@@ -3798,11 +3772,10 @@ msgid "Title"
 msgstr "Başlık"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:114
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt Yazı"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:119
 #, kde-format
@@ -3815,25 +3788,25 @@ msgstr "Etiketler"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:344
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rejected"
-msgstr "Reddedildi"
+msgstr "Reddedilen"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:350
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pending"
-msgstr "Bekletiliyor"
+msgstr "Bekletilen"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:356
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Accepted"
-msgstr "Kabul edildi"
+msgstr "Kabul Edilen"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:384
 #, kde-format
@@ -3869,7 +3842,7 @@ msgstr "Mavi"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Magenta"
-msgstr "Macenta"
+msgstr "Mor"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:420
 #, kde-format
@@ -3920,7 +3893,7 @@ msgstr "Boyut"
 #: core/app/views/tableview/tableview_column_file.cpp:95
 #, kde-format
 msgid "Last modified"
-msgstr "Son düzenlenen"
+msgstr "Son düzenleme"
 
 #: core/app/views/tableview/tableview_column_file.cpp:236
 #, kde-format
@@ -3938,18 +3911,18 @@ msgstr "Düz"
 #: core/app/views/tableview/tableview_column_geo.cpp:261
 #, kde-format
 msgid "Display format"
-msgstr "Gösterim biçimi"
+msgstr "Görüntüleme biçimi"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #, kde-format
 msgid "Geo properties"
-msgstr "Coğrafik özellikler"
+msgstr "Coğrafi özellikler"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:88
 #: core/app/views/tableview/tableview_column_geo.cpp:101
 #, kde-format
 msgid "Geotagged"
-msgstr "Coğrafi Etiketlenmiş"
+msgstr "Coğrafi etiketlenmiş"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:89
 #: core/app/views/tableview/tableview_column_geo.cpp:106
@@ -3986,7 +3959,7 @@ msgstr "Metrik birimler"
 #: core/app/views/tableview/tableview_column_geo.cpp:260
 #, kde-format
 msgid "Imperial units"
-msgstr "İngiliz ölçü birimi"
+msgstr "İmparatorluk ölçü birimleri"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #, kde-format
@@ -4053,7 +4026,7 @@ msgstr "Sayısallaştırma tarihi/zamanı"
 #: core/app/views/tableview/tableview_column_item.cpp:141
 #, kde-format
 msgid "Aspect ratio"
-msgstr "Görüntü oranı"
+msgstr "En-boy oranı"
 
 #: core/app/views/tableview/tableview_column_item.cpp:85
 #: core/app/views/tableview/tableview_column_item.cpp:146
@@ -4072,14 +4045,14 @@ msgstr "Fotoğraf özellikleri"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera maker"
-msgstr "Kamera modeli"
+msgstr "Kamera Üreticisi"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:78
 #: core/app/views/tableview/tableview_column_photo.cpp:102
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Camera model"
-msgstr "Kamera modeli"
+msgstr "Kamera Modeli"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:79
 #: core/app/views/tableview/tableview_column_photo.cpp:107
@@ -4093,14 +4066,14 @@ msgstr "Mercek"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Aperture"
-msgstr "Diyafram açıklığı"
+msgstr "Diyafram Açıklığı"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:81
 #: core/app/views/tableview/tableview_column_photo.cpp:117
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Focal length"
-msgstr "Odak uzaklığı"
+msgstr "Odak Uzaklığı"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:82
 #: core/app/views/tableview/tableview_column_photo.cpp:122
@@ -4121,21 +4094,21 @@ msgstr "Duyarlılık"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Mode/program"
-msgstr "Mod/program"
+msgstr "Kip/Program"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:85
 #: core/app/views/tableview/tableview_column_photo.cpp:137
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Flash"
-msgstr "Flash"
+msgstr "Flaş"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:86
 #: core/app/views/tableview/tableview_column_photo.cpp:142
 #, kde-format
 msgctxt "@title: tableview"
 msgid "White balance"
-msgstr "Beyaz dengesi"
+msgstr "Beyaz Dengesi"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:238
 #, kde-format
@@ -4147,7 +4120,7 @@ msgstr "%1 (%2)"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "%1 s"
-msgstr "%1 s"
+msgstr "%1 sn"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:267
 #, kde-format
@@ -4171,13 +4144,13 @@ msgstr "%1 ISO"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Fraction"
-msgstr "Bölme"
+msgstr "Kesir"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:445
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Rational"
-msgstr "Oranlı"
+msgstr "Oransal"
 
 #: core/app/views/tableview/tableview_column_photo.cpp:446
 #, kde-format
@@ -4217,7 +4190,7 @@ msgstr "Birim"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "Thumbnail"
-msgstr "Küçük resim"
+msgstr "Küçük Görsel"
 
 #: core/app/views/tableview/tableview_treeview.cpp:87
 #, kde-format
@@ -4230,9 +4203,7 @@ msgid "Configure this column"
 msgstr "Bu sütunu yapılandır"
 
 #: core/app/views/utils/componentsinfodlg.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -4285,12 +4256,10 @@ msgstr "Evet"
 
 #: core/app/views/utils/componentsinfodlg.cpp:106
 #: core/app/views/utils/componentsinfodlg.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "Baloo support"
+#, kde-format
 msgctxt "@item: component info"
 msgid "AddressBook support"
-msgstr "Baloo desteği"
+msgstr "Adres defteri desteği"
 
 #: core/app/views/utils/componentsinfodlg.cpp:118
 #: core/app/views/utils/componentsinfodlg.cpp:132
@@ -4336,7 +4305,7 @@ msgstr "Panorama desteği"
 #, kde-format
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
-msgstr "HTML Galeri desteği"
+msgstr "HTML Galerisi desteği"
 
 #: core/app/views/utils/componentsinfodlg.cpp:175
 #: core/app/views/utils/componentsinfodlg.cpp:180
@@ -4361,42 +4330,37 @@ msgstr "Veritabanı arka ucu"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
-msgstr "Veritabanı dahili sunucusu"
+msgstr "Veritabanı içsel sunucusu"
 
 #: core/app/views/utils/componentsinfodlg.cpp:205
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
-msgstr "Kamera Yapılandırması"
+msgstr "FFmpeg Yapılandırması"
 
 #: core/app/views/utils/componentsinfodlg.cpp:211
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
-msgstr "Video kodlayıcı"
+msgstr "Video Kod Çözücüleri"
 
 #: core/app/views/utils/componentsinfodlg.cpp:223
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
-msgstr "Video kodlayıcı"
+msgstr "Video Kodlayıcıları"
 
 #: core/app/views/utils/componentsinfodlg.cpp:238
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
-msgstr "Video Kodlayıcısı"
+msgstr "Ses Kod Çözücüleri"
 
 #: core/app/views/utils/componentsinfodlg.cpp:250
-#, fuzzy, kde-format
-#| msgid "Video Codec"
+#, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
-msgstr "Video Kodlayıcısı"
+msgstr "Ses Kodlayıcıları"
 
 #: core/app/views/utils/componentsinfodlg.cpp:265
 #, kde-format
@@ -4417,7 +4381,7 @@ msgstr "Otomatik Düzeyler"
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:266
 #, kde-format
 msgid "Normalize"
-msgstr "Normalleştir"
+msgstr "Olağanlaştır"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:62
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:137
@@ -4432,7 +4396,7 @@ msgstr "Eşitle"
 #: core/libs/dimg/filters/auto/stretchfilter.cpp:52
 #, kde-format
 msgid "Stretch Contrast"
-msgstr "Zıtlığı Artır"
+msgstr "Karşıtlığı Artır"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrection.cpp:64
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:157
@@ -4447,7 +4411,7 @@ msgstr "Otomatik Pozlandırma"
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:89
 #, kde-format
 msgid "Filter:"
-msgstr "Filtre"
+msgstr "Süz:"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:46
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:44
@@ -4464,76 +4428,68 @@ msgid "A tool to fix colors automatically"
 msgstr "Renkleri otomatik olarak düzeltmek için bir araç"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, renkleri görüntülerden otomatik olarak "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, renkleri görsellerden otomatik "
+"olarak ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:46
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "BCG Correction"
+#, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
 msgstr "BCG Düzeltme"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Brightness / Contrast / Gamma"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to fix Brightness / Contrast / Gamma"
-msgstr "Parlaklık / Zıtlık / Gama"
+msgstr "Parlaklık/Karşıtlık/Gama onarımı için bir araç"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki Parlaklık/Karşıtlık/"
+"Gama ayarlarını yapabilir.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Black and White Convert"
+#, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
-msgstr "Siyah ve Beyaz Dönüştürme"
+msgstr "Siyah-Beyaz'a Dönüştür"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert to black and white"
-msgstr "Siyah beyaza dönüştürmek için bir araç"
+msgstr "Siyah-beyaz'a dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images to black and white.</"
-#| "p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntüleri siyah beyaza dönüştürebilir."
-"</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri siyah-beyaz'a "
+"dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:46
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
-msgstr "Kanal Karıştırıcı"
+msgstr "Kanal Karıştırıcısı"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:61
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:59
@@ -4543,16 +4499,14 @@ msgid "A tool to mix color channel"
 msgstr "Renk kanalını karıştırmak için bir araç"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can mix color channels from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk kanallarını "
-"karıştırabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk kanallarını "
+"karıştırabilir.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:38
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:161
@@ -4564,7 +4518,7 @@ msgstr "Renk Dengesi"
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
 #, kde-format
 msgid "Adjust color balance."
-msgstr "Renk dengesini ayarla."
+msgstr "Renk dengesini ayarlayın."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
@@ -4581,94 +4535,84 @@ msgid "A tool to adjust color balance"
 msgstr "Renk dengesini ayarlamak için bir araç"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust color balance from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust color balance from images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk dengesini "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk dengesini "
+"ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:32
 #, kde-format
 msgid "Convert to 8 bits"
-msgstr "8 bite dönüştür"
+msgstr "8 Bit'e Dönüştür"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:33
 #, kde-format
 msgid "Convert color depth from 16 to 8 bits."
-msgstr "Renk derinliğini 16'dan 8 bite çevir."
+msgstr "Renk derinliğini 16 bit'ten 8 bit'e dönüştürün."
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert to 8 bits"
+#, kde-format
 msgctxt "@info"
 msgid "Convert to 8 bits"
-msgstr "8 bite dönüştür"
+msgstr "8 bit'e dönüştür"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:61
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 8 bits"
-msgstr "Renk derinliğini 8 bite dönüştürmek için bir araç"
+msgstr "Renk derinliğini 8 bit'e dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8plugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert image color depth to 8 bits."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert image color depth to 8 bits."
 "</para>"
 msgstr ""
-"<p>Bu toplu Kuyruk Yöneticisi aracı, görüntü renk derinliğini 8 bit'e "
-"dönüştürebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselin renk derinliğini 8 bit'e "
+"dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:46
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Convert to 16 bits"
-msgstr "16 bite dönüştür"
+msgstr "16 Bit'e Dönüştür"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:61
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert color depth to 16 bits"
-msgstr "Renk derinliğini 16 bite dönüştürmek için bir araç"
+msgstr "Renk derinliğini 16 bit'e dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
 #, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert image color depth to 8 bits."
-#| "</p>"
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
 "bits.</para>"
 msgstr ""
-"<p>Bu toplu Kuyruk Yöneticisi aracı, görüntü renk derinliğini 8 bit'e "
-"dönüştürebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin renk derinliğini 16 "
+"bit'e dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:43
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Curves Adjust"
+#, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
-msgstr "Eğrilerin Ayarlanması"
+msgstr "Eğriler Ayarı"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
 #, kde-format
 msgctxt "@info"
 msgid "Perform curves adjustments."
-msgstr "Eğri ayarlanmasını gerçekleştir."
+msgstr "Eğri ayarlamalarını gerçekleştir."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:62
 #, kde-format
@@ -4677,8 +4621,7 @@ msgid "Channel:"
 msgstr "Kanal:"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:65
-#, fuzzy, kde-format
-#| msgid "Luminosity"
+#, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
 msgstr "Parlaklık"
@@ -4721,31 +4664,27 @@ msgstr "Tüm parametreleri ayarlar metin dosyasından yükleyin."
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:61
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Adjust color balance."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color curves"
-msgstr "Renk dengesini ayarla."
+msgstr "Renk eğrilerini ayarlamak için bir araç"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjustplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust the color curves from images."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the color curves from images."
 "</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk eğrilerini "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk eğrilerini "
+"ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:46
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
-msgstr "HSL Düzeltme"
+msgstr "HSL Düzeltmesi"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
@@ -4761,36 +4700,31 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"<para>Bu toplu iş yöneticisi, görsellerdeki Ton/Doygunluk/Açıklık "
+"<para>Bu Toplu Kuyruk Yöneticisi, görsellerdeki Ton/Doygunluk/Açıklık "
 "değerlerini düzenleyebilir.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
-#, fuzzy, kde-format
-#| msgid "Color Profile Conversion"
+#, kde-format
 msgctxt "@title"
 msgid "Color Profile Conversion"
-msgstr "Renk Profili Dönüştürmesi"
+msgstr "Renk Profili Dönüşümü"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Convert image to a color space."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to a color space"
-msgstr "Resmi renk aralığına dönüştür."
+msgstr "Görselleri bir renk uzayına dönüştürmek içim bir araç"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images to a different color "
-#| "space.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images to a different color "
 "space.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntüleri farklı bir renk alanına "
-"dönüştürebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri başka bir renk uzayına "
+"dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:46
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:44
@@ -4804,17 +4738,16 @@ msgstr "Renkleri Ters Çevir"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to invert image colors"
-msgstr "Görüntü renklerini ters çevirmek için bir araç"
+msgstr "Görsel renklerini ters çevirmek için bir araç"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can invert colors from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renkleri tersine "
-"çevirebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renkleri tersine "
+"çevirebilir.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:46
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:44
@@ -4831,30 +4764,26 @@ msgid "A tool to adjust white balance"
 msgstr "Beyaz dengesini ayarlamak için bir araç"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust color balance from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk dengesini "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki beyaz dengesini "
+"ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To TIFF"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To AVIF"
-msgstr "TIFF Biçimine Dönüştür"
+msgstr "AVIF'e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to HEIF format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to AVIF format"
-msgstr "Görüntüleri HEIF formatına dönüştürmek için bir araç"
+msgstr "Görselleri AVIF biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:66
 #, kde-kuit-format
@@ -4866,20 +4795,24 @@ msgid ""
 "container format.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini AVIF biçimine "
+"dönüştürebilir.</para><para>AV1 Görsel Dosyası Biçimi, AV1 ile sıkıştırılmış "
+"görselleri veya görsel dizilerini ISOBMFF kapsayıcı biçiminde depolamak için "
+"kullanılan bir görsel dosyası biçimi belirtimidir.</para><para><a "
+"href='https://en.wikipedia.org/wiki/AVIF'>Bu sayfadan</a> bu biçimle ilgili "
+"ayrıntılara bakabilirsiniz.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert RAW To DNG"
+#, kde-format
 msgctxt "@title"
 msgid "Convert RAW To DNG"
-msgstr "HAM'ı DNG'ye dönüştür"
+msgstr "RAW'ı DNG'ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Convert RAW images to DNG container."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert RAW images to DNG container"
-msgstr "HAM resimleri DNG kapsayıcısına dönüştür."
+msgstr "RAW görselleri DNG kapsayıcısına dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:66
 #, kde-kuit-format
@@ -4890,20 +4823,23 @@ msgid ""
 "Adobe.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>"
 msgstr ""
+"<para>Bu genel araç, RAW görsel verisini DNG biçimine dönüştürebilir.</"
+"para><para>Sayısal Negatif, Adobe tarafından oluşturulan kayıpsız bir RAW "
+"görsel biçimidir.</para><para>Bu biçimle ilgili ayrıntılara <a href='https://"
+"en.wikipedia.org/wiki/Digital_Negative'>bu sayfadan bakabilirsiniz</a>.</"
+"para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To TIFF"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To HEIF"
-msgstr "TIFF Biçimine Dönüştür"
+msgstr "HEIF'e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to HEIF format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to HEIF format"
-msgstr "Görüntüleri HEIF formatına dönüştürmek için bir araç"
+msgstr "Görselleri HEIF biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:66
 #, kde-kuit-format
@@ -4920,20 +4856,30 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini HEIF biçimine "
+"dönüştürebilir.</para><para>Yüksek Verimli Görsel Kodlaması (HEIC) olarak da "
+"bilinen Yüksek Verimli Görsel Dosyası Biçimi (HEIF), bireysel kullanıcılar "
+"için bir dosya biçimidir. Hareketli Resim Uzmanları Grubu (MPEG) tarafından "
+"geliştirilmiştir ve bir HEIF görselinde, aynı boyuttaki bir JPEG görseline "
+"göre iki kat daha fazla bilgi depolanabileceğini ve bunun sonucunda daha "
+"kaliteli bir görsel elde edilebileceğini iddia etmektedir. HEIF, aynı "
+"zamanda canlandırmaları da destekler ve canlandırmalı bir GIF'ten daha küçük "
+"bir boyutta daha fazla bilgi depolayabilir.</para><para>Ayrıntılar için <a "
+"href='https://en.wikipedia.org/wiki/"
+"High_Efficiency_Image_File_Format'>Yüksek Verimli Görsel Dosyası Biçimi</a> "
+"sayfasına bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To JP2"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To JP2"
-msgstr "JP2 Biçimine Dönüştür"
+msgstr "JP2'ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to JPEG-2000 format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG-2000 format"
-msgstr "Görüntüleri JPEG-2000 formatına dönüştürmek için bir araç"
+msgstr "Görselleri JPEG-2000 biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:66
 #, kde-kuit-format
@@ -4947,20 +4893,26 @@ msgid ""
 "method.</para><para>See details about this format from <a href='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG-2000 biçimine "
+"dönüştürebilir.</para><para>Bu bir görsel sıkıştırma standardı ve kodlama "
+"sistemidir. 2000 yılında Birleşik Fotoğraf Uzmanları Grubu komitesi "
+"tarafından oluşturulmuştur. Bu biçimin amacı, özgün ayrık kosinüs dönüşümü "
+"tabanlı JPEG standartlarının (1992'de oluşturulan) yerini yeni tasarlanmış, "
+"dalgacık tabanlı bir yöntemle değiştirme niyetidir.</para><para>Ayrıntılar "
+"için <a href='https://en.wikipedia.org/wiki/JPEG_2000'>bu sayfaya</a> bakın."
+"</para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To JPEG"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To JPEG"
-msgstr "JPEG Biçimine Dönüştür"
+msgstr "JPEG'e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to JPEG format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JPEG format"
-msgstr "Görüntüleri JPEG formatına dönüştürmek için bir araç"
+msgstr "Görselleri JPEG biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:66
 #, kde-kuit-format
@@ -4973,20 +4925,24 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</"
 "para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG biçimine "
+"dönüştürebilir.</para><para>Birleşik Fotoğraf Uzmanları Grubu biçimi, "
+"sayısal görseller, özellikle de sayısal fotoğrafçılıkla üretilen görseller "
+"için yaygın olarak kullanılan bir kayıplı sıkıştırma yöntemidir.</"
+"para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/JPEG'>bu "
+"sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To JP2"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To JXL"
-msgstr "JP2 Biçimine Dönüştür"
+msgstr "JXL'e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to JPEG format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to JXL format"
-msgstr "Görüntüleri JPEG formatına dönüştürmek için bir araç"
+msgstr "Görselleri JXL biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:66
 #, kde-kuit-format
@@ -4999,20 +4955,24 @@ msgid ""
 "replacement.</para><para>See details about this format from <a href='https://"
 "en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG-XL biçimine "
+"dönüştürebilir.</para><para>JPEG-XL, hem kayıplı hem de kayıpsız "
+"sıkıştırmayı destekleyen telifsiz bir raster grafik dosya biçimidir. Tasarım "
+"amacı, var olan raster biçimlerden daha iyi başarım göstererek bunların "
+"evrensel alternatifi haline gelmektir.</para><para>Ayrıntılar için <a "
+"href='https://en.wikipedia.org/wiki/JPEG_XL'>bu sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To PGF"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To PGF"
-msgstr "PGF Biçimine Dönüştür"
+msgstr "PGF'ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to PGF format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PGF format"
-msgstr "Görüntüleri PGF formatına dönüştürmek için bir araç"
+msgstr "Görselleri PGF biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:66
 #, kde-kuit-format
@@ -5024,6 +4984,11 @@ msgid ""
 "details about this format from <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini PGF biçimine "
+"dönüştürebilir.</para><para>Progresif Grafik Dosyası, kayıpsız ve kayıplı "
+"veri sıkıştırması kullanan, dalgacık tabanlı bir bit eşlemli görsel "
+"biçimidir.</para><para>Ayrıntılar için <a href='https://en.wikipedia.org/"
+"wiki/Progressive_Graphics_File'>bu sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:59
 #, kde-format
@@ -5032,20 +4997,21 @@ msgid ""
 "Simply insert the tool for color profile conversion before this tool and "
 "select the desired color profile.</b>"
 msgstr ""
+"<b>PNG'ye dönüştürme işlemi başarısız olursa bunun nedeni renk profili "
+"denetimi olabilir. Renk profili dönüştürme aracını bu aracın önüne "
+"yerleştirmeniz ve istediğiniz renk profilini seçmeniz yeterlidir.</b>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To PNG"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To PNG"
-msgstr "PNG Biçimine Dönüştür"
+msgstr "PNG'ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to PNG format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to PNG format"
-msgstr "Görüntüleri PNG formatına dönüştürmek için bir araç"
+msgstr "Görselleri PNG biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:66
 #, kde-kuit-format
@@ -5057,20 +5023,23 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini PNG biçimine "
+"dönüştürebilir.</para><para>Taşınabilir Ağ Grafikleri, kayıpsız veri "
+"sıkıştırmayı destekleyen bir raster grafik dosya biçimidir.</"
+"para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
+"Portable_Network_Graphics'>bu sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To TIFF"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To TIFF"
-msgstr "TIFF Biçimine Dönüştür"
+msgstr "TIFF'e Dönüştür"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to TIFF format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to TIFF format"
-msgstr "Görüntüleri TIFF formatına dönüştürmek için bir araç"
+msgstr "Görselleri TIFF biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:66
 #, kde-kuit-format
@@ -5083,20 +5052,24 @@ msgid ""
 "format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</"
 "para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini TIFF biçimine "
+"dönüştürebilir.</para><para>Etiketli Görsel Dosyası Biçimi; fotoğrafçılar, "
+"grafik sanatçıları, yayıncılık endüstrisi ve yayıncılık endüstrisi arasında "
+"popüler olan, raster grafik görsellerini depolamak için kullanılan bir "
+"bilgisayar dosyası biçimidir.</para><para>Ayrıntılar için <a href='https://"
+"en.wikipedia.org/wiki/TIFF'>bu sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Convert To JP2"
+#, kde-format
 msgctxt "@title"
 msgid "Convert To WEBP"
-msgstr "JP2 Biçimine Dönüştür"
+msgstr "WEBP'ye Dönüştür"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to convert images to PGF format"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert images to WEBP format"
-msgstr "Görüntüleri PGF formatına dönüştürmek için bir araç"
+msgstr "Görselleri WEBP biçimine dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:66
 #, kde-kuit-format
@@ -5110,6 +5083,13 @@ msgid ""
 "transparency.</para><para>See details about this format from <a "
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini WEBP biçimine "
+"dönüştürebilir.</para><para>WEBP, Google'ın JPEG, PNG ve GIF dosya "
+"biçimlerinin yerine geçmek üzere geliştirdiği bir görsel dosyası biçimidir. "
+"WEBP, aynı kalite için daha küçük veya aynı boyut için daha yüksek kaliteli "
+"görseller sağlar. Hem kayıplı hem de kayıpsız sıkıştırmanın yanı sıra "
+"canlandırma ve alfa saydamlığını da destekler.</para><para>Ayrıntılar için "
+"<a href='https://en.wikipedia.org/wiki/WebP'>bu sayfaya</a> bakın.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
@@ -5141,37 +5121,34 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgid "JPEG"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
 #, kde-format
 msgid "AVIF"
-msgstr ""
+msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
 #, kde-format
 msgid "HEIF"
-msgstr ""
+msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
 #, kde-format
 msgid "WEBP"
-msgstr ""
+msgstr "WEBP"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
-msgstr "Kabuk Betiği:"
+msgstr "Kabuk betiği:"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
@@ -5180,9 +5157,9 @@ msgid ""
 "filenames (with special characters escaped). These would be substituted "
 "before shell execution."
 msgstr ""
-"Çalıştırılacak betiği girin. girdi / çıktı dosya isimleri için $INPUT ve "
-"$OUTPUT kullanın (özel karakterlerde kaçış karakteri kullanın). Bunlar kabuk "
-"çalışmadan değiştirilecektir."
+"Yürütülecek betiği girin. Girdi/çıktı dosya adları için $INPUT ve $OUTPUT "
+"kullanın (özel karakterler dışında). Bunlar, kabuk yürütmesinden önce "
+"değiştirilir."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
@@ -5190,65 +5167,60 @@ msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
 "RATING and TAGSPATH (separated by ;) are available."
 msgstr ""
-"<b>Not:</b> Çevre değişkenleri TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
-"RATING ve TAGSPATH ( ; ile ayrılmış) kullanılabilir."
+"<b>Not:</b> TITLE, COMMENTS, COLORLABEL, PICKLABEL, RATING ve TAGSPATH çevre "
+"değişkenleri, ';' ile ayrılarak kullanılabilir."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
-msgstr "Kullanıcı Betiği: Betik Yok."
+msgstr "Kullanıcı betiği: Betik yok."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:297
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Kullanıcı Betiği: Betik Yok."
+msgstr "Kullanıcı betiği: Dosya açma hatası."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
-msgstr "Kullanıcı Betiği: Betik zaman aşımına uğradı."
+msgstr "Kullanıcı betiği: Betik zaman aşımına uğradı."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:322
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "Kullanıcı Betiği: Betik Yok."
+msgstr "Kullanıcı betiği: Hata yok."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
-msgstr "Kullanıcı Betiği: Betik başlatma başarısız."
+msgstr "Kullanıcı betiği: Betik başlatılamadı."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr "Kullanıcı Betiği: Betik işlemesi çöktü."
+msgstr "Kullanıcı betiği: Betik süreci çöktü."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
-msgstr "Kullanıcı Betiği: Komut bulunamadı."
+msgstr "Kullanıcı betiği: Komut bulunamadı."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:344
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Kullanıcı Betiği: Betik Yok."
+msgstr "Kullanıcı betiği: Hata kodu %1 döndürdü."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "User Shell Script"
+#, kde-format
 msgctxt "@title"
 msgid "User Shell Script"
 msgstr "Kullanıcı Kabuk Betiği"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Execute a custom shell script"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to execute a custom shell script"
-msgstr "Özel kabuk betiği çalıştır"
+msgstr "Bir özel kabuk betiği yürütmek için bir araç"
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:66
 #, kde-kuit-format
@@ -5261,6 +5233,13 @@ msgid ""
 "$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, kullanıcı kabuk betiklerini iş akışı "
+"aşaması olarak çalıştırabilir.</para><para>Betik değişkenleri:</"
+"para><para>Girdi/çıktı dosya adları için <b>$INPUT</b> ve <b>$OUTPUT</b> "
+"kullanılır (özel karakterler kaçırılır) Bunlar, kabuk yürütmesinden önce "
+"değiştirilir.</para><para>digiKam özellikleri işlemesi için <b>$TITLE</b>, "
+"<b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> ve "
+"<b>$TAGSPATH</b> kullanılır.</para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:46
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:44
@@ -5270,46 +5249,41 @@ msgid "Add Border"
 msgstr "Kenarlık Ekle"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to add a border around images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around images"
-msgstr "Görüntülerin etrafına kenarlık eklemek için bir araç"
+msgstr "Görsellerin etrafına kenarlık eklemek için bir araç"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add decorative border around images."
 "</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin etrafına dekoratif "
+"kenarlıklar ekleyebilir.</para>"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Add Texture"
+#, kde-format
 msgctxt "@title"
 msgid "Add Texture"
 msgstr "Doku Ekle"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to apply a texture over images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over images"
-msgstr "Görüntülerin üzerine doku uygulamak için bir araç"
+msgstr "Görsellerin üzerine doku uygulamak için bir araç"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin üzerine doku "
+"uygulayabilir.</para>"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:188
 #, kde-format
@@ -5317,25 +5291,24 @@ msgid ""
 "Check this if you want the watermark to use the given size of the font or "
 "the image without any adjustment to the actual image."
 msgstr ""
-"Filigranın, gerçek görüntüde herhangi bir ayarlama yapmadan yazıtipi veya "
-"görüntünün verilen boyutunu kullanmasını istiyorsanız bunu işaretleyin."
+"Filigranın, gerçek görselde herhangi bir ayarlama yapmadan yazıtipinin veya "
+"görselin verilen boyutunu kullanmasını istiyorsanız bunu işaretleyin."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:191
 #, kde-format
 msgid "Use Absolute Size"
-msgstr "Kesin Boyutu Kullan"
+msgstr "Mutlak Boyutu Kullan"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Filigran Tipi:"
+msgstr "Filigran türü:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
 #, kde-format
 msgid "Image"
-msgstr "Resim"
+msgstr "Görsel"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:208
 #, kde-format
@@ -5345,18 +5318,17 @@ msgstr "Metin"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
 #, kde-format
 msgid "Image settings"
-msgstr "Resim ayarları"
+msgstr "Görsel ayarları"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
 #, kde-format
 msgid "Click to select watermark image."
-msgstr "Filigran resmini seçmek için tıklayın."
+msgstr "Filigran görseli seçmek için tıklayın."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Filigran resmi:"
+msgstr "Filigran görseli:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -5373,25 +5345,22 @@ msgid "Ignore Watermark aspect Ratio"
 msgstr "Filigran en-boy oranını yok say"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
-#, fuzzy, kde-format
-#| msgid "Check this if you want a background fill behind the text."
+#, kde-format
 msgid "Check this if you want watermark to be transparent."
-msgstr "Metnin arkasında bir arka plan dolgusu istiyorsanız bunu işaretleyin."
+msgstr "Filigranın saydam olmasını istiyorsanız bunu işaretleyin."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
-#, fuzzy, kde-format
-#| msgid "Click to select watermark image."
+#, kde-format
 msgid "Add transparency to watermark image"
-msgstr "Filigran resmini seçmek için tıklayın."
+msgstr "Filigran görseline saydamlık ekle"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
 #, kde-format
 msgid "Opacity of watermark"
-msgstr ""
+msgstr "Filigranın matlığı"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
 msgstr "Matlık (%):"
 
@@ -5403,11 +5372,10 @@ msgstr "Metin ayarları"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
 #, kde-format
 msgid "Enter your watermark string here."
-msgstr "Filigran dizgesini buraya girin."
+msgstr "Buraya filigran dizisini girin."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
 msgstr "Filigran metni:"
 
@@ -5419,7 +5387,7 @@ msgstr "Yazıtipini ve biçemini seçin. Boyut otomatik olarak hesaplanır."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
 msgid "Set the font color to use here."
-msgstr "Burada kullanılacak yazıtipi rengini ayarla."
+msgstr "Burada kullanılacak yazıtipi rengini ayarlayın."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
 #, kde-format
@@ -5427,10 +5395,9 @@ msgid "Font color: "
 msgstr "Yazıtipi rengi: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Metin görünürlüğü:"
+msgstr "Metin matlığı: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -5438,8 +5405,8 @@ msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
 "transparent."
 msgstr ""
-"Filigran metninin opaklığını ayarlayın. 100 tamamen opaktır, 0 tamamen "
-"şeffaftır."
+"Filigran metninin matlığını ayarlayın. 100 tümüyle mattır, 0 ise tümüyle "
+"saydamdır."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
@@ -5449,7 +5416,7 @@ msgstr "Metnin arkasında bir arka plan dolgusu istiyorsanız bunu işaretleyin.
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
 msgid "Use background"
-msgstr "Arkaplan kullan"
+msgstr "Arka plan kullan"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
 #, kde-format
@@ -5457,23 +5424,23 @@ msgid "Choose the color of the watermark background."
 msgstr "Filigran arka plan rengini seçin."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Arkaplan rengi:"
+msgstr "Arka plan rengi: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Arkaplan belirginliği:"
+msgstr "Arka plan matlığı: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
-msgstr "Filigran arkaplanı için matlık seçin. 100 tam mat, 0 tam transparan."
+msgstr ""
+"Filigran arka planının matlığını ayarlayın. 100 tümüyle mattır, 0 ise "
+"tümüyle saydamdır."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
 #, kde-format
@@ -5483,57 +5450,51 @@ msgstr "Belirli Konum"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
 #, kde-format
 msgid "Systematic Repetition"
-msgstr "Sistematik Tekrar"
+msgstr "Sistematik Yineleme"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
 #, kde-format
 msgid "Random Repetition"
-msgstr "Rastgele Tekrar"
+msgstr "Rastgele Yineleme"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
 #, kde-format
 msgid "Placement Type: "
-msgstr "Yerleşim Türü: "
+msgstr "Yerleştirme türü: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you choose to have the watermark repeated many times in the "
-#| "placement combo box, you can specify here whether the repetition"
+#, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
 "combo box, you can specify here whether the repetition."
 msgstr ""
-"Eğer filigranı birden çok kez yerleşim kutusununa koymak istiyorsanız burada "
-"tekrarı seçebilirsiniz"
+"Yerleşim çoklu seçim kutusunda filigranın birçok kez yinelenmesini "
+"seçtiğinizde, yinelemenin olup olmayacağını burada belirtebilirsiniz."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
-msgstr ""
-"Filigranın tekrarlanma yoğunluğu (\"Belirli Konum\" kipinde devre dışı)"
+msgstr "Filigranın yinelenme sıklığı (\"Belirli Konum\" kipinde devre dışıdır)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
-#, fuzzy, kde-format
-#| msgid ""
-#| "When you choose to have the watermark repeated many times in the "
-#| "placement combo box, you can specify here whether the repetition"
+#, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
 "combo box, you can specify here to randomly rotate the watermark (0, 90, "
 "180, 270 degrees)."
 msgstr ""
-"Eğer filigranı birden çok kez yerleşim kutusununa koymak istiyorsanız burada "
-"tekrarı seçebilirsiniz"
+"Yerleşim çoklu seçim kutusunda filigranın rastgele yinelenmesini "
+"seçtiğinizde, burada filigranı rastgele döndürmeyi (0, 90, 180, 270 derece) "
+"ayarlayabilirsiniz."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
-"Filigran yönlendirmesini rastgele oluştur (Yalnızca \"Rastgele Tekrarlama\" "
-"kipinde etkin)"
+"Filigran yönünü rastgele seç (Yalnızca \"Rastgele Yineleme\" kipinde "
+"etkindir)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
 #, kde-format
@@ -5542,39 +5503,39 @@ msgid ""
 "higher the value the sparser the watermarks get. Use floating point values, "
 "typically between 1.0 and 3.0. It can also be less than 1.0"
 msgstr ""
-"Filigran tekrarının seyrekliğini daha fazla kontrol etmek için bunu "
-"kullanın. Yüksek değerde filigran daha seyrek olur. Kayan noktalı sayı "
-"kullanın, genellikle 1.0 ve 3.0 arasında olur. 1.0'dan az da olabilir"
+"Filigran yinelemesinin seyrekliği üzerinde daha fazla denetim elde etmek "
+"için bunu kullanın. Filigranların aldığı değer ne kadar yüksek olursa o "
+"kadar seyrek olur. Genellikle 1,0 ile 3,0 arasındaki kayan noktalı değerleri "
+"kullanın. Ayrıca 1,0'dan az da olabilir"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Seyreklik Faktörü:"
+msgstr "Seyreklik çarpanı: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
-msgstr "Üst sol"
+msgstr "Sol üst"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
-msgstr "Üst sağ"
+msgstr "Sağ üst"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
-msgstr "Alt sol"
+msgstr "Sol alt"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
-msgstr "Alt sağ"
+msgstr "Sağ alt"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
@@ -5583,25 +5544,21 @@ msgid "Center"
 msgstr "Merkez"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
-#, fuzzy, kde-format
-#| msgctxt "@item: placement position"
-#| msgid "Top left"
+#, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
-msgstr "Üst sol"
+msgstr "Sol merkez"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
-#, fuzzy, kde-format
-#| msgctxt "@item: placement position"
-#| msgid "Bottom left"
+#, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
-msgstr "Alt sol"
+msgstr "Sol merkez"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
 #, kde-format
 msgid "Placement Position: "
-msgstr "Yerleştirme Konumu: "
+msgstr "Yerleştirme konumu: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -5624,102 +5581,90 @@ msgid "270 degrees CW"
 msgstr "Saat yönünde 270 derece"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Döndürme:"
+msgstr "Döndürme: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
-msgstr "İşaretli resmin yüzdesi cinsinden, filigranın boyutu."
+msgstr "Filigranın boyutu, imli görselin yüzdesi olarak."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Boyut (%):"
+msgstr "Boyut (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
-msgstr "İşaretli görüntünün yüzdesi olarak X yönündeki kenardan kenar boşluğu."
+msgstr "İmli görselin yüzdesi olarak X yönündeki kenardan kenar boşluğu."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "X kenar boşluğu (%):"
+msgstr "X kenar boşluğu (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
-#, fuzzy, kde-format
-#| msgid "Margin from edge in Y direction, as a percentage of the marked image"
+#, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
-msgstr ""
-"İşaretli resmin yüzdesi cinsinden, Y doğrultusunda köşeden kenar boşluğu"
+msgstr "İmli görselin yüzdesi olarak Y yönündeki kenardan kenar boşluğu."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Y kenar boşluğu (%):"
+msgstr "Y kenar boşluğu (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Add Watermark"
+#, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
 msgstr "Filigran Ekle"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to overlay an image or text as a visible watermark"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
 msgstr ""
-"Görünür bir filigran olarak bir görüntüyü veya metni kaplamak için bir araç"
+"Bir görseli veya metni görünür bir filigran olarak yerleştirmek için bir araç"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add a text watermark over images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin üzerine metin filigranı "
+"ekleyebilir.</para>"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Anti-Vignetting"
+#, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
-msgstr "Anti-Süsleme"
+msgstr "Anti Vinyet"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Remove/add vignetting to photograph."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
-msgstr "Resme süsleme ekle/çıkart."
+msgstr "Fotoğraftaki ayrıntıyı ayarlamaya yarayan bir araç"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool remove or add vignettings to images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere vinyet ekler veya "
+"kaldırır.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:59
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
-msgstr "Düzgünlük:"
+msgstr "Pürüzsüzlük:"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:63
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
@@ -5728,65 +5673,58 @@ msgid ""
 "A smoothness of 0 has no effect, 1 and above determine the Gaussian blur "
 "matrix radius that determines how much to blur the image."
 msgstr ""
-"Düzgünlük olarak 0 etkisizdir, 1 ve üzeri resmin ne kadar "
-"bulanıklaştırılacağını belirleyen Gauss bulanıklaştırma matris yarıçapını "
+"0 pürüzsüzlüğünün hiçbir etkisi yoktur; 1 ve üzeri, görselin ne kadar "
+"bulanıklaştırılacağını belirleyen Gauss bulanıklık matrisi yarıçapını "
 "belirler."
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Blur Image"
+#, kde-format
 msgctxt "@title"
 msgid "Blur Image"
-msgstr "Bulanık Görüntü"
+msgstr "Görseli Bulanıklaştır"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Blur images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
-msgstr "Resimleri bulanıklaştır"
+msgstr "Görselleri bulanıklaştırmak için bir araç"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<p>Bu Toplu Kuyruk Yöneticisi aracı, görselleri bulanıklaştırabilir.</p>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:46
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Hot Pixels"
+#, kde-format
 msgctxt "@title"
 msgid "Hot Pixels"
 msgstr "Sıcak Pikseller"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:61
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Auto-rotate/flip image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to fix hot pixels"
-msgstr "Resmi otomatik döndür/çevir"
+msgstr "Sıcak pikselleri onarmak için bir araç"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can fix hot pixels in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki sıcak pikselleri "
-"düzeltebilir.</p>"
+"<p>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki sıcak pikselleri "
+"onarabilir.</p>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
-msgstr "Mercek Otomatik-Düzeltme"
+msgstr "Mercek Otomatik Düzeltmesi"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
 #, kde-format
@@ -5799,42 +5737,38 @@ msgid ""
 "<b>Use Metadata</b> option will parse images' information at queue run-time "
 "to find relevant lens features."
 msgstr ""
-"<b>Metaveri Kullan</b> seçeneği ilgili lens özellikğı bulmak için resim "
-"bilgilerini kuyruk çalışma zamanında çözer."
+"<b>Üst Veriyi Kullan</b> seçeneği, ilgili lens özelliklerini bulmak için "
+"kuyruk çalışma zamanında görsellerin bilgilerini ayrıştıracaktır."
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:216
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
-msgstr "Lens otomatik düzeltmeleri işlemek için tüm lens bilgisi bulunamadı"
+msgstr ""
+"Lens otomatik düzeltmelerini işlemek için tüm mercek bilgileri bulunamıyor"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Lens Auto-Correction"
+#, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction"
-msgstr "Mercek Otomatik-Düzeltme"
+msgstr "Mercek Otomatik Düzeltmesi"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Fix automatically lens distortions"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
-msgstr "Lens bozulmalarını otomatik olarak düzelt"
+msgstr "Lens bozulmalarını otomatik olarak düzelten bir araç"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust colors automatically from "
-#| "images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
 "over images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, renkleri görüntülerden otomatik olarak "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseller üzerindeki mercek "
+"bozulmalarını otomatik olarak düzeltebilir.</para>"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:46
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:44
@@ -5845,85 +5779,78 @@ msgstr "Yerel Karşıtlık"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:61
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Emulate tone mapping."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
-msgstr "Ton eşlemesini taklit et."
+msgstr "Ton eşlemesini taklit eden bir araç"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can emulate tone mapping over images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseller üzerinde ton eşlemeyi "
+"taklit edebilir.</para>"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:46
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Noise Reduction"
+#, kde-format
 msgctxt "@title"
 msgid "Noise Reduction"
 msgstr "Gürültü Azaltma"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:61
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Remove photograph noise using wavelets."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
-msgstr "Dalgacıkları kullanarak resim gürültüsünü kaldır."
+msgstr "Dalgacıkları kullanarak fotoğraf gürültüsünü ortadan kaldıran bir araç"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki gürültüyü azaltabilir."
+"</para>"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Red Eye Correction"
+#, kde-format
 msgctxt "@title"
 msgid "Red Eye Correction"
 msgstr "Kırmızı Göz Düzeltme"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Automatically detect and correct RedEye effect."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
-msgstr "Kırmızı göz efektini otomatik olarak algıla ve düzelt."
+msgstr "Kırmızı göz efektini otomatik olarak algılayıp düzelten bir araç"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki kırmızı göz efektini "
+"azaltabilir.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
-msgstr "CImg kitaplığının sayfasına git"
+msgstr "CImg kitaplığının web sayfasını ziyaret et"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
 #, kde-format
 msgid "Reduce Uniform Noise"
-msgstr "Tekdüze Paraziti Azalt"
+msgstr "Tekdüze Gürültüyü Azalt"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:65
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:147
@@ -27454,38 +27381,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "Ham Dönüştürme"
 
-#: core/libs/album/engine/album.cpp:424
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Çöp"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Mevcut Zaman Çizgisi Arama"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Şimdiki Bulanık Resim Araması"
 
-#: core/libs/album/engine/album.cpp:785
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Geçerli Bulanık Taslak Araması"
 
-#: core/libs/album/engine/album.cpp:792
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr "Geçerli Harita Araması"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "Geçerli Arama"
 
-#: core/libs/album/engine/album.cpp:800
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Mecut Yinelenenler Araması"
@@ -30122,11 +30049,11 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
-"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
-"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
-"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
-"ini or ~/.my.cnf, change the settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
+"system, use the addition command in the mysql prompt to be able to create "
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>Not: Bir Linux sunucusuyla, bir veritabanı aşağıdaki komutlarla "
 "ilklendirilebilir:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
@@ -53113,7 +53040,8 @@ msgstr "Ön ek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
 #| msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers"
+"specifies the separator char before the numbers, ||0|| optional to always "
+"pad with ||n|| zero digits"
 msgstr "Ön ek numarası ekle, ||n|| kullanılacak basamak sayısını belirtir"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
@@ -66303,12 +66231,3 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
-
-#, fuzzy
-#~| msgid "Google Maps"
-#~ msgid "Input Google Maps API Key"
-#~ msgstr "Google Haritalar"
-
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "Etiketler: "

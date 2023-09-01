@@ -39,11 +39,12 @@ UniqueModifier::UniqueModifier()
              description());
     addToken(QLatin1String("{unique:||n||}"),
              i18n("Add a suffix number, ||n|| specifies the number of digits to use"));
-    addToken(QLatin1String("{unique:||n||,||c||}"),
+    addToken(QLatin1String("{unique:||n||,||c||,||0||}"),
              i18n("Add a suffix number, "
                   "||n|| specifies the number of digits to use, "
-                  "||c|| specifies the separator char before the numbers"));
-    QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?\\}"));
+                  "||c|| specifies the separator char before the numbers, "
+                  "||0|| optional to always pad with ||n|| zero digits"));
+             QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?(,(0))?\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
@@ -55,11 +56,17 @@ QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularEx
     QString str2ModifyAndExt     = settings.str2Modify + QLatin1Char('.') + info.suffix();
 
     cache[key] << str2ModifyAndExt;
+    bool notUnique               = (cache[key].count(str2ModifyAndExt) > 1);
 
-    if (cache[key].count(str2ModifyAndExt) > 1)
+    if  (notUnique || (match.captured(6) == QLatin1String("0")))
     {
         QString result = settings.str2Modify;
-        int index      = cache[key].count(str2ModifyAndExt) - 1;
+        int index      = 0;
+
+        if (notUnique)
+        {
+            index      = cache[key].count(str2ModifyAndExt) - 1;
+        }
 
         bool ok        = true;
         int slength    = match.captured(2).toInt(&ok);

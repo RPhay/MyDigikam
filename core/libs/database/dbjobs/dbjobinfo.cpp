@@ -191,7 +191,8 @@ SearchesDBJobInfo::SearchesDBJobInfo(QList<int>&& searchIds)
       m_searchResultRestriction (0),
       m_searchIds               (std::move(searchIds)),
       m_minThreshold            (0.4),
-      m_maxThreshold            (1)
+      m_maxThreshold            (1),
+      m_refImageSelectionMethod (HaarIface::RefImageSelMethod::OlderOrLarger)
 {
 }
 

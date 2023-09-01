@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:43+0000\n"
-"PO-Revision-Date: 2023-08-02 12:39\n"
+"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"PO-Revision-Date: 2023-08-27 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2782,7 +2782,7 @@ msgstr "全屏显示"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:503
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2871,7 +2871,7 @@ msgid "No Tags Album"
 msgstr "无标签相册"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:576
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -4951,37 +4951,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
-msgstr "JPEG"
+msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
@@ -25592,38 +25582,38 @@ msgstr ""
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
-#: core/libs/album/engine/album.cpp:424
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "当前时间轴搜索结果"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "当前模糊图像搜索结果"
 
-#: core/libs/album/engine/album.cpp:785
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "当前模糊画图搜索结果"
 
-#: core/libs/album/engine/album.cpp:792
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr "当前地图搜索结果"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "当前搜索结果"
 
-#: core/libs/album/engine/album.cpp:800
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "当前重复项搜索结果"
@@ -28030,26 +28020,31 @@ msgstr ""
 #| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
 #| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
 #| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu, "
+#| "enter:<br>SET GLOBAL log_bin_trust_function_creators=1;<br>in the mysql "
+#| "prompt. To be able to create MySQL triggers.</p><p>NOTE: If you have an "
+#| "enormous collection, you should start MySQL server with mysql --"
+#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have problems with a MySQL server on Ubuntu, enter:<br>SET "
-"GLOBAL log_bin_trust_function_creators=1;<br>in the mysql prompt. To be able "
-"to create MySQL triggers.</p><p>NOTE: If you have an enormous collection, "
-"you should start MySQL server with mysql --max_allowed_packet=128M OR in my."
-"ini or ~/.my.cnf, change the settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
+"system, use the addition command in the mysql prompt to be able to create "
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
 "p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
 "提示符下输入以下 SQL 命令初始化 digiKam 数据库并授予所需权限 (详见后文)</"
-"p><p>...</p><p>quit</p><p>提示：如果您的相册集合规模庞大，请在启动 MySQL 服务"
-"器时使用 mysql --max_allowed_packet=128M 命令，也可以在 my.ini 或 ~/.my.cnf "
-"中更改相关设置。</p>"
+"p><p>...</p><p>quit</p><p>提示：如果您在 Ubuntu 中创建 MySQL 服务器时遇到了问"
+"题，请在 MySQL 的命令行模式中输入：<br>SET GLOBAL "
+"log_bin_trust_function_creators=1;<br>以便创建 MySQL 触发器。</p><p>提示：如"
+"果您的相册集合规模庞大，请在启动 MySQL 服务器时使用 mysql --"
+"max_allowed_packet=128M 命令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</"
+"p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -49557,10 +49552,14 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "添加前缀数目，||n|| 指定使用的数字位数"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
+#| "specifies the separator char before the numbers"
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers"
+"specifies the separator char before the numbers, ||0|| optional to always "
+"pad with ||n|| zero digits"
 msgstr "添加前缀数目，||n|| 指定使用的数字位数，||c|| 指定在数字前使用的分隔符"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
@@ -51228,10 +51227,9 @@ msgstr "显示缩放控制"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google 地图"
+msgstr "Google Maps API 密钥"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
@@ -51245,11 +51243,9 @@ msgid "Float items"
 msgstr "浮动项目"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "API URL："
+msgstr "API 密钥："
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
 #, kde-format
@@ -61490,7 +61486,5 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
 
-#, fuzzy
-#~| msgid "Google Maps"
 #~ msgid "Input Google Maps API Key"
-#~ msgstr "Google 地图"
+#~ msgstr "输入 Google Maps API 密钥"

@@ -29,9 +29,9 @@ bool CaptionValues::operator==(const CaptionValues& val) const
 {
     bool b1  = (author  == val.author);
     bool b2  = (caption == val.caption);
-    bool b3  = (date    == val.date);
+    // bool b3  = (date    == val.date);
 
-    return (b1 && b2 && b3);
+    return (b1 && b2 /*&& b3*/);
 }
 
 QDebug operator<<(QDebug dbg, const CaptionValues& val)
