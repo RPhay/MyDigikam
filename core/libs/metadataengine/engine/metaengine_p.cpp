@@ -604,9 +604,10 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             ut.actime  = st.st_atime;
         }
 
-        bool hasIptcCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif(), hasIptcCSet))
+        if (!parser->applyChanges(finfo.filePath(), exvPath,
+                                  parent->hasExif(), parent->hasXmp(), hasCSet))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);
@@ -637,9 +638,10 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     }
     else
     {
-        bool hasIptcCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif(), hasIptcCSet))
+        if (!parser->applyChanges(finfo.filePath(), exvPath,
+                                  parent->hasExif(), parent->hasXmp(), hasCSet));
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);

@@ -142,7 +142,9 @@ bool ExifToolParser::applyChanges(const QString& path, const ExifToolData& newTa
     return (d->startProcess(cmdArgs, ExifToolProcess::APPLY_CHANGES));
 }
 
-bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFile, bool hasExif, bool hasIptcCSet)
+bool ExifToolParser::applyChanges(const QString& path,
+                                  const QString& exvTempFile,
+                                  bool hasExif, bool hasXmp, bool hasCSet)
 {
     if (exvTempFile.isEmpty())
     {
@@ -160,10 +162,13 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
 
     d->prepareProcess();
 
-    QMimeDatabase mimeDB;
+    // QMimeDatabase mimeDB;
     QByteArrayList cmdArgs;
-    QString suffix = fileInfo.suffix().toUpper();
 /*
+    QString suffix = fileInfo.suffix().toUpper();
+
+    bool isJXLFile = (suffix == QLatin1String("JXL"));
+
     bool isVideo   = (mimeDB.mimeTypeForFile(fileInfo).name().startsWith(QLatin1String("video/")));
 
     if (isVideo)
@@ -176,11 +181,38 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         cmdArgs << QByteArray("-itemlist:description=");
     }
 */
-    if (suffix != QLatin1String("JXL"))
+    if (hasExif)
+    {
+        cmdArgs << QByteArray("-ifd0:all=");
+        cmdArgs << QByteArray("-gps:all=");
+    }
+    else
+    {
+        cmdArgs << QByteArray("-exif:all=");
+    }
+
+    cmdArgs << QByteArray("-iptc:all=");
+
+    if (hasXmp)
+    {
+        cmdArgs << QByteArray("-xmp-dc:all=");
+        cmdArgs << QByteArray("-xmp-lr:all=");
+        cmdArgs << QByteArray("-xmp-mp:all=");
+        cmdArgs << QByteArray("-xmp-xmp:all=");
+        cmdArgs << QByteArray("-xmp-exif:all=");
+        cmdArgs << QByteArray("-xmp-tiff:all=");
+        cmdArgs << QByteArray("-xmp-xmpdm:all=");
+        cmdArgs << QByteArray("-xmp-acdsee:all=");
+        cmdArgs << QByteArray("-xmp-mwg-rs:all=");
+        cmdArgs << QByteArray("-xmp-digikam:all=");
+        cmdArgs << QByteArray("-xmp-mediapro:all=");
+        cmdArgs << QByteArray("-xmp-iptccore:all=");
+        cmdArgs << QByteArray("-xmp-microsoft:all=");
+        cmdArgs << QByteArray("-xmp-photoshop:all=");
+    }
+    else
     {
         cmdArgs << QByteArray("-xmp:all=");
-        cmdArgs << QByteArray("-exif:all=");
-        cmdArgs << QByteArray("-iptc:all=");
     }
 
     cmdArgs << QByteArray("-TagsFromFile");
@@ -195,18 +227,18 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
         cmdArgs << QByteArray("-itemlist:description<xmp:description");
     }
 */
-    if (hasIptcCSet)
+    if (hasCSet)
     {
         cmdArgs << QByteArray("-codedcharacterset=UTF8");
     }
-
+/*
     if (hasExif)
     {
         cmdArgs << QByteArray("-TagsFromFile");
         cmdArgs << QByteArray("@");
         cmdArgs << QByteArray("-makernotes");
     }
-
+*/
     cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.filePath();
