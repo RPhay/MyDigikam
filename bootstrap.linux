@@ -15,8 +15,15 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 #export CXX=/usr/bin/clang++
 
 SOURCEDIR=$PWD
+export BUILD_WITH_QT6=0
 
-command -v qtpaths >/dev/null 2>&1 || { echo >&2 "This script require qtpaths CLI tool from Qt5 project but it's not installed. Aborting."; exit 1; }
+if [[ $BUILD_WITH_QT6 == 1 ]] ; then
+    QTPATHS="qtpaths6"
+else
+    QTPATHS="qtpaths"
+fi
+
+command -v $QTPATHS >/dev/null 2>&1 || { echo >&2 "This script require $QTPATHS CLI tool from Qt project but it's not installed. Aborting."; exit 1; }
 
 if [ "$1" == "" ]; then
     MAKEFILES_TYPE='Unix Makefiles'
@@ -49,8 +56,8 @@ elif [[ "$ARCH" = "i686" ]] ; then
     LIBPATH="lib"
 fi
 
-QT_INSTALL_PREFIX=`qtpaths --install-prefix`
-QT_PLUGIN_INSTALL_DIR=`qtpaths --plugin-dir`
+QT_INSTALL_PREFIX=`$QTPATHS --install-prefix`
+QT_PLUGIN_INSTALL_DIR=`$QTPATHS --plugin-dir`
 export PATH=$QT_INSTALL_PREFIX/bin:$PATH
 
 if [ "$CMAKE_BINARY" == "" ]; then
@@ -68,7 +75,7 @@ fi
 export LD_LIBRARY_PATH=$DIGIKAM_INSTALL_PREFIX/$LIBPATH:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$DIGIKAM_INSTALL_PREFIX/$LIBPATH/pkgconfig:$PKG_CONFIG_PATH
 
-echo "Qt5     Install Path : $QT_INSTALL_PREFIX"
+echo "Qt      Install Path : $QT_INSTALL_PREFIX"
 echo "digiKam Install Path : $DIGIKAM_INSTALL_PREFIX"
 echo "CMake binary         : $CMAKE_BINARY"
 echo "Build Directory      : $BUILDDIR"
@@ -85,6 +92,7 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       $ADDITIONAL_CMAKE_FLAGS \
       -DBUILD_TESTING=ON \
       -DBUILD_WITH_CCACHE=ON \
+      -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DDIGIKAMSC_COMPILE_PO=OFF \
       -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
       -DENABLE_KFILEMETADATASUPPORT=ON \
