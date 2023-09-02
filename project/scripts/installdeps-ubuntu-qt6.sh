@@ -21,6 +21,9 @@ packages=("qt6-base-dev"
           "qt6-webview-dev"
           "qt6-networkauth-dev"
           "qt6-scxml-dev"
+          "qt6-quick3d-dev"
+          "qt6-quick3dphysics-dev"
+          "qml6-module-qtquick3d-spatialaudio"
 )
 
 for pkg in ${packages[@]}; do
