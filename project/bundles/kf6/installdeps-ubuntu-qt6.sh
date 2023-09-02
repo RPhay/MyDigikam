@@ -24,6 +24,10 @@ packages=("qt6-base-dev"
           "qt6-quick3d-dev"
           "qt6-quick3dphysics-dev"
           "qml6-module-qtquick3d-spatialaudio"
+          "qt6-l10n-tools"
+          "qt6-tools-dev"
+          "libxcb-xres0-dev"
+          "libxcb-keysyms1-dev"
 )
 
 for pkg in ${packages[@]}; do
