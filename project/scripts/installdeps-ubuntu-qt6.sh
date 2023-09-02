@@ -17,10 +17,10 @@ fi
 packages=("qt6-base-dev"
           "qt6-base-dev-tools"
           "qt6-svg-dev"
-          "qt6-websockets-dev"
-          "qt6-serialport-dev"
-          "qt6-multimedia-dev"
-          "qt6-5compat-dev"
+          "qt6-webengine-dev"
+          "qt6-webview-dev"
+          "qt6-networkauth-dev"
+          "qt6-scxml-dev"
 )
 
 for pkg in ${packages[@]}; do
