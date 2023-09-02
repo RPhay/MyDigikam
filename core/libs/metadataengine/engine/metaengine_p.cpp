@@ -641,7 +641,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
         if (!parser->applyChanges(finfo.filePath(), exvPath,
-                                  parent->hasExif(), parent->hasXmp(), hasCSet));
+                                  parent->hasExif(), parent->hasXmp(), hasCSet))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);
