@@ -231,14 +231,14 @@ bool ExifToolParser::applyChanges(const QString& path,
     {
         cmdArgs << QByteArray("-codedcharacterset=UTF8");
     }
-/*
+
     if (hasExif)
     {
         cmdArgs << QByteArray("-TagsFromFile");
         cmdArgs << QByteArray("@");
         cmdArgs << QByteArray("-makernotes");
     }
-*/
+
     cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.filePath();
