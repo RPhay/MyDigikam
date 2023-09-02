@@ -45,7 +45,7 @@ RegisterRemoteServers
 # Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
-
+if [ ]  ;then
 #################################################################################################
 # Install out-dated dependencies
 
@@ -68,7 +68,7 @@ cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
-
+fi
 #################################################################################################
 # Build digiKam in temporary directory and installation
 
@@ -173,8 +173,8 @@ fi
 
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
-
-make -j$CPU_CORES
+make
+#make -j$CPU_CORES
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot compile digiKam $DK_VERSION."

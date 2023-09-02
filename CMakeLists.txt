@@ -189,6 +189,13 @@ endif()
 
 ######################################################################################################################
 
+# Extra check to detect Qt core with minimal version before to continue.
+
+set(QT5_MIN_VERSION       "5.14.0")
+set(QT6_MIN_VERSION       "6.2.3")
+
+include(RulesFindQtCore)
+
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     add_subdirectory(core)
 endif()

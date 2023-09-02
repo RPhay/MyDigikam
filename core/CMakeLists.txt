@@ -17,8 +17,6 @@ message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION
 message(STATUS "")
 
 set(KF${QT_VERSION_MAJOR}_MIN_VERSION       "5.89.0")
-set(QT5_MIN_VERSION       "5.14.0")
-set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.1")
 set(OPENCV_MIN_VERSION    "3.3.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")      # For Lens auto-correction plugin
@@ -33,10 +31,6 @@ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 include(RulesOptionDefinitions)
 
 ############## Find Packages ###################
-
-# Extra check to detect Qt core with minimal version before to continue.
-
-include(RulesFindQtCore)
 
 # Now detect the whole Qt6 or Qt5 framework.
 
