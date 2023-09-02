@@ -77,7 +77,7 @@ DK_KA_VERSION="23.04.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.106"
+DK_KDE_VERSION="5.106"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5.15"

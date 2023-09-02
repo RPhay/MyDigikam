@@ -98,7 +98,7 @@ DK_KA_VERSION="22.12.3"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.106"
+DK_KDE_VERSION="5.106"
 
 # Qt version to use in bundle and provided by Macports.
 DK_QTVERSION="5.15"

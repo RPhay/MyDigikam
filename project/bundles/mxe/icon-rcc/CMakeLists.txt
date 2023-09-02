@@ -18,7 +18,7 @@ ExternalProject_Add(icon-rcc
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://invent.kde.org/frameworks/breeze-icons.git
-    GIT_TAG v${KF5_VERSION}.0
+    GIT_TAG v${KDE_VERSION}.0
 
     PATCH_COMMAND patch -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-mxe-linux.patch
 
