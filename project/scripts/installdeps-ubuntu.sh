@@ -49,7 +49,7 @@ sudo apt-get update 2>&1 | \
 
 # Install dependencies to checkout source code
 
-sudo apt-get install -y git
+sudo apt-get install -y git git-lfs
 
 echo "-------------------------------------------------------------------"
 
