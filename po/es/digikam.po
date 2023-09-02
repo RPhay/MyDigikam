@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-30 11:13+0200\n"
+"PO-Revision-Date: 2023-09-01 12:00+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -51573,17 +51573,15 @@ msgstr ""
 "Añadir un sufijo numérico, ||n|| indica el número de dígitos que se debe usar"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||0|| optional to always "
 "pad with ||n|| zero digits"
 msgstr ""
 "Añadir un sufijo numérico, ||n|| indica el número de dígitos que se debe "
-"usar, ||c|| indica el carácter de separación antes de los números"
+"usar, ||c|| indica el carácter de separación antes de los números, ||0|| es "
+"opcional para rellenar siempre con ||n|| dígitos cero"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format

@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-17 11:42+0200\n"
+"PO-Revision-Date: 2023-08-27 18:07+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -53320,10 +53320,9 @@ msgstr "Mostra controllo della scala"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Maps"
+msgstr "Chiave delle API di Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
@@ -53337,17 +53336,14 @@ msgid "Float items"
 msgstr "Elementi flottanti"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "URL dell'API:"
+msgstr "Chiave delle API:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
-#, fuzzy, kde-format
-#| msgid "Script Manager"
+#, kde-format
 msgid "Javascript Message"
-msgstr "Gestore degli script"
+msgstr "Messaggio Javascript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
