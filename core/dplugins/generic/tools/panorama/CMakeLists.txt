@@ -13,9 +13,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-                    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::ThreadWeaver,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ThreadWeaver,INTERFACE_INCLUDE_DIRECTORIES>
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/manager
                     ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptoparser
@@ -128,7 +128,7 @@ set(panoramaplugin_SRCS
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Panorama
                            SOURCES ${panoramaplugin_SRCS}
                            DEPENDS panoparser
-                                   KF5::ThreadWeaver
+                                   KF${QT_VERSION_MAJOR}::ThreadWeaver
 )
 
 add_subdirectory(icons)

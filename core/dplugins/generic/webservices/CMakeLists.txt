@@ -44,7 +44,7 @@ endif()
 add_subdirectory(smugmug)
 add_subdirectory(twitter)
 
-if(KF5KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
     add_subdirectory(filetransfer)
 

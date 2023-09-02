@@ -16,7 +16,7 @@ message(STATUS "----------------------------------------------------------------
 message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
 message(STATUS "")
 
-set(KF5_MIN_VERSION       "5.89.0")
+set(KF${QT_VERSION_MAJOR}_MIN_VERSION       "5.89.0")
 set(QT5_MIN_VERSION       "5.14.0")
 set(QT6_MIN_VERSION       "6.2.3")
 set(EXIV2_MIN_VERSION     "0.27.1")
@@ -168,7 +168,7 @@ include(RulesLiblensfun)
 
 # -- Check dependencies for Panorama tool --------------------------------------
 
-if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
 
     set(HAVE_PANORAMA 1)
 
@@ -203,14 +203,14 @@ MACOS_DEBUG_POLICIES()
 message(STATUS "--------------------------------------------------")
 message(STATUS "")
 
-MACRO_BOOL_TO_01(KF5Sane_FOUND                HAVE_KSANE)
-MACRO_BOOL_TO_01(KF5FileMetaData_FOUND        HAVE_KFILEMETADATA)
-MACRO_BOOL_TO_01(KF5CalendarCore_FOUND        HAVE_KCALENDAR)
-MACRO_BOOL_TO_01(KF5Notifications_FOUND       HAVE_KNOTIFICATIONS)
-MACRO_BOOL_TO_01(KF5NotifyConfig_FOUND        HAVE_KNOTIFYCONFIG)
-MACRO_BOOL_TO_01(KF5KIO_FOUND                 HAVE_KIO)
-MACRO_BOOL_TO_01(KF5IconThemes_FOUND          HAVE_KICONTHEMES)
-MACRO_BOOL_TO_01(KF5Sonnet_FOUND              HAVE_SONNET)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sane_FOUND                HAVE_KSANE)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}FileMetaData_FOUND        HAVE_KFILEMETADATA)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}CalendarCore_FOUND        HAVE_KCALENDAR)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Notifications_FOUND       HAVE_KNOTIFICATIONS)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}NotifyConfig_FOUND        HAVE_KNOTIFYCONFIG)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}KIO_FOUND                 HAVE_KIO)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}IconThemes_FOUND          HAVE_KICONTHEMES)
+MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sonnet_FOUND              HAVE_SONNET)
 MACRO_BOOL_TO_01(LensFun_FOUND                HAVE_LENSFUN)
 MACRO_BOOL_TO_01(LQR-1_FOUND                  HAVE_LIBLQR_1)
 MACRO_BOOL_TO_01(Gphoto2_FOUND                HAVE_GPHOTO2)
@@ -258,7 +258,7 @@ PRINT_LIBRARY_STATUS("libboostgraph" "https://github.com/boostorg/boost"        
 PRINT_LIBRARY_STATUS("libexiv2"      "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
 PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
-PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF5_MIN_VERSION})"    KF5_FOUND)
+PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"    KF${QT_VERSION_MAJOR}_FOUND)
 PRINT_LIBRARY_STATUS("liblcms"       "https://github.com/mm2/Little-CMS"                 "(version >= 2.0.0)"                 LCMS2_FOUND)
 PRINT_LIBRARY_STATUS("libopencv"     "https://github.com/opencv/opencv"                  "(version >= ${OPENCV_MIN_VERSION})" OpenCV_FOUND)
 PRINT_LIBRARY_STATUS("libpng"        "https://libpng.sourceforge.io/"                    "(version >= 1.2.7)"                 PNG_FOUND)
@@ -272,23 +272,23 @@ PRINT_OPTIONAL_LIBRARY_STATUS("bison"             "https://www.gnu.org/software/
 PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/doxygen"                              "(version >= 1.8.0)"                    "digiKam will be compiled without API documentation building support."        Doxygen_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF5AkonadiContact_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://invent.kde.org/frameworks/kcalendarcore"                 "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF5CalendarCore_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkfilemetadata"  "https://invent.kde.org/frameworks/kfilemetadata"                 "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop file metadata support."         KF5FileMetaData_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkiconthemes"    "https://invent.kde.org/frameworks/kiconthemes"                   "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop icon themes support."           KF5IconThemes_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://invent.kde.org/frameworks/kio"                           "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop integration support."           KF5KIO_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libknotifications" "https://invent.kde.org/frameworks/knotifyconfig"                 "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notifications support."         KF5Notifications_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://invent.kde.org/frameworks/knotifications"                "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notify configuration support."  KF5NotifyConfig_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libsonnet"         "https://invent.kde.org/frameworks/sonnet"                        "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without spell-checking support."                    KF5Sonnet_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF5Sane_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://invent.kde.org/frameworks/kcalendarcore"                 "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF${QT_VERSION_MAJOR}CalendarCore_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libkfilemetadata"  "https://invent.kde.org/frameworks/kfilemetadata"                 "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop file metadata support."         KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libkiconthemes"    "https://invent.kde.org/frameworks/kiconthemes"                   "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop icon themes support."           KF${QT_VERSION_MAJOR}IconThemes_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://invent.kde.org/frameworks/kio"                           "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop integration support."           KF${QT_VERSION_MAJOR}KIO_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libknotifications" "https://invent.kde.org/frameworks/knotifyconfig"                 "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notifications support."         KF${QT_VERSION_MAJOR}Notifications_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://invent.kde.org/frameworks/knotifications"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notify configuration support."  KF${QT_VERSION_MAJOR}NotifyConfig_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libsonnet"         "https://invent.kde.org/frameworks/sonnet"                        "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without spell-checking support."                    KF${QT_VERSION_MAJOR}Sonnet_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF${QT_VERSION_MAJOR}Sane_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://github.com/carlobaldassi/liblqr"                         "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       LQR-1_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF5ThreadWeaver_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOME/libxml2/"                         "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://gitlab.gnome.org/GNOME/libxslt"                          "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libheif"           "https://github.com/strukturag/libheif"                           "(version >= 1.6.0)"                    "digiKam will be compiled without HEIF support."                              HEIF_FOUND)
@@ -309,7 +309,7 @@ if(Boost_FOUND                          AND
    exiv2_FOUND                          AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
-   KF5_FOUND                            AND
+   KF${QT_VERSION_MAJOR}_FOUND                            AND
    LCMS2_FOUND                          AND
    OpenCV_FOUND                         AND
    PNG_FOUND                            AND
@@ -385,7 +385,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
     if(MINGW)
-        # Remove ATTRIBUTES GCC flag which generate a lots of compilation warnings with KF5 frameworks
+        # Remove ATTRIBUTES GCC flag which generate a lots of compilation warnings with KF${QT_VERSION_MAJOR} frameworks
         REMOVE_GCC_COMPILER_WARNINGS("-Wattributes")
     endif()
 

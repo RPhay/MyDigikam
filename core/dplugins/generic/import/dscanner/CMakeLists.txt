@@ -12,9 +12,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-                    $<TARGET_PROPERTY:KF5::Sane,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Sane,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(dscannerplugin_SRCS
@@ -25,5 +25,5 @@ set(dscannerplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    DigitalScanner
                            SOURCES ${dscannerplugin_SRCS}
-                           DEPENDS KF5::Sane
+                           DEPENDS KF${QT_VERSION_MAJOR}::Sane
 )

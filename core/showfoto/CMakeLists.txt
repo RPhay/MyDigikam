@@ -128,12 +128,12 @@ target_include_directories(showfoto
                            ${DK_LOCAL_INCLUDES_UTILS}
 )
 
-if(KF5IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_include_directories(showfoto
                                PRIVATE
                                AFTER
-                               $<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>
+                               $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>
     )
 
 endif()
@@ -150,37 +150,37 @@ target_link_libraries(showfoto
                       Qt${QT_VERSION_MAJOR}::Xml
                       Qt${QT_VERSION_MAJOR}::Widgets
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
 
                       digikamcore
 )
 
-if(KF5Notifications_FOUND)
+if(KF${QT_VERSION_MAJOR}Notifications_FOUND)
 
     target_link_libraries(showfoto
                           PUBLIC
-                          KF5::Notifications
+                          KF${QT_VERSION_MAJOR}::Notifications
     )
 
 endif()
 
-if(KF5NotifyConfig_FOUND)
+if(KF${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 
     target_link_libraries(showfoto
                           PUBLIC
-                          KF5::NotifyConfig
+                          KF${QT_VERSION_MAJOR}::NotifyConfig
     )
 
 endif()
 
-if(KF5IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(showfoto
                           PUBLIC
-                          KF5::IconThemes
+                          KF${QT_VERSION_MAJOR}::IconThemes
     )
 
 endif()

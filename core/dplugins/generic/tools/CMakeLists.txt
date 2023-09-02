@@ -23,7 +23,7 @@ if(ENABLE_MEDIAPLAYER)
     add_subdirectory(videoslideshow)
 endif()
 
-if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
     add_subdirectory(panorama)
 endif()
 

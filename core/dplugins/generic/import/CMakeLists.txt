@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-if(KF5Sane_FOUND)
+if(KF${QT_VERSION_MAJOR}Sane_FOUND)
     add_subdirectory(dscanner)
 endif()

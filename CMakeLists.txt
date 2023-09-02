@@ -89,7 +89,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules
                       ${ECM_MODULE_PATH}
 )
 
-# KF5 Framework macros
+# KF${QT_VERSION_MAJOR} Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
@@ -195,7 +195,7 @@ endif()
 
 if(DIGIKAMSC_COMPILE_PO)
     find_package(Gettext REQUIRED)
-    find_package(KF5I18n NO_MODULE)
+    find_package(KF${QT_VERSION_MAJOR}I18n NO_MODULE)
     ki18n_install(po)
 endif()
 
