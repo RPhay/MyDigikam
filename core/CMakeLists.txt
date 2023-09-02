@@ -309,7 +309,7 @@ if(Boost_FOUND                          AND
    exiv2_FOUND                          AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
-   KF${QT_VERSION_MAJOR}_FOUND                            AND
+   KF${QT_VERSION_MAJOR}_FOUND          AND
    LCMS2_FOUND                          AND
    OpenCV_FOUND                         AND
    PNG_FOUND                            AND
