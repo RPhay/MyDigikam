@@ -1,0 +1,18 @@
+diff --git a/src/kxmlguiclient.cpp b/src/kxmlguiclient.cpp
+index de2ed352..322525b3 100644
+--- a/src/kxmlguiclient.cpp
++++ b/src/kxmlguiclient.cpp
+@@ -301,10 +301,10 @@ void KXMLGUIClient::setXML(const QString &document, bool merge)
+     // QDomDocument raises a parse error on empty document, but we accept no app-specific document,
+     // in which case you only get ui_standards.rc layout.
+     if (!document.isEmpty()) {
+-        const QDomDocument::ParseResult result = doc.setContent(document);
++        bool /*const QDomDocument::ParseResult*/ result = doc.setContent(document);
+         if (!result) {
+-            qCCritical(DEBUG_KXMLGUI) << "Error parsing XML document:" << result.errorMessage << "at line" << result.errorLine << "column"
+-                                      << result.errorColumn;
++            qCCritical(DEBUG_KXMLGUI) << "Error parsing XML document";
++            // << result.errorMessage << "at line" << result.errorLine << "column" << result.errorColumn;
+ #ifdef NDEBUG
+             setDOMDocument(QDomDocument(), merge); // otherwise empty menus from ui_standards.rc stay around
+ #else

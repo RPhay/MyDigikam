@@ -112,7 +112,7 @@ InstallKF6Component(kiconthemes         ${KDE_VERSION} "${Qt6CommonOptions}"    
 InstallKF6Component(kservice            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF6Component(kglobalaccel        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF6Component(kcalendarcore       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF6Component(kxmlgui             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kxmlgui             ${KDE_VERSION} "${Qt6CommonOptions}"                       "kxmlgui-qt-6.4.patch")
 InstallKF6Component(kbookmarks          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF6Component(kimageformats       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF6Component(knotifyconfig       ${KDE_VERSION} "${Qt6CommonOptions}"                       "knotifyconfig-drop-phonon.patch")
