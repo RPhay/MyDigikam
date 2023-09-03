@@ -84,9 +84,9 @@ cmake --build . --config RelWithDebInfo --target ext_kconfigwidgets      -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$CPU_CORES
-fi
 cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
+fi
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam
