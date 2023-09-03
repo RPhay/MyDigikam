@@ -45,67 +45,79 @@ set(PATCH_COMMAND patch)
 
 set(EXTPREFIX_frameworks "${EXTPREFIX}")
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/kdesrc-buildrc.cmake.in
-               ${CMAKE_CURRENT_BINARY_DIR}/kdesrc-buildrc)
+function(InstallKF6Component
+         name
+         version
+         argoptions
+         patch)
 
-ExternalProject_Add(ext_kf6_frameworks
+        set(giturl "https://invent.kde.org/frameworks/${name}.git")
 
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+        message(STATUS "--------------------------------")
+        message(STATUS "KDE component    : ${name}")
+        message(STATUS "Component version: ${version}")
+        message(STATUS "Component Git Url: ${giturl}")
+        message(STATUS "Configure options: ${argoptions}")
+        message(STATUS "Patch to apply   : ${patch}")
 
-    # We will use the KDE build source helper git repository.
+        if(NOT "${patch}" STREQUAL "")
+            set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/${patch}")
+        endif()
 
-    GIT_REPOSITORY https://invent.kde.org/sdk/kdesrc-build.git
+        ExternalProject_Add(ext_${name}
+                            DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+                            GIT_REPOSITORY ${giturl}
 
-    # Check version installed and system dependencies. Install modules configuration.
+                            PATCH_COMMAND ${patch}
 
-    CONFIGURE_COMMAND cp ${CMAKE_CURRENT_BINARY_DIR}/kdesrc-buildrc <SOURCE_DIR>/                                          &&
-                      cd <SOURCE_DIR>                                                                                      &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --version       &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --metadata-only &&
-                      <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --pretend       &&
-                      ${CMAKE_CURRENT_SOURCE_DIR}/kf6-create-manifest.sh ${EXTERNALS_DOWNLOAD_DIR}
+                            UPDATE_COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/fix-qt-version.sh;<SOURCE_DIR>"
 
-    # Apply patches, compile and install modules.
+                            INSTALL_DIR ${EXTPREFIX_frameworks}
+                            CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_frameworks}
+                                       -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                                       ${GLOBAL_PROFILE}
+                                       -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX}
+                                       -DBUILD_TESTING=OFF
+                                       "${argoptions}"
+                                       -Wno-dev
+                            UPDATE_COMMAND ""
+                            ALWAYS 0
+        )
 
-    BUILD_COMMAND cd <DOWNLOAD_DIR>/kf6/knotifications && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/knotifications-drop-phonon.patch &&
-                  cd <DOWNLOAD_DIR>/kf6/kio            && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/kio-drop-ktextwidgets.patch      &&
-                  cd <DOWNLOAD_DIR>/kf6/knotifyconfig  && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/knotifyconfig-drop-phonon.patch  &&
-                  cd <DOWNLOAD_DIR>/kf6/breeze-icons   && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-dropsvg-rccprefix.patch   &&
-                  cd <SOURCE_DIR>                                                                                                                                  &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure extra-cmake-modules                       &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kconfig                                   &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure breeze-icons                              &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcoreaddons                               &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kwindowsystem                             &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure solid                                     &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure threadweaver                              &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure karchive                                  &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kdbusaddons                               &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure ki18n                                     &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcrash                                    &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcodecs                                   &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kauth                                     &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kguiaddons                                &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kwidgetsaddons                            &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kitemviews                                &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcompletion                               &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kconfigwidgets                            &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kiconthemes                               &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kservice                                  &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kglobalaccel                              &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kxmlgui                                   &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kbookmarks                                &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kimageformats                             &&
-# NOT YET PORTED  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure libksane                                  &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kjobwidgets                               &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kio                                       &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure knotifications                            &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure knotifyconfig                             &&
-# NOT YET PORTED  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure marble                                    &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcalendarcore
+endfunction()
 
-    INSTALL_COMMAND ""
+set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
+set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 
-    UPDATE_COMMAND ""
-    ALWAYS 0
-)
+InstallKF6Component(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
+InstallKF6Component(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(threadweaver        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kwindowsystem       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(karchive            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kdbusaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(ki18n               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kcrash              ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kcodecs             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kauth               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kguiaddons          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kwidgetsaddons      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kitemviews          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kcompletion         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kconfigwidgets      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kiconthemes         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kservice            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kglobalaccel        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kcalendarcore       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kxmlgui             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kbookmarks          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kimageformats       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(knotifyconfig       ${KDE_VERSION} "${Qt6CommonOptions}"                       "knotifyconfig-drop-phonon.patch")
+InstallKF6Component(knotifications      ${KDE_VERSION} "${Qt6CommonOptions}"                       "knotifications-drop-phonon.patch")
+InstallKF6Component(kjobwidgets         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(sonnet              ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(ktextwidgets        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF6Component(kio                 ${KDE_VERSION} "${Qt6CommonOptions}"                       "kio-drop-ktextwidgets.patch")
+InstallKF6Component(kinit               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")

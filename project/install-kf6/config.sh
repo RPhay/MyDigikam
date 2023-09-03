@@ -23,16 +23,11 @@ INSTALL_DIR="/usr"
 
 ########################################################################
 
-# KDE Plasma version.
-# See official release here: https://download.kde.org/stable/plasma/
+# KDE Plasma git tag version.
 DK_KP_VERSION="5.27.7"
 
-# KDE Application version.
-# See official release here: https://download.kde.org/stable/release-service/
+# KDE Application git tag version.
 DK_KA_VERSION="23.08.0"
 
-# KDE KF5 frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
+# KDE KF6 frameworks git tag version.
 DK_KDE_VERSION="5.108"
-
-DK_QTVERSION="6.3.1"
