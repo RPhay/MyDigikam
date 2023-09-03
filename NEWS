@@ -51,7 +51,7 @@ BUGFIXES:
 041 ==> 473110 - Assertion failure when new folder is created in album (inside our outside of digiKam).
 042 ==> 473913 - digiKam crashes while refreshing albums.
 043 ==> 473826 - digiKam with exiftool backend erases XMP tags.
-044 ==> 
+044 ==> 474103 - Some .jpg files cannot be previewed or opened in digiKam.
 045 ==> 
 046 ==> 
 047 ==> 
