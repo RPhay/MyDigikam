@@ -38,6 +38,7 @@ packages=("qt6-base-dev"
           "wayland-protocols"
           "plasma-wayland-protocols"
           "libical-dev"
+          "libcanberra-dev"
 )
 
 for pkg in ${packages[@]}; do
