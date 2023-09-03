@@ -59,7 +59,7 @@ cmake $ORIG_WD/../3rdparty \
       -Wno-dev
 
 # NOTE: The order to compile each component here is very important.
-
+if [ ] ; then
 # core KF5 frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
@@ -90,7 +90,7 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 # Extra support for digiKam
 
 # libksane support
-cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
+#cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
 # Desktop integration support
 cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
@@ -110,9 +110,6 @@ fi
 
 # Calendar support
 cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
-
-# Breeze style support
-cmake --build . --config RelWithDebInfo --target ext_breeze              -- -j$CPU_CORES
 
 #################################################################################################
 

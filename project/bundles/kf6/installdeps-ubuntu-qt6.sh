@@ -16,6 +16,7 @@ fi
 
 packages=("qt6-base-dev"
           "qt6-base-dev-tools"
+          "qt6-base-private-dev"
           "qt6-svg-dev"
           "qt6-webengine-dev"
           "qt6-webview-dev"
@@ -26,8 +27,16 @@ packages=("qt6-base-dev"
           "qml6-module-qtquick3d-spatialaudio"
           "qt6-l10n-tools"
           "qt6-tools-dev"
+          "qt6-tools-private-dev"
+          "qt6-wayland"
+          "qt6-wayland-dev"
           "libxcb-xres0-dev"
           "libxcb-keysyms1-dev"
+          "libxcb-xfixes0-dev"
+          "libxfixes-dev"
+          "wayland-protocols"
+          "plasma-wayland-protocols"
+          "libical-dev"
 )
 
 for pkg in ${packages[@]}; do
