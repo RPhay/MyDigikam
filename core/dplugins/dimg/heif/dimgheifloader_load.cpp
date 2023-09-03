@@ -333,12 +333,12 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
                                            struct heif_image* heif_image, bool loadImageData)
 {
-    int lumaBits   = heif_image_handle_get_luma_bits_per_pixel(image_handle);
+    int colorDepth = heif_image_handle_get_luma_bits_per_pixel(image_handle);
     int chromaBits = heif_image_handle_get_chroma_bits_per_pixel(image_handle);
 
-    if ((lumaBits == -1) || (chromaBits == -1))
+    if (chromaBits == -1)
     {
-        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIC luma or chroma bits information not valid!";
+        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIC chroma bits information not valid!";
         loadingFailed();
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
@@ -352,8 +352,33 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     struct heif_decoding_options* const decode_options = heif_decoding_options_alloc();
     decode_options->ignore_transformations             = 1;
     m_hasAlpha                                         = heif_image_handle_has_alpha_channel(image_handle);
-    heif_chroma chroma                                 = m_hasAlpha ? heif_chroma_interleaved_RGBA
-                                                                    : heif_chroma_interleaved_RGB;
+
+    heif_chroma chroma;
+
+    if      (colorDepth == 8)
+    {
+        chroma = m_hasAlpha ? heif_chroma_interleaved_RGBA
+                            : heif_chroma_interleaved_RGB;
+
+        m_sixteenBit = false;
+    }
+    else if ((colorDepth > 8) && (colorDepth <= 16))
+    {
+        chroma = m_hasAlpha ? heif_chroma_interleaved_RRGGBBAA_LE
+                            : heif_chroma_interleaved_RRGGBB_LE;
+
+        m_sixteenBit = true;
+    }
+    else
+    {
+        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "HEIF undefined bit depth:" << colorDepth;
+        loadingFailed();
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+        heif_decoding_options_free(decode_options);
+
+        return false;
+    }
 
     // Trace to check image size properties before decoding, as these values can be different.
 
@@ -386,9 +411,8 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     heif_decoding_options_free(decode_options);
 
-    int colorDepth = heif_image_get_bits_per_pixel_range(heif_image, heif_channel_interleaved);
-    imageWidth()   = heif_image_get_width(heif_image, heif_channel_interleaved);
-    imageHeight()  = heif_image_get_height(heif_image, heif_channel_interleaved);
+    imageWidth()  = heif_image_get_width(heif_image, heif_channel_interleaved);
+    imageHeight() = heif_image_get_height(heif_image, heif_channel_interleaved);
 
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Decoded HEIF image properties: size("
                                    << imageWidth() << "x" << imageHeight()
@@ -409,6 +433,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF data container:" << ptr;
     qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIC bytes per line:" << stride;
+    qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color bytes depth:" << (m_sixteenBit ? 16 : 8);
 
     if (!ptr || (stride <= 0))
     {
@@ -421,34 +446,14 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     }
 
     uchar* data    = nullptr;
-    int colorMul   = 1;       // color multiplier
     int colorModel = DImg::RGB;
+    int colorMul   = (colorDepth > 8) ? (16 - colorDepth)
+                                      : 1;   // color multiplier
 
-    if      (colorDepth == 8)
-    {
-        qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color bytes depth: 8";
-        m_sixteenBit = false;
-    }
-    else if ((colorDepth > 8) && (colorDepth <= 16))
-    {
-        qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color bytes depth: 16";
-        m_sixteenBit = true;
-        colorMul     = 16 - colorDepth;
-    }
-    else
-    {
-        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Color bits depth: " << colorDepth << ": not supported!";
-        loadingFailed();
-        heif_image_release(heif_image);
-        heif_image_handle_release(image_handle);
-
-        return false;
-    }
+    qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color multiplier:" << colorMul;
 
     if (loadImageData)
     {
-        qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "Color multiplier:" << colorMul;
-
         if (m_sixteenBit)
         {
             data = new_failureTolerant(imageWidth(), imageHeight(), 8); // 16 bits/color/pixel
