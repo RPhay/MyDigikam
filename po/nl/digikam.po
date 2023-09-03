@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-30 10:18+0200\n"
+"PO-Revision-Date: 2023-09-01 09:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -51447,17 +51447,15 @@ msgstr ""
 "Een getal achtervoegen, ||n|| specificeert het aantal te gebruiken cijfers"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||0|| optional to always "
 "pad with ||n|| zero digits"
 msgstr ""
 "Een getal achtervoegen, ||n|| specificeert het aantal te gebruiken cijfers, "
-"||c|| specificeert het scheidingsteken vóór de cijfers"
+"||c|| specificeert het scheidingsteken vóór de cijfers, ||0|| optioneel naar "
+"altijd aanvullen met ||n|| nul-tekens"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format

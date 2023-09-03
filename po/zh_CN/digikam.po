@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-27 03:40\n"
+"PO-Revision-Date: 2023-09-02 03:17\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -28014,17 +28014,7 @@ msgstr ""
 "命令建立它 (记得将 <b>password</b> 替换为实际密码)。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu, "
-#| "enter:<br>SET GLOBAL log_bin_trust_function_creators=1;<br>in the mysql "
-#| "prompt. To be able to create MySQL triggers.</p><p>NOTE: If you have an "
-#| "enormous collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -28039,12 +28029,11 @@ msgstr ""
 "<p>提示：在 Linux 服务器上，可以使用以下命令初始化数据库：</p><p># su</"
 "p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</p><p>在 SQL "
 "提示符下输入以下 SQL 命令初始化 digiKam 数据库并授予所需权限 (详见后文)</"
-"p><p>...</p><p>quit</p><p>提示：如果您在 Ubuntu 中创建 MySQL 服务器时遇到了问"
-"题，请在 MySQL 的命令行模式中输入：<br>SET GLOBAL "
-"log_bin_trust_function_creators=1;<br>以便创建 MySQL 触发器。</p><p>提示：如"
-"果您的相册集合规模庞大，请在启动 MySQL 服务器时使用 mysql --"
-"max_allowed_packet=128M 命令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</"
-"p>"
+"p><p>...</p><p>quit</p><p>提示：如果您在基于 Ubuntu 的发行版中遇到了 MySQL 服"
+"务器问题，请在 MySQL 的命令行模式中输入以下的附加命令来创建 MySQL 触发器 ："
+"<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>提示：如果您的相册集"
+"合规模庞大，请在启动 MySQL 服务器时使用 mysql --max_allowed_packet=128M 命"
+"令，也可以在 my.ini 或 ~/.my.cnf 中更改相关设置。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -49552,15 +49541,14 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "添加前缀数目，||n|| 指定使用的数字位数"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||0|| optional to always "
 "pad with ||n|| zero digits"
-msgstr "添加前缀数目，||n|| 指定使用的数字位数，||c|| 指定在数字前使用的分隔符"
+msgstr ""
+"添加前缀数目，||n|| 指定使用的数字位数，||c|| 指定数字前面的分隔符，||0|| 是"
+"可选的，指定总是与 ||n|| 的 0 值保持距离。"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -51250,7 +51238,7 @@ msgstr "API 密钥："
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
 #, kde-format
 msgid "Javascript Message"
-msgstr ""
+msgstr "Javascript 消息"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -61485,6 +61473,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid "Input Google Maps API Key"
-#~ msgstr "输入 Google Maps API 密钥"
