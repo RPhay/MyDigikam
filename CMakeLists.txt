@@ -55,9 +55,10 @@ project(digikam
         VERSION ${DIGIKAM_VERSION_SHORT}
         LANGUAGES CXX C)
 
-set(CMAKE_CXX_STANDARD 17)
+# Settings from ECM
+set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_EXTENSIONS        OFF)
 
 # See bug #454941 and the OpenCV detection in RelWithDebInfo target
 
