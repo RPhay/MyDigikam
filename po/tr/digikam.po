@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-31 01:00+0300\n"
+"PO-Revision-Date: 2023-09-03 21:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -40727,20 +40727,16 @@ msgstr[0] "Etiketi sil"
 msgstr[1] "Etiketleri sil"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>digiKam will clean up tag metadata before setting tags from database."
-#| "<br> You may <b>lose tags</b> if you did not read tags before (by calling "
-#| "Read Tags from Image).<br> Do you want to continue?<qt>"
+#, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam etiketleri veritabanından ayarlamadan önce etiket meta "
-"verilerini temizleyecek.<br> Etiketleri daha önce okumadıysanız (resimdeki "
-"Okunmuş Etiketleri çağırarak)<b>etiketleri kaybedebilirsiniz.</b><br> Devam "
-"etmek istiyor musunuz?<qt>"
+"<qt>digiKam, veritabanından etiketleri ayarlamadan önce etiket üst verisini "
+"temizleyecek.<br/> Daha önce etiketleri okumadıysanız (Görselden Etiketleri "
+"Oku'yu çağırarak) <b>etiketleri kaybedebilirsiniz</b>.<br/> Sürdürmek "
+"istiyor musunuz?</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:516
 #: core/libs/tags/manager/tagsmanager.cpp:535
@@ -40865,7 +40861,7 @@ msgstr "Etiketleri Veri Tabanından Resimlere Yaz"
 #: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read Tags from Image"
-msgstr "Resimden Okunmuş Etiketler"
+msgstr "Görselden Etiketleri Oku"
 
 #: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
