@@ -65,7 +65,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-08-05 11:45+0200\n"
+"PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -46894,32 +46894,32 @@ msgstr "Estatísticas da base de datos"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
-msgstr "Alternar a barra esquerda"
+msgstr "Alternar a barra lateral esquerda"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
-msgstr "Alternar a barra dereita"
+msgstr "Alternar a barra lateral dereita"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
-msgstr "Separador anterior da barra esquerda"
+msgstr "Lapela anterior da barra lateral esquerda"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
-msgstr "Seguinte separador da barra esquerda"
+msgstr "Seguinte lapela da barra lateral esquerda"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
-msgstr "Separador anterior da barra dereita"
+msgstr "Lapela anterior da barra lateral dereita"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
-msgstr "Seguinte separador da barra dereita"
+msgstr "Seguinte lapela da barra lateral dereita"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
