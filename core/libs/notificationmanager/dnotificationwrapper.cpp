@@ -6,7 +6,7 @@
  * Date        : 2008-07-03
  * Description : A wrapper send desktop notifications
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -74,7 +74,7 @@ public:
 
 private:
 
-    QWidget* m_parent;
+    QWidget* m_parent = nullptr;
 };
 
 // ----------------------------------------------------------------------------------------------
@@ -135,16 +135,37 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
 
         if (eventId.isEmpty())
         {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            KNotification::event(KNotification::Notification, message, logoPixmap);
+
+#else
+
             KNotification::event(KNotification::Notification, message, logoPixmap, parent);
+
+#endif
+
         }
         else
         {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+            KNotification::event(eventId, message, logoPixmap);
+
+#else
+
             KNotification::event(eventId, message, logoPixmap, parent);
+
+#endif
+
         }
     }
     else
 
 #else
+
     {
         Q_UNUSED(eventId);
     }
@@ -158,6 +179,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
     if (MacNativeDispatchNotify(windowTitle, message))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to OSX desktop notifier";
+
         return;
     }
     else
@@ -179,6 +201,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
         if (proc.waitForFinished() && proc.exitCode() == 0)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Event is dispatched to desktop notifier through DBUS";
+
             return;
         }
         else
@@ -186,6 +209,7 @@ void DNotificationWrapper(const QString& eventId, const QString& message,
             if (!parent)
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "parent is null";
+
                 return;
             }
 
