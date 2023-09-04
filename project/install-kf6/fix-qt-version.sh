@@ -9,3 +9,4 @@
 
 cd "$1"
 find . -type f \( -name 'CMakeLists.txt' \) -print0 | xargs -0 sed -i 's/REQUIRED_QT_VERSION 6.5.0/REQUIRED_QT_VERSION 6.4.1/g'
+find . -type f \( -name '*.cpp' \) -print0 | xargs -0 sed -i 's/QTimeZone::UTC/QTimeZone().utc()/g'

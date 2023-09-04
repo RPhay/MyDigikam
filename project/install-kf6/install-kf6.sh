@@ -90,14 +90,13 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 
 # Extra support for digiKam
 fi
-
 # libksane support
-#cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ksanecore           -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
 # Desktop integration support
 cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
-
 cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 
@@ -109,6 +108,6 @@ cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$C
 
 #################################################################################################
 
-./kf6-create-manifest.sh
+$ORIG_WD/kf6-create-manifest.sh $ORIG_WD/b
 
 TerminateScript
