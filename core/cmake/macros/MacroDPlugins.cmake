@@ -1,6 +1,6 @@
 # Some useful macros for printing status information
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -67,10 +67,10 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                           Qt${QT_VERSION_MAJOR}::Network
                           Qt${QT_VERSION_MAJOR}::NetworkAuth
 
-                          KF5::XmlGui
-                          KF5::I18n
-                          KF5::ConfigCore
-                          KF5::Service
+                          KF${QT_VERSION_MAJOR}::XmlGui
+                          KF${QT_VERSION_MAJOR}::I18n
+                          KF${QT_VERSION_MAJOR}::ConfigCore
+                          KF${QT_VERSION_MAJOR}::Service
 
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
@@ -145,10 +145,10 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
                           Qt${QT_VERSION_MAJOR}::Xml
                           Qt${QT_VERSION_MAJOR}::Widgets
 
-                          KF5::XmlGui
-                          KF5::I18n
-                          KF5::ConfigCore
-                          KF5::Service
+                          KF${QT_VERSION_MAJOR}::XmlGui
+                          KF${QT_VERSION_MAJOR}::I18n
+                          KF${QT_VERSION_MAJOR}::ConfigCore
+                          KF${QT_VERSION_MAJOR}::Service
 
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
@@ -226,10 +226,10 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           Qt${QT_VERSION_MAJOR}::Widgets
                           Qt${QT_VERSION_MAJOR}::Sql
 
-                          KF5::XmlGui
-                          KF5::I18n
-                          KF5::ConfigCore
-                          KF5::Service
+                          KF${QT_VERSION_MAJOR}::XmlGui
+                          KF${QT_VERSION_MAJOR}::I18n
+                          KF${QT_VERSION_MAJOR}::ConfigCore
+                          KF${QT_VERSION_MAJOR}::Service
 
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
@@ -304,10 +304,10 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
                           Qt${QT_VERSION_MAJOR}::Xml
                           Qt${QT_VERSION_MAJOR}::Widgets
 
-                          KF5::XmlGui
-                          KF5::I18n
-                          KF5::ConfigCore
-                          KF5::Service
+                          KF${QT_VERSION_MAJOR}::XmlGui
+                          KF${QT_VERSION_MAJOR}::I18n
+                          KF${QT_VERSION_MAJOR}::ConfigCore
+                          KF${QT_VERSION_MAJOR}::Service
 
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
@@ -382,8 +382,8 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
                           Qt${QT_VERSION_MAJOR}::Xml
                           Qt${QT_VERSION_MAJOR}::Widgets
 
-                          KF5::I18n
-                          KF5::ConfigCore
+                          KF${QT_VERSION_MAJOR}::I18n
+                          KF${QT_VERSION_MAJOR}::ConfigCore
 
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
