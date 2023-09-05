@@ -80,7 +80,7 @@ public:
 private:
 
     // X11 helper functions for Qt6 support.
-    // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=5.15.2#n102
+    // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=v5.15.2#n92
 
     // TODO: these functions use private API from Qt6 (QPlatformNativeInterface) and need to be ported later to XCB API.
     //       See this url for details: https://www.x.org/releases/X11R7.6/doc/libxcb/tutorial/index.html#screenofdisplay
