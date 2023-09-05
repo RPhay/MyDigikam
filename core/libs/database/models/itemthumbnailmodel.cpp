@@ -35,6 +35,7 @@ public:
 
     explicit Private()
       : thread             (nullptr),
+        storageThread      (nullptr),
         preloadThread      (nullptr),
         thumbSize          (0),
         lastGlobalThumbSize(0),
