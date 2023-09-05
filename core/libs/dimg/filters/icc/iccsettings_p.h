@@ -7,7 +7,7 @@
  * Description : central place for ICC settings - Private header.
  *
  * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -82,11 +82,11 @@ private:
     // X11 helper functions for Qt6 support.
     // Imported from https://code.qt.io/cgit/qt/qtx11extras.git/tree/src/x11extras/qx11info_x11.cpp?h=5.15.2#n102
 
-    bool     isX11();
-    quint32  getAppRootWindow(int);
-    QScreen* findScreenForVirtualDesktop(int);
-    int      appScreen();
-    Display* display();
+    bool     isX11()                            const;
+    quint32  getAppRootWindow(int)              const;
+    QScreen* findScreenForVirtualDesktop(int)   const;
+    int      appScreen()                        const;
+    Display* display()                          const;
 
 #   endif
 

@@ -52,10 +52,11 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     if (!QX11Info::isPlatformX11())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
+
         return IccProfile();
     }
 
-    unsigned long appRootWindow;
+    unsigned long appRootWindow = 0;
     QString       atomName;
 
     QScreen* const screen = qApp->primaryScreen();
@@ -63,6 +64,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     if (!screen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No screen available for application";
+
         return IccProfile();
     }
 
@@ -111,11 +113,11 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     Atom          type;
     int           format;
-    unsigned long nitems;
-    unsigned long bytes_after;
-    quint8*       str = nullptr;
+    unsigned long nitems      = 0;
+    unsigned long bytes_after = 0;
+    quint8*       str         = nullptr;
 
-    static Atom icc_atom = XInternAtom(QX11Info::display(), atomName.toLatin1().constData(), True);
+    static Atom icc_atom      = XInternAtom(QX11Info::display(), atomName.toLatin1().constData(), True);
 
     if ((icc_atom != None)                                                &&
         (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
@@ -147,17 +149,20 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #elif defined Q_OS_WIN
 
-    //TODO
+    // TODO
+
     Q_UNUSED(widget);
 
 #elif defined Q_OS_MACOS
 
-    //TODO
+    // TODO
+
     Q_UNUSED(widget);
 
 #else
 
     // Unsupported platform
+
     Q_UNUSED(widget);
 
 #endif
