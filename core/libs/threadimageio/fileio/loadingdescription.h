@@ -84,7 +84,8 @@ public:
         enum PreviewFlag
         {
             NoFlags         = 0,
-            OnlyPregenerate = 1 << 0
+            OnlyPregenerate = 1 << 0,
+            OnlyFromStorage = 1 << 1
         };
         Q_DECLARE_FLAGS(PreviewFlags, PreviewFlag)
 
@@ -93,6 +94,7 @@ public:
         explicit PreviewParameters();
 
         bool onlyPregenerate()                          const;
+        bool onlyFromStorage()                          const;
 
         bool operator==(const PreviewParameters& other) const;
 

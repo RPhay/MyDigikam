@@ -45,6 +45,7 @@ public:
     }
 
     ThumbnailLoadThread*   thread;
+    ThumbnailLoadThread*   storageThread;
     ThumbnailLoadThread*   preloadThread;
     ThumbnailSize          thumbSize;
     ThumbnailSize          lastGlobalThumbSize;
@@ -71,11 +72,27 @@ ItemThumbnailModel::ItemThumbnailModel(QObject* const parent)
     : ItemModel(parent),
       d        (new Private)
 {
+    d->storageThread = new ThumbnailLoadThread;
+    d->storageThread->setSendSurrogatePixmap(false);
+
+    connect(d->storageThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+            this, SLOT(slotThumbnailLoadedFromStorage(LoadingDescription,QPixmap)));
+
     setKeepsFilePathCache(true);
 }
 
 ItemThumbnailModel::~ItemThumbnailModel()
 {
+    d->storageThread->stopAllTasks();
+    d->storageThread->wait();
+
+    if (d->preloadThread)
+    {
+        d->preloadThread->stopAllTasks();
+        d->preloadThread->wait();
+    }
+
+    delete d->storageThread;
     delete d->preloadThread;
     delete d;
 }
@@ -218,12 +235,18 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 
         if (info.isNull())
         {
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
             QVariant var = QPixmap();
             return var;
+
 #else
+
             return QVariant(QVariant::Pixmap);
+
 #endif
+
         }
 
         double ratio  = qApp->devicePixelRatio();
@@ -231,25 +254,32 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 
         if (!d->detailRect.isNull())
         {
-            if (d->thread->find(info.thumbnailIdentifier(), d->detailRect, thumbnail, thumbSize))
+            if (d->storageThread->find(info.thumbnailIdentifier(),
+                                       d->detailRect, thumbnail, thumbSize, true))
             {
                 return thumbnail;
             }
         }
         else
         {
-            if (d->thread->find(info.thumbnailIdentifier(), thumbnail, thumbSize))
+            if (d->storageThread->find(info.thumbnailIdentifier(),
+                                       thumbnail, thumbSize, true))
             {
                 return thumbnail;
             }
         }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
         QVariant var = QPixmap();
         return var;
+
 #else
+
         return QVariant(QVariant::Pixmap);
+
 #endif
+
     }
 
     return ItemModel::data(index, role);
@@ -261,10 +291,15 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
     {
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
         switch (value.typeId())
+
 #else
+
         switch (value.type())
+
 #endif
+
         {
             case QVariant::Invalid:
             {
@@ -310,6 +345,20 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
     }
 
     return ItemModel::setData(index, value, role);
+}
+
+void ItemThumbnailModel::slotThumbnailLoadedFromStorage(const LoadingDescription& loadingDescription, const QPixmap& thumb)
+{
+    if (thumb.isNull())
+    {
+        LoadingDescription description = loadingDescription;
+        description.previewParameters.flags &= ~LoadingDescription::PreviewParameters::OnlyFromStorage;
+        d->thread->load(description);
+    }
+    else
+    {
+        slotThumbnailLoaded(loadingDescription, thumb);
+    }
 }
 
 void ItemThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& thumb)
