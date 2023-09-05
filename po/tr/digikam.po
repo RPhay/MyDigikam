@@ -34,27 +34,25 @@
 # Translators:
 # Adem Alp Yıldız <ademalp@kde.org.tr>, 2005.
 # Ayşe Genç <ayse@uludag.org.tr>, 2004-2005.
-# baki incebulut <bakiince@yahhoo.com.tr>, 2006.
+# Baki İncebulut <bakiince@yahhoo.com.tr>, 2006.
 # Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
-# erenturkay <turkay.eren@gmail.com>, 2007.
+# Eren Türkay <turkay.eren@gmail.com>, 2007.
 # Gökmen Görgen <gkmngrgn@gmail.com>, 2008.
 # Görkem Çetin <gorkem@kde.org>, 2004.
-# H.Gökhan SARI <hsa2@difuzyon.net>, 2008.
+# H. Gökhan SARI <hsa2@difuzyon.net>, 2008.
 # İsmail Şimşek <simsek@kde.org.tr>, 2005.
 # Osman Tosun <rainman.neu@gmail.com>, 2008-2009.
-# obsoleteman <tulliana@gmail.com>, 2008-2009,2012.
-# Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015.
+# obsoleteman <tulliana@gmail.com>, 2008-2009, 2012.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010-2011.
-# Volkan Gezer <volkangezer@gmail.com>, 2013.
-# obsoleteman <tulliana@gmail.com>, 2008-2009.
-# Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2017, 2019, 2021.
+# Volkan Gezer <volkangezer@gmail.com>, 2013-2015, 2017, 2019, 2021.
 # Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: extragear-graphics-kde4\n"
+"Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-01 00:43+0000\n"
-"PO-Revision-Date: 2023-09-03 21:39+0300\n"
+"PO-Revision-Date: 2023-09-05 00:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3197,12 +3195,12 @@ msgstr ""
 #: core/app/views/stack/trashview.cpp:148
 #, kde-format
 msgid "Selected Items Permanently"
-msgstr "Seçili Ögeler Kalıcı Olarak"
+msgstr "Seçili Ögeleri Kalıcı Olarak"
 
 #: core/app/views/stack/trashview.cpp:151
 #, kde-format
 msgid "All Items Permanently"
-msgstr "Tüm Ögeler Kalıcı Olarak"
+msgstr "Tüm Ögeleri Kalıcı Olarak"
 
 #: core/app/views/stack/trashview.cpp:278
 #, kde-format
@@ -4592,7 +4590,7 @@ msgid "A tool to convert color depth to 16 bits"
 msgstr "Renk derinliğini 16 bit'e dönüştürmek için bir araç"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:66
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
@@ -5884,49 +5882,47 @@ msgstr ""
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:46
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Restoration"
+#, kde-format
 msgctxt "@title"
 msgid "Restoration"
-msgstr "Bakım"
+msgstr "Restorasyon"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to restore images using Greystoration algorithm"
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Greystoration algoritmasını kullanarak görselleri restore etmeye yönelik bir "
+"araç"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "This image is not color managed."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can restore images using Greystoration "
 "algorithm.</para>"
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, Greystoration algoritmasını "
+"kullanarak görselleri restore edebilir.</para>"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Sharpen Image"
+#, kde-format
 msgctxt "@title"
 msgid "Sharpen Image"
-msgstr "Keskin Resim"
+msgstr "Görseli Keskinleştir"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to sharp images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to sharp images"
-msgstr "Görüntüleri keskinleştirmek için bir araç"
+msgstr "Görselleri keskinleştirmek için bir araç"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri keskinleştirebilir.</para>"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:46
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:44
@@ -5936,82 +5932,71 @@ msgid "Color Effects"
 msgstr "Renk Efektleri"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to apply color effects"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
 msgstr "Renk efektleri uygulamak için bir araç"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply color effects over images.</"
 "para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere renk efektleri "
+"uygulayabilir.</para>"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:46
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Film Grain"
+#, kde-format
 msgctxt "@title"
 msgid "Film Grain"
-msgstr "Film Greni"
+msgstr "Film Taneciği"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "Add film grain"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
-msgstr "Film tanecikleri ekle"
+msgstr "Film tanecikleri eklemek için bir araç"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere film tanecikleri "
+"ekleyebilir.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "title of the file"
-#| msgid "Title:"
+#, kde-format
 msgid "Titles:"
-msgstr "Başlık:"
+msgstr "Başlıklar:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
-#, fuzzy, kde-format
-#| msgid "Enter title here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
-msgstr "Başlığı buraya girin."
+msgstr "Buraya başlık metnini girin."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
-#, fuzzy, kde-format
-#| msgid "Captions: "
+#, kde-format
 msgid "Captions:"
-msgstr "Başlıklar: "
+msgstr "Alt yazılar:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
-#, fuzzy, kde-format
-#| msgid "Enter caption text here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr "Başlık metninizi buraya girin."
+msgstr "Alt yazı metninizi buraya girin."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean all and re-scan"
+#, kde-format
 msgid "Clean up and overwrite"
-msgstr "Tümünü temizle ve tekrar tara"
+msgstr "Temizle ve üzerine yaz"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -6021,46 +6006,41 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"Bu seçeneği açarsanız alt yazılar temizlenecek ve yeni değerlerle "
+"değiştirilir,\n"
+"aksi takdirde eski değerler yeni değerlerle birleştirilir."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Assign tools"
+#, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
-msgstr "Atama araçları"
+msgstr "Alt Yazılar Ata"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
-msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+msgstr "Görsellere alt yazı üst verisi atamak için bir araç"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere başlık ve açıklama üst "
+"verisi alternatif değerlerini atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
 #, kde-format
 msgid "Pick Label:"
-msgstr "Etiket Seçin:"
+msgstr "Etiket seç:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
 #, kde-format
 msgid "Color Label:"
-msgstr "Renk Etiketi:"
+msgstr "Renk etiketi:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:108
 #, kde-format
@@ -6068,22 +6048,16 @@ msgid "Rating:"
 msgstr "Derecelendirme:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Assign Labels"
+#, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
-msgstr "Etiket Ata"
+msgstr "Etiketler Ata"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
-msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+msgstr "Görsellere etiketler üst verisi atamak için bir araç"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
 #, kde-kuit-format
@@ -6092,96 +6066,74 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere derecelendirme veya renk "
-"atar veya etiket üst veri değerleri seçer.</para>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere derecelendirme, renk veya "
+"etiket üst verisi değerlerini atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Assign Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr "Etiket Tanımla"
+msgstr "Etiketler Ata"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags metadata to images"
-msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+msgstr "Görsellere etiketler üst verisi atamak için bir araç"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere klavye hiyerarşisi üst "
+"verisi değerlerini atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata Template"
-msgstr "Üstveri Şablonunu Uygula"
+msgstr "Üst Veri Şablonu Uygula"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
-msgstr "Görüntülere meta veri şablonu uygulamak için bir araç"
+msgstr "Görsellere üst veri şablonu uygulamak için bir araç"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata template over images."
 "</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, üst veri şablonu uygulayabilir.</"
+"para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
 msgstr "Görsel Kalitesi Sıralama"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
-msgstr ""
-"Resim kalitesine göre otomatik Seçme Etiketini atamak için bu seçeneği "
-"etkinleştirin."
+msgstr "Görsel kalitesine göre etiket üst verisi seçmek için bir araç"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply a texture over images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign a pick label metadata value "
 "by parsing image and estimate the quality.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerin üzerine bir doku "
-"uygulayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseli ayrıştırarak bir etiket üst "
+"veri etiketi değeri atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
@@ -6190,12 +6142,10 @@ msgid "Exif:"
 msgstr "Exif:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "Name of the component"
-#| msgid "Component"
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
-msgstr "Bileşen"
+msgstr "Tümü"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:107
 #, kde-format
@@ -6210,18 +6160,16 @@ msgid "GPS"
 msgstr "GPS"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
-#, fuzzy, kde-format
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "XPKeywords"
-msgstr "Anahtar sözcükler"
+msgstr "XPKeywords"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:110
-#, fuzzy, kde-format
-#| msgid "Russian Federation"
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "Comment and description"
-msgstr "Rusya Federasyonu"
+msgstr "Yorum ve açıklama"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:112
 #, kde-format
@@ -6230,12 +6178,10 @@ msgid "Iptc:"
 msgstr "Iptc:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "Name of the component"
-#| msgid "Component"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
-msgstr "Bileşen"
+msgstr "Tümü"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
 #, kde-format
@@ -6244,11 +6190,10 @@ msgid "Date"
 msgstr "Tarih"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt yazı"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
 #, kde-format
@@ -6257,12 +6202,10 @@ msgid "Xmp:"
 msgstr "Xmp:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "Name of the component"
-#| msgid "Component"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
-msgstr "Bileşen"
+msgstr "Tümü"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:121
 #, kde-format
@@ -6274,17 +6217,16 @@ msgstr "Tarih"
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam"
-msgstr "DigiKam"
+msgstr "digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:123
 #, kde-format
 msgctxt "@item: xmp namespace"
 msgid "DigiKam image history"
-msgstr "DigiKam görüntü geçmişi"
+msgstr "DigiKam görsel geçmişi"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:124
-#, fuzzy, kde-format
-#| msgid "Dublin Core"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Dublin Core"
 msgstr "Dublin Core"
@@ -6302,43 +6244,38 @@ msgid "Video"
 msgstr "Video"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:127
-#, fuzzy, kde-format
-#| msgid "Caption, Comment, Title"
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Caption, Comment and Description"
-msgstr "Başlık, Not, Ünvan"
+msgstr "Alt yazı, yorum, açıklama"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:220
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
-msgstr ""
+msgstr "Üst veriyi kaldır: Listedeki son araç değil."
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Remove Metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Metadata"
-msgstr "Metaveri Sil"
+msgstr "Üst Veriyi Kaldır"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to remove Exif, Iptc, or Xmp metadata from images"
-msgstr ""
-"Görüntülerden Exif, Iptc veya Xmp meta verilerini kaldırmak için bir araç"
+msgstr "Görsellerden Exif, Iptc veya Xmp üst verisini kaldırmak için bir araç"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can invert colors from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or "
 "Xmp from images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renkleri tersine "
-"çevirebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerden Exif, Iptc veya Xmp üst "
+"verilerini kaldırabilir.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:43
 #, kde-format
@@ -6348,7 +6285,7 @@ msgstr "Zaman Ayarı"
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:44
 #, kde-format
 msgid "Adjust Date Time Stamp of Image"
-msgstr "Resmin Zaman Damgasını Ayarla"
+msgstr "Görselin Zaman Damgasını Ayarla"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
@@ -6364,82 +6301,70 @@ msgid "A tool to adjust date and time-stamp from images"
 msgstr "Görsellerdeki tarih ve zaman bilgisini ayarlamak için bir araç"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki zaman ayarını "
+"yapabilir.</para>"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
 msgstr "Başlık"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:108
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt yazı"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@item: icc profile properties"
-#| msgid "Copyright"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
-msgstr "Telif Hakkı"
+msgstr "Telif hakları"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:110
-#, fuzzy, kde-format
-#| msgid "Right Usage Terms:"
+#, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
-msgstr "Doğru Kullanım Koşulları:"
+msgstr "Kullanım koşulları"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:113
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@label"
 msgid "Translate to:"
-msgstr "%1'e git"
+msgstr "Şuna çevir:"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:151
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
-msgstr "İçeriğin dilini buradan seçin."
+msgstr "%1 ile çevrilecek girdiler:"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Use Metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Translate Metadata"
-msgstr "Metadata kullan"
+msgstr "Üst Veriyi Çevir"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to create print composition from images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
-msgstr "Görüntülerden baskı kompozisyonu oluşturmak için bir araç"
+msgstr "Görsel üst verisindeki dizileri çevirmek için bir araç"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can adjust color balance from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renk dengesini "
-"ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin Xmp üst verisindeki "
+"alternatif dillerdeki dizileri çevirebilir.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
 #, kde-format
@@ -6452,8 +6377,8 @@ msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
 "borders."
 msgstr ""
-"Kırpma alanı ayarlarını, siyah delik resim kenarlıklarını çözümleyerek "
-"otomatik olarak hesapla."
+"Kara delik görsel kenarlıklarının ayrıştırılmasıyla alan ayarlarını otomatik "
+"olarak hesaplayın."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:96
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:349
@@ -6468,44 +6393,39 @@ msgstr "Konum:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:358
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
-msgstr "Burada, kırpma için seçimin üst sol köşesini ayarlayın."
+msgstr "Kırpma için sol üst seçim köşesi konumunu buradan ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:115
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
 #, kde-format
 msgid "Set here the width selection for cropping."
-msgstr "Kırpma için genişlik seçimini ayarlayın."
+msgstr "Kırpma için genişlik seçimini buradan ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:120
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
 #, kde-format
 msgid "Set here the height selection for cropping."
-msgstr "Burada, kırpma için yüksekliği ayarlayın."
+msgstr "Kırpma için yükseklik seçimini buradan ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Crop"
+#, kde-format
 msgctxt "@title"
 msgid "Crop"
 msgstr "Kırp"
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to crop images to a region"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
-msgstr "Görüntüleri bir bölgeye göre kırpmak için bir araç"
+msgstr "Görselleri belirli bir bölgeye kırpmak için bir araç"
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can convert images to black and white.</"
-#| "p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntüleri siyah beyaza dönüştürebilir."
-"</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri belirli bir bölgeye "
+"kırpabilir.</para>"
 
 #: core/dplugins/bqm/transform/flip/flip.cpp:58
 #, kde-format
@@ -6523,37 +6443,34 @@ msgstr "Dikey"
 #, kde-format
 msgctxt "@label"
 msgid "Flip:"
-msgstr "Çevir:"
+msgstr "Ters çevir:"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Flip"
+#, kde-format
 msgctxt "@title"
 msgid "Flip"
-msgstr "Çevir"
+msgstr "Ters Çevir"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to flip images horizontally or vertically"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
 msgstr "Resimleri yatay veya dikey olarak çevirmek için bir araç"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can invert colors from images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerden renkleri tersine "
-"çevirebilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir iş akışı etabı olarak kullanıcı "
+"betiklerini çalıştırabilir.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:150
 #, kde-format
 msgid "Preset Length:"
-msgstr "Önayar Uzunluğu:"
+msgstr "Önayar uzunluğu:"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:152
 #, kde-format
@@ -6600,23 +6517,23 @@ msgstr[1] "Devasa (%1 piksel)"
 #: core/dplugins/bqm/transform/resize/resize.cpp:159
 #, kde-format
 msgid "Not enlarge small images"
-msgstr "Küçük görüntüleri büyütmeyin"
+msgstr "Küçük görselleri büyütme"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:160
 #, kde-format
 msgid "Use Custom Length"
-msgstr "Özel Uzunluk Kullan"
+msgstr "Özel uzunluk kullan"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:161
 #, kde-format
 msgid "Use Percentage"
-msgstr "Yüzde Kullan"
+msgstr "Yüzde kullan"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:163
 #: core/dplugins/bqm/transform/resize/resize.cpp:243
 #, kde-format
 msgid " Pixels"
-msgstr "Piksel"
+msgstr " Piksel"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:46
 #, kde-format
@@ -6625,27 +6542,25 @@ msgid "Resize"
 msgstr "Yeniden Boyutlandır"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to resize images with a customized length"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
 msgstr ""
-"Görüntüleri özelleştirilmiş bir uzunlukta yeniden boyutlandırmak için bir "
-"araç"
+"Görselleri özelleştirilmiş uzunlukta yeniden boyutlandırmaya yönelik bir araç"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri yeniden boyutlandırabilir."
+"</para>"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:86
 #, kde-format
 msgctxt "@title"
 msgid "Use Exif Orientation"
-msgstr "Exif Yönlendirmesi Kullan"
+msgstr "Exif Yönelimini Kullan"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:90
 #, kde-format
@@ -6678,60 +6593,46 @@ msgid "Angle:"
 msgstr "Açı:"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Rotate"
+#, kde-format
 msgctxt "@title"
 msgid "Rotate"
 msgstr "Döndür"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid "A tool to rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to rotate images"
-msgstr "Görüntüleri döndürmek için bir araç"
+msgstr "Görselleri döndürmek için bir araç"
 
 #: core/dplugins/bqm/transform/rotate/rotateplugin.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "<p>This Batch Queue Manager tool can adjust time in images.</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görüntülerdeki zamanı ayarlayabilir.</p>"
+"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri döndürebilir.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:68
-#, fuzzy, kde-format
-#| msgid "Lossless PGF files"
+#, kde-format
 msgid "Lossless HEIF files"
-msgstr "Kayıpsız PGF Dosyaları"
+msgstr "Kayıpsız HEIF dosyaları"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
-#| "enabled, a lossless method will be used to compress PGF pictures.</p>"
+#, kde-format
 msgid ""
 "<p>Toggle lossless compression for HEIF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress HEIF pictures.</p>"
 msgstr ""
-"<p>PGF görüntüleri için kayıpsız sıkıştırmayı aç/kapat.</p><p>Bu seçenek "
-"etkinleştirilirse PGF resimlerini sıkıştırmak için kayıpsız bir yöntem "
+"<p>HEIF görselleri için kayıpsız sıkıştırmayı açın/kapatın.</p><p>Bu seçenek "
+"etkinleştirilirse HEIF görsellerini sıkıştırmak için kayıpsız bir yöntem "
 "kullanılacaktır.</p>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
-#, fuzzy, kde-format
-#| msgid "PGF quality:"
+#, kde-format
 msgid "HEIF quality:"
-msgstr "PGF kalitesi:"
+msgstr "HEIF kalitesi:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>The quality value for JPEG 2000 images:</p><p><b>1</b>: low quality "
-#| "(high compression and small file size)<br/><b>50</b>: medium quality<br/"
-#| "><b>75</b>: good quality (default)<br/><b>100</b>: high quality (no "
-#| "compression and large file size)</p><p><b>Note: JPEG 2000 is not a "
-#| "lossless image compression format when you use this setting.</b></p>"
+#, kde-format
 msgid ""
 "<p>The quality value for HEIF images:</p><p><b>1</b>: low quality (high "
 "compression and small file size)<br/><b>50</b>: medium quality<br/><b>75</"
@@ -6739,32 +6640,29 @@ msgid ""
 "large file size)</p><p><b>Note: HEIF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 resim kalitesi değeri:</p><p><b>1</b>: düşük kalite (yüksek "
-"sıkıştırma ve küçük dosya boyutu)<br/><b>50</b>: orta kalite<br/><b>75</b>: "
-"iyi kalite (öntanımlı)<br/><b>100</b>: yüksek kalite (sıkıştırma yok ve "
-"büyük dosya boyutu)</p><p><b>Not: Bu ayarı kullandığınızda JPEG 2000 "
-"kayıpsız sıkıştırma biçimi değildir.</b></p>"
+"<p>HEIF görüntüleri için kalite değeri:</p><p><b>1</b>: Düşük kalite (yüksek "
+"sıkıştırma ve küçük dosya boyutu)<br/><b>50</b>: Orta kalite<br/><b>75</b>: "
+"İyi kalite (öntanımlı)<br/><b>100</b>: Yüksek kalite (sıkıştırmasız ve büyük "
+"dosya boyutu)</p><p> <b>Not: Bu ayarı kullandığınızda HEIF, kayıpsız bir "
+"görsel sıkıştırma biçimi olmaktan çıkar.</b></p>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "HEIF loader"
+#, kde-format
 msgctxt "@title"
 msgid "HEIF loader"
-msgstr "HEIF yükleyici"
+msgstr "HEIF Yükleyicisi"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:62
-#, fuzzy, kde-format
-#| msgid "An image loader based on Libheif codec"
+#, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
-msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
+msgstr "Libheif kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
-#, fuzzy, kde-format
-#| msgid "This library is not present on your system."
+#, kde-format
 msgctxt "@info"
 msgid "This library is not present on your system."
-msgstr "Bu kitaplık sisteminizde mevcut değil."
+msgstr "Bu kitaplık sisteminizde yok."
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:75
 #, kde-format
@@ -6773,6 +6671,8 @@ msgid ""
 "This library is available on your system with a maximum color depth support "
 "of %1 bits."
 msgstr ""
+"Bu kitaplık sisteminizde en çok %1 bit renk derinliği desteğiyle "
+"kullanılabilirdir."
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:80
 #, kde-format
@@ -6781,6 +6681,8 @@ msgid ""
 "This library is available on your system but is not able to encode image "
 "with a suitable color depth."
 msgstr ""
+"Bu kitaplık sisteminizde kullanılabilir; ancak görseli uygun renk "
+"derinliğiyle kodlayamıyor."
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:87
 #, kde-kuit-format
@@ -6798,14 +6700,27 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
+"<para>Bu eklenti, kullanıcıların Libheif kod çözücü bileşenini kullanarak "
+"görsel yüklemesine ve kaydetmesine olanak tanır.</para><para>Yüksek Verimli "
+"Görsel Kodlaması (HEIC) olarak da bilinen Yüksek Verimli Görsel Dosyası "
+"Biçimi (HEIF), bireysel kullanıcılar için bir dosya biçimidir. Hareketli "
+"Resim Uzmanları Grubu (MPEG) tarafından geliştirilmiştir ve bir HEIF "
+"görselinde, aynı boyuttaki bir JPEG görseline göre iki kat daha fazla bilgi "
+"depolanabileceğini ve bunun sonucunda daha kaliteli bir görsel elde "
+"edilebileceğini iddia etmektedirler. HEIF aynı zamanda canlandırmaları da "
+"destekler ve çok daha küçük bir boyutta canlandırmalı bir GIF'ten daha fazla "
+"bilgi depolayabilir.</para><para>HEIC'in kodlanması isteğe bağlı libde265 "
+"kodlayıcısı bileşeniyle ilgilidir. %1</para><para>Ayrıntılar için <a "
+"href='https://en.wikipedia.org/wiki/"
+"High_Efficiency_Image_File_Format'>Yüksek Verimli Görsel Dosyası Biçimi</a> "
+"sayfasına bakın.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
-#, fuzzy, kde-format
-#| msgid "High Efficiency Image Coding (*.heic *.heif)"
+#, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
-msgstr "Yüksek Verimli Görüntü Kodlaması (*.heic *.heif)"
+msgstr "Yüksek Verimli Görsel Kodlaması (*.heic *.heif)"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
@@ -6825,9 +6740,7 @@ msgstr "Yüksek Verimli Görüntü Kodlaması (*.heic *.heif)"
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "evet"
@@ -6849,9 +6762,7 @@ msgstr "evet"
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "yes"
+#, kde-format
 msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "evet"
@@ -6861,26 +6772,22 @@ msgstr "evet"
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "no"
+#, kde-format
 msgctxt "@info: cannot write file format"
 msgid "no"
 msgstr "hayır"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, fuzzy, kde-format
-#| msgid "Flash has been fired"
+#, kde-format
 msgctxt "@title"
 msgid "ImageMagick loader"
-msgstr "Flaş kullanılmış"
+msgstr "ImageMagick Yükleyicisi"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "An image loader based on Libheif codec"
+#, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
-msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
+msgstr "ImageMagick kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
 #, kde-kuit-format
@@ -6892,13 +6799,18 @@ msgid ""
 "200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
+"<para>Bu eklenti, kullanıcıların ImageMagick kodlayıcılarını kullanarak "
+"görsel yüklemesine ve kaydetmesine olanak tanır.</para><para>ImageMagick, "
+"raster ve vektör görsel dosyalarını dönüştürmek için kullanılan ücretsiz ve "
+"açık kaynaklı bir yazılım paketidir. 200'den fazla görsel dosyası biçimini "
+"okuyabilir ve yazabilir.</para><para>Ayrıntılar için <a href='https://en."
+"wikipedia.org/wiki/ImageMagick'>ImageMagick belgelendirmesine</a> bakın.</"
+"para>"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@info: gphoto backend feature"
-#| msgid "no"
+#, kde-format
 msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "hayır"
@@ -6917,27 +6829,24 @@ msgid ""
 "(default)<br/><b>100</b>: high quality (no compression and large file size)</"
 "p><p><b>Note: JPEG always uses lossy compression.</b></p>"
 msgstr ""
-"<p>JPEG resim kalitesi:</p><p><b>1</b>: düşük kalite (yüksek sıkıştırma ve "
-"düşük dosya boyutu)<br/><b>50</b>: orta kalite<br/><b>75</b>: iyi kalite "
-"(öntanımlı)<br/><b>100</b>: yüksek kalite (sıkıştırma yok ve büyük dosya "
-"boyutu)</p><p><b>Not: JPEG, kayıpsız bir dosya biçimi değildir.</b></p>"
+"<p>JPEG kalitesi:</p><p><b>1</b>: Düşük kalite (yüksek sıkıştırma ve küçük "
+"dosya boyutu)<br/><b>50</b>: Orta kalite< br/><b>75</b>: İyi kalite "
+"(öntanımlı)<br/><b>100</b>: Yüksek kalite (sıkıştırmasız ve büyük dosya "
+"boyutu)</p><p><b> Not: JPEG her zaman kayıplı sıkıştırma kullanır.</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "<font color='red'><i>Warning: <a href='http://en.wikipedia.org/wiki/"
-#| "JPEG'>JPEG</a> is a lossy image compression format.</i></font>"
+#, kde-format
 msgid ""
 "<font color='red'><i>Warning: <a href='https://en.wikipedia.org/wiki/"
 "JPEG'>JPEG</a> is a lossy image compression format.</i></font>"
 msgstr ""
-"<font color='red'><i>Uyarı: <a href='http://en.wikipedia.org/wiki/"
-"JPEG'>JPEG</a> kayıplı resim sıkıştırma biçimidir.</i></font>"
+"<font color='red'><i>Uyarı: <a href='https://en.wikipedia.org/wiki/"
+"JPEG'>JPEG</a>, kayıplı bir görsel sıkıştırma biçimidir.</i></font>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:97
 #, kde-format
 msgid "Chroma subsampling:"
-msgstr "Renk berraklığı alt örnekleyicisi:"
+msgstr "Kroma alt örnekleme:"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:100
 #, kde-format
@@ -6973,31 +6882,29 @@ msgid ""
 "quartered in 4x1 blocks, high compression but low quality.</p><p><b>Note: "
 "JPEG always uses lossy compression.</b></p>"
 msgstr ""
-"<p>Renk parlaklığı alt örneklemesi, gözlerin renk çözünürlüğüne karşı daha "
-"az duyarlılığından yararlanarak dosya boyutunu azaltır. Farkın "
-"algılanabilirliği görüntüye bağlı, büyük fotoğraflar genellikle fark "
-"göstermezken küçültülmüş piksel grafikleri ince renk ayrıntılarını "
-"kaybedebilir.</p><p><b>4:4:4</b> - Hiçbir renk parlaklığı alt örneklemesi "
-"yok, en yüksek kalite ancak en düşük sıkıştırma.</p><p><b>4:2:2</b> - Renk "
-"parlaklığı yatay olarak yarıya indirildi, ortalama sıkıştırma, ortalama "
-"kalite.</p><p><b>4:2:0</b> - Renk parlaklığı, 2x2 boklarla dörde bölünmüş, "
-"yüksek sıkıştırma fakat düşük kalite.</p><p><b>4:1:1</b> - Renk parlaklığı "
-"4x1 bloklarla dörde bölünmüş, yüksek sıkıştırma fakat düşük kalite.</"
-"p><p><b>Not: JPEG her zaman kayıplı sıkıştırmayı kullanır.</b></p>"
+"<p>Renk alt örneklemesi, gözün renk çözünürlüğüne karşı daha az "
+"duyarlılığından yararlanarak dosya boyutunu küçültür. Farkın ne kadar "
+"algılanabilir olduğu görsele bağlıdır; büyük fotoğraflar genellikle hiçbir "
+"fark göstermezken; keskin, küçültülmüş piksel grafikler renk ayrıntısı "
+"inceliklerini kaybedebilir.</p><p><b>4:4:4</b> - Kroma alt örneklemesi yok, "
+"en yüksek kalite; ancak en düşük sıkıştırma.</p><p><b>4:2:2</p><p><b>4:2:2</ "
+"b> - Kroma yatay olarak yarıya indirilir; ortalama sıkıştırma, ortalama "
+"kalite.</p><p><b>4:2:0</b> - Kroma 2 x 2 blok halinde dörde bölünmüş, yüksek "
+"sıkıştırma; ancak düşük kalite.</p>< p><b>4:1:1</b> - Kroma 4 x 1 bloklara "
+"bölünmüştür, yüksek sıkıştırma; ancak düşük kalite.</p><p><b>Not: JPEG her "
+"zaman kayıplı sıkıştırma kullanır.</b>< /p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "JPEG loader"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG loader"
-msgstr "JPEG yükleyici"
+msgstr "JPEG Yükleyicisi"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:62
-#, fuzzy, kde-format
-#| msgid "An image loader based on Libheif codec"
+#, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
-msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
+msgstr "Libjpeg kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:67
 #, kde-kuit-format
@@ -7011,15 +6918,22 @@ msgid ""
 "para><para>See <a href='https://en.wikipedia.org/wiki/JPEG'>Joint "
 "Photographic Experts Group documentation</a> for details.</para>"
 msgstr ""
+"<para>Bu eklenti, kullanıcıların Libjpeg kodlayıcısı bileşenini kullanarak "
+"görsel yüklemesine ve kaydetmesine olanak tanır.</para><para>Ortak Fotoğraf "
+"Uzmanları Grubu (JPEG), sayısal görseller için özellikle de sayısal fotoğraf "
+"makineleriyle üretilen görseller için yaygın olarak kullanılan bir kayıplı "
+"sıkıştırma yöntemidir. Sıkıştırma derecesi, depolama boyutu ile görsel "
+"kalitesi arasında seçilebilir bir ödüne izin verecek şekilde ayarlanabilir.</"
+"para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
+"JPEG'>Ortak Fotoğraf Uzmanları Grubu belgelendirmesine</a> bakın.</para>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG image"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "JPEG 2000 Görseli"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:68
 #, kde-format
@@ -7032,9 +6946,9 @@ msgid ""
 "<p>Toggle lossless compression for JPEG 2000 images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress JPEG 2000 pictures.</p>"
 msgstr ""
-"<p>JPEG 2000 resimleri için kayıpsız sıkıştırmayı değiştirir.</p><p>Eğer bu "
-"seçenek etkinleştirilirse JPEG 2000 resimlerini sıkıştırmak için kayıpsız "
-"yöntem kullanılacaktır.</p>"
+"<p>JPEG 2000 görselleri için kayıpsız sıkıştırmayı açın/kapatın.</p><p>Bu "
+"seçenek etkinleştirilirse JPEG 2000 görsellerini sıkıştırmak için kayıpsız "
+"bir yöntem kullanılacaktır.</p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000exportsettings.cpp:77
 #, kde-format
@@ -7050,25 +6964,23 @@ msgid ""
 "large file size)</p><p><b>Note: JPEG 2000 is not a lossless image "
 "compression format when you use this setting.</b></p>"
 msgstr ""
-"<p>JPEG 2000 resim kalitesi değeri:</p><p><b>1</b>: düşük kalite (yüksek "
-"sıkıştırma ve küçük dosya boyutu)<br/><b>50</b>: orta kalite<br/><b>75</b>: "
-"iyi kalite (öntanımlı)<br/><b>100</b>: yüksek kalite (sıkıştırma yok ve "
-"büyük dosya boyutu)</p><p><b>Not: Bu ayarı kullandığınızda JPEG 2000 "
-"kayıpsız sıkıştırma biçimi değildir.</b></p>"
+"<p>JPEG 2000 görselleri için kalite değeri:</p><p><b>1</b>: Düşük kalite "
+"(yüksek sıkıştırma ve küçük dosya boyutu)<br/><b>50</b>: Orta kalite<br/"
+"><b>75</b>: İyi kalite (öntanımlı)<br/><b>100</b>: Yüksek kalite "
+"(sıkıştırmasız ve büyük dosya boyutu)</p><p><b>Not: Bu ayarı kullandığınızda "
+"JPEG 2000, kayıpsız bir görsel sıkıştırma biçimi olmaktan çıkar.</b></p>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:108
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 loader"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
-msgstr "JPEG-2000 yükleyici"
+msgstr "JPEG-2000 Yükleyicisi"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:123
-#, fuzzy, kde-format
-#| msgid "An image loader based on Libheif codec"
+#, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
-msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
+msgstr "Libjasper kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:128
 #, kde-kuit-format
@@ -7083,34 +6995,41 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/JPEG_2000'>Joint Photographic Experts "
 "Group documentation</a> for details.</para>"
 msgstr ""
+"<para>Bu eklenti, kullanıcıların Libjasper kodlayıcısı bileşenini kullanarak "
+"görsel yüklemesine ve kaydetmesine olanak tanır.</para><para>2001'de son "
+"haline getirilen JPEG (Birleşik Fotoğraf Uzmanları Grubu) 2000 standardı, "
+"dalgacık teknolojisine dayalı sanat sıkıştırma teknikleri temelli en son "
+"teknolojiyi kullanarak bir görsel kodlama şeması tanımlar. Mimarisi; görsel "
+"arşivleme, güvenlik sistemleri, sayısal fotoğrafçılık ve tıbbi görüntüleme "
+"dahil olmak üzere birçok farklı uygulama için kullanışlıdır.</"
+"para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
+"JPEG_2000'>Birleşik Fotoğraf Uzmanları Grubu belgelendirmesine</a> bakın.</"
+"para>"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:174
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "JPEG 2000 Görseli"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
-#, fuzzy, kde-format
-#| msgid "JPEG 2000 image"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
-msgstr "JPEG 2000 görüntüsü"
+msgstr "JPEG 2000 Akışı"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
-#, fuzzy, kde-format
-#| msgid "JPEG-2000 verification model"
+#, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
-msgstr "JPEG-2000 doğrulama modeli"
+msgstr "JPEG-2000 Doğrulama Modeli"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
 msgid "Lossless PGF files"
-msgstr "Kayıpsız PGF Dosyaları"
+msgstr "Kayıpsız PGF dosyaları"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:70
 #, kde-format
@@ -7118,8 +7037,8 @@ msgid ""
 "<p>Toggle lossless compression for PGF images.</p><p>If this option is "
 "enabled, a lossless method will be used to compress PGF pictures.</p>"
 msgstr ""
-"<p>PGF görüntüleri için kayıpsız sıkıştırmayı aç/kapat.</p><p>Bu seçenek "
-"etkinleştirilirse PGF resimlerini sıkıştırmak için kayıpsız bir yöntem "
+"<p>PGF görselleri için kayıpsız sıkıştırmayı açın/kapatın.</p><p>Bu seçenek "
+"etkinleştirilirse PGF görsellerini sıkıştırmak için kayıpsız bir yöntem "
 "kullanılacaktır.</p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:77
@@ -7136,25 +7055,23 @@ msgid ""
 "small file size)</p><p><b>Note: PGF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>PGF görüntülerinin kalite değeri:</p><p><b>1</b>: yüksek kalite "
-"(sıkıştırma olmadan ve büyük dosya boyutu)<br/><b>3</b>: iyi kalite "
-"(öntanımlı)<br/><b>6</b>: orta kalite<br/><b>9</b>: düşük kalite (yüksek "
-"sıkıştırma ve küçük dosya boyutu</p><p><b>Not: Bu ayarı kullandığınızda PGF "
-"kayıpsız görüntü sıkıştırma formatı değildir. </b></p>"
+"<p>PGF görselleri için kalite değeri:</p><p><b>1</b>: Yüksek kalite "
+"(sıkıştırmasız ve büyük dosya boyutu)<br/><b>3</b>: İyi kalite "
+"(öntanımlı)<br/><b>6</b>: Orta kalite<br/><b>9</b>: Düşük kalite (yüksek "
+"sıkıştırma ve küçük dosya boyutu)</p><p> <b>Not: Bu ayarı kullandığınızda "
+"PGF, kayıpsız bir görsel sıkıştırma biçimi olmaktan çıkar.</b></p>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "PNG loader"
+#, kde-format
 msgctxt "@title"
 msgid "PGF loader"
-msgstr "PNG yükleyici"
+msgstr "PGF Yükleyicisi"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:62
-#, fuzzy, kde-format
-#| msgid "An image loader based on Libheif codec"
+#, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
-msgstr "Libheif codec'e dayalı bir görüntü yükleyicisi"
+msgstr "Libpgf kodlayıcısı temelli bir görsel yükleyicisi"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
 #, kde-kuit-format
@@ -7169,13 +7086,21 @@ msgid ""
 "org/wiki/Progressive_Graphics_File'>Progressive Graphics File documentation</"
 "a> for details.</para>"
 msgstr ""
+"<para>Bu eklenti, kullanıcıların Libpgf kodlayıcısı bileşenini kullanarak "
+"görsel yüklemesine ve kaydetmesine olanak tanır.</para><para>Progresif "
+"Grafik Dosyası (PGF), aşamalı kodlamayla hızlı, ayrık dalgacık dönüşümü "
+"özelliklerine dayanan etkili bir görsel dosyası biçimidir. PGF kayıpsız ve "
+"kayıplı sıkıştırma için kullanılabilir. Doğal görseller için en uygun dosya "
+"biçimidir. PGF, JPEG-2000'in çok etkili ve hızlı bir alternatifi olarak "
+"kullanılabilir.</para><para>Ayrıntılar için <a href='https://en.wikipedia."
+"org/wiki/Progressive_Graphics_File'>Progresif Grafik Dosyası "
+"belgelendirmesine</a> bakın.</para>"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
-#, fuzzy, kde-format
-#| msgid "Progressive Graphics file (*.pgf)"
+#, kde-format
 msgctxt "@title"
 msgid "Progressive Graphics File"
-msgstr "Progressive Graphics dosyası (*.pgf)"
+msgstr "Progresif Grafik Dosyası"
 
 #: core/dplugins/dimg/png/dimgpngexportsettings.cpp:67
 #, kde-format
@@ -7191,18 +7116,17 @@ msgid ""
 "compression duration)</p><p><b>Note: PNG is always a lossless image "
 "compression format.</b></p>"
 msgstr ""
-"<p>PNG resimleri için sıkıştırma değeri:</p><p><b>1</b>: düşük sıkıştırma "
-"(büyük dosya boyutu oluşur fakat sıkıştırma süresi azalır - ön tanımlı)<br/"
-"><b>5</b>: orta sıkıştırma<br/><b>9</b>: yüksek sıkıştırma (küçük dosya "
-"boyutu sağlar fakat sıkıştırma süresi uzundur)</p><p><b>Not: PNG her zaman "
-"kayıpsız sıkıştırma biçimidir.</b></p>"
+"<p>PNG görselleri için sıkıştırma değeri:</p><p><b>1</b>: Düşük sıkıştırma "
+"(büyük dosya boyutu; ancak kısa sıkıştırma süresi - öntanımlı)<br/><b>5</b>: "
+"Orta sıkıştırma<br/><b>9</b>: Yüksek sıkıştırma (küçük dosya boyutu; ancak "
+"yüksek sıkıştırma süresi)</p><p><b>Not: PNG her zaman kayıpsız bir görsel "
+"sıkıştırma biçimidir.</b></p>"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:47
-#, fuzzy, kde-format
-#| msgid "PNG loader"
+#, kde-format
 msgctxt "@title"
 msgid "PNG loader"
-msgstr "PNG yükleyici"
+msgstr "PNG Yükleyicisi"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:62
 #, fuzzy, kde-format
