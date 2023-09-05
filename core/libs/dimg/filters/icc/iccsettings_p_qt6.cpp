@@ -55,7 +55,7 @@ QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNum
 
     for (QScreen* const screen : screens)
     {
-        auto* qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
+        auto* const qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
 
         if (qxcbScreen && (qxcbScreen->virtualDesktopNumber() == virtualDesktopNumber))
         {
@@ -104,6 +104,7 @@ int IccSettings::Private::appScreen() const
     {
         return 0;
     }
+
     return (reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen"))));
 }
 
