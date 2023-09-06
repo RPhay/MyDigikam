@@ -51,7 +51,10 @@ add_library(mediawikibackend STATIC ${libmediawiki_SRCS})
 
 target_link_libraries(mediawikibackend
                       PRIVATE
+
                       digikamcore
+
+                      KF${QT_VERSION_MAJOR}::CoreAddons
 )
 
 # --------------------------------------------------------------------------------
