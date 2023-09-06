@@ -107,6 +107,7 @@ set(COMMON_TEST_LINK Qt${QT_VERSION_MAJOR}::Core
                      KF${QT_VERSION_MAJOR}::XmlGui
                      KF${QT_VERSION_MAJOR}::I18n
                      KF${QT_VERSION_MAJOR}::ConfigCore
+                     KF${QT_VERSION_MAJOR}::CoreAddons
                      KF${QT_VERSION_MAJOR}::Service
                      KF${QT_VERSION_MAJOR}::Solid
 
