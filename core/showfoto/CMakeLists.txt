@@ -164,6 +164,7 @@ target_link_libraries(showfoto
                       KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
+                      KF${QT_VERSION_MAJOR}::CoreAddons
 
                       digikamcore
 )
