@@ -6,7 +6,7 @@
  * Date        : 2021-02-20
  * Description : Unit tests for TagsCache class
  *
- * SPDX-FileCopyrightText: 2021 by David Haslam, <dch dot code at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by David Haslam <dch dot code at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -17,6 +17,7 @@
 // C++ includes
 
 #include <set>
+#include <iostream>
 
 // Qt includes
 
@@ -25,14 +26,13 @@
 #include <QSqlDatabase>
 
 // Local includes
+
 #include "digikam_debug.h"
 #include "haariface.h"
 #include "duplicatesfinder.h"
 #include "albumselectors.h"
 #include "album.h"
 #include "findduplicatesalbumitem.h"
-
-// database related
 #include "dtestdatadir.h"
 #include "dbengineparameters.h"
 #include "albummanager.h"
@@ -45,8 +45,6 @@
 #include "thumbsdbaccess.h"
 #include "scancontroller.h"
 
-#include <iostream>
-
 using namespace Digikam;
 
 typedef QString ImagePath;
@@ -56,55 +54,55 @@ typedef QString ImagePath;
 #define PATHFROMFILEINFO(info) \
     QDir(filesPath).relativeFilePath(info.filePath())
 
-#define START_SEARCHING_DUPLICATES \
-do {\
-    AlbumManager::instance()->clearCurrentAlbums();\
-    SimilarityDbAccess().db()->clearImageSimilarity(); \
-    /* 50% because largerSmaler.png has only 58% similarity */ \
+#define START_SEARCHING_DUPLICATES                                                                          \
+do {                                                                                                        \
+    AlbumManager::instance()->clearCurrentAlbums();                                                         \
+    SimilarityDbAccess().db()->clearImageSimilarity();                                                      \
+    /* 50% because largerSmaler.png has only 58% similarity */                                              \
     DuplicatesFinder* finder = new DuplicatesFinder(searchAlbums, tags, HaarIface::AlbumTagRelation::NoMix, \
-                        50, 100,  \
-                        HaarIface::DuplicatesSearchRestrictions::None, \
-                        refImageSelMethod, referenceAlbums); \
-    bool complete = false; \
-    connect(finder, &DuplicatesFinder::signalComplete, [&complete]() { \
-        complete = true; \
-    }); \
-    finder->start(); \
-    auto startTime = QDateTime::currentMSecsSinceEpoch(); \
-    while (!complete) { \
-        QTest::qWait(100); \
-        if (ENABLE_TIMEOUT)\
-            QVERIFY(QDateTime::currentMSecsSinceEpoch() - startTime < 1000); \
-    } \
-    QTest::qWait(1000); /* Wait until AlbumManager refreshed the salbums */ \
-    \
-    AlbumList aList = AlbumManager::instance()->allSAlbums(); \
-    for (AlbumList::iterator it = aList.begin() ; it != aList.end() ; ++it) { \
-        SAlbum* salbum = dynamic_cast<SAlbum*>(*it); \
-        if (salbum) \
-            salbum->removeExtraData(this); \
-    }\
-    \
-    QTreeWidget w; \
-    for (AlbumList::const_iterator it = aList.constBegin() ; it != aList.constEnd() ; ++it) \
-    { \
-        SAlbum* const salbum = dynamic_cast<SAlbum*>(*it); \
-    \
-        if (salbum && salbum->isDuplicatesSearch() && !salbum->extraData(this)) \
-        { \
-            /* Adding item to listView by creating an item and passing listView as parent */  \
-            FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(&w, salbum); \
-            salbum->setExtraData(this, item); \
-            const auto id = salbum->title().toLongLong(); \
-            ItemInfo info(id); \
-            const auto path = QDir(filesPath).relativeFilePath(info.filePath()); \
-            const QList<ItemInfo> duplicates = item->duplicatedItems(); \
-    \
-            if (!references.contains(path)) \
-                references.insert(path, duplicates); \
-        } \
-    } \
-} while(false);
+                        50, 100,                                                                            \
+                        HaarIface::DuplicatesSearchRestrictions::None,                                      \
+                        refImageSelMethod, referenceAlbums);                                                \
+    bool complete = false;                                                                                  \
+    connect(finder, &DuplicatesFinder::signalComplete, [&complete]() {                                      \
+        complete = true;                                                                                    \
+    });                                                                                                     \
+    finder->start();                                                                                        \
+    auto startTime = QDateTime::currentMSecsSinceEpoch();                                                   \
+    while (!complete) {                                                                                     \
+        QTest::qWait(100);                                                                                  \
+        if (ENABLE_TIMEOUT)                                                                                 \
+            QVERIFY(QDateTime::currentMSecsSinceEpoch() - startTime < 1000);                                \
+    }                                                                                                       \
+    QTest::qWait(1000); /* Wait until AlbumManager refreshed the salbums */                                 \
+                                                                                                            \
+    AlbumList aList = AlbumManager::instance()->allSAlbums();                                               \
+    for (AlbumList::iterator it = aList.begin() ; it != aList.end() ; ++it) {                               \
+        SAlbum* salbum = dynamic_cast<SAlbum*>(*it);                                                        \
+        if (salbum)                                                                                         \
+            salbum->removeExtraData(this);                                                                  \
+    }                                                                                                       \
+                                                                                                            \
+    QTreeWidget w;                                                                                          \
+    for (AlbumList::const_iterator it = aList.constBegin() ; it != aList.constEnd() ; ++it)                 \
+    {                                                                                                       \
+        SAlbum* const salbum = dynamic_cast<SAlbum*>(*it);                                                  \
+                                                                                                            \
+        if (salbum && salbum->isDuplicatesSearch() && !salbum->extraData(this))                             \
+        {                                                                                                   \
+            /* Adding item to listView by creating an item and passing listView as parent */                \
+            FindDuplicatesAlbumItem* const item = new FindDuplicatesAlbumItem(&w, salbum);                  \
+            salbum->setExtraData(this, item);                                                               \
+            const auto id = salbum->title().toLongLong();                                                   \
+            ItemInfo info(id);                                                                              \
+            const auto path = QDir(filesPath).relativeFilePath(info.filePath());                            \
+            const QList<ItemInfo> duplicates = item->duplicatedItems();                                     \
+                                                                                                            \
+            if (!references.contains(path))                                                                 \
+                references.insert(path, duplicates);                                                        \
+        }                                                                                                   \
+    }                                                                                                       \
+} while (false);
 
 HaarIfaceTest::HaarIfaceTest(QObject* const parent)
     : QObject  (parent)
@@ -127,7 +125,9 @@ void HaarIfaceTest::initTestCase()
     }
 
     QVERIFY(dir.cd(QStringLiteral("Collection")));
+
     // The new collection is in the same path as the database, but in the "Collection" subfolder
+
     const auto collectionPath = dir.absolutePath();
     CollectionManager::instance()->addLocation(QUrl::fromLocalFile(collectionPath), QStringLiteral("Collection"));
 
@@ -250,6 +250,7 @@ void HaarIfaceTest::testExcludeRefSelectpotentialDuplicates()
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
+
             referenceAlbums << a;
         }
     }
@@ -302,6 +303,7 @@ void HaarIfaceTest::testPreferFolderSelectpotentialDuplicates()
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
+
             referenceAlbums << a;
         }
     }
@@ -350,6 +352,7 @@ void HaarIfaceTest::testPreferNewerCreationDate()
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
+
             referenceAlbums << a;
         }
     }
@@ -360,13 +363,19 @@ void HaarIfaceTest::testPreferNewerCreationDate()
     QCOMPARE(references.count(), 3);
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
-    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")) != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+
+    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")));
+//          QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
 
     // Both have same creation date
-    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")) != QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
+
+    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")));
+//          QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
-    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) != QStringLiteral("Collection/potentialDuplicates/4.png"));
+
+    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")));
+//          QStringLiteral("Collection/potentialDuplicates/4.png"));
 }
 
 void HaarIfaceTest::testPreferNewerModificationDate()
@@ -386,6 +395,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates and subfolders
+
             referenceAlbums << a;
         }
     }
@@ -396,6 +406,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
     QCOMPARE(references.count(), 3);
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
+
     QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")) != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
 
     {
@@ -406,6 +417,7 @@ void HaarIfaceTest::testPreferNewerModificationDate()
     }
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
+
     QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) != QStringLiteral("Collection/potentialDuplicates/4.png"));
 }
 
@@ -425,6 +437,7 @@ void HaarIfaceTest::testPreferFolderWhole()
     QCOMPARE(references.count(), 3);
 
     // Not relevant which one is used, but at least one of the is available
+
     QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")) != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
     QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) != QStringLiteral("Collection/potentialDuplicates/4.png"));
     QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")) != QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
@@ -459,6 +472,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
             // Collection/2021
             // Collection/2022
             // Collection/2023
+
             searchAlbums << a;
         }
     }
@@ -472,6 +486,7 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates
+
             referenceAlbums << a;
         }
     }
@@ -508,7 +523,8 @@ void HaarIfaceTest::testReferenceFolderNotSelected()
  * Similar test to testReferenceFolderNotSelected(), but with the difference,
  * "Collection/potentialDuplicates/subfolder" is in both, the reference and in the search albums
  */
-void HaarIfaceTest::testReferenceFolderPartlySelected() {
+void HaarIfaceTest::testReferenceFolderPartlySelected()
+{
     const auto refImageSelMethod = HaarIface::RefImageSelMethod::ExcludeFolder;
 
     AlbumList all = AlbumManager::instance()->allPAlbums();
@@ -542,6 +558,7 @@ void HaarIfaceTest::testReferenceFolderPartlySelected() {
         if (path.startsWith(QStringLiteral("/potentialDuplicates")))
         {
             // potentialDuplicates
+
             referenceAlbums << a;
         }
     }

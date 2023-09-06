@@ -6,7 +6,7 @@
  * Date        : 2021-02-20
  * Description : Unit tests for TagsCache class
  *
- * SPDX-FileCopyrightText: 2021 by David Haslam, <dch dot code at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by David Haslam <dch dot code at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -38,6 +38,7 @@ public:
     ~HaarIfaceTest() override;
 
 private Q_SLOTS:
+
     void initTestCase();
     void cleanupTestCase();
     void testOriginal();
@@ -50,8 +51,11 @@ private Q_SLOTS:
     void testReferenceFolderPartlySelected();
 
 private:
+
     void startSqlite(const QDir& dbDir);
     void stopSql();
+
+private:
 
     QString              filesPath;
 };
