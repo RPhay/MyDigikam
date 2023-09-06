@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-find_package(KF${QT_VERSION_MAJOR} ${KF5_MIN_VERSION} REQUIRED
+find_package(KF${QT_VERSION_MAJOR} ${KF${QT_VERSION_MAJOR}_MIN_VERSION} REQUIRED
                                     COMPONENTS
                                     XmlGui
                                     CoreAddons
@@ -15,7 +15,7 @@ find_package(KF${QT_VERSION_MAJOR} ${KF5_MIN_VERSION} REQUIRED
                                     I18n
 )
 
-find_package(KF${QT_VERSION_MAJOR} ${KF5_MIN_VERSION} QUIET
+find_package(KF${QT_VERSION_MAJOR} ${KF${QT_VERSION_MAJOR}_MIN_VERSION} QUIET
                                     OPTIONAL_COMPONENTS
                                     KIO                         # For Desktop integration (Widgets only).
                                     IconThemes                  # For Desktop integration.
@@ -27,7 +27,7 @@ find_package(KF${QT_VERSION_MAJOR} ${KF5_MIN_VERSION} QUIET
 
 if(ENABLE_KFILEMETADATASUPPORT)
 
-    find_package(KF${QT_VERSION_MAJOR} ${KF5_MIN_VERSION} QUIET
+    find_package(KF${QT_VERSION_MAJOR} ${KF${QT_VERSION_MAJOR}_MIN_VERSION} QUIET
                                         OPTIONAL_COMPONENTS
                                         FileMetaData            # For Plasma desktop file indexer support.
     )
@@ -56,19 +56,19 @@ find_package(KF${QT_VERSION_MAJOR} ${CALENDAR_MIN_VERSION} QUIET
                                          CalendarCore           # For Calendar tool.
 )
 
-if ("${KF5CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
+if ("${KF${QT_VERSION_MAJOR}CalendarCore_VERSION}" VERSION_GREATER 5.6.40)
 
     set(HAVE_KCALENDAR_QDATETIME TRUE)
 
 endif()
 
-if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KF5AkonadiContact_FOUND OR NOT KF5Contacts_FOUND))
+if(ENABLE_AKONADICONTACTSUPPORT AND (NOT KF${QT_VERSION_MAJOR}AkonadiContact_FOUND OR NOT KF${QT_VERSION_MAJOR}Contacts_FOUND))
 
     set(ENABLE_AKONADICONTACTSUPPORT OFF)
 
 endif()
 
-if(ENABLE_KFILEMETADATASUPPORT AND NOT KF5FileMetaData_FOUND)
+if(ENABLE_KFILEMETADATASUPPORT AND NOT KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     set(ENABLE_KFILEMETADATASUPPORT OFF)
 
@@ -76,7 +76,7 @@ endif()
 
 # Check if KIO have been compiled with KIOWidgets. digiKam only needs this one.
 
-if(KF5KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
     get_target_property(KIOWidgets_INCLUDE_DIRS KF${QT_VERSION_MAJOR}::KIOWidgets
                         INTERFACE_INCLUDE_DIRECTORIES)
