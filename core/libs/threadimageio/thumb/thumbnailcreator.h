@@ -65,14 +65,15 @@ public:
     /**
      * Create a thumbnail for the specified file.
      */
-    QImage load(const ThumbnailIdentifier& identifier)                              const;
+    QImage load(const ThumbnailIdentifier& identifier, bool onlyStorage = false)   const;
 
     /**
      * Creates a thumbnail for the specified detail of the file.
      * A suitable custom identifier (for cache key etc.) is inserted as image.text("customIdentifier").
      */
     QImage loadDetail(const ThumbnailIdentifier& identifier,
-                      const QRect& detailRect)                                      const;
+                      const QRect& detailRect,
+                      bool onlyStorage = false)                                     const;
 
     /**
      * Ensures that the thumbnail is pregenerated in the database, but does not load it from there.
@@ -179,7 +180,8 @@ private:
 
     QImage load(const ThumbnailIdentifier& id,
                 const QRect& rect,
-                bool pregenerate)                                                   const;
+                bool pregenerate,
+                bool onlyStorage = false)                                           const;
     QImage loadWithDImgScaled(const QString& path,
                               IccProfile* const profile)                            const;
     QImage loadImageDetail(const ThumbnailInfo& info,

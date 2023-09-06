@@ -54,6 +54,6 @@ BUGFIXES:
 044 ==> 474103 - Some .jpg files cannot be previewed or opened in digiKam.
 045 ==> 474159 - Metadata template, contact, URL is not written as metadata.
 046 ==> 474146 - Broken history, what does it mean.
-047 ==> 
+047 ==> 474205 - digiKam crashes while it scans video albums.
 048 ==> 
 049 ==> 

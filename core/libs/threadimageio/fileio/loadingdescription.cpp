@@ -46,6 +46,11 @@ bool LoadingDescription::PreviewParameters::onlyPregenerate() const
     return (flags & OnlyPregenerate);
 }
 
+bool LoadingDescription::PreviewParameters::onlyFromStorage() const
+{
+    return (flags & OnlyFromStorage);
+}
+
 bool LoadingDescription::PostProcessingParameters::operator==(const PostProcessingParameters& other) const
 {
     return (colorManagement == other.colorManagement);

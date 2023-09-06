@@ -231,7 +231,8 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
                                int size,
                                QPixmap* retPixmap,
                                bool emitSignal,
-                               const QRect& detailRect)
+                               const QRect& detailRect,
+                               bool onlyStorage)
 {
     const QPixmap* pix = nullptr;
     LoadingDescription description;
@@ -243,6 +244,11 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
     else
     {
         description = d->createLoadingDescription(identifier, size, detailRect);
+    }
+
+    if (onlyStorage)
+    {
+        description.previewParameters.flags |= LoadingDescription::PreviewParameters::OnlyFromStorage;
     }
 
     QString cacheKey = description.cacheKey();
@@ -287,9 +293,10 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
 
 // --- Normal thumbnails ---
 
-bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, QPixmap& retPixmap, int size)
+bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
+                               QPixmap& retPixmap, int size, bool onlyStorage)
 {
-    return find(identifier, size, &retPixmap, false, QRect());
+    return find(identifier, size, &retPixmap, false, QRect(), onlyStorage);
 }
 
 bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, QPixmap& retPixmap)
@@ -330,9 +337,10 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, const QRec
     return find(identifier, rect, pixmap, d->size);
 }
 
-bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, const QRect& rect, QPixmap& pixmap, int size)
+bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier,
+                               const QRect& rect, QPixmap& pixmap, int size, bool onlyStorage)
 {
-    return find(identifier, size, &pixmap, false, rect);
+    return find(identifier, size, &pixmap, false, rect, onlyStorage);
 }
 
 void ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, const QRect& rect)

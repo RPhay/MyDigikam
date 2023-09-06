@@ -123,6 +123,8 @@ protected:
 
 protected Q_SLOTS:
 
+    void slotThumbnailLoadedFromStorage(const LoadingDescription& loadingDescription,
+                                        const QPixmap& thumb);
     void slotThumbnailLoaded(const LoadingDescription& loadingDescription,
                              const QPixmap& thumb);
 
