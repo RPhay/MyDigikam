@@ -72,7 +72,7 @@ if(Marble_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
+if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -81,7 +81,7 @@ if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -207,7 +207,7 @@ if(ENABLE_MEDIAPLAYER)
 
 endif()
 
-if(${QT_VERSION_MAJOR}IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -225,7 +225,7 @@ if(${QT_VERSION_MAJOR}IconThemes_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -235,7 +235,7 @@ if(${QT_VERSION_MAJOR}KIO_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}Notifications_FOUND)
+if(KF${QT_VERSION_MAJOR}Notifications_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -244,7 +244,7 @@ if(${QT_VERSION_MAJOR}Notifications_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}NotifyConfig_FOUND)
+if(KF${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -253,7 +253,7 @@ if(${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}Sonnet_FOUND)
+if(KF${QT_VERSION_MAJOR}Sonnet_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -360,7 +360,7 @@ if(OpenCV_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
+if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -369,7 +369,7 @@ if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}AkonadiContact_FOUND)
+if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE

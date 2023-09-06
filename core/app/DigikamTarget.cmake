@@ -85,7 +85,7 @@ if(ENABLE_DBUS)
 
 endif()
 
-if(${QT_VERSION_MAJOR}IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikam
                           PUBLIC
@@ -103,7 +103,7 @@ if(${QT_VERSION_MAJOR}IconThemes_FOUND)
 
 endif()
 
-if(${QT_VERSION_MAJOR}KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
     target_link_libraries(digikam
                           PUBLIC
