@@ -85,16 +85,25 @@ if(ENABLE_DBUS)
 
 endif()
 
-if(KF5IconThemes_FOUND)
+if(${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikam
                           PUBLIC
                           KF${QT_VERSION_MAJOR}::IconThemes
     )
 
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikam
+                              PUBLIC
+                              KF${QT_VERSION_MAJOR}::IconWidgets
+        )
+
+    endif()
+
 endif()
 
-if(KF5KIO_FOUND)
+if(${QT_VERSION_MAJOR}KIO_FOUND)
 
     target_link_libraries(digikam
                           PUBLIC

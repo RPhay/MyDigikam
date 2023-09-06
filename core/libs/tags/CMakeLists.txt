@@ -46,6 +46,13 @@ include_directories(
 
 if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
     include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
+
+    if (Qt6_FOUND)
+
+        include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+
+    endif()
+
 endif()
 
 # Used by digikamgui

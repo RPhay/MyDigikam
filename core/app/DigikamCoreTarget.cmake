@@ -72,7 +72,7 @@ if(Marble_FOUND)
 
 endif()
 
-if(KF5FileMetaData_FOUND)
+if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -81,7 +81,7 @@ if(KF5FileMetaData_FOUND)
 
 endif()
 
-if(KF5AkonadiContact_FOUND)
+if(${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -165,10 +165,12 @@ target_link_libraries(digikamcore
 )
 
 if(Qt6_FOUND)
+
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::StateMachine
     )
+
 endif()
 
 if(ENABLE_QWEBENGINE)
@@ -205,16 +207,25 @@ if(ENABLE_MEDIAPLAYER)
 
 endif()
 
-if(KF5IconThemes_FOUND)
+if(${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
                           KF${QT_VERSION_MAJOR}::IconThemes
     )
 
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              KF${QT_VERSION_MAJOR}::IconWidgets
+        )
+
+    endif()
+
 endif()
 
-if(KF5KIO_FOUND)
+if(${QT_VERSION_MAJOR}KIO_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -224,7 +235,7 @@ if(KF5KIO_FOUND)
 
 endif()
 
-if(KF5Notifications_FOUND)
+if(${QT_VERSION_MAJOR}Notifications_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -233,7 +244,7 @@ if(KF5Notifications_FOUND)
 
 endif()
 
-if(KF5NotifyConfig_FOUND)
+if(${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -242,7 +253,7 @@ if(KF5NotifyConfig_FOUND)
 
 endif()
 
-if(KF5Sonnet_FOUND)
+if(${QT_VERSION_MAJOR}Sonnet_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -349,7 +360,7 @@ if(OpenCV_FOUND)
 
 endif()
 
-if(KF5FileMetaData_FOUND)
+if(${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -358,7 +369,7 @@ if(KF5FileMetaData_FOUND)
 
 endif()
 
-if(KF5AkonadiContact_FOUND)
+if(${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE

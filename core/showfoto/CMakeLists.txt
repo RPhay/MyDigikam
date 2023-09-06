@@ -136,6 +136,16 @@ if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
                                $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>
     )
 
+    if (Qt6_FOUND)
+
+        target_include_directories(showfoto
+                                   PRIVATE
+                                   AFTER
+                                   $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+        )
+
+    endif()
+
 endif()
 
 add_dependencies(showfoto digikam-gitversion)
@@ -182,6 +192,15 @@ if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
                           PUBLIC
                           KF${QT_VERSION_MAJOR}::IconThemes
     )
+
+    if (Qt6_FOUND)
+
+        target_link_libraries(showfoto
+                              PUBLIC
+                              KF${QT_VERSION_MAJOR}::IconWidgets
+        )
+
+    endif()
 
 endif()
 
