@@ -59,7 +59,6 @@ cmake $ORIG_WD \
       -Wno-dev
 
 # NOTE: The order to compile each component here is very important.
-if [ ] ; then
 
 # core KF5 frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
@@ -89,7 +88,7 @@ cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam
-fi
+
 # libksane support
 cmake --build . --config RelWithDebInfo --target ext_ksanecore           -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
