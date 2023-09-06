@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
 "PO-Revision-Date: 2023-05-29 19:29-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -40736,12 +40736,12 @@ msgstr "名前:"
 msgid "Usages:"
 msgstr "タグ:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "サイズが指定されていないか不正です"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "サムネイルが空です"

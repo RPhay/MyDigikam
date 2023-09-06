@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
 "PO-Revision-Date: 2023-06-28 09:31+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -40968,12 +40968,12 @@ msgstr "Noms :"
 msgid "Usages:"
 msgstr "Utilisations :"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Taille non valable ou non spécifiée"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "La vignette n'est pas définie"

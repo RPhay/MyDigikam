@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -39533,12 +39533,12 @@ msgstr "Nosaukumi:"
 msgid "Usages:"
 msgstr "Lietojumi:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Nav norādīts vai nepareizs izmērs"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Sīktēla nav"

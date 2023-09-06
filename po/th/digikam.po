@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -40245,12 +40245,12 @@ msgstr "ชื่อ:"
 msgid "Usages:"
 msgstr "การใช้:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "ไม่มีหรือระบุขนาดไม่ถูกต้อง"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "ภาพตัวอย่างว่าง"

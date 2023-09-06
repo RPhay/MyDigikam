@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-01 00:43+0000\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -38494,12 +38494,12 @@ msgstr ""
 msgid "Usages:"
 msgstr "imatges"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr ""
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr ""
