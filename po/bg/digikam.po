@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-06 00:43+0000\n"
-"PO-Revision-Date: 2023-08-29 15:01+0200\n"
+"PO-Revision-Date: 2023-09-06 09:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -29297,17 +29297,7 @@ msgstr ""
 "<i><b>паролата</i></b> с правилната).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu, "
-#| "enter:<br>SET GLOBAL log_bin_trust_function_creators=1;<br>in the mysql "
-#| "prompt. To be able to create MySQL triggers.</p><p>NOTE: If you have an "
-#| "enormous collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29326,9 +29316,9 @@ msgstr ""
 "предоставяне (виж отзад)</p><p>...</p><p>quit</p><p>ЗАБЕЛЕЖКА: Ако имате "
 "проблеми с MySQL сървъра в Ubuntu, въведете:<br>SET GLOBAL "
 "log_bin_trust_function_creators=1;<br>в промпта  на mysql.  Да можете да "
-"създавате тригери на MySQL.</p><p>ЗАБЕЛЕЖКА: Ако имате огромна колекция, "
-"трябва да стартирате MySQL сървъра с mysql --max_allowed_packet=128M ИЛИ в "
-"my.ini или ~/.my.cnf променете настройките</p>"
+"създавате тригери на MySQL.</p><p>ЗАБЕЛЕЖКА: Ако имате много голяма "
+"колекция, трябва да стартирате MySQL сървъра с mysql --"
+"max_allowed_packet=128M ИЛИ в my.ini или ~/.my.cnf променете настройките</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -51524,17 +51514,15 @@ msgstr ""
 "използват"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||0|| optional to always "
 "pad with ||n|| zero digits"
 msgstr ""
-"Добавяне на номер на суфикс, ||n|| Посочва броя на цифрите, които трябва да "
-"се използват, ||c|| Посочва разделителния символ преди числата"
+"Добавяне на суфикс, ||n|| Посочва броя на цифрите, които трябва да се "
+"използват, ||c|| Посочва разделителния символ преди числата, ||0||по избор "
+"добавяне на ||n|| 0 пред числото за подравняване"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
