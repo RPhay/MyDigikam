@@ -387,18 +387,18 @@ void HaarIfaceTest::testPreferNewerCreationDate()
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png"))
-            != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+    QVERIFY(references.contains(QLatin1String("Collection/2020/LargerSmaller.png")) !=
+            references.contains(QLatin1String("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png")));
 
     // Both have same creation date
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png"))
-            != QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/subfolder/2.png")));
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png"))
-            != QStringLiteral("Collection/potentialDuplicates/4.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/4.png")));
 }
 
 void HaarIfaceTest::testPreferNewerModificationDate()
@@ -429,8 +429,8 @@ void HaarIfaceTest::testPreferNewerModificationDate()
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png"))
-            != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png")));
 
     {
         QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png"))); // This one is Newer
@@ -442,8 +442,8 @@ void HaarIfaceTest::testPreferNewerModificationDate()
 
     // Undefined which one is used, because both have the same time, but at least one of the is available
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png"))
-            != QStringLiteral("Collection/potentialDuplicates/4.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/4.png")));
 }
 
 void HaarIfaceTest::testPreferFolderWhole()
@@ -463,14 +463,14 @@ void HaarIfaceTest::testPreferFolderWhole()
 
     // Not relevant which one is used, but at least one of the is available
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2020/LargerSmaller.png"))
-            != QStringLiteral("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png"));
+    QVERIFY(references.contains(QLatin1String("Collection/2020/LargerSmaller.png")) !=
+            references.contains(QLatin1String("Collection/potentialDuplicates/subfolder/subsubfolder/LargerSmaller.png")));
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png"))
-            != QStringLiteral("Collection/potentialDuplicates/4.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2023/4.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/4.png")));
 
-    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png"))
-            != QStringLiteral("Collection/potentialDuplicates/subfolder/2.png"));
+    QVERIFY(references.contains(QStringLiteral("Collection/2021/2.png")) !=
+            references.contains(QStringLiteral("Collection/potentialDuplicates/subfolder/2.png")));
 }
 
 /*!

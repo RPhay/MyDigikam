@@ -140,11 +140,6 @@ target_link_libraries(tagscache_utest
 
 #------------------------------------------------------------------------
 
-# This unit test do not compile yet with Qt6
-# With Qt5 it compile but some tests are gargage and must be fixed.
-
-if(NOT Qt6_FOUND)
-
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/haariface_utest.cpp
 
               NAME_PREFIX
@@ -161,5 +156,3 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/haariface_utest.cpp
 
               GUI
 )
-
-endif()
