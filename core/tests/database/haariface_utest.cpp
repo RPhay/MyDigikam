@@ -91,7 +91,7 @@ do                                                                              
     AlbumList aList = AlbumManager::instance()->allSAlbums();                                               \
                                                                                                             \
     for (AlbumList::iterator it = aList.begin() ; it != aList.end() ; ++it)                                 \
-    {                                                                                                       \                               \
+    {                                                                                                       \
         SAlbum* salbum = dynamic_cast<SAlbum*>(*it);                                                        \
                                                                                                             \
         if (salbum)                                                                                         \
