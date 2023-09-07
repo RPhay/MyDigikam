@@ -2,9 +2,9 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-08-08
+ * Date        : 2023-09-02
  * Description : Derived class to perform YOLO neural network inference
- *               for face detection (here yolo version 5).
+ *               for object detection (here yolo version 5).
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *
@@ -45,9 +45,9 @@ DNNYoloDetector::~DNNYoloDetector()
 {
 }
 
-QVector<QString>  DNNYoloDetector::loadCOCOClass()
+QList<QString>  DNNYoloDetector::loadCOCOClass()
 {
-    QVector<QString>  classList;
+    QList<QString>  classList;
 
     // NOTE storing all model definition at the same application path as face engine
     QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
@@ -61,13 +61,13 @@ QVector<QString>  DNNYoloDetector::loadCOCOClass()
 
     while (getline(ifs, line))
     {
-        classList.push_back(QString::fromStdString(line));
+        classList.append(QString::fromStdString(line));
     }
 
     return classList;
 }
 
-QVector<QString> DNNYoloDetector::getPredefinedClasses() const
+QList<QString> DNNYoloDetector::getPredefinedClasses() const
 {
     return predefinedClasses;
 }

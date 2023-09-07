@@ -244,7 +244,7 @@ QWidget* MainWindow::setupControlPanel()
     QWidget* objectsSelectView = new QWidget();
     QVBoxLayout* const vLayout = new QVBoxLayout(this);
 
-    QVector<QString> predClass = m_yoloDetector->getPredefinedClasses();
+    QList<QString> predClass = m_yoloDetector->getPredefinedClasses();
 
     for (int i = 0; i < predClass.size(); i++)
     {

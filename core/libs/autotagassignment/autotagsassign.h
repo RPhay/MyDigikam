@@ -2,11 +2,10 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-07-22
- * Description : Class to perform faces detection using OpenCV DNN module
+ * Date        : 2023-09-02
+ * Description : Class for autotagging engine
  *
- * SPDX-FileCopyrightText: 20 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
- *
+ * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -49,7 +48,6 @@ public:
     cv::Mat prepareForDetection(const QString& inputImagePath) const;
     std::vector<cv::Mat> prepareForDetection(const QList<QString>& inputImagePaths, int batchSize) const;
 
-
     QList<QString> generateTagsList(const QImage& inputImage);
     QList<QString> generateTagsList(const DImg& inputImage);
     QList<QString> generateTagsList(const QString& inputImagePath);
@@ -59,6 +57,8 @@ public:
      * NOTE: the batch size is fixed depending on the deep NN model we choose  
     */
     QList<QList<QString>> generateTagsList(const QList<QString>& inputImagePaths, int batchSize) const;
+
+    QList<QString> getPredefinedTagsPath() const;
 
 private:
 

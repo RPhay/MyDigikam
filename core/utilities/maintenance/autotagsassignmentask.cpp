@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2013-08-19
- * Description : Thread actions task for image quality sorter.
+ * Date        : 2023-09-02
+ * Description : Thread actions task for autotags assignment.
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *

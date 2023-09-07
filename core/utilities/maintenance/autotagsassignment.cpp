@@ -1,15 +1,12 @@
-
 /* ============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2013-08-19
- * Description : image quality sorter maintenance tool
+ * Date        : 2023-09-02
+ * Description : Autotags Assignment maintenance tool
  *
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
- * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2023 by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -35,6 +32,7 @@
 #include "coredbaccess.h"
 #include "tagscache.h"
 #include "maintenancethread.h"
+#include "autotagsassign.h"
 
 namespace Digikam
 {
@@ -105,8 +103,17 @@ void AutotagsAssignment::slotStart()
         d->albumList = AlbumManager::instance()->allPAlbums();
     }
 
-    // Get all item in DB which do not have any Pick Label assigned.
+    // Get all item in DB which do not have any auto Tag assigned.
+    // any path containing root Path "auto" as "auto/car", "auto/bus", ...
+    
+    QList<QString> predTagPaths = autoTagsAssign().getPredefinedTagsPath();
+    QStringList assignedItems;
 
+    for (auto path: predTagPaths)
+    {
+        assignedItems  += CoreDbAccess().db()->getItemsURLsWithTag(TagsCache::instance()->tagForPath(path));
+    }
+    
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
 
     for (AlbumList::ConstIterator it = d->albumList.constBegin() ;
@@ -131,8 +138,11 @@ void AutotagsAssignment::slotStart()
         if (d->mode == NonAssignedItems)
         {
             Q_FOREACH (const QString& path, aPaths)
-            {  
-                d->allPicturesPath += path;
+            {
+                if (!assignedItems.contains(path))
+                {
+                    d->allPicturesPath += path;
+                }
             }
         }
         else  // AllItems

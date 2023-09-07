@@ -2,9 +2,9 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-08-08
+ * Date        : 2023-09-02
  * Description : Derived class to perform YOLO neural network inference
- *               for face detection (including yolo versions to benchmark).
+ *               for object detection (including yolo versions to benchmark).
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -35,9 +35,9 @@ public:
 
 public:
 
-    QVector<QString>  getPredefinedClasses()                                           const;
+    QList<QString>    getPredefinedClasses()                                           const         override;
     bool              loadModels();
-    QVector<QString>  loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
+    QList<QString>    loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
 
 public:
 
@@ -65,7 +65,7 @@ private:
 
 private:
 
-    QVector<QString> predefinedClasses;
+    QList<QString>   predefinedClasses;
     YoloVersions     yoloVersion;
 };
 

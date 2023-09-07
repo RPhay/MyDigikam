@@ -2,12 +2,10 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-07-22
- * Description : Class to perform faces detection using OpenCV DNN module
+ * Date        : 2023-09-02
+ * Description : Class for autotagging engine
  *
- * SPDX-FileCopyrightText: 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- *
+ * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -262,6 +260,20 @@ QList<QList<QString>> autoTagsAssign::generateTagsList(const QList<QString>& inp
     }
 
     return result;
+}
+
+QList<QString> autoTagsAssign::getPredefinedTagsPath() const
+{
+    QList<QString> tagsPaths;
+    QList<QString> objects = m_inferenceEngine->getPredefinedClasses();
+
+    QString rootTags = QLatin1String("auto/");
+    for (auto obj : objects)
+    {
+        tagsPaths.append(rootTags + obj);
+    }
+
+    return tagsPaths;
 }
 
 } // namespace Digikam

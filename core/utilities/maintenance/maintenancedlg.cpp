@@ -49,6 +49,7 @@
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"
 #include "drangebox.h"
+#include "autotagsassignment.h"
 
 namespace Digikam
 {
@@ -121,6 +122,7 @@ public:
     static const QString configFaceManagement;
     static const QString configFaceScannedHandling;
     static const QString configAutotagsAssignment;
+    static const QString configAutotaggingScanMode;
     static const QString configImageQualitySorter;
     static const QString configQualityScanMode;
     static const QString configQualitySettingsSelected;
@@ -145,6 +147,7 @@ public:
     QCheckBox*                retrainAllFaces;
     QCheckBox*                shrinkDatabases;
     QComboBox*                qualityScanMode;
+    QComboBox*                autotaggingScanMode;
     QPushButton*              metadataSetup;
     ImageQualityConfSelector* qualitySelector;
     QComboBox*                syncDirection;
@@ -154,6 +157,7 @@ public:
     DVBox*                    vbox2;
     DVBox*                    vbox3;
     DVBox*                    vbox4;
+    DVBox*                    vbox5;
     DVBox*                    duplicatesBox;
     DIntRangeBox*             similarityRange;
     QComboBox*                faceScannedHandling;
@@ -177,6 +181,7 @@ const QString MaintenanceDlg::Private::configDuplicatesRestriction(QLatin1String
 const QString MaintenanceDlg::Private::configFaceManagement(QLatin1String("FaceManagement"));
 const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("FaceScannedHandling"));
 const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
+const QString MaintenanceDlg::Private::configAutotaggingScanMode(QLatin1String("AutotaggingScanMode"));
 const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
 const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
 const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));
@@ -335,8 +340,17 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    d->expanderBox->insertItem(Private::AutotagsAssignment, new QLabel(i18n("<qt>No option<br/>"
-                               "<i>Note: Automatical tags assignments using Deep neural network.</i></qt>")),
+    d->vbox5 = new DVBox;
+    DHBox* const hbox12 = new DHBox(d->vbox5);
+    new QLabel (i18n("Auto-tagging mode: "), hbox12);
+    QWidget* const space8 = new QWidget(hbox12);
+    hbox12->setStretchFactor(space8, 10);
+
+    d->autotaggingScanMode    = new QComboBox(hbox12);
+    d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
+    d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
+    
+    d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"), QLatin1String("AutotagsAssignment"), false);
     d->expanderBox->setCheckBoxVisible(Private::AutotagsAssignment, true);
 
@@ -471,7 +485,10 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
                                                                               : FaceScanSettings::DetectAndRecognize;
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
+    
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
+    prm.autotaggingScanMode                 = d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
+
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
     prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
@@ -533,6 +550,7 @@ void MaintenanceDlg::readSettings()
         d->faceScannedHandling->setCurrentIndex(group.readEntry(d->configFaceScannedHandling,                   (int)prm.faceSettings.alreadyScannedHandling));
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, group.readEntry(d->configAutotagsAssignment,    prm.autotagsAssignment));
+        d->autotaggingScanMode->setCurrentIndex(group.readEntry(d->configAutotaggingScanMode,                   prm.autotaggingScanMode));
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
@@ -589,6 +607,7 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configFaceManagement,             prm.faceManagement);
         group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configAutotagsAssignment,         prm.autotagsAssignment);
+        group.writeEntry(d->configAutotaggingScanMode,        prm.autotaggingScanMode);
         group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
         group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
@@ -635,6 +654,11 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
         {
             d->vbox->setEnabled(b);
             break;
+        }
+
+        case Private::AutotagsAssignment:
+        {
+            d->vbox5->setEnabled(b);
         }
 
         case Private::MetadataSync:
@@ -695,6 +719,7 @@ void MaintenanceDlg::slotUseLastSettings(bool checked)
         d->faceScannedHandling->setCurrentIndex(prm.faceSettings.alreadyScannedHandling);
 
         d->expanderBox->setChecked(Private::AutotagsAssignment, prm.autotagsAssignment);
+        d->autotaggingScanMode->setCurrentIndex(prm.autotaggingScanMode);
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, prm.qualitySort);
         d->qualityScanMode->setCurrentIndex(prm.qualityScanMode);

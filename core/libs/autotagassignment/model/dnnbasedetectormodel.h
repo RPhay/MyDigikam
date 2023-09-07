@@ -2,9 +2,9 @@
  *
  * This file is a part of digiKam
  *
- * Date        : 2019-08-08
+ * Date        : 2023-09-02
  * Description : Base class to perform low-level neural network inference
- *               for object detection
+ *               for object detection and object classification
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
  *
@@ -54,6 +54,11 @@ public:
      * detectObjects in batch images (fixed batch size)
     */
     virtual QList<QMap<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
+
+    /**
+     * get predefined objects according to selected model
+    */
+    virtual QList<QString> getPredefinedClasses() const = 0;
 
     /**
      * generateObjects in one image return just the predicted objects without locations of objects
