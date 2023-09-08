@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-06 00:43+0000\n"
-"PO-Revision-Date: 2023-08-27 18:07+0200\n"
+"PO-Revision-Date: 2023-09-03 22:10+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20117,8 +20117,8 @@ msgstr ""
 "<qt><p><h1><b>Benvenuto al Creatore di stampa</b></h1></p><p>Questa "
 "procedura guidata ti aiuterà ad assemblare le immagini da stampare "
 "rispettando modelli specifici quali Photo Album, Photo Collage o Framed "
-"Photo.</p><p>Può essere usata anche una disposizione di pagina adattativa "
-"della raccolta delle fotografie, basata sull'algoritmo Atkins.</p></qt>"
+"Photo.</p><p>Può essere usata anche un'impaginazione flessibile della "
+"raccolta delle fotografie, basata sull'algoritmo Atkins.</p></qt>"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
 #, kde-format
@@ -29317,17 +29317,7 @@ msgstr ""
 "quella corretta).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have problems with a MySQL server on Ubuntu, "
-#| "enter:<br>SET GLOBAL log_bin_trust_function_creators=1;<br>in the mysql "
-#| "prompt. To be able to create MySQL triggers.</p><p>NOTE: If you have an "
-#| "enormous collection, you should start MySQL server with mysql --"
-#| "max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29344,12 +29334,12 @@ msgstr ""
 "mysqld</p><p># mysql -u root</p><p>...</p><p>Digitate il codice SQL al "
 "prompt di Mysql in modo da inizializzare le banche dati di digiKam con "
 "privilegi di amministrazione (vedi indietro)</p><p>...</p><p>quit</"
-"p><p>NOTA: se hai problemi con un server MySQL in Ubuntu, digita:<br>SET "
-"GLOBAL log_bin_trust_function_creators=1;<br>nella finestra di prompt mysql, "
-"per poter creare attivatori MySQL.</p><p>NOTA: se possiedi una raccolta "
-"molto grande, devi avviare il server MySQL con mysql --"
-"max_allowed_packet=128M OPPURE cambiare le impostazioni in my.ini o ~/.my."
-"cnf</p>"
+"p><p>NOTA: se hai problemi con un server MySQL in Ubuntu, un sistema basato "
+"su Linux, usa il comando aggiuntivo nella finestra di prompt MySQL per "
+"creare attivatori MySQL.<br>SET GLOBAL log_bin_trust_function_creators=1;</"
+"p><p>NOTA: se possiedi una raccolta molto grande, devi avviare il server "
+"MySQL con mysql --max_allowed_packet=128M OPPURE cambiare le impostazioni in "
+"my.ini o ~/.my.cnf</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
@@ -51569,17 +51559,15 @@ msgstr ""
 "Aggiungi un suffisso numerico, ||n|| specifica la quantità di cifre da usare"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||0|| optional to always "
 "pad with ||n|| zero digits"
 msgstr ""
-"Aggiungi un suffisso numerico, ||n|| specifica la quantità di cifre da usare "
-"prima dei numeri"
+"Aggiungi un suffisso numerico, ||n|| specifica la quantità di cifre da "
+"usare, ||c|| specifica il carattere separatore prima dei numeri, ||0|| "
+"facoltativo per riempire sempre con ||n|| zero cifre"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
