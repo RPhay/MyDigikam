@@ -1,12 +1,12 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # digiKam exported API for external DPlugins based projects.
 #
 # Note: all headers must export only Qt5 dependencies.
-# No KF5 dependencies are permitted: all external DPlugin based projects do not depend explicitly to KF5 API.
+# No KDE framework dependencies are permitted: all external DPlugin based projects do not depend explicitly to KDE framework API.
 # External DPlugins demo code can be found in this project: https://github.com/cgilles/digikamplugins-demo
 #
 

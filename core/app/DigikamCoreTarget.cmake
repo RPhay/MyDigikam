@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -73,7 +73,7 @@ if(Marble_FOUND)
 
 endif()
 
-if(KF5FileMetaData_FOUND)
+if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -82,7 +82,7 @@ if(KF5FileMetaData_FOUND)
 
 endif()
 
-if(KF5AkonadiContact_FOUND)
+if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
@@ -135,12 +135,12 @@ target_link_libraries(digikamcore
                       Qt${QT_VERSION_MAJOR}::PrintSupport
                       Qt${QT_VERSION_MAJOR}::Concurrent
 
-                      KF5::Solid
-                      KF5::WindowSystem
-                      KF5::ConfigGui
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::Solid
+                      KF${QT_VERSION_MAJOR}::WindowSystem
+                      KF${QT_VERSION_MAJOR}::ConfigGui
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::Service
 
                       # Required by CImg which use pthread internally.
 
@@ -166,10 +166,12 @@ target_link_libraries(digikamcore
 )
 
 if(Qt6_FOUND)
+
     target_link_libraries(digikamcore
                           PRIVATE
                           Qt${QT_VERSION_MAJOR}::StateMachine
     )
+
 endif()
 
 if(ENABLE_QWEBENGINE)
@@ -206,49 +208,58 @@ if(ENABLE_MEDIAPLAYER)
 
 endif()
 
-if(KF5IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::IconThemes
+                          KF${QT_VERSION_MAJOR}::IconThemes
+    )
+
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              KF${QT_VERSION_MAJOR}::IconWidgets
+        )
+
+    endif()
+
+endif()
+
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          KF${QT_VERSION_MAJOR}::KIOCore
+                          KF${QT_VERSION_MAJOR}::KIOWidgets
     )
 
 endif()
 
-if(KF5KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}Notifications_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::KIOCore
-                          KF5::KIOWidgets
+                          KF${QT_VERSION_MAJOR}::Notifications
     )
 
 endif()
 
-if(KF5Notifications_FOUND)
+if(KF${QT_VERSION_MAJOR}NotifyConfig_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::Notifications
+                          KF${QT_VERSION_MAJOR}::NotifyConfig
     )
 
 endif()
 
-if(KF5NotifyConfig_FOUND)
+if(KF${QT_VERSION_MAJOR}Sonnet_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::NotifyConfig
-    )
-
-endif()
-
-if(KF5Sonnet_FOUND)
-
-    target_link_libraries(digikamcore
-                          PRIVATE
-                          KF5::SonnetCore
-                          KF5::SonnetUi
+                          KF${QT_VERSION_MAJOR}::SonnetCore
+                          KF${QT_VERSION_MAJOR}::SonnetUi
     )
 
 endif()
@@ -350,20 +361,20 @@ if(OpenCV_FOUND)
 
 endif()
 
-if(KF5FileMetaData_FOUND)
+if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::FileMetaData
+                          KF${QT_VERSION_MAJOR}::FileMetaData
     )
 
 endif()
 
-if(KF5AkonadiContact_FOUND)
+if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          KF5::AkonadiContact
+                          KF${QT_VERSION_MAJOR}::AkonadiContact
     )
 
 endif()

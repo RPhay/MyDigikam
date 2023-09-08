@@ -12,10 +12,6 @@
 
 #include "taggingactionfactory.h"
 
-// Qt includes
-
-#include <QDebug>
-
 // KDE includes
 
 #include <klocalizedstring.h>

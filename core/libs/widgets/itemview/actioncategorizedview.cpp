@@ -73,7 +73,7 @@ void ActionCategorizedView::adjustGridSize()
 
 #endif
 
-    int maxSize = option.decorationSize.width() * 4;
+    int maxWidth = option.decorationSize.width() * 4;
     QFontMetrics fm(option.font);
     QSize grid;
 
@@ -82,12 +82,12 @@ void ActionCategorizedView::adjustGridSize()
         const QModelIndex index = model()->index(i, 0);
         const QSize size        = sizeHintForIndex(index);
 
-        if (size.width() > maxSize)
+        if (size.width() > maxWidth)
         {
-            QString text        = index.data(Qt::DisplayRole).toString();
-            QRect unwrappedRect = fm.boundingRect(QRect(0, 0, size.width(), size.height()), Qt::AlignLeft, text);
-            QRect wrappedRect   = fm.boundingRect(QRect(0, 0, maxSize, maxSize), Qt::AlignLeft | Qt::TextWordWrap, text);
-            grid                = grid.expandedTo(QSize(maxSize, size.height() + wrappedRect.height() - unwrappedRect.height()));
+            QString text      = index.data(Qt::DisplayRole).toString();
+            QRect wrappedRect = fm.boundingRect(QRect(0, 0, maxWidth, maxWidth),
+                                                Qt::AlignLeft | Qt::TextWordWrap, text);
+            grid              = grid.expandedTo(QSize(maxWidth, wrappedRect.height()));
         }
         else
         {

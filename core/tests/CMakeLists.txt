@@ -35,9 +35,9 @@ if(ENABLE_DBUS)
 
 endif()
 
-if(KF5Notifications_FOUND)
+if(KF${QT_VERSION_MAJOR}Notifications_FOUND)
 
-    set(_extra_deps ${_extra_deps} KF5::Notifications)
+    set(_extra_deps ${_extra_deps} KF${QT_VERSION_MAJOR}::Notifications)
 
 endif()
 
@@ -104,11 +104,12 @@ set(COMMON_TEST_LINK Qt${QT_VERSION_MAJOR}::Core
                      Qt${QT_VERSION_MAJOR}::Test
                      Qt${QT_VERSION_MAJOR}::Sql
 
-                     KF5::XmlGui
-                     KF5::I18n
-                     KF5::ConfigCore
-                     KF5::Service
-                     KF5::Solid
+                     KF${QT_VERSION_MAJOR}::XmlGui
+                     KF${QT_VERSION_MAJOR}::I18n
+                     KF${QT_VERSION_MAJOR}::ConfigCore
+                     KF${QT_VERSION_MAJOR}::CoreAddons
+                     KF${QT_VERSION_MAJOR}::Service
+                     KF${QT_VERSION_MAJOR}::Solid
 
                      ${OPENMP_LDFLAGS}
                      ${JPEG_LIBRARIES}
@@ -172,7 +173,7 @@ if(Marble_FOUND)
     add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
 endif()
 
-if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+if(FLEX_FOUND AND BISON_FOUND AND KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
     add_subdirectory(panorama)
 endif()
 

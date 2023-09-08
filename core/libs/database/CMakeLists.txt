@@ -16,12 +16,12 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Solid,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 
     ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src
 
@@ -169,13 +169,6 @@ if(ENABLE_DBUS)
        )
 endif()
 
-if(Marble_FOUND)
-    set(libdatabase_SRCS
-        ${libdatabase_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/item/containers/itemgps.cpp
-       )
-endif()
-
 # enable exceptions
 kde_source_files_enable_exceptions(${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraph.cpp
                                    ${CMAKE_CURRENT_SOURCE_DIR}/history/itemhistorygraphmodel.cpp
@@ -233,6 +226,13 @@ set(libdatabasemain_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/scan/scancontroller_progress.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/scan/scancontroller_stop.cpp
 )
+
+if(Marble_FOUND)
+    set(libdatabasemain_SRCS
+        ${libdatabasemain_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces/itemgps.cpp
+       )
+endif()
 
 # Used by digikamgui
 add_library(gui_digikamdatabasemain_obj OBJECT ${libdatabasemain_SRCS})

@@ -51,7 +51,12 @@ public:
         Input = 0,
         JPEG,
         PNG,
-        TIFF
+        TIFF,
+        JPEG2000,
+        JPEGXL,
+        AVIF,
+        HEIF,
+        WEBP
     };
 
 public:
@@ -93,10 +98,15 @@ void UserScript::registerSettingsWidget()
     label1->setText(i18n("Output file type:"));
 
     d->comboBox          = new DComboBox(vbox);
-    d->comboBox->insertItem(Private::Input, i18n("Same as input"));
-    d->comboBox->insertItem(Private::JPEG,  i18n("JPEG"));
-    d->comboBox->insertItem(Private::PNG,   i18n("PNG"));
-    d->comboBox->insertItem(Private::TIFF,  i18n("TIFF"));
+    d->comboBox->insertItem(Private::Input,    i18n("Same as input"));
+    d->comboBox->insertItem(Private::JPEG,     i18n("JPEG"));
+    d->comboBox->insertItem(Private::PNG,      i18n("PNG"));
+    d->comboBox->insertItem(Private::TIFF,     i18n("TIFF"));
+    d->comboBox->insertItem(Private::JPEG2000, i18n("JPEG 2000"));
+    d->comboBox->insertItem(Private::JPEGXL,   i18n("JPEG XL"));
+    d->comboBox->insertItem(Private::AVIF,     i18n("AVIF"));
+    d->comboBox->insertItem(Private::HEIF,     i18n("HEIF"));
+    d->comboBox->insertItem(Private::WEBP,     i18n("WEBP"));
     d->comboBox->setDefaultIndex(Private::Input);
 
     QLabel* const label2 = new QLabel(vbox);
@@ -179,6 +189,31 @@ QString UserScript::outputSuffix () const
         case Private::TIFF:
         {
             return QLatin1String("tif");
+        }
+
+        case Private::JPEG2000:
+        {
+            return QLatin1String("jp2");
+        }
+
+        case Private::JPEGXL:
+        {
+            return QLatin1String("jxl");
+        }
+
+        case Private::AVIF:
+        {
+            return QLatin1String("avif");
+        }
+
+        case Private::HEIF:
+        {
+            return QLatin1String("heic");
+        }
+
+        case Private::WEBP:
+        {
+            return QLatin1String("webp");
         }
 
         default:

@@ -189,7 +189,6 @@ protected:
 
     QUrl                   m_url;
     QDateTime              m_dateTime;
-    QStringList            m_databaseTags;
 
     bool                   m_dirty;
     GPSDataContainer       m_gpsData;
@@ -200,9 +199,6 @@ protected:
     QList<QList<TagData> > m_savedTagList;
     bool                   m_writeXmpTags;
     bool                   m_writeMetaLoc;
-
-    bool                   m_saveTags;
-    bool                   m_saveGPS;
 
     friend class GPSItemModel;
 

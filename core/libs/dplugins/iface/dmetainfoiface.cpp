@@ -189,7 +189,7 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
     return map;
 }
 
-void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
+void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map)
 {
     QScopedPointer<DMetadata> meta(new DMetadata(url.toLocalFile()));
     QStringList keys = map.keys();
@@ -250,6 +250,8 @@ void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Keys not yet supported in DMetaInfoIface::setItemInfo():" << keys;
     }
+
+    Q_EMIT signalItemChanged(url);
 }
 
 bool DMetaInfoIface::supportAlbums() const

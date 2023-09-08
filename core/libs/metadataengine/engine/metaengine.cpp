@@ -84,8 +84,12 @@ bool MetaEngine::initializeExiv2()
         return false;
     }
 
-    registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"), QLatin1String("apple-fi"));    // krazy:exclude=insecurenet
-    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),    QLatin1String("excire"));      // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.google.com/photos/1.0/container/item/"),
+                         QLatin1String("Item_1_"));     // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.apple.com/faceinfo/1.0/"),
+                         QLatin1String("apple-fi"));    // krazy:exclude=insecurenet
+    registerXmpNameSpace(QLatin1String("http://ns.excire.com/foto/1.0/"),
+                         QLatin1String("excire"));      // krazy:exclude=insecurenet
 
     /**
      * It cleans up memory used by Adobe XMP SDK automatically at application exit.

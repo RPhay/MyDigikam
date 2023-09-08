@@ -23,8 +23,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPointer>
-#include <QRegularExpression>
-#include <QValidator>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>

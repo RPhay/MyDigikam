@@ -7,7 +7,7 @@
  * Description : Helper functions for geolocation interface interaction
  *
  * SPDX-FileCopyrightText: 2011      by Michael G. Hansen <mike at mghansen dot de>
- * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -21,6 +21,7 @@
 #include <QMenu>
 #include <QPointer>
 #include <QAction>
+#include <QActionGroup>
 
 // KDE includes
 
@@ -53,7 +54,6 @@ public:
     QAction*                       sortActionOldestFirst;
     QAction*                       sortActionYoungestFirst;
     QAction*                       sortActionRating;
-
 };
 
 GPSItemInfoSorter::GPSItemInfoSorter(QObject* const parent)

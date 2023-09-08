@@ -35,4 +35,9 @@ DPluginRawImport::~DPluginRawImport()
 {
 }
 
+QString DPluginRawImport::getRawProgram() const
+{
+    return QString();
+}
+
 } // namespace Digikam

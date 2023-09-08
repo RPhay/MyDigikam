@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -243,13 +243,13 @@ target_link_libraries(digikamgui
                       Qt${QT_VERSION_MAJOR}::Sql
                       Qt${QT_VERSION_MAJOR}::PrintSupport
 
-                      KF5::XmlGui
-                      KF5::Solid
-                      KF5::ConfigCore
-                      KF5::ConfigGui
-                      KF5::Service
-                      KF5::WindowSystem
-                      KF5::I18n
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::Solid
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::ConfigGui
+                      KF${QT_VERSION_MAJOR}::Service
+                      KF${QT_VERSION_MAJOR}::WindowSystem
+                      KF${QT_VERSION_MAJOR}::I18n
 
                       digikamcore
                       digikamdatabase
@@ -290,20 +290,29 @@ if(ENABLE_DBUS)
 
 endif()
 
-if(KF5IconThemes_FOUND)
+if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_link_libraries(digikamgui
                           PRIVATE
-                          KF5::IconThemes
+                          KF${QT_VERSION_MAJOR}::IconThemes
     )
+
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikamgui
+                              PRIVATE
+                              KF${QT_VERSION_MAJOR}::IconWidgets
+        )
+
+    endif()
 
 endif()
 
-if(KF5KIO_FOUND)
+if(KF${QT_VERSION_MAJOR}KIO_FOUND)
 
     target_link_libraries(digikamgui
                           PRIVATE
-                          KF5::KIOWidgets
+                          KF${QT_VERSION_MAJOR}::KIOWidgets
     )
 
 endif()

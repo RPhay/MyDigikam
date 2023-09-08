@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-07-03 19:35+0200\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
+"PO-Revision-Date: 2023-09-01 05:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -301,12 +301,12 @@ msgstr "Dodeli značko spuščenim predmetom"
 #: core/app/dragdrop/itemdragdrop.cpp:614
 #, kde-format
 msgid "Change Face Tags"
-msgstr "Spremeni oznake obrazov"
+msgstr "Spremeni značke obrazov"
 
 #: core/app/dragdrop/itemdragdrop.cpp:618
 #, kde-format
 msgid "Change Face Tag"
-msgstr "Spremeni oznako obraza"
+msgstr "Spremeni značko obraza"
 
 #: core/app/dragdrop/itemdragdrop.cpp:622
 #: core/app/dragdrop/itemdragdrop.cpp:671
@@ -420,22 +420,22 @@ msgstr "Filter značk"
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
 msgid "Images Without Face tags"
-msgstr "Slike brez oznak obrazov"
+msgstr "Slike brez značk obrazov"
 
 #: core/app/filters/filtersidebarwidget.cpp:224
 #, kde-format
 msgid "Show images without a face tag."
-msgstr "Prikaži slike brez oznak obrazov."
+msgstr "Prikaži slike brez značk obrazov."
 
 #: core/app/filters/filtersidebarwidget.cpp:227
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr "Oznake obrazov, ki se ujemajo s pogojem"
+msgstr "Značke obrazov, ki se ujemajo s pogojem"
 
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid "Face Tags Filter"
-msgstr "Filter oznak obrazov"
+msgstr "Filter značk obrazov"
 
 #: core/app/filters/filtersidebarwidget.cpp:267
 #, kde-format
@@ -446,7 +446,7 @@ msgstr "Filter oznak"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Restore Tag Filters"
-msgstr "Obnovi filtre oznak"
+msgstr "Obnovi filtre značk"
 
 #: core/app/filters/tagfilterview.cpp:73
 #, kde-format
@@ -464,25 +464,25 @@ msgstr "Izključeno"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Tag Filter Mode"
-msgstr "Način filtriranja oznak"
+msgstr "Način filtriranja značk"
 
 #: core/app/filters/tagfilterview.cpp:77
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Ignore This Tag"
-msgstr "Prezri to oznako"
+msgstr "Prezri to značko"
 
 #: core/app/filters/tagfilterview.cpp:78
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Have This Tag"
-msgstr "Mora imeti to oznako"
+msgstr "Mora imeti to značko"
 
 #: core/app/filters/tagfilterview.cpp:79
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Must Not Have This Tag"
-msgstr "Ne sme imeti te oznake"
+msgstr "Ne sme imeti te značke"
 
 #: core/app/items/delegate/itemdelegate.cpp:362
 #, kde-format
@@ -569,7 +569,7 @@ msgstr "Nastavi za sličico albuma"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Set as Tag Thumbnail"
-msgstr "Nastavi kot oznako sličice"
+msgstr "Nastavi kot značko sličice"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:178
 #, kde-format
@@ -607,7 +607,7 @@ msgstr "Vsi albumi"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "All Tags"
-msgstr "Vse oznake"
+msgstr "Vse značke"
 
 #: core/app/items/utils/contextmenuhelper_albums.cpp:100
 #, kde-format
@@ -745,31 +745,31 @@ msgstr "Odpri z..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "New Tag..."
-msgstr "Nova oznaka..."
+msgstr "Nova značka..."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:35
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tag"
-msgstr "Izbriši oznako"
+msgstr "Izbriši značko"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:46
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Delete Tags"
-msgstr "Izbriši oznake"
+msgstr "Izbriši značke"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:57
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tag"
-msgstr "Označi kot oznako obraza"
+msgstr "Označi kot značko obraza"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:68
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Mark As Face Tags"
-msgstr "Označi kot oznake obrazov"
+msgstr "Označi kot značke obrazov"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:79
 #, kde-format
@@ -781,7 +781,7 @@ msgstr "Lastnosti..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr "Odznači oznako kot obraz"
+msgstr "Odznači značko kot obraz"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -790,14 +790,14 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"Odstrani lastnost obraza iz izbrane oznake in območja obraza iz vsebovanih "
+"Odstrani lastnost obraza iz izbrane značke in območja obraza iz vsebovanih "
 "slik. Če želite, lahko slike tudi odznačite."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr "Odznači oznake kot obraze"
+msgstr "Odznači značke kot obraze"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -806,20 +806,20 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Odstrani lastnost obraza iz izbranih oznak in območja obraza iz vsebovanih "
+"Odstrani lastnost obraza iz izbranih značk in območja obraza iz vsebovanih "
 "slik. Če želite, lahko slike tudi odznačite."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
 msgctxt "@action: context menu"
 msgid "A&ssign Tag"
-msgstr "Dodeli oznako"
+msgstr "Dodeli značko"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:140
 #, kde-format
 msgctxt "@action: context menu"
 msgid "R&emove Tag"
-msgstr "Odstrani oznako"
+msgstr "Odstrani značko"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
 #, kde-format
@@ -940,10 +940,10 @@ msgstr[3] "Datum albuma: %2 %3 %4 - %1 predmetov"
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
-msgstr[0] "%2 vključno z %1 pod-oznako"
-msgstr[1] "%2 vključno z %1 pod-oznakama"
-msgstr[2] "%2 vključno z %1 pod-oznakami"
-msgstr[3] "%2 vključno s %1 pod-oznak"
+msgstr[0] "%2 vključno z %1 pod-značko"
+msgstr[1] "%2 vključno z %1 pod-značkama"
+msgstr[2] "%2 vključno z %1 pod-značkami"
+msgstr[3] "%2 vključno s %1 pod-značkami"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:334
 #, kde-format
@@ -1149,7 +1149,7 @@ msgstr "Zaslonka/goriščna razdalja:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -1752,7 +1752,7 @@ msgstr "Izbriši"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
-msgstr "Dodeli oznako"
+msgstr "Dodeli značko"
 
 #: core/app/main/digikamapp_setup.cpp:305
 #, kde-format
@@ -1783,7 +1783,7 @@ msgstr "Zemljevid"
 #, kde-format
 msgctxt "@action: Switch to table view"
 msgid "Table"
-msgstr "Miza"
+msgstr "Tabela"
 
 #: core/app/main/digikamapp_setup.cpp:344
 #, kde-format
@@ -2007,7 +2007,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
-msgstr "Vključi pod-drevo oznak"
+msgstr "Vključi pod-drevo značk"
 
 #: core/app/main/digikamapp_setup.cpp:550
 #, kde-format
@@ -2016,8 +2016,8 @@ msgid ""
 "Activate this option to show all images marked by the given tag and all its "
 "sub-tags."
 msgstr ""
-"Omogočite to možnost, da pokažete vse slike označene z dano oznako in vsemi "
-"njenimi pod-oznakami."
+"Omogočite to možnost, da pokažete vse slike označene z dano značko in vsemi "
+"njenimi pod-značkami."
 
 #: core/app/main/digikamapp_setup.cpp:555
 #, kde-format
@@ -2854,7 +2854,7 @@ msgstr "Naprej"
 #: core/app/views/preview/itempreviewview.cpp:199
 #, kde-format
 msgid "Add a Face Tag"
-msgstr "Dodaj oznako obraza"
+msgstr "Dodaj značko obraza"
 
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
@@ -2869,7 +2869,7 @@ msgstr "Označi vse nepotrjene obraze kot prezrte"
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
 msgid "Show Face Tags"
-msgstr "Pokaži oznake obrazov"
+msgstr "Pokaži značke obrazov"
 
 #: core/app/views/preview/itempreviewview.cpp:219
 #, kde-format
@@ -2888,11 +2888,11 @@ msgstr "Prikaži celozaslonsko"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:93
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2983,12 +2983,12 @@ msgid "No Tags Album"
 msgstr "Album brez značk"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3712,7 +3712,7 @@ msgstr "Vrsta zvočnega kanala"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3758,7 +3758,7 @@ msgstr "Ocena"
 #, kde-format
 msgctxt "@title: tableview"
 msgid "Pick label"
-msgstr "Oznaka za izbor"
+msgstr "Poberi oznako"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:73
 #, kde-format
@@ -3794,7 +3794,7 @@ msgstr "Ocena"
 #, kde-format
 msgctxt "@info: tableview"
 msgid "Pick label"
-msgstr "Izberi oznako"
+msgstr "Poberi oznako"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:104
 #, kde-format
@@ -3907,7 +3907,7 @@ msgstr "Lastnosti datoteke"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
 #, kde-format
 msgid "Filename"
 msgstr "Ime datoteke"
@@ -3971,7 +3971,7 @@ msgstr "Koordinate"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Altitude"
 msgstr "Višina"
@@ -4223,8 +4223,8 @@ msgstr "Enota"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:262
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "Thumbnail"
 msgstr "Sličica"
@@ -5132,41 +5132,66 @@ msgstr ""
 "tem formatu na <a href='https://en.wikipedia.org/wiki/WebP'> tej strani</a>."
 "</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Vrsta izhodne datoteke:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Enako kot vhod"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, kde-format
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, kde-format
+msgid "JPEG XL"
+msgstr "JPEG-XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, kde-format
+msgid "AVIF"
+msgstr "AVIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, kde-format
+msgid "HEIF"
+msgstr "HEIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, kde-format
+msgid "WEBP"
+msgstr "WEBP"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shellov skript:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5177,7 +5202,7 @@ msgstr ""
 "$OUTPUT (z ubežnimi znaki pred posebnimi znaki). Te bi bile nadomeščenepred "
 "izvedbo skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5186,42 +5211,42 @@ msgstr ""
 "<b>Opomba:</b> na voljo so spremenljivke okolja TITLE, COMMENTS, COLORLABEL, "
 "PICKLABEL, RATING in TAGSPATH (ločeno s ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Uporabnikov skript: Ni skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Uporabnikov skript: Napaka pri odpiranju datoteke."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Uporabnikov skript: Časovna omejitev skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, kde-format
 msgid "User Script: No error."
 msgstr "Uporabnikov skript: Ni napake."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Uporabnikov skript: Skript se ni uspel zagnati."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Uporabnikov skript: Proces skripta je izpadel."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Uporabnikov skript: Ukaz ni bil najden."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Uporabnikov skript: Vrnjena koda napake %1."
@@ -5249,7 +5274,7 @@ msgid ""
 "$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
-"<para>To orodje upravitelja čakalnih vrst lahko zažene skript uporabniške "
+"<para>To orodje upravljalnika čakalnih vrst lahko zažene skript uporabniške "
 "lupine kot fazo v poteku dela.</para><para>Spremenljivke skripta:</"
 "para><para>Uporablja <b>$INPUT</b> in <b>$OUTPUT</b> za vhodna / izhodna "
 "imena datotek (s posebnimi ubežnimi znaki). Te bi se nadomestile pred "
@@ -5502,7 +5527,7 @@ msgid ""
 "180, 270 degrees)."
 msgstr ""
 "Ko se odločite, da se bo vodni žig naključno ponovil v polju, lahko tukaj "
-"določite, da bo vodni žig naključno zasukan za (0, 90, 180, 270 stopinj)."
+"določite, da bo vodni žig naključno zavrten za (0, 90, 180, 270 stopinj)."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
 #, kde-format
@@ -6048,7 +6073,7 @@ msgstr ""
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
 #, kde-format
 msgid "Pick Label:"
-msgstr "Izbor oznake:"
+msgstr "Poberi oznako:"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:103
 #, kde-format
@@ -6086,13 +6111,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr "Dodeli oznake"
+msgstr "Dodeli značke"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags metadata to images"
-msgstr "Orodje za dodeljevanje oznak iz metapodatkov v slike"
+msgstr "Orodje za dodeljevanje značk iz metapodatkov v slike"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
 #, kde-kuit-format
@@ -6136,7 +6161,7 @@ msgstr "Razvrščanje slik po kakovosti"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
-msgstr "Orodje za dodeljevanje oznak glede na kakovost slik"
+msgstr "Orodje za dodeljevanje oznake glede na kakovost slike"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
 #, kde-kuit-format
@@ -10072,6 +10097,7 @@ msgstr "Samodejna prilagoditev"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Nastavitve"
@@ -10968,7 +10994,7 @@ msgstr ""
 "<p>To orodje omogoča pridobivanje novih slik z digitalnega optičnega "
 "bralnika.</p><p>V knjižnici Sane je podprtih ogromno naprav za optično "
 "branje.</p><p>Ciljno sliko je mogoče kasneje obdelovati kot npr. obrezovati "
-"in zasukati.</p>"
+"in vrteti.</p>"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
@@ -11109,67 +11135,67 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Dva zemljevida - navpično"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Razvrščanje"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Najprej prikaži najstarejše"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Najprej prikaži najmlajše"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Korelator GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Uveljavi/razveljavi"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Obratno geokodiranje"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Poišči"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Izvozi KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Nalaganje metapodatkov -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11179,25 +11205,25 @@ msgstr[1] "Imate %1 spremenjeni sliki."
 msgstr[2] "Imate %1 spremenjene slike."
 msgstr[3] "Imate %1 spremenjenih slik."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Neshranjene spremembe"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1. Ali želite shraniti spremembe, ki ste jih napravili zanje?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Shranjevanje sprememb -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11241,44 +11267,44 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Napaka"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Ni bilo mogoče shraniti nekaterih podatkov:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "Uredi zemljepisno lego"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Latitude"
 msgstr "Širina"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Longitude"
 msgstr "Dolžina"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Speed"
 msgstr "Hitrost"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "# satellites"
 msgstr "št. satelitov"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Fix type"
 msgstr "Vrsta popravka"
@@ -11294,7 +11320,7 @@ msgid "3-d"
 msgstr "3d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -12441,7 +12467,7 @@ msgid ""
 "wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
 msgstr ""
 "<b>Opomba:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
-"V besedilnih oznakah označenih z (*), so lahko le natisljivi <b><a "
+"V besedilnih značkah označenih z (*), so lahko le natisljivi <b><a "
 "href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> znaki."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
@@ -14712,7 +14738,7 @@ msgid ""
 msgstr ""
 "To orodje omogoča spreminjanje številnih metapodatkov iz predmetov.\n"
 "\n"
-"Večina običajnih oznak Exif, Iptc in Xmp, ki se uporabljajo v fotografiji, "
+"Večina običajnih značk Exif, Iptc in Xmp, ki se uporabljajo v fotografiji, "
 "je navedenih za urejanje s standardiziranimi vrednostmi.\n"
 "\n"
 "Za foto agencije se lahko uporablja vnaprej nastavljene teme za opis vsebine "
@@ -15609,7 +15635,7 @@ msgstr "Posodobljeni časovni žig"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Status"
 msgstr "Stanje"
@@ -16486,14 +16512,14 @@ msgid "Process a preview of bracketed images stack with current settings."
 msgstr "Obdelaj predogled sklada kadriranih slik s trenutnimi nastavitvami."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "Privzeto"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
@@ -16522,7 +16548,7 @@ msgstr "Shrani izdelek"
 #, kde-format
 msgctxt "@label: textbox"
 msgid "File Name Template: "
-msgstr "Šablona imen datotek: "
+msgstr "Predloga imen datotek: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
 #, kde-format
@@ -16627,19 +16653,19 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Dobrodošli v orodju za zložene slike"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Dobrodošli v orodju za zlaganje slik"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16649,7 +16675,7 @@ msgstr ""
 "To orodje zlije kadrirane slike z različno osvetlitvijo, da ustvari psevdo "
 "HDR sliko"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16659,7 +16685,7 @@ msgstr ""
 "Uporabite ga lahko tudi za zlivanje kadriranega sklada slik, da dobite eno "
 "sliko s povečano globinsko ostrino."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16669,7 +16695,7 @@ msgstr ""
 "Ta pomočnik vam bo pomagal pri nastavitvah, kako uvoziti slike pred njihovim "
 "sestavljanjem v panoramo."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16679,20 +16705,20 @@ msgstr ""
 "Kadrirane slike je treba posneti z isto kamero v enakih pogojih in če je "
 "mogoče z uporabo stojala."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr "Za več informacij si oglejte"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "ta stran"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
@@ -16808,8 +16834,8 @@ msgid ""
 "Pre-processing operations include Raw demosaicing. Raw images will be "
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
-"Postopki predobdelave vključujejo razmozaičenje surovih slik. Surove slike "
-"bodo pretvorjene v 16-bitne slike sRGB s samodejno gamo."
+"Postopki predobdelave vključujejo odstranjevanje mozaičnosti surovih slik. "
+"Surove slike bodo pretvorjene v 16-bitne slike sRGB s samodejno gamo."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
@@ -17266,7 +17292,7 @@ msgstr ""
 "izhod lahko prilagodite z lepo temo.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
@@ -17275,7 +17301,7 @@ msgid "&Choose image selection method:"
 msgstr "Izberite način izbire slike:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
@@ -17299,7 +17325,7 @@ msgstr "Ciljna mapa:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -17478,7 +17504,7 @@ msgstr "Jalbum je dokončan, a z nekaj opozorili."
 msgid "Jalbum completed."
 msgstr "Jalbum je dokončan."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17489,7 +17515,7 @@ msgstr ""
 "pomočnik vas bo vodil, da boste hitro izvozili</p><p></p><p>vaše slike kot "
 "projekt jAlbum.</p></qt>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
@@ -17764,7 +17790,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Server Port:"
-msgstr "Vreta strežnika:"
+msgstr "Vrata strežnika:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:65
 #, kde-format
@@ -18268,7 +18294,7 @@ msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
 msgstr "Privzeto, karkoli je na voljo."
 
-#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:43
+#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:44
 #, kde-format
 msgid ""
 "Tesseract is an optical character recognition engine for various operating "
@@ -18277,19 +18303,19 @@ msgstr ""
 "Tesseract je programje za optično razpoznavanje znakov za različne "
 "operacijske sisteme."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Optični pretvornik besedila (OCR)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:132
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "Začetek OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:164
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18301,13 +18327,13 @@ msgstr ""
 "znakov. Tesseract in želeni jezikovni paketi morajo biti nameščeni na vašem "
 "sistemu."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Prepoznavanje besedila"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18319,55 +18345,55 @@ msgstr ""
 "besedilo. Lahko pregledate besede in ji po potrebi popravite. Pritisnite "
 "gumb Shrani, da shranite vaše spremembe."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Shrani"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:233
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
 msgstr "Pregled besedila"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:383
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "Obdelovanje %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "Obdelava ni uspela"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:462
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Obdelava preklicana"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:470
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Notranja napaka"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:521
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Uspeh"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Pretvornik besedila"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18376,38 +18402,38 @@ msgid ""
 msgstr ""
 "Seznam ne vsebuje nobene digitalne datoteke za obdelavo. Morate jih izbrati."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Pretvornik besedila"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "Prekini"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Prekini obdelavo OCR surovih datotek."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:676
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "Začni OCR"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:716
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "Začni OCR z uporabo trenutnih nastavitev."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18417,13 +18443,13 @@ msgstr ""
 "Program Tesseract ali jezikovni moduli\n"
 "niso nameščeni na vašem sistemu."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Obdelaj vse predmete"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:755
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -18724,19 +18750,19 @@ msgstr "Ustvarjanje slike tiff ni uspelo."
 msgid "Raw file conversion failed."
 msgstr "Pretvorba surove datoteke ni uspela."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Dobrodošli v orodje za panorame"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:106
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Dobrodošli v orodje za panorame"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18746,7 +18772,7 @@ msgstr ""
 "To orodje sešije več slik skupaj, da ustvari panoramo, ne da bi se videli "
 "stiki med slikami."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18756,37 +18782,37 @@ msgstr ""
 "Ta pomočnik vam bo pomagal pri nastavitvah, kako uvoziti slike pred njihovim "
 "šivanjem v panoramo."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Slike morajo biti posnete iz iste točke pogleda."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "Za več informacij si oglejte "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Izvajalni programi za Panoramo"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:181
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Format datoteke"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:185
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Izhod JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:190
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18796,7 +18822,7 @@ msgstr ""
 "Izbere izhod JPEG z 90% stopnjo stiskanja (stiskanje z izgubami, manjša "
 "velikost)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -18808,13 +18834,13 @@ msgstr ""
 "se bodo izgubili nekateri podatki. To je najlažji način za deljenje "
 "rezultatov, tiskanje preko spleta ali tiskanje v trgovini."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:198
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Izhod TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -18824,7 +18850,7 @@ msgstr ""
 "Izbere izhod TIFF stisnjen z uporabo algoritma LZW (stiskanje brez izgub, "
 "večja velikost)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -19321,7 +19347,7 @@ msgstr "Stran %1 shranjena kot %2"
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
 #, kde-format
 msgid "Print Creator"
-msgstr "Ustvarjalnik tiska"
+msgstr "Kreator tiska"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
 #, kde-format
@@ -19356,7 +19382,7 @@ msgstr "Prispeval"
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
-msgstr "Ustvarjalnik tiska..."
+msgstr "Kreator tiska..."
 
 #: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
 #, kde-format
@@ -19763,7 +19789,7 @@ msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
 msgstr ""
-"Fotografijo na postavitvi samodejno zasukajte glede na podatek o usmeritvi "
+"Fotografijo na postavitvi samodejno zavrti glede na podatek o usmeritvi "
 "fotoaparata"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
@@ -19824,7 +19850,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "Ustvarjalnik tiska"
+msgstr "Kreator tiska"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
@@ -19867,7 +19893,7 @@ msgstr "Ciljna mapa:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Ciljna pot izhoda"
@@ -21636,13 +21662,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Packe"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Predstavitev"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21829,8 +21855,7 @@ msgid ""
 "Show the digiKam image color label and pick label at the bottom of the "
 "screen."
 msgstr ""
-"Pokaže digiKamove lastnosti: barvna oznaka, oznaka za izbor ocene na dnu "
-"zaslona."
+"Pokaže digiKamove lastnosti: barvna oznaka, pobere oznako na dnu zaslona."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:172
 #, kde-format
@@ -21917,10 +21942,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -23046,7 +23071,7 @@ msgstr "To je seznam slik, ki jih lahko prenesete v svoj Flickr račun."
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:56
 #, kde-format
 msgid "Extra tags"
-msgstr "Dodatne značke"
+msgstr "Posebne značke"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:60
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:71
@@ -23478,7 +23503,7 @@ msgstr "Izvozi samo končne značke v hierarhiji značk"
 #: core/dplugins/generic/webservices/google/gswidget.cpp:59
 #, kde-format
 msgid "Split tags"
-msgstr "Razdeli značke"
+msgstr "Razcepi značke"
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:60
 #, kde-format
@@ -26159,7 +26184,7 @@ msgstr "Nastavitve spletnih storitev"
 msgid "Export by Web Service"
 msgstr "Izvoz na spletne storitve"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26168,12 +26193,12 @@ msgstr ""
 "Napaka pri uvozu surove slike s programom ART\n"
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "Pretvorba ART surove"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26182,7 +26207,7 @@ msgstr ""
 "Napaka pri uvozu surove slike s programom DarkTable\n"
 "Zaprite to pogovorno okno, da naložite surovo sliko z orodjem za uvoz"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable pretvorba surove"
@@ -26373,7 +26398,7 @@ msgstr ""
 "Uporabi splošne nastavitve dekodiranja surovih slik za nalaganje te slike v "
 "urejevalnik."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26383,12 +26408,12 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee pretvorba surove"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26398,43 +26423,43 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Smeti"
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Trenutno iskanje po časovnici"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Trenutno megleno iskanje slik"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Trenutno megleno iskanje s skico"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr "Trenutno iskanje po zemljevidu"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutno iskanje"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutno iskanje dvojnikov"
@@ -26995,7 +27020,7 @@ msgstr "Ne vprašaj več na tej seji"
 #: core/libs/album/manager/albummanager_talbum.cpp:694
 #, kde-format
 msgid "No such tag"
-msgstr "Ni take oznake"
+msgstr "Ni take značke"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:1113
 #, kde-format
@@ -27320,19 +27345,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Bela"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nov album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Uredi album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27342,112 +27367,112 @@ msgstr ""
 "\"%1\"\n"
 "Lastnosti albuma"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "Naslov:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Tu nastavite naslov novega albuma"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegorija:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Podrejen:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Na&pis:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sem vnesite napis albuma..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Datum albuma:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Najstarejši"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "Uporabite ta gumb, da izberete datum najstarejše slike v albumu."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "Povprečen"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "Uporabite ta gumb, da izračunate povprečen datum slik v albumu."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Najnovejši"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "Uporabite ta gumb, da izberete datum najnovejše slike v albumu."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nov album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Izbran album (privzeto)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Koren trenutne zbirke"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Album brez kategorije"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27457,13 +27482,13 @@ msgstr ""
 "Ustvari nov album v\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Povprečja ni bilo mogoče izračunati"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28368,25 +28393,25 @@ msgstr ""
 "je oblika podatkovne zbirke novejša). Uporabite novejšo različico digiKama "
 "kot ste jo uporabljali prej. "
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Ljudje"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Nepotrjeno"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -28845,7 +28870,7 @@ msgstr ""
 "so shranjeni albumi, predmeti in metapodatki iskanj."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Ime PZ sličic:"
@@ -28956,29 +28981,33 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
+"system, use the addition command in the mysql prompt to be able to create "
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>Opomba: s strežnikom Linux se lahko baza podatkov osnuje po naslednjih "
 "ukazih:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</"
-"p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
-"databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>Opomba: Če imate velikansko zbirko, morate zagnati strežnik MySQL z "
-"mysql --max_allowed_packet=128M ali v my.ini ali v ~/.my.cnf zamenjati "
-"nastavitve</p><p></p>"
+"p><p>...</p><p>Vnesite kodo SQL code za pozivom Mysql prompt za osnovanje "
+"digiKamovih podatkovnih zbirk z dodeljevanjem pravic (glejte zadaj)</p><p>..."
+"</p><p>quit</p><p>OPOMBA: Če imate probleme s strežnikom MySQL na Ubuntu, "
+"vnesite dodatne ukaze za pozivom mysql , da ustvarite MySQL prožilnike."
+"<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>OPOMBA: Če imate "
+"velikansko zbirko, morate zagnati strežnik MySQL z mysql --"
+"max_allowed_packet=128M ali zamenjati nastavitve v my.ini ali v ~/.my.cnf</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
 msgid "Requirements"
 msgstr "Zahteve"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Tehnične podrobnosti strežnika podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29017,78 +29046,78 @@ msgstr ""
 "zbirke morajo biti že ustvarjene s strani skrbnika. Za podrobnosti si "
 "oglejte zavihek <b>Zahteve</b>.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, kde-format
 msgid "Documentation"
 msgstr "Dokumentacija"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Mapa sličic Db:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Preizkus povezave do podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Preizkus povezave do podatkovne zbirke je bil uspešen."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "Preizkus povezave do podatkovne zbirke ni bil uspešen. <p>Napaka je bila: "
 "%1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Ime gostitelja strežnika je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Uporabniško ime strežnika je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Ime jedrne podatkovne zbirke je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Ime podatkovne zbirke sličic je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Ime podatkovne zbirke obrazov je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Ime podatkovne zbirke podobnosti je prazno"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "Ta pot je bila nastavljena kot ukazna vrstica (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Konfiguracija podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -29097,7 +29126,7 @@ msgstr ""
 "Nastavitev imen podatkovnih zbirk ni veljavna. Napaka je <br/><p>%1</p><br/"
 ">Preverite vaše nastavitve."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -29106,7 +29135,7 @@ msgstr ""
 "Preizkušanje povezave s podatkovno zbirko je spodletelo z napako<br/><p>%1</"
 "p><br/>Preverite vaše nastavitve."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29115,13 +29144,13 @@ msgstr ""
 "Izbrati morate mapo v kateri bo podatkovna zbirka, ki jo bo digiKam uporabil "
 "za shranjevanje podrobnosti in metapodatkov."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Naj ustvarim mapo za podatkovno zbirko?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29130,13 +29159,13 @@ msgstr ""
 "<p>Mapa, ki naj bi bila uporabljena za podatkovno zbirko, ne obstaja:</"
 "p><p><b>%1</b></p>Ali želite, da jo digiKam ustvari za vas?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Ustvarjanje mape za podatkovno zbirko je spodletelo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -29146,13 +29175,13 @@ msgstr ""
 "zbirke.\n"
 "Izberite drugo mesto.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Ni dovoljenj za pisanje v podatkovno zbirko"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -31275,7 +31304,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Intensity:"
-msgstr "Intenziteta:"
+msgstr "Intenzivnost:"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:196
 #, kde-format
@@ -33754,7 +33783,7 @@ msgstr "Opis: "
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Location: "
-msgstr "Mesto: "
+msgstr "Lokacija: "
 
 #: core/libs/dplugins/webservices/wsnewalbumdialog.cpp:108
 #, kde-format
@@ -34108,14 +34137,14 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Sprotni priročnik..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, kde-format
 msgid "About..."
@@ -34199,12 +34228,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:267
+#: core/libs/dtrash/dtrashitemmodel.cpp:269
 #, kde-format
 msgid "Relative Path"
 msgstr "Relativna pot"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:272
+#: core/libs/dtrash/dtrashitemmodel.cpp:274
 #, kde-format
 msgid "Deletion Time"
 msgstr "Čas izbrisa"
@@ -34255,7 +34284,7 @@ msgstr "Zapisovanje metapodatkov v datoteke"
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:316
 #, kde-format
 msgid "Revising Exif Orientation tags"
-msgstr "Popravljanje oznak usmerjenosti Exif"
+msgstr "Popravljanje značk usmerjenosti Exif"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:81
 #, kde-format
@@ -34427,7 +34456,7 @@ msgstr "<br/><nobr><i>Ocena</i></nobr>"
 #: core/libs/filters/filterstatusbar.cpp:144
 #, kde-format
 msgid "<br/><nobr><i>Pick Labels</i></nobr>"
-msgstr "<br/><nobr><i>Oznake za izbor</i></nobr>"
+msgstr "<br/><nobr><i>Poberi oznake</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:149
 #, kde-format
@@ -36163,7 +36192,7 @@ msgstr "Napis"
 #, kde-format
 msgctxt "@title: xmp namespace for pick-label container"
 msgid "Pick label"
-msgstr "Poberi značko"
+msgstr "Poberi oznako"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:67
 #, kde-format
@@ -36367,9 +36396,9 @@ msgid ""
 "doing.</p><p>Press <b>Configure</b> if you want to customize update options "
 "from setup dialog.</p>"
 msgstr ""
-"<p>Trenutna<b>%1</b>stabilna verzija je <i>%2</i></p><p>Nova stabilna "
+"<p>Trenutna <b>%1</b> stabilna verzija je <i>%2</i></p><p>Nova stabilna "
 "verzija <i>%3</i>  je na voljo v tem <a href='%4'>skladišču</a>.</"
-"p><p>Pritisnite <b>Prenos</b>da pridobite datoteko...</p><p>Opomba: na "
+"p><p>Pritisnite <b>Prenesi sem</b> da pridobite datoteko...</p><p>Opomba: na "
 "plošči Nastavitve/Razno lahko preklopite na preverjanje tedenskih pred-izdaj."
 "<br/>Pred-izdajne verzije so namenjene hitremu preizkusu novih zmožnosti.<br/"
 ">Uporaba pred-izdaj v produkciji ni priporočljiva, saj lahko vsebujejo "
@@ -36771,7 +36800,7 @@ msgstr "<li>datum</li>"
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr "<li>izbor oznake</li>"
+msgstr "<li>poberi oznako</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
@@ -36868,7 +36897,7 @@ msgstr "Datum:"
 #, kde-format
 msgctxt "@label"
 msgid "Pick Label:"
-msgstr "Izbor oznake:"
+msgstr "Poberi oznako:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:52
 #, kde-format
@@ -37723,7 +37752,7 @@ msgstr "Napis: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Pick label: "
-msgstr "Izbor oznake: "
+msgstr "Poberi oznako: "
 
 #: core/libs/properties/itempropertiestab.cpp:241
 #, kde-format
@@ -37987,13 +38016,13 @@ msgid ""
 "para>"
 msgstr ""
 "<title>Kakovost (interpolacija)</title><para>Tukaj izberite postopek "
-"razmozaičenja pri dekodiranju slik RAW. Algoritem za odstranjevanje "
-"mozaičnosti je postopek pri digitalni fotografiji, s katerim se interpolira "
-"celotna slika iz delnih podatkov RAW, ki jih pridobimo iz barvno filtriranih "
-"tipal v mnogih digitalnih fotoaparatih v obliki matrike barvnih točk. Drugo "
-"poimenovanje za odstranjevanje mozaičnosti je interpolacija CFA ali "
-"rekonstrukcija barv. Za odstranjevanje mozaičnosti slik RAW so na voljo "
-"naslednji postopki:</para><para><list><item><emphasis "
+"odstranjevanja mozaičnosti pri dekodiranju slik RAW. Algoritem za "
+"odstranjevanje mozaičnosti je postopek pri digitalni fotografiji, s katerim "
+"se interpolira celotna slika iz delnih podatkov RAW, ki jih pridobimo iz "
+"barvno filtriranih tipal v mnogih digitalnih fotoaparatih v obliki matrike "
+"barvnih točk. Drugo poimenovanje za odstranjevanje mozaičnosti je "
+"interpolacija CFA ali rekonstrukcija barv. Za odstranjevanje mozaičnosti "
+"slik RAW so na voljo naslednji postopki:</para><para><list><item><emphasis "
 "strong='true'>Dvolinearna</emphasis>: uporabi hitro vendar nizko kakovostno "
 "dvolinearno interpolacijo (privzeto - za počasnejše računalnike). Pri tem "
 "postopku je rdeča vrednost nerdečih točk izračunana kot povprečje sosednjih "
@@ -38014,9 +38043,9 @@ msgstr ""
 "item><item><emphasis strong='true'>AHD v2</emphasis>: Predelana "
 "interpolacija AHD, ki uporablja postopek neskladja barvnih odstopanj "
 "(Variance of Color Differences).</item><item><emphasis strong='true'>AFD</"
-"emphasis>: Interpolacija razmozaičenja s prilagodljivim filtriranjem "
-"(Adaptive Filtered Demosaicing) skozi 5-stopenski vmesni filter projekta "
-"PerfectRaw.</item><item><emphasis strong='true'>VCD</emphasis>: "
+"emphasis>: Interpolacija odstranjevanja mozaičnosti s prilagodljivim "
+"filtriranjem (Adaptive Filtered Demosaicing) skozi 5-stopenski vmesni filter "
+"projekta PerfectRaw.</item><item><emphasis strong='true'>VCD</emphasis>: "
 "Interpolacija neskladja barvnih odstopanj (Variance of Color Differences).</"
 "item><item><emphasis strong='true'>VCD in AHD</emphasis>: odstranjevanje "
 "mozaičnosti, mešanica med postopkoma VCD in AHD.</item><item><emphasis "
@@ -38082,7 +38111,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Demosaicing"
-msgstr "Razmozaičenje"
+msgstr "Odstranjevanje mozaičnosti"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:375
 #, kde-format
@@ -38915,19 +38944,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Ustvari \"%1\" v %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Ustvari \"%1\""
@@ -39011,8 +39040,8 @@ msgid_plural ""
 "remove the children.\n"
 "Do you want to continue?"
 msgstr[0] ""
-"Oznaka obraza '%2' ima še vsaj eno podrejeno oznako. Brisanje te oznake bo "
-"izbrisalo tudi vse njene podrejene oznake.\n"
+"Značka obraza '%2' ima še vsaj eno podrejeno značko. Brisanje te bo "
+"izbrisalo tudi vse njene podrejene.\n"
 "Ali želite nadaljevati?"
 msgstr[1] ""
 "Oznaki obrazov '%2' imata še vsaj eno podrejeno oznako. Njuno brisanje bo "
@@ -39034,7 +39063,7 @@ msgid ""
 msgid_plural ""
 "Face tags '%2' are assigned to at least one item. Do you want to continue?"
 msgstr[0] ""
-"Oznaka obraza '%2' je dodeljena vsaj enemu predmetu. Ali želite nadaljevati?"
+"Značka obraza '%2' je dodeljena vsaj enemu predmetu. Ali želite nadaljevati?"
 msgstr[1] ""
 "Oznaki obrazov '%2' sta dodeljeni vsaj enemu predmetu. Ali želite "
 "nadaljevati?"
@@ -39047,7 +39076,7 @@ msgstr[3] ""
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
-msgstr[0] "Odstrani oznako obraza?"
+msgstr[0] "Odstrani značko obraza?"
 msgstr[1] "Odstrani oznaki obraza?"
 msgstr[2] "Odstrani oznake obraza?"
 msgstr[3] "Odstrani oznake obraza?"
@@ -39057,7 +39086,7 @@ msgstr[3] "Odstrani oznake obraza?"
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
 "Remove the %1 tags corresponding to this face tags from the images?"
-msgstr[0] "Odstrani to %1 značko, ki se nanaša na to oznako obraza iz slik?"
+msgstr[0] "Odstrani to %1 značko, ki se nanaša na to oznako značko iz slik?"
 msgstr[1] "Odstrani ti %1 znački, ki se nanašata na to oznake obraza iz slik?"
 msgstr[2] "Odstrani te %1 značke, ki se nanašajo na to oznako obraza iz slik?"
 msgstr[3] "Odstrani teh %1 značk, ki se nanašajo na to oznako obraza iz slik?"
@@ -39144,7 +39173,7 @@ msgstr "Razširi drevo značk"
 #: core/libs/tags/manager/tagsmanager.cpp:738
 #, kde-format
 msgid "Collapse Tag Tree"
-msgstr "Strni drevo oznak"
+msgstr "Strni drevo značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
 #: core/libs/tags/manager/tagsmanager.cpp:741
@@ -39169,7 +39198,7 @@ msgstr "Naslov:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag name here"
-msgstr "Sem vnesite ime oznake"
+msgstr "Sem vnesite ime značke"
 
 #: core/libs/tags/manager/tagpropwidget.cpp:125
 #, kde-format
@@ -39202,7 +39231,7 @@ msgstr "Opomba"
 msgctxt "@label"
 msgid "This shortcut can be used to assign or unassign tag to items."
 msgstr ""
-"To bližnjico lahko uporabite, da dodelite ali odstranite oznako predmetom."
+"To bližnjico lahko uporabite, da dodelite ali odstranite značko predmetom."
 
 #: core/libs/tags/manager/tagpropwidget.cpp:166
 #, kde-format
@@ -39220,7 +39249,7 @@ msgstr "Zavrzi"
 #, kde-format
 msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
-msgstr "Predhodne oznake so bile spremenjene. Ali želite shraniti spremembe? "
+msgstr "Predhodne značke so bile spremenjene. Ali želite shraniti spremembe? "
 
 #: core/libs/tags/manager/tagsmanager.cpp:180
 #, kde-format
@@ -39280,10 +39309,10 @@ msgstr[3] "Izbrišem značke %2?"
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] "Izbriši oznako"
-msgstr[1] "Izbriši oznaki"
-msgstr[2] "Izbriši oznake"
-msgstr[3] "Izbriši oznake"
+msgstr[0] "Izbriši značko"
+msgstr[1] "Izbriši znački"
+msgstr[2] "Izbriši značke"
+msgstr[3] "Izbriši značke"
 
 #: core/libs/tags/manager/tagsmanager.cpp:504
 #, kde-format
@@ -39292,9 +39321,9 @@ msgid ""
 "> You may <b>lose tags</b> if you did not read tags before (by calling Read "
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
-"<qt>digiKam bo počistil oznake iz metapodatkov preden bo nastavil oznake iz "
-"podatkovne zbirke.<br/>Če pred tem niste prebrali oznak (s klicem Preberi "
-"oznake iz slike), lahko pride do <b>izgube oznak</b>.<br/>Ali želite "
+"<qt>digiKam bo počistil značke iz metapodatkov preden bo nastavil značke iz "
+"podatkovne zbirke.<br/>Če pred tem niste prebrali značk (s klicem Preberi "
+"značke iz slike), lahko pride do <b>izgube značk</b>.<br/>Ali želite "
 "nadaljevati?</qt>"
 
 #: core/libs/tags/manager/tagsmanager.cpp:516
@@ -39399,7 +39428,7 @@ msgstr "Razširi drevo oznak v celoti"
 #: core/libs/tags/manager/tagsmanager.cpp:767
 #, kde-format
 msgid "Collapse tag tree completely"
-msgstr "Strni drevo oznak v celoti"
+msgstr "Strni drevo značk v celoti"
 
 #: core/libs/tags/manager/tagsmanager.cpp:769
 #, kde-format
@@ -39446,7 +39475,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr "Spletna pomoč glede upravljanja oznak"
+msgstr "Spletna pomoč glede upravljanja značk"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -39481,18 +39510,18 @@ msgstr "Oboje"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
-msgstr "Nova oznaka"
+msgstr "Nova značka"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
-msgstr "Uredi oznako"
+msgstr "Uredi značko"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:141
 #, kde-format
 msgid "Enter tag name here..."
-msgstr "Sem vnesite ime oznake..."
+msgstr "Sem vnesite ime značke..."
 
 #: core/libs/tags/widgets/tageditdlg.cpp:148
 #, kde-format
@@ -39504,12 +39533,12 @@ msgid ""
 "tag hierarchy starts with '/', root tag album is used as parent.</li></ul></"
 "p>"
 msgstr ""
-"<p>Da ustvarite nove oznake, lahko uporabite naslednja pravila:</"
-"p><p><ul><li>'/' lahko uporabite, da ustvarite hierarhijo oznak<br/>Npr.: <i>"
+"<p>Da ustvarite nove značke, lahko uporabite naslednja pravila:</"
+"p><p><ul><li>'/' lahko uporabite, da ustvarite hierarhijo značk<br/>Npr.: <i>"
 "\"Država/Mesto/Pariz\"</i></li><li>',' lahko uporabite, da ustvarite več kot "
 "eno hierarhijo oznak naenkrat.<br/>Npr.: <i>\"Mesto/Pariz, Spomenik/Notre-"
-"Dame\"</i></li><li>Če se hierarhija začne z '/', bo kot nadrejena oznaka "
-"uporabljena korenska oznaka albuma.</li></ul></p>"
+"Dame\"</i></li><li>Če se hierarhija začne z '/', bo kot nadrejena značka "
+"uporabljena korenska značka albuma.</li></ul></p>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:182
 #, kde-format
@@ -39554,7 +39583,7 @@ msgstr "Napaka med ustvarjanjem oznake"
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
 msgid "An error occurred during tag creation:"
-msgstr "Med ustvarjanjem oznake je prišlo do napake:"
+msgstr "Med ustvarjanjem značke je prišlo do napake:"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:546
 #, kde-format
@@ -39564,12 +39593,12 @@ msgstr "Pot značk"
 #: core/libs/tags/widgets/tagfolderview.cpp:145
 #, kde-format
 msgid "Expand all Tags"
-msgstr "Razširi vse oznake"
+msgstr "Razširi vse značke"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:150
 #, kde-format
 msgid "Collapse all Tags"
-msgstr "Strni vse oznake"
+msgstr "Strni vse značke"
 
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
@@ -39870,9 +39899,9 @@ msgid ""
 msgstr ""
 "<p>Polje Vir bi naj bilo uporabljeno za določitev izvornega lastnika ali "
 "lastnika avtorskih pravic fotografije. Ko so ti podatki vneseni, se naj to "
-"polje ne bi nikoli spreminjalo potem ko je slika že ustvarjena. Čeprav to še "
-"ni vsiljeno, vseeno obravnavajte to polje kot \"enkrat-zapisljivo\". Vir je "
-"lahko posameznik, agencija ali član agencije. Za lažja kasnejša iskanja "
+"polje ne bi nikoli spreminjalo, potem ko je slika že ustvarjena. Čeprav to "
+"še ni vsiljeno, vseeno obravnavajte to polje kot \"enkrat-zapisljivo\". Vir "
+"je lahko posameznik, agencija ali član agencije. Za lažja kasnejša iskanja "
 "ločite poševnice, \"/\", s presledki. Uporabite obliko \"fotograf / agencija"
 "\" namesto \"fotograf/agencija\". Vir se lahko razlikuje od ustvarjalca in "
 "imen, ki so v Opombi avtorskih pravic.</p><p>V IPTC je to polje omejeno na "
@@ -40116,12 +40145,12 @@ msgstr "Imena:"
 msgid "Usages:"
 msgstr "Uporabe:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Navedene ni nobene velikosti ali pa je le ta napačna"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Sličice ni"
@@ -43600,7 +43629,7 @@ msgstr "Informacija FlashPix"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:175
 #, kde-format
 msgid "Font Name Tags"
-msgstr "Font Name Tags"
+msgstr "Značke imen pisav"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:179
 #, kde-format
@@ -43973,7 +44002,7 @@ msgstr "Možnosti filtra oznak"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Apply tags filter over metadata."
-msgstr "Uveljavi filter oznak čez metapodatke."
+msgstr "Uveljavi filter značk čez metapodatke."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:159
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:133
@@ -44015,7 +44044,7 @@ msgstr "Orodja"
 #, kde-format
 msgctxt "@info: metadata view"
 msgid "Run tool over metadata tags."
-msgstr "Zaženi orodje čez oznake metapodatkov."
+msgstr "Zaženi orodje čez značke metapodatkov."
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:189
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:158
@@ -44338,13 +44367,13 @@ msgstr "Brez"
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
-msgstr "Izbor oznake: %1"
+msgstr "Poberi oznako: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:414
 #, kde-format
 msgctxt "@title: pick label menu"
 msgid "Pick"
-msgstr "Izbor"
+msgstr "Poberi"
 
 #: core/libs/widgets/metadata/labels/ratingwidget.cpp:566
 #: core/utilities/searchwindow/searchfields_createfield.cpp:149
@@ -49587,13 +49616,13 @@ msgstr "Dejavnosti vrtenja"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "Pokaži slike/sličice zav&rtene glede na oznako za usmerjenost."
+msgstr "Pokaži slike/sličice zav&rtene glede na značko za usmerjenost."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:98
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Po vrtenju/zrcaljenju nastavi oznako usmerjenosti na običajno."
+msgstr "Po vrtenju/zrcaljenju nastavi značko usmerjenosti na običajno."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:117
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:179
@@ -49948,26 +49977,26 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Videz"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:338
-#: core/utilities/setup/misc/setupmisc.cpp:367
-#, kde-format
-msgctxt "@title:tab"
-msgid "System"
-msgstr "Sistem"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
+#: core/showfoto/setup/showfotosetupmisc.cpp:340
 #: core/utilities/setup/misc/setupmisc.cpp:355
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Črkovanje"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/showfoto/setup/showfotosetupmisc.cpp:346
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Lokaliziraj"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/utilities/setup/misc/setupmisc.cpp:367
+#, kde-format
+msgctxt "@title:tab"
+msgid "System"
+msgstr "Sistem"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:384
 #: core/utilities/setup/misc/setupmisc.cpp:400
@@ -51097,10 +51126,12 @@ msgstr "Dodaj številko pripone, ||n|| določa koliko števk bo uporabljenih"
 #, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers"
+"specifies the separator char before the numbers, ||0|| optional to always "
+"pad with ||n|| zero digits"
 msgstr ""
 "Dodaj številko pripone, ||n|| določa koliko števk bo uporabljenih, ||c|| "
-"določa mejni znak pred številkami"
+"določa mejni znak pred številkami, ||0|| neobvezno vedno dopolni z ||n|| "
+"ničlami"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -51326,14 +51357,14 @@ msgid "Display Aspect Ratio"
 msgstr "Prikaz razmerja"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Bitna hitrost zvoka"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -51422,7 +51453,7 @@ msgid "Tilt"
 msgstr "Nagib"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Accuracy"
 msgstr "Natančnost"
@@ -52502,13 +52533,13 @@ msgstr "Oboje"
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Albums but not tags"
-msgstr "Albumi a ne oznake"
+msgstr "Albumi a ne značke"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:205
 #, kde-format
 msgctxt "@label:listbox similarity album tag relation"
 msgid "Tags but not albums"
-msgstr "Oznake a ne albumi"
+msgstr "Značke a ne albumi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:212
 #, kde-format
@@ -52779,51 +52810,67 @@ msgstr ""
 "da izvedete\n"
 "megleno iskanje"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:168
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Zemljevid cest"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Hibrid"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:171
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Teren"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Pokaži nadzornik vrste zemljevida"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:194
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Pokaži nadzornik krmarjenja"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Pokaži nadzornik merila"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:212
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#, kde-format
+msgid "Google Maps API Key"
+msgstr "API ključ za Google Maps"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:380
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Lebdeči predmeti"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#, kde-format
+msgid "API Key:"
+msgstr "API ključ:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr "Sporočilo Javascripta"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -53300,65 +53347,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "št. točk"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
 #, kde-format
 msgid "Not available"
 msgstr "Ni na voljo"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Popravek: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
 #, kde-format
 msgid "#Sat: %1"
 msgstr "št. sat.: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "Modified"
 msgstr "Spremenjeno"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Date and time"
 msgstr "Datum in čas"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
 #, kde-format
 msgid "Failed to open file."
 msgstr "Ni bilo mogoče odpreti datoteke."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:906
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Ni bilo mogoče dodati podatkov GPS k sliki."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:918
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Ni bilo mogoče odstraniti podatkov GPS iz slike"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:930
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Ni bilo mogoče shraniti značk v datoteko."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1009
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Ni bilo mogoče shraniti sprememb v datoteko"
@@ -53676,7 +53722,7 @@ msgstr "Manj možnosti"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, kde-format
 msgid "Write locations as tags"
-msgstr "Zapiši lokacije kot oznake"
+msgstr "Zapiši lokacije kot značke"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, kde-format
@@ -53702,7 +53748,7 @@ msgstr "Pridobivanje podrobnosti RG -"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Dodaj novo oznako"
+msgstr "Dodaj novo značko"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -53724,7 +53770,7 @@ msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
-"1 slika je bila obratno geokodirana. Ali želite ohraniti oznake, ki so že "
+"1 slika je bila obratno geokodirana. Ali želite ohraniti značke, ki so že "
 "bile pridobljene?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
@@ -56179,7 +56225,7 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 "Prejem slik je zaključen. Sedaj lahko odklopite kamero, medtem ko bodo slike "
-"samodejno zasukane"
+"samodejno zavrtene"
 
 #: core/utilities/import/main/importui.cpp:2479
 #, kde-format
@@ -56337,7 +56383,7 @@ msgid ""
 "Enable this option if you want images automatically rotated or flipped using "
 "Exif information provided by the camera."
 msgstr ""
-"Omogočite to možnost, če želite, da se vaše slike samodejno zasukajo ali "
+"Omogočite to možnost, če želite, da se vaše slike samodejno zavrtijo ali "
 "obrnejo glede na podatke Exif iz fotoaparata."
 
 #: core/utilities/import/widgets/advancedsettings.cpp:144
@@ -57774,7 +57820,7 @@ msgstr "Nalaganje datotek RAW:"
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:216
 #, kde-format
 msgid "Perform RAW demosaicing"
-msgstr "Izvedi razmozaičenje RAW"
+msgstr "Izvedi odstranjevanje mozaičnosti surove"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:217
 #, kde-format
@@ -57905,40 +57951,40 @@ msgstr "Spodaj lahko vidite zgodovino zadnjih obdelanih paketnih opravil."
 msgid "History"
 msgstr "Zgodovina"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Nov potek dela"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Uredi potek dela"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Ustvari nov potek dela</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Lastnosti poteka dela</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "Naslov:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Opis:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Nov potek dela"
@@ -58128,7 +58174,7 @@ msgstr "Vrni predmete brez značk"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:96
 #, kde-format
 msgid "Not Tagged"
-msgstr "Ni označena"
+msgstr "Brez značk"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:104
 #, kde-format
@@ -58717,102 +58763,102 @@ msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Codec"
 msgstr "Kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Return video codec"
 msgstr "Vrni video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Vrni zvočne posnetke z bitno hitrostjo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:909
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bit/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Vrni avdio z vrsto zvočnega kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround zvok"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround zvok"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 kanalna sekvenca"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:932
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Druga vrsta zvočnega kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Vrni avdio kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Faces"
 msgstr "Obrazi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Vrni predmete po število regij obrazov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Vrni postavke brez regij obrazov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgid "No Face Regions"
 msgstr "Ni regij obrazov"
@@ -59248,7 +59294,7 @@ msgstr "Zaženi urejevalnik slik"
 #: core/utilities/setup/album/setupalbumview.cpp:220
 #, kde-format
 msgid "Show on Light Table"
-msgstr "Prikaži na osvetljeni plošči"
+msgstr "Prikaži na osvetlitveni mizi"
 
 #: core/utilities/setup/album/setupalbumview.cpp:221
 #, kde-format
@@ -59554,7 +59600,7 @@ msgstr ""
 "<p>Tukaj lahko dodate pripone slikovnih datotek (vključno z datotekami RAW), "
 "ki bodo prikazane v pogledu albuma. Dodajte \"xyz abc\" da prikažete "
 "datoteke s priponami xyz in abc v pogledu albuma.</p><p>Vrste, ki so "
-"privzeto prikazane lahko odstranite tako da pred nje dodate znak za minus. "
+"privzeto prikazane lahko odstranite tako, da pred nje dodate znak za minus. "
 "Na primer \"-gif\" bi odstranil vse datoteke GIF iz pogleda albuma in "
 "pobrisal vse njihove sledove iz zbirke, kar pa ne pomeni, da bi bile "
 "datoteke izbrisane.</p><p><b>Opozorilo:</b> odstranitev datotek iz "
@@ -60695,7 +60741,7 @@ msgstr ""
 "shranjevanjem slikovnih datotek</li><li>Brez oznake: med shranjevanjem so "
 "uporabljene privzete nastavitve</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60707,49 +60753,49 @@ msgstr ""
 "digitalnega fotoaparata\n"
 "Odprtje takšne datoteke zahteva obširno tolmačenje in obdelovanje podatkov."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Odpri datoteke RAW v urejevalniku slik"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Hitro in preprosto, kot 8 bitna slika"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Z uporabo privzetih nastavitev, v 16 bit"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
 msgstr "Vedno odpri orodje za uvažanje datotek RAW in prilagodi nastavitve"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (privzeto)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "O orodju za uvoz surovih slik..."
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Obnašanje surovih (RAW)"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -61378,7 +61424,7 @@ msgid ""
 "Turn on this option to push rating, comments and tags from digiKam into the "
 "Baloo storage"
 msgstr ""
-"Vklopite to možnost, da prepišete ocene, opombe in oznake iz digiKama v "
+"Vklopite to možnost, da prepišete ocene, opombe in značke iz digiKama v "
 "shrambo Baloo"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:40
@@ -61409,8 +61455,8 @@ msgid ""
 "metadata stored by digiKam desktop-wide with the Baloo Desktop Search."
 msgstr ""
 "ponuja osnovo za generični način obdelav vseh vrst metapodatkov na namizju "
-"KDE. Omogoča vam označevanje, ocenjevanje in komentiranje datotek v "
-"KDEaplikacijah, kot je Dolphin. Nastavite tu, če želite sinhronizirati "
+"KDE. Omogoča vam označevanje, ocenjevanje in komentiranje datotek v KDE "
+"aplikacijah, kot je Dolphin. Nastavite tu, če želite sinhronizirati "
 "metapodatke, ki jih digiKam shrani po celotnem namizju z namiznim iskanjem "
 "Baloo."
 
@@ -61468,7 +61514,7 @@ msgid ""
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
 "Vklopite to možnost, da shranite napis in naslov slike v opombo odseka JFIF, "
-"oznako Exif, oznako XMP in oznako IPTC."
+"značko Exif, značko XMP in značko IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:56
 #, kde-format
@@ -61482,19 +61528,20 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store the item rating in the Exif tag and the XMP "
 "tags."
-msgstr "Vklopite to možnost, da shranite oceno slike v oznake Exif in XMP."
+msgstr ""
+"Vklopite to možnost, da shranite oceno slike v značke Exif in značke XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Pick label"
-msgstr "Izbor oznake"
+msgstr "Poberi oznako"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item pick label in the XMP tags."
-msgstr "Vklopite to možnost, da shranite oznako za izbor slike v oznake XMP."
+msgstr "Vklopite to možnost, da shranite izbrano značko slike v značke XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:66
 #, kde-format
@@ -61506,7 +61553,7 @@ msgstr "Barvna oznaka"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Turn on this option to store the item color label in the XMP tags."
-msgstr "Vklopite to možnost, da shranite barvno oznako slike v oznake XMP."
+msgstr "Vklopite to možnost, da shranite barvno značko slike v značke XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:71
 #, kde-format
@@ -61521,7 +61568,7 @@ msgid ""
 "Turn on this option to store the item date and time in the EXIF, XMP, and "
 "IPTC tags."
 msgstr ""
-"Vklopite to možnost, da shranite datum in čas slike v oznake Exif, XMP in "
+"Vklopite to možnost, da shranite datum in čas slike v značke Exif, XMP in "
 "IPTC."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:76
@@ -61544,7 +61591,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Face Tags (including face areas)"
-msgstr "Oznake obrazov (vključno z območji obrazov)"
+msgstr "Značke obrazov (vključno z območji obrazov)"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:82
 #, kde-format
@@ -61552,8 +61599,8 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to store face tags with face rectangles in the XMP tags."
 msgstr ""
-"Vklopite to možnost, da shranite oznake obrazov skupaj s pravokotniki "
-"obrazov v oznake XMP."
+"Vklopite to možnost, da shranite značke obrazov skupaj s pravokotniki "
+"obrazov v značke XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:86
 #, kde-format
@@ -61568,8 +61615,8 @@ msgid ""
 "Turn on this option to store Geolocation information in the Exif tag and the "
 "XMP tags."
 msgstr ""
-"Vklopite to možnost, če želite informacije o geolokaciji shraniti med oznake "
-"Exif in oznake XMP."
+"Vklopite to možnost, če želite informacije o geolokaciji shraniti med značke "
+"Exif in značke XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:112
 #, kde-format
@@ -61858,13 +61905,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Show images/thumbnails &rotated according to orientation tag."
-msgstr "Pokaži slike/sličice zav&rtene glede na oznako za usmerjenost."
+msgstr "Pokaži slike/sličice zav&rtene glede na značko za usmerjenost."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:109
 #, kde-format
 msgctxt "@option"
 msgid "Set orientation tag to normal after rotate/flip."
-msgstr "Po vrtenju/zrcaljenju nastavi oznako usmerjenosti na običajno."
+msgstr "Po vrtenju/zrcaljenju nastavi značko usmerjenosti na običajno."
 
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:120
 #, kde-format
@@ -62211,7 +62258,7 @@ msgstr "Razširi trenutni drevesni element z enim klikom miške"
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
-"Prikažite samo obrazne oznake za dodelitev imen v stranski letvici oseb"
+"Prikažite samo obrazne značke za dodelitev imen v stranski letvici oseb"
 
 #: core/utilities/setup/misc/setupmisc.cpp:100
 #, kde-format
@@ -63519,6 +63566,9 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
+
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Vhod API ključ za Google Maps"
 
 #~ msgctxt "@label: item properties"
 #~ msgid "Tags: "

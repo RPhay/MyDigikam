@@ -191,10 +191,10 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "Qt") <<                             QLatin1String(qVersion()));
+                        i18nc(CONTEXT, "Qt Framework") <<                   QLatin1String(qVersion()));
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "KF5") <<                            QLatin1String(KXMLGUI_VERSION_STRING));
+                        i18nc(CONTEXT, "KDE Framework") <<                  QLatin1String(KXMLGUI_VERSION_STRING));
 
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "LibRaw") <<                         DRawDecoder::librawVersion());

@@ -604,9 +604,10 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             ut.actime  = st.st_atime;
         }
 
-        bool hasIptcCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif(), hasIptcCSet))
+        if (!parser->applyChanges(finfo.filePath(), exvPath,
+                                  parent->hasExif(), parent->hasXmp(), hasCSet))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);
@@ -637,9 +638,10 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     }
     else
     {
-        bool hasIptcCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif(), hasIptcCSet))
+        if (!parser->applyChanges(finfo.filePath(), exvPath,
+                                  parent->hasExif(), parent->hasXmp(), hasCSet))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);
@@ -677,7 +679,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         comment = exifDatum.toString();
 
-        // libexiv2 will prepend "charset=\"SomeCharset\" " if charset is specified
+        // libexiv2 will prepend "charset=SomeCharset " if charset is specified
         // Before conversion to QString, we must know the charset, so we stay with std::string for a while
 
         if ((comment.length() > 8) && (comment.substr(0, 8) == "charset="))
@@ -690,19 +692,37 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             {
                 // extract string between the = and the blank
 
-                charset = comment.substr(8, pos-8);
+                charset = comment.substr(8, pos - 8);
 
                 // get the rest of the string after the charset specification
 
-                comment = comment.substr(pos+1);
+                comment = comment.substr(pos + 1);
             }
         }
 
-        if      (charset == "\"Unicode\"")
+        if      (charset == "Unicode")
         {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+            QByteArray rawComment(exifDatum.size(), '\0');
+            exifDatum.copy((Exiv2::byte*)rawComment.data(), Exiv2::bigEndian);
+
+            // remove "UNICODE\0"
+
+            rawComment          = rawComment.mid(8, rawComment.size() - 8);
+            QString utf16String = QString::fromUtf16((ushort*)rawComment.data());
+
+            if (utf16String.isValidUtf16())
+            {
+                return QString::fromUtf8(utf16String.toUtf8());
+            }
+
+#endif
+
             return QString::fromUtf8(comment.data());
         }
-        else if (charset == "\"Jis\"")
+        else if (charset == "Jis")
         {
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
@@ -735,7 +755,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 #endif
 
         }
-        else if (charset == "\"Ascii\"")
+        else if (charset == "Ascii")
         {
             return QString::fromStdString(comment);
         }

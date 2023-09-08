@@ -3,9 +3,59 @@ digiKam 8.2.0 - Release date: 2023-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
+Libraw : update to snapshot 30/07/2023
 
 *****************************************************************************************************
 BUGFIXES:
 
 001 ==> 471934 - "Remove face region" from Ignored sends it to Unknown.
-002 ==> 
+002 ==> 472019 - Can not edit raw file with ART or Rawtherapee or Darktable 2 Gmic is not present in image editor menues.
+003 ==> 472036 - GEO Tag Editor not adding co ordinates.
+004 ==> 472094 - Delete icon not visible in find fields.
+005 ==> 472092 - Request "Ignore All" for Images with Many Persons.
+006 ==> 472125 - Connections to remote mariadb are aborted when digikam is closed.
+007 ==> 472129 - Indecently large distance between the elements in the "tools" panel.
+008 ==> 471961 - Two database dump was made on the same day, but one of them is not read by digiKam.
+009 ==> 472174 - Unable to remove "Unknown" Face Tags from photo.
+010 ==> 472235 - digiKam crashes on escaping from [modal] dialogs such as album properties form.
+011 ==> 471438 - Crash when create new album folder.
+012 ==> 472253 - Thumbnails of TIFF files show as low resolution with visible colour bands.
+013 ==> 472269 - Unable to change/remove "Ignored" identity Face Tags and name as a person.
+014 ==> 465635 - Geolocate is too slow: it reads way too much data.
+015 ==> 457272 - Incorrect UI Element Padding under KDE with Breeze Theme at 1.5 scale.
+016 ==> 472704 - Tags are not saved on exit.
+017 ==> 472683 - Showfoto ignores icons scale configured for Digikam when launched outside it.
+018 ==> 472770 - ExifTool Custom Tags outside "MakerNotes" shows not available.
+019 ==> 472734 - Database creation on MariaDB fails.
+020 ==> 472692 - Tesseract OCR does not take language selection into account.
+021 ==> 426478 - Slideshow: rating editor cannot be toggled by F4.
+022 ==> 472841 - Failed to create tables.
+023 ==> 472856 - The storage location of this image is currently not available (Ref: Bug report 438845).
+024 ==> 466773 - Conversion raw (Panasonic rw2) to DNG with bugs.
+025 ==> 472914 - Face tag subfolders get converted to backslash instead of forward slash when metadata reread.
+026 ==> 473113 - Slideshow should prevent the monitor from powering off during the slideshow.
+027 ==> 472494 - Export to Google Photos ends up with "too many requests" error.
+028 ==> 473283 - Pressing enter in the geolocation editor search box closes the window instead of searching.
+029 ==> 473312 - digiKam crashes when hitting OK for settings -> metadata -> read from sidecars.
+030 ==> 473355 - Big trash bin freezes digikam for long time.
+031 ==> 473383 - Crash when deleting an album to wastebasket.
+032 ==> 473418 - Allow other output file-types in BQM custom user script as JPEG-XL.
+033 ==> 473605 - Add Collection buttons are floating, not going with scrolling.
+034 ==> 473632 - Lighttable shows incorrect active AF points.
+035 ==> 473635 - Lighttable shows no active AF points for Canon EOS R7.
+036 ==> 473671 - Google-Maps Geolocation: Map not updating when panned.
+037 ==> 473686 - Lighttable shows incorrect active AF points for Canon EOS R8.
+038 ==> 473450 - Create a field in Digikam Settings GUI: "User's Google Maps API key".
+039 ==> 473752 - Cannot filter by video framerate greater than 60fps.
+040 ==> 473801 - Crashes while auto-importing new media files.
+041 ==> 473110 - Assertion failure when new folder is created in album (inside our outside of digiKam).
+042 ==> 473913 - digiKam crashes while refreshing albums.
+043 ==> 473826 - digiKam with exiftool backend erases XMP tags.
+044 ==> 474103 - Some .jpg files cannot be previewed or opened in digiKam.
+045 ==> 474159 - Metadata template, contact, URL is not written as metadata.
+046 ==> 474146 - Broken history, what does it mean.
+047 ==> 474205 - digiKam crashes while it scans video albums.
+048 ==> 456289 - Build error from git with Qt6.
+049 ==> 468658 - Linking failed with Qt6 and KJobs class from KDE framework.
+050 ==> 
+051 ==> 

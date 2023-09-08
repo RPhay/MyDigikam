@@ -99,7 +99,7 @@ void IptcCoreContactInfo::merge(const IptcCoreContactInfo& t)
         phone = t.phone;
     }
 
-    if (!t.country.isEmpty())
+    if (!t.webUrl.isEmpty())
     {
         webUrl = t.webUrl;
     }

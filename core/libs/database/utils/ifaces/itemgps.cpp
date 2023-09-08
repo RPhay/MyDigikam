@@ -19,7 +19,9 @@
 
 #include "coredb.h"
 #include "tagscache.h"
+#include "metadatahub.h"
 #include "itemposition.h"
+#include "scancontroller.h"
 #include "metaenginesettings.h"
 #include "itemextendedproperties.h"
 
@@ -51,21 +53,16 @@ bool ItemGPS::loadImageData()
         {
             m_gpsData.setAltitude(pos.altitude());
         }
-
-        // mark us as not-dirty, because the data was just loaded:
-
-        m_dirty      = false;
-        m_savedState = m_gpsData;
-
-        emitDataChanged();
-
-        return true;
     }
 
-    // If item do not have any GPS data in database, we will try to load
-    // it from file using standard implementation from GPSItemContainer.
+    // mark us as not-dirty, because the data was just loaded:
 
-    return GPSItemContainer::loadImageData();
+    m_dirty      = false;
+    m_savedState = m_gpsData;
+
+    emitDataChanged();
+
+    return true;
 }
 
 QString ItemGPS::saveChanges()
@@ -98,8 +95,6 @@ QString ItemGPS::saveChanges()
 
     pos.apply();
 
-    m_databaseTags.clear();
-
     if (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
     {
         QMap<QString, QVariant> attributes;
@@ -108,7 +103,6 @@ QString ItemGPS::saveChanges()
 
         for (int i = 0 ; i < m_tagList.count() ; ++i)
         {
-
             QString singleTagPath;
             QList<TagData> currentTagPath = m_tagList[i];
 
@@ -137,10 +131,6 @@ QString ItemGPS::saveChanges()
         {
             QList<int> tagIds = TagsCache::instance()->getOrCreateTags(tagsPath);
             CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
-
-            m_databaseTags    = TagsCache::instance()->tagPaths(m_info.tagIds(),
-                                                                TagsCache::NoLeadingSlash,
-                                                                TagsCache::NoHiddenTags);
         }
 
         if (m_writeMetaLoc)
@@ -150,14 +140,32 @@ QString ItemGPS::saveChanges()
         }
     }
 
-    // Save info to file.
+    MetadataHub hub;
+    hub.load(m_info);
+    QString filePath = m_info.filePath();
 
-    MetaEngineSettings* const settings = MetaEngineSettings::instance();
+    if (MetaEngineSettings::instance()->settings().useLazySync)
+    {
+        hub.write(filePath, MetadataHub::WRITE_TAGS     |
+                            MetadataHub::WRITE_TEMPLATE |
+                            MetadataHub::WRITE_POSITION);
+    }
+    else
+    {
+        ScanController::FileMetadataWrite writeScope(m_info);
+        writeScope.changed(hub.write(filePath, MetadataHub::WRITE_TAGS     |
+                                               MetadataHub::WRITE_TEMPLATE |
+                                               MetadataHub::WRITE_POSITION));
+    }
 
-    m_saveTags                         = settings->settings().saveTags;
-    m_saveGPS                          = settings->settings().savePosition;
+    m_dirty        = false;
+    m_savedState   = m_gpsData;
+    m_tagListDirty = false;
+    m_savedTagList = m_tagList;
 
-    return GPSItemContainer::saveChanges();
+    emitDataChanged();
+
+    return QString();
 }
 
 } // namespace Digikam

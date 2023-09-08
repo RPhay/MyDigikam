@@ -462,7 +462,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
            )
         {
-            ItemInfo& info = d->currentInfos.first();
+            const ItemInfo& info = d->currentInfos.first();
 
             if (changeset.ids().contains(info.id()))
             {
@@ -501,7 +501,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
         }
         else if ((tab == d->desceditTab) && d->desceditTab->isModified())
         {
-            ItemInfo& info = d->currentInfos.first();
+            const ItemInfo& info = d->currentInfos.first();
 
             if (changeset.ids().contains(info.id()))
             {
@@ -529,7 +529,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
 
         if      (tab == m_propertiesStackedView)
         {
-            ItemInfo& info = d->currentInfos.first();
+            const ItemInfo& info = d->currentInfos.first();
 
             if (changeset.ids().contains(info.id()))
             {
@@ -539,7 +539,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
         }
         else if ((tab == d->desceditTab) && d->desceditTab->isModified())
         {
-            ItemInfo& info = d->currentInfos.first();
+            const ItemInfo& info = d->currentInfos.first();
 
             if (changeset.ids().contains(info.id()))
             {

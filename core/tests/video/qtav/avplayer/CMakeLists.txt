@@ -71,9 +71,9 @@ target_include_directories(avplayer
                            $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                            $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
 
-                           $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                           $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                           $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
 
                            ${CMAKE_CURRENT_SOURCE_DIR}/filters
                            ${CMAKE_CURRENT_SOURCE_DIR}/playlist
@@ -112,10 +112,10 @@ target_link_libraries(avplayer
                       Qt${QT_VERSION_MAJOR}::Widgets
                       Qt${QT_VERSION_MAJOR}::Sql
 
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
+                      KF${QT_VERSION_MAJOR}::XmlGui
+                      KF${QT_VERSION_MAJOR}::I18n
+                      KF${QT_VERSION_MAJOR}::ConfigCore
+                      KF${QT_VERSION_MAJOR}::Service
 
                       ${MEDIAPLAYER_LIBRARIES}
 )

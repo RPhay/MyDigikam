@@ -114,11 +114,13 @@ private Q_SLOTS:
 
     void slotHTMLInitialized();
     void slotSetCenterTimer();
+    void slotInputUserAPIKey();
+    void slotMessageEvent(const QString& message);
     void slotMapTypeActionTriggered(QAction* action);
     void slotHTMLEvents(const QStringList& eventStrings);
     void slotFloatSettingsTriggered(QAction* action);
     void slotSelectionHasBeenMade(const Digikam::GeoCoordinates::Pair& searchCoordinates);
-    void slotTrackManagerChanged() override;
+    void slotTrackManagerChanged()                                                        override;
     void slotTracksChanged(const QList<TrackManager::TrackChanges>& trackChanges);
     void slotTrackVisibilityChanged(const bool newState);
 

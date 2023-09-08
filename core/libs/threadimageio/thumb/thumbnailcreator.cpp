@@ -175,12 +175,13 @@ QString ThumbnailCreator::errorString() const
     return d->error;
 }
 
-QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier) const
+QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, bool onlyStorage) const
 {
-    return load(identifier, QRect(), false);
+    return load(identifier, QRect(), false, onlyStorage);
 }
 
-QImage ThumbnailCreator::loadDetail(const ThumbnailIdentifier& identifier, const QRect& rect) const
+QImage ThumbnailCreator::loadDetail(const ThumbnailIdentifier& identifier,
+                                    const QRect& rect, bool onlyStorage) const
 {
     if (!rect.isValid())
     {
@@ -189,7 +190,7 @@ QImage ThumbnailCreator::loadDetail(const ThumbnailIdentifier& identifier, const
         return QImage();
     }
 
-    return load(identifier, rect, false);
+    return load(identifier, rect, false, onlyStorage);
 }
 
 void ThumbnailCreator::pregenerate(const ThumbnailIdentifier& identifier) const
@@ -209,7 +210,8 @@ void ThumbnailCreator::pregenerateDetail(const ThumbnailIdentifier& identifier, 
     load(identifier, rect, true);
 }
 
-QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect& rect, bool pregenerate) const
+QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier,
+                              const QRect& rect, bool pregenerate, bool onlyStorage) const
 {
     if (d->storageSize() <= 0)
     {
@@ -267,7 +269,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
 
     // For images in offline collections we can stop here, they are not available on disk
 
-    if (image.isNull() && info.filePath.isEmpty())
+    if (image.isNull() && (onlyStorage || info.filePath.isEmpty()))
     {
         return QImage();
     }

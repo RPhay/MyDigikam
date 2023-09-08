@@ -78,7 +78,8 @@ public:
     /**
      * Same as above, but does not use the global size, but an extra specified size.
      */
-    bool find(const ThumbnailIdentifier& identifier, QPixmap& pixmap, int size);
+    bool find(const ThumbnailIdentifier& identifier,
+              QPixmap& pixmap, int size, bool onlyStorage = false);
 
     /**
      * Find a thumbnail.
@@ -104,7 +105,8 @@ public:
      * All tastes of find() methods, for loading the thumbnail of a detail
      */
     bool find(const ThumbnailIdentifier& identifier, const QRect& rect, QPixmap& pixmap);
-    bool find(const ThumbnailIdentifier& identifier, const QRect& rect, QPixmap& pixmap, int size);
+    bool find(const ThumbnailIdentifier& identifier,
+              const QRect& rect, QPixmap& pixmap, int size, bool onlyStorage = false);
     void find(const ThumbnailIdentifier& identifier, const QRect& rect);
     void find(const ThumbnailIdentifier& identifier, const QRect& rect, int size);
     void findGroup(const QList<QPair<ThumbnailIdentifier, QRect> >& filePathAndRects);
@@ -240,7 +242,8 @@ protected:
 
 private:
 
-    bool find(const ThumbnailIdentifier& identifier, int size, QPixmap* retPixmap, bool emitSignal, const QRect& detailRect);
+    bool find(const ThumbnailIdentifier& identifier, int size, QPixmap* retPixmap,
+              bool emitSignal, const QRect& detailRect, bool onlyStorage = false);
     void load(const LoadingDescription& description, bool pregenerate);
     bool checkSize(int size);
     QPixmap surrogatePixmap(const LoadingDescription& loadingDescription);

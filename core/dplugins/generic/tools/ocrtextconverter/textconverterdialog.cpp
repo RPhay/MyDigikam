@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
 #include "textconverterlist.h"
@@ -170,7 +171,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     tesseractLabel->setWordWrap(true);
     tesseractLabel->setOpenExternalLinks(true);
 
-    d->binWidget                      = new DBinarySearch(recognitionTab);
+    d->binWidget                  = new DBinarySearch(recognitionTab);
     d->binWidget->addBinary(d->tesseractBin);
 
 #ifdef Q_OS_MACOS
@@ -187,7 +188,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #ifdef Q_OS_WIN
 
-    d->binWidget->addDirectory(QLatin1String("C:/Program Files/digiKam"));
+    d->binWidget->addDirectory(QLatin1String("C:/Program Files/Tesseract-OCR"));
 
 #endif
 
@@ -199,7 +200,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #endif
 
-    d->ocrSettings                    = new TextConverterSettings(recognitionTab);
+    d->ocrSettings                = new TextConverterSettings(recognitionTab);
 
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -213,8 +214,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // --- Review tab --------------------------------------------------------------------------
 
-    DVBox* const reviewTab            = new DVBox(d->tabView);
-    d->textedit                       = new DTextEdit(0, reviewTab);
+    DVBox* const reviewTab = new DVBox(d->tabView);
+    d->textedit            = new DTextEdit(0, reviewTab);
     d->textedit->setPlaceholderText(i18nc("@info", "After to process recognition, "
                                                    "double-click on one item to "
                                                    "display recognized text here. "
@@ -223,7 +224,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
                                                    "button to record your changes."));
     reviewTab->setStretchFactor(d->textedit, 100);
 
-    d->saveTextButton                 = new QPushButton(reviewTab);
+    d->saveTextButton      = new QPushButton(reviewTab);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
     d->saveTextButton->setEnabled(false);
 
@@ -276,9 +277,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     connect(d->saveTextButton, SIGNAL(clicked()),
             this, SLOT(slotUpdateText()));
-
-    connect(this, SIGNAL(signalMetadataChangedForUrl(QUrl)),
-            d->iface, SLOT(slotMetadataChangedForUrl(QUrl)));
 
     connect(d->binWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotTesseractBinaryFound(bool)));
@@ -359,8 +357,6 @@ void TextConverterDialog::slotUpdateText()
             OcrTesseractEngine::saveXMP(d->currentSelectedItem->url(),
                                         commentsMap,
                                         opt.iface);
-
-            Q_EMIT signalMetadataChangedForUrl(d->currentSelectedItem->url());
         }
     }
 }
@@ -418,8 +414,6 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText;
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
-
-                    Q_EMIT signalMetadataChangedForUrl(ad.fileUrl);
 
                     break;
                 }

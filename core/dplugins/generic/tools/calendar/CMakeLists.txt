@@ -13,15 +13,15 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSupport,INTERFACE_INCLUDE_DIRECTORIES>
 
-                    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/print
                     ${CMAKE_CURRENT_SOURCE_DIR}/wizard
 )
 
-if(KF5CalendarCore_FOUND)
-    include_directories($<TARGET_PROPERTY:KF5::CalendarCore,INTERFACE_INCLUDE_DIRECTORIES>)
+if(KF${QT_VERSION_MAJOR}CalendarCore_FOUND)
+    include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CalendarCore,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
 set(calendarplugin_SRCS
@@ -43,11 +43,11 @@ ki18n_wrap_ui(calendarplugin_SRCS
               ${CMAKE_CURRENT_SOURCE_DIR}/ui/calprogress.ui
 )
 
-if(KF5CalendarCore_FOUND)
+if(KF${QT_VERSION_MAJOR}CalendarCore_FOUND)
 
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Calendar
                                SOURCES ${calendarplugin_SRCS}
-                               DEPENDS KF5::CalendarCore Qt${QT_VERSION_MAJOR}::PrintSupport
+                               DEPENDS KF${QT_VERSION_MAJOR}::CalendarCore Qt${QT_VERSION_MAJOR}::PrintSupport
     )
 
 else()

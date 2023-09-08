@@ -36,7 +36,7 @@ RecognitionWorker::~RecognitionWorker()
 /**
  *TODO: investigate this method
  */
-void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
+void RecognitionWorker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     FaceUtils      utils;
     QList<QImage*> images;

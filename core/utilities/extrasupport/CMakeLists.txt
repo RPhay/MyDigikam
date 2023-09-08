@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-if(KF5AkonadiContact_FOUND)
+if(KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
     add_subdirectory(addressbook)
 endif()
 
-if(KF5FileMetaData_FOUND)
+if(KF${QT_VERSION_MAJOR}FileMetaData_FOUND)
     add_subdirectory(filesindexer)
 endif()

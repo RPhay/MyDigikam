@@ -90,7 +90,7 @@ public:
     virtual void     setAlbumInfo(int, const DInfoMap&)                             const;
 
     virtual DInfoMap itemInfo(const QUrl&)                                          const;
-    virtual void     setItemInfo(const QUrl&, const DInfoMap&)                      const;
+    virtual void     setItemInfo(const QUrl&, const DInfoMap&);
 
     Q_SIGNAL void signalLastItemUrl(const QUrl&);
     ///@}

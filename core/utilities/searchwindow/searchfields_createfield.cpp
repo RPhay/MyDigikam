@@ -821,9 +821,10 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("Frame Rate"), i18n("Return video with the frame rate"));
         field->setBetweenText(i18nc("Find video with frame rate between...and...", "and"));
         field->setNumberPrefixAndSuffix(QString(), i18nc("Frames per Second", "fps"));
-        field->setBoundary(10, 60, 5);
+        field->setBoundary(10, 600, 5);
         field->setSuggestedValues(QList<int>()
-                                  << 10 << 15 << 20 << 25 << 30 << 35 << 40 << 45 << 55 << 60
+                                  << 10 << 15 << 20 << 25 << 30 << 35 << 40 << 45 << 55 << 60 << 120
+                                  << 180 << 240 << 300 << 360 << 420 << 480 << 540 << 600
                                   // TODO : adjust default values
                                  );
         field->setSuggestedInitialValue(10);

@@ -123,7 +123,7 @@ double SinglePhotoPreviewLayout::zoomFactor() const
 {
     if (!d->item || !d->view)
     {
-        return 1;
+        return 1.0;
     }
 
     return d->zoomSettings()->zoomFactor();
@@ -133,7 +133,7 @@ double SinglePhotoPreviewLayout::realZoomFactor() const
 {
     if (!d->item || !d->view)
     {
-        return 1;
+        return 1.0;
     }
 
     return d->zoomSettings()->realZoomFactor();
@@ -226,6 +226,7 @@ void SinglePhotoPreviewLayout::setZoomFactor(double z, const QPoint& givenAnchor
 
     d->zoomSettings()->setZoomFactor(z);
     d->item->sizeHasChanged();
+
     updateLayout();
     d->item->update();
 
@@ -267,6 +268,7 @@ void SinglePhotoPreviewLayout::fitToWindow()
 
     d->zoomSettings()->fitToSize(d->frameSize(), d->fitToSizeMode);
     d->item->sizeHasChanged();
+
     updateLayout();
     d->item->update();
 
@@ -321,6 +323,11 @@ void SinglePhotoPreviewLayout::updateLayout()
 
 void SinglePhotoPreviewLayout::updateZoomAndSize()
 {
+    if (!d->item || !d->view)
+    {
+        return;
+    }
+
     double fitZoom = d->zoomSettings()->fitToSizeZoomFactor(d->frameSize(), d->fitToSizeMode);
     double minZoom = qBound(0.01, fitZoom - 0.01, 0.1);
 

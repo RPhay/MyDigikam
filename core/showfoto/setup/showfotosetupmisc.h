@@ -39,9 +39,9 @@ public:
     {
         Behaviour = 0,
         Appearance,
-        System,
         SpellCheck,
-        Localize
+        Localize,
+        System
     };
 
 public:

@@ -64,7 +64,6 @@ public:
     DWItemDelegatePool*  widgetPool;
     QAbstractItemModel*  model;
     QItemSelectionModel* selectionModel;
-    bool                 viewDestroyed;
     DWItemDelegate*      q;
 };
 

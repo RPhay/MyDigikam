@@ -9,8 +9,7 @@ set(ECM_MIN_VERSION     "5.55.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
-execute_process(COMMAND ${CMAKE_COMMAND} --version OUTPUT_VARIABLE VERSION_CMAKE_INFO)
-message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
+message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 # ==============================================================================
 # Information to update before to release this package.
@@ -56,9 +55,10 @@ project(digikam
         VERSION ${DIGIKAM_VERSION_SHORT}
         LANGUAGES CXX C)
 
-set(CMAKE_CXX_STANDARD 17)
+# Settings from ECM
+set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_EXTENSIONS        OFF)
 
 # See bug #454941 and the OpenCV detection in RelWithDebInfo target
 
@@ -90,7 +90,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules
                       ${ECM_MODULE_PATH}
 )
 
-# KF5 Framework macros
+# KF${QT_VERSION_MAJOR} Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
@@ -190,13 +190,20 @@ endif()
 
 ######################################################################################################################
 
+# Extra check to detect Qt core with minimal version before to continue.
+
+set(QT5_MIN_VERSION       "5.14.0")
+set(QT6_MIN_VERSION       "6.2.3")
+
+include(RulesFindQtCore)
+
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     add_subdirectory(core)
 endif()
 
 if(DIGIKAMSC_COMPILE_PO)
     find_package(Gettext REQUIRED)
-    find_package(KF5I18n NO_MODULE)
+    find_package(KF${QT_VERSION_MAJOR}I18n NO_MODULE)
     ki18n_install(po)
 endif()
 

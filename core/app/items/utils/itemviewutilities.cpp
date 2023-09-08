@@ -458,7 +458,7 @@ void ItemViewUtilities::createGroupByFilenameFromInfoList(const ItemInfoList& it
     for (it = groupingList.begin() ; it != groupingList.end() ; )
     {
         QList<ItemInfo> group;
-        QString fname = it->name().left(it->name().lastIndexOf(QLatin1Char('.')));
+        QString fname = it->name().left(it->name().indexOf(QLatin1Char('.')));
 
         // don't know the leader yet so put first element also in group
 
@@ -466,7 +466,7 @@ void ItemViewUtilities::createGroupByFilenameFromInfoList(const ItemInfoList& it
 
         for (it2 = it + 1 ; it2 != groupingList.end() ; ++it2)
         {
-            QString fname2 = it2->name().left(it2->name().lastIndexOf(QLatin1Char('.')));
+            QString fname2 = it2->name().left(it2->name().indexOf(QLatin1Char('.')));
 
             if (fname == fname2)
             {

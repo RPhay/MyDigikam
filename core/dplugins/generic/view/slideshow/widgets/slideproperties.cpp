@@ -45,13 +45,11 @@ public:
 
     explicit Private()
         : maxStringLen(80),
-          paintEnabled(true),
           settings    (nullptr)
     {
     }
 
     const int                maxStringLen;
-    bool                     paintEnabled;
 
     QUrl                     url;
 
@@ -83,11 +81,6 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
 
 void SlideProperties::paintEvent(QPaintEvent*)
 {
-    if (!d->paintEnabled)
-    {
-        return;
-    }
-
     QPainter p(this);
     p.setFont(d->settings->captionFont);
 
@@ -382,12 +375,6 @@ void SlideProperties::printTags(QPainter& p, int& offset, QStringList& tags)
     {
         printInfoText(p, offset, str, qApp->palette().color(QPalette::Link).name());
     }
-}
-
-void SlideProperties::togglePaintEnabled()
-{
-    d->paintEnabled = !d->paintEnabled;
-    update();
 }
 
 } // namespace DigikamGenericSlideShowPlugin

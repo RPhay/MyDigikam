@@ -37,7 +37,7 @@ DetectionBenchmarker::DetectionBenchmarker(FacePipeline::Private* const d)
 {
 }
 
-void DetectionBenchmarker::process(FacePipelineExtendedPackage::Ptr package)
+void DetectionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if (package->databaseFaces.isEmpty())
     {

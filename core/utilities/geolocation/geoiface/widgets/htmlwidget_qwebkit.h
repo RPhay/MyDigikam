@@ -65,6 +65,7 @@ protected Q_SLOTS:
 Q_SIGNALS:
 
     void signalHTMLEvents(const QStringList& events);
+    void signalMessageEvent(const QString& message);
     void signalJavaScriptReady();
     void selectionHasBeenMade(const Digikam::GeoCoordinates::Pair& coordinatesRect);
 

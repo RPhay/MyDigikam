@@ -266,8 +266,8 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.Sigma.LensRange"));       ///< Sigma Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Samsung2.LensType"));     ///< Samsung Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          ///< Non-standard Exif tag set by Camera Raw.
-    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    ///< Olympus Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   ///< Olympus Cameras Makernote.
+    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    ///< Olympus Cameras Makernote.
 
     // Try Exif.Photo.LensModel for Sony and Canon first.
 

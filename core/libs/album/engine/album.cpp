@@ -107,7 +107,7 @@ Album* Album::next() const
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
-    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.count()))
+    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.size()))
     {
         return nullptr;
     }
@@ -138,7 +138,12 @@ Album* Album::childAtRow(int row) const
 {
     QReadLocker locker(&m_cacheLock);
 
-    return m_childCache.value(row, nullptr);
+    if ((row < 0) || (row >= m_childCache.size()))
+    {
+        return nullptr;
+    }
+
+    return m_childCache.at(row);
 }
 
 AlbumList Album::childAlbums(bool recursive)
@@ -206,18 +211,21 @@ void Album::removeChild(Album* const child)
 
 void Album::clear()
 {
-    m_cacheLock.lockForWrite();
+    QList<Album*> albumsToDelete;
 
-    while (!m_childCache.isEmpty())
     {
-        Album* const album = m_childCache.takeFirst();
-        m_cacheLock.unlock();
+        QWriteLocker locker(&m_cacheLock);
 
-        delete album;
-        m_cacheLock.lockForWrite();
+        while (!m_childCache.isEmpty())
+        {
+            albumsToDelete << m_childCache.takeFirst();
+        }
     }
 
-    m_cacheLock.unlock();
+    while (!albumsToDelete.isEmpty())
+    {
+        delete albumsToDelete.takeFirst();
+    }
 }
 
 int Album::globalID() const

@@ -52,8 +52,8 @@ public:
         textQueryCompletion          (false),
         hasCaseSensitive             (true),
         highlightOnResult            (true),
-        hasResultColor               (200, 255, 200),
-        hasNoResultColor             (255, 200, 200),
+        hasResultColor               (140, 220, 140),
+        hasNoResultColor             (220, 140, 140),
         completer                    (nullptr),
         searchTimer                  (nullptr)
     {
@@ -302,7 +302,12 @@ void SearchTextBar::setIgnoreCase(bool ignore)
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    Q_EMIT signalSearchTextSettings(d->settings);
+    // Re-Q_EMIT signal with changed settings
+
+    if (!text().isEmpty())
+    {
+        Q_EMIT signalSearchTextSettings(d->settings);
+    }
 }
 
 } // namespace Digikam

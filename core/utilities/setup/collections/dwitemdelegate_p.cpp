@@ -18,26 +18,14 @@
 
 // Qt includes
 
-#include <QIcon>
 #include <QSize>
 #include <QStyle>
 #include <QEvent>
-#include <QHoverEvent>
-#include <QFocusEvent>
-#include <QCursor>
 #include <QTimer>
-#include <QBitmap>
-#include <QLayout>
-#include <QPainter>
-#include <QScrollBar>
-#include <QKeyEvent>
+#include <QTreeView>
 #include <QApplication>
 #include <QStyleOption>
-#include <QPaintEngine>
-#include <QCoreApplication>
 #include <QAbstractItemView>
-#include <QAbstractProxyModel>
-#include <QTreeView>
 
 // Local includes
 
@@ -52,18 +40,12 @@ DWItemDelegatePrivate::DWItemDelegatePrivate(DWItemDelegate* const q, QObject* c
       widgetPool    (new DWItemDelegatePool(q)),
       model         (nullptr),
       selectionModel(nullptr),
-      viewDestroyed (false),
       q             (q)
 {
 }
 
 DWItemDelegatePrivate::~DWItemDelegatePrivate()
 {
-    if (!viewDestroyed)
-    {
-        widgetPool->fullClear();
-    }
-
     delete widgetPool;
 }
 
@@ -146,8 +128,6 @@ void DWItemDelegatePrivate::updateRowRange(const QModelIndex& parent, int start,
                                                                                                       : DWItemDelegatePool::UpdateWidgets);
             if (isRemoving)
             {
-                widgetPool->d->allocatedWidgets.removeAll(widgetList);
-
                 Q_FOREACH (QWidget* const widget, widgetList)
                 {
                     const QModelIndex idx = widgetPool->d->widgetInIndex[widget];
@@ -205,21 +185,6 @@ void DWItemDelegatePrivate::initializeModel(const QModelIndex& parent)
 
 bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
 {
-    if (event->type() == QEvent::Destroy)
-    {
-        // we care for the view since it deletes the widgets (parentage).
-        // if the view hasn't been deleted, it might be that just the
-        // delegate is removed from it, in which case we need to remove the widgets
-        // manually, otherwise they still get drawn.
-
-        if (watched == itemView)
-        {
-            viewDestroyed = true;
-        }
-
-        return false;
-    }
-
     Q_ASSERT(itemView);
 
     if (model != itemView->model())

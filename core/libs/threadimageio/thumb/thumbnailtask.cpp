@@ -158,12 +158,14 @@ void ThumbnailLoadingTask::execute()
         switch (m_loadingDescription.previewParameters.type)
         {
             case LoadingDescription::PreviewParameters::Thumbnail:
-                m_qimage = m_creator->load(m_loadingDescription.thumbnailIdentifier());
+                m_qimage = m_creator->load(m_loadingDescription.thumbnailIdentifier(),
+                                           m_loadingDescription.previewParameters.onlyFromStorage());
                 break;
 
             case LoadingDescription::PreviewParameters::DetailThumbnail:
                 m_qimage = m_creator->loadDetail(m_loadingDescription.thumbnailIdentifier(),
-                                                 m_loadingDescription.previewParameters.extraParameter.toRect());
+                                                 m_loadingDescription.previewParameters.extraParameter.toRect(),
+                                                 m_loadingDescription.previewParameters.onlyFromStorage());
                 break;
 
             default:

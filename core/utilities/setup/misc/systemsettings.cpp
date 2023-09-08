@@ -22,6 +22,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 namespace Digikam
 {
@@ -56,8 +57,19 @@ void SystemSettings::readSettings()
     QSettings settings(m_path, QSettings::IniFormat);
 
     settings.beginGroup(QLatin1String("System"));
+
+#ifdef Q_OS_LINUX
+
+    useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), true).toBool();
+    useHighDpiPixmaps = settings.value(QLatin1String("useHighDpiPixmaps"), true).toBool();
+
+#else
+
     useHighDpiScaling = settings.value(QLatin1String("useHighDpiScaling"), false).toBool();
     useHighDpiPixmaps = settings.value(QLatin1String("useHighDpiPixmaps"), false).toBool();
+
+#endif
+
     disableFaceEngine = settings.value(QLatin1String("disableFaceEngine"), false).toBool();
     enableLogging     = settings.value(QLatin1String("enableLogging"),     false).toBool();
     disableOpenCL     = settings.value(QLatin1String("disableOpenCL"),     true).toBool();

@@ -123,6 +123,11 @@ void ARTRawImportPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QString ARTRawImportPlugin::getRawProgram() const
+{
+    return DFileOperations::findExecutable(QLatin1String("ART"));
+}
+
 bool ARTRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
     QFileInfo fileInfo(filePath);
@@ -149,7 +154,7 @@ bool ARTRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*
 
     // --------
 
-    d->art->setProgram(DFileOperations::findExecutable(QLatin1String("ART")));
+    d->art->setProgram(getRawProgram());
     d->art->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initially as Gimp plugin
                                        << filePath               // Input file
                                        << d->tempName);          // Output file

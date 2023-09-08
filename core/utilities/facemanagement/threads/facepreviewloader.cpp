@@ -46,7 +46,7 @@ void FacePreviewLoader::cancel()
     scheduledPackages.clear();
 }
 
-void FacePreviewLoader::process(FacePipelineExtendedPackage::Ptr package)
+void FacePreviewLoader::process(const FacePipelineExtendedPackage::Ptr& package)
 {
     if (!package->image.isNull())
     {

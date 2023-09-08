@@ -399,11 +399,6 @@ bool SlideOSD::isUnderMouse() const
            );
 }
 
-void SlideOSD::toggleProperties()
-{
-    d->slideProps->togglePaintEnabled();
-}
-
 void SlideOSD::setLoadingReady(bool b)
 {
     d->ready = b;

@@ -18,16 +18,11 @@
 
 // Qt includes
 
-#include <QMetaObject>
-#include <QMetaMethod>
-#include <QMetaProperty>
-#include <QPair>
-#include <QHash>
 #include <QList>
 #include <QWidget>
-#include <QAbstractItemView>
-#include <QApplication>
 #include <QInputEvent>
+#include <QApplication>
+#include <QAbstractItemView>
 #include <QAbstractProxyModel>
 
 // Local includes
@@ -77,6 +72,11 @@ DWItemDelegatePool::DWItemDelegatePool(DWItemDelegate* const delegate)
 
 DWItemDelegatePool::~DWItemDelegatePool()
 {
+    if (!d->widgetInIndex.isEmpty())
+    {
+        fullClear();
+    }
+
     delete d->eventListener;
     delete d;
 }
@@ -115,13 +115,12 @@ QList<QWidget*> DWItemDelegatePool::findWidgets(const QPersistentModelIndex& idx
     else
     {
         result = d->delegate->createItemWidgets(index);
-        d->allocatedWidgets << result;
         d->usedWidgets[index] = result;
 
         Q_FOREACH (QWidget* const widget, result)
         {
             d->widgetInIndex[widget] = index;
-            widget->setParent(d->delegate->d->itemView);
+            widget->setParent(d->delegate->d->itemView->viewport());
             widget->installEventFilter(d->eventListener);
             widget->setVisible(true);
         }
@@ -177,7 +176,6 @@ void DWItemDelegatePool::fullClear()
     d->clearing = true;
     qDeleteAll(d->widgetInIndex.keyBegin(), d->widgetInIndex.keyEnd());
     d->clearing = false;
-    d->allocatedWidgets.clear();
     d->usedWidgets.clear();
     d->widgetInIndex.clear();
 }
@@ -188,14 +186,9 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
 
     if ((event->type() == QEvent::Destroy) && !poolPrivate->clearing)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "User of DWItemDelegate should not delete widgets created by createItemWidgets!";
-
-        // assume the application has kept a list of widgets and tries to delete them manually
-        // they have been reparented to the view in any case, so no leaking occurs
+        // qCDebug(DIGIKAM_GENERAL_LOG) << "Delete widget created by createItemWidgets" <<  widget;
 
         poolPrivate->widgetInIndex.remove(widget);
-        QWidget* const viewport = poolPrivate->delegate->d->itemView->viewport();
-        QApplication::sendEvent(viewport, event);
     }
 
     if (dynamic_cast<QInputEvent*>(event) && !poolPrivate->delegate->blockedEventTypes(widget).contains(event->type()))
@@ -212,12 +205,17 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
                 QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
                 QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPosition().toPoint()),
                                 mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
+
 #else
+
                 QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPos()),
                                 mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
+
 #endif
+
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }
@@ -243,6 +241,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
                 QTabletEvent* const tabletEvent = static_cast<QTabletEvent*>(event);
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
                 QTabletEvent evt(event->type(),
                                  tabletEvent->pointingDevice(),
                                  QPointF(viewport->mapFromGlobal(tabletEvent->globalPosition().toPoint())),
@@ -257,7 +256,9 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
                                  tabletEvent->button(),
                                  tabletEvent->buttons()
                 );
+
 #else
+
                 QTabletEvent evt(event->type(),
                                  QPointF(viewport->mapFromGlobal(tabletEvent->globalPos())),
                                  tabletEvent->globalPosF(),
@@ -274,7 +275,9 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
                                  tabletEvent->button(),
                                  tabletEvent->buttons()
                 );
+
 #endif
+
                 QApplication::sendEvent(viewport, &evt);
                 break;
             }

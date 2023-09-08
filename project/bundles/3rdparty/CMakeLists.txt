@@ -201,7 +201,7 @@ add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_uchardet)
 
-add_subdirectory(ext_kf5_frameworks)
+add_subdirectory(ext_kde_frameworks)
 add_subdirectory(ext_libksane)
 add_subdirectory(ext_breeze)
 add_subdirectory(ext_waylandprotocols)

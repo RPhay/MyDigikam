@@ -7,7 +7,7 @@
  * Description : central place for ICC settings - Qt6 implementations
  *
  * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -23,7 +23,8 @@
 #    pragma clang diagnostic ignored "-Wvariadic-macros"
 #endif
 
-// Note must be after all other to prevent broken compilation
+// NOTE: must be after all other to prevent broken compilation
+
 #ifdef HAVE_X11
 #   include <climits>
 #   include <X11/Xlib.h>
@@ -43,20 +44,20 @@ namespace Digikam
 
 #ifdef HAVE_X11
 
-bool IccSettings::Private::isX11()
+bool IccSettings::Private::isX11() const
 {
-    return QGuiApplication::platformName() == QLatin1String("xcb");
+    return (QGuiApplication::platformName() == QLatin1String("xcb"));
 }
 
-QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber)
+QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber) const
 {
     const auto screens = QGuiApplication::screens();
 
     for (QScreen* const screen : screens)
     {
-        auto* qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
+        auto* const qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
 
-        if (qxcbScreen && qxcbScreen->virtualDesktopNumber() == virtualDesktopNumber)
+        if (qxcbScreen && (qxcbScreen->virtualDesktopNumber() == virtualDesktopNumber))
         {
             return screen;
         }
@@ -65,66 +66,68 @@ QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNum
     return nullptr;
 }
 
-quint32 IccSettings::Private::getAppRootWindow(int screen)
+quint32 IccSettings::Private::getAppRootWindow(int screen) const
 {
     if (!qApp)
     {
         return 0;
     }
 
-    QPlatformNativeInterface* native = qApp->platformNativeInterface();
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
 
     if (!native)
     {
         return 0;
     }
 
-    QScreen* scr = (screen == -1) ?  QGuiApplication::primaryScreen() : findScreenForVirtualDesktop(screen);
+    QScreen* const scr = (screen == -1) ? QGuiApplication::primaryScreen() 
+                                        : findScreenForVirtualDesktop(screen);
 
     if (!scr)
     {
         return 0;
     }
 
-    return static_cast<uint32_t>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr)));
+    return (static_cast<quint32>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr))));
 }
 
-int IccSettings::Private::appScreen()
+int IccSettings::Private::appScreen() const
 {
     if (!qApp)
     {
         return 0;
     }
 
-    QPlatformNativeInterface* native = qApp->platformNativeInterface();
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
 
     if (!native)
     {
         return 0;
     }
-    return reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen")));
+
+    return (reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen"))));
 }
 
-Display* IccSettings::Private::display()
+Display* IccSettings::Private::display() const
 {
     if (!qApp)
     {
         return nullptr;
     }
 
-    QPlatformNativeInterface* native = qApp->platformNativeInterface();
+    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
 
     if (!native)
     {
         return nullptr;
     }
 
-    void* display = native->nativeResourceForIntegration(QByteArray("display"));
+    void* const display = native->nativeResourceForIntegration(QByteArray("display"));
 
-    return reinterpret_cast<Display*>(display);
+    return (reinterpret_cast<Display*>(display));
 }
 
-#endif
+#endif // HAVE_X11
 
 /*
  * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
@@ -142,10 +145,11 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     if (!isX11())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
+
         return IccProfile();
     }
 
-    unsigned long appRootWindow;
+    unsigned long appRootWindow = 0;
     QString       atomName;
 
     QScreen* const screen = qApp->primaryScreen();
@@ -153,6 +157,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     if (!screen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No screen available for application";
+
         return IccProfile();
     }
 
@@ -201,9 +206,9 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     Atom          type;
     int           format;
-    unsigned long nitems;
-    unsigned long bytes_after;
-    quint8*       str = nullptr;
+    unsigned long nitems      = 0;
+    unsigned long bytes_after = 0;
+    quint8*       str         = nullptr;
 
     static Atom icc_atom = XInternAtom(display(), atomName.toLatin1().constData(), True);
 
@@ -237,20 +242,22 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #elif defined Q_OS_WIN
 
-    //TODO
+    // TODO
     Q_UNUSED(widget);
 
 #elif defined Q_OS_MACOS
 
-    //TODO
+    // TODO
+
     Q_UNUSED(widget);
 
 #else
 
     // Unsupported platform
+
     Q_UNUSED(widget);
 
-#endif
+#endif // HAVE_X11
 
     return IccProfile();
 }

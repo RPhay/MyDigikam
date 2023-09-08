@@ -37,12 +37,12 @@ public:
 
 public Q_SLOTS:
 
-    void process(FacePipelineExtendedPackage::Ptr package);
+    void process(const FacePipelineExtendedPackage::Ptr& package);
     void slotImageLoaded(const LoadingDescription& loadingDescription, const DImg& img);
 
 Q_SIGNALS:
 
-    void processed(FacePipelineExtendedPackage::Ptr package);
+    void processed(const FacePipelineExtendedPackage::Ptr& package);
 
 protected:
 

@@ -331,12 +331,6 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 
-    // -- System Options --------------------------------------------------------
-
-    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
-
-    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
-
     // -- Spell Check and Localize Options --------------------------------------
 
 #ifdef HAVE_SONNET
@@ -350,6 +344,12 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     d->localizeWidget = new LocalizeConfig(d->tab);
 
     d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
+
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
     // --------------------------------------------------------
 

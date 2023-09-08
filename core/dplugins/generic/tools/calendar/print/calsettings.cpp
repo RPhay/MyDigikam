@@ -29,9 +29,23 @@
 
     // KCalCore includes
 
-#   include <kcalcore/icalformat.h>
-#   include <kcalcore/filestorage.h>
-#   include <kcalcore/memorycalendar.h>
+#   if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#       include <kcalendarcore/icalformat.h>
+#       include <kcalendarcore/filestorage.h>
+#       include <kcalendarcore/memorycalendar.h>
+
+using namespace KCalendarCore;
+
+#   else
+
+#       include <kcalcore/icalformat.h>
+#       include <kcalcore/filestorage.h>
+#       include <kcalcore/memorycalendar.h>
+
+using namespace KCalCore;
+
+#   endif
 
     // Qt includes
 
@@ -294,17 +308,17 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
 
 #   ifdef HAVE_KCALENDAR_QDATETIME
 
-    KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QTimeZone::utc()));
+    MemoryCalendar::Ptr memCal(new MemoryCalendar(QTimeZone::utc()));
     using DateTime = QDateTime;
 
 #   else
 
-    KCalCore::MemoryCalendar::Ptr memCal(new KCalCore::MemoryCalendar(QLatin1String("UTC")));
+    MemoryCalendar::Ptr memCal(new MemoryCalendar(QLatin1String("UTC")));
     using DateTime = KDateTime;
 
 #   endif
 
-    KCalCore::FileStorage::Ptr fileStorage(new KCalCore::FileStorage(memCal, url.toLocalFile(), new KCalCore::ICalFormat));
+    FileStorage::Ptr fileStorage(new FileStorage(memCal, url.toLocalFile(), new ICalFormat));
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Loading calendar from file " << url.toLocalFile();
 
@@ -326,16 +340,16 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         DateTime dtCurrent;
 
         int counter                = 0;
-        KCalCore::Event::List list = memCal->rawEvents(qFirst, qLast);
+        Event::List list = memCal->rawEvents(qFirst, qLast);
 
-        Q_FOREACH (const KCalCore::Event::Ptr event, list)
+        Q_FOREACH (const Event::Ptr event, list)
         {
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << event->summary() << QT_ENDL << "--------";
             counter++;
 
             if (event->recurs())
             {
-                KCalCore::Recurrence* const recur = event->recurrence();
+                Recurrence* const recur = event->recurrence();
 
                 for (dtCurrent = recur->getNextDateTime(dtFirst.addDays(-1));
                      (dtCurrent <= dtLast) && dtCurrent.isValid();
@@ -351,7 +365,12 @@ void CalSettings::loadSpecial(const QUrl& url, const QColor& color)
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Loaded " << counter << " events";
+
+#   if (QT_VERSION < QT_VERSION_CHECK(5, 99, 0))
+
         memCal->close();
+
+#   endif
 
         if (fileStorage->close())
         {

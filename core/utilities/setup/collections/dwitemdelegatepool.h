@@ -99,7 +99,6 @@ public:
     DWItemDelegate*                                delegate;
     DWItemDelegateEventListener*                   eventListener;
 
-    QList<QList<QWidget*> >                        allocatedWidgets;
     QHash<QPersistentModelIndex, QList<QWidget*> > usedWidgets;
     QHash<QWidget*, QPersistentModelIndex>         widgetInIndex;
 

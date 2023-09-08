@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 00:44+0000\n"
-"PO-Revision-Date: 2023-06-29 14:49+0200\n"
+"POT-Creation-Date: 2023-09-06 00:43+0000\n"
+"PO-Revision-Date: 2023-09-06 09:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -810,12 +810,10 @@ msgid "R&emove Tag"
 msgstr "Према&хване на таг"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Премахване на всички лица"
+msgstr "Премахване на всички тагове"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -1125,7 +1123,7 @@ msgstr "Бленда и фокусно разстояние:"
 
 #: core/app/items/utils/tooltipfiller.cpp:234
 #: core/dplugins/generic/tools/mjpegstream/mjpegframeosd.cpp:214
-#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:211
+#: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:204
 #: core/libs/dialogs/imagedialog_preview.cpp:190
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:203
 #: core/utilities/import/items/importtooltipfiller.cpp:184
@@ -2855,11 +2853,11 @@ msgstr "Показване на цял екран"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:145
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:88
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:93
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:90
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
-#: core/libs/album/engine/album.cpp:500
+#: core/libs/album/engine/album.cpp:508
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
@@ -2951,12 +2949,12 @@ msgid "No Tags Album"
 msgstr "Няма албум с етикети"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
-#: core/libs/album/engine/album.cpp:573
+#: core/libs/album/engine/album.cpp:581
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3690,7 +3688,7 @@ msgstr "Тип на аудио канала"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3885,7 +3883,7 @@ msgstr "Свойства за файла"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
 #, kde-format
 msgid "Filename"
 msgstr "Име на файл"
@@ -3949,7 +3947,7 @@ msgstr "Координати"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
 #, kde-format
 msgid "Altitude"
 msgstr "Височина"
@@ -4201,8 +4199,8 @@ msgstr "Единица"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:88
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:262
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/libs/dtrash/dtrashitemmodel.cpp:264
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
 #, kde-format
 msgid "Thumbnail"
 msgstr "Миниатюра"
@@ -5109,41 +5107,66 @@ msgstr ""
 "para> <para> Вижте подробности за този формат от <a href='https://en."
 "wikipedia.org/wiki/Webp'> това Страница </a>. </para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #, kde-format
 msgid "Output file type:"
 msgstr "Тип изходен файл:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Same as input"
 msgstr "Също като входа"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:102
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:105
+#, kde-format
+msgid "JPEG 2000"
+msgstr "JPEG 2000"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#, kde-format
+msgid "JPEG XL"
+msgstr "JPEG XL"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#, kde-format
+msgid "AVIF"
+msgstr "AVIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:108
+#, kde-format
+msgid "HEIF"
+msgstr "HEIF"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#, kde-format
+msgid "WEBP"
+msgstr "WEBP"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:113
 #, kde-format
 msgid "Shell Script:"
 msgstr "Скрипт на обвивката:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:116
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5154,7 +5177,7 @@ msgstr ""
 "вход/изход (с пропускане на специални символи). Те ще бъдат заменени преди "
 "изпълнението на обвивката."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:119
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5164,42 +5187,42 @@ msgstr ""
 "COMMENTS (коментари), COLORLABEL (етикет на цвета), PICKLABEL (етикет на "
 "избора), RATING (оценка) и TAGSPATH (разделени с ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:236
 #, kde-format
 msgid "User Script: No script."
 msgstr "Потребителски скрипт: Без скрипт."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: File open error."
 msgstr "Потребителски скрипт: Грешка при отваряне на файл."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Потребителски скрипт: Timeout от скрипта."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:322
 #, kde-format
 msgid "User Script: No error."
 msgstr "Потребителски скрипт: Няма грешка."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:326
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Потребителски скрипт: Неуспешно стартиране на скрипт."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:332
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Потребителски скрипт: Процесът на скрипт се срина."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:338
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Потребителски скрипт: Командата не е намерена."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:344
 #, kde-format
 msgid "User Script: Error code returned %1."
 msgstr "Потребителски скрипт: Върнат код за грешка %1."
@@ -10181,6 +10204,7 @@ msgstr "Автоматична настройка"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
 #, kde-format
 msgid "Settings"
 msgstr "Настройки"
@@ -11233,67 +11257,67 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Две карти - вертикално"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:354
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Подреждане"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:361
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Първо най-старите"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:365
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Първо най-младите"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:405
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Детайли"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:406
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS корелатор"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Отмяна/Повторение"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Обратно геокодиране"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Търсене"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Експортиране в KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:616
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Зареждане на метаданни -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:807
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11301,25 +11325,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Имате 1 модифицирано изображение."
 msgstr[1] "Имате %1 модифицирани изображения."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Незапазени промени"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Искате ли да запазите промените, които сте направили в тях?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:931
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Запазване на промените -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11363,44 +11387,44 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Грешка"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:991
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Част от информацията не можа да се запази:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "Редактиране на геолокацията"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
 #, kde-format
 msgid "Latitude"
 msgstr "Географска ширина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
 #, kde-format
 msgid "Longitude"
 msgstr "Географска дължина"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
 #, kde-format
 msgid "Speed"
 msgstr "Скорост"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "# satellites"
 msgstr "# сателити"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Fix type"
 msgstr "Вид на корекцията"
@@ -11416,7 +11440,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15778,7 +15802,7 @@ msgstr "Актуализирано клеймо за време"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Status"
 msgstr "Състояние"
@@ -16668,14 +16692,14 @@ msgstr ""
 "настройки"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:135
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
 #, kde-format
 msgctxt "@action: button"
 msgid "&Default"
 msgstr "&По подразбиране"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:150
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:138
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
@@ -16808,19 +16832,19 @@ msgstr ""
 "\n"
 " %2"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:57
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Добре дошли в инструмента за сливане на изображения"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
 msgstr "Добре дошли в инструмента за сливане на изображения"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16830,7 +16854,7 @@ msgstr ""
 "Този инструмент обединява изображения с различни експозиции, за да направи "
 "псевдо HDR изображение"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16840,7 +16864,7 @@ msgstr ""
 "Може да се използва и за сливане на фокусни скоби, за да се получи едно "
 "изображение с по-голяма дълбочина на рязкост."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16850,7 +16874,7 @@ msgstr ""
 "Този асистент ще ви помогне да конфигурирате начина на импортиране на "
 "изображения, преди да ги обедините в едно."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -16860,20 +16884,20 @@ msgstr ""
 "Бракетните изображения трябва да бъдат направени с един и същ фотоапарат, "
 "при едни и същи условия и по възможност с помощта на статив."
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
 msgstr "За повече информация, моля, разгледайте"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "this page"
 msgstr "тази страница"
 
-#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:83
+#: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
@@ -17453,7 +17477,7 @@ msgstr ""
 "p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:88
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:105
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
@@ -17462,7 +17486,7 @@ msgid "&Choose image selection method:"
 msgstr "&Избиране на метод за избор на изображения:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
@@ -17486,7 +17510,7 @@ msgstr "Целева папка:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:269
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
@@ -17666,7 +17690,7 @@ msgstr "Jalbum е завършен, но се появиха някои пред
 msgid "Jalbum completed."
 msgstr "Jalbum е завършен."
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
 #, kde-format
 msgid ""
 "<qt><p><h1><b>Welcome to jAlbum export tool</b></h1></p><p>This assistant "
@@ -17677,7 +17701,7 @@ msgstr ""
 "p><p>Този помощник ще ви помогне да експортирате бързо</p><p></"
 "p><p>изображенията си като проект на jAlbum.</p></qt>"
 
-#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
+#: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
@@ -18471,7 +18495,7 @@ msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
 msgstr "Стандартно, основано на това, което се вижда"
 
-#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:43
+#: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:44
 #, kde-format
 msgid ""
 "Tesseract is an optical character recognition engine for various operating "
@@ -18480,19 +18504,19 @@ msgstr ""
 "Tesseract е двигател за оптично разпознаване на символи за различни "
 "операционни системи."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Преобразуване на текст с оптично разпознаване OCR)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:132
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
 msgstr "&Стартиране на оптично разпознаване на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:164
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -18504,13 +18528,13 @@ msgstr ""
 "оптично разпознаване на символи. Програмата Tesseract и желаните езикови "
 "модули трябва да са инсталирани на вашата система."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Разпознаване на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:219
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18523,55 +18547,55 @@ msgstr ""
 "поправите, ако е необходимо. Натиснете бутона Запазване, за да запишете "
 "промените."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Запазване"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:233
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
 msgstr "Преглед на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:383
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
 msgstr "Обработване на %1"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
 msgstr "Процесът е неуспешен"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:462
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
 msgstr "Процесът е отменен"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:470
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
 msgstr "Вътрешна грешка"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:521
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
 #, kde-format
 msgctxt "@info"
 msgid "Success"
 msgstr "Успех"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Преобразуване на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18580,38 +18604,38 @@ msgid ""
 msgstr ""
 "Списъкът не съдържа цифрови файлове за обработка. Трябва да ги изберете."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
 msgstr "Преобразуване на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "&Прекъсване"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
 msgstr "Прекъсване на оптичното разпознаване на Raw файлове."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:676
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
 msgstr "&Стартиране на оптично разпознаване на текст"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:716
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
 msgstr "Стартиране на оптично разпознаване с текущите настройки."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18621,13 +18645,13 @@ msgstr ""
 "Програма или езикови модули на Tesseract\n"
 "не са инсталирани на вашата система."
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
 msgstr "Обработка на всички елементи"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:755
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
@@ -18934,19 +18958,19 @@ msgstr "Създаването на Tiff изображение е неуспе�
 msgid "Raw file conversion failed."
 msgstr "Неуспешно конвертиране на Raw файл."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "Добре дошли в инструмента за панорама"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:106
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
 msgstr "Добре дошли в инструмента за панорама"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18956,7 +18980,7 @@ msgstr ""
 "Този инструмент съшива няколко изображения заедно, за да създаде панорама, "
 "като прави шева между изображенията невидим."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -18966,37 +18990,37 @@ msgstr ""
 "Този помощник ще ви помогне да конфигурирате как да импортирате "
 "изображенията, преди да ги съшиете в панорама."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
 msgstr "Изображенията трябва да са направени от една и съща гледна точка."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
 msgstr "За повече информация, моля, разгледайте "
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:116
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
 #, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Бинарни файлове на панорама"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:181
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:182
 #, kde-format
 msgctxt "@title: group"
 msgid "File Format"
 msgstr "Файлов формат"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:185
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:186
 #, kde-format
 msgctxt "@option: radio"
 msgid "JPEG output"
 msgstr "Изход в JPEG"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:190
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
 #, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19006,7 +19030,7 @@ msgstr ""
 "Избира изход JPEG с 90% степен на компресия (компресия със загуби, по-малък "
 "размер)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:192
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -19018,13 +19042,13 @@ msgstr ""
 "малък на цената на загуба на информация по време на компресията. Това е най-"
 "лесният начин за споделяне резултата или да го качите онлайн или в магазин."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:198
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
 #, kde-format
 msgctxt "@option: radio"
 msgid "TIFF output"
 msgstr "Изход в TIFF"
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
 #, kde-format
 msgctxt "@info: tooltip"
 msgid ""
@@ -19034,7 +19058,7 @@ msgstr ""
 "Избира изход в TIFF, компресиран с помощта на алгоритъма LZW (компресия без "
 "загуби, по-голям размер)."
 
-#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:201
+#: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
 #, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
@@ -20087,7 +20111,7 @@ msgstr "Целева папка:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:268
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:270
 #, kde-format
 msgid "Output Destination Path"
 msgstr "Път за изходно местоназначение"
@@ -21871,13 +21895,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Blobs"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:673
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22164,10 +22188,10 @@ msgid ""
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
 "Start:</td><td><i>Space</i> key</td></tr><tr><td>Slideshow Settings:</"
-"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Properties:</td><td><i>F4</"
-"i> key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-"colspan=\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></"
-"td></tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+"td><td><i>F2</i> key</td></tr><tr><td>Hide/Show Overlays:</td><td><i>F4</i> "
+"key</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+"tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
 "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
 "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard shortcuts</"
 "td></tr><tr><td>Change Pick Label:</td><td>Use Pick label keyboard "
@@ -22175,20 +22199,20 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>Този инструмент визуализира поредица отелементи като обикновено слайдшоу. "
-"</p><p>Множество свойства на елементите могат да се показват като наслагване "
-"по време на работа.</p><p>Този инструмент може да възпроизвежда съдържанието "
-"на албума в рекурсивенрежим с детски албуми, ако има такива.</"
+"<p>Този инструмент визуализира поредица от елементи като обикновено "
+"слайдшоу. </p><p>Множество свойства на елементите могат да се показват като "
+"наслагване по време на работа.</p><p>Този инструмент може да възпроизвежда "
+"съдържанието на албума в рекурсивен режим с дъщерни албуми, ако има такива.</"
 "p><p><u>Използване:</u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Достъп до елемент</h1></b></center></nobr></td></"
 "tr><tr><td>Предишен елемент:</td><td>клавиш <i>Up</i></td></tr><tr><td></"
-"td><td>клавиш <i>PgUp</i></td></tr><tr><td></td><td>клавиш <i>Left</i></td></"
-"tr><tr><td></td><td>Колелцето намишката нагоре </td></tr><tr><td></"
-"td><td>Ляв бутон намишката</td></tr><tr><td>Следващ елемент:</td><td>клавиш "
-"<i>Down</i></td></tr><tr><td></td><td>клавиш <i>PgDown</i></td></"
-"tr><tr><td></td><td>клавиш<i>Right</i></td></tr><tr><td></td><td>Колелцето "
-"намишката надолу</td></tr><tr><td></td><td>Десен бутон намишката</td></"
-"tr><tr><td>Пауза/Старт:</td><td>клавиш <i>Интервал</i></td></"
+"td><td>клавиш <i>PgUp</i></td></tr><tr><td></td><td>клавиш <i>Стрелка "
+"наляво</i></td></tr><tr><td></td><td>Колелцето на мишката нагоре </td></"
+"tr><tr><td></td><td>Ляв бутон на мишката</td></tr><tr><td>Следващ елемент:</"
+"td><td>клавиш <i>Down</i></td></tr><tr><td></td><td>клавиш <i>PgDown</i></"
+"td></tr><tr><td></td><td>клавиш<i>Стрелка надясно</i></td></tr><tr><td></"
+"td><td>Колелцето на мишката надолу</td></tr><tr><td></td><td>Десен бутон на "
+"мишката</td></tr><tr><td>Пауза/Старт:</td><td>клавиш <i>Интервал</i></td></"
 "tr><tr><td>Настройки на слайдшоу:</td><td>клавиш <i>F2</i> </td></"
 "tr><tr><td>Скриване/показване на свойствата:</td><td>клавиш <i>F4</i></td></"
 "tr><tr><td>Изход:</td><td>клавиш <i>Esc</i></td></tr><tr><td colspan="
@@ -26458,7 +26482,7 @@ msgstr "Настройки на уеб услугата"
 msgid "Export by Web Service"
 msgstr "Експортиране с уеб-услуга"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:215
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:220
 #, kde-format
 msgid ""
 "Error to import RAW image with ART\n"
@@ -26468,12 +26492,12 @@ msgstr ""
 "Затворете този диалогов прозорец, за да заредите RAW изображение с "
 "оригиналния инструмент за импортиране"
 
-#: core/dplugins/rawimport/art/rawimportartplugin.cpp:230
+#: core/dplugins/rawimport/art/rawimportartplugin.cpp:235
 #, kde-format
 msgid "ART Raw Conversion"
 msgstr "ART Raw конвертиране"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:280
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26483,7 +26507,7 @@ msgstr ""
 "Затворете този диалогов прозорец, за да заредите RAW изображение с "
 "оригиналния инструмент за импортиране"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:295
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable Raw конвертиране"
@@ -26680,7 +26704,7 @@ msgstr ""
 "Използвайте общи настройки за декодиране на Raw, за да заредите това "
 "изображение в редактора."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26690,12 +26714,12 @@ msgstr ""
 "Затворете този диалогов прозорец, за да заредите RAW изображение с "
 "оригиналния инструмент за импортиране"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:234
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee Raw конвертиране"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:225
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26705,43 +26729,43 @@ msgstr ""
 "Затворете този диалогов прозорец, за да заредите RAW изображение с "
 "оригиналния инструмент за импортиране"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:240
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Конвертиране UFRaw Raw"
 
-#: core/libs/album/engine/album.cpp:421
+#: core/libs/album/engine/album.cpp:429
 #: core/libs/database/utils/ifaces/dio.cpp:823
 #, kde-format
 msgid "Trash"
 msgstr "Кошче"
 
-#: core/libs/album/engine/album.cpp:772
+#: core/libs/album/engine/album.cpp:780
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Текущо търсене по период от време"
 
-#: core/libs/album/engine/album.cpp:778
+#: core/libs/album/engine/album.cpp:786
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Текущо ориентировъчно търсене по изображение"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:790
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Текущо ориентировъчно търсене по скица"
 
-#: core/libs/album/engine/album.cpp:789
+#: core/libs/album/engine/album.cpp:797
 #, kde-format
 msgid "Current Map Search"
 msgstr "Текущо търсене по карта"
 
-#: core/libs/album/engine/album.cpp:794
+#: core/libs/album/engine/album.cpp:802
 #, kde-format
 msgid "Current Search"
 msgstr "Текущо търсене"
 
-#: core/libs/album/engine/album.cpp:797
+#: core/libs/album/engine/album.cpp:805
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Текущо търсене на дубликати"
@@ -27630,19 +27654,19 @@ msgctxt "@item: color tree"
 msgid "White"
 msgstr "Бяло"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Нов албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:117
+#: core/libs/album/widgets/albumpropsedit.cpp:115
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Редактиране на албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27652,56 +27676,56 @@ msgstr ""
 "\"%1\"\n"
 "Свойства на албума"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:146
+#: core/libs/album/widgets/albumpropsedit.cpp:144
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:150
+#: core/libs/album/widgets/albumpropsedit.cpp:148
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Задайте тук новото заглавие на албума"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:155
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "&Категория:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:160
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Дъщерен на:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:168
+#: core/libs/album/widgets/albumpropsedit.cpp:166
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "&Надпис:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Въведете тук заглавието на албума..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Дата на &албум:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:182
+#: core/libs/album/widgets/albumpropsedit.cpp:180
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:201
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Най-старите"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:183
+#: core/libs/album/widgets/albumpropsedit.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
@@ -27709,14 +27733,14 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-старото изображение от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:184
+#: core/libs/album/widgets/albumpropsedit.cpp:182
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:203
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Средно"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:185
+#: core/libs/album/widgets/albumpropsedit.cpp:183
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -27724,14 +27748,14 @@ msgstr ""
 "Използвайте този бутон, за да изчислите средната дата на изображенията от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:186
+#: core/libs/album/widgets/albumpropsedit.cpp:184
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:205
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Най-нови"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:187
+#: core/libs/album/widgets/albumpropsedit.cpp:185
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
@@ -27739,31 +27763,31 @@ msgstr ""
 "Използвайте този бутон, за да изберете датата на най-новото изображение от "
 "албума."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:271
+#: core/libs/album/widgets/albumpropsedit.cpp:269
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Нов албум"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:273
+#: core/libs/album/widgets/albumpropsedit.cpp:271
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Избран албум (по подразбиране)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:274
+#: core/libs/album/widgets/albumpropsedit.cpp:272
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Основна папка на текущата колекция"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:348
+#: core/libs/album/widgets/albumpropsedit.cpp:346
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Албум без категории"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:434
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27773,13 +27797,13 @@ msgstr ""
 "Създаване на нов албум в\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:479
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Не може да се изчисли средната стойност"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:480
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28691,25 +28715,25 @@ msgstr ""
 "форматът на базата данни е твърде нов) Моля, използвайте по-новата версия на "
 "digikam, която сте използвали преди. "
 
-#: core/libs/database/tags/facetags.cpp:404
+#: core/libs/database/tags/facetags.cpp:398
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
 msgstr "Хора"
 
-#: core/libs/database/tags/facetags.cpp:468
+#: core/libs/database/tags/facetags.cpp:462
 #, kde-format
 msgctxt "The list of detected faces from the collections but not recognized"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: core/libs/database/tags/facetags.cpp:488
+#: core/libs/database/tags/facetags.cpp:482
 #, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
 msgstr "Непотвърдено"
 
-#: core/libs/database/tags/facetags.cpp:508
+#: core/libs/database/tags/facetags.cpp:502
 #, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
@@ -29170,7 +29194,7 @@ msgstr ""
 "на албуми, елементи и метаданни за търсения."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Име на базата данни за миниатюрите:"
@@ -29279,29 +29303,34 @@ msgid ""
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
 "root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init digiKam "
 "databases with grant privileges (see behind)</p><p>...</p><p>quit</"
-"p><p>NOTE: If you have an enormous collection, you should start MySQL server "
-"with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
-"settings</p>"
+"p><p>NOTE: If you have problems with a MySQL server on Ubuntu based Linux "
+"system, use the addition command in the mysql prompt to be able to create "
+"MySQL triggers.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>NOTE: "
+"If you have an enormous collection, you should start MySQL server with mysql "
+"--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 "<p>Забележка: при Linux сървър базата данни може да бъде инициализирана, "
 "като се изпълняват командите по-долу:</p><p># su</p><p># systemctl restart "
 "mysqld</p><p># mysql -u root</p><p>...</p><p>Въведете SQL код в промпта на "
 "Mysql, за да инициализирате базите данни на digiKam с привилегии за "
 "предоставяне (виж отзад)</p><p>...</p><p>quit</p><p>ЗАБЕЛЕЖКА: Ако имате "
-"огромна колекция, трябва да стартирате MySQL сървъра с mysql --"
+"проблеми с MySQL сървъра в Ubuntu, въведете:<br>SET GLOBAL "
+"log_bin_trust_function_creators=1;<br>в промпта  на mysql.  Да можете да "
+"създавате тригери на MySQL.</p><p>ЗАБЕЛЕЖКА: Ако имате много голяма "
+"колекция, трябва да стартирате MySQL сървъра с mysql --"
 "max_allowed_packet=128M ИЛИ в my.ini или ~/.my.cnf променете настройките</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
 #, kde-format
 msgid "Requirements"
 msgstr "Изисквания"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Технически подробности за сървъра за бази данни"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:327
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29341,77 +29370,77 @@ msgstr ""
 "данни трябва да бъдат създадени предварително на отдалечения сървър от "
 "администратора. Погледнете в раздела <b>Изисквания</b> за подробности.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:353
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
 #, kde-format
 msgid "Documentation"
 msgstr "Документация"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:580
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Папка на базата данни за миниатюрите:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Тест за свързване на база данни"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Тестът за връзка с базата данни е успешен."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:600
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 "Тестът за връзка с база данни не беше успешен. <p> Грешката беше: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:609
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Името на хоста на сървъра е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:615
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Потребителското име на сървъра е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:626
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Името на основната база данни е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:632
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Името на базата данни с миниатюри е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:638
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Името на базата данни за лица е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:644
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Името на базата данни на сходните файлове е празно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:706
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "Този път е зададен като опция от командния ред (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Конфигурация на базата данни"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -29420,7 +29449,7 @@ msgstr ""
 "Конфигурацията на имената на базата данни не е валидна. Грешката е <br/> <p>"
 "%1 </p> <br/> Моля, проверете вашата конфигурация."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -29429,7 +29458,7 @@ msgstr ""
 "Връзката за тестване на базата данни се провали с грешка <br/><p>%1</p><br/> "
 "Моля, проверете вашата конфигурация."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:872
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29438,13 +29467,13 @@ msgstr ""
 "Трябва да изберете папка, в която digiKam да съхранява информация и "
 "метаданни във файл с база данни."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Да се създаде ли папка на базата от данни?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29453,13 +29482,13 @@ msgstr ""
 "<p>Папката, в която да поставите базата данни, изглежда не съществува::</"
 "p><p><b>%1</b></p>Искате ли digiKam да я създаде за вас?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Създаването на папка с база данни е неуспешно"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -29469,13 +29498,13 @@ msgstr ""
 "база данни.\n"
 "Моля, изберете друго местоположение.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Няма достъп за запис в базата данни"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -34463,14 +34492,14 @@ msgctxt "@action: button"
 msgid "Help"
 msgstr "Помощ"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:72
+#: core/libs/dplugins/widgets/dplugindialog.cpp:73
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:69
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
 #, kde-format
 msgid "Online Handbook..."
 msgstr "Онлайн ръководство..."
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:73
+#: core/libs/dplugins/widgets/dplugindialog.cpp:74
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:70
 #, kde-format
 msgid "About..."
@@ -34555,12 +34584,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Помощ"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:267
+#: core/libs/dtrash/dtrashitemmodel.cpp:269
 #, kde-format
 msgid "Relative Path"
 msgstr "Релативен път"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:272
+#: core/libs/dtrash/dtrashitemmodel.cpp:274
 #, kde-format
 msgid "Deletion Time"
 msgstr "Време на изтриване"
@@ -39265,19 +39294,19 @@ msgctxt "@item: album categories"
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:386
+#: core/libs/tags/engine/taggingactionfactory.cpp:382
 #, kde-format
 msgctxt "<tag name> in <tag path>"
 msgid "%1 in %2"
 msgstr "%1 в %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:394
+#: core/libs/tags/engine/taggingactionfactory.cpp:390
 #, kde-format
 msgctxt "Create New Tag <tag name> in <parent tag path>"
 msgid "Create \"%1\" in %2"
 msgstr "Създаване на \"%1\" в %2"
 
-#: core/libs/tags/engine/taggingactionfactory.cpp:399
+#: core/libs/tags/engine/taggingactionfactory.cpp:395
 #, kde-format
 msgid "Create \"%1\""
 msgstr "Създаване \"%1\""
@@ -40457,12 +40486,12 @@ msgstr "Имена:"
 msgid "Usages:"
 msgstr "Употреба:"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:216
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:218
 #, kde-format
 msgid "No or invalid size specified"
 msgstr "Големината не е зададена или е зададена неправилно"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:327
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Миниатюрата е празна"
@@ -50321,26 +50350,26 @@ msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Външен вид"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:338
-#: core/utilities/setup/misc/setupmisc.cpp:367
-#, kde-format
-msgctxt "@title:tab"
-msgid "System"
-msgstr "Система"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
+#: core/showfoto/setup/showfotosetupmisc.cpp:340
 #: core/utilities/setup/misc/setupmisc.cpp:355
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Проверка на правописа"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/showfoto/setup/showfotosetupmisc.cpp:346
 #: core/utilities/setup/misc/setupmisc.cpp:361
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Локализация"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:352
+#: core/utilities/setup/misc/setupmisc.cpp:367
+#, kde-format
+msgctxt "@title:tab"
+msgid "System"
+msgstr "Система"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:384
 #: core/utilities/setup/misc/setupmisc.cpp:400
@@ -51488,10 +51517,12 @@ msgstr ""
 #, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers"
+"specifies the separator char before the numbers, ||0|| optional to always "
+"pad with ||n|| zero digits"
 msgstr ""
-"Добавяне на номер на суфикс, ||n|| Посочва броя на цифрите, които трябва да "
-"се използват, ||c|| Посочва разделителния символ преди числата"
+"Добавяне на суфикс, ||n|| Посочва броя на цифрите, които трябва да се "
+"използват, ||c|| Посочва разделителния символ преди числата, ||0||по избор "
+"добавяне на ||n|| 0 пред числото за подравняване"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -51717,14 +51748,14 @@ msgid "Display Aspect Ratio"
 msgstr "Показване на съотношението на аспектите"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Скорост на аудио бит"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -51813,7 +51844,7 @@ msgid "Tilt"
 msgstr "Наклон"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
 #, kde-format
 msgid "Accuracy"
 msgstr "Точност"
@@ -53204,51 +53235,67 @@ msgstr ""
 "за да се извърши\n"
 "ориентировъчно търсене"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:168
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
 #, kde-format
 msgid "Roadmap"
 msgstr "Пътна карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:169
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
 #, kde-format
 msgid "Satellite"
 msgstr "Спътников изглед"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:170
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
 #, kde-format
 msgid "Hybrid"
 msgstr "Смесен изглед"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:171
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
 #, kde-format
 msgid "Terrain"
 msgstr "Теренен изглед"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Управление на вида карта"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:194
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Управление на навигацията"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Управление на мащаба"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:212
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#, kde-format
+msgid "Google Maps API Key"
+msgstr "API ключ на Карти в Google"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
 #, kde-format
 msgid "Google Maps"
 msgstr "Карти в Google"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:380
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
 #, kde-format
 msgid "Float items"
 msgstr "Плаващи елементи"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#, kde-format
+msgid "API Key:"
+msgstr "API ключ:"
+
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#, kde-format
+msgid "Javascript Message"
+msgstr "Съобщение на Javascript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
 #, kde-format
@@ -53716,65 +53763,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "#точки"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:405
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
 #, kde-format
 msgid "Not available"
 msgstr "Не е налично"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:444
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:449
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Поправка: %1D"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:454
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:497
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
 #, kde-format
 msgid "%1d"
 msgstr "%1 д"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:521
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
 #, kde-format
 msgid "Modified"
 msgstr "Последна промяна"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
 #, kde-format
 msgid "Date and time"
 msgstr "Дата и час"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:834
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
 #, kde-format
 msgid "Failed to open file."
 msgstr "Неуспешно отваряне на файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:906
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Не успя да се добави GPS информация към изображението."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:918
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Неуспешно премахване на GPS информация от изображението"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:930
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Грешка при запазване на таговете във файла."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1009
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Невъзможно е да се запазят промените във файла"
@@ -58343,40 +58389,40 @@ msgstr ""
 msgid "History"
 msgstr "История"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Нов работен процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:68
+#: core/utilities/queuemanager/views/workflowdlg.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Редактиране на работния процес"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:81
+#: core/utilities/queuemanager/views/workflowdlg.cpp:79
 #, kde-format
 msgid "<qt><b>Create new Workflow</b></qt>"
 msgstr "<qt><b>Създаване на нов работен процес</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:85
+#: core/utilities/queuemanager/views/workflowdlg.cpp:83
 #, kde-format
 msgid "<qt><b>Workflow Properties</b></qt>"
 msgstr "<qt><b>Свойства на работен процес</b></qt>"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:96
+#: core/utilities/queuemanager/views/workflowdlg.cpp:94
 #, kde-format
 msgctxt "@title: batch worklow name"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:108
+#: core/utilities/queuemanager/views/workflowdlg.cpp:106
 #, kde-format
 msgid "Description:"
 msgstr "Описание:"
 
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#: core/utilities/queuemanager/views/workflowdlg.cpp:135
 #, kde-format
 msgid "New Workflow"
 msgstr "Нов работен процес"
@@ -59155,102 +59201,102 @@ msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Codec"
 msgstr "Кодек"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:838
+#: core/utilities/searchwindow/searchfields_createfield.cpp:839
 #, kde-format
 msgid "Return video codec"
 msgstr "Връщане на видео кодек"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:906
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Връщане на аудио битрейта"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:907
+#: core/utilities/searchwindow/searchfields_createfield.cpp:908
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "и"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:908
+#: core/utilities/searchwindow/searchfields_createfield.cpp:909
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:924
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Връщане на тип аудио канал"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:926
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Моно"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:927
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Стерео"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:928
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 съраунд"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:929
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 съраунд"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:930
+#: core/utilities/searchwindow/searchfields_createfield.cpp:931
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 канална последователност"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:931
+#: core/utilities/searchwindow/searchfields_createfield.cpp:932
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Друг тип канал"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:943
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Връщане на аудио кодек"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Faces"
 msgstr "Лица"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Връщане на елементи по брой области на лицето"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "и"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Връщане на елементи без области на лицето"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgid "No Face Regions"
 msgstr "Няма области с лица"
@@ -61195,7 +61241,7 @@ msgstr ""
 "Настройките по подразбиране се използват при записване на файлове с "
 "изображения</li></ul>"
 
-#: core/utilities/setup/editor/setupraw.cpp:101
+#: core/utilities/setup/editor/setupraw.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61208,25 +61254,25 @@ msgstr ""
 "Отварянето на raw файл изисква задълбочена интерпретация и обработка на "
 "данните."
 
-#: core/utilities/setup/editor/setupraw.cpp:119
+#: core/utilities/setup/editor/setupraw.cpp:120
 #, kde-format
 msgctxt "@label"
 msgid "Open raw files in the image editor"
 msgstr "Отваряне на raw файлове в редактора на изображения"
 
-#: core/utilities/setup/editor/setupraw.cpp:122
+#: core/utilities/setup/editor/setupraw.cpp:123
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Fast and simple, as 8 bit image"
 msgstr "Бързо и просто, като 8 битово изображение"
 
-#: core/utilities/setup/editor/setupraw.cpp:124
+#: core/utilities/setup/editor/setupraw.cpp:125
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Using the default settings, in 16 bit"
 msgstr "Използване на настройките по подразбиране, в 16-битов формат"
 
-#: core/utilities/setup/editor/setupraw.cpp:126
+#: core/utilities/setup/editor/setupraw.cpp:127
 #, kde-format
 msgctxt "@option:radio Open raw files..."
 msgid "Always open the Raw Import Tool to customize settings"
@@ -61234,25 +61280,25 @@ msgstr ""
 "Винаги да се използва инструмента за импортиране на Raw изображения за "
 "персонализиране на настройките"
 
-#: core/utilities/setup/editor/setupraw.cpp:141
+#: core/utilities/setup/editor/setupraw.cpp:142
 #, kde-format
 msgctxt "@item: default raw plugin"
 msgid " (default)"
 msgstr " (по подразбиране)"
 
-#: core/utilities/setup/editor/setupraw.cpp:150
+#: core/utilities/setup/editor/setupraw.cpp:170
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About this Raw Import tool..."
 msgstr "Относно този инструмент за импортиране на Raw формат..."
 
-#: core/utilities/setup/editor/setupraw.cpp:184
+#: core/utilities/setup/editor/setupraw.cpp:204
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
 msgstr "Поведение на RAW"
 
-#: core/utilities/setup/editor/setupraw.cpp:185
+#: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Default Settings"
@@ -64084,544 +64130,7 @@ msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
 
-#~ msgctxt "@label: item properties"
-#~ msgid "Tags: "
-#~ msgstr "Тагове: "
-
-#~ msgid ""
-#~ "Other process are not finished yet.\n"
-#~ "Please try again later."
-#~ msgstr ""
-#~ "Другите процеси все още не са завършени.\n"
-#~ "Моля, опитайте отново по-късно."
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Video"
-#~ msgstr "Отваряне на видеоклип"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an Url"
-#~ msgstr "Отваряне на адрес"
-
-#~ msgctxt "@info"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@info"
-#~ msgid "Drag and drop a file to player\n"
-#~ msgstr "Завлечете файл в плейъра\n"
-
-#~ msgctxt "@info"
-#~ msgid "A: switch aspect ratio"
-#~ msgstr "A: превключване на съотношението"
-
-#~ msgctxt "@info"
-#~ msgid "Double click to switch fullscreen"
-#~ msgstr "Двойно щракване, за да превключите на цял екран"
-
-#~ msgctxt "@info"
-#~ msgid "Shortcut:\n"
-#~ msgstr "Клавишна комбинация:\n"
-
-#~ msgctxt "@info"
-#~ msgid "Space: pause/continue\n"
-#~ msgstr "Интервал: пауза/продължаване\n"
-
-#~ msgctxt "@info"
-#~ msgid "F: fullscreen on/off\n"
-#~ msgstr "F: вкл./изкл. на цял екран\n"
-
-#~ msgctxt "@info"
-#~ msgid "T: stays on top on/off\n"
-#~ msgstr "T: задържане отгоре вкл./изкл.\n"
-
-#~ msgctxt "@info"
-#~ msgid "N: show next frame. Continue the playing by pressing 'Space'\n"
-#~ msgstr ""
-#~ "N: показване на следващия кадър. Продължете възпроизвеждането с натискане "
-#~ "на \"Интервал\"\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+O: open a file\n"
-#~ msgstr "Ctrl+O: отваряне на файл\n"
-
-#~ msgctxt "@info"
-#~ msgid "O: On Screen Display\n"
-#~ msgstr "O: Екранни надписи\n"
-
-#~ msgctxt "@info"
-#~ msgid "P: replay\n"
-#~ msgstr "P: повторно изпълнение\n"
-
-#~ msgctxt "@info"
-#~ msgid "Q/ESC: quit\n"
-#~ msgstr "Q/ESC: изход\n"
-
-#~ msgctxt "@info"
-#~ msgid "S: stop\n"
-#~ msgstr "S: стоп\n"
-
-#~ msgctxt "@info"
-#~ msgid "R: rotate 90 degrees"
-#~ msgstr "R: завъртане на 90 градуса"
-
-#~ msgctxt "@info"
-#~ msgid "M: mute on/off\n"
-#~ msgstr "M: вкл./изкл. на звук\n"
-
-#~ msgctxt "@info"
-#~ msgid "C: capture video"
-#~ msgstr "C: заснемане на видео"
-
-#~ msgctxt "@info"
-#~ msgid "Up/Down: volume +/-\n"
-#~ msgstr "Стрелки нагоре/надолу: сила на звука +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "Ctrl+Up/Down: speed +/-\n"
-#~ msgstr "Ctrl+нагоре/надолу: скорост +/-\n"
-
-#~ msgctxt "@info"
-#~ msgid "-&gt;/&lt;-: seek forward/backward\n"
-#~ msgstr "-&gt;/&lt;-: превъртане напред/назад\n"
-
-#~ msgctxt "@title:window"
-#~ msgid "Help"
-#~ msgstr "Помощ"
-
-#~ msgctxt "@action: open new media"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@action: open new stream"
-#~ msgid "Open Url"
-#~ msgstr "Отваряне на адрес (URL)"
-
-#~ msgctxt "@action: about AVPlayer"
-#~ msgid "About"
-#~ msgstr "Относно"
-
-#~ msgctxt "@action: AVPlayer help"
-#~ msgid "Help"
-#~ msgstr "Помощ"
-
-#~ msgctxt "#info"
-#~ msgid ""
-#~ "<p>You are running AVPlayer as a 32-bit version on a 64-bit Windows.</"
-#~ "p><p>Please install the 64-bit version of AVPlayer to get a better "
-#~ "experience with AVPlayer.</p>"
-#~ msgstr ""
-#~ "<p>Използвате AVPlayer като 32-битова версия на 64-битов Windows.</"
-#~ "p><p>Моля, инсталирайте 64-битовата версия на AVPlayer, за да получите по-"
-#~ "добри резултати с AVPlayer.</p>"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Media File"
-#~ msgstr "Отваряне на мултимедиен файл"
-
-#~ msgctxt "@option"
-#~ msgid "Aspect ratio"
-#~ msgstr "Съотношение"
-
-#~ msgctxt "@title:window"
-#~ msgid "Player Error"
-#~ msgstr "Грешка на плейъра"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "No media"
-#~ msgstr "Няма диск"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Invalid media"
-#~ msgstr "Невалидна медия"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffering..."
-#~ msgstr "Буфериране..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Buffered"
-#~ msgstr "Буфериран"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loading..."
-#~ msgstr "Зареждане..."
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Loaded"
-#~ msgstr "Заредено"
-
-#~ msgctxt "@info: media loading"
-#~ msgid "Stalled"
-#~ msgstr "Застой"
-
-#~ msgctxt "@title:window, media loading state"
-#~ msgid "Buffering... %1% @%2 %3"
-#~ msgstr "Буфериране... %1% @%2 %3"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Capture video frame\n"
-#~ "Save to: %1\n"
-#~ "Format: %2"
-#~ msgstr ""
-#~ "Заснемане на видео\n"
-#~ "Записване в: %1\n"
-#~ "Формат: %2"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open a Subtitle File"
-#~ msgstr "Отваряне на файл със субтитри"
-
-#~ msgctxt "@info"
-#~ msgid "Video renderer is not available on your platform!"
-#~ msgstr ""
-#~ "Програмата за възпроизвеждане на видео (рендър) не е наличен на вашата "
-#~ "платформа!"
-
-#~ msgctxt "@action: audio track"
-#~ msgid "External"
-#~ msgstr "Външен"
-
-#~ msgctxt "@info"
-#~ msgid "Current time"
-#~ msgstr "Текущо време"
-
-#~ msgctxt "@info"
-#~ msgid "Duration"
-#~ msgstr "Продължителност"
-
-#~ msgctxt "@info"
-#~ msgid "Render engine"
-#~ msgstr "Програма за възпроизвеждане (рендър)"
-
-#~ msgctxt "@info"
-#~ msgid "Speed. Ctrl+Up/Down"
-#~ msgstr "Скорост. Ctrl+Стрелка нагоре/надолу"
-
-#~ msgctxt "@info: open new media"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@info: button"
-#~ msgid "Capture"
-#~ msgstr "Прихващане"
-
-#~ msgctxt "@info: button"
-#~ msgid "Volume"
-#~ msgstr "Сила на звука"
-
-#~ msgctxt "@action"
-#~ msgid "Open Url"
-#~ msgstr "Отваряне на адрес (URL)"
-
-#~ msgctxt "@option"
-#~ msgid "Play list"
-#~ msgstr "Изпълнение на списък"
-
-#~ msgctxt "@option"
-#~ msgid "History"
-#~ msgstr "История"
-
-#~ msgctxt "@action"
-#~ msgid "About"
-#~ msgstr "Относно"
-
-#~ msgctxt "@action"
-#~ msgid "Setup"
-#~ msgstr "Настройки"
-
-#~ msgctxt "@option"
-#~ msgid "Speed"
-#~ msgstr "Скорост"
-
-#~ msgctxt "@option"
-#~ msgid "Repeat"
-#~ msgstr "Повторение"
-
-#~ msgctxt "@action"
-#~ msgid "Enable"
-#~ msgstr "Включване"
-
-#~ msgctxt "@info"
-#~ msgid "infinity"
-#~ msgstr "безкрайно"
-
-#~ msgctxt "@label"
-#~ msgid "Times"
-#~ msgstr "Времена"
-
-#~ msgctxt "@label: from time-stamp"
-#~ msgid "From"
-#~ msgstr "От"
-
-#~ msgctxt "@info"
-#~ msgid "negative value means from the end"
-#~ msgstr "отрицателна стойност означава от края"
-
-#~ msgctxt "@label: to time-stamp"
-#~ msgid "To"
-#~ msgstr "До"
-
-#~ msgctxt "@action"
-#~ msgid "Clock"
-#~ msgstr "Часовник"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Auto"
-#~ msgstr "Автоматично"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Audio"
-#~ msgstr "Аудио"
-
-#~ msgctxt "@option: clock sync"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@info"
-#~ msgid "Take effect in next playback"
-#~ msgstr "Влиза в сила при следващото изпълнение"
-
-#~ msgctxt "@option"
-#~ msgid "Subtitle"
-#~ msgstr "Подзаглавие"
-
-#~ msgctxt "@action"
-#~ msgid "Auto load"
-#~ msgstr "Автоматично зареждане"
-
-#~ msgctxt "@action: open subtitle file"
-#~ msgid "Open"
-#~ msgstr "Отворяне"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "FFmpeg supports more subtitles but only render plain text\n"
-#~ "LibASS supports 'ass' styles"
-#~ msgstr ""
-#~ "FFmpeg поддържа повече субтитри, но визуализира само обикновен текст\n"
-#~ "LibASS поддържа стилове \"ass\""
-
-#~ msgctxt "@label"
-#~ msgid "Charset"
-#~ msgstr "Кодова таблица"
-
-#~ msgctxt "@option"
-#~ msgid "System"
-#~ msgstr "Система"
-
-#~ msgctxt "@info"
-#~ msgid "Auto detect requires libchardet"
-#~ msgstr "Автоматичното откриване изисква libchardet"
-
-#~ msgctxt "@option"
-#~ msgid "Audio track"
-#~ msgstr "Aудио запис"
-
-#~ msgctxt "@option"
-#~ msgid "Channel"
-#~ msgstr "Канал"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "As input"
-#~ msgstr "Като вход"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Stereo"
-#~ msgstr "Стерео"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Mono (center)"
-#~ msgstr "Моно (центрирано)"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Left"
-#~ msgstr "Наляво"
-
-#~ msgctxt "@action: channel option"
-#~ msgid "Right"
-#~ msgstr "Надясно"
-
-#~ msgctxt "@action: aspect ratio"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Window"
-#~ msgstr "Прозорец"
-
-#~ msgctxt "@action: video ratio"
-#~ msgid "Custom"
-#~ msgstr "Потребителска"
-
-#~ msgctxt "@option"
-#~ msgid "Color space"
-#~ msgstr "Цветово пространство"
-
-#~ msgctxt "@option"
-#~ msgid "Decoder"
-#~ msgstr "Декодер"
-
-#~ msgctxt "@option"
-#~ msgid "Renderer"
-#~ msgstr "Рендерер"
-
-#~ msgctxt "@info"
-#~ msgid "not available on your platform!"
-#~ msgstr "не е налично на платформата!"
-
-#~ msgctxt "@title:window"
-#~ msgid "Open an External Audio Track"
-#~ msgstr "Отваряне на външна аудиописта"
-
-#~ msgctxt "@info"
-#~ msgid "Can not use this renderer"
-#~ msgstr "Не може да използва този рендер"
-
-#~ msgctxt "@info"
-#~ msgid "Use Ctrl/Shift + Click to select multiple items"
-#~ msgstr "Използвайте Ctrl/Shift + щракване, за да изберете няколко елемента"
-
-#~ msgctxt "@action: clear playlist"
-#~ msgid "Clear"
-#~ msgstr "Изчистване"
-
-#~ msgctxt "@info"
-#~ msgid "Remove selected items"
-#~ msgstr "Премахване на избрани елементи"
-
-#~ msgctxt "@title:window"
-#~ msgid "Select Files"
-#~ msgstr "Избор на файлове"
-
-#~ msgctxt "@option: base"
-#~ msgid "Url"
-#~ msgstr "Url"
-
-#~ msgctxt "@option: base"
-#~ msgid "Format"
-#~ msgstr "Формат"
-
-#~ msgctxt "@option: base"
-#~ msgid "Bit rate"
-#~ msgstr "Битов поток"
-
-#~ msgctxt "@option: base"
-#~ msgid "Start time"
-#~ msgstr "Начало на възпроизвеждане"
-
-#~ msgctxt "@option: base"
-#~ msgid "Duration"
-#~ msgstr "Продължителност"
-
-#~ msgctxt "@option: common"
-#~ msgid "Available"
-#~ msgstr "Наличен"
-
-#~ msgctxt "@option: common"
-#~ msgid "Codec"
-#~ msgstr "Кодек"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder"
-#~ msgstr "Декодер"
-
-#~ msgctxt "@option: common"
-#~ msgid "Decoder detail"
-#~ msgstr "Подробности за декодера"
-
-#~ msgctxt "@option: common"
-#~ msgid "Total time"
-#~ msgstr "Общо време"
-
-#~ msgctxt "@option: common"
-#~ msgid "Start time"
-#~ msgstr "Начало на възпроизвеждане"
-
-#~ msgctxt "@option: common"
-#~ msgid "Bit rate"
-#~ msgstr "Битов поток"
-
-#~ msgctxt "@option: common"
-#~ msgid "Frames"
-#~ msgstr "Кадри"
-
-#~ msgctxt "@option: common"
-#~ msgid "FPS"
-#~ msgstr "FPS"
-
-#~ msgctxt "@option: video"
-#~ msgid "FPS Now"
-#~ msgstr "FPS в момента"
-
-#~ msgctxt "@option: video"
-#~ msgid "Pixel format"
-#~ msgstr "Формат на пикселите"
-
-#~ msgctxt "@option: video"
-#~ msgid "Size"
-#~ msgstr "Размер"
-
-#~ msgctxt "@option: video"
-#~ msgid "Coded size"
-#~ msgstr "Кодиран размер"
-
-#~ msgctxt "@option: video"
-#~ msgid "GOP size"
-#~ msgstr "Размер на група изображения"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample format"
-#~ msgstr "Формат на извадката"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Sample rate"
-#~ msgstr "Честота на дискретизация"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channels"
-#~ msgstr "Канали"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Channel layout"
-#~ msgstr "Разположение на каналите"
-
-#~ msgctxt "@option: audio"
-#~ msgid "Frame size"
-#~ msgstr "Размер на кадъра"
-
-#~ msgctxt "@title:window"
-#~ msgid "Media Info"
-#~ msgstr "Информация за медиа"
-
-#~ msgctxt "@title"
-#~ msgid "Key"
-#~ msgstr "Ключ"
-
-#~ msgctxt "@title"
-#~ msgid "Value"
-#~ msgstr "Стойност"
-
-#~ msgctxt "@item: video info"
-#~ msgid "Metadata"
-#~ msgstr "Метаданни"
-
-#~ msgctxt "@item: video stats"
-#~ msgid "Video"
-#~ msgstr "Видео"
-
-#~ msgctxt "@option"
-#~ msgid "Metadata"
-#~ msgstr "Метаданни"
-
-#~ msgctxt "@option"
-#~ msgid "Audio"
-#~ msgstr "Аудио"
-
-#~ msgctxt "@action"
-#~ msgid "Ok"
-#~ msgstr "Добре"
-
-#~ msgid "County"
-#~ msgstr "Държава"
+#, fuzzy
+#~| msgid "Google Maps"
+#~ msgid "Input Google Maps API Key"
+#~ msgstr "Карти в Google"

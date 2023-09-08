@@ -35,7 +35,7 @@ public:
 
 public Q_SLOTS:
 
-    void process(FacePipelineExtendedPackage::Ptr package);
+    void process(const FacePipelineExtendedPackage::Ptr& package);
     void setThreshold(double threshold, bool);
 
     // TODO: add set K-Nearest method
@@ -46,7 +46,7 @@ protected:
 
 Q_SIGNALS:
 
-    void processed(FacePipelineExtendedPackage::Ptr package);
+    void processed(const FacePipelineExtendedPackage::Ptr& package);
 
 protected:
 

@@ -58,7 +58,7 @@ public:
     DInfoMap    albumInfo(int)                                                      const override;
 
     DInfoMap    itemInfo(const QUrl&)                                               const override;
-    void        setItemInfo(const QUrl&, const DInfoMap&)                           const override;
+    void        setItemInfo(const QUrl&, const DInfoMap&)                                 override;
 
     QWidget*    albumChooser(QWidget* const parent)                                 const override;
     DAlbumIDs   albumChooserItems()                                                 const override;

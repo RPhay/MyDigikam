@@ -19,17 +19,11 @@
 // Qt includes
 
 #include <QSize>
-#include <QStyle>
 #include <QEvent>
-#include <QHoverEvent>
-#include <QFocusEvent>
 #include <QTimer>
-#include <QStyleOption>
-#include <QPaintEngine>
+#include <QTreeView>
 #include <QApplication>
 #include <QAbstractItemView>
-#include <QAbstractProxyModel>
-#include <QTreeView>
 
 // Local includes
 

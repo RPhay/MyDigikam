@@ -63,6 +63,7 @@ public:
     enum Style
     {
         STYLE_NOQUIRK,
+        STYLE_MACINTOSH,
         STYLE_PLASTIQUE,
         STYLE_BREEZE,
         STYLE_FUSION,
@@ -182,16 +183,16 @@ void DAbstractSliderSpinBox::paintEvent(QPaintEvent* e)
 
     switch (d->style)
     {
-        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
-            paintFusion(painter);
-            break;
-
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             paintPlastique(painter);
             break;
 
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
             paintBreeze(painter);
+            break;
+
+        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
+            paintFusion(painter);
             break;
 
         default:
@@ -227,8 +228,9 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
 
     QStyleOptionProgressBar progressOpts = progressBarOptions();
 
-    if ((d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2) ||
-        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN))
+    if ((d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)    ||
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN)  ||
+        (d->style == DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH))
     {
         progressOpts.state |= QStyle::State_Horizontal;
     }
@@ -678,10 +680,6 @@ QSize DAbstractSliderSpinBox::sizeHint() const
 
     switch (d->style)
     {
-        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
-            hint += QSize(8, 8);
-            break;
-
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             hint += QSize(8, 0);
             break;
@@ -690,10 +688,9 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             hint += QSize(2, 0);
             break;
 
+        case DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH:
+        case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
         case DAbstractSliderSpinBoxPrivate::STYLE_OXYGEN:
-            hint += QSize(8, 8);
-            break;
-
         case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
             hint += QSize(8, 8);
             break;
@@ -963,9 +960,9 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
 
     if (e->type() == QEvent::StyleChange)
     {
-        if      (style()->objectName() == QLatin1String("fusion"))
+        if      (style()->objectName() == QLatin1String("macintosh"))
         {
-            d->style = DAbstractSliderSpinBoxPrivate::STYLE_FUSION;
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_MACINTOSH;
         }
         else if (style()->objectName() == QLatin1String("plastique"))
         {
@@ -974,6 +971,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("breeze"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_BREEZE;
+        }
+        else if (style()->objectName() == QLatin1String("fusion"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_FUSION;
         }
         else if (style()->objectName() == QLatin1String("oxygen"))
         {

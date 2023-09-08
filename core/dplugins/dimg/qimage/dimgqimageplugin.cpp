@@ -133,20 +133,20 @@ int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
     QString filePath = fileInfo.filePath();
     QString format   = fileInfo.suffix().toUpper();
 
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+
+    // Ignore non image format.
+
+    if (
+        mimeType.startsWith(QLatin1String("video/")) ||
+        mimeType.startsWith(QLatin1String("audio/"))
+       )
+    {
+        return 0;
+    }
+
     if (!magic)
     {
-        QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-
-        // Ignore non image format.
-
-        if (
-            mimeType.startsWith(QLatin1String("video/")) ||
-            mimeType.startsWith(QLatin1String("audio/"))
-           )
-        {
-            return 0;
-        }
-
         Q_FOREACH (const QByteArray& ba, QImageReader::supportedImageFormats())
         {
             if (QString::fromUtf8(ba).toUpper() == format)
@@ -154,9 +154,15 @@ int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
                 return 80;
             }
         }
+
+        return 0;
     }
 
-    return 0;
+    QImageReader reader(filePath);
+    reader.setDecideFormatFromContent(true);
+    QByteArray readFormat = reader.format();
+
+    return (QImageReader::supportedImageFormats().contains(readFormat) ? 80 : 0);
 }
 
 int DImgQImagePlugin::canWrite(const QString& format) const

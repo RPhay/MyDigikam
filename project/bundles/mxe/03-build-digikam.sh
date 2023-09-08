@@ -79,7 +79,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKP_VERSION=$DK_KP_VERSION \
                            -DKA_VERSION=$DK_KA_VERSION \
-                           -DKF5_VERSION=$DK_KF5_VERSION \
+                           -DKDE_VERSION=$DK_KDE_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
@@ -222,7 +222,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKP_VERSION=$DK_KP_VERSION \
                            -DKA_VERSION=$DK_KA_VERSION \
-                           -DKF5_VERSION=$DK_KF5_VERSION \
+                           -DKDE_VERSION=$DK_KDE_VERSION \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 

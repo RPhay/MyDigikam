@@ -1,14 +1,13 @@
-# Script to build KF6 Frameworks for digiKam bundle.
+# Script to build KDE Frameworks for digiKam bundle.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 set(EXTPREFIX_frameworks "${EXTPREFIX}")
 
-function(InstallKF5Component
+function(InstallKDEComponent
          name
          version
          argoptions
@@ -16,7 +15,7 @@ function(InstallKF5Component
 
     if(MINGW)
 
-        # Extract MD5 sums of each KF5 components directly from server.
+        # Extract MD5 sums of each KDE components directly from server.
         execute_process(COMMAND
                             wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
@@ -31,7 +30,7 @@ function(InstallKF5Component
         )
 
         message(STATUS "--------------------------------")
-        message(STATUS "KF6 component    : ${name}")
+        message(STATUS "KDE component    : ${name}")
         message(STATUS "Component version: ${version}")
         message(STATUS "Component MD5    : ${md5sm}")
         message(STATUS "Configure options: ${argoptions}")
@@ -72,7 +71,7 @@ function(InstallKF5Component
 
     elseif(APPLE)
 
-        # Extract MD5 sums of each KF5 components directly from server.
+        # Extract MD5 sums of each KDE components directly from server.
         execute_process(COMMAND
                             wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
@@ -87,7 +86,7 @@ function(InstallKF5Component
         )
 
         message(STATUS "--------------------------------")
-        message(STATUS "KF6 component    : ${name}")
+        message(STATUS "KDE component    : ${name}")
         message(STATUS "Component version: ${version}")
         message(STATUS "Component MD5    : ${md5sm}")
         message(STATUS "Configure options: ${argoptions}")
@@ -122,7 +121,7 @@ function(InstallKF5Component
 
     else() # Linux
 
-        # Extract MD5 sums of each KF5 components directly from server.
+        # Extract MD5 sums of each KDE components directly from server.
         execute_process(COMMAND
                             wget -q -O - -o /dev/null https://download.kde.org/stable/frameworks/${version}/${name}-${version}.0.tar.xz.md5
                         COMMAND
@@ -137,7 +136,7 @@ function(InstallKF5Component
         )
 
         message(STATUS "--------------------------------")
-        message(STATUS "KF6 component    : ${name}")
+        message(STATUS "KDE component    : ${name}")
         message(STATUS "Component version: ${version}")
         message(STATUS "Component MD5    : ${md5sm}")
         message(STATUS "Configure options: ${argoptions}")
@@ -189,35 +188,35 @@ if (${ENABLE_QTVERSION} MATCHES "6.*")
     set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 endif()
 
-InstallKF5Component(extra-cmake-modules ${KF5_VERSION} "${Qt6CommonOptions}"                       "extracmakemodules-compiler-options.patch")
-InstallKF5Component(kconfig             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(breeze-icons        ${KF5_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
-InstallKF5Component(solid               ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kcoreaddons         ${KF5_VERSION} "${Qt6CommonOptions}"                       "${MacosCoreAddonsPatch}")
-InstallKF5Component(threadweaver        ${KF5_VERSION} "${Qt6CommonOptions}"                       "${MacosThreadWeaverPatch}")
-InstallKF5Component(kwindowsystem       ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(karchive            ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kdbusaddons         ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(ki18n               ${KF5_VERSION} "${Qt6CommonOptions}"                       "ki18n-mingw.patch")
-InstallKF5Component(kcrash              ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kcodecs             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kauth               ${KF5_VERSION} "${Qt6CommonOptions};${MacosKauthBackend}"  "")
-InstallKF5Component(kguiaddons          ${KF5_VERSION} "${Qt6CommonOptions}"                       "kguiaddons-mingw.patch")
-InstallKF5Component(kwidgetsaddons      ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kitemviews          ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kcompletion         ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kconfigwidgets      ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kiconthemes         ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kservice            ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kglobalaccel        ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kcalendarcore       ${KF5_VERSION} "${Qt6CommonOptions}"                       "${KCalendarCorePatch}")
-InstallKF5Component(kxmlgui             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kbookmarks          ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kimageformats       ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(knotifyconfig       ${KF5_VERSION} "${Qt6CommonOptions}"                       "knotifyconfig-drop-phonon.patch")
-InstallKF5Component(knotifications      ${KF5_VERSION} "${Qt6CommonOptions}"                       "knotifications-drop-phonon.patch")
-InstallKF5Component(kjobwidgets         ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(sonnet              ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(ktextwidgets        ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(kio                 ${KF5_VERSION} "${Qt6CommonOptions}"                       "kio-drop-ktextwidgets.patch")
-InstallKF5Component(kinit               ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"                       "extracmakemodules-compiler-options.patch")
+InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
+InstallKDEComponent(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "${MacosCoreAddonsPatch}")
+InstallKDEComponent(threadweaver        ${KDE_VERSION} "${Qt6CommonOptions}"                       "${MacosThreadWeaverPatch}")
+InstallKDEComponent(kwindowsystem       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(karchive            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kdbusaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(ki18n               ${KDE_VERSION} "${Qt6CommonOptions}"                       "ki18n-mingw.patch")
+InstallKDEComponent(kcrash              ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kcodecs             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kauth               ${KDE_VERSION} "${Qt6CommonOptions};${MacosKauthBackend}"  "")
+InstallKDEComponent(kguiaddons          ${KDE_VERSION} "${Qt6CommonOptions}"                       "kguiaddons-mingw.patch")
+InstallKDEComponent(kwidgetsaddons      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kitemviews          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kcompletion         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kconfigwidgets      ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kiconthemes         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kservice            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kglobalaccel        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kcalendarcore       ${KDE_VERSION} "${Qt6CommonOptions}"                       "${KCalendarCorePatch}")
+InstallKDEComponent(kxmlgui             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kbookmarks          ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kimageformats       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(knotifyconfig       ${KDE_VERSION} "${Qt6CommonOptions}"                       "knotifyconfig-drop-phonon.patch")
+InstallKDEComponent(knotifications      ${KDE_VERSION} "${Qt6CommonOptions}"                       "knotifications-drop-phonon.patch")
+InstallKDEComponent(kjobwidgets         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(sonnet              ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(ktextwidgets        ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kio                 ${KDE_VERSION} "${Qt6CommonOptions}"                       "kio-drop-ktextwidgets.patch")
+InstallKDEComponent(kinit               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")

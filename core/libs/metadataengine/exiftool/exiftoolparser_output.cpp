@@ -325,8 +325,13 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                                         }
                                         else if (e2.tagName() == QLatin1String("tag"))           // One tag from group
                                         {
+                                            QString a1   = e2.attribute(QLatin1String("g1"));
+                                            QString a2   = e2.attribute(QLatin1String("g2"));
                                             QString name = e2.attribute(QLatin1String("name"));
-                                            tag          = QString::fromLatin1("%1.%2.%3.%4").arg(g0).arg(g1).arg(g2).arg(name);
+                                            tag          = QString::fromLatin1("%1.%2.%3.%4").arg(g0)
+                                                                                             .arg(a1.isNull() ? g1 : a1)
+                                                                                             .arg(a2.isNull() ? g2 : a2)
+                                                                                             .arg(name);
                                             type         = e2.attribute(QLatin1String("type"));
                                             writable     = e2.attribute(QLatin1String("writable"));
 
