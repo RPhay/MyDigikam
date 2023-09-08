@@ -22,6 +22,7 @@
 #include <QMouseEvent>
 #include <QPointer>
 #include <QAction>
+#include <QActionGroup>
 #include <QStandardItemModel>
 
 // KDE includes
