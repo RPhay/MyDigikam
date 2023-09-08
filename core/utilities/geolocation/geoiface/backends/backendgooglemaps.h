@@ -83,8 +83,13 @@ public:
     void regionSelectionChanged()                                                         override;
     void mouseModeChanged()                                                               override;
 
-    void centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel) override;
     void setActive(const bool state)                                                      override;
+
+#ifdef HAVE_MARBLE
+
+    void centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel) override;
+
+#endif
 
 public Q_SLOTS:
 

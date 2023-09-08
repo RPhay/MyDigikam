@@ -24,10 +24,11 @@
 
 // local includes
 
+#include "digikam_export.h"
+#include "digikam_config.h"
 #include "geoifacetypes.h"
 #include "geocoordinates.h"
 #include "geogroupstate.h"
-#include "digikam_export.h"
 
 class QAction;
 class QDragEnterEvent;
@@ -168,13 +169,6 @@ Q_SIGNALS:
     void signalStickyModeChanged();
     void signalMouseModeChanged(const Digikam::GeoMouseModes& currentMouseMode);
     void signalLoadTracksFromAlbums();
-
-public:
-
-    /**
-     * Return a string version of LibMarbleWidget release in format "major.minor.patch"
-     */
-    static QString MarbleWidgetVersion();
 
 protected:
 

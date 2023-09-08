@@ -6,7 +6,7 @@
  * Date        : 2009-08-16
  * Description : GeoCoordinates class
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -25,13 +25,18 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_export.h"
+
+#ifdef HAVE_MARBLE
 
 /// NOTE: forward declaration only to declare interoperability operators
 namespace Marble
 {
     class GeoDataCoordinates;
 }
+
+#endif // HAVE_MARBLE
 
 namespace Digikam
 {
@@ -88,11 +93,16 @@ public:
     QString geoUrl()    const;
 
     bool sameLonLatAs(const GeoCoordinates& other)   const;
-    Marble::GeoDataCoordinates toMarbleCoordinates() const;
 
     static GeoCoordinates fromGeoUrl(const QString& url, bool* const parsedOkay = nullptr);
-    static GeoCoordinates fromMarbleCoordinates(const Marble::GeoDataCoordinates& marbleCoordinates);
     static Pair makePair(const qreal lat1, const qreal lon1, const qreal lat2, const qreal lon2);
+
+#ifdef HAVE_MARBLE
+
+    Marble::GeoDataCoordinates toMarbleCoordinates() const;
+    static GeoCoordinates fromMarbleCoordinates(const Marble::GeoDataCoordinates& marbleCoordinates);
+
+#endif // HAVE_MARBLE
 
 private:
 

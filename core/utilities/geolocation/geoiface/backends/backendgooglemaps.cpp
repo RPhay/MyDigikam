@@ -39,7 +39,11 @@
 
 // Marble includes
 
-#include <marble/GeoDataLatLonAltBox.h>
+#ifdef HAVE_MARBLE
+
+#   include <marble/GeoDataLatLonAltBox.h>
+
+#endif
 
 // Local includes
 
@@ -50,9 +54,13 @@
 #include "geomodelhelper.h"
 
 #ifdef HAVE_QWEBENGINE
+
 #   include "htmlwidget_qwebengine.h"
+
 #else
+
 #   include "htmlwidget_qwebkit.h"
+
 #endif
 
 namespace Digikam
@@ -1325,24 +1333,6 @@ void BackendGoogleMaps::slotSelectionHasBeenMade(const Digikam::GeoCoordinates::
     Q_EMIT signalSelectionHasBeenMade(searchCoordinates);
 }
 
-void BackendGoogleMaps::centerOn( const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel)
-{
-    /// @todo Buffer this call if there is no widget or if inactive!
-
-    if (!d->htmlWidget)
-    {
-        return;
-    }
-
-    const qreal boxWest  = latLonBox.west(Marble::GeoDataCoordinates::Degree);
-    const qreal boxNorth = latLonBox.north(Marble::GeoDataCoordinates::Degree);
-    const qreal boxEast  = latLonBox.east(Marble::GeoDataCoordinates::Degree);
-    const qreal boxSouth = latLonBox.south(Marble::GeoDataCoordinates::Degree);
-
-    d->htmlWidget->centerOn(boxWest, boxNorth, boxEast, boxSouth, useSaneZoomLevel);
-    qCDebug(DIGIKAM_GEOIFACE_LOG) << getZoom();
-}
-
 void BackendGoogleMaps::setActive(const bool state)
 {
     const bool oldState = d->activeState;
@@ -1721,5 +1711,27 @@ void BackendGoogleMaps::slotMessageEvent(const QString& message)
         d->keyChanged = false;
     }
 }
+
+#ifdef HAVE_MARBLE
+
+void BackendGoogleMaps::centerOn(const Marble::GeoDataLatLonBox& latLonBox, const bool useSaneZoomLevel)
+{
+    /// @todo Buffer this call if there is no widget or if inactive!
+
+    if (!d->htmlWidget)
+    {
+        return;
+    }
+
+    const qreal boxWest  = latLonBox.west(Marble::GeoDataCoordinates::Degree);
+    const qreal boxNorth = latLonBox.north(Marble::GeoDataCoordinates::Degree);
+    const qreal boxEast  = latLonBox.east(Marble::GeoDataCoordinates::Degree);
+    const qreal boxSouth = latLonBox.south(Marble::GeoDataCoordinates::Degree);
+
+    d->htmlWidget->centerOn(boxWest, boxNorth, boxEast, boxSouth, useSaneZoomLevel);
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << getZoom();
+}
+
+#endif
 
 } // namespace Digikam

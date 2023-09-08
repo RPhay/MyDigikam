@@ -44,9 +44,13 @@
 
 // Marble includes
 
-#include <marble/GeoDataLineString.h>
-#include <marble/GeoDataLatLonBox.h>
-#include <marble/MarbleGlobal.h>
+#ifdef HAVE_MARBLE
+
+#   include <marble/GeoDataLineString.h>
+#   include <marble/GeoDataLatLonBox.h>
+#   include <marble/MarbleGlobal.h>
+
+#endif
 
 // local includes
 
@@ -59,7 +63,12 @@
 #include "digikam_debug.h"
 #include "abstractmarkertiler.h"
 #include "backendgooglemaps.h"
-#include "backendmarble.h"
+
+#ifdef HAVE_MARBLE
+
+#   include "backendmarble.h"
+
+#endif
 
 namespace Digikam
 {
@@ -227,7 +236,13 @@ MapWidget::MapWidget(QWidget* const parent)
     d->stackedLayout->addWidget(d->placeholderWidget);
 
     d->loadedBackends.append(new BackendGoogleMaps(s, this));
+
+#ifdef HAVE_MARBLE
+
     d->loadedBackends.append(new BackendMarble(s, this));
+
+#endif
+
 /*
     d->loadedBackends.append(new BackendOSM(s, this));
 */
@@ -408,6 +423,7 @@ MapWidget::~MapWidget()
     qDeleteAll(d->loadedBackends);
     d->currentBackend = nullptr;
     d->loadedBackends.clear();
+
     delete d;
 
     /// @todo delete s, but make sure it is not accessed by any other objects any more!
@@ -676,7 +692,13 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
 
     if (d->currentBackendName.isEmpty())
     {
+
+#ifdef HAVE_MARBLE
+
         setBackend(group->readEntry("Backend", "marble"));
+
+#endif
+
     }
 
     // Options concerning the display of markers
@@ -1220,6 +1242,8 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
     const int sourceZoom = zoomParts.last().toInt();
     int targetZoom       = -1;
 
+#ifdef HAVE_MARBLE
+
     // all of these values were found experimentally!
 
     if (targetBackend == QLatin1String("marble" ))
@@ -1246,6 +1270,8 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
         else if (sourceZoom ==19) { targetZoom = 3450; }
         else                      { targetZoom = 3500; } /// @todo Find values for level 20 and up
     }
+
+#endif
 
     if (targetBackend == QLatin1String("googlemaps" ))
     {
@@ -1497,6 +1523,9 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
     if ((s->currentMouseMode == MouseModeZoomIntoGroup) ||
         (s->currentMouseMode == MouseModeRegionSelectionFromIcon))
     {
+
+#ifdef HAVE_MARBLE
+
         int maxTileLevel = 0;
 
         Marble::GeoDataLineString tileString;
@@ -1553,21 +1582,23 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
         if (maxTileLevel != 0)
         {
             //increase the selection boundaries with 0.1 degrees because some thumbnails aren't caught by selection
-            latLonBox.setWest((latLonBox.west(Marble::GeoDataCoordinates::Degree)-(0.1/maxTileLevel)), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setNorth((latLonBox.north(Marble::GeoDataCoordinates::Degree)+(0.1/maxTileLevel)), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setEast((latLonBox.east(Marble::GeoDataCoordinates::Degree)+(0.1/maxTileLevel)), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setSouth((latLonBox.south(Marble::GeoDataCoordinates::Degree)-(0.1/maxTileLevel)), Marble::GeoDataCoordinates::Degree);
+
+            latLonBox.setWest((latLonBox.west(Marble::GeoDataCoordinates::Degree) - (0.1 / maxTileLevel)),   Marble::GeoDataCoordinates::Degree);
+            latLonBox.setNorth((latLonBox.north(Marble::GeoDataCoordinates::Degree) + (0.1 / maxTileLevel)), Marble::GeoDataCoordinates::Degree);
+            latLonBox.setEast((latLonBox.east(Marble::GeoDataCoordinates::Degree) + (0.1 / maxTileLevel)),   Marble::GeoDataCoordinates::Degree);
+            latLonBox.setSouth((latLonBox.south(Marble::GeoDataCoordinates::Degree) - (0.1 / maxTileLevel)), Marble::GeoDataCoordinates::Degree);
         }
         else
         {
 */
-            latLonBox.setWest((latLonBox.west(Marble::GeoDataCoordinates::Degree)-0.0001), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setNorth((latLonBox.north(Marble::GeoDataCoordinates::Degree)+0.0001), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setEast((latLonBox.east(Marble::GeoDataCoordinates::Degree)+0.0001), Marble::GeoDataCoordinates::Degree);
-            latLonBox.setSouth((latLonBox.south(Marble::GeoDataCoordinates::Degree)-0.0001), Marble::GeoDataCoordinates::Degree);
+            latLonBox.setWest((latLonBox.west(Marble::GeoDataCoordinates::Degree) - 0.0001),   Marble::GeoDataCoordinates::Degree);
+            latLonBox.setNorth((latLonBox.north(Marble::GeoDataCoordinates::Degree) + 0.0001), Marble::GeoDataCoordinates::Degree);
+            latLonBox.setEast((latLonBox.east(Marble::GeoDataCoordinates::Degree) + 0.0001),   Marble::GeoDataCoordinates::Degree);
+            latLonBox.setSouth((latLonBox.south(Marble::GeoDataCoordinates::Degree) - 0.0001), Marble::GeoDataCoordinates::Degree);
 /*
         }
 */
+
         if (s->currentMouseMode == MouseModeZoomIntoGroup)
         {
             /// @todo Very small latLonBoxes can crash Marble
@@ -1585,8 +1616,12 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 
             s->selectionRectangle = newSelection;
             d->currentBackend->regionSelectionChanged();
+
             Q_EMIT signalRegionSelectionChanged();
         }
+
+#endif
+
     }
     else if (((s->currentMouseMode == MouseModeFilter) && s->selectionRectangle.first.hasCoordinates()) ||
              (s->currentMouseMode == MouseModeSelectThumbnail))
@@ -2209,13 +2244,6 @@ void MapWidget::addWidgetToControlWidget(QWidget* const newWidget)
     }
 }
 
-// Static methods ---------------------------------------------------------
-
-QString MapWidget::MarbleWidgetVersion()
-{
-    return QString(Marble::MARBLE_VERSION_STRING).section(QLatin1Char(' '), 0, 0);
-}
-
 void MapWidget::setActive(const bool state)
 {
     const bool oldState = s->activeState;
@@ -2352,6 +2380,8 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
         return;
     }
 
+#ifdef HAVE_MARBLE
+
     Marble::GeoDataLineString tileString;
 
     /// @todo not sure that this is the best way to find the bounding box of all items
@@ -2380,6 +2410,12 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
     /// @todo use a sane zoom level
 
     d->currentBackend->centerOn(latLonBox, useSaneZoomLevel);
+
+#else
+
+    Q_UNUSED(useSaneZoomLevel);
+
+#endif
 }
 
 void MapWidget::refreshMap()

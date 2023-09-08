@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Base-class for backends for geolocation interface
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
  *
@@ -31,10 +31,14 @@ class QWidget;
 
 class KConfigGroup;
 
+#ifdef HAVE_MARBLE
+
 namespace Marble
 {
     class GeoDataLatLonBox;
 }
+
+#endif
 
 namespace Digikam
 {
@@ -94,9 +98,14 @@ public:
 
     const QExplicitlySharedDataPointer<GeoIfaceSharedData> s;
 
+    virtual void setActive(const bool state)                                      = 0;
+
+#ifdef HAVE_MARBLE
+
     virtual void centerOn(const Marble::GeoDataLatLonBox& box,
                           const bool useSaneZoomLevel = true)                     = 0;
-    virtual void setActive(const bool state)                                      = 0;
+
+#endif
 
 public Q_SLOTS:
 

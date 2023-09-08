@@ -2078,4 +2078,9 @@ void BackendMarble::slotScheduleUpdate()
     }
 }
 
+QString MapWidget::MarbleWidgetVersion()
+{
+    return QString(Marble::MARBLE_VERSION_STRING).section(QLatin1Char(' '), 0, 0);
+}
+
 } // namespace Digikam

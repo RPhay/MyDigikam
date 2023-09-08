@@ -56,7 +56,7 @@
 #endif
 
 #ifdef HAVE_MARBLE
-#   include "mapwidget.h"
+#   include "backendmarble.h"
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
@@ -318,7 +318,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_MARBLE
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "Marble") <<                         MapWidget::MarbleWidgetVersion());
+                        i18nc(CONTEXT, "Marble") <<                         BackendMarble::MarbleWidgetVersion());
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);
