@@ -26,15 +26,7 @@ else()
 endif()
 
 
-set(libgeoiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonames-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonamesUS-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-osm-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/mapbackend.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarble.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarblelayer.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendgooglemaps.cpp
-
+set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_correlator.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_correlator_thread.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_listmodel.cpp
@@ -83,8 +75,20 @@ set(libgeoiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/tiles/tilegrouper.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/tiles/tileindex.cpp
 
-                     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonames-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonamesUS-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-osm-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/mapbackend.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendgooglemaps.cpp
+
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/placeholderwidget.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget.cpp
+
+                     # TODO: files to port to Qt 6 when Marble will be ready
+
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarble.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarblelayer.cpp
 )
 
 if(ENABLE_QWEBENGINE)

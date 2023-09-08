@@ -83,11 +83,11 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-if(NOT Qt6_FOUND)
+#if(NOT Qt6_FOUND)
 
     find_package(Marble)                           # For geolocation support (Qt5 only for the moment).
 
-endif()
+#endif()
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.

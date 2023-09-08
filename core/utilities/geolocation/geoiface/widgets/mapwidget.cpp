@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : world map widget library
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText:      2014 by Justus Schwartz <justus at gmx dot li>
  *
@@ -34,6 +34,7 @@
 #include <QToolButton>
 #include <QHBoxLayout>
 #include <QAction>
+#include <QActionGroup>
 #include <QFrame>
 
 // KDE includes
@@ -41,7 +42,7 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
-// Marbel includes
+// Marble includes
 
 #include <marble/GeoDataLineString.h>
 #include <marble/GeoDataLatLonBox.h>

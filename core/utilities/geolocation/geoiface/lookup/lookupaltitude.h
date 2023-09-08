@@ -19,6 +19,7 @@
 // Qt includes
 
 #include <QObject>
+#include <QVariant>
 
 // local includes
 
