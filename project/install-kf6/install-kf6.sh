@@ -59,7 +59,7 @@ cmake $ORIG_WD \
       -Wno-dev
 
 # NOTE: The order to compile each component here is very important.
-
+if [ ] ;then
 # core KF5 frameworks dependencies
 cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
@@ -96,6 +96,7 @@ cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$C
 # Desktop integration support
 cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
+fi
 cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 

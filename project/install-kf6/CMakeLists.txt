@@ -126,7 +126,7 @@ InstallKF6Component(knotifications      ${KDE_VERSION} "${Qt6CommonOptions}"    
 InstallKF6Component(kjobwidgets         ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(sonnet              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(ktextwidgets        ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(kio                 ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(kio                 ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kio-drop-deps.patch")
 InstallKF6Component(kinit               ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(ksanecore           ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(libksane            ${KDE_VERSION} "${Qt6CommonOptions}"                                    "libksane-common-rules.patch")
