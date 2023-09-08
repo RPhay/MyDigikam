@@ -35,4 +35,9 @@ add_subdirectory(searchwindow)
 add_subdirectory(extrasupport)
 add_subdirectory(facemanagement)
 add_subdirectory(focuspointmanagement)
-add_subdirectory(geolocation)
+
+if(${Marble_FOUND})
+
+    add_subdirectory(geolocation)
+
+endif()
