@@ -100,6 +100,8 @@ cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 
+cmake --build . --config RelWithDebInfo --target ext_sonnet              -- -j$CPU_CORES
+
 # Geolocation support
 #cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
