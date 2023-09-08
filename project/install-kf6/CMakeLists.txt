@@ -94,10 +94,9 @@ endfunction()
 
 set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON)
-# -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 
 InstallKF6Component(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(kconfig             ${KDE_VERSION} "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"              "")
+InstallKF6Component(kconfig             ${KDE_VERSION} "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"              "kconfig-disable-qml.patch")
 InstallKF6Component(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}"              "breeze-dropsvg-rccprefix.patch")
 InstallKF6Component(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions};-DKCOREADDONS_USE_QML=OFF"          "")
