@@ -2078,7 +2078,7 @@ void BackendMarble::slotScheduleUpdate()
     }
 }
 
-QString MapWidget::MarbleWidgetVersion()
+QString BackendMarble::MarbleWidgetVersion()
 {
     return QString(Marble::MARBLE_VERSION_STRING).section(QLatin1Char(' '), 0, 0);
 }
