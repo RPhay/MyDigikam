@@ -57,5 +57,5 @@ BUGFIXES:
 047 ==> 474205 - digiKam crashes while it scans video albums.
 048 ==> 456289 - Build error from git with Qt6.
 049 ==> 468658 - Linking failed with Qt6 and KJobs class from KDE framework.
-050 ==> 
+050 ==> 474287 - Setting prefs display metadata don't work.
 051 ==> 
