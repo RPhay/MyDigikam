@@ -304,15 +304,33 @@ QString CollectionManager::Private::directoryHash(const QString& path)
 SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRootLocation* location,
                                                                   const QList<SolidVolumeInfo>& volumes)
 {
-    QUrl url(location->identifier);
     QString queryItem;
+    QUrl url(location->identifier);
 
     if (url.scheme() != QLatin1String("volumeid"))
     {
         return SolidVolumeInfo();
     }
 
-    if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
+    if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"))).isNull())
+    {
+        Q_FOREACH (const SolidVolumeInfo& volume, volumes)
+        {
+            QString volPath = volume.path;
+            volPath.chop(1);
+            QString colPath = volPath + location->specificPath;
+
+            if (volume.isMounted)
+            {
+                if (queryItem == getCollectionUUID(colPath))
+                {
+                    return volume;
+                }
+            }
+        }
+    }
+
+    if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
     {
         Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
@@ -321,6 +339,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
                 return volume;
             }
         }
+
         return SolidVolumeInfo();
     }
     else if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("label"))).isNull())
@@ -496,7 +515,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
 {
     const QUrl filePathUrl = QUrl::fromLocalFile(filePath);
 
-    QReadLocker locker(&lock);
+    QReadLocker readLocker(&lock);
 
     Q_FOREACH (AlbumRootLocation* const location, locations)
     {
@@ -530,6 +549,109 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
     }
 
     return false;
+}
+
+QString CollectionManager::Private::getCollectionUUID(const QString& path)
+{
+    QString uuid;
+    QFileInfo info(path);
+    const int uuidSize = 36;
+
+    if (!info.exists() || !info.isReadable())
+    {
+        return uuid;
+    }
+
+    QString uuidFile = info.filePath()           +
+                       QLatin1String("/.dtrash") +
+                       QLatin1String("/digikam.uuid");
+
+    if  (!QFile::exists(uuidFile))
+    {
+        return uuid;
+    }
+
+    QFile readFile(uuidFile);
+
+    if (!readFile.open(QIODevice::ReadOnly))
+    {
+        return uuid;
+    }
+
+    uuid = QString::fromLatin1(readFile.read(uuidSize));
+
+    if (uuid.size() != uuidSize)
+    {
+        uuid.clear();
+    }
+    else
+    {
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Found Location" << path
+                                      << "with file uuid" << (uuid.left(8) + QLatin1String("..."));
+    }
+
+    return uuid;
+}
+
+bool CollectionManager::Private::checkCollectionUUID(AlbumRootLocation* const location, const QString& path)
+{
+    QFileInfo info(path);
+    const int uuidSize = 36;
+    QUrl url(location->identifier);
+    const QString uuidQuery(QLatin1String("fileuuid"));
+
+    if (!info.exists() || !info.isWritable())
+    {
+        return false;
+    }
+
+    QString uuidPath = info.filePath()    +
+                       QLatin1String("/.dtrash");
+    QString uuidFile = uuidPath;
+    uuidFile        += QLatin1String("/digikam.uuid");
+
+    if (QFileInfo::exists(uuidFile))
+    {
+        if (!QUrlQuery(url).queryItemValue(uuidQuery).isNull())
+        {
+            return false;
+        }
+    }
+
+    if (!QFileInfo::exists(uuidPath))
+    {
+        QDir().mkpath(uuidPath);
+    }
+
+    QFile writeFile(uuidFile);
+
+    if (!writeFile.open(QIODevice::WriteOnly))
+    {
+        return false;
+    }
+
+    QString uuid = QUuid::createUuid().toString().mid(1, uuidSize);
+
+    if (writeFile.write(uuid.toLatin1()) != uuidSize)
+    {
+        return false;
+    }
+
+    writeFile.close();
+    writeFile.setPermissions(QFileDevice::ReadOwner  |
+                             QFileDevice::ReadGroup  |
+                             QFileDevice::ReadOther  |
+                             QFileDevice::WriteOwner |
+                             QFileDevice::WriteGroup);
+
+    QUrlQuery q(url);
+    q.removeQueryItem(uuidQuery);
+    q.addQueryItem(uuidQuery, uuid);
+    url.setQuery(q);
+
+    location->identifier = url.url();
+
+    return true;
 }
 
 } // namespace Digikam

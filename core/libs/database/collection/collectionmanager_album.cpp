@@ -19,7 +19,7 @@ namespace Digikam
 
 QStringList CollectionManager::allAvailableAlbumRootPaths()
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     QStringList list;
 
@@ -36,7 +36,7 @@ QStringList CollectionManager::allAvailableAlbumRootPaths()
 
 QString CollectionManager::albumRootPath(int id)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
     CollectionLocation* const location = d->locations.value(id);
 
     if (location && location->status() == CollectionLocation::LocationAvailable)
@@ -49,7 +49,7 @@ QString CollectionManager::albumRootPath(int id)
 
 QString CollectionManager::albumRootLabel(int id)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     CollectionLocation* const location = d->locations.value(id);
 
@@ -73,7 +73,7 @@ QString CollectionManager::albumRootPath(const QUrl& fileUrl)
 
 QString CollectionManager::albumRootPath(const QString& givenPath)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -101,7 +101,7 @@ bool CollectionManager::isAlbumRoot(const QUrl& fileUrl)
 
 bool CollectionManager::isAlbumRoot(const QString& filePath)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -121,7 +121,7 @@ QString CollectionManager::album(const QUrl& fileUrl)
 
 QString CollectionManager::album(const QString& filePath)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -190,7 +190,7 @@ QUrl CollectionManager::oneAlbumRoot()
 
 QString CollectionManager::oneAlbumRootPath()
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -223,7 +223,7 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
 
             CollectionLocation toBeEmitted;
             {
-                QReadLocker locker(&d->lock);
+                QReadLocker readLocker(&d->lock);
                 AlbumRootLocation* const location = d->locations.value(changeset.albumRootId());
 
                 if (location)
