@@ -86,6 +86,8 @@ cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_sonnet              -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ktextwidgets        -- -j$CPU_CORES
 
 # Extra support for digiKam
 
@@ -100,7 +102,7 @@ cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$C
 cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 
-cmake --build . --config RelWithDebInfo --target ext_sonnet              -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kfilemetadata       -- -j$CPU_CORES
 
 # Geolocation support
 #cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES

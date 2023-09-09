@@ -1,0 +1,143 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8b54bfb..13c7106 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,8 +37,8 @@ ecm_setup_version(
+   ${RELEASE_SERVICE_VERSION}
+   VARIABLE_PREFIX KSANE
+   VERSION_HEADER "${ksane_version_header}"
+-  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5SaneConfigVersion.cmake"
+-  SOVERSION 5
++  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF${QT_MAJOR_VERSION}SaneConfigVersion.cmake"
++  SOVERSION ${QT_MAJOR_VERSION}
+ )
+ # Dependencies
+ set(REQUIRED_QT_VERSION "5.15.2")
+@@ -94,26 +94,26 @@ add_definitions(
+ )
+ 
+ # Create a Config.cmake and a ConfigVersion.cmake file and install them
+-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5Sane")
++set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF${QT_MAJOR_VERSION}Sane")
+ 
+ configure_package_config_file(
+-  "${CMAKE_CURRENT_SOURCE_DIR}/KF5SaneConfig.cmake.in"
+-  "${CMAKE_CURRENT_BINARY_DIR}/KF5SaneConfig.cmake"
++  "${CMAKE_CURRENT_SOURCE_DIR}/KSaneConfig.cmake.in"
++  "${CMAKE_CURRENT_BINARY_DIR}/KF${QT_MAJOR_VERSION}SaneConfig.cmake"
+   INSTALL_DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+ )
+ 
+ install(FILES
+-  "${CMAKE_CURRENT_BINARY_DIR}/KF5SaneConfig.cmake"
+-  "${CMAKE_CURRENT_BINARY_DIR}/KF5SaneConfigVersion.cmake"
++  "${CMAKE_CURRENT_BINARY_DIR}/KF${QT_MAJOR_VERSION}SaneConfig.cmake"
++  "${CMAKE_CURRENT_BINARY_DIR}/KF${QT_MAJOR_VERSION}SaneConfigVersion.cmake"
+   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+   COMPONENT Devel
+ )
+ 
+ install(EXPORT
+-  KF5SaneTargets
++  KF${QT_MAJOR_VERSION}SaneTargets
+   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+-  FILE KF5SaneTargets.cmake
+-  NAMESPACE KF5::
++  FILE KF${QT_MAJOR_VERSION}SaneTargets.cmake
++  NAMESPACE KF${QT_MAJOR_VERSION}::
+ )
+ 
+ install(FILES
+diff --git a/KF5SaneConfig.cmake.in b/KSaneConfig.cmake.in
+similarity index 61%
+rename from KF5SaneConfig.cmake.in
+rename to KSaneConfig.cmake.in
+index 67f6f04..2fa7eb8 100644
+--- a/KF5SaneConfig.cmake.in
++++ b/KSaneConfig.cmake.in
+@@ -2,4 +2,4 @@
+ 
+ include(CMakeFindDependencyMacro)
+ find_dependency(Qt@QT_MAJOR_VERSION@Widgets "@REQUIRED_QT_VERSION@")
+-include("${CMAKE_CURRENT_LIST_DIR}/KF5SaneTargets.cmake")
++include("${CMAKE_CURRENT_LIST_DIR}/KF@QT_MAJOR_VERSION@SaneTargets.cmake")
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 030421d..3addc03 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1,21 +1,21 @@
+-add_library(KF5Sane)
+-add_library(KF5::Sane ALIAS KF5Sane)
+-add_library(KF5::SaneWidget ALIAS KF5Sane)
++add_library(KF${QT_MAJOR_VERSION}Sane)
++add_library(KF${QT_MAJOR_VERSION}::Sane ALIAS KF${QT_MAJOR_VERSION}Sane)
++add_library(KF${QT_MAJOR_VERSION}::SaneWidget ALIAS KF${QT_MAJOR_VERSION}Sane)
+ 
+-set_target_properties(KF5Sane PROPERTIES
++set_target_properties(KF${QT_MAJOR_VERSION}Sane PROPERTIES
+     VERSION     ${KSANE_VERSION}
+     SOVERSION   ${KSANE_SOVERSION}
+     EXPORT_NAME "Sane"
+ )
+ 
+-target_compile_definitions(KF5Sane PRIVATE -DTRANSLATION_DOMAIN=\"libksane\")
++target_compile_definitions(KF${QT_MAJOR_VERSION}Sane PRIVATE -DTRANSLATION_DOMAIN=\"libksane\")
+ 
+-if (KF5Wallet_FOUND)
+-    target_compile_definitions(KF5Sane PRIVATE -DHAVE_KF5WALLET)
+-    target_link_libraries(KF5Sane PRIVATE KF${KF_MAJOR_VERSION}::Wallet)
++if (KF${QT_MAJOR_VERSION}Wallet_FOUND)
++    target_compile_definitions(KF${QT_MAJOR_VERSION}Sane PRIVATE -DHAVE_KF5WALLET)
++    target_link_libraries(KF${QT_MAJOR_VERSION}Sane PRIVATE KF${KF_MAJOR_VERSION}::Wallet)
+ endif()
+ 
+-target_sources(KF5Sane PRIVATE
++target_sources(KF${QT_MAJOR_VERSION}Sane PRIVATE
+     widgets/gammadisp.cpp
+     widgets/labeledgamma.cpp
+     widgets/labeledcheckbox.cpp
+@@ -34,7 +34,7 @@ target_sources(KF5Sane PRIVATE
+     splittercollapser.cpp
+ )
+ 
+-ecm_qt_declare_logging_category(KF5Sane
++ecm_qt_declare_logging_category(KF${QT_MAJOR_VERSION}Sane
+   HEADER ksane_debug.h
+   IDENTIFIER KSANE_LOG
+   CATEGORY_NAME org.kde.ksane
+@@ -52,21 +52,21 @@ else()
+     endif()
+ endif()
+ 
+-ecm_generate_export_header(KF5Sane
++ecm_generate_export_header(KF${QT_MAJOR_VERSION}Sane
+     BASE_NAME KSane
+     VERSION ${KSANE_VERSION}
+     DEPRECATED_BASE_VERSION 0
+     ${_generate_export_header_version_args}
+ )
+ 
+-target_include_directories(KF5Sane
++target_include_directories(KF${QT_MAJOR_VERSION}Sane
+     INTERFACE
+         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSane>"
+     PRIVATE
+         ${CMAKE_CURRENT_SOURCE_DIR}/widgets
+ )
+ 
+-target_link_libraries(KF5Sane
++target_link_libraries(KF${QT_MAJOR_VERSION}Sane
+     PUBLIC
+         Qt${QT_MAJOR_VERSION}::Core
+         Qt${QT_MAJOR_VERSION}::Gui
+@@ -93,8 +93,8 @@ ecm_install_icons(ICONS
+   16-actions-gray-scale.png
+   DESTINATION ${KDE_INSTALL_ICONDIR})
+ 
+-install(TARGETS KF5Sane
+-  EXPORT KF5SaneTargets
++install(TARGETS KF${QT_MAJOR_VERSION}Sane
++  EXPORT KF${QT_MAJOR_VERSION}SaneTargets
+   ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+ )
+ 
