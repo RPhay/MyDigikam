@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 00:43+0000\n"
+"POT-Creation-Date: 2023-09-09 00:43+0000\n"
 "PO-Revision-Date: 2022-09-27 23:22+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -9831,7 +9831,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Pengaturan"
@@ -52629,134 +52629,134 @@ msgid ""
 "Fuzzy search"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #, kde-format
 msgid "Satellite"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Terrain"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, kde-format
 msgid "Show Navigation Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, kde-format
 msgid "Show Scale Control"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:488
 #, kde-format
 msgid "Float items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "API URL:"
 msgid "API Key:"
 msgstr "API URL:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
 msgid "Javascript Message"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:351
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
 msgid "Atlas map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:353
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Satelit"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:353
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:354
 #, kde-format
 msgid "OpenStreetMap"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:403
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:404
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Mercator"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Equirectangular"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:425
 #, kde-format
 msgid "Show compass"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
 #, kde-format
 msgid "Show scale bar"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Show navigation"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
 #, kde-format
 msgid "Show overview map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:452
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:453
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
 #, kde-format
 msgid "Projection"
 msgstr ""
@@ -52862,60 +52862,60 @@ msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Komentar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:818
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:953
 #, fuzzy, kde-format
 #| msgid "Loading Bookmark"
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Memuat Markah"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:819
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:954
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
 "%3"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:940
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Buka File"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:933
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:960
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:942
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:969
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:952
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
 #, kde-format
 msgid "Imported %1"
 msgstr "%1 terimpor"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:967
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Simpan File"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:959
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:968
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 #| msgid "Format"
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "Format"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 #| msgid "Loading Bookmark"
 msgid "Error saving bookmarks"
@@ -53595,97 +53595,97 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "Zoom perbesar"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "Zoom perkecil"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, kde-format
 msgid "Preview single items"
 msgstr "Pratinjau item tunggal"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:276
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview grouped items"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:279
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, kde-format
 msgid "Remove the current region selection"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:303
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:308
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:315
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
 msgid "Select images"
 msgstr "Pilih citra"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, kde-format
 msgid "Lock the map position"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, kde-format
 msgid "Load tracks from albums"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr ""

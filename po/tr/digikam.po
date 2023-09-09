@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 00:43+0000\n"
-"PO-Revision-Date: 2023-09-07 00:42+0300\n"
+"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"PO-Revision-Date: 2023-09-09 00:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2334,7 +2334,7 @@ msgstr "Normal"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
-msgstr "Yatay Çevrilmiş"
+msgstr "Yatay Ters Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:961
 #, kde-format
@@ -2346,13 +2346,13 @@ msgstr "Yukarıdan Aşağıya Döndürülmüş"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
-msgstr "Dikey Çevrilmiş"
+msgstr "Dikey Ters Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:965
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr "Sağa Döndürülmüş / Yatay Çevrilmiş"
+msgstr "Sağa Döndürülmüş / Yatay Ters Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:967
 #, kde-format
@@ -2364,7 +2364,7 @@ msgstr "Sağa Döndürülmüş"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr "Sağa Döndürülmüş / Dikey Çevrilmiş"
+msgstr "Sağa Döndürülmüş / Dikey Ters Çevrilmiş"
 
 #: core/app/main/digikamapp_setup.cpp:971
 #, kde-format
@@ -2394,7 +2394,7 @@ msgstr "Sağ"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flip"
-msgstr "Çevir"
+msgstr "Ters Çevir"
 
 #: core/app/main/digikamapp_setup.cpp:1057
 #, kde-format
@@ -2412,7 +2412,7 @@ msgstr "Dikey Olarak"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Auto Rotate/Flip Using Exif Information"
-msgstr "Exif Bilgisi ile Otomatik Döndür/Çevir"
+msgstr "Exif Bilgisi ile Otomatik Döndür/Ters Çevir"
 
 #: core/app/main/digikamapp_setup.cpp:1085
 #, kde-format
@@ -5300,7 +5300,7 @@ msgstr "Mutlak Boyutu Kullan"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Watermark type: "
-msgstr "Filigran türü:"
+msgstr "Filigran türü: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:549
@@ -5326,7 +5326,7 @@ msgstr "Filigran görseli seçmek için tıklayın."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
 #, kde-format
 msgid "Watermark image: "
-msgstr "Filigran görseli:"
+msgstr "Filigran görseli: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -5360,7 +5360,7 @@ msgstr "Filigranın matlığı"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
 #, kde-format
 msgid "Opacity (%): "
-msgstr "Matlık (%):"
+msgstr "Matlık (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -5375,7 +5375,7 @@ msgstr "Buraya filigran dizisini girin."
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
 #, kde-format
 msgid "Watermark text: "
-msgstr "Filigran metni:"
+msgstr "Filigran metni: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6455,7 +6455,7 @@ msgstr "Ters Çevir"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr "Resimleri yatay veya dikey olarak çevirmek için bir araç"
+msgstr "Görselleri yatay veya dikey olarak döndürmek için bir araç"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
 #, kde-kuit-format
@@ -7145,7 +7145,7 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>Portable "
 "Network Graphics documentation</a> for details.</para>"
 msgstr ""
-"<para>Bu eklenti, kullanıcıların Libpng kodlayıcısı bileşenini görsel resim "
+"<para>Bu eklenti, kullanıcıların Libpng kodlayıcısı bileşenini görsel "
 "yüklemesine ve kaydetmesine olanak tanır.</para><para>Taşınabilir Ağ "
 "Grafikleri (PNG), kayıpsız veri sıkıştırmayı destekleyen bir raster grafik "
 "dosya biçimidir. PNG, Grafik Değişim Formatının geliştirilmiş, patentsiz bir "
@@ -7357,7 +7357,7 @@ msgid ""
 "(Deflate) is used to save the file.</p>"
 msgstr ""
 "<p>TIFF görselleri için sıkıştırmayı açın/kapatın.</p><p>Bu seçenek "
-"etkinleştirilirse TIFF resminin nihai boyutu azaltılır.</p><p>Dosyayı "
+"etkinleştirilirse TIFF görselinin nihai boyutu azaltılır.</p><p>Dosyayı "
 "kaydetmek için kayıpsız bir sıkıştırma biçimi (Deflate) kullanıldı.</p>"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
@@ -8382,8 +8382,8 @@ msgid ""
 "determines the size of parts copied in the image. \n"
 "Shortcut :: [ and ]"
 msgstr ""
-"0 yarıçapının hiçbir etkisi yoktur; 1 ve üzeri, resimde kopyalanan "
-"parçaların boyutunu belirleyen fırça yarıçapını belirler.\n"
+"0 yarıçapının hiçbir etkisi yoktur; 1 ve üzeri, görselde kopyalanan "
+"parçaların boyutunu belirleyen fırça yarıçapını belirler. \n"
 "Kısayol :: [ ve ]"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:146
@@ -8634,32 +8634,29 @@ msgid "Lens Distortion"
 msgstr "Mercek Bozunumu"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Lens Distortion"
+#, kde-format
 msgctxt "@title"
 msgid "Lens Distortion"
 msgstr "Mercek Bozunumu"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Fix automatically lens distortions"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust lens distortions"
-msgstr "Lens bozulmalarını otomatik olarak düzelt"
+msgstr "Lens bozunumlarını ayarlamak için bir araç"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, görseldeki lens bozunumlarını ayarlayabilir."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Distortion..."
+#, kde-format
 msgctxt "@action"
 msgid "Distortion..."
-msgstr "Bozulma..."
+msgstr "Bozunum..."
 
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttool.cpp:160
 #, kde-format
@@ -8667,11 +8664,12 @@ msgid "Local Contrast"
 msgstr "Yerel Karşıtlık"
 
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görsel üzerindeki ton eşlemelerini "
+"öykünebilir."
 
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
 #, kde-format
@@ -8686,15 +8684,13 @@ msgid "Noise Reduction"
 msgstr "Gürültü Azaltma"
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseldeki gürültüyü azaltabilir."
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Noise Reduction..."
+#, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
 msgstr "Gürültü Azaltma..."
@@ -8704,13 +8700,13 @@ msgstr "Gürültü Azaltma..."
 msgid ""
 "Here you can see the image selection preview with red eye reduction applied."
 msgstr ""
-"Burada, kırmızı göz azaltma uyguladıktan sonra resim önizlemesini "
+"Burada kırmızı göz azaltma uygulanmış görsel seçimi önizlemesini "
 "görebilirsiniz."
 
 #: core/dplugins/editor/enhance/redeye/redeyetool.cpp:176
 #, kde-format
 msgid "Red Eyes Correction"
-msgstr "Kırmızı Gözleri Düzeltme"
+msgstr "Kırmızı Göz Düzeltme"
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:44
 #, kde-format
@@ -8719,11 +8715,11 @@ msgid "Red Eye"
 msgstr "Kırmızı Göz"
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, görseldeki kırmızı göz etkisini azaltabilir."
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, kde-format
@@ -8732,27 +8728,24 @@ msgid "Red Eye..."
 msgstr "Kırmızı Göz..."
 
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "This filter can be used to correct red eyes in a photo. Select a region "
-#| "including the eyes to use this option."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This filter can be used to correct red eyes in a photo. Select a region "
 "including the eyes to use this option."
 msgstr ""
-"Bu filtre fotoğraftaki kırmızı gözleri düzeltmek için kullanılabilir. Bu "
-"seçeneği kullanmak için gözleri de içeren bir bölgeyi seçin."
+"Bu süzgeç, bir fotoğraftaki kırmızı gözleri düzeltmek için kullanılabilir. "
+"Bu seçeneği kullanmak için gözleri içeren bir bölge seçin."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:137
 #, kde-format
 msgid "Preset"
-msgstr "Ayar"
+msgstr "Önayar"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:143
 #, kde-format
 msgid "Filtering type:"
-msgstr "Filtreleme türü"
+msgstr "Süzme türü:"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:149
 #, kde-format
@@ -8771,67 +8764,68 @@ msgid ""
 "images.<br/><b>Custom</b>: Puts settings to most common values, fully "
 "customizable.</p>"
 msgstr ""
-"<p>Fotoğraf iyileştirmesi için kullanılacak filtre ön ayarını buradan seçin:"
-"</p><p><b>Düzgün Gürültüyü Azalt</b>: algılama gürültüsü gibi küçük resim "
-"yapaylığını azaltın.<br/><b>JPEG Yapaylığını Azalt</b>: JPEG sıkıştırma "
-"mozaiği gibi büyük resim yapaylığını azaltın.<br/><b>Dokulamayı Azalt</b>: "
-"kağıt dokusu veya taranan görüntülerdeki Moire desenleri gibi görüntü "
-"yapaylığını azalt.<br/><b>Özel</b>: Ayarları en yaygın değerlere, tamamen "
-"özelleştirilebilir hale getirir.</p>"
+"<p>Fotoğraf restorasyonu için kullanılacak süzgeç önayarını buradan seçin:</"
+"p><p><b>Tekdüzen Gürültüyü Azalt</b>: Algılayıcı gürültüsü gibi küçük görsel "
+"bozulmalarını azaltın.<br/><b>JPEG Bozulmalarını Azalt</b>: JPEG sıkıştırma "
+"mozaiği gibi büyük görüntü bozulmalarını azaltın.<br/><b>Dokulamayı Azalt</"
+"b>: Taranan görsellerdeki kağıt dokusu veya Moire desenleri gibi görsel "
+"bozulmalarını azaltın.< br/><b>Özel</b>: Ayarları tümüyle özelleştirilebilir "
+"şekilde en yaygın değerlere getirir.</p>"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:339
 #, kde-format
 msgid "Restoration"
-msgstr "Bakım"
+msgstr "Restorasyon"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
-msgstr "Yüklenecek Fotoğraf Bakım Ayarları Dosyası"
+msgstr "Yüklenecek Fotoğraf Restorasyon Ayarları Dosyası"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
-msgstr "\"%1\" bir Fotoğraf Bakım ayarları yazı dosyası değil."
+msgstr "\"%1\" bir fotoğraf restorasyon ayarları metin dosyası değil."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:371
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
-msgstr "Fotoğraf Bakım yazı dosyasından ayarlar yüklenemiyor."
+msgstr "Fotoğraf restorasyon metin dosyasından ayarlar yüklenemiyor."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
-msgstr "Kaydedilecek Fotoğraf Bakım Ayarları Dosyası"
+msgstr "Kaydedilecek Fotoğraf Restorasyon Ayarları Dosyası"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
-msgstr "Fotoğraf Bakım ayarları yazı dosyasına ayarlar kaydedilemiyor."
+msgstr "Fotoğraf restorasyon ayarları metin dosyasına ayarlar kaydedilemiyor."
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to restore an image using Greystoration algorithm"
 msgstr ""
+"Greystoration algoritmasını kullanarak bir görseli restore etmeye yönelik "
+"bir araç"
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can restore an image using Greystoration algorithm."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, Greystoration algoritmasını kullanarak bir "
+"görseli restore edebilir."
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
-msgstr "Geri Yükle..."
+msgstr "Restorasyon..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
 #: core/libs/dimg/filters/sharp/sharpenfilter.cpp:88
@@ -8852,36 +8846,31 @@ msgid "Refocus"
 msgstr "Yeniden Odaklan"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Sharpen"
+#, kde-format
 msgctxt "@title"
 msgid "Sharpen"
 msgstr "Keskinleştir"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add a border around images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to sharp an image"
-msgstr "Resimlerin etrafına bir sınır ekle"
+msgstr "Bir görseli keskinleştirmek için bir araç"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseli keskinleştirebilir."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sharpen..."
+#, kde-format
 msgctxt "@action"
 msgid "Sharpen..."
 msgstr "Keskinleştir..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Resmi Yazdır"
@@ -8904,7 +8893,7 @@ msgid ""
 "<p>Color Management is disabled.</p> <p>You can enable it now by clicking on "
 "the \"Settings\" button.</p>"
 msgstr ""
-"<p>Renk Yönetimi kapalı.</p><p>Şimdi, \"Ayarlar\" butonuna basarak "
+"<p>Renk Yönetimi devre dışı.</p><p>\"Ayarlar\" düğmesine basarak "
 "etkinleştirebilirsiniz.</p>"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
@@ -8912,7 +8901,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:94
 #, kde-format
 msgid "Image Settings"
-msgstr "Resim Ayarları"
+msgstr "Görsel Ayarları"
 
 #. i18n: ectx: property (title), widget (QGroupBox, imagePosButtonGroup)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -8920,7 +8909,7 @@ msgstr "Resim Ayarları"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:104
 #, kde-format
 msgid "Image Position"
-msgstr "Resim Konumu"
+msgstr "Görsel Konumu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_autorotate)
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_PrintAutoRotate)
@@ -8928,7 +8917,7 @@ msgstr "Resim Konumu"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:366
 #, kde-format
 msgid "Auto rotate"
-msgstr "Otomatik döndür"
+msgstr "Otomatik Döndür"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/editor/file/print/printoptionspage.ui:75
@@ -8946,19 +8935,19 @@ msgstr "Ö&lçekleme yok"
 #: core/dplugins/editor/file/print/printoptionspage.ui:100
 #, kde-format
 msgid "&Fit image to page"
-msgstr "R&esimi sayfaya sığdır"
+msgstr "Görseli sayfaya &sığdır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_PrintEnlargeSmallerImages)
 #: core/dplugins/editor/file/print/printoptionspage.ui:137
 #, kde-format
 msgid "Enlarge smaller images"
-msgstr "Küçük resimleri büyüt"
+msgstr "Küçük görselleri büyüt"
 
 #. i18n: ectx: property (text), widget (QRadioButton, mScaleTo)
 #: core/dplugins/editor/file/print/printoptionspage.ui:162
 #, kde-format
 msgid "&Scale to:"
-msgstr "&Boyutlandır:"
+msgstr "Şuna &boyutlandır:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: core/dplugins/editor/file/print/printoptionspage.ui:203
@@ -8992,33 +8981,28 @@ msgid "Keep ratio"
 msgstr "Oranı koru"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title"
 msgid "Print Image"
-msgstr "Resmi Yazdır"
+msgstr "Görseli Yazdır"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Auto-rotate/flip image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to print an image"
-msgstr "Resmi otomatik döndür/çevir"
+msgstr "Bir görseli yazdırmak için bir araç"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:65
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can print an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseli yazdırabilir."
 
 #: core/dplugins/editor/file/print/printplugin.cpp:99
-#, fuzzy, kde-format
-#| msgid "Print Image..."
+#, kde-format
 msgctxt "@action"
 msgid "Print Image..."
-msgstr "Resmi Yazdır..."
+msgstr "Görseli Yazdır..."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:102
 #, kde-format
@@ -9038,7 +9022,7 @@ msgstr "Dairesel Bulanıklaştırma"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:111
 #, kde-format
 msgid "Far Blur"
-msgstr "Uzak Bulanıklaştırması"
+msgstr "Uzak Bulanıklaştırma"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:112
 #, kde-format
@@ -9101,29 +9085,30 @@ msgid ""
 "pixel value.</p>"
 msgstr ""
 "<p>Resme uygulamak için bulanıklaştırma efektini seçin.</"
-"p><p><b>Yakınlaştırma Bulanıklığı</b>:  resmi belirli bir merkez noktasından "
-"başlayarak radyal çizgiler boyunca bulanıklaştırır. Bu, bir yakınlaştırma "
-"kamerasının bulanıklığını taklit eder.</p><p><b>Radyal Bulanıklığı</b>: "
-"pikselleri belirtilen merkez noktasının çevresinde döndürerek resmi "
-"bulanıklaştırır. Bu, dönen bir kameranın bulanıklığını taklit eder.</"
-"p><p><b>Uzak Bulanıklık</b>: uzak pikselleri kullanarak resmi "
-"bulanıklaştırır. Bu, bir odaklanmamış kamera lensinin bulanıklığını taklit "
-"eder.</p><p><b>Hareket Bulanıklığı</b>: pikselleri yatay hareket ettirerek "
-"resmi bulanıklaştırır. Bu, doğrusal hareket eden bir fotoğraf makinesinin "
-"bulanıklığını taklit eder.</p><p><b>Yumuşatıcı Bulanıklık</b>: resmi yumuşak "
-"bir şekilde koyu ve açık renk tonlarında bulanıklaştırır. Bu, resimlere "
-"hülyalı ve parlak yumuşak odak efekti verir. Romantik portreler, göz alıcı "
-"fotoğraflar elde etmek ya da resimlere ılık ve naif bir parlaklık "
-"kazandırmak için idealdir.</p><p><b>Sarsıntı Bulanıklığı</b>: pikselleri "
-"rastgele sallayarak görüntüyü bulanıklaştırır. Bu, rasgele hareket eden bir "
-"kameranın bulanıklığını taklit eder.</p><p><b>Odak Bulanıklığı</b>: bir "
-"merceğin astigmat çarpıklığını yeniden üretmek için görüntü köşelerini "
-"bulanıklaştırır.</p><p><b>Akıllı Bulanıklaştırma</b>: resmedeki renk "
-"kenarlarını bulur ve onları görüntünün geri kalanını bulanıklaştırmadan "
-"bulanıklaştırır.</p><p><b>Buzlu Cam</b>: resmi buzlu bir camdan rastgele "
-"ışık yayılırcasına bulanıklaştırır.</p><p><b> Mozaik</b>: fotoğrafı "
-"dikdörtgen hücrelere böler ve bu hücreleri ortalama piksel değeri ile "
-"doldurarak yeniden oluşturur.</p>"
+"p><p><b>Yakınlaştırma Bulanıklaştırması</b>: Görseli belirli bir merkez "
+"noktasından başlayarak radyal çizgiler boyunca bulanıklaştırır. Bu, bir "
+"yakınlaştırma kamerasının bulanıklığına öykünür.</p><p><b>Dairesel "
+"Bulanıklaştırma</b>: Pikselleri belirtilen merkez noktasının çevresinde "
+"döndürerek görseli bulanıklaştırır. Bu, dönen bir kameranın bulanıklığına "
+"öykünür.</p><p><b>Uzak Bulanıklaştırma</b>: Uzak pikselleri kullanarak "
+"görseli bulanıklaştırır. Bu, bir odaklanmamış kamera merceğinin "
+"bulanıklığına öykünür.</p><p><b>Hareket Bulanıklaştırması</b>: Pikselleri "
+"yatay hareket ettirerek görseli bulanıklaştırır. Bu, doğrusal hareket eden "
+"bir fotoğraf makinesinin bulanıklığına öykünür.</p><p><b>Yumuşatıcı "
+"Bulanıklaştırma</b>: Görseli yumuşak bir şekilde koyu ve açık renk "
+"tonlarında bulanıklaştırır. Bu, görsellere hülyalı ve parlak yumuşak odak "
+"efekti verir. Romantik portreler, göz alıcı fotoğraflar elde etmek ya da "
+"görsellere ılık ve naif bir parlaklık kazandırmak için idealdir.</"
+"p><p><b>Sallama Bulanıklaştırması</b>: Pikselleri rastgele sallayarak "
+"görseli bulanıklaştırır. Bu, rastgele hareket eden bir kameranın "
+"bulanıklığını taklit eder.</p><p><b>Odak Bulanıklaştırması</b>: Bir merceğin "
+"astigmat çarpıklığını yeniden üretmek için görsel köşelerini bulanıklaştırır."
+"</p><p><b>Akıllı Bulanıklaştırma</b>: Görseldeki renk kenarlarını bulur ve "
+"onları görselin geri kalanını bulanıklaştırmadan bulanıklaştırır.</"
+"p><p><b>Buzlu Cam</b>: Görseli buzlu bir camdan rastgele ışık "
+"yayılırmışçasına bulanıklaştırır.</p><p><b>Mozaik</b>: Fotoğrafı dikdörtgen "
+"hücrelere böler ve bu hücreleri ortalama piksel değeri ile doldurarak "
+"yeniden oluşturur.</p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:144
 #, kde-format
@@ -9133,7 +9118,7 @@ msgstr "Uzaklık:"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:148
 #, kde-format
 msgid "Set here the blur distance in pixels."
-msgstr "Buradan, piksel cinsinden bulanıklaştırma uzaklığını ayarlayın."
+msgstr "Burada, piksel cinsinden bulanıklaştırma uzaklığını ayarlayın."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:150
 #, kde-format
@@ -9144,7 +9129,7 @@ msgstr "Düzey:"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:154
 #, kde-format
 msgid "This value controls the level to use with the current effect."
-msgstr "Bu değer, geçerli etkide kullanılacak düzeyi belirler."
+msgstr "Bu değer, geçerli efektte kullanılacak düzeyi belirler."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:370
 #, kde-format
@@ -9152,29 +9137,27 @@ msgid "Blur Effects"
 msgstr "Bulanıklaştırma Efektleri"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Blur Effects"
+#, kde-format
 msgctxt "@title"
 msgid "Blur Effects"
 msgstr "Bulanıklaştırma Efektleri"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Apply color effects"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply blur effects to an image"
-msgstr "Renk efektlerini uygula"
+msgstr "Bir görsele bulanıklaştırma efektleri uygulamak için bir araç"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can apply blur effects to an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görsele bulanıklaştırma efektleri "
+"uygulayabilir."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Blur Effects..."
+#, kde-format
 msgctxt "@action"
 msgid "Blur Effects..."
 msgstr "Bulanıklaştırma Efektleri..."
@@ -9194,54 +9177,50 @@ msgstr "Kalem boyutu:"
 #, kde-format
 msgid "Set here the charcoal pencil size used to simulate the drawing."
 msgstr ""
-"Çizim etkisini yaratırken kullanılacak kara kalem ucu büyüklüğünü belirleyin."
+"Çizimi benzetmek için kullanılan karakalem kalem boyutunu buradan ayarlayın."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:99
 #, kde-format
 msgctxt "smoothing value of the pencil"
 msgid "Smooth:"
-msgstr "Yumuşatma:"
+msgstr "PürüzsüzlÜK:"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:103
 #, kde-format
 msgid ""
 "This value controls the smoothing effect of the pencil under the canvas."
-msgstr "Bu değer, kalemin tuval üzerindeki yumuşaklık etkisini belirler."
+msgstr "Bu değer, kalemin tuvalin altındaki pürüzsüzlük efektini denetler."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Charcoal Drawing..."
+#, kde-format
 msgctxt "@title"
 msgid "Charcoal Drawing"
-msgstr "Kara Kalem Çizimi..."
+msgstr "Karakalem Çizim"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Emulate tone mapping."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emulate charcoal drawing"
-msgstr "Ton eşlemesini taklit et."
+msgstr "Ton eşlemesini öykünmek için bir araç"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate charcoal drawing to an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görselde karakalem çizime öykünebilir."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Charcoal Drawing..."
+#, kde-format
 msgctxt "@action"
 msgid "Charcoal Drawing..."
-msgstr "Kara Kalem Çizimi..."
+msgstr "Karakalem Çizim..."
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the color effects preview"
+#, kde-format
 msgctxt "@info"
 msgid "This is the color effects preview"
-msgstr "Renk etkileri önizlemesi"
+msgstr "Bu, renk efektleri önizlemesidir"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:207
 #, kde-format
@@ -9250,8 +9229,7 @@ msgid "Solarize"
 msgstr "Soldur"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:211
-#, fuzzy, kde-format
-#| msgid "Vivid"
+#, kde-format
 msgctxt "@title: filter"
 msgid "Vivid"
 msgstr "Canlı"
@@ -9263,11 +9241,10 @@ msgid "Neon"
 msgstr "Neon"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:219
-#, fuzzy, kde-format
-#| msgid "Find Edges"
+#, kde-format
 msgctxt "@title: filter"
 msgid "Find Edges"
-msgstr "Sınırları Bul"
+msgstr "Kenarları Bul"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:223
 #, kde-format
@@ -9276,18 +9253,17 @@ msgid "Lut3D"
 msgstr "Lut3D"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Apply color effects"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects to an image"
-msgstr "Renk efektlerini uygula"
+msgstr "Bir görsele renk efektlerini uygulamak için bir araç"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "Apply color effects"
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can apply color effects to an image."
-msgstr "Renk efektlerini uygula"
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görsele renk efektleri uygulayabilir."
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:98
 #, kde-format
@@ -9298,17 +9274,17 @@ msgstr "Renk Efektleri..."
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:97
 #, kde-format
 msgid "This is the preview of the distortion effect applied to the photograph."
-msgstr "Bu, bozulma etkisi uygulanan fotoğrafın önizlemesidir."
+msgstr "Bu, fotoğrafa uygulanan bozunum efektinin önizlemesidir."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:112
 #, kde-format
 msgid "Fish Eyes"
-msgstr "Balık Gözü"
+msgstr "Balıkgözü"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:113
 #, kde-format
 msgid "Twirl"
-msgstr "Kıvır"
+msgstr "Burgu"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:114
 #, kde-format
@@ -9405,25 +9381,26 @@ msgid ""
 "splits the photograph into square blocks and moves them randomly inside the "
 "image.</p>"
 msgstr ""
-"<p>Burada görüntüye uygulanacak etki türünü seçin.</p><p><b>Balık Gözü</b>: "
-"fotoğrafın etrafını 3 boyutlu şekilde sarmalar. Balık Gözü etkisi yaratmak "
-"için kullanılır.</p><p><b>Kıvrım</b>: kıvrım modeli oluşturmak için "
-"fotoğrafı döndürür.</p><p><b>Yatay Silindir</b>: fotoğrafı yatay silindir "
-"etrafında sarmalar.</p><p><b>Dikey Silindir</b>: fotoğrafı dikey silindir "
-"etrafında sarmalar.</p><p><b>Y/D Silindir.</b>: fotoğrafı yatay ve dikey "
-"olmak üzere iki silindirde sarmalar.</p><p><b>Karikatür</b>: ters balık gözü "
-"etkisi ile fotoğrafı bozar.</p><p><b>Çoklu Köşeler</b>: çoklu köşeler modeli "
-"gibi fotoğrafı ayırır.</p><p><b>Yatay Dalgalar</b>: fotoğrafı yatay dalgalar "
-"ile bozar.</p><p><b>Dikey Dalgalar</b>: fotoğrafı dikey dalgalar ile bozar.</"
-"p><p><b>Blok Dalgalar 1</b>: görüntüye cam bloklardan bakılıyor gibi etki "
-"vermek için hücrelere böler.</p><p><b>Blok Dalgalar 2</b>: Blok Dalgalar 1 "
-"gibidir fakat farklı sürüm bir bozulma etkisi sağlar.</p><p><b>Çembersel "
-"Dalgalar 1</b>: fotoğrafı çembersel dalgalar ile bozar.</p><p><b>Çembersel "
-"Dalgalar 2</b>: Çembersel Dalgalar etkisinin diğer çeşidi.</p><p><b>Kutup "
-"Kordinatları</b>: fotoğrafı kareselden kutup kordinatlarına çevirir.</"
-"p><p><b>Kutupsal olmayan Kordinat</b>: terse çevrilmiş kutupsal kordinat.</"
-"p><p><b>Döşe</b>: fotoğrafı kare bloklara böler ve görüntü içerisinde "
-"rastgele yerleştirir.</p>"
+"<p>Burada, bir görsele uygulanacak efekt türünü seçin.</p><p><b>Balıkgözü</"
+"b>: Pek yaygın kullanılan bir efekt olan 'Balıkgözü' efektini uygulamak için "
+"fotoğrafı 3B silindirik bir şekil etrafında büker.</p><p><b>Burgu</b>: "
+"Fotoğrafı bir burgu deseni oluşturacak şekilde döndürür.</p><p><b>Silindir "
+"Yatay</b>: Fotoğrafı yatay bir silindir etrafında büker.</p><p><b>Silindir "
+"Dikey</b>: Fotoğrafı dikey bir silindir etrafında büker.</p><p><b>Silindir Y/"
+"D.</b>: Fotoğrafı dikey ve yatay olmak üzere 2 silindir etrafında büker.</"
+"p><p><b>Karikatür</b>: 'Balık Gözü' efekti ters çevrilerek fotoğrafı bozar.</"
+"p><p><b>Çoklu Köşeler</b>: Fotoğrafı çok köşeli bir desen gibi böler.</"
+"p><p><b>Yatay Dalgalar</b>: Fotoğrafı yatay dalgalarla bozar.</p><p><b>Dikey "
+"Dalgalar</b>: Fotoğrafı dikey dalgalarla bozar.</p><p><b>Blok Dalgalar 1</"
+"b>: Görseli hücrelere bölerek sanki cam blokların arkasından bakılıyormuş "
+"gibi görünmesini sağlar.</p><p><b>Blok Dalgalar 2</b>: Blok Dalgalar 1'e "
+"benzer; ancak cam blok bozunumunun başka bir sürümünü uygular.</"
+"p><p><b>Dairesel Dalgalar 1</b>: Fotoğrafı dairesel dalgalarla bozar.</"
+"p><p><b>Dairesel Dalgalar 2</b>: Dairesel Dalgalar 1 efektinin başka bir "
+"çeşididir.</p><p><b>Kutup Koordinatları</b>: Fotoğrafı dikdörtgenden "
+"kutupsal koordinatlara dönüştürür.</p><p><b>Kutupsuz Koordinatlar</b>: Kutup "
+"Koordinatları efektinin ters çevrilmişidir.</p><p><b>Döşe</b>: Fotoğrafı "
+"kare bloklara böler ve bunları görselin içinde rastgele hareket ettirir.</p>"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:154
 #, kde-format
@@ -9434,7 +9411,7 @@ msgstr "Düzey:"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:158
 #, kde-format
 msgid "Set here the level of the effect."
-msgstr "Buradan etkinin düzeyini ayarlayın."
+msgstr "Burada efektin düzeyini ayarlayın."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:160
 #, kde-format
@@ -9445,41 +9422,37 @@ msgstr "Yineleme:"
 #, kde-format
 msgid ""
 "This value controls the iterations to use for Waves, Tile, and Neon effects."
-msgstr ""
-"Bu değer Dalgalar, Döşeme ve Neon etkilerinin tekrarlamalarını kontrol eder."
+msgstr "Bu değer; Dalgalar, Döşe ve Neon efektlerinin yinelemesini denetler."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:334
 #, kde-format
 msgid "Distortion Effects"
-msgstr "Bozulma Efektleri"
+msgstr "Bozunum Efektleri"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Distortion Effects"
+#, kde-format
 msgctxt "@title"
 msgid "Distortion Effects"
-msgstr "Bozulma Efektleri"
+msgstr "Bozunum Efektleri"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Apply color effects"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply distortion effects to an image"
-msgstr "Renk efektlerini uygula"
+msgstr "Bir görsele bozunum efektleri uygulamak için bir araç"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can apply distortion effects to an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görsele bozunum efektleri uygulayabilir."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Distortion Effects..."
+#, kde-format
 msgctxt "@action"
 msgid "Distortion Effects..."
-msgstr "Bozulma Efektleri..."
+msgstr "Bozunum Efektleri..."
 
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:80
 #, kde-format
@@ -9489,40 +9462,36 @@ msgstr "Derinlik:"
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:84
 #, kde-format
 msgid "Set here the depth of the embossing image effect."
-msgstr "Resim kabartma etkisi için derinliği buradan ayarlayın."
+msgstr "Burada görsel kabartma efektinin derinliğini ayarlayın."
 
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:167
 #, kde-format
 msgid "Emboss"
-msgstr "Kabartma"
+msgstr "Kabart"
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Emboss"
+#, kde-format
 msgctxt "@title"
 msgid "Emboss"
-msgstr "Kabartma"
+msgstr "Kabart"
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emboss an image"
-msgstr "Resim yüklenemedi"
+msgstr "Görseli kabartmak için bir araç"
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emboss an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, görsele kabartma efekti uygulayabilir."
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Emboss..."
+#, kde-format
 msgctxt "@action"
 msgid "Emboss..."
-msgstr "Kabartma..."
+msgstr "Kabart..."
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintool.cpp:146
 #, kde-format
@@ -9530,25 +9499,23 @@ msgid "Film Grain"
 msgstr "Film Greni"
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add film grain"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain over an image"
-msgstr "Film tanecikleri ekle"
+msgstr "Bir görselin üzerine film greni eklemek için bir araç"
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can add film grain over an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görselin üzerine film greni ekleyebilir."
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Add Film Grain..."
+#, kde-format
 msgctxt "@action"
 msgid "Add Film Grain..."
-msgstr "Film Tanecikleri Ekle..."
+msgstr "Film Greni Ekle..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:88
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
@@ -9560,18 +9527,18 @@ msgstr "Fırça boyutu:"
 #, kde-format
 msgid "Set here the brush size to use for simulating the oil painting."
 msgstr ""
-"Burada, yağlı boya taklidi oluşturmak için fırça büyüklüğünü ayarlayın."
+"Yağlı boyayı benzetmek için kullanılacak fırça boyutunu buradan ayarlayın."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:96
 #, kde-format
 msgctxt "value of smoothing effect"
 msgid "Smooth:"
-msgstr "Yumuşatma:"
+msgstr "Pürüzsüzlük:"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:100
 #, kde-format
 msgid "This value controls the smoothing effect of the brush under the canvas."
-msgstr "Bu değer, fırçanın tuval üzerinde yumuşaklık etkisini kontrol eder."
+msgstr "Bu değer, fırçanın tuval üzerindeki pürüzsüzlük etkisini denetler."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:190
 #, kde-format
@@ -9585,18 +9552,18 @@ msgid "Oil Paint"
 msgstr "Yağlı Boya"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Emulate tone mapping."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emulate oil painting"
-msgstr "Ton eşlemesini taklit et."
+msgstr "Yağlı boyaya öykünmek için bir araç"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate oil painting over an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görselin üzerinde yağlı boyaya "
+"öykünebilir."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:98
 #, kde-format
@@ -9612,9 +9579,9 @@ msgid ""
 "can use this method to disable the Raindrops effect on a human face, for "
 "example.</p>"
 msgstr ""
-"Bu, Yağmur Damlası etkisi önizlemesidir.<p>Not: Düzenleyiciden daha önce bir "
-"alan seçimi yaptıysanız efekt, süzgeç tarafından kaldırılır. Örnek olarak bu "
-"yöntemi insan yüzündeki yağmur damlası etkisini kaldırmak için "
+"Bu, Yağmur Damlası efektinin önizlemesidir.<p>Not: Düzenleyicide daha önce "
+"bir alan seçtiyseniz bu, süzgeçten etkilenmez. Bu yöntemi; örneğin, bir "
+"insan yüzündeki Yağmur Damlaları efektini devre dışı bırakmak için "
 "kullanabilirsiniz.</p>"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:102
@@ -9625,27 +9592,27 @@ msgstr "Damla boyutu:"
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:106
 #, kde-format
 msgid "Set here the raindrops' size."
-msgstr "Buradan damla büyüklüklerini ayarlayabilirsiniz."
+msgstr "Burada damla boyutlarını ayarlayın."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:110
 #, kde-format
 msgid "Number:"
-msgstr "Numara:"
+msgstr "Sayı:"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:114
 #, kde-format
 msgid "This value controls the maximum number of raindrops."
-msgstr "Bu değer, en fazla yağmur damlası sayısını belirler."
+msgstr "Bu değer, en çok yağmur damlası sayısını belirler."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:118
 #, kde-format
 msgid "Fish eyes:"
-msgstr "Balık gözü:"
+msgstr "Balıkgözü:"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:122
 #, kde-format
 msgid "This value is the fish-eye-effect optical distortion coefficient."
-msgstr "Bu değer, balık gözü etkisi optik bozulma katsayısını belirler."
+msgstr "Bu değer, balıkgözü efekti optik bozulma katsayısıdır."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:229
 #, kde-format
@@ -9659,18 +9626,18 @@ msgid "Raindrops"
 msgstr "Yağmur Damlaları"
 
 #: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add a border around images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to add rain drops over an image"
-msgstr "Resimlerin etrafına bir sınır ekle"
+msgstr "Bir görselin üzerine yağmur damlaları eklemek için bir araç"
 
 #: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can add rain drops over an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görselin üzerinde yağmur damlaları "
+"ekleyebilir."
 
 #: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:98
 #, kde-format
@@ -9682,14 +9649,13 @@ msgstr "Yağmur Damlaları..."
 #, kde-format
 msgctxt "@title"
 msgid "Auto-Crop"
-msgstr "Otomatik Kırp"
+msgstr "Kendiliğinden Kırp"
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Failed to load image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to auto-crop an image"
-msgstr "Resim yüklenemedi"
+msgstr "Bir görseli kendiliğinden kırpmak için bir araç"
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:64
 #, kde-format
@@ -9698,19 +9664,20 @@ msgid ""
 "This Image Editor tool can crop automatically an image by detection of inner "
 "black border, generated while panorama stitching for example."
 msgstr ""
+"Bu görsel düzenleyicisi aracı; örneğin, panorama dikişi sırasında "
+"oluşturulan iç siyah kenarlığı algılayarak görseli kendiliğinden kırpabilir."
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "&Auto-Crop"
-msgstr "&Otomatik Kırp"
+msgstr "&Kendiliğinden Kırp"
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr "Bu seçenek, görseli kendiliğinden kırpmak için kullanılabilir."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:193
 #: core/dplugins/editor/transform/resize/resizetool.cpp:349
@@ -9735,7 +9702,7 @@ msgstr "Genişlik (pks):"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:360
 #, kde-format
 msgid "Set here the new image width in pixels."
-msgstr "Buradan, yeni görüntü genişliğini piksel cinsinden ayarlayın."
+msgstr "Burada, yeni görsel genişliğini piksel türünden ayarlayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:204
 #, kde-format
@@ -9745,7 +9712,7 @@ msgstr "Yükseklik (pks):"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
 msgid "Set here the new image height in pixels."
-msgstr "Yeni görsel yüksekliğini piksel türünden ayarlayın."
+msgstr "Burada, yeni görsel yüksekliğini piksel türünden ayarlayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
@@ -9774,28 +9741,27 @@ msgstr "Yeni görsel yüksekliği, yüzde türünden (%)."
 #, kde-format
 msgid "Specify here your desired content-aware rescaling percentage."
 msgstr ""
-"Buradan, istediğiniz yeniden ölçeklendirme yüzdesini içerik dahil olarak "
-"belirtin."
+"İstediğiniz içeriğe duyarlı yeniden ölçeklendirme yüzdesini burada belirtin."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Add weight masks"
-msgstr "Ağırlık maskesi ekle"
+msgstr "Ağırlık maskeleri ekle"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, kde-format
 msgid "Enable this option to add suppression and preservation masks."
-msgstr "Baskı ve koruma maskeleri eklemek için bu seçeneği etkinleştir."
+msgstr "Bastırma ve koruma maskeleri eklemek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
-msgstr "Baskı ağırlık markesi:"
+msgstr "Bastırma ağırlık markesi:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
 msgid "Draw a suppression mask"
-msgstr "Baskı maskesi çiz"
+msgstr "Bir bastırma maskesi çiz"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:273
 #, kde-format
@@ -9804,9 +9770,9 @@ msgid ""
 "important.  These zones will be deleted when reducing the picture, or "
 "duplicated when enlarging the picture."
 msgstr ""
-"Resmin nerelerinin daha az önemli olduğunu işaretlemek için alan çizmek için "
-"bu butona tkılayın.  Bu alanlar resim küçültülürken ya da resmi "
-"genişletirken çoklanacağı zaman silinecektir."
+"Görselin hangi alanlarının daha az önemli olduğunu işaretleyen bölgeleri "
+"çizmek için bu düğmeye tıklayın. Bu bölgeler, görsel küçültüldüğünde "
+"silinecek veya büyütüldüğünde kopyalanacaktır."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
@@ -9816,7 +9782,7 @@ msgstr "Koruma ağırlık maskesi:"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
 msgid "Draw a preservation mask"
-msgstr "Koruma maskesi çiz"
+msgstr "Bir koruma maskesi çiz"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:285
 #, kde-format
@@ -9824,8 +9790,8 @@ msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
 "to preserve."
 msgstr ""
-"Resmin hangi bölgelerini korumak istediğinizi işaretleyen bölgeler çizmek "
-"için bu düğmeye tıkla."
+"Görselin hangi alanlarını korumak istediğinizi işaretleyen bölgeleri çizmek "
+"için bu düğmeye tıklayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
@@ -9835,48 +9801,47 @@ msgstr "Maskeyi sil:"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:295
 #, kde-format
 msgid "Erase mask"
-msgstr "Maske sil"
+msgstr "Maskeyi sil"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid "Click on this button to erase mask regions."
-msgstr "Maske alanlarını silmek için bu butona tıklayın."
+msgstr "Maske bölgelerini silmek için bu düğmeye tıklayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:305
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
-msgstr ""
-"Maskeleri boyamak için kullanılacak fırçanın boyunu buradan belirleyin."
+msgstr "Maskeleri boyamak için kullanılan fırçanın boyutunu burada belirtin."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
-msgstr "Parlaklık geçişinin standardı"
+msgstr "Parlaklık gradyanı standardı"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
-msgstr "Parlaklık geçişinin mutlak değerlerinin toplamı"
+msgstr "Parlaklık gradyanlarının mutlak değerlerinin toplamı"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
-msgstr "Parlaklık geçişinin mutlak değeri"
+msgstr "Parlaklık gradyanının mutlak değeri"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
-msgstr "Luma geçişinin normu"
+msgstr "Luma gradyanı standardı"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
-msgstr "Luma geçişinin mutlak değerlerinin toplamı"
+msgstr "Luma gradyanlarının mutlak değerlerinin toplamı"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
-msgstr "Luma geçişinin mutlak değeri"
+msgstr "Luma gradyanının mutlak değeri"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
@@ -9884,25 +9849,26 @@ msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr ""
-"Bu seçenek size, geçiş işlevini seçmenize izin verir. Bu işlev, hangi "
-"piksellerin silineceğine ya da kalacağına karar verir."
+"Bu seçenek bir gradyan işlevi seçmenizi sağlar. Bu işlev, hangi piksellerin "
+"kaldırılması veya tutulması gerektiğini belirlemek için kullanılır."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
 #, kde-format
 msgid "Preserve Skin Tones"
-msgstr "Tema Tonlarını Koru"
+msgstr "Deri Tonlarını Koru"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:337
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr ""
-"Rengi renk tonuna yakın olan pikselleri korumak için bu seçeneği etkinleştir."
+"Rengi deri tonuna yakın olan pikselleri korumak için bu seçeneği "
+"etkinleştirin."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
 #, kde-format
 msgid "Overall rigidity of the seams:"
-msgstr "Bağlantı noktalarının genel sertliği:"
+msgstr "Dikişlerin genel sağlamlığı:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
 #, kde-format
@@ -9915,18 +9881,18 @@ msgid ""
 "coordinate between each two successive points, elevated to the power of 1.5, "
 "and summed up for the whole seam."
 msgstr ""
-"Düz olmayan dikiş noktalarına negatif bir eğilim vermek için bu değeri "
-"kullanın. Bazı durumlarda bozulmaları önlemek veya piksel atlamadan "
-"kaynaklanan aksaklıkları önlemek için yararlı olabilir (bu durumda düşük "
-"değerleri kullanmak daha iyidir). Bu ayar, herhangi bir sertlik maskesi "
-"kullanılmadığında, seçilen katmanın tamamı için geçerlidir. Not: eğilim her "
-"iki ardışık nokta arasındaki çapraz koordinatdaki farkla orantılıdır, 1,5 "
-"değerine yükselir ve tüm dikiş için özetlenir."
+"Düz olmayan dikişlere negatif bir eğilim vermek için bu değeri kullanın. "
+"Bazı durumlarda bozulmaları önlemek veya piksel atlamasından kaynaklanan "
+"yapaylıkları önlemek için yararlı olabilir (böyle bir durumda düşük "
+"değerlerin kullanılması daha iyidir). Bu ayar, herhangi bir sertlik maskesi "
+"kullanılmadığı durumda seçilen katmanın tümüne uygulanır. Not: Sapma, "
+"birbirini takip eden her iki nokta arasındaki enine koordinat farkıyla "
+"orantılıdır, 1,5'in kuvvetine yükseltilir ve tüm dikiş için toplanır."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
 #, kde-format
 msgid "Maximum number of transversal steps:"
-msgstr "Maksimum çapraz adım sayısı:"
+msgstr "En çok çapraz adım sayısı:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:368
 #, kde-format
@@ -9940,13 +9906,13 @@ msgid ""
 "artifacts. In order to balance the situation, you can use the rigidity "
 "setting."
 msgstr ""
-"Bu seçenek dikişlerdeki piksellerin alabileceği maksimum enine adım "
-"seçmenizi sağlar. Varsayılan değer adımı = 1'e karşılık gelen standart "
-"algoritmada, dikişteki her piksel, komşularına göre en fazla bir piksel "
-"kaydırılabilir. Bu, dikişlerin taban çizgisine göre en fazla 45 derece açı "
-"oluşturabileceği anlamına gelir. Adım değerini artırmak, bu sınırın "
-"üstesinden gelmenizi sağlar, ancak eserler kullanıma açılabilir. Durumu "
-"dengelemek için sağlamlık ayarını kullanabilirsiniz."
+"Bu seçenek, dikişlerdeki piksellerin alabileceği en çok çapraz adımı "
+"seçmenizi sağlar. Öntanımlı değer olan adım = 1'e karşılık gelen standart "
+"algoritmada, bir dikişteki her piksel, komşularına oranla en çok bir piksel "
+"kaydırılabilir. Bu, dikişlerin taban çizgisine göre en fazla 45 derecelik "
+"bir açı oluşturabileceği anlamına gelir. Adım değerini artırmak bu sınırı "
+"aşmanıza olanak tanır; ancak bozulmaların ortaya çıkmasına yol açabilir. "
+"Durumu dengelemek için sertlik ayarını kullanabilirsiniz."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
 #, kde-format
@@ -9966,20 +9932,19 @@ msgid ""
 "switched automatically during rescaling, at the cost of slightly worse "
 "performance."
 msgstr ""
-"Oyma işlemi sırasında, her adımda, oynamak için en uygun dikiş her pikselin "
-"alaka değerine dayalı olarak seçilir. Bununla birlikte, iki dikiş eşdeğer "
-"olduğu durumda (örneğin, resmin büyük bölümleri aynı renkte olduğunda), "
-"algoritma bu dikişleri daima bir kenardan seçer.  Bazı durumlarda bu, bir "
-"takım sorunlar doğurabilir, örn. orijinal resimde ortalanmış bir nesne "
-"sonuçta ortaya çıkan görüntüde ortalanmış olmayabilir. Bu efektin üstesinden "
-"gelmek için bu ayar, tercih edilen tarafın yeniden ölçeklendirme sırasında "
-"biraz daha kötü performans pahasına da olsa otomatik olarak geçiş yapmasına "
-"izin verir."
+"Oyma işlemi sırasında, her adımda, her pikselin uygunluk değerine göre "
+"oyulacak en uygun dikiş seçilir. Ancak, iki dikişin eşdeğer olması durumunda "
+"(örneğin, görselin büyük bir bölümünün aynı renge sahip olması durumunda) "
+"algoritma dikişleri her zaman bir taraftan seçer. Bazı durumlarda bu sorun "
+"yaratabilir; örneğin, özgün görselde ortalanan bir nesne, ortaya çıkan "
+"görselde ortalanmayabilir. Bu etkinin üstesinden gelmek için bu ayar, "
+"yeniden ölçeklendirme sırasında tercih edilen tarafın, biraz daha kötü "
+"başarım pahasına kendiliğinden değiştirilmesine olanak tanır."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:394
 #, kde-format
 msgid "Resize Order:"
-msgstr "Yeniden Boyutlandırma Sırası:"
+msgstr "Yeniden boyutlandırma sırası:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:396
 #, kde-format
@@ -9996,8 +9961,8 @@ msgstr "Önce dikey"
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr ""
-"Buradan ilk önce yatay mı yoksa düşey olarak mı yeniden boyutlandıracağınızı "
-"seç."
+"Burada yeniden boyutlandırmanın önce yatay olarak mı, yoksa önce dikey "
+"olarak mı yapılacağını ayarlayabilirsiniz."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:417
 #, kde-format
@@ -10031,29 +9996,27 @@ msgid "Liquid Rescale"
 msgstr "Sıvı Yeniden Ölçeklendirme"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Liquid Rescale"
+#, kde-format
 msgctxt "@title"
 msgid "Liquid Rescale"
 msgstr "Sıvı Yeniden Ölçeklendirme"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Resize images with a customized length."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to resize an image with content analysis"
-msgstr "Resimleri özelleştirilmiş bir uzunluk ile yeniden boyutlandır."
+msgstr "İçerik çözümlemesiyle görselleri yeniden boyutlandırmak için bir araç"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can resize an image with content analysis."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, görselleri içerik çözümlemesiyle yeniden "
+"boyutlandırabilir."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "Liquid Rescale..."
+#, kde-format
 msgctxt "@action"
 msgid "Liquid Rescale..."
 msgstr "Sıvı Yeniden Ölçekleme..."
@@ -10066,10 +10029,10 @@ msgid ""
 "you in adjusting the free rotation correction. Release the left mouse button "
 "to freeze the dashed line's position."
 msgstr ""
-"Bu, serbest yönlendirme işlemi önizlemesidir. Fare işaretçisini bu alanın "
-"üzerine getirirseniz oluşan dikey ve yatay kesikli çizgiler ile serbest "
-"yönlendirme doğrulaması ayarlarını yapabilirsiniz. Kesikli çizginin konumunu "
-"sabitlemek için sol fare düğmesine bırakın."
+"Bu, serbest dönüş işlemi önizlemesidir. Fare imlecini bu önizleme üzerinde "
+"hareket ettirirseniz serbest dönüş düzeltmesini ayarlarken size kılavuzluk "
+"etmek için dikey ve yatay kesikli bir çizgi çizilecektir. Kesikli çizginin "
+"konumunu dondurmak için farenin sol düğmesini bırakın. "
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:115
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:121
@@ -10110,8 +10073,8 @@ msgid ""
 "Select a point in the preview widget, then click this button to assign the "
 "point for auto-correction."
 msgstr ""
-"Önizleme parçacığında bir nokta seç, ardından otomatik düzeltme noktasını "
-"atamak için bu düğmeye tıkla."
+"Önizleme araç takımında bir nokta seçin, ardından otomatik düzeltme için "
+"noktayı atamak üzere bu düğmeye tıklayın."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:174
 #, kde-format
@@ -10126,9 +10089,9 @@ msgid ""
 "in the preview widget and clicking <i>Adjust</i>.<br/>You can either adjust "
 "horizontal or vertical lines.</p>"
 msgstr ""
-"<p>Önizleme parçacığına iki nokta atayıp <i>Ayarla</i> tıklatarak "
-"resimlerinizin otomatik olarak dönüşünü düzelt:<br/>Yatay veya dikey "
-"çizgileri ayarlayabilirsin.</p>"
+"<p>Önizleme araç takımında iki nokta atayıp <i>Ayarla</i>'yı tıklayarak "
+"görsellerinizin dönüşünü otomatik olarak düzeltin.<br/>Yatay veya dikey "
+"çizgiler ayarlayabilirsiniz.</p>"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:208
 #, kde-format
@@ -10138,7 +10101,7 @@ msgstr "Otomatik Ayarlama"
 #. i18n: ectx: property (title), widget (QGroupBox, settingsGroupBox)
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:210
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:43
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:418
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:426
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
@@ -10161,54 +10124,48 @@ msgid "Okay"
 msgstr "Tamam"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:46
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgctxt "@title"
 msgid "Free Rotation"
 msgstr "Serbest Döndürme"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Auto-rotate/flip image"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to rotate an image"
-msgstr "Resmi otomatik döndür/çevir"
+msgstr "Bir görseli döndürmek için bir araç"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:66
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can rotate an image with an arbitrary angle."
-msgstr "Bu resim renk yönetimli değil."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, görselleri isteğe bağlı bir açıyla "
+"döndürebilir."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
-#, fuzzy, kde-format
-#| msgid "Free Rotation..."
+#, kde-format
 msgctxt "@action"
 msgid "Free Rotation..."
 msgstr "Serbest Döndürme..."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:109
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
-msgstr "Serbest Döndürme"
+msgstr "Serbest Döndürme Ayar Noktası 1"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:115
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
-msgstr "Serbest Döndürme"
+msgstr "Serbest Döndürme Ayar Noktası 2"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:121
-#, fuzzy, kde-format
-#| msgid "Free Rotation"
+#, kde-format
 msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
-msgstr "Serbest Döndürme"
+msgstr "Serbest Döndürme Kendiliğinden Ayarlama"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #, kde-format
@@ -10216,8 +10173,8 @@ msgid ""
 "This is the perspective transformation operation preview. You can use the "
 "mouse for dragging the corner to adjust the perspective transformation area."
 msgstr ""
-"Bu, perspektif dönüştürme işlemi önizleme penceresidir. Perspektif "
-"dönüştürme alanını ayarlamak için fare ile köşeyi sürükleyebilirsiniz."
+"Bu, perspektif dönüştürme işlemi önizlemesidir. Perspektif dönüştürme "
+"alanını ayarlamak için fareyi köşeyi sürüklemek için kullanabilirsiniz."
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:132
 #, kde-format
@@ -10257,7 +10214,7 @@ msgstr "Izgara çiz"
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:147
 #, kde-format
 msgid "Inverse transformation"
-msgstr "Dönüşümü tersine döndür"
+msgstr "Dönüşümü tersine çevir"
 
 #: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:44
 #, kde-format
@@ -10266,25 +10223,23 @@ msgid "Perspective"
 msgstr "Perspektif"
 
 #: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Adjust color balance."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust perspective"
-msgstr "Renk dengesini ayarla."
+msgstr "Perspektifi ayarlamak için bir araç"
 
 #: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This option can be used to crop automatically the image."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust perspective from an image."
-msgstr "Bu seçenek resmi otomatik olarak kırpmak için kullanılabilir."
+msgstr ""
+"Bu görsel düzenleyicisi aracı, bir görselin perspektifini ayarlayabilir."
 
 #: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:98
-#, fuzzy, kde-format
-#| msgid "Perspective Adjustment..."
+#, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
-msgstr "Perspektif Ayarlaması..."
+msgstr "Perspektif Ayarı..."
 
 #: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:317
 #, kde-format
@@ -10294,14 +10249,14 @@ msgstr "Perspektif Ayarlama Aracı"
 #: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:336
 #, kde-format
 msgid "Perspective Adjustment"
-msgstr "Perspektif Ayarlaması"
+msgstr "Perspektif Ayarı"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:207
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1129
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1135
 #, kde-format
 msgid "Aspect Ratio Crop"
-msgstr "En Boy Oranı Kırpma"
+msgstr "En-Boy Oranıyla Kırp"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:215
 #, kde-format
@@ -10311,21 +10266,21 @@ msgid ""
 "the <b>CTRL</b> key to move the opposite corner too.</p><p>Press and hold "
 "the <b>SHIFT</b> key to move the closest corner to the mouse pointer.</p>"
 msgstr ""
-"<p>Burada, kırpma için kullanılan en-boy oranı seçimi önizlemesini "
+"<p>Burada kırpma için kullanılan en-boy oranı seçimi önizlemesini "
 "görebilirsiniz. Kırpma alanını taşımak ve yeniden boyutlandırmak için fareyi "
 "kullanabilirsiniz.</p><p>Karşı köşeyi de taşımak için <b>Kontrol</b> "
-"düğmesine basın ve basılı tutun.</p><p>Fare işaretçisine en yakın köşeyi "
-"hareket ettirmek için <b>Üst Karakter</b> düğmesine basıp basılı tutun.</p>"
+"düğmesini basılı tutun.</p><p>Fare işaretçisine en yakın köşeyi taşımak için "
+"<b>Üst Karakter</b> düğmesini basılı tutun.</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:238
 #, kde-format
 msgid "Max. Aspect"
-msgstr "Azami Görünüş"
+msgstr "En Büyük Oran"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:239
 #, kde-format
 msgid "Set selection area to the maximum size according to the current ratio."
-msgstr "Geçerli orana göre alan seçimini en büyük boyuta ayarla."
+msgstr "Seçim alanını geçerli orana göre en büyük boyuta ayarlayın."
 
 #. i18n: ectx: property (text), widget (QLabel, resolutionLabel)
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:255
@@ -10343,7 +10298,7 @@ msgstr "Bilgiyi Kırp"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:275
 #, kde-format
 msgid "Aspect ratio:"
-msgstr "En-Boy oranı:"
+msgstr "En-boy oranı:"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:277
 #, kde-format
@@ -10353,50 +10308,31 @@ msgstr "Özel"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:290
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:861
-#, fuzzy, kde-format
-#| msgid "Format"
+#, kde-format
 msgid "Format DIN A"
-msgstr "Biçim"
+msgstr "DIN A Biçimi"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:291
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
 #, kde-format
 msgid "Golden Ratio"
-msgstr "En İyi Oran"
+msgstr "Altın Oran"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:292
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
-#, fuzzy, kde-format
-#| msgid "Current aspect ratio"
+#, kde-format
 msgid "Current Aspect Ratio"
-msgstr "Mevcut en-boy oranı"
+msgstr "Geçerli En-Boy Oranı"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:293
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:864
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:296
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Select your constrained aspect ratio for cropping. Aspect Ratio Crop "
-#| "tool uses a relative ratio. That means it is the same if you use "
-#| "centimeters or inches and it does not specify the physical size.</"
-#| "p><p>You can see below a correspondence list of traditional photographic "
-#| "paper sizes and aspect ratio crop:</p><p><b>2:3</b>: 10x15cm, 20x30cm, "
-#| "30x45cm, 4x6\", 8x12\", 12x18\", 16x24\", 20x30\"</p><p><b>3:4</b>: "
-#| "6x8cm, 15x20cm, 18x24cm, 30x40cm, 3.75x5\", 4.5x6\", 6x8\", 7.5x10\", "
-#| "9x12\"</p><p><b>4:5</b>: 20x25cm, 40x50cm, 8x10\", 16x20\"</p><p><b>5:7</"
-#| "b>: 15x21cm, 30x42cm, 5x7\"</p><p><b>7:10</b>: 21x30cm, 42x60cm, 3.5x5\"</"
-#| "p><p><b>8:5</b>: common wide-screen monitor (as 1680x1050)</p><p><b>2:1</"
-#| "b>, <b>3:1</b>, <b>4:1</b>: common panoramic sizes</p><p><b>16:9</b>: "
-#| "common tv-screen (as HDTV or Full-HD)</p><p>The <b>Golden Ratio</b> is "
-#| "1:1.618. A composition following this rule is considered visually "
-#| "harmonious but can be unadapted to print on standard photographic paper.</"
-#| "p><p>The <b>Current Aspect Ratio</b> takes aspect ratio from the "
-#| "currently opened image.</p>"
+#, kde-format
 msgid ""
 "<p>Select your constrained aspect ratio for cropping. Aspect Ratio Crop tool "
 "uses a relative ratio. That means it is the same if you use centimeters or "
@@ -10415,36 +10351,38 @@ msgid ""
 "photographic paper.</p><p>The <b>Current Aspect Ratio</b> takes aspect ratio "
 "from the currently opened image.</p>"
 msgstr ""
-"<p>Kırpma için sınırlandırılmış en-boy oranınızı seçin. En-Boy Oranı Kırpma "
+"<p>Kırpma için kısıtlanmış en boy oranınızı seçin. En-Boy Oranıyla Kırp "
 "aracı göreceli bir oran kullanır. Bu, santimetre veya inç kullanırsanız aynı "
-"şey demektir ve fiziksel boyutu belirtmez.</p><p>Aşağıda geleneksel fotoğraf "
-"kağıdı boyutlarına ve en-boy oranını gösteren bir yazışma listesine "
-"bakabilirsiniz:</p><p><b>2:3</b>: 10x15cm, 20x30cm, 30x45cm, 4x6\", 8x12\", "
-"12x18\", 16x24\", 20x30\"</p><p><b>3:4</b>:6x8cm, 15x20cm, 18x24cm, 30x40cm, "
-"3.75x5\", 4.5x6\", 6x8\", 7.5x10\", 9x12\"</p><p><b>4:5</b>: 20x25cm, "
-"40x50cm, 8x10\", 16x20\"</p><p><b>5:7</b>: 15x21cm, 30x42cm, 5x7\"</"
-"p><p><b>7:10</b>: 21x30cm, 42x60cm, 3.5x5\"</p><p><b>8:5</b>: genel geniş-"
-"ekran monitör (1680x1050 olarak)</p><p><b>2:1</b>, <b>3:1</b>, <b>4:1</b>:  "
-"genel panoramik boyutlar</p><p><b>16:9</b>: genel tv-ekranı (HDTV yada Full-"
-"HD olarak)</p><p>Altın Oran</b> 1:1.618. Bu kurala uyan bir kompozisyon, "
-"görsel olarak uyumlu kabul edilir, ancak standart fotoğraf kağıdına "
-"yazdırmak için değiştirilmemiş olabilir.</p><p>Mevcut En-Boy Oranı</b>en-boy "
-"oranını mevcutta açılmış olan resimden alır.</p>"
+"olacağı ve fiziksel boyutu belirtmediği anlamına gelir.</p><p>Aşağıda "
+"geleneksel fotoğraf kağıdı boyutları ve en-boy oranı kırpmasının bir "
+"listesini görebilirsiniz:</p><p><b>2:3</b>: 10 x 15 cm, 20 x 30 cm, 30 x 45 "
+"cm, 4 x 6\", 8 x 12\", 12 x 18\", 16 x 24\", 20 x 30\"</p><p><b>3:4</b>: 6 x "
+"8 cm, 15 x 20 cm, 18 x 24 cm, 30 x 40 cm, 3,75 x 5\", 4,5 x 6\", 6 x 8\", "
+"7,5 x 10\", 9 x 12\"</p><p><b>4:5</b>: 20 x 25 cm, 40 x 50 cm, 8 x 10\", 16 "
+"x 20\"</p><p><b>5:7</b>: 15 x 21 cm, 30 x 42 cm, 5 x 7\"</p><p><b>7:10</b>: "
+"21 x 30 cm, 42 x 60 cm, 3,5 x 5\"</p><p><b>8:5</b>: Yaygın geniş ekran "
+"monitör (1680 x 1050 olarak)</p><p><b>2:1</b>, <b>3:1</b>, <b>4:1</b>: "
+"Yaygın panoramik boyutlar</p><p><b>16:9</b>: Yaygın TV ekranı (HDTV veya Tam "
+"YB)</p><p><b>DIN A Biçimi</b> kağıt, 1:1,414 oranını kullanır</p><p><b>Altın "
+"Oran</b> ise 1:1,618'dir. Bu kurala uyan bir kompozisyon görsel olarak "
+"uyumlu kabul edilir; ancak standart fotoğraf kağıdına baskı için uygun "
+"olmayabilir.</p><p><b>Geçerli En-Boy Oranı</b>, en-boy oranını şu anda açık "
+"olan görselden alır.</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:320
 #, kde-format
 msgid "Exact aspect"
-msgstr "Tam boyut"
+msgstr "Tam oran"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:321
 #, kde-format
 msgid "Enable this option to force exact aspect ratio crop."
-msgstr "Kesin en-boy oranı kesimine zorlamak için bu seçeneği etkinleştirin."
+msgstr "Kesin en-boy oranı kırpmasına zorlamak için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:323
 #, kde-format
 msgid "Orientation:"
-msgstr "Uyum:"
+msgstr "Yönelim:"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:325
 #, kde-format
@@ -10459,17 +10397,17 @@ msgstr "Dikey"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:327
 #, kde-format
 msgid "Select constrained aspect ratio orientation."
-msgstr "Sınırlandırılmış en boy oranı uyumunu seç."
+msgstr "Kısıtlandırılmış en-boy oranı uyumunu seçin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:330
 #, kde-format
 msgid "Auto"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:331
 #, kde-format
 msgid "Enable this option to automatically set the orientation."
-msgstr "Uyum'u otomatik ayarlamak için bu seçeneği etkinleştirin."
+msgstr "Yönelimi kendiliğinden ayarlamak için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:335
 #, kde-format
@@ -10479,12 +10417,12 @@ msgstr "Özel oran:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:340
 #, kde-format
 msgid "Set here the desired custom aspect numerator value."
-msgstr "Burada istenilen özel görünüm numaralama değerini ayarlayın."
+msgstr "Burada, istediğiniz özel en-boy payı değerini ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:345
 #, kde-format
 msgid "Set here the desired custom aspect denominator value."
-msgstr "Burada istenilen özel görünüm numaralama paydasını ayarlayın."
+msgstr "Burada, istenilen özel en-boy payda değerini ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
 #, kde-format
@@ -10525,13 +10463,13 @@ msgstr "Uyumlu Üçgenler"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:427
 #, kde-format
 msgid "Golden Mean"
-msgstr "En iyi Ortalama"
+msgstr "Altın Ortalama"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:428
 #, kde-format
 msgctxt "no geometric form"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:431
 #, kde-format
@@ -10539,69 +10477,70 @@ msgid ""
 "With this option, you can display guide lines to help compose your "
 "photograph."
 msgstr ""
-"Bu seçenek ile, fotoğrafınıza yardmcı olması için klavuz çizgileri "
+"Bu seçenekle fotoğrafınızı oluşturmanıza yardımcı olacak kılavuz çizgileri "
 "görüntüleyebilirsiniz."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:434
 #, kde-format
 msgid "Golden sections"
-msgstr "En iyi bölgeler"
+msgstr "Altın bölgeler"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
-msgstr "En iyi bölgeleri göstermek için bu seçeneği etkinleştirin."
+msgstr "Altın bölgeleri göstermek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
 msgid "Golden spiral sections"
-msgstr "En iyi spiral bölgeler"
+msgstr "Altın kıvrımsal bölgeler"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:438
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
-msgstr "En iyi spiral bölgeleri göstermek için bu seçeneği etkinleştirin."
+msgstr "Altın kıvrımsal bölgeleri göstermek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:440
 #, kde-format
 msgid "Golden spiral"
-msgstr "En iyi sprial"
+msgstr "Altın kıvrımsal"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
-msgstr "Altın rengi spiral klavuzu göstermek için bu seçeneği etkinleştir."
+msgstr "Altın kıvrımsal kılavuzu göstermek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
 msgid "Golden triangles"
-msgstr "En iyi üçgenler"
+msgstr "Altın üçgenler"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
-msgstr "En iyi üçgenleri göstermek için bu seçeneği etkinleştirin."
+msgstr "Altın üçgenleri göstermek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
-msgstr "Yatay Çevir"
+msgstr "Yatay ters çevir"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr ""
-"Klavuz çizgilerini yatay olarak döndürmek için bu seçeneği etkinleştir."
+"Kılavuz çizgilerini yatay olarak döndürmek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
-msgstr "Dikey Çevir"
+msgstr "Dikey ters çevir"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
-msgstr "Kılavuz çizgilerini dikey olarak döndürmek için bu seçeneği seçin."
+msgstr ""
+"Kılavuz çizgilerini dikey olarak döndürmek için bu seçeneği etkinleştirin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:452
 #, kde-format
@@ -10611,19 +10550,19 @@ msgstr "Renk ve genişlik:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
 #, kde-format
 msgid "Set here the color used to draw composition guides."
-msgstr "Burada kompozisyon kılavuzlarını çizmek için kullanılan rengi seçin."
+msgstr "Burada, kompozisyon kılavuzlarını çizmek için kullanılan rengi seçin."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:459
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr ""
-"Burada komposizyon kılavuzları çizmek için pikseller içerisinde genişliği "
-"ayarlayın."
+"Burada, kompozisyon kılavuzlarını çizmek için kullanılan genişliği piksel "
+"türünden ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:478
 #, kde-format
 msgid "Composition Guides"
-msgstr "Düzenleme Kılavuzları"
+msgstr "Kompozisyon Kılavuzları"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:831
 #, kde-format
@@ -10632,32 +10571,28 @@ msgid "Custom"
 msgstr "Özel"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Aspect Ratio Crop"
+#, kde-format
 msgctxt "@title"
 msgid "Aspect Ratio Crop"
-msgstr "En Boy Oranı Kırpma"
+msgstr "En-Boy Oranıyla Kırp"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Crop images to a region."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to crop an image with ratio"
-msgstr "Resmin bir bölgesine kırp."
+msgstr "Görselleri oranlı olarak kırpmak için bir araç"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can crop an image with ratio."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, görselleri oranlı olarak kırpabilir."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "Aspect Ratio Crop..."
+#, kde-format
 msgctxt "@action"
 msgid "Aspect Ratio Crop..."
-msgstr "En Boy Oranı Kırpma..."
+msgstr "En-Boy Oranıyla Kırp..."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:303
 #, kde-format
@@ -10665,71 +10600,57 @@ msgid "New Size"
 msgstr "Yeni Boyut"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:305
-#, fuzzy, kde-format
-#| msgid "Resolution:"
+#, kde-format
 msgid "Preset Resolutions:"
-msgstr "Çözünürlük:"
+msgstr "Önayar çözünürlükleri:"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:307
-#, fuzzy, kde-format
-#| msgid "Original"
+#, kde-format
 msgctxt "Original (size)"
 msgid "Original (%1 x %2 pixels)"
-msgstr "Özgün"
+msgstr "Özgün (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:310
-#, fuzzy, kde-format
-#| msgid "Tiny (1 pixel)"
-#| msgid_plural "Tiny (%1 pixels)"
+#, kde-format
 msgctxt "Tiny (size)"
 msgid "Tiny (%1 x %2 pixels)"
-msgstr "Ufak (1 piksel)"
+msgstr "Ufak (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:313
-#, fuzzy, kde-format
-#| msgid "Small (1 pixel)"
-#| msgid_plural "Small (%1 pixels)"
+#, kde-format
 msgctxt "Small (size)"
 msgid "Small (%1 x %2 pixels)"
-msgstr "Küçük (1 piksel)"
+msgstr "Küçük (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:316
-#, fuzzy, kde-format
-#| msgid "Medium (1 pixel)"
-#| msgid_plural "Medium (%1 pixels)"
+#, kde-format
 msgctxt "Medium (size)"
 msgid "Medium (%1 x %2 pixels)"
-msgstr "Orta (1 piksel)"
+msgstr "Orta (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:319
-#, fuzzy, kde-format
-#| msgid "Big (1 pixel)"
-#| msgid_plural "Big (%1 pixels)"
+#, kde-format
 msgctxt "Big (size)"
 msgid "Big (%1 x %2 pixels)"
-msgstr "Büyük (1 piksel)"
+msgstr "Büyük (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:322
-#, fuzzy, kde-format
-#| msgid "Large (1 pixel)"
-#| msgid_plural "Large (%1 pixels)"
+#, kde-format
 msgctxt "Large (size)"
 msgid "Large (%1 x %2 pixels)"
-msgstr "Geniş (1 piksel)"
+msgstr "Geniş (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:325
-#, fuzzy, kde-format
-#| msgid "Huge (1 pixel)"
-#| msgid_plural "Huge (%1 pixels)"
+#, kde-format
 msgctxt "Huge (size)"
 msgid "Huge (%1 x %2 pixels)"
-msgstr "Devasa (1 piksel)"
+msgstr "Devasa (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:328
 #, kde-format
 msgctxt "UHD4K (size)"
 msgid "UHD-4K (%1 x %2 pixels)"
-msgstr ""
+msgstr "UYB-4K (%1 x %2 piksel)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:331
 #, kde-format
@@ -10753,31 +10674,31 @@ msgstr "A6 (105 x 148 mm)"
 #, kde-format
 msgctxt "Letter (size)"
 msgid "Letter (8.5 x 11 in)"
-msgstr ""
+msgstr "Mektup (8,5 x 11 inç)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:335
 #, kde-format
 msgctxt "Print (size)"
 msgid "4 x 6 in"
-msgstr "4 x 6 in"
+msgstr "4 x 6 inç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:336
 #, kde-format
 msgctxt "Print (size)"
 msgid "5 x 7 in"
-msgstr "5 x 7 in"
+msgstr "5 x 7 inç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:337
 #, kde-format
 msgctxt "Print (size)"
 msgid "8 x 10 in"
-msgstr "8 x 10 in"
+msgstr "8 x 10 inç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:338
 #, kde-format
 msgctxt "Print (size)"
 msgid "11 x 14 in"
-msgstr "11 x 14 in"
+msgstr "11 x 14 inç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:342
 #, kde-format
@@ -10787,23 +10708,22 @@ msgstr "Birimler:"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:344
 #, kde-format
 msgid "Pixels (px)"
-msgstr "Pikseller (pks)"
+msgstr "Piksel (pks)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:345
-#, fuzzy, kde-format
-#| msgid "Inches"
+#, kde-format
 msgid "Inches (in)"
-msgstr "İnç"
+msgstr "İnç (inç)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:346
 #, kde-format
 msgid "Centimeters (cm)"
-msgstr "Santimetreler (cm)"
+msgstr "Santimetre (cm)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:347
 #, kde-format
 msgid "Millimeters (mm)"
-msgstr "Milimetreler (mm)"
+msgstr "Milimetre (mm)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:353
 #, kde-format
@@ -10829,28 +10749,27 @@ msgstr "Piksel türünden yeni görsel yüksekliği (pks)."
 #: core/dplugins/editor/transform/resize/resizetool.cpp:377
 #, kde-format
 msgid "New image width in percent (%)."
-msgstr "Yüzde olarak yeni görüntü genişliği (%)"
+msgstr "Yüzde türünden yeni görsel genişliği (%)."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:385
 #, kde-format
 msgid "New image height in percent (%)."
-msgstr "Yüzde olarak yeni görüntü yüksekliği (%)."
+msgstr "Yüzde türünden yeni görsel yüksekliği (%)."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:391
-#, fuzzy, kde-format
-#| msgid "Pixels:"
+#, kde-format
 msgid " Pixel/Inch"
-msgstr "Piksel:"
+msgstr " Piksel/İnç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:393
 #, kde-format
 msgid "New image resolution in pixels/inch."
-msgstr "Piksel/inç türünden yeni görsel çözünürlüğü"
+msgstr "Piksel/inç türünden yeni görsel çözünürlüğü."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:400
 #, kde-format
 msgid "Restore photograph (slow)"
-msgstr "Fotoğrafı geri yükle (yavaş)"
+msgstr "Fotoğrafı restore et (yavaş)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:401
 #, kde-format
@@ -10858,7 +10777,7 @@ msgid ""
 "Enable this option to scale-up an image to a huge size. <b>Warning</b>: This "
 "process can take some time."
 msgstr ""
-"Bir görüntüyü çok büyük bir boyuta ölçeklemek için bunu etkinleştirin. "
+"Bir görseli çok büyük bir boyuta büyütmek için bu seçeneği etkinleştirin. "
 "<b>Uyarı</b>: Bu işlem biraz zaman alabilir."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:404
@@ -10867,8 +10786,8 @@ msgid ""
 "<b>Note:</b> use Restoration Mode to scale-up an image to a huge size. This "
 "process can take some time."
 msgstr ""
-"<b>Not:</b> bir görüntüyü çok büyük boyutlara ölçeklemek için Bakım Kipini "
-"kullanın. Bu işlem biraz zaman alabilir."
+"<b>Not:</b> Bir görseli çok büyük bir boyuta büyütmek için Restorasyon "
+"Kipi'ni kullanın. Bu işlem biraz zaman alabilir."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:629
 #: core/utilities/searchwindow/searchfields_createfield.cpp:203
@@ -10879,11 +10798,10 @@ msgid "px"
 msgstr "pks"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#, fuzzy, kde-format
-#| msgid "Find"
+#, kde-format
 msgctxt "Inches"
 msgid "in"
-msgstr "Bul"
+msgstr "inç"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:641
 #, kde-format
@@ -10904,53 +10822,49 @@ msgid "Resize"
 msgstr "Yeniden Boyutlandır"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
-msgstr "Yüklenecek Fotoğraf Boyutlandırma Ayarları"
+msgstr "Yüklenecek Fotoğraf Yeniden Boyutlandırma Ayarları Dosyası"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:934
 #, kde-format
 msgid "\"%1\" is not a Photograph Resizing settings text file."
-msgstr "\"%1\" bir Fotoğraf Boyutlandırma Ayar dosyası değil"
+msgstr "\"%1\" bir Fotoğraf Yeniden Boyutlandırma Ayarı dosyası değil."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:943
 #, kde-format
 msgid "Cannot load settings from the Photograph Resizing text file."
-msgstr "Fotoğraf Boyutlandırma dosyasından ayarlar yüklenemiyor."
+msgstr "Fotoğraf Yeniden Boyutlandırma metin dosyasından ayarlar yüklenemiyor."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
-msgstr "Kaydedilecek Fotoğraf Boyutlandırma Ayar Dosyası"
+msgstr "Kaydedilecek Fotoğraf Yeniden Boyutlandırma Ayarı Dosyası"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
 msgid "Cannot save settings to the Photograph Resizing text file."
-msgstr "Fotoğraf Boyutlandırma dosyasına ayarlar kaydedilemiyor."
+msgstr "Fotoğraf Yeniden Boyutlandırma metin dosyasına ayarlar kaydedilemiyor."
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Resize Image"
-msgstr "Resmi Yeniden Boyutlandır"
+msgstr "Görseli Yeniden Boyutlandır"
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add a border around images"
+#, kde-format
 msgctxt "@action"
 msgid "A tool to resize an image"
-msgstr "Resimlerin etrafına bir sınır ekle"
+msgstr "Görselleri yeniden boyutlandırmak için bir araç"
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@action"
 msgid "This Image Editor tool can resize an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseli yeniden boyutlandırabilir."
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:95
 #, kde-format
@@ -10966,10 +10880,10 @@ msgid ""
 "adjusting the shear correction. Release the left mouse button to freeze the "
 "dashed line's position."
 msgstr ""
-"Makaslama işlemi önizlemesi. Fare işaretçisini bu alanın üzerine "
-"getirirseniz oluşan dikey ve yatay kesikli çizgiler ile makaslama ayarlarını "
-"yapabilirsiniz. Kesikli çizginin konumunu sabitlemek için sol fare düğmesine "
-"bırakın."
+"Bu, kırkma işlemi önizlemesidir. Fare imlecini bu önizleme üzerinde hareket "
+"ettirirseniz kırkma düzeltmesini ayarlarken size yol göstermek üzere dikey "
+"ve yatay kesikli bir çizgi çizilecektir. Kesikli çizginin konumunu dondurmak "
+"için farenin sol düğmesini bırakın."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:128
 #, kde-format
@@ -10979,7 +10893,7 @@ msgstr "Ana yatay açı:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:132
 #, kde-format
 msgid "The main horizontal shearing angle, in degrees."
-msgstr "Derece olarak ana yatay makaslama açısı."
+msgstr "Derece türünden ana yatay kırkma açısı."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:134
 #, kde-format
@@ -10991,7 +10905,9 @@ msgstr "İnce yatay açı:"
 msgid ""
 "This value in degrees will be added to main horizontal angle value to set "
 "fine adjustments."
-msgstr "Bu değer ana yatay açı değerine ince ayar için eklenecektir."
+msgstr ""
+"Derece türünden bu değer, ince ayarları yapmak için ana yatay açı değerine "
+"eklenecektir."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:140
 #, kde-format
@@ -11001,7 +10917,7 @@ msgstr "Ana dikey açı:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:144
 #, kde-format
 msgid "The main vertical shearing angle, in degrees."
-msgstr "Derece cinsinden ana dikey makaslama açısı."
+msgstr "Derece türünden ana dikey kırkma açısı."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:146
 #, kde-format
@@ -11013,7 +10929,9 @@ msgstr "İnce dikey açı:"
 msgid ""
 "This value in degrees will be added to main vertical angle value to set fine "
 "adjustments."
-msgstr "Bu değer ince ayar için ana dikey derece değerine eklenecektir."
+msgstr ""
+"Derece türünden bu değer, ince ayarları yapmak için ana dikey açı değerine "
+"eklenecektir."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:153
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:104
@@ -11027,53 +10945,49 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
 "To smooth the target image, it will be blurred a little."
 msgstr ""
-"Kırpılmış görüntüye kenar yumuşatma filtresi eklemek için bunu işaretleyin. "
-"Hedef görüntüyü düzgünleştirmek için biraz bulanıklaştırma kullanılacaktır."
+"Kırkılmış görsele kenar yumuşatma süzgeci eklemek için bunu seçeneği "
+"etkinleştirin. Hedef görseli pürüzsüzleştirmek için biraz bulanıklaştırma "
+"kullanılacaktır."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:328
 #: core/libs/dimg/filters/transform/shearfilter.cpp:91
 #, kde-format
 msgid "Shear Tool"
-msgstr "Makaslama Aracı"
+msgstr "Kırkma Aracı"
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:44
-#, fuzzy, kde-format
-#| msgid "Sharpen Image"
+#, kde-format
 msgctxt "@title"
 msgid "Shear Image"
-msgstr "Keskin Resim"
+msgstr "Görseli Kırk"
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add a border around images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to shear an image"
-msgstr "Resimlerin etrafına bir sınır ekle"
+msgstr "Görselleri kırkmak için bir araç"
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:64
-#, fuzzy, kde-format
-#| msgid "This image is not color managed."
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can shear an image."
-msgstr "Bu resim renk yönetimli değil."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseli kırkabilir."
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Shear..."
+#, kde-format
 msgctxt "@action"
 msgid "&Shear..."
-msgstr "Makasla..."
+msgstr "&Kırk..."
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:55
-#, fuzzy, kde-format
-#| msgid "Digital still camera"
+#, kde-format
 msgid "Digital Scanner"
-msgstr "Dijital kamera"
+msgstr "Sayısal Tarayıcı"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
-msgstr ""
+msgstr "Sayısal bir tarayıcıyla görselleri almak için bir araç"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
 #, kde-format
@@ -11082,13 +10996,16 @@ msgid ""
 "p><p>Plenty of scanner devices are supported through the Sane library.</"
 "p><p>Target image can be post processed as crop and rotate.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların sayısal bir tarayıcıdan yeni görseller almasına "
+"olanak tanır.</p><p>Sane kitaplığı aracılığıyla çok sayıda tarayıcı aygıtı "
+"desteklenir.</p><p>Hedef görsel, sonradan kırpılabilir veya döndürülebilir.</"
+"p>"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
-#, fuzzy, kde-format
-#| msgid "Import from Scanner..."
+#, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
-msgstr "Tarayıcıdan Aktar..."
+msgstr "Tarayıcıdan İçe Aktar..."
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
@@ -11096,6 +11013,8 @@ msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
+"Kullanılabilir tarayıcı aygıtı yok.\n"
+"Lütfen yapılandırmanızı denetleyin"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
@@ -11103,18 +11022,19 @@ msgid ""
 "Cannot open scanner device \"%1\".\n"
 "Please check your configuration"
 msgstr ""
+"\"%1\" tarayıcı aygıtı açılamıyor.\n"
+"Lütfen yapılandırmanızı denetleyin"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
-msgstr "Resim Tara"
+msgstr "Görsel Tara"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:72
 #, kde-format
 msgid "Scan Images"
-msgstr "Resimleri Tara"
+msgstr "Görseller Tara"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
@@ -11124,8 +11044,7 @@ msgid "New Image File Name"
 msgstr "Yeni Görsel Dosyası Adı"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Desteklenmeyen Biçim"
@@ -11133,14 +11052,13 @@ msgstr "Desteklenmeyen Biçim"
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
 #, kde-format
 msgid "The target image file format \"%1\" is unsupported."
-msgstr "\"%1\" hedef resim biçimi desteklenmiyor."
+msgstr "\"%1\" hedef görsel biçimi desteklenmiyor."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
-msgstr "Dosya kaydedilemiyor"
+msgstr "Dosya Kaydedilemiyor"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
 #, kde-format
@@ -11150,24 +11068,23 @@ msgid ""
 "\"%2\"."
 msgstr ""
 "Dosya kaydedilemedi\n"
-"\"%1\" konum\n"
-"\"%2\"."
+"\"%1\"\n"
+"\"%2\" konumuna."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2277
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr "Üzerine yazılsın mı?"
+msgstr "Dosyanın Üzerine Yaz?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
-" \"%1\" isimli bir dosya zaten var. Üzerine yazmak istediğinizden emin "
+"\"%1\" adlı bir dosya halihazırda var. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:296
@@ -11176,8 +11093,7 @@ msgid "Saving file %1 -"
 msgstr "%1 dosyası kaydediliyor -"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, fuzzy, kde-format
-#| msgid "File Not Saved"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Dosya Kaydedilmedi"
@@ -11185,7 +11101,7 @@ msgstr "Dosya Kaydedilmedi"
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, kde-format
 msgid "Cannot save \"%1\" file"
-msgstr "\"%1\" dosyası kaydedilemedi"
+msgstr "\"%1\" dosyası kaydedilemiyor"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
@@ -11198,7 +11114,7 @@ msgstr "Coğrafi Konum Düzenleyicisi"
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
-msgstr "Yer imlerine eklenmiş konumları haritada görüntüleyin."
+msgstr "Haritada yer imlerine eklenmiş konumları görüntüleyin."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
 #, kde-format
@@ -11231,18 +11147,16 @@ msgid "Sorting"
 msgstr "Sıralama"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
-#, fuzzy, kde-format
-#| msgid "Show oldest first"
+#, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
-msgstr "Eski olanı ilk göster"
+msgstr "En eskiyi ilk önce göster"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
-#, fuzzy, kde-format
-#| msgid "Show youngest first"
+#, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
-msgstr "İlk olarak en yeni olanı göster"
+msgstr "En yeniyi ilk önce göster"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
 #, kde-format
@@ -11254,7 +11168,7 @@ msgstr "Ayrıntılar"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
-msgstr "GPS İlişkilendirici"
+msgstr "GPS İlişkilendiricisi"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
@@ -11266,7 +11180,7 @@ msgstr "Geri Al/Yenile"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
-msgstr "Ters Konumlanma"
+msgstr "Ters Coğrafi Konumlama"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
@@ -11284,23 +11198,21 @@ msgstr "KML Dışa Aktar"
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
-msgstr "Metaveri yükleniyor -"
+msgstr "Üst veri yükleniyor -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
-msgstr[0] "1 değiştirilmiş resminiz var."
-msgstr[1] "%1 değiştirilmiş resminiz var."
+msgstr[0] "1 değiştirilmiş görsel var."
+msgstr[1] "%1 değiştirilmiş görsel var."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unsaved changes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr "Kaydedilmemiş değişiklikler"
+msgstr "Kaydedilmemiş Değişiklikler"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
@@ -11392,23 +11304,23 @@ msgstr "Hız"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
 #, kde-format
 msgid "# satellites"
-msgstr "# uydular"
+msgstr "# uydu"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
 #, kde-format
 msgid "Fix type"
-msgstr "Düzeltme türü"
+msgstr "Onarım türü"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
 #, kde-format
 msgid "2-d"
-msgstr "2-b"
+msgstr "2B"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
 #, kde-format
 msgid "3-d"
-msgstr "3-b"
+msgstr "3B"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
@@ -11430,14 +11342,13 @@ msgstr "Değişen ayrıntılar"
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
-msgstr "Coğrafi Konum Düzenle"
+msgstr "Coğrafi Konumu Düzenle"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
-msgstr "Eposta ile gönder"
+msgstr "Ögelerin coğrafi konumunu düzenlemek için bir araç"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
 #, kde-format
@@ -11454,10 +11365,20 @@ msgid ""
 "Finally, this tool is able to read a GPS trace from a device to synchronize "
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
+"Bu araç, kullanıcıların ögelerdeki coğrafi konum bilgilerini değiştirmesine "
+"olanak tanır.\n"
+"\n"
+"Bu araç, GPS verisini elle veya bir harita üzerinden düzenleyebilir. Ters "
+"coğrafi kodlama da web hizmetleri aracılığıyla kullanılabilir.\n"
+"\n"
+"Bu araç aynı zamanda harita izlerini Google biçiminde depolamak için KML'ye "
+"dışa aktarma işlevine de sahiptir.\n"
+"\n"
+"Son olarak bu araç, eğer kameranızda yerleşik bir GPS aygıtı yoksa ögelerin "
+"coğrafi konumunu eşzamanlamak için bir aygıttan GPS izini okuyabilir."
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
 msgstr "Coğrafi Konumu Düzenle..."
@@ -11467,50 +11388,50 @@ msgstr "Coğrafi Konumu Düzenle..."
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:116
 #, kde-format
 msgid "Could not read image '%1'"
-msgstr "'%1' resmi okunamadı"
+msgstr "'%1' görseli okunamadı"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:155
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
 #, kde-format
 msgid "Format of image '%1' is unknown"
-msgstr "'%1' resminin biçimi bilinmiyor"
+msgstr "'%1' görselinin biçimi bilinmiyor"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:173
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:134
 #, kde-format
 msgid "Error loading image '%1'"
-msgstr "'%1' resmini yüklemede hata"
+msgstr "'%1' görselini yüklemede hata"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:216
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
-msgstr "'%1' resmi '%2' konumuna kaydedilemedi"
+msgstr "'%1' görseli '%2' konumuna kaydedilemedi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:220
 #, kde-format
 msgid "Creation of picture '%1'"
-msgstr "'%1' resminin oluşturma işlemi"
+msgstr "'%1' görselinin oluşturma işlemi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:322
 #, kde-format
 msgid "Creation of placemark '%1'"
-msgstr "'%1' konum işareti oluşturma işlemi"
+msgstr "'%1' konum imi oluşturma işlemi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:331
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
-msgstr "'%1' resmi için '%2' konumuna simge kaydedilemedi"
+msgstr "'%1' görseli için '%2' konumuna simge kaydedilemedi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:335
 #, kde-format
 msgid "Creation of icon '%1'"
-msgstr "'%1' simgesinin oluşumu"
+msgstr "'%1' simgesini oluşturma işlemi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:362
 #, kde-format
 msgid "No GPX file chosen."
-msgstr "Bir GPX dosyası seçili değil."
+msgstr "Seçili GPX dosyası yok."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:371
 #, kde-format
@@ -11520,12 +11441,12 @@ msgstr "%1 GPX dosyası ayrıştırılamıyor."
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:377
 #, kde-format
 msgid "The %1 GPX file do not have a date-time track to use."
-msgstr "%1 GPX dosyası, kullanmak üzere tarih-zaman içermiyor."
+msgstr "%1 GPX dosyası, kullanılabilir tarih-zaman izi içermiyor."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:385
 #, kde-format
 msgid "Tracks"
-msgstr "Yollar"
+msgstr "İzler"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:489
 #, kde-format
@@ -11540,7 +11461,7 @@ msgstr "Dosya yazmak için açılamıyor"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:517
 #, kde-format
 msgid "Move %1 to final directory %2"
-msgstr "%1 dizinini %2 son dizinine taşı"
+msgstr "%1 ögesini %2 son dizinine taşı"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
@@ -11550,7 +11471,7 @@ msgstr "Veri, hedef dizine taşınamıyor"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:531
 #, kde-format
 msgid "Report below have been generated while KML file processing:"
-msgstr "KML dosyası işlenirken, aşağıdaki rapor oluşturuldu:"
+msgstr "KML dosyası işlenirken aşağıdaki rapor üretildi:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlgpsdataparser.cpp:58
 #, kde-format
@@ -11583,12 +11504,12 @@ msgstr "Hedef Türü"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:67
 #, kde-format
 msgid "&Local or web target used by GoogleEarth"
-msgstr "GoogleEarth tarafından kullanı&lan yerel veya web hedefi"
+msgstr "Google Earth tarafından kullanı&lan yerel veya web hedefi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
 msgid "Web target used by GoogleMaps"
-msgstr "Google Haritalar tarafından kullanılan web hedefleri"
+msgstr "Google Haritalar tarafından kullanılan web hedefi"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:71
 #, kde-format
@@ -11603,7 +11524,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:82
 #, kde-format
 msgid "Picture Altitude:"
-msgstr "Resim Yüksekliği:"
+msgstr "Resim irtifası:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:84
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:214
@@ -11624,14 +11545,7 @@ msgid "absolute"
 msgstr "mutlak"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Specifies how pictures are displayed<dl><dt>clamp to ground (default)</"
-#| "dt><dd>Indicates to ignore an altitude specification</dd><dt>relative to "
-#| "ground</dt><dd>Sets the altitude of the element relative to the actual "
-#| "ground elevation of a particular location.</dd><dt>absolute</dt><dd>Sets "
-#| "the altitude of the coordinate relative to sea level, regardless of the "
-#| "actual elevation of the terrain beneath the element.</dd></dl>"
+#, kde-format
 msgid ""
 "<p>Specifies how pictures are displayed<dl><dt>clamp to ground (default)</"
 "dt><dd>Indicates to ignore an altitude specification</dd><dt>relative to "
@@ -11641,28 +11555,27 @@ msgid ""
 "elevation of the terrain beneath the element.</dd></dl></p>"
 msgstr ""
 "<p>Resimlerin nasıl görüntülendiğini belirtir<dl><dt>yere kenetli "
-"(öntanımlı)</dt><dd>Yükseklik niteliğini yok saymasını belirtir</dd><dt>yere "
-"bağıl</dt><dd>Ögenin yüksekliğini, belirli bir konumda asıl yer yüksekliğine "
-"bağlı olarak ayarlar.</dd><dt>mutlak</dt><dd>Koordinatın yüksekliğini deniz "
-"düzeyine göre, ögenin altındaki zeminin gerçek yüksekliğine bakılmaksızın "
-"ayarlar.</dd></dl>"
+"(öntanımlı)</dt><dd>Bir irtifa belirtiminin yok sayılacağını belirtir</"
+"dd><dt>yere bağıl</dt><dd>Belirli bir konumun gerçek yer yüksekliğine göre "
+"ögenin irtifasını ayarlar.</dd><dt>mutlak</dt><dd>Ögenin altındaki arazinin "
+"gerçek yüksekliğinden bağımsız olarak, koordinatın deniz düzeyine göre "
+"irtifasını ayarlar.</dd></dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:100
 #, kde-format
 msgid "Destination Directory:"
-msgstr "Hedef Dizin:"
+msgstr "Hedef dizin:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
-msgstr "KML dosya ve resimlerinin kaydedileceği bir dizin seçin"
+msgstr "KML Dosyası/Resimleri Kaydetme Dizini"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
 #, kde-format
 msgid "Destination Path:"
-msgstr "Hedef Yolu:"
+msgstr "Hedef yolu:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:109
 #, kde-format
@@ -11682,7 +11595,7 @@ msgstr "Simge Boyutu:"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:134
 #, kde-format
 msgid "Image Size:"
-msgstr "Resim Boyutu:"
+msgstr "Görsel boyutu:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:149
 #, kde-format
@@ -11703,19 +11616,19 @@ msgstr "GPX dosyası:"
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
-msgstr "GPS Exchange Format (*.gpx)"
+msgstr "GPS Değişim Biçimi (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
-msgstr "Yüklemek için GPX Dosyası Seç"
+msgstr "Yüklenecek GPX Dosyası Seç"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:165
 #, kde-format
 msgid "Time Zone:"
-msgstr "Zaman Dilimi:"
+msgstr "Zaman dilimi:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:167
 #, kde-format
@@ -11858,18 +11771,18 @@ msgid ""
 "Sets the time zone of the camera during picture shooting, so that the time "
 "stamps of the GPS can be converted to match the local time"
 msgstr ""
-"Fotoğraf çekimi sırasında kameranın zaman dilimini ayarlar, böylece GPS'in "
-"zaman damgaları yerel saatle eşleşecek şekilde dönüştürülebilir."
+"Fotoğraf çekimi sırasında kameranın saat dilimini ayarlar, böylece GPS zaman "
+"damgaları yerel saatle eşleşecek biçimde dönüştürülebilir"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:198
 #, kde-format
 msgid "Track Width:"
-msgstr "Yol Genişliği:"
+msgstr "İz genişliği:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:202
 #, kde-format
 msgid "Track Color:"
-msgstr "Yol Rengi:"
+msgstr "İz rengi:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
 #, kde-format
@@ -11879,18 +11792,10 @@ msgstr "Matlık (%):"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:212
 #, kde-format
 msgid "Track Altitude:"
-msgstr "Yol Yüksekliği:"
+msgstr "İz irtifası:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:217
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Specifies how the points are displayed<dl><dt>clamp to ground "
-#| "(default)</dt><dd>Indicates to ignore an altitude specification</"
-#| "dd><dt>relative to ground</dt><dd>Sets the altitude of the element "
-#| "relative to the actual ground elevation of a particular location.</"
-#| "dd><dt>absolute</dt><dd>Sets the altitude of the coordinate relative to "
-#| "sea level, regardless of the actual elevation of the terrain beneath the "
-#| "element.</dd></dl>"
+#, kde-format
 msgid ""
 "<p>Specifies how the points are displayed<dl><dt>clamp to ground (default)</"
 "dt><dd>Indicates to ignore an altitude specification</dd><dt>relative to "
@@ -11900,17 +11805,17 @@ msgid ""
 "elevation of the terrain beneath the element.</dd></dl></p>"
 msgstr ""
 "<p>Noktaların nasıl görüntülendiğini belirtir<dl><dt>yere kenetli "
-"(öntanımlı)</dt><dd>Yükseklik niteliğini yoksaymasını belirtir</dd><dt>yere "
-"bağıl</dt><dd>Ögenin yüksekliğini, belirli bir konumda asıl yer yüksekliğine "
-"bağlı olarak ayarlar.</dd><dt>mutlak</dt><dd>Koordinatın yüksekliğini deniz "
-"düzeyine göre, ögenin altındaki zeminin gerçek yüksekliğine bakılmaksızın "
-"ayarlar.</dd></dl>"
+"(öntanımlı)</dt><dd>Bir irtifa belirtiminin yok sayılacağını belirtir</"
+"dd><dt>yere bağıl</dt><dd>Belirli bir konumun gerçek yer yüksekliğine göre "
+"ögenin irtifasını ayarlar.</dd><dt>mutlak</dt><ddÖgenin altındaki arazinin "
+"gerçek yüksekliğinden bağımsız olarak, koordinatın deniz düzeyine göre "
+"irtifasını ayarlar.</dd></dl></p>"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:249
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:293
 #, kde-format
 msgid "Generate KML file"
-msgstr "KML dosyası oluştur"
+msgstr "KML dosyası üret"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchbackend.cpp:308
 #, kde-format
@@ -11927,8 +11832,8 @@ msgstr "OSM"
 #, kde-format
 msgid "1 image snapped to '%2'"
 msgid_plural "%1 images snapped to '%2'"
-msgstr[0] "1 resim '%2' konumuna yapıştırıldı"
-msgstr[1] "%1 resim '%2' konumuna yapıştırıldı"
+msgstr[0] "1 görsel '%2' konumuna tutturuldu"
+msgstr[1] "%1 görsel '%2' konumuna tutturuldu"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:162
 #, kde-format
@@ -11939,17 +11844,17 @@ msgstr "Ara"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:169
 #, kde-format
 msgid "Clear the search results."
-msgstr "Arama sonuçlarını temizle."
+msgstr "Arama sonuçlarını temizleyin."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:177
 #, kde-format
 msgid "Keep the results of old searches when doing a new search."
-msgstr "Yeni bir arama yaparken eski arama sonuçlarını koruyun."
+msgstr "Yeni bir arama yaparken eski arama sonuçlarını tutun."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:184
 #, kde-format
 msgid "Toggle the visibility of the search results on the map."
-msgstr "Arama sonuçlarının haritada görünürlüğünü aç/kapat."
+msgstr "Arama sonuçlarının haritada görünürlüğünü açın/kapatın."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:188
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:102
@@ -11960,7 +11865,7 @@ msgstr "Koordinatları kopyala"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:191
 #, kde-format
 msgid "Move selected images to this position"
-msgstr "Seçilen resimleri bu konuma taşı"
+msgstr "Seçili görselleri bu konuma taşı"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:193
 #, kde-format
@@ -11979,11 +11884,10 @@ msgid "Bookmarks"
 msgstr "Yer İmleri"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Search failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
-msgstr "Arama başarısız"
+msgstr "Arama Başarısız"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
 #, kde-format
@@ -11998,8 +11902,8 @@ msgstr ""
 #, kde-format
 msgid "1 image moved to '%2'"
 msgid_plural "%1 images moved to '%2'"
-msgstr[0] "1 resim '%2' konumuna taşındı"
-msgstr[1] "%1 resim '%2' konumuna taşındı"
+msgstr[0] "1 görsel '%2' konumuna taşındı"
+msgstr[1] "%1 görsel '%2' konumuna taşındı"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
 #, kde-format
@@ -12023,24 +11927,22 @@ msgstr "Önceki"
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
-msgstr "EXIF Bilgilerini Düzenle"
+msgstr "EXIF Bilgisini Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
-msgstr "IPTC Bilgilerini Düzenle"
+msgstr "IPTC Bilgisini Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:130
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
-msgstr "XMP Bilgilerini Düzenle"
+msgstr "XMP Bilgisini Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 (%2/%3) - Edit Metadata"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - Üst Veriyi Düzenle"
@@ -12064,12 +11966,12 @@ msgstr "Listeden seçili değeri kaldır"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:91
 #, kde-format
 msgid "Replace the current selected value from the list"
-msgstr "Listeden seçili değeri değiştir"
+msgstr "Listedeki seçili değeri değiştir"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
 #, kde-format
 msgid " This field is limited to:"
-msgstr "Bu alan sınırlı:"
+msgstr " Bu alan şununla sınırlanmıştır:"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
 #, kde-format
@@ -12086,9 +11988,7 @@ msgstr[1] "<p>%1 karakter.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
 #: core/libs/widgets/text/dplaintextedit.cpp:394
 #: core/libs/widgets/text/dtextedit.cpp:394
-#, fuzzy, kde-format
-#| msgid "<p>1 character.</p>"
-#| msgid_plural "<p>%1 characters.</p>"
+#, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
 msgstr[0] "<p>1 karakter.</p>"
@@ -12102,7 +12002,7 @@ msgstr "Öznitelik:"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgid "Select here the editorial attribute of content."
-msgstr "İçeriğin yayıncıya ait özniteliğini buradan belirleyin."
+msgstr "İçeriğin yayımcıya ait özniteliğini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
@@ -12114,19 +12014,19 @@ msgstr "Geçerli"
 #, kde-format
 msgctxt "Content type"
 msgid "Analysis"
-msgstr "Analiz"
+msgstr "Çözümleme"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:106
 #, kde-format
 msgctxt "Content type"
 msgid "Archive material"
-msgstr "Arşiv malzemesi"
+msgstr "Arşiv Malzemesi"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
 #, kde-format
 msgctxt "Content type"
 msgid "Background"
-msgstr "Arkaplan"
+msgstr "Arka Plan"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:108
 #, kde-format
@@ -12150,7 +12050,7 @@ msgstr "Geçmiş"
 #, kde-format
 msgctxt "Content type"
 msgid "Obituary"
-msgstr "Anma yazısı"
+msgstr "Anma Yazısı"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
@@ -12162,7 +12062,7 @@ msgstr "Düşünce"
 #, kde-format
 msgctxt "Content type"
 msgid "Polls & Surveys"
-msgstr "Anket ve Araştırmalar"
+msgstr "Anketler ve Araştırmalar"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:114
 #, kde-format
@@ -12180,7 +12080,7 @@ msgstr "Sonuç Listelemeleri ve Tablo"
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
-msgstr "Kenar çubuğu ve Destekleyici bilgi"
+msgstr "Kenar Çubuğu ve Destekleyici Bilgi"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
@@ -12192,13 +12092,13 @@ msgstr "Özet"
 #, kde-format
 msgctxt "Content type"
 msgid "Transcript & Verbatim"
-msgstr "Kopya ve Kelimesi Kelimesine"
+msgstr "Yazıdöküm ve Sözlü Bildirim"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:119
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
-msgstr "Görüşme"
+msgstr "Röportaj"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
 #, kde-format
@@ -12210,7 +12110,7 @@ msgstr "Sahneden"
 #, kde-format
 msgctxt "Content type"
 msgid "Retrospective"
-msgstr "Geriye dönük"
+msgstr "Geriye Dönük"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:122
 #, kde-format
@@ -12237,31 +12137,26 @@ msgid "Press Release"
 msgstr "Basın Bildirisi"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
-#, fuzzy, kde-format
-#| msgid "Set here the editorial attribute description of the content."
+#, kde-format
 msgid "Set here the editorial attribute description of content."
-msgstr "İçeriğin yayıncıya ait öznitelik tanımını buradan belirleyin."
+msgstr "İçeriğin yayımcıya ait öznitelik açıklamasını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
-#, fuzzy, kde-format
-#| msgid " This field is limited to:"
+#, kde-format
 msgid " This field is limited to "
-msgstr "Bu alan sınırlı:"
+msgstr " Bu alan şununla sınırlıdır: "
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
-#, fuzzy, kde-format
-#| msgid "<p>1 character.</p>"
-#| msgid_plural "<p>%1 characters.</p>"
+#, kde-format
 msgid "%1 character."
 msgid_plural "%1 characters."
-msgstr[0] "<p>1 karakter.</p>"
-msgstr[1] "<p>%1 karakter.</p>"
+msgstr[0] "1 karakter."
+msgstr[1] "%1 karakter."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
-#, fuzzy, kde-format
-#| msgid "Set here the editorial attribute description of the content."
+#, kde-format
 msgid "Set here the editorial description"
-msgstr "İçeriğin yayıncıya ait öznitelik tanımını buradan belirleyin."
+msgstr "İçeriğin yayımcıya ait açıklamasını burada ayarlayın"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
@@ -12274,19 +12169,19 @@ msgid ""
 "Set here the brightness adjustment value in APEX unit used by camera to take "
 "the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından kullanılan APEX birimindeki parlaklık "
-"ayar değerini buradan belirleyin."
+"Kameranın fotoğrafı çekmek için kullandığı APEX birimli parlaklık ayar "
+"değerini buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:95
 #, kde-format
 msgid "Gain Control:"
-msgstr "Kazanç Kontrolü:"
+msgstr "Kazanç denetimi:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:97
 #, kde-format
 msgctxt "gain control"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:98
 #, kde-format
@@ -12318,8 +12213,8 @@ msgid ""
 "Set here the degree of overall image gain adjustment used by camera to take "
 "the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından kullanılan ortalama resim kazanç "
-"ayarlama derecesini buradan belirleyin."
+"Kameranın fotoğraf çekmek için kullandığı genel görsel kazanımı ayarının "
+"derecesini buradan ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:107
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:207
@@ -12327,7 +12222,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:350
 #, kde-format
 msgid "Contrast:"
-msgstr "Zıtlık:"
+msgstr "Karşıtlık:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:109
 #, kde-format
@@ -12353,8 +12248,8 @@ msgid ""
 "Set here the direction of contrast processing applied by the camera to take "
 "the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından uygulanan zıtlık işlem yönünü buradan "
-"belirleyin."
+"Fotoğraf çekmek için kameranın uyguladığı karşıtlık işleme yönünü buradan "
+"ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:117
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:220
@@ -12444,20 +12339,19 @@ msgid ""
 "Set here the use of special processing on image data, such as rendering "
 "geared to output."
 msgstr ""
-"Çıktıya bağlı olan gerçekleme gibi, resim verisi üzerinde özel işlem "
-"kullanımını buradan belirleyin."
+"Burada çıktıya yönelik işleme gibi görsel verisi üzerinde özel işlemenin "
+"kullanımını ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:98
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
-msgstr "İsim (*):"
+msgstr "Ad (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
-#, fuzzy, kde-format
-#| msgid "Set here the original owner of content."
+#, kde-format
 msgid "Set here the original document name."
-msgstr "İçeriğin özgün sahibini buradan belirleyin."
+msgstr "Burada özgün belge adını ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, kde-format
@@ -12465,7 +12359,7 @@ msgid ""
 "Enter the name of the document from which this image was been scanned. This "
 "field is limited to ASCII characters."
 msgstr ""
-"Bu resmin görüntülendiği belgenin adını girin. Bu alan ASCII karakterlerle "
+"Bu görselin tarandığı belgenin adını girin. Bu alan ASCII karakterlerle "
 "sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
@@ -12475,15 +12369,14 @@ msgid "Description (*):"
 msgstr "Açıklama (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
-#, fuzzy, kde-format
-#| msgid "Enter the content description."
+#, kde-format
 msgid "Set here the image description."
-msgstr "İçerik tanımını buradan girin."
+msgstr "Burada içerik açıklamasını girin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
 #, kde-format
 msgid "Enter the image description. This field is limited to ASCII characters."
-msgstr "Resim açıklamasını girin. Bu alan ASCII karakterlerle sınırlıdır."
+msgstr "Görsel açıklamasını girin. Bu alan ASCII karakterlerle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
 #, kde-format
@@ -12491,31 +12384,28 @@ msgid "Artist (*):"
 msgstr "Sanatçı (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "@info: WB settings"
-#| msgid "Set here the saturation value."
+#, kde-format
 msgid "Set here the author's name."
-msgstr "Buradan doygunluk değerini ayarlayın."
+msgstr "Burada sanatçının adını ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the image author's name. This field is limited to ASCII characters."
+#, kde-format
 msgid ""
 "Enter the image author's name separated by semi-colons. This field is "
 "limited to ASCII characters."
-msgstr "Resim sahibinin adını girin. Bu alan ASCII karakterlerle sınırlıdır."
+msgstr ""
+"Görsel sanatçılarının adlarını noktalı virgülle ayırarak girin. Bu alan "
+"ASCII karakterlerle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Copyright (*):"
-msgstr "Telif Hakkı (*):"
+msgstr "Telif hakkı (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
-#, fuzzy, kde-format
-#| msgid "Set here the contact country."
+#, kde-format
 msgid "Set here the copyright owner."
-msgstr "İletişim ülkesini buradan ayarlayın."
+msgstr "Burada telif hakkı sahibini ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
 #, kde-format
@@ -12523,20 +12413,18 @@ msgid ""
 "Enter the copyright owner of the image. This field is limited to ASCII "
 "characters."
 msgstr ""
-"Resmin telif hakkı sahibini girin. Bu alan ASCII karakterlerle sınırlıdır."
+"Görselin telif hakkı sahibini girin. Bu alan ASCII karakterlerle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:135
 #, kde-format
 msgctxt "image caption"
 msgid "Caption:"
-msgstr "Başlık:"
+msgstr "Alt yazı:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
-#, fuzzy, kde-format
-#| msgid "You have edited the image caption. "
-#| msgid_plural "You have edited the captions of %1 images. "
+#, kde-format
 msgid "Set here the image's caption."
-msgstr "Resmin başlığını düzenlediniz. "
+msgstr "Burada görselin alt yazısını ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
 #, kde-format
@@ -12544,45 +12432,38 @@ msgid ""
 "Enter the image's caption. This field is not limited. UTF8 encoding will be "
 "used to save the text."
 msgstr ""
-"Resmin yazılarını girin. Bu alan sınırlı değildir. Metni kaydetmek için "
-"UTF-8 kodlaması kullanılacaktır."
+"Resmin alt yazısını girin. Bu alan sınırlandırılmamıştır. Metni kaydetmek "
+"için UTF-8 kodlaması kullanılacaktır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:94
 #, kde-format
 msgid "Sync JFIF Comment section"
-msgstr "JFIF Yorum bölgesini eşle"
+msgstr "JFIF açıklama bölümünü eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:144
 #, kde-format
 msgid "Sync XMP caption"
-msgstr "XMP resim yazısını eşle"
+msgstr "XMP alt yazısını eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sync IPTC caption (warning: limited to 2000 printable Ascii characters)"
+#, kde-format
 msgid "Sync IPTC caption (warning: limited to 2000 characters)"
-msgstr ""
-"IPTC resim yazısını eşzamanla (uyarı: 2000 yazdırılabilir Ascii karakterine "
-"kadar sınırlı)"
+msgstr "IPTC alt yazısını eşzamanla (uyarı: 2000 karakterle sınırlıdır)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:152
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:316
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: <b><a href='http://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> text "
-#| "tags marked by (*) only support printable <b><a href='http://en.wikipedia."
-#| "org/wiki/Ascii'>ASCII</a></b> characters.</b>"
+#, kde-format
 msgid ""
 "<b>Note:</b> <b><a href='https://en.wikipedia.org/wiki/EXIF'>Exif</a></b> "
 "text tags marked by (*) only support printable <b><a href='https://en."
 "wikipedia.org/wiki/Ascii'>ASCII</a></b> characters."
 msgstr ""
-"<b>Not:<b>(*) ile işaretlenmiş<a href='http://tr.wikipedia.org/wiki/"
-"EXIF'>EXIF</a></b> metin etiketleri yalnızca basılabilir <b><a href='http://"
-"tr.wikipedia.org/wiki/Ascii'>ASCII</a></b> karakterlerini destekler.</b>"
+"<b>Not:</b> (*) ile imlenmiş <b><a href='https://en.wikipedia.org/wiki/"
+"EXIF'>Exif</a></b> metin etiketleri yalnzıca yazdırılabilir <b><a "
+"href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> karakterlerini "
+"destekler."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:110
 #, kde-format
@@ -12597,19 +12478,19 @@ msgstr "Oluşturma alt saniyesi"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:122
 #, kde-format
 msgid "Sync XMP creation date"
-msgstr "XMP yaratılma tarihini eşle"
+msgstr "XMP oluşturulma tarihini eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
 #, kde-format
 msgid "Sync IPTC creation date"
-msgstr "IPTC yaratılma tarihini eşle"
+msgstr "IPTC oluşturulma tarihini eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:127
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:154
 #, kde-format
 msgid "Set creation date to today"
-msgstr "Yaratılma tarihini bugün olarak belirle"
+msgstr "Oluşturulma tarihini bugün olarak ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:132
 #, kde-format
@@ -12617,7 +12498,7 @@ msgid ""
 "Set here the date and time of image creation. In this standard it is the "
 "date and time the file was changed."
 msgstr ""
-"Görselin oluşturulma tarihini ve zamanını buradan ayarlayın. Bu standartta "
+"Burada görselin oluşturulma tarihini ve zamanını ayarlayın. Bu standartta "
 "dosyanın değiştirildiği tarih ve zamandır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:134
@@ -12625,8 +12506,8 @@ msgstr ""
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
-"Görselin oluşturulma tarihi ve zamanı için burada saniyenin kesirlerini "
-"ayarlayın."
+"Burada görselin oluşturulma tarihi ve zamanı için burada saniyenin "
+"kesirlerini ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:141
 #, kde-format
@@ -12641,7 +12522,7 @@ msgstr "Özgün alt saniye"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
 #, kde-format
 msgid "Set original date to today"
-msgstr "Özgün tarihi bugün olarak belirle"
+msgstr "Özgün tarihi bugün olarak ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
 #, kde-format
@@ -12649,8 +12530,8 @@ msgid ""
 "Set here the date and time when the original image data was generated. For a "
 "digital still camera the date and time the picture was taken are recorded."
 msgstr ""
-"Özgün görsel verisinin oluşturulduğu tarihi ve zamanı buradan ayarlayın. "
-"Sayısal bir fotoğraf makinesi için, fotoğrafın çekildiği tarih ve zaman "
+"Burada özgün görsel verisinin oluşturulduğu tarihi ve zamanı ayarlayın. "
+"Sayısal bir fotoğraf makinesi için fotoğrafın çekildiği tarih ve zaman "
 "kaydedilir."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:160
@@ -12659,8 +12540,8 @@ msgid ""
 "Set here the fractions of seconds for the date and time when the original "
 "image data was generated."
 msgstr ""
-"Özgün görsel verisinin oluşturulduğu tarih ve zaman için burada saniyenin "
-"kesirlerini ayarlayın."
+"Burada özgün görsel verisinin oluşturulduğu tarih ve zaman için burada "
+"saniyenin kesirlerini ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:167
 #, kde-format
@@ -12677,7 +12558,7 @@ msgstr "Sayısallaştırma alt saniyesi"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:133
 #, kde-format
 msgid "Set digitization date to today"
-msgstr "Sayısallaştırma zamanını bugün olarak belirle"
+msgstr "Sayısallaştırma zamanını bugün olarak ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:183
 #, kde-format
@@ -12687,8 +12568,8 @@ msgid ""
 "time the file was recorded, then Original and Digitization date and time "
 "will have the same contents."
 msgstr ""
-"Görselin sayısal veri olarak kaydedildiği tarihi ve zamanı buradan "
-"ayarlayın. Örneğin, bir sayısal sabit kamera tarafından bir görsel "
+"Burada görselin sayısal veri olarak kaydedildiği tarihi ve zamanı buradan "
+"ayarlayın. Örneğin, sayısal bir sabit kamera tarafından bir görsel "
 "yakalanmışsa ve aynı zamanda dosya kaydedilmişse Özgün ve Sayısallaştırma "
 "tarih ve zamanı aynı içeriğe sahip olur."
 
@@ -12698,8 +12579,8 @@ msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
 "stored as digital data."
 msgstr ""
-"Görselin sayısal veri olarak depolandığı tarih ve zaman için saniyenin "
-"kesirlerini burada ayarlayın."
+"Burada görselin sayısal veri olarak depolandığı tarih ve zaman için "
+"saniyenin kesirlerini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
 #, kde-format
@@ -12718,8 +12599,8 @@ msgid ""
 "Set here the manufacturer of image input equipment used to take the picture. "
 "This field is limited to ASCII characters."
 msgstr ""
-"Fotoğraf çekmek için kullanılan resim giriş donanımının üreticisini buradan "
-"belirleyin. Bu alan ASCII karakterlerle sınırlıdır. "
+"Fotoğraf çekmek için kullanılan görsel giriş donanımının üreticisini burada "
+"ayarlayın. Bu alan ASCII karakterlerle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:133
 #, kde-format
@@ -15872,7 +15753,7 @@ msgstr "Kaynak için resmi olmayan kısa bir isim."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, kde-format
 msgid "Identifiers:"
-msgstr "Tanımlayıcılar."
+msgstr "Tanımlayıcılar:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
@@ -16445,7 +16326,7 @@ msgstr "Takvim oluştur"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:359
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
-msgstr "%2 takvim sayfasından %1. sayfa yazdırılıyor..."
+msgstr "%1/%2 takvim sayfası yazdırılıyor"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:369
 #, kde-format
@@ -21747,7 +21628,7 @@ msgstr "0:00:00"
 #, kde-format
 msgctxt "Total amount of time of presentation"
 msgid "Total:"
-msgstr "Toplam: "
+msgstr "Toplam:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
@@ -21771,7 +21652,7 @@ msgstr "&Denetimler"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:63
 #, kde-format
 msgid "Enable mouse wheel to move between slides."
-msgstr "Slaytlar arasında hareket etmek için fare tekerleğini etkinleştir"
+msgstr "Slaytlar arasında hareket etmek için fare tekerleğini etkinleştirin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_enableMouseWheelCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:66
@@ -22449,17 +22330,17 @@ msgstr "Eğer hiç başlık yoksa ekranın altında resim yazısı göster."
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:166
 #, kde-format
 msgid "Show image tags"
-msgstr "Resim etiketlerini göster"
+msgstr "Görsel etiketlerini göster"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:167
 #, kde-format
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr " digiKam resim etiketi adlarını ekranın alt kısmında gösterin."
+msgstr "Ekranın alt kısmında digiKam görsel etiketleri adlarını gösterin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:169
 #, kde-format
 msgid "Show image labels"
-msgstr "Resim etiketlerini göster"
+msgstr "Görsel adı etiketlerini göster"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:170
 #, fuzzy, kde-format
@@ -23484,7 +23365,7 @@ msgstr "Uzak Depolamaya Dışa Aktar..."
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
-msgstr "Uzak Depolamadan İçe Aktar"
+msgstr "Uzak Depolamadan İçe Aktar..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
@@ -23814,7 +23695,7 @@ msgstr "Daha fazla etiket seçeneği"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:127
 #, kde-format
 msgid "Added Tags: "
-msgstr "Eklenen Etiketler:"
+msgstr "Eklenen etiketler: "
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:130
 #, kde-format
@@ -23824,7 +23705,7 @@ msgstr "Yeni etiketleri virgülle ayrılmış olarak buraya girin."
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:132
 #, kde-format
 msgid "Add tags per image"
-msgstr "Etiketleri görsel başına ekle"
+msgstr "Görsel başına etiketler ekle"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:133
 #, kde-format
@@ -24574,7 +24455,7 @@ msgstr "Açılamıyor: %1"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:112
 #, kde-format
 msgid "Logged in as:"
-msgstr "Oturumu açılan kullanıcı: "
+msgstr "Oturumu açılan kullanıcı:"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:122
 #, fuzzy, kde-format
@@ -26446,7 +26327,7 @@ msgstr "Açıklama:"
 #, kde-format
 msgctxt "new smug album dialog"
 msgid "Template:"
-msgstr "Şablon: "
+msgstr "Şablon:"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:134
 #, kde-format
@@ -26717,7 +26598,7 @@ msgstr "SmugMug çağrısı başarısız: %1\n"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
 #, kde-format
 msgid "&lt;none&gt;"
-msgstr "&lt;hiçbiri&gt;"
+msgstr "&lt;yok&gt;"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:671
 #, kde-format
@@ -26725,8 +26606,8 @@ msgid ""
 "You will be logged out of your account, click \"Continue\" to authenticate "
 "for another account."
 msgstr ""
-"Hesabınızın oturumu kapatılacaktır; başka bir hesabı yetkilendirmek için "
-"\"Sürdür\"e tıklayın"
+"Hesabınızın oturumu kapatılacak; başka bir hesabı yetkilendirmek için "
+"\"Sürdür\"e tıklayın."
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:763
 #, fuzzy, kde-format
@@ -27177,12 +27058,12 @@ msgstr "Gama:"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:218
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
-msgstr "Burada resmin gama ayarlamalarını yapın."
+msgstr "Görselin gama ayarlarını burada ayarlayın."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:225
 #, kde-format
 msgid "Set here the color saturation correction."
-msgstr "Burada renk doygunluğu düzeltmesini ayarlayın."
+msgstr "Renk doygunluğu düzeltmesini burada ayarlayın."
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:227
 #, kde-format
@@ -27716,12 +27597,12 @@ msgstr "Yeni Veritabanı"
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
-msgstr "Tanımlanan koleksiyon konumu geçersiz veya şuan kullanılamıyor"
+msgstr "Sağlanan koleksiyon konumu geçersiz veya şu anda kullanılamıyor."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:352
 #, kde-format
 msgid "No album for collection location: Internal error"
-msgstr "Koleksiyon konumu için albüm bulunamadı: Dahili hata"
+msgstr "Koleksiyon konumunda albüm bulunamadı: İçsel hata"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:368
 #, kde-format
@@ -28725,28 +28606,28 @@ msgid ""
 "Error opening database backend.\n"
 "%1"
 msgstr ""
-"Veritabanı arka ucunun açılmasında hata oluştu.\n"
+"Veritabanı arka ucu açılırken hata.\n"
 "%1"
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:62
 #, kde-format
 msgid "Error while opening the source database."
-msgstr "Kaynak veritabanını açarken hata"
+msgstr "Kaynak veritabanını açarken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:72
 #, kde-format
 msgid "Error while opening the target database."
-msgstr "Hedef veritabanını açarken hata"
+msgstr "Hedef veritabanı açılırken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:119
 #, kde-format
 msgid "Error while preparing the target database."
-msgstr "Hedef veritabanı hazırlanırken hata oluştu."
+msgstr "Hedef veritabanı hazırlanırken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:130
 #, kde-format
 msgid "Error while scrubbing the target database."
-msgstr "Hedef veritabanı temizlenirken hata oluştu."
+msgstr "Hedef veritabanı temizlenirken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:142
 #, kde-format
@@ -28756,7 +28637,7 @@ msgstr "Şema Oluştur..."
 #: core/libs/database/coredb/coredbcopymanager.cpp:146
 #, kde-format
 msgid "Error while creating the database schema."
-msgstr "Veritabanı şeması oluşturulurken hata"
+msgstr "Veritabanı şeması oluşturulurken hata."
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:288
 #, kde-format
@@ -28787,9 +28668,8 @@ msgid ""
 "current database schema version cannot be verified. Try to start with an "
 "empty database. "
 msgstr ""
-"Veritabanı geçerli değil: \"DBVersion\" ayarı mevcut değil. Yürürlükteki "
-"veritabanı şema sürümü doğrulanamadı. Boş bir veritabanı ile başlamayı "
-"deneyin."
+"Veritabanı geçerli değil: \"DBVersion\" ayarı yok. Geçerli veritabanı şema "
+"sürümü doğrulanamıyor. Boş bir veritabanı ile başlamayı deneyin. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:271
 #, kde-format
@@ -28900,7 +28780,7 @@ msgid ""
 "place. "
 msgstr ""
 "Veritabanı güncelleme eylemi bulunamadı. Lütfen digiKam'in güncel sürümünün "
-"dbconfig.xml dosyasının doğru yere kurulduğundan emin olun."
+"dbconfig.xml dosyasının doğru yere kurulu olduğundan emin olun. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:702
 #, kde-format
@@ -28930,8 +28810,9 @@ msgid ""
 "but it cannot be opened. Please delete both files and try again, starting "
 "with an empty database. "
 msgstr ""
-"Eski veritabanı dosyası (\"%1\") yeni yerine (\"%2\") kopyalandı; ama "
-"açılmayabilir. Boş bir veritabanı ile başlayarak tekrar deneyin."
+"Eski veritabanı dosyası (\"%1\") yeni yerine (\"%2\") kopyalandı; ancak "
+"açılamıyor. Her iki dosyası da silip boş bir veritabanı dosyasıyla "
+"başlayarak yeniden deneyin. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:896
 #, kde-format
@@ -29092,7 +28973,7 @@ msgid ""
 "that the version released with the running version of digiKam is installed. "
 msgstr ""
 "<b>%1</b> yapılandırma dosyasının eski bir sürümü bulundu. Lütfen digiKam'in "
-"çalışan sürümüyle yayımlanan sürümün kurulu olduğundan emin olun."
+"çalışan sürümüyle yayımlanan sürümün kurulu olduğundan emin olun. "
 
 #: core/libs/database/engine/dbengineguierrorhandler.cpp:212
 #, kde-format
@@ -31436,7 +31317,7 @@ msgstr "Yüklemek için Siyah & Beyaz Ayar Dosyası"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
 msgid "\"%1\" is not a Black & White settings text file."
-msgstr "\"%1\" bir Siyah & Beyaz ayar dosyası değil"
+msgstr "\"%1\" bir Black & White ayar metin dosyası değil."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
 #, kde-format
@@ -31453,7 +31334,7 @@ msgstr "Kaydetmek için Siyah & Beyaz Ayar Dosyası"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
-msgstr "Siyah & Beyaz dosyasına ayarlar yazılamıyor"
+msgstr "Black & White metin dosyasına ayarlar yazılamıyor."
 
 #: core/libs/dimg/filters/bw/infraredfilter.cpp:60
 #, kde-format
@@ -32153,12 +32034,12 @@ msgstr "Sola Döndür"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:402
 #, kde-format
 msgid "Flip Horizontally"
-msgstr "Yatay Olarak Döndür"
+msgstr "Yatay Olarak Ters Çevir"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:407
 #, kde-format
 msgid "Flip Vertically"
-msgstr "Dikey Olarak Döndür"
+msgstr "Dikey Olarak Ters Çevir"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:412
 #, kde-format
@@ -32185,7 +32066,7 @@ msgstr "Döndür"
 #, kde-format
 msgctxt "Flip image"
 msgid "Flip"
-msgstr "Çevir"
+msgstr "Ters Çevir"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:504
 #, kde-format
@@ -36232,7 +36113,7 @@ msgstr "Normal"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
-msgstr "Yatay Çevrilmiş"
+msgstr "Yatay Ters Çevrilmiş"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:817
 #, kde-format
@@ -36244,13 +36125,13 @@ msgstr "180 Derece Döndürüldü"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
-msgstr "Dikey çevrilmiş"
+msgstr "Dikey Ters Çevrilmiş"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:827
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
-msgstr "Yatay olarak döndürülmüş ve sola çevrilmiş"
+msgstr "Yatay olarak ters çevrilmiş ve sola döndürülmüş"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:832
 #, kde-format
@@ -36262,7 +36143,7 @@ msgstr "Sola Döndürüldü"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
-msgstr "Dikey olarak çevrilmiş ve sola döndürülmüş"
+msgstr "Dikey olarak ters çevrilmiş ve sola döndürülmüş"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:842
 #, kde-format
@@ -54765,134 +54646,134 @@ msgstr ""
 "yapmak için buraya\n"
 "bir taslak çizebilirsiniz"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:189
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:197
 #, kde-format
 msgid "Roadmap"
 msgstr "Yol Haritası"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:190
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:198
 #, kde-format
 msgid "Satellite"
 msgstr "Uydu"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:191
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:199
 #, kde-format
 msgid "Hybrid"
 msgstr "Karma"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:192
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:200
 #, kde-format
 msgid "Terrain"
 msgstr "Arazi"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:210
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:218
 #, kde-format
 msgid "Show Map Type Control"
 msgstr "Harita Türü Denetimlerini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:215
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:223
 #, kde-format
 msgid "Show Navigation Control"
 msgstr "Gezinme Denetimlerini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:220
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:228
 #, kde-format
 msgid "Show Scale Control"
 msgstr "Ölçeklendirme Denetimlerini Göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:225
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1657
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, fuzzy, kde-format
 #| msgid "Google Maps"
 msgid "Google Maps API Key"
 msgstr "Google Haritalar"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:238
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
 msgid "Google Maps"
 msgstr "Google Haritalar"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:409
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:487
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:417
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:488
 #, kde-format
 msgid "Float items"
 msgstr "Yüzen nesneler"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1661
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "API URL:"
 msgid "API Key:"
 msgstr "API URL'si:"
 
-#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1720
+#: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
 msgid "Javascript Message"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:206
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
 msgid "Marble Virtual Globe"
 msgstr "Bilye Sanal Küre"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:351
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
 #, kde-format
 msgid "Atlas map"
 msgstr "Atlas haritası"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:352
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:353
 #, fuzzy, kde-format
 #| msgid "Satellite"
 msgid "Satellite map"
 msgstr "Uydu"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:353
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:354
 #, kde-format
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:403
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:404
 #, kde-format
 msgctxt "Spherical projection"
 msgid "Spherical"
 msgstr "Küresel"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:408
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:409
 #, kde-format
 msgid "Mercator"
 msgstr "Merkator"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:413
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:414
 #, kde-format
 msgid "Equirectangular"
 msgstr "Eşdikdörtgensel"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:424
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:425
 #, kde-format
 msgid "Show compass"
 msgstr "Pusulayı göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:429
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:430
 #, kde-format
 msgid "Show scale bar"
 msgstr "Boyutlandırma çubuğunu göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:434
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:435
 #, kde-format
 msgid "Show navigation"
 msgstr "Gezinmeyi göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:439
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:440
 #, kde-format
 msgid "Show overview map"
 msgstr "Genel bakış haritasını göster"
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:452
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:453
 #, kde-format
 msgid "Other Marble Themes"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:478
+#: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:479
 #, kde-format
 msgid "Projection"
 msgstr "Projeksiyon"
@@ -54998,15 +54879,15 @@ msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Yorum"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:818
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:953
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Yer İmi Yükleniyor"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:819
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:954
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
@@ -55015,44 +54896,44 @@ msgstr ""
 "%1 satırı, %2 sütunundaki yer imlerinin yüklenmesinde hata:\n"
 "%3"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:940
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:933
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:960
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:942
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:969
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr "XBEL (*.xbel *.xml)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:952
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
 #, kde-format
 msgid "Imported %1"
 msgstr "%1 İçeriye aktarıldı"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:967
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Dosyayı Kaydet"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:959
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:968
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 #| msgid "Export error"
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "Dışarıya aktarma hatası"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:979
 #, fuzzy, kde-format
 #| msgid "error saving bookmarks"
 msgid "Error saving bookmarks"
@@ -55778,98 +55659,98 @@ msgstr ""
 "Dosya bir GPX dosyası; ancak geçerli zaman damgalı hiçbir iz noktası "
 "bulunamadı."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:258
 #, kde-format
 msgid "Zoom in"
 msgstr "Yakınlaştır"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:265
 #, kde-format
 msgid "Zoom out"
 msgstr "Uzaklaştır"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:271
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "İşaretleyiciler ve küçük resimler arasında gezin."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:289
 #, kde-format
 msgid "Preview single items"
 msgstr "Tek nesneleri önizle"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:276
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:292
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Gruplandırılmış nesneleri önizle"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:279
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Show numbers"
 msgstr "Numaraları göster"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:301
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Harita üzerindeki küçük resim boyutunu büyüt"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Harita üzerindeki küçük resim boyutunu küçült"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Geçerli bölge seçimini kaldır"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:303
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:319
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Resimleri bir dikdörtgen çizerek seçin"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:308
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:324
 #, kde-format
 msgid "Pan mode"
 msgstr "Kaydırma kipi"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:315
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:331
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Bir gruba yakınlaştır"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Bir küçük resimden bölge seçimi oluştur"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Filter images"
 msgstr "Resimleri filtrele"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:348
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Geçerli filtreyi kaldır"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:353
 #, kde-format
 msgid "Select images"
 msgstr "Resimleri seç"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:359
 #, kde-format
 msgid "Lock the map position"
 msgstr "Harita konumunu kilitle"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:362
 #, fuzzy, kde-format
 #| msgid "Load playlist from a file."
 msgid "Load tracks from albums"
 msgstr "Bir dosyadan parça listesi yükle."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:823
 #, kde-format
 msgid "Map settings"
 msgstr "Harita ayarları"
