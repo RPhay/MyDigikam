@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2023-06-28 09:31+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -28390,7 +28390,7 @@ msgstr ""
 "sélectionné. Si l'emplacement est vide, le partage sera considéré comme "
 "indisponible."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28400,7 +28400,7 @@ msgstr ""
 "« Emplacement relatif » sur la partition du disque dur avec « UUID »\n"
 "Dossier « %1 » sur le volume avec l'identifiant « %2 »"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28410,7 +28410,7 @@ msgstr ""
 "« Emplacement relatif » sur la partition du disque dur avec l'« étiquette »\n"
 "Dossier « %1 » sur le volume avec l'identifiant « %2 »"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

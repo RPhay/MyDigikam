@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2023-09-06 09:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -28076,7 +28076,7 @@ msgstr ""
 "Споделянето в мрежата ще бъде идентифицирано по пътя, който сте избрали. Ако "
 "пътят е празен, споделянето ще се счита за недостъпно."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28086,7 +28086,7 @@ msgstr ""
 "\"относителен път\" на дял от твърдия диск с \"UUID\"\n"
 "Папка \"%1\" на дял с идентификатор \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28096,7 +28096,7 @@ msgstr ""
 "\"относителен път\" на дял от твърдия диск с \"етикет\"\n"
 "Папка \"%1\" на том с етикет \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

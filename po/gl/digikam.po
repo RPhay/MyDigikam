@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -30331,7 +30331,7 @@ msgstr ""
 "A compartición de rede identificarase coa ruta que seleccionou. Se a ruta "
 "estiver baleira, a compartición considerarase como non dispoñíbel."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -30341,7 +30341,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "Cartafol «%1» do volume co identificador «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -30349,7 +30349,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Shared directory mounted at <b>%1</b>"

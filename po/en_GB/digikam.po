@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27604,7 +27604,7 @@ msgstr ""
 "The network share will be identified by the path you selected. If the path "
 "is empty, the share will be considered unavailable."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27614,7 +27614,7 @@ msgstr ""
 "\"relative path\" on hard-disk partition with \"UUID\"\n"
 "Folder \"%1\" on the volume with the id \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -27624,7 +27624,7 @@ msgstr ""
 "\"relative path\" on hard-disk partition with \"label\"\n"
 "Folder \"%1\" on the volume labelled \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

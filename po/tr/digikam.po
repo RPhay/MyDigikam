@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2023-09-09 00:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -6393,19 +6393,19 @@ msgstr "Konum:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:358
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
-msgstr "Kırpma için sol üst seçim köşesi konumunu buradan ayarlayın."
+msgstr "Kırpma için sol üst seçim köşesi konumunu burada ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:115
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
 #, kde-format
 msgid "Set here the width selection for cropping."
-msgstr "Kırpma için genişlik seçimini buradan ayarlayın."
+msgstr "Kırpma için genişlik seçimini burada ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:120
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
 #, kde-format
 msgid "Set here the height selection for cropping."
-msgstr "Kırpma için yükseklik seçimini buradan ayarlayın."
+msgstr "Kırpma için yükseklik seçimini burada ayarlayın."
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
 #, kde-format
@@ -6640,7 +6640,7 @@ msgid ""
 "large file size)</p><p><b>Note: HEIF is not a lossless image compression "
 "format when you use this setting.</b></p>"
 msgstr ""
-"<p>HEIF görüntüleri için kalite değeri:</p><p><b>1</b>: Düşük kalite (yüksek "
+"<p>HEIF görselleri için kalite değeri:</p><p><b>1</b>: Düşük kalite (yüksek "
 "sıkıştırma ve küçük dosya boyutu)<br/><b>50</b>: Orta kalite<br/><b>75</b>: "
 "İyi kalite (öntanımlı)<br/><b>100</b>: Yüksek kalite (sıkıştırmasız ve büyük "
 "dosya boyutu)</p><p> <b>Not: Bu ayarı kullandığınızda HEIF, kayıpsız bir "
@@ -7331,7 +7331,7 @@ msgstr ""
 "alınan, en az düzeyde işlenmiş veriler içerir. RAW dosyalar henüz "
 "işlenmemiştir ve bu nedenle bir biteşlem grafik düzenleyicisiyle "
 "yazdırılmaya veya düzenlenmeye hazır değildir. RAW, depolama, yazdırma veya "
-"daha fazla düzenleme için TIFF veya JPEG'e dönüştürülmeden önce hassas "
+"daha fazla düzenleme için TIFF veya JPEG'e dönüştürülmeden önce kesin "
 "ayarlamaların yapılabildiği geniş gamlı dahili renk alanındaki bir ham "
 "dönüştürücü tarafından işlenir. Bu genellikle görseli aygıta bağlı bir renk "
 "uzayında kodlar.</para><para>Ayrıntılar için <a href='https://en.wikipedia."
@@ -8196,7 +8196,7 @@ msgstr "270 Derece"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:201
 #, kde-format
 msgid "Select the text rotation to use here."
-msgstr "Burada kullanılacak metin döndürmesini seçin."
+msgstr "Kullanılacak metin döndürmesini burada seçin."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:205
 #, kde-format
@@ -8207,7 +8207,7 @@ msgstr "Renk:"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:208
 #, kde-format
 msgid "Set here the font color to use."
-msgstr "Burada, kullanılacak yazıtipi rengini seçin."
+msgstr "Kullanılacak yazıtipi rengini burada seçin."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:212
 #, kde-format
@@ -8767,7 +8767,7 @@ msgstr ""
 "<p>Fotoğraf restorasyonu için kullanılacak süzgeç önayarını buradan seçin:</"
 "p><p><b>Tekdüzen Gürültüyü Azalt</b>: Algılayıcı gürültüsü gibi küçük görsel "
 "bozulmalarını azaltın.<br/><b>JPEG Bozulmalarını Azalt</b>: JPEG sıkıştırma "
-"mozaiği gibi büyük görüntü bozulmalarını azaltın.<br/><b>Dokulamayı Azalt</"
+"mozaiği gibi büyük görsel bozulmalarını azaltın.<br/><b>Dokulamayı Azalt</"
 "b>: Taranan görsellerdeki kağıt dokusu veya Moire desenleri gibi görsel "
 "bozulmalarını azaltın.< br/><b>Özel</b>: Ayarları tümüyle özelleştirilebilir "
 "şekilde en yaygın değerlere getirir.</p>"
@@ -9118,7 +9118,7 @@ msgstr "Uzaklık:"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:148
 #, kde-format
 msgid "Set here the blur distance in pixels."
-msgstr "Burada, piksel cinsinden bulanıklaştırma uzaklığını ayarlayın."
+msgstr "Piksel cinsinden bulanıklaştırma uzaklığını burada ayarlayın."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:150
 #, kde-format
@@ -9177,7 +9177,7 @@ msgstr "Kalem boyutu:"
 #, kde-format
 msgid "Set here the charcoal pencil size used to simulate the drawing."
 msgstr ""
-"Çizimi benzetmek için kullanılan karakalem kalem boyutunu buradan ayarlayın."
+"Çizimi benzetmek için kullanılan karakalem kalem boyutunu burada ayarlayın."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:99
 #, kde-format
@@ -9411,7 +9411,7 @@ msgstr "Düzey:"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:158
 #, kde-format
 msgid "Set here the level of the effect."
-msgstr "Burada efektin düzeyini ayarlayın."
+msgstr "Efektin düzeyini burada ayarlayın."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:160
 #, kde-format
@@ -9462,7 +9462,7 @@ msgstr "Derinlik:"
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:84
 #, kde-format
 msgid "Set here the depth of the embossing image effect."
-msgstr "Burada görsel kabartma efektinin derinliğini ayarlayın."
+msgstr "Görsel kabartma efektinin derinliğini burada ayarlayın."
 
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:167
 #, kde-format
@@ -9527,7 +9527,7 @@ msgstr "Fırça boyutu:"
 #, kde-format
 msgid "Set here the brush size to use for simulating the oil painting."
 msgstr ""
-"Yağlı boyayı benzetmek için kullanılacak fırça boyutunu buradan ayarlayın."
+"Yağlı boyayı benzetmek için kullanılacak fırça boyutunu burada ayarlayın."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:96
 #, kde-format
@@ -9592,7 +9592,7 @@ msgstr "Damla boyutu:"
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:106
 #, kde-format
 msgid "Set here the raindrops' size."
-msgstr "Burada damla boyutlarını ayarlayın."
+msgstr "Damla boyutlarını burada ayarlayın."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:110
 #, kde-format
@@ -9702,7 +9702,7 @@ msgstr "Genişlik (pks):"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:360
 #, kde-format
 msgid "Set here the new image width in pixels."
-msgstr "Burada, yeni görsel genişliğini piksel türünden ayarlayın."
+msgstr "Yeni görsel genişliğini piksel türünden burada ayarlayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:204
 #, kde-format
@@ -9712,7 +9712,7 @@ msgstr "Yükseklik (pks):"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
 msgid "Set here the new image height in pixels."
-msgstr "Burada, yeni görsel yüksekliğini piksel türünden ayarlayın."
+msgstr "Yeni görsel yüksekliğini piksel türünden burada ayarlayın."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
@@ -10417,12 +10417,12 @@ msgstr "Özel oran:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:340
 #, kde-format
 msgid "Set here the desired custom aspect numerator value."
-msgstr "Burada, istediğiniz özel en-boy payı değerini ayarlayın."
+msgstr "İstenilen özel en-boy payı değerini burada ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:345
 #, kde-format
 msgid "Set here the desired custom aspect denominator value."
-msgstr "Burada, istenilen özel en-boy payda değerini ayarlayın."
+msgstr "İstenilen özel en-boy payda değerini burada ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
 #, kde-format
@@ -10550,14 +10550,15 @@ msgstr "Renk ve genişlik:"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:458
 #, kde-format
 msgid "Set here the color used to draw composition guides."
-msgstr "Burada, kompozisyon kılavuzlarını çizmek için kullanılan rengi seçin."
+msgstr ""
+"Kompozisyon kılavuzlarını çizmek için kullanılan rengi burada ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:459
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr ""
-"Burada, kompozisyon kılavuzlarını çizmek için kullanılan genişliği piksel "
-"türünden ayarlayın."
+"Kompozisyon kılavuzlarını çizmek için kullanılan genişliği piksel türünden "
+"burada ayarlayın."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:478
 #, kde-format
@@ -12588,10 +12589,9 @@ msgid "Device manufacturer (*):"
 msgstr "Aygıt üreticisi (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
-#, fuzzy, kde-format
-#| msgid "Device manufacturer (*):"
+#, kde-format
 msgid "Set here the manufacturer name"
-msgstr "Aygıt üreticisi (*):"
+msgstr "Aygıt üreticisini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
 #, kde-format
@@ -12608,10 +12608,9 @@ msgid "Device model (*):"
 msgstr "Aygıt modeli (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
-#, fuzzy, kde-format
-#| msgid "Set here the contact e-mail."
+#, kde-format
 msgid "Set here the model name"
-msgstr "Bağlantı e-postasını buradan belirleyin."
+msgstr "Model adını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:138
 #, kde-format
@@ -12619,8 +12618,8 @@ msgid ""
 "Set here the model of image input equipment used to take the picture. This "
 "field is limited to ASCII characters."
 msgstr ""
-"Foroğraf çekmek için kullanılan resim giriş donanımının modelini buradan "
-"belirleyin. Bu alan ASCII karakterlerle sınırlıdır."
+"Fotoğraf çekmek için kullanılan görsel giriş ekipmanının modelini buradan "
+"ayarlayın. Bu alan ASCII karakterlerle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:143
 #, kde-format
@@ -12630,39 +12629,35 @@ msgstr "Aygıt türü:"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:145
 #, kde-format
 msgid "Film scanner"
-msgstr "Film tarayıcı"
+msgstr "Film tarayıcısı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
 #, kde-format
 msgid "Reflection print scanner"
-msgstr "Düz yatak tarayıcı"
+msgstr "Yansımalı yazdırma tarayıcısı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
 #, kde-format
 msgid "Digital still camera"
-msgstr "Dijital kamera"
+msgstr "Sayısal sabit kamera"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:148
 #, kde-format
 msgid "Select here the image input equipment type used to take the picture."
 msgstr ""
-"Fotoğraf çekmek için kullanılan resim giriş donanımının türünü buradan "
-"belirleyin."
+"Fotoğrafı çekmek için kullanılan görsel giriş ekipmanı türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Warning: EXIF <b><a href='http://en.wikipedia.org/wiki/"
-#| "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> can be "
-#| "unreadable if you set wrong device manufacturer/model description.</b>"
+#, kde-format
 msgid ""
 "<b>Warning:</b> Exif<b><a href='https://en.wikipedia.org/wiki/"
 "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> can be "
 "unreadable if you set wrong device manufacturer/model description."
 msgstr ""
-"<b>Uyarı: EXIF <b><a href='http://en.wikipedia.org/wiki/"
-"Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> can be "
-"unreadable if you set wrong device manufacturer/model description.</b>"
+"<b>Uyarı:</b> Yanlış üretici/model açıklaması ayarlarsanız Exif <b><a "
+"href='https://en.wikipedia.org/wiki/"
+"Exchangeable_image_file_format#MakerNote_data'>yapım notları</a></b> "
+"okunamaz olabilir."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:163
 #, kde-format
@@ -12673,18 +12668,19 @@ msgstr "Pozlandırma süresi (saniye):"
 #, kde-format
 msgid ""
 "Set on this option to set the exposure time of picture, given in seconds."
-msgstr "Fotoğrafın ışıklama zamanını bu seçenekten belirleyin."
+msgstr ""
+"Resmin pozlama süresini saniye türünden ayarlamak için bu seçeneği ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:181
 #, kde-format
 msgid "Exposure program:"
-msgstr "Pozlandırma uygulaması:"
+msgstr "Pozlandırma programı:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:183
 #, kde-format
 msgctxt "exposure program"
 msgid "Not defined"
-msgstr "Tanımlanmamış"
+msgstr "Tanımlanmadı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:184
 #, kde-format
@@ -12696,13 +12692,13 @@ msgstr "Elle"
 #, kde-format
 msgctxt "exposure program"
 msgid "Auto"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:186
 #, kde-format
 msgctxt "exposure program"
 msgid "Aperture priority"
-msgstr "Diyafram açıklığı önceliği"
+msgstr "Açıklık önceliği"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:187
 #, kde-format
@@ -12714,13 +12710,13 @@ msgstr "Deklanşör önceliği"
 #, kde-format
 msgctxt "exposure program"
 msgid "Creative program"
-msgstr "Oluşturucu uygulama"
+msgstr "Yaratıcı program"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:189
 #, kde-format
 msgctxt "exposure program"
 msgid "Action program"
-msgstr "Eylem uygulaması"
+msgstr "Eylem programı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:190
 #, kde-format
@@ -12741,7 +12737,7 @@ msgid ""
 "was taken."
 msgstr ""
 "Fotoğraf çekilirken yapılan pozlandırmayı belirlemek için kamera tarafından "
-"kullanılan programı buradan belirleyin."
+"kullanılan programı burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:197
 #, kde-format
@@ -12752,7 +12748,7 @@ msgstr "Pozlandırma kipi:"
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:200
 #, kde-format
@@ -12773,14 +12769,14 @@ msgid ""
 "taken. In auto-bracketing mode, the camera shoots a series of frames of the "
 "same scene at different exposure settings."
 msgstr ""
-"Fotoğraf çekilirken makine tarafından kullanılan pozlandırma kipini buradan "
-"belirleyin. Otomatik ayraçlama yönteminde, makine aynı sahnenin çerçeve "
-"grubunu farklı pozlandırma ayarlarıyla çeker."
+"Fotoğraf çekilirken makine tarafından kullanılan pozlandırma kipini burada "
+"seçin. Otomatik ayraçlama yönteminde, makine aynı sahnenin çerçeve grubunu "
+"farklı pozlandırma ayarlarıyla çeker."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:210
 #, kde-format
 msgid "Exposure bias (APEX):"
-msgstr "Işıklama sapması (APEX):"
+msgstr "Pozlandırma yanlılığı (APEX):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:215
 #, kde-format
@@ -12788,8 +12784,8 @@ msgid ""
 "Set here the exposure bias value (in APEX units) used by camera to take the "
 "picture."
 msgstr ""
-"Resim çekmek için kamera tarafından kullanılan (APEX birimi ile) pozlandırma "
-"sapması değerini buradan belirleyin."
+"Fotoğraf çekmek için kamera tarafından kullanılan (APEX birimi ile) "
+"pozlandırma yanlılığı değerini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:222
 #, kde-format
@@ -12836,7 +12832,7 @@ msgstr "Çoklu bölüt"
 #, kde-format
 msgctxt "metering mode"
 msgid "Partial"
-msgstr "Kısmi"
+msgstr "Kısımsal"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:231
 #, kde-format
@@ -12851,7 +12847,7 @@ msgid ""
 "picture was taken."
 msgstr ""
 "Fotoğraf çekilirken yapılan pozlandırmayı belirlemek için kamera tarafından "
-"kullanılan ölçme yöntemini buradan belirleyin."
+"kullanılan ölçme yöntemini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:237
 #, kde-format
@@ -12861,7 +12857,7 @@ msgstr "Duyarlılık (ISO):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:275
 #, kde-format
 msgid "Select here the ISO Speed of the camera which took the picture."
-msgstr "Fotoğrafı çeken kameranın ISO Hızını buradan belirleyin."
+msgstr "Fotoğrafı çeken kameranın ISO hızını burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:280
 #, kde-format
@@ -12876,40 +12872,40 @@ msgstr "Tanımlanmamış"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:283
 #, kde-format
 msgid "One-chip color area"
-msgstr "Bir-iz renk alanı"
+msgstr "Bir izli renk alanı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:284
 #, kde-format
 msgid "Two-chip color area"
-msgstr "İki-iz renk alanı"
+msgstr "İki izli renk alanı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:285
 #, kde-format
 msgid "Three-chip color area"
-msgstr "Üç-iz renk alanı"
+msgstr "Üç izli renk alanı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:286
 #, kde-format
 msgid "Color sequential area"
-msgstr "Renk ardaşığı alanı"
+msgstr "Renk sıralı alan"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:287
 #, kde-format
 msgid "Trilinear sensor"
-msgstr "Üç çizgili algılayıcı"
+msgstr "Üç doğrulu algılayıcı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:288
 #, kde-format
 msgid "Color sequential linear"
-msgstr "Renk ardaşığı doğrusal"
+msgstr "Renk sıralı doğrusal"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:289
 #, kde-format
 msgid ""
 "Select here the image sensor type used by the camera to take the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından kullanılan resim algılayıcı türünü "
-"buradan seçin."
+"Fotoğraf çekmek için kamera tarafından kullanılan görsel algılayıcısı türünü "
+"burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:294
 #, kde-format
@@ -12924,22 +12920,19 @@ msgid "Standard"
 msgstr "Standart"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:297
-#, fuzzy, kde-format
-#| msgid "Landscape"
+#, kde-format
 msgctxt "@item: scene type"
 msgid "Landscape"
 msgstr "Yatay"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:298
-#, fuzzy, kde-format
-#| msgid "Portrait"
+#, kde-format
 msgctxt "@item: scene type"
 msgid "Portrait"
 msgstr "Dikey"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:299
-#, fuzzy, kde-format
-#| msgid "Night scene"
+#, kde-format
 msgctxt "@item: scene type"
 msgid "Night scene"
 msgstr "Gece çekimi"
@@ -12949,13 +12942,13 @@ msgstr "Gece çekimi"
 msgctxt "@info"
 msgid "Select here the type of scene used by the camera to take the picture."
 msgstr ""
-"Fotoğraf çekmek için kamera tarafından kullanılan sahne türünü buradan seçin."
+"Fotoğraf çekmek için kamera tarafından kullanılan sahne türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:305
 #, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
-msgstr "Nesne mesafe türü:"
+msgstr "Nesne uzaklığı türü:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:307
 #, kde-format
@@ -12987,14 +12980,14 @@ msgctxt "@info"
 msgid ""
 "Select here the type of distance between the subject and the image input "
 "equipment."
-msgstr "Nesne ve resim giriş donanımı arasındaki mesafe türünü buradan seçin."
+msgstr ""
+"Nesne ile görsel giriş ekipmanı arasındaki uzaklık türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt yazı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
 #, kde-format
@@ -13027,102 +13020,81 @@ msgid "Adjustments"
 msgstr "Düzeltmeler"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@title"
 msgid "Caption Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Alt Yazı Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
-#, fuzzy, kde-format
-#| msgid "Set here the editorial attribute description of the content."
+#, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
-msgstr "İçeriğin yayıncıya ait öznitelik tanımını buradan belirleyin."
+msgstr "Teknik Açıklamaları Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
-#, fuzzy, kde-format
-#| msgid "Add date and time information"
+#, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
-msgstr "Tarih ve zaman bilgisi ekleyin"
+msgstr "Tarih ve Zaman Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Camera File Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
-msgstr "Kamera Dosyası Özellikleri"
+msgstr "Kamera Zaman Damgası Özelliklerini Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Enfuse Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
-msgstr "Enfuse Ayarları"
+msgstr "Mercek Ayarları"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Album Category Settings<br/><i>Assign categories to albums used to "
-#| "sort them</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
-msgstr ""
-"<qt>Albüm Kategori Ayarları<br/><i>Albümleri sınıflandırmak için kategoriler "
-"belirleyin</i></qt>"
+msgstr "Kamera Merceği Ayrıntılarını Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
-#, fuzzy, kde-format
-#| msgid "Remote Server Settings"
+#, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
-msgstr "Sunucu Ayarlarını Uzaktan Yönet"
+msgstr "Aygıt Ayarlarını Yakala"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
-msgstr "Kamera tarafından kullanılan kayıt koşulları"
+msgstr "Kameranın Kullandığı Kayıt Koşulları"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Light Source Information"
+#, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
-msgstr "Işık Kaynağı Bilgileri"
+msgstr "Işık Kaynağı Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Subject Information<br/><i>Use this panel to record subject "
-#| "information about the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record ambient condition captured by camera"
-msgstr ""
-"<qt>Konu Bilgileri<br/><i>Resimle ilgili konuları kaydetmek için bu paneli "
-"kullanın</i></qt>"
+msgstr "Kameranın Yakaladığı Ortam Koşullarını Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
-#, fuzzy, kde-format
-#| msgid "Timestamp Adjustments"
+#, kde-format
 msgctxt "@title"
 msgid "Pictures Adjustments"
-msgstr "Zaman Damgası Ayarlamaları"
+msgstr "Resim Ayarlamaları"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
-msgstr ""
+msgstr "Kameranın Kullandığı Teknik Ayrıntıları Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
 msgid "Focal length (mm):"
-msgstr "Odak uzaklığı (mm):"
+msgstr "Odak uzunluğu (mm):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:149
 #, kde-format
@@ -13130,8 +13102,8 @@ msgid ""
 "Set here the lens focal length in millimeters used by camera to take the "
 "picture."
 msgstr ""
-"Resim çekmek için kamera tarafından kullanılan merceklerin odak "
-"uzunluklarını milimetre olarak buradan belirleyin."
+"Fotoğrafı çekmek için kamera tarafından kullanılan merceklerin odak "
+"uzunluklarını milimetre türünden burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:154
 #, kde-format
@@ -13150,31 +13122,31 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:166
 #, kde-format
 msgid "Digital zoom ratio:"
-msgstr "Dijital yakınlaşma oranı:"
+msgstr "Sayısal yakınlaşma oranı:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:172
 #, kde-format
 msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr ""
-"Resim çekmek için kamera tarafından kullanılan dijital yakınlaşma oranını "
-"buradan belirleyin."
+"Fotoğraf çekmek için kamera tarafından kullanılan sayısal yakınlaşma oranını "
+"burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "Lens açıklığı (odak oranıı):"
+msgstr "Lens açıklığı (odak oranı):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
 #, kde-format
 msgid "Select here the lens aperture used by camera to take the picture."
 msgstr ""
-"Resim çekmek için kamera tarafından kullanılan lens açıklığını buradan "
-"belirleyin."
+"Fotoğraf çekmek için kamera tarafından kullanılan lens açıklığını burada "
+"ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
 #, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr "Azami lens açıklığı (odak oranı):"
+msgstr "En büyük mercek açıklığı (odak oranı):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
 #, kde-format
@@ -13182,8 +13154,8 @@ msgid ""
 "Select here the smallest aperture of the lens used by camera to take the "
 "picture."
 msgstr ""
-"Resim çekmek için kamera tarafından kullanılan en küçük lens açıklığını "
-"buradan belirleyin."
+"Fotoğraf çekmek için kamera tarafından kullanılan en küçük mercek açıklığını "
+"burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, kde-format
@@ -13198,12 +13170,12 @@ msgstr "Ateşli"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Fired, no strobe return light"
-msgstr "Ateşli, stroboskop dönüş ışığı yok"
+msgstr "Ateşli, flaş dönüş ışığı yok"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Fired, strobe return light"
-msgstr "Ateşli, stroboskop dönüş ışığı"
+msgstr "Ateşli, flaş dönüş ışığı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
@@ -13228,22 +13200,22 @@ msgstr "Hayır, zorunlu"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, kde-format
 msgid "No, auto"
-msgstr "Hayır, otomatik"
+msgstr "Hayır, kendiliğinden"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:97
 #, kde-format
 msgid "Yes, auto"
-msgstr "Evet, otomatik"
+msgstr "Evet, kendiliğinden"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, no return light"
-msgstr "Evet, otomatik, dönüş ışığı yok"
+msgstr "Evet, kendiliğinden, dönüş ışığı yok"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
 #, kde-format
 msgid "Yes, auto, return light"
-msgstr "Evet, otomatik, dönüş ışığı"
+msgstr "Evet, kendiliğinden, dönüş ışığı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:100
 #, kde-format
@@ -13253,7 +13225,7 @@ msgstr "Flaş işlevi yok"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:101
 #, kde-format
 msgid "Yes, red-eye"
-msgstr "Evet, kırmızı gözz"
+msgstr "Evet, kırmızı göz"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
 #, kde-format
@@ -13283,17 +13255,17 @@ msgstr "Evet, zorunlu, kırmızı göz, dönüş ışığı"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
 #, kde-format
 msgid "Yes, auto, red-eye"
-msgstr "Evet, otomatik, kırmızı göz"
+msgstr "Evet, kendiliğinden, kırmızı göz"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
-msgstr "Evet, otomatik, kırmızı göz, dönüş ışığı yok"
+msgstr "Evet, kendiliğinden, kırmızı göz, dönüş ışığı yok"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
-msgstr "Evet, otomatik, kırmızı göz, dönüş ışığı"
+msgstr "Evet, kendiliğinden, kırmızı göz, dönüş ışığı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
@@ -13418,13 +13390,13 @@ msgstr "D50"
 #, kde-format
 msgctxt "light source"
 msgid "ISO studio tungsten"
-msgstr "ISO stüdyo tungsten"
+msgstr "ISO stüdyo tungsteni"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:161
 #, kde-format
 msgctxt "light source"
 msgid "Other light source"
-msgstr "Diğer ışık kaynağı"
+msgstr "Başka ışık kaynağı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:162
 #, kde-format
@@ -13440,7 +13412,7 @@ msgstr "Flaş kipi:"
 #, kde-format
 msgid ""
 "Select here the flash program mode used by the camera to take the picture."
-msgstr "Resim çekmek için kullanılan flaş programı yöntemini buradan seçin."
+msgstr "Fotoğraf çekmek için kullanılan flaş programı kipini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:178
 #, kde-format
@@ -13455,10 +13427,11 @@ msgid ""
 "when it is focused into a beam by a reflector or lens. This value is the "
 "effective intensity for a period of one second."
 msgstr ""
-"BCPS birimde resim çekmek için kullanılan flaş enerjisini buradan "
-"belirleyin. Işın Mum Gücü Saniyeleri, bir yansıtıcı veya lenslerle bir ışına "
-"odaklandığı zamanki bir ışık kaynağının etkili yoğunluk ölçüsüdür. Bu değer, "
-"bir saniyelik bir periyod için etkili bir yoğunluktur."
+"BCPS birimleri türünden fotoğraf çekmek için kullanılan flaş gücünü "
+"ayarlayın. Işın Mumu Gücü Saniyeleri, bir ışık kaynağının bir yansıtıcı veya "
+"mercek tarafından bir ışına odaklandığındaki etkin yoğunluğunun ölçüsüdür. "
+"Bu değer, bir ışık kaynağının bir saniyelik bir süredeki etkin yoğunluğunun "
+"ölçüsüdür."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:192
 #, kde-format
@@ -13469,13 +13442,13 @@ msgstr "Beyaz dengesi:"
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Auto"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:195
 #, kde-format
 msgctxt "@item: white balance"
 msgid "Manual"
-msgstr "El ile"
+msgstr "Elle"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:196
 #, kde-format
@@ -13484,8 +13457,8 @@ msgid ""
 "Select here the white balance mode set by the camera when the picture was "
 "taken."
 msgstr ""
-"Resim çekilirken kamera tarafından belirlenen beyaz dengesi kipini buradan "
-"seçin."
+"Fotoğraf çekildiğinde kamera tarafından belirlenen beyaz dengesi kipini "
+"burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
@@ -13495,10 +13468,9 @@ msgstr "İçerik öznesini tanımlayın (en fazla 3 karakter):"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
-#, fuzzy, kde-format
-#| msgid "Set here the contact country."
+#, kde-format
 msgid "Set here the category ID"
-msgstr "İletişim ülkesini buradan ayarlayın."
+msgstr "Kategori kimliğini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
@@ -13516,10 +13488,9 @@ msgstr "Tamamlayıcı kategoriler:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:93
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
-#, fuzzy, kde-format
-#| msgid "Set here the contact city."
+#, kde-format
 msgid "Set here the extra category"
-msgstr "İletişim şehrini buradan ayarlayın."
+msgstr "Ek kategoriyi burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
 #, kde-format
@@ -13527,7 +13498,7 @@ msgid ""
 "Enter here a new supplemental category of content. This field is limited to "
 "32 characters."
 msgstr ""
-"Yeni bir ek içerik kategorisini buraya girin. Bu alan, 32 karakterle "
+"Yeni bir ek içerik kategorisini buraya girin. Bu alan 32 karakterle "
 "sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:100
@@ -13565,82 +13536,68 @@ msgstr "&Değiştir"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:249
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:110
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: <b><a href='http://en.wikipedia.org/wiki/"
-#| "IPTC_Information_Interchange_Model'>IPTC</a></b> text tags only support "
-#| "the printable <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></"
-#| "b> characters and limit string sizes. Use contextual help for details.</b>"
+#, kde-format
 msgid ""
 "<b>Note: <a href='https://en.wikipedia.org/wiki/"
 "IPTC_Information_Interchange_Model'>IPTC</a> text tags are limited string "
 "sizes. Use contextual help for details. Consider to use <a href='https://en."
 "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
 msgstr ""
-"<b>Not:<b><a href='http://tr.wikipedia.org/wiki/IPTC'>IPTC</a></b> metin "
-"etiketleri yalnızca basılabilir <b><a href='http://tr.wikipedia.org/wiki/"
-"Ascii'>ASCII</a></b> karakter takımını destekler ve dizgi boyutunu sınırlar. "
-"Ayrıntılar için bağlamsal yardımı kullanın.</b>"
+"<b>Not: <a href='https://en.wikipedia.org/wiki/"
+"IPTC_Information_Interchange_Model'>IPTC</a> metin etiketleri sınırlı "
+"boyutlu dizilerdir. Bunun yerine <a href='https://en.wikipedia.org/wiki/"
+"Extensible_Metadata_Platform'>XMP</a> kullanmayı düşünün.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:82
 #, kde-format
 msgid "Headline:"
-msgstr "Başlık:"
+msgstr "Manşet:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
-#, fuzzy, kde-format
-#| msgid "Enter here the content synopsis."
+#, kde-format
 msgid "Set here the content synopsis"
-msgstr "İçerik özetini buradan girin."
+msgstr "İçerik özetini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the content synopsis. This field is limited to 256 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Enter here the content synopsis. This field is limited to 256 characters."
-msgstr "İçerik özetini buradan girin. Bu alan 256 karakterler sınırlıdır."
+msgstr "İçerik özetini buraya girin. Bu alan 256 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:88
 #, kde-format
 msgctxt "content description"
 msgid "Caption:"
-msgstr "Başlık:"
+msgstr "Alt yazı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:95
-#, fuzzy, kde-format
-#| msgid "Sync EXIF Comment"
+#, kde-format
 msgid "Sync Exif Comment"
-msgstr "EXIF Yorumunu eşle"
+msgstr "EXIF Açıklamasını Eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
-#, fuzzy, kde-format
-#| msgid "Enter the content description."
+#, kde-format
 msgid "Set here the content description"
-msgstr "İçerik tanımını buradan girin."
+msgstr "İçerik açıklamasını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the content description. This field is limited to 2000 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Enter the content description. This field is limited to 2000 characters."
-msgstr "İçerik tanımını girin. Bu alan 2000 ASCII karakterle sınırlıdır."
+msgstr "İçerik açıklamasını girin. Bu alan 2000 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:103
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:104
 #, kde-format
 msgid "Caption Writer:"
-msgstr "Resim Yazısı Yazıcısı:"
+msgstr "Alt yazı yazıcısı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
 #, kde-format
 msgid "Enter the name of the caption author."
-msgstr "Resim yazısı yazarının adını girin."
+msgstr "Alt yazı yazarının adını girin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
@@ -13648,47 +13605,43 @@ msgstr "Resim yazısı yazarının adını girin."
 #: core/libs/template/templateviewer.cpp:149
 #, kde-format
 msgid "Copyright:"
-msgstr "Telif Hakkı:"
+msgstr "Telif hakkı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
-#, fuzzy, kde-format
-#| msgid "Enter the necessary copyright notice."
+#, kde-format
 msgid "Set here the copyright notice."
-msgstr "Gerekli telif hakkı uyarılarını buradan belirleyin."
+msgstr "Gerekli telif hakkı bildirimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the necessary copyright notice. This field is limited to 128 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Set here the necessary copyright notice. This field is limited to 128 "
 "characters."
 msgstr ""
-"Gerekli telif hakkı uyarısını buradan belirleyin. Bu alan 128 ASCII "
-"karakterle sınırlıdır."
+"Gerekli telif hakkı bildirimini burada ayarlayın. Bu alan 128 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:87
 #, kde-format
 msgid "Byline:"
-msgstr "Yazar Adı:"
+msgstr "Künye:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
-msgstr "İçerik yaratıcısının adını buradan belirleyin."
+msgstr "İçerik yaratıcısının adını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
 #, kde-format
 msgid "Byline Title:"
-msgstr "Yazar Ünvanı:"
+msgstr "Künye unvanı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:94
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
-msgstr "İçerik yaratıcısının ünvanını buradan belirleyin."
+msgstr "İçerik yaratıcısının unvanını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
@@ -13696,23 +13649,19 @@ msgstr "İçerik yaratıcısının ünvanını buradan belirleyin."
 #: core/libs/template/templateviewer.cpp:147
 #, kde-format
 msgid "Credit:"
-msgstr "Yazanlar:"
+msgstr "Emeği geçenler:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, kde-format
 msgid "Set here the content provider."
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik sağlayıcısını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the content provider. This field is limited to 32 ASCII "
-#| "characters."
+#, kde-format
 msgid "Set here the content provider. This field is limited to 32 characters."
 msgstr ""
-"İçerik sağlayıcısını buradan belirleyin. Bu alan 32 ASCII karakterle "
-"sınırlıdır."
+"İçerik sağlayıcısını burada ayarlayın. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:108
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:198
@@ -13722,22 +13671,17 @@ msgid "Source:"
 msgstr "Kaynak:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the content owner."
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik sağlayıcısını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the original owner of content. This field is limited to 32 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the original owner of content. This field is limited to 32 "
 "characters."
 msgstr ""
-"İçeriğin özgün sahibini buradan belirleyin. Bu alan 32 ASCII karakterle "
-"sınırlıdır."
+"İçeriğin özgün sahibini burada ayarlayın. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:117
 #, kde-format
@@ -13745,10 +13689,9 @@ msgid "Contact:"
 msgstr "İletişim:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
-#, fuzzy, kde-format
-#| msgid "Set here the person or organisation to contact."
+#, kde-format
 msgid "Set here the person or organization to contact."
-msgstr "Bağlantı kurulacak kişi veya kurumu buradan belirleyin."
+msgstr "Bağlantı kurulacak kişi veya kurumu burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
 #, kde-format
@@ -13757,17 +13700,16 @@ msgid "Content"
 msgstr "İçerik"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:119
-#, fuzzy, kde-format
-#| msgid "Origin"
+#, kde-format
 msgctxt "@item: iptc"
 msgid "Origin"
-msgstr "Kaynak"
+msgstr "Köken"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:123
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Credits"
-msgstr "Emeği Geçenler"
+msgstr "Emeği geçenler"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:127
 #, kde-format
@@ -13800,205 +13742,159 @@ msgid "Properties"
 msgstr "Özellikler"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Envelope"
+#, kde-format
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "Zarf"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:215
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
-#, fuzzy, kde-format
-#| msgid "Components Information"
+#, kde-format
 msgctxt "@title"
 msgid "Content Information"
-msgstr "Bileşen Bilgileri"
+msgstr "Bileşen Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Content Information<br/><i>Use this panel to describe the visual "
-#| "content of the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Describe the visual content of the item"
-msgstr ""
-"<qt>İçerik Bilgisi<br/><i>Resmin görsel içeriğini tanımlamak için bu paneli "
-"kullanın</i></qt>"
+msgstr "Ögenin Görsel İçeriğini Açıkla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Login Information"
+#, kde-format
 msgctxt "@title"
 msgid "Origin Information"
-msgstr "Giriş Bilgileri"
+msgstr "Köken Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Origin Information<br/><i>Use this panel for formal descriptive "
-#| "information about the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
-msgstr ""
-"<qt>Özgün Bilgi<br/><i>Resim hakkında resmi tanımlayıcı bilgi için bu paneli "
-"kullanın</i></qt>"
+msgstr "Ögenin Açıklayıcı Resmi Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@title"
 msgid "Credit Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Emeği Geçenler Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Credit Information<br/><i>Use this panel to record copyright "
-#| "information about the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record copyright information about the item"
-msgstr ""
-"<qt>Emeği Geçenlere ait Bilgiler<br/><i>Resimle ilgili telif hakkı "
-"bilgilerini kaydetmek için bu paneli kullanın</i></qt>"
+msgstr "Ögenin Telif Hakkı Bilgisini Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgctxt "@title"
 msgid "Subject Information"
-msgstr "Metaveri Bilgisi"
+msgstr "Konu Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Subject Information<br/><i>Use this panel to record subject "
-#| "information about the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
-msgstr ""
-"<qt>Konu Bilgileri<br/><i>Resimle ilgili konuları kaydetmek için bu paneli "
-"kullanın</i></qt>"
+msgstr "Ögenin Konu Bilgisini Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
-#, fuzzy, kde-format
-#| msgid "Import Information"
+#, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
-msgstr "Bilgi İçe Aktar"
+msgstr "Anahtar Sözcük Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Keyword Information<br/><i>Use this panel to record keywords relevant "
-#| "to the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record keywords relevant to the item"
-msgstr ""
-"<qt>Anahtar Sözcük Bilgileri<br/><i>Resimle ilgili anahtar sözcükleri "
-"kaydetmek için bu paneli kullanın</i></qt>"
+msgstr "Ögeyle İlişkili Anahtar Sözcükleri Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@title"
 msgid "Category Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Kategori Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Category Information<br/><i>Use this panel to record categories "
-#| "relevant to the image</i></qt>"
+#, kde-format
 msgctxt "@title"
 msgid "Record categories relevant to the item"
-msgstr ""
-"<qt>Kategori Bilgileri<br/><i>Resimle ilgili kategori bilgilerini kaydetmek "
-"için bu paneli kullanın</i></qt>"
+msgstr "Ögeyle İlişkili Kategorileri Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
-#, fuzzy, kde-format
-#| msgid "Metadata Information"
+#, kde-format
 msgctxt "@title"
 msgid "Status Information"
-msgstr "Metaveri Bilgisi"
+msgstr "Durum Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
-#, fuzzy, kde-format
-#| msgid "Audio/Video Information"
+#, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
-msgstr "Ses/Video Bilgileri"
+msgstr "İş Akışı Bilgisini Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Items Properties"
+#, kde-format
 msgctxt "@title"
 msgid "Status Properties"
-msgstr "Öge Özellikleri"
+msgstr "Durum Özellikleri"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
-#, fuzzy, kde-format
-#| msgid "Add file properties"
+#, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
-msgstr "Dosya özelliklerini ekleyin"
+msgstr "İş Akışı Özelliklerini Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
-msgstr "Bilgiyi Kırp"
+msgstr "Zarf Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
-msgstr "Video kodlayıcı"
+msgstr "Editöryel Ayrıntıları Kaydet"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
 msgid "No ObjectData"
-msgstr "NesneVerisi Yok"
+msgstr "Nesne Verisi Yok"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:77
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 1)"
-msgstr "IPTC-NAA Dijital Haber Fotoğrafı Parametre Kaydı (sürüm 1)"
+msgstr "IPTC-NAA Sayısal Haber Fotoğrafı Parametresi Kaydı (sürüm 1)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:78
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 2)"
-msgstr "IPTC-NAA Dijital Haber Fotoğrafı Parametre Kaydı (sürüm 2)"
+msgstr "IPTC-NAA Sayısal Haber Fotoğrafı Parametresi Kaydı (sürüm 2)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:79
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 3)"
-msgstr "IPTC-NAA Dijital Haber Fotoğrafı Parametre Kaydı (sürüm 3)"
+msgstr "IPTC-NAA Sayısal Haber Fotoğrafı Parametresi Kaydı (sürüm 3)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:80
 #, kde-format
 msgid "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
-msgstr "IPTC-NAA Dijital Haber Fotoğrafı Parametre Kaydı (sürüm 4)"
+msgstr "IPTC-NAA Sayısal Haber Fotoğrafı Parametresi Kaydı (sürüm 4)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
@@ -14008,17 +13904,17 @@ msgstr "IPTC7901 Önerilen İleti Biçimi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
 msgid "Tagged Image File Format (version 5.0)"
-msgstr "Etiketli Görüntü Dosya Biçimi (sürüm 5.0)"
+msgstr "Etiketli Görsel Dosyası Biçimi (sürüm 5.0)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:83
 #, kde-format
 msgid "Tagged Image File Format (version 6.0)"
-msgstr "Etiketli Görüntü Dosya Biçimi (sürüm 6.0)"
+msgstr "Etiketli Görsel Dosyası Biçimi (sürüm 6.0)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "Illustrator"
-msgstr "Illustrator"
+msgstr "İlüstratör"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
@@ -14043,12 +13939,12 @@ msgstr "IPTC Yapısal Olmayan Karaktere Yönelik Dosya Biçimi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
-msgstr "Birleşik Basın Uluslararası ANPA 1312 değişkesi"
+msgstr "Birleşik Basın Uluslararası ANPA 1312 Çeşidi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "United Press International Down-Load Message"
-msgstr "Birleşik Basın Uluslararası Karşıdan-Yükleme İletisi"
+msgstr "Birleşik Basın Uluslararası İndirme İletisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
 #, kde-format
@@ -14058,27 +13954,27 @@ msgstr "JPEG Dosya Değişimi"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:92
 #, kde-format
 msgid "Photo-CD Image-Pac"
-msgstr "Foto-CD Resim-Pak"
+msgstr "Photo-CD Image-Pac"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:93
 #, kde-format
 msgid "Microsoft Bit Mapped Graphics File [*.BMP]"
-msgstr "Microsoft Noktacık Tabanlı Grafik Dosyası [*.BMP]"
+msgstr "Microsoft Biteşlem Grafik Dosyası [*.BMP]"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
 #, kde-format
 msgid "Digital Audio File [*.WAV]"
-msgstr "Dijital Ses Dosyası [*.WAV]"
+msgstr "Sayısal Ses Dosyası [*.WAV]"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
 #, kde-format
 msgid "Audio plus Moving Video [*.AVI]"
-msgstr "Ses artı Hareketli Görüntü [*.AVI]"
+msgstr "Ses ve Hareketli Video [*.AVI]"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:96
 #, kde-format
 msgid "PC DOS/Windows Executable Files [*.COM][*.EXE]"
-msgstr "PC DOS/Windows Çalıştırılabilir Dosyaları [*.COM][*.EXE]"
+msgstr "PC DOS/Windows Yürütülebilir Dosyaları [*.COM][*.EXE]"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:97
 #, kde-format
@@ -14088,12 +13984,12 @@ msgstr "Sıkıştırılmış İkili Dosya [*.ZIP]"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:98
 #, kde-format
 msgid "Audio Interchange File Format AIFF"
-msgstr "Ses Değişim Dosya Biçimi AIFF"
+msgstr "Ses Değişim Dosyası Biçimi AIFF"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:99
 #, kde-format
 msgid "RIFF Wave (Microsoft Corporation)"
-msgstr "RIFF Wave (Microsoft Corporation)"
+msgstr "RIFF Dalgası (Microsoft Corporation)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:100
 #, kde-format
@@ -14148,12 +14044,12 @@ msgstr "Bant Arşivi [*.TAR]"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:110
 #, kde-format
 msgid "Tidningarnas Telegrambyra NITF version (TTNITF DTD)"
-msgstr "Tidningarnas Telegrambyra NITF sürümü (TTNITF DTD)"
+msgstr "Tidningarnas Telegrambyra NITF Sürümü (TTNITF DTD)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:111
 #, kde-format
 msgid "Ritzaus Bureau NITF version (RBNITF DTD)"
-msgstr "Ritzaus Bureau NITF sürümü (RBNITF DTD)"
+msgstr "Ritzaus Bureau NITF Sürümü (RBNITF DTD)"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:112
 #, kde-format
@@ -14163,117 +14059,89 @@ msgstr "Corel Draw [*.CDR]"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Destination:"
-msgstr "Hedef:"
+msgstr "Varış noktası:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
-#, fuzzy, kde-format
-#| msgid "Select here the envelope priority."
+#, kde-format
 msgid "Set here the envelope destination"
-msgstr "Zarf önceliğini buradan belirleyin."
+msgstr "Zarfın varış noktasını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the envelope destination. This field is limited to 1024 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr ""
-"Zarfın varış yerini buradan belirleyin. Bu alan 1024 ASCII karakteriyle "
-"sınırlıdır."
+"Zarfın varış noktasını burada belirleyin. Bu alan 1024 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:181
 #, kde-format
 msgid "U.N.O ID:"
-msgstr "U.N.O ID:"
+msgstr "U.N.O kimliği:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the Unique Name of Object identifier. This field is limited to "
-#| "80 ASCII characters."
+#, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr ""
-"Nesne tanımlayıcısının Eşsiz İsmini buradan belirleyin. Bu alan 80 ASCII "
-"karakteriyle sınırlıdır."
+msgstr "Nesne tanımlayıcısının benzersiz adını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the Unique Name of Object identifier. This field is limited to "
-#| "80 ASCII characters."
+#, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
 "characters."
 msgstr ""
-"Nesne tanımlayıcısının Eşsiz İsmini buradan belirleyin. Bu alan 80 ASCII "
-"karakteriyle sınırlıdır."
+"Nesne tanımlayıcısının benzersiz adını buraya girin. Bu alan 80 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:191
 #, kde-format
 msgid "Product ID:"
-msgstr "Ürün Kimliği:"
+msgstr "Ürün kimliği:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the product identifier"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "Ürün tanımlayıcısını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the product identifier. This field is limited to 32 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
 msgstr ""
-"Ürün tanımlayıcısını buradan belirleyin. Bu alan 32 ASCII karakteriyle "
-"sınırlıdır."
+"Ürün tanımlayıcısını burada ayarlayın. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:201
 #, kde-format
 msgid "Service ID:"
-msgstr "Hizmet Kimliği:"
+msgstr "Hizmet kimliği:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
-#, fuzzy, kde-format
-#| msgid "Set here the new image width in pixels."
+#, kde-format
 msgid "Set here the service identifier"
-msgstr "Buradan, yeni görüntü genişliğini piksel cinsinden ayarlayın."
+msgstr "Hizmet tanımlayıcısını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the service identifier. This field is limited to 10 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
 msgstr ""
-"Hizmet tanımlayıcısını buradan belirleyin. Bu alan 10 ASCII karakteriyle "
-"sınırlıdır."
+"Hizmet tanımlayıcısını burada ayarlayın. Bu alan 10 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #, kde-format
 msgid "Envelope ID:"
-msgstr "Zarf Kimliği:"
+msgstr "Zarf kimliği:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
-#, fuzzy, kde-format
-#| msgid "Select here the envelope priority."
+#, kde-format
 msgid "Set here the envelope identifier"
-msgstr "Zarf önceliğini buradan belirleyin."
+msgstr "Zarf tanımlayıcısını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the envelope identifier. This field is limited to 8 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
 msgstr ""
-"Zarf tanımlayıcısını buradan belirleyin. Bu alan 8 ASCII karakterle "
-"sınırlıdır."
+"Zarf tanımlayıcısını burada ayarlayın. Bu alan 8 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:221
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
@@ -14285,7 +14153,7 @@ msgstr "Öncelik:"
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
-msgstr "0: Hiçbiri"
+msgstr "0: Yok"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
 #, kde-format
@@ -14310,12 +14178,12 @@ msgstr "8: Düşük"
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
-msgstr "9: Kullanıcı Tanımlı"
+msgstr "9: Kullanıcı tanımlı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, kde-format
 msgid "Select here the envelope priority."
-msgstr "Zarf önceliğini buradan belirleyin."
+msgstr "Zarf önceliğini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
@@ -14327,7 +14195,7 @@ msgstr "Biçim:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #, kde-format
 msgid "Select here envelope file format."
-msgstr "Zarf dosya biçimini buradan belirleyin."
+msgstr "Zarfın dosya biçimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
 #, kde-format
@@ -14342,42 +14210,39 @@ msgstr "Gönderilme zamanı:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
 #, kde-format
 msgid "Set envelope sent date to today"
-msgstr "Zarf gönderilme tarihini bugün olarak belirle"
+msgstr "Zarfın gönderilme tarihini bugün olarak belirle"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
 #, kde-format
 msgid "Set here the date when the service sent the material."
-msgstr "Hizmetin malzemeyi gönderdiği tarihi buradan belirleyin."
+msgstr "Hizmetin malzemeyi gönderdiği tarihi burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:269
 #, kde-format
 msgid "Set here the time when the service sent the material."
-msgstr "Hizmetin malzemeyi gönderdiği zamanı buradan belirleyin."
+msgstr "Hizmetin malzemeyi gönderdiği zamanı burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:270
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
-msgstr "Hizmetin malzemeyi gönderdiği zaman dilimini buradan ayarlayın."
+msgstr "Hizmetin malzemeyi gönderdiği zaman dilimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:74
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, kde-format
 msgid "Use information retrieval words:"
-msgstr "Bilgi erişim kelimelerini kullan:"
+msgstr "Bilgi erişim sözcükleri kullan:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
-#, fuzzy, kde-format
-#| msgid "Enter here a new keyword."
+#, kde-format
 msgid "Set here a keyword"
-msgstr "Buraya yeni bir anahtar sözcük girin."
+msgstr "Bir anahtar sözcüğü burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here a new keyword. This field is limited to 64 ASCII characters."
+#, kde-format
 msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr ""
-"Buraya yeni bir anahtar kelime girin. Bu alan 64 ASCII karakterle sınırlıdır."
+"Yeni bir anahtar sözcüğü buraya girin. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:128
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
@@ -14394,18 +14259,18 @@ msgstr "Sayısallaştırma zamanı"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:135
 #, kde-format
 msgid "Set here the creation date of digital representation."
-msgstr "Dijital temsilin yaratılma tarihini buradan belirleyin."
+msgstr "Sayısal temsilin oluşturulma tarihini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
 #, kde-format
 msgid "Set here the creation time of digital representation."
-msgstr "Sayısal temsilin oluşturulma zamanını buradan ayarlayın."
+msgstr "Sayısal temsilin oluşturulma zamanını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
 #, kde-format
 msgid "Set here the time zone of digital representation."
-msgstr "Sayısal temsilin zaman dilimini buradan ayarlayın."
+msgstr "Sayısal temsilin zaman dilimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
@@ -14420,33 +14285,32 @@ msgstr "Oluşturulma zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:163
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:150
-#, fuzzy, kde-format
-#| msgid "Sync EXIF creation date"
+#, kde-format
 msgid "Sync Exif creation date"
-msgstr "EXIF yaratılma tarihini eşle"
+msgstr "EXIF yaratılma tarihini eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
 #, kde-format
 msgid "Set here the creation date of intellectual content."
-msgstr "Düşünsel içeriğin yaratılma tarihini buradan belirleyin."
+msgstr "Düşünsel içeriğin yaratılma tarihini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:171
 #, kde-format
 msgid "Set here the creation time of intellectual content."
-msgstr "Sanatsal içeriğin oluşturulma zamanını buradan ayarlayın."
+msgstr "Düşünsel içeriğin oluşturulma zamanını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:173
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:158
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr "Sanatsal içeriğin zaman dilimini buradan ayarlayın."
+msgstr "Düşünsel içeriğin zaman dilimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
 #, kde-format
 msgid "Set here the full country name referenced by the content."
-msgstr "İçerik tarafından başvurulan tam ülke adını buradan belirleyin."
+msgstr "İçerik tarafından başvurulan tam ülke adını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:151
@@ -14460,22 +14324,16 @@ msgid "City:"
 msgstr "Şehir:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select here the scene type of the content."
+#, kde-format
 msgid "Set here the city of the content"
-msgstr "İçeriğin sahne türünü buradan seçin."
+msgstr "İçeriğin şehrini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:190
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the city of content origin. This field is limited to 32 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the city of content origin. This field is limited to 32 characters."
 msgstr ""
-"İçerik kaynağının kentini buradan belirleyin. Bu alan 32 ASCII karakterle "
-"sınırlıdır."
+"İçeriğin özgün şehrini burada ayarlayın. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:195
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:191
@@ -14486,22 +14344,18 @@ msgid "Sublocation:"
 msgstr "Alt konum:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:199
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the content location"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik konumunu burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:200
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the content location within city. This field is limited to 32 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Set here the content location within city. This field is limited to 32 "
 "characters."
 msgstr ""
-"Kent içerisindeki içerik konumunu buradan belirleyin. Bu alan 32 ASCII "
-"karakterle sınırlıdır."
+"İçeriğin şehirdeki konumunu burada ayarlayın. Bu alan 32 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:156
@@ -14514,22 +14368,17 @@ msgid "State/Province:"
 msgstr "Eyalet/İl:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select here the scene type of the content."
+#, kde-format
 msgid "Set here the Province or State of the content"
-msgstr "İçeriğin sahne türünü buradan seçin."
+msgstr "İçeriğin il veya eyaletini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the Province or State of content origin. This field is limited "
-#| "to 32 ASCII characters."
+#, kde-format
 msgid ""
 "Set here the Province or State of content origin. This field is limited to "
 "32 characters."
 msgstr ""
-"İçerik kaynağının İl veya Eyaletini buradan belirleyin. Bu alan 32 ASCII "
+"İçerik kökeninin ilini veya eyaletini burada ayarlayın. Bu alan 32 "
 "karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:215
@@ -14547,12 +14396,12 @@ msgstr "Ülke:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:207
 #, kde-format
 msgid "Select here country name of content origin."
-msgstr "İçerik kaynağının ülke adını buradan belirleyin."
+msgstr "İçerik kökeninin ülkesini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
 msgid "Release date"
-msgstr "Yayınlanma tarihi"
+msgstr "Yayımlanma tarihi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
 #, kde-format
@@ -14562,61 +14411,59 @@ msgstr "Yayım zamanı"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
 msgid "Set release date to today"
-msgstr "Yayın tarihini bugün olarak belirle"
+msgstr "Yayım tarihini bugün olarak ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr ""
-"Düşünsel içeriğin en erken istenilen kullanılabilir tarihini buradan "
-"belirleyin."
+"Düşünsel içeriğin en erken istenilen kullanılabilir tarihini burada "
+"ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
-msgstr ""
-"Sanatsal içeriğin en erken kullanıma açıldığı zamanı buradan ayarlayın."
+msgstr "Düşünsel içeriğin en erken kullanıma açıldığı zamanı burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr ""
-"Buradan entelektüel içeriğin en eski tasarlanmış kullanılabilir zaman "
-"dilimini ayarlayın."
+"Düşünsel içeriğin en eski tasarlanmış kullanılabilir zaman dilimini burada "
+"ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
 #, kde-format
 msgid "Expiration date"
-msgstr "Zaman aşımı tarihi"
+msgstr "Son kullanma tarihi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:157
 #, kde-format
 msgid "Expiration time"
-msgstr "Son kullanma süresi"
+msgstr "Son kullanma zamanı"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
 #, kde-format
 msgid "Set expiration date to today"
-msgstr "Sona erme tarihini bugün olarak belirle"
+msgstr "Son kullanma tarihini bugün olarak belirle"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr ""
-"Düşünsel içeriğin en son istenilen kullanılabilir tarihini buradan "
-"belirleyin."
+"Düşünsel içeriğin en son istenilen kullanılabilir tarihini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
-msgstr "Sanatsal içeriğin en son kullanılabileceği zamanı buradan ayarlayın."
+msgstr "Düşünsel içeriğin en son kullanılabileceği zamanı burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
 #, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
-"Buradan entelektüel içeriğin en son tasarlanan kullanılabilir zaman dilimini "
+"Düşünsel içeriğin en son tasarlanan kullanılabilir zaman dilimini burada "
 "ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
@@ -14627,13 +14474,13 @@ msgstr "Dil:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
 #, kde-format
 msgid "Select here the language of content."
-msgstr "İçeriğin dilini buradan seçin."
+msgstr "İçeriğin dilini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
-msgstr "0: Hiçbiri"
+msgstr "0: Yok"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
 #, kde-format
@@ -14656,12 +14503,12 @@ msgstr "8: Düşük"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
 #, kde-format
 msgid "Select here the editorial urgency of content."
-msgstr "İçeriğin yayıncıya ait zorunluluğunu buradan seçin."
+msgstr "İçeriğin editoryal aciliyetini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:211
 #, kde-format
 msgid "Cycle:"
-msgstr "Zaman:"
+msgstr "Dolaşım:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:213
 #, kde-format
@@ -14685,13 +14532,12 @@ msgstr "Akşam"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
-msgstr "İçeriğin yayıncıya ait dolaşımını buradan seçin."
+msgstr "İçeriğin editoryal dolaşımını burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the content type"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik türünü burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:226
 #, kde-format
@@ -14706,47 +14552,40 @@ msgstr "Veri"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:228
 #, kde-format
 msgid "Advisory"
-msgstr "Öneri"
+msgstr "Danışma"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:229
 #, kde-format
 msgid "Select here the editorial type of content."
-msgstr "İçeriğin yayıncıya ait türünü buradab seçin."
+msgstr "İçeriğin editoryal türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the editorial type description of content. This field is limited "
-#| "to 64 ASCII characters."
+#, kde-format
 msgid ""
 "Set here the editorial type description of content. This field is limited to "
 "64 characters."
 msgstr ""
-"İçeriğin yayıncıya ait tür tanımını buradan belirleyin. Bu alan 64 ASCII "
-"karakterle sınırlıdır."
+"İçeriğin editoryal tür tanımını burada ayarlayın. Bu alan 64 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:239
 #, kde-format
 msgid "Reference:"
-msgstr "Referans:"
+msgstr "Başvuru:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:242
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the content reference"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik başvurusunu burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:244
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the original content transmission reference. This field is "
-#| "limited to 32 ASCII characters."
+#, kde-format
 msgid ""
 "Set here the original content transmission reference. This field is limited "
 "to 32 characters."
 msgstr ""
-"Özgün içerik iletme referansını buradan belirleyin. Bu alan 32 ASCII "
-"karakterle sınırlıdır."
+"Özgün içerik iletim başvurusunu burada ayarlayın. Bu alan 32 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:74
 #, kde-format
@@ -14755,122 +14594,90 @@ msgid "Title:"
 msgstr "Başlık:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the content title"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik başlığını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the shorthand reference of content. This field is limited to 64 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Set here the shorthand reference of content. This field is limited to 64 "
 "characters."
 msgstr ""
-"İçeriğin steno referansını buradan belirleyin. Bu alan 64 ASCII karakterle "
+"İçeriğin kısayol başvurusunu burada ayarlayın. Bu alan 64 karakterle "
 "sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:83
 #, kde-format
 msgid "Edit Status:"
-msgstr "Durumu Düzenle:"
+msgstr "Durumu düzenle:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
-#, fuzzy, kde-format
-#| msgid "Set here the contact city."
+#, kde-format
 msgid "Set here the content status"
-msgstr "İletişim şehrini buradan ayarlayın."
+msgstr "İçerik durumunu burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the title of content status. This field is limited to 64 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Set here the title of content status. This field is limited to 64 characters."
 msgstr ""
-"İçerik durumunun başlığını buradan belirleyin. Bu alan 64 ASCII karakterle "
+"İçerik durumunun başlığını burada ayarlayın. Bu alan 64 karakterle "
 "sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:92
 #, kde-format
 msgid "Job Identifier:"
-msgstr "Görev Tanımlayıcı:"
+msgstr "İş tanımlayıcısı:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:95
-#, fuzzy, kde-format
-#| msgid "Set here the contact URL."
+#, kde-format
 msgid "Set here the job ID"
-msgstr "İletişim adresini buradan ayarlayın."
+msgstr "İş kimliğini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:96
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set here the string that identifies content that recurs. This field is "
-#| "limited to 32 ASCII characters."
+#, kde-format
 msgid ""
 "Set here the string that identifies content that recurs. This field is "
 "limited to 32 characters."
 msgstr ""
-"Yinelenen içeriği tanımlayan dizgiyi buradan belirleyin. Bu alan 32 ASCII "
-"karakterle sınırlıdır."
+"Yinelenen içeriği tanımlayan diziyi burada ayarlayın. Bu alan 32 karakterle "
+"sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:101
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:90
 #, kde-format
 msgid "Special Instructions:"
-msgstr "Özel Bilgiler:"
+msgstr "Özel yönergeler:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:104
-#, fuzzy, kde-format
-#| msgid "Set here the content's city of origin."
+#, kde-format
 msgid "Set here the content instructions"
-msgstr "İçerik kaynağının kentini buradan belirleyin."
+msgstr "İçerik yönergelerini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:105
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the editorial usage instructions. This field is limited to 256 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Enter the editorial usage instructions. This field is limited to 256 "
 "characters."
 msgstr ""
-"Yayıncıya ait kullanım talimatlarını girin. Bu alan 256 ASCII karakterle "
-"sınırlıdır."
+"Editoryal kullanım yönergelerini girin. Bu alan 256 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the Informative Provider Reference. I.P.R is a name registered "
-#| "with the IPTC/NAA, identifying the provider that provides an indicator of "
-#| "the content. The default value for the I.P.R is \"IPTC\" if a standard "
-#| "Reference Code is used. This field is limited to 32 ASCII characters."
+#, kde-format
 msgid ""
 "Enter here the Informative Provider Reference. I.P.R is a name registered "
 "with the IPTC/NAA, identifying the provider that provides an indicator of "
 "the content. The default value for the I.P.R is \"IPTC\" if a standard "
 "Reference Code is used. This field is limited to 32 characters."
 msgstr ""
-"Bilgi Verici Sağlayıcı Referansını (I.P.R) buradan girin. I.P.R, IPTC/NAA "
-"ile kaydedilmiş, bir içerik bildiricisi sağlayan sağlayıcıyı tanımlayan bir "
-"isimdir. Eğer standart bir Referans Kodu kullanılırsa öntanımlı I.P.R değeri "
-"\"IPTC\"'dir. Bu alan 32 ASCII karakteriyle sınırlıdır."
+"Bilgi Verici Sağlayıcı Başvurusunu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
+"kaydedilmiş, bir içerik bildiricisi sağlayan sağlayıcıyı tanımlayan bir "
+"addır. Eğer standart bir  başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
+"\"IPTC\"'dir. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:45
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the Subject Reference Number. Provides a numeric code to "
-#| "indicate the Subject Name plus optional Subject Matter and Subject Detail "
-#| "Names in the language of the service. Subject Reference is a number from "
-#| "the range 01000000 to 17999999 and represent a language independent "
-#| "international reference to a Subject. A Subject is identified by its "
-#| "Reference Number and corresponding Names taken from a standard lists "
-#| "given by XMP/NAA. If a standard reference code is used, these lists are "
-#| "the English language reference versions. This field is limited to 8 digit "
-#| "code."
+#, kde-format
 msgid ""
 "Enter here the Subject Reference Number. Provides a numeric code to indicate "
 "the Subject Name plus optional Subject Matter and Subject Detail Names in "
@@ -14881,56 +14688,40 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Konu Referans Numarasını buradan girin. Konu Adı ve isteğe bağlı olarak Konu "
-"Özü ve Konu Detay Adlarını hizmet dilinde göstermek için bir sayısal kod "
-"sağlar. Konu Referansı, 01000000 ile 17999999 arasında bir sayıdır ve bir "
-"Konu için uluslararası referansdan bağımsız bir dil belirtir. Konu, Referans "
-"Numarasıyla tanımlanır ve XMP/NAA tarafından verilen standart listelerinden "
-"alınmış Adların yerini tutar. Eğer standart bir referans kodu kullanılırsa "
-"bu listeler İngilizce dili referans  sürümleridirler. Bu alan 8 haneli kodla "
-"sınırlıdır."
+"Konu Başvuru Numarasını buraya girin. Konu Adı ve isteğe bağlı olarak Konu "
+"Özü ve Konu Ayrıntısı Adlarını hizmet dilinde göstermek için bir sayısal kod "
+"sağlar. Konu Başvurusu, 01000000 ile 17999999 arasında bir sayıdır ve bir "
+"Konu için uluslararası başvurudan bağımsız bir dil belirtir. Konu, Başvuru "
+"Numarasıyla tanımlanır ve IPTC/NAA tarafından verilen standart listelerinden "
+"alınmış Adların yerini tutar. Standart bir başvuru kodu kullanılırsa bu "
+"listeler İngilizce dilindeki sürümlerdir. Bu alan 8 haneli kodla sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:59
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the Subject Name. English language is used if you selected a "
-#| "standard IPTC/NAA reference code. This field is limited to 64 ASCII "
-#| "characters."
+#, kde-format
 msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Konu Adını buradan girin. Eğer standart bir IPTC/NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır. Bu alan 64 ASCII karakterle "
-"sınırlıdır."
+"Konu Adını buraya girin. Standart bir IPTC/NAA başvuru kodu seçtiyseniz "
+"İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the Subject Matter Name. English language is used if you "
-#| "selected a standard IPTC/NAA reference code. This field is limited to 64 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Konu Özü Adını buradan girin. Eğer standart bir IPTC/NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır. Bu alan 64 ASCII karakteriyle "
-"sınırlıdır."
+"Konu Özü Adını buraya girin. Standart bir IPTC/NAA başvuru kodu seçtiyseniz "
+"İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:71
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter here the Subject Detail Name. English language is used if you "
-#| "selected a standard IPTC/NAA reference code. This field is limited to 64 "
-#| "ASCII characters."
+#, kde-format
 msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard IPTC/NAA reference code. This field is limited to 64 characters."
 msgstr ""
-"Konu Detay Adını buradan girin. Eğer standart bir IPTC(NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır. Bu alan 64 ASCII karakteriyle "
-"sınırlıdır."
+"Konu Ayrıntısı Adını buraya girin. Standart bir IPTC/NAA başvuru kodu "
+"seçtiyseniz İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:43
 #, kde-format
@@ -14939,11 +14730,10 @@ msgid "Metadata Edit"
 msgstr "Üst Veri Düzenle"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:58
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
-msgstr "Eposta ile gönder"
+msgstr "Ögelerin üst verisini düzenlemek için bir araç"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
 #, kde-format
@@ -14957,93 +14747,90 @@ msgid ""
 "For photo agencies, pre-configured subjects can be used to describe the "
 "items contents based on Iptc reference codes."
 msgstr ""
+"Bu araç, kullanıcıların ögelerdeki birçok üst veriyi değiştirmesine olanak "
+"tanır.\n"
+"\n"
+"Fotoğrafçılıkta kullanılan en yaygın Exif, Iptc ve Xmp etiketleri "
+"standartlaştırılmış değerlerle düzenleme için listelenmiştir.\n"
+"\n"
+"Fotoğraf ajansları için önceden yapılandırılmış konular, ögelerin içeriğini "
+"Iptc başvuru kodlarına göre tanımlamak için kullanılabilir."
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
-#, fuzzy, kde-format
-#| msgid "Edit Metadata..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
-msgstr "Metaveriyi Düzenle..."
+msgstr "Üst Veriyi Düzenle..."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:91
 #, kde-format
 msgid "Enter here a new supplemental category of content."
-msgstr "Yeni bir ek içerik kategorisini buraya girin."
+msgstr "Yeni bir tamamlayıcı içerik kategorisini buraya girin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:84
-#, fuzzy, kde-format
-#| msgid "Enter here the content synopsis."
+#, kde-format
 msgid "Set here the content synopsis."
-msgstr "İçerik özetini buradan girin."
+msgstr "İçerik özetini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:88
-#, fuzzy, kde-format
-#| msgid "Captions: "
+#, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr "Başlıklar: "
+msgstr "Alt yazılar:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
-#, fuzzy, kde-format
-#| msgid "Enter the content description."
+#, kde-format
 msgid "Set here the content descriptions."
-msgstr "İçerik tanımını buradan girin."
+msgstr "İçerik açıklamalarını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:91
 #, kde-format
 msgid "Default Language Caption Options"
-msgstr "Öntanımlı Dil Resim Yazısı Seçenekleri"
+msgstr "Öntanımlı Dil Alt Yazı Seçenekleri"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:106
-#, fuzzy, kde-format
-#| msgid "Enter the name of the caption author."
+#, kde-format
 msgid "Set here the name of the caption author."
-msgstr "Resim yazısı yazarının adını girin."
+msgstr "Alt yazı yazarının adını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
-#, fuzzy, kde-format
-#| msgid "Enter the necessary copyright notice."
+#, kde-format
 msgid "Set here the necessary copyright notice."
-msgstr "Gerekli telif hakkı uyarılarını buradan belirleyin."
+msgstr "Gerekli telif hakkı bildirimini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
-#, fuzzy, kde-format
-#| msgid "Sync EXIF Comment"
+#, kde-format
 msgid "Sync Exif Copyright"
-msgstr "EXIF Yorumunu eşle"
+msgstr "Exif Telif Hakkını Eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:115
 #: core/libs/template/templatepanel.cpp:174
 #, kde-format
 msgid "Right Usage Terms:"
-msgstr "Doğru Kullanım Koşulları:"
+msgstr "Hak kullanım koşulları:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enter the list of instructions on how a resource can be legally used here."
+#, kde-format
 msgid "Set here the instructions on how a resource can be legally used here."
 msgstr ""
-"Kaynağın burada yasal olarak nasıl kullanılacağına dair yönergelerin "
-"listesini girin."
+"Bir özkaynağın yasal olarak nasıl kullanılabileceğine ilişkin yönergeleri "
+"burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:111
 #, kde-format
 msgctxt "@option: name of content creator"
 msgid "Creator:"
-msgstr "Oluşturucu:"
+msgstr "Yaratıcı:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:113
-#, fuzzy, kde-format
-#| msgid "Sync EXIF creation date"
+#, kde-format
 msgid "Sync Exif Artist"
-msgstr "EXIF yaratılma tarihini eşle"
+msgstr "Exif Sanatçısını Eşzamanla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:117
-#, fuzzy, kde-format
-#| msgid "Projection"
+#, kde-format
 msgid "Creator Title:"
-msgstr "Projeksiyon"
+msgstr "Yaratıcı unvanı:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:123
 #: core/libs/template/templatepanel.cpp:415
@@ -15061,7 +14848,7 @@ msgstr "E-posta:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
 #, kde-format
 msgid "Set here the contact e-mail."
-msgstr "Bağlantı e-postasını buradan belirleyin."
+msgstr "İletişim e-postasını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
 #: core/libs/template/templatepanel.cpp:373
@@ -15073,7 +14860,7 @@ msgstr "URL:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
 #, kde-format
 msgid "Set here the contact URL."
-msgstr "İletişim URL'sini buradan ayarlayın."
+msgstr "İletişim URL'sini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
 #: core/libs/template/templatepanel.cpp:363
@@ -15085,7 +14872,7 @@ msgstr "Telefon:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:139
 #, kde-format
 msgid "Set here the contact 'phone number."
-msgstr "İletişim telefon numarasını buradan ayarlayın."
+msgstr "İletişim telefon numarasını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:141
 #, kde-format
@@ -15096,7 +14883,7 @@ msgstr "Adres:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:144
 #, kde-format
 msgid "Set here the contact address."
-msgstr "İletişim adresini buradan ayarlayın."
+msgstr "İletişim adresini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:146
 #, kde-format
@@ -15106,28 +14893,27 @@ msgstr "Posta kodu:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:149
 #, kde-format
 msgid "Set here the contact postal code."
-msgstr "İletişim posta kodunu buradan ayarlayın."
+msgstr "İletişim posta kodunu burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:154
 #, kde-format
 msgid "Set here the contact city."
-msgstr "İletişim şehrini buradan ayarlayın."
+msgstr "İletişim şehrini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:159
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the contact state/province."
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İletişim eyaletini/ilini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:164
 #, kde-format
 msgid "Set here the contact country."
-msgstr "İletişim ülkesini buradan ayarlayın."
+msgstr "İletişim ülkesini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:200
 #, kde-format
 msgid "Set here the original owner of content."
-msgstr "İçeriğin özgün sahibini buradan belirleyin."
+msgstr "İçeriğin özgün sahibini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
 #, kde-format
@@ -15136,11 +14922,10 @@ msgid "Content"
 msgstr "İçerik"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Origin"
+#, kde-format
 msgctxt "@item"
 msgid "Origin"
-msgstr "Kaynak"
+msgstr "Köken"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
 #, kde-format
@@ -15149,29 +14934,25 @@ msgid "Credits"
 msgstr "Emeği Geçenler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
-#, fuzzy, kde-format
-#| msgid "Subjects"
+#, kde-format
 msgctxt "@item"
 msgid "Subjects"
 msgstr "Konular"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
-#, fuzzy, kde-format
-#| msgid "Keywords"
+#, kde-format
 msgctxt "@item"
 msgid "Keywords"
 msgstr "Anahtar sözcükler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgctxt "@item"
 msgid "Categories"
 msgstr "Kategoriler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
-#, fuzzy, kde-format
-#| msgid "Status"
+#, kde-format
 msgctxt "@item"
 msgid "Status"
 msgstr "Durum"
@@ -15184,38 +14965,34 @@ msgid "Properties"
 msgstr "Özellikler"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:77
-#, fuzzy, kde-format
-#| msgid "Enter here a new keyword."
+#, kde-format
 msgid "Set here a new keyword"
-msgstr "Buraya yeni bir anahtar sözcük girin."
+msgstr "Yeni bir anahtar sözcüğü burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:165
-#, fuzzy, kde-format
-#| msgid "Video codec"
+#, kde-format
 msgid "Video date"
-msgstr "Video kodlayıcı"
+msgstr "Video tarihi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:173
-#, fuzzy, kde-format
-#| msgid "Set creation date to today"
+#, kde-format
 msgid "Set video date to today"
-msgstr "Yaratılma tarihini bugün olarak belirle"
+msgstr "Video tarihini bugün olarak ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
-#, fuzzy, kde-format
-#| msgid "Set here the creation date of intellectual content."
+#, kde-format
 msgid "Set here the video date of intellectual content."
-msgstr "Düşünsel içeriğin yaratılma tarihini buradan belirleyin."
+msgstr "Düşünsel içeriğin yaratılma tarihini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
 #, kde-format
 msgid "Set here the content's city of origin."
-msgstr "İçerik kaynağının kentini buradan belirleyin."
+msgstr "İçerik kökeninin kentini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:194
 #, kde-format
 msgid "Set here the content's location within the city."
-msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
+msgstr "İçeriğin ait olduğu şehirdeki konumunu burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:201
 #, kde-format
@@ -15232,13 +15009,13 @@ msgstr "Kafa resmi"
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Half-length"
-msgstr "Yarı-boy"
+msgstr "Yarım boy"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:64
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Full-length"
-msgstr "Tam-boy"
+msgstr "Tam boy"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:65
 #, kde-format
@@ -15298,7 +15075,7 @@ msgstr "Havadan görünüm"
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Under-water"
-msgstr "Su altı"
+msgstr "Sualtı"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:75
 #, kde-format
@@ -15316,13 +15093,13 @@ msgstr "Uydu"
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Exterior view"
-msgstr "Dıştan görünüm"
+msgstr "Dış görünüm"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:78
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Interior view"
-msgstr "İçten görünüm"
+msgstr "İç görünüm"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:79
 #, kde-format
@@ -15340,13 +15117,13 @@ msgstr "Eylem"
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Performing"
-msgstr "Gösteri"
+msgstr "Hareketli"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:82
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Posing"
-msgstr "Pozlandırılıyor"
+msgstr "Pozlama"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:83
 #, kde-format
@@ -15367,17 +15144,16 @@ msgid "Movie scene"
 msgstr "Film sahnesi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:87
-#, fuzzy, kde-format
-#| msgid "Advisory"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Advisory"
-msgstr "Öneri"
+msgstr "Danışma"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:88
 #, kde-format
 msgctxt "@item: type code"
 msgid "Alert"
-msgstr "Uyar"
+msgstr "Uyarı"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:89
 #, kde-format
@@ -15404,11 +15180,10 @@ msgid "DTD"
 msgstr "DTD"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:93
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@item: type code"
 msgid "Maintenance"
-msgstr "Onarım"
+msgstr "Bakım"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:94
 #, kde-format
@@ -15420,7 +15195,7 @@ msgstr "Haberler"
 #, kde-format
 msgctxt "@item: type code"
 msgid "News Management Mode"
-msgstr "Haber Yönetim Kipi"
+msgstr "Haber yönetim kipi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:96
 #, kde-format
@@ -15444,7 +15219,7 @@ msgstr "Başlık"
 #, kde-format
 msgctxt "@item: type code"
 msgid "Topic Set"
-msgstr "Konu Grubu"
+msgstr "Konu kümesi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:143
 #, kde-format
@@ -15453,15 +15228,13 @@ msgid "Language:"
 msgstr "Dil:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:144
-#, fuzzy, kde-format
-#| msgid "Select here the language of content."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the language of content."
-msgstr "İçeriğin dilini buradan seçin."
+msgstr "İçeriğin dilini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:158
-#, fuzzy, kde-format
-#| msgid "Priority:"
+#, kde-format
 msgctxt "@option"
 msgid "Priority:"
 msgstr "Öncelik:"
@@ -15470,7 +15243,7 @@ msgstr "Öncelik:"
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "0: None"
-msgstr "0: Hiçbiri"
+msgstr "0: Yok"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
 #, kde-format
@@ -15494,14 +15267,13 @@ msgstr "8: Düşük"
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "9: User-defined"
-msgstr "9: Kullanıcı Tanımlı"
+msgstr "9: Kullanıcı tanımlı"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:170
-#, fuzzy, kde-format
-#| msgid "Select here the editorial urgency of content."
+#, kde-format
 msgctxt "@info"
 msgid "@info: Select here the editorial urgency of content."
-msgstr "İçeriğin yayıncıya ait zorunluluğunu buradan seçin."
+msgstr "İçeriğin editoryal aciliyetini burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:174
 #, kde-format
@@ -15513,7 +15285,7 @@ msgstr "Sahne:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the scene type of the content."
-msgstr "İçeriğin sahne türünü buradan seçin."
+msgstr "İçeriğin sahne türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:189
 #, kde-format
@@ -15525,33 +15297,31 @@ msgstr "Tür:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
-msgstr "İçeriğin yayıncıya ait türünü buradan seçin."
+msgstr "İçeriğin editoryal türünü burada seçin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
-#, fuzzy, kde-format
-#| msgid "Attribute:"
+#, kde-format
 msgctxt "@option"
 msgid "Attribute:"
 msgstr "Öznitelik:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:210
-#, fuzzy, kde-format
-#| msgid "Set here the editorial attribute description of the content."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
-msgstr "İçeriğin yayıncıya ait öznitelik tanımını buradan belirleyin."
+msgstr "Editoryal öznitelik açıklamasını burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description of the content."
-msgstr "İçeriğin yayıncıya ait öznitelik tanımını buradan belirleyin."
+msgstr "İçeriğin editoryal öznitelik açıklamasını burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:213
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial attribute of the content."
-msgstr "İçeriğin yayıncıya ait özniteliğini buradan belirleyin."
+msgstr "İçeriğin editoryal özniteliğini burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:214
 #, kde-format
@@ -15563,7 +15333,7 @@ msgstr "Geçerli"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Analysis"
-msgstr "Analiz"
+msgstr "Çözümleme"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:216
 #, kde-format
@@ -15575,7 +15345,7 @@ msgstr "Arşiv malzemesi"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Background"
-msgstr "Arkaplan"
+msgstr "Arka plan"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:218
 #, kde-format
@@ -15587,7 +15357,7 @@ msgstr "Özellik"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Forecast"
-msgstr "Hava Durumu"
+msgstr "Hava durumu"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, kde-format
@@ -15596,17 +15366,13 @@ msgid "History"
 msgstr "Geçmiş"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Obituary"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Obituary"
 msgstr "Anma yazısı"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:222
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Opinion"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Opinion"
 msgstr "Düşünce"
@@ -15615,7 +15381,7 @@ msgstr "Düşünce"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Polls & Surveys"
-msgstr "Anket ve Araştırmalar"
+msgstr "Anketler ve araştırmalar"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:224
 #, kde-format
@@ -15624,20 +15390,16 @@ msgid "Profile"
 msgstr "Profil"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Results Listings & Table"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
-msgstr "Sonuç Listelemeleri ve Tablo"
+msgstr "Sonuç listelemeleri ve tablo"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Side bar & Supporting information"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
-msgstr "Kenar çubuğu ve Destekleyici bilgi"
+msgstr "Kenar çubuğu ve destekleyici bilgi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
 #, kde-format
@@ -15646,31 +15408,25 @@ msgid "Summary"
 msgstr "Özet"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Transcript & Verbatim"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Transcript & Verbatim"
-msgstr "Kopya ve Kelimesi Kelimesine"
+msgstr "Yazıdöküm ve sözlü bildirim"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:229
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Interview"
-msgstr "Görüşme"
+msgstr "Röportaj"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "From the Scene"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "From the Scene"
 msgstr "Sahneden"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:231
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Retrospective"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Retrospective"
 msgstr "Geriye dönük"
@@ -15688,39 +15444,34 @@ msgid "Update"
 msgstr "Güncelle"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:234
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Wrap-up"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Wrap-up"
 msgstr "Özet"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Press Release"
+#, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Press Release"
-msgstr "Basın Bildirisi"
+msgstr "Basın bildirisi"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:239
 #, kde-format
 msgctxt "@option"
 msgid "Reference:"
-msgstr "Referans:"
+msgstr "Başvuru:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:242
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgctxt "@info"
 msgid "Set here the content reference"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "İçerik başvurusunu burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Set here the original content transmission reference."
-msgstr "Özgün içerik iletme referansını buradan belirleyin."
+msgstr "Özgün içerik iletme başvurusunu burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:72
 #, kde-format
@@ -15731,7 +15482,7 @@ msgstr "Başlık:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "Set here a shorthand reference for the content."
-msgstr "İçeriğin steno referansını buradan belirleyin."
+msgstr "İçeriğin kısayol başvurusunu burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:119
@@ -15740,15 +15491,14 @@ msgid "Nickname:"
 msgstr "Takma ad:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:80
-#, fuzzy, kde-format
-#| msgid "Set here the contact e-mail."
+#, kde-format
 msgid "Set here a short informal name"
-msgstr "Bağlantı e-postasını buradan belirleyin."
+msgstr "Kısa bir resmi olmayan adı burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:81
 #, kde-format
 msgid "A short informal name for the resource."
-msgstr "Kaynak için resmi olmayan kısa bir isim."
+msgstr "Özkaynak için resmi olmayan kısa bir ad."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, kde-format
@@ -15758,18 +15508,17 @@ msgstr "Tanımlayıcılar:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:86
 #, kde-format
 msgid "Set here the strings that identify content that recurs."
-msgstr "Yinelenen içeriği tanımlayan dizgileri buradan belirleyin."
+msgstr "Yinelenen içeriği tanımlayan dizileri burada ayarlayın."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
-#, fuzzy, kde-format
-#| msgid "Enter the editorial usage instructions."
+#, kde-format
 msgid "Set here the editorial usage instructions"
-msgstr "Yayıncıya ait kullanım talimatlarını girin."
+msgstr "Editoryal kullanım yönergelerini burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:94
 #, kde-format
 msgid "Enter the editorial usage instructions."
-msgstr "Yayıncıya ait kullanım talimatlarını girin."
+msgstr "Editoryal kullanım yönergelerini girin."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:46
 #, kde-format
@@ -15779,10 +15528,10 @@ msgid ""
 "content. The default value for the I.P.R is \"XMP\" if a standard Reference "
 "Code is used."
 msgstr ""
-"Bilgi Verici Sağlayıcı Referansını (I.P.R) buradan girin. I.P.R, XMP/NAA ile "
+"Bilgi Verici Sağlayıcı Başvurusunu (I.P.R) buraya girin. I.P.R; IPTC/NAA ile "
 "kaydedilmiş, bir içerik bildiricisi sağlayan sağlayıcıyı tanımlayan bir "
-"isimdir. Eğer standart bir Referans Kodu kullanılırsa öntanımlı I.P.R değeri "
-"\"XMP\"'dir."
+"addır. Eğer standart bir  başvuru kodu kullanılırsa öntanımlı I.P.R değeri "
+"\"XMP\"'dir. Bu alan 32 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:52
 #, kde-format
@@ -15796,14 +15545,13 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
-"Konu Referans Numarasını buradan girin. Konu Adı ve isteğe bağlı olarak Konu "
-"Özü ve Konu Detay Adlarını hizmet dilinde göstermek için bir sayısal kod "
-"sağlar. Konu Referansı, 01000000 ile 17999999 arasında bir sayıdır ve bir "
-"Konu için uluslararası referansdan bağımsız bir dil belirtir. Konu, Referans "
+"Konu Başvuru Numarasını buraya girin. Konu Adı ve isteğe bağlı olarak Konu "
+"Özü ve Konu Ayrıntısı Adlarını hizmet dilinde göstermek için bir sayısal kod "
+"sağlar. Konu Başvurusu, 01000000 ile 17999999 arasında bir sayıdır ve bir "
+"Konu için uluslararası başvurudan bağımsız bir dil belirtir. Konu, Başvuru "
 "Numarasıyla tanımlanır ve XMP/NAA tarafından verilen standart listelerinden "
-"alınmış Adların yerini tutar. Eğer standart bir referans kodu kullanılırsa "
-"bu listeler İngilizce dili referans  sürümleridirler. Bu alan 8 haneli kodla "
-"sınırlıdır."
+"alınmış Adların yerini tutar. Standart bir başvuru kodu kullanılırsa bu "
+"listeler İngilizce dilindeki sürümlerdir. Bu alan 8 haneli kodla sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:65
 #, kde-format
@@ -15811,8 +15559,8 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
-"Konu Adını buradan girin. Eğer standart bir XMP/NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır."
+"Konu Adını buraya girin. Standart bir XMP/NAA başvuru kodu seçtiyseniz "
+"İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:69
 #, kde-format
@@ -15820,8 +15568,8 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Konu Özü Adını buradan girin. Eğer standart bir XMP/NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır. "
+"Konu Özü Adını buraya girin. Standart bir XMP/NAA başvuru kodu seçtiyseniz "
+"İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:73
 #, kde-format
@@ -15829,15 +15577,14 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
-"Konu Detay Adını buradan girin. Eğer standart bir XMP/NAA referans kodu "
-"seçtiyseniz İngilizce dili kullanılır."
+"Konu Ayrıntısı Adını buraya girin. Standart bir XMP/NAA başvuru kodu "
+"seçtiyseniz İngilizce dili kullanılır. Bu alan 64 karakterle sınırlıdır."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "Resim özelliklerini ayarla"
+msgstr "Tarihi ve Zamanı Ayarla"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -15846,18 +15593,16 @@ msgid "&Apply"
 msgstr "&Uygula"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
-msgstr "Her dosyaya metaveriyi yaz"
+msgstr "Her bir görsel için düzeltilmiş tarihi ve zamanı yaz"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:347
-#, fuzzy, kde-format
-#| msgid "Adjustment:"
+#, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
-msgstr "Ayarlama:"
+msgstr "Tarihi ve zamanı ayarla"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
@@ -15872,7 +15617,7 @@ msgstr "İptal"
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
-msgstr "Mevcut işlemi iptal et"
+msgstr "Geçerli işlemi iptal et"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:381
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
@@ -15909,10 +15654,9 @@ msgid "Status"
 msgstr "Durum"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
-#, fuzzy, kde-format
-#| msgid "Failed to save tags to file."
+#, kde-format
 msgid "Failed to update metadata timestamp"
-msgstr "Etiketleri dosyaya kaydetme başarısız."
+msgstr "Üst veri zaman damgası güncellenemedi"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, fuzzy, kde-format
@@ -19921,7 +19665,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
 #, kde-format
 msgid "Enter here your customized caption string..."
-msgstr "Buraya özelleşmiş resim yazısını girin..."
+msgstr "Özelleştirilmiş alt yazınızı buraya girin..."
 
 #. i18n: ectx: property (text), widget (QLabel, m_free_label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
@@ -27058,7 +26802,7 @@ msgstr "Gama:"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:218
 #, kde-format
 msgid "Set here the gamma adjustment of the image"
-msgstr "Görselin gama ayarlarını burada ayarlayın."
+msgstr "Görselin gamasını burada ayarla"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:225
 #, kde-format
@@ -28569,7 +28313,7 @@ msgstr ""
 "Ağ paylaşımı, seçtiğiniz konum ile tanımlanacak. Konum boş ise paylaşım "
 "kullanılamayacak."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28579,7 +28323,7 @@ msgstr ""
 "\"UUID\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" kimlikli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28589,7 +28333,7 @@ msgstr ""
 "\"etiket\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" etiketli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Shared directory mounted at <b>%1</b>"
@@ -50226,7 +49970,7 @@ msgstr "İsim"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "Diller listesinde aramak üzere bir dizi girin..."
 
 #: core/libs/widgets/text/localizeconfig.cpp:147
 #, fuzzy, kde-format
@@ -62068,7 +61812,7 @@ msgstr ""
 #: core/utilities/setup/camera/cameraselection.cpp:176
 #, kde-format
 msgid "<p>Enter here the network address of your camera.</p>"
-msgstr "<p>Buraya kameranızın ağ adresini girin.</p>"
+msgstr "<p>Kameranızın ağ adresini buraya girin..</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:194
 #, kde-format

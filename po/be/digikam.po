@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -26343,7 +26343,7 @@ msgstr ""
 "Гэты сеткавы рэсурс будзе распазнавацца па вызначанаму шляху. Калі шлях "
 "будзе пустым, рэсурс будзе недаступным."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26351,7 +26351,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26359,7 +26359,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

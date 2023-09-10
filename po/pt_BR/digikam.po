@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:43+0000\n"
+"POT-Creation-Date: 2023-09-10 00:43+0000\n"
 "PO-Revision-Date: 2021-08-23 13:58-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -29521,7 +29521,7 @@ msgstr ""
 "O compartilhamento de rede será identificado pelo caminho selecionado. Se o "
 "caminho estiver vazio, o compartilhamento será considerado indisponível."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:431
+#: core/libs/database/collection/collectionmanager_p.cpp:450
 #, fuzzy, kde-format
 #| msgctxt "\"relative path\" on harddisk partition with \"UUID\""
 #| msgid "Folder \"%1\" on the volume with the id \"%2\""
@@ -29531,7 +29531,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr "Pasta \"%1\" no volume com o ID \"%2\""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:439
+#: core/libs/database/collection/collectionmanager_p.cpp:458
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -29539,7 +29539,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:453
+#: core/libs/database/collection/collectionmanager_p.cpp:472
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Shared directory mounted at <b>%1</b>"
