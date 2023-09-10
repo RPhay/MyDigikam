@@ -63,7 +63,7 @@ bool ColumnThumbnail::CreateFromConfiguration(TableViewShared* const tableViewSh
                                               TableViewColumn** const pNewColumn,
                                               QObject* const parent)
 {
-    if (pConfiguration.columnId!=QLatin1String("thumbnail"))
+    if (pConfiguration.columnId != QLatin1String("thumbnail"))
     {
         return false;
     }

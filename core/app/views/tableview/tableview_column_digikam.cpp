@@ -461,7 +461,15 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             QStringList tagPaths = AlbumManager::instance()->tagPaths(info.tagIds(), false);
             tagPaths.sort();
 
-            return tagPaths.join(QLatin1Char('\n'));
+            Q_FOREACH (TableViewColumn* const column, s->tableViewModel->getColumnObjects())
+            {
+                if (column->getConfiguration().columnId == QLatin1String("thumbnail"))
+                {
+                    return tagPaths.join(QLatin1Char('\n'));
+                }
+            }
+
+            return tagPaths.join(QLatin1String(", "));
         }
 
     }

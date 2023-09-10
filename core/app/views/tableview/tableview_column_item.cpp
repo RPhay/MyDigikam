@@ -422,7 +422,7 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
             {
                 // make sure that the original image has always the highest similarity.
 
-                double infoASimilarity  = infoA.id() == referenceImageIdA ? 1.0 : infoA.currentSimilarity();
+                double infoASimilarity = infoA.id() == referenceImageIdA ? 1.0 : infoA.currentSimilarity();
                 double infoBSimilarity = infoB.id() == referenceImageIdB ? 1.0 : infoB.currentSimilarity();
 
                 return compareHelper<double>(infoASimilarity, infoBSimilarity);
