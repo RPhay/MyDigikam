@@ -314,6 +314,9 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
     if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"))).isNull())
     {
+        QString uuid = QUrlQuery(url).queryItemValue(QLatin1String("uuid"));
+        QList<SolidVolumeInfo> candidateVolumes;
+
         Q_FOREACH (const SolidVolumeInfo& volume, volumes)
         {
             QString volPath = volume.path;
@@ -324,9 +327,23 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
             {
                 if (queryItem == getCollectionUUID(colPath))
                 {
-                    return volume;
+                    if (!uuid.isNull() && (volume.uuid.compare(uuid, Qt::CaseInsensitive) == 0))
+                    {
+                        return volume;
+                    }
+                    else
+                    {
+                        qCDebug(DIGIKAM_DATABASE_LOG) << "Partition uuid possibly changed from"
+                                                      << volPath;
+                        candidateVolumes << volume;
+                    }
                 }
             }
+        }
+
+        if (candidateVolumes.size() == 1)
+        {
+            return candidateVolumes.first();
         }
     }
 
