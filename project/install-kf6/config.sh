@@ -31,3 +31,45 @@ DK_KA_VERSION="23.08.0"
 
 # KDE KF6 frameworks git tag version.
 DK_KDE_VERSION="master"
+
+# NOTE: The order to compile each component here is very important.
+
+FRAMEWORK_COMPONENTS="\
+ext_extra-cmake-modules \
+ext_kconfig \
+ext_breeze-icons \
+ext_kcoreaddons \
+ext_kwindowsystem \
+ext_solid \
+ext_threadweaver \
+ext_karchive \
+ext_kdbusaddons \
+ext_ki18n \
+ext_kcrash \
+ext_kcodecs \
+ext_kauth \
+ext_kguiaddons \
+ext_kwidgetsaddons \
+ext_kitemviews \
+ext_kcompletion \
+ext_kcolorscheme \
+ext_kconfigwidgets \
+ext_kiconthemes \
+ext_kservice \
+ext_kglobalaccel \
+ext_kxmlgui \
+ext_kbookmarks \
+ext_kimageformats \
+ext_sonnet \
+ext_ktextwidgets \
+ext_ksanecore \
+ext_libksane \
+ext_knotifications \
+ext_kjobwidgets \
+ext_kio \
+ext_knotifyconfig \
+ext_kfilemetadata \
+ext_kcalendarcore \
+"
+
+#ext_marble \
