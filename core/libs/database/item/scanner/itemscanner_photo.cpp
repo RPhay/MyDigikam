@@ -489,8 +489,25 @@ void ItemScanner::commitFaces()
             continue;
         }
 
-        QRect rect = TagRegion::relativeToAbsolute(rectF, size);
-        TagRegion::adjustToOrientation(rect, orientation, size);
+        QString creatorTool = d->metadata->getXmpTagString("Xmp.xmp.CreatorTool").toUpper();
+        QRect rect          = TagRegion::relativeToAbsolute(rectF, size);
+
+        if (creatorTool.contains(QLatin1String("MICROSOFT PHOTO")))
+        {
+            if ((orientation == MetaEngine::ORIENTATION_ROT_90)     ||
+                (orientation == MetaEngine::ORIENTATION_ROT_270)    ||
+                (orientation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
+            {
+                size.transpose();
+            }
+
+            TagRegion::reverseToOrientation(rect, orientation, size);
+        }
+        else
+        {
+            TagRegion::adjustToOrientation(rect, orientation, size);
+        }
+
         TagRegion newRegion(rect);
 
         if (assignedRects.contains(rect))

@@ -60,7 +60,7 @@ BUGFIXES:
 050 ==> 474287 - Setting prefs display metadata don't work.
 051 ==> 470556 - Collection Storage Location Unavailable Mac.
 052 ==> 398831 - digiKam DB maintenance can not tell difference between two external drives (same type and size).
-053 ==> 
+053 ==> 474357 - Face Tag shown at wrong location.
 054 ==> 
 055 ==> 
 056 ==> 
