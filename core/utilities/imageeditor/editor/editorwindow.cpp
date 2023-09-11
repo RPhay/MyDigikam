@@ -294,8 +294,17 @@ void EditorWindow::setupStandardActions()
         d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "AVIF"),   QLatin1String("AVIF"));
     }
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    m_saveNewVersionAction->popupMenu()->addAction(m_saveNewVersionAsAction);
+    m_saveNewVersionAction->popupMenu()->addAction(m_saveNewVersionInFormatAction->menuAction());
+
+#else
+
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionAsAction);
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionInFormatAction->menuAction());
+
+#endif
 
     // This also triggers saveAs, but in the context of non-destructive we want a slightly different appearance
 
@@ -353,8 +362,17 @@ void EditorWindow::setupStandardActions()
     ac->addAction(QLatin1String("editorwindow_undo"), m_undoAction);
     ac->setDefaultShortcut(m_undoAction, QKeySequence(Qt::CTRL | Qt::Key_Z));
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(m_undoAction->popupMenu(), SIGNAL(aboutToShow()),
+            this, SLOT(slotAboutToShowUndoMenu()));
+
+#else
+
     connect(m_undoAction->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowUndoMenu()));
+
+#endif
 
     // connect simple undo action
 
@@ -371,8 +389,17 @@ void EditorWindow::setupStandardActions()
     ac->addAction(QLatin1String("editorwindow_redo"), m_redoAction);
     ac->setDefaultShortcut(m_redoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Z));
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(m_redoAction->popupMenu(), SIGNAL(aboutToShow()),
+            this, SLOT(slotAboutToShowRedoMenu()));
+
+#else
+
     connect(m_redoAction->menu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowRedoMenu()));
+
+#endif
 
     // connect simple redo action
 
@@ -648,12 +675,32 @@ void EditorWindow::setupStatusBar()
 
 void EditorWindow::slotAboutToShowUndoMenu()
 {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    m_undoAction->popupMenu()->clear();
+
+#else
+
     m_undoAction->menu()->clear();
+
+#endif
+
     QStringList titles = m_canvas->interface()->getUndoHistory();
 
     for (int i = 0 ; i < titles.size() ; ++i)
     {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+        QAction* const action = m_undoAction->popupMenu()->addAction(titles.at(i));
+
+#else
+
         QAction* const action = m_undoAction->menu()->addAction(titles.at(i));
+
+#endif
+
         int id                = i + 1;
 
         connect(action, &QAction::triggered,
@@ -667,12 +714,32 @@ void EditorWindow::slotAboutToShowUndoMenu()
 
 void EditorWindow::slotAboutToShowRedoMenu()
 {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    m_redoAction->popupMenu()->clear();
+
+#else
+
     m_redoAction->menu()->clear();
+
+#endif
+
     QStringList titles = m_canvas->interface()->getRedoHistory();
 
     for (int i = 0 ; i < titles.size() ; ++i)
     {
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+        QAction* const action = m_redoAction->popupMenu()->addAction(titles.at(i));
+
+#else
+
         QAction* const action = m_redoAction->menu()->addAction(titles.at(i));
+
+#endif
+
         int id                = i + 1;
 
         connect(action, &QAction::triggered,
