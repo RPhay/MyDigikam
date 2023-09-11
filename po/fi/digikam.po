@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-10 00:43+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -28148,7 +28148,7 @@ msgstr ""
 "Tämä verkkojako tunnistetaan sen polun perusteella. Mikäli polku on tyhjä, "
 "jako katsotaan olevan poissa käytöstä."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:450
+#: core/libs/database/collection/collectionmanager_p.cpp:467
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28158,7 +28158,7 @@ msgstr ""
 "”suhteellinen sijainti” kiintolevyosiolla, jonka ”UUID”\n"
 "Kansio ”%1” taltiolla, jonka tunniste ”%2”"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:458
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28166,7 +28166,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:472
+#: core/libs/database/collection/collectionmanager_p.cpp:489
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

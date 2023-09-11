@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-10 00:43+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2023-09-01 11:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -28050,7 +28050,7 @@ msgstr ""
 "El recurs compartit s'identificarà amb el camí que heu seleccionat. Si el "
 "camí està buit, el recurs compartit es considerarà com a no disponible."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:450
+#: core/libs/database/collection/collectionmanager_p.cpp:467
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28060,7 +28060,7 @@ msgstr ""
 "«Camí relatiu» a la partició del disc dur amb l'«UUID»\n"
 "Carpeta «%1» al volum amb l'ID «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:458
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28070,7 +28070,7 @@ msgstr ""
 "«Camí relatiu» a la partició del disc dur amb el «rètol»\n"
 "Carpeta «%1» al volum amb el rètol «%2»"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:472
+#: core/libs/database/collection/collectionmanager_p.cpp:489
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

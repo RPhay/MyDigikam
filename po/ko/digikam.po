@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-10 00:43+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28284,7 +28284,7 @@ msgid ""
 "is empty, the share will be considered unavailable."
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:450
+#: core/libs/database/collection/collectionmanager_p.cpp:467
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28292,7 +28292,7 @@ msgid ""
 "Folder \"%1\" on the volume with the id \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:458
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28300,7 +28300,7 @@ msgid ""
 "Folder \"%1\" on the volume labeled \"%2\""
 msgstr ""
 
-#: core/libs/database/collection/collectionmanager_p.cpp:472
+#: core/libs/database/collection/collectionmanager_p.cpp:489
 #, kde-format
 msgctxt "@info"
 msgid "Shared directory mounted at \"%1\""

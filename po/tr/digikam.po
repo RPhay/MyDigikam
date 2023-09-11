@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-10 00:43+0000\n"
+"POT-Creation-Date: 2023-09-11 00:43+0000\n"
 "PO-Revision-Date: 2023-09-09 00:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28313,7 +28313,7 @@ msgstr ""
 "Ağ paylaşımı, seçtiğiniz konum ile tanımlanacak. Konum boş ise paylaşım "
 "kullanılamayacak."
 
-#: core/libs/database/collection/collectionmanager_p.cpp:450
+#: core/libs/database/collection/collectionmanager_p.cpp:467
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28323,7 +28323,7 @@ msgstr ""
 "\"UUID\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" kimlikli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:458
+#: core/libs/database/collection/collectionmanager_p.cpp:475
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -28333,7 +28333,7 @@ msgstr ""
 "\"etiket\"li sabit disk bölüntüsündeki \"göreceli yol\"\n"
 "\"%2\" etiketli disk bölümündeki \"%1\" klasörü"
 
-#: core/libs/database/collection/collectionmanager_p.cpp:472
+#: core/libs/database/collection/collectionmanager_p.cpp:489
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Shared directory mounted at <b>%1</b>"
