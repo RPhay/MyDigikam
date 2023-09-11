@@ -1031,7 +1031,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         srcId = d->hints->itemHints.value(NewlyAppearedFile(albumId, info.fileName()));
     }
 
-    if (srcId != 0)
+    if (srcId > 0)
     {
         scanner.copiedFrom(albumId, srcId);
     }
@@ -1048,7 +1048,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
             srcId = CoreDbAccess().db()->getImageId(srcAlbum, info.fileName());
         }
 
-        if (srcId != 0)
+        if (srcId > 0)
         {
             scanner.copiedFrom(albumId, srcId);
         }
