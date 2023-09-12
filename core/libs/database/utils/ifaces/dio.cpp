@@ -252,13 +252,6 @@ void DIO::processJob(IOJobData* const data)
         GroupedImagesFinder finder(data->itemInfos());
         data->setItemInfos(finder.infos);
     }
-    else if (operation == IOJobData::CopyAlbum)
-    {
-        ScanController::instance()->hintAtMoveOrCopyOfAlbum(data->srcAlbum(), data->destAlbum());
-        createJob(data);
-
-        return;
-    }
     else if ((operation == IOJobData::Trash) ||
              (operation == IOJobData::Delete))
     {
@@ -267,8 +260,7 @@ void DIO::processJob(IOJobData* const data)
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "Number of files to be deleted:" << data->sourceUrls().count();
     }
-
-    if (operation == IOJobData::Rename)
+    else if (operation == IOJobData::Rename)
     {
         SidecarFinder finder(data->sourceUrls());
         data->setSourceUrls(finder.localFiles);
@@ -346,6 +338,11 @@ void DIO::createJob(IOJobData* const data)
                 if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))
                 {
                     msgBox->button(QMessageBox::No)->hide();
+                }
+
+                if (operation == IOJobData::CopyAlbum)
+                {
+                    msgBox->button(QMessageBox::Yes)->hide();
                 }
 
                 int result = msgBox->exec();
@@ -555,8 +552,44 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         case IOJobData::CopyAlbum:
         {
-            QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
-            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+            if (data->srcAlbum() && data->destAlbum())
+            {
+                CoreDbAccess access;
+                QList<int> albumsToCopy;
+                QString newName  = data->destName(url);
+                QString basePath = data->srcAlbum()->albumPath();
+                QString destPath = data->destAlbum()->albumPath();
+
+                if (!destPath.endsWith(QLatin1Char('/')))
+                {
+                    destPath.append(QLatin1Char('/'));
+                }
+
+                addAlbumChildrenToList(albumsToCopy, data->srcAlbum());
+
+                Q_FOREACH (int albumId, albumsToCopy)
+                {
+                    QString relativePath = access.db()->getAlbumRelativePath(albumId);
+                    relativePath         = relativePath.section(basePath, 1, -1);
+                    relativePath         = destPath + newName + relativePath;
+
+                    int copyId = access.db()->addAlbum(data->srcAlbum()->albumRootId(),
+                                                       relativePath, QString(), QDate(), QString());
+                    access.db()->copyAlbumProperties(albumId, copyId);
+                    const QList<qlonglong>& imageIds = access.db()->getItemIDsInAlbum(albumId);
+
+                    Q_FOREACH (const qlonglong& id, imageIds)
+                    {
+                        QString name     = access.db()->getItemName(id);
+                        qlonglong itemId = access.db()->copyItem(albumId, name, copyId, name);
+
+                        // Remove grouping for copied items.
+
+                        access.db()->removeAllImageRelationsFrom(itemId, DatabaseRelation::Grouped);
+                        access.db()->removeAllImageRelationsTo(itemId, DatabaseRelation::Grouped);
+                    }
+                }
+            }
 
             break;
         }
