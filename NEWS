@@ -63,6 +63,6 @@ BUGFIXES:
 053 ==> 474367 - Incomplete display of tags.
 054 ==> 473481 - digiKam 8.1 crashes on startup.
 055 ==> 474459 - Renaming pattern field is cutting characters in MacOS.
-056 ==> 
+056 ==> 474486 - Metadata > XMP tab > Some fields are showing type="Struct".
 057 ==> 
 058 ==> 
