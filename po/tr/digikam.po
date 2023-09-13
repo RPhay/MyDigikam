@@ -46,13 +46,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009, 2012.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010-2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2015, 2017, 2019, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:43+0000\n"
-"PO-Revision-Date: 2023-09-12 01:40+0300\n"
+"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"PO-Revision-Date: 2023-09-12 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -221,20 +221,29 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:91
-#: core/app/dragdrop/albumdragdrop.cpp:207
-#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/albumdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:210
+#: core/app/dragdrop/albumdragdrop.cpp:326
 #: core/app/dragdrop/importdragdrop.cpp:107
 #: core/app/dragdrop/itemdragdrop.cpp:136 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
 msgstr "Buraya &Taşı"
 
-#: core/app/dragdrop/albumdragdrop.cpp:93
-#: core/app/dragdrop/albumdragdrop.cpp:163
-#: core/app/dragdrop/albumdragdrop.cpp:217
-#: core/app/dragdrop/albumdragdrop.cpp:272
-#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:90
+#: core/app/dragdrop/albumdragdrop.cpp:211
+#: core/app/dragdrop/albumdragdrop.cpp:327
+#: core/app/dragdrop/importdragdrop.cpp:110
+#: core/app/dragdrop/itemdragdrop.cpp:139
+#, kde-format
+msgid "&Copy Here"
+msgstr "Buraya &Kopyala"
+
+#: core/app/dragdrop/albumdragdrop.cpp:92
+#: core/app/dragdrop/albumdragdrop.cpp:166
+#: core/app/dragdrop/albumdragdrop.cpp:220
+#: core/app/dragdrop/albumdragdrop.cpp:275
+#: core/app/dragdrop/albumdragdrop.cpp:329
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
@@ -244,27 +253,19 @@ msgstr "Buraya &Taşı"
 msgid "C&ancel"
 msgstr "İ&ptal"
 
-#: core/app/dragdrop/albumdragdrop.cpp:159
-#: core/app/dragdrop/albumdragdrop.cpp:213
+#: core/app/dragdrop/albumdragdrop.cpp:162
+#: core/app/dragdrop/albumdragdrop.cpp:216
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Albüm Küçük Görseli Olarak Ayarla"
 
-#: core/app/dragdrop/albumdragdrop.cpp:208
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/importdragdrop.cpp:110
-#: core/app/dragdrop/itemdragdrop.cpp:139
-#, kde-format
-msgid "&Copy Here"
-msgstr "Buraya &Kopyala"
-
-#: core/app/dragdrop/albumdragdrop.cpp:269
+#: core/app/dragdrop/albumdragdrop.cpp:272
 #: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Download From Camera"
 msgstr "Kameradan İndir"
 
-#: core/app/dragdrop/albumdragdrop.cpp:270
+#: core/app/dragdrop/albumdragdrop.cpp:273
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
@@ -3244,7 +3245,7 @@ msgid "Selection"
 msgstr "Seçim"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:818
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -15659,34 +15660,32 @@ msgid "Failed to update metadata timestamp"
 msgstr "Üst veri zaman damgası güncellenemedi"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
-#, fuzzy, kde-format
-#| msgid "Failed to save file: %1"
+#, kde-format
 msgid "Failed to update file timestamp"
-msgstr "Dosya kaydetmesi başarısız: %1"
+msgstr "Dosya zaman damgası güncellenemedi"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
-#, fuzzy, kde-format
-#| msgid "Quick Access List"
+#, kde-format
 msgid "Success"
-msgstr "Hızlı Erişim Listesi"
+msgstr "Başarılı"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:105
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:114
 #, kde-format
 msgid "not valid"
-msgstr ""
+msgstr "geçerli değil"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:129
 #, kde-format
 msgid "Please wait ..."
-msgstr ""
+msgstr "Lütfen bekleyin..."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:58
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
-msgstr ""
+msgstr "Tarih ve zamanı ayarlamak için bir araç"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
 #, kde-format
@@ -15700,13 +15699,20 @@ msgid ""
 "Many metadata time-stamp can be adjusted or left untouched. The adjustment "
 "can be an offset of time or a specific date."
 msgstr ""
+"Bu araç, kullanıcıların toplu ögelerin tarih-zaman damgasını ayarlamasına "
+"olanak tanır.\n"
+"\n"
+"Birçok özgün zaman damgası kaynağı, özgün ögelerden veya ortak bir dosyadan "
+"seçilebilir.\n"
+"\n"
+"Birçok üst veri zaman damgası ayarlanabilir veya dokunulmadan bırakılabilir. "
+"Ayarlama, zaman farkı veya belirli bir tarih olabilir."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
-#, fuzzy, kde-format
-#| msgid "Adjust White Balance."
+#, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
-msgstr "Beyaz Dengesini Ayarla"
+msgstr "Tarih ve Zamanı Ayarla"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
 #, kde-format
@@ -15716,7 +15722,7 @@ msgstr "Takvim Oluştur"
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
 #, kde-format
 msgid "A tool to create calendar from images"
-msgstr "Görüntülerden takvim oluşturmak için bir araç"
+msgstr "Görsellerden takvim oluşturmak için bir araç"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:63
 #, kde-format
@@ -15727,22 +15733,25 @@ msgid ""
 "p><p>Finally, the tool will propose to export the result to your printer or "
 "in a PDF file.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların ögeler meydana getirmesine ve en iyi "
+"fotoğraflarınızla bir takvim oluşturmasına olanak tanır.</p><p>Farklı takvim "
+"düzenleri kullanılabilirdir ve tatil zamanını vurgulamak için ICS "
+"biçimindeki bir tarih listesini tümleştirebilirsiniz.</p><p> p><p>Son olarak "
+"araç, sonucu yazıcınıza veya bir PDF dosyasına dışa aktarmanızı önerir.</p>"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
-#, fuzzy, kde-format
-#| msgid "Author"
+#, kde-format
 msgid "Former Author"
-msgstr "Yazar"
+msgstr "Önceki Yazar"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Developer and Mentoring"
+#, kde-format
 msgid "Developer and Maintainer"
-msgstr "Geliştirici ve Danışmanlık"
+msgstr "Geliştirici ve Bakımcı"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
 #, kde-format
@@ -15760,7 +15769,7 @@ msgstr "Takvim olayları"
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:26
 #, kde-format
 msgid "Select an optional calendar file with the official holidays"
-msgstr "Resmi tatillerin olduğu isteğe bağlı bir takvim dosyası seçin"
+msgstr "Resmi tatillerin olduğu isteğe bağlı bir takvim dosyası seç"
 
 #. i18n: ectx: property (text), widget (QLabel, ohExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:46
@@ -15792,8 +15801,8 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Ülkeniz için bir takvimi "
 "<a href=\"www.icalshare.com\"><span style=\" text-decoration: underline; "
-"color:#0057ae;\">www.icalshare.com</span></a> veya başka sitelerden "
-"indirebilirsiniz.</p>\n"
+"color:#0057ae;\">www.icalshare.com</span></a> sitesinden veya başka "
+"sitelerden indirebilirsiniz.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu, tümüyle isteğe "
 "bağlıdır. Bu takvimden olan tüm etkinlikler kırmızı ile yazdırılır.</p></"
@@ -15803,7 +15812,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:75
 #, kde-format
 msgid "Select an optional calendar file with your \"family holidays\""
-msgstr "\"aile tatillerinizin\" olduğu isteğe bağlı bir takvim dosyası seçin"
+msgstr "\"Aile tatillerinin\" olduğu isteğe bağlı bir takvim dosyası seç"
 
 #. i18n: ectx: property (text), widget (QLabel, fhExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:94
@@ -15817,13 +15826,13 @@ msgstr ""
 "<a href=\"https://en.wikipedia.org/wiki/ICalendar\">iCalendar biçimi</a>'ni "
 "destekleyen bir program kullanarak böyle bir takvim oluşturabilirsiniz.\n"
 "Bu tamamen isteğe bağlıdır. Bu takvimdeki tüm etkinlikler yeşil ile "
-"yazdırılacak."
+"yazdırılır."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalProgress)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:14
 #, kde-format
 msgid "Printing"
-msgstr "Yazdırılıyot"
+msgstr "Yazdırılıyor"
 
 #. i18n: ectx: property (text), widget (QLabel, currentLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:23
@@ -15856,7 +15865,7 @@ msgstr "Önizleme"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:57
 #, kde-format
 msgid "Paper Size:"
-msgstr "Kağıt Boyutu:"
+msgstr "Kağıt boyutu:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, paperSizeCombo)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:65
@@ -15913,13 +15922,13 @@ msgstr "&Sağ"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:150
 #, kde-format
 msgid "Draw lines on calendar"
-msgstr "Takvim üzerine çizgileri çiz"
+msgstr "Takvim üzerine çizgiler çiz"
 
 #. i18n: ectx: property (text), widget (QLabel, ratioLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:162
 #, kde-format
 msgid "Image to text ratio:"
-msgstr "Resim/metin oranı:"
+msgstr "Görsel/metin oranı:"
 
 #. i18n: ectx: property (text), widget (QLabel, fontLabel)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:192
@@ -15938,7 +15947,7 @@ msgstr "Yıl:"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:234
 #, kde-format
 msgid "Select Images"
-msgstr "Resimleri Seç"
+msgstr "Resimler Seç"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:243
@@ -15946,8 +15955,8 @@ msgstr "Resimleri Seç"
 msgid ""
 "Left click on a month to select an image, right click to clear an image."
 msgstr ""
-"Resimleri Seçmek için aylara sol tıklayın. Bir resmi temizlemek için sağ "
-"tıklayın."
+"Bir görsel seçmek için bir ayın üzerine sol tıklayın; bir seçimi temizlemek "
+"için görsel üzerine sağ tıklayın."
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:47
 #, kde-format
@@ -15956,35 +15965,25 @@ msgid ""
 "you to create and print a calendar with a selection of images taken from "
 "your collection.</p>"
 msgstr ""
-"<p><h1><b>Takvim aracına hoş geldiniz</b></h1></p><p>Bu asistan, "
+"<p><h1><b>Takvim aracına hoş geldiniz</b></h1></p><p>Bu yardımcı, "
 "koleksiyonunuzdan alınan çeşitli görsellerden oluşan bir takvim oluşturmanız "
-"ve yazdırmanız için size rehberlik edecek.</p>"
+"ve yazdırmanız için size kılavuzluk edecek.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:54
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Welcome to Calendar Tool</b></h1></p><p>This assistant will "
-#| "guide you to create and print a calendar with a selection of images taken "
-#| "from your collection.</p><p>This tool will also permit to set specific "
-#| "dates on your calendar using external data event files as <a href='http://"
-#| "en.wikipedia.org/wiki/VCalendar'>vCalendar</a>, and <a href='http://en."
-#| "wikipedia.org/wiki/Icalendar'>iCalendar</a> formats.</p></qt>"
+#, kde-format
 msgid ""
 "<p>This tool will also allow to set specific dates on your calendar using "
 "external data event files as <a href='https://en.wikipedia.org/wiki/"
 "VCalendar'>vCalendar</a>, and <a href='https://en.wikipedia.org/wiki/"
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
-"<qt><p><h1><b>Takvim Aracına Hoşgeldiniz</b></h1></p><p>Bu asistan size, "
-"koleksiyonunuzdan belirlediğiniz resimlerle bir takvim oluşturma ve yazdırma "
-"konusunda yardımcı olacak. Bu araç aynı zamanda size özel tarihlerinizi "
-"takvimde belirlemek için <a href='http://en.wikipedia.org/wiki/"
-"VCalendar'>vCalendar</a> ve <a href='http://en.wikipedia.org/wiki/"
-"Icalendar'>iCalendar</a> biçemlerini kullanmanıza da izin verir.</p></qt>"
+"<p>Bu araç, takviminizdeki belirli tarihleri <a href='https://en.wikipedia."
+"org/wiki/VCalendar'>vCalendar</a>, and <a href='https://en.wikipedia.org/"
+"wiki/Icalendar'>iCalendar</a> biçimlerinde dış etkinlik veri dosyaları "
+"olarak ayarlamanıza izin verir.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Takvim Oluştur"
@@ -15992,12 +15991,12 @@ msgstr "Takvim Oluştur"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
 msgid "Welcome to Calendar Tool"
-msgstr "Takvim Aracına Hoşgeldiniz"
+msgstr "Takvim aracına hoş geldiniz"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
 #, kde-format
 msgid "Choose events to show on the Calendar"
-msgstr "Takvim'de gösterilecek olayları seç"
+msgstr "Takvimde gösterilecek olayları seç"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, kde-format
@@ -16011,16 +16010,14 @@ msgstr "Yazdırma Sürüyor"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
-#, fuzzy, kde-format
-#| msgid "%1|Calendar Data File"
+#, kde-format
 msgctxt "@info: open file filters"
 msgid "Calendar Data File (*.ics)"
-msgstr "%1|Takvim Veri Dosyası"
+msgstr "Takvim Veri Dosyası (*.ics)"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, fuzzy, kde-format
-#| msgid "Select Calendar Data File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "Takvim Veri Dosyasını Seç"
@@ -16029,8 +16026,8 @@ msgstr "Takvim Veri Dosyasını Seç"
 #, kde-format
 msgid "No valid images selected for months<br/>Click Back to select images"
 msgstr ""
-"Aylar için seçilmiş geçerli resimler yok<br/> Resimleri seçmek için Geri'ye "
-"tıklayın"
+"Aylar için seçili geçerli görseller yok<br/>Görseller seçmek için Geri'ye "
+"tıkla"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:235
 #, kde-format
@@ -16038,7 +16035,7 @@ msgid ""
 "Please note that you are making a calendar for<br/>the current year or a "
 "year in the past."
 msgstr ""
-"Lütfen geçerli yıl veya geçmiş bir yıl için<br/> bir takvim yaptığınıza "
+"Lütfen geçerli yıl veya geçmiş bir yıl için<br/>bir takvim yaptığınıza "
 "dikkat edin."
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:242
@@ -16047,12 +16044,11 @@ msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
 "year %1:<br/>"
 msgstr ""
-"Yazdırmaya başlamak için İleri'ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
+"Yazdırmaya başlamak için Sonraki'ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
 "için yazıdırılacaktır:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
-#, fuzzy, kde-format
-#| msgid "Print Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Takvimi Yazdır"
@@ -16079,113 +16075,91 @@ msgstr "Yazdırma Tamamlandı"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
-msgstr "Dönüştür"
+msgstr "DNG Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Convert"
-msgstr "Dönüştür"
+msgstr "&Dönüştür"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, kde-format
 msgid "The list does not contain any Raw files to process."
-msgstr ""
+msgstr "Bu liste, işlenecek herhangi bir RAW dosyası içermiyor"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgid "DNG Converter"
-msgstr "Dönüştür"
+msgstr "DNG Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
 #, kde-format
 msgid "&Abort"
-msgstr "&Durdur"
+msgstr "&İptal Et"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
-#, fuzzy, kde-format
-#| msgid "Raw file conversion failed."
+#, kde-format
 msgid "Abort the conversion of Raw files."
-msgstr "Ham dosya dönüştürmesi başarısız."
+msgstr "RAW dosyalarının dönüştürülmesini iptal edin."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgid "Con&vert"
-msgstr "Dönüştür"
+msgstr "&Dönüştür"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:433
-#, fuzzy, kde-format
-#| msgid "Generate a Raw image preview using current settings."
+#, kde-format
 msgid "Start converting the Raw images using the current settings."
-msgstr "Şimdiki ayarları kullanarak Raw görüntü önizlemesi oluştur."
+msgstr "Geçerli ayarları kullanarak RAW görsellerini dönüştürmeyi başlatın."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:457
-#, fuzzy, kde-format
-#| msgid "Failed to save image to %1."
+#, kde-format
 msgid "Failed to save image"
-msgstr "Resmi %1'e kaydetme başarısız."
+msgstr "Görsel kaydedilemedi"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to open video encoder"
+#, kde-format
 msgid "Failed to move sidecar"
-msgstr "Video kodlayıcısının açılması başarısız"
+msgstr "Sidecar taşınamadı"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to save image to %1."
+#, kde-format
 msgid "Failed to save image."
-msgstr "Resmi %1'e kaydetme başarısız."
+msgstr "Görsel kaydedilemedi."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:506
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgid "Process failed"
-msgstr "İşleme Başarısız"
+msgstr "İşlem başarısız"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:512
-#, fuzzy, kde-format
-#| msgid "Process Cancelled..."
+#, kde-format
 msgid "Process Canceled"
-msgstr "İşlem İptal Edildi..."
+msgstr "İşlem İptal Edildi"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "Calendar support"
+#, kde-format
 msgid "File not supported"
-msgstr "Takvim desteği"
+msgstr "Dosya desteklenmiyor"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:524
-#, fuzzy, kde-format
-#| msgid "Internal Error"
+#, kde-format
 msgid "Internal error"
-msgstr "İç Hata"
+msgstr "İç hata"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:549
-#, fuzzy, kde-format
-#| msgid "Processing page %1"
+#, kde-format
 msgid "Processing %1"
-msgstr "Sayfa %1 işleniyor"
+msgstr "%1 işleniyor"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox"
-#| msgid "Raw Files"
+#, kde-format
 msgid "Raw File"
-msgstr "Ham Dosyalar"
+msgstr "RAW Dosyası"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:92
@@ -16202,19 +16176,16 @@ msgid "Camera"
 msgstr "Kamera"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
-msgstr "Dönüştür"
+msgstr "DNG Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
-#, fuzzy, kde-format
-#| msgid "Convert RAW images to DNG container."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
-msgstr "HAM resimleri DNG kapsayıcısına dönüştür."
+msgstr "RAW kamera görsellerini DNG'ye dönüştürmek için bir araç"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:63
 #, kde-format
@@ -16226,29 +16197,29 @@ msgid ""
 "\n"
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
+"Bu genel araç, RAW görsellerinin verisini DNG biçimine dönüştürebilir.\n"
+"\n"
+"Sayısal Negatif (DNG), Adobe tarafından oluşturulmuş kayıpsız bir RAW görsel "
+"dosyasıdır.\n"
+"\n"
+"Bu biçim hakkınde ayrıntılı bilgi için Vikipedi girdisine bakın: %1"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "Color Space Converter..."
+#, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
-msgstr "Renk Aralığı Dönüştürücüsü..."
+msgstr "DNG Dönüştürücüsü..."
 
 #: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:113
-#, fuzzy, kde-format
-#| msgid ""
-#| "Cannot decode RAW image\n"
-#| "\"%1\""
+#, kde-format
 msgid "Cannot identify Raw image"
-msgstr ""
-"RAW resim çözülemiyor\n"
-"\"%1\""
+msgstr "RAW görseli tanımlanamıyor"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
-msgstr "Enfuse için kapsa"
+msgstr "Kaynaştırmada İçer"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
@@ -16260,51 +16231,49 @@ msgstr "Dosya Adı"
 #, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
-msgstr "Pozlama (E.V):"
+msgstr "Pozlama (EV)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:40
 #, kde-format
 msgctxt "@info"
 msgid "Hardmask: enabled"
-msgstr "Sıkı maske: etkinleştirildi"
+msgstr "Sıkı maske: Etkin"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:40
 #, kde-format
 msgctxt "@info"
 msgid "Hardmask: disabled"
-msgstr "Sıkı maske: kapatıldı"
+msgstr "Sıkı maske: Devre dışı"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "CIECAM02: enabled"
-msgstr "CIECAM02: etkinleştirildi"
+msgstr "CIECAM02: Etkin"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:42
 #, kde-format
 msgctxt "@info"
 msgid "CIECAM02: disabled"
-msgstr "CIECAM02: kapatıldı"
+msgstr "CIECAM02: Devre dışı"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:44
 #, kde-format
 msgctxt "@info"
 msgid "Levels: auto"
-msgstr "Düzeyler: otomatik"
+msgstr "Düzeyler: Kendiliğinden"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:44
-#, fuzzy, kde-format
-#| msgid "Aperture: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Levels: <numid>%1</numid>"
-msgstr "Diyafram açıklığı: %1"
+msgstr "Düzeyler: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:46
-#, fuzzy, kde-format
-#| msgid "Exposure: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Exposure: <numid>%1</numid>"
-msgstr "Pozlandırma: %1"
+msgstr "Pozlama: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:48
 #, kde-format
@@ -16313,17 +16282,16 @@ msgid "Saturation: <numid>%1</numid>"
 msgstr "Doygunluk: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:50
-#, fuzzy, kde-format
-#| msgid "Contrast: %1"
+#, kde-format
 msgctxt "@info"
 msgid "Contrast: <numid>%1</numid>"
-msgstr "Karşıtlık: %1"
+msgstr "Karşıtlık: <numid>%1</numid>"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:119
 #, kde-format
 msgctxt "@option:check Enfuse setting"
 msgid "Automatic Local/Global Image Features Balance (Levels)"
-msgstr "Otomatik Yerel/Genel Resim Özellikleri Dengesi (Düzeyler)"
+msgstr "Kendiliğinden Yerel/Genel Görsel Özellikleri Dengesi (Düzeyler)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:121
 #, kde-format
@@ -16351,7 +16319,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Image Features Balance:"
-msgstr "Resim Özellikleri Dengesi:"
+msgstr "Görsel özellikleri dengesi:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:131
 #, kde-format
@@ -16360,7 +16328,7 @@ msgid ""
 "Balances between local features (small number) or global features (high "
 "number)."
 msgstr ""
-"Yerel (küçük sayı) ya da genel (büyük sayı) özellikler arasındaki dengeler."
+"Yerel (küçük sayı) veya genel (büyük sayı) özellikler arasındaki dengeler."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:133
 #, kde-format
@@ -16380,7 +16348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Hard Mask"
-msgstr "Sıkı Maske"
+msgstr "Sıkı maske"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:140
 #, kde-format
@@ -16396,21 +16364,21 @@ msgid ""
 "useful for focus stacks with thin and high contrast features. It improves "
 "sharpness at the expense of increased noise."
 msgstr ""
-"Sıkı harmanlama maskelerini en iyi ölçekte ortlama olmaksızın zorla. Bu, "
-"ince ve yüksek kontrast özelliklerine sahip odak yığınları için özellikle "
-"kullanışlıdır ve artan gürültü pahasına keskinliği iyileştirir."
+"En iyi ölçekte ortalamayı almadan sert karışım maskelerini zorlayın. Bu "
+"yalnızca ince ve yüksek karşıtlık özelliklerine sahip odak yığınları için "
+"kullanışlıdır. Artan gürültü pahasına keskinliği artırır."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:147
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
-msgstr "İyi-Pozlama Katkısı:"
+msgstr "İyi pozlanma katkısı:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of well exposed pixels to the blending process."
-msgstr "Işığa tutulmuş piksellerin harmanlama sürecine katkısı."
+msgstr "İyi pozlanmış piksellerin harmanlama sürecine katkısı."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:154
 #, kde-format
@@ -16419,14 +16387,14 @@ msgid ""
 "Set the well-exposedness criterion contribution for the blending process. "
 "Higher values will favor well-exposed pixels."
 msgstr ""
-"Harmanlama işlemi için iyi-pozlanmış kriter katkısını ayarlayın. Daha yüksek "
+"Harmanlama işlemi için iyi pozlanma kriter katkısını ayarlayın. Daha yüksek "
 "değerler iyi pozlanmış piksellere yardım edecektir."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:157
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
-msgstr "Yüksek Doygunluk Katkısı:"
+msgstr "Yüksek doygunluk katkısı:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
 #, kde-format
@@ -16448,13 +16416,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
-msgstr "Yüksek Zıtlık Katkısı:"
+msgstr "Yüksek karşıtlık katkısı:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Contribution of highly contrasted pixels to the blending process."
-msgstr "Yükzek zıtlıklı piksellerin harmanlama sürecine katkısı."
+msgstr "Yüksek karşıtlıklı piksellerin harmanlama sürecine katkısı."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:176
 #, kde-format
@@ -16464,7 +16432,7 @@ msgid ""
 "makes pixels with neighboring differently colored pixels contribute more to "
 "the final output. Particularly useful for focus stacks."
 msgstr ""
-"Yüksek kontrastlı piksellerin göreceli ağırlığını ayarlar. Bu ağırlığı "
+"Yüksek karşıtlıklı piksellerin göreceli ağırlığını ayarlar. Bu ağırlığı "
 "artırmak bitişik renkli pikselli pikselleri nihai çıktıya daha fazla katkıda "
 "bulunacak hale getirir. Odak yığınları için özellikle yararlıdır."
 
@@ -16494,7 +16462,7 @@ msgid ""
 "and default color blending algorithm is very slight, and will be most "
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
-"Ayrıntılı renkleri oluşturmak için Renk Görünüşü Modelleme 'yi (CIECAM02) "
+"Ayrıntılı renkleri oluşturmak için Renk Görünüşü Modelleme'yi (CIECAM02) "
 "kullanın. Giriş dosyalarınızın gömülü ICC profilleri olmalıdır. ICC profili "
 "yoksa sRGB renk alanı var olarak sayılır. Bu seçeneği ve öntanımlı renk "
 "karıştırma algoritmasını kullanmak arasındaki fark çok azdır ve farklı ana "
@@ -16505,7 +16473,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column Saving checkbox"
 msgid "Include during Saving"
-msgstr "Kaydederken dahil et"
+msgstr "Kaydederken İçer"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:182
 #, kde-format
@@ -16523,52 +16491,43 @@ msgstr "Seçili Girdiler"
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Remove item"
-msgstr "Ögeyi kaldır"
+msgstr "Ögeyi Kaldır"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:218
 #, kde-format
 msgctxt "@item:inmenu"
 msgid "Clear all"
-msgstr "Tümünü temizle"
+msgstr "Tümünü Temizle"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgid "Exposure Blending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "Pozlama Harmanlaması"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Kaydet"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process and save selected items."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
-msgstr "Seçilen ögeleri işle ve kaydet."
+msgstr "Seçili ögeleri işleyip kaydedin."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Preview"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "&Önizleme"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process a preview of bracketed images stack with current settings."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
-msgstr "Parantezli resim yığınlarının önilemesini mevcut ayarlar ile işle."
+msgstr "Parantezli görsel yığınının önizlemesini geçerli ayarlarla işleyin."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:136
@@ -16582,7 +16541,7 @@ msgstr "&Öntanımlı"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
-msgstr "Mevcut ayarları öntanımlı değerlere geri döndür."
+msgstr "Geçerli ayarları öntanımlı değerlere geri döndürün."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
@@ -16595,64 +16554,61 @@ msgstr "Ayrıntılar..."
 #, kde-format
 msgctxt "@title"
 msgid "Enfuse Settings"
-msgstr "Enfuse Ayarları"
+msgstr "Kaynaştırma Ayarları"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:186
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgctxt "@title"
 msgid "Save Result"
-msgstr "Farklı Kaydet..."
+msgstr "Sonucu Kaydet"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:196
 #, kde-format
 msgctxt "@label: textbox"
 msgid "File Name Template: "
-msgstr "Dosya Adı Şablonu: "
+msgstr "Dosya adı şablonu: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Enfuse Processing Messages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
-msgstr "Enfuse İşleme İletileri"
+msgstr "Kaynaştırma İşleme İletileri"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save image to %1."
-msgstr "Resmi %1'e kaydetme başarısız."
+msgstr "Görsel %1 konumuna kaydedilemedi."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:555
 #, kde-format
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
-msgstr "Basamaklı resimlerin önizlemeleri işleniyor..."
+msgstr "Basamaklı görsellerin önizlemesi işleniyor..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:562
 #, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
-msgstr "Parantezli resimlerin çıktısı işleniyor..."
+msgstr "Basamaklı görsellerin çıktısı işleniyor..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:589
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
-msgstr "İşlenmiş resim yüklemesi başarısız."
+msgstr "İşlenen görsel yüklenemedi."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:599
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
-msgstr "Parantezli resimlerin önizlemesinin işlenmesi başarısız."
+msgstr "Basamaklı görsellerin önizlemesinin işlenmesi başarısız."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:610
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
-msgstr "Parantezli resimlerin çıktısının işlenmesi başarısız."
+msgstr "Basamaklı görsellerin çıktısının işlenmesi başarısız."
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
 #, kde-format
@@ -16660,11 +16616,9 @@ msgid "Exposure Blending"
 msgstr "Pozlama Harmanlaması"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Align bracketed images"
+#, kde-format
 msgid "A tool to blend bracketed images"
-msgstr "Parantezli resimleri hizala"
+msgstr "Basamaklı görselleri harmanlamak için bir araç"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:71
 #, kde-format
@@ -16676,6 +16630,13 @@ msgid ""
 "RAW images instead JPEG, where colors depth is higher and are well adapted "
 "for merging pixels by pixels.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların sahte HDR fotoğraflar oluşturmak için basamaklı "
+"görselleri bir araya getirmesine olanak tanır.</p><p>Yüksek belirginlikli "
+"görsel erimleri oluşturmak için aynı nesnenin tripodla çekilmiş ve farklı "
+"pozlama ayarlarıyla pozlanmış görsellerini kullanmanız gerekir.</p><p>Daha "
+"iyi sonuçlara sahip görseller oluşturmak için renk derinliğinin daha yüksek "
+"olduğu ve pikselleri piksel birleştirmeye iyi uyarlanmış olduğu JPEG yerine "
+"RAW görselleri kullanabilirsiniz.</p>"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
@@ -16685,21 +16646,19 @@ msgstr ""
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
 #, kde-format
 msgid "Author and Maintainer"
-msgstr ""
+msgstr "Yazar ve Bakımcı"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Create Stacked Images..."
+#, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
-msgstr "Yığınlanmış Resimleri Oluştur..."
+msgstr "Yığılmış Görselleri Harmanla..."
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:328
 #, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
-msgstr "bilinmeyen"
+msgstr "bilinmiyor"
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:905
 #, kde-format
@@ -16716,15 +16675,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
-msgstr "Yığın Resim Aracına Hoşgeldiniz"
+msgstr "Yığılmış Görseller Aracına Hoş Geldiniz"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Welcome to Stacked Images Tool"
+#, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
-msgstr "Yığın Resim Aracına Hoşgeldiniz"
+msgstr "Yığılmış görseller aracına hoş geldiniz"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:74
 #, kde-format
@@ -16733,6 +16690,8 @@ msgid ""
 "This tool fuses bracketed images with different exposure to make pseudo HDR "
 "Image"
 msgstr ""
+"Bu araç, sahte HDR görseller oluşturmak için farklı pozlamalara sahip "
+"basamaklı görselleri kaynaştırır"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:75
 #, kde-format
@@ -16741,6 +16700,8 @@ msgid ""
 "It can also be used to merge focus bracketed stack to get a single image "
 "with increased depth of field."
 msgstr ""
+"Artırılmış alan derinliğine sahip tek bir görsel elde etmek için odak "
+"basamalı yığını birleştirmek için de kullanılabilir."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
@@ -16749,6 +16710,8 @@ msgid ""
 "This assistant will help you to configure how to import images before "
 "merging them to a single one."
 msgstr ""
+"Bu yardımcı, görselleri tek bir görselde birleştirmeden önce nasıl içe "
+"aktaracağınızı yapılandırmanıza yardımcı olacaktır."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:77
 #, kde-format
@@ -16757,34 +16720,33 @@ msgid ""
 "Bracketed images must be taken with the same camera, in the same conditions, "
 "and if possible using a tripod."
 msgstr ""
+"Basamaklı görseller aynı kamerayla, aynı koşullarda ve olanaklıysa tripod "
+"kullanılarak çekilmelidir."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
-msgstr "Daha fazla bilgi için lütfen bir göz atın"
+msgstr "Daha fazla bilgi için lütfen şuraya göz atın"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:79
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:112
-#, fuzzy, kde-format
-#| msgid "Next page"
+#, kde-format
 msgctxt "@info"
 msgid "this page"
-msgstr "Sonraki sayfa"
+msgstr "bu sayfa"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:84
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
-msgstr "Pozlama Harmanlaması İkilileri Değerleri"
+msgstr "Pozlama Harmanlaması İkilileri"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "<b>Set Bracketed Images</b>"
+#, kde-format
 msgctxt "@title:window"
 msgid "Set Bracketed Images"
-msgstr "<b>Parantezli Resimleri Ayarlayın</b>"
+msgstr "Basamaklı Görselleri Ayarla"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:70
 #, kde-format
@@ -16793,19 +16755,21 @@ msgid ""
 "Set here the list of your bracketed images to fuse. Please follow these "
 "conditions"
 msgstr ""
+"Kaynaştırılacak basamaklı görsellerin listesini burada ayarlayın. Lütfen bu "
+"koşullara uyun"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "At least 2 images from the same subject must be added to the stack."
-msgstr ""
+msgstr "Aynı konudan en az 2 görsel yığına eklenmelidir."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:72
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
-msgstr "Farklı renk derinliğine sahip resimleri karıştırmayın."
+msgstr "Farklı renk derinliğine sahip görselleri karıştırmayın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:73
 #, kde-format
@@ -16814,66 +16778,62 @@ msgid "All images must have the same dimensions."
 msgstr "Tüm görseller aynı boyutlara sahip olmalıdır."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title:column Input image exposure"
-#| msgid "Exposure (EV)"
+#, kde-format
 msgctxt "@title: column"
 msgid "Exposure (EV)"
-msgstr "Pozlama (E.V):"
+msgstr "Pozlama (EV)"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Pre-Processing is Complete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "Ön İşleme Tamamlandı"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Pre-Processing is Complete"
+#, kde-format
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
-msgstr "Ön İşleme Tamamlandı"
+msgstr "Basamaklı görsellerin ön işlemesi tamamlandı"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are ready to be fused."
-msgstr ""
+msgstr "Tebrikler. Görselleriniz kaynaştırılmaya hazır."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program from will be used."
-msgstr ""
+msgstr "Bu işlemi gerçekleştirmek için Enblend programı kullanılacak."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
 #, kde-format
 msgctxt "@info"
 msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
+"Ögelerinizi kaynaştırmak ve sahte bir HDR görseli yapmak için \"Bitir\" "
+"düğmesine basın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:81
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "<b>Pre-Processing Bracketed Images</b>"
+#, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
-msgstr "<b>Parantezli Resimlerin Ön İşlenmesi</b>"
+msgstr "Basamaklı Görsellerin Ön İşlemesi</b>"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
 #, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
-msgstr "Parantezli resimleri hizala"
+msgstr "Basamaklı görselleri hizala"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process bracketed images before fusing them."
 msgstr ""
+"Şimdi, onları kaynaştırmadan önce, basamaklı görselleri ön işlemeye tabi "
+"tutacağız."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:142
 #, kde-format
@@ -16882,6 +16842,8 @@ msgid ""
 "Alignment must be performed if you have not used a tripod to take bracketed "
 "images. Alignment operations can take a while."
 msgstr ""
+"Basamaklı fotoğraflar çekmek için tripod kullanmadıysanız hizalamanın "
+"yapılması gerekir. Hizalama işlemleri biraz zaman alabilir."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:143
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:200
@@ -16891,13 +16853,15 @@ msgid ""
 "Pre-processing operations include Raw demosaicing. Raw images will be "
 "converted to 16-bit sRGB images with auto-gamma."
 msgstr ""
+"Ön işleme işlemleri arasında RAW demozaikleme işlemi de yer alır. RAW "
+"görseller, otomatik gama ile 16 bit sRGB görsellere dönüştürülecek."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:144
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:205
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
-msgstr ""
+msgstr "Ön işlemeyi başlatmak için \"Sonraki\" düğmesine basın."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
@@ -16912,57 +16876,50 @@ msgstr "Ön işleme sürüyor, lütfen bekleyin."
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
-msgstr ""
+msgstr "Bu biraz vakit alabilir..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
-msgstr "İşleme Başarısız"
+msgstr "Ön işleme başarısız oldu."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Processing preview of bracketed images..."
+#, kde-format
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
-msgstr "Basamaklı resimlerin önizlemeleri işleniyor..."
+msgstr "Lütfen basamaklı görsel yığınınızı denetleyin..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:302
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Enfuse Processing Messages"
+#, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
-msgstr "Enfuse İşleme İletileri"
+msgstr "Aşağıda işleme iletilerini görebilirsiniz."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Stacked Images Tool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "Yığın Resim Aracı"
+msgstr "Yığılmış Görseller Aracı"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
 msgid "Error loading RAW image '%1'"
-msgstr "'%1' HAM resmi yüklenemedi"
+msgstr "'%1' RAW görseli yüklenirken hata"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
-msgstr "'%1' resmi için '%2' konumuna küçük resim kaydedilemedi"
+msgstr "'%1' görselinin küçük görseli '%2' konumuna kaydedilemedi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:45
 #, kde-format
 msgid "unavailable"
-msgstr "mevcut değil"
+msgstr "kullanılamıyor"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, kde-format
@@ -16972,27 +16929,25 @@ msgstr "'%1' dosyası yazmak için açılamıyor"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
 msgid "Could not save image to file '%1'"
-msgstr "Resim '%1' dosyasına kaydedilemedi"
+msgstr "Görsel '%1' dosyasına kaydedilemedi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid "Could not find theme in '%1'"
-msgstr "'%1' içerisinde tema bulunamadı"
+msgstr "'%1' içinde tema bulunamadı"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:116
-#, fuzzy, kde-format
-#| msgid "Create directories"
+#, kde-format
 msgctxt "@info"
 msgid "Create directories"
-msgstr "Dizinleri oluştur"
+msgstr "Dizinler oluştur"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:120
-#, fuzzy, kde-format
-#| msgid "Could not create folder '%1'"
+#, kde-format
 msgctxt "@info"
 msgid "Could not create folder '%1'"
-msgstr "'%1' dizini oluşturulamadı"
+msgstr "'%1' klasörü oluşturulamadı"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:129
 #, kde-format
@@ -17010,7 +16965,7 @@ msgstr "Tema kopyalanamadı"
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
-msgstr "Resim ve XML dosyalarını oluştur"
+msgstr "Görsel ve XML dosyaları üret"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
 #, kde-format
@@ -17052,7 +17007,7 @@ msgstr "XML dosyasının işlenmesinde hata"
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
-msgstr "Yazmak için '%1' açılamadı"
+msgstr "'%1' yazmak için açılamadı"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
 #, kde-format
@@ -17094,7 +17049,7 @@ msgstr "Albüm Listesi"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
-msgstr "Özgün Resim"
+msgstr "Özgün Görsel"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
 #, kde-format
@@ -17106,7 +17061,7 @@ msgstr "Yukarı Git"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
-msgstr "Marka"
+msgstr "Yap"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, kde-format
@@ -17118,25 +17073,25 @@ msgstr "Model"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
-msgstr "Resim Yönlendirmesi"
+msgstr "Görsel Yönelimi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
-msgstr "Yatay Resim Çözünürlüğü"
+msgstr "Görsel X Çözünürlüğü"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
-msgstr "Dikey Resim Çözünürlüğü"
+msgstr "Görsel Y Çözünürlüğü"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
-msgstr "Resim Çözünürlük Birimi"
+msgstr "Görsel Çözünürlüğü Birimi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
@@ -17166,7 +17121,7 @@ msgstr "F Sayısı"
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
-msgstr "Pozlama Dizini"
+msgstr "Pozlama İndeksi"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, kde-format
@@ -17218,7 +17173,7 @@ msgstr "Html Galerisi"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
-msgstr ""
+msgstr "Görsellerden HTML galerisi üretmek için bir araç"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
 #, kde-format
@@ -17228,17 +17183,22 @@ msgid ""
 "one or by group through a selection of albums.</p><p>Themable HTML template "
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların W3C uyumlu HTML galerileri oluşturmadan önce "
+"ögeleri (yeniden boyutlandırma olarak) geri işlemesine olanak tanır.</"
+"p><p>İşlenecek ögeler, çeşitli albümler arasından tek tek veya grup halinde "
+"seçilebilir.</p><p>Farklı düzene sahip temalı HTML şablonları, dosyaları bir "
+"galeride bir araya getirmek için kullanılabilir.</p>"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
 msgid "Former Author and Maintainer"
-msgstr ""
+msgstr "Önceki Yazar ve Bakımcı"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
-msgstr "Html galerisi oluştur..."
+msgstr "HTML Galerisi Oluştur..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:101
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:100
@@ -17253,20 +17213,20 @@ msgstr "İç Hata"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
 #, kde-format
 msgid "Starting to generate gallery..."
-msgstr "Galeri oluşturmaya başlanıyor..."
+msgstr "Galeri üretimine başlanıyor..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
 #, kde-format
 msgid "%1 albums to process:"
-msgstr "İşlenecek %1 albüm:"
+msgstr "%1 albüm işlenecek:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:136
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:133
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:153
 #, kde-format
 msgid "%1 items to process"
-msgstr "İşlenecek %1 öge"
+msgstr "%1 öge işlenecek"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:140
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
@@ -17277,7 +17237,7 @@ msgstr "Çıktı dizini: %1"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
-msgstr "Galeri tamamlandı, ancak bazı uyarılar oluştu."
+msgstr "Galeri tamamlandı; ancak bazı uyarılar oluştu."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
 #, kde-format
@@ -17287,7 +17247,7 @@ msgstr "Galeri tamamlandı."
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
-msgstr "Galeri, öntanımlı masaüstü tarayıcı ile açılıyor..."
+msgstr "Galeri, öntanımlı masaüstü tarayıcısı ile açılıyor..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
 #, kde-format
@@ -17297,7 +17257,7 @@ msgstr "Galeri, dahili tarayıcı ile açılıyor..."
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
 #, kde-format
 msgid "Full Image Properties:"
-msgstr "Tüm Resim Özellikleri:"
+msgstr "Tam görsel özellikleri:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:79
 #, kde-format
@@ -17318,22 +17278,22 @@ msgstr "En büyük boyut:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
 #, kde-format
 msgid "Include full-size original images for download"
-msgstr "Karşıdan indirme için tam boyutlu özgün resimleri dahil et"
+msgstr "İndirirken tam boyutlu özgün görselleri içer"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
 #, kde-format
 msgid "Use original image"
-msgstr "Özgün resmi kullan"
+msgstr "Özgün görseli kullan"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:160
 #, kde-format
 msgid "Thumbnail Properties:"
-msgstr "Küçük Resim Özellikleri:"
+msgstr "Küçük görsel özellikleri:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:209
 #, kde-format
 msgid "Square thumbnails"
-msgstr "Kare küçük resimler"
+msgstr "Kare küçük görseller"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:74
 #, kde-format
@@ -17344,11 +17304,11 @@ msgid ""
 "en.wikipedia.org/wiki/HTML'>HTML and CSS standards</a></p><p>and the output "
 "can be customized with a nice theme.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>HTML Galeri aracına hoş geldiniz</b></h1></p><p>Bu asistan "
-"size, resimlerinizi hızlıca </p><p></p><p>bir sabit HTML resim galerisi "
-"oluşturmanıza yardımcı olacaktır.</p><p>Bu araç <a href='https://en."
-"wikipedia.org/wiki/HTML'>HTML ve CSS standartları</a> ile tamamen uyumludur</"
-"p><p> ve çıktı güzel bir tema ile özelleştirilebilir.</p></qt>"
+"<qt><p><h1><b>HTML Galerisi aracına hoş geldiniz</b></h1></p><p>Bu yardımcı, "
+"görsellerinizi hızlıca bir</p><p></p><p>HTML fotoğraf galerisine dışa "
+"aktarmanıza yardım eder.</p><p>Bu araç, <a href='https://en.wikipedia.org/"
+"wiki/HTML'>HTML ve CSS standartlarıyla tümüyle uyumludur</a></p><p>ve "
+"çıktıyı güzelce bir temayla özelleştirebilirsiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:86
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:92
@@ -17357,7 +17317,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
 #, kde-format
 msgid "&Choose image selection method:"
-msgstr "&Resim seçimi yöntemini seçin:"
+msgstr "&Görsel seçim yöntemini seç:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:95
@@ -17367,49 +17327,46 @@ msgstr "&Resim seçimi yöntemini seçin:"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
-msgstr "Resimler"
+msgstr "Görseller"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:72
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
-msgstr "Galeri Başlığı:"
+msgstr "Galeri başlığı:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
-msgstr "Hedef Dizin:"
+msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:269
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
-msgstr "Hedef Dizin"
+msgstr "Hedef Klasör"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
-msgstr "Tarayıcıda Aç:"
+msgstr "Tarayıcıda aç:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:96
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:97
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
-msgstr "Dahili"
+msgstr "İç"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:98
 #, kde-format
@@ -17424,7 +17381,7 @@ msgid ""
 "different parameters are available."
 msgstr ""
 "Bu sayfada, bazı tema parametrelerini değiştirebilirsiniz. Temaya bağlı "
-"olarak değişik parametreler mevcuttur."
+"olarak değişik parametreler kullanılabilirdir."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:145
 #, kde-format
@@ -17440,7 +17397,7 @@ msgstr "özelleştirilebilir"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
 #, kde-format
 msgid "no customization available"
-msgstr "özelleştirme kullanılabilir değil"
+msgstr "kullanılabilir özelleştirme yok"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
 #, kde-format
@@ -17448,22 +17405,21 @@ msgid "Author: %1<br/><br/>"
 msgstr "Yazar: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Create HTML Gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
-msgstr "HTML Galerisi oluştur"
+msgstr "HTML Galerisi Oluştur"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
-msgstr "HTML Galeri Aracına Hoşgeldiniz"
+msgstr "HTML galerisi aracına hoş geldiniz"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, kde-format
 msgid "Items Selection"
-msgstr "Öge Seçimi"
+msgstr "Ögeler Seçimi"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
 #, kde-format
@@ -17484,52 +17440,47 @@ msgstr "Çıktı Ayarları"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
 #, kde-format
 msgid "Generating Gallery"
-msgstr "Galeri üretiliyor"
+msgstr "Galeri Üretiliyor"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:82
 #, kde-format
 msgid "Create directories"
-msgstr "Dizinleri oluştur"
+msgstr "Dizinler oluştur"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:86
 #, kde-format
 msgid "Could not create folder '%1'"
-msgstr "'%1' dizini oluşturulamadı"
+msgstr "'%1' klasörü oluşturulamadı"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Save project file"
+#, kde-format
 msgid "Create jAlbum project files"
-msgstr "Proje dosyasını kaydet"
+msgstr "jAlbum proje dosyaları oluştur"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:134
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to create project files"
-msgstr "Dosya oluşturulamadı..."
+msgstr "Proje dosyaları oluşturulamadı"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:151
-#, fuzzy, kde-format
-#| msgid "Failed to create file..."
+#, kde-format
 msgid "Failed to create settings file"
-msgstr "Dosya oluşturulamadı..."
+msgstr "Ayarlar dosyası oluşturulamadı"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:165
 #, kde-format
 msgid "Launch jAlbum with new project files"
-msgstr ""
+msgstr "jAlbum'ü yeni proje dosyalarıyla başlat"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "jAlbum Export"
-msgstr "Dışarıya Aktar"
+msgstr "jAlbum Dışa Aktar"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:58
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
-msgstr ""
+msgstr "Görselleri jAlbum galerisi üretecine dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:63
 #, kde-format
@@ -17539,38 +17490,38 @@ msgid ""
 "selection of albums.</p><p>jAlbum is themable with different templates and "
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
+"<p>Bu araö, kullanıcıların ögeleri jAlbum HTML galerisi üretecine dışa "
+"aktarmasına olanak tanır.</p><p>İşlenecek ögeler teker teker veya albümlerle "
+"grup olarak seçilebilir.</p><p>Çeşitli temalarla jAlbum görünüşü ve "
+"yerleşimi değiştirilebilir. Ayrıntılar için jAlbum web sayfasına bakın: "
+"https://jalbum.net/.</p>"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Create Html gallery..."
+#, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
-msgstr "Html galerisi oluştur..."
+msgstr "jAlbum Galerisi Oluştur..."
 
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjar.cpp:38
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjava.cpp:31
 #, kde-format
 msgid "jAlbum Gallery Generator."
-msgstr ""
+msgstr "jAlbum galerisi üreteci."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:114
-#, fuzzy, kde-format
-#| msgid "Starting to generate gallery..."
+#, kde-format
 msgid "Starting to generate jAlbum..."
-msgstr "Galeri oluşturmaya başlanıyor..."
+msgstr "jAlbum üretimine başlanıyor..."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
-#, fuzzy, kde-format
-#| msgid "Gallery is completed, but some warnings occurred."
+#, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
-msgstr "Galeri tamamlandı, ancak bazı uyarılar oluştu."
+msgstr "jAlbum tamamlandı; ancak bazı uyarılar oluştu."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
-#, fuzzy, kde-format
-#| msgid "Gallery completed."
+#, kde-format
 msgid "Jalbum completed."
-msgstr "Galeri tamamlandı."
+msgstr "jAlbum tamamlandı."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
 #, kde-format
@@ -17584,23 +17535,20 @@ msgstr ""
 "p><p>dışa aktarmanız için size kılavuzluk edecek.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:103
-#, fuzzy, kde-format
-#| msgid "Album name"
+#, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
-msgstr "Albüm adı"
+msgstr "jAlbum İkilileri"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
-#, fuzzy, kde-format
-#| msgid "Projection"
+#, kde-format
 msgid "Project Title:"
-msgstr "Projeksiyon"
+msgstr "Proje başlığı:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:74
-#, fuzzy, kde-format
-#| msgid "Set here the content provider."
+#, kde-format
 msgid "Set here the project title"
-msgstr "İçerik sağlayıcıyı buradan belirleyin."
+msgstr "Proje başlığını burada ayarla."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
 #, kde-format
@@ -17620,16 +17568,14 @@ msgid "Create jAlbum Album"
 msgstr "jAlbum Albümü Oluştur"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to Email Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Eposta Aracına Hoşgeldiniz"
+msgstr "jAlbum dışa aktarma aracına hoş geldiniz"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
-#, fuzzy, kde-format
-#| msgid "Items Selection"
+#, kde-format
 msgid "Paths Selection"
-msgstr "Öge Seçimi"
+msgstr "Yollar Seçimi"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:84
 #, kde-format
@@ -17637,18 +17583,17 @@ msgid "Generating jAlbum"
 msgstr "jAlbum Üretiliyor"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Ortam Sunucusunu Başlatma"
+msgstr "DLNA Ortam Sunucusuyla Dosyalar Paylaş"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
 #, kde-format
 msgctxt "@option"
 msgid "Start Server at Startup"
-msgstr "Sunucuy Başlangıçta Başlat"
+msgstr "Sunucuyu Başlangıçta Başlat"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
 #, kde-format
@@ -17657,8 +17602,8 @@ msgid ""
 "Set this option to turn-on the DLNA server at application start-up "
 "automatically"
 msgstr ""
-"DLNA sunucusunu uygulama başlatmada otomatik olarak açmak için bu seçeneği "
-"ayarlayın."
+"DLNA sunucusunu uygulama başlatımında kendiliğinden açmak için bu seçeneği "
+"ayarla"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:168
 #, kde-format
@@ -17684,9 +17629,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Ortam Sunucusu İçeriği"
@@ -17714,8 +17657,8 @@ msgstr "Sunucu çalışıyor"
 msgctxt "@info"
 msgid "1 album shared"
 msgid_plural "%1 albums shared"
-msgstr[0] "1 Albüm paylaşıldı"
-msgstr[1] "%1 Albüm paylaşıldı"
+msgstr[0] "1 albüm paylaşıldı"
+msgstr[1] "%1 albüm paylaşıldı"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:267
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:28
@@ -17731,7 +17674,7 @@ msgstr[1] "%1 öge paylaşıldı"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr "Dur"
+msgstr "Durdur"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:275
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:37
@@ -17766,34 +17709,31 @@ msgstr "Geçerli seçimle paylaşılacak herhangi bir öge yok..."
 #, kde-format
 msgctxt "@info"
 msgid "Shared Items"
-msgstr "Paylaşılmış Ögeler"
+msgstr "Paylaşılan Ögeler"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
-msgstr "Ortam Sunucusunu Başlatma"
+msgstr "Ortam Sunucusunu Başlatılıyor"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:341
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
-msgstr "Ortam Sunucusu başlatılırken bir hata oluştu ..."
+msgstr "Ortam sunucusu başlatılırken bir hata oluştu..."
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
-#, fuzzy, kde-format
-#| msgid "KML Export"
+#, kde-format
 msgid "DLNA Export"
-msgstr "KML Dışa Aktar"
+msgstr "DLNA Dışa Aktar"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
 #, kde-format
 msgid "A tool to export items to a DLNA compatible device"
-msgstr ""
+msgstr "Ögeleri DLNA uyumlu bir aygıta dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:74
 #, kde-format
@@ -17803,13 +17743,17 @@ msgid ""
 "a selection of albums.</p><p>Many kind of electronic devices can support "
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların bir DLNA sunucusu aracılığıyla yerel ağdaki "
+"ögeleri paylaşmasına olanak tanır.</p><p>Paylaşılacak ögeler, çeşitli "
+"albümler aracılığıyla tek tek veya grup halinde seçilebilir.</"
+"p><p>Tabletler, cep telefonları, TV vb. gibi pek çok türde elektronik aygıt "
+"DLNA'yı destekleyebilir.</p>"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
-#, fuzzy, kde-format
-#| msgid "Share with DLNA"
+#, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
-msgstr "DLNA ile paylaştır"
+msgstr "DLNA ile Paylaş..."
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaserver.cpp:146
 #, kde-format
@@ -17827,31 +17771,26 @@ msgid "Media Server cannot be started!"
 msgstr "Ortam sunucusu başlatılamıyor!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:178
-#, fuzzy, kde-format
-#| msgid "Media Server have been started"
+#, kde-format
 msgid "MJPEG Server have been started"
-msgstr "Ortam sunucusu başlatıldı"
+msgstr "MJPEG sunucusu başlatıldı"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:179
-#, fuzzy, kde-format
-#| msgid "Media Server cannot be started!"
+#, kde-format
 msgid "MJPEG Server cannot be started!"
-msgstr "Ortam sunucusu başlatılamıyor!"
+msgstr "MJPEG sunucusu başlatılamıyor!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Ortam Sunucusunu Başlatma"
+msgstr "MJPEG Ortam Sunucusuyla Dosyalar Paylaş"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
-msgstr "Ortam Sunucusu İçeriği"
+msgstr "MJPEG Sunucusu İçeriği"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:98
 #, kde-format
@@ -17867,27 +17806,23 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Server Port:"
-msgstr "Sunucu Kapısı:"
+msgstr "Sunucu kapısı:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG server IP port."
-msgstr "MJPEG sunucusu IP kapısı."
+msgstr "MJPEG sunucusu IP'si kapısı."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Set this option to turn-on the DLNA server at application start-up "
-#| "automatically"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Set this option to turn-on the MJPEG server at application start-up "
 "automatically"
 msgstr ""
-"DLNA sunucusunu uygulama başlatmada otomatik olarak açmak için bu seçeneği "
-"ayarlayın."
+"MJPEG sunucusunu uygulama başlatımında kendiliğinden açmak için bu seçeneği "
+"ayarla"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
 #, kde-format
@@ -17901,34 +17836,39 @@ msgid ""
 "browser, just use http://address:port as url, with address the MJPEG server "
 "IP, and port the server port set in this config dialog."
 msgstr ""
+"%1 sunucusu, bir web tarayıcısı kullanarak ögelerin yerel ağ üzerinden "
+"paylaşılmasına olanak tanır. Motion JPEG, her video karesinin ayrı ayrı JPEG "
+"görseli olarak sıkıştırıldığı bir video sıkıştırma biçimidir. MJPEG "
+"akışları, ağ istemcilerinin ek bir modül olmadan bağlanmasına olanak tanıyan "
+"bir standarttır. Çoğu büyük web tarayıcısı ve oynatıcı MJPEG akışını "
+"destekler. Tarayıcınızdan akışa erişmek için URL olarak http://adres:"
+"kapı'yı, MJPEG sunucusu IP adresini ve bu yapılandırma iletişim kutusunda "
+"ayarlanan sunucu kapısını kullanın."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:94
-#, fuzzy, kde-format
-#| msgid "Preview..."
+#, kde-format
 msgctxt "@action: button"
 msgid "Preview..."
-msgstr "Önizleme..."
+msgstr "Önizle..."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:95
 #, kde-format
 msgctxt "@info"
 msgid ""
 "Press this button to preview the stream on your computer with your browser."
-msgstr ""
+msgstr "Akışı bilgisayarınızdaki tarayıcıda önizlemek için bu düğmeye basın."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:111
-#, fuzzy, kde-format
-#| msgid "MySQL interface"
+#, kde-format
 msgctxt "@title"
 msgid "Server"
-msgstr "MySQL arayüzü"
+msgstr "Sunucu"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:127
-#, fuzzy, kde-format
-#| msgid "JPEG Quality:"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG Quality:"
-msgstr "JPEG Kalitesi:"
+msgstr "JPEG kalitesi:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:131
 #, kde-format
@@ -17937,13 +17877,14 @@ msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality require "
 "more network bandwidth"
 msgstr ""
+"JPEG kalitesi [50:düşük - 100:yüksek]. Uyarı: Yüksek kalite daha çok ağ bant "
+"genişliği gerektirir"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
-#, fuzzy, kde-format
-#| msgid "JPEG Files"
+#, kde-format
 msgctxt "@label"
 msgid "JPEG Size:"
-msgstr "JPEG Dosyaları"
+msgstr "JPEG boyutu:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:154
 #, kde-format
@@ -17952,27 +17893,26 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size require more network bandwidth"
 msgstr ""
+"Standart ekran çözünürlüklerini kullanan, piksel türünden JPEG görseli "
+"boyutu. Uyarı: Daha büyük boyut, daha fazla ağ bant genişliği gerektirir"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Milliseconds"
+#, kde-format
 msgctxt "@label"
 msgid "Delay in Seconds:"
-msgstr "Milisaniye"
+msgstr "Saniye türünden gecikme:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:164
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgctxt "@info"
 msgid "The delay in seconds between images."
-msgstr "Resimler arasında saniye cinsinden gecikme."
+msgstr "Görseller arasındaki saniye türünden gecikme."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:167
 #, kde-format
 msgctxt "@label"
 msgid "Frames by Second:"
-msgstr ""
+msgstr "Saniye başına kare:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:171
 #, kde-format
@@ -17981,28 +17921,26 @@ msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "require more network bandwidth"
 msgstr ""
+"Akışın sunulması için saniye bazında kare sayısı. Uyarı: Daha yüksek hız, "
+"daha fazla ağ bant genişliği gerektirir"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Eritrea"
+#, kde-format
 msgctxt "@option:check"
 msgid "Stream in Loop"
-msgstr "Eritre"
+msgstr "Döngüde akış"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:177
 #, kde-format
 msgctxt "@info"
 msgid "The MJPEG stream will be played in loop instead once."
-msgstr ""
+msgstr "MJPEG akışı, bir kez oynatılmak yerine bir döngüye alınır."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Eritrea"
+#, kde-format
 msgctxt "@title"
 msgid "Stream"
-msgstr "Eritre"
+msgstr "Akış"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:215
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:261
@@ -18014,27 +17952,21 @@ msgid "Type:"
 msgstr "Tür:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:233
-#, fuzzy, kde-format
-#| msgid ""
-#| "<i>A transition is an visual effect applied between two images. For some "
-#| "effects, the duration can depend of random values and can change while "
-#| "the slideshow.</i>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "A transition is an visual effect applied between two images. For some "
 "effects, the duration can depend of random values and can change while the "
 "stream."
 msgstr ""
-"<i>Geçiş, iki görüntü arasında uygulanan görsel bir efekttir. Bazı efektler "
-"için süre rastgele değerlere bağlı olabilir ve slayt gösterisi sırasında "
-"değişebilir.</i>"
+"Geçiş, iki görsel arasına uygulanan bir efekttir. Bazı efektlerin süresi "
+"rastgele değerlere bağlı olabilir ve akış sırasında değişebilir."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:249
-#, fuzzy, kde-format
-#| msgid "Position:"
+#, kde-format
 msgctxt "@title"
 msgid "Transition"
-msgstr "Konum:"
+msgstr "Geçiş"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:279
 #, kde-format
@@ -18047,126 +17979,106 @@ msgstr ""
 "kaydırma veya yakınlaştırmadır."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
-#, fuzzy, kde-format
-#| msgctxt "@action: dplugin"
-#| msgid "Effects"
+#, kde-format
 msgctxt "@title"
 msgid "Effect"
-msgstr "Etkiler"
+msgstr "Efekt"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:304
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image file name"
-msgstr "Görüntünün dosya adını göster"
+msgstr "Görsel dosya adını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image file name at the bottom of the screen."
-msgstr "Resim dosya adını ekranın altında göster."
+msgstr "Ekranın altında görselin dosya adını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:307
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image creation date"
-msgstr "Resim oluşturulma gününü göster"
+msgstr "Görsel oluşturulma tarihini göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image creation time/date at the bottom of the screen."
-msgstr "Resim oluşturma zamanını/gününü ekranın altında göster."
+msgstr "Ekranın altında görselin oluşturulma tarihini/zamanını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:310
-#, fuzzy, kde-format
-#| msgid "Show camera aperture and focal length"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera aperture and focal length"
-msgstr "Kamera apartür ve odak uzaklığını göster"
+msgstr "Kamera açıklığını ve odak uzaklığını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera aperture and focal length at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera aperture and focal length at the bottom of the screen."
-msgstr "Kamera açıklığını(apartür) ve odak uzaklığını ekranın altında göster."
+msgstr "Ekranın altında kamera açıklığını ve odak uzaklığını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:313
-#, fuzzy, kde-format
-#| msgid "Show camera exposure and sensitivity"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera exposure and sensitivity"
-msgstr "Kamera pozunu ve hassaslığını göster"
+msgstr "Kamera pozlamasını ve duyarlılığını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:314
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the camera exposure and sensitivity at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Kamera pozlamasını ve hassaslığını ekranın altında göster."
+msgstr "Ekranın altında kamera pozlamasını ve duyarlılığını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:316
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera make and model"
-msgstr "Kamera modelini göster"
+msgstr "Kamera yapımını ve modelini göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:317
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera make and model at the bottom of the screen."
-msgstr "Kamera marka ve modelini ekranın altında göster."
+msgstr "Ekranın altında kamera yapımını ve modelini gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:319
-#, fuzzy, kde-format
-#| msgid "Show camera make and model"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show camera lens model"
-msgstr "Kamera modelini göster"
+msgstr "Kamera merceği modelini göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:320
-#, fuzzy, kde-format
-#| msgid "Show the camera make and model at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the camera lens model at the bottom of the screen."
-msgstr "Kamera marka ve modelini ekranın altında göster."
+msgstr "Ekranın altında kamera merceği modelini gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:322
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption"
-msgstr "Resim başlığını göster"
+msgstr "Görsel alt yazısını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:323
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image caption at the bottom of the screen."
-msgstr "Resim başlığını ekranın altında göster."
+msgstr "Ekranın altında görsel alt yazısını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:325
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image title"
-msgstr "Resim başlığını göster"
+msgstr "Görsel başlığını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:326
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the image title at the bottom of the screen."
-msgstr "Ekranın altında resim başlığını göster."
+msgstr "Ekranın altında görsel başlığını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
 #, fuzzy, kde-format
@@ -19614,7 +19526,7 @@ msgstr ""
 "yazdır: dosya adı\n"
 "yazdır: kamera pozlama süresi\n"
 "yazdır: öge açıklaması\n"
-"yazdır: kameranın ISO hassasiyeti\n"
+"yazdır: kameranın ISO duyarlılığı\n"
 "yazdır: kameranın tarih ve zaman bilgisi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -22009,12 +21921,12 @@ msgstr "Kamera açıklığını(apartür) ve odak uzaklığını ekranın altın
 #: core/showfoto/setup/showfotosetuptooltip.cpp:157
 #, kde-format
 msgid "Show camera exposure and sensitivity"
-msgstr "Kamera pozunu ve hassaslığını göster"
+msgstr "Kamera pozlamasını ve duyarlılığını göster"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:149
 #, kde-format
 msgid "Show the camera exposure and sensitivity at the bottom of the screen."
-msgstr "Kamera pozlamasını ve hassaslığını ekranın altında göster."
+msgstr "Kamera pozlamasını ve duyarlılığını ekranın altında gösterin."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:151
 #: core/showfoto/setup/showfotosetuptooltip.cpp:142
@@ -26913,7 +26825,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Ham Dönüştürme"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:823
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #, kde-format
 msgid "Trash"
 msgstr "Çöp"
@@ -27560,7 +27472,7 @@ msgid "Context menu"
 msgstr "Bağlam menüsü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:833
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -28995,14 +28907,14 @@ msgstr ""
 "Geçerli veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla "
 "başlamayı deneyin. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:329
+#: core/libs/database/utils/ifaces/dio.cpp:321
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dosya adı filtresi:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:330
+#: core/libs/database/utils/ifaces/dio.cpp:322
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29015,65 +28927,65 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:339
+#: core/libs/database/utils/ifaces/dio.cpp:331
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Otomatik olarak üzerine yaz"
 
-#: core/libs/database/utils/ifaces/dio.cpp:341
+#: core/libs/database/utils/ifaces/dio.cpp:333
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Otomatik olarak üzerine yaz"
 
-#: core/libs/database/utils/ifaces/dio.cpp:343
+#: core/libs/database/utils/ifaces/dio.cpp:335
 #, fuzzy, kde-format
 #| msgid "Skip automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Otomatik olarak atla"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:820
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Albüme Göre"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "Resimleri &Gruplandır"
 
-#: core/libs/database/utils/ifaces/dio.cpp:798
+#: core/libs/database/utils/ifaces/dio.cpp:831
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Copy Files"
 msgstr "Değeri kopyala"
 
-#: core/libs/database/utils/ifaces/dio.cpp:803
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "Albüme &Taşı..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:808
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Resimler Kaydet"
 
-#: core/libs/database/utils/ifaces/dio.cpp:813
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Film Dosyaları"
 
-#: core/libs/database/utils/ifaces/dio.cpp:828
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
@@ -51553,7 +51465,7 @@ msgid ""
 "Set this option to display the camera exposure and sensitivity used to take "
 "the image."
 msgstr ""
-"Fotoğrafı çekmek için kullanılan kameranın açıklığını ve hassasiyetini "
+"Fotoğrafı çekmek için kullanılan kameranın açıklığını ve duyarlılığını "
 "görüntülemek için bu seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:161
@@ -65462,7 +65374,7 @@ msgstr "Kamera diyafram ve odak uzaklığı"
 #: core/utilities/setup/setuptooltip.cpp:427
 #, kde-format
 msgid "Camera exposure and sensitivity"
-msgstr "Kamera pozlaması ve hassasiyeti"
+msgstr "Kamera pozlaması ve duyarlılığı"
 
 #: core/utilities/setup/setuptooltip.cpp:254
 #, kde-format
