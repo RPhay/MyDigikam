@@ -157,7 +157,7 @@ void CopyOrMoveJob::run()
 
                     if      (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
                                                                      m_data->getProgressId(),
-                                                                     &m_cancel, true, true))
+                                                                     &m_cancel, true))
                     {
                         Q_EMIT signalOneProccessed(srcUrl);
 
@@ -206,7 +206,7 @@ void CopyOrMoveJob::run()
 
                 if (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
                                                             m_data->getProgressId(),
-                                                            &m_cancel, true, true))
+                                                            &m_cancel, true))
                 {
                     Q_EMIT signalOneProccessed(srcUrl);
 

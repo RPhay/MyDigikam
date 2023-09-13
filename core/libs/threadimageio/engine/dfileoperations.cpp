@@ -387,7 +387,6 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
                                             const QString& dstPath,
                                             const QString& itemId,
                                             bool* const cancel,
-                                            bool  countTotal,
                                             bool  useDstPath)
 {
     QDir srcDir(srcPath);
@@ -403,7 +402,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         return false;
     }
 
-    if (countTotal && !itemId.isEmpty())
+    if (!itemId.isEmpty())
     {
         int count = 0;
 
