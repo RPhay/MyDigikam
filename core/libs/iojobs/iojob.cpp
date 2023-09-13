@@ -159,7 +159,7 @@ void CopyOrMoveJob::run()
                                                                      m_data->getProgressId(),
                                                                      &m_cancel, true))
                     {
-                        Q_EMIT signalOneProccessed(srcUrl);
+                        m_data->setErrorOrCancel(true);
 
                         if (m_cancel)
                         {
@@ -208,7 +208,7 @@ void CopyOrMoveJob::run()
                                                             m_data->getProgressId(),
                                                             &m_cancel, true))
                 {
-                    Q_EMIT signalOneProccessed(srcUrl);
+                    m_data->setErrorOrCancel(true);
 
                     if (m_cancel)
                     {
@@ -251,6 +251,8 @@ void CopyOrMoveJob::run()
 
         Q_EMIT signalOneProccessed(srcUrl);
     }
+
+    m_data->setErrorOrCancel(m_cancel);
 
     Q_EMIT signalDone();
 }

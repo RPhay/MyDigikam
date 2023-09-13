@@ -102,10 +102,13 @@ public:
     void               setProgressId(const QString& id);
 
     void               setFileConflict(int fc);
+    void               setErrorOrCancel(bool err);
 
     int                operation()                          const;
 
     int                fileConflict()                       const;
+
+    bool               errorOrCancel()                      const;
 
     PAlbum*            srcAlbum()                           const;
     PAlbum*            destAlbum()                          const;

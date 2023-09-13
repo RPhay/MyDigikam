@@ -450,6 +450,16 @@ void DIO::slotResult()
                 updateAlbumDate(albumID);
             }
         }
+
+        if (data->errorOrCancel())
+        {
+            if ((operation == IOJobData::CopyAlbum) ||
+                (operation == IOJobData::MoveAlbum))
+            {
+                QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
+                ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+            }
+        }
     }
 
     if (m_processingCount)
