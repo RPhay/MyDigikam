@@ -62,7 +62,7 @@ BUGFIXES:
 052 ==> 398831 - digiKam DB maintenance can not tell difference between two external drives (same type and size).
 053 ==> 474367 - Incomplete display of tags.
 054 ==> 473481 - digiKam 8.1 crashes on startup.
-055 ==> 
+055 ==> 474459 - Renaming pattern field is cutting characters in MacOS.
 056 ==> 
 057 ==> 
 058 ==> 
