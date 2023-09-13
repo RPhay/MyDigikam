@@ -340,11 +340,6 @@ void DIO::createJob(IOJobData* const data)
                     msgBox->button(QMessageBox::No)->hide();
                 }
 
-                if (operation == IOJobData::CopyAlbum)
-                {
-                    msgBox->button(QMessageBox::Yes)->hide();
-                }
-
                 int result = msgBox->exec();
                 delete msgBox;
 
