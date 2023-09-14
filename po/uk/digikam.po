@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-01 09:28+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -3271,7 +3271,7 @@ msgid "Selection"
 msgstr "Позначене"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26826,7 +26826,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Смітник"
@@ -27433,7 +27433,7 @@ msgid "Context menu"
 msgstr "Контекстне меню"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Спорожнити смітник"
@@ -28879,37 +28879,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Автоматично пропустити"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Копіювати альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Копіювати зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Копіювати файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Пересунути альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Пересунути зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Пересунути файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Відновити зі смітника"
@@ -35480,12 +35480,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "У %2 вже є файл або тека з назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Не вдалося пересунути теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35494,43 +35494,43 @@ msgstr ""
 "Не вдалося пересунути теку %1 до альбому %2. Теку %1 також було скопійовано "
 "до альбому %2."
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Не вдалося пересунути додатковий файл для файла %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Не вдалося скопіювати теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "Не вдалося виконати копіювання додаткового файла для файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Не вдалося скопіювати файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файла або теки %1 не існує"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35540,7 +35540,7 @@ msgstr ""
 "Не вдалося пересунути теку %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35550,32 +35550,32 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Не вдалося вилучити альбом %1"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"

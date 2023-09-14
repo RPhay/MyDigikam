@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-01 09:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3277,7 +3277,7 @@ msgid "Selection"
 msgstr "Selectie"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26714,7 +26714,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Prullenbak"
@@ -27323,7 +27323,7 @@ msgid "Context menu"
 msgstr "Contextmenu"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Prullenbak legen"
@@ -28771,37 +28771,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch overslaan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Afbeeldingen kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Bestanden kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Album verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Afbeeldingen verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Bestanden verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Prullenbak herstellen"
@@ -35323,12 +35323,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Een bestand of map met de naam %1 bestaat al in %2"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Kon map %1 niet verplaatsen naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35337,42 +35337,42 @@ msgstr ""
 "Kon map %1 niet verplaatsen naar album %2. De map %1 is wel gekopieerd naar "
 "album %2"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Kon aanhangsel uit bestand %1 niet verplaatsen naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Kon bestand %1 niet verplaatsen naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Kon map %1 niet kopiëren naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Kon aanhangsel uit bestand %1 niet kopiëren naar map %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Kon bestand %1 niet kopiëren naar map %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Kon bestand %1 niet kopiëren naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Bestand/map %1 bestaat niet"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35383,7 +35383,7 @@ msgstr ""
 "Controleer de bestandsrechten op de prullenbakmap \".dtrash\" in de "
 "afbeeldingenverzameling."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35394,33 +35394,33 @@ msgstr ""
 "Controleer de bestandsrechten op de prullenbakmap \".dtrash\" in de "
 "afbeeldingenverzameling."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 kon niet verwijderd worden"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Afbeelding %1 kon niet verwijderd worden"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "Kon afbeelding '%1' niet verplaatsen naar prullenbak voor verzamelingen"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Afbeelding met dezelfde naam %1 is daar al"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Afbeelding %1 kon niet hernoemd worden"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Kon bestand %1 niet herstellen uit de prullenbak"

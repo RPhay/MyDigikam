@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-01 06:55+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3240,7 +3240,7 @@ msgid "Selection"
 msgstr "Markering"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26420,7 +26420,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw konvertering av obehandlade bilder"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Papperskorg"
@@ -27024,7 +27024,7 @@ msgid "Context menu"
 msgstr "Sammanhangsberoende meny"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Töm papperskorgen"
@@ -28442,37 +28442,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Hoppa över automatiskt"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiera album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiera bilder"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiera filer"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Flytta album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Flytta bilder"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Flytta filer"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Återställ från papperskorgen"
@@ -34929,12 +34929,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "En fil eller katalog som heter %1 finns redan i %2"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Kunde inte flytta katalogen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -34943,42 +34943,42 @@ msgstr ""
 "Kunde inte flytta katalogen %1 till albumet %2. Katalogen %1 kopierades "
 "också till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Kunde inte flytta associerad fil från filen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Kunde inte flytta filen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Kunde inte kopiera katalogen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Kunde inte kopiera associerad fil från filen %1 till katalogen %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Kunde inte kopiera filen %1 till katalogen %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Kunde inte kopiera filen %1 till albumet %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Filen eller katalogen %1 finns inte"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34989,7 +34989,7 @@ msgstr ""
 "Kontrollera filrättigheterna för papperskorgens katalog \".dtrash\" i "
 "bildsamlingen."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35000,32 +35000,32 @@ msgstr ""
 "Kontrollera filrättigheterna för papperskorgens katalog \".dtrash\" i "
 "bildsamlingen."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Albumet %1 kunde inte tas bort"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Bilden %1 kunde inte tas bort"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Kunde inte flytta bilden %1 till samlingens papperskorg"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "En bild med samma namn %1 finns redan där"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Namnet på bilden %1 kunde inte bytas"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Kunde inte återställa filen '%1' från papperskorgen"

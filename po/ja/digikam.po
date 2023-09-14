@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-05-29 19:29-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3219,7 +3219,7 @@ msgid "Selection"
 msgstr "選択"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26907,7 +26907,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "カラースペースの変換"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27527,7 +27527,7 @@ msgid "Context menu"
 msgstr "コンテキストメニュー"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -29017,43 +29017,43 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動的に上書きする"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "アルバムで"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, fuzzy, kde-format
 #| msgid "Sort Images"
 msgid "Copy Images"
 msgstr "画像をソート"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "プリセットなし"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "アルバムへ移動(&M)..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "画像の保存"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "動画ファイル"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "復元"
@@ -35665,54 +35665,54 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "'%1' という名前のメタデータテンプレートは既に存在します。"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "ファイルは存在しません"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35720,7 +35720,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35728,35 +35728,35 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "アルバム名は空白にできません。"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Could not move image %1 to collection trash"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "同じ名前のタグが既に存在します。\n"
 "他の名前を付けてください。"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Could not restore file %1 from trash"

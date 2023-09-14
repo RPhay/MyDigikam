@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-02 03:17\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3154,7 +3154,7 @@ msgid "Selection"
 msgstr "选中内容"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -25584,7 +25584,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw RAW 转换"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "回收站"
@@ -26158,7 +26158,7 @@ msgid "Context menu"
 msgstr "右键菜单"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "清空回收站"
@@ -27534,37 +27534,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自动跳过"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "复制相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "复制图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "复制文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "移动相册"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "移动图像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "移动文件"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "还原回收站"
@@ -33788,54 +33788,54 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "名为 %1 的文件或文件夹已存在于 %2 中"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "无法移动文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "无法移动文件夹 %1 到相册 %2。文件夹 %1 已被复制到相册 %2。"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "无法将文件 %1 的附带文件移动到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "无法移动文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "无法复制文件夹 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "无法将文件 %1 的附带文件复制到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "无法复制文件 %1 到文件夹 %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "无法复制文件 %1 到相册 %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "文件/文件夹 %1 不存在"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -33845,7 +33845,7 @@ msgstr ""
 "无法移动文件夹 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -33855,32 +33855,32 @@ msgstr ""
 "无法移动图像 %1 到图像集合回收站。\n"
 "请检查图像集合的回收站文件夹“.dtrash”的文件权限。"
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "相册 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "图像 %1 无法移除"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "无法移动图像 %1 到相册集合回收站"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "该位置已存在同名图像 %1"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "图像 %1 无法重命名"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "无法从回收站还原文件 %1"

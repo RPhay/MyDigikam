@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -3235,7 +3235,7 @@ msgid "Selection"
 msgstr "Auswahl"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26774,7 +26774,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw-RAW-Umwandlung"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Papierkorb"
@@ -27399,7 +27399,7 @@ msgid "Context menu"
 msgstr "Kontextmenü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Papierkorb leeren"
@@ -28860,37 +28860,37 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch überspringen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Bilder kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Dateien kopieren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Album verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Bilder verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Dateien verschieben"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Papierkorb wiederherstellen"
@@ -35413,12 +35413,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Eine Datei oder ein Ordner mit dem Namen %1 existiert bereits in %2"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Der Ordner „%1“ lässt sich nicht in das Album „%2“ verschieben."
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35427,44 +35427,44 @@ msgstr ""
 "Der Ordner „%1“ kann nicht in das Album„%2“ verschoben werden. Der Ordner "
 "„%1“ wurde ebenfalls in das Album „%2“ kopiert"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, fuzzy, kde-format
 #| msgid "Could not move file %1 to album %2"
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Die Datei „%1“ lässt sich nicht in das Album „%2“ verschieben"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Die Datei „%1“ lässt sich nicht in das Album „%2“ verschieben"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Der Ordner „%1“ lässt sich nicht in das Album „%2“ kopieren"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to folder %2"
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Die Datei „%1“ lässt sich nicht in den Ordner „%2“ kopieren"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Die Datei „%1“ lässt sich nicht in den Ordner „%2“ kopieren"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Die Datei „%1“ lässt sich nicht in das Album „%2“ kopieren"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Die Datei oder Ordner %1 existiert nicht"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35472,7 +35472,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35480,33 +35480,33 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Das Album %1 lässt sich nicht entfernen"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Das Bild %1 lässt sich nicht entfernen"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "Das Bild „%1“ lässt sich nicht in den Papierkorb der Sammlung verschieben"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Es existiert bereits ein Bild mit dem Namen %1"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Das Bild %1 lässt sich nicht umbenennen"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Datei „%1“ kann nicht aus dem Papierkorb wiederhergestellt werden"

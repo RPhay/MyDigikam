@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -3250,7 +3250,7 @@ msgid "Selection"
 msgstr "בחירה"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -25222,7 +25222,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "מרחב צבע"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -25766,7 +25766,7 @@ msgid "Context menu"
 msgstr ""
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -27083,39 +27083,39 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "לשכתב את הקובץ?"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, fuzzy, kde-format
 msgid "Copy Album"
 msgstr "אוספי-התמונות שלי"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, fuzzy, kde-format
 msgid "Copy Images"
 msgstr "סידור תמונות"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, fuzzy, kde-format
 msgid "Copy Files"
 msgstr "העתיקו לכאן"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, fuzzy, kde-format
 msgid "Move Album"
 msgstr "אוסף-תמונות חדש..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "שמירת תמונות"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "קבצי סרטים"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "שחזור"
@@ -33280,54 +33280,54 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "קיים קובץ או תיקייה בעליי אותו שם"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "הקובץ אינו קיים"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -33335,7 +33335,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -33343,34 +33343,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "שם אלבום אינו יכול להיות ריק."
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "כשל בעת הצגת קבצים ב %1"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "אוסף-תמונות בעל אותו שם קיים\n"
 "אנא בחרו שם חדש"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, fuzzy, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "כשל בעת הצגת קבצים ב %1"

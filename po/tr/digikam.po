@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:43+0000\n"
+"POT-Creation-Date: 2023-09-14 00:42+0000\n"
 "PO-Revision-Date: 2023-09-12 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3245,7 +3245,7 @@ msgid "Selection"
 msgstr "Seçim"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:851
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26825,7 +26825,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Ham Dönüştürme"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:856
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Çöp"
@@ -27472,7 +27472,7 @@ msgid "Context menu"
 msgstr "Bağlam menüsü"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:866
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -28948,44 +28948,44 @@ msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Otomatik olarak atla"
 
-#: core/libs/database/utils/ifaces/dio.cpp:820
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Albüme Göre"
 
-#: core/libs/database/utils/ifaces/dio.cpp:825
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "Resimleri &Gruplandır"
 
-#: core/libs/database/utils/ifaces/dio.cpp:831
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Copy Files"
 msgstr "Değeri kopyala"
 
-#: core/libs/database/utils/ifaces/dio.cpp:836
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "Albüme &Taşı..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:841
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Resimler Kaydet"
 
-#: core/libs/database/utils/ifaces/dio.cpp:846
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Film Dosyaları"
 
-#: core/libs/database/utils/ifaces/dio.cpp:861
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
@@ -35654,12 +35654,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "%2 içerisinde %1 isimli klasör ya da dosya zaten bulunuyor"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35667,45 +35667,45 @@ msgid ""
 msgstr ""
 "%1 klasörü %2 albümüne taşınamadı. %1 klasörü de %2 albümüne kopyalanmış"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, fuzzy, kde-format
 #| msgid "Could not move file %1 to album %2"
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "%1 klasörü %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to album %2"
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to album %2"
 msgid "Could not copy file %1 to folder %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Dosya/Klasör %1 yok"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35713,7 +35713,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35721,33 +35721,33 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "%1 albümü kaldırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "%1 resmi kaldırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, fuzzy, kde-format
 #| msgid "Couldn't move image %1 to collection trash"
 msgid "Could not move image %1 to collection trash"
 msgstr "%1 resmi koleksiyon çöpüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Aynı isimli %1 resmi zaten var"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "%1 resmi yeniden adlandırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, fuzzy, kde-format
 #| msgid "Could not open file '%1' for writing"
 msgid "Could not restore file %1 from trash"
