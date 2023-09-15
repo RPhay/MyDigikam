@@ -186,6 +186,18 @@ QString ParseResults::replaceTokens(const QString& markedString) const
     return result;
 }
 
+QString ParseResults::resultValuesAsString() const
+{
+    QString valuesString;
+
+    Q_FOREACH (const ResultsKey& key, m_results.keys())
+    {
+        valuesString +=  result(key);
+    }
+
+    return valuesString;
+}
+
 void ParseResults::debug() const
 {
     Q_FOREACH (const ResultsKey& key, m_results.keys())

@@ -68,6 +68,8 @@ public:
 
     QString    replaceTokens(const QString& markedString)   const;
 
+    QString    resultValuesAsString()                       const;
+
     void       debug()                                      const;
 
 private:
