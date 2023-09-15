@@ -192,7 +192,7 @@ QString ParseResults::resultValuesAsString() const
 
     Q_FOREACH (const ResultsKey& key, m_results.keys())
     {
-        valuesString +=  result(key);
+        valuesString += result(key);
     }
 
     return valuesString;
