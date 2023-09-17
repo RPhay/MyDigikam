@@ -68,8 +68,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:43+0000\n"
-"PO-Revision-Date: 2023-09-09 12:19+0200\n"
+"POT-Creation-Date: 2023-09-16 00:43+0000\n"
+"PO-Revision-Date: 2023-09-15 21:40+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -241,20 +241,29 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:91
-#: core/app/dragdrop/albumdragdrop.cpp:207
-#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/albumdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:210
+#: core/app/dragdrop/albumdragdrop.cpp:326
 #: core/app/dragdrop/importdragdrop.cpp:107
 #: core/app/dragdrop/itemdragdrop.cpp:136 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
 msgstr "&Déplacer ici"
 
-#: core/app/dragdrop/albumdragdrop.cpp:93
-#: core/app/dragdrop/albumdragdrop.cpp:163
-#: core/app/dragdrop/albumdragdrop.cpp:217
-#: core/app/dragdrop/albumdragdrop.cpp:272
-#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:90
+#: core/app/dragdrop/albumdragdrop.cpp:211
+#: core/app/dragdrop/albumdragdrop.cpp:327
+#: core/app/dragdrop/importdragdrop.cpp:110
+#: core/app/dragdrop/itemdragdrop.cpp:139
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Copier ici"
+
+#: core/app/dragdrop/albumdragdrop.cpp:92
+#: core/app/dragdrop/albumdragdrop.cpp:166
+#: core/app/dragdrop/albumdragdrop.cpp:220
+#: core/app/dragdrop/albumdragdrop.cpp:275
+#: core/app/dragdrop/albumdragdrop.cpp:329
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
@@ -264,27 +273,19 @@ msgstr "&Déplacer ici"
 msgid "C&ancel"
 msgstr "&Annuler"
 
-#: core/app/dragdrop/albumdragdrop.cpp:159
-#: core/app/dragdrop/albumdragdrop.cpp:213
+#: core/app/dragdrop/albumdragdrop.cpp:162
+#: core/app/dragdrop/albumdragdrop.cpp:216
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Définir comme vignette d'album"
 
-#: core/app/dragdrop/albumdragdrop.cpp:208
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/importdragdrop.cpp:110
-#: core/app/dragdrop/itemdragdrop.cpp:139
-#, kde-format
-msgid "&Copy Here"
-msgstr "&Copier ici"
-
-#: core/app/dragdrop/albumdragdrop.cpp:269
+#: core/app/dragdrop/albumdragdrop.cpp:272
 #: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Download From Camera"
 msgstr "Télécharger depuis l'appareil photo"
 
-#: core/app/dragdrop/albumdragdrop.cpp:270
+#: core/app/dragdrop/albumdragdrop.cpp:273
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
@@ -1573,8 +1574,7 @@ msgid "Select Folder to Parse"
 msgstr "Sélectionner le dossier à analyser"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Sélectionner les dossiers à importer dans un album"
@@ -3239,7 +3239,7 @@ msgstr "Aide"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr ""
+msgstr "Aide en ligne concernant la poubelle"
 
 #: core/app/views/stack/trashview.cpp:130
 #, kde-format
@@ -3327,7 +3327,7 @@ msgid "Selection"
 msgstr "Sélection"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:818
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -5303,10 +5303,9 @@ msgid "User Script: No script."
 msgstr "Script utilisateur : pas de script."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:297
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Script utilisateur : pas de script."
+msgstr "Script utilisateur : erreur d'ouverture de fichier."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:314
 #, kde-format
@@ -5334,10 +5333,9 @@ msgid "User Script: Command not found."
 msgstr "Script utilisateur : impossible de trouver la commande."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:344
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Script utilisateur : pas de script."
+msgstr "Script utilisateur : code d'erreur retourné %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -7784,11 +7782,10 @@ msgid "Adjust Levels"
 msgstr "Ajuster des niveaux"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "Sélectionner le fichier des niveaux GIMP à charger"
+msgstr "Sélectionner le fichier des niveaux « GIMP » à charger"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -16813,9 +16810,7 @@ msgid "&Save"
 msgstr "Enregi&strer"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process and save selected items."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Traiter et enregistrer les éléments sélectionnés."
@@ -17902,10 +17897,9 @@ msgid "Create jAlbum Album"
 msgstr "Créer un album « jAlbum »"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
-#, fuzzy, kde-format
-#| msgid "Welcome to jAlbum Album Tool"
+#, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "Bienvenue dans l'outil d'album jAlbum"
+msgstr "Bienvenue dans l'outil d'exportation jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -17918,12 +17912,10 @@ msgid "Generating jAlbum"
 msgstr "Génération de jAlbum"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Partager des fichiers avec le serveur de média DLNA"
+msgstr "Partager des fichiers avec le serveur « DLNA »de média"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
@@ -18119,9 +18111,7 @@ msgid "MJPEG Server cannot be started!"
 msgstr "Le serveur « MJPEG » ne peut être démarré !"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with MJPEG Stream Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
 msgstr "Partager des fichiers avec le serveur de flux « MJPEG »"
@@ -21988,11 +21978,10 @@ msgstr "Présentation…"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Specify delay for slide show"
+#, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
-msgstr "Spécifier un retard pour le diaporama"
+msgstr "Spécifier un délai pour le diaporama"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
@@ -22958,11 +22947,10 @@ msgid "Validate previous session..."
 msgstr "Valider la session précédente…"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "Exporter vers le service Web « Facebook »"
+msgstr "Exporter vers le service Internet « Facebook »"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
 #, fuzzy, kde-format
@@ -24021,17 +24009,13 @@ msgid "Export to Google Drive"
 msgstr "Exporter vers Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Lancer l'envoi vers Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Exporter vers le service Google Photos"
@@ -24045,9 +24029,7 @@ msgid "Start upload to Google Photos service"
 msgstr "Lancer l'envoi vers le service Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import from Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Importer depuis le service Google Photos"
@@ -24512,23 +24494,20 @@ msgstr "Connexion :"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, fuzzy, kde-format
-#| msgid "ERROR while creating observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "ERREUR lors de la création de l'observation"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, fuzzy, kde-format
-#| msgid "ERROR while uploading photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERREUR lors de l'envoi d'une photo"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, fuzzy, kde-format
-#| msgid "ERROR while deleting observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERREUR lors de la suppression de l'observation"
@@ -26390,11 +26369,10 @@ msgid "Maximum dimension:"
 msgstr "Dimension maximale :"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr "Importer depuis le service Web « SmugMug »"
+msgstr "Importer depuis le service Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
 #, fuzzy, kde-format
@@ -26404,18 +26382,16 @@ msgid "Start download from SmugMug web service"
 msgstr "Démarrer le téléchargement depuis le service Web « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "Exporter vers le service Web « SmugMug »"
+msgstr "Exporter vers le service Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
-msgstr "Démarrer l'envoi vers le service Web « SmugMug »"
+msgstr "Démarrer l'envoi vers le service Internet « SmugMug »"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -26994,7 +26970,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversion « UFRaw Raw »"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:823
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Corbeille"
@@ -27619,7 +27595,7 @@ msgid "Context menu"
 msgstr "Menu contextuel"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:833
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Vider la corbeille"
@@ -28070,9 +28046,7 @@ msgstr ""
 "« %1 »"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:477
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Impossible de calculer une moyenne"
@@ -29036,13 +29010,13 @@ msgstr ""
 "n'existe pas. Impossible de vérifier la version du schéma de la base de "
 "données actuelle. Essayez de démarrer avec une base de données vide"
 
-#: core/libs/database/utils/ifaces/dio.cpp:329
+#: core/libs/database/utils/ifaces/dio.cpp:321
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflit de fichier"
 
-#: core/libs/database/utils/ifaces/dio.cpp:330
+#: core/libs/database/utils/ifaces/dio.cpp:322
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29064,55 +29038,55 @@ msgstr ""
 "Écraser automatiquement : les fichiers en conflit seront écrasés.\n"
 "Ignorer automatiquement : les fichiers en conflit seront ignorés."
 
-#: core/libs/database/utils/ifaces/dio.cpp:339
+#: core/libs/database/utils/ifaces/dio.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Renommer automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:341
+#: core/libs/database/utils/ifaces/dio.cpp:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Écraser automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:343
+#: core/libs/database/utils/ifaces/dio.cpp:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Ignorer automatiquement"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Copier l'album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Copier les images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:798
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Copier des fichiers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:803
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Déplacer l'album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:808
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Déplacer les images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:813
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Déplacer les fichiers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:828
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaurer la corbeille"
@@ -29800,11 +29774,10 @@ msgstr ""
 "n'existe pas :</p><p><b>%1</b></p>Voulez-vous que digiKam le crée pour vous ?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "Impossible de créer le dossier de la base de données"
+msgstr "Impossible de créer un dossier de base de données"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
 #, kde-format
@@ -30105,15 +30078,13 @@ msgid "&Move to Trash"
 msgstr "&Mettre à la corbeille"
 
 #: core/libs/dialogs/deletedialog.cpp:660
-#, fuzzy, kde-format
-#| msgid "About to delete selected items"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "À propos de la suppression des éléments sélectionnés"
 
 #: core/libs/dialogs/deletedialog.cpp:667
-#, fuzzy, kde-format
-#| msgid "About to delete selected albums"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
 msgstr "À propos de la suppression des albums sélectionnés"
@@ -30134,11 +30105,10 @@ msgid "Do not ask again"
 msgstr "Ne plus poser la question"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, fuzzy, kde-format
-#| msgid "Settings for Saving Image File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr "Configuration pour l'enregistrement d'un fichier image"
+msgstr "Configuration pour l'enregistrement d'un fichier d'image"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
 #, kde-format
@@ -30323,11 +30293,10 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
-msgstr "Liste des appareils photo RAW pris en charge"
+msgstr "Liste des appareils photo en mode « RAW » pris en charge"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
 #, kde-format
@@ -31072,11 +31041,10 @@ msgid "Luminosity"
 msgstr "Luminosité"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr "Fichier de configuration de noir et blanc à charger"
+msgstr "Fichier de configuration des noirs et blancs à charger"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -31091,11 +31059,10 @@ msgstr ""
 "blanc."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr "Fichier de configuration de noir et blanc à enregistrer"
+msgstr "Fichier de configuration des noirs et blancs à enregistrer"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
@@ -31253,9 +31220,7 @@ msgstr ""
 "de gain."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Gimp Gains Mixer File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Fichier « GIMP » de mélangeur de gains à enregistrer"
@@ -31419,11 +31384,10 @@ msgid "Adjust Curves"
 msgstr "Ajuster des courbes"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select Gimp Curves File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr "Sélectionner le fichier de courbes GIMP à charger"
+msgstr "Sélectionner le fichier de courbes « GIMP » à charger"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -34797,9 +34761,7 @@ msgid "Save the list."
 msgstr "Enregistrer la liste."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Sélectionner la liste de fichiers d'images à charger"
@@ -34812,9 +34774,7 @@ msgid "All Files (*)"
 msgstr "Tous les fichiers (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "Sélectionner la liste des fichiers d'images à enregistrer"
@@ -35731,12 +35691,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Un fichier ou dossier nommé « %1 » existe déjà dans « %2 »."
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Impossible de déplacer le dossier « %1 » dans l'album « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -35745,45 +35705,45 @@ msgstr ""
 "Impossible de déplacer le dossier « %1 » dans l'album « %2 ». Le dossier "
 "« %1 » a été copié dans l'album « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr ""
 "Impossible de déplacer le fichier à partir du fichier« %1 » vers l'album "
 "« %2 »"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Impossible de déplacer le fichier « %1 » dans l'album « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Impossible de copier le dossier « %1 » dans l'album « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr ""
 "Impossible de copier le fichier vers le fichier « %1 » vers le dossier « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Impossible de copier le fichier « %1 » dans le dossier « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Impossible de copier le fichier « %1 » dans l'album « %2 »"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Le fichier/dossier « %1 » n'existe pas"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35794,7 +35754,7 @@ msgstr ""
 "Vérifiez les droits d'accès au fichier dans le dossier de corbeille « ."
 "dtrash » de la collection d'images."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35805,32 +35765,32 @@ msgstr ""
 "Vérifiez les droits d'accès au fichier dans le dossier de corbeille « ."
 "dtrash » de la collection d'images."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Impossible de supprimer l'album « %1 »"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "L'image « %1 » n'a pas pu être supprimée"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Impossible de déplacer l'image « %1 » dans la corbeille"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Une image avec le même nom « %1 » existe déjà"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "L'image « %1 » n'a pas pu être renommée"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Impossible de restaurer le fichier « %1 » à partir de la corbeille"
@@ -40224,7 +40184,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr ""
+msgstr "Aide en ligne sur la gestion des étiquettes"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -51393,9 +51353,7 @@ msgid "Edit Favorite Folder"
 msgstr "Modifier le dossier préféré"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Impossible de calculer une moyenne"
@@ -52011,8 +51969,9 @@ msgstr ""
 #| "specifies the separator char before the numbers"
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers, ||0|| optional to always "
-"pad with ||n|| zero digits"
+"specifies the separator char before the numbers, ||a|| optional to include "
+"all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
+"digits"
 msgstr ""
 "Ajouter un nombre suffixe, ||n|| spécifie le nombre de chiffres à utiliser, "
 "||c|| spécifie le caractère de séparation avant les chiffres"
@@ -52975,11 +52934,10 @@ msgstr ""
 "p><p><b>%1</b></p>Voulez-vous que digiKam le crée pour vous ?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "Impossible de créer le dossier d'albums racine"
+msgstr "Impossible de créer le dossier racine de l'album"
 
 #: core/utilities/firstrun/collectionpage.cpp:193
 #, kde-format
@@ -53495,7 +53453,7 @@ msgstr "Plus ancien ou plus grand"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected folder as reference"
-msgstr ""
+msgstr "Préférez le dossier sélectionné comme référence"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:218
 #, kde-format
@@ -53510,12 +53468,10 @@ msgid "Prefer Newer Creation Date"
 msgstr "Préférer la date de création la plus récente"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:224
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Modification Date"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Modification Date"
-msgstr "Par date de modification"
+msgstr "Préférer une nouvelle date de modification"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:228
 #, fuzzy, kde-format
@@ -55153,8 +55109,7 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Aucun profil</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Options d'épreuvage sur écran"
@@ -57929,14 +57884,12 @@ msgid "Open the item with default assigned application."
 msgstr "Ouvrir l'élément avec l'application désignée par défaut."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
-msgstr "Supprimer l'élément de la table lumineuse"
+msgstr "Supprimer un élément de la table lumineuse"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
 msgstr "Supprimer tous les éléments de la table lumineuse"
 
@@ -58396,10 +58349,9 @@ msgstr ""
 "Durée : %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Supprimer l'étiquette des images"
+msgstr "Supprimer tous les visages des images"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
 #, kde-format
@@ -58614,11 +58566,10 @@ msgstr "Il n'y a pas d'éléments à traiter dans les files d'attente."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, fuzzy, kde-format
-#| msgid "Processed items album settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr "Paramètres de l'album d'éléments traités"
+msgstr "Configuration de l'album d'éléments traités"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
@@ -59638,10 +59589,9 @@ msgid "Province"
 msgstr "Province"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:657
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province shown in the item"
-msgstr "Pays associé à l'emplacement affiché dans l'élément"
+msgstr "Province affichée dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
@@ -59649,10 +59599,9 @@ msgid "City"
 msgstr "Ville"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:673
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City shown in the item"
-msgstr "Pays associé à l'emplacement affiché dans l'élément"
+msgstr "Ville affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:689
 #, kde-format
@@ -59660,10 +59609,9 @@ msgid "Sublocation"
 msgstr "Lieu complémentaire"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:689
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Pays associé à l'emplacement affiché dans l'élément"
+msgstr "Sous-emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:703
 #, kde-format
@@ -61490,11 +61438,10 @@ msgid "Choose the Folder Containing your Collection"
 msgstr "Choisissez le dossier contenant votre collection"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:695
-#, fuzzy, kde-format
-#| msgid "Problem Appending Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
-msgstr "Problème pour ajouter une collection"
+msgstr "Problème lors d'un ajout à une collection"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, kde-format
@@ -61502,8 +61449,7 @@ msgid "A collection with the path \"%1\" already exists."
 msgstr "Un collection à l'emplacement « %1 » existe déjà."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:856
-#, fuzzy, kde-format
-#| msgid "Remove Path from the Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Supprimer l'emplacement de la collection ?"
@@ -62265,20 +62211,16 @@ msgstr ""
 "Video 1 » (AV1), un format d'encodage ouvert et libre de droits. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:144
-#, fuzzy, kde-format
-#| msgid "Reread Metadata From File"
-#| msgid_plural "Reread Metadata From Selected Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Advanced Metadata Profile"
-msgstr "Lire à nouveau les métadonnées à partir du fichier"
+msgstr "Enregistrer le profil avancé des métadonnées"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Remove metadata from file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Advanced Metadata Profile"
-msgstr "Supprimer les métadonnées du fichier"
+msgstr "Charger le profil avancé des métadonnées"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:214
 #, kde-format

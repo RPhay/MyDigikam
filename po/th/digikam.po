@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:43+0000\n"
+"POT-Creation-Date: 2023-09-16 00:43+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -217,20 +217,29 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:91
-#: core/app/dragdrop/albumdragdrop.cpp:207
-#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/albumdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:210
+#: core/app/dragdrop/albumdragdrop.cpp:326
 #: core/app/dragdrop/importdragdrop.cpp:107
 #: core/app/dragdrop/itemdragdrop.cpp:136 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
 msgstr "ย้าย&มาไว้ที่นี่"
 
-#: core/app/dragdrop/albumdragdrop.cpp:93
-#: core/app/dragdrop/albumdragdrop.cpp:163
-#: core/app/dragdrop/albumdragdrop.cpp:217
-#: core/app/dragdrop/albumdragdrop.cpp:272
-#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:90
+#: core/app/dragdrop/albumdragdrop.cpp:211
+#: core/app/dragdrop/albumdragdrop.cpp:327
+#: core/app/dragdrop/importdragdrop.cpp:110
+#: core/app/dragdrop/itemdragdrop.cpp:139
+#, kde-format
+msgid "&Copy Here"
+msgstr "&คัดลอกไว้ที่นี่"
+
+#: core/app/dragdrop/albumdragdrop.cpp:92
+#: core/app/dragdrop/albumdragdrop.cpp:166
+#: core/app/dragdrop/albumdragdrop.cpp:220
+#: core/app/dragdrop/albumdragdrop.cpp:275
+#: core/app/dragdrop/albumdragdrop.cpp:329
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
@@ -240,27 +249,19 @@ msgstr "ย้าย&มาไว้ที่นี่"
 msgid "C&ancel"
 msgstr "&ยกเลิก"
 
-#: core/app/dragdrop/albumdragdrop.cpp:159
-#: core/app/dragdrop/albumdragdrop.cpp:213
+#: core/app/dragdrop/albumdragdrop.cpp:162
+#: core/app/dragdrop/albumdragdrop.cpp:216
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "ตั้งเป็นภาพตัวอย่างของอัลบั้ม"
 
-#: core/app/dragdrop/albumdragdrop.cpp:208
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/importdragdrop.cpp:110
-#: core/app/dragdrop/itemdragdrop.cpp:139
-#, kde-format
-msgid "&Copy Here"
-msgstr "&คัดลอกไว้ที่นี่"
-
-#: core/app/dragdrop/albumdragdrop.cpp:269
+#: core/app/dragdrop/albumdragdrop.cpp:272
 #: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Download From Camera"
 msgstr "ดาวน์โหลดจากกล้อง"
 
-#: core/app/dragdrop/albumdragdrop.cpp:270
+#: core/app/dragdrop/albumdragdrop.cpp:273
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
@@ -3368,7 +3369,7 @@ msgid "Selection"
 msgstr "ส่วนที่เลือก"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:818
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26698,7 +26699,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "การแปลงขอบเขตสี"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:823
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -27312,7 +27313,7 @@ msgid "Context menu"
 msgstr "เมนูเมื่อคลิกขวา"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:833
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -28718,13 +28719,13 @@ msgstr ""
 "ทำให้ไม่สามารถตรวจความถูกต้องของรุ่นของชุดรูปแบบฐานข้อมูลปัจจุบันได้ "
 "โปรดลองเริ่มการทำงานด้วยฐานข้อมูลเปล่าดู"
 
-#: core/libs/database/utils/ifaces/dio.cpp:329
+#: core/libs/database/utils/ifaces/dio.cpp:321
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "ชื่อของแฟ้ม"
 
-#: core/libs/database/utils/ifaces/dio.cpp:330
+#: core/libs/database/utils/ifaces/dio.cpp:322
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28737,64 +28738,64 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:339
+#: core/libs/database/utils/ifaces/dio.cpp:331
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "ให้เขียนทับโดยอัตโนมัติ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:341
+#: core/libs/database/utils/ifaces/dio.cpp:333
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "ให้เขียนทับโดยอัตโนมัติ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:343
+#: core/libs/database/utils/ifaces/dio.cpp:335
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "ให้เขียนทับโดยอัตโนมัติ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Copy Album"
 msgstr "อัลบั้มของฉัน"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, fuzzy, kde-format
 #| msgid "Add Images..."
 msgid "Copy Images"
 msgstr "เพิ่มภาพต่าง ๆ ..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:798
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy Files"
 msgstr "&คัดลอกไว้ที่นี่"
 
-#: core/libs/database/utils/ifaces/dio.cpp:803
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "&ย้ายไปยังอัลบั้ม..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:808
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "บันทึกภาพ"
 
-#: core/libs/database/utils/ifaces/dio.cpp:813
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "แฟ้มภาพยนตร์"
 
-#: core/libs/database/utils/ifaces/dio.cpp:828
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "ซ่อมแซมภาพถ่าย"
@@ -35264,54 +35265,54 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "มีแฟ้มหรือโฟลเดอร์อื่นที่มีชื่อเดียวกันนี้อยู่แล้ว"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, fuzzy, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, fuzzy, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, fuzzy, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, fuzzy, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, fuzzy, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "ไม่สามารถบันทึกไอคอนสำหรับภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "ยังไม่มีแฟ้มอยู่"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35319,7 +35320,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35327,34 +35328,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "ชื่อของอัลบั้มไม่สามารถว่างไว้ได้"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "ไม่สามารถบันทึกภาพ '%1' ไปเป็น '%2' ได้"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "มีอัลบั้มอื่นที่มีชื่อเดียวกันนี้อยู่ก่อนแล้ว\n"
 "โปรดตั้งชื่ออัลบั้มเป็นชื่ออื่น"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"
@@ -52358,8 +52359,9 @@ msgstr ""
 #, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers, ||0|| optional to always "
-"pad with ||n|| zero digits"
+"specifies the separator char before the numbers, ||a|| optional to include "
+"all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
+"digits"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36

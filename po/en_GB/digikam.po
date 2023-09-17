@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:43+0000\n"
+"POT-Creation-Date: 2023-09-16 00:43+0000\n"
 "PO-Revision-Date: 2023-05-21 15:02+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -205,20 +205,29 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:91
-#: core/app/dragdrop/albumdragdrop.cpp:207
-#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/albumdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:210
+#: core/app/dragdrop/albumdragdrop.cpp:326
 #: core/app/dragdrop/importdragdrop.cpp:107
 #: core/app/dragdrop/itemdragdrop.cpp:136 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
 msgstr "&Move Here"
 
-#: core/app/dragdrop/albumdragdrop.cpp:93
-#: core/app/dragdrop/albumdragdrop.cpp:163
-#: core/app/dragdrop/albumdragdrop.cpp:217
-#: core/app/dragdrop/albumdragdrop.cpp:272
-#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:90
+#: core/app/dragdrop/albumdragdrop.cpp:211
+#: core/app/dragdrop/albumdragdrop.cpp:327
+#: core/app/dragdrop/importdragdrop.cpp:110
+#: core/app/dragdrop/itemdragdrop.cpp:139
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Copy Here"
+
+#: core/app/dragdrop/albumdragdrop.cpp:92
+#: core/app/dragdrop/albumdragdrop.cpp:166
+#: core/app/dragdrop/albumdragdrop.cpp:220
+#: core/app/dragdrop/albumdragdrop.cpp:275
+#: core/app/dragdrop/albumdragdrop.cpp:329
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
@@ -228,27 +237,19 @@ msgstr "&Move Here"
 msgid "C&ancel"
 msgstr "C&ancel"
 
-#: core/app/dragdrop/albumdragdrop.cpp:159
-#: core/app/dragdrop/albumdragdrop.cpp:213
+#: core/app/dragdrop/albumdragdrop.cpp:162
+#: core/app/dragdrop/albumdragdrop.cpp:216
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Set as Album Thumbnail"
 
-#: core/app/dragdrop/albumdragdrop.cpp:208
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/importdragdrop.cpp:110
-#: core/app/dragdrop/itemdragdrop.cpp:139
-#, kde-format
-msgid "&Copy Here"
-msgstr "&Copy Here"
-
-#: core/app/dragdrop/albumdragdrop.cpp:269
+#: core/app/dragdrop/albumdragdrop.cpp:272
 #: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Download From Camera"
 msgstr "Download From Camera"
 
-#: core/app/dragdrop/albumdragdrop.cpp:270
+#: core/app/dragdrop/albumdragdrop.cpp:273
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
@@ -3232,7 +3233,7 @@ msgid "Selection"
 msgstr "Selection"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:818
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26276,7 +26277,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Raw Conversion"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:823
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Wastebin"
@@ -26884,7 +26885,7 @@ msgid "Context menu"
 msgstr "Context menu"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:833
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Empty Wastebin"
@@ -28255,13 +28256,13 @@ msgstr ""
 "exist. The current database schema version cannot be verified. Try to start "
 "with an empty database. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:329
+#: core/libs/database/utils/ifaces/dio.cpp:321
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "File Conflict"
 
-#: core/libs/database/utils/ifaces/dio.cpp:330
+#: core/libs/database/utils/ifaces/dio.cpp:322
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28282,55 +28283,55 @@ msgstr ""
 "Overwrite automatically: conflicting files will be overwritten.\n"
 "Skip automatically: conflicting files will be skipped."
 
-#: core/libs/database/utils/ifaces/dio.cpp:339
+#: core/libs/database/utils/ifaces/dio.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Rename Automatically"
 
-#: core/libs/database/utils/ifaces/dio.cpp:341
+#: core/libs/database/utils/ifaces/dio.cpp:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Overwrite Automatically"
 
-#: core/libs/database/utils/ifaces/dio.cpp:343
+#: core/libs/database/utils/ifaces/dio.cpp:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Skip Automatically"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Copy Album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Copy Images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:798
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Copy Files"
 
-#: core/libs/database/utils/ifaces/dio.cpp:803
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Move Album"
 
-#: core/libs/database/utils/ifaces/dio.cpp:808
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Move Images"
 
-#: core/libs/database/utils/ifaces/dio.cpp:813
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Move Files"
 
-#: core/libs/database/utils/ifaces/dio.cpp:828
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restore Wastebin"
@@ -34765,12 +34766,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "A file or folder named %1 already exists in %2"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Could not move folder %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -34779,42 +34780,42 @@ msgstr ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Could not move sidecar from file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Could not move file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Could not copy folder %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Could not copy sidecar from file %1 to folder %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Could not copy file %1 to folder %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Could not copy file %1 to album %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "File/Folder %1 does not exist"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34825,7 +34826,7 @@ msgstr ""
 "Check the file permission on the wastebin folder \".dtrash\" in the image "
 "collection."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34836,32 +34837,32 @@ msgstr ""
 "Check the file permission on the wastebin folder \".dtrash\" in the image "
 "collection."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 could not be removed"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Image %1 could not be removed"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Could not move image %1 to collection trash"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Image with the same name %1 already there"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Image %1 could not be renamed"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Could not restore file %1 from wastebin"
@@ -50783,8 +50784,9 @@ msgstr "Add a suffix number, ||n|| specifies the number of digits to use"
 #| "specifies the separator char before the numbers"
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers, ||0|| optional to always "
-"pad with ||n|| zero digits"
+"specifies the separator char before the numbers, ||a|| optional to include "
+"all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
+"digits"
 msgstr ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers"

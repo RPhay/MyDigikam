@@ -155,10 +155,11 @@ void CopyOrMoveJob::run()
                 {
                     // If QDir::rename fails, try copy and remove.
 
-                    if      (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
-                                                                     m_data->getProgressId(), &m_cancel))
+                    if      (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
+                                                                     m_data->getProgressId(),
+                                                                     &m_cancel, true))
                     {
-                        Q_EMIT signalOneProccessed(srcUrl);
+                        m_data->setErrorOrCancel(true);
 
                         if (m_cancel)
                         {
@@ -203,10 +204,11 @@ void CopyOrMoveJob::run()
             {
                 QDir srcDir(srcInfo.filePath());
 
-                if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(),
-                                                            m_data->getProgressId(), &m_cancel))
+                if (!DFileOperations::copyFolderRecursively(srcDir.path(), destenation,
+                                                            m_data->getProgressId(),
+                                                            &m_cancel, true))
                 {
-                    Q_EMIT signalOneProccessed(srcUrl);
+                    m_data->setErrorOrCancel(true);
 
                     if (m_cancel)
                     {
@@ -249,6 +251,8 @@ void CopyOrMoveJob::run()
 
         Q_EMIT signalOneProccessed(srcUrl);
     }
+
+    m_data->setErrorOrCancel(m_cancel);
 
     Q_EMIT signalDone();
 }

@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:43+0000\n"
-"PO-Revision-Date: 2023-09-04 20:29+0100\n"
+"POT-Creation-Date: 2023-09-16 00:43+0000\n"
+"PO-Revision-Date: 2023-09-16 18:07+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -192,20 +192,29 @@ msgctxt "@info: month-name year-string"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/dragdrop/albumdragdrop.cpp:91
-#: core/app/dragdrop/albumdragdrop.cpp:207
-#: core/app/dragdrop/albumdragdrop.cpp:323
+#: core/app/dragdrop/albumdragdrop.cpp:89
+#: core/app/dragdrop/albumdragdrop.cpp:210
+#: core/app/dragdrop/albumdragdrop.cpp:326
 #: core/app/dragdrop/importdragdrop.cpp:107
 #: core/app/dragdrop/itemdragdrop.cpp:136 core/app/dragdrop/tagdragdrop.cpp:80
 #, kde-format
 msgid "&Move Here"
 msgstr "&Movi tien ĉi"
 
-#: core/app/dragdrop/albumdragdrop.cpp:93
-#: core/app/dragdrop/albumdragdrop.cpp:163
-#: core/app/dragdrop/albumdragdrop.cpp:217
-#: core/app/dragdrop/albumdragdrop.cpp:272
-#: core/app/dragdrop/albumdragdrop.cpp:326
+#: core/app/dragdrop/albumdragdrop.cpp:90
+#: core/app/dragdrop/albumdragdrop.cpp:211
+#: core/app/dragdrop/albumdragdrop.cpp:327
+#: core/app/dragdrop/importdragdrop.cpp:110
+#: core/app/dragdrop/itemdragdrop.cpp:139
+#, kde-format
+msgid "&Copy Here"
+msgstr "&Kopii tien ĉi"
+
+#: core/app/dragdrop/albumdragdrop.cpp:92
+#: core/app/dragdrop/albumdragdrop.cpp:166
+#: core/app/dragdrop/albumdragdrop.cpp:220
+#: core/app/dragdrop/albumdragdrop.cpp:275
+#: core/app/dragdrop/albumdragdrop.cpp:329
 #: core/app/dragdrop/importdragdrop.cpp:55
 #: core/app/dragdrop/importdragdrop.cpp:172
 #: core/app/dragdrop/itemdragdrop.cpp:84 core/app/dragdrop/itemdragdrop.cpp:728
@@ -215,27 +224,19 @@ msgstr "&Movi tien ĉi"
 msgid "C&ancel"
 msgstr "Rezi&gni"
 
-#: core/app/dragdrop/albumdragdrop.cpp:159
-#: core/app/dragdrop/albumdragdrop.cpp:213
+#: core/app/dragdrop/albumdragdrop.cpp:162
+#: core/app/dragdrop/albumdragdrop.cpp:216
 #, kde-format
 msgid "Set as Album Thumbnail"
 msgstr "Agordi kiel Albuma Bildeto"
 
-#: core/app/dragdrop/albumdragdrop.cpp:208
-#: core/app/dragdrop/albumdragdrop.cpp:324
-#: core/app/dragdrop/importdragdrop.cpp:110
-#: core/app/dragdrop/itemdragdrop.cpp:139
-#, kde-format
-msgid "&Copy Here"
-msgstr "&Kopii tien ĉi"
-
-#: core/app/dragdrop/albumdragdrop.cpp:269
+#: core/app/dragdrop/albumdragdrop.cpp:272
 #: core/app/dragdrop/itemdragdrop.cpp:724
 #, kde-format
 msgid "Download From Camera"
 msgstr "Elŝuti De Fotilo"
 
-#: core/app/dragdrop/albumdragdrop.cpp:270
+#: core/app/dragdrop/albumdragdrop.cpp:273
 #: core/app/dragdrop/itemdragdrop.cpp:726
 #, kde-format
 msgid "Download && Delete From Camera"
@@ -3223,7 +3224,7 @@ msgid "Selection"
 msgstr "Elekto"
 
 #: core/app/views/stack/trashview.cpp:454
-#: core/libs/database/utils/ifaces/dio.cpp:818
+#: core/libs/database/utils/ifaces/dio.cpp:856
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:447
 #, kde-format
@@ -26318,7 +26319,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "UFRaw Kruda Konvertiĝo"
 
 #: core/libs/album/engine/album.cpp:429
-#: core/libs/database/utils/ifaces/dio.cpp:823
+#: core/libs/database/utils/ifaces/dio.cpp:861
 #, kde-format
 msgid "Trash"
 msgstr "Rubujo"
@@ -26923,7 +26924,7 @@ msgid "Context menu"
 msgstr "Kunteksta menuo"
 
 #: core/libs/album/treeview/abstractalbumtreeview.cpp:1109
-#: core/libs/database/utils/ifaces/dio.cpp:833
+#: core/libs/database/utils/ifaces/dio.cpp:871
 #, kde-format
 msgid "Empty Trash"
 msgstr "Malplenigi Rubujon"
@@ -28299,13 +28300,13 @@ msgstr ""
 "nuna datumbaza skemversio ne povas esti kontrolita. Provu komenci kun "
 "malplena datumbazo."
 
-#: core/libs/database/utils/ifaces/dio.cpp:329
+#: core/libs/database/utils/ifaces/dio.cpp:321
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dosiera Konflikto"
 
-#: core/libs/database/utils/ifaces/dio.cpp:330
+#: core/libs/database/utils/ifaces/dio.cpp:322
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -28326,55 +28327,55 @@ msgstr ""
 "Anstataŭigu aŭtomate: konfliktantaj dosieroj estos anstataŭitaj.\n"
 "Salti aŭtomate: konfliktantaj dosieroj estos preterlasitaj."
 
-#: core/libs/database/utils/ifaces/dio.cpp:339
+#: core/libs/database/utils/ifaces/dio.cpp:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Alinomigi Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:341
+#: core/libs/database/utils/ifaces/dio.cpp:333
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Anstataŭigi Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:343
+#: core/libs/database/utils/ifaces/dio.cpp:335
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Salti Aŭtomate"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:825
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopii Albumon"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:830
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopii Bildojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:798
+#: core/libs/database/utils/ifaces/dio.cpp:836
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopii Dosierojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:803
+#: core/libs/database/utils/ifaces/dio.cpp:841
 #, kde-format
 msgid "Move Album"
 msgstr "Movi Albumon"
 
-#: core/libs/database/utils/ifaces/dio.cpp:808
+#: core/libs/database/utils/ifaces/dio.cpp:846
 #, kde-format
 msgid "Move Images"
 msgstr "Movi Bildojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:813
+#: core/libs/database/utils/ifaces/dio.cpp:851
 #, kde-format
 msgid "Move Files"
 msgstr "Movi Dosierojn"
 
-#: core/libs/database/utils/ifaces/dio.cpp:828
+#: core/libs/database/utils/ifaces/dio.cpp:866
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restarigi Rubujon"
@@ -34814,12 +34815,12 @@ msgstr ""
 msgid "A file or folder named %1 already exists in %2"
 msgstr "Dosiero aŭ dosierujo nomita %1 jam ekzistas en %2"
 
-#: core/libs/iojobs/iojob.cpp:168
+#: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
 msgstr "Ne eblis movi la dosierujon %1 al la albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:175
+#: core/libs/iojobs/iojob.cpp:176
 #, kde-format
 msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
@@ -34828,42 +34829,42 @@ msgstr ""
 "Ne eblis movi la dosierujon %1 al la albumo %2. La dosierujo %1 estis "
 "kopiita ankaŭ al albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:187
+#: core/libs/iojobs/iojob.cpp:188
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr "Ne eblis movi kromĉaron de dosiero %1 al albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:193
+#: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Ne eblis movi dosieron %1 al albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:216
+#: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Ne eblis kopii dosierujon %1 al albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:228
+#: core/libs/iojobs/iojob.cpp:230
 #, kde-format
 msgid "Could not copy sidecar from file %1 to folder %2"
 msgstr "Ne eblis kopii kromĉaron de dosiero %1 al dosierujo %2"
 
-#: core/libs/iojobs/iojob.cpp:236
+#: core/libs/iojobs/iojob.cpp:238
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Ne eblis kopii dosieron %1 al dosierujo %2"
 
-#: core/libs/iojobs/iojob.cpp:241
+#: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Ne eblis kopii dosieron %1 al albumo %2"
 
-#: core/libs/iojobs/iojob.cpp:283
+#: core/libs/iojobs/iojob.cpp:287
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Dosiero/Dosierujo %1 ne ekzistas"
 
-#: core/libs/iojobs/iojob.cpp:295
+#: core/libs/iojobs/iojob.cpp:299
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -34873,7 +34874,7 @@ msgstr ""
 "Ne eblis movi la dosierujon %1 al la rubujo.\n"
 "Kontroli la dosierpermeson sur la rubujo \".dtrash\" en la bildkolekto."
 
-#: core/libs/iojobs/iojob.cpp:307
+#: core/libs/iojobs/iojob.cpp:311
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -34883,32 +34884,32 @@ msgstr ""
 "Ne eblis movi bildon %1 al kolektorubo.\n"
 "Kontroli la dosierpermeson en la rubujo \".dtrash\" en la bildkolekto."
 
-#: core/libs/iojobs/iojob.cpp:324
+#: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Albumo %1 ne povis esti forigita"
 
-#: core/libs/iojobs/iojob.cpp:336
+#: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Bildo %1 ne povis esti forigita"
 
-#: core/libs/iojobs/iojob.cpp:382
+#: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Ne eblis movi bildon %1 al kolekta rubujo"
 
-#: core/libs/iojobs/iojob.cpp:392
+#: core/libs/iojobs/iojob.cpp:396
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Bildo kun la sama nomo %1 jam tie"
 
-#: core/libs/iojobs/iojob.cpp:407
+#: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Bildo %1 ne povis esti renomita"
 
-#: core/libs/iojobs/iojob.cpp:479
+#: core/libs/iojobs/iojob.cpp:483
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Ne eblis restarigi dosieron %1 el rubujo"
@@ -50856,12 +50857,14 @@ msgstr "Aldonu sufikson nombron, ||n|| specifas la nombron da ciferoj por uzi"
 #, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-"specifies the separator char before the numbers, ||0|| optional to always "
-"pad with ||n|| zero digits"
+"specifies the separator char before the numbers, ||a|| optional to include "
+"all options for uniqueness, ||0|| optional to always pad with ||n|| zero "
+"digits"
 msgstr ""
-"Aldonu sufikson nombron, ||n|| precizigas la nombron da ciferoj por uzi, ||"
-"c|| specifas la apartigilon antaŭ la nombroj, ||0|| nedeviga por ĉiam ŝtopi "
-"kun ||n|| nulciferoj"
+"Aldoni sufiksnombron, ||n|| specifas la nombron da ciferoj uzendaj, ||c|| "
+"specifas la apartigilon antaŭ la nombroj, ||a|| laŭvolaĵo por inkluzivi "
+"ĉiujn opciojn por unusenceco, ||0|| nedeviga por ĉiam ŝtopi kun ||n|| "
+"nulciferoj"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format

@@ -387,17 +387,22 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
                                             const QString& dstPath,
                                             const QString& itemId,
                                             bool* const cancel,
-                                            bool  countTotal)
+                                            bool  useDstPath)
 {
     QDir srcDir(srcPath);
-    QString newCopyPath = dstPath + QLatin1Char('/') + srcDir.dirName();
+    QString newCopyPath = dstPath;
+
+    if (!useDstPath)
+    {
+        newCopyPath += QLatin1Char('/') + srcDir.dirName();
+    }
 
     if (!srcDir.mkpath(newCopyPath))
     {
         return false;
     }
 
-    if (countTotal && !itemId.isEmpty())
+    if (!itemId.isEmpty())
     {
         int count = 0;
 

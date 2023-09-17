@@ -85,18 +85,21 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        // TODO Copy?
-
         QMenu popMenu(view);
-        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
+        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
         QAction* const choice     = popMenu.exec(QCursor::pos());
 
-        if (choice == moveAction)
+        if      (choice == moveAction)
         {
             DIO::move(droppedAlbum, destAlbum);
+        }
+        else if (choice == copyAction)
+        {
+            DIO::copy(droppedAlbum, destAlbum);
         }
 
         return true;
