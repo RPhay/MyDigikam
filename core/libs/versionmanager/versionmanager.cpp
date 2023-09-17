@@ -177,13 +177,17 @@ void VersionNameCreator::setSaveFileName()
 
     // Update the result format for TIFF and JPG to the existing original suffix in short or long format.
 
-    int lastDot = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
+    int lastDot          = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
+    const bool tifFormat = (m_result.format == QLatin1String("TIFF"));
+    const bool jpgFormat = (m_result.format == QLatin1String("JPG"));
 
-    if ((lastDot != -1) && ((m_result.format == QLatin1String("TIFF")) || (m_result.format == QLatin1String("JPG"))))
+    if ((lastDot != -1) && (tifFormat || jpgFormat))
     {
-        QString suffix = m_loadedFile.fileName.right(m_loadedFile.fileName.size() - lastDot - 1).toUpper();
+        int extSize    = m_loadedFile.fileName.size() - lastDot - 1;
+        QString suffix = m_loadedFile.fileName.right(extSize).toUpper();
 
-        if ((suffix == QLatin1String("TIF")) || (suffix == QLatin1String("JPEG")))
+        if (((suffix == QLatin1String("TIF"))  && tifFormat) ||
+            ((suffix == QLatin1String("JPEG")) && jpgFormat))
         {
             m_result.format = suffix;
         }
