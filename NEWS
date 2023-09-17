@@ -65,7 +65,7 @@ BUGFIXES:
 055 ==> 474459 - Renaming pattern field is cutting characters in MacOS.
 056 ==> 474486 - Metadata > XMP tab > Some fields are showing type="Struct".
 057 ==> 474607 - digiKam crashes when creating album for new photos.
-058 ==> 
+058 ==> 474560 - Image saved with .tiff extension instead of .tif.
 059 ==> 
 060 ==> 
 061 ==> 

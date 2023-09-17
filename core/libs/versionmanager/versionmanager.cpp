@@ -175,6 +175,21 @@ void VersionNameCreator::setSaveFileName()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "analyzing file" << m_loadedFile.fileName << m_version << m_intermediateCounter;
 
+    // Update the result format for TIFF and JPG to the existing original suffix in short or long format.
+
+    QString suffix = m_loadedFile.format;
+    int lastDot    = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
+
+    if ((lastDot != -1) && ((m_result.format == QLatin1String("TIFF")) || (m_result.format == QLatin1String("JPG"))))
+    {
+        QString suffix = m_loadedFile.fileName.right(m_loadedFile.fileName.size() - lastDot - 1).toUpper();
+
+        if ((suffix == QLatin1String("TIF")) || (suffix == QLatin1String("JPEG")))
+        {
+            m_result.format = suffix;
+        }
+    }
+
     if (!m_newVersion)
     {
         m_result.fileName = m_loadedFile.fileName;
