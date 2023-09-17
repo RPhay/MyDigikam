@@ -177,8 +177,7 @@ void VersionNameCreator::setSaveFileName()
 
     // Update the result format for TIFF and JPG to the existing original suffix in short or long format.
 
-    QString suffix = m_loadedFile.format;
-    int lastDot    = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
+    int lastDot = m_loadedFile.fileName.lastIndexOf(QLatin1Char('.'));
 
     if ((lastDot != -1) && ((m_result.format == QLatin1String("TIFF")) || (m_result.format == QLatin1String("JPG"))))
     {
