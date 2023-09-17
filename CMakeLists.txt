@@ -90,7 +90,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules
                       ${ECM_MODULE_PATH}
 )
 
-# KF${QT_VERSION_MAJOR} Framework macros
+# KDE Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
