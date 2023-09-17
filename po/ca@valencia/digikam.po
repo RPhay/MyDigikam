@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:43+0000\n"
-"PO-Revision-Date: 2023-09-01 11:14+0200\n"
+"PO-Revision-Date: 2023-09-16 11:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22118,7 +22118,7 @@ msgid ""
 "with the F2 key.</b>"
 msgstr ""
 "<b>Nota: Este diàleg per a la configuració de la presentació de diapositives "
-"es pot activar en qualsevol moment amb la tecla F2.</b>"
+"es pot activar en qualsevol moment amb la tecla «F2».</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
 #, kde-format
@@ -51548,11 +51548,7 @@ msgstr ""
 "d'utilitzar"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers, ||0|| optional to always "
-#| "pad with ||n|| zero digits"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51560,8 +51556,9 @@ msgid ""
 "digits"
 msgstr ""
 "Afig un número de sufix, ||n|| especifica el nombre de dígits que s'ha "
-"d'utilitzar, ||c|| especifica el caràcter separador abans del números, ||0|| "
-"opcional per a farcir sempre amb ||n|| dígits zero"
+"d'utilitzar, ||c|| especifica el caràcter separador abans del números, ||a|| "
+"opcional per a incloure totes les opcions per a la unicitat, ||0|| opcional "
+"per a farcir sempre amb ||n|| dígits zero"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format

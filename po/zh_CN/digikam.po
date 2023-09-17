@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:43+0000\n"
-"PO-Revision-Date: 2023-09-02 03:17\n"
+"PO-Revision-Date: 2023-09-16 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -6602,12 +6602,12 @@ msgstr "4:2:2 (画质较好)"
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:102
 #, kde-format
 msgid "4:2:0 (low quality)"
-msgstr "4:2:0 (画质较低)"
+msgstr "4:2:0 (画质较差)"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:103
 #, kde-format
 msgid "4:1:1 (low quality)"
-msgstr "4:1:1 (画质较低)"
+msgstr "4:1:1 (画质较差)"
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:104
 #, kde-format

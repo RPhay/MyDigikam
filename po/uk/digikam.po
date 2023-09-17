@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:43+0000\n"
-"PO-Revision-Date: 2023-09-01 09:28+0300\n"
+"PO-Revision-Date: 2023-09-16 08:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -51699,11 +51699,7 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "Додати суфікс-число, ||n|| визначає кількість цифр у суфіксі"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers, ||0|| optional to always "
-#| "pad with ||n|| zero digits"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51711,7 +51707,8 @@ msgid ""
 "digits"
 msgstr ""
 "Додати суфікс-число, ||n|| визначає кількість цифр у суфіксі, ||c|| задає "
-"символ-роздільник до чисел, ||0|| — необов'язкове безумовне доповнення "
+"символ-роздільник до чисел, ||a|| — необов'язковий, для включення усіх "
+"параметрів для унікальності, ||0|| — необов'язкове безумовне доповнення "
 "нулями до ||n|| цифр"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36

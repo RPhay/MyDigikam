@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 00:43+0000\n"
-"PO-Revision-Date: 2023-09-01 05:58+0200\n"
+"PO-Revision-Date: 2023-09-16 09:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.3.2\n"
 
@@ -51124,11 +51124,7 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "Dodaj številko pripone, ||n|| določa koliko števk bo uporabljenih"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers, ||0|| optional to always "
-#| "pad with ||n|| zero digits"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51136,8 +51132,8 @@ msgid ""
 "digits"
 msgstr ""
 "Dodaj številko pripone, ||n|| določa koliko števk bo uporabljenih, ||c|| "
-"določa mejni znak pred številkami, ||0|| neobvezno vedno dopolni z ||n|| "
-"ničlami"
+"določa mejni znak pred številkami, ||a|| neobvezno za vključevanje vseh "
+"možnosti unikatnosti, ||0|| neobvezno vedno dopolni z ||n|| ničlami"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
