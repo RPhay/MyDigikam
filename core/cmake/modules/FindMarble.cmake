@@ -6,7 +6,7 @@
 #  MARBLE_LIBRARIES   - the marble core libraries
 #  ASTRO_LIBRARIES    - the marble astro libraries
 #
-# SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -19,7 +19,17 @@ IF ( MARBLE_INCLUDE_DIR AND MARBLE_LIBRARIES )
 ENDIF ( MARBLE_INCLUDE_DIR AND MARBLE_LIBRARIES )
 
 FIND_PATH( MARBLE_INCLUDE_DIR NAMES marble/MarbleModel.h )
-FIND_LIBRARY( MARBLE_LIBRARIES NAMES marblewidget-qt5 marblewidget-qt5d )
+
+if(NOT Qt6_FOUND)
+
+    FIND_LIBRARY( MARBLE_LIBRARIES NAMES marblewidget-qt5 marblewidget-qt5d )
+
+else()
+
+    FIND_LIBRARY( MARBLE_LIBRARIES NAMES marblewidget-qt6 marblewidget-qt6d )
+
+endif()
+
 FIND_LIBRARY( ASTRO_LIBRARIES NAMES astro astrod )
 
 INCLUDE( FindPackageHandleStandardArgs )
