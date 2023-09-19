@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:43+0000\n"
-"PO-Revision-Date: 2023-09-03 22:10+0200\n"
+"POT-Creation-Date: 2023-09-19 00:43+0000\n"
+"PO-Revision-Date: 2023-09-16 19:48+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -11254,104 +11254,104 @@ msgstr "File non salvato"
 msgid "Cannot save \"%1\" file"
 msgstr "Impossibile salvare il file «%1»"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Editor di geolocalizzazione"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Mostra le posizioni segnate sulla mappa."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Disposizione:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "Una mappa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "Due mappe in orizzontale"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Due mappe in verticale"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Ordinamento"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Mostra prima la foto più vecchia"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Mostra prima la foto più recente"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Dettagli"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Correlatore GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Annulla/rifai"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Geocodifica inversa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Cerca"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Esportazione KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:619
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Caricamento dei metadati -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:810
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11359,25 +11359,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Hai un'immagine modificata."
 msgstr[1] "Hai %1 immagini modificate."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Modifiche non salvate"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:818
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Vuoi salvare le modifiche apportate?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:934
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Salvataggio delle modifiche -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11421,13 +11421,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Errore"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:994
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Salvataggio di alcune informazioni non riuscito:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1025
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -51560,11 +51560,7 @@ msgstr ""
 "Aggiungi un suffisso numerico, ||n|| specifica la quantità di cifre da usare"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers, ||0|| optional to always "
-#| "pad with ||n|| zero digits"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51572,8 +51568,9 @@ msgid ""
 "digits"
 msgstr ""
 "Aggiungi un suffisso numerico, ||n|| specifica la quantità di cifre da "
-"usare, ||c|| specifica il carattere separatore prima dei numeri, ||0|| "
-"facoltativo per riempire sempre con ||n|| zero cifre"
+"usare, ||c|| specifica il carattere separatore prima dei numeri, ||a|| "
+"facoltativo per includere tutte le opzioni per univocità, ||0|| facoltativo "
+"per riempire sempre con ||n|| zero cifre"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format

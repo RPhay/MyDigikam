@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:43+0000\n"
+"POT-Creation-Date: 2023-09-19 00:43+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -10550,110 +10550,110 @@ msgstr "फाईल नाव"
 msgid "Cannot save \"%1\" file"
 msgstr "फाईल \"%1\" साठवू शकत नाही"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "जिओलोकेशन"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, fuzzy, kde-format
 #| msgid "Layout:"
 msgctxt "@label"
 msgid "Layout:"
 msgstr "रचना :"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "आडवे पलटी करा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "अनुक्रमीत"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "तपशील"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "दिनदर्शिका"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "पूर्ववत करा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "शोधा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:619
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "दाखल करत आहे..."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:810
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -10661,7 +10661,7 @@ msgid_plural "You have %1 modified images."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10669,13 +10669,13 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "बदल साठवा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:818
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:934
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10683,7 +10683,7 @@ msgctxt "@info"
 msgid "Saving changes -"
 msgstr "बदल साठवा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10728,13 +10728,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "त्रुटी"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:994
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1025
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
