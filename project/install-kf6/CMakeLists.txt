@@ -128,6 +128,7 @@ InstallKF6Component(sonnet              ${KDE_VERSION} "${Qt6CommonOptions};-DSO
 InstallKF6Component(ktextwidgets        ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kio                 ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kio-drop-deps.patch")
 InstallKF6Component(kinit               ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(kdoctools           ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(ksanecore           ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(libksane            ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kfilemetadata       ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
