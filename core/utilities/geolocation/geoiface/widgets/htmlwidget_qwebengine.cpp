@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : Widget for displaying HTML in the backends - QtWebEngine version
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -272,8 +272,14 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
                 if (!d->firstSelectionPoint.hasCoordinates())
                 {
                     runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+                                          .arg(e->position().x())
+                                          .arg(e->position().y()),
+#else
                                           .arg(e->x())
                                           .arg(e->y()),
+#endif
                                           &d->firstSelectionPoint);
 
                     d->firstSelectionScreenPoint = QPoint(e->x(), e->y());
