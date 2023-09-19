@@ -562,7 +562,7 @@ void AdvancedMetadataTab::setModels()
 
     Q_FOREACH (const QString& str, keys)
     {
-        d->metadataType->addItem(i18n(str.toUtf8().constData()), str);
+        d->metadataType->addItem(d->container.translateMappingKey(str), str);
     }
 
     d->metadataTypeSize = keys.size();
