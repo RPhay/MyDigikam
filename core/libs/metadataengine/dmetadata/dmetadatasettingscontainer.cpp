@@ -312,16 +312,18 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
 {
-   const QString readNameSpace  = QLatin1String("read%1Namespaces");
-   const QString writeNameSpace = QLatin1String("write%1Namespaces");
+    const QString readNameSpace  = QLatin1String("read%1Namespaces");
+    const QString writeNameSpace = QLatin1String("write%1Namespaces");
+
+    // Remove all old group elements.
+
+    Q_FOREACH (const QString& groupKey, group.groupList())
+    {
+        group.deleteGroup(groupKey);
+    }
 
     Q_FOREACH (const QString& str, mappingKeys())
     {
-        // Remove all old group elements.
-
-        group.group(readNameSpace.arg(str)).deleteGroup();
-        group.group(writeNameSpace.arg(str)).deleteGroup();
-
         writeOneGroup(group, readNameSpace.arg(str), getReadMapping(str));
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
