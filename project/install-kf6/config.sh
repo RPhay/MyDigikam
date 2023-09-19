@@ -71,6 +71,7 @@ ext_knotifyconfig \
 ext_kfilemetadata \
 ext_kcalendarcore \
 ext_kdoctools \
+ext_phonon \
 "
 
 #ext_marble \
