@@ -41,6 +41,8 @@ packages=("qt6-base-dev"
           "libical-dev"
           "libcanberra-dev"
           "libattr1-dev"
+          "libgpgme-dev"
+          "libssh-gcrypt-dev"
 )
 
 for pkg in ${packages[@]}; do

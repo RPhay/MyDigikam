@@ -72,6 +72,14 @@ ext_kfilemetadata \
 ext_kcalendarcore \
 ext_kdoctools \
 ext_phonon \
+ext_qca \
+ext_kwallet \
+ext_kpackage \
+ext_attica \
+ext_knewstuff \
+ext_kitemmodels \
+ext_kparts \
+ext_krunner \
 "
 
 #ext_marble \
