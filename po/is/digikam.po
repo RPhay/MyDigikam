@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 00:43+0000\n"
-"PO-Revision-Date: 2023-06-29 16:57+0000\n"
+"POT-Creation-Date: 2023-09-20 00:43+0000\n"
+"PO-Revision-Date: 2023-09-19 11:52+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -39,7 +39,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.04.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -806,12 +806,10 @@ msgid "R&emove Tag"
 msgstr "Fjarlægja m&erki"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Remove all Faces"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Fjarlægja öll andlitsmerki"
+msgstr "Fjarlægja öll merki"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -2940,7 +2938,7 @@ msgstr "Ekkert merkingaalbúm"
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3317,6 +3315,8 @@ msgid ""
 "Metadata: add new options to save and load configuration profiles in "
 "Advanced Metadata Settings Panel."
 msgstr ""
+"Lýsigögn: bætt við nýjum valkostum til að vista og hlaða inn stillingasniðum "
+"á spjaldinu fyrir ítarlegar stillingar lýsigagna."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
@@ -3412,11 +3412,13 @@ msgstr "Leyfa að nota allsstaðar sérsniðnar stillingar myndgæðaröðunar."
 #, kde-format
 msgid "Add Icon-View settings to customize Labels visibility over thumbnails."
 msgstr ""
+"Bætt við stillingum fyrir Táknmyndasýn til að sérsníða sýnileika skýringa "
+"ofan á smámyndum."
 
 #: core/app/views/stack/welcomepageview.cpp:165
 #, kde-format
 msgid "Add support for float16 (half float) images in the TIFF Loader."
-msgstr ""
+msgstr "Bætt við stuðningi við float16 (half float) myndir í TIFF-myndhleðslu."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3479,6 +3481,8 @@ msgid ""
 "Update G'MIC-Qt tool to last version 3.2.2 and finalize MacOS port and "
 "improve stability of plugin."
 msgstr ""
+"Uppfærsla á G'MIC-Qt verkfærinu í nýjustu 3.2.2 útgáfuna og lokið við MacOS-"
+"yfirfærslu ásamt lagfæringum á stöðugleika viðbótarinnar."
 
 #: core/app/views/stack/welcomepageview.cpp:173
 #, kde-format
@@ -3844,7 +3848,7 @@ msgstr "Eiginleikar skráar"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #, kde-format
 msgid "Filename"
 msgstr "Skráarheiti"
@@ -3908,7 +3912,7 @@ msgstr "Hnit"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, kde-format
 msgid "Altitude"
 msgstr "Hæð"
@@ -4161,7 +4165,7 @@ msgstr "Eining"
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Thumbnail"
 msgstr "Smámynd"
@@ -5092,37 +5096,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
@@ -11213,31 +11207,31 @@ msgid "Edit Geolocation"
 msgstr "Breyta hnattstaðsetningu"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #, kde-format
 msgid "Latitude"
 msgstr "Breiddargráða"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, kde-format
 msgid "Longitude"
 msgstr "Lengdargráða"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, kde-format
 msgid "Speed"
 msgstr "Hraði"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "# satellites"
 msgstr "Fjöldi gervitungla"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, kde-format
 msgid "Fix type"
 msgstr "Tegund aðlögunar"
@@ -11253,7 +11247,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -15567,7 +15561,7 @@ msgstr "Tímamerki uppfært"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "Status"
 msgstr "Staða"
@@ -21848,31 +21842,7 @@ msgid "A tool to render slideshow"
 msgstr "Verkfæri til að myndgera skyggnusýningu"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -21910,16 +21880,16 @@ msgstr ""
 "td><td><i>Hægri</i>-lykill</td></tr><tr><td></td><td>Músarhjól niður</td></"
 "tr><tr><td></td><td>Hægri músarhnappur</td></tr><tr><td>Bið/Spila:</"
 "td><td><i>Bilslár</i>lykill</td></tr><tr><td>Stillingar skyggnusýningar:</"
-"td><td><i>F2</i>-lykill</td></tr><tr><td>Fela/Sýna eiginleika:</"
-"td><td><i>F4</i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</"
-"td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Eiginleikar atriða</h1></"
-"b></center></nobr></td></tr><tr><td>Breyta merkjum:</td><td>Nota flýtilykla "
-"fyrir merki</td></tr><tr><td>Breyta einkunn:</td><td>Nota flýtilykla fyrir "
-"einkunnir</td></tr><tr><td>Breyta litmerki:</td><td>Nota flýtilykla fyrir "
-"litmerkingar</td></tr><tr><td>Breyta sérmerkingu:</td><td>Nota flýtilykla "
-"fyrir sérmerkingar</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Annað</h1></b></center></nobr></td></"
-"tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-lykill</td></tr></table>"
+"td><td><i>F2</i>-lykill</td></tr><tr><td>Fela/Sýna yfirlög:</td><td><i>F4</"
+"i>-lykill</td></tr><tr><td>Hætta:</td><td><i>Esc</i>-lykill</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Eiginleikar atriða</h1></b></center></"
+"nobr></td></tr><tr><td>Breyta merkjum:</td><td>Nota flýtilykla fyrir merki</"
+"td></tr><tr><td>Breyta einkunn:</td><td>Nota flýtilykla fyrir einkunnir</"
+"td></tr><tr><td>Breyta litmerki:</td><td>Nota flýtilykla fyrir litmerkingar</"
+"td></tr><tr><td>Breyta sérmerkingu:</td><td>Nota flýtilykla fyrir "
+"sérmerkingar</td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Annað</h1></"
+"b></center></nobr></td></tr><tr><td>Birta þessa hjálp:</td><td><i>F1</i>-"
+"lykill</td></tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, kde-format
@@ -22855,6 +22825,8 @@ msgid ""
 "Copy the full URL from the external browser that contains the \"oauth_token"
 "\" entry:"
 msgstr ""
+"Afritaðu fulla URL-slóð úr utanaðkomandi vafra sem inniheldur \"oauth_token"
+"\" færsluna:"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:371
 #, kde-format
@@ -28655,6 +28627,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Write-Ahead Log er hamur eða virkni til að nota framvirkt skráningarkerfi "
+"(roll-forward journal) sem skráir færslur sem hafa verið afgreiddar en hafa "
+"ekki enn verið skrifaðar inn í gagnagrunna. Það notar auka-tímamerkta skrá "
+"til að hýsa raðaðar upplýsingar þannig að þær nýtist við endurheimtu færslna "
+"eftir hrun. Breytingar eru fyrst skráðar í þessa atvikaskrá, áður en "
+"breytingar eru skrifaðar í gagnagrunn. Þetta gerir gagnagrunnabeiðnir "
+"smættaðar og áreiðanlegar við umfangsmikla og áríðandi notkun."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -28903,15 +28882,7 @@ msgstr ""
 "að hafa skipt út <b><i>password</i></b> fyrir rétta lykilorðið).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -28927,8 +28898,11 @@ msgstr ""
 "skipunum:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</"
 "p><p>...</p><p>Settu SQL-kóða inn í Mysql-kvaðninguna til að frumstilla "
 "gagnagrunna digiKam með veittum heimildum (grant privileges - sjá nánar hér "
-"á eftir)</p><p>...</p><p>quit</p><p>ATH: Ef þú ert með óvenju stórt safn, "
-"ættir þú að ræsa MySQL-þjóninn með skipuninni mysql --"
+"á eftir)</p><p>...</p><p>quit</p><p>ATH: Ef þú átt í vandræðum með MySQL-"
+"þjón á Ubuntu-afleiddu Linux-kerfi, skaltu nota addition-skipunina á mysql-"
+"skipanalínu til að geta útbúið MySQL-gikki (triggers).<br>SET GLOBAL "
+"log_bin_trust_function_creators=1;</p><p>ATH: Ef þú ert með óvenju stórt "
+"safn, ættir þú að ræsa MySQL-þjóninn með skipuninni mysql --"
 "max_allowed_packet=128M EÐA breyta stillingum í my.ini eða ~/.my.cnf "
 "skránum</p>"
 
@@ -36061,37 +36035,37 @@ msgctxt "@info: country code"
 msgid "Zulu"
 msgstr "Zúlú"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:47
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:52
 #, kde-format
 msgctxt "@title: xmp namespace for tags container"
 msgid "Tags"
 msgstr "Merki"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:51
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:56
 #, kde-format
 msgctxt "@title: xmp namespace for title container"
 msgid "Title"
 msgstr "Titill"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:55
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:60
 #, kde-format
 msgctxt "@title: xmp namespace for rating container"
 msgid "Rating"
 msgstr "Einkunn"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:59
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:64
 #, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:63
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:68
 #, kde-format
 msgctxt "@title: xmp namespace for pick-label container"
 msgid "Pick label"
 msgstr "Sérmerking"
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:67
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:72
 #, kde-format
 msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
@@ -41173,7 +41147,7 @@ msgstr "Virkja"
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:50
 #, kde-format
 msgid "options"
-msgstr "valkostir"
+msgstr "valkosti"
 
 #: core/libs/video/qtav/config/AVFormatConfigPage.cpp:52
 #, kde-format
@@ -48660,6 +48634,8 @@ msgid ""
 "Select the default language here to use with \"x-default\"value for the "
 "alternative language strings."
 msgstr ""
+"Veldu hér sjálfgefið tungumál fyrir \"x-default\" gildi fyrir strengi á "
+"varatungumáli."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:127
 #, kde-format
@@ -50957,10 +50933,7 @@ msgstr ""
 "Bæta við tölusettu viðskeyti, ||n|| tilgreinir fjölda stafa sem á að nota"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -50968,7 +50941,9 @@ msgid ""
 "digits"
 msgstr ""
 "Bæta við tölusettu viðskeyti, ||n|| tilgreinir fjölda stafa sem á að nota, ||"
-"c|| tiltekur staf til aðgreiningar á undan tölum"
+"c|| tiltekur staf til aðgreiningar á undan tölum, ||a|| valkvætt til að hafa "
+"með alla valkosti fyrir einstæðileika (uniqueness), ||0|| valkvætt til að "
+"alltaf fylla að með ||n|| núll-stöfum"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -51290,7 +51265,7 @@ msgid "Tilt"
 msgstr "Halla"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, kde-format
 msgid "Accuracy"
 msgstr "Nákvæmni"
@@ -52689,10 +52664,9 @@ msgstr "Birta kvarðastýringu"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Google Kort"
+msgstr "API-lykill GoogleMaps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
@@ -52706,17 +52680,14 @@ msgid "Float items"
 msgstr "Fleyta hlutum"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "Slóð á API-forritsviðmót:"
+msgstr "API-lykill:"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
-#, fuzzy, kde-format
-#| msgid "Script Manager"
+#, kde-format
 msgid "Javascript Message"
-msgstr "Skriftustjóri"
+msgstr "JavaScript skilaboð"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
@@ -53181,64 +53152,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr "Fjöldi punkta"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
 #, kde-format
 msgid "Not available"
 msgstr "Ekki tiltækt"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
 #, kde-format
 msgid "#Sat: %1"
 msgstr "#tungla: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
 #, kde-format
 msgid "Modified"
 msgstr "Breytt"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Date and time"
 msgstr "Dagsetning og tími"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
 #, kde-format
 msgid "Failed to open file."
 msgstr "Gat ekki opnað skrá."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Gat ekki bætt GPS-upplýsingum í mynd."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Gat ekki fjarlægt GPS-upplýsingar úr mynd"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Gat ekki vistað merki í skrá."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Gat ekki vistað breytingar í skrá"
@@ -60339,7 +60310,7 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:232
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
-msgstr "Dera andlitakerfið óvirkt og ekki spyrja aftur"
+msgstr "Gera andlitakerfið óvirkt og ekki spyrja aftur"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
