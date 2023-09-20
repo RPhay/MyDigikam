@@ -792,8 +792,6 @@ QString DMetadataSettingsContainer::translateMappingKey(const QString& key) cons
         return namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.toString();
     }
 
-    return key;
-
 #else
 
     if      (NamespaceEntry::DM_TAG_CONTAINER() == key)
@@ -827,10 +825,9 @@ QString DMetadataSettingsContainer::translateMappingKey(const QString& key) cons
                      namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
     }
 
-    return key;
-
 #endif
 
+    return key;
 }
 
 QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)
