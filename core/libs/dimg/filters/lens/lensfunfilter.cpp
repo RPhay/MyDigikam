@@ -97,12 +97,18 @@ QString LensFunFilter::DisplayableName()
 {
     static const struct FilterName
     {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
         const KLazyLocalizedString    title;
+
 #else
+
         const char*                   context;
         const char*                   title;
+
 #endif
+
     }
     FILTER_NAME =
     {
@@ -110,10 +116,15 @@ QString LensFunFilter::DisplayableName()
     };
 
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
     return FILTER_NAME.title.toString();
+
 #else
+
     return i18nc(FILTER_NAME.context, FILTER_NAME.title);
+
 #endif
+
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
