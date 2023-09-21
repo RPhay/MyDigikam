@@ -27,6 +27,7 @@
 #include "digikam_debug.h"
 #include "digikam_opencv.h"
 #include "dnnyolodetector.h"
+#include "dnnresnetdetector.h"
 
 namespace Digikam
 {
@@ -45,6 +46,12 @@ autoTagsAssign::autoTagsAssign(DetectorModel model)
         case DetectorModel::YOLOV5XLARGE:
         {
             m_inferenceEngine = new DNNYoloDetector(YoloVersions(m_modelType));
+            break;
+        }
+
+        case DetectorModel::RESNET50:
+        {
+            m_inferenceEngine = new DNNResnetDetector();
             break;
         }
 

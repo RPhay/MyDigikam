@@ -94,3 +94,21 @@ target_link_libraries(autotagging_batch_cli
                       KF5::Service
                       ${COMMON_TEST_LINK}
 )
+
+# -----------------------------------------------------------------------------
+
+set(resnet_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/resnet_cli.cpp)
+add_executable(resnet_cli ${resnet_cli_SRCS})
+target_link_libraries(resnet_cli
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
+
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
+                      ${COMMON_TEST_LINK}
+)
+

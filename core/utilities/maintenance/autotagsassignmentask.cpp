@@ -95,13 +95,19 @@ void AutotagsAssignmentTask::run()
     {
         // Run Autotags backend ere
         // Assign Tags in databae using API from itemInfo
-        d->autotagsEngine = new autoTagsAssign();
+        QElapsedTimer timer;
+        timer.start();
+        
+        d->autotagsEngine = new autoTagsAssign(DetectorModel::YOLOV5NANO);
         QList<QList<QString>> tagsLists = d->autotagsEngine->generateTagsList(d->batchImgPaths, d->batchSize);
 
         for (int i = 0; i <  d->batchImgPaths.size(); i++)
         {
             assignTags(d->batchImgPaths[i], tagsLists[i]);
         }
+
+        int elapsed = timer.elapsed();
+        qDebug() << "assgin Tags process takes: " << elapsed << " ms";
 
         d->autotagsEngine = nullptr;
         delete d->autotagsEngine;

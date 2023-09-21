@@ -13,7 +13,7 @@
  * ============================================================ */
 
 
-#include "dnnyolodetector.h"
+#include "dnnresnetdetector.h"
 
 // C++ includes
 
@@ -33,19 +33,18 @@
 namespace Digikam
 {
 
-DNNYoloDetector::DNNYoloDetector(YoloVersions modelVersion)
-    : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(320, 320)),
-      yoloVersion (modelVersion)
+DNNResnetDetector::DNNResnetDetector()
+    : DNNBaseDetectorModel(1.0F / 255.0F, cv::Scalar(0.0 ,0.0 ,0.0), cv::Size(224, 224))
 {
     loadModels();
-    predefinedClasses = loadCOCOClass();
+    predefinedClasses = loadImageNetClass();
 }
 
-DNNYoloDetector::~DNNYoloDetector()
+DNNResnetDetector::~DNNResnetDetector()
 {
 }
 
-QList<QString>  DNNYoloDetector::loadCOCOClass()
+QList<QString>  DNNResnetDetector::loadImageNetClass()
 {
     QList<QString>  classList;
 
@@ -54,9 +53,9 @@ QList<QString>  DNNYoloDetector::loadCOCOClass()
                                              QLatin1String("digikam/autotagassignment"),
                                              QStandardPaths::LocateDirectory);
 
-    QString cocoClasses = appPath + QLatin1Char('/') + QLatin1String("coco.names");
+    QString imageNetClasses = appPath + QLatin1Char('/') + QLatin1String("classification_classes_ILSVRC2012.txt");
 
-    std::ifstream ifs(cocoClasses.toStdString());
+    std::ifstream ifs(imageNetClasses.toStdString());
     std::string line;
 
     while (getline(ifs, line))
@@ -67,33 +66,19 @@ QList<QString>  DNNYoloDetector::loadCOCOClass()
     return classList;
 }
 
-QList<QString> DNNYoloDetector::getPredefinedClasses() const
+QList<QString> DNNResnetDetector::getPredefinedClasses() const
 {
     return predefinedClasses;
 }
 
-bool DNNYoloDetector::loadModels()
+bool DNNResnetDetector::loadModels()
 {
     QString appPath =  QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/autotagassignment"),
                                              QStandardPaths::LocateDirectory);
 
     QString model;
-
-    switch (yoloVersion)
-    {
-        case (YoloVersions::YOLOV5NANO):
-        {
-            model = appPath + QLatin1Char('/') + QLatin1String("yolov5n_batch_16_s320.onnx");  ///< smaller model
-            break;
-        }
-
-        case (YoloVersions::YOLOV5XLARGE):
-        {
-            model = appPath + QLatin1Char('/') + QLatin1String("yolov5x_batch_16_s320.onnx");  ///< bigger model
-            break;
-        }
-    }
+    model = appPath + QLatin1Char('/') + QLatin1String("resnet50.onnx"); 
 
     if (QFileInfo::exists(model))
     {
@@ -120,14 +105,14 @@ bool DNNYoloDetector::loadModels()
     }
     else
     {
-        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected detection DNN model" << model;
+        qCCritical(DIGIKAM_FACEDB_LOG) << "Cannot found objected classification DNN model" << model;
         return false;
     }
 
     return true;
 }
 
-QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inputImage)
+QMap<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
 {
 
     if (inputImage.empty())
@@ -140,7 +125,7 @@ QMap<QString, QVector<QRect>> DNNYoloDetector::detectObjects(const::cv::Mat& inp
     return postprocess(inputImage, outs[0]);
 }
 
-QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+QList<QMap<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
 {
     if (inputBatchImages.empty())
     {
@@ -153,7 +138,7 @@ QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::detectObjects(const std::v
     return postprocess(inputBatchImages, outs);
 }
 
-std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
+std::vector<cv::Mat> DNNResnetDetector::preprocess(const cv::Mat& inputImage)
 {
     cv::Mat inputBlob = cv::dnn::blobFromImage(inputImage, scaleFactor, inputImageSize, meanValToSubtract, true,false);
     std::vector<cv::Mat> outs;
@@ -167,7 +152,7 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const cv::Mat& inputImage)
     return outs;
 }
 
-std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
+std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& inputBatchImages) 
 {
     cv::Mat inputBlob = cv::dnn::blobFromImages(inputBatchImages, scaleFactor, inputImageSize, meanValToSubtract, true,false);
     std::vector<cv::Mat> outs;
@@ -188,8 +173,8 @@ std::vector<cv::Mat> DNNYoloDetector::preprocess(const std::vector<cv::Mat>& inp
     return outs;
 }
 
-QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
-                                                                  const std::vector<cv::Mat>& outs) const
+QList<QMap<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+                                                                    const std::vector<cv::Mat>& outs) const
 {
     QList<QMap<QString, QVector<QRect>>> detectedBoxesList;
     
@@ -202,88 +187,26 @@ QList<QMap<QString, QVector<QRect>>> DNNYoloDetector::postprocess(const std::vec
     return detectedBoxesList;
 }
 
-QMap<QString, QVector<QRect>> DNNYoloDetector::postprocess(const cv::Mat& inputImage,
-                                                           const cv::Mat& out) const
+QMap<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inputImage,
+                                                             const cv::Mat& out) const
 {
     QMap<QString, QVector<QRect>> detectedBoxes;
 
-    std::vector<int>      class_ids;
-    std::vector<float>    confidences;
-    std::vector<cv::Rect> boxes;
+    cv::Point classIdPoint;
+    double final_prob;
 
-    float x_factor = float(inputImage.cols) / float(inputImageSize.width);
-    float y_factor = float(inputImage.rows) / float(inputImageSize.height);
+    minMaxLoc(out.reshape(1, 1), 0, &final_prob, 0, &classIdPoint);
+    int label_id = classIdPoint.x; 
 
-    float *data = (float *)out.data;
-
-    // Calculate the size of the data array and number of outputs
-    // NOTE outsput is a cv::Mat vector of [1 x (250200 * 85)]
-    size_t data_size = out.total() * out.channels();
-    int rows         = data_size / 85;
-
-    for (int i = 0; i < rows; ++i)
-    {
-        float confidence = data[4];
-        // Discard bad detections and continue.
-
-        if (confidence >= confidenceThreshold)
-        {
-            float* classes_scores = data + 5;
-
-            // Create a 1x85 Mat and store class scores of 80 classes.
-            cv::Mat scores(1, predefinedClasses.size(), CV_32FC1, classes_scores);
-
-            // Perform minMaxLoc and acquire the index of best class score.
-            cv::Point class_id;
-            double max_class_score;
-            cv::minMaxLoc(scores, 0, &max_class_score, 0, &class_id);
-
-            // Continue if the class score is above the threshold.
-            if (max_class_score > scoreThreshold)
-            {
-                // Store class ID and confidence in the pre-defined respective vectors.
-                confidences.push_back(confidence);
-                class_ids.push_back(class_id.x);
-
-                // Center.
-                float centerX = data[0];
-                float centerY = data[1];
-
-                // Box dimension.
-                float w    = data[2];
-                float h    = data[3];
-
-                // Bounding box coordinates.
-                int left      = int((centerX - 0.5 * w) * x_factor);
-                int top       = int((centerY - 0.5 * h) * y_factor);
-                int width     = int(w  * x_factor);
-                int height    = int(h  * y_factor);
-
-                // Store good detections in the boxes vector.
-                boxes.push_back(cv::Rect(left, top, width, height));
-            }
-        }
-        // Jump to the next row.
-        data += 85;
-    }
-
-    // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
-    std::vector<int> indices;
-    cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
-
-    for (const auto& id : indices)
-    {
-        cv::Rect bbox = boxes[id];
-        QString label = predefinedClasses[class_ids[id]];
-        detectedBoxes[label].push_back(QRect(bbox.x, bbox.y, bbox.width, bbox.height));
-    }
-
+    QString label = predefinedClasses[label_id];
+    detectedBoxes[label].push_back({});
+    
     return detectedBoxes;
 }
 
 /** Get the names of the output layers
  */
-std::vector<cv::String> DNNYoloDetector::getOutputsNames() const
+std::vector<cv::String> DNNResnetDetector::getOutputsNames() const
 {
     static std::vector<cv::String> names;
 

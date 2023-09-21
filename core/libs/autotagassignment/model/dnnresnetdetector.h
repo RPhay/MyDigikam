@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2023-09-02
- * Description : Derived class to perform YOLO neural network inference
+ * Description : Derived class to perform Resnet neural network inference
  *               for object detection (including yolo versions to benchmark).
  *
  * SPDX-FileCopyrightText: 2023 by Quoc Hung TRAN <quochungtran1999 at gmail dot com>
@@ -11,34 +11,27 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DNN_DETECTOR_YOLO_H
-#define DIGIKAM_DNN_DETECTOR_YOLO_H
+#ifndef DIGIKAM_DNN_DETECTOR_RESNET_H
+#define DIGIKAM_DNN_DETECTOR_RESNET_H
 
 #include "dnnbasedetectormodel.h"
 
 namespace Digikam
 {
 
-enum class YoloVersions
-{
-    YOLOV5NANO = 0,
-    YOLOV5XLARGE,
-    RESNET50
-};
-
-class DIGIKAM_EXPORT DNNYoloDetector: public DNNBaseDetectorModel
+class DIGIKAM_EXPORT DNNResnetDetector: public DNNBaseDetectorModel
 {
 
 public:
 
-    explicit DNNYoloDetector(YoloVersions modelVersion = YoloVersions::YOLOV5NANO);
-    ~DNNYoloDetector()                                                      override;
+    explicit DNNResnetDetector();
+    ~DNNResnetDetector()                                                      override;
 
 public:
 
     QList<QString>    getPredefinedClasses()                                           const         override;
     bool              loadModels();
-    QList<QString>    loadCOCOClass();    ///< load 80 predifined classes for object detection "coco.names"
+    QList<QString>    loadImageNetClass();    ///< load 80 predifined classes for object detection "..."
 
 public:
 
@@ -61,15 +54,14 @@ private:
 private:
 
     // Disable
-    DNNYoloDetector(const DNNYoloDetector&)            = delete;
-    DNNYoloDetector& operator=(const DNNYoloDetector&) = delete;
+    DNNResnetDetector(const DNNResnetDetector&)            = delete;
+    DNNResnetDetector& operator=(const DNNResnetDetector&) = delete;
 
 private:
 
     QList<QString>   predefinedClasses;
-    YoloVersions     yoloVersion;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DNN_DETECTOR_YOLO_H
+#endif // DIGIKAM_DNN_DETECTOR_RESNET_H

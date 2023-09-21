@@ -26,7 +26,7 @@
 
 #include "digikam_debug.h"
 #include "dnnbasedetectormodel.h"
-#include "dnnyolodetector.h"
+#include "dnnresnetdetector.h"
 
 using namespace Digikam;
 
@@ -64,10 +64,7 @@ void showObjects(const QString& imagePath, const QMap<QString, QVector<QRect>>& 
     for (QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
         it != detectedBoxes.constEnd(); it++)
     { 
-        for (auto rectDraw : it.value())
-        {
-            painter.drawRect(rectDraw);
-        }
+        painter.drawText(QPoint(20, 30), it.key());
     }
 
     // Only setPixmap after finishing drawing bboxes around detected objects
@@ -94,41 +91,12 @@ int main(int argc, char** argv)
     QFileInfoList filesInfo = dataset.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
 
     std::vector<cv::Mat> cvImages;
+    QScopedPointer<DNNResnetDetector> resnetDetector (new DNNResnetDetector());
+
     for (int j = 0; j < filesInfo.size(); j++)
     {
         cv::Mat cvImage = cv::imread(filesInfo[j].absoluteFilePath().toStdString());
-        cvImages.push_back(cvImage);
-    }
-
-    int batch_size = 16;
-    QList<QMap<QString, QVector<QRect>>> results; 
-    QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
-
-    int s = filesInfo.size() - filesInfo.size() % batch_size;
-
-
-    for (int i = 0; i < s - batch_size + 1; i += batch_size)
-    {
-        QElapsedTimer timer;
-        timer.start();
-        std::vector<cv::Mat> cvBatchImages;
-        for (int j = 0; j < batch_size; j++)
-        {
-            cvBatchImages.push_back(cvImages[i+j]);
-        }
-
-        // std::vector<cv::Mat> outs = yoloDetector->preprocess(cvBatchImages);
-        QList<QMap<QString, QVector<QRect>>> resBatch = yoloDetector->detectObjects(cvBatchImages);
-        int elapsed = timer.elapsed();
-        qDebug() << "detected took: " << elapsed << " ms";
-        // qDebug() << yoloDetector->showInferenceTime();
-        results += resBatch;
-    }
-
-
-    for (int i = 0; i < s; i++)
-    {
-        showObjects(filesInfo[i].absoluteFilePath(), results[i]);
+        showObjects(filesInfo[j].absoluteFilePath(),resnetDetector->detectObjects(cvImage));
     }
 
     return app.exec();

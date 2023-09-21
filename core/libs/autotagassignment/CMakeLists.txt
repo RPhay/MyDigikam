@@ -27,6 +27,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
 
 set(autotagassignment_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/model/dnnbasedetectormodel.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/model/dnnyolodetector.cpp
+                               ${CMAKE_CURRENT_SOURCE_DIR}/model/dnnresnetdetector.cpp
                                ${CMAKE_CURRENT_SOURCE_DIR}/autotagsassign.cpp
 )
 
