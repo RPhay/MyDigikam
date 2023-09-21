@@ -82,7 +82,7 @@ QString NamespaceEntry::DM_TAG_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TAGS].context, namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
 
 #endif
 
@@ -97,7 +97,7 @@ QString NamespaceEntry::DM_TITLE_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TITLE].context, namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
 
 #endif
 
@@ -112,7 +112,7 @@ QString NamespaceEntry::DM_RATING_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::RATING].context, namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::RATING].title);
 
 #endif
 
@@ -127,7 +127,7 @@ QString NamespaceEntry::DM_COMMENT_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COMMENT].context, namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
 
 #endif
 
@@ -142,7 +142,7 @@ QString NamespaceEntry::DM_PICKLABEL_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].context, namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
 
 #endif
 
@@ -157,7 +157,7 @@ QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
 
 #else
 
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].context, namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
 
 #endif
 
@@ -792,14 +792,42 @@ QString DMetadataSettingsContainer::translateMappingKey(const QString& key) cons
         return namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.toString();
     }
 
-    return key;
-
 #else
 
-    return i18n(key.toUtf8().constData());
+    if      (NamespaceEntry::DM_TAG_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::TAGS].context,
+                     namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+    }
+    else if (NamespaceEntry::DM_TITLE_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::TITLE].context,
+                     namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+    }
+    else if (NamespaceEntry::DM_RATING_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::RATING].context,
+                     namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+    }
+    else if (NamespaceEntry::DM_COMMENT_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::COMMENT].context,
+                     namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+    }
+    else if (NamespaceEntry::DM_PICKLABEL_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].context,
+                     namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+    }
+    else if (NamespaceEntry::DM_COLORLABEL_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].context,
+                     namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+    }
 
 #endif
 
+    return key;
 }
 
 QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)

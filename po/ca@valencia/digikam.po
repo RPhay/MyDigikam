@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-21 00:42+0000\n"
 "PO-Revision-Date: 2023-09-16 11:57+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19782,7 +19782,7 @@ msgstr "Mida de les fotografies"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:947
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -19795,7 +19795,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:942
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:958
 #, kde-format
 msgid "inches"
 msgstr "polzades"
@@ -20084,43 +20084,43 @@ msgstr "El nom del fitxer d'eixida d'imatge es generarà automàticament."
 msgid "Open in File Browser"
 msgstr "Obri en el navegador de fitxers"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:63
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:69
 #, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
 msgstr "Personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Seleccioneu l'eixida d'impressió preferida."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
 msgid "Add again"
 msgstr "Afig altra vegada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
 #, kde-format
 msgid "Remove"
 msgstr "Elimina"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Disposició personalitzada"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "La mida personalitzada seleccionada de la fotografia no es pot aplicar a la "
 "mida del paper."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1318
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -32638,86 +32638,86 @@ msgstr "(coincidència parcial)"
 msgid "(exact match found)"
 msgstr "(coincidència exacta)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:109
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Eina per a la correcció automàtica de la lent"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Càmera: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Lent: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Distància del motiu: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Obertura: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Distància focal: <numid>%1</numid>"
 
 # Segons la viquipèdia, «Crop factor» és el «Factor de distància focal»
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Factor de l'escapçat: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "Activat"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "Correcció CCA: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:413
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "Desactivat"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Correcció VIG: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "Correcció DST: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
