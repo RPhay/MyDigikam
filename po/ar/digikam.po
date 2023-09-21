@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-21 00:42+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -19344,7 +19344,7 @@ msgstr "اعرض ملفّ حجم"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:947
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
 msgstr "سم"
@@ -19357,7 +19357,7 @@ msgstr "مم"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:942
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:958
 #, kde-format
 msgid "inches"
 msgstr "بوصة"
@@ -19653,43 +19653,43 @@ msgstr ""
 msgid "Open in File Browser"
 msgstr "افتح مجلّدًا"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:63
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:69
 #, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
 msgstr "مخصّصة"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
 #, fuzzy, kde-format
 #| msgid "Select the profile of the color space to convert to."
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "اختر تشكيلة فضاء الألوان للتّحويل إليها."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgid "Add again"
 msgstr "أضف وسمًا جديدًا"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
 #, kde-format
 msgid "Remove"
 msgstr "أزل"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "مخصص"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1318
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, fuzzy, kde-format
 msgid ""
 "Custom\n"
@@ -31984,86 +31984,86 @@ msgstr "(عُثر على مطابقة جزئيّة)"
 msgid "(exact match found)"
 msgstr "(عُثر على مطابقة تامّة)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:109
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction Tool"
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "أداة تصحيح العدسة آليًّا"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "الكاميرا: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "العدسة: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "موضوع المسافة: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "الحدقة: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "طول البؤرة: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "معامل الاقتصاص: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "ممكّن"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:413
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "معطّل"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "تلقائي اللون التصحيح"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, fuzzy, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"

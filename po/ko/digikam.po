@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-21 00:42+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -20077,7 +20077,7 @@ msgstr "사진 크기"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:947
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -20090,7 +20090,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:942
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:958
 #, kde-format
 msgid "inches"
 msgstr "인치"
@@ -20375,44 +20375,44 @@ msgstr "이미지 출력 파일 이름을 자동으로 생성합니다."
 msgid "Open in File Browser"
 msgstr "파일 탐색기에서 열기"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:63
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:69
 #, fuzzy, kde-format
 #| msgid "Custom"
 msgctxt "@info layout page"
 msgid "Custom"
 msgstr "사용자 정의"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
 #, fuzzy, kde-format
 #| msgid "Select your preferred print output."
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "원하는 인쇄 출력을 선택하십시오."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
 msgid "Add again"
 msgstr "다시 추가"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, fuzzy, kde-format
 #| msgid "Custom layout"
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "사용자 정의 레이아웃"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr "선택한 사용자 정의 사진 크기는 용지 크기에 사용할 수 없습니다."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1318
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -32502,90 +32502,90 @@ msgstr "(부분적으로 일치하는 항목 있음)"
 msgid "(exact match found)"
 msgstr "(정확히 일치하는 항목 있음)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:109
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction Tool"
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "렌즈 자동 보정 도구"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "카메라: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "렌즈: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "피사체 거리: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "조리개 구경: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "초점 거리: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "크롭 배율: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "사용함"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
 #, fuzzy, kde-format
 #| msgid "CCA Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA 보정: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:413
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
 #, fuzzy, kde-format
 #| msgid "disabled"
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "사용 안 함"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, fuzzy, kde-format
 #| msgid "VIG Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "VIG 보정: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, fuzzy, kde-format
 #| msgid "DST Correction: %1"
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST 보정: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, fuzzy, kde-format
 #| msgid "GEO Correction: %1"
 msgctxt "@info; XMP settings"

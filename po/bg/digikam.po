@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:43+0000\n"
+"POT-Creation-Date: 2023-09-21 00:42+0000\n"
 "PO-Revision-Date: 2023-09-06 09:25+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -19825,7 +19825,7 @@ msgstr "Размер на снимка"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:947
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
 msgstr "см"
@@ -19838,7 +19838,7 @@ msgstr "mm"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:942
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:958
 #, kde-format
 msgid "inches"
 msgstr "инчове"
@@ -20127,43 +20127,43 @@ msgstr "Името на изходния файл на изображениет�
 msgid "Open in File Browser"
 msgstr "Отваряне във файлов браузър"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:63
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:69
 #, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
 msgstr "Потребителска"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr "Изберете предпочитания изход за печат"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
 msgid "Add again"
 msgstr "Добавяне отново"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
 #, kde-format
 msgid "Remove"
 msgstr "Изтриване"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Потребителско оформление"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 "Избраният потребителски размер на снимката не може да бъде приложен към "
 "размера на хартията."
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1318
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -32639,85 +32639,85 @@ msgstr "(намерено е частично съвпадение)"
 msgid "(exact match found)"
 msgstr "(намерено е точно съвпадение)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:109
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr "Инструмент за автоматична корекция на обектива"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr "Камера: %1-%2"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr "Обектив: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr "Разстояние до обекта: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr "Бленда: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr "Фокусно разстояние: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr "Фактор на изрязване: <numid>%1</numid>"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr "включен"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr "CCA корекция: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:413
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr "изключено"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr "Корекция на винетирането: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr "DST корекция: %1"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
