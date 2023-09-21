@@ -17,7 +17,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 # Manage script traces to log file
 
 mkdir -p ./logs
-exec > >(tee ./logs/build-extralibs.full.log) 2>&1
+exec > >(tee ./logs/build-kf6.full.log) 2>&1
 
 #################################################################################################
 # Pre-processing checks
