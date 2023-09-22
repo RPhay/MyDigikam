@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:42+0000\n"
-"PO-Revision-Date: 2023-09-16 19:48+0200\n"
+"PO-Revision-Date: 2023-09-21 10:53+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16437,13 +16437,13 @@ msgstr "Esposizione (EV):"
 #, kde-format
 msgctxt "@info"
 msgid "Hardmask: enabled"
-msgstr "HardMask: abilitata"
+msgstr "Maschera forte: abilitata"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:40
 #, kde-format
 msgctxt "@info"
 msgid "Hardmask: disabled"
-msgstr "HardMask: disabilitata"
+msgstr "Maschera forte: disabilitata"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:42
 #, kde-format
@@ -16551,7 +16551,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Hard Mask"
-msgstr "Hard Mask"
+msgstr "Maschera forte"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:140
 #, kde-format
