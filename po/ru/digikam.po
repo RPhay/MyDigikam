@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:42+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -18427,113 +18427,117 @@ msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr "Опубликовать с использованием сервера MJPEG..."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:48
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr "Только Orientation and script detection (OSD)."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr "Автоматическая сегментация страниц с помощью OSD."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr "Автоматическая сегментация страниц без OSD или OCR. (не реализовано)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:51
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
 msgstr "Полная автоматическая сегментация страниц с OSD. (По умолчанию)"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr "Предположить, что один столбец текста имеет переменные размеры."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
 msgstr "Предположить, что это единый блок вертикально выровненного текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:54
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr "Предположить, что это единый блок текста."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr "Рассматривать изображение как одну текстовую строку."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr "Рассматривать изображение как одно слово."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr "Рассматривать изображение как одно слово в кругу."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr "Рассматривать изображение как один символ."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
 msgstr "Редкий текст. Найти как можно больше текста в произвольном порядке."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr "Разреженный текст с OSD."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:61
-#, kde-format
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
+#| "Tesseract-specific."
 msgctxt "@info:tooltip"
 msgid ""
-"Raw line. Treat the image as a single text line,bypassing hacks that are "
+"Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
 "Простая строка. Рассматривать изображение как одну текстовую строку, минуя "
 "области, специфичные для Tesseract."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr "Только для устаревшего движка."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:72
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr "Только движок нейронных сетей LSTM."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:73
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr "Устаревшие движки + LSTM."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."

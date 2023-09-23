@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:42+0000\n"
+"POT-Creation-Date: 2023-09-23 00:42+0000\n"
 "PO-Revision-Date: 2023-09-15 21:40+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -18541,7 +18541,7 @@ msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr "Partager comme flux « MJPEG »…"
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:48
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
@@ -18549,13 +18549,13 @@ msgstr ""
 "Module de détection d'orientation et de script (Incrustation vidéo) "
 "uniquement."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr "Segmentation automatique de page avec incrustation vidéo."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
@@ -18563,7 +18563,7 @@ msgstr ""
 "Segmentation automatique de page mais sans incrustation vidéo ou "
 "reconnaissance optique de caractères (Non implémenté)."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:51
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
@@ -18571,14 +18571,14 @@ msgstr ""
 "Segmentation automatique de page totalement automatique mais sans "
 "incrustation vidéo (Par défaut)."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr ""
 "Prendre l'hypothèse d'une simple colonne de texte avec des tailles variables."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
@@ -18586,37 +18586,37 @@ msgstr ""
 "Prendre l'hypothèse d'un simple bloc uniforme de textes alignés "
 "verticalement."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:54
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr "Prendre l'hypothèse d'un simple bloc uniforme de texte."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr "Traiter l'image comme un simple ligne de texte."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr "Traiter l'image comme un mot simple."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr "Traiter l'image comme un mot simple dans un cercle."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr "Traiter l'image comme un mot caractère."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
@@ -18624,41 +18624,45 @@ msgstr ""
 "Texte éparpillé. Trouvez autant de texte que possible, sans ordre "
 "particulier."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr "Texte clair avec incrustation vidéo."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:61
-#, kde-format
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
+#| "Tesseract-specific."
 msgctxt "@info:tooltip"
 msgid ""
-"Raw line. Treat the image as a single text line,bypassing hacks that are "
+"Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
 "Ligne brute. Traiter l'image comme une seule ligne de texte, en contournant "
 "les correctifs spécifiques à Tesseract."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr "Ancien moteur uniquement. "
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:72
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr "Moteur de réseaux neuronaux « LSTM » uniquement."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:73
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr "Moteurs anciens et « LSTM »."
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
