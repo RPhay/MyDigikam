@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 00:42+0000\n"
-"PO-Revision-Date: 2023-09-16 11:57+0200\n"
+"PO-Revision-Date: 2023-09-23 13:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18445,11 +18445,7 @@ msgid "Sparse text with OSD."
 msgstr "Text dispers amb OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
-#| "Tesseract-specific."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
