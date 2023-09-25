@@ -149,53 +149,34 @@ public:
 
 public:
 
-    explicit Private()
-      : errorView       (nullptr),
-        playerView      (nullptr),
-        prevAction      (nullptr),
-        nextAction      (nullptr),
-        playAction      (nullptr),
-        grabAction      (nullptr),
-        loopPlay        (nullptr),
-        toolBar         (nullptr),
-        iface           (nullptr),
-        videoWidget     (nullptr),
-        player          (nullptr),
-        slider          (nullptr),
-        volume          (nullptr),
-        tlabel          (nullptr),
-        videoOrientation(0),
-        capturePosition (0),
-        sliderTime      (0)
-    {
-    }
+    Private() = default;
 
-    QFrame*              errorView;
-    QFrame*              playerView;
+    QFrame*              errorView          = nullptr;
+    QFrame*              playerView         = nullptr;
 
-    QAction*             prevAction;
-    QAction*             nextAction;
-    QAction*             playAction;
-    QAction*             grabAction;
+    QAction*             prevAction         = nullptr;
+    QAction*             nextAction         = nullptr;
+    QAction*             playAction         = nullptr;
+    QAction*             grabAction         = nullptr;
 
-    QPushButton*         loopPlay;
+    QPushButton*         loopPlay           = nullptr;
 
-    QToolBar*            toolBar;
+    QToolBar*            toolBar            = nullptr;
 
-    DInfoInterface*      iface;
+    DInfoInterface*      iface              = nullptr;
 
-    WidgetRenderer*      videoWidget;
-    AVPlayerCore*        player;
+    WidgetRenderer*      videoWidget        = nullptr;
+    AVPlayerCore*        player             = nullptr;
 
-    QSlider*             slider;
-    QSlider*             volume;
-    QLabel*              tlabel;
+    QSlider*             slider             = nullptr;
+    QSlider*             volume             = nullptr;
+    QLabel*              tlabel             = nullptr;
     QUrl                 currentItem;
 
 
-    int                  videoOrientation;
-    qint64               capturePosition;
-    qint64               sliderTime;
+    int                  videoOrientation   = 0;
+    qint64               capturePosition    = 0;
+    qint64               sliderTime         = 0;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)

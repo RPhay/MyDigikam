@@ -27,34 +27,19 @@
 // Qt includes
 
 #include <QStackedWidget>
-#include <QMediaPlayer>
+#include <QEvent>
 #include <QUrl>
+#include <QMediaPlayer>
 
-class QEvent;
+// Local includes
+
+#include "digikam_export.h"
+#include "dinfointerface.h"
 
 namespace Digikam
 {
 
-class MediaPlayerMouseClickFilter : public QObject
-{
-    Q_OBJECT
-
-public:
-
-    explicit MediaPlayerMouseClickFilter(QObject* const parent);
-
-protected:
-
-    bool eventFilter(QObject* obj, QEvent* event);
-
-private:
-
-    QObject* m_parent;
-};
-
-// --------------------------------------------------------
-
-class MediaPlayerView : public QStackedWidget
+class DIGIKAM_EXPORT MediaPlayerView : public QStackedWidget
 {
     Q_OBJECT
 
@@ -66,6 +51,7 @@ public:
     void setCurrentItem(const QUrl& url   = QUrl(),
                         bool  hasPrevious = false,
                         bool  hasNext     = false);
+    void setInfoInterface(DInfoInterface* const iface);
     void escapePreview();
     void reload();
 
@@ -79,6 +65,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotEscapePressed();
+    void slotRotateVideo();
 
 private Q_SLOTS:
 

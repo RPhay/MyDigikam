@@ -50,45 +50,58 @@
 namespace Digikam
 {
 
-MediaPlayerMouseClickFilter::MediaPlayerMouseClickFilter(QObject* const parent)
-    : QObject (parent),
-      m_parent(parent)
+class Q_DECL_HIDDEN MediaPlayerMouseClickFilter : public QObject
 {
-}
+    Q_OBJECT
 
-bool MediaPlayerMouseClickFilter::eventFilter(QObject* obj, QEvent* event)
-{
-    if (
-        (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)  && (event->type() == QEvent::MouseButtonRelease)) ||
-        (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) && (event->type() == QEvent::MouseButtonDblClick))
-       )
+public:
+
+    explicit MediaPlayerMouseClickFilter(QObject* const parent)
+        : QObject (parent),
+          m_parent(parent)
     {
-        QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
+    }
 
-        if (mouseEvent && mouseEvent->button() == Qt::LeftButton)
+protected:
+
+    bool eventFilter(QObject* obj, QEvent* event)
+    {
+        if (
+            (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)  && (event->type() == QEvent::MouseButtonRelease)) ||
+            (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) && (event->type() == QEvent::MouseButtonDblClick))
+           )
         {
-            if (m_parent)
+            QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
+
+            if (mouseEvent && mouseEvent->button() == Qt::LeftButton)
             {
-                MediaPlayerView* const mplayer = dynamic_cast<MediaPlayerView*>(m_parent);
-
-                if (mplayer)
+                if (m_parent)
                 {
-                    mplayer->slotEscapePressed();
-                }
-            }
+                    MediaPlayerView* const mplayer = dynamic_cast<MediaPlayerView*>(m_parent);
 
-            return true;
+                    if (mplayer)
+                    {
+                        mplayer->slotEscapePressed();
+                    }
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
-            return false;
+            return QObject::eventFilter(obj, event);
         }
     }
-    else
-    {
-        return QObject::eventFilter(obj, event);
-    }
-}
+
+private:
+
+    QObject* m_parent = nullptr;
+};
 
 // --------------------------------------------------------
 
@@ -114,6 +127,8 @@ public:
     QAction*             nextAction  = nullptr;
 
     QToolBar*            toolBar     = nullptr;
+
+    DInfoInterface*      iface       = nullptr;
 
     QVideoWidget*        videoWidget = nullptr;
     QMediaPlayer*        player      = nullptr;
@@ -230,6 +245,11 @@ MediaPlayerView::~MediaPlayerView()
     delete d;
 }
 
+void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
+{
+    d->iface = iface;
+}
+
 void MediaPlayerView::reload()
 {
     d->player->stop();
@@ -270,6 +290,11 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
+}
+
+void MediaPlayerView::slotRotateVideo()
+{
+    // TODO
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -391,3 +416,5 @@ void MediaPlayerView::handlePlayerError()
 }
 
 }  // namespace Digikam
+
+#include "mediaplayerview.moc"
