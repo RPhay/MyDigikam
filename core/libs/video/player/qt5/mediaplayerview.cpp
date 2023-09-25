@@ -324,13 +324,13 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
             this, SLOT(slotImageCaptured(QImage)));
 
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Audio output backends:"
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV:Audio output backends:"
                                  << d->player->audio()->backendsAvailable();
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Number of supported audio codecs:"
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV:Number of supported audio codecs:"
                                  << AudioDecoder::supportedCodecs().count();
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Number of supported video codecs:"
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV:Number of supported video codecs:"
                                  << VideoDecoder::supportedCodecs().count();
 }
 

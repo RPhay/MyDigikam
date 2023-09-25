@@ -233,6 +233,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->player, SIGNAL(error(QMediaPlayer::Error)),
             this, SLOT(handlePlayerError()));
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Using QtMultimedia";
 }
 
 MediaPlayerView::~MediaPlayerView()
