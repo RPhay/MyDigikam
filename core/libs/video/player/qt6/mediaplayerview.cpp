@@ -204,7 +204,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(this, SIGNAL(signalFinished()),
             this, SLOT(slotPlayerFinished()));
 
-    connect(d->player, SIGNAL(stateChanged(QMediaPlayer::PlaybackState)),
+    connect(d->player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
             this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
@@ -223,16 +223,16 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
             this, SLOT(slotSliderReleased()));
 
     connect(d->slider, SIGNAL(sliderMoved(int)),
-            this, SLOT(setPosition(int)));
+            this, SLOT(slotPosition(int)));
 
     connect(d->player, SIGNAL(positionChanged(qint64)),
-            this, SLOT(positionChanged(qint64)));
+            this, SLOT(slotPositionChanged(qint64)));
 
     connect(d->player, SIGNAL(durationChanged(qint64)),
-            this, SLOT(durationChanged(qint64)));
+            this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->player, SIGNAL(error(QMediaPlayer::Error)),
-            this, SLOT(handlePlayerError()));
+    connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
+            this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Using QtMultimedia";
 }
@@ -370,7 +370,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->player->play();
 }
 
-void MediaPlayerView::positionChanged(qint64 position)
+void MediaPlayerView::slotPositionChanged(qint64 position)
 {
     if (!d->slider->isSliderDown())
     {
@@ -378,12 +378,12 @@ void MediaPlayerView::positionChanged(qint64 position)
     }
 }
 
-void MediaPlayerView::durationChanged(qint64 duration)
+void MediaPlayerView::slotDurationChanged(qint64 duration)
 {
     d->slider->setRange(0, duration);
 }
 
-void MediaPlayerView::setPosition(int position)
+void MediaPlayerView::slotPosition(int position)
 {
     if (d->player->isSeekable())
     {
@@ -410,11 +410,11 @@ void MediaPlayerView::slotSliderReleased()
     }
 }
 
-void MediaPlayerView::handlePlayerError()
+void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
 {
     setPreviewMode(Private::ErrorView);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << d->player->errorString();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << errStr;
 }
 
 }  // namespace Digikam

@@ -70,14 +70,14 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotPlayerFinished();
-    void slotThemeChanged();
     void slotPlayerStateChanged(QMediaPlayer::PlaybackState newState);
+    void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
+    void slotThemeChanged();
 
     // Slidebar slots
-    void positionChanged(qint64 position);
-    void durationChanged(qint64 duration);
-    void setPosition(int position);
-    void handlePlayerError();
+    void slotPositionChanged(qint64 position);
+    void slotDurationChanged(qint64 duration);
+    void slotPosition(int position);
     void slotSliderPressed();
     void slotSliderReleased();
 
