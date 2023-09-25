@@ -47,6 +47,9 @@ if(ENABLE_MEDIAPLAYER)
 
         # NOTE: this part depends of QtMultimedia
 
+        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+        )
+
         set(libvideotools_SRCS ${libvideotools_SRCS}
             ${CMAKE_CURRENT_SOURCE_DIR}/player/qt6/mediaplayerview.cpp
         )

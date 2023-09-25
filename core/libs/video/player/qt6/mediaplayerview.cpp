@@ -4,9 +4,9 @@
  * http://www.digikam.org
  *
  * Date        : 2006-20-12
- * Description : a view to embed Phonon media player.
+ * Description : a view to embed QtMultimedia media player.
  *
- * Copyright (C) 2006-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -51,15 +51,17 @@ namespace Digikam
 {
 
 MediaPlayerMouseClickFilter::MediaPlayerMouseClickFilter(QObject* const parent)
-    : QObject(parent),
+    : QObject (parent),
       m_parent(parent)
 {
 }
 
 bool MediaPlayerMouseClickFilter::eventFilter(QObject* obj, QEvent* event)
 {
-    if ((qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)  && event->type() == QEvent::MouseButtonRelease) ||
-        (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) && event->type() == QEvent::MouseButtonDblClick))
+    if (
+        (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)  && (event->type() == QEvent::MouseButtonRelease)) ||
+        (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) && (event->type() == QEvent::MouseButtonDblClick))
+       )
     {
         QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
 
@@ -97,46 +99,37 @@ public:
 
     enum MediaPlayerViewMode
     {
-        ErrorView=0,
+        ErrorView = 0,
         PlayerView
     };
 
 public:
 
-    Private() :
-        errorView(0),
-        playerView(0),
-        prevAction(0),
-        nextAction(0),
-        toolBar(0),
-        videoWidget(0),
-        player(0),
-        slider(0)
-    {
-    }
+    Private() = default;
 
-    QFrame*              errorView;
-    QFrame*              playerView;
+    QFrame*              errorView   = nullptr;
+    QFrame*              playerView  = nullptr;
 
-    QAction*             prevAction;
-    QAction*             nextAction;
+    QAction*             prevAction  = nullptr;
+    QAction*             nextAction  = nullptr;
 
-    QToolBar*            toolBar;
+    QToolBar*            toolBar     = nullptr;
 
-    QVideoWidget*        videoWidget;
-    QMediaPlayer*        player;
-    QSlider*             slider;
+    QVideoWidget*        videoWidget = nullptr;
+    QMediaPlayer*        player      = nullptr;
+    QSlider*             slider      = nullptr;
     QUrl                 currentItem;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
     : QStackedWidget(parent),
-      d(new Private)
+      d             (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QMargins margins(spacing, 0, spacing, spacing);
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")), i18nc("go to previous image", "Back"), this);
@@ -160,13 +153,12 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->playerView  = new QFrame(this);
     d->videoWidget = new QVideoWidget(this);
-    d->player      = new QMediaPlayer(this, QMediaPlayer::VideoSurface);
+    d->player      = new QMediaPlayer(this);
 
     d->slider      = new QSlider(Qt::Horizontal, this);
     d->slider->setRange(0, 0);
 
     d->player->setVideoOutput(d->videoWidget);
-    d->player->setNotifyInterval(250);
 
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
     d->videoWidget->setStyleSheet(QLatin1String("background-color:black;"));
@@ -197,8 +189,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(this, SIGNAL(signalFinished()),
             this, SLOT(slotPlayerFinished()));
 
-    connect(d->player, SIGNAL(stateChanged(QMediaPlayer::State)),
-            this, SLOT(slotPlayerStateChanged(QMediaPlayer::State)));
+    connect(d->player, SIGNAL(stateChanged(QMediaPlayer::PlaybackState)),
+            this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
@@ -234,37 +226,44 @@ MediaPlayerView::~MediaPlayerView()
     delete d->player;
     delete d->videoWidget;
     delete d->slider;
+
     delete d;
 }
 
 void MediaPlayerView::reload()
 {
     d->player->stop();
-    d->player->setMedia(d->currentItem);
+    d->player->setSource(d->currentItem);
     d->player->play();
 }
 
 void MediaPlayerView::slotPlayerFinished()
 {
-    if (d->player->state() == QMediaPlayer::StoppedState  &&
-        d->player->error() != QMediaPlayer::NoError)
+    if (
+        (d->player->playbackState() == QMediaPlayer::StoppedState)  &&
+        (d->player->error() != QMediaPlayer::NoError)
+       )
     {
         setPreviewMode(Private::ErrorView);
     }
 }
 
-void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::State newState)
+void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
 {
-    if (newState           == QMediaPlayer::StoppedState  &&
-        d->player->error() != QMediaPlayer::NoError)
+    if (
+        (newState           == QMediaPlayer::StoppedState)  &&
+        (d->player->error() != QMediaPlayer::NoError)
+       )
     {
         setPreviewMode(Private::ErrorView);
     }
 
-    if (newState                 == QMediaPlayer::StoppedState &&
-        d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
+    if (
+        (newState                 == QMediaPlayer::StoppedState) &&
+        (d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
+       )
     {
-        emit signalFinished();
+        Q_EMIT signalFinished();
     }
 }
 
@@ -287,7 +286,8 @@ void MediaPlayerView::slotThemeChanged()
 void MediaPlayerView::slotEscapePressed()
 {
     escapePreview();
-    emit signalEscapePreview();
+
+    Q_EMIT signalEscapePreview();
 }
 
 int MediaPlayerView::previewMode()
@@ -297,7 +297,7 @@ int MediaPlayerView::previewMode()
 
 void MediaPlayerView::setPreviewMode(int mode)
 {
-    if (mode != Private::ErrorView && mode != Private::PlayerView)
+    if ((mode != Private::ErrorView) && (mode != Private::PlayerView))
     {
         return;
     }
@@ -305,6 +305,7 @@ void MediaPlayerView::setPreviewMode(int mode)
     setCurrentIndex(mode);
 
     // Workaround for no video frame in the QVideoWidget, possible Qt-5.6.0 bug?
+
     d->videoWidget->setMaximumSize(0, 0);
     d->videoWidget->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
 
@@ -324,16 +325,20 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         return;
     }
 
-    if (d->currentItem == url &&
-        (d->player->state() == QMediaPlayer::PlayingState ||
-         d->player->state() == QMediaPlayer::PausedState))
+    if (
+        (d->currentItem == url) &&
+        (
+         (d->player->playbackState() == QMediaPlayer::PlayingState) ||
+         (d->player->playbackState() == QMediaPlayer::PausedState)
+        )
+       )
     {
         return;
     }
 
     d->currentItem = url;
 
-    d->player->setMedia(d->currentItem);
+    d->player->setSource(d->currentItem);
     setPreviewMode(Private::PlayerView);
     d->player->play();
 }
@@ -361,8 +366,10 @@ void MediaPlayerView::setPosition(int position)
 
 void MediaPlayerView::slotSliderPressed()
 {
-    if (d->player->state() == QMediaPlayer::PlayingState ||
-        d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
+    if (
+        (d->player->playbackState() == QMediaPlayer::PlayingState) ||
+        (d->player->mediaStatus()   == QMediaPlayer::EndOfMedia)
+       )
     {
         d->player->pause();
     }
@@ -379,6 +386,7 @@ void MediaPlayerView::slotSliderReleased()
 void MediaPlayerView::handlePlayerError()
 {
     setPreviewMode(Private::ErrorView);
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << d->player->errorString();
 }
 
