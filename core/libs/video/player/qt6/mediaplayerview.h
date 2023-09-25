@@ -78,6 +78,7 @@ private Q_SLOTS:
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotPosition(int position);
+    void slotPausePlay();
     void slotSliderPressed();
     void slotSliderReleased();
 

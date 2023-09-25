@@ -126,6 +126,7 @@ public:
 
     QAction*             prevAction  = nullptr;
     QAction*             nextAction  = nullptr;
+    QAction*             playAction  = nullptr;
 
     QToolBar*            toolBar     = nullptr;
 
@@ -149,9 +150,11 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     QMargins margins(spacing, 0, spacing, spacing);
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
-                                         i18nc("go to previous image", "Back"), this);
+                                         i18nc("go to previous image", "Back"),   this);
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),
-                                         i18nc("go to next image", "Forward"),  this);
+                                         i18nc("go to next image", "Forward"),    this);
+    d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
+                                         i18nc("pause/play video", "Pause/Play"), this);
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player...."), this);
@@ -195,6 +198,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar = new QToolBar(this);
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
+    d->toolBar->addAction(d->playAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -218,6 +222,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->nextAction, SIGNAL(triggered()),
             this, SIGNAL(signalNextItem()));
+
+    connect(d->playAction, SIGNAL(triggered()),
+            this, SLOT(slotPausePlay()));
 
     connect(d->slider, SIGNAL(sliderPressed()),
             this, SLOT(slotSliderPressed()));
@@ -318,6 +325,17 @@ void MediaPlayerView::slotEscapePressed()
     escapePreview();
 
     Q_EMIT signalEscapePreview();
+}
+
+void MediaPlayerView::slotPausePlay()
+{
+    if (!d->player->isPlaying())
+    {
+        d->player->play();
+        return;
+    }
+
+    d->player->pause();
 }
 
 int MediaPlayerView::previewMode()
