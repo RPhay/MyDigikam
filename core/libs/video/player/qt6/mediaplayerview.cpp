@@ -27,8 +27,11 @@
 
 #include <QApplication>
 #include <QVideoWidget>
+#include <QVideoSink>
+#include <QVideoFrame>
 #include <QVBoxLayout>
 #include <QMouseEvent>
+#include <QFileInfo>
 #include <QToolBar>
 #include <QAction>
 #include <QSlider>
@@ -47,6 +50,8 @@
 #include "thememanager.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "metaengine.h"
+#include "dmetadata.h"
 
 namespace Digikam
 {
@@ -127,6 +132,7 @@ public:
     QAction*             prevAction  = nullptr;
     QAction*             nextAction  = nullptr;
     QAction*             playAction  = nullptr;
+    QAction*             grabAction  = nullptr;
 
     QToolBar*            toolBar     = nullptr;
 
@@ -155,6 +161,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
                                          i18nc("go to next image", "Forward"),    this);
     d->playAction          = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")),
                                          i18nc("pause/play video", "Pause/Play"), this);
+    d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
+                                         i18nc("capture video frame", "Capture"), this);
 
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player...."), this);
@@ -199,6 +207,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
     d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->grabAction);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
@@ -225,6 +234,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->playAction, SIGNAL(triggered()),
             this, SLOT(slotPausePlay()));
+
+    connect(d->grabAction, SIGNAL(triggered()),
+            this, SLOT(slotCapture()));
 
     connect(d->slider, SIGNAL(sliderPressed()),
             this, SLOT(slotSliderPressed()));
@@ -336,6 +348,91 @@ void MediaPlayerView::slotPausePlay()
     }
 
     d->player->pause();
+}
+
+void MediaPlayerView::slotCapture()
+{
+    if (d->player->isPlaying())
+    {
+        int capturePosition    = d->player->position();
+        QVideoSink* const sink = d->player->videoSink();
+        QVideoFrame frame      = sink->videoFrame();
+        QImage image           = frame.toImage();
+
+        if (!image.isNull() && d->currentItem.isValid())
+        {
+            QFileInfo info(d->currentItem.toLocalFile());
+            QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
+                              .arg(info.path())
+                              .arg(info.baseName())
+                              .arg(capturePosition);
+
+            if (image.save(tempPath, "JPG", 100))
+            {
+                QScopedPointer<DMetadata> meta(new DMetadata);
+
+                if (meta->load(tempPath))
+                {
+                    QDateTime dateTime;
+                    MetaEngine::ImageOrientation orientation = MetaEngine::ORIENTATION_NORMAL;
+
+                    if (d->iface)
+                    {
+                        DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+
+                        dateTime    = dinfo.dateTime();
+                        orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
+                    }
+                    else
+                    {
+                        QScopedPointer<DMetadata> meta2(new DMetadata);
+
+                        if (meta2->load(d->currentItem.toLocalFile()))
+                        {
+                            dateTime    = meta2->getItemDateTime();
+                            orientation = meta2->getItemOrientation();
+                        }
+                    }
+
+                    if (dateTime.isValid())
+                    {
+                        dateTime = dateTime.addMSecs(capturePosition);
+                    }
+                    else
+                    {
+                        dateTime = QDateTime::currentDateTime();
+                    }
+
+                    if (orientation == MetaEngine::ORIENTATION_UNSPECIFIED)
+                    {
+                        orientation = MetaEngine::ORIENTATION_NORMAL;
+                    }
+
+                    meta->setImageDateTime(dateTime, true);
+                    meta->setItemDimensions(image.size());
+                    meta->setItemOrientation(orientation);
+                    meta->save(tempPath, true);
+                }
+
+                QString finalPath = QString::fromUtf8("%1/%2-%3.jpg")
+                                   .arg(info.path())
+                                   .arg(info.baseName())
+                                   .arg(capturePosition);
+
+                if (QFile::rename(tempPath, finalPath))
+                {
+                    if (d->iface)
+                    {
+                        d->iface->slotMetadataChangedForUrl(QUrl::fromLocalFile(finalPath));
+                    }
+                }
+                else
+                {
+                    QFile::remove(tempPath);
+                }
+            }
+        }
+    }
 }
 
 int MediaPlayerView::previewMode()
