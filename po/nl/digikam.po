@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 00:42+0000\n"
-"PO-Revision-Date: 2023-09-16 12:19+0200\n"
+"PO-Revision-Date: 2023-09-24 21:00+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -18455,17 +18455,13 @@ msgid "Sparse text with OSD."
 msgstr "Dun gezaaide tekst met OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
-#| "Tesseract-specific."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
-"Ruwe regel. Behandel de afbeelding als een enkele tekstregel, met boorbij "
+"Ruwe regel. Behandel de afbeelding als een enkele tekstregel, met voorbij "
 "gaan aan hacks die specifiek Tesseract zijn."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105

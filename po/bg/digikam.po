@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 00:42+0000\n"
-"PO-Revision-Date: 2023-09-06 09:25+0200\n"
+"PO-Revision-Date: 2023-09-24 22:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -18463,18 +18463,14 @@ msgid "Sparse text with OSD."
 msgstr "Разреден текст с OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
-#| "Tesseract-specific."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
-"Необработен ред. Третирайте изображението като един текстов ред,заобикаляйки "
-"хакове, които са специфични за Tesseract."
+"Необработен ред. Третиране на изображението като един текстов ред,"
+"заобикаляйки хакове, които са специфични за Tesseract."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
 #, kde-format
@@ -51519,11 +51515,7 @@ msgstr ""
 "използват"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers, ||0|| optional to always "
-#| "pad with ||n|| zero digits"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51531,8 +51523,9 @@ msgid ""
 "digits"
 msgstr ""
 "Добавяне на суфикс, ||n|| Посочва броя на цифрите, които трябва да се "
-"използват, ||c|| Посочва разделителния символ преди числата, ||0||по избор "
-"добавяне на ||n|| 0 пред числото за подравняване"
+"използват, ||c|| Посочва разделителния символ преди числата, ||a|| по избор "
+"включваневсички опции за уникалност||0||по избор добавяне на ||n|| 0 пред "
+"числото за подравняване"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
