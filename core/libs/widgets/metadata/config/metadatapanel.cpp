@@ -163,6 +163,8 @@ public:
 
     explicit Private()
       : tab                 (nullptr),
+        parser              (nullptr),
+        parserRunning       (false),
         exifViewerConfig    (nullptr),
         mknoteViewerConfig  (nullptr),
         iptcViewerConfig    (nullptr),
@@ -190,26 +192,31 @@ public:
 
 public:
 
-    QTabWidget*           tab;
+    QTabWidget*                  tab;
 
-    QStringList           defaultExifFilter;
-    QStringList           defaultMknoteFilter;
-    QStringList           defaultIptcFilter;
-    QStringList           defaultXmpFilter;
-    QStringList           defaultExifToolFilter;
+    QStringList                  defaultExifFilter;
+    QStringList                  defaultMknoteFilter;
+    QStringList                  defaultIptcFilter;
+    QStringList                  defaultXmpFilter;
+    QStringList                  defaultExifToolFilter;
 
-    MetadataSelectorView* exifViewerConfig;
-    MetadataSelectorView* mknoteViewerConfig;
-    MetadataSelectorView* iptcViewerConfig;
-    MetadataSelectorView* xmpViewerConfig;
-    MetadataSelectorView* exifToolViewerConfig;
+    ExifToolParser::ExifToolData parsedData;
+    ExifToolParser*              parser;
+    bool                         parserRunning;
+
+    MetadataSelectorView*        exifViewerConfig;
+    MetadataSelectorView*        mknoteViewerConfig;
+    MetadataSelectorView*        iptcViewerConfig;
+    MetadataSelectorView*        xmpViewerConfig;
+    MetadataSelectorView*        exifToolViewerConfig;
 };
 
 MetadataPanel::MetadataPanel(QTabWidget* const tab)
     : QObject(tab),
       d      (new Private)
 {
-    d->tab = tab;
+    d->tab    = tab;
+    d->parser = new ExifToolParser(this, true);
 
     // --------------------------------------------------------
 
@@ -236,6 +243,9 @@ MetadataPanel::MetadataPanel(QTabWidget* const tab)
     slotTabChanged(d->tab->currentIndex());
 
     // --------------------------------------------------------
+
+    connect(d->parser, SIGNAL(signalExifToolAsyncData(ExifToolParser::ExifToolData)),
+            this, SLOT(slotExifToolAsyncData(ExifToolParser::ExifToolData)));
 
     connect(d->tab, SIGNAL(currentChanged(int)),
             this, SLOT(slotTabChanged(int)));
@@ -323,7 +333,8 @@ void MetadataPanel::slotTabChanged(int)
         if (!d->exifViewerConfig->itemsCount())
         {
             d->exifViewerConfig->setTagsMap(meta->getStdExifTagsList());
-            d->exifViewerConfig->setcheckedTagsList(group.readEntry("EXIF Tags Filter", d->exifViewerConfig->defaultFilter()));
+            d->exifViewerConfig->setcheckedTagsList(group.readEntry("EXIF Tags Filter",
+                                                                    d->exifViewerConfig->defaultFilter()));
         }
     }
     else if (tab == d->mknoteViewerConfig)
@@ -331,7 +342,8 @@ void MetadataPanel::slotTabChanged(int)
         if (!d->mknoteViewerConfig->itemsCount())
         {
             d->mknoteViewerConfig->setTagsMap(meta->getMakernoteTagsList());
-            d->mknoteViewerConfig->setcheckedTagsList(group.readEntry("MAKERNOTE Tags Filter", d->mknoteViewerConfig->defaultFilter()));
+            d->mknoteViewerConfig->setcheckedTagsList(group.readEntry("MAKERNOTE Tags Filter",
+                                                                      d->mknoteViewerConfig->defaultFilter()));
         }
     }
     else if (tab == d->iptcViewerConfig)
@@ -339,7 +351,8 @@ void MetadataPanel::slotTabChanged(int)
         if (!d->iptcViewerConfig->itemsCount())
         {
             d->iptcViewerConfig->setTagsMap(meta->getIptcTagsList());
-            d->iptcViewerConfig->setcheckedTagsList(group.readEntry("IPTC Tags Filter", d->iptcViewerConfig->defaultFilter()));
+            d->iptcViewerConfig->setcheckedTagsList(group.readEntry("IPTC Tags Filter",
+                                                                    d->iptcViewerConfig->defaultFilter()));
         }
     }
     else if (tab == d->xmpViewerConfig)
@@ -347,26 +360,40 @@ void MetadataPanel::slotTabChanged(int)
         if (!d->xmpViewerConfig->itemsCount())
         {
             d->xmpViewerConfig->setTagsMap(meta->getXmpTagsList());
-            d->xmpViewerConfig->setcheckedTagsList(group.readEntry("XMP Tags Filter", d->xmpViewerConfig->defaultFilter()));
+            d->xmpViewerConfig->setcheckedTagsList(group.readEntry("XMP Tags Filter",
+                                                                   d->xmpViewerConfig->defaultFilter()));
         }
     }
     else if (tab == d->exifToolViewerConfig)
     {
-        if (!d->exifToolViewerConfig->itemsCount())
+        if (!d->exifToolViewerConfig->itemsCount() && d->parser->exifToolAvailable())
         {
-            QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
-
-            if (parser->tagsDatabase())
+            if (!d->parserRunning)
             {
-                ExifToolParser::ExifToolData parsed = parser->currentData();
+                d->parserRunning = d->parser->tagsDatabase();
 
-                d->exifToolViewerConfig->setTagsMap(parser->tagsDbToOrderedMap(parsed));
-                d->exifToolViewerConfig->setcheckedTagsList(group.readEntry("EXIFTOOL Tags Filter", d->exifToolViewerConfig->defaultFilter()));
+                // Let the waiting cursor continue to run.
+
+                return;
+            }
+            else if (!d->parsedData.isEmpty())
+            {
+                d->exifToolViewerConfig->setTagsMap(d->parser->tagsDbToOrderedMap(d->parsedData));
+                d->exifToolViewerConfig->setcheckedTagsList(group.readEntry("EXIFTOOL Tags Filter",
+                                                                            d->exifToolViewerConfig->defaultFilter()));
+                d->parserRunning = false;
             }
         }
     }
 
     qApp->restoreOverrideCursor();
+}
+
+void MetadataPanel::slotExifToolAsyncData(const ExifToolParser::ExifToolData& data)
+{
+    d->parsedData = data;
+    qApp->restoreOverrideCursor();
+    slotTabChanged(d->tab->currentIndex());
 }
 
 QStringList MetadataPanel::getAllCheckedTags() const

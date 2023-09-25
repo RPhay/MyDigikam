@@ -23,6 +23,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "exiftoolparser.h"
 
 class QTabWidget;
 
@@ -56,6 +57,7 @@ public:
 private Q_SLOTS:
 
     void slotTabChanged(int);
+    void slotExifToolAsyncData(const ExifToolParser::ExifToolData& data);
 
 private:
 
