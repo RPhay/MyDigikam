@@ -193,7 +193,7 @@ endif()
 # Extra check to detect Qt core with minimal version before to continue.
 
 set(QT5_MIN_VERSION       "5.14.0")
-set(QT6_MIN_VERSION       "6.2.3")
+set(QT6_MIN_VERSION       "6.5.0")
 
 include(RulesFindQtCore)
 

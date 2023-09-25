@@ -30,19 +30,36 @@ target_compile_definitions(core_videotoolscommon_obj
 
 ###
 
-# NOTE: this part depends of QtAv dependency
-
 if(ENABLE_MEDIAPLAYER)
 
     set(libvideotools_SRCS
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
+        # NOTE: this part depends of QtAv
+        # TODO: port to QtMultimedia
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/qt5/vidslidetask.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/player/qt5/slidevideo.cpp
 
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/mediaplayerview.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/slidevideo.cpp
     )
+
+    if(Qt6_FOUND)
+
+        # NOTE: this part depends of QtMultimedia
+
+        set(libvideotools_SRCS ${libvideotools_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt6/mediaplayerview.cpp
+        )
+
+    else()
+
+        # NOTE: this part depends of QtAv
+
+        set(libvideotools_SRCS ${libvideotools_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt5/mediaplayerview.cpp
+        )
+
+    endif()
 
     # Used by digikamcore
     add_library(core_videotools_obj OBJECT ${libvideotools_SRCS})
