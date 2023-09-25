@@ -200,6 +200,16 @@ endif()
 
 if(ENABLE_MEDIAPLAYER)
 
+    if(Qt6_FOUND)
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              Qt${QT_VERSION_MAJOR}::Multimedia
+                              Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        )
+
+    endif()
+
     target_link_libraries(digikamcore
                           PRIVATE
                           ${MEDIAPLAYER_LIBRARIES}
