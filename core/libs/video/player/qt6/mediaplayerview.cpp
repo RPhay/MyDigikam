@@ -164,6 +164,13 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"), this);
 
+    d->toolBar = new QToolBar(this);
+    d->toolBar->addAction(d->prevAction);
+    d->toolBar->addAction(d->nextAction);
+    d->toolBar->addAction(d->playAction);
+    d->toolBar->addAction(d->grabAction);
+    d->toolBar->setStyleSheet(toolButtonStyleSheet());
+
     d->errorView           = new QFrame(this);
     QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player...."), this);
 
@@ -172,6 +179,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->errorView->setLineWidth(1);
 
     QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
+    vbox1->addWidget(d->toolBar, 1);
     vbox1->addWidget(errorMsg, 10);
     vbox1->setContentsMargins(margins);
     vbox1->setSpacing(spacing);
@@ -196,6 +204,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView->setLineWidth(1);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
+    vbox2->addWidget(d->toolBar,      1);
     vbox2->addWidget(d->videoWidget, 10);
     vbox2->addWidget(d->slider,       0);
     vbox2->setContentsMargins(margins);
@@ -203,12 +212,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     insertWidget(Private::PlayerView, d->playerView);
 
-    d->toolBar = new QToolBar(this);
-    d->toolBar->addAction(d->prevAction);
-    d->toolBar->addAction(d->nextAction);
-    d->toolBar->addAction(d->playAction);
-    d->toolBar->addAction(d->grabAction);
-    d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     setPreviewMode(Private::PlayerView);
 
