@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-22
- * Description : Slideshow video viewer
+ * Description : Slideshow video viewer based on QtAV
  *
- * SPDX-FileCopyrightText: 2014-2020 Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2023 Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
