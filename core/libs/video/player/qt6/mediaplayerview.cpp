@@ -82,7 +82,7 @@ protected:
 
     bool eventFilter(QObject* obj, QEvent* event) override
     {
-        if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
+        if ((event->type() == QEvent::MouseButtonPress) || (event->type() == QEvent::MouseButtonDblClick))
         {
             bool singleClick              = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
             QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
@@ -94,13 +94,13 @@ protected:
                 if (mplayer)
                 {
                     if      ((mouseEvent->button() == Qt::LeftButton) &&
-                             ((singleClick && (event->type() == QEvent::MouseButtonRelease)) ||
+                             ((singleClick && (event->type() == QEvent::MouseButtonPress)) ||
                              (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
                     {
                         mplayer->slotEscapePressed();
                     }
                     else if ((mouseEvent->button() == Qt::RightButton) &&
-                             (event->type() == QEvent::MouseButtonRelease))
+                             (event->type() == QEvent::MouseButtonPress))
                     {
                         mplayer->slotRotateVideo();
                     }
@@ -194,7 +194,7 @@ public:
         videoView->centerOn(0, 0);
     };
 
-    int videoItemOrientation() const
+    int videoMediaOrientation() const
     {
         int orientation = 0;
         QVariant val    = player->metaData().value(QMediaMetaData::Orientation);
@@ -212,6 +212,7 @@ public:
         qreal x = videoWidget->boundingRect().width()  / 2.0;
         qreal y = videoWidget->boundingRect().height() / 2.0;
         videoWidget->setTransform(QTransform().translate(x, y).rotate(orientation).translate(-x, -y));
+        videoOrientation= orientation;
     };
 };
 
@@ -263,7 +264,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoView   = new QGraphicsView(d->videoScene);
     d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    d->videoView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
     d->player->setVideoOutput(d->videoWidget);
@@ -293,7 +294,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     hbox->setSpacing(spacing);
 
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
-    d->playerView->setMouseTracking(true);
+    d->videoView->setMouseTracking(true);
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
@@ -406,7 +407,7 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 {
     if (newState == QMediaPlayer::PlayingState)
     {
-        int rotate = d->videoItemOrientation();
+        int rotate = d->videoMediaOrientation();
         d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
@@ -466,7 +467,7 @@ void MediaPlayerView::slotRotateVideo()
     {
         int orientation = 0;
 
-        switch (d->videoItemOrientation())
+        switch (d->videoOrientation)
         {
             case 0:
                 orientation = 90;
