@@ -211,7 +211,11 @@ public:
     {
         qreal x          = videoWidget->boundingRect().width()  / 2.0;
         qreal y          = videoWidget->boundingRect().height() / 2.0;
-        videoWidget->setTransform(QTransform().translate(x, y).rotate(orientation).translate(-x, -y));
+        QTransform tfm;
+        tfm.translate(x, y);
+        tfm.rotate(orientation);
+        tfm.translate(-x, -y);
+        videoWidget->setTransform(tfm);
         videoOrientation = orientation;
         adjustVideoSize();
     };
