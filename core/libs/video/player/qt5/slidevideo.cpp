@@ -71,33 +71,22 @@ public:
 
 class Q_DECL_HIDDEN SlideVideo::Private
 {
-
 public:
 
-    explicit Private()
-      : iface           (nullptr),
-        videoWidget     (nullptr),
-        player          (nullptr),
-        slider          (nullptr),
-        volume          (nullptr),
-        tlabel          (nullptr),
-        indicator       (nullptr),
-        videoOrientation(0)
-    {
-    }
+    Private() = default;
 
-    DInfoInterface*      iface;
+    DInfoInterface*      iface            = nullptr;
 
-    WidgetRenderer*      videoWidget;
-    AVPlayerCore*        player;
+    WidgetRenderer*      videoWidget      = nullptr;
+    AVPlayerCore*        player           = nullptr;
 
-    QSlider*             slider;
-    QSlider*             volume;
-    QLabel*              tlabel;
+    QSlider*             slider           = nullptr;
+    QSlider*             volume           = nullptr;
+    QLabel*              tlabel           = nullptr;
 
-    DHBox*               indicator;
+    DHBox*               indicator        = nullptr;
 
-    int                  videoOrientation;
+    int                  videoOrientation = 0;
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
