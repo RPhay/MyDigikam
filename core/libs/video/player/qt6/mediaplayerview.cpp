@@ -31,6 +31,8 @@
 #include <QVideoFrame>
 #include <QVBoxLayout>
 #include <QMouseEvent>
+#include <QProxyStyle>
+#include <QPushButton>
 #include <QFileInfo>
 #include <QToolBar>
 #include <QAction>
@@ -43,11 +45,14 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
 #include "stackedview.h"
 #include "thememanager.h"
+#include "dlayoutbox.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "metaengine.h"
@@ -70,43 +75,66 @@ public:
 
 protected:
 
-    bool eventFilter(QObject* obj, QEvent* event)
+    bool eventFilter(QObject* obj, QEvent* event) override
     {
-        if (
-            (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick)  && (event->type() == QEvent::MouseButtonRelease)) ||
-            (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) && (event->type() == QEvent::MouseButtonDblClick))
-           )
+        if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
         {
+            bool singleClick              = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
             QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
 
-            if (mouseEvent && mouseEvent->button() == Qt::LeftButton)
+            if (m_parent && mouseEvent)
             {
-                if (m_parent)
-                {
-                    MediaPlayerView* const mplayer = dynamic_cast<MediaPlayerView*>(m_parent);
+                MediaPlayerView* const mplayer = dynamic_cast<MediaPlayerView*>(m_parent);
 
-                    if (mplayer)
+                if (mplayer)
+                {
+                    if      ((mouseEvent->button() == Qt::LeftButton) &&
+                             ((singleClick && (event->type() == QEvent::MouseButtonRelease)) ||
+                             (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
                     {
                         mplayer->slotEscapePressed();
                     }
-                }
+                    else if ((mouseEvent->button() == Qt::RightButton) &&
+                             (event->type() == QEvent::MouseButtonRelease))
+                    {
+                        mplayer->slotRotateVideo();
+                    }
 
-                return true;
-            }
-            else
-            {
-                return false;
+                    return true;
+                }
             }
         }
-        else
-        {
-            return QObject::eventFilter(obj, event);
-        }
+
+        return QObject::eventFilter(obj, event);
     }
 
 private:
 
     QObject* m_parent = nullptr;
+};
+
+// --------------------------------------------------------
+
+class Q_DECL_HIDDEN PlayerVideoStyle : public QProxyStyle
+{
+    Q_OBJECT
+
+public:
+
+    using QProxyStyle::QProxyStyle;
+
+    int styleHint(QStyle::StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const override
+    {
+        if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
+        {
+            return (Qt::LeftButton | Qt::MiddleButton | Qt::RightButton);
+        }
+
+        return QProxyStyle::styleHint(hint, option, widget, returnData);
+    }
 };
 
 // --------------------------------------------------------
@@ -134,14 +162,21 @@ public:
     QAction*             playAction  = nullptr;
     QAction*             grabAction  = nullptr;
 
+    QPushButton*         loopPlay    = nullptr;
+
     QToolBar*            toolBar     = nullptr;
 
     DInfoInterface*      iface       = nullptr;
 
     QVideoWidget*        videoWidget = nullptr;
     QMediaPlayer*        player      = nullptr;
+
     QSlider*             slider      = nullptr;
+    QSlider*             volume      = nullptr;
+    QLabel*              tlabel      = nullptr;
     QUrl                 currentItem;
+
+    qint64               sliderTime  = 0;
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -151,9 +186,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-    QMargins margins(spacing, 0, spacing, spacing);
+    const int spacing      = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                  QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),
                                          i18nc("go to previous image", "Back"),   this);
@@ -164,7 +198,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->grabAction          = new QAction(QIcon::fromTheme(QLatin1String("view-preview")),
                                          i18nc("capture video frame", "Capture"), this);
 
-    d->toolBar = new QToolBar(this);
+    d->toolBar             = new QToolBar(this);
     d->toolBar->addAction(d->prevAction);
     d->toolBar->addAction(d->nextAction);
     d->toolBar->addAction(d->playAction);
@@ -181,7 +215,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     QVBoxLayout* const vbox1 = new QVBoxLayout(d->errorView);
     vbox1->addWidget(d->toolBar, 1);
     vbox1->addWidget(errorMsg, 10);
-    vbox1->setContentsMargins(margins);
+    vbox1->setContentsMargins(QMargins());
     vbox1->setSpacing(spacing);
 
     insertWidget(Private::ErrorView, d->errorView);
@@ -191,13 +225,32 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView  = new QFrame(this);
     d->videoWidget = new QVideoWidget(this);
     d->player      = new QMediaPlayer(this);
-
-    d->slider      = new QSlider(Qt::Horizontal, this);
-    d->slider->setRange(0, 0);
-
     d->player->setVideoOutput(d->videoWidget);
 
+    DHBox* const hbox = new DHBox(this);
+    d->slider         = new QSlider(Qt::Horizontal, hbox);
+    d->slider->setStyle(new PlayerVideoStyle());
+    d->slider->setRange(0, 0);
+    d->tlabel         = new QLabel(hbox);
+    d->tlabel->setText(QLatin1String("00:00:00 / 00:00:00"));
+    d->loopPlay       = new QPushButton(hbox);
+    d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
+    d->loopPlay->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    d->loopPlay->setToolTip(i18n("Toggle playing in a loop"));
+    d->loopPlay->setFocusPolicy(Qt::NoFocus);
+    d->loopPlay->setMinimumSize(22, 22);
+    d->loopPlay->setCheckable(true);
+    QLabel* const spk = new QLabel(hbox);
+    spk->setPixmap(QIcon::fromTheme(QLatin1String("audio-volume-high")).pixmap(22, 22));
+    d->volume         = new QSlider(Qt::Horizontal, hbox);
+    d->volume->setRange(0, 100);
+    d->volume->setValue(50);
+    hbox->setContentsMargins(0, spacing, 0, 0);
+    hbox->setStretchFactor(d->slider, 10);
+    hbox->setSpacing(4);
+
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    d->videoWidget->setMouseTracking(true);
     d->videoWidget->setStyleSheet(QLatin1String("background-color:black;"));
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
@@ -206,25 +259,26 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
     vbox2->addWidget(d->toolBar,      1);
     vbox2->addWidget(d->videoWidget, 10);
-    vbox2->addWidget(d->slider,       0);
-    vbox2->setContentsMargins(margins);
+    vbox2->addWidget(d->hbox,         0);
+    vbox2->setContentsMargins(0, 0, 0, spacing);
     vbox2->setSpacing(spacing);
 
     insertWidget(Private::PlayerView, d->playerView);
-
 
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group("Media Player Settings");
+
+    d->volume->setValue(group.readEntry("Volume", 50));
+
     // --------------------------------------------------------------------------
 
     connect(this, SIGNAL(signalFinished()),
             this, SLOT(slotPlayerFinished()));
-
-    connect(d->player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
-            this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
@@ -241,14 +295,23 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->grabAction, SIGNAL(triggered()),
             this, SLOT(slotCapture()));
 
+    connect(d->slider, SIGNAL(sliderMoved(int)),
+            this, SLOT(slotPosition(int)));
+
     connect(d->slider, SIGNAL(sliderPressed()),
             this, SLOT(slotSliderPressed()));
 
     connect(d->slider, SIGNAL(sliderReleased()),
             this, SLOT(slotSliderReleased()));
 
-    connect(d->slider, SIGNAL(sliderMoved(int)),
-            this, SLOT(slotPosition(int)));
+    connect(d->volume, SIGNAL(valueChanged(int)),
+            this, SLOT(slotVolumeChanged(int)));
+
+    connect(d->loopPlay, SIGNAL(toggled(bool)),
+            this, SLOT(slotLoopToggled(bool)));
+
+    connect(d->player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
+            this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
     connect(d->player, SIGNAL(positionChanged(qint64)),
             this, SLOT(slotPositionChanged(qint64)));
@@ -264,6 +327,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
 MediaPlayerView::~MediaPlayerView()
 {
+    escapePreview();
+
     d->player->stop();
     delete d->player;
     delete d->videoWidget;
@@ -317,11 +382,8 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
-}
-
-void MediaPlayerView::slotRotateVideo()
-{
-    // TODO
+    d->player->audio()->close();
+    d->player->setFile(QString());
 }
 
 void MediaPlayerView::slotThemeChanged()
@@ -340,6 +402,11 @@ void MediaPlayerView::slotEscapePressed()
     escapePreview();
 
     Q_EMIT signalEscapePreview();
+}
+
+void MediaPlayerView::slotRotateVideo()
+{
+    // TODO
 }
 
 void MediaPlayerView::slotPausePlay()
@@ -463,8 +530,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     if (url.isEmpty())
     {
+        d->player->stop();
         d->currentItem = url;
         d->player->stop();
+
         return;
     }
 
@@ -481,22 +550,98 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->currentItem = url;
 
+    d->player->stop();
+
+    int orientation = 0;
+
+    if (d->iface)
+    {
+        DItemInfo info(d->iface->itemInfo(url));
+
+        orientation = info.orientation();
+    }
+
+    switch (orientation)
+    {
+        case MetaEngine::ORIENTATION_ROT_90:
+        case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+            d->videoOrientation = 90;
+            break;
+
+        case MetaEngine::ORIENTATION_ROT_180:
+            d->videoOrientation = 180;
+            break;
+
+        case MetaEngine::ORIENTATION_ROT_270:
+            d->videoOrientation = 270;
+            break;
+
+        default:
+            d->videoOrientation = 0;
+            break;
+    }
+
     d->player->setSource(d->currentItem);
     setPreviewMode(Private::PlayerView);
+    d->player->setPosition(10);
     d->player->play();
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
 {
+    if ((d->sliderTime < position)       &&
+        ((d->sliderTime + 100) > position))
+    {
+        return;
+    }
+
+    d->sliderTime = position;
+
     if (!d->slider->isSliderDown())
     {
+        d->slider->blockSignals(true);
         d->slider->setValue(position);
+        d->slider->blockSignals(false);
+    }
+
+    d->tlabel->setText(QString::fromLatin1("%1 / %2")
+                       .arg(QTime(0, 0, 0).addMSecs(position).toString(QLatin1String("HH:mm:ss")))
+                       .arg(QTime(0, 0, 0).addMSecs(d->slider->maximum()).toString(QLatin1String("HH:mm:ss"))));
+}
+
+void MediaPlayerView::slotVolumeChanged(int volume)
+{
+    d->player->audio()->setVolume((qreal)volume / 100.0);
+
+    if (objectName() != QLatin1String("main_media_player"))
+    {
+        return;
+    }
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group("Media Player Settings");
+    group.writeEntry("Volume", volume);
+}
+
+void MediaPlayerView::slotLoopToggled(bool loop)
+{
+    if (loop)
+    {
+        d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-repeat")));
+        d->player->setRepeat(-1);
+    }
+    else
+    {
+        d->loopPlay->setIcon(QIcon::fromTheme(QLatin1String("media-playlist-normal")));
+        d->player->setRepeat(0);
     }
 }
 
 void MediaPlayerView::slotDurationChanged(qint64 duration)
 {
-    d->slider->setRange(0, duration);
+    qint64 max = qMax((qint64)1, duration);
+    d->slider->setRange(0, max);
 }
 
 void MediaPlayerView::slotPosition(int position)

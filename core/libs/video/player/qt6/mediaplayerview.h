@@ -77,6 +77,8 @@ private Q_SLOTS:
     // Slidebar slots
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
+    void slotVolumeChanged(int volume);
+    void slotLoopToggled(bool loop);
     void slotPosition(int position);
     void slotPausePlay();
     void slotCapture();
