@@ -307,9 +307,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayerCore::State)),
             this, SLOT(slotPlayerStateChanged(QtAV::AVPlayerCore::State)));
 
-    connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
-            this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
-
     connect(d->player, SIGNAL(positionChanged(qint64)),
             this, SLOT(slotPositionChanged(qint64)),
             Qt::QueuedConnection);
@@ -320,9 +317,11 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->player, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotHandlePlayerError(QtAV::AVError)));
 
+    connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
+            this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
+
     connect(d->player->videoCapture(), SIGNAL(imageCaptured(QImage)),
             this, SLOT(slotImageCaptured(QImage)));
-
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV:Audio output backends:"
                                  << d->player->audio()->backendsAvailable();
