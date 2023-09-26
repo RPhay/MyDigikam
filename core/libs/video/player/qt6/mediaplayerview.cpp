@@ -242,7 +242,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
     d->errorView           = new QFrame(this);
-    QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player...."), this);
+    QLabel* const errorMsg = new QLabel(i18n("An error has occurred with the media player..."), this);
 
     errorMsg->setAlignment(Qt::AlignCenter);
     d->errorView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
