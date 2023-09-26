@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef MEDIAPLAYERVIEW_H
-#define MEDIAPLAYERVIEW_H
+#ifndef DIGIKAM_MEDIA_PLAYER_VIEW_H
+#define DIGIKAM_MEDIA_PLAYER_VIEW_H
 
 // Qt includes
 
@@ -99,4 +99,4 @@ private:
 
 }  // namespace Digikam
 
-#endif // MEDIAPLAYERVIEW_H
+#endif // DIGIKAM_MEDIA_PLAYER_VIEW_H
