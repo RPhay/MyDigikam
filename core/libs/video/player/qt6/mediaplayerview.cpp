@@ -309,7 +309,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     setPreviewMode(Private::PlayerView);
 
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
-    d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
+    d->videoView->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Media Player Settings");
