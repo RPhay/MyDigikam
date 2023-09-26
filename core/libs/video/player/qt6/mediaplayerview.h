@@ -89,6 +89,7 @@ private:
 
     int  previewMode();
     void setPreviewMode(int mode);
+    void resizeEvent(QResizeEvent*);
 
 private:
 

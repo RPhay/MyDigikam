@@ -38,7 +38,10 @@
 #include <QFrame>
 #include <QEvent>
 #include <QStyle>
-#include <QVideoWidget>
+#include <QTransform>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsVideoItem>
 #include <QVideoSink>
 #include <QVideoFrame>
 #include <QAudioOutput>
@@ -170,7 +173,9 @@ public:
 
     DInfoInterface*      iface              = nullptr;
 
-    QVideoWidget*        videoWidget        = nullptr;
+    QGraphicsScene*      videoScene         = nullptr;
+    QGraphicsView*       videoView          = nullptr;
+    QGraphicsVideoItem*  videoWidget        = nullptr;
     QMediaPlayer*        player             = nullptr;
 
     QSlider*             slider             = nullptr;
@@ -180,6 +185,34 @@ public:
 
     int                  videoOrientation   = 0;
     qint64               sliderTime         = 0;
+
+public:
+
+    void adjustVideoSize()
+    {
+        videoView->fitInView(videoScene->itemsBoundingRect(), Qt::KeepAspectRatio);
+        videoView->centerOn(0, 0);
+    };
+
+    int videoItemOrientation() const
+    {
+        int orientation = 0;
+        QVariant val    = player->metaData().value(QMediaMetaData::Orientation);
+
+        if (!val.isNull())
+        {
+            orientation = val.toInt();
+        }
+
+        return orientation;
+    };
+
+    void setVideoItemOrientation(int orientation)
+    {
+        qreal x = videoWidget->boundingRect().width()  / 2.0;
+        qreal y = videoWidget->boundingRect().height() / 2.0;
+        videoWidget->setTransform(QTransform().translate(x, y).rotate(orientation).translate(-x, -y));
+    };
 };
 
 MediaPlayerView::MediaPlayerView(QWidget* const parent)
@@ -226,9 +259,15 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     // --------------------------------------------------------------------------
 
     d->playerView  = new QFrame(this);
-    d->videoWidget = new QVideoWidget(this);
+    d->videoScene  = new QGraphicsScene(this);
+    d->videoView   = new QGraphicsView(d->videoScene);
+    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
     d->player->setVideoOutput(d->videoWidget);
+    d->videoScene->addItem(d->videoWidget);
 
     DHBox* const hbox = new DHBox(this);
     hbox->layout()->addWidget(d->toolBar);
@@ -254,15 +293,14 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     hbox->setSpacing(spacing);
 
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
-    d->videoWidget->setMouseTracking(true);
-    d->videoWidget->setStyleSheet(QLatin1String("background-color:black;"));
+    d->playerView->setMouseTracking(true);
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
-    vbox2->addWidget(hbox,           0);
-    vbox2->addWidget(d->videoWidget, 10);
+    vbox2->addWidget(hbox,          0);
+    vbox2->addWidget(d->videoView, 10);
     vbox2->setContentsMargins(0, 0, 0, 0);
     vbox2->setSpacing(spacing);
 
@@ -349,6 +387,7 @@ void MediaPlayerView::reload()
 {
     d->player->stop();
     d->player->setSource(d->currentItem);
+    d->adjustVideoSize();
     d->player->play();
 }
 
@@ -367,15 +406,9 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
 {
     if (newState == QMediaPlayer::PlayingState)
     {
-        int rotate   = 0;
-        QVariant val = d->player->metaData().value(QMediaMetaData::Orientation);
+        int rotate = d->videoItemOrientation();
+        d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
-        if (!val.isNull())
-        {
-            rotate = val.toInt();
-        }
-
-//TODO        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
 
@@ -429,7 +462,30 @@ void MediaPlayerView::slotEscapePressed()
 
 void MediaPlayerView::slotRotateVideo()
 {
-    // TODO
+    if (d->player->isPlaying())
+    {
+        int orientation = 0;
+
+        switch (d->videoItemOrientation())
+        {
+            case 0:
+                orientation = 90;
+                break;
+
+            case 90:
+                orientation = 180;
+                break;
+
+            case 180:
+                orientation = 270;
+                break;
+
+            default:
+                orientation = 0;
+        }
+
+        d->setVideoItemOrientation(orientation);
+    }
 }
 
 void MediaPlayerView::slotPausePlay()
@@ -550,6 +606,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 {
     d->prevAction->setEnabled(hasPrevious);
     d->nextAction->setEnabled(hasNext);
+    d->adjustVideoSize();
 
     if (url.isEmpty())
     {
@@ -699,6 +756,11 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
     setPreviewMode(Private::ErrorView);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << errStr;
+}
+
+void MediaPlayerView::resizeEvent(QResizeEvent*)
+{
+    d->adjustVideoSize();
 }
 
 }  // namespace Digikam
