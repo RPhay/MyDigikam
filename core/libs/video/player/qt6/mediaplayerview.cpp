@@ -190,7 +190,7 @@ public:
 
     void adjustVideoSize()
     {
-        videoView->fitInView(videoScene->itemsBoundingRect(), Qt::KeepAspectRatio);
+        videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
         videoView->centerOn(0, 0);
     };
 
@@ -209,10 +209,11 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
-        qreal x = videoWidget->boundingRect().width()  / 2.0;
-        qreal y = videoWidget->boundingRect().height() / 2.0;
+        qreal x          = videoWidget->boundingRect().width()  / 2.0;
+        qreal y          = videoWidget->boundingRect().height() / 2.0;
         videoWidget->setTransform(QTransform().translate(x, y).rotate(orientation).translate(-x, -y));
-        videoOrientation= orientation;
+        videoOrientation = orientation;
+        adjustVideoSize();
     };
 };
 
