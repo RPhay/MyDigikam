@@ -127,7 +127,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setAutoFillBackground(true);
     d->indicator->setSpacing(4);
 
-
     QGridLayout* const grid = new QGridLayout(this);
     grid->addWidget(d->videoWidget, 0, 0, 2, 1);
     grid->addWidget(d->indicator,   0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
