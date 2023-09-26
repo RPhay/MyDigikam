@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 00:42+0000\n"
+"POT-Creation-Date: 2023-09-26 00:40+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -2867,14 +2867,16 @@ msgid ""
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
-#: core/libs/video/player/mediaplayerview.cpp:212
+#: core/libs/video/player/qt5/mediaplayerview.cpp:193
+#: core/libs/video/player/qt6/mediaplayerview.cpp:159
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "عُد"
 
 #: core/app/views/preview/itempreviewview.cpp:188
-#: core/libs/video/player/mediaplayerview.cpp:214
+#: core/libs/video/player/qt5/mediaplayerview.cpp:195
+#: core/libs/video/player/qt6/mediaplayerview.cpp:161
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -40043,6 +40045,35 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr "عشوائيّ"
 
+#: core/libs/video/manager/qt5/vidslidetask.cpp:278
+#, fuzzy, kde-format
+#| msgid "Failed to open file."
+msgid "Failed to open video encoder"
+msgstr "فشل فتح الملفّ."
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:294
+#, fuzzy, kde-format
+#| msgid "Failed to open file."
+msgid "Failed to open audio encoder"
+msgstr "فشل فتح الملفّ."
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:324
+#, fuzzy, kde-format
+#| msgid "Failed to open file."
+msgid "Failed to open muxer"
+msgstr "فشل فتح الملفّ."
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:410
+#, kde-format
+msgid "Encoding %1 Done"
+msgstr ""
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:445
+#, fuzzy, kde-format
+#| msgid "Cannot create directory %1"
+msgid "Output video is %1"
+msgstr "تعذّر إنشاء الدّليل %1"
+
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: QVGA"
@@ -40523,60 +40554,39 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:278
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open video encoder"
-msgstr "فشل فتح الملفّ."
-
-#: core/libs/video/manager/vidslidetask.cpp:294
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open audio encoder"
-msgstr "فشل فتح الملفّ."
-
-#: core/libs/video/manager/vidslidetask.cpp:324
-#, fuzzy, kde-format
-#| msgid "Failed to open file."
-msgid "Failed to open muxer"
-msgstr "فشل فتح الملفّ."
-
-#: core/libs/video/manager/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr ""
-
-#: core/libs/video/manager/vidslidetask.cpp:445
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
-msgid "Output video is %1"
-msgstr "تعذّر إنشاء الدّليل %1"
-
-#: core/libs/video/player/mediaplayerview.cpp:216
+#: core/libs/video/player/qt5/mediaplayerview.cpp:197
+#: core/libs/video/player/qt6/mediaplayerview.cpp:163
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "ألبث/شغّل"
 
-#: core/libs/video/player/mediaplayerview.cpp:218
+#: core/libs/video/player/qt5/mediaplayerview.cpp:199
+#: core/libs/video/player/qt6/mediaplayerview.cpp:165
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "التقط"
 
-#: core/libs/video/player/mediaplayerview.cpp:221
+#: core/libs/video/player/qt5/mediaplayerview.cpp:202
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "حدث خطأ مع مشغّل الوسائط..."
 
-#: core/libs/video/player/mediaplayerview.cpp:248
+#: core/libs/video/player/qt5/mediaplayerview.cpp:229
 #, fuzzy, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
 "العرض بوصة ينفذ بتكرار\n"
 "حلقة\n"
 "يكرر"
+
+#: core/libs/video/player/qt6/mediaplayerview.cpp:175
+#, fuzzy, kde-format
+#| msgid "An error has occurred with the media player...."
+msgid "An error has occurred with the media player...."
+msgstr "حدث خطأ مع مشغّل الوسائط..."
 
 #: core/libs/video/qtav/codec/AVDecoder.cpp:131
 #, fuzzy, kde-format
@@ -42797,27 +42807,27 @@ msgctxt "default theme name"
 msgid "Default"
 msgstr "الافتراضيّ"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:218
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:225
 #, kde-format
 msgid "EXIF viewer"
 msgstr "عارض EXIF"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:222
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:229
 #, kde-format
 msgid "Makernotes viewer"
 msgstr ""
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:226
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:233
 #, kde-format
 msgid "IPTC viewer"
 msgstr "عارض IPTC"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:230
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:237
 #, kde-format
 msgid "XMP viewer"
 msgstr "عارض XMP"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:234
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:241
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgid "ExifTool viewer"
