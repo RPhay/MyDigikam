@@ -107,7 +107,7 @@ protected:
 
 private:
 
-    QObject* m_parent;
+    QObject* m_parent = nullptr;
 };
 
 // --------------------------------------------------------
