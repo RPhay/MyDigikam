@@ -231,6 +231,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->player->setVideoOutput(d->videoWidget);
 
     DHBox* const hbox = new DHBox(this);
+    hbox->layout()->addWidget(d->toolBar);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
     d->slider->setStyle(new PlayerVideoStyle());
     d->slider->setRange(0, 0);
@@ -248,9 +249,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
     d->volume->setValue(50);
-    hbox->setContentsMargins(0, spacing, 0, 0);
+    hbox->setContentsMargins(0, 0, 0, 0);
     hbox->setStretchFactor(d->slider, 10);
-    hbox->setSpacing(4);
+    hbox->setSpacing(spacing);
 
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
     d->videoWidget->setMouseTracking(true);
@@ -260,10 +261,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView->setLineWidth(1);
 
     QVBoxLayout* const vbox2 = new QVBoxLayout(d->playerView);
-    vbox2->addWidget(d->toolBar,      1);
+    vbox2->addWidget(hbox,           0);
     vbox2->addWidget(d->videoWidget, 10);
-    vbox2->addWidget(hbox,            0);
-    vbox2->setContentsMargins(0, 0, 0, spacing);
+    vbox2->setContentsMargins(0, 0, 0, 0);
     vbox2->setSpacing(spacing);
 
     insertWidget(Private::PlayerView, d->playerView);
