@@ -366,6 +366,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->player, SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
+    connect(d->player, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
+            this, SLOT(slotMediaStatusChanged(QMediaPlayer::MediaStatus)));
+
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
 
@@ -439,6 +442,14 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
         {
             Q_EMIT signalFinished();
         }
+    }
+}
+
+void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
+{
+    if (status == QMediaPlayer::InvalidMedia)
+    {
+        setPreviewMode(Private::ErrorView);
     }
 }
 
