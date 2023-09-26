@@ -66,6 +66,10 @@ private Q_SLOTS:
 
 private:
 
+    void resizeEvent(QResizeEvent*);
+
+private:
+
     class Private;
     Private* const d;
 };

@@ -24,7 +24,10 @@
 #include <QSlider>
 #include <QStyle>
 #include <QLabel>
-#include <QVideoWidget>
+#include <QTransform>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsVideoItem>
 #include <QVideoSink>
 #include <QVideoFrame>
 #include <QAudioOutput>
@@ -41,8 +44,6 @@
 #include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "metaengine.h"
-
-using namespace QtAV;
 
 namespace Digikam
 {
@@ -77,7 +78,9 @@ public:
 
     DInfoInterface*      iface            = nullptr;
 
-    QVideoWidget*        videoWidget      = nullptr;
+    QGraphicsScene*      videoScene       = nullptr;
+    QGraphicsView*       videoView        = nullptr;
+    QGraphicsVideoItem*  videoWidget      = nullptr;
     QMediaPlayer*        player           = nullptr;
 
     QSlider*             slider           = nullptr;
@@ -87,6 +90,40 @@ public:
     DHBox*               indicator        = nullptr;
 
     int                  videoOrientation = 0;
+
+public:
+
+    void adjustVideoSize()
+    {
+        videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
+        videoView->centerOn(0, 0);
+    };
+
+    int videoMediaOrientation() const
+    {
+        int orientation = 0;
+        QVariant val    = player->metaData().value(QMediaMetaData::Orientation);
+
+        if (!val.isNull())
+        {
+            orientation = val.toInt();
+        }
+
+        return orientation;
+    };
+
+    void setVideoItemOrientation(int orientation)
+    {
+        qreal x          = videoWidget->boundingRect().width()  / 2.0;
+        qreal y          = videoWidget->boundingRect().height() / 2.0;
+        QTransform tfm;
+        tfm.translate(x, y);
+        tfm.rotate(orientation);
+        tfm.translate(-x, -y);
+        videoWidget->setTransform(tfm);
+        videoOrientation = orientation;
+        adjustVideoSize();
+    };
 };
 
 SlideVideo::SlideVideo(QWidget* const parent)
@@ -95,20 +132,18 @@ SlideVideo::SlideVideo(QWidget* const parent)
 {
     setMouseTracking(true);
 
-    d->videoWidget    = new WidgetRenderer(this);
-    d->videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->videoWidget->setOutAspectRatioMode(QtAV::VideoAspectRatio);
-    d->videoWidget->setMouseTracking(true);
+    d->videoScene  = new QGraphicsScene(this);
+    d->videoView   = new QGraphicsView(d->videoScene);
+    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+    d->videoWidget = new QGraphicsVideoItem();
+    d->player      = new QMediaPlayer(this);
+    d->player->setVideoOutput(d->videoWidget);
+    d->videoScene->addItem(d->videoWidget);
 
-    d->player         = new AVPlayerCore(this);
-    d->player->setRenderer(d->videoWidget);
-
-    d->player->setBufferMode(QtAV::BufferPackets);
-    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
-    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
-    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
-    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
-    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+    d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    d->videoView->setMouseTracking(true);
 
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
@@ -127,10 +162,9 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setAutoFillBackground(true);
     d->indicator->setSpacing(4);
 
-
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->videoWidget, 0, 0, 2, 1);
-    grid->addWidget(d->indicator,   0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
+    grid->addWidget(d->videoView, 0, 0, 2, 1);
+    grid->addWidget(d->indicator, 0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
     grid->setRowStretch(0, 1);
     grid->setRowStretch(1, 100);
     grid->setContentsMargins(QMargins());
@@ -139,7 +173,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     KConfigGroup group        = config->group("Media Player Settings");
     int volume                = group.readEntry("Volume", 50);
 
-    d->player->audio()->setVolume((qreal)volume / 100.0);
+    d->player->audioOutput()->setVolume(volume / 100.0F);
     d->volume->setValue(volume);
 
     // --------------------------------------------------------------------------
@@ -153,11 +187,11 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
 
-    connect(d->player, SIGNAL(stateChanged(QtAV::AVPlayerCore::State)),
-            this, SLOT(slotPlayerStateChanged(QtAV::AVPlayerCore::State)));
+    connect(d->player, SIGNAL(playbackStateChanged(QMediaPlayer::PlaybackState)),
+            this, SLOT(slotPlayerStateChanged(QMediaPlayer::PlaybackState)));
 
-    connect(d->player, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
-            this, SLOT(slotMediaStatusChanged(QtAV::MediaStatus)));
+    connect(d->player, SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
+            this, SLOT(slotMediaStatusChanged(QMediaPlayer::MediaStatus)));
 
     connect(d->player, SIGNAL(positionChanged(qint64)),
             this, SLOT(slotPositionChanged(qint64)));
@@ -165,8 +199,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     connect(d->player, SIGNAL(durationChanged(qint64)),
             this, SLOT(slotDurationChanged(qint64)));
 
-    connect(d->player, SIGNAL(error(QtAV::AVError)),
-            this, SLOT(slotHandlePlayerError(QtAV::AVError)));
+    connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
+            this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
 
     // --------------------------------------------------------------------------
 
@@ -220,7 +254,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
             break;
     }
 
-    d->player->setFile(url.toLocalFile());
+    d->player->setSource(url);
     d->player->play();
 
     showIndicator(false);
@@ -233,18 +267,11 @@ void SlideVideo::showIndicator(bool b)
 
 void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
 {
-    if (state == QtAV::AVPlayerCore::PlayingState)
+    if (newState == QMediaPlayer::PlayingState)
     {
-        int rotate = 0;
+        int rotate = d->videoMediaOrientation();
+        d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
-#if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
-
-        // fix wrong rotation from QtAV git/master
-
-        rotate     = d->player->statistics().video_only.rotate;
-
-#endif
-        d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
                                      << d->videoOrientation;
     }
@@ -254,15 +281,15 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
 {
     switch (status)
     {
-        case EndOfMedia:
+        case QMediaPlayer::EndOfMedia:
             Q_EMIT signalVideoFinished();
             break;
 
-        case LoadedMedia:
+        case QMediaPlayer::LoadedMedia:
             Q_EMIT signalVideoLoaded(true);
             break;
 
-        case InvalidMedia:
+        case QMediaPlayer::InvalidMedia:
             Q_EMIT signalVideoLoaded(false);
             break;
 
@@ -279,13 +306,13 @@ void SlideVideo::pause(bool b)
         return;
     }
 
-    d->player->pause(b);
+    d->player->pause();
 }
 
 void SlideVideo::stop()
 {
     d->player->stop();
-    d->player->setFile(QString());
+    d->player->setSource(QUrl());
 }
 
 void SlideVideo::slotPositionChanged(qint64 position)
@@ -306,7 +333,7 @@ void SlideVideo::slotPositionChanged(qint64 position)
 
 void SlideVideo::slotVolumeChanged(int volume)
 {
-    d->player->audio()->setVolume((qreal)volume / 100.0);
+    d->player->audioOutput()->setVolume(volume / 100.0F);
 }
 
 void SlideVideo::slotDurationChanged(qint64 duration)
@@ -325,9 +352,14 @@ void SlideVideo::slotPosition(int position)
     }
 }
 
-void SlideVideo::slotHandlePlayerError(QMediaPlayer::Error, const QString& str);
+void SlideVideo::slotHandlePlayerError(QMediaPlayer::Error, const QString& str)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << str;
+}
+
+void SlideVideo::resizeEvent(QResizeEvent*)
+{
+    d->adjustVideoSize();
 }
 
 } // namespace Digikam
