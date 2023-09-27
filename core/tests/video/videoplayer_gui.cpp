@@ -6,7 +6,7 @@
  * Date        : 2017-05-25
  * Description : a stand alone tool to play a video file.
  *
- * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
     if (argc == 1)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "player - video file to play";
-        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: video files";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Usage: video file";
 
         return -1;
     }

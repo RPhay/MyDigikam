@@ -130,6 +130,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
     setMouseTracking(true);
 
     d->videoScene  = new QGraphicsScene(this);
@@ -202,12 +204,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
-
-    // --------------------------------------------------------------------------
-
-    layout()->activate();
-    resize(sizeHint());
-    show();
 }
 
 SlideVideo::~SlideVideo()
@@ -257,6 +253,8 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 
     d->player->setSource(url);
     d->player->play();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia:" << url;
 
     showIndicator(false);
 }
