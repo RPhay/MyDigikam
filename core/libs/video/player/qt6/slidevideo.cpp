@@ -167,11 +167,12 @@ SlideVideo::SlideVideo(QWidget* const parent)
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    QVBoxLayout* const vbox2 = new QVBoxLayout(this);
-    vbox2->addWidget(d->indicator,  0);
-    vbox2->addWidget(d->videoView, 10);
-    vbox2->setContentsMargins(0, 0, 0, 0);
-    vbox2->setSpacing(spacing);
+    QGridLayout* const grid = new QGridLayout(this);
+    grid->addWidget(d->videoView, 0, 0, 2, 1);
+    grid->addWidget(d->indicator, 0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
+    grid->setRowStretch(0, 1);
+    grid->setRowStretch(1, 100);
+    grid->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Media Player Settings");
@@ -261,6 +262,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 
 void SlideVideo::showIndicator(bool b)
 {
+    qDebug(DIGIKAM_GENERAL_LOG) << "ShowIndicator:" << b;
     d->indicator->setVisible(b);
 }
 
@@ -281,28 +283,36 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
     switch (status)
     {
         case QMediaPlayer::EndOfMedia:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia completed:" << d->player->source();
 
             Q_EMIT signalVideoFinished();
 
             break;
+        }
 
         case QMediaPlayer::LoadingMedia:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media loaded:" << d->player->source();
 
             Q_EMIT signalVideoLoaded(true);
 
             break;
+        }
 
         case QMediaPlayer::InvalidMedia:
+        {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media invalid:" << d->player->source();
 
             Q_EMIT signalVideoLoaded(false);
 
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -365,8 +375,15 @@ void SlideVideo::slotHandlePlayerError(QMediaPlayer::Error, const QString& str)
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << str;
 }
 
-void SlideVideo::resizeEvent(QResizeEvent*)
+void SlideVideo::resizeEvent(QResizeEvent* e)
 {
+    QWidget::resizeEvent(e);
+    d->adjustVideoSize();
+}
+
+void SlideVideo::showEvent(QShowEvent* e)
+{
+    QWidget::showEvent(e);
     d->adjustVideoSize();
 }
 

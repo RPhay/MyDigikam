@@ -90,7 +90,9 @@ private:
 
     int  previewMode();
     void setPreviewMode(int mode);
-    void resizeEvent(QResizeEvent*);
+
+    void resizeEvent(QResizeEvent*) override;
+    void showEvent(QShowEvent*)     override;
 
 private:
 

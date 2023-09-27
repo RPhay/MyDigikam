@@ -777,10 +777,18 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
 }
 
-void MediaPlayerView::resizeEvent(QResizeEvent*)
+void MediaPlayerView::resizeEvent(QResizeEvent* e)
 {
+    QStackedWidget::resizeEvent(e);
     d->adjustVideoSize();
 }
+
+void MediaPlayerView::showEvent(QShowEvent* e)
+{
+    QStackedWidget::showEvent(e);
+    d->adjustVideoSize();
+}
+
 
 }  // namespace Digikam
 

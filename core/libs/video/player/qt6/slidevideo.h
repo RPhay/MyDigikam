@@ -66,7 +66,8 @@ private Q_SLOTS:
 
 private:
 
-    void resizeEvent(QResizeEvent*);
+    void resizeEvent(QResizeEvent*) override;
+    void showEvent(QShowEvent*)     override;
 
 private:
 
