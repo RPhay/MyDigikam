@@ -371,8 +371,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Using QtMultimedia";
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -418,7 +416,7 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
         int rotate = d->videoMediaOrientation();
         d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
                                      << d->videoOrientation;
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
@@ -440,6 +438,8 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
             (d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
            )
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia completed:" << d->player->source();
+
             Q_EMIT signalFinished();
         }
     }
@@ -683,6 +683,8 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     setPreviewMode(Private::PlayerView);
     d->player->setPosition(10);
     d->player->play();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia started:" << d->player->source();
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
@@ -772,7 +774,7 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
 {
     setPreviewMode(Private::ErrorView);
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << errStr;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
 }
 
 void MediaPlayerView::resizeEvent(QResizeEvent*)

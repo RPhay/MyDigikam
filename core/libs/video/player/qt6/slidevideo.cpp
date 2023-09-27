@@ -254,7 +254,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     d->player->setSource(url);
     d->player->play();
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia:" << url;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia started:" << d->player->source();
 
     showIndicator(false);
 }
@@ -271,7 +271,7 @@ void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
         int rotate = d->videoMediaOrientation();
         d->setVideoItemOrientation((-rotate) + d->videoOrientation);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
                                      << d->videoOrientation;
     }
 }
@@ -281,15 +281,22 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
     switch (status)
     {
         case QMediaPlayer::EndOfMedia:
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia completed:" << d->player->source();
+
             Q_EMIT signalVideoFinished();
+
             break;
 
         case QMediaPlayer::LoadedMedia:
+
             Q_EMIT signalVideoLoaded(true);
+
             break;
 
         case QMediaPlayer::InvalidMedia:
+
             Q_EMIT signalVideoLoaded(false);
+
             break;
 
         default:
@@ -353,7 +360,7 @@ void SlideVideo::slotPosition(int position)
 
 void SlideVideo::slotHandlePlayerError(QMediaPlayer::Error, const QString& str)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << str;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << str;
 }
 
 void SlideVideo::resizeEvent(QResizeEvent*)
