@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 00:40+0000\n"
-"PO-Revision-Date: 2023-09-24 21:00+0200\n"
+"POT-Creation-Date: 2023-09-27 00:41+0000\n"
+"PO-Revision-Date: 2023-09-26 12:11+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2834,7 +2834,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:159
+#: core/libs/video/player/qt6/mediaplayerview.cpp:235
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2842,7 +2842,7 @@ msgstr "Terug"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:161
+#: core/libs/video/player/qt6/mediaplayerview.cpp:237
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41384,34 +41384,30 @@ msgid "Default from Desktop"
 msgstr "Standaard uit bureaublad"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:163
+#: core/libs/video/player/qt6/mediaplayerview.cpp:239
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pauzeren/afspelen"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:165
+#: core/libs/video/player/qt6/mediaplayerview.cpp:241
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Opname"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
+#: core/libs/video/player/qt6/mediaplayerview.cpp:251
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
+#: core/libs/video/player/qt6/mediaplayerview.cpp:288
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"
-
-#: core/libs/video/player/qt6/mediaplayerview.cpp:175
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
-msgid "An error has occurred with the media player...."
-msgstr "Er deed zich een fout voor met de mediaspeler..."
 
 #: core/libs/video/qtav/codec/AVDecoder.cpp:131
 #, kde-format
@@ -64025,6 +64021,10 @@ msgstr "Zet alle instellingen terug naar hun standaardwaarden."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Wilt u alle video-instellingen resetten naar de standaard waarden?"
+
+#~| msgid "An error has occurred with the media player..."
+#~ msgid "An error has occurred with the media player...."
+#~ msgstr "Er deed zich een fout voor met de mediaspeler...."
 
 #~| msgid "Google Maps"
 #~ msgid "Input Google Maps API Key"

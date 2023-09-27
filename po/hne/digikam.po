@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 00:40+0000\n"
+"POT-Creation-Date: 2023-09-27 00:41+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -2859,7 +2859,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:159
+#: core/libs/video/player/qt6/mediaplayerview.cpp:235
 #, fuzzy, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2867,7 +2867,7 @@ msgstr "पीछू"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:161
+#: core/libs/video/player/qt6/mediaplayerview.cpp:237
 #, fuzzy, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -39810,33 +39810,30 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:163
+#: core/libs/video/player/qt6/mediaplayerview.cpp:239
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:165
+#: core/libs/video/player/qt6/mediaplayerview.cpp:241
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "कैप्चर"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
+#: core/libs/video/player/qt6/mediaplayerview.cpp:251
 #, fuzzy, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "मीडिया प्लेयर के साथ एक गलती होइस..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
+#: core/libs/video/player/qt6/mediaplayerview.cpp:288
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
-
-#: core/libs/video/player/qt6/mediaplayerview.cpp:175
-#, fuzzy, kde-format
-msgid "An error has occurred with the media player...."
-msgstr "मीडिया प्लेयर के साथ एक गलती होइस..."
 
 #: core/libs/video/qtav/codec/AVDecoder.cpp:131
 #, fuzzy, kde-format
@@ -62383,6 +62380,10 @@ msgstr "सब्बो सेटिंग ल ऊंखर डिफाल्�
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "सब्बो सेटिंग ल ऊंखर डिफाल्ट मूल्य मं रीसेट करव."
+
+#, fuzzy
+#~ msgid "An error has occurred with the media player...."
+#~ msgstr "मीडिया प्लेयर के साथ एक गलती होइस..."
 
 #, fuzzy
 #~ msgctxt "@label: item properties"

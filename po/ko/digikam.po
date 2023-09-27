@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 00:40+0000\n"
+"POT-Creation-Date: 2023-09-27 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2755,7 +2755,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:159
+#: core/libs/video/player/qt6/mediaplayerview.cpp:235
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2763,7 +2763,7 @@ msgstr "뒤로"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:161
+#: core/libs/video/player/qt6/mediaplayerview.cpp:237
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41397,34 +41397,30 @@ msgid "Default from Desktop"
 msgstr "데스크톱 기본값"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:163
+#: core/libs/video/player/qt6/mediaplayerview.cpp:239
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "일시 정지/재생"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:165
+#: core/libs/video/player/qt6/mediaplayerview.cpp:241
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "캡처"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
+#: core/libs/video/player/qt6/mediaplayerview.cpp:251
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "미디어 재생기 오류 발생..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
+#: core/libs/video/player/qt6/mediaplayerview.cpp:288
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "반복 재생 전환"
-
-#: core/libs/video/player/qt6/mediaplayerview.cpp:175
-#, fuzzy, kde-format
-#| msgid "An error has occurred with the media player..."
-msgid "An error has occurred with the media player...."
-msgstr "미디어 재생기 오류 발생..."
 
 #: core/libs/video/qtav/codec/AVDecoder.cpp:131
 #, fuzzy, kde-format
@@ -64228,6 +64224,11 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
+
+#, fuzzy
+#~| msgid "An error has occurred with the media player..."
+#~ msgid "An error has occurred with the media player...."
+#~ msgstr "미디어 재생기 오류 발생..."
 
 #, fuzzy
 #~| msgid "Google Maps"
