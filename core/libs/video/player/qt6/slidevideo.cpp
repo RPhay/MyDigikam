@@ -287,13 +287,15 @@ void SlideVideo::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
 
             break;
 
-        case QMediaPlayer::LoadedMedia:
+        case QMediaPlayer::LoadingMedia:
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media loaded:" << d->player->source();
 
             Q_EMIT signalVideoLoaded(true);
 
             break;
 
         case QMediaPlayer::InvalidMedia:
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Slide video with QtMultimedia media invalid:" << d->player->source();
 
             Q_EMIT signalVideoLoaded(false);
 
