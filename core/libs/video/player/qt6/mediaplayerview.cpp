@@ -191,7 +191,7 @@ public:
     void adjustVideoSize()
     {
         videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
-        videoView->centerOn(0, 0);
+        videoView->centerOn(videoWidget);
     };
 
     int videoMediaOrientation() const

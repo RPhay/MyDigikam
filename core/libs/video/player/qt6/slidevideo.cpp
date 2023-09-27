@@ -96,7 +96,7 @@ public:
     void adjustVideoSize()
     {
         videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
-        videoView->centerOn(0, 0);
+        videoView->centerOn(videoWidget);
     };
 
     int videoMediaOrientation() const
@@ -163,9 +163,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setStretchFactor(d->slider, 10);
     d->indicator->setAutoFillBackground(true);
     d->indicator->setSpacing(4);
-
-    const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const grid = new QGridLayout(this);
     grid->addWidget(d->videoView, 0, 0, 2, 1);
