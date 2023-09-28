@@ -351,9 +351,9 @@ void MediaPlayerView::reload()
     d->player->play();
 }
 
-void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
+void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State newState)
 {
-    if      (state == QtAV::AVPlayerCore::PlayingState)
+    if      (newState == QtAV::AVPlayerCore::PlayingState)
     {
         int rotate = 0;
 
@@ -371,16 +371,16 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
-    else if ((state == QtAV::AVPlayerCore::PausedState) ||
-             (state == QtAV::AVPlayerCore::StoppedState))
+    else if ((newState == QtAV::AVPlayerCore::PausedState) ||
+             (newState == QtAV::AVPlayerCore::StoppedState))
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     }
 }
 
-void MediaPlayerView::slotMediaStatusChanged(QtAV::MediaStatus status)
+void MediaPlayerView::slotMediaStatusChanged(QtAV::MediaStatus newStatus)
 {
-    if (status == QtAV::InvalidMedia)
+    if (newStatus == QtAV::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
     }

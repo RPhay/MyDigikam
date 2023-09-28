@@ -64,8 +64,8 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotPlayerStateChanged(QtAV::AVPlayerCore::State state);
-    void slotMediaStatusChanged(QtAV::MediaStatus status);
+    void slotPlayerStateChanged(QtAV::AVPlayerCore::State newState);
+    void slotMediaStatusChanged(QtAV::MediaStatus newStatus);
     void slotHandlePlayerError(const QtAV::AVError& err);
     void slotImageCaptured(const QImage& image);
     void slotPlayerConfigChanged();

@@ -318,9 +318,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     // --------------------------------------------------------------------------
 
-    connect(this, SIGNAL(signalFinished()),
-            this, SLOT(slotPlayerFinished()));
-
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
 
@@ -392,17 +389,6 @@ void MediaPlayerView::reload()
     d->player->play();
 }
 
-void MediaPlayerView::slotPlayerFinished()
-{
-    if (
-        (d->player->playbackState() == QMediaPlayer::StoppedState)  &&
-        (d->player->error() != QMediaPlayer::NoError)
-       )
-    {
-        setPreviewMode(Private::ErrorView);
-    }
-}
-
 void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
 {
     if (newState == QMediaPlayer::PlayingState)
@@ -435,13 +421,18 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
             qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia completed:" << d->player->source();
 
             Q_EMIT signalFinished();
+
+            if (d->player->error() != QMediaPlayer::NoError)
+            {
+                setPreviewMode(Private::ErrorView);
+            }
         }
     }
 }
 
-void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus status)
+void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus)
 {
-    if (status == QMediaPlayer::InvalidMedia)
+    if (newStatus == QMediaPlayer::InvalidMedia)
     {
         setPreviewMode(Private::ErrorView);
     }

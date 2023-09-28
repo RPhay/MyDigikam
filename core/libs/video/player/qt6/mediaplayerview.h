@@ -69,9 +69,8 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotPlayerFinished();
     void slotPlayerStateChanged(QMediaPlayer::PlaybackState newState);
-    void slotMediaStatusChanged(QMediaPlayer::MediaStatus status);
+    void slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
     void slotThemeChanged();
 
