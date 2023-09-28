@@ -141,7 +141,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
     d->videoView->setMouseTracking(true);
 
-    d->indicator      = new DHBox(this);
+    d->indicator      = new DHBox;
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
     d->slider->setStyle(new SlideVideoStyle());
     d->slider->setRange(0, 0);
@@ -227,20 +227,28 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             d->videoOrientation = 90;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             d->videoOrientation = 180;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             d->videoOrientation = 270;
             break;
+        }
 
         default:
+        {
             d->videoOrientation = 0;
             break;
+        }
     }
 
     d->player->setSource(url);
