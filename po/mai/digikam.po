@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 00:40+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -21004,14 +21004,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:123
 #, fuzzy, kde-format
 #| msgid "Slide"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "स्लाइड"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
