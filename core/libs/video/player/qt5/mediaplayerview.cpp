@@ -366,7 +366,7 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 #endif
 
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAV:"
                                      << d->videoOrientation;
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
@@ -420,19 +420,27 @@ void MediaPlayerView::slotRotateVideo()
         switch (d->videoWidget->orientation())
         {
             case 0:
+            {
                 orientation = 90;
                 break;
+            }
 
             case 90:
+            {
                 orientation = 180;
                 break;
+            }
 
             case 180:
+            {
                 orientation = 270;
                 break;
+            }
 
             default:
+            {
                 orientation = 0;
+            }
         }
 
         d->videoWidget->setOrientation(orientation);
@@ -592,20 +600,28 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             d->videoOrientation = 90;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             d->videoOrientation = 180;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             d->videoOrientation = 270;
             break;
+        }
 
         default:
+        {
             d->videoOrientation = 0;
             break;
+        }
     }
 
     d->player->setFile(d->currentItem.toLocalFile());
@@ -681,7 +697,7 @@ void MediaPlayerView::slotPosition(int position)
 void MediaPlayerView::slotHandlePlayerError(const QtAV::AVError& err)
 {
     setPreviewMode(Private::ErrorView);
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << err.string();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV Error: " << err.string();
 }
 
 void MediaPlayerView::slotPlayerConfigChanged()

@@ -203,20 +203,28 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             d->videoOrientation = 90;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             d->videoOrientation = 180;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             d->videoOrientation = 270;
             break;
+        }
 
         default:
+        {
             d->videoOrientation = 0;
             break;
+        }
     }
 
     d->player->setFile(url.toLocalFile());
@@ -244,7 +252,7 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
 
 #endif
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtAV:"
                                      << d->videoOrientation;
     }
 }
@@ -254,19 +262,30 @@ void SlideVideo::slotMediaStatusChanged(QtAV::MediaStatus status)
     switch (status)
     {
         case EndOfMedia:
+        {
             Q_EMIT signalVideoFinished();
+
             break;
+        }
 
         case LoadedMedia:
+        {
             Q_EMIT signalVideoLoaded(true);
+
             break;
+        }
 
         case InvalidMedia:
+        {
             Q_EMIT signalVideoLoaded(false);
+
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -326,7 +345,7 @@ void SlideVideo::slotPosition(int position)
 
 void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << err.string();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "QtAV Error: " << err.string();
 }
 
 } // namespace Digikam
