@@ -37,11 +37,12 @@ class DIGIKAM_EXPORT MediaPlayerView : public QStackedWidget
 public:
 
     explicit MediaPlayerView(QWidget* const parent);
-    ~MediaPlayerView();
+    ~MediaPlayerView() override;
 
     void setCurrentItem(const QUrl& url   = QUrl(),
                         bool  hasPrevious = false,
                         bool  hasNext     = false);
+
     void setInfoInterface(DInfoInterface* const iface);
     void escapePreview();
     void reload();
@@ -51,7 +52,6 @@ Q_SIGNALS:
     void signalNextItem();
     void signalPrevItem();
     void signalEscapePreview();
-    void signalFinished();
 
 public Q_SLOTS:
 
@@ -65,7 +65,7 @@ private Q_SLOTS:
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
     void slotThemeChanged();
 
-    // Slidebar slots
+    /// Slidebar slots
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
     void slotVolumeChanged(int volume);
@@ -73,6 +73,7 @@ private Q_SLOTS:
     void slotPosition(int position);
     void slotPausePlay();
     void slotCapture();
+
     void slotSliderPressed();
     void slotSliderReleased();
 

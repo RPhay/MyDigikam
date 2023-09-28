@@ -411,8 +411,6 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia completed:" << d->player->source();
 
-            Q_EMIT signalFinished();
-
             if (d->player->error() != QMediaPlayer::NoError)
             {
                 setPreviewMode(Private::ErrorView);
