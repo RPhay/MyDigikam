@@ -114,13 +114,7 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
-        qreal x          = videoWidget->boundingRect().width()  / 2.0;
-        qreal y          = videoWidget->boundingRect().height() / 2.0;
-        QTransform tfm;
-        tfm.translate(x, y);
-        tfm.rotate(orientation);
-        tfm.translate(-x, -y);
-        videoWidget->setTransform(tfm);
+        videoView->rotate(orientation);
         videoOrientation = orientation;
         adjustVideoSize();
     };
