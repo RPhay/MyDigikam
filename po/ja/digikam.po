@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 00:41+0000\n"
+"POT-Creation-Date: 2023-09-28 00:40+0000\n"
 "PO-Revision-Date: 2023-05-29 19:29-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -22003,14 +22003,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "斑点"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:123
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "スライドショー"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "

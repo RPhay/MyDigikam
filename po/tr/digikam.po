@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 00:41+0000\n"
-"PO-Revision-Date: 2023-09-12 22:31+0300\n"
+"POT-Creation-Date: 2023-09-28 00:40+0000\n"
+"PO-Revision-Date: 2023-09-27 21:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -7332,14 +7332,13 @@ msgstr ""
 "görseli dosyası; sayısal kameranın, sinema filmi tarayıcısının veya başka "
 "bir aygıtın görsel algılayıcısından veya başka bir görsel tarayıcısından "
 "alınan, en az düzeyde işlenmiş veriler içerir. RAW dosyalar henüz "
-"işlenmemiştir ve bu nedenle bir biteşlem grafik düzenleyicisiyle "
-"yazdırılmaya veya düzenlenmeye hazır değildir. RAW, depolama, yazdırma veya "
-"daha fazla düzenleme için TIFF veya JPEG'e dönüştürülmeden önce kesin "
-"ayarlamaların yapılabildiği geniş gamlı dahili renk alanındaki bir ham "
-"dönüştürücü tarafından işlenir. Bu genellikle görseli aygıta bağlı bir renk "
-"uzayında kodlar.</para><para>Ayrıntılar için <a href='https://en.wikipedia."
-"org/wiki/Raw_image_format'>RAW Görsel Dosyası belgelendirmesine</a> bakın.</"
-"para>"
+"işlenmemiştir ve bu nedenle bir biteşlem grafik düzenleyicisiyle baskıya "
+"veya düzenlenmeye hazır değildir. RAW, depolama, baskı veya daha fazla "
+"düzenleme için TIFF veya JPEG'e dönüştürülmeden önce kesin ayarlamaların "
+"yapılabildiği geniş gamlı dahili renk alanındaki bir RAW dönüştürücüsü "
+"tarafından işlenir. Bu genellikle görseli aygıta bağlı bir renk uzayında "
+"kodlar.</para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
+"Raw_image_format'>RAW Görsel Dosyası belgelendirmesine</a> bakın.</para>"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
 #, kde-format
@@ -8876,12 +8875,12 @@ msgstr "Keskinleştir..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
-msgstr "Resmi Yazdır"
+msgstr "Görseli Bastır"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:90
 #, kde-format
 msgid "Use Color Management for Printing"
-msgstr "Yazdırma için Renk Yönetimi Kullan"
+msgstr "Baskı için Renk Yönetimi Kullan"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
@@ -8987,25 +8986,25 @@ msgstr "Oranı koru"
 #, kde-format
 msgctxt "@title"
 msgid "Print Image"
-msgstr "Görseli Yazdır"
+msgstr "Görseli Bastır"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to print an image"
-msgstr "Bir görseli yazdırmak için bir araç"
+msgstr "Bir görseli bastırmak için bir araç"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can print an image."
-msgstr "Bu görsel düzenleyicisi aracı, bir görseli yazdırabilir."
+msgstr "Bu görsel düzenleyicisi aracı, bir görseli bastırabilir."
 
 #: core/dplugins/editor/file/print/printplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Image..."
-msgstr "Görseli Yazdır..."
+msgstr "Görseli Bastır..."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:102
 #, kde-format
@@ -12637,7 +12636,7 @@ msgstr "Film tarayıcısı"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
 #, kde-format
 msgid "Reflection print scanner"
-msgstr "Yansımalı yazdırma tarayıcısı"
+msgstr "Yansımalı baskı tarayıcısı"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
 #, kde-format
@@ -15834,7 +15833,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:14
 #, kde-format
 msgid "Printing"
-msgstr "Yazdırılıyor"
+msgstr "Basılıyor"
 
 #. i18n: ectx: property (text), widget (QLabel, currentLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:23
@@ -15969,7 +15968,7 @@ msgid ""
 msgstr ""
 "<p><h1><b>Takvim aracına hoş geldiniz</b></h1></p><p>Bu yardımcı, "
 "koleksiyonunuzdan alınan çeşitli görsellerden oluşan bir takvim oluşturmanız "
-"ve yazdırmanız için size kılavuzluk edecek.</p>"
+"ve bastırmanız için size kılavuzluk edecek.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:54
 #, kde-format
@@ -16003,12 +16002,12 @@ msgstr "Takvimde gösterilecek olayları seç"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, kde-format
 msgid "Print Calendar"
-msgstr "Takvimi Yazdır"
+msgstr "Takvimi Bastır"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
 #, kde-format
 msgid "Printing in Progress"
-msgstr "Yazdırma Sürüyor"
+msgstr "Baskı Sürüyor"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:156
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:160
@@ -16046,19 +16045,19 @@ msgid ""
 "Click Next to start Printing<br/><br/>Following months will be printed for "
 "year %1:<br/>"
 msgstr ""
-"Yazdırmaya başlamak için Sonraki'ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
-"için yazıdırılacaktır:<br/>"
+"Baskıyı başlatmak için Sonraki'ye tıklayın<br/><br/>İzleyen aylar %1 yılı "
+"için basılacaktır:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
-msgstr "Takvimi Yazdır"
+msgstr "Takvimi Bastır"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
 msgid "Printing Cancelled"
-msgstr "Yazdırma İptal Edildi"
+msgstr "Baskı İptal Edildi"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:309
 #, kde-format
@@ -16068,12 +16067,12 @@ msgstr "Takvim oluştur"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:359
 #, kde-format
 msgid "Printing calendar page for %1 of %2"
-msgstr "%1/%2 takvim sayfası yazdırılıyor"
+msgstr "%1/%2 takvim sayfası bastırılıyor"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:369
 #, kde-format
 msgid "Printing Complete"
-msgstr "Yazdırma Tamamlandı"
+msgstr "Baskı Tamamlandı"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
@@ -18083,20 +18082,18 @@ msgid "Show the image title at the bottom of the screen."
 msgstr "Ekranın altında görsel başlığını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
-#, fuzzy, kde-format
-#| msgid "Show image caption if it hasn't title"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image caption if it has not title"
-msgstr "Resmin başlığı yoksa resim yazısı göster"
+msgstr "Görselin başlığı yoksa görsel alt yazısını göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Show the image caption at the bottom of the screen if no titles existed."
-msgstr "Eğer hiç başlık yoksa ekranın altında resim yazısı göster."
+msgstr ""
+"Bir görsel başlığı yoksa ekranın alt kısmında görsel alt yazısını gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:331
 #, kde-format
@@ -18111,51 +18108,44 @@ msgid "Show the digiKam image rating at the bottom of the screen."
 msgstr "digiKam görsel derecelendirmesini ekranın alt kısmında gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:334
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show image tags"
-msgstr "Resim etiketlerini göster"
+msgstr "Görsel etiketlerini göster"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:335
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgctxt "@info"
 msgid "Show the digiKam image tag names at the bottom of the screen."
-msgstr " digiKam resim etiketi adlarını ekranın alt kısmında gösterin."
+msgstr "digiKam görsel etiketi adlarını ekranın alt kısmında gösterin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:337
-#, fuzzy, kde-format
-#| msgid "Screen placement:"
+#, kde-format
 msgctxt "@option"
 msgid "On Screen Display Font:"
-msgstr "Ekran yerleşimi:"
+msgstr "Ekran üzeri görüntü yazıtipi:"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:338
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in Tree Views."
+#, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text in the MJPEG."
-msgstr ""
-"Ağaç Görünümde metin görüntülemek için kullanılacak yazıtipini buradan seçin."
+msgstr "MJPEG'de metin görüntülemek için kullanılacak yazıtipini burada seçin."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:354
-#, fuzzy, kde-format
-#| msgid "OSM"
+#, kde-format
 msgctxt "@title: On Screen Display"
 msgid "OSD"
-msgstr "OSM"
+msgstr "Ekran Üzeri Görüntü"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:55
 #, kde-format
 msgid "MJPEG Stream Server"
-msgstr ""
+msgstr "MJPEG Akışı Sunucusu"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid "Export by Email"
+#, kde-format
 msgid "A tool to export items as MJPEG Stream"
-msgstr "Eposta ile dışa aktar"
+msgstr "Ögeleri MJPEG akışı olarak dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
 #, kde-format
@@ -18172,6 +18162,17 @@ msgid ""
 "dialog. More than one computer can be connected to the MJPEG server at the "
 "same time.</p>"
 msgstr ""
+"<p>Bu araç, ögeleri yerel ağınızda bir MJPEG akışı sunucusu aracılığıyla "
+"paylaşmanıza izin verir.</p><p>Paylaşılacak ögeler teker teker veya bir "
+"albümler seçimi üzerinden belirlenebilir.</p><p>Hareketli (Motion) JPEG, "
+"sayısal video dizisinin her video karesinin veya taramalı alanının ayrı ayrı "
+"JPEG görseli olarak sıkıştırıldığı bir video sıkıştırma biçimidir. MJPEG "
+"akışları, ağ istemcilerinin ek modül olmadan bağlanmasına olanak tanıyan bir "
+"standarttır. Çoğu büyük web tarayıcıları ve oynatıcıları, MJPEG akışılarını "
+"destekler.</p><p>Tarayıcınızdan akışa erişmek için URL olarak http://adres:"
+"kapı adresini, MJPEG adresini bununla birlikte kullanın ve yapılandırma "
+"iletişim kutusunda ayarlanan MJPEG bağlantı noktasını bağlayın. MJPEG "
+"sunucusuna aynı anda birden fazla bilgisayar bağlanabilir.</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
@@ -18194,91 +18195,87 @@ msgstr "Geliştirici"
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
-msgstr ""
+msgstr "MJPEG Akışı Olarak Paylaş..."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
-msgstr ""
+msgstr "Yalnızca yönelim ve betik algılaması (EÜG)."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
-msgstr "OSD ile otomatik sayfa bölütlendirmesi."
+msgstr "Ekran Üzeri Görüntü ile kendiliğinden sayfa bölütlendirmesi."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
-msgstr "Otomatik sayfa bölütlendirmesi; ancak OSD veya OCD yok. (eklenmemiş)"
+msgstr ""
+"Kendiliğinden sayfa bölütlendirmesi; ancak EÜG veya OKT yok. (eklenmemiş)"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
-msgstr "Tam otomatik sayfa bölütlendirmesi; ancak OSD yok. (Öntanımlı)."
+msgstr ""
+"Tümüyle kendiliğinden sayfa bölütlendirmesi; ancak EÜG yok. (Öntanımlı)."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
-msgstr ""
+msgstr "Değişken boyutlarda tek bir metin sütunu olduğunu varsayın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
-msgstr ""
+msgstr "Dikey olarak hizalanmış tek bir metin blokunun olduğunu varsayın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
-msgstr ""
+msgstr "Tek bir metin blokunun olduğunu varsayın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
-msgstr "Her döşeme sınırı boyutunu ayarlar."
+msgstr "Görseli tek bir metin satırı olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
-msgstr "Her döşeme sınırı boyutunu ayarlar."
+msgstr "Görseli tek bir sözcük olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
-#, fuzzy, kde-format
-#| msgid "Sets the size of each tile border."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
-msgstr "Her döşeme sınırı boyutunu ayarlar."
+msgstr "Görseli bir çemberin içindeki tek bir sözcük olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save Changes as a New Version"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr "Değişiklikleri Yeni Bir Sürüm olarak kaydet"
+msgstr "Görseli tek bir karakter olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
-msgstr ""
+msgstr "Seyrek metin. Belirsiz bir sırada olabildiğince çok metin bulun."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
-#, fuzzy, kde-format
-#| msgid "Share with DLNA"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
-msgstr "DLNA ile paylaştır"
+msgstr "Ekran Üzeri Görüntü ile seyrek metin."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
 #, kde-format
@@ -18287,30 +18284,32 @@ msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
+"Ham satır. Tesseract'a özgü üzerinde oynamaları atlayarak görseli tek bir "
+"metin satırı olarak ele alın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
-msgstr ""
+msgstr "Yalnızca eski işletke."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
-msgstr ""
+msgstr "Yalnızca sinir ağları LSTM işletkesi."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
-msgstr ""
+msgstr "Eski işletkeler + LSTM işletkeleri."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
-msgstr ""
+msgstr "Öntanımlı, ne kullanılabiliyorsa o temelli."
 
 #: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:44
 #, kde-format
@@ -18322,20 +18321,16 @@ msgstr ""
 "işletkesidir."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
-msgstr "Dönüştür"
+msgstr "OKT Metin Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:133
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
-msgstr "&Başlat"
+msgstr "OKT'yi &Başlat"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:165
 #, kde-format
@@ -18350,8 +18345,7 @@ msgstr ""
 "sisteminizde kurulu olmalıdır."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:213
-#, fuzzy, kde-format
-#| msgid "Face Recognition"
+#, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
 msgstr "Yüz Tanıma"
@@ -18364,64 +18358,57 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"Tanıma işlemini tamamladıktan sonra, tanınan metni burada görüntülemek için "
+"bir ögeye çift tıklayın. Sözcükleri gözden geçirebilir ve gerekirse "
+"düzeltebilirsiniz. Değişikliklerinizi kaydetmek için Kaydet düğmesine basın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Save"
+#, kde-format
 msgctxt "@action: button"
 msgid "Save"
 msgstr "Kaydet"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:234
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgctxt "@title"
 msgid "Text Review"
-msgstr "Metin Süzgeci"
+msgstr "Metin Gözden Geçirme"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:379
-#, fuzzy, kde-format
-#| msgid "Processing page %1"
+#, kde-format
 msgctxt "@info"
 msgid "Processing %1"
-msgstr "Sayfa %1 işleniyor"
+msgstr "İşleniyor: %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:450
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@info"
 msgid "Process failed"
-msgstr "İşleme Başarısız"
+msgstr "İşleme başarısız"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
-#, fuzzy, kde-format
-#| msgid "Process Cancelled..."
+#, kde-format
 msgctxt "@info"
 msgid "Process canceled"
-msgstr "İşlem İptal Edildi..."
+msgstr "İşlem iptal edildi"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:464
-#, fuzzy, kde-format
-#| msgid "Internal Error"
+#, kde-format
 msgctxt "@info"
 msgid "Internal error"
-msgstr "İç Hata"
+msgstr "İçsel oata"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:515
-#, fuzzy, kde-format
-#| msgid "Quick Access List"
+#, kde-format
 msgctxt "@info"
 msgid "Success"
-msgstr "Hızlı Erişim Listesi"
+msgstr "Başarılı"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:579
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
-msgstr "Dönüştür"
+msgstr "Metin Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:580
 #, kde-format
@@ -18429,45 +18416,38 @@ msgctxt "@info"
 msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
-msgstr ""
+msgstr "Listede işlenecek sayısal dosya yok. Onları seçmeniz gerekir."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:591
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title"
 msgid "Text Converter"
-msgstr "Dönüştür"
+msgstr "Metin Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:664
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action"
 msgid "&Abort"
 msgstr "&Durdur"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:665
-#, fuzzy, kde-format
-#| msgid "Raw file conversion failed."
+#, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
-msgstr "Ham dosya dönüştürmesi başarısız."
+msgstr "Ham dosyaların Optik Karakter Tanıma işlemini durdurun."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
-msgstr "&Başlat"
+msgstr "OKT'yi &Başlat"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:710
-#, fuzzy, kde-format
-#| msgid "Generate a Raw image preview using current settings."
+#, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
-msgstr "Şimdiki ayarları kullanarak Raw görüntü önizlemesi oluştur."
+msgstr "Geçerli ayarları kullanarak optik karakter tanımayı başlatın."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:714
 #, kde-format
@@ -18480,40 +18460,35 @@ msgstr ""
 "sisteminizde kurulu değil."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:747
-#, fuzzy, kde-format
-#| msgid "Process Items"
+#, kde-format
 msgctxt "@action"
 msgid "Process All Items"
-msgstr "Ögeleri işle"
+msgstr "Tüm Ögeleri İşle"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:749
-#, fuzzy, kde-format
-#| msgid "Process Items"
+#, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
-msgstr "Ögeleri işle"
+msgstr "Seçili Ögeleri İşle"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@item: iptc"
-#| msgid "Keywords"
+#, kde-format
 msgid "Words"
-msgstr "Anahtar sözcükler"
+msgstr "Sözcükler"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title: tool group"
-#| msgid "Convert"
+#, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
-msgstr "Dönüştür"
+msgstr "OKT Metin Dönüştürücüsü"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgid "Convert RAW images to DNG container."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
-msgstr "HAM resimleri DNG kapsayıcısına dönüştür."
+msgstr ""
+"Belgelenen görselleri OKT kullanarak toplu olarak metne dönüştürmek için bir "
+"araç"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:64
 #, kde-format
@@ -18528,20 +18503,27 @@ msgid ""
 "\n"
 "See details on %1 for more information on Tesseract"
 msgstr ""
+"Bu araç, özgün olarak HP laboratuarlarında geliştirilen ve şu anda Google'ın "
+"sponsorluğunu üstlendiği, açık kaynaklı bir Optik Karakter Tanıma işletkesi "
+"olan Tesseract'ı kullanarak belgelenmiş görsel verisini metin biçimine "
+"dönüştürebilir.\n"
+"\n"
+"Birden fazla dili ve betiği (sağdan sola metin dahil) ve sayfa yerleşimi "
+"çözümlemesini destekler.\n"
+"\n"
+"Tesseract hakkında daha fazla bilgi için %1 ayrıntılarına bakın"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Color Space Converter..."
+#, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
-msgstr "Renk Aralığı Dönüştürücüsü..."
+msgstr "OKT Metin Dönüştürücüsü..."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:85
-#, fuzzy, kde-format
-#| msgid "Language:"
+#, kde-format
 msgctxt "@label"
 msgid "Languages:"
-msgstr "Dil:"
+msgstr "Diller:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
 #, kde-format
@@ -18556,13 +18538,13 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "languagemodule if available."
 msgstr ""
-"Karakter tanıma için kullanılan dili belirtin. Birden çok dil içeren dijital "
-"metin için Dil ayarlarının öntanımlı kipinde. Tesseract,\n"
-"İngilizce veya Fransızca gibi Latin alfabesi kullanan dilleri otomatik "
-"olarak tanıyabilir, ancak Çince, Japonca gibi hiyeroglif\n"
-"kullanan dillerle uyumlu değildir.\n"
-"Bunun yerine Oryantasyon ve Betik Algılama kipini veya varsa belirli bir dil "
-"modülünü kullanabilirsiniz."
+"OKT için kullanılan dili belirtin. Birden fazla dil içeren sayısal metinler "
+"için dil ayarlarının öntanımlı kipinde\n"
+"Tesseract, İngilizce veya Fransızca gibi Latin alfabesi kullanan dilleri "
+"otomatik olarak tanıyabilir; ancak Çince,\n"
+"Japonca gibi hiyeroglif kullanan dillerle uyumlu değildir.\n"
+"Bunun yerine Yönelim ve Betik algılama veya varsa belirli bir dil modülünü "
+"kullanabilirsiniz."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
 #, kde-format
@@ -18577,84 +18559,73 @@ msgid "Specify page segmentation mode."
 msgstr "Sayfa bölütlendirme kipini belirtin."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
-#, fuzzy, kde-format
-#| msgid "Exposure mode:"
+#, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
-msgstr "Pozlandırma kipi:"
+msgstr "İşletke kipi:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
-msgstr ""
+msgstr "OKT işletkesi kipini belirtin."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
-#, fuzzy, kde-format
-#| msgid "Resolution:"
+#, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
-msgstr "Çözünürlük:"
+msgstr "Çözünürlük DPI'si:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
-msgstr ""
+msgstr "Girdi görselinin DPI'sini belirtin."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr ""
+msgstr "Sonucu şurada depola: "
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgctxt "@option:check"
 msgid "Text file"
-msgstr "Metin Süzgeci"
+msgstr "Metin dosyası"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
-msgstr ""
+msgstr "OKT sonucunu ayrı bir metin dosyasında depola"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
-#, fuzzy, kde-format
-#| msgid "Metadata"
+#, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
-msgstr "Metaveri"
+msgstr "Üst veri"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
-msgstr ""
+msgstr "OKT sonucunu XMP üst verisi olarak depola"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
-msgstr ""
+msgstr "Birden çok çekirdek kullan"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, newly-loaded images will be sorted in "
-#| "descending order."
+#, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
-msgstr ""
-"Bu seçenek işaretlendiğinde yeni yüklenmiş görüntüler azalan sıralamada "
-"olacaktır."
+msgstr "Bu seçenek etkinleştirilmişse dosyalar birbirine paralelde işlenir."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
-#, fuzzy, kde-format
-#| msgctxt "default theme name"
-#| msgid "Default"
+#, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
 msgstr "Öntanımlı"
@@ -18663,14 +18634,13 @@ msgstr "Öntanımlı"
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr ""
+msgstr "Yönelim ve Betik algılama"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
-msgstr "%1'e git"
+msgstr "%1 ile çevir:"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:51
 #, kde-format
@@ -18678,11 +18648,9 @@ msgid "Create Panorama"
 msgstr "Panorama Oluştur"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Create panorama..."
+#, kde-format
 msgid "A tool to create panorama"
-msgstr "Panorama oluştur..."
+msgstr "Panorama oluşturmak için bir araç"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:71
 #, kde-format
@@ -18694,53 +18662,56 @@ msgid ""
 "matrix. Take a care that target image will become huge and require a lots of "
 "memory to be processed.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların büyük panorama oluşturmak için görselleri bir "
+"araya getirmesine olanak tanır.</p><p>Panoramik görsel oluşturmak için "
+"tripodla aynı bakış açısıyla çekilmiş ve aynı ayarlarla pozlanmış görseller "
+"kullanmanız gerekir.</p><p>Araç; yatay, dikey veya matris olarak alınan "
+"çekimleri bir araya getirebilir. Hedef görselin çok büyük olmasına ve "
+"işlenmesi için çok fazla bellek gerektirmesine dikkat edin.</p>"
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
-msgstr "Panorama oluştur..."
+msgstr "Panorama Oluştur..."
 
 #: core/dplugins/generic/tools/panorama/tasks/commandtask.cpp:103
 #, kde-format
 msgid "<b>Canceled</b>"
-msgstr "<b>İptal Edildi</b>"
+msgstr "<b>İptal edildi</b>"
 
 #: core/dplugins/generic/tools/panorama/tasks/commandtask.cpp:112
 #, kde-format
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
-msgstr "<b>Çalıştırılamıyor <i>%1</i>:</b><p>%2</p>"
+msgstr "<b><i>%1</i> çalıştırılamıyor:</b><p>%2</p>"
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
 #, kde-format
 msgid "Temporary panorama file does not exists."
-msgstr "Geçici panorama dosyası mevcut değil."
+msgstr "Geçici panorama dosyası yok."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
-msgstr ""
-"<filename>%1</filename> şeklinde adlandırılmış bir panorama dosyası zaten "
-"mevcut."
+msgstr "<filename>%1</filename> adlı bir panorama dosyası halihazırda var."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
 #, kde-format
 msgid "Temporary project file does not exist."
-msgstr "Geçici proje dosyası mevcut değil."
+msgstr "Geçici proje dosyası yok."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exists."
-msgstr ""
-"<filename>%1</filename> şeklinde adlandırılmış bir proje dosyası zaten "
-"mevcut."
+msgstr "<filename>%1</filename> adlı bir proje dosyası halihazırda var."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:169
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
 msgstr ""
-"Panorama <filename>%1</filename>'den <filename>%2</filename>'ye taşınamıyor."
+"Panorama, <filename>%1</filename> konumundan <filename>%2</filename> "
+"konumuna taşınamıyor."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
 #, kde-format
@@ -18748,8 +18719,8 @@ msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
 "filename>."
 msgstr ""
-"Proje dosyası <filename>%1</filename>'den <filename>%2</filename>'ye "
-"taşınamıyor."
+"Proje dosyası, <filename>%1</filename> konumundan <filename>%2</filename> "
+"konumuna taşınamıyor."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
 #, kde-format
@@ -18757,62 +18728,57 @@ msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
 "%2</filename>."
 msgstr ""
-"Dönüştürülmüş resmi <filename>%1</filename> konumundan <filename>%2</"
-"filename> konumuna kopyalayamıyor."
+"Dönüştürülmüş görsel dosyası, <filename>%1</filename> konumundan <filename>"
+"%2</filename> konumuna kopyalanamıyor."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
 #, kde-format
 msgid "PTO file already created in the temporary directory."
-msgstr "PTO dosyası zaten geçici dizinde oluşturulmuş."
+msgstr "Geçici dizinde PTO dosyası halihazırda oluşturulmuş."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:59
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
-msgstr "PTO dosyası geçici dizinde oluşturulamıyor."
+msgstr "Geçici dizinde PTO dosyası oluşturulamıyor."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
 #, kde-format
 msgid "Project file parsing failed."
-msgstr "Proje dosyası ayrıştırma başarısız."
+msgstr "Proje dosyası ayrıştırılamadı."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
 #, kde-format
 msgid "Unknown input file in the project file: <filename>%1</filename>"
-msgstr ""
-"Proje dosyası içerisinde bilinmeyen girdi dosyası: <filename>%1</filename>"
+msgstr "Proje dosyasında bilinmeyen girdi dosyası: <filename>%1</filename>"
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
-msgstr "Girdi resmi önizleme oluşturması için yüklenemiyor."
+msgstr "Önizleme üretimi için girdi dosyası yüklenemiyor."
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
 msgid "Tiff image creation failed."
-msgstr "Tiff resmi oluşturması başarısız."
+msgstr "Tiff görseli oluşturulamadı."
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:237
 #, kde-format
 msgid "Raw file conversion failed."
-msgstr "Ham dosya dönüştürmesi başarısız."
+msgstr "Ham dosya dönüştürülemedi."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Welcome to Panorama Tool</b>"
+#, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
 msgstr "<b>Panorama Aracına Hoş Geldiniz</b>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Welcome to Panorama Tool</b>"
+#, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
-msgstr "<b>Panorama Aracına Hoş Geldiniz</b>"
+msgstr "<b>Panorama aracına hoş geldiniz</b>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:108
 #, kde-format
@@ -18821,6 +18787,8 @@ msgid ""
 "This tool stitches several images together to create a panorama, making the "
 "seam between images not visible."
 msgstr ""
+"Bu araç, bir panorama oluşturmak için birkaç görseli bir araya getirir ve "
+"görseller arasındaki dikişin görünmez olmasını sağlar."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:109
 #, kde-format
@@ -18829,23 +18797,23 @@ msgid ""
 "This assistant will help you to configure how to import images before "
 "stitching them into a panorama."
 msgstr ""
+"Bu yardımcı, görselleri bir panoramaya birleştirmeden önce nasıl içe "
+"aktaracağınızı yapılandırmanıza yardımcı olur."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
-msgstr ""
+msgstr "Fotoğraflar aynı bakış açısıyla çekilmelidir."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
-msgstr "Daha fazla bilgi için lütfen bir göz atın "
+msgstr "Daha fazla bilgi için lütfen şuna bir göz atın: "
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Panorama Binaries"
+#, kde-format
 msgctxt "@title: group"
 msgid "Panorama Binaries"
 msgstr "Panorama İkilileri"
@@ -18863,35 +18831,26 @@ msgid "JPEG output"
 msgstr "JPEG çıktısı"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:191
-#, fuzzy, no-c-format, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Selects a JPEG output with 90% compression rate (lossy compression, "
-#| "smaller size)."
+#, no-c-format, kde-format
 msgctxt "@info: tooltip"
 msgid ""
 "Selects a JPEG output with 90% compression rate (lossy compression, smaller "
 "size)."
 msgstr ""
-"% 90 sıkıştırma oranı ile bir JPEG çıktısı seçer (kayıplı sıkıştırma, daha "
-"küçük boyut)."
+"%​90 sıkıştırma oranına (kayıplı sıkıştırma, daha küçük boyut) sahip bir JPEG "
+"çıktısı seçer."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>JPEG output</b>: Using JPEG output, the panorama file will be smaller "
-#| "at the cost of information loss during compression. This is the easiest "
-#| "way to share the result, or print it online or in a shop."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "\"JPEG output\": Using JPEG output, the panorama file will be smaller at the "
 "cost of information loss during compression. This is the easiest way to "
 "share the result, or print it online or in a shop."
 msgstr ""
-"<b>JPEG çıktısı</b>: JPEG çıktısı kullanarak, panorama dosyası sıkıştırma "
-"sırasındaki bilgi kaybı ile daha küçük boyutlu bir dosya olacaktır. Sonucu "
-"paylaşmak için en kolay yol, çevrim içi ya da mağazada yazdırmaktır."
+"\"JPEG çıktısı\": JPEG çıktısı kullanıldığında, sıkıştırma sırasında bilgi "
+"kaybı pahasına panorama dosyası daha küçük olacaktır. Bu, sonucu paylaşmanın "
+"veya çevrimiçi olarak veya bir fotoğrafçıda bastırmanın en kolay yoludur."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:199
 #, kde-format
@@ -18900,42 +18859,31 @@ msgid "TIFF output"
 msgstr "TIFF çıktısı"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Selects a TIFF output compressed using the LZW algorithm (lossless "
-#| "compression, bigger size)."
+#, kde-format
 msgctxt "@info: tooltip"
 msgid ""
 "Selects a TIFF output compressed using the LZW algorithm (lossless "
 "compression, bigger size)."
 msgstr ""
-"LZW algoritması kullanılarak sıkıştırılmış bir TIFF çıktısı seçer (kayıpsız "
-"sıkıştırma, daha büyük boyut)."
+"LZW algoritması (kayıpsız sıkıştırma, daha büyük boyut) kullanılarak "
+"sıkıştırılmış bir TIFF çıktısı seçer."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>TIFF output</b>: Using TIFF output, you get the same color depth than "
-#| "your original photos using RAW images at the cost of a bigger panorama "
-#| "file."
+#, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
 "\"TIFF output\": Using TIFF output, you get the same color depth than your "
 "original photos using RAW images at the cost of a bigger panorama file."
 msgstr ""
-"<b>TIFF çıktısı</b>: TIFF çıktısı kullanılarak, daha büyük panorama dosyası "
-"pahasına RAW resimleri kullanan özgün resimlerinizdeki derinlik ile aynı "
-"renk derinliğine sahip olursunuz."
+"\"TIFF çıktısı\": TIFF çıktısını kullanarak, daha büyük bir panorama dosyası "
+"karşılığında, RAW görseller kullanan özgün fotoğraflarınızla aynı renk "
+"derinliğini elde edersiniz."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Set Panorama Images</b>"
+#, kde-format
 msgctxt "@title:window"
 msgid "Set Panorama Images"
-msgstr "<b>Panorama Resimlerini Ayarla</b>"
+msgstr "Panorama Görsellerini Ayarla"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:70
 #, kde-format
@@ -18944,19 +18892,20 @@ msgid ""
 "Set here the list of your images to blend into a panorama. Please follow "
 "these conditions:"
 msgstr ""
+"Bir panoramaya harmanlanacak görsellerinizin listesini buradan ayarlayın. "
+"Lütfen şu koşullara uyun:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
-msgstr ""
+msgstr "Fotoğraflar aynı bakış açısıyla çekilmiş olmalıdır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
-#, fuzzy, kde-format
-#| msgid "Image with the same name %1 already there"
+#, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
-msgstr "Aynı isimli %1 resmi zaten var"
+msgstr "Fotoğraflar aynı kamerayla ve aynı mercekle çekilmiş olmalıdır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
 #, kde-format
@@ -18965,14 +18914,14 @@ msgid ""
 "Note that, in the case of a 360° panorama, the first image in the list will "
 "be the image that will be in the center of the panorama."
 msgstr ""
+"360° panorama olması durumunda, listedeki ilk görselin panoramanın "
+"merkezinde yer alan görsel olacağını unutmayın."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Panorama Stitched</b>"
+#, kde-format
 msgctxt "@title:window"
 msgid "Panorama Stitched"
-msgstr "<b>Birleştirilmiş Panorama</b>"
+msgstr "Dikilmiş Panorama"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:94
 #, kde-format
@@ -18993,14 +18942,7 @@ msgid "Name of the panorama file (without its extension)."
 msgstr "Panorama dosyasının adı (uzantısı olmadan)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>File name template</b>: Set here the base name of the files that will "
-#| "be saved. For example, if your template is <i>panorama</i> and if you "
-#| "chose a JPEG output, then your panorama will be saved with the name "
-#| "<i>panorama.jpg</i>. If you choose to save also the project file, it will "
-#| "have the name <i>panorama.pto</i>."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "\"File name template\": Set here the base name of the files that will be "
@@ -19009,11 +18951,10 @@ msgid ""
 "you choose to save also the project file, it will have the name \"panorama."
 "pto\"."
 msgstr ""
-"<b>Dosya adı şablonu</b>: Kaydedilecek dosyaların temel adını buradan "
-"ayarlayın. Örneğin şablonunuz <i>panorama</i> ise ve bir JPEG çıktısı "
-"seçerseniz panoramanız <i>panorama.jpg</i> adıyla kaydedilecektir. Ayrıca "
-"proje dosyasını da kaydetmeyi seçerseniz o da <i>panorama.pto</i> olarak "
-"kaydedilecektir."
+"\"Dosya adı şablonu\": Kaydedilecek dosyaların taban adını burada ayarlayın. "
+"Örneğin, şablonunuz \"panorama\" ise ve bir JPEG çıktısı seçtiyseniz "
+"panoramanız \"panorama.jpg\" olarak kaydedilecektir. Proje dosyasını da "
+"kaydetmeyi seçerseniz dosya \"panorama.pto\" adını alacaktır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:110
 #, kde-format
@@ -19025,17 +18966,10 @@ msgstr "Proje dosyasını kaydet"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
-msgstr "Hugin GUI içerisinde daha sonra işlenmek üzere proje dosyasını kaydet."
+msgstr "Hugin GUI içinde daha sonra işlenmek üzere proje dosyasını kaydedin."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>Save project file</b>: You can keep the project file generated to "
-#| "stitch your panorama for further tweaking within <a href=\"http://hugin."
-#| "sourceforge.net/\">Hugin</a> by checking this. This is useful if you want "
-#| "a different projection, modify the horizon or the center of the panorama, "
-#| "or modify the control points to get better results."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "\"Save project file\": You can keep the project file generated to stitch "
@@ -19043,12 +18977,11 @@ msgid ""
 "useful if you want a different projection, modify the horizon or the center "
 "of the panorama, or modify the control points to get better results."
 msgstr ""
-"<b>Proje dosyasını kaydet</b>: Bunu işaretleyerek panoramayı birleştirmek "
-"için oluşturulan proje dosyasını daha sonra <a href=\"http://hugin."
-"sourceforge.net/\">Hugin</a> içerisinde yapacağınız değişiklikler için "
-"saklayabilirsiniz. Bu, eğer farklı bir sunum istiyorsanız daha iyi sonuçlar "
-"almak için, ufuk çizgisini veya panoramanın merkezini ya da kontrol "
-"noktalarını değiştirmek için kullanışlıdır."
+"\"Proje dosyasını kaydet\": Bunu işaretleyerek panoramanızı dikmek için "
+"oluşturulan proje dosyasını %1 bünyesinde daha fazla ince ayar yapmak üzere "
+"tutabilirsiniz. Bu, farklı bir projeksiyon istiyorsanız, panoramanın ufkunu "
+"veya merkezini değiştirmek istiyorsanız veya daha iyi sonuçlar elde etmek "
+"için denetim noktalarını değiştirmek isterseniz kullanışlıdır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
@@ -19061,35 +18994,29 @@ msgstr "Uyarı"
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
-msgstr "Dosya zaten var"
+msgstr "Bu dosya halihazırda var"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><font color=\"orange\"><b>Warning:</b> One or more converted raw "
-#| "files already exists (they will be skipped during the copying process).</"
-#| "font></p></qt>"
+#, kde-format
 msgctxt "@label"
 msgid ""
 "One or more converted raw files already exists (they will be skipped during "
 "the copying process)"
 msgstr ""
-"<qt><p><font color=\"orange\">Uyarı:</b>Bir veya daha fazla dönüştürülmüş "
-"ham dosya zaten var (kopyalama işlemi sırasında atlanacak).</font></p></qt>"
+"Bir veya daha fazla dönüştürülmüş ham dosya halihazırda var (kopyalama "
+"işlemi sırasında bunlar atlanacak)"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Panorama Stitched</b>"
+#, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
-msgstr "<b>Birleştirilmiş Panorama</b>"
+msgstr "Panorama dikimi tamamlandı"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, kde-format
 msgctxt "@info"
 msgid "Congratulations. Your images are stitched into a panorama."
-msgstr ""
+msgstr "Tebrikler. Fotoğraflarınız bir panoramaya biçiminde dikiliyor."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:269
 #, kde-format
@@ -19098,35 +19025,22 @@ msgid "Your panorama will be created to the directory:"
 msgstr "Panoramanız şu dizinde oluşturulacak:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
-#, fuzzy, kde-format
-#| msgid "If you press this button, the white point is reset to pure white."
+#, kde-format
 msgctxt "@info"
 msgid "once you press the \"Finish\" button, with the name set below."
-msgstr "Bu butona basarsanız beyaz noktası saf beyaza sıfırlanır."
+msgstr "\"Bitir\" düğmesine bastığınızda, aşağıda ayarlanan adı kullanarak."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:272
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p><h1><b>Panorama Stitching is Done</b></h1></p><p>Congratulations. "
-#| "Your images are stitched into a panorama.</p><p>Your panorama will be "
-#| "created to the directory:<br /><b>%1</b><br />once you press the "
-#| "<i>Finish</i> button, with the name set below.</p><p>If you choose to "
-#| "save the project file, and if your images were raw images then the "
-#| "converted images used during the stitching process will be copied at the "
-#| "same time (those are TIFF files that can be big).</p></qt>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "If you choose to save the project file, and if your images were raw images "
 "then the converted images used during the stitching process will be copied "
 "at the same time (those are TIFF files that can be big)."
 msgstr ""
-"<qt><p><h1><b>Panorama Birleştirme Tamamlandı</b></h1></p><p>Tebrikler. "
-"Resimleriniz panoramaya birleştirildi.</p><p>Panoramanız şu dizine "
-"kaydedilecek:<br /><b>%1</b><br />>Aşağıya bir isim yazıp <i>Son</i> "
-"düğmesine basmanız yeterli.</p><p>Eğer proje dosyasını kaydetmeyi seçerseniz "
-"ve resimleriniz ham resimler ise birleştirme sırasında kullanılan "
-"dönüştürülmüş resimler de aynı zamanda kopyalanacaktır (Bu dosyalar büyük "
-"olabilecek TIFF dosyalarıdır).</p></qt>"
+"Proje dosyasını kaydetmeyi seçerseniz ve görselleriniz ham görsellerse "
+"birleştirme işlemi sırasında kullanılan dönüştürülmüş görseller aynı anda "
+"kopyalanacaktır (bunlar büyük olabilen TIFF dosyalarıdır)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:301
 #, kde-format
@@ -19135,42 +19049,33 @@ msgid "Error"
 msgstr "Hata"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Optimization</b>"
+#, kde-format
 msgctxt "@title: window"
 msgid "Optimization"
-msgstr "<b>Eniyileştirme</b>"
+msgstr "Eniyileme"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Level horizon"
+#, kde-format
 msgctxt "@option: check"
 msgid "Level horizon"
-msgstr "Ufuğu hizala"
+msgstr "Ufku hizala"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Detect the horizon and adapt the project to make it horizontal."
+#, kde-format
 msgctxt "@info: tooltip"
 msgid "Detect the horizon and adapt the project to make it horizontal."
-msgstr "Ufku algıla ve projeyi yatay yapacak şekilde uyarla."
+msgstr ""
+"Ufku algılayın ve onu bir hizada yatay yapacak biçimde projeyi uyarlayın."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:116
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>Level horizon</b>: Detect the horizon and adapt the projection so that "
-#| "the detected horizon is an horizontal line in the final panorama"
+#, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
 "\"Level horizon\": Detect the horizon and adapt the projection so that the "
 "detected horizon is an horizontal line in the final panorama"
 msgstr ""
-"<b>Ufuğu hizala</b>: Ufuğu algıla ve sunumu buna uyarla, böylece algılanan "
-"ufuk, son panoramadaki ufuk çizgisi olacaktır."
+"\"Ufku hizala\": Ufku algılayın ve projeksiyonu, algılanan ufuk son "
+"panoramada yatay bir çizgi olacak şekilde uyarlayın"
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
 #, kde-format
@@ -19183,7 +19088,7 @@ msgstr "Eniyileme sürüyor, lütfen bekleyin."
 msgctxt "@info"
 msgid ""
 "The optimization step according to your settings is ready to be performed."
-msgstr ""
+msgstr "Ayarlarınıza göre eniyileme adımı gerçekleştirilmeye hazır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:222
 #, kde-format
@@ -19192,64 +19097,51 @@ msgid ""
 "This step can include an automatic leveling of the horizon, and also an "
 "automatic projection selection and size."
 msgstr ""
+"Bu adım, ufkun kendiliğinden hizalanmasını ve ayrıca kendiliğinden "
+"projeksiyon seçimini ve boyutunu içerebilir."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:224
 #, kde-format
 msgctxt "@info"
 msgid "To perform this operation, the \"%1\" program will be used."
-msgstr ""
+msgstr "Bu işlemi gerçekleştirmek için \"%1\" programı kullanılacak."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:226
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
-msgstr ""
+msgstr "Eniyilemeyi çalıştırmak için \"Sonraki\" düğmesine basın."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
-msgstr "Bağıntı başarısız"
+msgstr "Eniyileme başarısız oldu."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "<b>Pre-Processing Images</b>"
+#, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Images"
-msgstr "<b>Resimler Ön-İşleniyor</b>"
+msgstr "Görseller Ön İşleniyor"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:110
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Detect moving skies"
+#, kde-format
 msgctxt "@option: check"
 msgid "Detect moving skies"
-msgstr "Hareketli gökyüzlerini algıla"
+msgstr "Hareket eden gökyüzünü algıla"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:112
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Automatic detection of clouds to prevent wrong keypoints matching between "
-#| "images due to moving clouds."
+#, kde-format
 msgctxt "@info: tooltip"
 msgid ""
 "Automatic detection of clouds to prevent wrong keypoints matching between "
 "images due to moving clouds."
 msgstr ""
-"Hareket eden bulutlar nedeniyle hatalı anahtar nokta eşleştirmeyi önlemek "
-"için bulutların otomatik tespiti."
+"Hareket eden bulutlar nedeniyle görseller arasında yanlış anahtar noktaların "
+"eşleşmesini önlemek için bulutların kendiliğinden algılanması."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:114
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<b>Detect moving skies</b>: During the control points selection and "
-#| "matching, this option discards any points that are associated to a "
-#| "possible cloud. This is useful to prevent moving clouds from altering the "
-#| "control points matching process."
+#, kde-format
 msgctxt "@info: whatsthis"
 msgid ""
 "\"Detect moving skies\": During the control points selection and matching, "
@@ -19257,17 +19149,17 @@ msgid ""
 "This is useful to prevent moving clouds from altering the control points "
 "matching process."
 msgstr ""
-"<b>Hareket eden gökyüzünü algıla</b>: Kontrol noktarının seçimi ve "
-"eşleştirilmesı sırasında, bu seçenek muhtemel bulut ile "
-"ilişkilendirilebilecek tüm noktaları yoksayar. Bu, hareketli bulutların "
-"kontrol noktalarının eşleşmesi işlemini değiştirmesini önlemeye yardımcı "
-"olur."
+"\"Hareket eden gökyüzünü algıla\": Denetim noktalarının seçimi ve "
+"eşleştirilmesi sırasında, bu seçenek olası bir bulutla ilişkili tüm "
+"noktaları atar. Bu, hareketli bulutların kontrol noktaları eşleştirme "
+"sürecini değiştirmesini önlemek için kullanışlıdır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:199
 #, kde-format
 msgctxt "@info"
 msgid "Now, we will pre-process images before stitching them."
 msgstr ""
+"Şimdi, görselleri birbirine dikmeden önce onların ön işlemelerini yapacağız."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:202
 #, kde-format
@@ -19276,33 +19168,36 @@ msgid ""
 "Pre-processing also include a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
+"Ön işleme ayrıca, görseller arasındaki çakışmaları eşleştirmek için bazı "
+"denetim noktalarının hesaplanmasını da içerir. Bu amaçla \"%1\" programı "
+"kullanılacaktır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
-msgstr "<b>Önizleme ve Son İşleme</b>"
+msgstr "<b>Önizleme ve Son İşlemesi</b>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:142
 #, kde-format
 msgid "Processing Panorama Preview..."
-msgstr "Panorama Önizlemesi İşleniyor..."
+msgstr "Panorama önizlemesi işleniyor..."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:221
 #, kde-format
 msgid "<qt><p><h1>Panorama Post-Processing</h1></p></qt>"
-msgstr "<qt><p><h1>Panorama Son İşleme</h1></p></qt>"
+msgstr "<qt><p><h1>Panorama Son İşlemesi</h1></p></qt>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:227
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
-msgstr "Panorama Son İşleme"
+msgstr "Panorama Son İşlemesi"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:304
 #, kde-format
 msgid "Preview Processing Cancelled."
-msgstr "Önizleme İşlemesi İptal Edildi."
+msgstr "Önizleme işlemesi iptal edildi."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
@@ -19313,7 +19208,7 @@ msgstr "<h1><b>Hata</b></h1><p>%1</p>"
 #, kde-format
 msgctxt "Here a makefile is a script for GNU Make"
 msgid "<p><b>Cannot create makefile: </b></p><p>%1</p>"
-msgstr "<p><b>Makefile oluşturulamıyor: </b></p><p>%1</p>"
+msgstr "<p><b>Bir Makefile oluşturulamıyor: </b></p><p>%1</p>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:427
 #, kde-format
@@ -19325,7 +19220,7 @@ msgstr "<p><b>Proje dosyası oluşturulamıyor: </b></p><p>%1</p>"
 #, kde-format
 msgctxt "Error message for image file number %1 out of %2"
 msgid "<p><b>Processing file %1 / %2: </b></p><p>%3</p>"
-msgstr "<p><b>%1 / %2 dosyası işleniyor: </b></p><p>%3</p>"
+msgstr "<p><b>%1/%2 dosya işleniyor: </b></p><p>%3</p>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:488
 #, kde-format
@@ -19340,15 +19235,15 @@ msgid ""
 "image.</p><p>Pressing the <i>Next</i> button will then launch the final "
 "stitching process.</p></qt>"
 msgstr ""
-"<qt><h1>Panorama Önizlemesi</h1><p>Resmi kırpmak istiyorsanız bir dikdörtgen "
-"çizin.</p><p>Ardından <i>Sonraki</i> düğmesine basmak son birleştirme "
-"işlemini başlatacaktır.</p></qt>"
+"<qt><h1>Panorama Önizlemesi</h1><p>Görseli kırpmak istiyorsanız bir "
+"dikdörtgen çizin.</p><p>Ardından <i>Sonraki</i> düğmesine basıldığında son "
+"dikiş işlemi başlatılacaktır.</p></qt>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:564
 #, kde-format
 msgctxt "Success for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
-msgstr "%1 / %2 dosyası işleniyor"
+msgstr "%1/%2 dosya işleniyor"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:593
 #, kde-format
@@ -19360,7 +19255,7 @@ msgstr "Panorama derlemesi"
 #, kde-format
 msgctxt "Compilation started for image file number %1 out of %2"
 msgid "Processing file %1 / %2"
-msgstr "%1 / %2 dosyası işleniyor"
+msgstr "%1/%2 dosya işleniyor"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:649
 #, kde-format
@@ -19383,19 +19278,19 @@ msgstr "Desteklenmeyen Kağıt Boyutu"
 #, kde-format
 msgctxt "Output: PDF"
 msgid "Print to PDF"
-msgstr "PDF olarak yazdır"
+msgstr "PDF Olarak Bastır"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:130
 #, kde-format
 msgctxt "Output: FILE"
 msgid "Print to Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Görsel Dosyasına Bastır"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:131
 #, kde-format
 msgctxt "Output: GIMP"
 msgid "Print with Gimp"
-msgstr "Gimp ile Yazdır"
+msgstr "GIMP ile Bastır"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:154
 #, kde-format
@@ -19419,19 +19314,19 @@ msgstr "TIFF"
 #, kde-format
 msgctxt "Caption type: NONE"
 msgid "No caption"
-msgstr "Başlık yok"
+msgstr "Alt yazı yok"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:166
 #, kde-format
 msgctxt "Caption type: FILENAME"
 msgid "Image file names"
-msgstr "Resim dosya isimleri"
+msgstr "Görsel dosyası adları"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:167
 #, kde-format
 msgctxt "Caption type: DATETIME"
 msgid "Exif date-time"
-msgstr "Exif tarih-zamanı"
+msgstr "Exif tarih ve zamanı"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprintsettings.cpp:168
 #, kde-format
@@ -19450,23 +19345,23 @@ msgstr "Özel biçim"
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:307
 #, kde-format
 msgid "Printing canceled"
-msgstr "Yazdırma iptal edildi"
+msgstr "Baskı iptal edildi"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:204
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:281
 #, kde-format
 msgid "Processing page %1"
-msgstr "Sayfa %1 işleniyor"
+msgstr "%1. sayfa işleniyor"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:293
 #, kde-format
 msgid "Could not save file %1"
-msgstr "Dosya %1 kaydedilemedi"
+msgstr "%1 dosyası kaydedilemedi"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:299
 #, kde-format
 msgid "Page %1 saved as %2"
-msgstr "Sayfa %1, %2 olarak kaydedildi"
+msgstr "%1. sayfa, %2 olarak kaydedildi"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
 #, kde-format
@@ -19476,7 +19371,7 @@ msgstr "Baskı Oluşturucu"
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
 #, kde-format
 msgid "A tool to create print composition from images"
-msgstr "Görüntülerden baskı kompozisyonu oluşturmak için bir araç"
+msgstr "Görsellerden baskı kompozisyonu oluşturmak için bir araç"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:63
 #, kde-format
@@ -19486,6 +19381,11 @@ msgid ""
 "a selection of albums.</p><p>Different pre-defined paper sizes and layouts "
 "can be used to process files.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların baskıdan önce ögeleri (birleştirme olarak) geri "
+"işlemesine olanak tanır.</p><p>İşlenecek ögeler, çeşitli albümler "
+"aracılığıyla tek tek veya grup halinde seçilebilir.</p><p>Dosyaları işlemek "
+"için önceden tanımlanmış farklı kağıt boyutları ve yerleşimleri "
+"kullanılabilir.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
 #: core/utilities/searchwindow/searchfields_createfield.cpp:719
@@ -19502,7 +19402,7 @@ msgstr "Katkıcı"
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
-msgstr "Oluşturanı Yazdır..."
+msgstr "Baskı Oluşturucusu..."
 
 #: core/dplugins/generic/tools/printcreator/tools/gimpbinary.cpp:45
 #, kde-format
@@ -19513,7 +19413,7 @@ msgstr "GNU Görüntü İşleme Programı."
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:57
 #, kde-format
 msgid "Caption Type:"
-msgstr "Başlık Türü:"
+msgstr "Alt yazı türü:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:86
@@ -19525,11 +19425,11 @@ msgid ""
 "print ISO sensibility from camera\n"
 "print date and time from camera"
 msgstr ""
-"yazdır: dosya adı\n"
-"yazdır: kamera pozlama süresi\n"
-"yazdır: öge açıklaması\n"
-"yazdır: kameranın ISO duyarlılığı\n"
-"yazdır: kameranın tarih ve zaman bilgisi"
+"bastır: dosya adı\n"
+"bastır: kamera pozlama süresi\n"
+"bastır: öge açıklaması\n"
+"bastır: kameranın ISO duyarlılığı\n"
+"bastır: kameranın tarih ve zaman bilgisi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:99
@@ -19570,9 +19470,9 @@ msgid ""
 "print focal length from camera\n"
 "add a new line"
 msgstr ""
-"kamera algılayıcı çözünürlüğünü yazdır\n"
-"kamera açıklığını yazdır\n"
-"kameranın odak uzaklığını yazdır\n"
+"bastır: kamera algılayıcı çözünürlüğü\n"
+"bastır: kamera açıklığı\n"
+"bastır: kameranın odak uzaklığı\n"
 "yeni bir satır ekle"
 
 #. i18n: ectx: property (placeholderText), widget (Digikam::DTextEdit, m_FreeCaptionFormat)
@@ -19585,26 +19485,25 @@ msgstr "Özelleştirilmiş alt yazınızı buraya girin..."
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
 #, kde-format
 msgid "The fields listed below can be used with the customization:"
-msgstr "Aşağıdaki alanlar özelleştirme ile kullanılabilir:"
+msgstr "Aşağıdaki alanlar özelleştirilerek kullanılabilir:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:174
 #, kde-format
 msgid "Text Color:"
-msgstr "Metin Rengi:"
+msgstr "Metin rengi:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:197
 #, kde-format
 msgid "Text Size:"
-msgstr "Metin Boyutu:"
+msgstr "Metin boyutu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:244
-#, fuzzy, kde-format
-#| msgid "Family:"
+#, kde-format
 msgid "Font Family:"
-msgstr "Aile:"
+msgstr "Yazıtipi ailesi:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
@@ -19918,7 +19817,7 @@ msgstr "Kamera yön bilgisine göre resmi yerleşime göre otomatik döndür"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
 #, kde-format
 msgid "No page to print..."
-msgstr "Yazdırılacak sayfa yok..."
+msgstr "Bastırılacak sayfa yok..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
 #, kde-format
@@ -19928,17 +19827,17 @@ msgstr "Dosyalar ön-işlemeye başlanıyor..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
 #, kde-format
 msgid "Printing process aborted..."
-msgstr "Yazdırma işlemi iptal edildi..."
+msgstr "Bastırma işlemi iptal edildi..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
 #, kde-format
 msgid "Printing process is not completed"
-msgstr "Yazdırma süreci tamamlanmadı"
+msgstr "Bastırma süreci tamamlanmadı"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
 #, kde-format
 msgid "Printing process completed."
-msgstr "Yazdırma süreci tamamlandı."
+msgstr "Bastırma süreci tamamlandı."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
 #, kde-format
@@ -19983,11 +19882,12 @@ msgid ""
 "Photo Album, Photo Collage, or Framed Photo.</p><p>An adaptive photo "
 "collection page layout can be also used, based on Atkins algorithm.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Yazdırma Oluşturucusuna Hoşgeldiniz</b></h1></p><p>Bu "
-"yardımcı, belirtilen şablonlarla resimleri birleştirerek Resim Albümü, Resim "
-"Kolajı ya da Çerçeveli Fotoğraf oluşturmaya yardımcı olacakır.</p><p> Atkins "
-"algoritması kullanan, adaptif resim koleksiyonu sayfa düzen de "
-"kullanılabilir.</p></qt>"
+"<qt><p><h1><b>Baskı Oluşturucusuna Hoş Geldiniz</b></h1></p><p>Bu yardımcı, "
+"Fotoğraf Albümü, Fotoğraf Kolajı veya Çerçeveli Fotoğraf gibi belirli "
+"şablonları takip ederek bastırılacak görselleri bir araya getirmeniz için "
+"size kılavuzluk edecektir.</p><p> Atkins algoritmasını temel alan "
+"uyarlanabilir bir fotoğraf koleksiyonu sayfası yerleşimi de kullanılabilir.</"
+"p></qt>"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:99
 #, kde-format
@@ -20039,11 +19939,10 @@ msgid "Custom"
 msgstr "Özel"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
-#, fuzzy, kde-format
-#| msgid "Select your preferred print output."
+#, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
-msgstr "Tercih ettiğiniz yazdırma çıktısını seçin."
+msgstr "Tercih edilen baskı çıktısını seçin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
@@ -20113,7 +20012,7 @@ msgstr "Resim Çıktı Ayarları"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:117
 #, kde-format
 msgid "Render Printing"
-msgstr "Gerçekleme Yazdırma"
+msgstr "Baskıyı Sun"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:254
 #, kde-format
@@ -21489,7 +21388,7 @@ msgstr "Dosya adını &yazdır"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
 #, kde-format
 msgid "Pr&int captions "
-msgstr "Başlıkları &yazdır "
+msgstr "Alt yazıları &yazdır "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
@@ -21803,14 +21702,14 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Damlalar"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:123
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slayt Gösterisi"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -39519,11 +39418,9 @@ msgid "Canon Digital Camera RAW Image Format version 1.0"
 msgstr "Etiketli Görüntü Dosya Biçimi (sürüm 5.0)"
 
 #: core/libs/rawengine/drawfiles.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Output: FILE"
-#| msgid "Print to Image File"
+#, kde-format
 msgid "Capture Shop Raw Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Capture Shop RAW Görsel Dosyası"
 
 #: core/libs/rawengine/drawfiles.cpp:63
 #, kde-format
@@ -39606,11 +39503,9 @@ msgid "Panasonic Digital Camera Image Format"
 msgstr "Panasonic Dijital Kamera Ham Görüntü Formatı"
 
 #: core/libs/rawengine/drawfiles.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "Output: FILE"
-#| msgid "Print to Image File"
+#, kde-format
 msgid "Digital Foto Maker Raw Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Digital Foto Maker RAW Görsel Dosyası"
 
 #: core/libs/rawengine/drawfiles.cpp:92 core/libs/rawengine/drawfiles.cpp:97
 #: core/libs/rawengine/drawfiles.cpp:107
@@ -39629,18 +39524,14 @@ msgid "Hasselblad Digital Camera Raw Image Format"
 msgstr "Hasselblad Dijital Kamera Ham Görüntü Formatı"
 
 #: core/libs/rawengine/drawfiles.cpp:114 core/libs/rawengine/drawfiles.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Output: FILE"
-#| msgid "Print to Image File"
+#, kde-format
 msgid "Phantom Software Raw Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Phantom Software RAW Görsel Dosyası"
 
 #: core/libs/rawengine/drawfiles.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "Output: FILE"
-#| msgid "Print to Image File"
+#, kde-format
 msgid "Sinar Raw Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Sinar RAW Görsel Dosyası"
 
 #: core/libs/rawengine/drawfiles.cpp:116
 #, kde-format
@@ -39658,11 +39549,9 @@ msgid "Panasonic LX3 Digital Camera Raw Image Format"
 msgstr "Panasonic LX3 Dijital Kamera Ham Görüntü Formatı"
 
 #: core/libs/rawengine/drawfiles.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "Output: FILE"
-#| msgid "Print to Image File"
+#, kde-format
 msgid "Sinar Capture Shop Raw Image File"
-msgstr "Resim Dosyasına Yazdır"
+msgstr "Sinar Capture Shop RAW Görsel Dosyası"
 
 #: core/libs/rawengine/drawfiles.cpp:127
 #, kde-format
@@ -45243,7 +45132,7 @@ msgstr "Dosya içine kaydet"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Print"
-msgstr "Yazdır"
+msgstr "Bastır"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:191
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:160
@@ -55231,10 +55120,9 @@ msgid "Less options"
 msgstr "Daha az seçenek"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "Başlıkları &yazdır "
+msgstr "Konumları etiketler olarak yaz"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
@@ -64984,7 +64872,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:423
 #, kde-format
 msgid "Printing and Proofing"
-msgstr "Yazdırma ve Denetleme"
+msgstr "Baskı ve Denetleme"
 
 #: core/utilities/setup/setupicc.cpp:428
 #, kde-format
@@ -65255,15 +65143,7 @@ msgstr ""
 "içinde tanımlamak için kullanılacaktır.</p>"
 
 #: core/utilities/setup/setuptemplate.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: These information are used to set <b><a href='http://en."
-#| "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a "
-#| "href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. There "
-#| "is no limitation with XMP, but note that IPTC text tags only support the "
-#| "printable <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
-#| "character set, and tag sizes are limited. Use contextual help for details."
-#| "</b>"
+#, kde-format
 msgid ""
 "<b>Note: These information are used to set <b><a href='https://en.wikipedia."
 "org/wiki/Extensible_Metadata_Platform'>XMP</a></b> and <b><a href='https://"
@@ -65271,13 +65151,12 @@ msgid ""
 "limitation with XMP, but note that IPTC text tag sizes are limited. Use "
 "contextual help for details.</b>"
 msgstr ""
-"<b>Not: Bu bilgiler, <a href='http://en.wikipedia.org/wiki/"
-"Extensible_Metadata_Platform'>XMP</a></b> ve <b><a href='http://en.wikipedia."
-"org/wiki/IPTC'>IPTC</a></b> etiket içeriklerini ayarlamak içindir. XMP ile "
-"ilgili bir sınır yoktur fakat IPTC metin etiketleri yalnızca yazdırılabilir "
-"<b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> karakter "
-"kümesi destekler ve etiket boyutları da sınırldır. Detaylar için içeriksel "
-"yardım kullanın.</b>"
+"<b>Not: Bu bilgiler, <b><a href='https://en.wikipedia.org/wiki/"
+"Extensible_Metadata_Platform'>XMP</a></b> ve <b><a href='https://en."
+"wikipedia.org/wiki/IPTC'>IPTC</a></b> etiketleri içeriğini ayarlamak için "
+"kullanılır. XMP'de herhangi bir sınırlama yoktur ancak IPTC metin etiketi "
+"boyutlarının sınırlı olduğunu unutmayın. Ayrıntılar için bağlamsal yardımı "
+"kullanın.</b>"
 
 #: core/utilities/setup/setuptemplate.cpp:118
 #, kde-format
@@ -65678,8 +65557,3 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Tüm video ayarlarını öntanımlı değerlere sıfırlamak istediğinizden emin "
 "misiniz?"
-
-#, fuzzy
-#~| msgid "An error has occurred with the media player...."
-#~ msgid "An error has occurred with the media player...."
-#~ msgstr "Ortam oynatıcısında bir hata oluştu..."
