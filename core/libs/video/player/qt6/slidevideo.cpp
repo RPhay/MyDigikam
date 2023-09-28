@@ -159,8 +159,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->indicator->setSpacing(4);
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->videoView, 0, 0, 2, 1);
-    grid->addWidget(d->indicator, 0, 0, 1, 1); // Widget will be over player to not change layout when visibility is changed.
+    grid->addWidget(d->videoView, 0, 0, 10, 1);
+    grid->addWidget(d->indicator, 0, 0, 1,  1); // Widget will be over player to not change layout when visibility is changed.
     grid->setRowStretch(0, 1);
     grid->setRowStretch(1, 100);
     grid->setContentsMargins(QMargins());
@@ -261,7 +261,6 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 
 void SlideVideo::showIndicator(bool b)
 {
-    qDebug(DIGIKAM_GENERAL_LOG) << "ShowIndicator:" << b;
     d->indicator->setVisible(b);
 }
 
