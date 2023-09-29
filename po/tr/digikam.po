@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 00:40+0000\n"
-"PO-Revision-Date: 2023-09-27 21:56+0300\n"
+"POT-Creation-Date: 2023-09-29 00:40+0000\n"
+"PO-Revision-Date: 2023-09-29 01:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2809,7 +2809,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:235
+#: core/libs/video/player/qt6/mediaplayerview.cpp:220
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2817,7 +2817,7 @@ msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:237
+#: core/libs/video/player/qt6/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -19516,12 +19516,12 @@ msgid ""
 "setting for each photo.\n"
 "Enable \"Do not crop\" to avoid cropping all of the photos."
 msgstr ""
-"Size verilen fotoğraf boyutları içerisine uyacak şekilde fotoğrafları "
-"kırpmak için kutuyu hareket ettirin.  \n"
-"Her resmi farklı olarak kırpabilirsiniz veya her dosya için öntanımlı kırpma "
-"ayarını kullanmak için 'İleri' düğmesine\n"
-"tıklayabilirsiniz.\n"
-"Tüm fotoğrafları kırpmayı engellemek için \"Kırpma\" seçeneğini "
+"Fotoğrafları, verdiğiniz fotoğraf boyutlarına sığacak şekilde kırpmak için "
+"kutuyu hareket ettirin.  \n"
+"Her görseli farklı biçimde kırpabilir veya her fotoğraf için öntanımlı "
+"kırpma ayarını kullanmak üzere \n"
+"'Sonraki' düğmesine tıklayabilirsiniz.\n"
+"Tüm fotoğrafların kırpılmasını önlemek için \"Kırpma\" seçeneğini "
 "etkinleştirin."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_disableCrop)
@@ -19540,17 +19540,15 @@ msgstr "Kırpma"
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:66
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
-#, fuzzy, kde-format
-#| msgid "Rotate photo to the right"
+#, kde-format
 msgid "Rotate photo to the left"
-msgstr "Fotoğrafı sağa çevir"
+msgstr "Fotoğrafı sola döndür"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
-#, fuzzy, kde-format
-#| msgid "&Rotate left"
+#, kde-format
 msgid "Rotate &left"
-msgstr "&Sola çevir"
+msgstr "&Sola döndür"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -19558,14 +19556,13 @@ msgstr "&Sola çevir"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
 #, kde-format
 msgid "Rotate photo to the right"
-msgstr "Fotoğrafı sağa çevir"
+msgstr "Fotoğrafı sağa döndür"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
-#, fuzzy, kde-format
-#| msgid "&Rotate right"
+#, kde-format
 msgid "Rotate &right"
-msgstr "&Sağa çevir"
+msgstr "&Sağa döndür"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -19615,19 +19612,19 @@ msgstr "Özel yerleşim"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:49
 #, kde-format
 msgid "Fit as many as possible:"
-msgstr "Mümkün olduğunca çok yerleştir:"
+msgstr "Olabildiğince çok sığdır:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:70
 #, kde-format
 msgid "Rows"
-msgstr "Satırlar"
+msgstr "Satır"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:112
 #, kde-format
 msgid "Photo size"
-msgstr "Resim boyutu"
+msgstr "Fotoğraf boyutu"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
@@ -19653,25 +19650,25 @@ msgstr "inç"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:239
 #, kde-format
 msgid "Columns"
-msgstr "Sütunlar"
+msgstr "Sütun"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_photoGridCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:279
 #, kde-format
 msgid "Photo grid:"
-msgstr "Resim ızgarası:"
+msgstr "Fotoğraf ızgarası:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_photosXPageCheck)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:304
 #, kde-format
 msgid "Automatic layout:"
-msgstr "Otomatik Yerleşim:"
+msgstr "Otomatik yerleşim:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:316
 #, kde-format
 msgid "Photos per page"
-msgstr "Bir sayfadaki resim"
+msgstr "Sayfa başına fotoğraf"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
@@ -19749,17 +19746,16 @@ msgid ">"
 msgstr ">"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcaptionpage.cpp:124
-#, fuzzy, kde-format
-#| msgid "Caption"
+#, kde-format
 msgctxt "@title: column"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt Yazı"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:34
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:35
 #, kde-format
 msgid "Choose your grid size"
-msgstr "Izgara boyutunu seçin"
+msgstr "Izgara boyutunu seç"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:36
 #, kde-format
@@ -19785,34 +19781,35 @@ msgstr "Sütun sayısı ekle"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:42
 #, kde-format
 msgid "Choose to have a custom photo size album"
-msgstr "Özel resim boyutlu albüm için seçin"
+msgstr "Özel fotoğraf boyutlu albüm için seç"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:43
 #, kde-format
 msgid "Photo height"
-msgstr "Resim yüksekliği"
+msgstr "Fotoğraf yüksekliği"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:44
 #, kde-format
 msgid "Insert photo height"
-msgstr "Resim yüksekliği ekle"
+msgstr "Fotoğraf yüksekliği ekle"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:45
 #, kde-format
 msgid "Photo width"
-msgstr "Resim genişliği"
+msgstr "Fotoğraf genişliği"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:46
 #, kde-format
 msgid "Insert photo width"
-msgstr "Resim genişliği ekle"
+msgstr "Fotoğraf genişliği ekle"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:48
 #, kde-format
 msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
-msgstr "Kamera yön bilgisine göre resmi yerleşime göre otomatik döndür"
+msgstr ""
+"Fotoğrafı, kamera yönü bilgisine göre yerleşimde otomatik olarak döndür"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
 #, kde-format
@@ -19822,7 +19819,7 @@ msgstr "Bastırılacak sayfa yok..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
 #, kde-format
 msgid "Starting to pre-process files..."
-msgstr "Dosyalar ön-işlemeye başlanıyor..."
+msgstr "Dosyalar ön işlemeye başlanıyor..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
 #, kde-format
@@ -19842,7 +19839,7 @@ msgstr "Bastırma süreci tamamlandı."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
 #, kde-format
 msgid "Open destination directory in file-browser."
-msgstr "Hedef dizini dosya tarayıcısında aç."
+msgstr "Hedef dizini dosya tarayıcısında açın."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
 #, kde-format
@@ -19850,7 +19847,7 @@ msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr ""
-"Dışarıdan Gimp programı başlatılırken bir hata oluştu. Lütfen doğru şekilde "
+"Dışarıdan GIMP programını başlatırken bir hata oluştu. Lütfen düzgün "
 "kurulduğundan emin olun."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
@@ -19865,14 +19862,14 @@ msgid ""
 "permissions to this folder and try again."
 msgstr ""
 "Geçici bir dizin oluşturulamadı. Lütfen bu dizin için uygun izinlere sahip "
-"olduğunuzdan emin olun ve tekrar deneyin."
+"olduğunuzdan emin olun ve yeniden deneyin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "Baskı Oluşturucu"
+msgstr "Baskı Oluşturucusu"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
@@ -19893,7 +19890,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Optional Gimp Binaries"
-msgstr "Seçime bağlı Gimp İkilikleri"
+msgstr "İsteğe Bağlı GIMP İkilileri"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
@@ -19901,19 +19898,18 @@ msgstr "Seçime bağlı Gimp İkilikleri"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
-msgstr "Resim Biçimi:"
+msgstr "Görsel biçimi:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:86
 #, kde-format
 msgid "Select your preferred format to export printing as image."
-msgstr "Resim olarak dışa aktarılacak dosya biçimini seçin."
+msgstr "VBaskıyı olarak dışa aktarmak için tercih ettiğiniz biçimi seçin."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
-msgstr "Hedef Dizin:"
+msgstr "Hedef klasör:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
@@ -19925,7 +19921,7 @@ msgstr "Çıktı Hedef Yolu"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:115
 #, kde-format
 msgid "The image output file name will be generated automatically."
-msgstr "Resim çıktı dosya adı otomatik olarak oluşturulacak."
+msgstr "Görsel çıktısının dosya adı kendiliğinden üretilecek."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:121
 #, kde-format
@@ -19947,7 +19943,7 @@ msgstr "Tercih edilen baskı çıktısını seçin."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
 msgid "Add again"
-msgstr "Tekrar ekle"
+msgstr "Yeniden ekle"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
@@ -19956,16 +19952,15 @@ msgid "Remove"
 msgstr "Kaldır"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
-#, fuzzy, kde-format
-#| msgid "Custom layout"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
-msgstr "Özel yerleşim"
+msgstr "Özel Yerleşim"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
-msgstr "Seçilen özel fotoğraf boyutu kağıt boyutuna uygulanamaz."
+msgstr "Seçili özel fotoğraf boyutu kağıt boyutuna uygulanamaz."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
@@ -19987,27 +19982,27 @@ msgstr "Baskı Oluşturucuya Hoş Geldiniz"
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
-msgstr "Albümler Seçimi"
+msgstr "Albüm Seçimi"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
 #, kde-format
 msgid "Select Page Layout"
-msgstr "Sayfa Düzenini Seçin"
+msgstr "Sayfa Yerleşimini Seç"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
 #, kde-format
 msgid "Caption Settings"
-msgstr "Başlık Ayarları"
+msgstr "Alt Yazı Ayarları"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
 #, kde-format
 msgid "Crop and Rotate Photos"
-msgstr "Resimleri Kırp ve Döndür"
+msgstr "Fotoğrafları Kırp ve Döndür"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
 #, kde-format
 msgid "Images Output Settings"
-msgstr "Resim Çıktı Ayarları"
+msgstr "Görsel Çıktısı Ayarları"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:117
 #, kde-format
@@ -20017,13 +20012,13 @@ msgstr "Baskıyı Sun"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:254
 #, kde-format
 msgid "Photo %1 of %2"
-msgstr "Resim %1 / %2"
+msgstr "Fotoğraf %1/%2"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:353
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:365
 #, kde-format
 msgid "Page %1 of %2"
-msgstr "Sayfa %1 / %2"
+msgstr "Sayfa %1/%2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
 #, kde-format
@@ -20053,17 +20048,17 @@ msgstr "Yeniden boyutlandırılmış görsel (PNG) kaydedilemedi. İptal ediliyo
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
 #, kde-format
 msgid "Cannot create a temporary directory"
-msgstr "Geçici dizin oluşturulamıyor"
+msgstr "Bir geçici dizin oluşturulamıyor"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:172
 #, kde-format
 msgid "Resizing %1"
-msgstr "%1 Yeniden Boyutlandırılıyor"
+msgstr "Yeniden boyutlandırılıyor: %1"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:188
 #, kde-format
 msgid "%1 resized successfully"
-msgstr "%1 yeniden boyutlandırma başarılı"
+msgstr "%1, başarıyla yeniden boyutlandırıldı"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:200
 #, kde-format
@@ -20078,12 +20073,12 @@ msgstr "Gönderilecek dosya yok"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:257
 #, kde-format
 msgid "Build images properties file"
-msgstr "Resim özellikler dosyası oluştur"
+msgstr "Görsel özellikleri dosyası oluştur"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:273
 #, kde-format
 msgid "no caption"
-msgstr "başlık yok"
+msgstr "alt yazı yok"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:278
 #, kde-format
@@ -20096,8 +20091,8 @@ msgid ""
 "file \"%1\":\n"
 "Original images: %2\n"
 msgstr ""
-"dosya \"%1\":\n"
-"Özgün resim: %2\n"
+"\"%1\" dosyası:\n"
+"Özgün görseller: %2\n"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:283
 #, kde-format
@@ -20122,18 +20117,17 @@ msgstr "properties.txt"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
 #, kde-format
 msgid "Image properties file cannot be opened"
-msgstr "Resim özellik dosyası açılamadı"
+msgstr "Görsel özellikleri dosyası açılamadı"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
 #, kde-format
 msgid "Image properties file done"
-msgstr "Resim özellik dosyası bitti"
+msgstr "Görsel özellikleri dosyası tamamlandır"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "İşleme Başarısız"
@@ -20144,7 +20138,7 @@ msgid ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 msgstr ""
-"Bazı resimler yeniden boyutlandırılamadı.\n"
+"Bazı görseller yeniden boyutlandırılamadı.\n"
 "Onları yeniden boyutlandırmadan eklemek ister misiniz?"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
@@ -20153,29 +20147,28 @@ msgid ""
 "The file \"%1\" is too big to be sent, please reduce its size or change your "
 "settings"
 msgstr ""
-"\"%1\" dosyası gönderilmek için çok büyük, lütfen resmin boyutunu küçültün "
-"veya ayarlarınızı değiştirin"
+"\"%1\" dosyası gönderilmek için çok büyük, lütfen boyutunu küçültün veya "
+"ayarlarınızı değiştirin"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:634
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
-msgstr "\"%1\" uygulaması başlatılamadı. Sisteminizi kontrol edin."
+msgstr "\"%1\" programı başlatılamadı. Sisteminizi denetleyin."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:644
 #, kde-format
 msgid "Starting \"%1\" program..."
-msgstr "\"%1\" uygulaması başlatılıyor..."
+msgstr "\"%1\" programı başlatılıyor..."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:647
 #, kde-format
 msgid "After having sent your images by email..."
-msgstr "Resimleriniz e-postayla gönderildikten sonra..."
+msgstr "Görselleriniz e-postayla gönderildikten sonra..."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:648
-#, fuzzy, kde-format
-#| msgid "Press 'Close' button to clean up temporary files"
+#, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
-msgstr "Geçici dosyaları temizlemek için 'Kapat' düğmesine basın"
+msgstr "Geçici dosyaları temizlemek için 'Bitir' düğmesine basın"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #, kde-format
@@ -20231,7 +20224,7 @@ msgstr "Thunderbird"
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
-msgstr "Jpeg"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
@@ -20239,18 +20232,17 @@ msgstr "Jpeg"
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
-msgstr "Png"
+msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
 #, kde-format
 msgid "Send by Email"
-msgstr "Eposta ile gönder"
+msgstr "E-posta ile Gönder"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgid "A tool to send images by E-mail"
-msgstr "Eposta ile gönder"
+msgstr "Görselleri e-posta ile göndermek için bir araç"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
 #, kde-format
@@ -20260,50 +20252,54 @@ msgid ""
 "through a selection of albums.</p><p>Different mail client application can "
 "be used to process files on the network.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların ögeleri e-posta ile göndermeden önce ögeleri "
+"(yeniden boyutlandırma olarak) geri işlemesine olanak tanır.</p><p>İşlenecek "
+"ögeler, çeşitli albümler arasından tek tek veya grup halinde seçilebilir.</"
+"p><p>Ağdaki dosyaları işlemek için farklı posta istemcisi uygulamaları "
+"kullanılabilir.</p>"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
-msgstr "Eposta ile gönder..."
+msgstr "Posta ile Gönder..."
 
 #: core/dplugins/generic/tools/sendbymail/tools/balsabinary.cpp:31
 #: core/dplugins/generic/tools/sendbymail/tools/evolutionbinary.cpp:31
 #, kde-format
 msgid "Gnome Mail Client."
-msgstr "Gnome Eposta İstemcisi."
+msgstr "Gnome posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/tools/clawsmailbinary.cpp:31
 #: core/dplugins/generic/tools/sendbymail/tools/sylpheedbinary.cpp:31
 #, kde-format
 msgid "GTK based Mail Client."
-msgstr "GTK temelli Eposta İstemcisi."
+msgstr "GTK temelli posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/tools/kmailbinary.cpp:33
 #, kde-format
 msgid "KDE Mail Client."
-msgstr "KDE Eposta İstemcisi."
+msgstr "KDE posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/tools/netscapebinary.cpp:31
 #, kde-format
 msgid "Netscape Mail Client."
-msgstr "Netscape Eposta İstemcisi."
+msgstr "Netscape posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/tools/outlookbinary.cpp:32
-#, fuzzy, kde-format
-#| msgid "Gnome Mail Client."
+#, kde-format
 msgid "Outlook Mail Client."
-msgstr "Gnome Eposta İstemcisi."
+msgstr "Outlook posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/tools/thunderbirdbinary.cpp:31
 #, kde-format
 msgid "Mozilla Foundation Mail Client."
-msgstr "Mozilla Vakfı Eposta İstemcisi."
+msgstr "Mozilla Vakfı posta istemcisi."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
 #, kde-format
 msgid "Preparing file to export by mail..."
-msgstr "Dosya, eposta ile dışa aktarmak için hazırlanıyor..."
+msgstr "Dosya postayla dışa aktarılmak üzere hazırlanıyor..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
@@ -20314,7 +20310,7 @@ msgstr "İşlenecek %1 girdi ögesi"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailimagespage.cpp:64
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
-msgstr "<p>Bu görünüm eposta ile dışa aktarılacak tüm ögeleri listeler.</p>"
+msgstr "<p>Bu görünüm, posta ile dışa aktarılacak tüm ögeleri listeler.</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:94
 #, kde-format
@@ -20324,31 +20320,32 @@ msgid ""
 "export contents, you will be able to adjust attachments properties "
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>E-posta aracına hoş geldiniz</b></h1></p><p>Bu asistan, "
-"ögelerinizi bir posta istemci uygulamasıyla göndermeniz için size rehberlik "
-"edecek.</p> <p>İçeriği dışa aktarmadan önce, ek özelliklerini posta hizmeti "
-"yeteneklerinize göre ayarlayabileceksiniz.</p></qt>"
+"<qt><p><h1><b>E-posta Aracına Hoş Geldiniz</b></h1></p><p>Bu yardımcı, "
+"ögelerinizi bir posta istemcisi uygulamasıyla göndermeniz için size "
+"kılavuzluk edecektir.</p ><p>İçeriği dışa aktarmadan önce, eklerin "
+"özelliklerini posta hizmeti yeteneklerinize uygun şekilde "
+"ayarlayabileceksiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:116
 #, kde-format
 msgctxt "@title:group"
 msgid "Mail client application Binaries"
-msgstr "Eposta istemci uygulaması İkiliği"
+msgstr "Eposta İstemcisi İkilileri"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:99
 #, kde-format
 msgid "Mail program:"
-msgstr "Eposta uygulaması:"
+msgstr "Posta uygulaması:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:103
 #, kde-format
 msgid "Select your preferred external mail client program here."
-msgstr "Tercih ettiğiniz harıcı eposta istemcisini buradan seçin."
+msgstr "Tercih ettiğiniz dış posta istemcisi programını buradan seçin."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #, kde-format
 msgid "Attach a file with items properties"
-msgstr "Öge özellikleriyle birlikte bir dosya iliştir"
+msgstr "Ögenin özellikleriyle birlikte bir dosya iliştir"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
 #, kde-format
@@ -20374,7 +20371,7 @@ msgstr "En büyük e-posta boyutu sınırı:"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
-msgstr "Resim özelliklerini ayarla"
+msgstr "Görsel özelliklerini ayarla"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
@@ -20384,15 +20381,15 @@ msgid ""
 "If you enable this option, all images to be sent can be resized and "
 "recompressed."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz gönderilecek tüm resimler yeniden "
-"boyutlandırılabilir ve yeniden sıkıştırılabilir."
+"Bu seçeneği etkinleştirirseniz gönderilecek tüm görseller yeniden "
+"boyutlandırılabilir ve sıkıştırılabilir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
-msgstr "Resim Özellikleri"
+msgstr "Görsel Özellikleri"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
@@ -20401,27 +20398,27 @@ msgstr "Resim Özellikleri"
 msgid ""
 "Select the length of the images that are to be sent. The aspect ratio is "
 "preserved."
-msgstr "Gönderilecek resimlerin boyutunu seçin. En-boy oranı korunacaktır."
+msgstr "Gönderilecek görsellerin uzunluğunu seçin. En-boy oranı korunur."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
-msgstr "Resim Boyu:"
+msgstr "Görsel uzunluğu:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
-msgstr "Tercih ettiğiniz dönüştürülecek resim biçimini seçin."
+msgstr "Görselleri dönüştürmek üzere tercih ettiğiniz biçimi seçin."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
 #, kde-format
 msgid "<p>The new compression value of JPEG images to be sent:</p>"
-msgstr "<p>Gönderilecek JPEG resimlerinin yeni sıkıştırma değeri:</p>"
+msgstr "<p>Gönderilecek JPEG görsellerinin yeni sıkıştırma değeri:</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:147
@@ -20431,23 +20428,23 @@ msgid ""
 "><b>50</b>: medium compression<br/><b>75</b>: low compression (default "
 "value)<br/><b>100</b>: no compression</p>"
 msgstr ""
-"<p><b>1</b>: çok yüksek sıkıştırma<br/><b>25</b>: yüksek sıkıştırma<br/"
-"><b>50</b>: ortalama sıkıştırma<br/><b>75</b>: düşük sıkıştırmaa (öntanımlı "
-"değer)<br/><b>100</b>: sıkıştırma yok</p>"
+"<p><b>1</b>: Çok yüksek sıkıştırma<br/><b>25</b>: Yüksek sıkıştırma<br/"
+"><b>50</b>: Ortalama sıkıştırma<br/><b>75</b>: Düşük sıkıştırma (öntanımlı "
+"değer)<br/><b>100</b>: Sıkıştırmasız</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
-msgstr "Resim kalitesi:"
+msgstr "Görsel kalitesi:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
-msgstr "Tüm metaveriyi sil"
+msgstr "Tüm üst veriyi kaldır"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:192
@@ -20457,50 +20454,46 @@ msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
 "removed."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz Exif, Iptc ve Xmp gibi tüm metaveriler "
-"silinecektir."
+"Bu seçeneği etkinleştirirseniz Exif, Iptc ve Xmp gibi tüm üst veriler "
+"kaldırılır."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
-msgstr "Eposta ile gönder"
+msgstr "E-posta ile Gönder"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, kde-format
 msgid "Welcome to Email Tool"
-msgstr "Eposta Aracına Hoşgeldiniz"
+msgstr "E-posta Aracına Hoş Geldiniz"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:89
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:98
 #, kde-format
 msgid "Images List"
-msgstr "Resim Listesi"
+msgstr "Görsel Listesi"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
 #, kde-format
 msgid "Email Settings"
-msgstr "Eposta Ayarları"
+msgstr "E-posta Ayarları"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
 #, kde-format
 msgid "Export by Email"
-msgstr "Eposta ile dışa aktar"
+msgstr "E-posta ile Dışa Aktar"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:43
-#, fuzzy, kde-format
-#| msgid "Create a Video Slideshow"
+#, kde-format
 msgid "Video Slideshow"
 msgstr "Video Slayt Gösterisi Oluştur"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Create video slideshow..."
+#, kde-format
 msgid "A tool to create video slideshow from images"
-msgstr "Video slayt gösterisi oluştur..."
+msgstr "Görsellerden video slayt gösterisi oluşturmak için bir araç"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
 #, kde-format
@@ -20510,27 +20503,32 @@ msgid ""
 "through a selection of albums.</p><p>Different visual effects can be applied "
 "to images to make transitions while to render target video.</p>"
 msgstr ""
+"<p>Bu araç, kullanıcıların video slayt gösterisi oluşturmalar için görseli "
+"çerçeve olarak geri işlemesine olanak tanır.</p><p>İşlenecek ögeler, çeşitli "
+"albümler aracılığıyla tek tek veya grup halinde seçilebilir.</p><p>Hedef "
+"videoyu sunarken geçişler için görsellere farklı görsel efektler "
+"uygulanabilir.</p>"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
-msgstr "Video slayt gösterisi oluştur..."
+msgstr "Video Slayt Gösterisi Oluştur..."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:123
 #, kde-format
 msgid "Starting to generate video slideshow..."
-msgstr "Video slayt gösterisi oluşturulmaya başlanıyor..."
+msgstr "Video slayt gösterisi üretilmeye başlanıyor..."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:126
 #, kde-format
 msgid "%1 input images to process"
-msgstr "%1 girdi resimleri işlenecek"
+msgstr "İşlenecek %1 görsel girdisi"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:137
 #, kde-format
 msgid "%1 input audio stream to process:"
-msgstr "%1 girdi ses akışları işlenecek:"
+msgstr "İşlenecek %1 ses akışı girdisi:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidefinalpage.cpp:185
 #, kde-format
@@ -20554,9 +20552,9 @@ msgid ""
 "is on top of the list, the last one</p><p>on the bottom. You can adjust the "
 "order of each item.</p>"
 msgstr ""
-"<p>Bu görünüm video akışında bulunacak tüm ögeleri listeler.</p><p>Birinci "
-"olan listenin başında, sonuncu olan</p><p>listenin sonunda. Her bir ögenin "
-"sırasını ayarlyablirsiniz.</p>"
+"<p>Bu görünüm, video akışında içerilecek tüm ögeleri listeler.</p><p>Birinci "
+"olan listenin başında, sonuncu olan</p><p>listenin sonundadır. Her bir "
+"ögenin sırasını ayarlayabilirsiniz.</p>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:71
 #, kde-format
@@ -20570,55 +20568,55 @@ msgid ""
 "also create a video presentation with transition</p><p>effects and audio "
 "tracks to show on a TV screen.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Video Slayt Gösterisi aracına hoş geldiniz.</b></h1></p><p>Bu "
-"asistan size resimlerinizi</p><p>video akışı olarak dışa aktarmanızda "
-"yardımcı olacak.</p><p>Tripod eklentili ve <a href='https://en.wikipedia.org/"
-"wiki/Intervalometer#Photography'>intervalometer</a> ile kontrol edilmiş "
-"kamera ile yakalanmış resimlerinizden hızlıca <a href='https://en.wikipedia."
-"org/wiki/Time-lapse_photography'>Zaman-döngüsü</a> filmi oluşturabilirsiniz."
-"</p><p></p><p>Aynı zamanda TV ekranında göstermek üzere geçiş</"
-"p><p>efektleri ses parçaları ile bir video sunumu oluşturabilirsiniz.</p></"
-"qt>"
+"<qt><p><h1><b>Video Slayt Gösterisi aracına hoş geldiniz</b></h1></p><p>Bu "
+"yardımcı, görsellerinizi bir video akışı</p><p>olarak dışa aktarmanız "
+"sırasında size kılavuzluk edecek.</p><p>Kolaylıkla bir <a href='https://en."
+"wikipedia.org/wiki/Intervalometer#Photography'>aralıkölçer</a> tarafından "
+"denetlenen</p><p>bir tripod üzerine takılı kamera ile <a href='https://en."
+"wikipedia.org/wiki/Time-lapse_photography'>zaman atlamalı</a> filmler "
+"üretebilirsiniz.</p><p></p><p>Ayrıca TV ekranında gösterilecek geçiş "
+"efektleri ve</p><p>ses parçaları içeren bir video sunumu da "
+"oluşturabilirsiniz.</p></qt>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:87
 #, kde-format
 msgid "Media Container Format:"
-msgstr "Media Kapsayıcısı Biçimi:"
+msgstr "Ortam kapsayıcısı biçimi:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:127
 #, kde-format
 msgid "The video output file name will be generated automatically."
-msgstr "Video çıktı dosyası ismi otomatik olarak oluşturulacak."
+msgstr "Video çıktı dosyasının adı kendiliğinden oluşturulur."
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:134
 #, kde-format
 msgid "Open in Player:"
-msgstr "Oynatıcıda Aç:"
+msgstr "Oynatıcıda aç:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:101
 #, kde-format
 msgid "Number of Frames by Image:"
-msgstr "Resim Başına Kare Sayısı:"
+msgstr "Görsel başına kare sayısı:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:110
 #, kde-format
 msgid "Video Standard:"
-msgstr "Video Standardı:"
+msgstr "Video standardı:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:129
 #, kde-format
 msgid "Video Type:"
-msgstr "Video Türü:"
+msgstr "Video türü:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:152
 #, kde-format
 msgid "Video Bit Rate:"
-msgstr "Video Bit Hızı:"
+msgstr "Video bit hızı:"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:197
 #, kde-format
 msgid "Effect While Displaying Images"
-msgstr "Resimleri Görüntülerden Efekt Uygula"
+msgstr "Görselleri Görüntülerden Efekt Uygula"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:217
 #, kde-format
@@ -20627,14 +20625,14 @@ msgid ""
 "displayed. The effect duration will follow the number of frames used to "
 "render the image on video stream.</i>"
 msgstr ""
-"<i>Efekt, bir görüntü görüntülenirken uygulanan bir görsel kaydırma veya "
-"yakınlaştırma işlemidir. Etki süresi video akışında görüntüyü oluşturmak "
-"için kullanılan karelerin sayısını izleyecektir.</i>"
+"<i>Efekt, bir görsel görüntülenirken uygulanan bir görsel kaydırma veya "
+"yakınlaştırma işlemidir. Efekt süresi video akışında görseli sunmak için "
+"kullanılan karelerin sayısını izleyecektir.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:234
 #, kde-format
 msgid "Transition Between Images"
-msgstr "Resimler Arasındaki Geçiş"
+msgstr "Görseller Arasındaki Geçiş"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:254
 #, kde-format
@@ -20643,18 +20641,17 @@ msgid ""
 "effects, the duration can depend of random values and can change while the "
 "slideshow.</i>"
 msgstr ""
-"<i>Geçiş, iki görüntü arasında uygulanan görsel bir efekttir. Bazı efektler "
-"için süre rastgele değerlere bağlı olabilir ve slayt gösterisi sırasında "
+"<i>Geçiş, iki görsel arasında uygulanan bir efekttir. Bazı efektler için "
+"süre rastgele değerlere bağlı olabilir ve slayt gösterisi sırasında "
 "değişebilir.</i>"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:335
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
-msgstr "Süre: öge başına %1 saniye, toplam %2 saniye (geçişler hariç)"
+msgstr "Süre: Öge başına %1 saniye, toplam %2 saniye (geçişsiz)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, fuzzy, kde-format
-#| msgid "Create a Video Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Video Slayt Gösterisi Oluştur"
@@ -20662,7 +20659,7 @@ msgstr "Video Slayt Gösterisi Oluştur"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
 msgid "Welcome to Video Slideshow Tool"
-msgstr "Video Slayt Gösterisi Aracına Hoşgeldiniz"
+msgstr "Video Slayt Gösterisi Aracına Hoş Geldiniz"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
 #, kde-format
@@ -20675,16 +20672,14 @@ msgid "Generating Video Slideshow"
 msgstr "Video Slayt Gösterisi üretiliyor"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "Export as wallpaper"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Duvar kağıdı olarak dışa aktar"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:60
-#, fuzzy, kde-format
-#| msgid "Convert image to a color space."
+#, kde-format
 msgid "A tool to set image as wallpaper"
-msgstr "Resmi renk aralığına dönüştür."
+msgstr "Görseli duvar kağıdı olarak ayarlamak için bir araç"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:65
 #, kde-format
@@ -20693,22 +20688,23 @@ msgid ""
 "</p><p>If many images are selected, the first one will be used.</p><p>If no "
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
+"<p>Bu araç, tüm masaüstü bilgisayarlar için arka plan duvar kağıdını seçili "
+"görselle değiştirir.</p><p>Çok sayıda görsel seçilirse ilki kullanılır.</"
+"p><p>Hiçbir görsel seçilmezse, Geçerli albümden ilki kullanılacak.</p>"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
-msgstr "Dışarıya aktarma hatası"
+msgstr "Duvar Kağıdı Olarak Ayarla"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgid "Convert image to a color space."
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
-msgstr "Resmi renk aralığına dönüştür."
+msgstr "Görseli Duvar Kağıdı Yaparken Hata"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:93
 #, kde-format
@@ -20719,21 +20715,25 @@ msgid ""
 "\n"
 "Error: %2"
 msgstr ""
+"Aşağıdaki görsel, geçerli masaüstüne duvar kağıdı yapılamadı:\n"
+"%1\n"
+"\n"
+"Hata: %2"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:65
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Cannot change wallpaper image from current desktop with\n"
 "%1"
-msgstr "Dosya kaydedilemiyor"
+msgstr ""
+"Aşağıdaki görsel, geçerli masaüstüne duvar kağıdı yapılamadı:\n"
+"%1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
-#, fuzzy, kde-format
-#| msgid "Unknown filter"
+#, kde-format
 msgid "Unknown Error %1"
-msgstr "Bilinmeyen Süzgeç"
+msgstr "Bilinmeyen Hata %1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -20745,64 +20745,63 @@ msgid ""
 "\n"
 "Error: %3"
 msgstr ""
+"Aşağıdaki görsel, geçerli masaüstüne duvar kağıdı yapılamadı:\n"
+"%1\n"
+"\n"
+"Bağlam: %2\n"
+"\n"
+"Hata: %3"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:95
-#, fuzzy, kde-format
-#| msgid "Cannot create directory %1"
+#, kde-format
 msgid "Cannot create desktop context."
-msgstr "%1 dizini oluşturulamıyor"
+msgstr "Masaüstü bağlamı oluşturulamıyor."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:129
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgid "Cannot set wall paper image path."
-msgstr "Dosya kaydedilemiyor"
+msgstr "Duvar kağıdı görseli yolu ayarlanamıyor."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:139
 #, kde-format
 msgid "Cannot set wallpaper properties."
-msgstr "Duvar kağıdı özellikleri ayarlanamaz."
+msgstr "Duvar kağıdı özellikleri ayarlanıyor."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:149
 #, kde-format
 msgid "Cannot apply changes to desktop wallpaper."
-msgstr ""
+msgstr "Masaüstü duvar kağıdı değişiklikleri uygulanamıyor."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
-#| msgid "Save Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
-msgstr "Ayarları Kaydet"
+msgstr "Duvar Kağıdı Ayarları"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Wallpaper Layout:"
-msgstr ""
+msgstr "Duvar kağıdı yerleşimi:"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "Automatic Adjustment"
-#| msgid "Adjust"
+#, kde-format
 msgid "Adjusted"
-msgstr "Ayarla"
+msgstr "İnce ayarlı"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "Return pictures with the aspect ratio"
+#, kde-format
 msgid "Adjusted with Aspect ratio"
-msgstr "Resimleri en-boy oranı ile getir"
+msgstr "En-boy oranına göre ayarlı"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:84
-#, fuzzy, kde-format
-#| msgid "Adjustment:"
+#, kde-format
 msgid "Adjusted and cropped"
-msgstr "Ayarlama:"
+msgstr "Ayarlı ve kırpılmış"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:89
 #, kde-format
 msgid "Centered"
-msgstr "Ortala"
+msgstr "Ortalanmış"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:45
 #, kde-format
@@ -20812,28 +20811,10 @@ msgstr "OpenGL Görüntüleyicisi"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:60
 #, kde-format
 msgid "A tool to preview image with OpenGL"
-msgstr "OpenGL ile görüntüyü önizlemek için bir araç"
+msgstr "OpenGL ile görseli önizlemek için bir araç"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
-#| "b></center></nobr></td></tr><tr><td>Previous Item:</td><td><i>Up</i> key</"
-#| "td></tr><tr><td></td><td><i>PgUp</i> key</td><tr><td></td><td><i>Left</i> "
-#| "key</td><tr><td></td><td>Mouse wheel up</td><tr><td></td><td>Left mouse "
-#| "button</td><tr><td>Next Item:</td><td><i>Down</i> key</td></tr><tr><td></"
-#| "td><td><i>PgDown</i> key</td><tr><td></td><td><i>Right</i> key</"
-#| "td><tr><td></td><td>Mouse wheel down</td><tr><td></td><td>Right mouse "
-#| "button</td><tr><td>Pause/Start:</td><td><i>Space</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key<td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table></qt>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -20857,23 +20838,29 @@ msgid ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 msgstr ""
-"<qt><table><tr><td colspan=\"2\"><nobr><center><b><h1>Öge Erişimi</h1></b></"
-"center></nobr></td></tr><tr><td>Önceki Öge:</td><td><i>Yukarı</i> tuşu</td></"
-"tr><tr><td></td><td><i>PgUp</i> tuşu</td><tr><td></td><td><i>Sol</i> tuş</"
-"td><tr><td></td><td>Fare yukarı tekerlek</td><tr><td></td><td>Fare sol tuşu</"
-"td><tr><td>Sonraki öge:</td><td><i>Aşağı</i> tuşu</td></tr><tr><td></"
-"td><td><i>PgDown</i> tuşu</td><tr><td></td><td><i>Sağ</i> tuş</td><tr><td></"
-"td><td>Fare aşağı tekerlek</td><tr><td></td><td>Fare sağ tuşu</"
-"td><tr><td>Durdur/Başlat:</td><td><i>Boşluk</i> tuşu</td></tr><tr><td>Çıkış:"
-"</td><td><i>Esc</i> tuşu<td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Öge Özellikleri</h1></b></center></nobr></td></"
-"tr><tr><td>Etiketleri Değiştir:</td><td>Etiket klavye kısayolları kullan</"
-"td></tr><tr><td>Derecelendirmeyi Değiştir:</td><td>Derecelendirme klavye "
-"kısayolları kullan</td></tr><tr><td>Renk Etiketi Değiştir:</td><td>Renk "
-"etiketi klavye kısayolları kullan</td></tr><tr><td>Seçme Etiketi Değiştir:</"
-"td><td>Seçme etiketi klavye kısayolları kullan</td></tr><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Diğerleri</h1></b></center></nobr></td></"
-"tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> tuşu</td></tr></table></qt>"
+"<p>Bu araç, OpenGL efektleri kullanarak bir dizi ögeyi önizler.</"
+"p><p><u>Kullanım:</u></p><table><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Öge Erişimi</h1></b></center></nobr></td></"
+"tr><tr><td>Önceki öge:</td><td><i>Up</i> key</td></tr><tr><td></"
+"td><td><i>Sayfa Yukarı</i> düğmesi</td></tr><tr><td></td><td><i>Sol Ok</i> "
+"düğmesi</td></tr><tr><td></td><td>Fare tekerleği yukarı</td></"
+"tr><tr><td>Sonraki öge:</td><td><i>Aşağı ok</i> düğmesi</td></tr><tr><td></"
+"td><td><i>Sayfa Aşağı</i> düğmesi</td></tr><tr><td></td><td><i>Sağ Ok</i> "
+"düğmesi</td></tr><tr><td></td><td>Fare tekerleği aşağı</td></tr><tr><td>Çık:"
+"</td><td><i>Vazgeç</i> düğmesi</td></tr><tr><td colspan="
+"\"2\"><nobr><center><b><h1>Öge Görüntüleme</h1></b></center></nobr></td></"
+"tr><tr><td>Tam ekranı aç/kapat:</td><td><i>F</i> düğmesi</td></"
+"tr><tr><td>Fare tekerleği eylemi aç/kapat:</td><td><i>C</i> düğmesi (ya "
+"yakınlaştır ya da görseli değiştir)</td></tr><tr><td>Döndürme:</td><td><i>R</"
+"i> düğmesi</td></tr><tr><td>Görünümü sıfırla:</td><td>Çift tık</td></"
+"tr><tr><td>Özgün boyut:</td><td><i>O</i> düğmesi</td></"
+"tr><tr><td>Yakınlaştırma:</td><td>Sağ fare düğmesine basarken fareyi yukarı "
+"aşağı yönünde hareket ettir</td></tr><tr><td></td><td><i>C</i> düğmesi ve "
+"fare tekerleği</td></tr><tr><td></td><td><i>+</i> ve <i>-</i> düğmeleri</"
+"td></tr><tr><td></td><td>Kontrol + Fare tekerleği</td></tr><tr><td>Kaydırma:"
+"</td><td>Sol fare düğmesine basarken fareyi hareket ettir</td></tr><tr><td "
+"colspan=\"2\"><nobr><center><b><h1>Diğer</h1></b></center></nobr></td></"
+"tr><tr><td>Bu yardımı göster:</td><td><i>F1</i> düğmesi</td></tr></table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
 #, kde-format
@@ -20883,27 +20870,25 @@ msgstr "OpenGL Görsel Görüntüleyicisi"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgid "OpenGL Error"
-msgstr "Dışarıya aktarma hatası"
+msgstr "OpenGL Hatası"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
 msgid "GL_ARB_texture_rectangle not supported"
-msgstr ""
+msgstr "GL_ARB_texture_rectangle desteklenmiyor"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "No OpenGL context found"
-msgstr ""
+msgstr "OpenGL bağlamı bulunamadı"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, fuzzy, kde-format
-#| msgid "Soundtrack preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
-msgstr "Film müziği önizlemesi"
+msgstr "Film Müziği Önizlemesi"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
 #, kde-format
@@ -20911,43 +20896,43 @@ msgid ""
 "If set, the soundtrack for the current album will be saved and restored "
 "automatically on the next startup."
 msgstr ""
-"Seçilirse şu anki albüm için ayarlanmış müzik parçası kaydedilecek ve bir "
-"sonraki açılışta tekrar yüklenecektir."
+"Ayarlanırsa geçerli albümün müziği bir sonraki açılışta otomatik olarak "
+"kaydedilecek ve geri yüklenecektir."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:125
 #, kde-format
 msgid "Move the selected track up in the playlist."
-msgstr "Seçili parçayı çalma listesinde yukarıya taşı."
+msgstr "Seçili parçayı çalma listesinde yukarı taşıyın."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:126
 #, kde-format
 msgid "Move the selected track down in the playlist."
-msgstr "Seçili parçayı çalma listesinde aşağııya taşı."
+msgstr "Seçili parçayı çalma listesinde aşağı taşıyın."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:127
 #, kde-format
 msgid "Add new tracks to the playlist."
-msgstr "Çalma listesine yeni parçalar ekle."
+msgstr "Çalma listesine yeni parçalar ekleyin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:128
 #, kde-format
 msgid "Delete the selected track from the playlist."
-msgstr "Seçili parçayı çalma listesinden sil."
+msgstr "Seçili parçayı çalma listesinden silin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
 #, kde-format
 msgid "Load playlist from a file."
-msgstr "Bir dosyadan parça listesi yükle."
+msgstr "Bir dosyadan parça listesi yükleyin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
 #, kde-format
 msgid "Save playlist to a file."
-msgstr "Parça listesini bir dosyaya kaydet."
+msgstr "Parça listesini bir dosyaya kaydedin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
 #, kde-format
 msgid "Clear the playlist."
-msgstr "Çalma listesini temizle."
+msgstr "Çalma listesini temizleyin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
 #, kde-format
@@ -20961,32 +20946,29 @@ msgstr[1] "%1 parça [%2]"
 #, kde-format
 msgid ""
 "Slide time is greater than soundtrack time. Suggestion: add more sound files."
-msgstr ""
-"Slayt süresi ses süresinden uzun. Öneri: daha fazla ses dosyası ekleyin."
+msgstr "Slayt süresi ses süresinden uzun. Öneri: Daha çok ses dosyası ekleyin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, fuzzy, kde-format
-#| msgid "Select sound files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr "Ses dosyalarını seç"
+msgstr "Ses Dosyaları Seç"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
 #, kde-format
 msgid "You can only move image files up one at a time."
-msgstr "Her seferde yalnızca tek bir resmi yukarıya taşıyabilirsiniz."
+msgstr "Tek kerede yalnızca tek bir görseli yukarı taşıyabilirsiniz."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:468
 #, kde-format
 msgid "You can only move files down one at a time."
-msgstr "Her seferde yalnızca tek bir dosyayı aşağıya taşıyabilirsiniz."
+msgstr "Tek kerede yalnızca tek bir görseli aşağı taşıyabilirsiniz."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, fuzzy, kde-format
-#| msgid "Load playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr "Parça listesi yükle"
+msgstr "Çalma Listesi Yükle"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
@@ -20995,47 +20977,45 @@ msgid "Playlist (*.m3u)"
 msgstr "Çalma Listesi (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, fuzzy, kde-format
-#| msgid "Save playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr "Çalma listesini kaydet"
+msgstr "Çalma Listesini Kaydet"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
 msgstr ""
-"\"%1\" dosyasına erişilemiyor. Lütfen yolun doğru olup olmadığını kontrol "
-"edin."
+"\"%1\" dosyasına erişilemiyor. Lütfen yolun doğru olup olmadığını denetleyin."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
-msgstr "Boş bir dosya listesinin ön görünümü yaratılamaz."
+msgstr "Boş bir dosya listesinin önizlemesi oluşturulamaz."
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_selectionGroupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:23
 #, kde-format
 msgid "Select audio files"
-msgstr "Ses dosyalarını seç"
+msgstr "Ses dosyaları seç"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonUp)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:76
 #, kde-format
 msgid "Move the current image up in the portfolio list."
-msgstr "Geçerli resmi portfolyo listesinde yukarı taşı."
+msgstr "Geçerli görseli portfolyo listesinde yukarı taşıyın."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonAdd)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:104
 #, kde-format
 msgid "Add some image files to the portfolio list."
-msgstr "Portfolyo listesine bazı resim dosyaları ekleyin."
+msgstr "Portfolyo listesine bazı görsel dosyaları ekleyin."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonDelete)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:132
 #, kde-format
 msgid "Remove some image files from the portfolio list."
-msgstr "Portfolyo listesinden bazı resim dosyalarını kaldırın."
+msgstr "Portfolyo listesinden bazı görsel dosyalarını kaldırın."
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonDown)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonLoad)
@@ -21047,13 +21027,13 @@ msgstr "Portfolyo listesinden bazı resim dosyalarını kaldırın."
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:244
 #, kde-format
 msgid "Move the current image down in the portfolio list."
-msgstr "Geçerli resmi portfolyo listesinde aşağı taşı."
+msgstr "Geçerli görseli portfolyo listesinde aşağı taşıyın."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_previewButton)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:302
 #, kde-format
 msgid "Preview..."
-msgstr "Önizleme..."
+msgstr "Önizle..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:322
@@ -21073,25 +21053,25 @@ msgstr "Seçenekler"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:177
 #, kde-format
 msgid "&Loop"
-msgstr "&Tekrarla"
+msgstr "&Döngü Yap"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_playCheckBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:335
 #, kde-format
 msgid "&Auto play"
-msgstr ""
+msgstr "&Kendiliğinden Çal"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_rememberSoundtrack)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:342
 #, kde-format
 msgid "Remember soundtrack"
-msgstr "Film müziğini anımsa"
+msgstr "Müziği anımsa"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:365
 #, kde-format
 msgid "Time comparison"
-msgstr "Zaman karşılaştırma"
+msgstr "Zaman karşılaştırması"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:373
@@ -21108,7 +21088,7 @@ msgstr "Fon müziği:"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, kde-format
 msgid "No detail available"
-msgstr "Hiçbir detay yok"
+msgstr "Kullanılabilir ayrıntı yok"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
@@ -21120,19 +21100,19 @@ msgstr "%1 - %2"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
-msgstr "%1 oynatılabilir olmayabilir."
+msgstr "%1 çalınabilir olmayabilir."
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
-msgstr "Bu dosya oynatılabilir olmayabilir."
+msgstr "Bu dosya çalınabilir olmayabilir."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:32
 #, kde-format
 msgid "Play"
-msgstr "Oynat"
+msgstr "Çal"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
@@ -21167,10 +21147,9 @@ msgstr "Zaman"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:79
-#, fuzzy, kde-format
-#| msgid "elapsed:"
+#, kde-format
 msgid "Elapsed:"
-msgstr "geçen süre:"
+msgstr "Geçen süre:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_elapsedTimeLabel)
 #. i18n: ectx: property (text), widget (QLabel, m_totalTimeLabel)
@@ -21215,7 +21194,7 @@ msgstr "Slaytlar arasında hareket etmek için fare tekerleğini etkinleştirin.
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:66
 #, kde-format
 msgid "Enable mouse &wheel "
-msgstr "Fare &tekerleğiini etkinleştir "
+msgstr "Fare &tekerleğini etkinleştir "
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:76
@@ -21239,7 +21218,7 @@ msgstr "&Ken Burns efekti"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:110
 #, kde-format
 msgid "Disable &fade-in / fade-out"
-msgstr "Açılma / kararmayı &etkisizleştir"
+msgstr "Açılmayı/Kararmayı &devre dışı bırak"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_kbDisableCrossfadeCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:123
@@ -21251,7 +21230,7 @@ msgstr "&Çapraz geçişi devre dışı bırak"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:130
 #, kde-format
 msgid "Use &same speed for visual effects"
-msgstr ""
+msgstr "Görsel efektler için aynı hızı kullan"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.cpp:38
 #, kde-format
@@ -21286,7 +21265,7 @@ msgstr "Çerçeveli Metin"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
 #, kde-format
 msgid "Background opacity:"
-msgstr "Arkaplan belirginliği:"
+msgstr "Arka plan matlığı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
@@ -21299,35 +21278,33 @@ msgstr "Yazıtipi rengi:"
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
 #, kde-format
 msgid "Background color:"
-msgstr "Arkaplan rengi:"
+msgstr "Arka plan rengi:"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
-msgstr[0] "%1 resim [%2]"
-msgstr[1] "%1 resim [%2]"
+msgstr[0] "%1 görsel [%2]"
+msgstr[1] "%1 görsel [%2]"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "%1 image"
 msgid_plural "%1 images"
-msgstr[0] "1 Resim"
-msgstr[1] "%1 Resim"
+msgstr[0] "1 görsel"
+msgstr[1] "%1 görsel"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
 msgstr ""
-"%1 dosyasına erişilemiyor. Lütfen yolun doğru olup olmadığını kontrol edin."
+"%1 dosyasına erişilemiyor. Lütfen yolun doğru olup olmadığını denetleyin."
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
-msgstr "Resim #%1"
+msgstr "Görsel #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:679
@@ -21338,45 +21315,44 @@ msgstr "Ken Burns"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:480
 #, kde-format
 msgid "Delay between images (ms):"
-msgstr "Resimler arasındaki gecikme (ms):"
+msgstr "Görseller arasındaki gecikme (ms):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_delayLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:487
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:210
 #, kde-format
 msgid "Delay between images (s):"
-msgstr "Resimler arasındaki gecikme (s):"
+msgstr "Görseler arasındaki gecikme (sn):"
 
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, m_ImagesFilesGroup)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:17
 #, kde-format
 msgid "Preview the currently selected image."
-msgstr "Şu andaki seçilmiş resmi önizle."
+msgstr "Şu anda seçili olan görseli önizleyin."
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_ImagesFilesGroup)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:20
 #, kde-format
 msgid "Image List"
-msgstr "Resim Listesi"
+msgstr "Görsel Listesi"
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_label6)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:87
 #, kde-format
 msgid "Total number of images in the portfolio and sequence duration."
-msgstr "Portföydeki resimlerim toplam sayısı ve ard arda sıralama süresi."
+msgstr "Portfolyodaki görsellerin toplam sayısı ve dizilim süresi."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_label7)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:106
 #, kde-format
 msgid "Currently selected image in the portfolio list."
-msgstr "Portfolyo listesinde şu andaki seçili resim."
+msgstr "Portfolyo listesinde şu anda seçili olan görsel."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
-#, fuzzy, kde-format
-#| msgid "Content"
+#, kde-format
 msgid "Content Rendering"
-msgstr "İçerik"
+msgstr "İçerik Sunumu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:132
@@ -21398,8 +21374,7 @@ msgstr "İlerleme göstergesi"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
-#, fuzzy, kde-format
-#| msgid "Play"
+#, kde-format
 msgid "Playback"
 msgstr "Oynat"
 
@@ -21407,19 +21382,20 @@ msgstr "Oynat"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:184
 #, kde-format
 msgid "&Shuffle images"
-msgstr "Resimleri &karıştır"
+msgstr "Görselleri &karıştır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_offAutoDelayCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:191
 #, kde-format
 msgid "&Off Auto Delay"
-msgstr ""
+msgstr "Kendiliğinden Gecikme &Kapalı"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_offAutoDelayCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:194
 #, kde-format
 msgid "this option requires user action to switch between images"
 msgstr ""
+"bu seçenek, görseller arasında geçiş yapmak için kullanıcı eylemi gerektirir"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:203
@@ -21434,9 +21410,7 @@ msgid "Use Open&GL transitions"
 msgstr "Open&GL geçişleri kullan"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Sunum"
@@ -21448,8 +21422,7 @@ msgid "Start"
 msgstr "Başlat"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Presentation"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
 msgstr "Sunumu Başlat"
@@ -21464,18 +21437,16 @@ msgstr "Ana Ayarlar"
 #, kde-format
 msgctxt "@title: caption settings for the presentation"
 msgid "Caption"
-msgstr "Başlık"
+msgstr "Alt Yazı"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:106
 #, kde-format
 msgctxt "@title: soundtrack settings for the presentation"
 msgid "Soundtrack"
-msgstr "Film müziği"
+msgstr "Fon Müziği"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@title: avanced presentation settings"
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title: advanced presentation settings"
 msgid "Advanced"
 msgstr "Gelişmiş"
@@ -21485,13 +21456,13 @@ msgstr "Gelişmiş"
 #, kde-format
 msgctxt "Filter Effect: No effect"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:568
 #, kde-format
 msgctxt "Filter Effect: Bend"
 msgid "Bend"
-msgstr "Bükme"
+msgstr "Bük"
 
 #: core/dplugins/generic/view/presentation/opengl/presentationgl.cpp:569
 #, kde-format
@@ -21553,7 +21524,7 @@ msgstr "Slayt Gösterisi Tamamlandı"
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:869
 #, kde-format
 msgid "Click to Exit..."
-msgstr "Çıkmak için Tıklayın..."
+msgstr "Çıkmak için tıkla..."
 
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:631
 #, kde-format
@@ -21563,7 +21534,7 @@ msgstr "Slayt Gösterisi Tamamlandı"
 #: core/dplugins/generic/view/presentation/presentationmngr.cpp:103
 #, kde-format
 msgid "There are no images to show."
-msgstr "Gösterilecek bir resim yok."
+msgstr "Gösterilecek bir görsel yok."
 
 #: core/dplugins/generic/view/presentation/presentationmngr.cpp:162
 #, kde-format
@@ -21577,11 +21548,10 @@ msgid "Presentation"
 msgstr "Sunum"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid "Starting to generate gallery..."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
-msgstr "Galeri oluşturmaya başlanıyor..."
+msgstr "Sunumu oluşturmak içir bir araç"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
 #, kde-format
@@ -41991,14 +41961,14 @@ msgid "Default from Desktop"
 msgstr "Masaüstünden öntanımlı"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:239
+#: core/libs/video/player/qt6/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Durdur/Oynat"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:241
+#: core/libs/video/player/qt6/mediaplayerview.cpp:226
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -42007,14 +41977,14 @@ msgid "Capture"
 msgstr "Yakala"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:251
+#: core/libs/video/player/qt6/mediaplayerview.cpp:236
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:288
+#: core/libs/video/player/qt6/mediaplayerview.cpp:273
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
