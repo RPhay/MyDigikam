@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 00:40+0000\n"
-"PO-Revision-Date: 2023-07-04 23:11+0200\n"
+"POT-Creation-Date: 2023-09-29 00:40+0000\n"
+"PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
@@ -1525,6 +1525,8 @@ msgid ""
 "You have chosen a bright color scheme. We switch to a dark icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
+"Vybrali ste si svetlú farebnú schému. Prepneme na tmavú tému pre ikony. Téma "
+"pre ikony je k dispozícii po reštarte programu digiKam."
 
 #: core/app/main/digikamapp_config.cpp:111
 #: core/showfoto/main/showfoto_config.cpp:191
@@ -1533,17 +1535,17 @@ msgid ""
 "You have chosen a dark color scheme. We switch to a bright icon theme. The "
 "icon theme is available after a restart of digiKam."
 msgstr ""
+"Vybrali ste si tmavú farebnú schému. Prepneme na svetlú tému pre ikony. Téma "
+"pre ikony je k dispozícii po reštarte programu digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Vyberte priečinok, ktorý sa má spracovať"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Zvoľte priečinky, ktoré sa naimportujú do albumu"
@@ -2809,7 +2811,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:235
+#: core/libs/video/player/qt6/mediaplayerview.cpp:220
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2817,7 +2819,7 @@ msgstr "Späť"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:237
+#: core/libs/video/player/qt6/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -10840,8 +10842,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Skenovať obrázok"
@@ -18488,26 +18489,25 @@ msgid "Specify OCR engine mode."
 msgstr "Iba zoznam štítkov"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
-#, fuzzy, kde-format
-#| msgid "Resolution:"
+#, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
-msgstr "Rozlíšenie:"
+msgstr "Rozlíšenie DPI:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
-msgstr ""
+msgstr "Zadajte DPI pre vstupný obrázok."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr ""
+msgstr "Uložiť výsledok do: "
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Text file"
 msgstr "Textový filter"
@@ -21974,8 +21974,7 @@ msgstr "Exportovať do Boxu"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "Spustiť odosielanie"
@@ -22056,8 +22055,7 @@ msgstr "Pokračovať"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Zrušiť"
@@ -23645,8 +23643,7 @@ msgstr "Exportovať do ImageShacku"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "Odoslať"
@@ -28630,15 +28627,16 @@ msgid ""
 "file system such as NFS, cannot be used here. For performance reasons, it is "
 "also recommended not to use network storage media.</p><p></p>"
 msgstr ""
-"<p>Vyberte umiestnenie, kde budú uložené databázové súbory. Budú to celkom "
-"tri databázy: jedna pre uloženie všetkých vlastností kolekcií, jedna pre "
-"uloženie komprimovaných náhľadov a jedna pre uloženie metadát rozpoznávania "
-"tvárí.<br/>Aby bolo možné upravovať vlastnosti obrázkov, vyžadujú sa práva "
-"pre zápis.</p><p>Databázy sú najdôležitejšie súbory digiKamu. Vyberte "
-"umiestnenie na rýchlom disku (napríklad SSD) s dostatkom miesta - "
+"<p>Tu vyberte umiestnenie, v ktorom  budú uložené súbory databázy. Budú to "
+"celkom štyri databázy. Jedna pre uloženie všetkých vlastností kolekcií, "
+"jedna pre uloženie komprimovaných náhľadov, jedna pre uloženie metadát "
+"rozpoznávania tvárí a jedna pre uloženie odtlačkov podobností.<br/>Aby bolo "
+"možné upravovať vlastnosti obrázkov, vyžadujú sa práva pre zápis.</"
+"p><p>Databázy sú najdôležitejšie súbory digiKamu. Vyberte umiestnenie na "
+"rýchlom disku (napríklad SSD alebo NVMe) s dostatkom voľného miesta - "
 "predovšetkým pre databázu náhľadov.</p><p>Poznámka: Nie je možné použiť "
 "vzdialený systém súborov (napríklad NFS). Zároveň z dôvodu nízkeho výkonu sa "
-"neodporúča použiť prenosné nosiče dát.</p><p></p>"
+"neodporúča použiť sieťové nosiče dát.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, fuzzy, kde-format
@@ -36437,8 +36435,7 @@ msgid "Zulu"
 msgstr "Zuluština"
 
 #: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:52
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@title: xmp namespace for tags container"
 msgid "Tags"
 msgstr "Štítky"
@@ -36510,12 +36507,10 @@ msgid "In Focus"
 msgstr ""
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@action: select tags menu"
-#| msgid "Select"
+#, kde-format
 msgctxt "Focus point type description"
 msgid "Selected"
-msgstr "Vybrať"
+msgstr "Vybrané"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:129
 #, fuzzy, kde-format
@@ -37197,8 +37192,7 @@ msgid "Apply to all versions"
 msgstr "Použiť na všetky verzie"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
-#, fuzzy, kde-format
-#| msgid "Apply all changes to all versions of this image"
+#, kde-format
 msgctxt "@info"
 msgid "Apply all changes to all versions of this image"
 msgstr "Použiť všetky zmeny na všetky verzie tohto obrázka"
@@ -37210,8 +37204,7 @@ msgid "More"
 msgstr "Viac"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:101
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Description"
 msgstr "Popis"
@@ -39071,15 +39064,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/settings/applicationsettings_miscs.cpp:464
-#, fuzzy, kde-format
-#| msgid "Add to Light Table"
+#, kde-format
 msgid "Adding items to the Light Table"
-msgstr "Pridať na Svetelnú tabuľu"
+msgstr "Pridávam položky na Svetelnú tabuľu"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:467
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Do Správcu dávkového spracovania sa pridávajú položky"
+msgstr "Do Správcu dávkového spracovania pridávam položky"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:470
 #, kde-format
@@ -39089,7 +39081,7 @@ msgstr "Otváram položky v Premietaní"
 #: core/libs/settings/applicationsettings_miscs.cpp:473
 #, fuzzy, kde-format
 msgid "Renaming items"
-msgstr "Obrázky EXR"
+msgstr "Premenovávam položky"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:476
 #, kde-format
@@ -41379,27 +41371,27 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:239
+#: core/libs/video/player/qt6/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pozastaviť/Prehrať"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:241
+#: core/libs/video/player/qt6/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Zachytiť"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:251
+#: core/libs/video/player/qt6/mediaplayerview.cpp:236
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Vyskytla se chyba s prehrávačom médií..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:288
+#: core/libs/video/player/qt6/mediaplayerview.cpp:273
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Prehrávanie v slučke"
@@ -43799,8 +43791,7 @@ msgid "Write"
 msgstr "Na zápis: "
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:103
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title: column"
 msgid "Description"
 msgstr "Popis"
@@ -50333,30 +50324,27 @@ msgid "&Title:"
 msgstr "&Názov:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
-msgstr "Zadajte meno štítku..."
+msgstr "Sem zadajte meno záložky..."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
-msgstr ""
+msgstr "Meno záložky musí byť jedinečné a nesmie byť prázdne"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:132
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
-#, fuzzy, kde-format
-#| msgid "&Icon:"
+#, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Ikona:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:140
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Nastaviť na pôvodné"
@@ -53840,7 +53828,7 @@ msgstr "Štítky, ale nie albumy"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Older or Larger"
-msgstr ""
+msgstr "Staršie alebo väčšie"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:215
 #, kde-format
@@ -58226,14 +58214,12 @@ msgid "Open the item with default assigned application."
 msgstr "Otvorí položku v predvolenom programe."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
-#, fuzzy, kde-format
-#| msgid "Remove item from LightTable"
+#, kde-format
 msgid "Remove item from Light Table"
 msgstr "Odstrániť položku zo Svetelnej tabule"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove all items from LightTable"
+#, kde-format
 msgid "Remove all items from Light Table"
 msgstr "Odstrániť všetky položky zo Svetelnej tabule"
 
@@ -63767,8 +63753,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/setup.cpp:169
-#, fuzzy, kde-format
-#| msgid "Database"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Databáza"
@@ -63783,8 +63768,7 @@ msgid ""
 msgstr "<qt>Nastavenia databázy<br/><i>Upraviť nastavenie databázy</i></qt>"
 
 #: core/utilities/setup/setup.cpp:174
-#, fuzzy, kde-format
-#| msgid "Collections"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Kolekcie"
@@ -63817,8 +63801,7 @@ msgstr ""
 "<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
 
 #: core/utilities/setup/setup.cpp:184
-#, fuzzy, kde-format
-#| msgid "Tool-Tip"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Bublinový pomocník"
@@ -63834,9 +63817,7 @@ msgstr ""
 "v bublinách</i></qt>"
 
 #: core/utilities/setup/setup.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@item: xmp namespace"
-#| msgid "Video"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
@@ -63872,8 +63853,7 @@ msgstr ""
 "obrázkami a metadátami</i></qt>"
 
 #: core/utilities/setup/setup.cpp:203
-#, fuzzy, kde-format
-#| msgid "Templates"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Šablóny"
@@ -63887,8 +63867,7 @@ msgid ""
 msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
 
 #: core/utilities/setup/setup.cpp:208
-#, fuzzy, kde-format
-#| msgid "Image Editor"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor obrázkov"
@@ -63904,8 +63883,7 @@ msgstr ""
 "nastavenie dekódovania RAW</i></qt>"
 
 #: core/utilities/setup/setup.cpp:213
-#, fuzzy, kde-format
-#| msgid "Color Management"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Správa farieb"
@@ -63941,8 +63919,7 @@ msgstr ""
 "porovnávanie fotografií</i></qt>"
 
 #: core/utilities/setup/setup.cpp:223
-#, fuzzy, kde-format
-#| msgid "Image Quality Sorter"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Triedenie kvality obrázkov"
@@ -63958,8 +63935,7 @@ msgstr ""
 "nastavenie dekódovania RAW</i></qt>"
 
 #: core/utilities/setup/setup.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cameras"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Fotoaparáty"
@@ -63974,8 +63950,7 @@ msgid ""
 msgstr "<qt>Nastavenia fotoaparátu<br/><i>Správa vašich fotoaparátov</i></qt>"
 
 #: core/utilities/setup/setup.cpp:236
-#, fuzzy, kde-format
-#| msgid "Plugins"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginy"
@@ -63990,9 +63965,7 @@ msgstr ""
 "<qt>Nastavenie prezentácie<br/><i>Prispôsobiť nastavenie prezentácie</i></qt>"
 
 #: core/utilities/setup/setup.cpp:241
-#, fuzzy, kde-format
-#| msgctxt "@item: album categories"
-#| msgid "Miscellaneous"
+#, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Rôzne"
