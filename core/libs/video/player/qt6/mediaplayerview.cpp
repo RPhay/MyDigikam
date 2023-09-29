@@ -327,11 +327,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->slider, SIGNAL(sliderMoved(int)),
             this, SLOT(slotPosition(int)));
 
-    connect(d->slider, SIGNAL(sliderPressed()),
-            this, SLOT(slotSliderPressed()));
-
-    connect(d->slider, SIGNAL(sliderReleased()),
-            this, SLOT(slotSliderReleased()));
+    connect(d->slider, SIGNAL(valueChanged(int)),
+            this, SLOT(slotPosition(int)));
 
     connect(d->volume, SIGNAL(valueChanged(int)),
             this, SLOT(slotVolumeChanged(int)));
@@ -460,19 +457,28 @@ void MediaPlayerView::slotRotateVideo()
         switch (d->videoOrientation)
         {
             case 0:
+            {
                 orientation = 90;
                 break;
+            }
 
             case 90:
+            {
                 orientation = 180;
                 break;
+            }
 
             case 180:
+            {
                 orientation = 270;
                 break;
+            }
 
             default:
+            {
                 orientation = 0;
+                break;
+            }
         }
 
         d->setVideoItemOrientation(orientation);
@@ -637,20 +643,28 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
             d->videoOrientation = 90;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_180:
+        {
             d->videoOrientation = 180;
             break;
+        }
 
         case MetaEngine::ORIENTATION_ROT_270:
+        {
             d->videoOrientation = 270;
             break;
+        }
 
         default:
+        {
             d->videoOrientation = 0;
             break;
+        }
     }
 
     d->player->setSource(d->currentItem);
@@ -725,25 +739,6 @@ void MediaPlayerView::slotPosition(int position)
     }
 }
 
-void MediaPlayerView::slotSliderPressed()
-{
-    if (
-        (d->player->playbackState() == QMediaPlayer::PlayingState) ||
-        (d->player->mediaStatus()   == QMediaPlayer::EndOfMedia)
-       )
-    {
-        d->player->pause();
-    }
-}
-
-void MediaPlayerView::slotSliderReleased()
-{
-    if (d->player->mediaStatus() != QMediaPlayer::EndOfMedia)
-    {
-        d->player->play();
-    }
-}
-
 void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const QString& errStr)
 {
     setPreviewMode(Private::ErrorView);
@@ -762,7 +757,6 @@ void MediaPlayerView::showEvent(QShowEvent* e)
     QStackedWidget::showEvent(e);
     d->adjustVideoSize();
 }
-
 
 }  // namespace Digikam
 

@@ -440,6 +440,7 @@ void MediaPlayerView::slotRotateVideo()
             default:
             {
                 orientation = 0;
+                break;
             }
         }
 

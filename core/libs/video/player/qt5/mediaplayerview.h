@@ -69,9 +69,6 @@ private Q_SLOTS:
     void slotHandlePlayerError(const QtAV::AVError& err);
     void slotThemeChanged();
 
-    void slotImageCaptured(const QImage& image);
-    void slotPlayerConfigChanged();
-
     /// Slidebar slots
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
@@ -80,6 +77,9 @@ private Q_SLOTS:
     void slotPosition(int position);
     void slotPausePlay();
     void slotCapture();
+
+    void slotImageCaptured(const QImage& image);
+    void slotPlayerConfigChanged();
 
 private:
 

@@ -74,9 +74,6 @@ private Q_SLOTS:
     void slotPausePlay();
     void slotCapture();
 
-    void slotSliderPressed();
-    void slotSliderReleased();
-
 private:
 
     int  previewMode();
