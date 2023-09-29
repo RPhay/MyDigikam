@@ -168,6 +168,7 @@ public:
     QGraphicsView*       videoView          = nullptr;
     QGraphicsVideoItem*  videoWidget        = nullptr;
     QMediaPlayer*        player             = nullptr;
+    QAudioOutput*        audio              = nullptr;
 
     QSlider*             slider             = nullptr;
     QSlider*             volume             = nullptr;
@@ -183,6 +184,7 @@ public:
     {
         videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
         videoView->centerOn(videoWidget);
+        videoView->raise();
     };
 
     int videoMediaOrientation() const
@@ -257,6 +259,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
+    d->audio       = new QAudioOutput;
+    d->player->setAudioOutput(d->audio);
     d->player->setVideoOutput(d->videoWidget);
     d->videoScene->addItem(d->videoWidget);
 
@@ -700,7 +704,7 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
 
 void MediaPlayerView::slotVolumeChanged(int volume)
 {
-    d->player->audioOutput()->setVolume(volume / 100.0F);
+    d->audio->setVolume(volume / 100.0F);
 
     if (objectName() != QLatin1String("main_media_player"))
     {

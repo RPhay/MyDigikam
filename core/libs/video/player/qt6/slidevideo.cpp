@@ -82,6 +82,7 @@ public:
     QGraphicsView*       videoView        = nullptr;
     QGraphicsVideoItem*  videoWidget      = nullptr;
     QMediaPlayer*        player           = nullptr;
+    QAudioOutput*        audio            = nullptr;
 
     QSlider*             slider           = nullptr;
     QSlider*             volume           = nullptr;
@@ -135,6 +136,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
+    d->audio       = new QAudioOutput;
+    d->player->setAudioOutput(d->audio);
     d->player->setVideoOutput(d->videoWidget);
     d->videoScene->addItem(d->videoWidget);
 
@@ -356,7 +359,7 @@ void SlideVideo::slotPositionChanged(qint64 position)
 
 void SlideVideo::slotVolumeChanged(int volume)
 {
-    d->player->audioOutput()->setVolume(volume / 100.0F);
+    d->audio->setVolume(volume / 100.0F);
 }
 
 void SlideVideo::slotDurationChanged(qint64 duration)
