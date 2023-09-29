@@ -196,6 +196,12 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
+
+    // --------------------------------------------------------------------------
+
+    layout()->activate();
+    resize(sizeHint());
+    show();
 }
 
 SlideVideo::~SlideVideo()
