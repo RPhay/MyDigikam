@@ -218,6 +218,7 @@ void SlideVideo::setInfoInterface(DInfoInterface* const iface)
 void SlideVideo::setCurrentUrl(const QUrl& url)
 {
     d->player->stop();
+    d->videoView->resetTransform();
 
     int orientation = 0;
 
