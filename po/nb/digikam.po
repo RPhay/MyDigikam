@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 00:43+0000\n"
+"POT-Creation-Date: 2023-09-29 00:40+0000\n"
 "PO-Revision-Date: 2022-05-29 19:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -2726,14 +2726,16 @@ msgid ""
 msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
-#: core/libs/video/player/mediaplayerview.cpp:212
+#: core/libs/video/player/qt5/mediaplayerview.cpp:193
+#: core/libs/video/player/qt6/mediaplayerview.cpp:220
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Tilbake"
 
 #: core/app/views/preview/itempreviewview.cpp:188
-#: core/libs/video/player/mediaplayerview.cpp:214
+#: core/libs/video/player/qt5/mediaplayerview.cpp:195
+#: core/libs/video/player/qt6/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -2872,7 +2874,7 @@ msgstr ""
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:609
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
 #: core/utilities/searchwindow/searchfields_createfield.cpp:82
 #: core/utilities/searchwindow/searchfields_createfield.cpp:95
@@ -3713,7 +3715,7 @@ msgstr "Filegenskaper"
 #: core/app/views/tableview/tableview_column_file.cpp:55
 #: core/app/views/tableview/tableview_column_file.cpp:80
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:44
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:587
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:598
 #, kde-format
 msgid "Filename"
 msgstr "Filnavn"
@@ -3777,7 +3779,7 @@ msgstr "Koordinater"
 #: core/app/views/tableview/tableview_column_geo.cpp:90
 #: core/app/views/tableview/tableview_column_geo.cpp:111
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:591
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:602
 #, kde-format
 msgid "Altitude"
 msgstr "Høyde"
@@ -4030,7 +4032,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
 #: core/libs/dtrash/dtrashitemmodel.cpp:264
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:586
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
 #, kde-format
 msgid "Thumbnail"
 msgstr "Miniatyrbilde"
@@ -10506,104 +10508,104 @@ msgstr ""
 msgid "Cannot save \"%1\" file"
 msgstr "Kan ikke lagre fila «%1»"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:317
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:356
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:363
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:367
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:407
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:618
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:619
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:809
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:810
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -10611,25 +10613,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:816
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:817
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:818
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:933
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:934
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:992
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10673,44 +10675,44 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Feil"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:993
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:994
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1024
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1025
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:589
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:600
 #, fuzzy, kde-format
 msgid "Latitude"
 msgstr "Bredde"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:128
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:601
 #, fuzzy, kde-format
 msgid "Longitude"
 msgstr "Lengde"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:136
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:596
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:607
 #, fuzzy, kde-format
 msgid "Speed"
 msgstr "Hastighet"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:142
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:595
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:606
 #, kde-format
 msgid "# satellites"
 msgstr "antall satellitter"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:148
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:605
 #, kde-format
 msgid "Fix type"
 msgstr "Punkttype"
@@ -10726,7 +10728,7 @@ msgid "3-d"
 msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:593
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:604
 #, kde-format
 msgid "DOP"
 msgstr "DOP"
@@ -14940,7 +14942,7 @@ msgstr "Tidsstempel oppdatert"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:40
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:40
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:93
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:597
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:608
 #, kde-format
 msgid "Status"
 msgstr "Status"
@@ -17316,111 +17318,111 @@ msgctxt "@action"
 msgid "Share as MJPEG Stream..."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:48
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:51
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:64
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:54
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:55
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:61
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Raw line. Treat the image as a single text line,bypassing hacks that are "
+"Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:72
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:73
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
+#: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
@@ -18623,7 +18625,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:203
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:947
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:963
 #, kde-format
 msgid "cm"
 msgstr "cm"
@@ -18636,7 +18638,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_photoUnits)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:213
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:942
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:958
 #, kde-format
 msgid "inches"
 msgstr "tommer"
@@ -18914,41 +18916,41 @@ msgstr ""
 msgid "Open in File Browser"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:63
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:69
 #, kde-format
 msgctxt "@info layout page"
 msgid "Custom"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:127
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:503
 #, kde-format
 msgid "Add again"
 msgstr "Legg til igjen"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:506
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "&Fjern"
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1117
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1118
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1318
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1343
 #, kde-format
 msgid ""
 "Custom\n"
@@ -20580,13 +20582,13 @@ msgctxt "Filter Effect: Blobs"
 msgid "Blobs"
 msgstr "Bobler"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:124
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:681
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -30702,85 +30704,85 @@ msgstr "(fant delvis treff)"
 msgid "(exact match found)"
 msgstr "(fant nøyaktig treff)"
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:109
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:115
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:386
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:397
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Camera: %1-%2"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:388
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Lens: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:390
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Subject Distance: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:392
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:403
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Aperture: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:394
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Focal Length: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:396
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "Crop Factor: <numid>%1</numid>"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info: correction status"
 msgid "enabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:398
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:409
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "CCA Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:399
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:402
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:405
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:408
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:410
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:413
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:416
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:419
 #, kde-format
 msgctxt "@info: correction status"
 msgid "disabled"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:401
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:412
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "VIG Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:404
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "DST Correction: %1"
 msgstr ""
 
-#: core/libs/dimg/filters/lens/lensfunfilter.cpp:407
+#: core/libs/dimg/filters/lens/lensfunfilter.cpp:418
 #, kde-format
 msgctxt "@info; XMP settings"
 msgid "GEO Correction: %1"
@@ -34475,37 +34477,37 @@ msgctxt "@info: country code"
 msgid "Zulu"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:47
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:52
 #, kde-format
 msgctxt "@title: xmp namespace for tags container"
 msgid "Tags"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:51
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:56
 #, kde-format
 msgctxt "@title: xmp namespace for title container"
 msgid "Title"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:55
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:60
 #, kde-format
 msgctxt "@title: xmp namespace for rating container"
 msgid "Rating"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:59
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:64
 #, kde-format
 msgctxt "@title: xmp namespace for comment container"
 msgid "Caption"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:63
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:68
 #, kde-format
 msgctxt "@title: xmp namespace for pick-label container"
 msgid "Pick label"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:67
+#: core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp:72
 #, kde-format
 msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
@@ -38605,6 +38607,31 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr ""
 
+#: core/libs/video/manager/qt5/vidslidetask.cpp:278
+#, kde-format
+msgid "Failed to open video encoder"
+msgstr ""
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:294
+#, kde-format
+msgid "Failed to open audio encoder"
+msgstr ""
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:324
+#, kde-format
+msgid "Failed to open muxer"
+msgstr ""
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:410
+#, kde-format
+msgid "Encoding %1 Done"
+msgstr ""
+
+#: core/libs/video/manager/qt5/vidslidetask.cpp:445
+#, kde-format
+msgid "Output video is %1"
+msgstr ""
+
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: QVGA"
@@ -39085,49 +39112,28 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/manager/vidslidetask.cpp:278
-#, kde-format
-msgid "Failed to open video encoder"
-msgstr ""
-
-#: core/libs/video/manager/vidslidetask.cpp:294
-#, kde-format
-msgid "Failed to open audio encoder"
-msgstr ""
-
-#: core/libs/video/manager/vidslidetask.cpp:324
-#, kde-format
-msgid "Failed to open muxer"
-msgstr ""
-
-#: core/libs/video/manager/vidslidetask.cpp:410
-#, kde-format
-msgid "Encoding %1 Done"
-msgstr ""
-
-#: core/libs/video/manager/vidslidetask.cpp:445
-#, kde-format
-msgid "Output video is %1"
-msgstr ""
-
-#: core/libs/video/player/mediaplayerview.cpp:216
+#: core/libs/video/player/qt5/mediaplayerview.cpp:197
+#: core/libs/video/player/qt6/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/mediaplayerview.cpp:218
+#: core/libs/video/player/qt5/mediaplayerview.cpp:199
+#: core/libs/video/player/qt6/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr ""
 
-#: core/libs/video/player/mediaplayerview.cpp:221
+#: core/libs/video/player/qt5/mediaplayerview.cpp:202
+#: core/libs/video/player/qt6/mediaplayerview.cpp:236
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
-#: core/libs/video/player/mediaplayerview.cpp:248
+#: core/libs/video/player/qt5/mediaplayerview.cpp:229
+#: core/libs/video/player/qt6/mediaplayerview.cpp:273
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -41287,27 +41293,27 @@ msgctxt "default theme name"
 msgid "Default"
 msgstr "Standard"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:218
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:225
 #, kde-format
 msgid "EXIF viewer"
 msgstr "Visningsprogram for EXIF"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:222
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:229
 #, kde-format
 msgid "Makernotes viewer"
 msgstr "Produsentens notat"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:226
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:233
 #, kde-format
 msgid "IPTC viewer"
 msgstr "Visningsprogram for IPTC"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:230
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:237
 #, kde-format
 msgid "XMP viewer"
 msgstr "Visningsprogram for XMP"
 
-#: core/libs/widgets/metadata/config/metadatapanel.cpp:234
+#: core/libs/widgets/metadata/config/metadatapanel.cpp:241
 #, kde-format
 msgid "ExifTool viewer"
 msgstr ""
@@ -49307,7 +49313,7 @@ msgid "Tilt"
 msgstr "Vipp"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:61
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:592
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:603
 #, kde-format
 msgid "Accuracy"
 msgstr "Nøyaktighet"
@@ -51081,64 +51087,64 @@ msgctxt "@title: track list header"
 msgid "#points"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:403
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:414
 #, kde-format
 msgid "Not available"
 msgstr "Ikke tilgjengelig"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:442
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:453
 #, kde-format
 msgid "DOP: %1"
 msgstr "DOP: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:447
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:458
 #, kde-format
 msgid "Fix: %1d"
 msgstr "Fix: %1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:452
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:463
 #, kde-format
 msgid "#Sat: %1"
 msgstr "Ant. Sat: %1"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:495
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:506
 #, kde-format
 msgid "%1d"
 msgstr "%1d"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:519
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:530
 #, kde-format
 msgid "Modified"
 msgstr "Endret"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:588
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #, kde-format
 msgid "Date and time"
 msgstr "Dato og tid"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:832
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
 #, kde-format
 msgid "Failed to open file."
 msgstr "Klarte ikke åpne fil."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:904
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to add GPS info to image."
 msgstr "Klarte ikke å legge til GPS-informasjon til bildet."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:916
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
 #, kde-format
 msgid "Failed to remove GPS info from image"
 msgstr "Klarte ikke å fjerne GPS-informasjon fra bildet"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:959
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:983
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Klarte ikke å lagre tagger til fil."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:995
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Klarte ikke å lagre endringer til fil"

@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-29 00:40+0000\n"
+"POT-Creation-Date: 2023-09-30 00:40+0000\n"
 "PO-Revision-Date: 2023-09-26 12:11+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2834,7 +2834,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:220
+#: core/libs/video/player/qt6/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2842,7 +2842,7 @@ msgstr "Terug"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:222
+#: core/libs/video/player/qt6/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41384,27 +41384,27 @@ msgid "Default from Desktop"
 msgstr "Standaard uit bureaublad"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:224
+#: core/libs/video/player/qt6/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Pauzeren/afspelen"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:226
+#: core/libs/video/player/qt6/mediaplayerview.cpp:228
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Opname"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:236
+#: core/libs/video/player/qt6/mediaplayerview.cpp:238
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Er deed zich een fout voor met de mediaspeler..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:273
+#: core/libs/video/player/qt6/mediaplayerview.cpp:277
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Afspelen in een loop omschakelen"

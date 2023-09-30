@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-29 00:40+0000\n"
+"POT-Creation-Date: 2023-09-30 00:40+0000\n"
 "PO-Revision-Date: 2023-09-29 01:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2809,7 +2809,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:220
+#: core/libs/video/player/qt6/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2817,7 +2817,7 @@ msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:222
+#: core/libs/video/player/qt6/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41961,14 +41961,14 @@ msgid "Default from Desktop"
 msgstr "Masaüstünden öntanımlı"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:224
+#: core/libs/video/player/qt6/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Durdur/Oynat"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:226
+#: core/libs/video/player/qt6/mediaplayerview.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -41977,14 +41977,14 @@ msgid "Capture"
 msgstr "Yakala"
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:236
+#: core/libs/video/player/qt6/mediaplayerview.cpp:238
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu..."
 
 #: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:273
+#: core/libs/video/player/qt6/mediaplayerview.cpp:277
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
