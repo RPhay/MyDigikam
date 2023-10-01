@@ -2772,7 +2772,7 @@ msgstr " (%1)"
 #: core/app/main/digikamapp_solid.cpp:636
 #, kde-format
 msgid "Cannot access the storage device.\n"
-msgstr "Non se pode acceder ao dispositivo de almacenaxe.\n"
+msgstr "Non é posíbel acceder ao dispositivo de almacenaxe.\n"
 
 #: core/app/main/digikamapp_solid.cpp:667
 #, kde-format
@@ -3387,7 +3387,7 @@ msgstr "Filtros"
 #: core/app/views/stack/itemiconview_albums.cpp:318
 #, kde-format
 msgid "Cannot open the root album. It is not a physical location."
-msgstr "Non se pode abrir o álbum raíz. Non é un lugar físico."
+msgstr "Non é posíbel abrir o álbum raíz. Non é un lugar físico."
 
 #: core/app/views/stack/itemiconview_items.cpp:638
 #, kde-format
@@ -6332,8 +6332,8 @@ msgstr ""
 #, kde-format
 msgid "Cannot find all lens information to process lens auto-corrections"
 msgstr ""
-"Non se pode atopar toda a información da lente para procesar as correccións "
-"automáticas das lentes"
+"Non é posíbel atopar toda a información da lente para procesar as "
+"correccións automáticas das lentes"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:46
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:44
@@ -7244,7 +7244,7 @@ msgstr "Ampliar as imaxes máis pequenas"
 #: core/dplugins/bqm/transform/resize/resize.cpp:160
 #, kde-format
 msgid "Use Custom Length"
-msgstr "Utilizar unha lonxitude personalizada"
+msgstr "Usar unha lonxitude personalizada"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:161
 #, kde-format
@@ -8497,7 +8497,7 @@ msgstr "Escolla o ficheiro de niveis do Gimp que cargar"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
-msgstr "Non se poden cargar os niveis desde o ficheiro de niveis do Gimp."
+msgstr "Non é posíbel cargar os niveis desde o ficheiro de niveis do Gimp."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
 #, fuzzy, kde-format
@@ -8509,7 +8509,7 @@ msgstr "Ficheiro de niveis do Gimp que gardar"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
-msgstr "Non se pode gardar no ficheiro de niveis do Gimp."
+msgstr "Non é posíbel gardar no ficheiro de niveis do Gimp."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:44
 #, fuzzy, kde-format
@@ -9781,7 +9781,7 @@ msgstr "«%1» non é un ficheiro de configuración da restauración de fotograf
 #, kde-format
 msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr ""
-"Non se poden configurar as opcións co ficheiro de restauración das "
+"Non é posíbel configurar as opcións co ficheiro de restauración das "
 "fotografías."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
@@ -9795,7 +9795,7 @@ msgstr "Ficheiro de configuración da restauración de fotografías que gardar"
 #, kde-format
 msgid "Cannot save settings to the Photograph Restoration text file."
 msgstr ""
-"Non se poden gardar as opcións no ficheiro de texto de restauración das "
+"Non é posíbel gardar as opcións no ficheiro de texto de restauración das "
 "fotografías."
 
 #: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:59
@@ -10183,7 +10183,7 @@ msgstr "Tamaño do lapis:"
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:95
 #, kde-format
 msgid "Set here the charcoal pencil size used to simulate the drawing."
-msgstr "Escolla aquí o tamaño do carbón utilizado para simular o debuxo."
+msgstr "Escolla aquí o tamaño do carbón usado para simular o debuxo."
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:99
 #, kde-format
@@ -10560,8 +10560,7 @@ msgstr "Tamaño do pincel:"
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:92
 #, kde-format
 msgid "Set here the brush size to use for simulating the oil painting."
-msgstr ""
-"Escolla aquí o tamaño do pincel utilizado para simular a pintura ao óleo."
+msgstr "Escolla aquí o tamaño do pincel usado para simular a pintura ao óleo."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:96
 #, kde-format
@@ -11904,7 +11903,7 @@ msgstr "«%1» non é un ficheiro de configuración do cambio de tamaño da foto
 #: core/dplugins/editor/transform/resize/resizetool.cpp:943
 #, kde-format
 msgid "Cannot load settings from the Photograph Resizing text file."
-msgstr "Non se pode cargar a configuración do ficheiro de cambio de tamaño."
+msgstr "Non é posíbel cargar a configuración do ficheiro de cambio de tamaño."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
 #, fuzzy, kde-format
@@ -11916,7 +11915,7 @@ msgstr "Ficheiro de configuración do cambio de tamaño que gardar"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
 msgid "Cannot save settings to the Photograph Resizing text file."
-msgstr "Non se pode gardar a configuración no ficheiro de cambio de tamaño."
+msgstr "Non é posíbel gardar a configuración no ficheiro de cambio de tamaño."
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:44
 #, fuzzy, kde-format
@@ -12146,7 +12145,7 @@ msgid ""
 "\"%1\" to\n"
 "\"%2\"."
 msgstr ""
-"Non se puido gardar o ficheiro\n"
+"Non foi posíbel gardar o ficheiro\n"
 "«%1» en\n"
 "«%2»."
 
@@ -12180,7 +12179,7 @@ msgstr "Ficheiro non gardado"
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, kde-format
 msgid "Cannot save \"%1\" file"
-msgstr "Non se pode gardar o ficheiro «%1»"
+msgstr "Non é posíbel gardar o ficheiro «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
@@ -12497,7 +12496,7 @@ msgstr "Editar a localización xeográfica…"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:116
 #, kde-format
 msgid "Could not read image '%1'"
-msgstr "Non se puido ler a imaxe «%1»"
+msgstr "Non foi posíbel ler a imaxe «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:155
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:124
@@ -12515,7 +12514,7 @@ msgstr "Produciuse un erro ao cargar a imaxe «%1»"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:185
 #, kde-format
 msgid "Could not save image '%1' to '%2'"
-msgstr "Non se puido gardar a imaxe «%1» en «%2»"
+msgstr "Non foi posíbel gardar a imaxe «%1» en «%2»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:220
 #, kde-format
@@ -12530,7 +12529,7 @@ msgstr "Creación da marca de lugar «%1»"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:331
 #, kde-format
 msgid "Could not save icon for image '%1' to '%2'"
-msgstr "Non se puido gardar a icona da imaxe «%1» en «%2»"
+msgstr "Non foi posíbel gardar a icona da imaxe «%1» en «%2»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:335
 #, kde-format
@@ -12545,7 +12544,7 @@ msgstr "Non se escolleu ningún ficheiro GPX."
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:371
 #, kde-format
 msgid "Cannot parse %1 GPX file."
-msgstr "Non se pode interpretar o ficheiro GPX %1."
+msgstr "Non é posíbel interpretar o ficheiro GPX %1."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:377
 #, kde-format
@@ -12565,7 +12564,7 @@ msgstr "Non hai datos da posición para «%1»"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:504
 #, kde-format
 msgid "Cannot open file for writing"
-msgstr "Non se pode abrir o ficheiro para escribir nel."
+msgstr "Non é posíbel abrir o ficheiro para escribir nel."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:517
 #, kde-format
@@ -12575,7 +12574,7 @@ msgstr "Mover %1 ao directorio final %2"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Cannot move data to destination directory"
-msgstr "Non se poden mover os datos ao directorio de destino."
+msgstr "Non é posíbel mover os datos ao directorio de destino."
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:531
 #, kde-format
@@ -12997,7 +12996,7 @@ msgstr "Retirar da lista de resultados"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:197
 #, kde-format
 msgid "Select which service you would like to use."
-msgstr "Seleccione o servizo que desexe utilizar."
+msgstr "Seleccione o servizo que desexe usar."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:221
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
@@ -17201,12 +17200,12 @@ msgstr "Estado"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:77
 #, kde-format
 msgid "Failed to update metadata timestamp"
-msgstr "Non se puideron actualizar os metadatos da marca temporal"
+msgstr "Non foi posíbel actualizar os metadatos da marca temporal"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:82
 #, kde-format
 msgid "Failed to update file timestamp"
-msgstr "Non se puido actualizar a marca temporal do ficheiro"
+msgstr "Non foi posíbel actualizar a marca temporal do ficheiro"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:92
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
@@ -18328,7 +18327,7 @@ msgid ""
 "\n"
 " %2"
 msgstr ""
-"Non se pode executar %1:\n"
+"Non é posíbel executar %1:\n"
 "\n"
 " %2"
 
@@ -18577,7 +18576,7 @@ msgstr "Produciuse un erro ao cargar a imaxe RAW «%1»"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:218
 #, kde-format
 msgid "Could not save thumbnail for image '%1' to '%2'"
-msgstr "Non se puido gardar a miniatura de «%1» en «%2»"
+msgstr "Non foi posíbel gardar a miniatura de «%1» en «%2»"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:230
 #: core/libs/widgets/itemview/ditemtooltip.cpp:45
@@ -18588,12 +18587,12 @@ msgstr "non dispoñíbel"
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:506
 #, kde-format
 msgid "Could not open file '%1' for writing"
-msgstr "Non se puido abrir o ficheiro «%1» para escribir nel"
+msgstr "Non foi posíbel abrir o ficheiro «%1» para escribir nel"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:513
 #, kde-format
 msgid "Could not save image to file '%1'"
-msgstr "Non se puido gardar a imaxe no ficheiro «%1»"
+msgstr "Non foi posíbel gardar a imaxe no ficheiro «%1»"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:104
 #, fuzzy, kde-format
@@ -19169,7 +19168,7 @@ msgstr "Crear directorios"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:86
 #, kde-format
 msgid "Could not create folder '%1'"
-msgstr "Non se puido crear o cartafol «%1»"
+msgstr "Non foi posíbel crear o cartafol «%1»"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
 #, kde-format
@@ -19179,12 +19178,12 @@ msgstr "Crear ficheiros de proxecto de jAlbum"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:134
 #, kde-format
 msgid "Failed to create project files"
-msgstr "Non se puideron crear os ficheiros de proxecto"
+msgstr "Non foi posíbel crear os ficheiros de proxecto"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:151
 #, kde-format
 msgid "Failed to create settings file"
-msgstr "Non se puido crear o ficheiro de configuración"
+msgstr "Non foi posíbel crear o ficheiro de configuración"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:165
 #, kde-format
@@ -19539,7 +19538,7 @@ msgstr "Iniciouse o servidor multimedia"
 #: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:162
 #, kde-format
 msgid "Media Server cannot be started!"
-msgstr "Non se pode iniciar o servidor multimedia!"
+msgstr "Non é posíbel iniciar o servidor multimedia!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:178
 #, fuzzy, kde-format
@@ -20567,7 +20566,7 @@ msgstr "Xa existe un ficheiro de proxecto chamado <filename>%1</filename>."
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
 msgstr ""
-"Non se pode mover o panorama de <filename>%1</filename> a <filename>%2</"
+"Non é posíbel mover o panorama de <filename>%1</filename> a <filename>%2</"
 "filename>."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:184
@@ -20576,7 +20575,7 @@ msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
 "filename>."
 msgstr ""
-"Non se pode mover o ficheiro do proxecto de <filename>%1</filename> a "
+"Non é posíbel mover o ficheiro do proxecto de <filename>%1</filename> a "
 "<filename>%2</filename>."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:210
@@ -20585,8 +20584,8 @@ msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
 "%2</filename>."
 msgstr ""
-"Non se pode copiar o ficheiro de imaxe convertida de <filename>%1</filename> "
-"a <filename>%2</filename>."
+"Non é posíbel copiar o ficheiro de imaxe convertida de <filename>%1</"
+"filename> a <filename>%2</filename>."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:52
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:60
@@ -20598,7 +20597,7 @@ msgstr "Xa está creado o ficheiro PTO no directorio temporal."
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:68
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
-msgstr "Non se pode crear o ficheiro PTO no directorio temporal."
+msgstr "Non é posíbel crear o ficheiro PTO no directorio temporal."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
 #, kde-format
@@ -20615,7 +20614,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:180
 #, kde-format
 msgid "Input image cannot be loaded for preview generation."
-msgstr "Non se pode cargar a imaxe de entrada para xerar a vista previa."
+msgstr "Non é posíbel cargar a imaxe de entrada para xerar a vista previa."
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:208
 #, kde-format
@@ -21302,7 +21301,7 @@ msgstr "Procesando a páxina %1"
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:293
 #, kde-format
 msgid "Could not save file %1"
-msgstr "Non se puido gardar o ficheiro %1"
+msgstr "Non foi posíbel gardar o ficheiro %1"
 
 #: core/dplugins/generic/tools/printcreator/manager/advprinttask.cpp:299
 #, kde-format
@@ -21811,7 +21810,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
-msgstr "Non se puideron retirar os ficheiros temporais do GIMP."
+msgstr "Non foi posíbel retirar os ficheiros temporais do GIMP."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
 #, kde-format
@@ -21819,8 +21818,8 @@ msgid ""
 "Unable to create a temporary folder. Please make sure you have proper "
 "permissions to this folder and try again."
 msgstr ""
-"Non se pode crear un cartafol temporal. Asegúrese de que dispón dos permisos "
-"axeitados para este cartafol e inténteo de novo."
+"Non é posíbel crear un cartafol temporal. Asegúrese de que dispón dos "
+"permisos axeitados para este cartafol e inténteo de novo."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
@@ -21998,22 +21997,22 @@ msgstr "Ocorreu un erro ao abrir o cartafol temporal"
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
 #, kde-format
 msgid "Cannot resize image. Aborting."
-msgstr "Non se pode cambiar o tamaño da imaxe. Interrómpese."
+msgstr "Non é posíbel cambiar o tamaño da imaxe. Interrómpese."
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:139
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
-msgstr "Non se pode gardar a imaxe co tamaño cambiado (JPEG). Interrómpese."
+msgstr "Non é posíbel gardar a imaxe co tamaño cambiado (JPEG). Interrómpese."
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:147
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
-msgstr "Non se pode gardar a imaxe co tamaño cambiado (PNG). Interrómpese."
+msgstr "Non é posíbel gardar a imaxe co tamaño cambiado (PNG). Interrómpese."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
 #, kde-format
 msgid "Cannot create a temporary directory"
-msgstr "Non se pode crear un directorio temporal"
+msgstr "Non é posíbel crear un directorio temporal"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:172
 #, kde-format
@@ -22028,7 +22027,7 @@ msgstr "Cambiouse o tamaño de %1"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:200
 #, kde-format
 msgid "Failed to resize %1: %2"
-msgstr "Non se puido cambiar o tamaño de %1: %2"
+msgstr "Non foi posíbel cambiar o tamaño de %1: %2"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:236
 #, kde-format
@@ -22082,7 +22081,7 @@ msgstr "propiedades.txt"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
 #, kde-format
 msgid "Image properties file cannot be opened"
-msgstr "Non se pode abrir o ficheiro de propiedades das imaxes."
+msgstr "Non é posíbel abrir o ficheiro de propiedades das imaxes."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
 #, kde-format
@@ -22104,7 +22103,7 @@ msgid ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 msgstr ""
-"Non se pode cambiar o tamaño dalgunhas imaxes.\n"
+"Non é posíbel cambiar o tamaño dalgunhas imaxes.\n"
 "Quere engadilas como anexos (sen cambiar o tamaño)?"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
@@ -22119,7 +22118,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:634
 #, kde-format
 msgid "Failed to start \"%1\" program. Check your system."
-msgstr "Non se puido iniciar o programa «%1». Comprobe o sistema."
+msgstr "Non foi posíbel iniciar o programa «%1». Comprobe o sistema."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:644
 #, kde-format
@@ -22991,12 +22990,14 @@ msgstr "Gardar a lista de reprodución"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
-msgstr "Non se pode acceder ao ficheiro «%1». Comprobe que a ruta é correcta."
+msgstr ""
+"Non é posíbel acceder ao ficheiro «%1». Comprobe que a ruta é correcta."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
-msgstr "Non se pode crear unha vista previa dunha lista de ficheiros baleira."
+msgstr ""
+"Non é posíbel crear unha vista previa dunha lista de ficheiros baleira."
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_selectionGroupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:23
@@ -23185,7 +23186,7 @@ msgstr "&Interface"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:35
 #, kde-format
 msgid "Use &milliseconds instead of seconds"
-msgstr "Utilizar &milisegundos no canto de segundos"
+msgstr "Usar &milisegundos no canto de segundos"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:51
@@ -23308,7 +23309,7 @@ msgstr[1] "%1 imaxes"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #, kde-format
 msgid "Cannot access file %1. Please check the path is correct."
-msgstr "Non se pode acceder ao ficheiro %1; comprobe que a ruta é correcta."
+msgstr "Non é posíbel acceder ao ficheiro %1; comprobe que a ruta é correcta."
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:419
 #, kde-format
@@ -24150,7 +24151,7 @@ msgstr "Exportar a &Box…"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:841
 #, kde-format
 msgid "Failed to upload photo"
-msgstr "Non se puido enviar a foto"
+msgstr "Non foi posíbel enviar a foto"
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:456
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:444
@@ -24159,7 +24160,7 @@ msgstr "Non se puido enviar a foto"
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:921
 #, kde-format
 msgid "Failed to list folders"
-msgstr "Non se puideron listar os cartafoles"
+msgstr "Non foi posíbel listar os cartafoles"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
 #, fuzzy, kde-format
@@ -24444,7 +24445,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a imaxe a Dropbox\n"
+"Non foi posíbel enviar a imaxe a Dropbox\n"
 "%1\n"
 "Quere continuar?"
 
@@ -24541,7 +24542,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:894
 #, kde-format
 msgid "Cannot open file"
-msgstr "Non se pode abrir o ficheiro"
+msgstr "Non é posíbel abrir o ficheiro"
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:502
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:468
@@ -24641,7 +24642,7 @@ msgid ""
 "Failed to upload photo into Facebook: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto a Facebook: %1\n"
+"Non foi posíbel enviar a foto a Facebook: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:639
@@ -25187,12 +25188,12 @@ msgstr "Fallou a creación do conxunto de fotos: "
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1101
 #, kde-format
 msgid "Failed to fetch list of photo sets."
-msgstr "Non se puido obter a lista dos conxuntos de fotos."
+msgstr "Non foi posíbel obter a lista dos conxuntos de fotos."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1241
 #, kde-format
 msgid "Failed to query photo information"
-msgstr "Non se puido consultar información da foto"
+msgstr "Non foi posíbel consultar información da foto"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:33
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:49
@@ -25425,7 +25426,7 @@ msgstr "Exportación a Flickr"
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:842
 #, kde-format
 msgid "Failed to Fetch Photoset information from %1. %2\n"
-msgstr "Non se puido obter información dos conxuntos de fotos de %1. %2\n"
+msgstr "Non foi posíbel obter información dos conxuntos de fotos de %1. %2\n"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:850
 #, kde-format
@@ -25433,13 +25434,13 @@ msgid ""
 "Failed to upload photo into %1. %2\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto a %1. %2\n"
+"Non foi posíbel enviar a foto a %1. %2\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:417
 #, kde-format
 msgid "Failed to create folder"
-msgstr "Non se puido crear o cartafol"
+msgstr "Non foi posíbel crear o cartafol"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:498
 #, kde-format
@@ -25473,7 +25474,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
 #, kde-format
 msgid "Failed to fetch photo-set list"
-msgstr "Non se puido obter a lista dos conxuntos de fotos."
+msgstr "Non foi posíbel obter a lista dos conxuntos de fotos."
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:67
 #, kde-format
@@ -25989,7 +25990,7 @@ msgstr "Exportación a ImageShack"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:269
 #, kde-format
 msgid "Authenticating..."
-msgstr "Estase a autenticar…"
+msgstr "Autenticando…"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:327
 #, kde-format
@@ -25999,7 +26000,7 @@ msgstr "O acceso fallou: %1\n"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:341
 #, kde-format
 msgid "Failed to get galleries list: %1\n"
-msgstr "Non se puido obter a lista de galerías: %1\n"
+msgstr "Non foi posíbel obter a lista de galerías: %1\n"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:414
 #, kde-format
@@ -26007,7 +26008,7 @@ msgid ""
 "Failed to upload photo into ImageShack: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a imaxe a ImageShack: %1\n"
+"Non foi posíbel enviar a imaxe a ImageShack: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:56
@@ -26080,13 +26081,13 @@ msgstr "Exportar a &Imgur…"
 #: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:192
 #, kde-format
 msgid "Could not authorize"
-msgstr "Non se puido autorizar."
+msgstr "Non foi posíbel autorizar."
 
 #: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:389
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"
-msgstr "Non se puido abrir o ficheiro"
+msgstr "Non foi posíbel abrir o ficheiro"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:112
 #, kde-format
@@ -26133,12 +26134,12 @@ msgstr "Fallou a autorización"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:251
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
-msgstr "Non se puido identificar en Imgur: %1\n"
+msgstr "Non foi posíbel identificar en Imgur: %1\n"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:279
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
-msgstr "Non se puido enviar a imaxe a Imgur: %1\n"
+msgstr "Non foi posíbel enviar a imaxe a Imgur: %1\n"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:286
 #, kde-format
@@ -26146,7 +26147,7 @@ msgid ""
 "Failed to upload photo to Imgur: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a imaxe a Imgur: %1\n"
+"Non foi posíbel enviar a imaxe a Imgur: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/inaturalist/inatbrowserdlg.cpp:189
@@ -26756,7 +26757,7 @@ msgstr "Iniciar o envío a IPFS"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:227
 #, kde-format
 msgid "Failed to upload photo to IPFS: %1\n"
-msgstr "Non se puido enviar a imaxe a IPFS: %1\n"
+msgstr "Non foi posíbel enviar a imaxe a IPFS: %1\n"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:233
 #, kde-format
@@ -26764,7 +26765,7 @@ msgid ""
 "Failed to upload photo to IPFS: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a imaxe a IPFS: %1\n"
+"Non foi posíbel enviar a imaxe a IPFS: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/mediawiki/backend/mediawiki_queryimageinfo.cpp:193
@@ -27510,12 +27511,12 @@ msgstr "Exportar a &Pinterest…"
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:498
 #, kde-format
 msgid "Failed to upload Pin"
-msgstr "Non se puido enviar o broche"
+msgstr "Non foi posíbel enviar o broche"
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:524
 #, kde-format
 msgid "Failed to list boards"
-msgstr "Non se puideron listar os taboleiros"
+msgstr "Non foi posíbel listar os taboleiros"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
 #, fuzzy, kde-format
@@ -27549,7 +27550,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto a Pinterest.\n"
+"Non foi posíbel enviar a foto a Pinterest.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -27650,7 +27651,7 @@ msgstr "Recibiuse unha resposta incorrecta do Piwigo remoto"
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:964
 #, kde-format
 msgid "Failed to list albums"
-msgstr "Non se puideron listar os álbums"
+msgstr "Non foi posíbel listar os álbums"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:688
 #, kde-format
@@ -27772,7 +27773,7 @@ msgstr "Editar os datos de Piwigo"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:427
 #, kde-format
 msgid "Failed to login into remote piwigo. "
-msgstr "Non se puido acceder ao piwigo remoto. "
+msgstr "Non foi posíbel acceder ao piwigo remoto. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:428
 #, kde-format
@@ -27815,7 +27816,7 @@ msgstr "Enviando o ficheiro %1"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:655
 #, kde-format
 msgid "Failed to upload media into remote Piwigo. "
-msgstr "Non se puido enviar o ficheiro ao Piwigo remoto. "
+msgstr "Non foi posíbel enviar o ficheiro ao Piwigo remoto. "
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:656
 #, kde-format
@@ -27912,7 +27913,7 @@ msgstr "Álbum descoñecido"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:235
 #, kde-format
 msgid "Failed to open album"
-msgstr "Non se puido abrir o álbum"
+msgstr "Non foi posíbel abrir o álbum"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:236
 #, kde-format
@@ -27922,7 +27923,7 @@ msgstr "O nome do álbum non pode estar baleiro"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:237
 #, kde-format
 msgid "Failed to create album"
-msgstr "Non se puido crear o álbum"
+msgstr "Non foi posíbel crear o álbum"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:238
 #, kde-format
@@ -28154,7 +28155,7 @@ msgstr "A chave da API é incorrecta"
 #: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:1067
 #, kde-format
 msgid "Failed to list album template"
-msgstr "Non se puideron listar os modelos de álbum"
+msgstr "Non foi posíbel listar os modelos de álbum"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:67
 #, kde-format
@@ -28342,7 +28343,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto a SmugMug.\n"
+"Non foi posíbel enviar a foto a SmugMug.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -28352,7 +28353,7 @@ msgid ""
 "Failed to save photo: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido gardar a foto: %1\n"
+"Non foi posíbel gardar a foto: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:998
@@ -28361,7 +28362,7 @@ msgid ""
 "Failed to download photo: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido descargar a foto: %1\n"
+"Non foi posíbel descargar a foto: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:48
@@ -28418,13 +28419,13 @@ msgid ""
 "Failed to upload photo\n"
 "Code: %1, name: %2, message: %3"
 msgstr ""
-"Non se puido enviar a foto\n"
+"Non foi posíbel enviar a foto\n"
 "Código: %1; nome: %2; mensaxe: %3"
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:903
 #, kde-format
 msgid "Failed to create tweet for photo uploaded"
-msgstr "Non se puido crear o chío da foto enviada"
+msgstr "Non foi posíbel crear o chío da foto enviada"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
 #, fuzzy, kde-format
@@ -28452,7 +28453,7 @@ msgid ""
 "%1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto a Twitter.\n"
+"Non foi posíbel enviar a foto a Twitter.\n"
 "%1\n"
 "Quere continuar?"
 
@@ -28469,7 +28470,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:275
 #, kde-format
 msgid "Cannot open image at %1\n"
-msgstr "Non se pode abrir a imaxe que hai en %1\n"
+msgstr "Non é posíbel abrir a imaxe que hai en %1\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
 #, fuzzy, kde-format
@@ -28491,7 +28492,7 @@ msgid ""
 "Failed to upload photo: %1\n"
 "Do you want to continue?"
 msgstr ""
-"Non se puido enviar a foto: %1\n"
+"Non foi posíbel enviar a foto: %1\n"
 "Quere continuar?"
 
 #: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:44
@@ -28724,7 +28725,7 @@ msgid ""
 "Cannot decode RAW image\n"
 "\"%1\""
 msgstr ""
-"Non se pode descodificar a imaxe RAW\n"
+"Non é posíbel descodificar a imaxe RAW\n"
 "«%1»"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:173
@@ -29138,9 +29139,9 @@ msgid ""
 "file system settings.<br/>The collection is now located at this place:</p>"
 msgstr ""
 "<p>A colección aínda está dispoñíbel, pero o identificador cambiou.<br/>Isto "
-"pódese deber a unha restauración dunha copia de seguridade, cambiando a "
-"distribución das particións ou a configuración do sistema de ficheiros.<br/"
-">A colección está situada agora neste lugar:</p>"
+"pódese deber a unha restauración dunha salvagarda, cambiando a distribución "
+"das particións ou a configuración do sistema de ficheiros.<br/>A colección "
+"está situada agora neste lugar:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:336
 #, kde-format
@@ -29262,8 +29263,8 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Trying to upgrade old databases."
 msgstr ""
-"Non se puido copiar o ficheiro vello de base de datos («%1») para o seu novo "
-"destino («%2»). Intentando anovar as bases de datos vellas."
+"Non foi posíbel copiar o ficheiro vello de base de datos («%1») para o seu "
+"novo destino («%2»). Intentando anovar as bases de datos vellas."
 
 #: core/libs/album/manager/albummanager_database.cpp:603
 #, kde-format
@@ -29302,9 +29303,9 @@ msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
 "file without backup, using the existing file."
 msgstr ""
-"Non se puido crear unha copia de seguridade do ficheiro de base de datos xa "
-"existente («%1»). Rexéitase substituír o ficheiro sen facer a copia de "
-"seguridade, polo que se usará o ficheiro xa existente."
+"Non foi posíbel crear unha salvagarda do ficheiro de base de datos xa "
+"existente («%1»). Rexéitase substituír o ficheiro sen facer a salvagarda, "
+"polo que se usará o ficheiro xa existente."
 
 #: core/libs/album/manager/albummanager_database.cpp:718
 #, kde-format
@@ -29312,7 +29313,7 @@ msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Starting with an empty database."
 msgstr ""
-"Non se puido copiar o ficheiro vello de base de datos («%1») na nova "
+"Non foi posíbel copiar o ficheiro vello de base de datos («%1») na nova "
 "localización («%2»). Iniciarase cunha base de datos baleira."
 
 #: core/libs/album/manager/albummanager_database.cpp:751
@@ -29362,12 +29363,12 @@ msgstr "Xa existe un álbum con ese nome."
 #: core/libs/album/manager/albummanager_palbum.cpp:419
 #, kde-format
 msgid "Failed to create directory '%1'"
-msgstr "Non se puido crear o directorio «%1»."
+msgstr "Non foi posíbel crear o directorio «%1»."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:428
 #, kde-format
 msgid "Failed to add album to database"
-msgstr "Non se puido engadir o álbum á base de datos"
+msgstr "Non foi posíbel engadir o álbum á base de datos"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:455
 #: core/libs/album/manager/albummanager_palbum.cpp:539
@@ -29382,12 +29383,12 @@ msgstr "Non existe tal álbum"
 #: core/libs/album/manager/albummanager_palbum.cpp:461
 #, kde-format
 msgid "Cannot rename root album"
-msgstr "Non se pode renomear o álbum raíz"
+msgstr "Non é posíbel renomear o álbum raíz"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:467
 #, kde-format
 msgid "Cannot rename album root album"
-msgstr "Non se pode renomear o álbum raíz"
+msgstr "Non é posíbel renomear o álbum raíz"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:473
 #, kde-format
@@ -29406,12 +29407,12 @@ msgstr ""
 #: core/libs/album/manager/albummanager_palbum.cpp:500
 #, kde-format
 msgid "Failed to rename Album"
-msgstr "Non se puido renomear o álbum"
+msgstr "Non foi posíbel renomear o álbum"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:545
 #, kde-format
 msgid "Cannot edit root album"
-msgstr "Non se pode editar o álbum raíz"
+msgstr "Non é posíbel editar o álbum raíz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:289
 #, kde-format
@@ -29438,7 +29439,7 @@ msgstr "Xa existe ese nome de etiqueta"
 #: core/libs/album/manager/albummanager_talbum.cpp:320
 #, kde-format
 msgid "Failed to add tag to database"
-msgstr "Non se puido engadir a etiqueta á base de datos"
+msgstr "Non foi posíbel engadir a etiqueta á base de datos"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:371
 #, fuzzy, kde-format
@@ -29456,7 +29457,7 @@ msgstr "Non se pode eliminar a etiqueta raíz"
 #: core/libs/album/manager/albummanager_talbum.cpp:700
 #, kde-format
 msgid "Cannot edit root tag"
-msgstr "Non se pode editar a etiqueta raíz"
+msgstr "Non é posíbel editar a etiqueta raíz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:477
 #, kde-format
@@ -29475,7 +29476,7 @@ msgstr "Intento de mover TAlbum a ningures."
 #: core/libs/album/manager/albummanager_talbum.cpp:508
 #, kde-format
 msgid "Cannot move root tag"
-msgstr "Non se pode mover a etiqueta raíz"
+msgstr "Non é posíbel mover a etiqueta raíz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:516
 #, kde-format
@@ -29489,7 +29490,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_talbum.cpp:590
 #, kde-format
 msgid "Cannot merge root tag"
-msgstr "Non se pode mesturar a etiqueta raíz"
+msgstr "Non é posíbel mesturar a etiqueta raíz"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:596
 #, fuzzy, kde-format
@@ -30459,7 +30460,7 @@ msgid ""
 "Failed to create tables in database.\n"
 " "
 msgstr ""
-"Non se puideron crear táboas na base de datos.\n"
+"Non foi posíbel crear táboas na base de datos.\n"
 " "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:354
@@ -30471,12 +30472,12 @@ msgid ""
 "digikam developers mailing list (see www.digikam.org/support). As well, "
 "please have a look at what digiKam prints on the console. "
 msgstr ""
-"Non se puido abrir unha transacción de base de datos no ficheiro de base de "
-"datos «%1». Isto non é normal. Comprobe que pode acceder ao ficheiro e que "
-"non haxa ningún outro proceso que estea a trancar o ficheiro. Se o problema "
-"persiste pode obter axuda na rolda de correo dos desenvolvedores de digiKam "
-"(consulte www.digikam.org/support). Ademais, consulte o que digiKam imprime "
-"na consola."
+"Non foi posíbel abrir unha transacción de base de datos no ficheiro de base "
+"de datos «%1». Isto non é normal. Comprobe que pode acceder ao ficheiro e "
+"que non haxa ningún outro proceso que estea a trancar o ficheiro. Se o "
+"problema persiste pode obter axuda na rolda de correo dos desenvolvedores de "
+"digiKam (consulte www.digikam.org/support). Ademais, consulte o que digiKam "
+"imprime na consola."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:415
 #, kde-format
@@ -30533,9 +30534,9 @@ msgid ""
 "xml file of the current version of digiKam is installed at the correct "
 "place. "
 msgstr ""
-"Non se pode atopar a acción de actualización da base de datos. Asegúrese de "
-"que está instalado o ficheiro dbconfig.xml da versión actual de digiKam onde "
-"ten que estar."
+"Non é posíbel atopar a acción de actualización da base de datos. Asegúrese "
+"de que está instalado o ficheiro dbconfig.xml da versión actual de digiKam "
+"onde ten que estar."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:702
 #, kde-format
@@ -30549,7 +30550,7 @@ msgid ""
 "Error message: \"%3\". Please make sure that the file can be copied, or "
 "delete it."
 msgstr ""
-"Non se puido copiar o ficheiro vello da base de datos («%1») ao seu novo "
+"Non foi posíbel copiar o ficheiro vello da base de datos («%1») ao seu novo "
 "lugar («%2»). Mensaxe de erro: «%3». Asegúrese de que o ficheiro pode "
 "copiarse ou elimíneo."
 
@@ -30690,14 +30691,14 @@ msgid ""
 "the digikam application and is absolutely required to run digikam. Please "
 "check your installation."
 msgstr ""
-"Non se puido abrir o ficheiro de configuración <b>%1</b>. Este ficheiro "
+"Non foi posíbel abrir o ficheiro de configuración <b>%1</b>. Este ficheiro "
 "instálase xunto con digiKam, e resulta imprescindíbel para o funcionamento "
 "da aplicación. Comprobe a instalación."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:180
 #, kde-format
 msgid "Could not open configuration file <b>%1</b>"
-msgstr "Non se puido abrir o ficheiro de configuración <b>%1</b>."
+msgstr "Non foi posíbel abrir o ficheiro de configuración <b>%1</b>."
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:188
 #, kde-format
@@ -30881,7 +30882,7 @@ msgstr ""
 #: core/libs/database/server/databaseserver.cpp:335
 #, kde-format
 msgid "Cannot create directory %1"
-msgstr "Non se pode crear o directorio %1"
+msgstr "Non é posíbel crear o directorio %1"
 
 #: core/libs/database/server/databaseserver.cpp:415
 #, kde-format
@@ -30890,7 +30891,7 @@ msgid ""
 "the default configuration file</p><p>%1</p><p>was not readable or the target "
 "file</p><p>%2</p><p>could not be written.</p>"
 msgstr ""
-"Non se pode crear o ficheiro de configuración do servidor de MySQL.<p>Isto "
+"Non é posíbel crear o ficheiro de configuración do servidor de MySQL.<p>Isto "
 "significa que ou o ficheiro de configuración predeterminado</p> <p>%1</p> "
 "<p>non se puido ler ou o ficheiro de destino</p> <p>%2</p> <p>non se puido "
 "escribir.</p>"
@@ -30899,18 +30900,18 @@ msgstr ""
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
-"Non se pode atopar a configuración predeterminada do servidor de MySQL "
+"Non é posíbel atopar a configuración predeterminada do servidor de MySQL "
 "(mysql-global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:525
 #, kde-format
 msgid "Could not start database initializer."
-msgstr "Non se puido iniciar o preparador da base de datos."
+msgstr "Non foi posíbel iniciar o preparador da base de datos."
 
 #: core/libs/database/server/databaseserver.cpp:588
 #, kde-format
 msgid "Could not start database server."
-msgstr "Non se puido iniciar o servidor da base de datos."
+msgstr "Non foi posíbel iniciar o servidor da base de datos."
 
 #: core/libs/database/server/databaseserver.cpp:630
 #, kde-format
@@ -30929,14 +30930,14 @@ msgstr ""
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
-"Non se puido conectar á base de datos tras intentalo durante 60 segundos."
+"Non foi posíbel conectar á base de datos tras intentalo durante 60 segundos."
 
 #: core/libs/database/server/databaseserver.cpp:698
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
-"Non se puido crear a base de datos<p>Erro da solicitude: %1</p><p>Erro da "
+"Non foi posíbel crear a base de datos<p>Erro da solicitude: %1</p><p>Erro da "
 "base de datos: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:724
@@ -31675,12 +31676,12 @@ msgstr ""
 "bases de datos: unha para todas as propiedades das coleccións, outra para "
 "almacenar as miniaturas comprimidas, e outra para almacenar os metadatos de "
 "recoñecemento facial.</p> <p>A diferenza de SQLite e de MySQL interno, pode "
-"personalizar os nomes das bases de datos para simplificar as copias de "
-"seguridade.</p> <p>As bases de datos son o principal motor de digiKam. Para "
-"evitar problemas de rendemento, asegúrese de usar unha conexión de rede "
-"rápida entre os computadores cliente e servidor. Tamén se recomenda "
-"almacenar os ficheiros das bases de datos en soporte físico rápido (como <a "
-"href=\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a>) con espazo "
+"personalizar os nomes das bases de datos para simplificar as salvagardas.</"
+"p> <p>As bases de datos son o principal motor de digiKam. Para evitar "
+"problemas de rendemento, asegúrese de usar unha conexión de rede rápida "
+"entre os computadores cliente e servidor. Tamén se recomenda almacenar os "
+"ficheiros das bases de datos en soporte físico rápido (como <a href="
+"\"https://en.wikipedia.org/wiki/Solid-state_drive\">SSD</a>) con espazo "
 "libre dabondo, especialmente para a base de datos de miniaturas, aínda que "
 "estean comprimida mediante transformacións wavelet usando o formato de imaxe "
 "<a href=\"https://en.wikipedia.org/wiki/Progressive_Graphics_File\">PGF</a>."
@@ -32532,7 +32533,7 @@ msgstr "Abrir a páxina de inicio co navegador web predeterminado do escritorio"
 #: core/libs/dialogs/webbrowserdlg.cpp:249
 #, kde-format
 msgid "Cannot load page %1"
-msgstr "Non se pode cargar a páxina %1"
+msgstr "Non é posíbel cargar a páxina %1"
 
 #: core/libs/dimg/dimg_metadata.cpp:426
 #, kde-format
@@ -33119,7 +33120,7 @@ msgstr "«%1» non é un ficheiro de configuración de branco e negro."
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:592
 #, kde-format
 msgid "Cannot load settings from the Black & White text file."
-msgstr "Non se pode cargar a configuración desde o ficheiro."
+msgstr "Non é posíbel cargar a configuración desde o ficheiro."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
 #, fuzzy, kde-format
@@ -33131,7 +33132,7 @@ msgstr "Ficheiro de configuración de branco e negro que gardar"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
 msgid "Cannot save settings to the Black & White text file."
-msgstr "Non se pode gardar a configuración no ficheiro de branco e negro."
+msgstr "Non é posíbel gardar a configuración no ficheiro de branco e negro."
 
 #: core/libs/dimg/filters/bw/infraredfilter.cpp:60
 #, kde-format
@@ -33492,7 +33493,7 @@ msgstr "Escolla o ficheiro de curvas do Gimp a cargar"
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
 msgid "Cannot load from the Gimp curves text file."
-msgstr "Non se pode cargar o ficheiro de curvas do Gimp."
+msgstr "Non é posíbel cargar o ficheiro de curvas do Gimp."
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
 #, fuzzy, kde-format
@@ -33504,7 +33505,7 @@ msgstr "Ficheiro de curvas de Gimp que gardar"
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
 msgid "Cannot save to the Gimp curves text file."
-msgstr "Non se pode gardar o ficheiro de curvas do Gimp."
+msgstr "Non é posíbel gardar o ficheiro de curvas do Gimp."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:193
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:791
@@ -34869,7 +34870,7 @@ msgstr ""
 #, kde-format
 msgid "Cannot load settings from the Photograph Local Contrast text file."
 msgstr ""
-"Non se pode cargar a configuración con este ficheiro de contraste local de "
+"Non é posíbel cargar a configuración con este ficheiro de contraste local de "
 "fotografías."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
@@ -34883,7 +34884,7 @@ msgstr "Ficheiro de configuración da contraste local que gardar"
 #, kde-format
 msgid "Cannot save settings to the Photograph Local Contrast text file."
 msgstr ""
-"Non se pode gardar a configuración no ficheiro de contraste local de "
+"Non é posíbel gardar a configuración no ficheiro de contraste local de "
 "fotografías."
 
 #: core/libs/dimg/filters/lens/antivignettingfilter.cpp:58
@@ -35279,9 +35280,8 @@ msgid ""
 msgstr ""
 "<p>Escolla a escala do histograma.</p><p>Se os valores máximos da imaxe "
 "foren pequenos pode usar a escala <b>lineal</b>.</p><p>A escala "
-"<b>logarítmica</b> pódese utilizar cando os valores totais máximos foren "
-"altos. De usarse, todos os valores (grandes e pequenos) son visíbeis no "
-"gráfico.</p>"
+"<b>logarítmica</b> pódese usar cando os valores totais máximos foren altos. "
+"De usarse, todos os valores (grandes e pequenos) son visíbeis no gráfico.</p>"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:92
 #, kde-format
@@ -35553,8 +35553,8 @@ msgstr ""
 #, kde-format
 msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr ""
-"Non se pode cargar a configuración do ficheiro de texto de configuración da "
-"redución de ruído da imaxe."
+"Non é posíbel cargar a configuración do ficheiro de texto de configuración "
+"da redución de ruído da imaxe."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
 #, fuzzy, kde-format
@@ -35567,8 +35567,8 @@ msgstr "Ficheiro de configuración da redución de ruído da imaxe que gardar"
 #, kde-format
 msgid "Cannot save settings to the Photograph Noise Reduction text file."
 msgstr ""
-"Non se pode gardar a configuración no ficheiro de texto de redución de ruído "
-"da imaxe."
+"Non é posíbel gardar a configuración no ficheiro de texto de redución de "
+"ruído da imaxe."
 
 #: core/libs/dimg/filters/raw/rawprocessingfilter.cpp:67
 #, kde-format
@@ -35774,7 +35774,7 @@ msgstr ""
 #, kde-format
 msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
-"Non se pode cargar a configuración con este ficheiro de refocalizado de "
+"Non é posíbel cargar a configuración con este ficheiro de refocalizado de "
 "fotografías."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
@@ -35788,7 +35788,7 @@ msgstr "Ficheiro de configuración da Refocalización onde gardar"
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
 msgstr ""
-"Non se pode gardar a configuración no ficheiro de refocalizado de "
+"Non é posíbel gardar a configuración no ficheiro de refocalizado de "
 "fotografías."
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:72
@@ -37250,7 +37250,7 @@ msgid ""
 "Failed to create tables in database.\n"
 "%1"
 msgstr ""
-"Non se puideron crear as táboas na base de datos.\n"
+"Non foi posíbel crear as táboas na base de datos.\n"
 "%1"
 
 #: core/libs/fileactionmanager/databaseworkeriface.cpp:94
@@ -37334,12 +37334,12 @@ msgstr "Procesar os elementos"
 #: core/libs/fileactionmanager/fileworkeriface.cpp:74
 #, kde-format
 msgid "Failed to revise Exif orientation these files:"
-msgstr "Non se puido revisar a orientación EXIF destes ficheiros:"
+msgstr "Non foi posíbel revisar a orientación EXIF destes ficheiros:"
 
 #: core/libs/fileactionmanager/fileworkeriface.cpp:350
 #, kde-format
 msgid "Failed to transform these files:"
-msgstr "Non se puideron transformar estes ficheiros:"
+msgstr "Non foi posíbel transformar estes ficheiros:"
 
 #: core/libs/fileactionmanager/metadatahubmngr.cpp:157
 #, kde-format
@@ -38002,7 +38002,7 @@ msgstr "Xa existe un ficheiro ou cartafol en %2 chamado %1."
 #: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
-msgstr "Non se puido mover o cartafol %1 ao álbum %2."
+msgstr "Non foi posíbel mover o cartafol %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:176
 #, kde-format
@@ -38010,7 +38010,7 @@ msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
-"Non se puido mover o cartafol %1 ao álbum %2, así que en vez de moverse "
+"Non foi posíbel mover o cartafol %1 ao álbum %2, así que en vez de moverse "
 "copiouse."
 
 #: core/libs/iojobs/iojob.cpp:188
@@ -38022,12 +38022,12 @@ msgstr "Non se puido mover o ficheiro %1 ao álbum %2."
 #: core/libs/iojobs/iojob.cpp:194
 #, kde-format
 msgid "Could not move file %1 to album %2"
-msgstr "Non se puido mover o ficheiro %1 ao álbum %2."
+msgstr "Non foi posíbel mover o ficheiro %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:218
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
-msgstr "Non se puido copiar o cartafol %1 ao álbum %2."
+msgstr "Non foi posíbel copiar o cartafol %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:230
 #, fuzzy, kde-format
@@ -38044,7 +38044,7 @@ msgstr "Non se puido copiar o ficheiro %1 ao álbum %2."
 #: core/libs/iojobs/iojob.cpp:243
 #, kde-format
 msgid "Could not copy file %1 to album %2"
-msgstr "Non se puido copiar o ficheiro %1 ao álbum %2."
+msgstr "Non foi posíbel copiar o ficheiro %1 ao álbum %2."
 
 #: core/libs/iojobs/iojob.cpp:287
 #, kde-format
@@ -38070,17 +38070,17 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:328
 #, kde-format
 msgid "Album %1 could not be removed"
-msgstr "Non se puido retirar o álbum %1."
+msgstr "Non foi posíbel retirar o álbum %1."
 
 #: core/libs/iojobs/iojob.cpp:340
 #, kde-format
 msgid "Image %1 could not be removed"
-msgstr "Non se puido retirar a imaxe %1."
+msgstr "Non foi posíbel retirar a imaxe %1."
 
 #: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
-msgstr "Non se puido mover a imaxe %1 ao lixo da colección."
+msgstr "Non foi posíbel mover a imaxe %1 ao lixo da colección."
 
 #: core/libs/iojobs/iojob.cpp:396
 #, kde-format
@@ -38090,7 +38090,7 @@ msgstr "Xa hai unha imaxe aí chamada %1."
 #: core/libs/iojobs/iojob.cpp:411
 #, kde-format
 msgid "Image %1 could not be renamed"
-msgstr "Non se puido renomear a imaxe %1."
+msgstr "Non foi posíbel renomear a imaxe %1."
 
 #: core/libs/iojobs/iojob.cpp:483
 #, fuzzy, kde-format
@@ -43562,7 +43562,7 @@ msgstr "O ficheiro non existe ou non é un ficheiro"
 #: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:213
 #, kde-format
 msgid "Cannot create thumbnail for %1"
-msgstr "Non se pode crear a miniatura de %1"
+msgstr "Non é posíbel crear a miniatura de %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
 #, fuzzy, kde-format
@@ -43982,17 +43982,17 @@ msgstr "Aleatorio"
 #: core/libs/video/manager/qt5/vidslidetask.cpp:278
 #, kde-format
 msgid "Failed to open video encoder"
-msgstr "Non se puido abrir o codificador de vídeo"
+msgstr "Non foi posíbel abrir o codificador de vídeo"
 
 #: core/libs/video/manager/qt5/vidslidetask.cpp:294
 #, kde-format
 msgid "Failed to open audio encoder"
-msgstr "Non se puido abrir o codificador de son"
+msgstr "Non foi posíbel abrir o codificador de son"
 
 #: core/libs/video/manager/qt5/vidslidetask.cpp:324
 #, kde-format
 msgid "Failed to open muxer"
-msgstr "Non se puido abrir o mesturador"
+msgstr "Non foi posíbel abrir o mesturador"
 
 #: core/libs/video/manager/qt5/vidslidetask.cpp:410
 #, kde-format
@@ -45671,7 +45671,7 @@ msgstr "Vista previa de tamaño reducido"
 #: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:237
 #, kde-format
 msgid "Failed to load image"
-msgstr "Non se puido cargar a imaxe"
+msgstr "Non foi posíbel cargar a imaxe"
 
 #: core/libs/widgets/graphicsview/paniconwidget.cpp:330
 #, kde-format
@@ -54282,7 +54282,7 @@ msgstr "Ocorreu un erro ao gardar o ficheiro"
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
 msgid "Failed to save file: %1"
-msgstr "Non se puido gardar o ficheiro: %1."
+msgstr "Non foi posíbel gardar o ficheiro: %1."
 
 #: core/showfoto/main/showfoto_iofiles.cpp:80
 #, kde-format
@@ -54308,7 +54308,7 @@ msgstr ""
 #: core/showfoto/main/showfoto_iofiles.cpp:201
 #, kde-format
 msgid "Cannot delete \"%1\""
-msgstr "Non se pode eliminar «%1»"
+msgstr "Non é posíbel eliminar «%1»"
 
 #: core/showfoto/main/showfoto_open.cpp:58
 #, fuzzy, kde-format
@@ -55898,7 +55898,7 @@ msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
 "information about renaming and modifier options."
 msgstr ""
-"Asegúrese de utilizar os botóns de acceso rápido: Poden fornecer información "
+"Asegúrese de usar os botóns de acceso rápido: Poden fornecer información "
 "adicional sobre o renomeamento e as opcións dos modificadores."
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:56
@@ -57234,8 +57234,8 @@ msgstr ""
 "unha nova configuración podería resultar en perda de etiquetas ou outros "
 "metadatos que non estivesen incluídos nas imaxes e só estivesen dispoñíbeis "
 "na base de datos de digiKam 4.</p><p>En calquera caso recoméndaselle facer "
-"unha copia de seguridade dos ficheiros de configuración e das bases de datos "
-"antes de proceder.</p></qt>"
+"unha salvagarda dos ficheiros de configuración e das bases de datos antes de "
+"proceder.</p></qt>"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:91
 #, kde-format
@@ -57280,11 +57280,11 @@ msgid ""
 "quickly, it is often better to use the light table: images can be displayed "
 "side-by-side, and synchronized zooming and panning can be performed.</p></qt>"
 msgstr ""
-"<qt><p><i>Nota:</i> utilizar a vista previa é sempre máis rápido que o "
-"editor, especialmente para probar unha serie de fotos, pero non pode cambiar "
-"nin corrixir as imaxes nese modo. Lembre que, se quere comparar rapidamente "
-"as imaxes, normalmente a mellor maneira é usar a mesa de luces: pódense "
-"amosar as imaxes unha a par da outra e facer ampliacións e desprazamentos "
+"<qt><p><i>Nota:</i> usar a vista previa é sempre máis rápido que o editor, "
+"especialmente para probar unha serie de fotos, pero non pode cambiar nin "
+"corrixir as imaxes nese modo. Lembre que, se quere comparar rapidamente as "
+"imaxes, normalmente a mellor maneira é usar a mesa de luces: pódense amosar "
+"as imaxes unha a par da outra e facer ampliacións e desprazamentos "
 "sincronizados.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
@@ -57489,11 +57489,11 @@ msgstr ""
 "<p><b>Transición de digiKam 4</b></p><p>Os ficheiros de configuración de "
 "digiKam 4 non se migran. Aínda se pode usar a base de datos anterior, só ten "
 "que escoller os mesmos lugares para as coleccións e a base de datos nos "
-"seguintes diálogos. Recoméndase crear unha copia de seguridade da súa base "
-"de datos antes de proceder.</p> <p>O novo lugar dos ficheiros de "
-"configuración é %1 (antes %2). Hai problemas sen resolver dos que se "
-"informou ao usar de novo os ficheiros de configuración anteriores, así que "
-"de momento non se recomenda, e baixo o seu propio risco.</p></qt>"
+"seguintes diálogos. Recoméndase crear unha salvagarda da súa base de datos "
+"antes de proceder.</p> <p>O novo lugar dos ficheiros de configuración é %1 "
+"(antes %2). Hai problemas sen resolver dos que se informou ao usar de novo "
+"os ficheiros de configuración anteriores, así que de momento non se "
+"recomenda, e baixo o seu propio risco.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
 #, kde-format
@@ -58400,8 +58400,8 @@ msgstr "Correlacionar"
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
-msgstr[0] "Non se puido cargar o ficheiro GPX seguinte:"
-msgstr[1] "Non se puideron cargar os %1 ficheiros GPX seguintes:"
+msgstr[0] "Non foi posíbel cargar o ficheiro GPX seguinte:"
+msgstr[1] "Non foi posíbel cargar os %1 ficheiros GPX seguintes:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, fuzzy, kde-format
@@ -58431,8 +58431,8 @@ msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
-"Non se puido correlacionar ningunha imaxe - asegúrese de que a configuración "
-"do desprazamento e da diferenza son correctos."
+"Non foi posíbel correlacionar ningunha imaxe - asegúrese de que a "
+"configuración do desprazamento e da diferenza son correctos."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, fuzzy, kde-format
@@ -58542,29 +58542,29 @@ msgstr "Data e hora"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:843
 #, kde-format
 msgid "Failed to open file."
-msgstr "Non se puido abrir o ficheiro."
+msgstr "Non foi posíbel abrir o ficheiro."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:915
 #, kde-format
 msgid "Failed to add GPS info to image."
-msgstr "Non se puido engadir a información de GPS á imaxe."
+msgstr "Non foi posíbel engadir a información de GPS á imaxe."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:927
 #, kde-format
 msgid "Failed to remove GPS info from image"
-msgstr "Non se puido retirar a información de GPS da imaxe"
+msgstr "Non foi posíbel retirar a información de GPS da imaxe"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:962
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:970
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, kde-format
 msgid "Failed to save tags to file."
-msgstr "Non se puido gardar as etiquetas no ficheiro."
+msgstr "Non foi posíbel gardar as etiquetas no ficheiro."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1006
 #, kde-format
 msgid "Unable to save changes to file"
-msgstr "Non se pode gardar os cambios no ficheiro"
+msgstr "Non é posíbel gardar os cambios no ficheiro"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:104
 #, kde-format
@@ -58622,7 +58622,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:541
 #, kde-format
 msgid "Could not find any coordinates on the clipboard."
-msgstr "Non se puido atopar ningunha coordenada no portapapeis."
+msgstr "Non foi posíbel atopar ningunha coordenada no portapapeis."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:545
 #, kde-format
@@ -58953,7 +58953,7 @@ msgstr "Interromper a codificación xeográfica inversa?"
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:235
 #, kde-format
 msgid "Could not open: %1"
-msgstr "Non se puido abrir: %1"
+msgstr "Non foi posíbel abrir: %1"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:242
 #, kde-format
@@ -60353,7 +60353,7 @@ msgid ""
 "Failed to load image\n"
 "\"%1\""
 msgstr ""
-"Non se puido cargar a imaxe\n"
+"Non foi posíbel cargar a imaxe\n"
 "\"%1\""
 
 #: core/utilities/imageeditor/widgets/imageguidewidget.cpp:43
@@ -60513,54 +60513,54 @@ msgstr "Fallou a conexión."
 #: core/utilities/import/backend/cameracontroller.cpp:452
 #, kde-format
 msgid "Failed to get free space from camera"
-msgstr "Non se puido saber o espazo libre que queda na cámara."
+msgstr "Non foi posíbel saber o espazo libre que queda na cámara."
 
 #: core/utilities/import/backend/cameracontroller.cpp:466
 #, kde-format
 msgid "Failed to get preview from camera"
-msgstr "Non se puido obter a vista previa da cámara."
+msgstr "Non foi posíbel obter a vista previa da cámara."
 
 #: core/utilities/import/backend/cameracontroller.cpp:480
 #, kde-format
 msgid "Failed to process capture from camera"
-msgstr "Non se puido procesar a captura da cámara."
+msgstr "Non foi posíbel procesar a captura da cámara."
 
 #: core/utilities/import/backend/cameracontroller.cpp:494
 #, kde-kuit-format
 msgid "Failed to list folder <filename>%1</filename>"
-msgstr "Non se puido listar o cartafol <filename>%1</filename>."
+msgstr "Non foi posíbel listar o cartafol <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:510
 #, kde-kuit-format
 msgid "Failed to list files in <filename>%1</filename>"
-msgstr "Non se puideron listar os ficheiros de <filename>%1</filename>."
+msgstr "Non foi posíbel listar os ficheiros de <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:562
 #, kde-kuit-format
 msgid "Failed to get thumbnail for <filename>%1</filename>"
-msgstr "Non se puido obter a miniatura de <filename>%1</filename>."
+msgstr "Non foi posíbel obter a miniatura de <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:580
 #, kde-kuit-format
 msgid "Failed to get Metadata for <filename>%1</filename>"
-msgstr "Non se puideron obter os metadatos de <filename>%1</filename>."
+msgstr "Non foi posíbel obter os metadatos de <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
 #: core/utilities/import/main/importui.cpp:2417
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
-msgstr "Non se puido descargar <filename>%1</filename>."
+msgstr "Non foi posíbel descargar <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:727
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to JPEG"
-msgstr "Non se puido converter o ficheiro <filename>%1</filename> a JPEG."
+msgstr "Non foi posíbel converter o ficheiro <filename>%1</filename> a JPEG."
 
 #: core/utilities/import/backend/cameracontroller.cpp:772
 #, kde-kuit-format
 msgid "Failed to convert file <filename>%1</filename> to DNG"
-msgstr "Non se puido converter o ficheiro <filename>%1</filename> a DNG."
+msgstr "Non foi posíbel converter o ficheiro <filename>%1</filename> a DNG."
 
 #: core/utilities/import/backend/cameracontroller.cpp:789
 #, kde-kuit-format
@@ -60581,63 +60581,63 @@ msgstr "Esgotouse o tempo máximo do guión para <filename>%1</filename>"
 #: core/utilities/import/backend/cameracontroller.cpp:889
 #, kde-kuit-format
 msgid "Failed to run script for <filename>%1</filename>"
-msgstr "Non se puido executar o guión para <filename>%1</filename>."
+msgstr "Non foi posíbel executar o guión para <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1004
 #, kde-format
 msgid "Failed to download file <b>%1</b>."
-msgstr "Non se puido descargar o ficheiro <b>%1</b>."
+msgstr "Non foi posíbel descargar o ficheiro <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1008
 #, kde-format
 msgid "Failed to download file <b>%1</b>. Do you want to continue?"
-msgstr "Non se puido descargar o ficheiro <b>%1</b>. Quere continuar?"
+msgstr "Non foi posíbel descargar o ficheiro <b>%1</b>. Quere continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1025
 #, kde-kuit-format
 msgid "Failed to upload <filename>%1</filename>"
-msgstr "Non se puido enviar <filename>%1</filename>."
+msgstr "Non foi posíbel enviar <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1033
 #, kde-format
 msgid "Failed to upload file <b>%1</b>."
-msgstr "Non se puido enviar o ficheiro <b>%1</b>."
+msgstr "Non foi posíbel enviar o ficheiro <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1037
 #, kde-format
 msgid "Failed to upload file <b>%1</b>. Do you want to continue?"
-msgstr "Non se puido enviar o ficheiro <b>%1</b>. Quere continuar?"
+msgstr "Non foi posíbel enviar o ficheiro <b>%1</b>. Quere continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1052
 #, kde-kuit-format
 msgid "Failed to delete <filename>%1</filename>"
-msgstr "Non se puido eliminar <filename>%1</filename>."
+msgstr "Non foi posíbel eliminar <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1060
 #, kde-format
 msgid "Failed to delete file <b>%1</b>."
-msgstr "Non se puido eliminar o ficheiro <b>%1</b>."
+msgstr "Non foi posíbel eliminar o ficheiro <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1064
 #, kde-format
 msgid "Failed to delete file <b>%1</b>. Do you want to continue?"
-msgstr "Non se puido eliminar o ficheiro <b>%1</b>. Quere continuar?"
+msgstr "Non foi posíbel eliminar o ficheiro <b>%1</b>. Quere continuar?"
 
 #: core/utilities/import/backend/cameracontroller.cpp:1079
 #, kde-kuit-format
 msgid "Failed to lock <filename>%1</filename>"
-msgstr "Non se puido bloquear <filename>%1</filename>."
+msgstr "Non foi posíbel bloquear <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1087
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>."
-msgstr "Non se puido conmutar o ficheiro de bloqueo <b>%1</b>."
+msgstr "Non foi posíbel conmutar o ficheiro de bloqueo <b>%1</b>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:1091
 #, kde-format
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
-"Non se puido conmutar o ficheiro de bloqueo <b>%1</b>. Quere continuar?"
+"Non foi posíbel conmutar o ficheiro de bloqueo <b>%1</b>. Quere continuar?"
 
 #: core/utilities/import/backend/gpcamera.cpp:1534
 #, kde-format
@@ -61310,7 +61310,8 @@ msgid ""
 "Failed to connect to the camera. Please make sure it is connected properly "
 "and turned on."
 msgstr ""
-"Non se puido conectar coa cámara. Verifique que está ben conectada e acesa."
+"Non foi posíbel conectar coa cámara. Verifique que está ben conectada e "
+"acesa."
 
 #: core/utilities/import/main/importui.cpp:1151
 #, kde-format
@@ -61539,7 +61540,8 @@ msgstr "Renomear o ficheiro a <filename>%1</filename>"
 #: core/utilities/import/main/importui.cpp:2397
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
-msgstr "Non se puido gardar o ficheiro acompañante de <filename>%1</filename>"
+msgstr ""
+"Non foi posíbel gardar o ficheiro acompañante de <filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:2471
 #, fuzzy, kde-format
@@ -62008,7 +62010,7 @@ msgstr "O formato non é correcto…"
 #: core/utilities/import/widgets/capturewidget.cpp:83
 #, kde-format
 msgid "Cannot display camera preview"
-msgstr "Non se pode amosar a vista previa da cámara"
+msgstr "Non é posíbel amosar a vista previa da cámara"
 
 #: core/utilities/import/widgets/dngconvertsettings.cpp:66
 #, kde-format
@@ -63032,7 +63034,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Failed to process item..."
-msgstr "Non se puido procesar o elemento…"
+msgstr "Non foi posíbel procesar o elemento…"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, kde-format
@@ -63161,7 +63163,7 @@ msgstr ""
 #: core/utilities/queuemanager/manager/task.cpp:289
 #, kde-format
 msgid "Failed to create sidecar file..."
-msgstr "Non se puido crear o ficheiro acompañante…"
+msgstr "Non foi posíbel crear o ficheiro acompañante…"
 
 #: core/utilities/queuemanager/manager/task.cpp:298
 #, kde-format
@@ -63172,7 +63174,7 @@ msgstr "O elemento procesouse correctamente %1"
 #: core/utilities/queuemanager/manager/task.cpp:308
 #, kde-format
 msgid "Failed to create file..."
-msgstr "Non se puido crear o ficheiro…"
+msgstr "Non foi posíbel crear o ficheiro…"
 
 #: core/utilities/queuemanager/views/assignedlist.cpp:112
 #, kde-format
@@ -65317,7 +65319,7 @@ msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
 "is turned on. Would you like to try again?"
 msgstr ""
-"Non se puido detectar automaticamente a cámara; asegúrese de que está ben "
+"Non foi posíbel detectar automaticamente a cámara; asegúrese de que está ben "
 "conectada e acesa. Quere intentalo de novo?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
@@ -65780,7 +65782,7 @@ msgid ""
 "Please check if your camera is turned on and retry or try setting it "
 "manually."
 msgstr ""
-"Non se puido detectar automaticamente a cámara.\n"
+"Non foi posíbel detectar automaticamente a cámara.\n"
 "Comprobe que ten a cámara acesa e inténteo de novo ou probe a configurala "
 "manualmente."
 
@@ -68564,8 +68566,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:269
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr ""
-"Asumir que está a utilizar o espazo de cores sRGB (estándar de Internet)"
+msgstr "Asumir que está a usar o espazo de cores sRGB (estándar de Internet)"
 
 #. i18n("<p></p>"));
 #.
@@ -68577,7 +68578,7 @@ msgstr "e convertelo ao espazo de cores de traballo"
 #: core/utilities/setup/setupicc.cpp:288
 #, kde-format
 msgid "Assume it is using the working color space"
-msgstr "Asumir que está a utilizar o espazo de cores de traballo"
+msgstr "Asumir que está a usar o espazo de cores de traballo"
 
 #. i18n("<p></p>"));
 #.
@@ -69006,7 +69007,7 @@ msgstr "Substituí&r…"
 #: core/utilities/setup/setuptemplate.cpp:284
 #, kde-format
 msgid "Cannot register new metadata template without title."
-msgstr "Non se pode rexistrar un modelo de datos sen título."
+msgstr "Non é posíbel rexistrar un modelo de datos sen título."
 
 #: core/utilities/setup/setuptemplate.cpp:260
 #, kde-format

@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 00:40+0000\n"
-"PO-Revision-Date: 2023-09-29 01:00+0300\n"
+"PO-Revision-Date: 2023-09-30 11:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -24888,7 +24888,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: name of wiki area"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:316
 #, kde-format
@@ -26017,7 +26017,7 @@ msgstr "SmugMug web hizmetine e-posta ve parola ile oturum açın."
 #, kde-format
 msgctxt "smug account settings"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:93
 #, kde-format
@@ -34048,11 +34048,10 @@ msgid "Authors"
 msgstr "Yazarlar"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
@@ -34115,11 +34114,10 @@ msgid "Properties"
 msgstr "Özellikler"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:134
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: Dplugin property"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/dplugins/setup/dpluginconfview.cpp:135
 #, fuzzy, kde-format
@@ -40452,7 +40450,7 @@ msgstr "Yazarlar"
 #: core/libs/template/templatepanel.cpp:111
 #, kde-format
 msgid "Author Names:"
-msgstr "Yazar İsimleri:"
+msgstr "Yazar adları:"
 
 #: core/libs/template/templatepanel.cpp:114
 #, kde-format
@@ -40913,7 +40911,7 @@ msgstr "Değiştirme"
 #: core/libs/template/templateviewer.cpp:143
 #, kde-format
 msgid "Names:"
-msgstr "İsimler:"
+msgstr "Adlar:"
 
 #: core/libs/template/templateviewer.cpp:151
 #, kde-format
@@ -42277,11 +42275,10 @@ msgid "Video Decoder Config Page"
 msgstr "Video kodlayıcı"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
-#, fuzzy, kde-format
-#| msgid "The namespace name is required"
+#, kde-format
 msgctxt "@label"
 msgid "Decoder Priorities (reopen is required)"
-msgstr "İsim uzayı adı gereklidir"
+msgstr "Kod Çözücü Öncelikleri (Yeniden Açma Gerekli)"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:289
 #, kde-format
@@ -43124,7 +43121,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:129
 #, kde-format
@@ -43425,7 +43422,7 @@ msgstr "Özet"
 #, kde-format
 msgctxt "@info: icc profile class"
 msgid "Named color"
-msgstr "İsimlendirilmiş renk"
+msgstr "Adlı renk"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:516
 #, kde-format
@@ -44302,7 +44299,7 @@ msgstr "Exif"
 #, kde-format
 msgctxt "@title: metadata properties"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/widgets/metadata/config/metadataselector.cpp:96
 #, kde-format
@@ -49737,11 +49734,10 @@ msgid "Code (Language-Country)"
 msgstr "Bask Dili (Bask Ülkesi)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: translator language name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/widgets/text/localizeconfig.cpp:112
 #, kde-format
@@ -50854,7 +50850,7 @@ msgstr "Tarih"
 #, kde-format
 msgctxt "sort images by name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
@@ -51393,12 +51389,10 @@ msgid "Favorite Folder Properties"
 msgstr "Dosya Özellikleri"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info: favorite folder title property"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:215
 #, fuzzy, kde-format
@@ -51416,12 +51410,10 @@ msgid "Favorite Item Properties"
 msgstr "Dosya Özellikleri"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info: favorite item title property"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:235
 #, fuzzy, kde-format
@@ -51454,12 +51446,10 @@ msgid "Description:"
 msgstr "Açıklama:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "filename"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label: favorite item title properties"
 msgid "&Name:"
-msgstr "İsim:"
+msgstr "&Ad:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:151
 #, fuzzy, kde-format
@@ -51591,11 +51581,10 @@ msgid "&Items:"
 msgstr "Ögeler:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:248
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title:column file name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:249
 #, fuzzy, kde-format
@@ -51813,11 +51802,10 @@ msgid "Unnamed"
 msgstr "Adsız"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:91
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: item file name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/showfoto/stackview/showfotostackviewlist.cpp:92
 #, fuzzy, kde-format
@@ -51958,7 +51946,7 @@ msgstr "Azalan"
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:266
 #, kde-format
 msgid "Current Name"
-msgstr "Şimdiki İsim"
+msgstr "Şu Anki Ad"
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:266
 #, kde-format
@@ -52829,7 +52817,7 @@ msgstr "Dosya özelliklerini ekleyin"
 #, kde-format
 msgctxt "File name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:47
 #, kde-format
@@ -61667,7 +61655,7 @@ msgstr "İçe Aktarılan Filtreleri Düzenle"
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
@@ -62229,7 +62217,7 @@ msgstr "Koleksiyonu kaldır"
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1248
 #, kde-format
@@ -63019,11 +63007,10 @@ msgid "New XMP Namespace"
 msgstr "Yeni XMP Ad Alanı"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:149
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr "Xmp İsim Uzayını Düzenle"
+msgstr "XMP Ad Alanını Düzenle"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:239
 #, kde-format
@@ -63039,7 +63026,7 @@ msgstr "Metaveri Alt Boşluğu"
 #, kde-format
 msgctxt "@label: namespace name"
 msgid "Name:"
-msgstr "İsim:"
+msgstr "Ad:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:263
 #, kde-format
@@ -63091,7 +63078,7 @@ msgstr "Özel Seçenekler"
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:321
 #, kde-format
 msgid "Alternative name"
-msgstr "Alternatif İsim"
+msgstr "Alternatif ad"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:325
 #, kde-format
@@ -63122,7 +63109,7 @@ msgstr ""
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:571
 #, kde-format
 msgid "The namespace name is required"
-msgstr "İsim uzayı adı gereklidir"
+msgstr "Ad alanı adı gerekli"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:581
 #, kde-format

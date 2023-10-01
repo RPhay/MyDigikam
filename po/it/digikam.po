@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-30 00:40+0000\n"
-"PO-Revision-Date: 2023-09-25 18:25+0200\n"
+"PO-Revision-Date: 2023-09-29 15:08+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -22858,7 +22858,7 @@ msgstr "Crea collegamenti simbolici relativi"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr "Include i sidecar degli elementi"
+msgstr "Includi i sidecar degli elementi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
