@@ -524,7 +524,7 @@ bool GeolocationEdit::eventFilter(QObject* const o, QEvent* const e)
     {
         QMouseEvent const* m = static_cast<QMouseEvent*>(e);
 
-        QPoint p (m->x(), m->y());
+        QPoint p (m->position().toPoint());
         const int var = d->tabBar->tabAt(p);
 
         if (var < 0)
