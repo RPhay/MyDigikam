@@ -186,6 +186,11 @@ public:
     QString filePath()                                                                  const;
 
     /**
+     * Returns the relative path part to the image
+     */
+    QString relativePath()                                                              const;
+
+    /**
      * @return the unique image id for this item
      */
     qlonglong id()                                                                      const;

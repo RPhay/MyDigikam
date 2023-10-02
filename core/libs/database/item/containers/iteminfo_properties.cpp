@@ -319,6 +319,16 @@ QString ItemInfo::filePath() const
     }
 }
 
+QString ItemInfo::relativePath() const
+{
+    if (!m_data)
+    {
+        return QString();
+    }
+
+    return (ItemInfoStatic::cache()->albumRelativePath(m_data->albumId));
+}
+
 bool ItemInfo::isVisible() const
 {
     if (!m_data)

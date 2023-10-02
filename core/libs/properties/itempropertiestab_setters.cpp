@@ -106,6 +106,16 @@ void ItemPropertiesTab::setVideoInfoDisable(const bool b)
     }
 }
 
+void ItemPropertiesTab::setFileName(const QString& str)
+{
+    d->labelFile->setAdjustedText(str);
+}
+
+void ItemPropertiesTab::setFileFolder(const QString& str)
+{
+    d->labelFolder->setAdjustedText(str);
+}
+
 void ItemPropertiesTab::setFileModifiedDate(const QString& str)
 {
     d->labelFileModifiedDate->setAdjustedText(str);
