@@ -36,7 +36,7 @@ if(ENABLE_MEDIAPLAYER)
 
         # NOTE: this part depends of QtAv
         # TODO: port to QtMultimedia
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/qt5/vidslidetask.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
@@ -50,8 +50,8 @@ if(ENABLE_MEDIAPLAYER)
         )
 
         set(libvideotools_SRCS ${libvideotools_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt6/mediaplayerview.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt6/slidevideo.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/mediaplayerview.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/slidevideo.cpp
         )
 
     else()
@@ -59,8 +59,8 @@ if(ENABLE_MEDIAPLAYER)
         # NOTE: this part depends of QtAv
 
         set(libvideotools_SRCS ${libvideotools_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt5/mediaplayerview.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/player/qt5/slidevideo.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
         )
 
     endif()
