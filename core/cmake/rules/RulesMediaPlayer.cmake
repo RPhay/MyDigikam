@@ -8,11 +8,21 @@ if(ENABLE_MEDIAPLAYER)
 
     if(Qt6_FOUND)
 
-        find_package(Qt${QT_VERSION_MAJOR}
-                     OPTIONAL_COMPONENTS
-                     Multimedia
-                     MultimediaWidgets
-        )
+        if (ENABLE_QTMULTIMEDIA)
+
+            find_package(Qt${QT_VERSION_MAJOR}
+                         OPTIONAL_COMPONENTS
+                         Multimedia
+                         MultimediaWidgets
+            )
+
+        endif()
+
+    else()
+
+        # Qt Multimedia is only supported with Qt6 > 6.5.
+
+        set (ENABLE_QTMULTIMEDIA OFF)
 
     endif()
 

@@ -200,7 +200,7 @@ endif()
 
 if(ENABLE_MEDIAPLAYER)
 
-    if(Qt6_FOUND)
+    if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
 
         target_link_libraries(digikamcore
                               PRIVATE

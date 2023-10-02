@@ -215,6 +215,14 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Qt WebKit version") <<              QLatin1String(QTWEBKITWIDGETS_VERSION_STR));
 #endif
 
+#ifdef HAVE_QMULTIMEDIA
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+#else
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+#endif
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Exiv2") <<                          MetaEngine::Exiv2Version());
 

@@ -35,14 +35,14 @@ if(ENABLE_MEDIAPLAYER)
     set(libvideotools_SRCS
 
         # NOTE: this part depends of QtAv
-        # TODO: port to QtMultimedia
+        # TODO: port to QtMultimedia when API will be ready to stream customized frames to QMediaRecoreder
         ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
 
         ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
     )
 
-    if(Qt6_FOUND)
+    if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
 
         # NOTE: this part depends of QtMultimedia
 
