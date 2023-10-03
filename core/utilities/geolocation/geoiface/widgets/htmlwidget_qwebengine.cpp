@@ -282,18 +282,51 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 #endif
                                           &d->firstSelectionPoint);
 
-                    d->firstSelectionScreenPoint = QPoint(e->x(), e->y());
+                    d->firstSelectionScreenPoint = QPoint(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                        e->position().toPoint()
+#else
+
+                        e->x(), e->y()
+
+#endif
+
+                    );
                 }
                 else
                 {
                     runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                                          .arg(e->position().toPoint().x())
+                                          .arg(e->position().toPoint().y()),
+
+#else
+
                                           .arg(e->x())
-                                          .arg(e->y()),
+                                          .arg(e->y())
+
+#endif
+
                                           &d->intermediateSelectionPoint);
 
-                    d->intermediateSelectionScreenPoint = QPoint(e->x(), e->y());
+                    d->intermediateSelectionScreenPoint = QPoint(
 
-                    qreal lonWest, latNorth, lonEast, latSouth;
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                        e->position().toPoint()
+#else
+
+                        e->x(), e->y()
+
+#endif
+
+                    );
+
+                    qreal lonWest = 0.0, latNorth = 0.0, lonEast = 0.0, latSouth = 0.0;
 
                     if (d->firstSelectionScreenPoint.x() < d->intermediateSelectionScreenPoint.x())
                     {
@@ -344,16 +377,27 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
                 d->firstSelectionPoint.hasCoordinates())
             {
                 runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
-                                      .arg(e->x())
-                                      .arg(e->y()),
+                                      .arg(e->position().toPoint().x())
+                                      .arg(e->position().toPoint().y()),
                                       &d->intermediateSelectionPoint);
 
-                d->intermediateSelectionScreenPoint = QPoint(e->x(), e->y());
+                d->intermediateSelectionScreenPoint = QPoint(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                        e->position().toPoint()
+#else
+
+                        e->x(), e->y()
+
+#endif
+
+                );
 
                 qCDebug(DIGIKAM_GEOIFACE_LOG) << d->firstSelectionScreenPoint << QLatin1Char(' ')
                                               << d->intermediateSelectionScreenPoint;
 
-                qreal lonWest, latNorth, lonEast, latSouth;
+                qreal lonWest = 0.0, latNorth = 0.0, lonEast = 0.0, latSouth = 0.0;
 
                 if (d->firstSelectionScreenPoint.x() < d->intermediateSelectionScreenPoint.x())
                 {
@@ -394,6 +438,7 @@ void HTMLWidget::setSelectionRectangle(const GeoCoordinates::Pair& searchCoordin
     if (!searchCoordinates.first.hasCoordinates())
     {
         runScript(QLatin1String("kgeomapRemoveSelectionRectangle();"));
+
         return;
     }
 
