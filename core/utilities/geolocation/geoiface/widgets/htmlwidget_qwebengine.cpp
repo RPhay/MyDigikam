@@ -274,12 +274,17 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
                     runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                           .arg(e->position().x())
                                           .arg(e->position().y()),
+
 #else
+
                                           .arg(e->x())
                                           .arg(e->y()),
+
 #endif
+
                                           &d->firstSelectionPoint);
 
                     d->firstSelectionScreenPoint = QPoint(
@@ -287,6 +292,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                         e->position().toPoint()
+
 #else
 
                         e->x(), e->y()
@@ -318,6 +324,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                         e->position().toPoint()
+
 #else
 
                         e->x(), e->y()
@@ -397,6 +404,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                         e->position().toPoint()
+
 #else
 
                         e->x(), e->y()
