@@ -132,11 +132,17 @@ void EmbossFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &EmbossFilter::embossMultithreaded, this,
+
 #else
+
                                            this, &EmbossFilter::embossMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1],
                                            h,

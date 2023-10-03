@@ -571,7 +571,7 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
         if (mbt == Qt::LeftButton)
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             gMousePos = me->globalPosition().toPoint();
 
@@ -580,6 +580,7 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
             gMousePos = me->globalPos();
 
 #endif
+
             iMousePos = me->pos();
         }
 
@@ -609,7 +610,7 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
         int x                 = mpWindow->pos().x();
         int y                 = mpWindow->pos().y();
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         int dx                = me->globalPosition().toPoint().x() - gMousePos.x();
         int dy                = me->globalPosition().toPoint().y() - gMousePos.y();
@@ -622,7 +623,6 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
         gMousePos             = me->globalPos();
 
 #endif
-
 
         mpWindow->move(x + dx, y + dy);
 

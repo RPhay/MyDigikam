@@ -173,7 +173,7 @@ void DragDropViewImplementation::paste()
                      data, Qt::NoButton,
                      cutAction ? Qt::ShiftModifier : Qt::ControlModifier);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     QModelIndex index = asView()->indexAt(event.position().toPoint());
 
@@ -235,7 +235,7 @@ void DragDropViewImplementation::dragMoveEvent(QDragMoveEvent* e)
     if (handler)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         QModelIndex index     = asView()->indexAt(e->position().toPoint());
 
@@ -268,7 +268,7 @@ void DragDropViewImplementation::dropEvent(QDropEvent* e)
     if (handler)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         QModelIndex index = asView()->indexAt(e->position().toPoint());
 

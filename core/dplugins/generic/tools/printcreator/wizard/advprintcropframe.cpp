@@ -264,13 +264,18 @@ void AdvPrintCropFrame::mouseMoveEvent(QMouseEvent* e)
         int newW = d->cropRegion.width();
         int newH = d->cropRegion.height();
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         int newX = e->position().toPoint().x() - (newW / 2);
         int newY = e->position().toPoint().y() - (newH / 2);
+
 #else
+
         int newX = e->x() - (newW / 2);
         int newY = e->y() - (newH / 2);
+
 #endif
+
         newX     = qMax(d->imageX, newX);
         newX     = qMin(d->imageX + d->image.width() - newW, newX);
 

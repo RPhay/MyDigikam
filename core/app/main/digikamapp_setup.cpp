@@ -137,7 +137,7 @@ void DigikamApp::setupActions()
     ac->addAction(QLatin1String("album_back"), d->backwardActionMenu);
     ac->setDefaultShortcut(d->backwardActionMenu, Qt::ALT | Qt::Key_Left);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->backwardActionMenu->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowBackwardMenu()));
@@ -160,7 +160,7 @@ void DigikamApp::setupActions()
     ac->addAction(QLatin1String("album_forward"), d->forwardActionMenu);
     ac->setDefaultShortcut(d->forwardActionMenu, Qt::ALT | Qt::Key_Right);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->forwardActionMenu->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowForwardMenu()));
@@ -532,7 +532,7 @@ void DigikamApp::setupActions()
     d->albumSortAction = new KSelectAction(i18nc("@action: setup", "&Sort Albums"), this);
     d->albumSortAction->setWhatsThis(i18nc("@info: setup", "Sort Albums in tree-view."));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->albumSortAction, SIGNAL(indexTriggered(int)),
             d->view, SLOT(slotSortAlbums(int)));

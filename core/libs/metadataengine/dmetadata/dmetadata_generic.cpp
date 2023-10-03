@@ -85,11 +85,16 @@ QVariant DMetadata::fromIptcOrXmp(const char* const iptcTagName, const char* con
         }
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     return QVariant(QMetaType(QMetaType::QString));
+
 #else
+
     return QVariant(QVariant::String);
+
 #endif
+
 }
 
 QVariant DMetadata::fromExifOrXmpList(const QStringList& tagList) const
@@ -170,11 +175,16 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
 
             if (str.isEmpty())
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::QVariantMap));
+
 #else
+
                 return QVariant(QVariant::Map);
+
 #endif
+
             }
 
             QMap<QString, QVariant> map;
@@ -200,16 +210,21 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         {
             QVariant var;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             // TODO: With Qt6.2.3, QMultiMap do not inherit of QMap as with Qt5 and QVariant do not handle QMultiMap.
             // We needs to find a way to support QVariant conversion from QMultiMap without to lost face entries,
             // or wait than Qt6 support QVariant(QMultiMap).
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Faces multimap to variant conversion is not yet supported with Qt6!";
+
 #else
+
             QMultiMap<QString,QVariant> faceMap;
             getItemFacesMap(faceMap);
             var = QVariant(faceMap);
+
 #endif
+
             return var;
         }
 
@@ -378,11 +393,16 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         case MetadataInfo::WhiteBalanceColorTemperature:
         {
             //TODO: ??
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             return QVariant(QMetaType(QMetaType::Int));
+
 #else
+
             return QVariant(QVariant::Int);
+
 #endif
+
         }
 
         case MetadataInfo::Longitude:
@@ -400,11 +420,17 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
             }
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::Double));
+
 #else
+
                 return QVariant(QVariant::Double);
+
 #endif
+
             }
         }
 
@@ -423,11 +449,17 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
             }
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::Double));
+
 #else
+
                 return QVariant(QVariant::Double);
+
 #endif
+
             }
         }
 
@@ -441,11 +473,17 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
             }
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::Double));
+
 #else
+
                 return QVariant(QVariant::Double);
+
 #endif
+
             }
         }
 
@@ -455,21 +493,31 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
         case MetadataInfo::PositionAccuracy:
         {
             // TODO or unsupported?
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::Double));
+
 #else
+
                 return QVariant(QVariant::Double);
+
 #endif
+
         }
 
         case MetadataInfo::PositionDescription:
         {
             // TODO or unsupported?
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::QString));
+
 #else
+
                 return QVariant(QVariant::String);
+
 #endif
+
         }
 
         case MetadataInfo::IptcCoreCopyrightNotice:
@@ -739,11 +787,17 @@ QVariant DMetadata::getMetadataField(MetadataInfo::Field field) const
             }
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 return QVariant(QMetaType(QMetaType::Int));
+
 #else
+
                 return QVariant(QVariant::Int);
+
 #endif
+
             }
         }
 
@@ -1238,11 +1292,17 @@ QVariant DMetadata::toStringListVariant(const QStringList& list) const
 {
     if (list.isEmpty())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             return QVariant(QMetaType(QMetaType::QStringList));
+
 #else
+
             return QVariant(QVariant::StringList);
+
 #endif
+
     }
 
     return list;

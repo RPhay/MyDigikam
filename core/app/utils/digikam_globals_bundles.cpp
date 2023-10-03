@@ -384,7 +384,7 @@ void loadEcmQtTranslationFiles(QApplication& app)
                                  catalog                        +
                                  QLatin1String(".qm");
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             const QString root = QLibraryInfo::path(QLibraryInfo::PrefixPath);
 

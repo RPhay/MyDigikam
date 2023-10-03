@@ -123,7 +123,7 @@ bool DImgBuiltinFilter::isValid() const
         case Crop:
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             return (m_arg.typeId() == QVariant::Rect);
 
@@ -138,7 +138,7 @@ bool DImgBuiltinFilter::isValid() const
         case Resize:
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             return (m_arg.typeId() == QVariant::Size);
 

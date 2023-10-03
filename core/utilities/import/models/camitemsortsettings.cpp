@@ -291,20 +291,30 @@ int CamItemSortSettings::compare(const CamItemInfo& left, const CamItemInfo& rig
 bool CamItemSortSettings::lessThan(const QVariant& left, const QVariant& right) const
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (left.typeId() != right.typeId())
+
 #else
+
     if (left.type() != right.type())
+
 #endif
+
     {
         return false;
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     switch (left.typeId())
+
 #else
+
     switch (left.type())
+
 #endif
+
     {
         case QVariant::Int:
         {

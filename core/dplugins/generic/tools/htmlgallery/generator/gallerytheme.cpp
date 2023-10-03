@@ -23,8 +23,10 @@
 #include <QUrl>
 #include <QDir>
 
-#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+
 #   include <QTextCodec>
+
 #endif
 
 // KDE includes
@@ -88,10 +90,14 @@ public:
 
         QTextStream stream(&file);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         stream.setEncoding(QStringConverter::Utf8);
+
 #else
+
         stream.setCodec(QTextCodec::codecForName("UTF-8"));
+
 #endif
 
         QString prefix = QLatin1String("[") + QLatin1String(PARAMETER_GROUP_PREFIX);

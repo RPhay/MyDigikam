@@ -474,7 +474,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return QSortFilterProxyModel::lessThan(left, right);
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     if ((valLeft.typeId() == QVariant::String) && (valRight.typeId() == QVariant::String))
 
@@ -491,7 +491,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     else if ((valLeft.typeId() == QVariant::Date) && (valRight.typeId() == QVariant::Date))
 

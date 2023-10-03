@@ -294,7 +294,7 @@ void EditorWindow::setupStandardActions()
         d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "AVIF"),   QLatin1String("AVIF"));
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     m_saveNewVersionAction->popupMenu()->addAction(m_saveNewVersionAsAction);
     m_saveNewVersionAction->popupMenu()->addAction(m_saveNewVersionInFormatAction->menuAction());
@@ -362,7 +362,7 @@ void EditorWindow::setupStandardActions()
     ac->addAction(QLatin1String("editorwindow_undo"), m_undoAction);
     ac->setDefaultShortcut(m_undoAction, QKeySequence(Qt::CTRL | Qt::Key_Z));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(m_undoAction->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowUndoMenu()));
@@ -389,7 +389,7 @@ void EditorWindow::setupStandardActions()
     ac->addAction(QLatin1String("editorwindow_redo"), m_redoAction);
     ac->setDefaultShortcut(m_redoAction, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Z));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(m_redoAction->popupMenu(), SIGNAL(aboutToShow()),
             this, SLOT(slotAboutToShowRedoMenu()));
@@ -676,7 +676,7 @@ void EditorWindow::setupStatusBar()
 void EditorWindow::slotAboutToShowUndoMenu()
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     m_undoAction->popupMenu()->clear();
 
@@ -691,7 +691,7 @@ void EditorWindow::slotAboutToShowUndoMenu()
     for (int i = 0 ; i < titles.size() ; ++i)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         QAction* const action = m_undoAction->popupMenu()->addAction(titles.at(i));
 
@@ -715,7 +715,7 @@ void EditorWindow::slotAboutToShowUndoMenu()
 void EditorWindow::slotAboutToShowRedoMenu()
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     m_redoAction->popupMenu()->clear();
 
@@ -730,7 +730,7 @@ void EditorWindow::slotAboutToShowRedoMenu()
     for (int i = 0 ; i < titles.size() ; ++i)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         QAction* const action = m_redoAction->popupMenu()->addAction(titles.at(i));
 

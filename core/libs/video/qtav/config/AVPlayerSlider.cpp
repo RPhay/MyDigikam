@@ -84,11 +84,16 @@ int AVPlayerSlider::pixelPosToRangeValue(int pos) const
                                            sliderMax - sliderMin, opt.upsideDown);
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
 void AVPlayerSlider::enterEvent(QEnterEvent* e)
+
 #else
+
 void AVPlayerSlider::enterEvent(QEvent* e)
+
 #endif
+
 {
     Q_EMIT onEnter();
 

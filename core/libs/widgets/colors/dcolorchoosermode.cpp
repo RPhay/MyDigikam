@@ -66,11 +66,17 @@ void setComponentValue(QColor& color, DColorChooserMode chooserMode, qreal value
     }
     else
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         float h = 0.0F, s = 0.0F, v = 0.0F, a = 0.0F;
+
 #else
+
         qreal h = 0., s = 0., v = 0., a = 0.;
+
 #endif
+
         color.getHsvF(&h, &s, &v, &a);
 
         if      (chooserMode == ChooserHue)

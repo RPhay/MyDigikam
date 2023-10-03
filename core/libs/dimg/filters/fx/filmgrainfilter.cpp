@@ -251,11 +251,17 @@ void FilmGrainFilter::filterImage()
     for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
     {
         tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                        &FilmGrainFilter::filmgrainMultithreaded, this,
+
 #else
+
                                        this, &FilmGrainFilter::filmgrainMultithreaded,
+
 #endif
+
                                        vals[j],
                                        vals[j+1]
                                       )
