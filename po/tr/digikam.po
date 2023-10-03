@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 00:40+0000\n"
+"POT-Creation-Date: 2023-10-03 00:40+0000\n"
 "PO-Revision-Date: 2023-09-30 11:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2808,16 +2808,16 @@ msgstr ""
 "Dal: %7"
 
 #: core/app/views/preview/itempreviewview.cpp:186
-#: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:222
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Geri"
 
 #: core/app/views/preview/itempreviewview.cpp:188
-#: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:224
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -30040,44 +30040,44 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Kitaplıklar"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:284
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:365
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:393
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:421
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Kamera Yapılandırması"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Hayır"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:614
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -38023,7 +38023,7 @@ msgstr "<i>değiştirilmemiş</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:621
+#: core/libs/properties/itempropertiessidebardb.cpp:622
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38035,10 +38035,10 @@ msgstr "mevcut değil"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebar.cpp:284
-#: core/libs/properties/itempropertiessidebardb.cpp:670
-#: core/libs/properties/itempropertiessidebardb.cpp:672
-#: core/libs/properties/itempropertiessidebardb.cpp:775
-#: core/libs/properties/itempropertiessidebardb.cpp:777
+#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:682
+#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:787
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, kde-format
 msgctxt "@info: item properties"
@@ -38050,10 +38050,10 @@ msgstr "Hayır"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
 #: core/libs/properties/itempropertiessidebar.cpp:283
-#: core/libs/properties/itempropertiessidebardb.cpp:669
-#: core/libs/properties/itempropertiessidebardb.cpp:671
-#: core/libs/properties/itempropertiessidebardb.cpp:774
-#: core/libs/properties/itempropertiessidebardb.cpp:776
+#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:681
+#: core/libs/properties/itempropertiessidebardb.cpp:784
+#: core/libs/properties/itempropertiessidebardb.cpp:786
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
@@ -38289,8 +38289,8 @@ msgstr "Ayarlanmamış"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:646
-#: core/libs/properties/itempropertiessidebardb.cpp:659
+#: core/libs/properties/itempropertiessidebardb.cpp:656
+#: core/libs/properties/itempropertiessidebardb.cpp:669
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38303,40 +38303,40 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 x %2 (%3 Mpks)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:668
+#: core/libs/properties/itempropertiessidebardb.cpp:678
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:315
-#: core/libs/properties/itempropertiessidebardb.cpp:702
+#: core/libs/properties/itempropertiessidebardb.cpp:712
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:320
-#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:717
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Başlıklar"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Sürümler"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:651
+#: core/libs/properties/itempropertiessidebardb.cpp:661
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -38512,7 +38512,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr "B"
 
-#: core/libs/properties/itempropertiestab_setters.cpp:354
+#: core/libs/properties/itempropertiestab_setters.cpp:364
 #, kde-format
 msgctxt "@info: item properties"
 msgid " fps"
@@ -41357,27 +41357,27 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr "Rastgele"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:278
+#: core/libs/video/manager/qtav/vidslidetask.cpp:278
 #, kde-format
 msgid "Failed to open video encoder"
 msgstr "Video kodlayıcısının açılması başarısız"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:294
+#: core/libs/video/manager/qtav/vidslidetask.cpp:294
 #, kde-format
 msgid "Failed to open audio encoder"
 msgstr "Ses çözücü açılırken hata"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:324
+#: core/libs/video/manager/qtav/vidslidetask.cpp:324
 #, kde-format
 msgid "Failed to open muxer"
 msgstr "Değiştirici açılırken hata"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:410
+#: core/libs/video/manager/qtav/vidslidetask.cpp:410
 #, kde-format
 msgid "Encoding %1 Done"
 msgstr "%1 Kodlaması Tamamlandı"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:445
+#: core/libs/video/manager/qtav/vidslidetask.cpp:445
 #, kde-format
 msgid "Output video is %1"
 msgstr "Çıktı videosu %1"
@@ -41958,15 +41958,15 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr "Masaüstünden öntanımlı"
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:226
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Durdur/Oynat"
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:228
+#: core/libs/video/player/qtav/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -41974,15 +41974,15 @@ msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Yakala"
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:238
+#: core/libs/video/player/qtav/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:238
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu..."
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:277
+#: core/libs/video/player/qtav/mediaplayerview.cpp:229
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 00:40+0000\n"
+"POT-Creation-Date: 2023-10-03 00:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -2995,16 +2995,16 @@ msgstr ""
 "ਰੀਵਿ: %3"
 
 #: core/app/views/preview/itempreviewview.cpp:186
-#: core/libs/video/player/qt5/mediaplayerview.cpp:193
-#: core/libs/video/player/qt6/mediaplayerview.cpp:222
+#: core/libs/video/player/qtav/mediaplayerview.cpp:193
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:222
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "ਪਿੱਛੇ"
 
 #: core/app/views/preview/itempreviewview.cpp:188
-#: core/libs/video/player/qt5/mediaplayerview.cpp:195
-#: core/libs/video/player/qt6/mediaplayerview.cpp:224
+#: core/libs/video/player/qtav/mediaplayerview.cpp:195
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:224
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -29481,7 +29481,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "ਐਲਬਮ ਲਾਇਬਰੇਰੀ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:276
+#: core/libs/dialogs/libsinfodlg.cpp:284
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29489,7 +29489,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:357
+#: core/libs/dialogs/libsinfodlg.cpp:365
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29497,34 +29497,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:385
+#: core/libs/dialogs/libsinfodlg.cpp:393
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:413
+#: core/libs/dialogs/libsinfodlg.cpp:421
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "ਕੈਮਰਾ ਸੰਰਚਨਾ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:596
+#: core/libs/dialogs/libsinfodlg.cpp:604
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "ਹਾਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:601
+#: core/libs/dialogs/libsinfodlg.cpp:609
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "ਨਹੀਂ"
 
-#: core/libs/dialogs/libsinfodlg.cpp:606
+#: core/libs/dialogs/libsinfodlg.cpp:614
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
@@ -37200,7 +37200,7 @@ msgstr "<i>ਅਣ-ਤਬਦੀਲ</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
-#: core/libs/properties/itempropertiessidebardb.cpp:621
+#: core/libs/properties/itempropertiessidebardb.cpp:622
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -37212,10 +37212,10 @@ msgstr "ਨਾ-ਉਪਲੱਬਧ"
 #: core/libs/properties/import/importitempropertiestab.cpp:511
 #: core/libs/properties/itempropertiessidebar.cpp:281
 #: core/libs/properties/itempropertiessidebar.cpp:284
-#: core/libs/properties/itempropertiessidebardb.cpp:670
-#: core/libs/properties/itempropertiessidebardb.cpp:672
-#: core/libs/properties/itempropertiessidebardb.cpp:775
-#: core/libs/properties/itempropertiessidebardb.cpp:777
+#: core/libs/properties/itempropertiessidebardb.cpp:680
+#: core/libs/properties/itempropertiessidebardb.cpp:682
+#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:787
 #: core/libs/properties/itempropertiestab_setters.cpp:81
 #, fuzzy, kde-format
 #| msgid "No"
@@ -37228,10 +37228,10 @@ msgstr "ਨਹੀਂ"
 #: core/libs/properties/import/importitempropertiestab.cpp:507
 #: core/libs/properties/itempropertiessidebar.cpp:280
 #: core/libs/properties/itempropertiessidebar.cpp:283
-#: core/libs/properties/itempropertiessidebardb.cpp:669
-#: core/libs/properties/itempropertiessidebardb.cpp:671
-#: core/libs/properties/itempropertiessidebardb.cpp:774
-#: core/libs/properties/itempropertiessidebardb.cpp:776
+#: core/libs/properties/itempropertiessidebardb.cpp:679
+#: core/libs/properties/itempropertiessidebardb.cpp:681
+#: core/libs/properties/itempropertiessidebardb.cpp:784
+#: core/libs/properties/itempropertiessidebardb.cpp:786
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -37494,8 +37494,8 @@ msgstr "ਅਣ-ਕੈਲੀਬਰੇਟ"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
-#: core/libs/properties/itempropertiessidebardb.cpp:646
-#: core/libs/properties/itempropertiessidebardb.cpp:659
+#: core/libs/properties/itempropertiessidebardb.cpp:656
+#: core/libs/properties/itempropertiessidebardb.cpp:669
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -37510,7 +37510,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:279
-#: core/libs/properties/itempropertiessidebardb.cpp:668
+#: core/libs/properties/itempropertiessidebardb.cpp:678
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -37518,7 +37518,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:315
-#: core/libs/properties/itempropertiessidebardb.cpp:702
+#: core/libs/properties/itempropertiessidebardb.cpp:712
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -37526,28 +37526,28 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:320
-#: core/libs/properties/itempropertiessidebardb.cpp:707
+#: core/libs/properties/itempropertiessidebardb.cpp:717
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:95
+#: core/libs/properties/itempropertiessidebardb.cpp:96
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "ਸੁਰਖੀ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:96
+#: core/libs/properties/itempropertiessidebardb.cpp:97
 #, fuzzy, kde-format
 #| msgid "Versions"
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "ਵਰਜਨ"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:651
+#: core/libs/properties/itempropertiessidebardb.cpp:661
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -37730,7 +37730,7 @@ msgctxt "@info: unit file size in bytes"
 msgid "B"
 msgstr ""
 
-#: core/libs/properties/itempropertiestab_setters.cpp:354
+#: core/libs/properties/itempropertiestab_setters.cpp:364
 #, fuzzy, kde-format
 #| msgid " fps"
 msgctxt "@info: item properties"
@@ -40257,29 +40257,29 @@ msgctxt "Transition: Random Effect"
 msgid "Random"
 msgstr "ਰਲਵੇਂ"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:278
+#: core/libs/video/manager/qtav/vidslidetask.cpp:278
 #, fuzzy, kde-format
 msgid "Failed to open video encoder"
 msgstr "ਕੈਮਰੇ ਤੋਂ ਫਾਇਲ %1 ਫਾਇਲ ਪਰਾਪਤ ਕਰਨ 'ਚ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:294
+#: core/libs/video/manager/qtav/vidslidetask.cpp:294
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to open audio encoder"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:324
+#: core/libs/video/manager/qtav/vidslidetask.cpp:324
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgid "Failed to open muxer"
 msgstr "ਚਿੱਤਰ ਲੋਡ ਕਰਨ ਲਈ ਫੇਲ੍ਹ"
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:410
+#: core/libs/video/manager/qtav/vidslidetask.cpp:410
 #, kde-format
 msgid "Encoding %1 Done"
 msgstr ""
 
-#: core/libs/video/manager/qt5/vidslidetask.cpp:445
+#: core/libs/video/manager/qtav/vidslidetask.cpp:445
 #, fuzzy, kde-format
 msgid "Output video is %1"
 msgstr "ਡਾਇਰੈਕਟਰੀ ਬਣਾਉਣ ਲਈ ਫੇਲ੍ਹ ਹੈ,"
@@ -40766,29 +40766,29 @@ msgctxt "Video Standard DESKTOP"
 msgid "Default from Desktop"
 msgstr ""
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:197
-#: core/libs/video/player/qt6/mediaplayerview.cpp:226
+#: core/libs/video/player/qtav/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:226
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:199
-#: core/libs/video/player/qt6/mediaplayerview.cpp:228
+#: core/libs/video/player/qtav/mediaplayerview.cpp:199
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:228
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "ਕੈਪਚਰ"
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:202
-#: core/libs/video/player/qt6/mediaplayerview.cpp:238
+#: core/libs/video/player/qtav/mediaplayerview.cpp:202
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:238
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "ਮੀਡਿਆ ਪਲੇਅਰ ਨਾਲ ਇੱਕ ਗਲਤੀ ਆਈ ਹੈ..."
 
-#: core/libs/video/player/qt5/mediaplayerview.cpp:229
-#: core/libs/video/player/qt6/mediaplayerview.cpp:277
+#: core/libs/video/player/qtav/mediaplayerview.cpp:229
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
