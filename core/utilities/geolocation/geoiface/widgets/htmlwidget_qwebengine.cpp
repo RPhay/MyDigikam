@@ -307,7 +307,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 #else
 
                                           .arg(e->x())
-                                          .arg(e->y())
+                                          .arg(e->y()),
 
 #endif
 
@@ -377,8 +377,19 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
                 d->firstSelectionPoint.hasCoordinates())
             {
                 runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                       .arg(e->position().toPoint().x())
                                       .arg(e->position().toPoint().y()),
+
+#else
+
+                                      .arg(e->x())
+                                      .arg(e->y()),
+
+#endif
+
                                       &d->intermediateSelectionPoint);
 
                 d->intermediateSelectionScreenPoint = QPoint(
