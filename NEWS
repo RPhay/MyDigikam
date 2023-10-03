@@ -67,7 +67,7 @@ BUGFIXES:
 057 ==> 474607 - digiKam crashes when creating album for new photos.
 058 ==> 474560 - Image saved with .tiff extension instead of .tif.
 059 ==> 475122 - Need file info even collection is offline.
-060 ==> 
+060 ==> 474105 - Faces load sequentially, not showing existing face thumbnails in the database until a previous one has been generated.
 061 ==> 
 062 ==> 
 063 ==> 

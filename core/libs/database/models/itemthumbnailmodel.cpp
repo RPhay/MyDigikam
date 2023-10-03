@@ -34,7 +34,7 @@ class Q_DECL_HIDDEN ItemThumbnailModel::Private
 public:
 
     explicit Private()
-      : thread             (nullptr),
+      : loadingThread      (nullptr),
         storageThread      (nullptr),
         preloadThread      (nullptr),
         thumbSize          (0),
@@ -45,7 +45,7 @@ public:
         staticListContainingThumbnailRole << ItemModel::ThumbnailRole;
     }
 
-    ThumbnailLoadThread*   thread;
+    ThumbnailLoadThread*   loadingThread;
     ThumbnailLoadThread*   storageThread;
     ThumbnailLoadThread*   preloadThread;
     ThumbnailSize          thumbSize;
@@ -100,15 +100,15 @@ ItemThumbnailModel::~ItemThumbnailModel()
 
 void ItemThumbnailModel::setThumbnailLoadThread(ThumbnailLoadThread* const thread)
 {
-    d->thread = thread;
+    d->loadingThread = thread;
 
-    connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
+    connect(d->loadingThread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotThumbnailLoaded(LoadingDescription,QPixmap)));
 }
 
 ThumbnailLoadThread* ItemThumbnailModel::thumbnailLoadThread() const
 {
-    return d->thread;
+    return d->loadingThread;
 }
 
 ThumbnailSize ItemThumbnailModel::thumbnailSize() const
@@ -154,28 +154,6 @@ void ItemThumbnailModel::setPreloadThumbnails(bool preload)
         disconnect(this, SIGNAL(allRefreshingFinished()),
                    this, SLOT(preloadAllThumbnails()));
     }
-}
-
-void ItemThumbnailModel::prepareThumbnails(const QList<QModelIndex>& indexesToPrepare)
-{
-    prepareThumbnails(indexesToPrepare, d->thumbSize);
-}
-
-void ItemThumbnailModel::prepareThumbnails(const QList<QModelIndex>& indexesToPrepare, const ThumbnailSize& thumbSize)
-{
-    if (!d->thread)
-    {
-        return;
-    }
-
-    QList<ThumbnailIdentifier> ids;
-
-    Q_FOREACH (const QModelIndex& index, indexesToPrepare)
-    {
-        ids << imageInfoRef(index).thumbnailIdentifier();
-    }
-
-    d->thread->findGroup(ids, thumbSize.size());
 }
 
 void ItemThumbnailModel::preloadThumbnails(const QList<ItemInfo>& infos)
@@ -229,7 +207,7 @@ void ItemThumbnailModel::imageInfosCleared()
 
 QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 {
-    if ((role == ThumbnailRole) && (d->thread && index.isValid()))
+    if ((role == ThumbnailRole) && (d->loadingThread && index.isValid()))
     {
         QPixmap thumbnail;
         ItemInfo info = imageInfo(index);
@@ -354,7 +332,7 @@ void ItemThumbnailModel::slotThumbnailLoadedFromStorage(const LoadingDescription
     {
         LoadingDescription description = loadingDescription;
         description.previewParameters.flags &= ~LoadingDescription::PreviewParameters::OnlyFromStorage;
-        d->thread->load(description);
+        d->loadingThread->load(description);
     }
     else
     {
