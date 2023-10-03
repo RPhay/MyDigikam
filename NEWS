@@ -68,7 +68,7 @@ BUGFIXES:
 058 ==> 474560 - Image saved with .tiff extension instead of .tif.
 059 ==> 475122 - Need file info even collection is offline.
 060 ==> 474105 - Faces load sequentially, not showing existing face thumbnails in the database until a previous one has been generated.
-061 ==> 
+061 ==> 471058 - Tags not shown for all items after export-import.
 062 ==> 
 063 ==> 
 064 ==> 
