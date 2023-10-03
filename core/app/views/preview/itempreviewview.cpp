@@ -403,7 +403,7 @@ bool ItemPreviewView::acceptsMouseClick(QMouseEvent* e)
     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
 void ItemPreviewView::enterEvent(QEnterEvent* e)
 
@@ -721,10 +721,14 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
         popMenu.setMouseTracking(true);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         QAction* const choice             = popMenu.exec(this->mapToGlobal(e->position().toPoint()));
+
 #else
+
         QAction* const choice             = popMenu.exec(this->mapToGlobal(e->pos()));
+
 #endif
 
         if (choice == assignToThisAction)

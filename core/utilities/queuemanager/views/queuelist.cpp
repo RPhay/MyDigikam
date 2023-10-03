@@ -378,12 +378,17 @@ Qt::DropActions QueueListView::supportedDropActions() const
     return (Qt::CopyAction | Qt::MoveAction);
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
 QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*>& items) const
+
 #else
+
 // cppcheck-suppress passedByValue
 QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const    // clazy:exclude=function-args-by-ref
+
 #endif
+
 {
     QList<QUrl> urls;
     QList<int> albumIDs;

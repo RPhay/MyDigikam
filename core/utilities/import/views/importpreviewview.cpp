@@ -362,11 +362,16 @@ bool ImportPreviewView::acceptsMouseClick(QMouseEvent* e)
 */
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
 void ImportPreviewView::enterEvent(QEnterEvent* e)
+
 #else
+
 void ImportPreviewView::enterEvent(QEvent* e)
+
 #endif
+
 {
     Q_UNUSED(e)
 /*

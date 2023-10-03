@@ -237,7 +237,7 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
         if (info.isNull())
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             QVariant var = QPixmap();
             return var;
@@ -270,7 +270,7 @@ QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
             }
         }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         QVariant var = QPixmap();
         return var;
@@ -291,7 +291,7 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
     if (role == ThumbnailRole)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         switch (value.typeId())
 

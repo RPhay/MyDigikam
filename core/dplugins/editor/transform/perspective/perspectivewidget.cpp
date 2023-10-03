@@ -848,7 +848,9 @@ void PerspectiveWidget::paintEvent(QPaintEvent*)
 
 void PerspectiveWidget::mousePressEvent(QMouseEvent* e)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if ( (e->button() == Qt::LeftButton) && d->rect.contains( e->position().toPoint().x(), e->position().toPoint().y() ))
     {
         if      ( d->topLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) )
@@ -873,7 +875,9 @@ void PerspectiveWidget::mousePressEvent(QMouseEvent* e)
             d->spot.setY(e->position().toPoint().y() - d->rect.y());
         }
     }
+
 #else
+
     if ( (e->button() == Qt::LeftButton) && d->rect.contains( e->x(), e->y() ))
     {
         if      ( d->topLeftCorner.contains( e->x(), e->y() ) )
@@ -898,7 +902,9 @@ void PerspectiveWidget::mousePressEvent(QMouseEvent* e)
             d->spot.setY(e->y() - d->rect.y());
         }
     }
+
 #endif
+
 }
 
 void PerspectiveWidget::mouseReleaseEvent(QMouseEvent* e)
@@ -918,13 +924,19 @@ void PerspectiveWidget::mouseReleaseEvent(QMouseEvent* e)
     }
     else
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         d->spot.setX(e->position().toPoint().x() - d->rect.x());
         d->spot.setY(e->position().toPoint().y() - d->rect.y());
+
 #else
+
         d->spot.setX(e->x() - d->rect.x());
         d->spot.setY(e->y() - d->rect.y());
+
 #endif
+
         updatePixmap();
         update();
     }
@@ -939,10 +951,15 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
         if ( d->currentResizing != Private::ResizingNone )
         {
             QPolygon unusablePoints;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QPoint pm(e->position().toPoint().x(), e->position().toPoint().y());
+
 #else
+
             QPoint pm(e->x(), e->y());
+
 #endif
 
             if (!d->rect.contains( pm ))
@@ -1052,13 +1069,19 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
 
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 d->spot.setX(e->position().toPoint().x() - d->rect.x());
                 d->spot.setY(e->position().toPoint().y() - d->rect.y());
+
 #else
+
                 d->spot.setX(e->x() - d->rect.x());
                 d->spot.setY(e->y() - d->rect.y());
+
 #endif
+
             }
 
             updatePixmap();
@@ -1076,7 +1099,9 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
     }
     else
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         if      ( d->topLeftCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) ||
                   d->bottomRightCorner.contains( e->position().toPoint().x(), e->position().toPoint().y() ) )
         {
@@ -1088,7 +1113,9 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
         {
             setCursor( Qt::SizeBDiagCursor );
         }
+
 #else
+
         if      ( d->topLeftCorner.contains( e->x(), e->y() ) ||
                   d->bottomRightCorner.contains( e->x(), e->y() ) )
         {
@@ -1100,7 +1127,9 @@ void PerspectiveWidget::mouseMoveEvent(QMouseEvent* e)
         {
             setCursor( Qt::SizeBDiagCursor );
         }
+
 #endif
+
         else
         {
             unsetCursor();

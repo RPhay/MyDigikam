@@ -55,10 +55,14 @@ QueuePoolBar::~QueuePoolBar()
 void QueuePoolBar::dragEnterEvent(QDragEnterEvent* e)
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     int tab = tabAt(e->position().toPoint());
+
 #else
+
     int tab = tabAt(e->pos());
+
 #endif
 
     if (tab != -1)
@@ -80,10 +84,14 @@ void QueuePoolBar::dragEnterEvent(QDragEnterEvent* e)
 void QueuePoolBar::dragMoveEvent(QDragMoveEvent* e)
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     int tab = tabAt(e->position().toPoint());
+
 #else
+
     int tab = tabAt(e->pos());
+
 #endif
 
     if (tab != -1)

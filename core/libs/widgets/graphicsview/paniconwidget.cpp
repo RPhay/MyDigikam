@@ -534,7 +534,7 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
     if (
         ((e->button() == Qt::LeftButton) || (e->button() == Qt::MiddleButton)) &&
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
          d->localRegionSelection.contains(e->position().toPoint().x(), e->position().toPoint().y())
 
@@ -547,7 +547,7 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
        )
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         d->xpos          = e->position().toPoint().x();
         d->ypos          = e->position().toPoint().y();
@@ -571,7 +571,7 @@ void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
         ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MiddleButton)))
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         int newxpos = e->position().toPoint().x();
         int newypos = e->position().toPoint().y();
@@ -617,7 +617,7 @@ void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
     else
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         if (d->localRegionSelection.contains(e->position().toPoint().x(), e->position().toPoint().y()))
 

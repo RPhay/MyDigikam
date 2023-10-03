@@ -350,10 +350,15 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
             for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
             {
                 tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                                &LocalContrastFilter::blurMultithreaded, this,
+
 #else
+
                                                this, &LocalContrastFilter::blurMultithreaded,
+
 #endif
 
                                                vals[j],
@@ -383,11 +388,17 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LocalContrastFilter::saturationMultithreaded, this,
+
 #else
+
                                            this, &LocalContrastFilter::saturationMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1],
                                            img,
@@ -492,11 +503,17 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
             prm.stop  = valsy[j+1];
 
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LocalContrastFilter::inplaceBlurYMultithreaded, this,
+
 #else
+
                                            this, &LocalContrastFilter::inplaceBlurYMultithreaded,
+
 #endif
+
                                            prm
                                           )
             );
@@ -515,11 +532,17 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
             prm.stop  = valsx[j+1];
 
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LocalContrastFilter::inplaceBlurXMultithreaded, this,
+
 #else
+
                                            this, &LocalContrastFilter::inplaceBlurXMultithreaded,
+
 #endif
+
                                            prm
                                           )
             );

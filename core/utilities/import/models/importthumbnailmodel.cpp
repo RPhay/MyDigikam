@@ -114,11 +114,16 @@ bool ImportThumbnailModel::setData(const QModelIndex& index, const QVariant& val
     if (role == ThumbnailRole)
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         switch (value.typeId())
+
 #else
+
         switch (value.type())
+
 #endif
+
         {
             case QVariant::Invalid:
             {

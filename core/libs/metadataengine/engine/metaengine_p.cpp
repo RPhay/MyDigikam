@@ -725,7 +725,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
         else if (charset == "Jis")
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             if (Exiv2::convertStringCharset(comment, charset.c_str(), "UTF-8"))
             {

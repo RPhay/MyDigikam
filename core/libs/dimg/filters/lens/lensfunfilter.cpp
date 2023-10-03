@@ -293,11 +293,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterCCAMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterCCAMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );
@@ -322,11 +328,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterVIGMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterVIGMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );
@@ -361,11 +373,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterDSTMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterDSTMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );
