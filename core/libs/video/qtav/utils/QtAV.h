@@ -42,7 +42,7 @@
 #include "GLSLFilter.h"
 #include "LibAVFilter.h"
 
-#if (QT_VERSION == QT_VERSION_CHECK(5,0,0) && !defined(QT_NO_OPENGL)) || (QT_VERSION >= QT_VERSION_CHECK(6,0,0) && defined(QT_OPENGL_LIB))
+#if (QT_VERSION == QT_VERSION_CHECK(5, 0, 0) && !defined(QT_NO_OPENGL)) || (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && defined(QT_OPENGL_LIB))
 #   include "Geometry.h"
 #   include "GeometryRenderer.h"
 #   include "VideoShader.h"
@@ -64,7 +64,7 @@
 
 #include "QPainterRenderer.h"
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5,4,0) && QT_VERSION < QT_VERSION_CHECK(6,0,0)) || (QT_VERSION >= QT_VERSION_CHECK(6,0,0) && defined(QT_OPENGL_LIB))
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 4, 0) && QT_VERSION < QT_VERSION_CHECK(6, 0, 0)) || (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0) && defined(QT_OPENGL_LIB))
 #   include "OpenGLWindowRenderer.h"
 #endif
 

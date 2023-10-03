@@ -21,11 +21,17 @@ namespace Digikam
 SearchFieldChoice::SearchFieldChoice(QObject* const parent)
     : SearchField(parent),
       m_comboBox (nullptr),
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
       m_type     (QMetaType::UnknownType)
+
 #else
+
       m_type     (QVariant::Invalid)
+
 #endif
+
 {
     m_model   = new ChoiceSearchModel(this);
     m_anyText = i18nc("@option: default kind of search options combined", "Any");
@@ -55,22 +61,36 @@ void SearchFieldChoice::setupValueWidgets(QGridLayout* layout, int row, int colu
 
 void SearchFieldChoice::setChoice(const QMap<int, QString>& map)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     m_type = QMetaType::Int;
+
 #else
+
     m_type = QVariant::Int;
+
 #endif
+
     m_model->setChoice(map);
+
 }
 
 void SearchFieldChoice::setChoice(const QStringList& choice)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     m_type = QMetaType::QString;
+
 #else
+
     m_type = QVariant::String;
+
 #endif
+
     m_model->setChoice(choice);
+
 }
 
 void SearchFieldChoice::setAnyText(const QString& anyText)
@@ -112,38 +132,62 @@ void SearchFieldChoice::read(SearchXmlCachingReader& reader)
 
     if (relation == SearchXml::OneOf)
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         if      (m_type == QMetaType::Int)
+
 #else
+
         if      (m_type == QVariant::Int)
+
 #endif
+
         {
             m_model->setChecked<int>(reader.valueToIntList());
         }
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         else if (m_type == QMetaType::QString)
+
 #else
+
         else if (m_type == QVariant::String)
+
 #endif
+
         {
             m_model->setChecked<QString>(reader.valueToStringList());
         }
     }
     else
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         if      (m_type == QMetaType::Int)
+
 #else
+
         if      (m_type == QVariant::Int)
+
 #endif
+
         {
             m_model->setChecked<int>(reader.valueToInt(), relation);
         }
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         else if (m_type == QMetaType::QString)
+
 #else
+
         else if (m_type == QVariant::String)
+
 #endif
+
         {
             // The testRelation magic only really makes sense for integers. "Like" is not implemented.
 /*
@@ -156,11 +200,17 @@ void SearchFieldChoice::read(SearchXmlCachingReader& reader)
 
 void SearchFieldChoice::write(SearchXmlWriter& writer)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if      (m_type == QMetaType::Int)
+
 #else
+
     if      (m_type == QVariant::Int)
+
 #endif
+
     {
         QList<int> v = m_model->checkedKeys<int>();
 
@@ -180,11 +230,17 @@ void SearchFieldChoice::write(SearchXmlWriter& writer)
             }
         }
     }
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     else if (m_type == QMetaType::QString)
+
 #else
+
     else if (m_type == QVariant::String)
+
 #endif
+
     {
         QList<QString> v = m_model->checkedKeys<QString>();
 

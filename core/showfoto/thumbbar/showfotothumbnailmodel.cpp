@@ -146,12 +146,18 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
 
         if (info.isNull() || url.isEmpty())
         {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QVariant var = QPixmap();
             return var;
+
 #else
+
             return QVariant(QVariant::Pixmap);
+
 #endif
+
         }
 
         if (pixmapForItem(path, pixmap))
@@ -174,12 +180,17 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
             return thumbnailImage;
         }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QVariant var = QPixmap();
             return var;
+
 #else
+
             return QVariant(QVariant::Pixmap);
+
 #endif
+
     }
 
     return ShowfotoItemModel::data(index, role);
@@ -189,11 +200,17 @@ bool ShowfotoThumbnailModel::setData(const QModelIndex& index, const QVariant& v
 {
     if (role == ThumbnailRole)
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         switch (value.typeId())
+
 #else
+
         switch (value.type())
+
 #endif
+
         {
             case QVariant::Invalid:
             {

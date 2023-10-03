@@ -139,7 +139,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->btnGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotToggleTagsSelection(int)));

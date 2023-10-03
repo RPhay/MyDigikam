@@ -69,11 +69,17 @@ SimilarityDbAccessStaticPriv* SimilarityDbAccess::d = nullptr;
 // -----------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN SimilarityDbAccessMutexLocker
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     : public QMutexLocker<QRecursiveMutex>
+
 #else
+
     : public QMutexLocker
+
 #endif
+
 {
 public:
 

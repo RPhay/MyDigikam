@@ -243,11 +243,17 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
             prm.y     = y;
 
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &SharpenFilter::convolveImageMultithreaded, this,
+
 #else
+
                                            this, &SharpenFilter::convolveImageMultithreaded,
+
 #endif
+
                                            prm
                                           )
             );

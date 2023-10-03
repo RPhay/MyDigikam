@@ -212,7 +212,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                 {
                     bool set = false;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                     if (e->modifiers() == Qt::ControlModifier)
 
@@ -256,7 +256,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     bool assign = false;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                     if (e->modifiers() == Qt::ControlModifier)
 
@@ -366,7 +366,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             tagNames  << destAlbum->title();
         }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         if (e->modifiers() == Qt::ControlModifier)
 

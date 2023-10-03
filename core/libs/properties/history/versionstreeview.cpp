@@ -197,11 +197,17 @@ QModelIndex VersionsTreeView::mapIndexForDragDrop(const QModelIndex& index) cons
 QPixmap VersionsTreeView::pixmapForDrag(const QList<QModelIndex>& indexes) const
 {
     QStyleOptionViewItem option;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     initViewItemOption(&option);
+
 #else
+
     option = viewOptions();
+
 #endif
+
     option.rect                 = viewport()->rect();
     QPixmap pix;
 
@@ -248,11 +254,17 @@ bool VersionsTreeView::viewportEvent(QEvent* event)
             }
 
             QStyleOptionViewItem option;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             initViewItemOption(&option);
+
 #else
+
             option = viewOptions();
+
 #endif
+
             option.rect                 = visualRect(index);
             option.state               |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
 

@@ -79,11 +79,16 @@ QSize RatingComboBoxDelegate::sizeHint(const QStyleOptionViewItem& option, const
 {
     QVariant value = index.data(Qt::DisplayRole);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (value.typeId() == QVariant::Int)
+
 #else
+
     if (value.type() == QVariant::Int)
+
 #endif
+
     {
         return QSize(RatingMax * (m_starPolygonSize.width() + 1), m_starPolygonSize.height());
     }
@@ -99,11 +104,16 @@ void RatingComboBoxDelegate::paint(QPainter* painter, const QStyleOptionViewItem
     QVariant value  = index.data(Qt::DisplayRole);
     bool selectable = index.flags() & Qt::ItemIsSelectable;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (value.typeId() == QVariant::Int)
+
 #else
+
     if (value.type() == QVariant::Int)
+
 #endif
+
     {
         painter->save();
         drawBackground(painter, option, index);

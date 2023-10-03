@@ -513,11 +513,16 @@ bool WorkflowManager::load(QStringList& failed)
                             QString type  = e3.attribute(QLatin1String("type"));
                             QVariant var(val3);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                             var.convert(QMetaType().fromName(type.toLatin1().constData()));
+
 #else
+
                             var.convert(QVariant::nameToType(type.toLatin1().constData()));
+
 #endif
+
 /*
                             qCDebug(DIGIKAM_GENERAL_LOG) << "name=" << pname << " :: "
                                                          << "type=" << type << " :: "

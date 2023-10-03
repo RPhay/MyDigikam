@@ -79,7 +79,7 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
 
     // ------------------------------------------------------------------------
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->saneWidget, &KSaneWidget::scannedImageReady,
             this, &ScanDialog::slotSaveImage);
@@ -126,7 +126,7 @@ void ScanDialog::slotDialogFinished()
     d->saneWidget->closeDevice();
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
 void ScanDialog::slotSaveImage(const QImage& image_data)
 
@@ -270,7 +270,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
     connect(thread, &SaveImgThread::signalComplete,
             this, &ScanDialog::slotThreadDone);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     thread->setImageData(image_data);
     thread->setScannerModel(d->saneWidget->deviceVendor(), d->saneWidget->deviceModel());

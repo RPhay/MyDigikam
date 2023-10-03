@@ -91,7 +91,7 @@ TagCheckView::TagCheckView(QWidget* const parent, TagModel* const tagModel)
     d->toggleParentsAction->setData(Parents);
     d->toggleBothAction->setData(ChildrenAndParents);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->toggleAutoAction, SIGNAL(actionTriggered(QAction*)),
             this, SLOT(toggleAutoActionSelected(QAction*)));
