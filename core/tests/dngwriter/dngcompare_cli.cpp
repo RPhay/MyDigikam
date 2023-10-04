@@ -7,7 +7,7 @@
  * Description : a command line tool to compare info from 2 DNG files
  *
  * SPDX-FileCopyrightText: 2011      by Jens Mueller <tschenser at gmx dot de>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -29,6 +29,7 @@
 #include "dng_host.h"
 #include "dng_info.h"
 #include "dng_xmp_sdk.h"
+#include "dng_sdk_limits.h"
 
 // Local includes
 
@@ -505,8 +506,13 @@ void compareIfd(dng_ifd* const ifd1, dng_ifd* const ifd2)
     if (ifd1->fLosslessJPEGBug16 != ifd2->fLosslessJPEGBug16)
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    LosslessJPEGBug16: %1 %2").arg(ifd1->fLosslessJPEGBug16).arg(ifd2->fLosslessJPEGBug16);
 
-    if (ifd1->fMaskedArea != ifd2->fMaskedArea)
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    MaskedArea");
+    for (unsigned int i = 0 ; i < kMaxMaskedAreas ; i++)
+    {
+        if (ifd1->fMaskedArea[i] != ifd2->fMaskedArea[i])
+        {
+            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    MaskedArea");
+        }
+    }
 
     if (ifd1->fMaskedAreaCount != ifd2->fMaskedAreaCount)
         qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::fromLatin1("    MaskedAreaCount: %1 %2").arg(ifd1->fMaskedAreaCount).arg(ifd2->fMaskedAreaCount);
