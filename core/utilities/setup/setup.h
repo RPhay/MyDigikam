@@ -7,7 +7,7 @@
  * Description : digiKam setup dialog.
  *
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -42,7 +42,7 @@ public:
         AlbumViewPage,
         ToolTipPage,
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
         VideoPage,
 

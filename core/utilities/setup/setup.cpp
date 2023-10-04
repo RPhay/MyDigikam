@@ -7,7 +7,7 @@
  * Description : digiKam setup dialog.
  *
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -48,7 +48,7 @@
 #include "dxmlguiwindow.h"
 #include "onlineversiondlg.h"
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 #   include "setupvideo.h"
 #endif
 
@@ -65,7 +65,7 @@ public:
         page_albumView          (nullptr),
         page_tooltip            (nullptr),
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
         page_video              (nullptr),
 
@@ -85,7 +85,7 @@ public:
         albumViewPage           (nullptr),
         tooltipPage             (nullptr),
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
         videoPage               (nullptr),
 
@@ -108,7 +108,7 @@ public:
     DConfigDlgWdgItem*       page_albumView;
     DConfigDlgWdgItem*       page_tooltip;
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     DConfigDlgWdgItem*       page_video;
 
@@ -129,7 +129,7 @@ public:
     SetupAlbumView*          albumViewPage;
     SetupToolTip*            tooltipPage;
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     SetupVideo*              videoPage;
 
@@ -185,7 +185,7 @@ Setup::Setup(QWidget* const parent)
     d->page_tooltip->setHeader(i18nc("@title", "Items Tool-Tip Settings\nCustomize information in item tool-tips"));
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     d->videoPage  = new SetupVideo();
     d->page_video = addPage(d->videoPage, i18nc("@title: settings section", "Video"));
@@ -286,7 +286,7 @@ Setup::~Setup()
     group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     group.writeEntry(QLatin1String("Video Tab"),       (int)d->videoPage->activeTab());
 
@@ -548,7 +548,7 @@ void Setup::slotOkClicked()
     d->albumViewPage->applySettings();
     d->tooltipPage->applySettings();
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     d->videoPage->applySettings();
 
@@ -579,7 +579,7 @@ void Setup::slotOkClicked()
 void Setup::slotCancelClicked()
 {
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     d->videoPage->cancel();
 
@@ -600,7 +600,7 @@ void Setup::showPage(Setup::Page page)
         d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
         d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
         d->videoPage->setActiveTab((SetupVideo::VideoTab)group.readEntry(QLatin1String("Video Tab"), (int)SetupVideo::Decoder));
 
@@ -646,7 +646,7 @@ Setup::Page Setup::activePageIndex() const
         return ToolTipPage;
     }
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
     if (cur == d->page_video)
     {
@@ -708,53 +708,83 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
     switch (page)
     {
         case Setup::DatabasePage:
+        {
             return page_database;
+        }
 
         case Setup::CollectionsPage:
+        {
             return page_collections;
+        }
 
         case Setup::AlbumViewPage:
+        {
             return page_albumView;
+        }
 
         case Setup::ToolTipPage:
+        {
             return page_tooltip;
+        }
 
-#ifdef HAVE_MEDIAPLAYER
+#if defined HAVE_MEDIAPLAYER && !defined HAVE_QTMULTIMEDIA
 
         case Setup::VideoPage:
+        {
             return page_video;
+        }
 
 #endif
 
         case Setup::MetadataPage:
+        {
             return page_metadata;
+        }
 
         case Setup::TemplatePage:
+        {
             return page_template;
+        }
 
         case Setup::LightTablePage:
+        {
             return page_lighttable;
+        }
 
         case Setup::EditorPage:
+        {
             return page_editor;
+        }
 
         case Setup::ImageQualityPage:
+        {
             return page_imagequalitysorter;
+        }
 
         case Setup::ICCPage:
+        {
             return page_icc;
+        }
 
         case Setup::CameraPage:
+        {
             return page_camera;
+        }
 
         case Setup::PluginsPage:
+        {
             return page_plugins;
+        }
 
         case Setup::MiscellaneousPage:
+        {
             return page_misc;
+        }
 
         default:
+        {
             return nullptr;
+        }
     }
 }
 
