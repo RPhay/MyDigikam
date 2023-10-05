@@ -253,6 +253,8 @@ MetadataPanel::MetadataPanel(QTabWidget* const tab)
 
 MetadataPanel::~MetadataPanel()
 {
+    qApp->restoreOverrideCursor();
+
     delete d;
 }
 
