@@ -277,20 +277,22 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
             break;
         }
 
+#ifdef HAVE_MEDIAPLAYER
+
         case VideoView:
         {
 
-#ifdef HAVE_MEDIAPLAYER
 
             d->osd->video(true);
             d->osd->pause(false);
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
 
-#endif
 
             break;
         }
+
+#endif
 
         default: // EndView
         {
@@ -485,7 +487,13 @@ void SlideShowLoader::slotVideoLoaded(bool loaded)
 {
     if (loaded)
     {
+
+#ifdef HAVE_MEDIAPLAYER
+
         setCurrentView(VideoView);
+
+#endif
+
     }
     else
     {
