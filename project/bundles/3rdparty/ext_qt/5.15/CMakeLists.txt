@@ -21,12 +21,12 @@ ENDIF()
 ExternalProject_Add(ext_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-    URL https://download.qt.io/official_releases/qt/5.15/5.15.7/single/qt-everywhere-opensource-src-5.15.7.tar.xz
-    URL_MD5 b30147f4fd91c8dc1b7e61cbc7e6b8a6
+    URL https://download.qt.io/official_releases/qt/5.15/5.15.11/single/qt-everywhere-opensource-src-5.15.11.tar.xz
+    URL_MD5 37b79a3764b0c9157fa3686df209b25a
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
-               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
+#               && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
 
     CMAKE_ARGS -DOPENSSL_LIBS='-l${EXTPREFIX}/local/lib/libssl.a -l${EXTPREFIX}/local/lib/libcrypto.a -lpthread -ldl'
                -DOPENSSL_INCDIR='${EXTPREFIX}/local/include/openssl/'
@@ -41,6 +41,7 @@ ExternalProject_Add(ext_qt
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
 #                  -iconv                            # International string conversion
+                  -icu
                   -fontconfig
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link to static version of ssl libraries
