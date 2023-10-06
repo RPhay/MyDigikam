@@ -4,6 +4,7 @@ digiKam 8.2.0 - Release date: 2023-xx-xx
 NEW FEATURES:
 
 Libraw : update to snapshot 30/07/2023
+Bundles: MacOS PK is now based on Qt framework 5.15.10 and KDE frameworks 5.110.
 
 *****************************************************************************************************
 BUGFIXES:
