@@ -3,7 +3,7 @@
 # Script to cleanup installation of KF5 framework from the host system.
 # This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -26,6 +26,17 @@ rm -vfr /usr/lib64/cmake/KF5*
 rm -vfr /usr/include/astro
 rm -vfr /usr/include/marble
 rm -vfr /usr/share/marble
+rm -vfr /usr/share/k*5
+rm -vfr /usr/plugins/kf5
+rm -vfr /usr/plugins/imageformats/kimg*
+rm -vfr /usr/plugins/kauth
+rm -vfr /usr/plugins/plasma
+rm -vfr /usr/plugins/styles/breeze*
+rm -vfr /usr/plugins/iconengines/KIcon*
+rm -vfr /usr/plugins/designer/k*
+rm -vfr /usr/plugins/org.kde*
+rm -vfr /usr/plugins/marble*
+rm -vfr /usr/plugins/kcm*
 rm -vfr /usr/lib64/marble
 rm -vfr /usr/lib64/libastro*
 rm -vfr /usr/lib64/libmarble*
