@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 00:40+0000\n"
+"POT-Creation-Date: 2023-10-07 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -21274,7 +21274,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slaidrāde"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:696
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
