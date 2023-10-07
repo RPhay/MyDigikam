@@ -72,6 +72,6 @@ BUGFIXES:
 060 ==> 474105 - Faces load sequentially, not showing existing face thumbnails in the database until a previous one has been generated.
 061 ==> 471058 - Tags not shown for all items after export-import.
 062 ==> 475253 - digiKam crashes when closing settings menu.
-063 ==> 
+063 ==> 473083 - Appimage has no title-bar under Wayland: add Qt plugin wayland-decoration-client.
 064 ==> 
 065 ==> 
