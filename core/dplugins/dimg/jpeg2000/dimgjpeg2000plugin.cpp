@@ -6,7 +6,7 @@
  * Date        : 2019-09-22
  * Description : JPEG-2000 DImg plugin.
  *
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -61,7 +61,7 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
       m_initJasper(false)
 {
 
-#if JAS_VERSION_MAJOR >= 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
     size_t max_mem = jas_get_total_mem_size();
 
@@ -95,7 +95,7 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
 DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 {
 
-#if JAS_VERSION_MAJOR >= 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
     jas_cleanup_library();
 
@@ -155,7 +155,7 @@ QList<DPluginAuthor> DImgJPEG2000Plugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2022"))
+                             QString::fromUtf8("(C) 2006-2023"))
             ;
 }
 
