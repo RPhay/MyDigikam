@@ -9,6 +9,12 @@ project(digikam-bundles)
 
 cmake_minimum_required(VERSION 3.3.2)
 
+if(POLICY CMP0135)
+
+    cmake_policy(SET CMP0135 OLD)
+
+endif()
+
 function(JoinListAsString VALUES GLUE OUTPUT)
     string(REPLACE ";" "${GLUE}" _TMP_STR "${VALUES}")
     set(${OUTPUT} "${_TMP_STR}" PARENT_SCOPE)
