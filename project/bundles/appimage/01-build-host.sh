@@ -37,13 +37,13 @@ RegisterRemoteServers
 ORIG_WD="`pwd`"
 
 #################################################################################################
-if [ ] ; then
+
 if [[ "$OS_NAME" == "ubuntu" ]] ; then
 
     . ./host_ubuntu.inc
 
 fi
-fi
+
 # Clean up previous openssl and libicu install
 
 rm -fr /usr/local/lib/libssl.a       || true
@@ -76,7 +76,7 @@ if [ ! -d /opt/cmake ] ; then
 fi
 
 #################################################################################################
-if [ ] ; then
+
 cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
@@ -95,7 +95,7 @@ cmake $ORIG_WD/../3rdparty \
 # Install new cmake recent version to /opt
 
 cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
-fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
