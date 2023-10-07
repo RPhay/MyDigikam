@@ -38,11 +38,7 @@ ORIG_WD="`pwd`"
 
 #################################################################################################
 
-if   [[ "$OS_NAME" == "mageia" ]] ; then
-
-    . ./host_mageia.inc
-
-elif [[ "$OS_NAME" == "ubuntu" ]] ; then
+if [[ "$OS_NAME" == "ubuntu" ]] ; then
 
     . ./host_ubuntu.inc
 

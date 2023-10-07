@@ -44,29 +44,25 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="5.27.5"
+DK_KP_VERSION="5.27.8"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="23.04.1"
+DK_KA_VERSION="23.08.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="5.106"
+DK_KDE_VERSION="5.110"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values:
 # - 5.15:     stable Qt5 release.
-# - 5.15-LTS: rolling release version 5 (can be not stbilized)
 # - 6.3.1:    stable Qt6 release.
 
 #DK_QTVERSION="6.3.1"
 DK_QTVERSION="5.15"
-
-# QtWebEngine version to use in bundle when 5.15-LTS is used.
-DK_QTWEBENGINEVERSION="5.15.9"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
