@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 00:40+0000\n"
+"POT-Creation-Date: 2023-10-07 00:40+0000\n"
 "PO-Revision-Date: 2023-09-26 11:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21854,7 +21854,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Presentació de diapositives"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:688
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:696
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -51919,7 +51919,7 @@ msgstr "Text"
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Unix Time Stamp"
-msgstr "Marques de temps de el Unix"
+msgstr "Marques de temps de Unix"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:53
 #, kde-format
@@ -64143,6 +64143,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid "An error has occurred with the media player...."
-#~ msgstr "S'ha produït un error amb el reproductor multimèdia..."
