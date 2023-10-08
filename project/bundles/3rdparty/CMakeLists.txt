@@ -5,9 +5,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-project(digikam-bundles)
-
 cmake_minimum_required(VERSION 3.3.2)
+
+project(digikam-bundles)
 
 if(POLICY CMP0135)
 
