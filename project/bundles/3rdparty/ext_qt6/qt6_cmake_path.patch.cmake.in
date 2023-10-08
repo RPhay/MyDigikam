@@ -1,10 +1,12 @@
-diff --git a/qtbase/configure b/qtbase/configure
-index 56999a9..0396223 100755
---- a/qtbase/configure
-+++ b/qtbase/configure
-@@ -239,4 +239,4 @@ if [ -n "$CFG_TOPLEVEL" ]; then
+diff --git a/configure b/configure
+index e57707dc0b..3725c257b2 100755
+--- a/configure
++++ b/configure
+@@ -163,6 +163,6 @@ if [ -n "$CFG_TOPLEVEL" ]; then
      cd ..
  fi
  
--cmake "-DOPTFILE=$optfilename" $top_level_arg -P "$relpath/cmake/QtProcessConfigureArgs.cmake"
-+@INSTALL_ROOT@/bin/cmake "-DOPTFILE=$optfilename" $top_level_arg -P "$relpath/cmake/QtProcessConfigureArgs.cmake"
+-cmake "-DOPTFILE=${optfilepath}" ${top_level_arg} ${fresh_requested_arg} -P "${relpath}/cmake/QtProcessConfigureArgs.cmake"
++/opt/cmake/bin/cmake "-DOPTFILE=${optfilepath}" ${top_level_arg} ${fresh_requested_arg} -P "${relpath}/cmake/QtProcessConfigureArgs.cmake"
+ 
+ IFS=$SAVED_IFS
