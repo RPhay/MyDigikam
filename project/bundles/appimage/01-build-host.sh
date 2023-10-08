@@ -113,30 +113,18 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
 
-# Low level libraries and Qt5 dependencies
+# Low level libraries and Qt dependencies
 # NOTE: The order to compile each component here is very important.
 
 # TODO: more recent libicu do not link yet with Qt6
 #/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
-
-#cp $DOWNLOAD_DIR/qt_manifest.txt $ORIG_WD/data/
-
-if [[ "$DK_QTVERSION" = "5.15-LTS" && $DK_QTWEBENGINE = 1 ]] ; then
-
-    # Patch QtWebEngine cmake config files to be compatible with Qt5.15 LTS which is versionned as 5.15.3
-
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngine_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngine_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake Qt5WebEngineWidgetsConfig.cmake
-
-fi
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
+    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
 # Clean up previous openssl install
@@ -145,14 +133,14 @@ rm -fr /usr/local/lib/libssl.a    || true
 rm -fr /usr/local/lib/libcrypto.a || true
 rm -fr /usr/local/include/openssl || true
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_jasper        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libde265      -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libaom        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif       -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_imagemagick   -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libde265        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_imagemagick     -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv          -- -j$CPU_CORES
 
 #################################################################################################
 

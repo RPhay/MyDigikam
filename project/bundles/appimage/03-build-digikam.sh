@@ -3,7 +3,7 @@
 # Script to build digiKam under Linux host
 # This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -45,7 +45,7 @@ RegisterRemoteServers
 # Paths rules
 ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
-if [ ]  ;then
+
 #################################################################################################
 # Install out-dated dependencies
 
@@ -68,7 +68,7 @@ cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
-fi
+
 #################################################################################################
 # Build digiKam in temporary directory and installation
 

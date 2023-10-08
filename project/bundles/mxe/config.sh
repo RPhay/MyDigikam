@@ -80,7 +80,7 @@ DK_KA_VERSION="23.04.1"
 DK_KDE_VERSION="5.106"
 
 # Qt version to use in bundle and provided by MXE.
-DK_QTVERSION="5.15"
+DK_QTVERSION="5"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags

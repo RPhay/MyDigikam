@@ -58,11 +58,11 @@ DK_KDE_VERSION="5.110"
 DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values:
-# - 5.15:     stable Qt5 release.
-# - 6.3.1:    stable Qt6 release.
+# - 5:     stable Qt5 release.
+# - 6:    stable Qt6 release.
 
-#DK_QTVERSION="6.3.1"
-DK_QTVERSION="5.15"
+#DK_QTVERSION="6"
+DK_QTVERSION="5"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
