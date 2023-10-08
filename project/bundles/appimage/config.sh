@@ -52,7 +52,7 @@ DK_KA_VERSION="23.08.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="5.110"
+DK_KDE_VERSION="master"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
@@ -61,8 +61,8 @@ DK_DEBUG=0
 # - 5:     stable Qt5 release.
 # - 6:    stable Qt6 release.
 
-#DK_QTVERSION="6"
-DK_QTVERSION="5"
+DK_QTVERSION="6"
+#DK_QTVERSION="5"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1

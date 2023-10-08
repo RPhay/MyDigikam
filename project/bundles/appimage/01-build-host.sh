@@ -82,8 +82,8 @@ cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
 cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
-      -DINSTALL_ROOT=/opt/cmake \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DINSTALL_ROOT=/usr \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
@@ -95,6 +95,12 @@ cmake $ORIG_WD/../3rdparty \
 # Install new cmake recent version to /opt
 
 cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libde265        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
 
 #################################################################################################
 
@@ -102,7 +108,7 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -119,12 +125,12 @@ rm -rf $BUILDING_DIR/* || true
 # TODO: more recent libicu do not link yet with Qt6
 #/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
+cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES    # depend of Qt and libicu
+    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
 # Clean up previous openssl install
@@ -133,14 +139,8 @@ rm -fr /usr/local/lib/libssl.a    || true
 rm -fr /usr/local/lib/libcrypto.a || true
 rm -fr /usr/local/include/openssl || true
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libde265        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_imagemagick     -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_imagemagick     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_opencv          -- -j$CPU_CORES
 
 #################################################################################################
 

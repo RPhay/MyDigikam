@@ -236,17 +236,17 @@ echo -e "---------- Clean-up Old Packages\n"
 sudo apt remove -y libqt5core5a  || true
 sudo apt remove -y libavfilter6  || true
 sudo apt remove -y libjasper-dev || true
+sudo apt remove -y libv4l-0      || true
 
 echo -e "---------- Install more recent version of compiler\n"
 
 # https://askubuntu.com/questions/1140183/install-gcc-9-on-ubuntu-18-04
+# https://www.followchain.org/install-gcc-11-on-ubuntu/
 # https://linuxconfig.org/how-to-switch-between-multiple-gcc-and-g-compiler-versions-on-ubuntu-20-04-lts-focal-fossa
 
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:jonathonf/gcc
-sudo apt-get update
-sudo apt-get install gcc-9
-sudo apt-get install g++-9
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt install -y gcc-11
+sudo apt install -y g++-11
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
 

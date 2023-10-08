@@ -208,12 +208,14 @@ add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_uchardet)
 
 add_subdirectory(ext_kf${ENABLE_QTVERSION})
-add_subdirectory(ext_libksane)
 add_subdirectory(ext_breeze)
 add_subdirectory(ext_waylandprotocols)
-add_subdirectory(ext_marble)
 
 if (${ENABLE_QTVERSION} MATCHES "5")
+
+    # included in KF6 target.
+    add_subdirectory(ext_libksane)
+    add_subdirectory(ext_marble)
 
     # Not yet ported to Qt6.
     add_subdirectory(ext_gmicqt)

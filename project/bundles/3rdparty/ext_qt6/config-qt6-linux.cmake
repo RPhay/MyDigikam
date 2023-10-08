@@ -20,8 +20,7 @@ LIST(APPEND QT_CONFIG
             -opensource                       # Build open-source framework edition
             -confirm-license                  # Silency ack the license
 
-            -sql-odbc                         # Compile ODBC SQL plugin
-            -sql-psql                         # Compile PostgreSql SQL plugin
+            -sql-mysql                         # Compile PostgreSql SQL plugin
             -sql-sqlite                       # Compile Sqlite SQL plugin
             -fontconfig
             -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
