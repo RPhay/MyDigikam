@@ -34,6 +34,7 @@ set(DIGIKAM_TARGET_INCLUDES $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSuppor
                             $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::WindowSystem,INTERFACE_INCLUDE_DIRECTORIES>
                             $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                             $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Service,INTERFACE_INCLUDE_DIRECTORIES>
+                            $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
 
                             ${CMAKE_SOURCE_DIR}/core/app/main
                             ${CMAKE_SOURCE_DIR}/core/app/date
