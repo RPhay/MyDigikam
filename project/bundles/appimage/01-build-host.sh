@@ -90,7 +90,7 @@ cmake $ORIG_WD/../3rdparty \
 
 # Install new cmake recent version to /opt
 
-cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_cmake           -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libde265        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_CORES
