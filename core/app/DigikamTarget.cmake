@@ -70,6 +70,7 @@ target_link_libraries(digikam
                       KF${QT_VERSION_MAJOR}::XmlGui
                       KF${QT_VERSION_MAJOR}::ConfigCore
                       KF${QT_VERSION_MAJOR}::Service
+                      KF${QT_VERSION_MAJOR}::CoreAddons
 
                       digikamcore
                       digikamdatabase
