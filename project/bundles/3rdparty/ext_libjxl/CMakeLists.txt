@@ -1,6 +1,6 @@
 # Script to build jpegXL library for digiKam bundle.
 #
-# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -30,7 +30,7 @@ if(MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
+        GIT_TAG v0.8.2
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-mxe.patch
 
@@ -61,7 +61,7 @@ elseif(APPLE)
         # To use official release tarball
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
+        GIT_TAG v0.8.2
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-macports.patch
 
@@ -85,7 +85,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
+        GIT_TAG v0.8.2
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-linux.patch
 
