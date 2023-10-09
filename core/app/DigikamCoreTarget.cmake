@@ -140,6 +140,7 @@ target_link_libraries(digikamcore
                       KF${QT_VERSION_MAJOR}::XmlGui
                       KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::Service
+                      KF${QT_VERSION_MAJOR}::CoreAddons
 
                       # Required by CImg which use pthread internally.
 
