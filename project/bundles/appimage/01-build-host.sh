@@ -64,15 +64,11 @@ cd /
 
 # Create the build dir for the 3rdparty deps
 if [ ! -d $BUILDING_DIR ] ; then
-    mkdir $BUILDING_DIR
+    mkdir -p $BUILDING_DIR
 fi
 
 if [ ! -d $DOWNLOAD_DIR ] ; then
-    mkdir $DOWNLOAD_DIR
-fi
-
-if [ ! -d /opt/cmake ] ; then
-    mkdir /opt/cmake
+    mkdir -p $DOWNLOAD_DIR
 fi
 
 #################################################################################################
@@ -123,7 +119,7 @@ cmake $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 # TODO: more recent libicu do not link yet with Qt6
-#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 
 cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
