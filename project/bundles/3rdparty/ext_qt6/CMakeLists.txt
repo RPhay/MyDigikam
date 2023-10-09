@@ -10,9 +10,6 @@ SET(EXTPREFIX_qt ${EXTPREFIX})
 SET(QT_URL https://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz)
 SET(QT_HASH 755db0527410df135609b51defa1a689)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/qt6_cmake_path.patch.cmake.in
-               ${CMAKE_CURRENT_BINARY_DIR}/qt6_cmake_path.patch)
-
 IF(MSVC)
 
     # Windows with M$ Visual C++ compiler
@@ -46,8 +43,8 @@ ELSE()
         URL ${QT_URL}
         URL_MD5 ${QT_HASH}
 
-        #${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_BINARY_DIR}/qt6_cmake_path.patch &&
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt6-openssl-linked.patch
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt6-openssl-linked.patch &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt6-disable-v4l.patch
 
         CMAKE_ARGS -DOPENSSL_LIBS='-l${EXTPREFIX}/local/lib/libssl.a -l${EXTPREFIX}/local/lib/libcrypto.a -lpthread -ldl'
                    -DOPENSSL_INCDIR='${EXTPREFIX}/local/include/openssl/'
