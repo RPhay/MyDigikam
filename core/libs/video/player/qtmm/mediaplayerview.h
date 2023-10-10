@@ -57,6 +57,7 @@ public Q_SLOTS:
 
     void slotEscapePressed();
     void slotRotateVideo();
+    void slotNativeSizeChanged();
 
 private Q_SLOTS:
 
@@ -80,7 +81,6 @@ private:
     void setPreviewMode(int mode);
 
     void resizeEvent(QResizeEvent*) override;
-    void showEvent(QShowEvent*)     override;
 
 private:
 

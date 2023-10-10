@@ -182,7 +182,18 @@ public:
 
     void adjustVideoSize()
     {
-        videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
+        videoWidget->setSize(videoView->size());
+        int orientation = videoMediaOrientation();
+
+        if ((orientation == 0) || (orientation == 180))
+        {
+            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatio);
+        }
+        else
+        {
+            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatioByExpanding);
+        }
+
         videoView->centerOn(videoWidget);
         videoView->raise();
     };
@@ -254,8 +265,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->playerView  = new QFrame(this);
     d->videoScene  = new QGraphicsScene(this);
     d->videoView   = new QGraphicsView(d->videoScene);
-    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
@@ -354,6 +365,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
+
+    connect(d->videoWidget, SIGNAL(nativeSizeChanged(QSizeF)),
+            this, SLOT(slotNativeSizeChanged()));
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -751,15 +765,14 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
 }
 
-void MediaPlayerView::resizeEvent(QResizeEvent* e)
+void MediaPlayerView::slotNativeSizeChanged()
 {
-    QStackedWidget::resizeEvent(e);
     d->adjustVideoSize();
 }
 
-void MediaPlayerView::showEvent(QShowEvent* e)
+void MediaPlayerView::resizeEvent(QResizeEvent* e)
 {
-    QStackedWidget::showEvent(e);
+    QStackedWidget::resizeEvent(e);
     d->adjustVideoSize();
 }
 
