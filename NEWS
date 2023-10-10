@@ -76,8 +76,19 @@ BUGFIXES:
 064 ==> 462413 - Map view freezes when viewing large number of elements.
 065 ==> 461838 - All face thumbnails in a picture are recreated after a face is tagged, which is not optimal performance-wise.
 066 ==> 406961 - Video with geo tags is filtered as non-geotagged: Mysql float value are encoded with comma or dot depending on the locale.
-067 ==> 
+067 ==> 459434 - After editing a JPG in the image editor and saving it only works for the next 3-5 images.
 068 ==> 
 069 ==> 
 070 ==> 
 071 ==> 
+072 ==> 
+073 ==> 
+074 ==> 
+075 ==> 
+076 ==> 
+077 ==> 
+078 ==> 
+079 ==> 
+080 ==> 
+081 ==> 
+
