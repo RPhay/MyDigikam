@@ -209,6 +209,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libicu-dev"
                    "icu-devtools"
                    "flite1-dev"
+                   "libxshmfence-dev"
                   )
 
 
