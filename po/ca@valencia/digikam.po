@@ -3261,7 +3261,7 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
-"Afegir la configuració d'exportació a JPEG-XL, WEBP i AVIF per tot arreu."
+"Afegir la configuració d'exportació cap a JPEG-XL, WEBP i AVIF per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
@@ -8468,7 +8468,7 @@ msgid ""
 "To Continue polygon, either press L or double click\n"
 "To Cancel, press ESC"
 msgstr ""
-"Seleccioneu el polígon amb el llaç.\n"
+"Seleccioneu un polígon amb el llaç.\n"
 "Drecera: L\n"
 "Per a continuar amb el polígon, premeu «L» o feu doble clic\n"
 "Per a cancel·lar, premeu «Esc»"
@@ -11448,7 +11448,7 @@ msgstr ""
 "Esta eina pot editar dades del GPS, manualment o sobre un mapa. També està "
 "disponible la geocodificació inversa a través de serveis web.\n"
 "\n"
-"Esta eina també té una funció d'exportació a KML per a emmagatzemar les "
+"Esta eina també té una funció d'exportació cap a KML per a emmagatzemar les "
 "traces en el format de Google.\n"
 "\n"
 "Finalment, esta eina pot llegir una traça GPS des d'un dispositiu per a "
@@ -12027,7 +12027,7 @@ msgstr "Edita l'XMP"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
-msgstr "%1 (%2/%3) - Edició de les metadades"
+msgstr "%1 (%2/%3) - Editeu les metadades"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
@@ -13226,7 +13226,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:177
 #, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "Obertura de la lent (nombre f):"
+msgstr "Obriu la lent (nombre f):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:180
 #, kde-format
@@ -17084,7 +17084,7 @@ msgstr "No s'ha pogut copiar el tema"
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
-msgstr "Genera imatges i fitxers XML"
+msgstr "Genera imatges i fitxers en XML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
 #, kde-format
@@ -17114,13 +17114,13 @@ msgstr "No s'ha pogut carregar el fitxer XSL «%1»"
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
-msgstr "No s'ha pogut carregar el fitxer XML «%1»"
+msgstr "No s'ha pogut carregar el fitxer en XML «%1»"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
-msgstr "S'ha produït un error en processar el fitxer XML"
+msgstr "S'ha produït un error en processar el fitxer en XML"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
 #, kde-format
@@ -24805,7 +24805,7 @@ msgstr "Esta és la llista de les imatges que es pujaran al wiki."
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
 msgstr ""
-"Este és el formulari de connexió amb el vostre compte al wiki escollit."
+"Este és el formulari de connexió amb el vostre compte en el wiki escollit."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -26928,7 +26928,7 @@ msgid ""
 msgstr ""
 "<p>La col·lecció encara està disponible però ha canviat l'identificador.<br/"
 ">Açò pot ser causat per la restauració d'una còpia de seguretat, per a "
-"canvis en la disposició de la partició o en la Configuració del sistema de "
+"canvis en la disposició de la partició o a la Configureu el sistema de "
 "fitxers.<br/>Ara la col·lecció es troba a este lloc:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:336
@@ -41977,12 +41977,12 @@ msgstr "Ha excedit el temps en obrir"
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:181
 #, kde-format
 msgid "Parse stream timed out"
-msgstr "Ha excedit el temps en analitzar el flux"
+msgstr "Ha excedit el temps en l'anàlisi sintàctica del flux"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:188
 #, kde-format
 msgid "Parse stream error"
-msgstr "S'ha produït un error en analitzar el flux"
+msgstr "S'ha produït un error en l'anàlisi sintàctica del flux"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:195
 #, kde-format
@@ -43147,7 +43147,7 @@ msgstr "Ahmed Fathi"
 #, kde-format
 msgid "UPNP/DLNA export tool, and Healing clone tool for image editor"
 msgstr ""
-"Eina d'exportació a UPnP/DLNA i l'eina de clonatge de guariment per a "
+"Eina d'exportació cap a UPnP/DLNA i l'eina de clonatge de guariment per a "
 "l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:189
@@ -43260,7 +43260,7 @@ msgstr "Smit Mehta"
 #: core/libs/widgets/mainview/daboutdata.cpp:250
 #, kde-format
 msgid "UPnP / DLNA Export tool and Mentoring"
-msgstr "Eina d'exportació a UPnP/DLNA i mentor"
+msgstr "Eina d'exportació cap a UPnP/DLNA i mentor"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:255
 #, kde-format
@@ -49829,7 +49829,7 @@ msgstr "No s'ha pogut suprimir «%1»"
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "Obriu les imatges des de carpeta"
+msgstr "Obriu les imatges des d'una carpeta"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -58040,7 +58040,7 @@ msgid ""
 "one from Queue Settings panel."
 msgstr ""
 "No s'ha especificat cap àlbum per a allotjar els elements processats de la "
-"cua «%1». Seleccioneu-ne un des del quadro de Configureu la cua."
+"cua «%1». Seleccioneu-ne un des del quadro Configureu la cua."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
@@ -58049,7 +58049,7 @@ msgid ""
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 "L'àlbum per a allotjar els elements processats de la cua «%1» no està "
-"disponible o no s'hi pot escriure. Establiu-ne un altre des del quadro de "
+"disponible o no s'hi pot escriure. Establiu-ne un altre des del quadro "
 "Configureu la cua."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
@@ -58884,7 +58884,7 @@ msgstr "El tipus de lent"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:403
 #, kde-format
 msgid "Lens aperture as f-number"
-msgstr "Obertura de la lent com a nombre f"
+msgstr "Obriu la lent com a nombre f"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:404
 #, kde-format
@@ -63841,7 +63841,7 @@ msgstr "Data de la càmera"
 #: core/utilities/setup/setuptooltip.cpp:423
 #, kde-format
 msgid "Camera aperture and focal length"
-msgstr "Obertura de la càmera i la distància focal"
+msgstr "Obriu la càmera i la distància focal"
 
 #: core/utilities/setup/setuptooltip.cpp:250
 #: core/utilities/setup/setuptooltip.cpp:427
