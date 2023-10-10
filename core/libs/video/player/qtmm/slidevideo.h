@@ -58,6 +58,7 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QMediaPlayer::PlaybackState newState);
     void slotMediaStatusChanged(QMediaPlayer::MediaStatus status);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
+    void slotNativeSizeChanged();
 
     void slotPositionChanged(qint64 position);
     void slotDurationChanged(qint64 duration);
@@ -67,7 +68,6 @@ private Q_SLOTS:
 private:
 
     void resizeEvent(QResizeEvent*) override;
-    void showEvent(QShowEvent*)     override;
 
 private:
 
