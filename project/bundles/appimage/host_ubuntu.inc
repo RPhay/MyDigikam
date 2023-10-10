@@ -211,7 +211,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libdbus-1-dev"
                    "libmount-dev"
                    "curl"
-                   "libicu60"
+                   "libicu66"
                    "libicu-dev"
                    "icu-devtools"
                    "flite1-dev"
