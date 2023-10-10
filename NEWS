@@ -74,7 +74,7 @@ BUGFIXES:
 062 ==> 475253 - digiKam crashes when closing settings menu.
 063 ==> 473083 - Appimage has no title-bar under Wayland: add Qt plugin wayland-decoration-client.
 064 ==> 462413 - Map view freezes when viewing large number of elements.
-065 ==> 
+065 ==> 461838 - All face thumbnails in a picture are recreated after a face is tagged, which is not optimal performance-wise.
 066 ==> 
 067 ==> 
 068 ==> 
