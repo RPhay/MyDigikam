@@ -38,11 +38,7 @@ ORIG_WD="`pwd`"
 
 #################################################################################################
 
-if [[ "$OS_NAME" == "ubuntu" ]] ; then
-
-    . ./host_ubuntu.inc
-
-fi
+. ./host_ubuntu.inc
 
 # Clean up previous openssl and libicu install
 
