@@ -10,6 +10,36 @@ set(PREFIX_ext_libjxl "${EXTPREFIX}")
 
 set(JpegXL_Conf -DBUILD_SHARED_LIBS=ON
                 -DBUILD_TESTING=OFF
+                -DJPEGXL_ENABLE_EXAMPLES=OFF
+                -DJPEGXL_ENABLE_PLUGINS=OFF
+                -DJPEGXL_ENABLE_TOOLS=OFF
+                -DJPEGXL_ENABLE_FUZZERS=OFF
+                -DJPEGXL_ENABLE_DEVTOOLS=OFF
+                -DJPEGXL_ENABLE_JPEGLI=OFF
+                -DJPEGXL_ENABLE_JPEGLI_LIBJPEG=ON
+                -DJPEGXL_ENABLE_DOXYGEN=OFF
+                -DJPEGXL_ENABLE_MANPAGES=OFF
+                -DJPEGXL_ENABLE_BENCHMARK=OFF
+                -DJPEGXL_BUNDLE_LIBPNG=OFF
+                -DJPEGXL_ENABLE_JNI=OFF
+                -DJPEGXL_ENABLE_SJPEG=OFF
+                -DJPEGXL_ENABLE_OPENEXR=OFF
+                -DJPEGXL_ENABLE_SKCMS=OFF
+                -DJPEGXL_BUNDLE_SKCMS=OFF
+                -DJPEGXL_ENABLE_VIEWERS=OFF
+                -DJPEGXL_ENABLE_TCMALLOC=OFF
+                -DJPEGXL_ENABLE_COVERAGE=OFF
+                -DJPEGXL_ENABLE_PROFILER=OFF
+                -DJPEGXL_ENABLE_SIZELESS_VECTORS=OFF
+                -DJPEGXL_ENABLE_TRANSCODE_JPEG=ON
+                -DJPEGXL_ENABLE_BOXES=ON
+                -DJPEGXL_STATIC=OFF
+                -DJPEGXL_WARNINGS_AS_ERRORS=OFF
+                -DJPEGXL_FORCE_NEON=OFF
+                -DJPEGXL_FORCE_SYSTEM_BROTLI=OFF
+                -DJPEGXL_FORCE_SYSTEM_GTEST=OFF
+                -DJPEGXL_FORCE_SYSTEM_LCMS2=OFF
+                -DJPEGXL_FORCE_SYSTEM_HWY=OFF
 )
 
 if(MINGW)
@@ -31,8 +61,6 @@ if(MINGW)
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
         GIT_TAG v0.8.2
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-mxe.patch
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
@@ -63,8 +91,6 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
         GIT_TAG v0.8.2
 
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-macports.patch
-
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_libjxl} RelWithDebInfo x86_64 ${BASH_OPTIONS}
@@ -86,8 +112,6 @@ else() # Linux
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
         GIT_TAG v0.8.2
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-linux.patch
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libjxl}
