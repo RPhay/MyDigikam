@@ -75,7 +75,7 @@ BUGFIXES:
 063 ==> 473083 - Appimage has no title-bar under Wayland: add Qt plugin wayland-decoration-client.
 064 ==> 462413 - Map view freezes when viewing large number of elements.
 065 ==> 461838 - All face thumbnails in a picture are recreated after a face is tagged, which is not optimal performance-wise.
-066 ==> 
+066 ==> 406961 - Video with geo tags is filtered as non-geotagged: Mysql float value are encoded with comma or dot depending on the locale.
 067 ==> 
 068 ==> 
 069 ==> 
