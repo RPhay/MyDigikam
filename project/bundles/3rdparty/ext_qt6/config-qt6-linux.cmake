@@ -63,6 +63,7 @@ LIST(APPEND QT_CONFIG
             -skip qtdoc
             -skip qtfeedback
             -skip qtgamepad
+            -skip qtgraphs
             -skip qtgraphicaleffects
             -skip qtlanguageserver
             -skip qtlottie
