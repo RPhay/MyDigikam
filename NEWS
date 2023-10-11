@@ -87,7 +87,7 @@ BUGFIXES:
 075 ==> 470146 - Crash in QtAV while playing videos with Slideshow tool.
 076 ==> 463852 - After create a Video SlideShow media as mp4 will not be integrated.
 077 ==> 463439 - Build system requires external git source.
-078 ==> 
+078 ==> 459450 - The crash for time closed a program.
 079 ==> 
 080 ==> 
 081 ==> 
