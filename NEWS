@@ -77,8 +77,8 @@ BUGFIXES:
 065 ==> 461838 - All face thumbnails in a picture are recreated after a face is tagged, which is not optimal performance-wise.
 066 ==> 406961 - Video with geo tags is filtered as non-geotagged: Mysql float value are encoded with comma or dot depending on the locale.
 067 ==> 459434 - After editing a JPG in the image editor and saving it only works for the next 3-5 images.
-068 ==> 
-069 ==> 
+068 ==> 417885 - Problems on Windows Subsystem for Linux.
+069 ==> 429793 - digiKam crashes in libicu when run with zzuf -s1 in WSL1.
 070 ==> 
 071 ==> 
 072 ==> 
