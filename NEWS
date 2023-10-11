@@ -84,7 +84,7 @@ BUGFIXES:
 072 ==> 471105 - digiKam crash when moving folders.
 073 ==> 470899 - In Geolocalisation/Detail panel, it is no more possible to drag/drop an image to the map to set its coordinates.
 074 ==> 470621 - digikam crashed when applying tag to many pictures on nfs mounted collection.
-075 ==> 
+075 ==> 470146 - Crash in QtAV while playing videos with Slideshow tool.
 076 ==> 
 077 ==> 
 078 ==> 
