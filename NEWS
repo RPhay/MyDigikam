@@ -79,7 +79,7 @@ BUGFIXES:
 067 ==> 459434 - After editing a JPG in the image editor and saving it only works for the next 3-5 images.
 068 ==> 417885 - Problems on Windows Subsystem for Linux.
 069 ==> 429793 - digiKam crashes in libicu when run with zzuf -s1 in WSL1.
-070 ==> 
+070 ==> 472944 - No option to use internal MYSQL (MariaDB) server.
 071 ==> 
 072 ==> 
 073 ==> 
