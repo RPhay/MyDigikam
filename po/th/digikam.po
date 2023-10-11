@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-07 00:40+0000\n"
+"POT-Creation-Date: 2023-10-11 00:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2937,7 +2937,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:222
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2945,7 +2945,7 @@ msgstr "ย้อนกลับ"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:224
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -41231,28 +41231,28 @@ msgid "Default from Desktop"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:226
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:228
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
 #, fuzzy, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "จับภาพ"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:238
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
 #, fuzzy, kde-format
 #| msgid "An error has occurred with the media player...."
 msgid "An error has occurred with the media player..."
 msgstr "เกิดข้อผิดพลาดขึ้นกับเครื่องเล่นสื่อ..."
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:277
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
 #, fuzzy, kde-format
 #| msgid "Display in loop"
 msgid "Toggle playing in a loop"

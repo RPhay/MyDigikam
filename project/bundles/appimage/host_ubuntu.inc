@@ -108,7 +108,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "mysql-server"                       # Run-time: mysql internal server init
                    "libeigen3-dev"                      # >= 3.2
                    "libgomp1"                           # For Libraw compilation
-                   "libjasper-dev"                      # >= 1.900.1
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
                    "liblqr-dev"                         # >= 0.4.2
@@ -150,7 +149,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "patchelf"
                    "dpkg"
                    "clang"
-                   "python"
+                   "python3"
                    "libboost-all-dev"
                    "libgphoto2-dev"
                    "libsane-dev"
@@ -198,7 +197,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libdbus-1-dev"
                    "libmount-dev"
                    "curl"
-                   "libicu66"
                    "libicu-dev"
                    "icu-devtools"
                    "flite1-dev"
@@ -223,7 +221,7 @@ echo -e "---------- Clean-up Old Packages\n"
 # Remove system based devel package to prevent conflict with new one.
 sudo apt remove -y libqt5core5a  || true
 sudo apt remove -y libavfilter6  || true
-sudo apt remove -y libjasper-dev || true
+#sudo apt remove -y libjasper-dev || true
 
 echo -e "---------- Install more recent version of compiler\n"
 

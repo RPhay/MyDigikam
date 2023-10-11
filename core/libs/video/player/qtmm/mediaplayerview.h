@@ -63,6 +63,7 @@ private Q_SLOTS:
     void slotPlayerStateChanged(QMediaPlayer::PlaybackState newState);
     void slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus);
     void slotHandlePlayerError(QMediaPlayer::Error, const QString&);
+    void slotNativeSizeChanged();
     void slotThemeChanged();
 
     /// Slidebar slots
@@ -80,7 +81,6 @@ private:
     void setPreviewMode(int mode);
 
     void resizeEvent(QResizeEvent*) override;
-    void showEvent(QShowEvent*)     override;
 
 private:
 

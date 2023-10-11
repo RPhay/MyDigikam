@@ -96,7 +96,18 @@ public:
 
     void adjustVideoSize()
     {
-        videoView->fitInView(videoWidget, Qt::KeepAspectRatio);
+        videoWidget->setSize(videoView->size());
+        int orientation = videoMediaOrientation();
+
+        if ((orientation == 0) || (orientation == 180))
+        {
+            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatio);
+        }
+        else
+        {
+            videoView->fitInView(0, 0, videoView->width(), videoView->height(), Qt::KeepAspectRatioByExpanding);
+        }
+
         videoView->centerOn(videoWidget);
     };
 
@@ -131,8 +142,8 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     d->videoScene  = new QGraphicsScene(this);
     d->videoView   = new QGraphicsView(d->videoScene);
-    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    d->videoView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     d->videoView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
     d->videoWidget = new QGraphicsVideoItem();
     d->player      = new QMediaPlayer(this);
@@ -199,6 +210,9 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     connect(d->player, SIGNAL(errorOccurred(QMediaPlayer::Error,QString)),
             this, SLOT(slotHandlePlayerError(QMediaPlayer::Error,QString)));
+
+    connect(d->videoWidget, SIGNAL(nativeSizeChanged(QSizeF)),
+            this, SLOT(slotNativeSizeChanged()));
 
     // --------------------------------------------------------------------------
 
@@ -383,15 +397,14 @@ void SlideVideo::slotHandlePlayerError(QMediaPlayer::Error, const QString& str)
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << str;
 }
 
-void SlideVideo::resizeEvent(QResizeEvent* e)
+void SlideVideo::slotNativeSizeChanged()
 {
-    QWidget::resizeEvent(e);
     d->adjustVideoSize();
 }
 
-void SlideVideo::showEvent(QShowEvent* e)
+void SlideVideo::resizeEvent(QResizeEvent* e)
 {
-    QWidget::showEvent(e);
+    QWidget::resizeEvent(e);
     d->adjustVideoSize();
 }
 
