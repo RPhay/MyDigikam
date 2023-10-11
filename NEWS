@@ -81,7 +81,7 @@ BUGFIXES:
 069 ==> 429793 - digiKam crashes in libicu when run with zzuf -s1 in WSL1.
 070 ==> 472944 - No option to use internal MYSQL (MariaDB) server.
 071 ==> 472322 - Problem with plugin Editor-LensCorrection.
-072 ==> 
+072 ==> 471105 - digiKam crash when moving folders.
 073 ==> 
 074 ==> 
 075 ==> 
@@ -91,4 +91,25 @@ BUGFIXES:
 079 ==> 
 080 ==> 
 081 ==> 
-
+082 ==> 
+083 ==> 
+084 ==> 
+085 ==> 
+086 ==> 
+087 ==> 
+088 ==> 
+089 ==> 
+090 ==> 
+091 ==> 
+092 ==> 
+093 ==> 
+094 ==> 
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 
+102 ==> 
+103 ==> 
