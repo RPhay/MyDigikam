@@ -82,7 +82,7 @@ BUGFIXES:
 070 ==> 472944 - No option to use internal MYSQL (MariaDB) server.
 071 ==> 472322 - Problem with plugin Editor-LensCorrection.
 072 ==> 471105 - digiKam crash when moving folders.
-073 ==> 
+073 ==> 470899 - In Geolocalisation/Detail panel, it is no more possible to drag/drop an image to the map to set its coordinates.
 074 ==> 
 075 ==> 
 076 ==> 
