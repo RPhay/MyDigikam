@@ -89,7 +89,7 @@ BUGFIXES:
 077 ==> 463439 - Build system requires external git source.
 078 ==> 459450 - The crash for time closed a program.
 079 ==> 456987 - Open with... not working in AppImage.
-080 ==> 
+080 ==> 455936 - digiKam segfaults on startup when built with kdesrc-build.
 081 ==> 
 082 ==> 
 083 ==> 
