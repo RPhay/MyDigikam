@@ -93,7 +93,7 @@ BUGFIXES:
 081 ==> 473257 - After moving image (s) clicking on preview, the application is fully blocked.
 082 ==> 453503 - digiKam cannot detect Samsung Android phone.
 083 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
-084 ==> 
+084 ==> 396671 - Google photo: Cannot download more than 1000 photos at once.
 085 ==> 
 086 ==> 
 087 ==> 
