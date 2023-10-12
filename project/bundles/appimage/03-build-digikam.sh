@@ -52,7 +52,7 @@ ORIG_WD="`pwd`"
 cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
-/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -62,11 +62,11 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
@@ -144,7 +144,7 @@ else
 
 fi
 
-/opt/cmake/bin/cmake -G "Unix Makefiles" .. \
+cmake -G "Unix Makefiles" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_TESTING=OFF \
@@ -157,6 +157,7 @@ fi
       -DENABLE_MYSQLSUPPORT=ON \
       -DENABLE_INTERNALMYSQL=ON \
       -DENABLE_MEDIAPLAYER=ON \
+      -DENABLE_QTMULTIMEDIA=$BUILD_WITH_QT6 \
       -DENABLE_DBUS=OFF \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=$DK_QTWEBENGINE \
@@ -212,7 +213,7 @@ if [[ $DK_QTVERSION == 5.* ]] ; then
 
     cd $BUILDING_DIR
 
-    /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+    cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -222,9 +223,9 @@ if [[ $DK_QTVERSION == 5.* ]] ; then
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
 else
 
