@@ -94,7 +94,7 @@ BUGFIXES:
 082 ==> 453503 - digiKam cannot detect Samsung Android phone.
 083 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
 084 ==> 396671 - Google photo: Cannot download more than 1000 photos at once.
-085 ==> 
+085 ==> 472846 - digiKam doesn't write metadata to files/sidecars under unclear circumstances.
 086 ==> 
 087 ==> 
 088 ==> 
