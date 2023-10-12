@@ -57,24 +57,24 @@ cmake $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 # core KF5 frameworks dependencies
-#cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules        -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kconfig                    -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_breeze-icons               -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kcoreaddons                -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kwindowsystem              -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_solid                      -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_threadweaver               -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_karchive                   -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kdbusaddons                -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_ki18n                      -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kcrash                     -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kcodecs                    -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kauth                      -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_plasma-wayland-protocols   -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kguiaddons                 -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons             -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kitemviews                 -- -j$CPU_CORES
-#cmake --build . --config RelWithDebInfo --target ext_kcompletion                -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kconfig                    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_breeze-icons               -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcoreaddons                -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kwindowsystem              -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_solid                      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_threadweaver               -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_karchive                   -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kdbusaddons                -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ki18n                      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcrash                     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcodecs                    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kauth                      -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_plasma-wayland-protocols   -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kguiaddons                 -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons             -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kitemviews                 -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kcompletion                -- -j$CPU_CORES
 
 if [[ $DK_QTVERSION == 6 ]] ; then
 
@@ -92,14 +92,18 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats              
 
 # Extra support for digiKam
 
-# libksane support
-cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
-
 # Desktop integration support
-cmake --build . --config RelWithDebInfo --target ext_kjobwidgets                -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifications             -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kjobwidgets                -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kio                        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig              -- -j$CPU_CORES
+
+# libksane support
+cmake --build . --config RelWithDebInfo --target ext_sonnet                     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_qca                        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kwallet                    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
 
 # Geolocation support
 cmake --build . --config RelWithDebInfo --target ext_marble                     -- -j$CPU_CORES
