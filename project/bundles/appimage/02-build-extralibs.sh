@@ -92,14 +92,18 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats              
 
 # Extra support for digiKam
 
-# libksane support
-cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
-
 # Desktop integration support
-cmake --build . --config RelWithDebInfo --target ext_kjobwidgets                -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifications             -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kjobwidgets                -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kio                        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig              -- -j$CPU_CORES
+
+# libksane support
+cmake --build . --config RelWithDebInfo --target ext_sonnet                     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_qca                        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_kwallet                    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
 
 # Geolocation support
 cmake --build . --config RelWithDebInfo --target ext_marble                     -- -j$CPU_CORES
