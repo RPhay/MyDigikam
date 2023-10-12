@@ -38,7 +38,7 @@ ORIG_WD="`pwd`"
 
 #################################################################################################
 
-#. ./host_ubuntu.inc
+. ./host_ubuntu.inc
 
 # Clean up previous openssl and libicu install
 
@@ -68,7 +68,7 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
 fi
 
 #################################################################################################
-if [ ] ; then
+
 cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
@@ -93,7 +93,7 @@ cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_C
 cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
-fi
+
 #################################################################################################
 
 cd $BUILDING_DIR
