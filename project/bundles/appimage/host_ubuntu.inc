@@ -202,6 +202,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "flite1-dev"
                    "libxshmfence-dev"
                    "libcanberra-dev"
+                   "libgcrypt11-dev"
                   )
 
 
