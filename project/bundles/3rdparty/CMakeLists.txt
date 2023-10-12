@@ -213,7 +213,7 @@ add_subdirectory(ext_breeze)
 if (${ENABLE_QTVERSION} MATCHES "5")
 
     # included in KF6 target.
-    add_subdirectory(ext_waylandprotocols)
+    add_subdirectory(ext_plasma-wayland-protocols)
     add_subdirectory(ext_libksane)
     add_subdirectory(ext_marble)
 

@@ -6,12 +6,12 @@
 #
 #
 
-SET(PREFIX_ext_waylandprotocols "${EXTPREFIX}")
+SET(PREFIX_ext_plasma-wayland-protocols "${EXTPREFIX}")
 
-ExternalProject_Add(ext_waylandprotocols
+ExternalProject_Add(ext_plasma-wayland-protocols
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-    GIT_REPOSITORY https://invent.kde.org/demi/plasma-wayland-protocols.git
+    GIT_REPOSITORY https://invent.kde.org/libraries/plasma-wayland-protocols.git
     GIT_TAG v1.10.0
 
     INSTALL_DIR ${EXTPREFIX_waylandprotocols}
