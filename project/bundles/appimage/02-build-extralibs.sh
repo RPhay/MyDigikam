@@ -108,7 +108,7 @@ cmake --build . --config RelWithDebInfo --target ext_fcitx-qt            -- -j$C
 
 #################################################################################################
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     ../3rdparty/kf6/kf6-create-manifest.sh
 

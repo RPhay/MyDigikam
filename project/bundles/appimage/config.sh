@@ -42,6 +42,13 @@ DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
+# Qt version to use in bundle. Possible values:
+# - 5:    stable Qt5 release.
+# - 6:    stable Qt6 release.
+
+DK_QTVERSION="6"
+#DK_QTVERSION="5"
+
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
 DK_KP_VERSION="5.27.8"
@@ -50,19 +57,21 @@ DK_KP_VERSION="5.27.8"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.1"
 
-# KDE KF5 frameworks version.
+# KDE frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="master"
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    DK_KDE_VERSION="5.110"
+
+else
+
+    DK_KDE_VERSION="master"     # Qt6 use master code for the moment.
+
+fi
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
-
-# Qt version to use in bundle. Possible values:
-# - 5:     stable Qt5 release.
-# - 6:    stable Qt6 release.
-
-DK_QTVERSION="6"
-#DK_QTVERSION="5"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1

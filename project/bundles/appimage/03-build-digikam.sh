@@ -132,7 +132,7 @@ echo "---------- Configure digiKam $DK_VERSION"
 #export CC=/usr/bin/clang
 #export CXX=/usr/bin/clang++
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     echo "Build digiKam with Qt5"
     BUILD_WITH_QT6=OFF
@@ -207,7 +207,7 @@ fi
 
 # TODO: not yet ported to Qt6
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     echo "Build 3rd-party plugins with Qt5"
 
