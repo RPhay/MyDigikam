@@ -13,11 +13,6 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
-if [ "root" != "$USER" ]; then
-    echo "This script must be run as root..."
-    exit
-fi
-
 #################################################################################################
 # Manage script traces to log file
 

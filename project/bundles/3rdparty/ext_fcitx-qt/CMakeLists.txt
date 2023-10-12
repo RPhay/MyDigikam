@@ -1,14 +1,13 @@
 # Script to build Fcitx-qt for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#
 #
 
 set(EXTPREFIX_fcitx-qt "${EXTPREFIX}" )
 
-if(${ENABLE_QTVERSION} MATCHES "5.*")
+if(${ENABLE_QTVERSION} MATCHES "5")
 
     message(STATUS "Compiling fcitx-qt for Qt5")
 
