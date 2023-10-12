@@ -24,6 +24,8 @@ function(InstallKF6Component
             set(giturl "https://invent.kde.org/libraries/${name}.git")
         elseif(${name} STREQUAL "plasma-wayland-protocols")
             set(giturl "https://invent.kde.org/libraries/${name}.git")
+        elseif(${name} STREQUAL "breeze")
+            set(giturl "https://invent.kde.org/plasma/${name}.git")
         elseif(${name} STREQUAL "marble")
             set(giturl "https://invent.kde.org/education/${name}.git")
         else()
@@ -115,3 +117,4 @@ InstallKF6Component(knewstuff                ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(kitemmodels              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kitemmodels-drop-qml.patch")
 InstallKF6Component(kparts                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(krunner                  ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(breeze                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
