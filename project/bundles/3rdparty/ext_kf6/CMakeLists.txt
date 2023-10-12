@@ -117,4 +117,4 @@ InstallKF6Component(knewstuff                ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(kitemmodels              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kitemmodels-drop-qml.patch")
 InstallKF6Component(kparts                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(krunner                  ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(breeze                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(breeze                   ${KDE_VERSION} "${Qt6CommonOptions};-DBUILD_QT6=ON;-DBUILD_QT5=OFF"     "breeze-common-rules.patch")
