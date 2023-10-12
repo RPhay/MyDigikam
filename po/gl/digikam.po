@@ -21987,12 +21987,12 @@ msgstr "Páxina %1 de %2"
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
 #, kde-format
 msgid "Error opening input file"
-msgstr "Ocorreu un erro ao abrir o ficheiro de entrada"
+msgstr "Produciuse un erro ao abrir o ficheiro de entrada"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:103
 #, kde-format
 msgid "Error opening temporary folder"
-msgstr "Ocorreu un erro ao abrir o cartafol temporal"
+msgstr "Produciuse un erro ao abrir o cartafol temporal"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
 #, kde-format
@@ -22655,12 +22655,12 @@ msgstr "Xerando a presentación en vídeo"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:45
 #, kde-format
 msgid "Export as wallpaper"
-msgstr "Exportar como fondo de escritorio"
+msgstr "Exportar como fondo"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:60
 #, kde-format
 msgid "A tool to set image as wallpaper"
-msgstr "Unha ferramenta para definir a imaxe como fondo de pantalla"
+msgstr "Unha ferramenta para definir a imaxe como fondo"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:65
 #, kde-format
@@ -22678,7 +22678,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
-msgstr "Definir como fondo de escritorio"
+msgstr "Definir como fondo"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
@@ -25177,7 +25177,7 @@ msgid ""
 "Error Occurred: %1\n"
 "Cannot proceed any further."
 msgstr ""
-"Ocorreu un erro: %1\n"
+"Produciuse un erro: %1\n"
 "Non se pode continuar."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1006
@@ -25468,7 +25468,7 @@ msgid ""
 "Error occurred: %1\n"
 "Unable to proceed further."
 msgstr ""
-"Ocorreu un erro: %1\n"
+"Produciuse un erro: %1\n"
 "Non se pode continuar."
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:783
@@ -27574,7 +27574,7 @@ msgstr "URL:"
 #, kde-format
 msgctxt "piwigo login settings"
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigologindlg.cpp:95
 #, kde-format
@@ -27630,7 +27630,7 @@ msgstr "O URL de Piwigo probabelmente é incorrecto"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:509
 #, kde-format
 msgid "Incorrect username or password specified"
-msgstr "Indicouse un nome de usuario ou contrasinal incorrecto"
+msgstr "Indicouse un nome de usuaria ou contrasinal incorrecto"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:555
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:742
@@ -27897,7 +27897,7 @@ msgstr "A orde é incorrecta"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:230
 #, kde-format
 msgid "Invalid login name or password"
-msgstr "Son incorrectos o nome de usuario ou o contrasinal"
+msgstr "Son incorrectos o nome de usuaria ou o contrasinal"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:231
 #, kde-format
@@ -30370,7 +30370,7 @@ msgid ""
 "Error opening database backend.\n"
 "%1"
 msgstr ""
-"Ocorreu un erro ao abrir a infraestrutura da base de datos.\n"
+"Produciuse un erro ao abrir a infraestrutura da base de datos.\n"
 "%1"
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:62
@@ -31414,7 +31414,7 @@ msgstr "Usuario:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
 #, kde-format
 msgid "Set the database account name"
-msgstr "Definir o nome de usuario da conta para acceder á base de datos."
+msgstr "Definir o nome de usuaria da conta para acceder á base de datos."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, fuzzy, kde-format
@@ -31602,7 +31602,7 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 "<p>digiKam espera que a base de datos estea xa creada cunha conta de usuario "
-"dedicada. O nome de usuario <i>digikam</i> necesitará acceso completo á base "
+"dedicada. O nome de usuaria <i>digikam</i> necesitará acceso completo á base "
 "de datos.<br> Se a base de datos aínda non está preparada, pode usar as "
 "seguintes ordes SQL (despois de substituír <b><i>password</i></b> polo "
 "contrasinal correcto).</p>"
@@ -31728,7 +31728,7 @@ msgstr "O nome de máquina do servidor está baleiro."
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
 #, kde-format
 msgid "The server user name is empty"
-msgstr "O nome de usuario do servidor está baleiro."
+msgstr "O nome de usuaria do servidor está baleiro."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
 #, kde-format
@@ -36676,7 +36676,7 @@ msgstr "Diversos"
 #: core/libs/dplugins/webservices/wslogindialog.cpp:86
 #, kde-format
 msgid "Login:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #: core/libs/dplugins/webservices/wslogindialog.cpp:100
 #, kde-format
@@ -44600,7 +44600,7 @@ msgstr "Capturar"
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:249
 #, kde-format
 msgid "An error has occurred with the media player..."
-msgstr "Ocorreu un erro co reprodutor multimedia…"
+msgstr "Produciuse un erro co reprodutor multimedia…"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:288
