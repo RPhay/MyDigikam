@@ -312,21 +312,14 @@ sudo snap remove firefox
 sudo snap remove snap-store
 sudo snap remove gtk-common-themes
 
-if   [[ $OS_VERSION == "22.4" ]] ; then
-
-    sudo snap remove core18
-    sudo snap remove gnome-3-38-2004
-    sudo snap remove bare
-    sudo snap remove snapd-desktop-integration
-
-elif [[ $OS_VERSION == "23.4" ]] ; then
-
-    sudo snap remove core22
-    sudo snap remove gnome-32-2204
-    sudo snap remove bare
-    sudo snap remove snapd
-
-fi
+sudo snap remove gnome-3-38-2004
+sudo snap remove gnome-32-2204
+sudo snap remove gnome-42-2204
+sudo snap remove core20
+sudo snap remove core22
+sudo snap remove bare
+sudo snap remove snapd
+sudo snap remove snapd-desktop-integration
 
 sudo rm -rf /var/cache/snapd/
 sudo apt autoremove --purge snapd
