@@ -84,7 +84,7 @@ cmake $ORIG_WD/../3rdparty \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-# Install new cmake recent version to /opt
+# Install new cmake recent version and shared lib
 
 cmake --build . --config RelWithDebInfo --target ext_cmake           -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
