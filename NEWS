@@ -92,7 +92,7 @@ BUGFIXES:
 080 ==> 455936 - digiKam segfaults on startup when built with kdesrc-build.
 081 ==> 473257 - After moving image (s) clicking on preview, the application is fully blocked.
 082 ==> 453503 - digiKam cannot detect Samsung Android phone.
-083 ==> 
+083 ==> 406583 - Cannot write special characters (è, í, ó) in Tag search box.
 084 ==> 
 085 ==> 
 086 ==> 
