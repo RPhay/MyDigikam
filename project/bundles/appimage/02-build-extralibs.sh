@@ -103,6 +103,7 @@ cmake --build . --config RelWithDebInfo --target ext_sonnet                     
 cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qca                        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kwallet                    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ksanecore                  -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
 
 # Geolocation support
