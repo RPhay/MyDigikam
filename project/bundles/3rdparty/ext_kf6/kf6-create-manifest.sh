@@ -11,9 +11,6 @@
 set -e
 set -C
 
-. ./common.sh
-. ./config.sh
-
 ORIG_WD="`pwd`"
 KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
 
@@ -39,4 +36,3 @@ done
 
 cat $KF6_GITREV_LST
 
-mv $KF6_GITREV_LST $INSTALL_DIR/logs/

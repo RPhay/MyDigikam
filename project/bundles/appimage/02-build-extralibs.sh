@@ -116,13 +116,35 @@ cmake --build . --config RelWithDebInfo --target ext_kcalendarcore              
 cmake --build . --config RelWithDebInfo --target ext_fcitx-qt                   -- -j$CPU_CORES
 
 # Breeze style support
-#cmake --build . --config RelWithDebInfo --target ext_breeze                     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_breeze                     -- -j$CPU_CORES
 
 #################################################################################################
 
-if [[ $DK_QTVERSION == 5 ]] ; then
+if [[ $DK_QTVERSION == 6 ]] ; then
 
-    ../3rdparty/kf6/kf6-create-manifest.sh
+    KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
+
+    echo "List git sub-module revisions in $KF6_GITREV_LST"
+
+    if [ -f $KF6_GITREV_LST ] ; then
+        rm -f $KF6_GITREV_LST
+    fi
+
+    currentDate=`date +"%Y-%m-%d"`
+    echo "+KF6 Snapshot $currentDate" > $KF6_GITREV_LST
+
+    # --- List git revisions for all sub-modules
+
+    for COMPONENT in $FRAMEWORK_COMPONENTS ; do
+
+        SUBDIR=$BUILDING_DIR/ext_kf6/$COMPONENT-prefix/src/$COMPONENT
+        cd $SUBDIR
+        echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> $KF6_GITREV_LST
+        cd $ORIG_WD
+
+    done
+
+    cat $KF6_GITREV_LST
 
 fi
 

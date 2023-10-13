@@ -66,12 +66,13 @@ endfunction()
 
 set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 set(MarbleQtOnlyOptions -DWITH_DESIGNER_PLUGIN=OFF -DBUILD_MARBLE_TESTS=OFF -DBUILD_MARBLE_TOOLS=OFF -DBUILD_MARBLE_EXAMPLES=OFF -DBUILD_MARBLE_APPS=OFF -DBUILD_WITH_DBUS=OFF -DQTONLY=ON -DBUILD_TESTING=OFF)
+set(BreezeOptions -DBUILD_QT6=ON -DBUILD_QT5=OFF -DWITH_DECORATIONS=OFF -DWITH_WALLPAPERS=OFF)
 
 set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON)
 
 InstallKF6Component(extra-cmake-modules      ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kconfig                  ${KDE_VERSION} "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"              "")
-InstallKF6Component(breeze-icons             ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}"              "breeze-dropsvg-rccprefix.patch")
+InstallKF6Component(breeze-icons             ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}"              "breeze-icons-dropsvg-rccprefix.patch")
 InstallKF6Component(solid                    ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kcoreaddons              ${KDE_VERSION} "${Qt6CommonOptions};-DKCOREADDONS_USE_QML=OFF"          "")
 InstallKF6Component(threadweaver             ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
@@ -117,4 +118,4 @@ InstallKF6Component(knewstuff                ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(kitemmodels              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kitemmodels-drop-qml.patch")
 InstallKF6Component(kparts                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(krunner                  ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(breeze                   ${KDE_VERSION} "${Qt6CommonOptions};-DBUILD_QT6=ON;-DBUILD_QT5=OFF"     "breeze-common-rules.patch")
+InstallKF6Component(breeze                   ${KDE_VERSION} "${Qt6CommonOptions};${BreezeOptions}"                   "breeze-common-rules.patch")
