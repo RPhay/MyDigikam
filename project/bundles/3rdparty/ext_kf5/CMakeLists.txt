@@ -191,7 +191,7 @@ InstallKDEComponent(extra-cmake-modules ${KDE_VERSION} "${Qt6CommonOptions}"    
 InstallKDEComponent(kconfig             ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(breeze-icons        ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
 InstallKDEComponent(solid               ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKDEComponent(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKDEComponent(kcoreaddons         ${KDE_VERSION} "${Qt6CommonOptions}"                       "kcoreaddons-mingw.patch")
 InstallKDEComponent(threadweaver        ${KDE_VERSION} "${Qt6CommonOptions}"                       "${MacosThreadWeaverPatch}")
 InstallKDEComponent(kwindowsystem       ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKDEComponent(karchive            ${KDE_VERSION} "${Qt6CommonOptions}"                       "")
