@@ -266,7 +266,7 @@ msgstr "Inserix ací els elements"
 #, kde-format
 msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
-msgstr "Agrupa ací i mou a l'àlbum"
+msgstr "Agrupa ací i mou cap a l'àlbum"
 
 #: core/app/dragdrop/itemdragdrop.cpp:193
 #, kde-format
@@ -547,8 +547,8 @@ msgstr "Establix com a miniatura de l'etiqueta"
 msgctxt "@action:inmenu Pluralized"
 msgid "Move to Trash"
 msgid_plural "Move %1 Files to Trash"
-msgstr[0] "Mou a la paperera"
-msgstr[1] "Mou %1 fitxers a la paperera"
+msgstr[0] "Mou cap a dins de la paperera"
+msgstr[1] "Mou %1 fitxers cap a dins de la paperera"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:190
 #, kde-format
@@ -824,7 +824,7 @@ msgstr "Etiqueta"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"
-msgstr "Ves a"
+msgstr "Ves fins a"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:27
 #, kde-format
@@ -1335,10 +1335,10 @@ msgid ""
 "setting it again, choose \"Yes\" here, otherwise choose \"No\", and the "
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
-"<p>El camí als perfils ICC pareix que no és vàlid.</p><p>Si voleu configurar-"
-"lo ara, seleccioneu «Sí», altrament, seleccioneu «No». En este cas, la "
-"característica de «Gestió del color» quedarà inactivada fins que resoleu "
-"esta qüestió.</p>"
+"<p>El camí cap als perfils ICC pareix que no és vàlid.</p><p>Si voleu "
+"configurar-lo ara, seleccioneu «Sí», altrament, seleccioneu «No». En este "
+"cas, la característica de «Gestió del color» quedarà inactivada fins que "
+"resoleu esta qüestió.</p>"
 
 #: core/app/main/digikamapp.cpp:661 core/app/views/stack/trashview.cpp:514
 #, kde-format
@@ -1578,13 +1578,13 @@ msgstr "Crea un àlbum buit nou en la col·lecció."
 #, kde-format
 msgctxt "@action: setup"
 msgid "&Move to Album..."
-msgstr "&Mou a l'àlbum..."
+msgstr "&Mou cap a l'àlbum..."
 
 #: core/app/main/digikamapp_setup.cpp:219
 #, kde-format
 msgctxt "@info: setup"
 msgid "Move selected images into an album."
-msgstr "Mou les imatges seleccionades a un àlbum."
+msgstr "Mou les imatges seleccionades cap a dins d'un àlbum."
 
 #: core/app/main/digikamapp_setup.cpp:226
 #, kde-format
@@ -1881,7 +1881,7 @@ msgstr "Canvia el nom del fitxer de l'element actualment seleccionat."
 #, kde-format
 msgctxt "@action: Non-pluralized"
 msgid "Move to Trash"
-msgstr "Mou a la paperera"
+msgstr "Mou cap a dins de la paperera"
 
 #: core/app/main/digikamapp_setup.cpp:506
 #, kde-format
@@ -1899,7 +1899,7 @@ msgstr "Suprimix definitivament sense confirmació"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
-msgstr "Mou a la paperera sense confirmació"
+msgstr "Mou cap a dins de la paperera sense confirmació"
 
 #: core/app/main/digikamapp_setup.cpp:532
 #, kde-format
@@ -11544,7 +11544,7 @@ msgstr "Mou %1 al directori final %2"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Cannot move data to destination directory"
-msgstr "No s'han pogut moure les dades al directori de destinació"
+msgstr "No s'han pogut moure les dades cap al directori de destinació"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:531
 #, kde-format
@@ -11947,7 +11947,7 @@ msgstr "Copia les coordenades"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:191
 #, kde-format
 msgid "Move selected images to this position"
-msgstr "Mou les imatges seleccionades a esta posició"
+msgstr "Mou les imatges seleccionades cap a esta posició"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:193
 #, kde-format
@@ -22253,7 +22253,7 @@ msgstr "Box"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Box web-service"
-msgstr "Una eina per a exportar al servei web Box"
+msgstr "Una eina per a exportar cap al servei web Box"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:68
 #, kde-format
@@ -22493,7 +22493,7 @@ msgstr "Dropbox"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Dropbox web-service"
-msgstr "Una eina per a exportar al servei web Dropbox"
+msgstr "Una eina per a exportar cap al servei web Dropbox"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:68
@@ -22619,7 +22619,7 @@ msgstr "Facebook"
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:64
 #, kde-format
 msgid "A tool to export to Facebook web-service"
-msgstr "Una eina per a exportar al servei web Facebook"
+msgstr "Una eina per a exportar cap al servei web Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:69
 #, kde-format
@@ -23115,7 +23115,7 @@ msgstr "Flickr"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Flickr web-service"
-msgstr "Una eina per a exportar al servei web Flickr"
+msgstr "Una eina per a exportar cap al servei web Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:68
 #, kde-format
@@ -23931,7 +23931,7 @@ msgstr "ImageShack"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImageShack web-service"
-msgstr "Una eina per a exportar al servei web ImageShack"
+msgstr "Una eina per a exportar cap al servei web ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:68
 #, kde-format
@@ -24082,7 +24082,7 @@ msgstr "ImgUr"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to ImgUr web-service"
-msgstr "Una eina per a exportar al servei web ImgUr"
+msgstr "Una eina per a exportar cap al servei web ImgUr"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:68
 #, kde-format
@@ -24678,7 +24678,7 @@ msgstr "IPFS"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to IPFS web-service"
-msgstr "Una eina per a exportar al servei web IPFS"
+msgstr "Una eina per a exportar cap al servei web IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:68
 #, kde-format
@@ -24743,7 +24743,7 @@ msgstr "MediaWiki"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to MediaWiki web-service"
-msgstr "Una eina per a exportar al servei web MediaWiki"
+msgstr "Una eina per a exportar cap al servei web MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:68
 #, kde-format
@@ -25271,7 +25271,7 @@ msgstr "OneDrive"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to OneDrive web-service"
-msgstr "Una eina per a exportar al servei web OneDrive"
+msgstr "Una eina per a exportar cap al servei web OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:68
 #, kde-format
@@ -25343,7 +25343,7 @@ msgstr "Pinterest"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Pinterest web-service"
-msgstr "Una eina per a exportar al servei web Pinterest"
+msgstr "Una eina per a exportar cap al servei web Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:68
 #, kde-format
@@ -25446,7 +25446,7 @@ msgstr "Piwigo"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Piwigo web-service"
-msgstr "Una eina per a exportar al servei web Piwigo"
+msgstr "Una eina per a exportar cap al servei web Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:68
 #, kde-format
@@ -25697,7 +25697,7 @@ msgstr "Rajce"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Rajce web-service"
-msgstr "Una eina per a exportar al servei web Rajce"
+msgstr "Una eina per a exportar cap al servei web Rajce"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:68
 #, kde-format
@@ -26200,7 +26200,7 @@ msgstr "Twitter"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export to Twitter web-service"
-msgstr "Una eina per a exportar al servei web Twitter"
+msgstr "Una eina per a exportar cap al servei web Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:68
 #, kde-format
@@ -27991,7 +27991,7 @@ msgid ""
 "system (\"%1\"). No more specific means of identification (UUID, label) is "
 "available."
 msgstr ""
-"Esta entrada només s'identificarà pel camí a on es troba en el sistema "
+"Esta entrada només s'identificarà pel camí cap a on es troba en el sistema "
 "(«%1»). No hi ha disponible cap altra manera d'identificació més específica "
 "(UUID, etiqueta)."
 
@@ -29644,7 +29644,7 @@ msgid ""
 "Trash."
 msgstr ""
 "Si està activada, els fitxers s'eliminaran definitivament en lloc de "
-"moure'ls a la paperera."
+"moure'ls cap a dins de la paperera."
 
 #: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
@@ -29661,7 +29661,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
-msgstr "Sup&rimix els elements en lloc de moure'ls a la paperera"
+msgstr "Sup&rimix els elements en lloc de moure'ls cap a dins de la paperera"
 
 #: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
@@ -29763,7 +29763,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
-msgstr "&Mou a la paperera"
+msgstr "&Mou cap a dins de la paperera"
 
 #: core/libs/dialogs/deletedialog.cpp:660
 #, kde-format
@@ -29899,7 +29899,7 @@ msgstr "Informació de les biblioteques compartides i components"
 #: core/libs/progressmanager/dhistoryview.cpp:149
 #, kde-format
 msgid "Copy to Clipboard"
-msgstr "Copia al porta-retalls"
+msgstr "Copia a dins del porta-retalls"
 
 #: core/libs/dialogs/infodlg.cpp:96
 #, kde-format
@@ -35351,7 +35351,7 @@ msgid ""
 "Could not move image %1 to collection trash.\n"
 "Check the file permission on the trash folder \"%2\" in the image collection."
 msgstr ""
-"No s'ha pogut moure la imatge %1 a la paperera de col·leccions.\n"
+"No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions.\n"
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «%2» en la "
 "col·lecció d'imatges."
 
@@ -35363,7 +35363,7 @@ msgstr "Ja existix un fitxer o una carpeta anomenat %1 a %2"
 #: core/libs/iojobs/iojob.cpp:169
 #, kde-format
 msgid "Could not move folder %1 to album %2"
-msgstr "No s'ha pogut moure la carpeta %1 a l'àlbum %2"
+msgstr "No s'ha pogut moure la carpeta %1 cap a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:176
 #, kde-format
@@ -35371,7 +35371,7 @@ msgid ""
 "Could not move folder %1 to album %2. The folder %1 was copied as well to "
 "album %2"
 msgstr ""
-"No s'ha pogut moure la carpeta %1 a l'àlbum %2. La carpeta %1 també s'ha "
+"No s'ha pogut moure la carpeta %1 cap a l'àlbum %2. La carpeta %1 també s'ha "
 "copiat a l'àlbum %2"
 
 #: core/libs/iojobs/iojob.cpp:188
@@ -35416,7 +35416,8 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
-"No s'ha pogut moure la carpeta %1 cap a la paperera de col·leccions.\n"
+"No s'ha pogut moure la carpeta %1 cap a dins de la paperera de "
+"col·leccions.\n"
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
@@ -35427,7 +35428,7 @@ msgid ""
 "Check the file permission on the trash folder \".dtrash\" in the image "
 "collection."
 msgstr ""
-"No s'ha pogut moure la imatge %1 a la paperera de col·leccions.\n"
+"No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions.\n"
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
@@ -35444,7 +35445,8 @@ msgstr "No s'ha pogut eliminar la imatge %1"
 #: core/libs/iojobs/iojob.cpp:386
 #, kde-format
 msgid "Could not move image %1 to collection trash"
-msgstr "No s'ha pogut moure la imatge %1 a la paperera de col·leccions"
+msgstr ""
+"No s'ha pogut moure la imatge %1 cap a dins de la paperera de col·leccions"
 
 #: core/libs/iojobs/iojob.cpp:396
 #, kde-format
@@ -37453,13 +37455,13 @@ msgstr "Obri un fitxer"
 #, kde-format
 msgctxt "@action: go to album"
 msgid "Go To Albums"
-msgstr "Ves als àlbums"
+msgstr "Ves fins als àlbums"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Go to the album of this image"
-msgstr "Ves a l'àlbum d'esta imatge"
+msgstr "Ves fins a l'àlbum d'esta imatge"
 
 #: core/libs/properties/history/versionsoverlays.cpp:71
 #, kde-format
@@ -39972,7 +39974,7 @@ msgstr "Elimina esta etiqueta"
 #: core/libs/tags/widgets/tagspopupmenu.cpp:739
 #, kde-format
 msgid "Go to this Tag"
-msgstr "Ves a esta etiqueta"
+msgstr "Ves fins a esta etiqueta"
 
 #: core/libs/template/subjectedit.cpp:47
 #, kde-format
@@ -44450,7 +44452,7 @@ msgstr "Imprimix"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy to Clipboard"
-msgstr "Copia al porta-retalls"
+msgstr "Copia a dins del porta-retalls"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:256
 #, kde-format
@@ -49299,7 +49301,7 @@ msgstr "Su&bstituïx"
 #, kde-format
 msgctxt "@action"
 msgid "Go to Previous"
-msgstr "Ves a l'anterior"
+msgstr "Ves fins a l'anterior"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:107
 #, kde-format
@@ -49311,7 +49313,7 @@ msgstr "Vas cap al lloc anterior en la jerarquia de la vista de carpetes"
 #, kde-format
 msgctxt "@action"
 msgid "Go to Next"
-msgstr "Ves al següent"
+msgstr "Ves fins al següent"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:124
 #, kde-format
@@ -49335,7 +49337,7 @@ msgstr "Vas cap amunt en la jerarquia de la vista de carpetes"
 #, kde-format
 msgctxt "@action"
 msgid "Go Home"
-msgstr "Ves a l'inici"
+msgstr "Ves fins a l'inici"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:158
 #, kde-format
@@ -49764,10 +49766,10 @@ msgid ""
 "now, select \"Yes\", otherwise select \"No\". In this case, \"Color "
 "Management\" feature will be disabled until you solve this issue</p>"
 msgstr ""
-"<p>El camí als perfils ICC pareix que no és vàlid.</p><p>Si voleu establir-"
-"lo ara, seleccioneu «Sí», altrament, seleccioneu «No». En este cas, la "
-"característica de «Gestió del color» quedarà inactivada fins que resolgueu "
-"esta qüestió</p>"
+"<p>El camí cap als perfils ICC pareix que no és vàlid.</p><p>Si voleu "
+"establir-lo ara, seleccioneu «Sí», altrament, seleccioneu «No». En este cas, "
+"la característica de «Gestió del color» quedarà inactivada fins que "
+"resolgueu esta qüestió</p>"
 
 #: core/showfoto/main/showfoto.cpp:244
 #, kde-format
@@ -55504,7 +55506,7 @@ msgstr "Suprimix definitivament sense confirmació"
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:53
 #, kde-format
 msgid "Move to Trash without Confirmation"
-msgstr "Mou a la paperera sense confirmació"
+msgstr "Mou cap a dins de la paperera sense confirmació"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:66
 #, kde-format
@@ -57366,7 +57368,7 @@ msgstr "Elimina tots els elements de la taula de llum"
 #, kde-format
 msgctxt "Non-pluralized"
 msgid "Move to Trash"
-msgstr "Mou a la paperera"
+msgstr "Mou cap a dins de la paperera"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:91
 #, kde-format
