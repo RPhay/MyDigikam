@@ -68,12 +68,7 @@ if(MINGW)
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
 
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlicommon.dll ${PREFIX_ext_libjxl}/bin &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlidec.dll    ${PREFIX_ext_libjxl}/bin &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlienc.dll    ${PREFIX_ext_libjxl}/bin &&
-                        mv -f ${PREFIX_ext_libjxl}/lib/libjxl.dll                           ${PREFIX_ext_libjxl}/bin &&
-                        mv -f ${PREFIX_ext_libjxl}/lib/libjxl_threads.dll                   ${PREFIX_ext_libjxl}/bin
+        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
 
         BUILD_IN_SOURCE 1
 
