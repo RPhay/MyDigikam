@@ -102,7 +102,7 @@ BUGFIXES:
 089 ==> 471200 - Windows 10 DigiKam Crash at Launch After Updating to 8.0.0.
 090 ==> 468348 - MySQL remote database: After hibernation, no enlarge window, no display.
 091 ==> 466938 - Duplicate Detection Reference Image.
-092 ==> 
+092 ==> 467713 - Rating unintentionally set to max. after cropping an image.
 093 ==> 
 094 ==> 
 095 ==> 

@@ -359,6 +359,11 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
                 break;
             }
 
+            case NamespaceEntry::IPTC:
+            {
+                break;
+            }
+
             case NamespaceEntry::EXIF:
             {
                 if (!setExifTagString(nameSpace, QString::number(colorId)))
@@ -366,11 +371,6 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
                     return false;
                 }
 
-                break;
-            }
-
-            case NamespaceEntry::IPTC:
-            {
                 break;
             }
 
@@ -386,9 +386,6 @@ bool DMetadata::setItemColorLabel(int colorId, const DMetadataSettingsContainer&
 
 bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& settings) const
 {
-    // NOTE : with digiKam 0.9.x, we have used IPTC Urgency to store Rating.
-    // Now this way is obsolete, and we use standard XMP rating tag instead.
-
     if ((rating < RatingMin) || (rating > RatingMax))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Rating value to write is out of range!";
@@ -432,6 +429,17 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 break;
             }
 
+            case NamespaceEntry::IPTC:
+            {
+                if (!setIptcTagString(nameSpace, QString::number(entry.convertRatio.at(rating))))
+                {
+                    qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting rating failed" << nameSpace;
+                    return false;
+                }
+
+                break;
+            }
+
             case NamespaceEntry::EXIF:
             {
                 if (!setExifTagLong(nameSpace, entry.convertRatio.at(rating)))
@@ -443,7 +451,6 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                 break;
             }
 
-            case NamespaceEntry::IPTC: // IPTC rating deprecated
             default:
             {
                 break;
