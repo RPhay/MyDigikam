@@ -103,7 +103,7 @@ BUGFIXES:
 090 ==> 468348 - MySQL remote database: After hibernation, no enlarge window, no display.
 091 ==> 466938 - Duplicate Detection Reference Image.
 092 ==> 467713 - Rating unintentionally set to max. after cropping an image.
-093 ==> 
+093 ==> 464084 - After showing User Access Control prompt, installer fails to launch on Windows 10 22H2.
 094 ==> 
 095 ==> 
 096 ==> 
