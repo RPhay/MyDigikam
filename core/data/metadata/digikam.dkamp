@@ -197,18 +197,6 @@ specialOpts=0
 subspace=0
 tagPaths=1
 
-[Metadata][readRatingNamespaces][#0005]
-convertRatio=8,6,5,4,2,1
-index=5
-isDefault=true
-isDisabled=false
-namespaceName=Iptc.Application2.Urgency
-nsType=2
-secondNameOpts=0
-specialOpts=0
-subspace=1
-tagPaths=1
-
 [Metadata][readTagsNamespaces][#0000]
 index=0
 isDefault=true
@@ -539,18 +527,6 @@ nsType=2
 secondNameOpts=0
 specialOpts=0
 subspace=0
-tagPaths=1
-
-[Metadata][writeRatingNamespaces][#0005]
-convertRatio=8,6,5,4,2,1
-index=5
-isDefault=true
-isDisabled=false
-namespaceName=Iptc.Application2.Urgency
-nsType=2
-secondNameOpts=0
-specialOpts=0
-subspace=1
 tagPaths=1
 
 [Metadata][writeTagsNamespaces][#0000]

@@ -540,19 +540,11 @@ void DMetadataSettingsContainer::defaultRatingValues()
     ratingNs5.index         = 4;
     ratingNs5.subspace      = NamespaceEntry::EXIF;
 
-    NamespaceEntry ratingNs6;
-    ratingNs6.namespaceName = QLatin1String("Iptc.Application2.Urgency");
-    ratingNs6.convertRatio  = iptcMappings;
-    ratingNs6.nsType        = NamespaceEntry::RATING;
-    ratingNs6.index         = 5;
-    ratingNs6.subspace      = NamespaceEntry::IPTC;
-
     getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()) << ratingNs1
                                                           << ratingNs2
                                                           << ratingNs3
                                                           << ratingNs4
-                                                          << ratingNs5
-                                                          << ratingNs6;
+                                                          << ratingNs5;
 
     d->writeMappings[NamespaceEntry::DM_RATING_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()));

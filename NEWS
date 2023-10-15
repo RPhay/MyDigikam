@@ -101,7 +101,7 @@ BUGFIXES:
 088 ==> 473376 - digiKam does not use date/time from metadata.
 089 ==> 471200 - Windows 10 DigiKam Crash at Launch After Updating to 8.0.0.
 090 ==> 468348 - MySQL remote database: After hibernation, no enlarge window, no display.
-091 ==> 
+091 ==> 467713 - Rating unintentionally set to max. after cropping an image.
 092 ==> 
 093 ==> 
 094 ==> 
