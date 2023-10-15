@@ -98,8 +98,8 @@ BUGFIXES:
 085 ==> 472846 - digiKam doesn't write metadata to files/sidecars under unclear circumstances.
 086 ==> 331878 - GROUP : the «grouped images icon» disapears when working on the main (front) image.
 087 ==> 475428 - "Open With" Dialog is empty.
-088 ==> 
-089 ==> 
+088 ==> 473376 - digiKam does not use date/time from metadata.
+089 ==> 471200 - Windows 10 DigiKam Crash at Launch After Updating to 8.0.0.
 090 ==> 
 091 ==> 
 092 ==> 
