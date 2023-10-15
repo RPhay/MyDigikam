@@ -110,7 +110,7 @@ BUGFIXES:
 096 ==> 435343 - Crash getting People album property if Thumbnail file removed.
 097 ==> 437588 - Del removes Group Selected item and the second item also disappears from the Table view [patch].
 098 ==> 426355 - Not responding and strange activity when quality sorting.
-099 ==> 
+099 ==> 418759 - People tag filtered list when entering name is too narrow.
 100 ==> 
 101 ==> 
 102 ==> 
