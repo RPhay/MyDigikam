@@ -107,7 +107,7 @@ BUGFIXES:
 093 ==> 464084 - After showing User Access Control prompt, installer fails to launch on Windows 10 22H2.
 094 ==> 468597 - digiKam 8.0.0 installer attempts to create a start menu folder with 7.9.0 version numbering.
 095 ==> 437737 - digiKam cannot create xmp for xcf.
-096 ==> 
+096 ==> 435343 - Crash getting People album property if Thumbnail file removed.
 097 ==> 
 098 ==> 
 099 ==> 
