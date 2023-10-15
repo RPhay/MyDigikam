@@ -100,7 +100,7 @@ BUGFIXES:
 087 ==> 475428 - "Open With" Dialog is empty.
 088 ==> 473376 - digiKam does not use date/time from metadata.
 089 ==> 471200 - Windows 10 DigiKam Crash at Launch After Updating to 8.0.0.
-090 ==> 
+090 ==> 468348 - MySQL remote database: After hibernation, no enlarge window, no display.
 091 ==> 
 092 ==> 
 093 ==> 
