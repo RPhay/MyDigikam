@@ -382,6 +382,11 @@ bool MetaEngine::useCompatibleFileName() const
 void MetaEngine::setMetadataWritingMode(const int mode)
 {
     d->metadataWritingMode = mode;
+
+    if (mode != MetadataWritingMode::WRITE_TO_FILE_ONLY)
+    {
+        d->useXMPSidecar4Reading = true;
+    }
 }
 
 int MetaEngine::metadataWritingMode() const

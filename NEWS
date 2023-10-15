@@ -114,7 +114,7 @@ BUGFIXES:
 100 ==> 382361 - Continuous net usage, server CPU and IO usage while doing nothing but keeping a collection opened [network share & mysql db].
 101 ==> 470566 - Metadata not updated.
 102 ==> 475663 - digiKam crashes while updating database from smb-share.
-103 ==> 
+103 ==> 395914 - Sidecar files are replaced if reading sidecar files is not enabled.
 104 ==> 
 105 ==> 
 106 ==> 
