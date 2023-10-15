@@ -108,7 +108,7 @@ BUGFIXES:
 094 ==> 468597 - digiKam 8.0.0 installer attempts to create a start menu folder with 7.9.0 version numbering.
 095 ==> 437737 - digiKam cannot create xmp for xcf.
 096 ==> 435343 - Crash getting People album property if Thumbnail file removed.
-097 ==> 
+097 ==> 437588 - Del removes Group Selected item and the second item also disappears from the Table view [patch].
 098 ==> 
 099 ==> 
 100 ==> 
