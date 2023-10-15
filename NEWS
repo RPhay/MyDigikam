@@ -112,7 +112,7 @@ BUGFIXES:
 098 ==> 426355 - Not responding and strange activity when quality sorting.
 099 ==> 418759 - People tag filtered list when entering name is too narrow.
 100 ==> 382361 - Continuous net usage, server CPU and IO usage while doing nothing but keeping a collection opened [network share & mysql db].
-101 ==> 
+101 ==> 470566 - Metadata not updated.
 102 ==> 
 103 ==> 
 104 ==> 
