@@ -66,6 +66,7 @@ mkdir -p $APP_IMG_DIR/usr/bin
 mkdir -p $APP_IMG_DIR/usr/etc
 mkdir -p $APP_IMG_DIR/usr/share
 mkdir -p $APP_IMG_DIR/usr/share/icons
+mkdir -p $APP_IMG_DIR/usr/share/X11
 mkdir -p $APP_IMG_DIR/usr/share/metainfo
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/interfaces
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/services
@@ -104,11 +105,28 @@ ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
 cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
 cp -r /usr/share/lensfun                                  ./usr/share
-cp -r /usr/share/knotifications5                          ./usr/share
-cp -r /usr/share/kservices5                               ./usr/share
-cp -r /usr/share/kservicetypes5                           ./usr/share
-cp -r /usr/share/kxmlgui5                                 ./usr/share
-cp -r /usr/share/kf5                                      ./usr/share
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp -r /usr/share/knotifications5                      ./usr/share
+    cp -r /usr/share/kservices5                           ./usr/share
+    cp -r /usr/share/kservicetypes5                       ./usr/share
+    cp -r /usr/share/kxmlgui5                             ./usr/share
+    cp -r /usr/share/kf5                                  ./usr/share
+
+else
+
+    cp -r /usr/share/knotifications6                      ./usr/share
+    cp -r /usr/share/kservices6                           ./usr/share
+    cp -r /usr/share/kservicetypes6                       ./usr/share
+    cp -r /usr/share/kxmlgui6                             ./usr/share
+    cp -r /usr/share/kf6                                  ./usr/share
+
+    # WHY it's necessary, else application menu are broken...
+    ln -s ./kxmlgui6                                      ./usr/share/kxmlgui5
+
+fi
+
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/icu                                      ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
@@ -117,10 +135,21 @@ cp -r /usr/share/mime                                     ./usr/share
 cp -r /usr/share/OpenCV                                   ./usr/share  || true
 cp -r /usr/share/opencv4                                  ./usr/share  || true
 
-cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/interfaces/
+# TODO check when kf6 prefix will be used here.
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 
-cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp -r /usr/share/dbus-1/interfaces/kf5*               ./usr/share/dbus-1/interfaces/
+    cp -r /usr/${LIBSUFFIX}/libexec/kf5                   ./usr/lib/libexec/
+
+else
+
+    # TODO: check if files do not change from kf5* to kf6.
+    cp -r /usr/share/dbus-1/interfaces/kf5*               ./usr/share/dbus-1/interfaces/
+    cp -r /usr/${LIBSUFFIX}/libexec/kf6                   ./usr/lib/libexec/
+
+fi
 
 echo -e "------------- Copy AppImage stream data filess\n"
 
@@ -155,8 +184,9 @@ if [[ -e /usr/translations ]]; then
 
     echo -e "------------- Copy Qt translations files\n"
 
-    cp -r /usr/translations ./usr/share/digikam
-    ln -s ../digikam/translations ./usr/share/showfoto/translations
+    cp -r /usr/translations ./usr
+    ln -s ../../translations ./usr/share/digikam/translations
+    ln -s ../../translations ./usr/share/showfoto/translations
 
     # optimizations
 
@@ -178,6 +208,7 @@ echo -e "------------- Copy KDE translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
@@ -186,6 +217,7 @@ echo -e "------------- Copy digiKam translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
@@ -223,16 +255,7 @@ echo -e "------------- Copy system libraries for binary compatibility\n"
 
 # otherwise segfaults!?
 
-if [[ "$OS_NAME" == "ubuntu" ]] ; then
-
-    cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.2    | cut -d ">" -f 2 | xargs) ./usr/lib/
-
-else
-
-    cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.3    | cut -d ">" -f 2 | xargs) ./usr/lib/
-
-fi
-
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.2    | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGL.so.1       | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGLU.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
@@ -467,7 +490,16 @@ cd usr/ ; find . -type f -exec sed -i -e 's|/usr|././|g' {} \; ; cd ..
 # We do not bundle this, so let's not search that inside the AppImage.
 # Fixes "Qt: Failed to create XKB context!" and lets us enter text
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
-sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
+
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
+
+else
+
+    sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
+
+fi
 
 #################################################################################################
 # Install ExifTool binary.
@@ -507,7 +539,17 @@ else
 
 fi
 
-APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    QT_SUF="-Qt5"
+
+else
+
+    QT_SUF="-Qt6"
+
+fi
+
+APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$QT_SUF$DEBUG_SUF.appimage"
 
 echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 

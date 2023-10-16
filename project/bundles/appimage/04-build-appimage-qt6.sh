@@ -490,7 +490,7 @@ echo -e "---------- Strip Configuration Files \n"
 # Probably it would be better to use /app as a prefix because it has the same length for all apps
 cd usr/ ; find . -type f -exec sed -i -e 's|$APP_IMG_DIR/usr/|./././././././././|g' {} \; ; cd  ..
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     # On openSUSE Qt is picking up the wrong libqxcb.so
     # (the one from the system when in fact it should use the bundled one) - is this a Qt bug?
