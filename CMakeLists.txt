@@ -5,7 +5,12 @@
 #
 
 set(CMAKE_MIN_VERSION   "3.16")
-set(ECM_MIN_VERSION     "5.55.0")
+
+# NOTE: for Qt6, ECM_MIN_VERSION must be set at configuration time with CMake at "5.240"
+
+if(${ECM_MIN_VERSION} STREQUAL "")
+    set(ECM_MIN_VERSION "5.55.0")
+endif()
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 

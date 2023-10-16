@@ -19,8 +19,10 @@ export BUILD_WITH_QT6=0
 
 if [[ $BUILD_WITH_QT6 == 1 ]] ; then
     QTPATHS="qtpaths6"
+    ECM_MIN_VERSION=5.240.0
 else
     QTPATHS="qtpaths"
+    ECM_MIN_VERSION=5.55.0
 fi
 
 # Prior Qt6 first. if failed try Qt5
@@ -121,6 +123,8 @@ echo "Qt      Install Path : $QT_INSTALL_PREFIX"
 echo "digiKam Install Path : $DIGIKAM_INSTALL_PREFIX"
 echo "CMake binary         : $CMAKE_BINARY"
 echo "Build Directory      : $BUILDDIR"
+echo "Build for Qt6        : $BUILD_WITH_QT6"
+echo "ECM min version      : $ECM_MIN_VERSION"
 
 mkdir -p $DIGIKAM_INSTALL_PREFIX
 mkdir -p $BUILDDIR
@@ -135,6 +139,7 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DBUILD_TESTING=ON \
       -DBUILD_WITH_CCACHE=ON \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
+      -DECM_MIN_VERSION=$ECM_MIN_VERSION \
       -DDIGIKAMSC_COMPILE_PO=OFF \
       -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
       -DENABLE_KFILEMETADATASUPPORT=ON \
@@ -145,5 +150,5 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=ON \
-      -DENABLE_QTMULTIMEDIA=OFF \
+      -DENABLE_QTMULTIMEDIA=ON \
       $SOURCEDIR && echo "$MESSAGE"
