@@ -50,6 +50,7 @@
 #include "applicationsettings.h"
 #include "drangebox.h"
 #include "autotagsassignment.h"
+#include "autotagsassign.h"
 
 namespace Digikam
 {
@@ -123,6 +124,7 @@ public:
     static const QString configFaceScannedHandling;
     static const QString configAutotagsAssignment;
     static const QString configAutotaggingScanMode;
+    static const QString configModelSelectionMode;
     static const QString configImageQualitySorter;
     static const QString configQualityScanMode;
     static const QString configQualitySettingsSelected;
@@ -148,6 +150,7 @@ public:
     QCheckBox*                shrinkDatabases;
     QComboBox*                qualityScanMode;
     QComboBox*                autotaggingScanMode;
+    QComboBox*                modelSelectionMode;
     QPushButton*              metadataSetup;
     ImageQualityConfSelector* qualitySelector;
     QComboBox*                syncDirection;
@@ -182,6 +185,7 @@ const QString MaintenanceDlg::Private::configFaceManagement(QLatin1String("FaceM
 const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("FaceScannedHandling"));
 const QString MaintenanceDlg::Private::configAutotagsAssignment(QLatin1String("AutotagsAssignment"));
 const QString MaintenanceDlg::Private::configAutotaggingScanMode(QLatin1String("AutotaggingScanMode"));
+const QString MaintenanceDlg::Private::configModelSelectionMode(QLatin1String("ModelSelectionMode"));
 const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
 const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
 const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));
@@ -349,6 +353,16 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->autotaggingScanMode    = new QComboBox(hbox12);
     d->autotaggingScanMode->addItem(i18n("Clean all and re-assign"),  AutotagsAssignment::AllItems);
     d->autotaggingScanMode->addItem(i18n("Scan non-assigned only"),   AutotagsAssignment::NonAssignedItems);
+
+    DHBox* const hbox13 = new DHBox(d->vbox5);
+    new QLabel (i18n("Selection model: "), hbox13);
+    QWidget* const space9 = new QWidget(hbox13);
+    hbox13->setStretchFactor(space9, 10);
+
+    d->modelSelectionMode = new QComboBox(hbox13);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 NANO"), DetectorModel::YOLOV5NANO);
+    d->modelSelectionMode->addItem(i18n("YOLOv5 XLarge"), DetectorModel::YOLOV5XLARGE);
+    d->modelSelectionMode->addItem(i18n("ResNet50"), DetectorModel::RESNET50);
     
     d->expanderBox->insertItem(Private::AutotagsAssignment, d->vbox5,
                                QIcon::fromTheme(QLatin1String("flag-green")), i18n("Auto-tags Assignment"), QLatin1String("AutotagsAssignment"), false);
@@ -488,6 +502,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     
     prm.autotagsAssignment                  = d->expanderBox->isChecked(Private::AutotagsAssignment);
     prm.autotaggingScanMode                 = d->autotaggingScanMode->itemData(d->autotaggingScanMode->currentIndex()).toInt();
+    prm.modelSelectionMode                  = d->modelSelectionMode->itemData(d->modelSelectionMode->currentIndex()).toInt();
 
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();

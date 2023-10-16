@@ -41,6 +41,7 @@ public:
     void setMaintenanceData(MaintenanceData* const data = nullptr);
     void setBatchImages(const QList<QString>& batchImgPaths) const;
     void setBatchSize(int batchSize) const;
+    void setModelType(int modelType) const;
 
 Q_SIGNALS:
 

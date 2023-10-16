@@ -81,6 +81,8 @@ public:
     bool                                    autotagsAssignment;
     /// autotagging scan mode
     int                                     autotaggingScanMode;
+    /// model selection mode
+    int                                     modelSelectionMode;
 
     /// Perform Image Quality Sorting.
     bool                                    qualitySort;

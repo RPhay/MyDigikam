@@ -161,10 +161,10 @@ void MaintenanceThread::generateFingerprints(const QList<qlonglong>& itemIds, bo
     appendJobs(collection);
 }
 
-void MaintenanceThread::generateTags(const QStringList& paths)
+void MaintenanceThread::generateTags(const QStringList& paths, int modelType)
 {
     int sizeData   = paths.size();
-    const int batch_size = 1; 
+    const int batch_size = 16; 
     ActionJobCollection collection;
 
     for (int i = 1; i <= maximumNumberOfThreads(); ++i)
@@ -192,6 +192,7 @@ void MaintenanceThread::generateTags(const QStringList& paths)
             AutotagsAssignmentTask* const t = new AutotagsAssignmentTask();
             t->setBatchSize(batch_size);
             t->setBatchImages(batchImgPaths);
+            t->setModelType(modelType);
 
             connect(t, SIGNAL(signalFinished()),
             this, SIGNAL(signalAdvance()));

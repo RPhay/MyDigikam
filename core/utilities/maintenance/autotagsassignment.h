@@ -49,6 +49,7 @@ public:
      */
     explicit AutotagsAssignment(AutotagsAssignmentScanMode mode,
                                 const AlbumList& list,
+                                int modelType,
                                 ProgressItem* const parent = nullptr);
     ~AutotagsAssignment()           override;
 

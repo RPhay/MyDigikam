@@ -40,6 +40,7 @@ public:
     autoTagsAssign*       autotagsEngine;
     QList<QString>        batchImgPaths;
     int                   batchSize;
+    int                   modelType;
 };
 
 // -------------------------------------------------------
@@ -65,6 +66,11 @@ void AutotagsAssignmentTask::setMaintenanceData(MaintenanceData* const data)
 void AutotagsAssignmentTask::setBatchSize(int batchSize) const
 {
     d->batchSize = batchSize;
+}
+
+void AutotagsAssignmentTask::setModelType(int modelType) const
+{
+    d->modelType = modelType;
 }
 
 void AutotagsAssignmentTask::assignTags(const QString& pathImage, const QList<QString>& tagsList)
@@ -98,7 +104,7 @@ void AutotagsAssignmentTask::run()
         QElapsedTimer timer;
         timer.start();
         
-        d->autotagsEngine = new autoTagsAssign(DetectorModel::YOLOV5NANO);
+        d->autotagsEngine = new autoTagsAssign(DetectorModel(d->modelType));
         QList<QList<QString>> tagsLists = d->autotagsEngine->generateTagsList(d->batchImgPaths, d->batchSize);
 
         for (int i = 0; i <  d->batchImgPaths.size(); i++)

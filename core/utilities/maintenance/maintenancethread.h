@@ -51,7 +51,7 @@ public:
     void removeMetadata(const ItemInfoList& items, MetadataRemover::RemoveAction action);
     void generateThumbs(const QStringList& paths);
     void generateFingerprints(const QList<qlonglong>& itemIds, bool rebuildAll);
-    void generateTags(const QStringList& paths);
+    void generateTags(const QStringList& paths, int modelType);
     void sortByImageQuality(const QStringList& paths, const ImageQualityContainer& quality);
 
     void computeDatabaseJunk(bool thumbsDb = false, bool facesDb = false, bool similarityDb = false);
