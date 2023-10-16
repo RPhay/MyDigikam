@@ -1,6 +1,6 @@
 # Macro to rule install paths for Qt5 and Qt6 target depending of ECM provided variables
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -27,6 +27,10 @@ message(STATUS "")
 message(STATUS "--------------------------------------------------")
 message(STATUS "digiKam Install Paths:")
 message(STATUS "")
+
+message(STATUS "KDE_INSTALL_FULL_KNOTIFYRCDIR      : ${KDE_INSTALL_FULL_KNOTIFYRCDIR}")
+message(STATUS "KDE_INSTALL_FULL_KXMLGUIDIR        : ${KDE_INSTALL_FULL_KXMLGUIDIR}")
+message(STATUS "KDE_INSTALL_FULL_KSERVICESDIR      : ${KDE_INSTALL_FULL_KSERVICESDIR}")
 
 message(STATUS "INSTALL DATA DIR      : ${KDE_INSTALL_FULL_DATADIR}")
 message(STATUS "INSTALL ICON DIR      : ${KDE_INSTALL_FULL_ICONDIR}")
