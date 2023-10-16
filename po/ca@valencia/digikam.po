@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2023-09-26 11:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -61884,7 +61884,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Avançat"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61900,7 +61900,7 @@ msgstr ""
 "lateral pot ja no estar assignat de manera única i s'utilitzarà per a les "
 "dues imatges, la qual cosa pot provocar problemes de metadades."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61911,7 +61911,7 @@ msgstr ""
 "imatges en una orientació errònia, per tant, només canvieu esta opció si ho "
 "requeriu explícitament."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61929,13 +61929,13 @@ msgstr ""
 "Si decidiu fer-ho, feu una còpia de seguretat dels fitxers RAW. Vos "
 "recomanem fermament no activar esta opció."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sí, ho entenc"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62560,7 +62560,7 @@ msgstr ""
 "de fitxer compatible (BASENAME.xmp) utilitzat per molts programes "
 "comercials. No activeu esta opció per a Darktable."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62585,7 +62585,7 @@ msgstr ""
 "fitxers laterals.\n"
 "Les diverses extensions s'han de separar amb un punt i coma o un espai."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62604,19 +62604,19 @@ msgstr ""
 "per a permetre fitxers amb les extensions *.xyz i *.abc.\n"
 "Sempre s'inclou el tipus de lateral *.xmp utilitzat internament."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Introduïu les extensions de fitxer dels laterals."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Extensions de fitxer lateral&s addicionals"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

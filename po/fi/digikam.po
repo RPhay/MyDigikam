@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2023-06-27 18:12+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -61223,7 +61223,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Lisäasetukset"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61234,7 +61234,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61242,7 +61242,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61260,13 +61260,13 @@ msgstr ""
 "Jos päätät valita tämän, tee RAW-tiedostoistasi varmuuskopiot. Emme "
 "suosittele tätä asetusta käyttöön."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Kyllä, ymmärrän"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -61859,7 +61859,7 @@ msgstr ""
 "tiedostonimin (PERUSNIMI.xmp) valitsemalla tämä asetus. Älä käytä tätä "
 "DarkTablelle."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61882,7 +61882,7 @@ msgstr ""
 "sama tehdään näille oheistiedostoille.\n"
 "Päätteitä voi antaa useita puolipistein tai välilyönnein erotettuna."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61902,19 +61902,19 @@ msgstr ""
 "kirjoittamalla vain ”xyz abc”. Sisäinen\n"
 "oheistiedostopääte *.xmp on aina mukana."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Anna oheistiedostojen nimien lisäpäätteet."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "&Oheistiedostojen nimien lisäpäätteet"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

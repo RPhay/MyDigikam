@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -62628,7 +62628,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Erweitert"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62639,7 +62639,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62649,7 +62649,7 @@ msgstr ""
 "Wenn Sie diese Option deaktivieren, wird das Bild sehr wahrscheinlich falsch "
 "gedreht dargestellt werden. Ändern Sie sie nur bei besonderen Anforderungen."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -62675,13 +62675,13 @@ msgstr ""
 "Wenn Sie sich dafür entscheiden, erstellen Sie eine Sicherung der RAW-Datei. "
 "Wir empfehlen dringend, diese Einstellung nicht zu aktivieren."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Ja, ich habe es verstanden"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -63321,7 +63321,7 @@ msgstr ""
 "Benutzen Sie diese Einstellung, um XMP-Filialdateien „Basisname.xmp“ zu "
 "erstellen. Für Darktable diese Einstellung nicht verwenden."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63345,7 +63345,7 @@ msgstr ""
 "Einzelne Datei-Erweiterungen müssen durch Strichpunkt oder Leerzeichen "
 "getrennt werden."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63363,19 +63363,19 @@ msgstr ""
 "Schreiben Sie „xyz abc“ für Dateien mit den Erweiterungen *.xyz und *.abc. "
 "Die Erweiterung *.xmp braucht nicht angegeben zu werden."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Geben Sie hier zusätzliche Erweiterungen für Filialdateien an."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "&Zusätzliche Erweiterungen für Filialdateien"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

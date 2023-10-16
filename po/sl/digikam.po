@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2023-09-26 09:50+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -61355,7 +61355,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61371,7 +61371,7 @@ msgstr ""
 "datoteka ni več edinstveno dodeljena in se bo uporabljala za obe sliki, kar "
 "lahko povzroča težave z metapodatki."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61382,7 +61382,7 @@ msgstr ""
 "vaše slike prikazane napačno, zato to možnost izklopite le, če to nujno "
 "potrebno."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61400,13 +61400,13 @@ msgstr ""
 "Če se že za to odločite, naredite vsaj varnostno kopijo surovih datotek "
 "slik. Močno vam priporočamo, da te možnosti ne omogočite."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Da, razumem"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -62013,7 +62013,7 @@ msgstr ""
 "(BASENAME.xmp), ki jih uporabljajo mnogi komercialni programi. Ne "
 "vklapljajte te možnosti za program Darktable."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62036,7 +62036,7 @@ msgstr ""
 "tudi v teh priklopnih datotekah.\n"
 "Večkratne razširitve morajo biti ločene s podpičjem ali presledkom."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62056,19 +62056,19 @@ msgstr ""
 "*.xyz in *.abc so razširitve. Priklopne datoteke za\n"
 "interno rabo tipa * .xmp so vedno vključene."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Vnesite dodatne priponke priklopnih datotek."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Dodatne razširitve priklopnih datotek"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

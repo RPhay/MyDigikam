@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -59049,7 +59049,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59060,7 +59060,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59068,7 +59068,7 @@ msgid ""
 "wrong orientation, so only change this option if you explicitly require this."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59080,13 +59080,13 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -59611,7 +59611,7 @@ msgid ""
 "enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59626,7 +59626,7 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59639,19 +59639,19 @@ msgid ""
 "used sidecars type *.xmp is always included."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "פתיחה במנהל-הקבצים"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "פתיחה במנהל-הקבצים"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"

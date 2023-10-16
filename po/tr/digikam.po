@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 00:40+0000\n"
+"POT-Creation-Date: 2023-10-16 00:40+0000\n"
 "PO-Revision-Date: 2023-09-30 11:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -63157,7 +63157,7 @@ msgctxt "@title:tab advanced metadata config view"
 msgid "Advanced"
 msgstr "Gelişmiş"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:237
+#: core/utilities/setup/metadata/setupmetadata.cpp:246
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63168,7 +63168,7 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:255
+#: core/utilities/setup/metadata/setupmetadata.cpp:264
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63179,7 +63179,7 @@ msgstr ""
 "yönde gösterecektir, bu nedenle bu seçeneği yalnızca özellikle buna "
 "gereksiniminiz varsa değiştirin."
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:278
+#: core/utilities/setup/metadata/setupmetadata.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -63191,7 +63191,7 @@ msgid ""
 "recommend not to enable this option."
 msgstr ""
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:286
+#: core/utilities/setup/metadata/setupmetadata.cpp:295
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Yes I understand"
@@ -63199,7 +63199,7 @@ msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Evet anladım"
 
-#: core/utilities/setup/metadata/setupmetadata.cpp:296
+#: core/utilities/setup/metadata/setupmetadata.cpp:305
 #, kde-format
 msgctxt "@info"
 msgid "You would rather disable writing metadata to RAW files?"
@@ -63873,7 +63873,7 @@ msgstr ""
 "Kamera tarafından sağlanan resim dosyası isimlerini değiştirmeden kullanmak "
 "istiyorsanız bu seçeneği belirtin."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:79
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Add file types to be recognised as sidecars.</p><p>digiKam "
@@ -63905,7 +63905,7 @@ msgstr ""
 "dosyalarda da yapılır.</p><p>Çoklu uzantılar noktalı virgül ya da boşluk ile "
 "ayrılmalıdır.</p>"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:94
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:91
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Here you can add extra extensions of sidecars files to be processed "
@@ -63929,21 +63929,21 @@ msgstr ""
 "abc\" yazmanız yeterlidir. Dahili kullanılan yan dosya tipi *.xmp her zaman "
 "dahil edilir.</p>"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:99
 #, fuzzy, kde-format
 #| msgid "Enter additional sidecars file extensions."
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
 msgstr "Ek yan dosya uzantıları girin."
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:102
 #, fuzzy, kde-format
 #| msgid "Additional &sidecar file extensions"
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
 msgstr "Ek &yan dosya uzantıları"
 
-#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:120
+#: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:117
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
