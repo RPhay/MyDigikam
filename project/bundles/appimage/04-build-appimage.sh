@@ -117,9 +117,13 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 else
 
     cp -r /usr/share/knotifications6                      ./usr/share
-    cp -r /usr/share/kservices6                           ./usr/share
-    cp -r /usr/share/kservicetypes6                       ./usr/share
-    cp -r /usr/share/kxmlgui6                             ./usr/share
+
+    # Not avaialble with KF6
+    cp -r /usr/share/kservices6                           ./usr/share  || true
+    cp -r /usr/share/kservicetypes6                       ./usr/share  || true
+
+    # KF6 still use kxmlgui5 subdir.
+    cp -r /usr/share/kxmlgui5                             ./usr/share
     cp -r /usr/share/kf6                                  ./usr/share
 
     # WHY it's necessary, else application menu are broken...
@@ -145,8 +149,7 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
 else
 
-    # TODO: check if files do not change from kf5* to kf6.
-    cp -r /usr/share/dbus-1/interfaces/kf5*               ./usr/share/dbus-1/interfaces/
+    cp -r /usr/share/dbus-1/interfaces/kf6*               ./usr/share/dbus-1/interfaces/
     cp -r /usr/${LIBSUFFIX}/libexec/kf6                   ./usr/lib/libexec/
 
 fi
@@ -279,8 +282,18 @@ echo -e "---------- Copy target binaries\n"
 
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
-cp /usr/bin/kbuildsycoca5           ./usr/bin
-cp /usr/bin/solid-hardware5         ./usr/bin
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp /usr/bin/kbuildsycoca5       ./usr/bin
+    cp /usr/bin/solid-hardware5     ./usr/bin
+
+else
+
+    cp /usr/bin/kbuildsycoca6       ./usr/bin
+    cp /usr/bin/solid-hardware6     ./usr/bin
+
+fi
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
