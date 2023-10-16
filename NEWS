@@ -117,7 +117,7 @@ BUGFIXES:
 103 ==> 395914 - Sidecar files are replaced if reading sidecar files is not enabled.
 104 ==> 469643 - digiKam 8.0 crashes when starting, as soon as the scanning completes.
 105 ==> 466837 - Detailed progress indicator twiddles open for every long running action.
-106 ==> 
+106 ==> 261634 - Use Qt6 to compile AppImage bundle.
 107 ==> 
 108 ==> 
 109 ==> 
