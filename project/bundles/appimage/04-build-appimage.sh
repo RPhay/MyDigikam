@@ -554,7 +554,8 @@ fi
 
 if [[ $DK_QTVERSION == 5 ]] ; then
 
-    QT_SUF="-Qt5"
+    # No prefix for the Qt5 version.
+    QT_SUF=""
 
 else
 
