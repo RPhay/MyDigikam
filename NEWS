@@ -115,8 +115,8 @@ BUGFIXES:
 101 ==> 470566 - Metadata not updated.
 102 ==> 475663 - digiKam crashes while updating database from smb-share.
 103 ==> 395914 - Sidecar files are replaced if reading sidecar files is not enabled.
-104 ==> 
-105 ==> 
+104 ==> 469643 - digiKam 8.0 crashes when starting, as soon as the scanning completes.
+105 ==> 466837 - Detailed progress indicator twiddles open for every long running action.
 106 ==> 
 107 ==> 
 108 ==> 
