@@ -121,6 +121,8 @@ echo "Qt      Install Path : $QT_INSTALL_PREFIX"
 echo "digiKam Install Path : $DIGIKAM_INSTALL_PREFIX"
 echo "CMake binary         : $CMAKE_BINARY"
 echo "Build Directory      : $BUILDDIR"
+echo "Build for Qt6        : $BUILD_WITH_QT6"
+echo "ECM min version      : $ECM_MIN_VERSION"
 
 mkdir -p $DIGIKAM_INSTALL_PREFIX
 mkdir -p $BUILDDIR
@@ -145,5 +147,5 @@ $CMAKE_BINARY -G "$MAKEFILES_TYPE" . \
       -DENABLE_DBUS=ON \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=ON \
-      -DENABLE_QTMULTIMEDIA=OFF \
+      -DENABLE_QTMULTIMEDIA=ON \
       $SOURCEDIR && echo "$MESSAGE"
