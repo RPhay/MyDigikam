@@ -214,9 +214,8 @@ done
 # Install more recent version of NodeJs for QtWebEngine.
 # https://learnubuntu.com/update-node-js/
 
-curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install nodejs
-
 
 echo -e "---------- Clean-up Old Packages\n"
 
