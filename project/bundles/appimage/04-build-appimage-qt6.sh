@@ -3,7 +3,7 @@
 # Script to bundle data using previously-built KF5 with digiKam installation
 # and create a Linux AppImage bundle file.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -101,7 +101,7 @@ cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
 cp -r /usr/share/lensfun                                  ./usr/share
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     cp -r /usr/share/knotifications5                      ./usr/share
     cp -r /usr/share/kservices5                           ./usr/share
@@ -133,7 +133,7 @@ cp -r /usr/share/opencv4                                  ./usr/share
 # TODO check when kf6 prefix will be used here.
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     cp -r /usr/share/dbus-1/interfaces/kf5*               ./usr/share/dbus-1/interfaces/
     cp -r /usr/${LIBSUFFIX}/libexec/kf5                   ./usr/lib/libexec/
@@ -151,7 +151,7 @@ echo -e "------------- Copy AppImage stream data files\n"
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml      ./usr/share/metainfo
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml     ./usr/share/metainfo
 
-if [[ $DK_QTVERSION == 6.* ]] ; then
+if [[ $DK_QTVERSION == 6 ]] ; then
 
     cp -r /usr/share/metainfo/org.kde.avplayer.appdata.xml ./usr/share/metainfo
 
@@ -204,7 +204,7 @@ if [[ -e /usr/translations ]]; then
 
 fi
 
-echo -e "------------- Copy KFE framework translations files\n"
+echo -e "------------- Copy KDE framework translations files\n"
 
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
@@ -293,7 +293,7 @@ cp /usr/bin/avplayer                ./usr/bin
 cp /usr/bin/kbuildsycoca5           ./usr/bin
 cp /usr/bin/solid-hardware5         ./usr/bin
 
-if [[ $DK_QTVERSION == 6.* ]] ; then
+if [[ $DK_QTVERSION == 6 ]] ; then
 
     cp /usr/bin/avplayer            ./usr/bin
 
@@ -503,7 +503,7 @@ fi
 # Fixes "Qt: Failed to create XKB context!" and lets us enter text
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
 
-if [[ $DK_QTVERSION == 6.* ]] ; then
+if [[ $DK_QTVERSION == 6 ]] ; then
 
     sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
 
@@ -551,7 +551,7 @@ else
 
 fi
 
-if [[ $DK_QTVERSION == 5.* ]] ; then
+if [[ $DK_QTVERSION == 5 ]] ; then
 
     QT_SUF="-Qt5"
 

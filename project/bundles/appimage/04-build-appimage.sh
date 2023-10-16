@@ -55,7 +55,7 @@ fi
 
 #################################################################################################
 
-echo -e "---------- Prepare directories in bundle\n"
+echo -e "------------- Prepare directories in bundle\n"
 
 # Make sure we build from the /, parts of this script depends on that. We also need to run as root...
 cd /
@@ -80,7 +80,7 @@ ln -s lib lib64
 
 #################################################################################################
 
-echo -e "---------- Copy Files in bundle\n"
+echo -e "------------- Copy Files in bundle\n"
 
 cd $APP_IMG_DIR
 
@@ -173,7 +173,7 @@ if [[ -e /usr/translations ]]; then
 
 fi
 
-echo -e "------------- Copy KF5 translations files\n"
+echo -e "------------- Copy KDE translations files\n"
 
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
@@ -189,7 +189,7 @@ for FILE in $FILES ; do
     cp --parents $FILE ./
 done
 
-echo -e "---------- Copy digiKam icons files\n"
+echo -e "------------- Copy digiKam icons files\n"
 
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
@@ -200,13 +200,13 @@ for FILE in $FILES ; do
     fi
 done
 
-echo -e "---------- Copy Marble data and plugins files\n"
+echo -e "------------- Copy Marble data and plugins files\n"
 
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
 
-echo -e "---------- Copy Git Revisions Manifest\n"
+echo -e "------------- Copy Git Revisions Manifest\n"
 
 touch ./usr/share/digikam/MANIFEST.txt
 
@@ -219,7 +219,7 @@ done
 
 ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt || true
 
-echo -e "---------- Copy system libraries for binary compatibility\n"
+echo -e "------------- Copy system libraries for binary compatibility\n"
 
 # otherwise segfaults!?
 
@@ -261,13 +261,13 @@ cp /usr/bin/solid-hardware5         ./usr/bin
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    echo -e "---------- Copy QtWebEngine runtime process\n"
+    echo -e "------------- Copy QtWebEngine runtime process\n"
 
     [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
 
 else
 
-    echo -e "---------- Copy QtWebKit runtime process\n"
+    echo -e "------------- Copy QtWebKit runtime process\n"
 
     [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
     [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
@@ -276,7 +276,7 @@ else
 
 fi
 
-echo -e "---------- Copy Solid binary\n"
+echo -e "------------- Copy Solid binary\n"
 
 # For Solid action when camera is connected to computer
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
@@ -284,7 +284,7 @@ sed -i "/Exec=/c\Exec=digikam-camera downloadFromUdi %i" ./usr/share/solid/actio
 
 #################################################################################################
 
-echo -e "---------- Scan dependencies recurssively\n"
+echo -e "------------- Scan dependencies recurssively\n"
 
 CopyReccursiveDependencies /usr/bin/digikam                  ./usr/lib
 CopyReccursiveDependencies /usr/bin/showfoto                 ./usr/lib
@@ -436,7 +436,7 @@ rm -rf usr/share/pkgconfig || true
 #################################################################################################
 # See LFS instruction: http://www.linuxfromscratch.org/lfs/view/systemd/chapter05/stripping.html
 
-echo -e "---------- Strip Symbols in Binaries Files\n"
+echo -e "------------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
     FILES=$(find . -type f  -exec file {} \; | grep ELF | grep -Ev '(digikam|showfoto)' | cut -d':' -f1)
@@ -453,7 +453,7 @@ done
 
 #################################################################################################
 
-echo -e "---------- Strip Configuration Files \n"
+echo -e "------------- Strip Configuration Files \n"
 
 # Since we set $APP_IMG_DIR as the prefix, we need to patch it away too (FIXME)
 # Probably it would be better to use /app as a prefix because it has the same length for all apps
@@ -509,7 +509,7 @@ fi
 
 APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
 
-echo -e "---------- Create Bundle with AppImage SDK stage1\n"
+echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 
 # Source functions
 
