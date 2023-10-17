@@ -57,19 +57,6 @@ DK_KP_VERSION="5.27.8"
 # See official release here: https://download.kde.org/stable/release-service/
 DK_KA_VERSION="23.08.1"
 
-# KDE frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
-
-if [[ $DK_QTVERSION == 5 ]] ; then
-
-    DK_KDE_VERSION="5.110"
-
-else
-
-    DK_KDE_VERSION="master"     # Qt6 use master code for the moment.
-
-fi
-
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=0
 
@@ -85,4 +72,18 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+# KDE frameworks version + Upload URL.
+# See official release here: https://download.kde.org/stable/frameworks/
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    DK_KDE_VERSION="5.110"
+    DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+else
+
+    DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
+    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+
+fi
