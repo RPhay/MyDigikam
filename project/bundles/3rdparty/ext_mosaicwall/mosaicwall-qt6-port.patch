@@ -148,28 +148,6 @@ index 84ebbb6..ec6d70e 100644
                        ${CMAKE_THREAD_LIBS_INIT}
 diff --git a/bootstrap-linux.sh b/bootstrap-linux.sh
 index 8bd74da..8cbf2be 100755
---- a/bootstrap-linux.sh
-+++ b/bootstrap-linux.sh
-@@ -1,6 +1,6 @@
- #!/bin/bash
- 
--# Copyright (c) 2008-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
-+# Copyright (c) 2008-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
- #
- # Redistribution and use is allowed according to the terms of the BSD license.
- # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
-@@ -18,9 +18,10 @@ fi
- 
- cd build
- 
--cmake -G "$MAKEFILES_TYPE" . \
-+/opt/qt6/bin/cmake -G "$MAKEFILES_TYPE" . \
-       -DCMAKE_INSTALL_PREFIX=/usr \
-       -Wno-dev \
-       -DENABLE_DPLUGIN=ON \
-+      -DBUILD_WITH_QT6=ON \
-       ..
- 
 diff --git a/cmake/modules/i18nUtils.cmake b/cmake/modules/i18nUtils.cmake
 index bd9f342..f675dd1 100644
 --- a/cmake/modules/i18nUtils.cmake
@@ -426,14 +404,3 @@ Subject: [PATCH 4/4] revert
 
 diff --git a/bootstrap-linux.sh b/bootstrap-linux.sh
 index 8cbf2be..0762304 100755
---- a/bootstrap-linux.sh
-+++ b/bootstrap-linux.sh
-@@ -18,7 +18,7 @@ fi
- 
- cd build
- 
--/opt/qt6/bin/cmake -G "$MAKEFILES_TYPE" . \
-+cmake -G "$MAKEFILES_TYPE" . \
-       -DCMAKE_INSTALL_PREFIX=/usr \
-       -Wno-dev \
-       -DENABLE_DPLUGIN=ON \
