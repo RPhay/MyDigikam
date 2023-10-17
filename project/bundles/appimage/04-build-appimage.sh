@@ -593,7 +593,7 @@ cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/defaul
 
 mkdir -p $ORIG_WD/bundle
 
-rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+rm -f $ORIG_WD/bundle/*x86-64*$DEBUG_SUF* || true
 
 echo -e "---------- Create Bundle with AppImage SDK stage2\n"
 
@@ -647,7 +647,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$DEBUG_SUF.appimage*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64*$DEBUG_SUF.appimage*"
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
