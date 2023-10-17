@@ -224,7 +224,21 @@ if [[ $DK_QTVERSION == 5 ]] ; then
 
 else
 
-    echo "Drop build stage of 3rd-party plugins with Qt6"
+    echo "Build 3rd-party plugins with Qt6"
+
+    cd $BUILDING_DIR
+
+    cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DINSTALL_ROOT=/usr \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKP_VERSION=$DK_KP_VERSION \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKDE_VERSION=$DK_KDE_VERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+
+    cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
 
 fi
 
