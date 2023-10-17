@@ -18,6 +18,8 @@ endif()
 
 JoinListAsString("${MosaicWall_Conf}" " " BASH_OPTIONS)
 
+message(STATUS "Mosaicwall Options: ${MosaicWall_Conf}")
+
 SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
 
 if (MINGW)
@@ -50,7 +52,7 @@ else() # MacOS and Linux
 
         PATCH_COMMAND ${patch}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_DPLUGIN=ON
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 
         INSTALL_COMMAND cd <SOURCE_DIR>/dplugin && make install/fast
 
