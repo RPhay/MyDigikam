@@ -1,7 +1,7 @@
 From 08a8db412e767d5b8d789df25db2b18109ef00db Mon Sep 17 00:00:00 2001
 From: Gilles Caulier <caulier.gilles@gmail.com>
 Date: Tue, 17 Oct 2023 11:44:08 +0200
-Subject: [PATCH 1/4] port to Qt6 ++
+Subject: [PATCH 1/5] port to Qt6 ++
 
 ---
  CMakeLists.txt                | 77 ++++++++++++++++++++++-----------
@@ -340,7 +340,7 @@ index 0420d4d..b542b62 100644
 From c6e63aa56b19d5ede87c9d47bee7f0c7127a80a0 Mon Sep 17 00:00:00 2001
 From: Gilles Caulier <caulier.gilles@gmail.com>
 Date: Tue, 17 Oct 2023 12:14:33 +0200
-Subject: [PATCH 2/4] qt6 port ++
+Subject: [PATCH 2/5] qt6 port ++
 
 ---
  imageprocessing.cpp | 10 ++++++++++
@@ -373,7 +373,7 @@ index 528ff53..407d943 100644
 From 31624c5d8ea4ff5a56549f52dc92c04e8bedf276 Mon Sep 17 00:00:00 2001
 From: Gilles Caulier <caulier.gilles@gmail.com>
 Date: Tue, 17 Oct 2023 15:58:20 +0200
-Subject: [PATCH 3/4] port to Qt6++
+Subject: [PATCH 3/5] port to Qt6++
 
 ---
  dplugin/CMakeLists.txt | 2 +-
@@ -396,7 +396,7 @@ index e7074f3..3dd6f83 100644
 From 680fb9291087f2e9d6133c4d608cd6e89d413726 Mon Sep 17 00:00:00 2001
 From: Gilles Caulier <caulier.gilles@gmail.com>
 Date: Tue, 17 Oct 2023 16:01:22 +0200
-Subject: [PATCH 4/4] revert
+Subject: [PATCH 4/5] revert
 
 ---
  bootstrap-linux.sh | 2 +-
@@ -404,3 +404,26 @@ Subject: [PATCH 4/4] revert
 
 diff --git a/bootstrap-linux.sh b/bootstrap-linux.sh
 index 8cbf2be..0762304 100755
+
+From f246d3f88bb083f2d8f5e52a5960797be0880fcc Mon Sep 17 00:00:00 2001
+From: Gilles Caulier <caulier.gilles@gmail.com>
+Date: Wed, 18 Oct 2023 10:37:59 +0200
+Subject: [PATCH 5/5] better way to handle digikam core includes path
+
+---
+ dplugin/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dplugin/CMakeLists.txt b/dplugin/CMakeLists.txt
+index 3dd6f83..2842f45 100644
+--- a/dplugin/CMakeLists.txt
++++ b/dplugin/CMakeLists.txt
+@@ -12,7 +12,7 @@ set_package_properties(DigikamCore PROPERTIES
+                        DESCRIPTION "digiKam core library"
+ )
+ 
+-include_directories(${CMAKE_INSTALL_FULL_INCLUDEDIR}/digikam
++include_directories($<TARGET_PROPERTY:Digikam::digikamcore,INTERFACE_INCLUDE_DIRECTORIES>
+                     ${CMAKE_CURRENT_BINARY_DIR}
+                     ${CMAKE_CURRENT_SOURCE_DIR}
+                     ${CMAKE_BINARY_DIR}
