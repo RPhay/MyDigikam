@@ -68,6 +68,9 @@ if(ENABLE_DBUS)
 
 endif()
 
+# Share the install include directory for the 3rdparty plugins
+target_include_directories(digikamdatabase INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/digikam>")
+
 ### Install Rules ###############################################################################################################
 
 install(TARGETS digikamdatabase EXPORT DigikamDatabaseConfig ${INSTALL_TARGETS_DEFAULT_ARGS})

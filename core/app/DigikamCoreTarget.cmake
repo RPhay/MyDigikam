@@ -421,6 +421,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 
 endif()
 
+# Share the install include directory for the 3rdparty plugins
+target_include_directories(digikamcore INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/digikam>")
+
 ### Install Rules ###############################################################################################################
 
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
