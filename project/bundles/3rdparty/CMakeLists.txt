@@ -209,6 +209,7 @@ add_subdirectory(ext_uchardet)
 
 add_subdirectory(ext_kf${ENABLE_QTVERSION})
 add_subdirectory(ext_mosaicwall)
+    add_subdirectory(ext_flowview)
 
 if (${ENABLE_QTVERSION} MATCHES "5")
 
@@ -220,6 +221,5 @@ if (${ENABLE_QTVERSION} MATCHES "5")
 
     # Not yet ported to Qt6.
     add_subdirectory(ext_gmicqt)
-    add_subdirectory(ext_flowview)
 
 endif()

@@ -239,6 +239,7 @@ else
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
     cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
 fi
 

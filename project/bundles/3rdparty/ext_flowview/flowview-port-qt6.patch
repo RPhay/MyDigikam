@@ -1,0 +1,147 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8ab7ebe..491986b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,6 +14,8 @@ project(
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
++option(BUILD_WITH_QT6 "Build with Qt6, else Qt5" OFF)
++
+ # Use common cmake macro from cmake/modules/ to install unistall plugins.
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
+ 
+diff --git a/bootstrap.sh b/bootstrap.sh
+index 6f35025..7dc87d9 100755
+--- a/bootstrap.sh
++++ b/bootstrap.sh
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ 
+-# Copyright (c) 2008-2022, Gilles Caulier, <caulier dot gilles at gmail dot com>
++# Copyright (c) 2008-2023, Gilles Caulier, <caulier dot gilles at gmail dot com>
+ #
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+@@ -12,6 +12,7 @@ cd build
+ cmake . \
+       -DCMAKE_INSTALL_PREFIX=/usr \
+       -DCMAKE_BUILD_TYPE=Debug \
++      -DBUILD_WITH_QT6=ON \
+       -G"Unix Makefiles" \
+       -Wno-dev \
+       ..
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 738be67..0f063c4 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -4,16 +4,35 @@
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ 
+-set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_AUTOMOC ON)
+ 
+-# set QT_VERSION_MAJOR
+-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
++if(BUILD_WITH_QT6)
++
++    find_package(Qt6 "6.5.0" REQUIRED
++                 NO_MODULE COMPONENTS
++                 Core
++                 Widgets
++                 Gui
++                 Concurrent
++    )
++
++    set(QT_VERSION_MAJOR 6)
++
++else()
++
++    find_package(Qt5 "5.6.0" REQUIRED
++                 NO_MODULE COMPONENTS
++                 Core
++                 Widgets
++                 Gui
++                 Concurrent
++    )
++
++    set(QT_VERSION_MAJOR 5)
++
++endif()
++
+ 
+-find_package(
+-    Qt${QT_VERSION_MAJOR} NO_MODULE
+-    COMPONENTS Core Widgets Gui
+-    REQUIRED)
+ find_package(DigikamCore CONFIG REQUIRED)
+ 
+ set_package_properties(
+@@ -26,9 +45,7 @@ include(FindThreads REQUIRED)
+ # For i18n support...
+ # include(i18nUtils)
+ 
+-include_directories(
+-    $<TARGET_PROPERTY:Digikam::digikamcore,INTERFACE_INCLUDE_DIRECTORIES>/digikam
+-)
++include_directories($<TARGET_PROPERTY:Digikam::digikamcore,INTERFACE_INCLUDE_DIRECTORIES>)
+ 
+ set(PicFlowView_generic_SRCS
+     ${CMAKE_CURRENT_SOURCE_DIR}/plugflow.cpp
+diff --git a/src/picdialog.cpp b/src/picdialog.cpp
+index 7698de2..435ed38 100644
+--- a/src/picdialog.cpp
++++ b/src/picdialog.cpp
+@@ -22,13 +22,14 @@
+ #include <QUrl>
+ 
+ #include "aspectratiopixmaplabel.hpp"
+-
+-#define INSERT_CANCEL_POINT                   \
+-    do {                                      \
+-        if(stop_) {                           \
+-            qDebug() << "Cancel load images"; \
+-            return;                           \
+-        }                                     \
++#include "digikam_debug.h"
++
++#define INSERT_CANCEL_POINT                                               \
++    do {                                                                  \
++        if(stop_) {                                                       \
++            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Cancel load images"; \
++            return;                                                       \
++        }                                                                 \
+     } while(0)
+ 
+ #define POST_RESIZE_EVENT(obj) (qApp->postEvent(obj, new QResizeEvent(this->size(), this->size())))
+@@ -99,7 +100,7 @@ void PicDialog::setStyle(Z::Style sty) {
+ void PicDialog::add(LoadingDescription const& desc, DImg const& dimg) {
+     qApp->processEvents();
+     if(dimg.isNull()) {
+-        qDebug() << "DImg " << desc.filePath << " load failed";
++        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "DImg " << desc.filePath << " load failed";
+         return;
+     }
+     INSERT_CANCEL_POINT;
+@@ -168,7 +169,7 @@ void PicDialog::load(const QUrl& url, bool loadByPool) {
+         INSERT_CANCEL_POINT;
+         QPixmap pix = dimg.convertToPixmap();
+         if(pix.isNull()) {
+-            qDebug() << "Image " << url.toLocalFile() << " load failed";
++            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Image " << url.toLocalFile() << " load failed";
+             return;
+         }
+         INSERT_CANCEL_POINT;
+diff --git a/src/plugflow.cpp b/src/plugflow.cpp
+index 7d178b8..c872713 100644
+--- a/src/plugflow.cpp
++++ b/src/plugflow.cpp
+@@ -43,7 +43,6 @@ QString FlowPlugin::iid() const {
+ 
+ QIcon FlowPlugin::icon() const {
+     return QIcon::fromTheme(QLatin1String("digikam"));
+-#include <functional>
+ }
+ 
+ QString FlowPlugin::description() const {

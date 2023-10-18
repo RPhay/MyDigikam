@@ -14,6 +14,10 @@ if(${ENABLE_QTVERSION} MATCHES "6")
     set(MosaicWall_Conf ${MosaicWall_Conf} -DBUILD_WITH_QT6=ON)
     set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/mosaicwall-qt6-port.patch")
 
+else()
+
+    set(MosaicWall_Conf ${MosaicWall_Conf} -DBUILD_WITH_QT6=OFF)
+
 endif()
 
 JoinListAsString("${MosaicWall_Conf}" " " BASH_OPTIONS)
