@@ -22,8 +22,6 @@ endif()
 
 JoinListAsString("${MosaicWall_Conf}" " " BASH_OPTIONS)
 
-message(STATUS "Mosaicwall Options: ${MosaicWall_Conf}")
-
 SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
 
 if (MINGW)

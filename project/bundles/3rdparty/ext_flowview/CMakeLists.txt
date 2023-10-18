@@ -20,7 +20,9 @@ endif()
 
 JoinListAsString("${FlowView_Conf}" " " BASH_OPTIONS)
 
-SET(PREFIX_ext_flowview "${EXTPREFIX}")
+message(STATUS "FlowView Options: ${FlowView_Conf}")
+
+set(PREFIX_ext_flowview "${EXTPREFIX}")
 
 if (MINGW)
 
@@ -30,10 +32,10 @@ if (MINGW)
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
         PATCH_COMMAND git reset --hard &&
+                      git submodule update --init &&
                       ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/flowview-port-qt6.patch
 
-        CONFIGURE_COMMAND git submodule update --init &&
-                          cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
@@ -53,8 +55,8 @@ else() # MacOS and Linux
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
         PATCH_COMMAND git reset --hard &&
-                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/flowview-port-qt6.patch &&
-                      git submodule update --init
+                      git submodule update --init &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/flowview-port-qt6.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_flowview} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${FlowView_Conf}
 
