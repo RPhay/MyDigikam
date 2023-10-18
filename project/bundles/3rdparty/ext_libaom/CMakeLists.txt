@@ -26,6 +26,13 @@ if(MINGW)
     set(AOM_Conf ${AOM_Conf}
                -DAOM_TARGET_CPU=x86_64
                -DAOM_TARGET_SYSTEM=Windows
+               -DENABLE_MMX=OFF
+               -DENABLE_SSE=OFF
+               -DENABLE_SSE2=OFF
+               -DENABLE_SSE3=OFF
+               -DENABLE_SSE4_1=OFF
+               -DENABLE_SSE4_2=OFF
+               -DENABLE_SSSE3=OFF
     )
 
 endif()
