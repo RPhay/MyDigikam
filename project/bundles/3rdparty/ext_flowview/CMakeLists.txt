@@ -32,7 +32,9 @@ if (MINGW)
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
         PATCH_COMMAND git reset --hard &&
-                      git submodule update --init
+                      git submodule update --init &&
+                      cd extern/QtFlowLayout &&
+                      git checkout master
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
@@ -54,7 +56,9 @@ else() # MacOS and Linux
         GIT_REPOSITORY https://github.com/cathaysia/digikamflowplugin.git
 
         PATCH_COMMAND git reset --hard &&
-                      git submodule update --init
+                      git submodule update --init &&
+                      cd extern/QtFlowLayout &&
+                      git checkout master
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_flowview} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${FlowView_Conf}
 
