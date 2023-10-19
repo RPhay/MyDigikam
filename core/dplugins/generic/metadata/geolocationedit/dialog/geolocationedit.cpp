@@ -157,7 +157,7 @@ public:
         imageModel               = nullptr;
         selectionModel           = nullptr;
         uiEnabled                = true;
-        closeButtonClicked       = false;
+        cancelButtonClicked      = false;
         listViewContextMenu      = nullptr;
         trackManager             = nullptr;
         fileIOFutureWatcher      = nullptr;
@@ -201,7 +201,7 @@ public:
     GPSItemModel*                            imageModel;
     QItemSelectionModel*                     selectionModel;
     bool                                     uiEnabled;
-    bool                                     closeButtonClicked;
+    bool                                     cancelButtonClicked;
     GPSItemListContextMenu*                  listViewContextMenu;
     TrackManager*                            trackManager;
 
@@ -337,10 +337,10 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->addButton(QDialogButtonBox::Apply);
-    m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->addButton(QDialogButtonBox::Cancel);
     m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
-    m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Cancel)->setAutoDefault(false);
     m_buttons->setParent(hbox);
 
     connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
@@ -349,8 +349,8 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &GeolocationEdit::slotApplyClicked);
 
-    connect(m_buttons->button(QDialogButtonBox::Close), &QPushButton::clicked,
-            this, &GeolocationEdit::slotCloseClicked);
+    connect(m_buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &GeolocationEdit::slotCancelClicked);
 
     mainLayout->addWidget(hbox, 0);
 
@@ -808,7 +808,7 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
         return;
     }
 
-    if (d->closeButtonClicked)
+    if (d->cancelButtonClicked)
     {
         saveSettings();
         e->accept();
@@ -1044,9 +1044,9 @@ void GeolocationEdit::slotApplyClicked()
     saveChanges(false);
 }
 
-void GeolocationEdit::slotCloseClicked()
+void GeolocationEdit::slotCancelClicked()
 {
-    d->closeButtonClicked = true;
+    d->cancelButtonClicked = true;
 
     close();
 }
