@@ -138,7 +138,7 @@ BUGFIXES:
 124 ==> 475807 - Tags not being displayed under Icons in some Albums.
 125 ==> 471797 - digiKam crashes on startup at 74% on Finding New Files.
 126 ==> 471269 - Application crashes when album contains avif file.
-127 ==> 
+127 ==> 379402 - Reuse filter settings after adding geolocation information [patch].
 128 ==> 
 129 ==> 
 130 ==> 
