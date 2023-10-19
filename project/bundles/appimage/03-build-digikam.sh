@@ -200,15 +200,11 @@ fi
 #################################################################################################
 # Install Extra Plugins
 
-# TODO: not yet ported to Qt6
+echo "Build 3rd-party plugins"
 
-if [[ $DK_QTVERSION == 5 ]] ; then
+cd $BUILDING_DIR
 
-    echo "Build 3rd-party plugins with Qt5"
-
-    cd $BUILDING_DIR
-
-    cmake $ORIG_WD/../3rdparty \
+cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -218,30 +214,9 @@ if [[ $DK_QTVERSION == 5 ]] ; then
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-    cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
-    cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
-    cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
-
-else
-
-    echo "Build 3rd-party plugins with Qt6"
-
-    cd $BUILDING_DIR
-
-    cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-      -DINSTALL_ROOT=/usr \
-      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-      -DKP_VERSION=$DK_KP_VERSION \
-      -DKA_VERSION=$DK_KA_VERSION \
-      -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
-
-    cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
-    cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
-
-fi
+cmake --build . --config RelWithDebInfo --target ext_gmic_qt    -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_mosaicwall -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_flowview   -- -j$CPU_CORES
 
 #################################################################################################
 
