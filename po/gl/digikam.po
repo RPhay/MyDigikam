@@ -54303,7 +54303,7 @@ msgid ""
 "Are you sure?"
 msgstr ""
 "Está a piques de eliminar o ficheiro «%1»\n"
-"Está seguro de que quere eliminalo?"
+"Seguro que quere eliminalo?"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:201
 #, kde-format
