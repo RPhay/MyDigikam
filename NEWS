@@ -135,7 +135,7 @@ BUGFIXES:
 121 ==> 441019 - Location of Collections 'Confused' by Same-Model External Drives.
 122 ==> 434438 - Writing metadata to an XMP sidecar removes previously-entered metadata already in the XMP file.
 123 ==> 429963 - digiKam hangs when adding people or cleaning the DB.
-124 ==> 
+124 ==> 475807 - Tags not being displayed under Icons in some Albums.
 125 ==> 
 126 ==> 
 127 ==> 
