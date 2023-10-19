@@ -136,8 +136,8 @@ BUGFIXES:
 122 ==> 434438 - Writing metadata to an XMP sidecar removes previously-entered metadata already in the XMP file.
 123 ==> 429963 - digiKam hangs when adding people or cleaning the DB.
 124 ==> 475807 - Tags not being displayed under Icons in some Albums.
-125 ==> 
-126 ==> 
+125 ==> 471797 - digiKam crashes on startup at 74% on Finding New Files.
+126 ==> 471269 - Application crashes when album contains avif file.
 127 ==> 
 128 ==> 
 129 ==> 
