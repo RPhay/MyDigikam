@@ -153,48 +153,48 @@ class Q_DECL_HIDDEN GeolocationEdit::Private
 public:
 
     explicit Private()
+      : imageModel               (nullptr),
+        selectionModel           (nullptr),
+        uiEnabled                (true),
+        cancelButtonClicked      (false),
+        listViewContextMenu      (nullptr),
+        trackManager             (nullptr),
+        fileIOFutureWatcher      (nullptr),
+        fileIOCountDone          (0),
+        fileIOCountTotal         (0),
+        fileIOCloseAfterSaving   (false),
+        buttonBox                (nullptr),
+        VSplitter                (nullptr),
+        HSplitter                (nullptr),
+        treeView                 (nullptr),
+        stackedWidget            (nullptr),
+        tabBar                   (nullptr),
+        splitterSize             (0),
+        undoStack                (nullptr),
+        undoView                 (nullptr),
+        progressBar              (nullptr),
+        progressCancelButton     (nullptr),
+        progressCancelObject     (nullptr),
+        detailsWidget            (nullptr),
+        correlatorWidget         (nullptr),
+        rgWidget                 (nullptr),
+        searchWidget             (nullptr),
+        kmlWidget                (nullptr),
+        mapLayout                (MapLayoutOne),
+        mapSplitter              (nullptr),
+        mapWidget                (nullptr),
+        mapWidget2               (nullptr),
+        mapDragDropHandler       (nullptr),
+        mapModelHelper           (nullptr),
+        geoifaceMarkerModel      (nullptr),
+        sortActionOldestFirst    (nullptr),
+        sortActionYoungestFirst  (nullptr),
+        sortMenu                 (nullptr),
+        cbMapLayout              (nullptr),
+        bookmarkOwner            (nullptr),
+        actionBookmarkVisibility (nullptr),
+        iface                    (nullptr)
     {
-        imageModel               = nullptr;
-        selectionModel           = nullptr;
-        uiEnabled                = true;
-        cancelButtonClicked      = false;
-        listViewContextMenu      = nullptr;
-        trackManager             = nullptr;
-        fileIOFutureWatcher      = nullptr;
-        fileIOCountDone          = 0;
-        fileIOCountTotal         = 0;
-        fileIOCloseAfterSaving   = false;
-        buttonBox                = nullptr;
-        VSplitter                = nullptr;
-        HSplitter                = nullptr;
-        treeView                 = nullptr;
-        stackedWidget            = nullptr;
-        tabBar                   = nullptr;
-        splitterSize             = 0;
-        undoStack                = nullptr;
-        undoView                 = nullptr;
-        progressBar              = nullptr;
-        progressCancelButton     = nullptr;
-        progressCancelObject     = nullptr;
-        detailsWidget            = nullptr;
-        correlatorWidget         = nullptr;
-        rgWidget                 = nullptr;
-        searchWidget             = nullptr;
-        kmlWidget                = nullptr;
-        mapSplitter              = nullptr;
-        mapWidget                = nullptr;
-        mapWidget2               = nullptr;
-        mapDragDropHandler       = nullptr;
-        mapModelHelper           = nullptr;
-        geoifaceMarkerModel      = nullptr;
-        sortActionOldestFirst    = nullptr;
-        sortActionYoungestFirst  = nullptr;
-        sortMenu                 = nullptr;
-        mapLayout                = MapLayoutOne;
-        cbMapLayout              = nullptr;
-        bookmarkOwner            = nullptr;
-        actionBookmarkVisibility = nullptr;
-        iface                    = nullptr;
     }
 
     // General things
