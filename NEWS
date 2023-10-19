@@ -134,7 +134,7 @@ BUGFIXES:
 120 ==> 441539 - Cannot add collection located on HDD.
 121 ==> 441019 - Location of Collections 'Confused' by Same-Model External Drives.
 122 ==> 434438 - Writing metadata to an XMP sidecar removes previously-entered metadata already in the XMP file.
-123 ==> 
+123 ==> 429963 - digiKam hangs when adding people or cleaning the DB.
 124 ==> 
 125 ==> 
 126 ==> 
