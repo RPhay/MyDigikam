@@ -157,6 +157,7 @@ public:
         imageModel               = nullptr;
         selectionModel           = nullptr;
         uiEnabled                = true;
+        closeButtonClicked       = false;
         listViewContextMenu      = nullptr;
         trackManager             = nullptr;
         fileIOFutureWatcher      = nullptr;
@@ -200,6 +201,7 @@ public:
     GPSItemModel*                            imageModel;
     QItemSelectionModel*                     selectionModel;
     bool                                     uiEnabled;
+    bool                                     closeButtonClicked;
     GPSItemListContextMenu*                  listViewContextMenu;
     TrackManager*                            trackManager;
 
@@ -333,17 +335,22 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->progressCancelButton, SIGNAL(clicked()),
             this, SLOT(slotProgressCancelButtonClicked()));
 
+    m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->addButton(QDialogButtonBox::Apply);
     m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
     m_buttons->setParent(hbox);
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &GeolocationEdit::slotOkClicked);
 
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &GeolocationEdit::slotApplyClicked);
 
     connect(m_buttons->button(QDialogButtonBox::Close), &QPushButton::clicked,
-            this, &GeolocationEdit::close);
+            this, &GeolocationEdit::slotCloseClicked);
 
     mainLayout->addWidget(hbox, 0);
 
@@ -801,6 +808,13 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
         return;
     }
 
+    if (d->closeButtonClicked)
+    {
+        saveSettings();
+        e->accept();
+        return;
+    }
+
     // are there any modified images?
 
     int dirtyImagesCount = 0;
@@ -1016,11 +1030,25 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
     }
 }
 
+void GeolocationEdit::slotOkClicked()
+{
+    // save the changes, and close afterwards
+
+    saveChanges(true);
+}
+
 void GeolocationEdit::slotApplyClicked()
 {
     // save the changes, but do not close afterwards
 
     saveChanges(false);
+}
+
+void GeolocationEdit::slotCloseClicked()
+{
+    d->closeButtonClicked = true;
+
+    close();
 }
 
 void GeolocationEdit::slotProgressChanged(const int currentProgress)

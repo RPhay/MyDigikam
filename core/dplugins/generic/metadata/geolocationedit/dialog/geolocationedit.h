@@ -84,7 +84,9 @@ private Q_SLOTS:
     void slotImageActivated(const QModelIndex& index);
     void slotSetUIEnabled(const bool enabledState, QObject* const cancelObject, const QString& cancelSlot);
     void slotSetUIEnabled(const bool enabledState);
+    void slotOkClicked();
     void slotApplyClicked();
+    void slotCloseClicked();
     void slotFileChangesSaved(int beginIndex, int endIndex);
     void slotFileMetadataLoaded(int beginIndex, int endIndex);
     void slotProgressChanged(const int currentProgress);
