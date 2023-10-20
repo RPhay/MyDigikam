@@ -211,7 +211,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     quint8*       str         = nullptr;
     Display* const disp       = display();
 
-    qDebug() << "X11 display instance:" << disp << ": atomName:" << atomName;
+    qCDebug(DIGIKAM_DIMG_LOG) << "X11 display instance:" << disp << ": atomName:" << atomName;
 
     static Atom icc_atom = XInternAtom(disp, atomName.toLatin1().constData(), True);
 
