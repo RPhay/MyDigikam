@@ -120,29 +120,37 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     unsigned long nitems      = 0;
     unsigned long bytes_after = 0;
     quint8*       str         = nullptr;
+    Display* const disp       = QX11Info::display();
 
-    static Atom icc_atom      = XInternAtom(QX11Info::display(), atomName.toLatin1().constData(), True);
-
-    if ((icc_atom != None)                                                &&
-        (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
-                           0, INT_MAX, False, XA_CARDINAL,
-                           &type, &format, &nitems, &bytes_after,
-                           (unsigned char**)& str) == Success)            &&
-         nitems
-       )
+    if (disp)
     {
-        QByteArray bytes = QByteArray::fromRawData((char*)str, (quint32)nitems);
+        static Atom icc_atom  = XInternAtom(disp, atomName.toLatin1().constData(), True);
 
-        if (!bytes.isEmpty())
+        if ((icc_atom != None)                                                &&
+            (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
+                               0, INT_MAX, False, XA_CARDINAL,
+                               &type, &format, &nitems, &bytes_after,
+                               (unsigned char**)& str) == Success)            &&
+             nitems
+           )
         {
-            profile = IccProfile(bytes);
-        }
+            QByteArray bytes = QByteArray::fromRawData((char*)str, (quint32)nitems);
 
-        qCDebug(DIGIKAM_DIMG_LOG) << "Found X.org XICC monitor profile " << profile.description();
+            if (!bytes.isEmpty())
+            {
+                profile = IccProfile(bytes);
+            }
+
+            qCDebug(DIGIKAM_DIMG_LOG) << "Found X.org XICC monitor profile " << profile.description();
+        }
+        else
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
+        }
     }
     else
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get X.org XICC profile for screen " << screenNumber;
     }
 
     // Insert to cache even if null

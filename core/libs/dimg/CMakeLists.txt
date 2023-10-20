@@ -98,7 +98,7 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/icctransformfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_x11.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettings_p_desktop.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/iccsettingscontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/icc/digikam-lcms.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/lc/localcontrastfilter.cpp
