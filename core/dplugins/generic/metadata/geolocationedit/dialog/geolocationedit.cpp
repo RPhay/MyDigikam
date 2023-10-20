@@ -153,53 +153,55 @@ class Q_DECL_HIDDEN GeolocationEdit::Private
 public:
 
     explicit Private()
+      : imageModel               (nullptr),
+        selectionModel           (nullptr),
+        uiEnabled                (true),
+        cancelButtonClicked      (false),
+        listViewContextMenu      (nullptr),
+        trackManager             (nullptr),
+        fileIOFutureWatcher      (nullptr),
+        fileIOCountDone          (0),
+        fileIOCountTotal         (0),
+        fileIOCloseAfterSaving   (false),
+        buttonBox                (nullptr),
+        VSplitter                (nullptr),
+        HSplitter                (nullptr),
+        treeView                 (nullptr),
+        stackedWidget            (nullptr),
+        tabBar                   (nullptr),
+        splitterSize             (0),
+        undoStack                (nullptr),
+        undoView                 (nullptr),
+        progressBar              (nullptr),
+        progressCancelButton     (nullptr),
+        progressCancelObject     (nullptr),
+        detailsWidget            (nullptr),
+        correlatorWidget         (nullptr),
+        rgWidget                 (nullptr),
+        searchWidget             (nullptr),
+        kmlWidget                (nullptr),
+        mapLayout                (MapLayoutOne),
+        mapSplitter              (nullptr),
+        mapWidget                (nullptr),
+        mapWidget2               (nullptr),
+        mapDragDropHandler       (nullptr),
+        mapModelHelper           (nullptr),
+        geoifaceMarkerModel      (nullptr),
+        sortActionOldestFirst    (nullptr),
+        sortActionYoungestFirst  (nullptr),
+        sortMenu                 (nullptr),
+        cbMapLayout              (nullptr),
+        bookmarkOwner            (nullptr),
+        actionBookmarkVisibility (nullptr),
+        iface                    (nullptr)
     {
-        imageModel               = nullptr;
-        selectionModel           = nullptr;
-        uiEnabled                = true;
-        listViewContextMenu      = nullptr;
-        trackManager             = nullptr;
-        fileIOFutureWatcher      = nullptr;
-        fileIOCountDone          = 0;
-        fileIOCountTotal         = 0;
-        fileIOCloseAfterSaving   = false;
-        buttonBox                = nullptr;
-        VSplitter                = nullptr;
-        HSplitter                = nullptr;
-        treeView                 = nullptr;
-        stackedWidget            = nullptr;
-        tabBar                   = nullptr;
-        splitterSize             = 0;
-        undoStack                = nullptr;
-        undoView                 = nullptr;
-        progressBar              = nullptr;
-        progressCancelButton     = nullptr;
-        progressCancelObject     = nullptr;
-        detailsWidget            = nullptr;
-        correlatorWidget         = nullptr;
-        rgWidget                 = nullptr;
-        searchWidget             = nullptr;
-        kmlWidget                = nullptr;
-        mapSplitter              = nullptr;
-        mapWidget                = nullptr;
-        mapWidget2               = nullptr;
-        mapDragDropHandler       = nullptr;
-        mapModelHelper           = nullptr;
-        geoifaceMarkerModel      = nullptr;
-        sortActionOldestFirst    = nullptr;
-        sortActionYoungestFirst  = nullptr;
-        sortMenu                 = nullptr;
-        mapLayout                = MapLayoutOne;
-        cbMapLayout              = nullptr;
-        bookmarkOwner            = nullptr;
-        actionBookmarkVisibility = nullptr;
-        iface                    = nullptr;
     }
 
     // General things
     GPSItemModel*                            imageModel;
     QItemSelectionModel*                     selectionModel;
     bool                                     uiEnabled;
+    bool                                     cancelButtonClicked;
     GPSItemListContextMenu*                  listViewContextMenu;
     TrackManager*                            trackManager;
 
@@ -333,17 +335,22 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->progressCancelButton, SIGNAL(clicked()),
             this, SLOT(slotProgressCancelButtonClicked()));
 
+    m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->addButton(QDialogButtonBox::Apply);
-    m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->addButton(QDialogButtonBox::Cancel);
+    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
-    m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
+    m_buttons->button(QDialogButtonBox::Cancel)->setAutoDefault(false);
     m_buttons->setParent(hbox);
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &GeolocationEdit::slotOkClicked);
 
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &GeolocationEdit::slotApplyClicked);
 
-    connect(m_buttons->button(QDialogButtonBox::Close), &QPushButton::clicked,
-            this, &GeolocationEdit::close);
+    connect(m_buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &GeolocationEdit::slotCancelClicked);
 
     mainLayout->addWidget(hbox, 0);
 
@@ -801,6 +808,13 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
         return;
     }
 
+    if (d->cancelButtonClicked)
+    {
+        saveSettings();
+        e->accept();
+        return;
+    }
+
     // are there any modified images?
 
     int dirtyImagesCount = 0;
@@ -1016,11 +1030,25 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
     }
 }
 
+void GeolocationEdit::slotOkClicked()
+{
+    // save the changes, and close afterwards
+
+    saveChanges(true);
+}
+
 void GeolocationEdit::slotApplyClicked()
 {
     // save the changes, but do not close afterwards
 
     saveChanges(false);
+}
+
+void GeolocationEdit::slotCancelClicked()
+{
+    d->cancelButtonClicked = true;
+
+    close();
 }
 
 void GeolocationEdit::slotProgressChanged(const int currentProgress)

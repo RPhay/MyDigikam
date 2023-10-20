@@ -368,11 +368,11 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # TODO: revise dropped compiler flags accordingly with patched source code which fix compilation
 
-    # Remove suggest-override GCC flag which generate a lots of compilation warnings
+    # Remove GCC flags which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wsuggest-override")
-
-    # Remove cast-align GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wcast-align")
+    REMOVE_GCC_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
+    REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
 
     # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")
