@@ -141,8 +141,8 @@ BUGFIXES:
 127 ==> 379402 - Reuse filter settings after adding geolocation information [patch].
 128 ==> 475870 - If "Use the last saved..." function is active in this case second opening the Image quality sorter become inactive.
 129 ==> 475874 - Huge mysql.err files filled with [ERROR] Incorrect definition of table mysql.column_stats.
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
+130 ==> 431035 - MariaDB error upgrading from stable to beta.
+131 ==> 452268 - digiKam unable to open database.
+132 ==> 455031 - Database process exited unexpectedly during initial connection.
+133 ==> 451153 - Incomplete Mariadb PrivCheck delete causes digiKam fail to start.
 134 ==> 
