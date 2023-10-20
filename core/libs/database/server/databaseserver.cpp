@@ -18,9 +18,9 @@
 
 // Qt includes
 
+#include <QProgressDialog>
 #include <QStandardPaths>
 #include <QApplication>
-#include <QMessageBox>
 #include <QTcpServer>
 #include <QDateTime>
 #include <QFileInfo>
@@ -197,6 +197,8 @@ void DatabaseServer::stopDatabaseProcess()
     mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
     mysqlShutDownProcess.waitForFinished();
 
+    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Send stop to database server";
+
     if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
@@ -237,7 +239,7 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    bool needUpgrade = checkAndRemoveMysqlLogs();
+    copyAndRemoveMysqlLogs();
 
     error = createMysqlFiles();
 
@@ -253,14 +255,27 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    if (needUpgrade)
-    {
-        error = upgradeMysqlDatabase();
+    error = initMysqlDatabase();
 
-        if (error.getErrorType() != DatabaseServerError::NoErrors)
-        {
-            return error;
-        }
+    if (error.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return error;
+    }
+
+    error = upgradeMysqlDatabase();
+
+    if (error.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return error;
+    }
+
+    stopDatabaseProcess();
+
+    error = startMysqlServer();
+
+    if (error.getErrorType() != DatabaseServerError::NoErrors)
+    {
+        return error;
     }
 
     error = initMysqlDatabase();
@@ -277,7 +292,7 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
 
 DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 {
-    DatabaseServerError result;
+    DatabaseServerError error;
 
     if (d->mysqldCmd.isEmpty())
     {
@@ -336,12 +351,12 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
                                         QDir::toNativeSeparators(d->fileDataDir)));
     }
 
-    return result;
+    return error;
 }
 
 DatabaseServerError DatabaseServer::initMysqlConfig() const
 {
-    DatabaseServerError result;
+    DatabaseServerError error;
 
     QString localConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                  QLatin1String("digikam/database/mysql-local.conf"));
@@ -421,7 +436,7 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
                                     d->globalConfig,
                                     d->actualConfig);
 
-            return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+            error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
         }
         else
         {
@@ -433,22 +448,20 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Cannot find MySQL server default configuration (mysql-global.conf)";
 
-        return DatabaseServerError(DatabaseServerError::StartError,
-                                   i18n("Cannot find MySQL server default "
-                                        "configuration (mysql-global.conf)."));
+        error = DatabaseServerError(DatabaseServerError::StartError,
+                                    i18n("Cannot find MySQL server default "
+                                         "configuration (mysql-global.conf)."));
     }
 
-    return result;
+    return error;
 }
 
-bool DatabaseServer::checkAndRemoveMysqlLogs() const
+void DatabaseServer::copyAndRemoveMysqlLogs() const
 {
     // Move mysql error log file out of the way
 
     const QFileInfo errorLog(d->dataDir,
                              QLatin1String("mysql.err"));
-
-    bool needUpgrade = false;
 
     if (errorLog.exists())
     {
@@ -457,11 +470,7 @@ bool DatabaseServer::checkAndRemoveMysqlLogs() const
 
         if (logFile.open(QFile::ReadOnly) && oldLogFile.open(QFile::Append))
         {
-            QByteArray runMaria("run mariadb-upgrade");
-            QByteArray runMysql("run mysql_upgrade");
             QByteArray ba = logFile.readAll();
-            needUpgrade   = (ba.contains(runMaria) || ba.contains(runMysql));
-
             oldLogFile.write(ba);
             oldLogFile.close();
             logFile.close();
@@ -472,18 +481,11 @@ bool DatabaseServer::checkAndRemoveMysqlLogs() const
             qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Failed to open MySQL error log.";
         }
     }
-
-    // Clear mysql ib_logfile's in case innodb_log_file_size option changed in last confUpdate
-
-    //QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile0"))).remove();
-    //QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile1"))).remove();
-
-    return needUpgrade;
 }
 
 DatabaseServerError DatabaseServer::createMysqlFiles() const
 {
-    DatabaseServerError result;
+    DatabaseServerError error;
 
     // Initialize the database
 
@@ -520,18 +522,18 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 
         if (!initProcess.waitForFinished() || (initProcess.exitCode() != 0))
         {
-            return DatabaseServerError(DatabaseServerError::StartError,
-                                       processErrorLog(&initProcess,
-                                                       i18n("Could not start database initializer.")));
+            error = DatabaseServerError(DatabaseServerError::StartError,
+                                        processErrorLog(&initProcess,
+                                                        i18n("Could not start database initializer.")));
         }
     }
 
-    return result;
+    return error;
 }
 
 DatabaseServerError DatabaseServer::startMysqlServer()
 {
-    DatabaseServerError result;
+    DatabaseServerError error;
 
     // Synthesize the server command line arguments
 
@@ -590,15 +592,15 @@ DatabaseServerError DatabaseServer::startMysqlServer()
         delete d->databaseProcess;
         d->databaseProcess = nullptr;
 
-        return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+        error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
     }
 
-    return result;
+    return error;
 }
 
 DatabaseServerError DatabaseServer::initMysqlDatabase() const
 {
-    DatabaseServerError result;
+    DatabaseServerError error;
 
     const QLatin1String initCon("initConnection");
 
@@ -701,7 +703,7 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
                                          query.lastError().text(),
                                          db.lastError().text());
 
-                return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+                error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
             }
 
             // Make sure query is destroyed before we close the db
@@ -712,29 +714,22 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
 
     QSqlDatabase::removeDatabase(initCon);
 
-    return result;
+    return error;
 }
 
 DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 {
-    QApplication::restoreOverrideCursor();
+    QPointer<QProgressDialog> dialog = new QProgressDialog;
+    dialog->setLabelText(i18n("A MySQL database upgrade is "
+                              "in progress, please wait..."));
+    dialog->setCancelButton(nullptr);
+    dialog->setMinimumDuration(5000);
+    dialog->setModal(true);
+    dialog->setMinimum(0);
+    dialog->setMaximum(0);
+    dialog->show();
 
-    QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information,
-             qApp->applicationName(),
-             i18n("The database is now upgraded to the current "
-                  "server version, this can take a while."),
-             QMessageBox::Ok | QMessageBox::Cancel,
-             qApp->activeWindow());
-
-    int msgResult = msgBox->exec();
-    delete msgBox;
-
-    QApplication::setOverrideCursor(Qt::WaitCursor);
-
-    if (msgResult == QMessageBox::Cancel)
-    {
-        return DatabaseServerError();
-    }
+    DatabaseServerError error;
 
     // Synthesize the mysql upgrade command line arguments
 
@@ -750,7 +745,7 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
 #endif
 
-    // Start the upgrade ptogram
+    // Start the upgrade program
 
     QUrl upgradeUrl = QUrl::fromLocalFile(d->mysqlAdminPath).adjusted(QUrl::RemoveFilename);
     upgradeUrl.setPath(upgradeUrl.path() + QLatin1String("mysql_upgrade"));
@@ -763,23 +758,23 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
                                         << upgradeProcess->program()
                                         << upgradeProcess->arguments();
 
-    if (!upgradeProcess->waitForFinished(-1) || (upgradeProcess->exitCode() != 0))
+    while (!upgradeProcess->waitForFinished(250))
+    {
+        qApp->processEvents();
+    }
+
+    if (upgradeProcess->exitCode() != 0)
     {
         QString errorMsg = processErrorLog(upgradeProcess,
                                            i18n("Could not upgrade database."));
 
-        delete upgradeProcess;
-
-        return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+        error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
     }
 
+    delete dialog;
     delete upgradeProcess;
 
-    // Restart the database server.
-
-    stopDatabaseProcess();
-
-    return startMysqlServer();
+    return error;
 }
 
 QString DatabaseServer::getcurrentAccountUserName() const

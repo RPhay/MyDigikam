@@ -99,9 +99,9 @@ private:
     DatabaseServerError initMysqlConfig()                                const;
 
     /**
-     * Check and remove mysql error log files.
+     * Copy and remove mysql error log files.
      */
-    bool checkAndRemoveMysqlLogs()                                       const;
+    void copyAndRemoveMysqlLogs()                                        const;
 
     /**
      * Creates initial Mysql database files for internal server.
