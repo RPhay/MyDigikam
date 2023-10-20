@@ -209,8 +209,11 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     unsigned long nitems      = 0;
     unsigned long bytes_after = 0;
     quint8*       str         = nullptr;
+    Display* const disp       = display();
 
-    static Atom icc_atom = XInternAtom(display(), atomName.toLatin1().constData(), True);
+    qDebug() << "X11 display instance:" << disp << ": atomName:" << atomName;
+
+    static Atom icc_atom = XInternAtom(disp, atomName.toLatin1().constData(), True);
 
     if ((icc_atom != None)                                                &&
         (XGetWindowProperty(display(), appRootWindow, icc_atom,
