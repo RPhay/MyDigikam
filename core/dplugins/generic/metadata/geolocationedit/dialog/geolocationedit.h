@@ -86,7 +86,6 @@ private Q_SLOTS:
     void slotSetUIEnabled(const bool enabledState);
     void slotOkClicked();
     void slotApplyClicked();
-    void slotCancelClicked();
     void slotFileChangesSaved(int beginIndex, int endIndex);
     void slotFileMetadataLoaded(int beginIndex, int endIndex);
     void slotProgressChanged(const int currentProgress);

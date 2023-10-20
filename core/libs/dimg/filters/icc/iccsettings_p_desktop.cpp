@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-08-09
- * Description : central place for ICC settings - Qt6 implementations
+ * Description : central place for ICC settings
  *
  * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
  * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -16,23 +16,21 @@
 
 #include "iccsettings_p.h"
 
-// X11 includes
-
 #if defined(Q_CC_CLANG)
 #    pragma clang diagnostic push
 #    pragma clang diagnostic ignored "-Wvariadic-macros"
 #endif
 
-// NOTE: must be after all other to prevent broken compilation
-
+// Note must be after all other to prevent broken compilation
 #ifdef HAVE_X11
 #   include <climits>
 #   include <X11/Xlib.h>
 #   include <X11/Xatom.h>
-#   include <qscreen.h>
-#   include <qpa/qplatformnativeinterface.h>
-#   include <qpa/qplatformscreen_p.h>
-#   include <qpa/qplatformscreen.h>
+#   if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#       include <private/qtx11extras_p.h>
+#   else
+#       include <QX11Info>
+#   endif
 #endif // HAVE_X11
 
 #if defined(Q_CC_CLANG)
@@ -41,93 +39,6 @@
 
 namespace Digikam
 {
-
-#ifdef HAVE_X11
-
-bool IccSettings::Private::isX11() const
-{
-    return (QGuiApplication::platformName() == QLatin1String("xcb"));
-}
-
-QScreen* IccSettings::Private::findScreenForVirtualDesktop(int virtualDesktopNumber) const
-{
-    const auto screens = QGuiApplication::screens();
-
-    for (QScreen* const screen : screens)
-    {
-        auto* const qxcbScreen = dynamic_cast<QNativeInterface::Private::QXcbScreen*>(screen->handle());
-
-        if (qxcbScreen && (qxcbScreen->virtualDesktopNumber() == virtualDesktopNumber))
-        {
-            return screen;
-        }
-    }
-
-    return nullptr;
-}
-
-quint32 IccSettings::Private::getAppRootWindow(int screen) const
-{
-    if (!qApp)
-    {
-        return 0;
-    }
-
-    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
-
-    if (!native)
-    {
-        return 0;
-    }
-
-    QScreen* const scr = (screen == -1) ? QGuiApplication::primaryScreen() 
-                                        : findScreenForVirtualDesktop(screen);
-
-    if (!scr)
-    {
-        return 0;
-    }
-
-    return (static_cast<quint32>(reinterpret_cast<quintptr>(native->nativeResourceForScreen(QByteArrayLiteral("rootwindow"), scr))));
-}
-
-int IccSettings::Private::appScreen() const
-{
-    if (!qApp)
-    {
-        return 0;
-    }
-
-    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
-
-    if (!native)
-    {
-        return 0;
-    }
-
-    return (reinterpret_cast<qintptr>(native->nativeResourceForIntegration(QByteArrayLiteral("x11screen"))));
-}
-
-Display* IccSettings::Private::display() const
-{
-    if (!qApp)
-    {
-        return nullptr;
-    }
-
-    QPlatformNativeInterface* const native = qApp->platformNativeInterface();
-
-    if (!native)
-    {
-        return nullptr;
-    }
-
-    void* const display = native->nativeResourceForIntegration(QByteArray("display"));
-
-    return (reinterpret_cast<Display*>(display));
-}
-
-#endif // HAVE_X11
 
 /*
  * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
@@ -142,7 +53,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
 #ifdef HAVE_X11
 
-    if (!isX11())
+    if (!QX11Info::isPlatformX11())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Desktop platform is not X11";
 
@@ -195,12 +106,12 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     if (screen->virtualSiblings().size() > 1)
     {
-        appRootWindow = getAppRootWindow(appScreen());
+        appRootWindow = QX11Info::appRootWindow(QX11Info::appScreen());
         atomName      = QString::fromLatin1("_ICC_PROFILE_%1").arg(screenNumber);
     }
     else
     {
-        appRootWindow = getAppRootWindow(screenNumber);
+        appRootWindow = QX11Info::appRootWindow(screenNumber);
         atomName      = QLatin1String("_ICC_PROFILE");
     }
 
@@ -209,29 +120,37 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
     unsigned long nitems      = 0;
     unsigned long bytes_after = 0;
     quint8*       str         = nullptr;
+    Display* const disp       = QX11Info::display();
 
-    static Atom icc_atom = XInternAtom(display(), atomName.toLatin1().constData(), True);
-
-    if ((icc_atom != None)                                                &&
-        (XGetWindowProperty(display(), appRootWindow, icc_atom,
-                           0, INT_MAX, False, XA_CARDINAL,
-                           &type, &format, &nitems, &bytes_after,
-                           (unsigned char**)& str) == Success)            &&
-         nitems
-       )
+    if (disp)
     {
-        QByteArray bytes = QByteArray::fromRawData((char*)str, (quint32)nitems);
+        static Atom icc_atom  = XInternAtom(disp, atomName.toLatin1().constData(), True);
 
-        if (!bytes.isEmpty())
+        if ((icc_atom != None)                                                &&
+            (XGetWindowProperty(QX11Info::display(), appRootWindow, icc_atom,
+                               0, INT_MAX, False, XA_CARDINAL,
+                               &type, &format, &nitems, &bytes_after,
+                               (unsigned char**)& str) == Success)            &&
+             nitems
+           )
         {
-            profile = IccProfile(bytes);
-        }
+            QByteArray bytes = QByteArray::fromRawData((char*)str, (quint32)nitems);
 
-        qCDebug(DIGIKAM_DIMG_LOG) << "Found X.org XICC monitor profile " << profile.description();
+            if (!bytes.isEmpty())
+            {
+                profile = IccProfile(bytes);
+            }
+
+            qCDebug(DIGIKAM_DIMG_LOG) << "Found X.org XICC monitor profile " << profile.description();
+        }
+        else
+        {
+            qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
+        }
     }
     else
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "No X.org XICC profile installed for screen " << screenNumber;
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot get X.org XICC profile for screen " << screenNumber;
     }
 
     // Insert to cache even if null
@@ -243,6 +162,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 #elif defined Q_OS_WIN
 
     // TODO
+
     Q_UNUSED(widget);
 
 #elif defined Q_OS_MACOS
@@ -257,7 +177,7 @@ IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 
     Q_UNUSED(widget);
 
-#endif // HAVE_X11
+#endif
 
     return IccProfile();
 }
