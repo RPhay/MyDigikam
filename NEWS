@@ -139,7 +139,7 @@ BUGFIXES:
 125 ==> 471797 - digiKam crashes on startup at 74% on Finding New Files.
 126 ==> 471269 - Application crashes when album contains avif file.
 127 ==> 379402 - Reuse filter settings after adding geolocation information [patch].
-128 ==> 
+128 ==> 475870 - If "Use the last saved..." function is active in this case second opening the Image quality sorter become inactive.
 129 ==> 
 130 ==> 
 131 ==> 
