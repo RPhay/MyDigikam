@@ -255,7 +255,7 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    error = initMysqlDatabase();
+    error = initMysqlDatabase(false);
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
     {
@@ -278,7 +278,7 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    error = initMysqlDatabase();
+    error = initMysqlDatabase(true);
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
     {
@@ -598,7 +598,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
     return error;
 }
 
-DatabaseServerError DatabaseServer::initMysqlDatabase() const
+DatabaseServerError DatabaseServer::initMysqlDatabase(bool useDatabase) const
 {
     DatabaseServerError error;
 
@@ -673,43 +673,46 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
             return DatabaseServerError(DatabaseServerError::StartError, errorMsg);
         }
 
-        QSqlQuery query(db);
-
-        if (!query.exec(QString::fromLatin1("USE %1;").arg(d->internalDBName)))
+        if (useDatabase)
         {
-            qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Failed to use database"
-                                                << d->internalDBName;
-            qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Query error:"
-                                                << query.lastError().text();
-            qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database error:"
-                                                << db.lastError().text();
-            qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Trying to create database now";
+            QSqlQuery query(db);
 
-            if (query.exec(QString::fromLatin1("CREATE DATABASE %1;").arg(d->internalDBName)))
+            if (!query.exec(QString::fromLatin1("USE %1;").arg(d->internalDBName)))
             {
-                qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database was successfully created";
-            }
-            else
-            {
-                qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Failed to create database";
+                qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Failed to use database"
+                                                    << d->internalDBName;
                 qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Query error:"
                                                     << query.lastError().text();
                 qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database error:"
                                                     << db.lastError().text();
+                qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Trying to create database now";
 
-                QString  errorMsg = i18n("Failed to create database"
-                                         "<p>Query error: %1</p>"
-                                         "<p>Database error: %2</p>",
-                                         query.lastError().text(),
-                                         db.lastError().text());
+                if (query.exec(QString::fromLatin1("CREATE DATABASE %1;").arg(d->internalDBName)))
+                {
+                    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database was successfully created";
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Failed to create database";
+                    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Query error:"
+                                                        << query.lastError().text();
+                    qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database error:"
+                                                        << db.lastError().text();
 
-                error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+                    QString  errorMsg = i18n("Failed to create database"
+                                             "<p>Query error: %1</p>"
+                                             "<p>Database error: %2</p>",
+                                             query.lastError().text(),
+                                             db.lastError().text());
+
+                    error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
+                }
             }
-
-            // Make sure query is destroyed before we close the db
-
-            db.close();
         }
+
+        // Make sure query is destroyed before we close the db
+
+        db.close();
     }
 
     QSqlDatabase::removeDatabase(initCon);

@@ -116,7 +116,7 @@ private:
     /**
      * Creates or connects to database digikam in mysql.
      */
-    DatabaseServerError initMysqlDatabase()                              const;
+    DatabaseServerError initMysqlDatabase(bool useDatabase)              const;
 
     /**
      * Perform a mysql database upgrade.
