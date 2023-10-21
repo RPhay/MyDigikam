@@ -279,9 +279,9 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
         d->playBtn->animateClick();
     }
 
-    QPointer<SetupSlideShowDialog> configDialog = new SetupSlideShowDialog(d->settings);
-    int ret = configDialog->exec();
-    delete configDialog;
+    QPointer<SetupSlideShowDialog> setup = new SetupSlideShowDialog(d->settings);
+    int ret = setup->exec();
+    delete setup;
 
     if (ret == QDialog::Accepted)
     {
