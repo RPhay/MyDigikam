@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -10552,110 +10552,110 @@ msgstr "फाईल नाव"
 msgid "Cannot save \"%1\" file"
 msgstr "फाईल \"%1\" साठवू शकत नाही"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:267
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "जिओलोकेशन"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:300
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, fuzzy, kde-format
 #| msgid "Layout:"
 msgctxt "@label"
 msgid "Layout:"
 msgstr "रचना :"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "आडवे पलटी करा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "अनुक्रमीत"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "तपशील"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "दिनदर्शिका"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "पूर्ववत करा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:419
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "शोधा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:420
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:638
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "दाखल करत आहे..."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -10663,7 +10663,7 @@ msgid_plural "You have %1 modified images."
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:843
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10671,13 +10671,13 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "बदल साठवा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:844
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:960
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -10685,7 +10685,7 @@ msgctxt "@info"
 msgid "Saving changes -"
 msgstr "बदल साठवा"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1019
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10730,13 +10730,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "त्रुटी"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1020
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1065
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -27210,30 +27210,30 @@ msgstr ""
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, fuzzy, kde-format
 #| msgid "Cannot create thumbnail for %1"
 msgid "Cannot create directory %1"
 msgstr "%1 करिता लघुप्रतिमा बनवू शकत नाही"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -27241,55 +27241,54 @@ msgid ""
 "file</p><p>%2</p><p>could not be written.</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgid "Print Image"
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "प्रतिमा छापा"
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, fuzzy, kde-format
 msgid "Could not upgrade database."
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

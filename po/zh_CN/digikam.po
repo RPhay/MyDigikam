@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2023-10-10 14:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10629,129 +10629,129 @@ msgstr "文件未保存"
 msgid "Cannot save \"%1\" file"
 msgstr "无法保存“%1”文件"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:267
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "地理位置编辑器"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:300
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "在地图上显示书签位置。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "布局："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "单地图"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "双地图 - 水平"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "双地图-垂直"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "排序"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "最旧在前"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "最新在前"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "详细信息"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS 关联工具"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "撤销/重做"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "反向地理编码"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:419
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "搜索"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:420
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML 导出"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:638
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "正在加载元数据 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
 msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 张已修改图像。"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:843
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "未保存的更改"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:844
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 您想要保存您所作的更改吗？"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:960
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1019
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -10795,13 +10795,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "错误"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1020
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "无法保存部分信息："
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1065
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -27350,29 +27350,29 @@ msgstr "这是原始图像"
 msgid "Database type is not supported."
 msgstr "数据库类型不支持。"
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 服务器命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 初始化命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr "配置文件中并未设置 MySQL 管理命令的路径。"
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "无法创建目录“%1”"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -27382,55 +27382,55 @@ msgstr ""
 "无法创建 MySQL 服务器配置文件。<p>这意味着默认配置文件</p><p>%1</p><p>不可读"
 "取，或者目标文件</p><p>%2</p><p>不可写入。"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "无法找到 MySQL 服务器的默认配置文件 (mysql-global.conf)。"
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "无法启动数据库初始化程序。"
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "无法启动数据库服务器。"
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "数据库服务器启动时遇到无效的数据库对象"
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "数据库进程在初始化连接时意外退出。"
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "无法连接到数据库，已尝试 60 秒。"
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "无法创建数据库<p>查询错误：%1</p><p>数据库错误：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr "digiKam 数据库正在升级为当前服务器版本，这可能需要一段时间。"
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Pre-processing is in progress, please wait."
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "正在处理，请稍候。"
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "无法升级数据库。"
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>可执行程序：%2</p><p>参数：%3</p><p>进程错误：%4</p>"
@@ -61481,3 +61481,8 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid ""
+#~ "The database is now upgraded to the current server version, this can take "
+#~ "a while."
+#~ msgstr "digiKam 数据库正在升级为当前服务器版本，这可能需要一段时间。"
