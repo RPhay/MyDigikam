@@ -465,7 +465,11 @@ for FILE in $EXTRA_EXCLUDE_FILES ; do
     fi
 done
 
-ln -s libssl.so.1.1 usr/lib/libssl.so || true
+if [[ -f usr/lib/libssl.so.1.1 ]] ; then
+
+    ln -s libssl.so.1.1 usr/lib/libssl.so || true
+
+fi
 
 # We don't bundle the developer stuff
 rm -rf usr/include         || true
