@@ -866,14 +866,9 @@ DbEngineParameters DbEngineParameters::parametersForSQLiteDefaultFile(const QStr
     return parametersForSQLite(QDir::cleanPath(directory + QLatin1Char('/') + QLatin1String(digikam4db)));
 }
 
-QString DbEngineParameters::defaultMysqlUpgradeCmd()
+QString DbEngineParameters::defaultMysqlInitCmd()
 {
-    return QLatin1String("mysql_upgrade");      // For Linux, Windows and OSX
-}
-
-QString DbEngineParameters::defaultMysqlServerCmd()
-{
-    return QLatin1String("mysqld");             // For Linux, Windows and OSX
+    return QLatin1String("mysql_install_db");   // For Linux, Windows and OSX
 }
 
 QString DbEngineParameters::defaultMysqlAdminCmd()
@@ -881,9 +876,14 @@ QString DbEngineParameters::defaultMysqlAdminCmd()
     return QLatin1String("mysqladmin");         // For Linux, Windows and OSX
 }
 
-QString DbEngineParameters::defaultMysqlInitCmd()
+QString DbEngineParameters::defaultMysqlServerCmd()
 {
-    return QLatin1String("mysql_install_db");   // For Linux, Windows and OSX
+    return QLatin1String("mysqld");             // For Linux, Windows and OSX
+}
+
+QString DbEngineParameters::defaultMysqlUpgradeCmd()
+{
+    return QLatin1String("mysql_upgrade");      // For Linux, Windows and OSX
 }
 
 // --------------------------------

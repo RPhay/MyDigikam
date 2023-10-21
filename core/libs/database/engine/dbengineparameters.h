@@ -172,14 +172,9 @@ public:
     static QString serverPrivatePath();
 
     /**
-     * Return the default Mysql upgrade command name (Internal server only).
+     * Return the default Mysql initialization command name (Internal server only).
      */
-    static QString defaultMysqlUpgradeCmd();
-
-    /**
-     * Return the default Mysql server command name (Internal server only).
-     */
-    static QString defaultMysqlServerCmd();
+    static QString defaultMysqlInitCmd();
 
     /**
      * Return the default Mysql server administration name (Internal server only).
@@ -187,9 +182,14 @@ public:
     static QString defaultMysqlAdminCmd();
 
     /**
-     * Return the default Mysql initialization command name (Internal server only).
+     * Return the default Mysql server command name (Internal server only).
      */
-    static QString defaultMysqlInitCmd();
+    static QString defaultMysqlServerCmd();
+
+    /**
+     * Return the default Mysql upgrade command name (Internal server only).
+     */
+    static QString defaultMysqlUpgradeCmd();
 
 public:
 
