@@ -418,9 +418,10 @@ for FILE in $EXCLUDE_FILES ; do
 done
 
 # This list is taken from older AppImage build script from krita
-# NOTE: libopenal   => see bug 390162.
-#       libdbus-1   => see Krita rules.
-#       libxcb-dri3 => see bug 417088.
+# NOTE: libopenal    => see bug 390162.
+#       libdbus-1    => see Krita rules.
+#       libxcb-dri3  => see bug 417088.
+#       libidn2.so.0 => Ubuntu 22.04
 
 EXTRA_EXCLUDE_FILES="\
 libgssapi_krb5.so.2 \
@@ -430,6 +431,7 @@ libheimbase.so.1 \
 libheimntlm.so.0 \
 libhx509.so.5 \
 libidn.so.11 \
+libidn2.so.0 \
 libk5crypto.so.3 \
 libkrb5.so.26 \
 libkrb5.so.3 \
