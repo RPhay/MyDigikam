@@ -43,10 +43,10 @@ namespace
 static const char* configGroupDatabase                         = "Database Settings";
 static const char* configInternalDatabaseServer                = "Internal Database Server";
 static const char* configInternalDatabaseServerPath            = "Internal Database Server Path";
-static const char* configInternalDatabaseServerMysqlUpgradeCmd = "Internal Database Server Mysql Upgrade Command";
-static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
-static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
 static const char* configInternalDatabaseServerMysqlInitCmd    = "Internal Database Server Mysql Init Command";
+static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
+static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
+static const char* configInternalDatabaseServerMysqlUpgradeCmd = "Internal Database Server Mysql Upgrade Command";
 static const char* configDatabaseType                          = "Database Type";
 static const char* configDatabaseName                          = "Database Name";              ///< For Sqlite the DB file path, for Mysql the DB name
 static const char* configDatabaseNameThumbnails                = "Database Name Thumbnails";   ///< For Sqlite the DB file path, for Mysql the DB name
@@ -74,7 +74,7 @@ static const char* similarity_digikamdb                        = "similarity.db"
 namespace Digikam
 {
 
-QString DbEngineParameters::internalServerPrivatePath()
+QString DbEngineParameters::serverPrivatePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
                                             QLatin1String("/digikam/");
@@ -100,10 +100,10 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
                                        const QString& _databaseNameFace,
                                        const QString& _databaseNameSimilarity,
                                        const QString& _internalServerDBPath,
-                                       const QString& _internalServerMysqlUpgradeCmd,
-                                       const QString& _internalServerMysqlServerCmd,
+                                       const QString& _internalServerMysqlInitCmd,
                                        const QString& _internalServerMysqlAdminCmd,
-                                       const QString& _internalServerMysqlInitCmd)
+                                       const QString& _internalServerMysqlServerCmd,
+                                       const QString& _internalServerMysqlUpgradeCmd)
     : databaseType                  (_type),
       databaseNameCore              (_databaseNameCore),
       connectOptions                (_connectOptions),
@@ -117,10 +117,10 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
       databaseNameFace              (_databaseNameFace),
       databaseNameSimilarity        (_databaseNameSimilarity),
       internalServerDBPath          (_internalServerDBPath),
-      internalServerMysqlUpgradeCmd (_internalServerMysqlUpgradeCmd),
-      internalServerMysqlServerCmd  (_internalServerMysqlServerCmd),
+      internalServerMysqlInitCmd    (_internalServerMysqlInitCmd),
       internalServerMysqlAdminCmd   (_internalServerMysqlAdminCmd),
-      internalServerMysqlInitCmd    (_internalServerMysqlInitCmd)
+      internalServerMysqlServerCmd  (_internalServerMysqlServerCmd),
+      internalServerMysqlUpgradeCmd (_internalServerMysqlUpgradeCmd)
 {
 }
 
@@ -167,13 +167,13 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
     }
     else
     {
-        internalServerDBPath = internalServerPrivatePath();
+        internalServerDBPath = serverPrivatePath();
     }
 
-    internalServerMysqlUpgradeCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlUpgradeCmd"));
-    internalServerMysqlServerCmd  = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlServerCmd"));
-    internalServerMysqlAdminCmd   = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlAdminCmd"));
     internalServerMysqlInitCmd    = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlInitCmd"));
+    internalServerMysqlAdminCmd   = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlAdminCmd"));
+    internalServerMysqlServerCmd  = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlServerCmd"));
+    internalServerMysqlUpgradeCmd = QUrlQuery(url).queryItemValue(QLatin1String("internalServerMysqlUpgradeCmd"));
 
 #else
 
@@ -220,10 +220,10 @@ void DbEngineParameters::insertInUrl(QUrl& url) const
     {
         q.addQueryItem(QLatin1String("internalServer"),                QLatin1String("true"));
         q.addQueryItem(QLatin1String("internalServerPath"),            internalServerDBPath);
-        q.addQueryItem(QLatin1String("internalServerMysqlUpgradeCmd"), internalServerMysqlUpgradeCmd);
-        q.addQueryItem(QLatin1String("internalServerMysqlServerCmd"),  internalServerMysqlServerCmd);
-        q.addQueryItem(QLatin1String("internalServerMysqlAdminCmd"),   internalServerMysqlAdminCmd);
         q.addQueryItem(QLatin1String("internalServerMysqlInitCmd"),    internalServerMysqlInitCmd);
+        q.addQueryItem(QLatin1String("internalServerMysqlAdminCmd"),   internalServerMysqlAdminCmd);
+        q.addQueryItem(QLatin1String("internalServerMysqlServerCmd"),  internalServerMysqlServerCmd);
+        q.addQueryItem(QLatin1String("internalServerMysqlUpgradeCmd"), internalServerMysqlUpgradeCmd);
     }
 
     if (!userName.isNull())
@@ -254,10 +254,10 @@ void DbEngineParameters::removeFromUrl(QUrl& url)
     q.removeQueryItem(QLatin1String("walMode"));
     q.removeQueryItem(QLatin1String("internalServer"));
     q.removeQueryItem(QLatin1String("internalServerPath"));
-    q.removeQueryItem(QLatin1String("internalServerMysqlUpgradeCmd"));
-    q.removeQueryItem(QLatin1String("internalServerMysqlServerCmd"));
-    q.removeQueryItem(QLatin1String("internalServerMysqlAdminCmd"));
     q.removeQueryItem(QLatin1String("internalServerMysqlInitCmd"));
+    q.removeQueryItem(QLatin1String("internalServerMysqlAdminCmd"));
+    q.removeQueryItem(QLatin1String("internalServerMysqlServerCmd"));
+    q.removeQueryItem(QLatin1String("internalServerMysqlUpgradeCmd"));
     q.removeQueryItem(QLatin1String("userName"));
     q.removeQueryItem(QLatin1String("password"));
 
@@ -278,10 +278,10 @@ bool DbEngineParameters::operator==(const DbEngineParameters& other) const
             (walMode                       == other.walMode)                       &&
             (internalServer                == other.internalServer)                &&
             (internalServerDBPath          == other.internalServerDBPath)          &&
-            (internalServerMysqlUpgradeCmd == other.internalServerMysqlUpgradeCmd) &&
-            (internalServerMysqlServerCmd  == other.internalServerMysqlServerCmd)  &&
-            (internalServerMysqlAdminCmd   == other.internalServerMysqlAdminCmd)   &&
             (internalServerMysqlInitCmd    == other.internalServerMysqlInitCmd)    &&
+            (internalServerMysqlAdminCmd   == other.internalServerMysqlAdminCmd)   &&
+            (internalServerMysqlServerCmd  == other.internalServerMysqlServerCmd)  &&
+            (internalServerMysqlUpgradeCmd == other.internalServerMysqlUpgradeCmd) &&
             (userName                      == other.userName)                      &&
             (password                      == other.password)
            );
@@ -416,11 +416,11 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
 
     internalServer                = group.readEntry(configInternalDatabaseServer,                false);
-    internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            internalServerPrivatePath());
-    internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, defaultMysqlUpgradeCmd());
-    internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd()); 
-    internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   defaultMysqlAdminCmd());
+    internalServerDBPath          = group.readEntry(configInternalDatabaseServerPath,            serverPrivatePath());
     internalServerMysqlInitCmd    = group.readEntry(configInternalDatabaseServerMysqlInitCmd,    defaultMysqlInitCmd());
+    internalServerMysqlAdminCmd   = group.readEntry(configInternalDatabaseServerMysqlAdminCmd,   defaultMysqlAdminCmd());
+    internalServerMysqlServerCmd  = group.readEntry(configInternalDatabaseServerMysqlServerCmd,  defaultMysqlServerCmd()); 
+    internalServerMysqlUpgradeCmd = group.readEntry(configInternalDatabaseServerMysqlUpgradeCmd, defaultMysqlUpgradeCmd());
 
 #else
 
@@ -555,7 +555,7 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
 
     if ((databaseType == QLatin1String("QMYSQL")) && internalServer)
     {
-        const QString miscDir      = internalServerPrivatePath() + QLatin1String("db_misc");
+        const QString miscDir      = serverPrivatePath() + QLatin1String("db_misc");
         databaseNameCore           = QLatin1String("digikam");
         databaseNameThumbnails     = QLatin1String("digikam");
         databaseNameFace           = QLatin1String("digikam");
@@ -665,10 +665,10 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configDatabaseConnectOptions,                connectOptions);
     group.writeEntry(configInternalDatabaseServer,                internalServer);
     group.writeEntry(configInternalDatabaseServerPath,            internalServerDBPath);
-    group.writeEntry(configInternalDatabaseServerMysqlUpgradeCmd, internalServerMysqlUpgradeCmd);
-    group.writeEntry(configInternalDatabaseServerMysqlServerCmd,  internalServerMysqlServerCmd);
-    group.writeEntry(configInternalDatabaseServerMysqlAdminCmd,   internalServerMysqlAdminCmd);
     group.writeEntry(configInternalDatabaseServerMysqlInitCmd,    internalServerMysqlInitCmd);
+    group.writeEntry(configInternalDatabaseServerMysqlAdminCmd,   internalServerMysqlAdminCmd);
+    group.writeEntry(configInternalDatabaseServerMysqlServerCmd,  internalServerMysqlServerCmd);
+    group.writeEntry(configInternalDatabaseServerMysqlUpgradeCmd, internalServerMysqlUpgradeCmd);
 
     group.deleteEntry(configDatabasePassword);  // Remove non encrypted password
 }
@@ -781,10 +781,11 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
     parameters.password                      = config.password;
     parameters.walMode                       = false;
     parameters.internalServer                = (databaseType == QLatin1String("QMYSQL"));
-    parameters.internalServerDBPath          = (databaseType == QLatin1String("QMYSQL")) ? internalServerPrivatePath() : QString();
-    parameters.internalServerMysqlUpgradeCmd = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlUpgradeCmd()    : QString();
-    parameters.internalServerMysqlServerCmd  = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlServerCmd()     : QString();    parameters.internalServerMysqlAdminCmd   = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlAdminCmd()      : QString();
-    parameters.internalServerMysqlInitCmd    = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlInitCmd()       : QString();
+    parameters.internalServerDBPath          = (databaseType == QLatin1String("QMYSQL")) ? serverPrivatePath()      : QString();
+    parameters.internalServerMysqlInitCmd    = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlInitCmd()    : QString();
+    parameters.internalServerMysqlAdminCmd   = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlAdminCmd()   : QString();
+    parameters.internalServerMysqlServerCmd  = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlServerCmd()  : QString();
+    parameters.internalServerMysqlUpgradeCmd = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlUpgradeCmd() : QString();
 
     QString hostName                       = config.hostName;
     QString port                           = config.port;
@@ -808,7 +809,7 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
 
     port.replace(QLatin1String("$$DBPORT$$"),              QLatin1String("-1"));
 
-    const QString miscDir                 = internalServerPrivatePath() + QLatin1String("db_misc");
+    const QString miscDir                 = serverPrivatePath() + QLatin1String("db_misc");
     connectOptions.replace(QLatin1String("$$DBOPTIONS$$"), (databaseType == QLatin1String("QMYSQL"))
                                                            ? QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir)
                                                            : QString());
@@ -901,10 +902,10 @@ QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
     dbg.nospace() << "   WAL Mode:                    " << p.walMode                                           << QT_ENDL;
     dbg.nospace() << "   Internal Server:             " << p.internalServer                                    << QT_ENDL;
     dbg.nospace() << "   Internal Server Path:        " << p.internalServerDBPath                              << QT_ENDL;
-    dbg.nospace() << "   Internal Server Upgrade Cmd: " << p.internalServerMysqlUpgradeCmd                     << QT_ENDL;
-    dbg.nospace() << "   Internal Server Server Cmd:  " << p.internalServerMysqlServerCmd                      << QT_ENDL;
-    dbg.nospace() << "   Internal Server Admin Cmd:   " << p.internalServerMysqlAdminCmd                       << QT_ENDL;
     dbg.nospace() << "   Internal Server Init Cmd:    " << p.internalServerMysqlInitCmd                        << QT_ENDL;
+    dbg.nospace() << "   Internal Server Admin Cmd:   " << p.internalServerMysqlAdminCmd                       << QT_ENDL;
+    dbg.nospace() << "   Internal Server Server Cmd:  " << p.internalServerMysqlServerCmd                      << QT_ENDL;
+    dbg.nospace() << "   Internal Server Upgrade Cmd: " << p.internalServerMysqlUpgradeCmd                     << QT_ENDL;
     dbg.nospace() << "   Username:                    " << p.userName                                          << QT_ENDL;
     dbg.nospace() << "   Password:                    " << QString().fill(QLatin1Char('X'), p.password.size()) << QT_ENDL;
 

@@ -81,7 +81,7 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << d->params;
 
-    QString defaultAkDir = DbEngineParameters::internalServerPrivatePath();
+    QString defaultAkDir = DbEngineParameters::serverPrivatePath();
     QString dataDir;
 
     if (d->params.internalServerPath().isEmpty())
