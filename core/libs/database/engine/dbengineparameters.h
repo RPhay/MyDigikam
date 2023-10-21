@@ -54,8 +54,9 @@ public:
                        const QString& _databaseNameFace = QString(),
                        const QString& _databaseNameSimilarity = QString(),
                        const QString& _internalServerDBPath = QString(),
+                       const QString& _internalServerMysqlUpgradeCmd = QString(),
+                       const QString& _internalServerMysqlServerCmd = QString(),
                        const QString& _internalServerMysqlAdminCmd = QString(),
-                       const QString& _internalServerMysqlServCmd = QString(),
                        const QString& _internalServerMysqlInitCmd = QString());
 
     DbEngineParameters();
@@ -171,6 +172,11 @@ public:
     static QString internalServerPrivatePath();
 
     /**
+     * Return the default Mysql upgrade command name (Internal server only).
+     */
+    static QString defaultMysqlUpgradeCmd();
+
+    /**
      * Return the default Mysql server command name (Internal server only).
      */
     static QString defaultMysqlServerCmd();
@@ -206,8 +212,9 @@ public:
      * Settings stored in config file and used only with internal server at runtime
      * to start server instance or init database tables.
      */
+    QString internalServerMysqlUpgradeCmd;
+    QString internalServerMysqlServerCmd;
     QString internalServerMysqlAdminCmd;
-    QString internalServerMysqlServCmd;
     QString internalServerMysqlInitCmd;
 };
 

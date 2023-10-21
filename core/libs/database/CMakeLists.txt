@@ -210,9 +210,10 @@ set(libdatabasemain_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbstatdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbsettingswidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/dbmigrationdlg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlupgradebinary.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlserverbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqladminbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlinitbinary.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/mysqlservbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets/searchtextbardb.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces/dbinfoiface.cpp
