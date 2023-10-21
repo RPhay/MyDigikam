@@ -741,7 +741,6 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
     dialog->setModal(true);
     dialog->setMinimum(0);
     dialog->setMaximum(0);
-    dialog->show();
 
     DatabaseServerError error;
 
