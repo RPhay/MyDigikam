@@ -60,9 +60,10 @@ public:
     QProcess*              databaseProcess;
 
     QString                internalDBName;
+    QString                mysqlUpgradePath;
+    QString                mysqlServerPath;
     QString                mysqlAdminPath;
-    QString                mysqldInitPath;
-    QString                mysqldServPath;
+    QString                mysqlInitPath;
     QString                dataDir;
     QString                miscDir;
     QString                fileDataDir;
@@ -96,9 +97,10 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Internal Server data path:" << dataDir;
 
     d->internalDBName       = QLatin1String("digikam");
+    d->mysqlUpgradePath     = d->params.internalServerMysqlUpgradeCmd;
+    d->mysqlServerPath      = d->params.internalServerMysqlServerCmd;
     d->mysqlAdminPath       = d->params.internalServerMysqlAdminCmd;
-    d->mysqldInitPath       = d->params.internalServerMysqlInitCmd;
-    d->mysqldServPath            = d->params.internalServerMysqlServCmd;
+    d->mysqlInitPath        = d->params.internalServerMysqlInitCmd;
     d->dataDir              = dataDir;
     d->miscDir              = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
     d->fileDataDir          = QDir(defaultAkDir).absoluteFilePath(QLatin1String("file_db_data"));
@@ -294,7 +296,16 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 {
     DatabaseServerError error;
 
-    if (d->mysqldServPath.isEmpty())
+    if (d->mysqlUpgradePath.isEmpty())
+    {
+        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql upgrade command set in configuration file!";
+
+        return DatabaseServerError(DatabaseServerError::StartError,
+                                   i18n("No path to mysql upgrade command set "
+                                        "in configuration file."));
+    }
+
+    if (d->mysqlServerPath.isEmpty())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql server command set in configuration file!";
 
@@ -303,21 +314,21 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
                                         "in configuration file."));
     }
 
-    if (d->mysqldInitPath.isEmpty())
-    {
-        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql initialization command set in configuration file!";
-
-        return DatabaseServerError(DatabaseServerError::StartError,
-                                   i18n("No path to mysql initialization "
-                                        "command set in configuration file."));
-    }
-
     if (d->mysqlAdminPath.isEmpty())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql administration command set in configuration file!";
 
         return DatabaseServerError(DatabaseServerError::StartError,
                                    i18n("No path to mysql administration "
+                                        "command set in configuration file."));
+    }
+
+    if (d->mysqlInitPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql initialization command set in configuration file!";
+
+        return DatabaseServerError(DatabaseServerError::StartError,
+                                   i18n("No path to mysql initialization "
                                         "command set in configuration file."));
     }
 
@@ -514,7 +525,7 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 
         QProcess initProcess;
         initProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
-        initProcess.start(d->mysqldInitPath, mysqlInitCmdArgs);
+        initProcess.start(d->mysqlInitPath, mysqlInitCmdArgs);
 
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database initializer:"
                                             << initProcess.program()
@@ -578,7 +589,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 
     d->databaseProcess = new QProcess();
     d->databaseProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    d->databaseProcess->start(d->mysqldServPath, mysqldServCmdArgs);
+    d->databaseProcess->start(d->mysqlServerPath, mysqldServCmdArgs);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database server:"
                                         << d->databaseProcess->program()
@@ -750,12 +761,9 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
     // Start the upgrade program
 
-    QUrl upgradeUrl = QUrl::fromLocalFile(d->mysqlAdminPath).adjusted(QUrl::RemoveFilename);
-    upgradeUrl.setPath(upgradeUrl.path() + QLatin1String("mysql_upgrade"));
-
     QProcess* const upgradeProcess = new QProcess();
     upgradeProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    upgradeProcess->start(upgradeUrl.toLocalFile(), upgradeCmdArgs);
+    upgradeProcess->start(d->mysqlUpgradePath, upgradeCmdArgs);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Upgrade database:"
                                         << upgradeProcess->program()

@@ -72,7 +72,7 @@ private Q_SLOTS:
     void slotRemoveImage();
     void slotScreenSelected(QAction*);
     void slotMenuSlideShowConfiguration();
-     void slotChangeDelayButtonPressed();
+    void slotChangeDelayButtonPressed();
 
 private:
 

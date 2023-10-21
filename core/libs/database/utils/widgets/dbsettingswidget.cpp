@@ -141,9 +141,10 @@ void DatabaseSettingsWidget::setupMainArea()
     d->dbBinariesWidget               = new DBinarySearch(binaryBox);
     d->dbBinariesWidget->header()->setSectionHidden(2, true);
 
-    d->dbBinariesWidget->addBinary(d->mysqlInitBin);
+    d->dbBinariesWidget->addBinary(d->mysqlServerBin);
     d->dbBinariesWidget->addBinary(d->mysqlAdminBin);
-    d->dbBinariesWidget->addBinary(d->mysqlServBin);
+    d->dbBinariesWidget->addBinary(d->mysqlUpgradeBin);
+    d->dbBinariesWidget->addBinary(d->mysqlInitBin);
 
 #ifdef Q_OS_LINUX
 
@@ -719,9 +720,10 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.internalServerPath());
         d->dbType->setCurrentIndex(d->dbTypeMap[MysqlInternal]);
+        d->mysqlUpgradeBin.setup(QFileInfo(d->orgPrms.internalServerMysqlUpgradeCmd).absoluteFilePath());
+        d->mysqlServerBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServerCmd).absoluteFilePath());
         d->mysqlAdminBin.setup(QFileInfo(d->orgPrms.internalServerMysqlAdminCmd).absoluteFilePath());
         d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absoluteFilePath());
-        d->mysqlServBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServCmd).absoluteFilePath());
         d->dbBinariesWidget->allBinariesFound();
         d->walModeCheck->setChecked(false);
         slotResetMysqlServerDBNames();
@@ -766,9 +768,10 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
         {
             prm = DbEngineParameters::defaultParameters(databaseBackend());
             prm.setInternalServerPath(databasePath());
-            prm.internalServerMysqlAdminCmd = d->mysqlAdminBin.path();
-            prm.internalServerMysqlInitCmd  = d->mysqlInitBin.path();
-            prm.internalServerMysqlServCmd  = d->mysqlServBin.path();
+            prm.internalServerMysqlUpgradeCmd = d->mysqlUpgradeBin.path();
+            prm.internalServerMysqlServerCmd  = d->mysqlServerBin.path();
+            prm.internalServerMysqlAdminCmd   = d->mysqlAdminBin.path();
+            prm.internalServerMysqlInitCmd    = d->mysqlInitBin.path();
             break;
         }
 

@@ -104,9 +104,9 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title:window", "Slideshow Settings"));
-    setModal(false);
+    setModal(true);
     setPlugin(settings->plugin);
+    setWindowTitle(i18nc("@title:window", "Slideshow Settings"));
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);

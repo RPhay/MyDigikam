@@ -12,8 +12,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MYSQL_SERV_BINARY_H
-#define DIGIKAM_MYSQL_SERV_BINARY_H
+#ifndef DIGIKAM_MYSQL_SERVER_BINARY_H
+#define DIGIKAM_MYSQL_SERVER_BINARY_H
 
 // Local includes
 
@@ -23,21 +23,21 @@
 namespace Digikam
 {
 
-class DIGIKAM_GUI_EXPORT MysqlServBinary : public DBinaryIface
+class DIGIKAM_GUI_EXPORT MysqlServerBinary : public DBinaryIface
 {
     Q_OBJECT
 
 public:
 
-    MysqlServBinary();
-    ~MysqlServBinary() override;
+    MysqlServerBinary();
+    ~MysqlServerBinary() override;
 
 private:
 
     // Disabled
-    explicit MysqlServBinary(QObject*) = delete;
+    explicit MysqlServerBinary(QObject*) = delete;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_MYSQL_SERV_BINARY_H
+#endif // DIGIKAM_MYSQL_SERVER_BINARY_H
