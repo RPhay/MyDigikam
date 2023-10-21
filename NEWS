@@ -149,7 +149,7 @@ BUGFIXES:
 135 ==> 407738 - MacOS clicking Import causes a need to force quit.
 136 ==> 412894 - Import window causes digiKam to hang in macOS.
 137 ==> 475329 - Initiating slide show goes to full screen black (or background color) and does not display images.
-138 ==> 
+138 ==> 433219 - Can't sign into my Microsoft account in order to access OneDrive.
 139 ==> 
 140 ==> 
 141 ==> 
