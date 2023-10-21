@@ -62,7 +62,7 @@ public:
     QString                internalDBName;
     QString                mysqlAdminPath;
     QString                mysqldInitPath;
-    QString                mysqldCmd;
+    QString                mysqldServPath;
     QString                dataDir;
     QString                miscDir;
     QString                fileDataDir;
@@ -98,7 +98,7 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
     d->internalDBName       = QLatin1String("digikam");
     d->mysqlAdminPath       = d->params.internalServerMysqlAdminCmd;
     d->mysqldInitPath       = d->params.internalServerMysqlInitCmd;
-    d->mysqldCmd            = d->params.internalServerMysqlServCmd;
+    d->mysqldServPath            = d->params.internalServerMysqlServCmd;
     d->dataDir              = dataDir;
     d->miscDir              = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
     d->fileDataDir          = QDir(defaultAkDir).absoluteFilePath(QLatin1String("file_db_data"));
@@ -294,7 +294,7 @@ DatabaseServerError DatabaseServer::checkDatabaseDirs() const
 {
     DatabaseServerError error;
 
-    if (d->mysqldCmd.isEmpty())
+    if (d->mysqldServPath.isEmpty())
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "No path to mysql server command set in configuration file!";
 
@@ -537,14 +537,14 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 
     // Synthesize the server command line arguments
 
-    QStringList mysqldCmdArgs;
-    mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->actualConfig))
-                  << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
+    QStringList mysqldServCmdArgs;
+    mysqldServCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->actualConfig))
+                      << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
 
 #ifdef Q_OS_MACOS
 
-    mysqldCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
-                                              .arg(macOSBundlePrefix()));
+    mysqldServCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--basedir=%1/lib/mariadb/")
+                                                  .arg(macOSBundlePrefix()));
 
 #endif
 
@@ -559,18 +559,18 @@ DatabaseServerError DatabaseServer::startMysqlServer()
         server->listen(QHostAddress::LocalHost, 0);
         d->serverPort = server->serverPort();
 
-        qCWarning(DIGIKAM_DATABASESERVER_LOG) << "Now use the free port:"  << d->serverPort;
+        qCWarning(DIGIKAM_DATABASESERVER_LOG) << "Now use the free port:" << d->serverPort;
     }
 
     server->close();
     delete server;
 
-    mysqldCmdArgs << QLatin1String("--skip-networking=0")
-                  << QString::fromLatin1("--port=%1").arg(d->serverPort);
+    mysqldServCmdArgs << QLatin1String("--skip-networking=0")
+                      << QString::fromLatin1("--port=%1").arg(d->serverPort);
 
 #else
 
-    mysqldCmdArgs << QString::fromLatin1("--socket=%1/mysql.socket").arg(d->miscDir);
+    mysqldServCmdArgs << QString::fromLatin1("--socket=%1/mysql.socket").arg(d->miscDir);
 
 #endif
 
@@ -578,7 +578,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
 
     d->databaseProcess = new QProcess();
     d->databaseProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    d->databaseProcess->start(d->mysqldCmd, mysqldCmdArgs);
+    d->databaseProcess->start(d->mysqldServPath, mysqldServCmdArgs);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database server:"
                                         << d->databaseProcess->program()
