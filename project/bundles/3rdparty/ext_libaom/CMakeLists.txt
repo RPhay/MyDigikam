@@ -22,7 +22,7 @@ set(AOM_Conf -DENABLE_EXAMPLES=OFF
 
 if(MINGW)
 
-    # See bug #471797
+    # See bugs #471797 and 471269
     set(AOM_Conf ${AOM_Conf}
                -DAOM_TARGET_CPU=x86_64
                -DAOM_TARGET_SYSTEM=Windows
