@@ -148,8 +148,13 @@ BUGFIXES:
 134 ==> 461871 - importing images does not work on images but on folders.
 135 ==> 407738 - MacOS clicking Import causes a need to force quit.
 136 ==> 412894 - Import window causes digiKam to hang in macOS.
-137 ==> 
+137 ==> 475329 - Initiating slide show goes to full screen black (or background color) and does not display images.
 138 ==> 
 139 ==> 
 140 ==> 
 141 ==> 
+142 ==> 
+143 ==> 
+144 ==> 
+145 ==> 
+146 ==> 
