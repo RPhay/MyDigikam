@@ -139,10 +139,22 @@ BUGFIXES:
 125 ==> 471797 - digiKam crashes on startup at 74% on Finding New Files.
 126 ==> 471269 - Application crashes when album contains avif file.
 127 ==> 379402 - Reuse filter settings after adding geolocation information [patch].
-128 ==> 
-129 ==> 
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
+128 ==> 475870 - If "Use the last saved..." function is active in this case second opening the Image quality sorter become inactive.
+129 ==> 475874 - Huge mysql.err files filled with [ERROR] Incorrect definition of table mysql.column_stats.
+130 ==> 431035 - MariaDB error upgrading from stable to beta.
+131 ==> 452268 - digiKam unable to open database.
+132 ==> 455031 - Database process exited unexpectedly during initial connection.
+133 ==> 451153 - Incomplete Mariadb PrivCheck delete causes digiKam fail to start.
+134 ==> 461871 - importing images does not work on images but on folders.
+135 ==> 407738 - MacOS clicking Import causes a need to force quit.
+136 ==> 412894 - Import window causes digiKam to hang in macOS.
+137 ==> 475329 - Initiating slide show goes to full screen black (or background color) and does not display images.
+138 ==> 433219 - Can't sign into my Microsoft account in order to access OneDrive.
+139 ==> 
+140 ==> 
+141 ==> 
+142 ==> 
+143 ==> 
+144 ==> 
+145 ==> 
+146 ==> 

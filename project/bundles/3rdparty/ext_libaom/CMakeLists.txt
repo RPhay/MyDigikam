@@ -22,12 +22,12 @@ set(AOM_Conf -DENABLE_EXAMPLES=OFF
 
 if(MINGW)
 
-    # See bug #471797
+    # See bugs #471797 and 471269
     set(AOM_Conf ${AOM_Conf}
                -DAOM_TARGET_CPU=x86_64
                -DAOM_TARGET_SYSTEM=Windows
-               -DENABLE_MMX=OFF
-               -DENABLE_SSE=OFF
+               -DENABLE_MMX=ON
+               -DENABLE_SSE=ON
                -DENABLE_SSE2=OFF
                -DENABLE_SSE3=OFF
                -DENABLE_SSE4_1=OFF

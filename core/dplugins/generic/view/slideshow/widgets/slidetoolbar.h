@@ -50,8 +50,6 @@ public:
     void setEnabledNext(bool val);
     void setEnabledPrev(bool val);
 
-    void closeConfigurationDialog();
-
 protected:
 
     void keyPressEvent(QKeyEvent* e) override;
@@ -74,8 +72,7 @@ private Q_SLOTS:
     void slotRemoveImage();
     void slotScreenSelected(QAction*);
     void slotMenuSlideShowConfiguration();
-    void slotConfigurationAccepted();
-    void slotChangeDelayButtonPressed();
+     void slotChangeDelayButtonPressed();
 
 private:
 

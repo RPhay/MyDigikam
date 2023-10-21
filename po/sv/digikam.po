@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2023-09-23 20:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -11073,104 +11073,104 @@ msgstr "Filen sparades inte"
 msgid "Cannot save \"%1\" file"
 msgstr "Kan inte spara filen \"%1\""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:267
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Geografisk lokaliseringseditor"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:300
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Visa positioner med bokmärken på kartan."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, kde-format
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Layout:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, kde-format
 msgctxt "@item"
 msgid "One map"
 msgstr "En karta"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "Två kartor - horisontellt"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Två kartor - vertikalt"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortering"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Visa äldsta först"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Visa nyaste först"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detaljinformation"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Korrelationsverktyg för GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Ångra/gör om"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Omvänd geografisk kodning"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:419
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Sök"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:420
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML-export"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:638
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Läser in metadata -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11178,25 +11178,25 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Det finns 1 ändrad bild."
 msgstr[1] "Det finns %1 ändrade bilder."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:843
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Osparade ändringar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:844
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Skulle du vilja spara ändringarna som gjorts?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:960
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Sparar ändringar -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1019
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11240,13 +11240,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Fel"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1020
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Misslyckades spara viss information:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1065
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -28249,31 +28249,31 @@ msgstr "Det här är originalbilden"
 msgid "Database type is not supported."
 msgstr "Databastyp stöds inte."
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "Ingen sökväg till mysql-serverkommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Ingen sökväg till mysql-initieringskommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Ingen sökväg till mysql-administrationskommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Kan inte skapa katalogen %1"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28284,57 +28284,55 @@ msgstr ""
 "gick det inte att läsa standardinställningsfilen</p><p>%1</p><p>eller gick "
 "det inte att skriva målfilen</p><p>%2</p>."
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Kan inte hitta MySQL-serverns standardinställning (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Kunde inte starta databasinitiering."
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "Kunde inte starta databasservern."
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ogiltigt databasobjekt under start av databasserver"
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databasprocessen avslutades oväntat vid initial anslutning."
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Kunde inte ansluta till databasen efter att ha försökt 60 sekunder."
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "Misslyckades skapa databas<p>Frågefel: %1</p><p>Databasfel: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
-"Databasen uppgraderas nu till den aktuella serverversionen. Det kan ta en "
-"stund."
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Pre-processing is in progress, please wait."
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "Förbehandling pågår, vänta."
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Kunde inte uppgradera databas."
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Körbar fil: %2</p><p>Argument: %3</p><p>Processfel: %4</p>"
@@ -63428,6 +63426,13 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Vill du återställa alla videoinställningar till förvalda värden?"
+
+#~ msgid ""
+#~ "The database is now upgraded to the current server version, this can take "
+#~ "a while."
+#~ msgstr ""
+#~ "Databasen uppgraderas nu till den aktuella serverversionen. Det kan ta en "
+#~ "stund."
 
 #, fuzzy
 #~| msgid "An error has occurred with the media player..."

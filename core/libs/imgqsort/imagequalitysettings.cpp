@@ -371,7 +371,6 @@ void ImageQualitySettings::readSettings()
     ImageQualityContainer imq;
     imq.readFromConfig();
     setImageQualityContainer(imq);
-    slotDisableOptionViews();
 }
 
 void ImageQualitySettings::readSettings(const KConfigGroup& group)
@@ -379,7 +378,6 @@ void ImageQualitySettings::readSettings(const KConfigGroup& group)
     ImageQualityContainer imq;
     imq.readFromConfig(group);
     setImageQualityContainer(imq);
-    slotDisableOptionViews();
 }
 
 void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer& imq)
@@ -414,6 +412,8 @@ void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer&
     d->setNoiseWeight->setEnabled(imq.detectNoise);
     d->lbl7->setEnabled(imq.detectCompression);
     d->setCompressionWeight->setEnabled(imq.detectCompression);
+
+    slotDisableOptionViews();
 }
 
 ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const

@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-20 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2023-09-03 12:57+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -12181,7 +12181,7 @@ msgstr "Ficheiro non gardado"
 msgid "Cannot save \"%1\" file"
 msgstr "Non é posíbel gardar o ficheiro «%1»"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:267
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:265
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, fuzzy, kde-format
 #| msgid "Geolocation Editor"
@@ -12189,112 +12189,112 @@ msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Editor de localización xeográfica"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:300
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:298
 #, fuzzy, kde-format
 #| msgid "Display bookmarked positions on the map."
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
 msgstr "Mostrar as posicións marcadas no mapa."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:316
 #, fuzzy, kde-format
 #| msgid "Layout:"
 msgctxt "@label"
 msgid "Layout:"
 msgstr "Disposición:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:318
 #, fuzzy, kde-format
 #| msgid "One map"
 msgctxt "@item"
 msgid "One map"
 msgstr "Un mapa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:321
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
 #, fuzzy, kde-format
 #| msgid "Two maps - horizontal"
 msgctxt "@item"
 msgid "Two maps - horizontal"
 msgstr "Dous mapas - horizontal"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:322
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
 #, fuzzy, kde-format
 #| msgid "Two maps - vertical"
 msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Dous mapas - vertical"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Ordenar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:371
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Mostrar primeiro a foto máis antiga"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:375
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Mostrar primeiro a foto máis recente"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalles"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "GPS Correlator"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Correlacionador de GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Desfacer/Refacer"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Codificación xeográfica inversa"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:419
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Buscar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:420
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 #| msgid "KML Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Exportación a KML"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:638
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 #| msgid "Loading metadata -"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Cargando os metadatos -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:836
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -12304,28 +12304,28 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Ten unha imaxe modificada."
 msgstr[1] "Ten %1 imaxes modificadas."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:843
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Cambios sen gardar"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:844
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Quere gardar os cambios que fixo?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:960
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgid "Saving changes -"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Gardando os cambios -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1019
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -12369,14 +12369,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Erro"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1020
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Non se puido gardar parte da información:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1065
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation"
 msgctxt "@title"
@@ -30853,7 +30853,7 @@ msgstr "Esta é a imaxe orixinal"
 msgid "Database type is not supported."
 msgstr "O tipo de base de datos non é compatíbel."
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
@@ -30861,7 +30861,7 @@ msgstr ""
 "No ficheiro de configuración non hai definida ningunha ruta á orde do "
 "servidor de MySQL!"
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql initialization command set in configuration file."
@@ -30869,7 +30869,7 @@ msgstr ""
 "No ficheiro de configuración non hai definida ningunha ruta á orde de "
 "preparación de MySQL!."
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
@@ -30877,14 +30877,14 @@ msgstr ""
 "No ficheiro de configuración non hai definida ningunha ruta á orde de "
 "preparación de MySQL!."
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Non é posíbel crear o directorio %1"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -30896,43 +30896,43 @@ msgstr ""
 "<p>non se puido ler ou o ficheiro de destino</p> <p>%2</p> <p>non se puido "
 "escribir.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Non é posíbel atopar a configuración predeterminada do servidor de MySQL "
 "(mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Non foi posíbel iniciar o preparador da base de datos."
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "Non foi posíbel iniciar o servidor da base de datos."
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "Obxecto de base de datos incorrecto durante o inicio do servidor da base de "
 "datos"
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "O proceso da base de datos saíu inesperadamente durante a conexión inicial."
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Non foi posíbel conectar á base de datos tras intentalo durante 60 segundos."
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -30940,20 +30940,19 @@ msgstr ""
 "Non foi posíbel crear a base de datos<p>Erro da solicitude: %1</p><p>Erro da "
 "base de datos: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgid "Device detection under progress, please wait..."
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "Detectando o dispositivo; agarde un anaco…"
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Non se puido iniciar o servidor da base de datos."
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Executábel: %2</p><p>Argumentos: %3</p><p>Erro do proceso: %4</p>"
