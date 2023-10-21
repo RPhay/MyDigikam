@@ -145,4 +145,11 @@ BUGFIXES:
 131 ==> 452268 - digiKam unable to open database.
 132 ==> 455031 - Database process exited unexpectedly during initial connection.
 133 ==> 451153 - Incomplete Mariadb PrivCheck delete causes digiKam fail to start.
-134 ==> 
+134 ==> 461871 - importing images does not work on images but on folders.
+135 ==> 407738 - MacOS clicking Import causes a need to force quit.
+136 ==> 412894 - Import window causes digiKam to hang in macOS.
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
