@@ -434,6 +434,7 @@ DatabaseFields::Set ItemFilterModel::suggestedWatchFlags() const
                   DatabaseFields::Width  | DatabaseFields::Height;
     watchFlags |= DatabaseFields::Comment;
     watchFlags |= DatabaseFields::ImageRelations;
+    watchFlags |= DatabaseFields::ItemPositionsAll;
 
     return watchFlags;
 }

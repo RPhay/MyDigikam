@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-16 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2023-09-15 21:40+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -11378,67 +11378,67 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Deux cartes - verticalement"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Tri"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, kde-format
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Afficher les plus anciennes d'abord"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, kde-format
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Afficher les plus récentes d'abord"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Détails"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, kde-format
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Corrélateur GPS"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Annuler / Refaire"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Géocodage inversé"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Rechercher"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, kde-format
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Exportation « KML »"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:631
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, kde-format
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Chargement des métadonnées - "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:822
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, kde-format
 msgctxt "@info"
 msgid "You have 1 modified image."
@@ -11446,26 +11446,26 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Vous avez une image modifiée."
 msgstr[1] "Vous avez %1 images modifiées."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Changements non enregistrés"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:830
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 "%1 Voulez-vous enregistrer les changements que vous leur avez apportés ?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:946
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, kde-format
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Enregistrement des changements - "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1005
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11509,13 +11509,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Erreur"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1006
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Impossible d'enregistrer certaines informations :"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1037
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -28851,35 +28851,35 @@ msgstr "Il s'agit de l'image originale"
 msgid "Database type is not supported."
 msgstr "Ce type de base de données n'est pas pris en charge."
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "Aucun emplacement vers la commande pour le serveur mysql n'est défini dans "
 "le fichier de configuration."
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Aucun emplacement vers la commande pour l'initialisation de « mysql » n'est "
 "défini dans le fichier de configuration."
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Aucun emplacement vers la commande d'administration « mysql » n'est défini "
 "dans le fichier de configuration."
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Impossible de créer le dossier %1."
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28891,42 +28891,42 @@ msgstr ""
 "pas lisible ou que le fichier cible</p> <p>%2</p> <p>n'a pas pu être écrit.</"
 "p>"
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Impossible de trouver la configuration par défaut du serveur MySQL (mysql-"
 "global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Impossible de démarrer l'outil d'initialisation de bases de données."
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "Impossible de démarrer le serveur de bases de données."
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Objet de base de données non valable lors du démarrage du serveur"
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "Le processus de base de données s'est terminé de façon inattendue durant la "
 "connexion initiale."
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Impossible de se connecter à la base de données après 60 secondes d'essais."
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28934,21 +28934,19 @@ msgstr ""
 "Impossible de créer la base de données<p>Erreur de requête : %1</p><p>Erreur "
 "de la base de données : %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
-"La base de données sera maintenant mise à jour avec la version actuelle du "
-"serveur. Ceci peut prendre un peu de temps."
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Pre-processing is in progress, please wait."
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "Le prétraitement est en cours. Veuillez patienter."
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Impossible de mettre à jour la base de données."
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -64786,6 +64784,13 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgid ""
+#~ "The database is now upgraded to the current server version, this can take "
+#~ "a while."
+#~ msgstr ""
+#~ "La base de données sera maintenant mise à jour avec la version actuelle "
+#~ "du serveur. Ceci peut prendre un peu de temps."
 
 #, fuzzy
 #~| msgid "An error has occurred with the media player..."

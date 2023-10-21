@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-16 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -11958,77 +11958,77 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr "Kaks kaarti teineteise peal"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Sortimine"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Vanimate näitamine esimesena"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Show youngest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Uusimate näitamine esimesena"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Üksikasjad"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "GPS Correlator"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "GPS-i korrelatsioon"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo/Redo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Tagasivõtmine/uuestitegemine"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, fuzzy, kde-format
 #| msgid "Reverse Geocoding"
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Pöördgeokodeerimine"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Otsing"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 #| msgid "KML Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "KML eksport"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:631
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 #| msgid "Loading metadata -"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Metaandmete laadimine -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:822
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, fuzzy, kde-format
 #| msgid "You have 1 modified image."
 #| msgid_plural "You have %1 modified images."
@@ -12038,28 +12038,28 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "Sul on 1 muudetud pilt."
 msgstr[1] "Sul on %1 muudetud pilti."
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Salvestamata muudatused"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:830
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, fuzzy, kde-format
 #| msgid "%1 Would you like to save the changes you made to them?"
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr "%1 Kas soovid salvestada neisse tehtud muudatused?"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:946
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgid "Saving changes -"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Muudatuste salvestamine -"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1005
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -12103,14 +12103,14 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Tõrge"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1006
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 #| msgid "Failed to save some information:"
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Osa teabe salvestamine nurjus:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1037
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation"
 msgctxt "@title"
@@ -30235,32 +30235,32 @@ msgstr "Originaalpilt"
 msgid "Database type is not supported."
 msgstr "Andmebaasi tüüp ei ole toetatud."
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
 msgstr "Seadistusfailis pole määratud mysql serveri käsu asukohta."
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "Seadistusfailis pole määratud mysql initsialiseerimiskäsu asukohta.."
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "Seadistusfailis pole määratud mysql initsialiseerimiskäsu asukohta.."
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Kataloogi %1 loomine nurjus"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -30271,58 +30271,57 @@ msgstr ""
 "vaikeseadistustefail</p><p>%1</p><p> ei ole loetav või ei ole võimalik "
 "kirjutada sihtfaili</p><p>%2</p>."
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "MySQL-serveri vaikeseadistust (mysql-global.conf) ei leitud."
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Andmebaasiserveri initsialiseerija käivitamine nurjus."
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "Andmebaasiserveri käivitamine nurjus."
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Vigane andmebaasiobjekt andmebaasi serveri käivitamisel"
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Andmebaasi protsess lõpetas ootamatult töö esialgse ühenduse käigus."
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Ühenduse loomine andmebaasiga nurjus ka 60 sekundit kestnud proovimise järel."
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Andmebaasi loomine nurjus<p>Päringu viga: %1</p><p>Andmebaasi viga: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+#| msgid "Device detection under progress, please wait..."
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "Seadet tuvastatakse, palun oota..."
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Andmebaasiserveri käivitamine nurjus."
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

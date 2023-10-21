@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-16 00:40+0000\n"
+"POT-Creation-Date: 2023-10-21 00:40+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -11146,75 +11146,75 @@ msgctxt "@item"
 msgid "Two maps - vertical"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:357
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
 #| msgid "Sorting"
 msgctxt "@title"
 msgid "Sorting"
 msgstr "Rikiavimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:364
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:369
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show oldest first"
 msgstr "Pirmiausia rodyti seniausius"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:368
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:373
 #, fuzzy, kde-format
 #| msgid "Show oldest first"
 msgctxt "@action"
 msgid "Show youngest first"
 msgstr "Pirmiausia rodyti seniausius"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:408
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
 #, fuzzy, kde-format
 #| msgid "Detail:"
 msgctxt "@item: map tool"
 msgid "Details"
 msgstr "Detalės:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:409
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:414
 #, fuzzy, kde-format
 #| msgid "Correlation:"
 msgctxt "@item: map tool"
 msgid "GPS Correlator"
 msgstr "Koreliacija:"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:410
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:415
 #, fuzzy, kde-format
 #| msgid "Undo"
 msgctxt "@item: map tool"
 msgid "Undo/Redo"
 msgstr "Atšaukti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:411
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:416
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
 msgstr "Atbulinis rikiavimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:412
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:417
 #, fuzzy, kde-format
 msgctxt "@item: map tool"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:413
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:418
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@item: map tool"
 msgid "KML Export"
 msgstr "Eksportuoti"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:631
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:636
 #, fuzzy, kde-format
 #| msgid "Print metadata"
 msgctxt "@info"
 msgid "Loading metadata -"
 msgstr "Spausdinti metaduomenis"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:822
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:827
 #, fuzzy, kde-format
 #| msgid "You have edited the image title. "
 #| msgid_plural "You have edited the titles of %1 images. "
@@ -11226,7 +11226,7 @@ msgstr[1] "Pakeitėte %1 paveikslėlių antraštes. "
 msgstr[2] "Pakeitėte %1 paveikslėlių antraštes. "
 msgstr[3] "Pakeitėte %1 paveikslėlio antraštę. "
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:829
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:834
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save Changes"
@@ -11234,20 +11234,20 @@ msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Išsaugoti pakeitimus"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:830
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:835
 #, kde-format
 msgctxt "@info"
 msgid "%1 Would you like to save the changes you made to them?"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:946
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:951
 #, fuzzy, kde-format
 #| msgid "Saving Images"
 msgctxt "@info"
 msgid "Saving changes -"
 msgstr "Paveikslėlių saugojimas"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1005
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1010
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
@@ -11292,13 +11292,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Klaida"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1006
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1011
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
 msgstr "Failo/paveikslėlio informacija"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1037
+#: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1049
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
@@ -28693,32 +28693,32 @@ msgstr "Tai originalus paveikslėlis"
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:287
+#: core/libs/database/server/databaseserver.cpp:302
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "Duomenų bazės nustatymuose nenurodytas kelias iki mysqld."
 
-#: core/libs/database/server/databaseserver.cpp:296
+#: core/libs/database/server/databaseserver.cpp:311
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "Duomenų bazės nustatymuose nenurodytas kelias iki mysqld."
 
-#: core/libs/database/server/databaseserver.cpp:305
+#: core/libs/database/server/databaseserver.cpp:320
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "Duomenų bazės nustatymuose nenurodytas kelias iki mysqld."
 
-#: core/libs/database/server/databaseserver.cpp:315
-#: core/libs/database/server/databaseserver.cpp:325
-#: core/libs/database/server/databaseserver.cpp:335
+#: core/libs/database/server/databaseserver.cpp:330
+#: core/libs/database/server/databaseserver.cpp:340
+#: core/libs/database/server/databaseserver.cpp:350
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "Nepavyko sukurti aplanko,"
 
-#: core/libs/database/server/databaseserver.cpp:415
+#: core/libs/database/server/databaseserver.cpp:430
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -28735,29 +28735,29 @@ msgstr ""
 "(mysql-global.conf),\n"
 "arba nepavyko įrašyti failo (mysql.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:437
+#: core/libs/database/server/databaseserver.cpp:452
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Nerasta MySQL numatytoji konfigūracija (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:525
+#: core/libs/database/server/databaseserver.cpp:527
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:588
+#: core/libs/database/server/databaseserver.cpp:590
 #, kde-format
 msgid "Could not start database server."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:630
+#: core/libs/database/server/databaseserver.cpp:632
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:661
+#: core/libs/database/server/databaseserver.cpp:663
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28767,12 +28767,12 @@ msgstr ""
 "Duomenų bazės procesas netikėtai nutrūko pradinio prisijungimo metu."
 "<p>Paleidžiamas failas: %1</p><p>Proceso klaida: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:667
+#: core/libs/database/server/databaseserver.cpp:669
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:698
+#: core/libs/database/server/databaseserver.cpp:702
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28780,20 +28780,18 @@ msgstr ""
 "Nepavyko sukurti duomenų bazės<p>Užklausos klaida: %1</p><p>Duombazės "
 "klaida: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:724
-#, kde-format
-msgid ""
-"The database is now upgraded to the current server version, this can take a "
-"while."
-msgstr ""
+#: core/libs/database/server/databaseserver.cpp:726
+#, fuzzy, kde-format
+msgid "A MySQL database upgrade is in progress, please wait..."
+msgstr "Ieškoma naujų failų. Prašome palaukti..."
 
-#: core/libs/database/server/databaseserver.cpp:769
+#: core/libs/database/server/databaseserver.cpp:772
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Nepavyko paleisti duomenų bazės."
 
-#: core/libs/database/server/databaseserver.cpp:813
+#: core/libs/database/server/databaseserver.cpp:811
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."

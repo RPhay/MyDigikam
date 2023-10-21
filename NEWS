@@ -3,8 +3,8 @@ digiKam 8.2.0 - Release date: 2023-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Libraw : update to snapshot 30/07/2023
-Bundles: MacOS PKG is now based on Qt framework 5.15.10 and KDE frameworks 5.110.
+Libraw : Update to snapshot 30/07/2023
+Bundles: MacOS PKG is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Linux AppImage is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Windows installer is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Exiftool updated to last 12.67.
@@ -119,30 +119,37 @@ BUGFIXES:
 105 ==> 466837 - Detailed progress indicator twiddles open for every long running action.
 106 ==> 261634 - Use Qt6 to compile AppImage bundle.
 107 ==> 475611 - Correcting the English used in the releasenotes.html file.
-108 ==> 
-109 ==> 
-110 ==> 
-111 ==> 
-112 ==> 
-113 ==> 
-114 ==> 
-115 ==> 
-116 ==> 
-117 ==> 
-118 ==> 
-119 ==> 
-120 ==> 
-121 ==> 
-122 ==> 
-123 ==> 
-124 ==> 
-125 ==> 
-126 ==> 
-127 ==> 
-128 ==> 
-129 ==> 
-130 ==> 
-131 ==> 
-132 ==> 
-133 ==> 
-134 ==> 
+108 ==> 473356 - Importing HEIF files is extremely slow and processor intensive.
+109 ==> 473073 - Unable to import albums from google photos (Too Many Requests).
+110 ==> 472567 - Import from Gootle Photos doesn't work.
+111 ==> 472014 - When opening preview mode, album thumbnail scroller frame scrolls to the wrong position.
+112 ==> 471968 - Preview mode shows wrong location at top-screen image scroll.
+113 ==> 471231 - Segmentation fault when playing video.
+114 ==> 470551 - digiKam crashes when playing video in preview after the fourth or fifth time.
+115 ==> 470510 - When editing metadatas in Preview mode, the filmstrip sometimes jumps back.
+116 ==> 465758 - Stopping import on error.
+117 ==> 464319 - digiKam crashes when showing a video in the preview.
+118 ==> 464187 - digiKam crashes while examining videos and gifs.
+119 ==> 463851 - After create a Videoslidshow videos as mp4 will not be integrated.
+120 ==> 441539 - Cannot add collection located on HDD.
+121 ==> 441019 - Location of Collections 'Confused' by Same-Model External Drives.
+122 ==> 434438 - Writing metadata to an XMP sidecar removes previously-entered metadata already in the XMP file.
+123 ==> 429963 - digiKam hangs when adding people or cleaning the DB.
+124 ==> 475807 - Tags not being displayed under Icons in some Albums.
+125 ==> 471797 - digiKam crashes on startup at 74% on Finding New Files.
+126 ==> 471269 - Application crashes when album contains avif file.
+127 ==> 379402 - Reuse filter settings after adding geolocation information [patch].
+128 ==> 475870 - If "Use the last saved..." function is active in this case second opening the Image quality sorter become inactive.
+129 ==> 475874 - Huge mysql.err files filled with [ERROR] Incorrect definition of table mysql.column_stats.
+130 ==> 431035 - MariaDB error upgrading from stable to beta.
+131 ==> 452268 - digiKam unable to open database.
+132 ==> 455031 - Database process exited unexpectedly during initial connection.
+133 ==> 451153 - Incomplete Mariadb PrivCheck delete causes digiKam fail to start.
+134 ==> 461871 - importing images does not work on images but on folders.
+135 ==> 407738 - MacOS clicking Import causes a need to force quit.
+136 ==> 412894 - Import window causes digiKam to hang in macOS.
+137 ==> 
+138 ==> 
+139 ==> 
+140 ==> 
+141 ==> 
