@@ -412,6 +412,8 @@ for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+    else
+        echo -e "   ==> ${FILE} DO OT EXISTS!!!"
     fi
 done
 
@@ -456,6 +458,8 @@ for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+    else
+        echo -e "   ==> ${FILE} DO NOT EXISTS!!!"
     fi
 done
 
