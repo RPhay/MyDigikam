@@ -476,8 +476,14 @@ void DatabaseServer::copyAndRemoveMysqlLogs() const
 
     if (errorLog.exists())
     {
-        QFile logFile(errorLog.absoluteFilePath());
         QFile oldLogFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("mysql.err.old")));
+        QFile logFile(errorLog.absoluteFilePath());
+        QFileInfo oldLogInfo(oldLogFile);
+
+        if (oldLogInfo.exists() && (oldLogInfo.size() > (100 * 1024 * 1024)))
+        {
+            oldLogFile.remove();
+        }
 
         if (logFile.open(QFile::ReadOnly) && oldLogFile.open(QFile::Append))
         {
