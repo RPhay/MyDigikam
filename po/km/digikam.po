@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 00:40+0000\n"
+"POT-Creation-Date: 2023-10-22 00:40+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -21942,20 +21942,20 @@ msgid "Presentation..."
 msgstr "ការ​បង្វិល​សេរី"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "មិន​អើពើ​ស្លាក​នេះ"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:435
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -21963,7 +21963,7 @@ msgid "Delete Image"
 msgstr "លុប​ស្លាក"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:436
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "តើ​អ្នក​ប្រាកដ​ជា​ចង់​លុប​ការ​ស្វែងរក \"%1\" ដែល​បាន​ជ្រើស​ឬ ?"
@@ -22052,7 +22052,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:696
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, fuzzy, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22060,7 +22060,7 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "ការ​រៀបចំ​ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #, fuzzy, kde-format
 #| msgid "Mask Settings"
 msgctxt "@title:window"
@@ -22379,12 +22379,12 @@ msgid ""
 "%1"
 msgstr "មាន​កំហុស​ដោយ​សារ​ឧបករណ៍​ចាក់​មេឌៀ...."
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:132
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:128
 #, fuzzy, kde-format
 msgid "Switch Screen"
 msgstr "ប្ដូរ​ប្រេកង់ ៖"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:145
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:141
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -26096,7 +26096,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr ""
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:204
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
 #, kde-format
 msgid "Password:"
@@ -26947,21 +26947,21 @@ msgid ""
 "in the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:117
+#: core/libs/album/manager/albummanager_database.cpp:120
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:125
+#: core/libs/album/manager/albummanager_database.cpp:128
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:135
+#: core/libs/album/manager/albummanager_database.cpp:138
 #, kde-format
 msgid ""
 "\n"
@@ -26970,7 +26970,7 @@ msgid ""
 "delete the file %1"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:148
+#: core/libs/album/manager/albummanager_database.cpp:151
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>An error occurred during the internal server start.</b></"
@@ -26985,7 +26985,7 @@ msgstr ""
 "<p><b>មាន​កំហុស អំឡុង​ពេល​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​អ៊ីនធឺណិត ។</b></p>សេចក្ដី​លម្អិត ៖\n"
 " %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:164
+#: core/libs/album/manager/albummanager_database.cpp:167
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -27002,14 +27002,14 @@ msgstr ""
 "ទិន្នន័យ​បាន​ឡើយ ។ digiKam នឹង​ចាប់ផ្ដើម​​ឥឡូវ​នេះ ប៉ុន្តែ​វា​នឹង <b>មិន</b> ដំណើរការ​ឡើយ ។ សូម​ពិនិត្យ​"
 "មើល​ការ​កំណត់​មូលដ្ឋាន​ទិន្នន័យ​នៅ​ក្នុង <b>ម៉ឺនុយ​ការ​កំណត់​រចនាសម្ព័ន្ធ</b> ។</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:173
+#: core/libs/album/manager/albummanager_database.cpp:176
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:213
+#: core/libs/album/manager/albummanager_database.cpp:216
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -27026,7 +27026,7 @@ msgstr ""
 "ទិន្នន័យ​បាន​ឡើយ ។ digiKam នឹង​ចាប់ផ្ដើម​​ឥឡូវ​នេះ ប៉ុន្តែ​វា​នឹង <b>មិន</b> ដំណើរការ​ឡើយ ។ សូម​ពិនិត្យ​"
 "មើល​ការ​កំណត់​មូលដ្ឋាន​ទិន្នន័យ​នៅ​ក្នុង <b>ម៉ឺនុយ​ការ​កំណត់​រចនាសម្ព័ន្ធ</b> ។</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:222
+#: core/libs/album/manager/albummanager_database.cpp:225
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27044,7 +27044,7 @@ msgstr ""
 "ប៉ុន្តែ​នឹង <b>មិន​</b> ដំណើរការ​ឡើយ ។ សូម​ពិនិត្យមើល​ការ​កំណត់​មូលដ្ឋាន​ទិន្នន័យ​របស់​អ្នក​នៅ​ក្នុង <b>ម៉ឺនុយ​ការ​"
 "កំណត់​រចនា​សម្ព័ន្ធ</b> ។</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:255
+#: core/libs/album/manager/albummanager_database.cpp:258
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -27073,7 +27073,7 @@ msgstr ""
 "ទាំង​នេះ​អាច​នឹង​មិន​ត្រូវ​បាន​រក​ឃើញ​នៅ​ក្នុង​សម្រាំង​ទៀត​ទេ ។ ប្រសិនបើ​អ្នក​ប្រាកដ​ថា អ្នក​ចង់​បន្ត ចុច 'បាទ/"
 "ចាស់' ។ បើ​មិន​ដូច្នេះ​ទេ ចុច 'ទេ' ហើយ​កែ​ការកំណត់​ទីតាំង​​របស់​អ្នក មុន​ពេល​ចាប់ផ្ដើម digiKam ឡើង​វិញ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:298
+#: core/libs/album/manager/albummanager_database.cpp:301
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -27087,7 +27087,7 @@ msgstr ""
 "រក​មិន​ឃើញ​<p>សម្រាំង </p><p><b>%1</b><br/>(%2)</p><p> បច្ចុប្បន្ន​នៅ​លើ​ប្រព័ន្ធ​របស់​អ្នក​ឡើយ ។"
 "<br/> សូម​ជ្រើស​ជម្រើស​ត្រឹមត្រូវ​បំផុត ដើម្បី​ដោះស្រាយ​ស្ថានភាព​នេះ ៖</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:317
+#: core/libs/album/manager/albummanager_database.cpp:320
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27098,7 +27098,7 @@ msgstr ""
 "វិញ ការ​ផ្លាស់ប្ដូរ​​ប្លង់​ភាគ​ថាស ឬ​ការ​កំណត់​ប្រព័ន្ធ​ឯកសារ ។<br/>ឥឡូវ​នេះ​សម្រាំង​ត្រូវ​បាន​ដាក់​​នៅ​ទីកន្លែង​"
 "នេះ ៖</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:336
+#: core/libs/album/manager/albummanager_database.cpp:339
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27106,28 +27106,28 @@ msgid ""
 msgstr ""
 "សម្រាំង​ត្រូវ​បាន​ដាក់​នៅ​លើ​ឧបករណ៍​ផ្ទុក ដែល​​មិន​ត្រូវ​បាន​​ភ្ជាប់​ជានិច្ច ។ សម្គាល់​ការ​សម្រាំង​ជា​សម្រាំងចល័ត ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:343
+#: core/libs/album/manager/albummanager_database.cpp:346
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "គ្មាន​សកម្មភាព​ឡើង​ឥឡូវ​នេះ ។ ខ្ញុំ​ចង់​ដោះស្រាយ​បញ្ហា​ក្រោយពេល​ប្រើ​ប្រអប់​រៀបចំ"
 
-#: core/libs/album/manager/albummanager_database.cpp:357
+#: core/libs/album/manager/albummanager_database.cpp:360
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "រក​មិន​ឃើញ​សម្រាំង​ឡើយ"
 
-#: core/libs/album/manager/albummanager_database.cpp:459
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/album/manager/albummanager_database.cpp:460
+#: core/libs/album/manager/albummanager_database.cpp:463
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -27141,36 +27141,36 @@ msgstr ""
 "ឡើង - ក្នុង​ការ​អះអាង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដូច​ដែល​បាន​បង្កើត​សម្រាប់​រូបភាព​ដែល​បាន​ដាក់​នៅ​ក្នុង​ថត "
 "\"%2\" ឬ​មិន​អើពើ​ឯកសារ​ចាស់ ហើយ​ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:470
-#: core/libs/album/manager/albummanager_database.cpp:538
-#: core/libs/album/manager/albummanager_database.cpp:560
+#: core/libs/album/manager/albummanager_database.cpp:473
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "ធ្វើ​ឲ្យ​មូលដ្ឋាន​ទិន្នន័យ​ប្រសើរ​ឡើង"
 
-#: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
-#: core/libs/album/manager/albummanager_database.cpp:610
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:613
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "បង្កើត​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី"
 
-#: core/libs/album/manager/albummanager_database.cpp:529
-#: core/libs/album/manager/albummanager_database.cpp:552
-#: core/libs/album/manager/albummanager_database.cpp:602
-#: core/libs/album/manager/albummanager_database.cpp:634
+#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី"
 
-#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:533
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27184,16 +27184,16 @@ msgstr ""
 "ចាស់​ប្រសើរ​ឡើង ចាប់ផ្ដើម​ជាមួយ​​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី ឬ​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន​ទៅ​កាន់​ទីតាំង​នេះ ហើយ​"
 "បន្ត​ក្នុង​ការ​ប្រើ​វាឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:612
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន"
 
-#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:556
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27205,7 +27205,7 @@ msgstr ""
 "ចាស់​របស់ digiKam ដែល​ត្រូវ​បាន​រក​ឃើញ​នៅ​ក្នុង​ថត ។</p> <p>តើ​អ្នក​ចង់​ធ្វើ​ឲ្យ​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់​"
 "ប្រសើរ​ ឬ​​ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ឬ ?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:588
+#: core/libs/album/manager/albummanager_database.cpp:591
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27214,7 +27214,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី (\"%2\") ។ "
 "សាកល្បង​​ធ្វើ​ឲ្យ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់​ប្រើសើរ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:606
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27224,7 +27224,7 @@ msgstr ""
 "<p>អ្នក​បាន​ជ្រើស​ថត \"%1\" ជា​ទី​កន្លែង​ថ្មី​ ដើម្បី​ទុក​មូលដ្ឋាន​ទិន្នន័យ ។</p><p>តើ​អ្នក​ចង់​ចម្លង​​មូលដ្ឋាន​"
 "ទិន្នន័យ​បច្ចុប្បន្ន​ទៅកាន់​ទីតាំង​ថ្មី ហើយ​បន្ត​ប្រើ​វា ឬ​ចាប់ផ្ដើម​​មូលដ្ឋាន​ន័យ​ថ្មី​ឬ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:635
+#: core/libs/album/manager/albummanager_database.cpp:638
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27236,14 +27236,14 @@ msgstr ""
 "រួចហើយ​នៅ​​ក្នុង​ទីតាំង​នេះ ។</p> <p>តើ​អ្នក​ចង់​ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់​នេះ​ជា​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ ឬ​យក​វា​"
 "ចេញ ​ហើយ​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​បច្ចុប្បន្ន​ទៅ​ទីកន្លែង​នេះ ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់"
 
-#: core/libs/album/manager/albummanager_database.cpp:700
+#: core/libs/album/manager/albummanager_database.cpp:703
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27252,7 +27252,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បម្រុងទុក​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​មាន​ស្រាប់ (\"%1\") ។ បដិសេធ​ក្នុង​ការ​ជំនួស​ឯកសារ​"
 "ដោយ​មិន​ចាំបាច់​បម្រុងទុក ដោយ​ប្រើ​ឯកសារ​ដែល​មាន​ស្រាប់ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:718
+#: core/libs/album/manager/albummanager_database.cpp:721
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27261,7 +27261,7 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​ទីតាំង​ថ្មី​របស់​វា (\"%2\") ។ "
 "ចាប់ផ្ដើម​ដោយ​មាន​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ។"
 
-#: core/libs/album/manager/albummanager_database.cpp:751
+#: core/libs/album/manager/albummanager_database.cpp:754
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -28734,37 +28734,43 @@ msgstr ""
 msgid "This is the original image"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:304
+#, fuzzy, kde-format
+#| msgid "No path to mysqld set in server configuration."
+msgid "No path to mysql upgrade command set in configuration file."
+msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
+
+#: core/libs/database/server/databaseserver.cpp:313
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:311
-#, fuzzy, kde-format
-#| msgid "No path to mysqld set in server configuration."
-msgid "No path to mysql initialization command set in configuration file."
-msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
-
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:322
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:331
+#, fuzzy, kde-format
+#| msgid "No path to mysqld set in server configuration."
+msgid "No path to mysql initialization command set in configuration file."
+msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
+
+#: core/libs/database/server/databaseserver.cpp:341
+#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:361
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/libs/database/server/databaseserver.cpp:430
+#: core/libs/database/server/databaseserver.cpp:441
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -28780,29 +28786,29 @@ msgstr ""
 "មាន​ន័យ​ថា​ឯកសារ​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម (mysql-global.conf) មិន​អាច​អាន​បាន​ទេ\n"
 "ឬ​ឯកសារ​គោលដៅ (mysql.conf) មិន​អាច​សរសេរ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:452
+#: core/libs/database/server/databaseserver.cpp:463
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "កុំ​រក​​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម​ម៉ាស៊ីន​បម្រើ MySQL  (mysql-global.conf) ។"
 
-#: core/libs/database/server/databaseserver.cpp:527
+#: core/libs/database/server/databaseserver.cpp:538
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:590
+#: core/libs/database/server/databaseserver.cpp:601
 #, kde-format
 msgid "Could not start database server."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:632
+#: core/libs/database/server/databaseserver.cpp:643
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:663
+#: core/libs/database/server/databaseserver.cpp:674
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28812,30 +28818,30 @@ msgstr ""
 "ដំណើរការ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ចេញ​ដោយ​មិន​រំពឹង អំឡុង​ពេល​ការ​តភ្ជាប់​ដំបូង ។<p>ឯកសារ​ប្រតិបត្តិ ៖ %1</"
 "p>”<p>កំហុស​ក្នុង​ការ​ដំណើរការ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:669
+#: core/libs/database/server/databaseserver.cpp:680
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:702
+#: core/libs/database/server/databaseserver.cpp:713
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​មូលដ្ឋាន​ទិន្នន័យ<p>កំហុស​សំណួរ ៖ %1</p><p>កំហុស​មូលដ្ឋាន​ទិន្នន័យ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:726
+#: core/libs/database/server/databaseserver.cpp:737
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/server/databaseserver.cpp:772
+#: core/libs/database/server/databaseserver.cpp:779
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:811
+#: core/libs/database/server/databaseserver.cpp:818
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -29204,18 +29210,18 @@ msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "ទិដ្ឋភាព​ធំ​ទូលាយ​"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:180
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Host Name:"
 msgstr "ឈ្មោះ ៖"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
 msgid "Set the host computer name"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -29223,36 +29229,36 @@ msgid ""
 "name (or IP address) in case of remote computer."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:188
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Connect options:</a>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, fuzzy, kde-format
 msgid "Set the database connection options"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
 "For advanced users only."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
 #, kde-format
 msgid "User:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "Set the database account name"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -29261,7 +29267,7 @@ msgid ""
 "MySQL server when database have been created."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -29269,61 +29275,61 @@ msgid ""
 "You can left this field empty to use an account set without password."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:212
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
 #, kde-format
 msgid "Host Port:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
 "Usually, MySQL server use port number 3306 by default"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
 #, fuzzy, kde-format
 msgid "Check Connection"
 msgstr "ជម្រើស Golden spiral"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
 "suitable."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:227
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
 #, kde-format
 msgid "Core Db Name:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "Set the core database name"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
 "albums, items, and searches metadata."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "Set the thumbnails database name or folder"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បន្ថែម​ស្លាក​ទៅកាន់​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -29333,18 +29339,18 @@ msgid ""
 "Choose a local folder to use a SQLite database."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
 #, kde-format
 msgid "Face Db Name:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "Set the face database name"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -29353,47 +29359,47 @@ msgid ""
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:254
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "Set the similarity database name"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
 #, fuzzy, kde-format
 msgid "Default Settings"
 msgstr "ការ​កំណត់​របាំង"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
 #, fuzzy, kde-format
 #| msgid "Capture Device Settings"
 msgid "Remote Server Settings"
 msgstr "កំណត់​ឧបករណ៍​ចំណង​ជើង​"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:285
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, fuzzy, kde-format
 #| msgid "Database Statistics"
 msgid "Database Server Instructions"
 msgstr "ស្ថិតិ​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -29403,7 +29409,7 @@ msgid ""
 "correct one).</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -29417,18 +29423,18 @@ msgid ""
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
 msgid "Requirements"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
 #, fuzzy, kde-format
 #| msgid "Database Statistics"
 msgid "Database Server Technical Details"
 msgstr "ស្ថិតិ​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29449,141 +29455,141 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "type is a document"
 #| msgid "Document"
 msgid "Documentation"
 msgstr "ឯកសារ​"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgid "Thumbs Db Folder:"
 msgstr "រូបភាព​តូច"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "ប្ដូរ​កន្លែង​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #, kde-format
 msgid "Database connection test successful."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
 #, kde-format
 msgid "The server hostname is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server user name is empty"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:630
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "The core database name is empty"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, fuzzy, kde-format
 #| msgid "Failed to add tag to database"
 msgid "The thumbnails database name is empty"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បន្ថែម​ស្លាក​ទៅកាន់​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "The face database name is empty"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
 #, fuzzy, kde-format
 #| msgid "Opened new database file"
 msgid "The similarity database name is empty"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "ប្ដូរ​កន្លែង​មូលដ្ឋាន​ទិន្នន័យ..."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:850
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
 "check your configuration."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
 "database file."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
 "b></p>Would you like digiKam to create it for you?"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "ថត​មូលដ្ឋាន​ទិន្នន័យ"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
 "Please select a different location.</p><p><b>%1</b></p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "បាន​ចម្លង​មូលដ្ឋាន​ទិន្នន័យ​ដោយ​ជោគជ័យ ។"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:926
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -29718,11 +29724,17 @@ msgid ""
 "database."
 msgstr ""
 
-#: core/libs/database/utils/widgets/mysqlservbinary.cpp:34
+#: core/libs/database/utils/widgets/mysqlserverbinary.cpp:34
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
 msgstr ""
+
+#: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
+#, fuzzy, kde-format
+msgid ""
+"This binary file is used to upgrade the database to current server version."
+msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format

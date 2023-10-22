@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 00:40+0000\n"
-"PO-Revision-Date: 2023-09-23 20:14+0200\n"
+"POT-Creation-Date: 2023-10-22 00:40+0000\n"
+"PO-Revision-Date: 2023-10-21 07:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -21531,27 +21531,27 @@ msgid "Presentation..."
 msgstr "Presentation..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Ange fördröjning för bildspel"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr "Fördröjning:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:435
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Ta bort bild"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:436
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Vill du flytta bilden till papperskorgen?"
@@ -21634,7 +21634,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Bildspel"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:696
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21642,7 +21642,7 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Visar ett bildspel"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
@@ -21990,12 +21990,12 @@ msgstr ""
 "Ett fel uppstod när objektet skulle visas\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:132
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:128
 #, kde-format
 msgid "Switch Screen"
 msgstr "Byt skärm"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:145
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:141
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -25635,7 +25635,7 @@ msgstr ""
 "Lösenordstips att visa för användare när lösenord efterfrågas (valfritt)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:204
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
 #, kde-format
 msgid "Password:"
@@ -26513,7 +26513,7 @@ msgid ""
 msgstr ""
 "MySQL databaskatalogen hittades inte. Ställ in rätt plats i nästa dialogruta."
 
-#: core/libs/album/manager/albummanager_database.cpp:117
+#: core/libs/album/manager/albummanager_database.cpp:120
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
@@ -26522,7 +26522,7 @@ msgstr ""
 "De binära MySQL-verktygen hittades inte. Ställ in rätt plats i nästa "
 "dialogruta."
 
-#: core/libs/album/manager/albummanager_database.cpp:125
+#: core/libs/album/manager/albummanager_database.cpp:128
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
@@ -26530,7 +26530,7 @@ msgid ""
 msgstr ""
 "SQLite-kärndatabasen hittades inte. Ställ in rätt plats i nästa dialogruta."
 
-#: core/libs/album/manager/albummanager_database.cpp:135
+#: core/libs/album/manager/albummanager_database.cpp:138
 #, kde-format
 msgid ""
 "\n"
@@ -26543,7 +26543,7 @@ msgstr ""
 "Om du vill börja med en ny inställning och med guiden för användning första "
 "gången,ta bort filen %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:148
+#: core/libs/album/manager/albummanager_database.cpp:151
 #, kde-format
 msgid ""
 "An error occurred during the internal server start.\n"
@@ -26556,7 +26556,7 @@ msgstr ""
 "Detaljinformation:\n"
 " %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:164
+#: core/libs/album/manager/albummanager_database.cpp:167
 #, kde-format
 msgid ""
 "Failed to open the database.\n"
@@ -26569,14 +26569,14 @@ msgstr ""
 "Du kan inte använda Digikam utan en fungerande databas.\n"
 "Kontrollera databasinställningarna i nästa dialogruta."
 
-#: core/libs/album/manager/albummanager_database.cpp:173
+#: core/libs/album/manager/albummanager_database.cpp:176
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr "<p>Digikam försöker nu starta, men kommer <b>inte</b> att fungera.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:213
+#: core/libs/album/manager/albummanager_database.cpp:216
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26588,7 +26588,7 @@ msgstr ""
 "fungerande databas. Digikam försöker nu starta, men kommer <b>inte</b> att "
 "fungera. Kontrollera databasinställningarna i <b>inställningsmenyn</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:222
+#: core/libs/album/manager/albummanager_database.cpp:225
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26601,7 +26601,7 @@ msgstr ""
 "försöker nu starta, men kommer <b>inte</b> att fungera. Kontrollera "
 "databasinställningarna i <b>inställningsmenyn</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:255
+#: core/libs/album/manager/albummanager_database.cpp:258
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26625,7 +26625,7 @@ msgstr ""
 "Klicka annars på 'Nej' och rätta databasens teckenuppsättning innan du "
 "startar om Digikam."
 
-#: core/libs/album/manager/albummanager_database.cpp:298
+#: core/libs/album/manager/albummanager_database.cpp:301
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26636,7 +26636,7 @@ msgstr ""
 "på systemet.<br/> Välj det lämpligaste alternativet för att hantera "
 "situationen:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:317
+#: core/libs/album/manager/albummanager_database.cpp:320
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26648,7 +26648,7 @@ msgstr ""
 "partitionens layout eller filsystemets inställningar.<br/>Samlingen finns nu "
 "på följande plats:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:336
+#: core/libs/album/manager/albummanager_database.cpp:339
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26657,7 +26657,7 @@ msgstr ""
 "Samlingen finns på en lagringsenhet som inte alltid är ansluten. Markera "
 "samlingen som en flyttbar samling."
 
-#: core/libs/album/manager/albummanager_database.cpp:343
+#: core/libs/album/manager/albummanager_database.cpp:346
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26666,19 +26666,19 @@ msgstr ""
 "Gör ingenting nu. Jag skulle vilja lösa problemet senare med "
 "inställningsdialogrutan."
 
-#: core/libs/album/manager/albummanager_database.cpp:357
+#: core/libs/album/manager/albummanager_database.cpp:360
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Samling hittades inte"
 
-#: core/libs/album/manager/albummanager_database.cpp:459
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Databaskatalog"
 
-#: core/libs/album/manager/albummanager_database.cpp:460
+#: core/libs/album/manager/albummanager_database.cpp:463
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26693,33 +26693,33 @@ msgstr ""
 "databasfilen verkligen skapades för bilderna i katalogen \"%2\", eller "
 "ignorera den gamla filen och börja med en ny databas?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:470
-#: core/libs/album/manager/albummanager_database.cpp:538
-#: core/libs/album/manager/albummanager_database.cpp:560
+#: core/libs/album/manager/albummanager_database.cpp:473
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Uppgradera databas"
 
-#: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
-#: core/libs/album/manager/albummanager_database.cpp:610
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:613
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Skapa ny databas"
 
-#: core/libs/album/manager/albummanager_database.cpp:529
-#: core/libs/album/manager/albummanager_database.cpp:552
-#: core/libs/album/manager/albummanager_database.cpp:602
-#: core/libs/album/manager/albummanager_database.cpp:634
+#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Ny databaskatalog"
 
-#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:533
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26734,15 +26734,15 @@ msgstr ""
 "databas, eller kopiera den nuvarande databasen till den här platsen och "
 "fortsätta använda den?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:612
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopiera nuvarande databas"
 
-#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:556
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26755,7 +26755,7 @@ msgstr ""
 "<p>Skulle du vilja uppgradera den gamla databasfilen eller starta med en ny "
 "databas?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:588
+#: core/libs/album/manager/albummanager_database.cpp:591
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26764,7 +26764,7 @@ msgstr ""
 "Misslyckades kopiera den gamla databasfilen (\"%1\") till sin nya plats "
 "(\"%2\"). Försöker uppgradera gamla databaser."
 
-#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:606
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26775,7 +26775,7 @@ msgstr ""
 "p><p>Skulle du vilja kopiera den nuvarande databasen till den här platsen "
 "och fortsätta använda den, eller starta med en ny databas?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:635
+#: core/libs/album/manager/albummanager_database.cpp:638
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26788,13 +26788,13 @@ msgstr ""
 "den befintliga filen som ny databas, eller ta bort den och kopiera nuvarande "
 "databas till platsen?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Använd befintlig fil"
 
-#: core/libs/album/manager/albummanager_database.cpp:700
+#: core/libs/album/manager/albummanager_database.cpp:703
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26803,7 +26803,7 @@ msgstr ""
 "Misslyckades säkerhetskopiera den befintliga databasfilen (\"%1\"). Vägrar "
 "ersätta filen utan säkerhetskopia, utan använder den befintliga filen."
 
-#: core/libs/album/manager/albummanager_database.cpp:718
+#: core/libs/album/manager/albummanager_database.cpp:721
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26812,7 +26812,7 @@ msgstr ""
 "Misslyckades kopiera den gamla databasfilen (\"%1\") till sin nya plats "
 "(\"%2\"). Startar med en tom databas."
 
-#: core/libs/album/manager/albummanager_database.cpp:751
+#: core/libs/album/manager/albummanager_database.cpp:754
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -28244,36 +28244,42 @@ msgstr "Ingen bild markerad"
 msgid "This is the original image"
 msgstr "Det här är originalbilden"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Databastyp stöds inte."
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:304
+#, fuzzy, kde-format
+#| msgid "No path to mysql server command set in configuration file."
+msgid "No path to mysql upgrade command set in configuration file."
+msgstr "Ingen sökväg till mysql-serverkommandot finns i inställningsfilen."
+
+#: core/libs/database/server/databaseserver.cpp:313
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "Ingen sökväg till mysql-serverkommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:311
-#, kde-format
-msgid "No path to mysql initialization command set in configuration file."
-msgstr ""
-"Ingen sökväg till mysql-initieringskommandot finns i inställningsfilen."
-
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:322
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Ingen sökväg till mysql-administrationskommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:331
+#, kde-format
+msgid "No path to mysql initialization command set in configuration file."
+msgstr ""
+"Ingen sökväg till mysql-initieringskommandot finns i inställningsfilen."
+
+#: core/libs/database/server/databaseserver.cpp:341
+#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:361
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Kan inte skapa katalogen %1"
 
-#: core/libs/database/server/databaseserver.cpp:430
+#: core/libs/database/server/databaseserver.cpp:441
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28284,55 +28290,53 @@ msgstr ""
 "gick det inte att läsa standardinställningsfilen</p><p>%1</p><p>eller gick "
 "det inte att skriva målfilen</p><p>%2</p>."
 
-#: core/libs/database/server/databaseserver.cpp:452
+#: core/libs/database/server/databaseserver.cpp:463
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Kan inte hitta MySQL-serverns standardinställning (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:527
+#: core/libs/database/server/databaseserver.cpp:538
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Kunde inte starta databasinitiering."
 
-#: core/libs/database/server/databaseserver.cpp:590
+#: core/libs/database/server/databaseserver.cpp:601
 #, kde-format
 msgid "Could not start database server."
 msgstr "Kunde inte starta databasservern."
 
-#: core/libs/database/server/databaseserver.cpp:632
+#: core/libs/database/server/databaseserver.cpp:643
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ogiltigt databasobjekt under start av databasserver"
 
-#: core/libs/database/server/databaseserver.cpp:663
+#: core/libs/database/server/databaseserver.cpp:674
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databasprocessen avslutades oväntat vid initial anslutning."
 
-#: core/libs/database/server/databaseserver.cpp:669
+#: core/libs/database/server/databaseserver.cpp:680
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Kunde inte ansluta till databasen efter att ha försökt 60 sekunder."
 
-#: core/libs/database/server/databaseserver.cpp:702
+#: core/libs/database/server/databaseserver.cpp:713
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "Misslyckades skapa databas<p>Frågefel: %1</p><p>Databasfel: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:726
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#: core/libs/database/server/databaseserver.cpp:737
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Förbehandling pågår, vänta."
+msgstr "En uppgradering av MySQL-databasen pågår, vänta ..."
 
-#: core/libs/database/server/databaseserver.cpp:772
+#: core/libs/database/server/databaseserver.cpp:779
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Kunde inte uppgradera databas."
 
-#: core/libs/database/server/databaseserver.cpp:811
+#: core/libs/database/server/databaseserver.cpp:818
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Körbar fil: %2</p><p>Argument: %3</p><p>Processfel: %4</p>"
@@ -28711,17 +28715,17 @@ msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "MySQL-binärprogram"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:180
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
 #, kde-format
 msgid "Host Name:"
 msgstr "Värddatornamn:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, kde-format
 msgid "Set the host computer name"
 msgstr "Ange värddatorns namn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
 #, kde-format
 msgid ""
 "This is the computer name running MySQL server.\n"
@@ -28732,7 +28736,7 @@ msgstr ""
 "Det kan vara \"localhost\" för en lokal server, eller datorns\n"
 "nätverksnamn (eller IP-adress) i fallet med en annan dator."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:188
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
@@ -28741,12 +28745,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Anslutningsalternativ:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, kde-format
 msgid "Set the database connection options"
 msgstr "Ange alternativ för databasanslutningen"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -28755,17 +28759,17 @@ msgstr ""
 "Ange MySQL-serverns anslutningsalternativ.\n"
 "Bara för avancerade användare."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
 #, kde-format
 msgid "User:"
 msgstr "Användare:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "Set the database account name"
 msgstr "Ange databasens kontonamn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
 #, kde-format
 msgid ""
 "Set the MySQL server account name used\n"
@@ -28778,7 +28782,7 @@ msgstr ""
 "Kontot måste vara tillgängligt på MySQL-fjärrservern\n"
 "när databasen har skapats."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -28789,12 +28793,12 @@ msgstr ""
 "av Digikam för att ansluta till servern.\n"
 "Fältet kan lämnas tomt för att använda ett konto utan lösenord."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:212
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
 #, kde-format
 msgid "Host Port:"
 msgstr "Värddatorport:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -28803,12 +28807,12 @@ msgstr ""
 "Ange värddatorns port.\n"
 "Oftast använder MySQL-servern normalt port nummer 3306."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
 #, kde-format
 msgid "Check Connection"
 msgstr "Kontrollera anslutning"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -28817,17 +28821,17 @@ msgstr ""
 "Utför en enkel databasanslutning för att se om de nuvarande inställningarna "
 "av MySQL-servern är lämpliga."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:227
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
 #, kde-format
 msgid "Core Db Name:"
 msgstr "Namn på huvuddatabasen:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, kde-format
 msgid "Set the core database name"
 msgstr "Ange huvuddatabasens namn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -28836,18 +28840,18 @@ msgstr ""
 "Huvuddatabasen är det främsta lagringsstället i Digikam, använt\n"
 "för att lagra album, objekt och metadata för sökningar."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
 #, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Namn på miniatyrbildsdatabas:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Ange miniatyrbildsdatabasens namn eller katalog"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, kde-format
 msgid ""
 "The thumbnails database is used by digiKam to host\n"
@@ -28862,17 +28866,17 @@ msgstr ""
 "hel del utrymme, särskilt om samlingarna\n"
 "är mycket stora."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
 #, kde-format
 msgid "Face Db Name:"
 msgstr "Namn på ansiktsdatabas:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, kde-format
 msgid "Set the face database name"
 msgstr "Ange ansiktsdatabasens namn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -28885,17 +28889,17 @@ msgstr ""
 "Den kan snabbt använda mycket utrymme, särskilt om det finns\n"
 "många bilder med detekterade och etiketterade människoansikten."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:254
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, kde-format
 msgid "Similarity Db Name:"
 msgstr "Likhetsdatabasnamn:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, kde-format
 msgid "Set the similarity database name"
 msgstr "Ange likhetsdatabasens namn"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
@@ -28904,27 +28908,27 @@ msgstr ""
 "Likhetsdatabasen används av Digikam för att lagra\n"
 "bildernas Haar-matrisdata för likhetssökning."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
 #, kde-format
 msgid "Default Settings"
 msgstr "Standardinställningar"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "Återställ inställningarna av databasnamn till vanliga standardvärden."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
 #, kde-format
 msgid "Remote Server Settings"
 msgstr "Inställningar av fjärrserver"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:285
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, kde-format
 msgid "Database Server Instructions"
 msgstr "Instruktioner om databasserver"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -28939,7 +28943,7 @@ msgstr ""
 "SQL-kommandon (efter att ha ersatt <b><i>lösenord</i></b> med det riktiga).</"
 "p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -28963,17 +28967,17 @@ msgstr ""
 "samling måste du starta MySQL-servern med mysql --max_allowed_packet=128M "
 "eller ändra inställningarna i my.ini eller ~/.my.cnf</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
 msgid "Requirements"
 msgstr "Krav"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
 #, kde-format
 msgid "Database Server Technical Details"
 msgstr "Teknisk information om databasserver"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
 #, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -29011,77 +29015,77 @@ msgstr ""
 "p><p>Databaserna måste skapas på fjärrservern av systemadministratören. Se "
 "fliken <b>Krav</b> för detaljerad information.</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
 #, kde-format
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
 #, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Katalog för miniatyrbildsdatabas:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Test av databasanslutning"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #, kde-format
 msgid "Database connection test successful."
 msgstr "Test av databasanslutning lyckades."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "Test av databasanslutning lyckades inte.<p>Felet är: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Serverns värddatornamn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Serverns användarnamn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:630
 #, kde-format
 msgid "The core database name is empty"
 msgstr "Huvuddatabasens namn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Miniatyrbildsdatabasens namn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, kde-format
 msgid "The face database name is empty"
 msgstr "Ansiktsdatabasens namn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
 #, kde-format
 msgid "The similarity database name is empty"
 msgstr "Likhetsdatabasens namn är tomt"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 "Sökvägen ställdes in med en kommandoradsväljare (--database-directory)."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Databasinställning"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:850
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -29090,7 +29094,7 @@ msgstr ""
 "Databasnamnens inställning är inte giltig. Felet är <br/><p>%1</p><br/"
 ">Kontrollera inställningen."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -29099,7 +29103,7 @@ msgstr ""
 "Test av databasanslutningen har misslyckats med felet<br/><p>%1</p><br/"
 ">Kontrollera inställningen."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
 #, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29108,13 +29112,13 @@ msgstr ""
 "Du måste välja en katalog som Digikam kan använda att lagra information och "
 "metadata i en databasfil."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Skapa databaskatalog?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
 #, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29123,13 +29127,13 @@ msgstr ""
 "<p>Katalogen du valde att innehålla databasfilen verkar inte finnas:</"
 "p><p><b>%1</b></p>Vill du att Digikam ska skapa den åt dig?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Misslyckades skapa databaskatalog"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
 #, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -29138,13 +29142,13 @@ msgstr ""
 "<p>Digikam kunde inte skapa katalogen att innehålla databasfilen.\n"
 "Välj en annan plats.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Ingen skrivåtkomst till databas"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:926
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -29270,10 +29274,19 @@ msgid ""
 "database."
 msgstr "Binärfilen används för att initiera MariaDB-datafiler för databasen."
 
-#: core/libs/database/utils/widgets/mysqlservbinary.cpp:34
+#: core/libs/database/utils/widgets/mysqlserverbinary.cpp:34
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
+msgstr ""
+"Binärfilen används för att starta en dedicerad instans av MariaDB-servern."
+
+#: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
+#, fuzzy, kde-format
+#| msgid ""
+#| "This binary file is used to start a dedicated instance of MariaDB server."
+msgid ""
+"This binary file is used to upgrade the database to current server version."
 msgstr ""
 "Binärfilen används för att starta en dedicerad instans av MariaDB-servern."
 

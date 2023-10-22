@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 00:40+0000\n"
+"POT-Creation-Date: 2023-10-22 00:40+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -21451,7 +21451,7 @@ msgid "Presentation..."
 msgstr "Prezentácia..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, fuzzy, kde-format
 #| msgid "Specify delay for slide show"
 msgctxt "@title:window"
@@ -21459,13 +21459,13 @@ msgid "Specify Delay for Slide Show"
 msgstr "Zadajte prestávku medzi obrázkami"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:249
 #, kde-format
 msgid "Delay:"
 msgstr "Prestávka:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:435
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:411
 #, fuzzy, kde-format
 #| msgid "Delete image"
 msgctxt "@title:window"
@@ -21473,7 +21473,7 @@ msgid "Delete Image"
 msgstr "Odstrániť obrázok"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:436
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:412
 #, fuzzy, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Ste si istý, že chcete odstrániť vybraný prenos?"
@@ -21557,7 +21557,7 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Premietanie"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:696
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:692
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -21565,7 +21565,7 @@ msgctxt ""
 msgid "Giving a slideshow"
 msgstr "Prebieha premietanie"
 
-#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
+#: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:109
 #, fuzzy, kde-format
 #| msgid "Slideshow Settings"
 msgctxt "@title:window"
@@ -21891,12 +21891,12 @@ msgstr ""
 "Pri spracovaní položky nastala chyba\n"
 "%1"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:132
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:128
 #, kde-format
 msgid "Switch Screen"
 msgstr "Prepnúť obrazovku"
 
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:145
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:141
 #, kde-format
 msgctxt "%1 is the screen number (0, 1, ...)"
 msgid "Screen %1"
@@ -25579,7 +25579,7 @@ msgid "Password hint to present to users in the password prompt (optional)."
 msgstr "Zobrazenie pomôcky pri výzve na zadanie hesla (nepovinné)."
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:155
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:204
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:205
 #: core/libs/dplugins/webservices/wslogindialog.cpp:89
 #, kde-format
 msgid "Password:"
@@ -26427,21 +26427,21 @@ msgid ""
 "in the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:117
+#: core/libs/album/manager/albummanager_database.cpp:120
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:125
+#: core/libs/album/manager/albummanager_database.cpp:128
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:135
+#: core/libs/album/manager/albummanager_database.cpp:138
 #, kde-format
 msgid ""
 "\n"
@@ -26450,7 +26450,7 @@ msgid ""
 "delete the file %1"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:148
+#: core/libs/album/manager/albummanager_database.cpp:151
 #, fuzzy, kde-format
 msgid ""
 "An error occurred during the internal server start.\n"
@@ -26461,7 +26461,7 @@ msgstr ""
 "Chyba pri otváraní databázovej podpory.\n"
 " "
 
-#: core/libs/album/manager/albummanager_database.cpp:164
+#: core/libs/album/manager/albummanager_database.cpp:167
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26478,14 +26478,14 @@ msgstr ""
 "nedá používať. DigiKam sa teraz spustí, ale <b>nebude</b> fungovať. "
 "Skontrolujte, prosím, nastavenie databázy v <b>ponuke s nastaveniami</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:173
+#: core/libs/album/manager/albummanager_database.cpp:176
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:213
+#: core/libs/album/manager/albummanager_database.cpp:216
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26502,7 +26502,7 @@ msgstr ""
 "nedá používať. DigiKam sa teraz spustí, ale <b>nebude</b> fungovať. "
 "Skontrolujte, prosím, nastavenie databázy v <b>ponuke s nastaveniami</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:222
+#: core/libs/album/manager/albummanager_database.cpp:225
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26515,7 +26515,7 @@ msgstr ""
 "spustí, ale \"<b>nebude</b> fungovať. Skontrolujte, prosím, nastavenie "
 "databázy v <b>ponuke s nastaveniami</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:255
+#: core/libs/album/manager/albummanager_database.cpp:258
 #, fuzzy, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26535,7 +26535,7 @@ msgstr ""
 "Ak chcete pokračovať, kliknite na „Áno“. V opačnom prípade zvoľte „Nie“ a "
 "opravte jazykové nastavenie predtým, než reštartujete digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:298
+#: core/libs/album/manager/albummanager_database.cpp:301
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26546,7 +26546,7 @@ msgstr ""
 "systéme nájdená.<br/> Pre vyriešenie tejto situácie vyberte, prosím, tú "
 "najvhodnejšiu možnosť:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:317
+#: core/libs/album/manager/albummanager_database.cpp:320
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26557,7 +26557,7 @@ msgstr ""
 "môže byť obnova zo zálohy, zmena rozdelenia disku alebo zmena nastavení "
 "súborového systému.<br/>Kolekcia sa teraz nachádza tu:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:336
+#: core/libs/album/manager/albummanager_database.cpp:339
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26566,28 +26566,28 @@ msgstr ""
 "Kolekcia je umiestnená na úložnom zariadení, ktoré nie je vždy pripojené. "
 "Označte kolekciu ako odpojiteľnú."
 
-#: core/libs/album/manager/albummanager_database.cpp:343
+#: core/libs/album/manager/albummanager_database.cpp:346
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "Teraz nič nerobiť. Problém chcem vyriešiť neskôr v okne s nastaveniami"
 
-#: core/libs/album/manager/albummanager_database.cpp:357
+#: core/libs/album/manager/albummanager_database.cpp:360
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kolekcia sa nenašla"
 
-#: core/libs/album/manager/albummanager_database.cpp:459
+#: core/libs/album/manager/albummanager_database.cpp:462
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Priečinok databázy"
 
-#: core/libs/album/manager/albummanager_database.cpp:460
+#: core/libs/album/manager/albummanager_database.cpp:463
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26602,36 +26602,36 @@ msgstr ""
 "byl naozaj vytvorený pre obrázky umiestnené v priečinku \"%2\" alebo starší "
 "súbor ignorovať a začať s novou databázou?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:470
-#: core/libs/album/manager/albummanager_database.cpp:538
-#: core/libs/album/manager/albummanager_database.cpp:560
+#: core/libs/album/manager/albummanager_database.cpp:473
+#: core/libs/album/manager/albummanager_database.cpp:541
+#: core/libs/album/manager/albummanager_database.cpp:563
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Aktualizovať databázu"
 
-#: core/libs/album/manager/albummanager_database.cpp:472
-#: core/libs/album/manager/albummanager_database.cpp:540
-#: core/libs/album/manager/albummanager_database.cpp:562
-#: core/libs/album/manager/albummanager_database.cpp:610
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
+#: core/libs/album/manager/albummanager_database.cpp:613
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Vytvoriť novú databázu"
 
-#: core/libs/album/manager/albummanager_database.cpp:529
-#: core/libs/album/manager/albummanager_database.cpp:552
-#: core/libs/album/manager/albummanager_database.cpp:602
-#: core/libs/album/manager/albummanager_database.cpp:634
+#: core/libs/album/manager/albummanager_database.cpp:532
+#: core/libs/album/manager/albummanager_database.cpp:555
+#: core/libs/album/manager/albummanager_database.cpp:605
+#: core/libs/album/manager/albummanager_database.cpp:637
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Nový databázový priečinok"
 
-#: core/libs/album/manager/albummanager_database.cpp:530
+#: core/libs/album/manager/albummanager_database.cpp:533
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26645,16 +26645,16 @@ msgstr ""
 "si tento súbor aktualizovať, začať s novou databázou alebo aktuálnu databázu "
 "do tohto umiestnenia skopírovať a pokračovať v jej používaní?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:542
-#: core/libs/album/manager/albummanager_database.cpp:612
-#: core/libs/album/manager/albummanager_database.cpp:643
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:615
+#: core/libs/album/manager/albummanager_database.cpp:646
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopírovať aktuálnu databázu"
 
-#: core/libs/album/manager/albummanager_database.cpp:553
+#: core/libs/album/manager/albummanager_database.cpp:556
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26666,7 +26666,7 @@ msgstr ""
 "priečinku bol nájdený súbor databázy staršej verzie digiKamu.</p> <p>Prajete "
 "si tento súbor aktualizovať alebo začať s novou databázou?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:588
+#: core/libs/album/manager/albummanager_database.cpp:591
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26675,7 +26675,7 @@ msgstr ""
 "Nepodarilo sa skopírovať starý súbor databázy („%1“) na jeho nové miesto "
 "(„%2“). Inovujú sa staré databázy."
 
-#: core/libs/album/manager/albummanager_database.cpp:603
+#: core/libs/album/manager/albummanager_database.cpp:606
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26686,7 +26686,7 @@ msgstr ""
 "p><p>Prajete si skopírovať súčasnú databázu do tohto umiestnenia a "
 "pokračovať v jej používaní alebo vytvoriť novú databázu?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:635
+#: core/libs/album/manager/albummanager_database.cpp:638
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26699,14 +26699,14 @@ msgstr ""
 "použiť ako novú databázu alebo ju chcete odstrániť a namiesto nej skopírovať "
 "súčasnú databázu?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:645
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Použiť existujúci súbor"
 
-#: core/libs/album/manager/albummanager_database.cpp:700
+#: core/libs/album/manager/albummanager_database.cpp:703
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26715,7 +26715,7 @@ msgstr ""
 "Nedá sa zazálohovať existujúci súbor databázy (\"%1\"). Odmietam prepísať "
 "súbory bez zálohovania, použijem existujúci súbor."
 
-#: core/libs/album/manager/albummanager_database.cpp:718
+#: core/libs/album/manager/albummanager_database.cpp:721
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26724,7 +26724,7 @@ msgstr ""
 "Nedá sa skopírovat pôvodný súbor databázy (\"%1\") na jeho nové umiestnenie "
 "(\"%2\"). Bude vytvorená prázdna databáza."
 
-#: core/libs/album/manager/albummanager_database.cpp:751
+#: core/libs/album/manager/albummanager_database.cpp:754
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -28198,27 +28198,26 @@ msgstr "Nebol vybraný žiaden formát obrázka."
 msgid "This is the original image"
 msgstr "Toto je nastavenie krivky svietivosti obrázka"
 
-#: core/libs/database/server/databaseserver.cpp:153
+#: core/libs/database/server/databaseserver.cpp:155
 #, kde-format
 msgid "Database type is not supported."
 msgstr "Typ databázy nie je podporovaný."
 
-#: core/libs/database/server/databaseserver.cpp:302
+#: core/libs/database/server/databaseserver.cpp:304
+#, fuzzy, kde-format
+#| msgid "No path to mysql server command set in configuration file!"
+msgid "No path to mysql upgrade command set in configuration file."
+msgstr ""
+"V konfiguračnom súbore nie je uvedená cesta k príkazu pre mysql server!"
+
+#: core/libs/database/server/databaseserver.cpp:313
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre mysql server!"
 
-#: core/libs/database/server/databaseserver.cpp:311
-#, fuzzy, kde-format
-#| msgid "No path to mysql initialization command set in configuration file!."
-msgid "No path to mysql initialization command set in configuration file."
-msgstr ""
-"V konfiguračnom súbore nie je uvedená cesta k príkazu pre inicializáciu "
-"mysql!"
-
-#: core/libs/database/server/databaseserver.cpp:320
+#: core/libs/database/server/databaseserver.cpp:322
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
@@ -28226,14 +28225,22 @@ msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre inicializáciu "
 "mysql!"
 
-#: core/libs/database/server/databaseserver.cpp:330
-#: core/libs/database/server/databaseserver.cpp:340
-#: core/libs/database/server/databaseserver.cpp:350
+#: core/libs/database/server/databaseserver.cpp:331
+#, fuzzy, kde-format
+#| msgid "No path to mysql initialization command set in configuration file!."
+msgid "No path to mysql initialization command set in configuration file."
+msgstr ""
+"V konfiguračnom súbore nie je uvedená cesta k príkazu pre inicializáciu "
+"mysql!"
+
+#: core/libs/database/server/databaseserver.cpp:341
+#: core/libs/database/server/databaseserver.cpp:351
+#: core/libs/database/server/databaseserver.cpp:361
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Nie je možné vytvoriť adresár %1"
 
-#: core/libs/database/server/databaseserver.cpp:430
+#: core/libs/database/server/databaseserver.cpp:441
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28244,38 +28251,38 @@ msgstr ""
 "predvolený konfiguračný súbor</p><p>%1</p><p>sa nedá čítať alebo do "
 "cieľového súboru</p><p>%2</p><p>sa nedá zapisovať.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:452
+#: core/libs/database/server/databaseserver.cpp:463
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Predvolená konfigurácia servera MySQL (mysql-global.conf) nebola nájdená."
 
-#: core/libs/database/server/databaseserver.cpp:527
+#: core/libs/database/server/databaseserver.cpp:538
 #, fuzzy, kde-format
 msgid "Could not start database initializer."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:590
+#: core/libs/database/server/databaseserver.cpp:601
 #, fuzzy, kde-format
 msgid "Could not start database server."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:632
+#: core/libs/database/server/databaseserver.cpp:643
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:663
+#: core/libs/database/server/databaseserver.cpp:674
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databázový proces neočakávane skončil počas nadväzovania spojenia."
 
-#: core/libs/database/server/databaseserver.cpp:669
+#: core/libs/database/server/databaseserver.cpp:680
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ani po 60 sekundách sa nepodarilo pripojiť k databáze."
 
-#: core/libs/database/server/databaseserver.cpp:702
+#: core/libs/database/server/databaseserver.cpp:713
 #, fuzzy, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28283,17 +28290,17 @@ msgstr ""
 "Nepodarilo sa vytvoriť tabuľky v databáze.\n"
 " "
 
-#: core/libs/database/server/databaseserver.cpp:726
+#: core/libs/database/server/databaseserver.cpp:737
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Prebieha odpojenie od fotoaparátu, čakajte prosím..."
 
-#: core/libs/database/server/databaseserver.cpp:772
+#: core/libs/database/server/databaseserver.cpp:779
 #, fuzzy, kde-format
 msgid "Could not upgrade database."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:811
+#: core/libs/database/server/databaseserver.cpp:818
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -28676,17 +28683,17 @@ msgctxt "@title:group"
 msgid "MySQL Binaries"
 msgstr "Údržba"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:180
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:181
 #, kde-format
 msgid "Host Name:"
 msgstr "Názov hostiteľa:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:182
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
 #, fuzzy, kde-format
 msgid "Set the host computer name"
 msgstr "Pridať fotoaparát manuálne..."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:183
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:184
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is the computer name running MySQL server.\n"
@@ -28701,7 +28708,7 @@ msgstr ""
 "Môže tu byť \"localhost\" pre miestny server alebo meno (či IP adresa)\n"
 "vzdialeného počítača v sieti."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:188
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:189
 #, kde-format
 msgid ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
@@ -28710,12 +28717,12 @@ msgstr ""
 "<a href=\"https://doc.qt.io/qt-5/qsqldatabase.html#setConnectOptions"
 "\">Možnosti pripojenia:</a>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:192
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
 #, fuzzy, kde-format
 msgid "Set the database connection options"
 msgstr "Testovať pripojenie k databáze"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:193
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:194
 #, kde-format
 msgid ""
 "Set the MySQL server connection options.\n"
@@ -28724,17 +28731,17 @@ msgstr ""
 "Zadajte možnosti pripojenia k serveru MySQL.\n"
 "Iba pre skúsených používateľov."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:197
 #, kde-format
 msgid "User:"
 msgstr "Užívateľ:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:198
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
 #, kde-format
 msgid "Set the database account name"
 msgstr "Zadejte názov databázového účtu"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:199
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:200
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set the MySQL server account name used\n"
@@ -28751,7 +28758,7 @@ msgstr ""
 "který bude digiKam používať pre pripojenie na server.\n"
 "Tento účet už musí v okamihu vytvárania databázy existovať."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:206
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:207
 #, kde-format
 msgid ""
 "Set the MySQL server account password used\n"
@@ -28762,12 +28769,12 @@ msgstr ""
 "ktoré bude digiKam používať pre pripojenie na server.\n"
 "Pre účet bez hesla môžete ponechať toto pole prázdne."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:212
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:213
 #, kde-format
 msgid "Host Port:"
 msgstr "Host Port:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:214
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:215
 #, kde-format
 msgid ""
 "Set the host computer port.\n"
@@ -28776,12 +28783,12 @@ msgstr ""
 "Zadajte port na cieľovom počítači.\n"
 "Predvolený port pre MySQL je obvykle 3306."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:219
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
 #, kde-format
 msgid "Check Connection"
 msgstr "Skontrolovať pripojenie"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:220
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:221
 #, kde-format
 msgid ""
 "Run a basic database connection to see if current MySQL server settings is "
@@ -28789,17 +28796,17 @@ msgid ""
 msgstr ""
 "Pokúsi sa pripojiť k databáze a overí tak správnosť nastavení MySQL servera."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:227
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:228
 #, fuzzy, kde-format
 msgid "Core Db Name:"
 msgstr "Meno novej schémy"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:229
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
 #, fuzzy, kde-format
 msgid "Set the core database name"
 msgstr "Tu vyberte farbu písma."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:230
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:231
 #, kde-format
 msgid ""
 "The core database is lead digiKam container used to store\n"
@@ -28808,18 +28815,18 @@ msgstr ""
 "digiKam používa základnú databázu na ukladanie\n"
 "albumov, položiek a metadát vyhľadávania."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:234
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:587
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:235
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:588
 #, fuzzy, kde-format
 msgid "Thumbs Db Name:"
 msgstr "Meno novej schémy"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:238
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
 #, fuzzy, kde-format
 msgid "Set the thumbnails database name or folder"
 msgstr "Pridanie albumu do databázy zlyhalo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:239
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:240
 #, fuzzy, kde-format
 #| msgid ""
 #| "The thumbnails database is used by digiKam to host\n"
@@ -28838,17 +28845,17 @@ msgstr ""
 "rýchle narásť - predovšetkým ak máte veľkú kolekciu\n"
 "obrázkov."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:245
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:246
 #, fuzzy, kde-format
 msgid "Face Db Name:"
 msgstr "Meno novej schémy"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:247
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
 #, fuzzy, kde-format
 msgid "Set the face database name"
 msgstr "Aktualizujem miestnu databázu Jamendo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:248
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:249
 #, kde-format
 msgid ""
 "The face database is used by digiKam to host image histograms\n"
@@ -28861,45 +28868,45 @@ msgstr ""
 "Táto databáza tak môže rýchlo narást - obzvlášť ak máte\n"
 "veľa obrázkov s detegovanými a označenými tvárami."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:254
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:255
 #, fuzzy, kde-format
 #| msgid "Similarity:"
 msgid "Similarity Db Name:"
 msgstr "Podobnosť:"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:256
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
 #, fuzzy, kde-format
 msgid "Set the similarity database name"
 msgstr "Tu vyberte farbu písma."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:257
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:258
 #, kde-format
 msgid ""
 "The similarity database is used by digiKam to host\n"
 "image Haar matrix data for the similarity search."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:261
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
 #, kde-format
 msgid "Default Settings"
 msgstr "Štandardné nastavenia"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:262
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:263
 #, fuzzy, kde-format
 msgid "Reset database names settings to common default values."
 msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:282
 #, fuzzy, kde-format
 msgid "Remote Server Settings"
 msgstr "Štandardné nastavenie archívu"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:285
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:286
 #, fuzzy, kde-format
 msgid "Database Server Instructions"
 msgstr "Testovať pripojenie k databáze"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:287
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:288
 #, kde-format
 msgid ""
 "<p>digiKam expects that database is already created with a dedicated user "
@@ -28913,7 +28920,7 @@ msgstr ""
 "prístup do databázy.<br/>Ak ešte nebola databáza nastavená, môžete použiť "
 "nasledujúce príkazy SQL (nahraďte <b><i>password</i></b> vašim heslom).</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
 #, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
@@ -28927,17 +28934,17 @@ msgid ""
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:324
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
 msgid "Requirements"
 msgstr "Požiadavky"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:328
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:329
 #, fuzzy, kde-format
 msgid "Database Server Technical Details"
 msgstr "Testovať pripojenie k databáze"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:330
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:331
 #, fuzzy, kde-format
 msgid ""
 "<p>Use this configuration view to set all information to be connected to a "
@@ -28961,77 +28968,77 @@ msgstr ""
 "počítači.\n"
 "Je potrebné mať práva na zápis pre toto umiestnenie."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:356
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:357
 #, kde-format
 msgid "Documentation"
 msgstr "Dokumentácia"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:583
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:584
 #, fuzzy, kde-format
 msgid "Thumbs Db Folder:"
 msgstr "Meno novej schémy"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:597
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:602
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:855
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:858
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Testovať pripojenie k databáze"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:598
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #, fuzzy, kde-format
 msgid "Database connection test successful."
 msgstr "Test fotoaparátu bol úspešný."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:603
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:604
 #, kde-format
 msgid "Database connection test was not successful. <p>Error was: %1</p>"
 msgstr "Test pripojenia do databázy nebol úspešný. <p>Chyba: %1</p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:612
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:613
 #, kde-format
 msgid "The server hostname is empty"
 msgstr "Nezadali ste názov servera"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:618
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:619
 #, kde-format
 msgid "The server user name is empty"
 msgstr "Nebol zadaný názov používateľského mena na serveri"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:629
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:630
 #, fuzzy, kde-format
 msgid "The core database name is empty"
 msgstr "Tu vyberte farbu písma."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:635
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:636
 #, fuzzy, kde-format
 msgid "The thumbnails database name is empty"
 msgstr "Pridanie albumu do databázy zlyhalo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:641
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:642
 #, fuzzy, kde-format
 msgid "The face database name is empty"
 msgstr "Aktualizujem miestnu databázu Jamendo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:647
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:648
 #, fuzzy, kde-format
 msgid "The similarity database name is empty"
 msgstr "Tu vyberte farbu písma."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:709
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:710
 #, kde-format
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:846
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:849
 #, fuzzy, kde-format
 #| msgid "Database Configuration"
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Nastavenie databázy"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:847
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:850
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
@@ -29040,7 +29047,7 @@ msgstr ""
 "Nastavenia databázy nie sú nesprávne. Chyba je <br/><p>%1</p><br/>Prosím, "
 "skontrolujte nastavena."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:856
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:859
 #, kde-format
 msgid ""
 "Testing database connection has failed with error<br/><p>%1</p><br/>Please "
@@ -29049,7 +29056,7 @@ msgstr ""
 "Test pripojenia do databázy zlyhal s chybou<br/><p>%1</p><br/>Prosím, "
 "skontrolujte vaše nastavenia."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:875
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:878
 #, fuzzy, kde-format
 msgid ""
 "You must select a folder for digiKam to store information and metadata in a "
@@ -29058,14 +29065,14 @@ msgstr ""
 "Musíte zvoliť priečinok, ktorý bude digiKam používať na ukladanie informácií "
 "a metadát v súbore databázy."
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:884
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:887
 #, fuzzy, kde-format
 #| msgid "Create Database Folder?"
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Vytvoriť priečinok databázy?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:885
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:888
 #, fuzzy, kde-format
 msgid ""
 "<p>The folder to put your database in does not seem to exist:</p><p><b>%1</"
@@ -29074,14 +29081,14 @@ msgstr ""
 "Zdá sa, že priečinok, kam sa má umiestniť vša databáza neexistuje: <p><b>%1</"
 "b></p>Chcete, aby ho digiKam vytvoril?"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:896
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:899
 #, fuzzy, kde-format
 #| msgid "Create Database Folder Failed"
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Vytvorenie priečinku pre databázu zlyhalo"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:897
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:900
 #, fuzzy, kde-format
 msgid ""
 "<p>digiKam could not create the folder to host your database file.\n"
@@ -29090,14 +29097,14 @@ msgstr ""
 "digiKam nemohol vytvoriť nasledujúci priečnok pre vašu databázu.\n"
 "Prosím zvoľte iné umiestnenie.<p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:922
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:925
 #, fuzzy, kde-format
 #| msgid "No Database Write Access"
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Databáza s prístupom len na čítanie"
 
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:923
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:926
 #, kde-format
 msgid ""
 "<p>You do not seem to have write access for the folder to host the database "
@@ -29231,10 +29238,20 @@ msgstr ""
 "Tento binárny súbor sa používa pri inicializácii dátových súborov databázy "
 "MariaDB."
 
-#: core/libs/database/utils/widgets/mysqlservbinary.cpp:34
+#: core/libs/database/utils/widgets/mysqlserverbinary.cpp:34
 #, kde-format
 msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
+msgstr ""
+"Tento binárny súbor sa používa na spustenie samostatnej inštancie databázy "
+"MariaDB."
+
+#: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
+#, fuzzy, kde-format
+#| msgid ""
+#| "This binary file is used to start a dedicated instance of MariaDB server."
+msgid ""
+"This binary file is used to upgrade the database to current server version."
 msgstr ""
 "Tento binárny súbor sa používa na spustenie samostatnej inštancie databázy "
 "MariaDB."
