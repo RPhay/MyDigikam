@@ -43,7 +43,7 @@ namespace
 static const char* configGroupDatabase                         = "Database Settings";
 static const char* configInternalDatabaseServer                = "Internal Database Server";
 static const char* configInternalDatabaseServerPath            = "Internal Database Server Path";
-static const char* configInternalUseMariaDBCommands            = "Internal Database Use MariaDB";
+static const char* configInternalUseMariaDBCommands            = "Internal Database Server Use MariaDB";
 static const char* configInternalDatabaseServerMysqlInitCmd    = "Internal Database Server Mysql Init Command";
 static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
 static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
