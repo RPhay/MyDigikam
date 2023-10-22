@@ -43,6 +43,7 @@ namespace
 static const char* configGroupDatabase                         = "Database Settings";
 static const char* configInternalDatabaseServer                = "Internal Database Server";
 static const char* configInternalDatabaseServerPath            = "Internal Database Server Path";
+static const char* configInternalUseMariaDBCommands            = "Internal Database Use MariaDB";
 static const char* configInternalDatabaseServerMysqlInitCmd    = "Internal Database Server Mysql Init Command";
 static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
 static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
@@ -866,24 +867,56 @@ DbEngineParameters DbEngineParameters::parametersForSQLiteDefaultFile(const QStr
     return parametersForSQLite(QDir::cleanPath(directory + QLatin1Char('/') + QLatin1String(digikam4db)));
 }
 
-QString DbEngineParameters::defaultMysqlInitCmd()
+QString DbEngineParameters::defaultMysqlInitCmd()      // For Linux, Windows and OSX
 {
-    return QLatin1String("mysql_install_db");   // For Linux, Windows and OSX
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupDatabase);
+
+    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    {
+        return QLatin1String("mariadb-install-db");
+    }
+
+    return QLatin1String("mysql_install_db");
 }
 
-QString DbEngineParameters::defaultMysqlAdminCmd()
+QString DbEngineParameters::defaultMysqlAdminCmd()     // For Linux, Windows and OSX
 {
-    return QLatin1String("mysqladmin");         // For Linux, Windows and OSX
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupDatabase);
+
+    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    {
+        return QLatin1String("mariadb-admin");
+    }
+
+    return QLatin1String("mysqladmin");
 }
 
-QString DbEngineParameters::defaultMysqlServerCmd()
+QString DbEngineParameters::defaultMysqlServerCmd()    // For Linux, Windows and OSX
 {
-    return QLatin1String("mysqld");             // For Linux, Windows and OSX
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupDatabase);
+
+    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    {
+        return QLatin1String("mariadbd");
+    }
+
+    return QLatin1String("mysqld");
 }
 
-QString DbEngineParameters::defaultMysqlUpgradeCmd()
+QString DbEngineParameters::defaultMysqlUpgradeCmd()   // For Linux, Windows and OSX
 {
-    return QLatin1String("mysql_upgrade");      // For Linux, Windows and OSX
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupDatabase);
+
+    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    {
+        return QLatin1String("mariadb-upgrade");
+    }
+
+    return QLatin1String("mysql_upgrade");
 }
 
 // --------------------------------
