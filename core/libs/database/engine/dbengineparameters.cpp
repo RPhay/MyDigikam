@@ -43,7 +43,7 @@ namespace
 static const char* configGroupDatabase                         = "Database Settings";
 static const char* configInternalDatabaseServer                = "Internal Database Server";
 static const char* configInternalDatabaseServerPath            = "Internal Database Server Path";
-static const char* configInternalUseMariaDBCommands            = "Internal Database Server Use MariaDB";
+static const char* configInternalDatabaseServerUseMariaDB      = "Internal Database Server Use MariaDB";
 static const char* configInternalDatabaseServerMysqlInitCmd    = "Internal Database Server Mysql Init Command";
 static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
 static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
@@ -872,7 +872,7 @@ QString DbEngineParameters::defaultMysqlInitCmd()      // For Linux, Windows and
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupDatabase);
 
-    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    if (group.readEntry(configInternalDatabaseServerUseMariaDB, false))
     {
         return QLatin1String("mariadb-install-db");
     }
@@ -885,7 +885,7 @@ QString DbEngineParameters::defaultMysqlAdminCmd()     // For Linux, Windows and
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupDatabase);
 
-    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    if (group.readEntry(configInternalDatabaseServerUseMariaDB, false))
     {
         return QLatin1String("mariadb-admin");
     }
@@ -898,7 +898,7 @@ QString DbEngineParameters::defaultMysqlServerCmd()    // For Linux, Windows and
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupDatabase);
 
-    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    if (group.readEntry(configInternalDatabaseServerUseMariaDB, false))
     {
         return QLatin1String("mariadbd");
     }
@@ -911,7 +911,7 @@ QString DbEngineParameters::defaultMysqlUpgradeCmd()   // For Linux, Windows and
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupDatabase);
 
-    if (group.readEntry(configInternalUseMariaDBCommands, false))
+    if (group.readEntry(configInternalDatabaseServerUseMariaDB, false))
     {
         return QLatin1String("mariadb-upgrade");
     }
