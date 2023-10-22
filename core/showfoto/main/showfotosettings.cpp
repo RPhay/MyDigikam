@@ -7,7 +7,7 @@
  * Description : Settings for Showfoto
  *
  * SPDX-FileCopyrightText: 2013-2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -275,7 +275,7 @@ void ShowfotoSettings::readSettings()
     d->updateWithDebug         = group.readEntry(d->configUpdateWithDebug,         false);
     d->rightSideBarStyle       = group.readEntry(d->configRightSideBarStyle,       0);
 
-#ifdef Q_OS_WIN
+#if defined Q_OS_WIN || defined Q_OS_MACOS
 
     QString defaultStyle       = QLatin1String("Breeze");
 
@@ -287,7 +287,14 @@ void ShowfotoSettings::readSettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    setApplicationStyle(group.readEntry(d->configApplicationStyle, defaultStyle));
+    QString style = group.readEntry(d->configApplicationStyle, defaultStyle);
+
+    if (style == QLatin1String("Macintosh"))        // See bug @475572
+    {
+        style = QLatin1String("Breeze");
+    }
+
+    setApplicationStyle(style);
 
 #else
 

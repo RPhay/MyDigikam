@@ -7,7 +7,7 @@
  * Description : application settings interface
  *
  * SPDX-FileCopyrightText: 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2007      by Arnd Baecker <arnd dot baecker at web dot de>
  * SPDX-FileCopyrightText: 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * SPDX-FileCopyrightText: 2014      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
@@ -228,7 +228,7 @@ void ApplicationSettings::readSettings()
     d->stringComparisonType              = (StringComparisonType)
                                                group.readEntry(d->configStringComparisonTypeEntry,                    (int) Natural);
 
-#ifdef Q_OS_WIN
+#if defined Q_OS_WIN || defined Q_OS_MACOS
 
     QString defaultStyle                 = QLatin1String("Breeze");
 
@@ -240,7 +240,14 @@ void ApplicationSettings::readSettings()
 
 #ifdef HAVE_APPSTYLE_SUPPORT
 
-    setApplicationStyle(group.readEntry(d->configApplicationStyleEntry, defaultStyle));
+    QString style = group.readEntry(d->configApplicationStyleEntry, defaultStyle);
+
+    if (style == QLatin1String("Macintosh"))        // See bug @475572
+    {
+        style = QLatin1String("Breeze");
+    }
+
+    setApplicationStyle(style);
 
 #else
 

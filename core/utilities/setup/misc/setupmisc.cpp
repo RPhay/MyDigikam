@@ -7,7 +7,7 @@
  * Description : mics configuration setup tab
  *
  * SPDX-FileCopyrightText: 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -215,7 +215,11 @@ SetupMisc::SetupMisc(QWidget* const parent)
     {
         QString sitem = style;
         sitem[0]      = sitem[0].toUpper();
-        d->applicationStyle->addItem(sitem, sitem.toLower());
+
+        if (sitem != QLatin1String("Macintosh"))        // See bug #475572
+        {
+            d->applicationStyle->addItem(sitem, sitem.toLower());
+        }
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
