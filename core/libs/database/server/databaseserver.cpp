@@ -502,6 +502,15 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
 
     if (!QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("mysql"))).exists())
     {
+        QPointer<QProgressDialog> dialog = new QProgressDialog;
+        dialog->setLabelText(i18n("The internal MySQL database is "
+                                  "initializing, please wait..."));
+        dialog->setCancelButton(nullptr);
+        dialog->setMinimumDuration(2000);
+        dialog->setModal(true);
+        dialog->setMinimum(0);
+        dialog->setMaximum(0);
+
         // Synthesize the server initialization command line arguments
 
         QStringList mysqlInitCmdArgs;
@@ -531,7 +540,14 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
                                             << initProcess.program()
                                             << initProcess.arguments();
 
-        if (!initProcess.waitForFinished() || (initProcess.exitCode() != 0))
+        while (!initProcess.waitForFinished(250))
+        {
+            qApp->processEvents();
+        }
+
+        delete dialog;
+
+        if (initProcess.exitCode() != 0)
         {
             error = DatabaseServerError(DatabaseServerError::StartError,
                                         processErrorLog(&initProcess,
@@ -760,29 +776,28 @@ DatabaseServerError DatabaseServer::upgradeMysqlDatabase()
 
     // Start the upgrade program
 
-    QProcess* const upgradeProcess = new QProcess();
-    upgradeProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    upgradeProcess->start(d->mysqlUpgradePath, upgradeCmdArgs);
+    QProcess upgradeProcess;
+    upgradeProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
+    upgradeProcess.start(d->mysqlUpgradePath, upgradeCmdArgs);
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Upgrade database:"
-                                        << upgradeProcess->program()
-                                        << upgradeProcess->arguments();
+                                        << upgradeProcess.program()
+                                        << upgradeProcess.arguments();
 
-    while (!upgradeProcess->waitForFinished(250))
+    while (!upgradeProcess.waitForFinished(250))
     {
         qApp->processEvents();
     }
 
-    if (upgradeProcess->exitCode() != 0)
+    delete dialog;
+
+    if (upgradeProcess.exitCode() != 0)
     {
-        QString errorMsg = processErrorLog(upgradeProcess,
+        QString errorMsg = processErrorLog(&upgradeProcess,
                                            i18n("Could not upgrade database."));
 
         error = DatabaseServerError(DatabaseServerError::StartError, errorMsg);
     }
-
-    delete dialog;
-    delete upgradeProcess;
 
     return error;
 }
