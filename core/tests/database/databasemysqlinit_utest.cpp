@@ -125,7 +125,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
     }
 
     DbEngineParameters params;
-    QString defaultAkDir                 = DbEngineParameters::internalServerPrivatePath();
+    QString defaultAkDir                 = DbEngineParameters::serverPrivatePath();
     QString miscDir                      = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
     params.databaseType                  = DbEngineParameters::MySQLDatabaseType();
     params.databaseNameCore              = QLatin1String("digikam");
