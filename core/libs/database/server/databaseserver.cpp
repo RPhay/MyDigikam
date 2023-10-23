@@ -155,7 +155,7 @@ DatabaseServerError DatabaseServer::startDatabaseProcess()
                                     i18n("Database type is not supported."));
     }
 
-    if     (error.getErrorType() == DatabaseServerError::StartError)
+    if      (error.getErrorType() == DatabaseServerError::StartError)
     {
         databaseServerStateEnum = notRunning;
     }
