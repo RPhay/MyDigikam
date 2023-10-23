@@ -196,12 +196,13 @@ void DatabaseServer::stopDatabaseProcess()
 
     QProcess mysqlShutDownProcess;
     mysqlShutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
-    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
-    mysqlShutDownProcess.waitForFinished();
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Send stop to database server";
 
-    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
+    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
+    mysqlShutDownProcess.waitForFinished();
+
+    if (!d->databaseProcess->waitForFinished() && (d->databaseProcess->state() == QProcess::Running))
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
@@ -265,15 +266,6 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
     }
 
     error = upgradeMysqlDatabase();
-
-    if (error.getErrorType() != DatabaseServerError::NoErrors)
-    {
-        return error;
-    }
-
-    stopDatabaseProcess();
-
-    error = startMysqlServer();
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
     {
@@ -478,6 +470,11 @@ void DatabaseServer::copyAndRemoveMysqlLogs() const
     {
         QFile logFile(errorLog.absoluteFilePath());
         QFile oldLogFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("mysql.err.old")));
+
+        if (oldLogFile.exists() && (oldLogFile.size() > (100 * 1024 * 1024)))
+        {
+            oldLogFile.remove();
+        }
 
         if (logFile.open(QFile::ReadOnly) && oldLogFile.open(QFile::Append))
         {

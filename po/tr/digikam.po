@@ -33,6 +33,7 @@
 #
 # Translators:
 #
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 # Adem Alp Yıldız <ademalp@kde.org.tr>, 2005.
 # Ayşe Genç <ayse@uludag.org.tr>, 2004-2005.
 # Baki İncebulut <bakiince@yahhoo.com.tr>, 2006.
@@ -46,13 +47,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2009, 2012.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010-2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2015, 2017, 2019, 2021.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 00:40+0000\n"
-"PO-Revision-Date: 2023-09-30 11:51+0300\n"
+"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"PO-Revision-Date: 2023-10-22 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +61,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -6890,10 +6891,10 @@ msgstr ""
 "algılanabilir olduğu görsele bağlıdır; büyük fotoğraflar genellikle hiçbir "
 "fark göstermezken; keskin, küçültülmüş piksel grafikler renk ayrıntısı "
 "inceliklerini kaybedebilir.</p><p><b>4:4:4</b> - Kroma alt örneklemesi yok, "
-"en yüksek kalite; ancak en düşük sıkıştırma.</p><p><b>4:2:2</p><p><b>4:2:2</ "
+"en yüksek kalite; ancak en düşük sıkıştırma.</p><p><b>4:2:2</p><p><b>4:2:2</"
 "b> - Kroma yatay olarak yarıya indirilir; ortalama sıkıştırma, ortalama "
 "kalite.</p><p><b>4:2:0</b> - Kroma 2 x 2 blok halinde dörde bölünmüş, yüksek "
-"sıkıştırma; ancak düşük kalite.</p>< p><b>4:1:1</b> - Kroma 4 x 1 bloklara "
+"sıkıştırma; ancak düşük kalite.</p><p><b>4:1:1</b> - Kroma 4 x 1 bloklara "
 "bölünmüştür, yüksek sıkıştırma; ancak düşük kalite.</p><p><b>Not: JPEG her "
 "zaman kayıplı sıkıştırma kullanır.</b></p>"
 
@@ -15737,8 +15738,8 @@ msgstr ""
 "<p>Bu araç, kullanıcıların ögeler meydana getirmesine ve en iyi "
 "fotoğraflarınızla bir takvim oluşturmasına olanak tanır.</p><p>Farklı takvim "
 "düzenleri kullanılabilirdir ve tatil zamanını vurgulamak için ICS "
-"biçimindeki bir tarih listesini tümleştirebilirsiniz.</p><p> p><p>Son olarak "
-"araç, sonucu yazıcınıza veya bir PDF dosyasına dışa aktarmanızı önerir.</p>"
+"biçimindeki bir tarih listesini tümleştirebilirsiniz.</p><p>Son olarak araç, "
+"sonucu yazıcınıza veya bir PDF dosyasına dışa aktarmanızı önerir.</p>"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
 #, kde-format
@@ -16820,7 +16821,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
-msgstr "Basamaklı Görsellerin Ön İşlemesi</b>"
+msgstr "Basamaklı Görsellerin Ön İşlemesi"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
 #, kde-format
@@ -28666,54 +28667,61 @@ msgstr ""
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "MySQL sunucu öntanımlı yapılandırması (mysql-global.conf) bulunamıyor."
 
-#: core/libs/database/server/databaseserver.cpp:538
+#: core/libs/database/server/databaseserver.cpp:511
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Pre-processing is in progress, please wait."
+msgid "The internal MySQL database is initializing, please wait..."
+msgstr "Ön işleme sürüyor, lütfen bekleyin."
+
+#: core/libs/database/server/databaseserver.cpp:559
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Veri tabanı başlatıcısı başlatılamadı."
 
-#: core/libs/database/server/databaseserver.cpp:601
+#: core/libs/database/server/databaseserver.cpp:622
 #, kde-format
 msgid "Could not start database server."
 msgstr "Veri tabanı sunucusu başlatılamadı."
 
-#: core/libs/database/server/databaseserver.cpp:643
+#: core/libs/database/server/databaseserver.cpp:664
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Veritabanı sunucusu başlatılırken geçersiz veritabanı nesnesi"
 
-#: core/libs/database/server/databaseserver.cpp:674
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "İlk bağlantı sırasında veritabanı işlemesi beklenmedik bir şekilde işlemden "
 "çıktı."
 
-#: core/libs/database/server/databaseserver.cpp:680
+#: core/libs/database/server/databaseserver.cpp:701
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "60 saniye denendikten sonra Veritabanına bağlanılamadı."
 
-#: core/libs/database/server/databaseserver.cpp:713
+#: core/libs/database/server/databaseserver.cpp:734
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Veritabanı oluşturulamadı<p>Sorgu hatası: %1</p><p>Veritabanı hatası: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:737
+#: core/libs/database/server/databaseserver.cpp:758
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Ön işleme sürüyor, lütfen bekleyin."
 
-#: core/libs/database/server/databaseserver.cpp:779
+#: core/libs/database/server/databaseserver.cpp:802
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "Veri tabanı sunucusu başlatılamadı."
 
-#: core/libs/database/server/databaseserver.cpp:818
+#: core/libs/database/server/databaseserver.cpp:838
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -51055,122 +51063,122 @@ msgstr "Parçacık biçimi:"
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Varsayılan pencere dekorasyonu ve görünüşü için bu seçeneği ayarla."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:275
-#: core/utilities/setup/misc/setupmisc.cpp:230
+#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/utilities/setup/misc/setupmisc.cpp:234
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Simge teması (yeniden balşatmadan sonra değişir):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:277
-#: core/utilities/setup/misc/setupmisc.cpp:232
+#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr "Öntanımlı simge temasını seçmek için bu seçeneği ayarlayın."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
-#: core/utilities/setup/misc/setupmisc.cpp:236
+#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/utilities/setup/misc/setupmisc.cpp:240
 #, fuzzy, kde-format
 #| msgid "Kuwait"
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr "Kuveyt"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:282
-#: core/utilities/setup/misc/setupmisc.cpp:237
+#: core/showfoto/setup/showfotosetupmisc.cpp:286
+#: core/utilities/setup/misc/setupmisc.cpp:241
 #, fuzzy, kde-format
 #| msgid "Breeze"
 msgctxt "icon theme"
 msgid "Breeze"
 msgstr "Esinti"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:283
-#: core/utilities/setup/misc/setupmisc.cpp:238
+#: core/showfoto/setup/showfotosetupmisc.cpp:287
+#: core/utilities/setup/misc/setupmisc.cpp:242
 #, fuzzy, kde-format
 #| msgid "Breeze Dark"
 msgctxt "icon theme"
 msgid "Breeze Dark"
 msgstr "Hafif Karanlık"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:284
-#: core/utilities/setup/misc/setupmisc.cpp:239
+#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:243
 #, kde-format
 msgctxt "icon theme"
 msgid "Faenza"
 msgstr "Faenza"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
-#: core/utilities/setup/misc/setupmisc.cpp:240
+#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/utilities/setup/misc/setupmisc.cpp:244
 #, fuzzy, kde-format
 #| msgid "Luminance"
 msgctxt "icon theme"
 msgid "Ambiance"
 msgstr "Işıklılık"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:286
-#: core/utilities/setup/misc/setupmisc.cpp:241
+#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/utilities/setup/misc/setupmisc.cpp:245
 #, kde-format
 msgctxt "icon theme"
 msgid "Humanity"
 msgstr "Humanity"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:287
-#: core/utilities/setup/misc/setupmisc.cpp:242
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/utilities/setup/misc/setupmisc.cpp:246
 #, kde-format
 msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
-#: core/utilities/setup/misc/setupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc.cpp:269
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Simge Temasını Sistemden Kullan"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:317
-#: core/utilities/setup/misc/setupmisc.cpp:272
+#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/utilities/setup/misc/setupmisc.cpp:276
 #, fuzzy, kde-format
 #| msgid "IIM Application 2"
 msgid "Application font:"
 msgstr "IIM Uygulaması 2"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
-#: core/utilities/setup/misc/setupmisc.cpp:273
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/utilities/setup/misc/setupmisc.cpp:277
 #, fuzzy, kde-format
 #| msgid "Select here the font used to display text in tooltips."
 msgid "Select here the font used to display text in whole application."
 msgstr "İpuçlarında kullanılan yazıtipini buradan seçin."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:332
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/utilities/setup/misc/setupmisc.cpp:292
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Görünüş"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:340
-#: core/utilities/setup/misc/setupmisc.cpp:355
+#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/utilities/setup/misc/setupmisc.cpp:359
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
-#: core/utilities/setup/misc/setupmisc.cpp:361
+#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/utilities/setup/misc/setupmisc.cpp:365
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Normalleştir"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
-#: core/utilities/setup/misc/setupmisc.cpp:367
+#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/utilities/setup/misc/setupmisc.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "Sistem"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:384
-#: core/utilities/setup/misc/setupmisc.cpp:400
+#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/utilities/setup/misc/setupmisc.cpp:404
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -64203,12 +64211,12 @@ msgstr ""
 "seçeneği ayarla. Bir dizüstü bilgisayarda olduğu gibi küçük bir ekran "
 "çözünürlüğü kullanırsanız \"Yalnızca Etkin Tab İçin\" seçeneğini kullan."
 
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc.cpp:299
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Takip eden işlemleri tüm grup üyeleri üzerinde yerine getir:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc.cpp:300
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -64220,25 +64228,25 @@ msgstr ""
 "üzerinde (Hayır)<br/>veya gruptaki tüm gizli ögelerde (Evet) yapılır.<br/"
 ">Eğer Sor seçilirse bu işlem her gerçekleştirildiğinde bir istem olur.<br/>"
 
-#: core/utilities/setup/misc/setupmisc.cpp:302
+#: core/utilities/setup/misc/setupmisc.cpp:306
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Hayır"
 
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:307
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Evet"
 
-#: core/utilities/setup/misc/setupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Sor"
 
-#: core/utilities/setup/misc/setupmisc.cpp:347
+#: core/utilities/setup/misc/setupmisc.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"

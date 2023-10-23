@@ -203,6 +203,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxshmfence-dev"
                    "libcanberra-dev"
                    "libgcrypt11-dev"
+                   "wayland-protocols"
                   )
 
 
