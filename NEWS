@@ -158,7 +158,7 @@ BUGFIXES:
 144 ==> 475840 - Theme icons and text have gone dark on a dark background.
 145 ==> 472083 - Toolbar, footer, and selected tabs are unreadable in all dark themes.
 146 ==> 475482 - Icons and descriptions not readable in black body and other design.
-147 ==> 
+147 ==> 425980 - Search freezes on large collection.
 148 ==> 
 149 ==> 
 150 ==> 
