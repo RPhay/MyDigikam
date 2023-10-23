@@ -342,7 +342,7 @@
 
         ;Remove registry entries
 
-        DeleteRegValue HKLM "Software\${MY_PRODUCT}" "default"
+        DeleteRegValue HKLM "Software\${MY_PRODUCT}" ""
         DeleteRegValue HKLM "Software\${MY_PRODUCT}" "Start Menu Folder"
         DeleteRegKey /ifempty HKLM "Software\${MY_PRODUCT}"
         DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}"
