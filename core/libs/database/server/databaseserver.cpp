@@ -196,12 +196,13 @@ void DatabaseServer::stopDatabaseProcess()
 
     QProcess mysqlShutDownProcess;
     mysqlShutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
-    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
-    mysqlShutDownProcess.waitForFinished();
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Send stop to database server";
 
-    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
+    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
+    mysqlShutDownProcess.waitForFinished();
+
+    if (!d->databaseProcess->waitForFinished() && (d->databaseProcess->state() == QProcess::Running))
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
