@@ -59,15 +59,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 00:40+0000\n"
-"PO-Revision-Date: 2023-06-10 09:12+0200\n"
+"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"PO-Revision-Date: 2023-10-22 10:57+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -840,11 +840,10 @@ msgid "R&emove Tag"
 msgstr "Usuń zn&acznik"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Usuń czarną ramkę"
+msgstr "Usuń wszystkie znaczniki"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, kde-format
@@ -1913,11 +1912,10 @@ msgid "Recognize Faces"
 msgstr "Rozpoznaj twarze"
 
 #: core/app/main/digikamapp_setup.cpp:466
-#, fuzzy, kde-format
-#| msgid "Remove Black Frame"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Usuń czarną ramkę"
+msgstr "Usuń wszystkie twarze"
 
 #: core/app/main/digikamapp_setup.cpp:473
 #, kde-format
@@ -5163,37 +5161,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WEBP"
 
@@ -18307,11 +18295,7 @@ msgid "Sparse text with OSD."
 msgstr "Rozstrzelony tekst z OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Raw line. Treat the image as a single text line,bypassing hacks that are "
-#| "Tesseract-specific."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
@@ -21984,31 +21968,7 @@ msgid "A tool to render slideshow"
 msgstr "Narzędzie do renderowania pokazu slajdów"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>F2</i> key</td></"
-#| "tr><tr><td>Hide/Show Properties:</td><td><i>F4</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22048,7 +22008,7 @@ msgstr ""
 "td><td>Kółko myszy w dół</td></tr><tr><td></td><td>Prawy przycisk myszy</"
 "td></tr><tr><td>Wstrzymaj/Wznów:</td><td>Klawisz <i>spacji</i></td></"
 "tr><tr><td>Ustawienia pokazu slajdów:</td><td>Klawisz <i>F2</i></td></"
-"tr><tr><td>Ukryj/pokaż właściwości:</td><td>Klawisz <i>F4</i></td></"
+"tr><tr><td>Ukryj/pokaż nakładki:</td><td>Klawisz <i>F4</i></td></"
 "tr><tr><td>Wyjdź:</td><td>Klawisz <i>Esc</i></td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Właściwości rzeczy</h1></b></center></nobr></td></"
 "tr><tr><td>Zmiana znaczników:</td><td>Użyj skrótów klawiszowych znaczników</"
@@ -28365,8 +28325,7 @@ msgid "Database type is not supported."
 msgstr "Rodzaj bazy danych jest nieobsługiwany."
 
 #: core/libs/database/server/databaseserver.cpp:304
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "Nie ma żadnej ścieżki do polecenia serwera mysql w pliku ustawień."
 
@@ -28411,32 +28370,38 @@ msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Nie można znaleźć domyślnych ustawień serwera MySQL (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:538
+#: core/libs/database/server/databaseserver.cpp:511
+#, fuzzy, kde-format
+#| msgid "A MySQL database upgrade is in progress, please wait..."
+msgid "The internal MySQL database is initializing, please wait..."
+msgstr "Uaktualnianie bazy danych MySQL jest w trakcie, proszę czekać..."
+
+#: core/libs/database/server/databaseserver.cpp:559
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Nie można rozpocząć inicjowania bazy danych."
 
-#: core/libs/database/server/databaseserver.cpp:601
+#: core/libs/database/server/databaseserver.cpp:622
 #, kde-format
 msgid "Could not start database server."
 msgstr "Nie można rozpocząć serwera bazy danych."
 
-#: core/libs/database/server/databaseserver.cpp:643
+#: core/libs/database/server/databaseserver.cpp:664
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Nieprawidłowy obiekt bazy dany przy uruchamianiu bazy danych"
 
-#: core/libs/database/server/databaseserver.cpp:674
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Proces bazy danych wyszedł nieoczekiwanie podczas wstępnego łączenia."
 
-#: core/libs/database/server/databaseserver.cpp:680
+#: core/libs/database/server/databaseserver.cpp:701
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Nie można połączyć się z bazą danych po próbie trwającej 60 sekund."
 
-#: core/libs/database/server/databaseserver.cpp:713
+#: core/libs/database/server/databaseserver.cpp:734
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28444,19 +28409,17 @@ msgstr ""
 "Nieudane tworzenie bazy danych<p>Błąd zapytania: %1</p><p>Błąd bazy danych: "
 "%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:737
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#: core/libs/database/server/databaseserver.cpp:758
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Wstępne przetwarzanie jest w trakcie. Proszę czekać."
+msgstr "Uaktualnianie bazy danych MySQL jest w trakcie, proszę czekać..."
 
-#: core/libs/database/server/databaseserver.cpp:779
+#: core/libs/database/server/databaseserver.cpp:802
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Nie można uaktualnić bazy danych."
 
-#: core/libs/database/server/databaseserver.cpp:818
+#: core/libs/database/server/databaseserver.cpp:838
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29066,15 +29029,7 @@ msgstr ""
 "S&QL (po zastąpieniu <b><i>hasła</i></b> tym prawidłowym).</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you have an enormous collection, you should "
-#| "start MySQL server with mysql --max_allowed_packet=128M OR in my.ini or "
-#| "~/.my.cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -29090,9 +29045,12 @@ msgstr ""
 "poniższych poleceń:</p><p># su</p><p># systemctl restart mysqld</p><p># "
 "mysql -u root</p><p>...</p><p>Podaj kod SQL w oknie Mysql. aby założyć bazę "
 "danych digiKam z przydzielonymi uprawnieniami (zobacz dalej)</p><p>...</"
-"p><p>quit</p><p>UWAGA: Jeśli masz duży zbiór, powinieneś utworzyć serwer "
-"MySQL przy pomocy polecenia mysql --max_allowed_packet=128M LUB zmienić "
-"ustawienia w my.ini lub ~/.my.cnf</p>"
+"p><p>quit</p><p>UWAGA: Jeśli masz kłopoty z serwerem MySQL na Ubuntu to użyj "
+"dodatkowego polecenia w wierszu poleceń mysql, aby móc utworzyć wyzwalacze "
+"MySQL.<br>SET GLOBAL log_bin_trust_function_creators=1;</p><p>UWAGA: Jeśli "
+"masz duży zbiór, powinieneś utworzyć serwer MySQL przy pomocy polecenia "
+"mysql --max_allowed_packet=128M LUB zmienić ustawienia w my.ini lub ~/.my."
+"cnf</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
@@ -29409,13 +29367,12 @@ msgstr ""
 "Ten plik binarny będzie wykorzystywany do uruchomienia  serwera MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Ten plik binarny będzie wykorzystywany do uruchomienia  serwera MariaDB."
+"Ten plik binarny zostanie wykorzystywany do uaktualnienia bazy danych do "
+"bieżącej wersji serwera."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -49959,116 +49916,116 @@ msgstr "Wygląd rzeczy interfejsu:"
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "Włącz tę opcję, aby wybrać domyślne ozdoby i wyglądy okien."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:275
-#: core/utilities/setup/misc/setupmisc.cpp:230
+#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/utilities/setup/misc/setupmisc.cpp:234
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "Zestaw ikon (zmieni się po ponownym uruchomieniu):"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:277
-#: core/utilities/setup/misc/setupmisc.cpp:232
-#, kde-format
-msgid "Set this option to choose the default icon theme."
-msgstr "Ustaw tę opcję, aby wybrać domyślny zestaw ikon."
-
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
-msgctxt "icon theme"
-msgid "Adwaita"
-msgstr "Adwaita"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:282
-#: core/utilities/setup/misc/setupmisc.cpp:237
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze"
-msgstr "Bryza"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:283
-#: core/utilities/setup/misc/setupmisc.cpp:238
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze Dark"
-msgstr "Ciemna Bryza"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:284
-#: core/utilities/setup/misc/setupmisc.cpp:239
-#, kde-format
-msgctxt "icon theme"
-msgid "Faenza"
-msgstr "Faenza"
+msgid "Set this option to choose the default icon theme."
+msgstr "Ustaw tę opcję, aby wybrać domyślny zestaw ikon."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:285
 #: core/utilities/setup/misc/setupmisc.cpp:240
 #, kde-format
 msgctxt "icon theme"
-msgid "Ambiance"
-msgstr "Ambiance"
+msgid "Adwaita"
+msgstr "Adwaita"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
 #: core/utilities/setup/misc/setupmisc.cpp:241
 #, kde-format
 msgctxt "icon theme"
-msgid "Humanity"
-msgstr "Humanity"
+msgid "Breeze"
+msgstr "Bryza"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
+msgid "Breeze Dark"
+msgstr "Ciemna Bryza"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:243
+#, kde-format
+msgctxt "icon theme"
+msgid "Faenza"
+msgstr "Faenza"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/utilities/setup/misc/setupmisc.cpp:244
+#, kde-format
+msgctxt "icon theme"
+msgid "Ambiance"
+msgstr "Ambiance"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/utilities/setup/misc/setupmisc.cpp:245
+#, kde-format
+msgctxt "icon theme"
+msgid "Humanity"
+msgstr "Humanity"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/utilities/setup/misc/setupmisc.cpp:246
+#, kde-format
+msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Tlen"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
-#: core/utilities/setup/misc/setupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc.cpp:269
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "Użyj zestawu ikon z systemu plików"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:317
-#: core/utilities/setup/misc/setupmisc.cpp:272
+#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/utilities/setup/misc/setupmisc.cpp:276
 #, kde-format
 msgid "Application font:"
 msgstr "Czcionka aplikacji:"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
-#: core/utilities/setup/misc/setupmisc.cpp:273
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/utilities/setup/misc/setupmisc.cpp:277
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr ""
 "Tutaj wybierz czcionkę używaną do wyświetlania tekstu w całej aplikacji."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:332
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/utilities/setup/misc/setupmisc.cpp:292
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "Wygląd"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:340
-#: core/utilities/setup/misc/setupmisc.cpp:355
+#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/utilities/setup/misc/setupmisc.cpp:359
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "Sprawdzanie pisowni"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
-#: core/utilities/setup/misc/setupmisc.cpp:361
+#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/utilities/setup/misc/setupmisc.cpp:365
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "Tłumaczenie"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
-#: core/utilities/setup/misc/setupmisc.cpp:367
+#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/utilities/setup/misc/setupmisc.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "System"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:384
-#: core/utilities/setup/misc/setupmisc.cpp:400
+#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/utilities/setup/misc/setupmisc.cpp:404
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -51188,10 +51145,7 @@ msgid "Add a suffix number, ||n|| specifies the number of digits to use"
 msgstr "Dodaj numer przyrostka, ||n|| określa liczbę używanych cyfr"
 
 #: core/utilities/advancedrename/parser/modifiers/uniquemodifier.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
-#| "specifies the separator char before the numbers"
+#, kde-format
 msgid ""
 "Add a suffix number, ||n|| specifies the number of digits to use, ||c|| "
 "specifies the separator char before the numbers, ||a|| optional to include "
@@ -51199,7 +51153,9 @@ msgid ""
 "digits"
 msgstr ""
 "Dodaj numer przyrostka, ||n|| określa liczbę używanych cyfr, ||c|| określa "
-"znak rozdzielający przed numerami"
+"znak rozdzielający przed numerami, niewymagane ||a|| aby uwzględnić "
+"ustawienia dla niepowtarzalności, niewymagane ||0|| aby zawsze wypełniać ||"
+"n||-krotnie cyframi zero"
 
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:36
 #, kde-format
@@ -52920,10 +52876,9 @@ msgstr "Pokaż kontrolę skali"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:233
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
-#, fuzzy, kde-format
-#| msgid "Google Maps"
+#, kde-format
 msgid "Google Maps API Key"
-msgstr "Mapy Google"
+msgstr "Klucz API Map Google"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
@@ -52937,16 +52892,14 @@ msgid "Float items"
 msgstr "Pływające rzeczy"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1651
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "API URL:"
+#, kde-format
 msgid "API Key:"
-msgstr "Adres URL API:"
+msgstr "Klucz API: "
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
 msgid "Javascript Message"
-msgstr ""
+msgstr "Wiadomość Javascript"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
@@ -55365,10 +55318,9 @@ msgid "Skipped to convert file <filename>%1</filename> to DNG"
 msgstr "Pominięto przekształacanie pliku <filename>%1</filename> na DNG"
 
 #: core/utilities/import/backend/cameracontroller.cpp:808
-#, fuzzy, kde-kuit-format
-#| msgid "Failed to run script for <filename>%1</filename>"
+#, kde-kuit-format
 msgid "Failed to open script for <filename>%1</filename>"
-msgstr "Nie udało się uruchomić skryptu <filename>%1</filename>"
+msgstr "Nie udało się otworzyć skryptu dla <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:882
 #, kde-kuit-format
@@ -56156,20 +56108,14 @@ msgstr ""
 "zdjęcia z aparatu."
 
 #: core/utilities/import/main/importui.cpp:1416
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Collection which host your default target album set to process download "
-#| "from camera device is not available. Please select another one from "
-#| "camera configuration dialog."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Collection selected as the destination album to download from the camera "
 "device is not available. Please select another destination album."
 msgstr ""
 "Zbiór, który przechowuje twój domyślny album docelowy ustawiony na "
-"pobieranie z urządzenia kamery jest niedostępny. Wybierz inny album z okna "
-"dialogowego ustawień kamery"
+"pobieranie z urządzenia kamery jest niedostępny. Wybierz inny album docelowy."
 
 #: core/utilities/import/main/importui.cpp:1470
 #, kde-kuit-format
@@ -57417,39 +57363,31 @@ msgstr ""
 "Czas trwania: %1"
 
 #: core/utilities/maintenance/metadataremover.cpp:189
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Usuń znacznik z obrazów"
+msgstr "Usuń wszystkie twarze z obrazu"
 
 #: core/utilities/maintenance/metadataremover.cpp:194
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Usuń znacznik z obrazów"
+msgstr "Usuń wszystkie znaczniki z obrazu"
 
 #: core/utilities/maintenance/metadataremover.cpp:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Wysyłanie zdjęcia zakończone niepowodzeniem %1\n"
+"Usunięto wszystkie twarze z %1 zaznaczonych obrazów.\n"
 "Czy chcesz kontynuować?"
 
 #: core/utilities/maintenance/metadataremover.cpp:215
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Wysyłanie zdjęcia zakończone niepowodzeniem %1\n"
+"Usunięto wszystkie znaczniki z %1 zaznaczonych obrazów.\n"
 "Czy chcesz kontynuować?"
 
 #: core/utilities/maintenance/metadatasynchronizer.cpp:187
@@ -62385,12 +62323,12 @@ msgstr ""
 "boczny. Wybierz opcję \"Tylko dla aktywnych kart\", jeśli masz ekran o małej "
 "rozdzielczości taki jak np. w laptopach."
 
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc.cpp:299
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "Wykonaj następujące działania na wszystkich członkach grupy:"
 
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc.cpp:300
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -62403,25 +62341,25 @@ msgstr ""
 "w grupie (Tak).<br/>Jeśi wybrano pytaj, to zostanie wyświetlone pytanie<br/"
 ">każdorazowo przy wykonaniu działania."
 
-#: core/utilities/setup/misc/setupmisc.cpp:302
+#: core/utilities/setup/misc/setupmisc.cpp:306
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "Nie"
 
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:307
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "Tak"
 
-#: core/utilities/setup/misc/setupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "Pytaj"
 
-#: core/utilities/setup/misc/setupmisc.cpp:347
+#: core/utilities/setup/misc/setupmisc.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"

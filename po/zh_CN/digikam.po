@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 00:40+0000\n"
+"POT-Creation-Date: 2023-10-23 00:40+0000\n"
 "PO-Revision-Date: 2023-10-21 13:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27393,50 +27393,57 @@ msgstr ""
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "无法找到 MySQL 服务器的默认配置文件 (mysql-global.conf)。"
 
-#: core/libs/database/server/databaseserver.cpp:538
+#: core/libs/database/server/databaseserver.cpp:511
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Pre-processing is in progress, please wait."
+msgid "The internal MySQL database is initializing, please wait..."
+msgstr "正在处理，请稍候。"
+
+#: core/libs/database/server/databaseserver.cpp:559
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "无法启动数据库初始化程序。"
 
-#: core/libs/database/server/databaseserver.cpp:601
+#: core/libs/database/server/databaseserver.cpp:622
 #, kde-format
 msgid "Could not start database server."
 msgstr "无法启动数据库服务器。"
 
-#: core/libs/database/server/databaseserver.cpp:643
+#: core/libs/database/server/databaseserver.cpp:664
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "数据库服务器启动时遇到无效的数据库对象"
 
-#: core/libs/database/server/databaseserver.cpp:674
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "数据库进程在初始化连接时意外退出。"
 
-#: core/libs/database/server/databaseserver.cpp:680
+#: core/libs/database/server/databaseserver.cpp:701
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "无法连接到数据库，已尝试 60 秒。"
 
-#: core/libs/database/server/databaseserver.cpp:713
+#: core/libs/database/server/databaseserver.cpp:734
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "无法创建数据库<p>查询错误：%1</p><p>数据库错误：%2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:737
+#: core/libs/database/server/databaseserver.cpp:758
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "正在处理，请稍候。"
 
-#: core/libs/database/server/databaseserver.cpp:779
+#: core/libs/database/server/databaseserver.cpp:802
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "无法升级数据库。"
 
-#: core/libs/database/server/databaseserver.cpp:818
+#: core/libs/database/server/databaseserver.cpp:838
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>可执行程序：%2</p><p>参数：%3</p><p>进程错误：%4</p>"
@@ -48379,115 +48386,115 @@ msgstr "窗口部件视觉风格："
 msgid "Set this option to choose the default window decoration and looks."
 msgstr "选择默认窗口装饰和外观风格。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:275
-#: core/utilities/setup/misc/setupmisc.cpp:230
+#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/utilities/setup/misc/setupmisc.cpp:234
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr "图标主题 (重启程序生效)："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:277
-#: core/utilities/setup/misc/setupmisc.cpp:232
-#, kde-format
-msgid "Set this option to choose the default icon theme."
-msgstr "选择默认图标主题。"
-
 #: core/showfoto/setup/showfotosetupmisc.cpp:281
 #: core/utilities/setup/misc/setupmisc.cpp:236
 #, kde-format
-msgctxt "icon theme"
-msgid "Adwaita"
-msgstr "Adwaita 古龟"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:282
-#: core/utilities/setup/misc/setupmisc.cpp:237
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze"
-msgstr "Breeze 微风"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:283
-#: core/utilities/setup/misc/setupmisc.cpp:238
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze Dark"
-msgstr "Breeze 微风深色"
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:284
-#: core/utilities/setup/misc/setupmisc.cpp:239
-#, kde-format
-msgctxt "icon theme"
-msgid "Faenza"
-msgstr "Faenza 法恩扎"
+msgid "Set this option to choose the default icon theme."
+msgstr "选择默认图标主题。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:285
 #: core/utilities/setup/misc/setupmisc.cpp:240
 #, kde-format
 msgctxt "icon theme"
-msgid "Ambiance"
-msgstr "Ambiance 意境"
+msgid "Adwaita"
+msgstr "Adwaita 古龟"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
 #: core/utilities/setup/misc/setupmisc.cpp:241
 #, kde-format
 msgctxt "icon theme"
-msgid "Humanity"
-msgstr "Humanity 仁心"
+msgid "Breeze"
+msgstr "Breeze 微风"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
+msgid "Breeze Dark"
+msgstr "Breeze 微风深色"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:243
+#, kde-format
+msgctxt "icon theme"
+msgid "Faenza"
+msgstr "Faenza 法恩扎"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/utilities/setup/misc/setupmisc.cpp:244
+#, kde-format
+msgctxt "icon theme"
+msgid "Ambiance"
+msgstr "Ambiance 意境"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/utilities/setup/misc/setupmisc.cpp:245
+#, kde-format
+msgctxt "icon theme"
+msgid "Humanity"
+msgstr "Humanity 仁心"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/utilities/setup/misc/setupmisc.cpp:246
+#, kde-format
+msgctxt "icon theme"
 msgid "Oxygen"
 msgstr "Oxygen 轻氧"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
-#: core/utilities/setup/misc/setupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc.cpp:269
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr "使用系统图标主题"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:317
-#: core/utilities/setup/misc/setupmisc.cpp:272
+#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/utilities/setup/misc/setupmisc.cpp:276
 #, kde-format
 msgid "Application font:"
 msgstr "界面字体："
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
-#: core/utilities/setup/misc/setupmisc.cpp:273
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/utilities/setup/misc/setupmisc.cpp:277
 #, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "选择在整个应用程序中用于显示文字的字体。"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:332
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/utilities/setup/misc/setupmisc.cpp:292
 #, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "外观"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:340
-#: core/utilities/setup/misc/setupmisc.cpp:355
+#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/utilities/setup/misc/setupmisc.cpp:359
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr "拼写检查"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
-#: core/utilities/setup/misc/setupmisc.cpp:361
+#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/utilities/setup/misc/setupmisc.cpp:365
 #, kde-format
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "本地化"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
-#: core/utilities/setup/misc/setupmisc.cpp:367
+#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/utilities/setup/misc/setupmisc.cpp:371
 #, kde-format
 msgctxt "@title:tab"
 msgid "System"
 msgstr "系统"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:384
-#: core/utilities/setup/misc/setupmisc.cpp:400
+#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/utilities/setup/misc/setupmisc.cpp:404
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -60300,12 +60307,12 @@ msgstr ""
 "选择侧栏选项卡标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动选"
 "项卡显示”。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc.cpp:299
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr "是否对分组的全部子项目执行下列操作："
 
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc.cpp:300
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -60316,25 +60323,25 @@ msgstr ""
 "图像分组后，下列操作是否对分组的全部子项目执行：<br/>否：仅对显示的分组子项目"
 "执行。<br/>是：对分组所有子项目执行。<br/>询问：每次操作时询问用户如何处理。"
 
-#: core/utilities/setup/misc/setupmisc.cpp:302
+#: core/utilities/setup/misc/setupmisc.cpp:306
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "否"
 
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:307
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "是"
 
-#: core/utilities/setup/misc/setupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr "询问"
 
-#: core/utilities/setup/misc/setupmisc.cpp:347
+#: core/utilities/setup/misc/setupmisc.cpp:351
 #, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"

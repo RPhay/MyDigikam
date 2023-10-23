@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 00:40+0000\n"
+"POT-Creation-Date: 2023-10-23 00:40+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -26955,48 +26955,53 @@ msgstr ""
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:538
+#: core/libs/database/server/databaseserver.cpp:511
+#, fuzzy, kde-format
+msgid "The internal MySQL database is initializing, please wait..."
+msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
+
+#: core/libs/database/server/databaseserver.cpp:559
 #, fuzzy, kde-format
 msgid "Could not start database initializer."
 msgstr "חישוב הממוצע נכשל"
 
-#: core/libs/database/server/databaseserver.cpp:601
+#: core/libs/database/server/databaseserver.cpp:622
 #, fuzzy, kde-format
 msgid "Could not start database server."
 msgstr "חישוב הממוצע נכשל"
 
-#: core/libs/database/server/databaseserver.cpp:643
+#: core/libs/database/server/databaseserver.cpp:664
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:674
+#: core/libs/database/server/databaseserver.cpp:695
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:680
+#: core/libs/database/server/databaseserver.cpp:701
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:713
+#: core/libs/database/server/databaseserver.cpp:734
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:737
+#: core/libs/database/server/databaseserver.cpp:758
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "בתהליך התנתקות ממצלמה, אנא המתינו..."
 
-#: core/libs/database/server/databaseserver.cpp:779
+#: core/libs/database/server/databaseserver.cpp:802
 #, fuzzy, kde-format
 msgid "Could not upgrade database."
 msgstr "חישוב הממוצע נכשל"
 
-#: core/libs/database/server/databaseserver.cpp:818
+#: core/libs/database/server/databaseserver.cpp:838
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -48125,118 +48130,118 @@ msgstr ""
 msgid "Set this option to choose the default window decoration and looks."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:275
-#: core/utilities/setup/misc/setupmisc.cpp:230
+#: core/showfoto/setup/showfotosetupmisc.cpp:279
+#: core/utilities/setup/misc/setupmisc.cpp:234
 #, kde-format
 msgid "Icon theme (changes after restart):"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:277
-#: core/utilities/setup/misc/setupmisc.cpp:232
+#: core/showfoto/setup/showfotosetupmisc.cpp:281
+#: core/utilities/setup/misc/setupmisc.cpp:236
 #, fuzzy, kde-format
 msgid "Set this option to choose the default icon theme."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:281
-#: core/utilities/setup/misc/setupmisc.cpp:236
+#: core/showfoto/setup/showfotosetupmisc.cpp:285
+#: core/utilities/setup/misc/setupmisc.cpp:240
 #, kde-format
 msgctxt "icon theme"
 msgid "Adwaita"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:282
-#: core/utilities/setup/misc/setupmisc.cpp:237
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze"
-msgstr ""
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:283
-#: core/utilities/setup/misc/setupmisc.cpp:238
-#, kde-format
-msgctxt "icon theme"
-msgid "Breeze Dark"
-msgstr ""
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:284
-#: core/utilities/setup/misc/setupmisc.cpp:239
-#, kde-format
-msgctxt "icon theme"
-msgid "Faenza"
-msgstr ""
-
-#: core/showfoto/setup/showfotosetupmisc.cpp:285
-#: core/utilities/setup/misc/setupmisc.cpp:240
-#, fuzzy, kde-format
-msgctxt "icon theme"
-msgid "Ambiance"
-msgstr "תאורה:"
-
 #: core/showfoto/setup/showfotosetupmisc.cpp:286
 #: core/utilities/setup/misc/setupmisc.cpp:241
 #, kde-format
 msgctxt "icon theme"
-msgid "Humanity"
+msgid "Breeze"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:287
 #: core/utilities/setup/misc/setupmisc.cpp:242
 #, kde-format
 msgctxt "icon theme"
+msgid "Breeze Dark"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:288
+#: core/utilities/setup/misc/setupmisc.cpp:243
+#, kde-format
+msgctxt "icon theme"
+msgid "Faenza"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:289
+#: core/utilities/setup/misc/setupmisc.cpp:244
+#, fuzzy, kde-format
+msgctxt "icon theme"
+msgid "Ambiance"
+msgstr "תאורה:"
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:290
+#: core/utilities/setup/misc/setupmisc.cpp:245
+#, kde-format
+msgctxt "icon theme"
+msgid "Humanity"
+msgstr ""
+
+#: core/showfoto/setup/showfotosetupmisc.cpp:291
+#: core/utilities/setup/misc/setupmisc.cpp:246
+#, kde-format
+msgctxt "icon theme"
 msgid "Oxygen"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:310
-#: core/utilities/setup/misc/setupmisc.cpp:265
+#: core/showfoto/setup/showfotosetupmisc.cpp:314
+#: core/utilities/setup/misc/setupmisc.cpp:269
 #, kde-format
 msgid "Use Icon Theme From System"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:317
-#: core/utilities/setup/misc/setupmisc.cpp:272
+#: core/showfoto/setup/showfotosetupmisc.cpp:321
+#: core/utilities/setup/misc/setupmisc.cpp:276
 #, fuzzy, kde-format
 #| msgid "IIM Application 2"
 msgid "Application font:"
 msgstr "יישום IIM 2"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:318
-#: core/utilities/setup/misc/setupmisc.cpp:273
+#: core/showfoto/setup/showfotosetupmisc.cpp:322
+#: core/utilities/setup/misc/setupmisc.cpp:277
 #, fuzzy, kde-format
 msgid "Select here the font used to display text in whole application."
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:332
-#: core/utilities/setup/misc/setupmisc.cpp:288
+#: core/showfoto/setup/showfotosetupmisc.cpp:336
+#: core/utilities/setup/misc/setupmisc.cpp:292
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Appearance"
 msgstr "ביטול"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:340
-#: core/utilities/setup/misc/setupmisc.cpp:355
+#: core/showfoto/setup/showfotosetupmisc.cpp:344
+#: core/utilities/setup/misc/setupmisc.cpp:359
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:346
-#: core/utilities/setup/misc/setupmisc.cpp:361
+#: core/showfoto/setup/showfotosetupmisc.cpp:350
+#: core/utilities/setup/misc/setupmisc.cpp:365
 #, fuzzy, kde-format
 #| msgid "Normalize"
 msgctxt "@title:tab"
 msgid "Localize"
 msgstr "נירמול"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:352
-#: core/utilities/setup/misc/setupmisc.cpp:367
+#: core/showfoto/setup/showfotosetupmisc.cpp:356
+#: core/utilities/setup/misc/setupmisc.cpp:371
 #, fuzzy, kde-format
 #| msgid "System Font"
 msgctxt "@title:tab"
 msgid "System"
 msgstr "גופני מערכת ההפעלה"
 
-#: core/showfoto/setup/showfotosetupmisc.cpp:384
-#: core/utilities/setup/misc/setupmisc.cpp:400
+#: core/showfoto/setup/showfotosetupmisc.cpp:388
+#: core/utilities/setup/misc/setupmisc.cpp:404
 #, kde-format
 msgid ""
 "Check for new version option will verify the pre-releases.\n"
@@ -59853,12 +59858,12 @@ msgid ""
 "laptop computer."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:295
+#: core/utilities/setup/misc/setupmisc.cpp:299
 #, kde-format
 msgid "Perform the following operations on all group members:"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:296
+#: core/utilities/setup/misc/setupmisc.cpp:300
 #, kde-format
 msgid ""
 "When images are grouped the following operations<br/>are performed only on "
@@ -59867,27 +59872,27 @@ msgid ""
 "operation is executed."
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:302
+#: core/utilities/setup/misc/setupmisc.cpp:306
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@label: grouped image ops"
 msgid "No"
 msgstr "לא"
 
-#: core/utilities/setup/misc/setupmisc.cpp:303
+#: core/utilities/setup/misc/setupmisc.cpp:307
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@label: grouped image ops"
 msgid "Yes"
 msgstr "כן"
 
-#: core/utilities/setup/misc/setupmisc.cpp:304
+#: core/utilities/setup/misc/setupmisc.cpp:308
 #, kde-format
 msgctxt "@label: grouped image ops"
 msgid "Ask"
 msgstr ""
 
-#: core/utilities/setup/misc/setupmisc.cpp:347
+#: core/utilities/setup/misc/setupmisc.cpp:351
 #, fuzzy, kde-format
 msgctxt "@title:tab"
 msgid "Grouping"
