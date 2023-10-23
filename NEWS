@@ -155,9 +155,9 @@ BUGFIXES:
 141 ==> 470359 - Geolocation Edit plugin ignores lazy synchronization / immediately writes metadata.
 142 ==> 430277 - digiKam-MySQL-MariaDB crash.
 143 ==> 475981 - Updating from 7.2.0 to 8.1 the digiKam entry in my start menu is: 7.9.0.
-144 ==> 
-145 ==> 
-146 ==> 
+144 ==> 475840 - Theme icons and text have gone dark on a dark background.
+145 ==> 472083 - Toolbar, footer, and selected tabs are unreadable in all dark themes.
+146 ==> 475482 - Icons and descriptions not readable in black body and other design.
 147 ==> 
 148 ==> 
 149 ==> 
