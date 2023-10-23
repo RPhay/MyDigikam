@@ -155,7 +155,7 @@ DatabaseServerError DatabaseServer::startDatabaseProcess()
                                     i18n("Database type is not supported."));
     }
 
-    if     (error.getErrorType() == DatabaseServerError::StartError)
+    if      (error.getErrorType() == DatabaseServerError::StartError)
     {
         databaseServerStateEnum = notRunning;
     }
@@ -196,12 +196,13 @@ void DatabaseServer::stopDatabaseProcess()
 
     QProcess mysqlShutDownProcess;
     mysqlShutDownProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
-    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
-    mysqlShutDownProcess.waitForFinished();
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Send stop to database server";
 
-    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished())
+    mysqlShutDownProcess.start(d->mysqlAdminPath, mysqlShutDownArgs);
+    mysqlShutDownProcess.waitForFinished();
+
+    if (!d->databaseProcess->waitForFinished() && (d->databaseProcess->state() == QProcess::Running))
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
@@ -265,15 +266,6 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
     }
 
     error = upgradeMysqlDatabase();
-
-    if (error.getErrorType() != DatabaseServerError::NoErrors)
-    {
-        return error;
-    }
-
-    stopDatabaseProcess();
-
-    error = startMysqlServer();
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
     {
