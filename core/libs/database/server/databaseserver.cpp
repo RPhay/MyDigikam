@@ -271,15 +271,6 @@ DatabaseServerError DatabaseServer::startMysqlDatabaseProcess()
         return error;
     }
 
-    stopDatabaseProcess();
-
-    error = startMysqlServer();
-
-    if (error.getErrorType() != DatabaseServerError::NoErrors)
-    {
-        return error;
-    }
-
     error = initMysqlDatabase(true);
 
     if (error.getErrorType() != DatabaseServerError::NoErrors)
