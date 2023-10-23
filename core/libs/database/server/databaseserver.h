@@ -25,8 +25,8 @@
 
 // Local includes
 
-#include "databaseservererror.h"
 #include "databaseserverstarter.h"
+#include "databaseservererror.h"
 #include "dbengineparameters.h"
 #include "digikam_export.h"
 
