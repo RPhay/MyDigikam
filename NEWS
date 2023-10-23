@@ -154,7 +154,7 @@ BUGFIXES:
 140 ==> 472640 - Batch Queue Manager Cannot see resize pixel size when Macintosh Widgets are selected.
 141 ==> 470359 - Geolocation Edit plugin ignores lazy synchronization / immediately writes metadata.
 142 ==> 430277 - digiKam-MySQL-MariaDB crash.
-143 ==> 
+143 ==> 475981 - Updating from 7.2.0 to 8.1 the digiKam entry in my start menu is: 7.9.0.
 144 ==> 
 145 ==> 
 146 ==> 
