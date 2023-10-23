@@ -6,7 +6,7 @@
  * Date        : 2005-04-02
  * Description : setup Misc tab.
  *
- * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText:      2008 by Arnd Baecker <arnd dot baecker at web dot de>
  * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
@@ -260,7 +260,11 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     {
         QString sitem = style;
         sitem[0]      = sitem[0].toUpper();
-        d->applicationStyle->addItem(sitem, sitem.toLower());
+
+        if (sitem != QLatin1String("Macintosh"))        // See bug #475572
+        {
+            d->applicationStyle->addItem(sitem, sitem.toLower());
+        }
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT

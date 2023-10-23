@@ -566,8 +566,6 @@ void SlideShowLoader::preloadNextItem()
 
 void SlideShowLoader::wheelEvent(QWheelEvent* e)
 {
-    d->osd->toolBar()->closeConfigurationDialog();
-
     if (e->angleDelta().y() < 0)
     {
         d->osd->pause(true);
@@ -590,8 +588,6 @@ void SlideShowLoader::wheelEvent(QWheelEvent* e)
 
 void SlideShowLoader::mousePressEvent(QMouseEvent* e)
 {
-    d->osd->toolBar()->closeConfigurationDialog();
-
     if      (e->button() == Qt::LeftButton)
     {
         if (d->fileIndex == -1)

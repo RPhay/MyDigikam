@@ -71,6 +71,7 @@ set(BreezeOptions -DBUILD_QT6=ON -DBUILD_QT5=OFF -DWITH_DECORATIONS=OFF -DWITH_W
 set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON)
 
 InstallKF6Component(extra-cmake-modules      ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(plasma-wayland-protocols ${KDE_VERSION} "${Qt6CommonOptions}"                                    "wayland-proto-ecm-version.patch")
 InstallKF6Component(kconfig                  ${KDE_VERSION} "${Qt6CommonOptions};-DKCONFIG_USE_QML=OFF"              "")
 InstallKF6Component(breeze-icons             ${KDE_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}"              "breeze-icons-dropsvg-rccprefix.patch")
 InstallKF6Component(solid                    ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
@@ -99,7 +100,6 @@ InstallKF6Component(kimageformats            ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(knotifyconfig            ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(knotifications           ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kjobwidgets              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(plasma-wayland-protocols ${KDE_VERSION} "${Qt6CommonOptions}"                                    "wayland-proto-ecm-version.patch")
 InstallKF6Component(sonnet                   ${KDE_VERSION} "${Qt6CommonOptions};-DSONNET_USE_QML=OFF"               "")
 InstallKF6Component(ktextwidgets             ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kio                      ${KDE_VERSION} "${Qt6CommonOptions}"                                    "kio-drop-deps.patch")

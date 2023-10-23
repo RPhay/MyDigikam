@@ -42,9 +42,10 @@
 #include "digikam_version.h"
 #include "dtestdatadir.h"
 #include "wstoolutils.h"
+#include "mysqlupgradebinary.h"
+#include "mysqlserverbinary.h"
 #include "mysqladminbinary.h"
 #include "mysqlinitbinary.h"
-#include "mysqlservbinary.h"
 #include "databaseserverstarter.h"
 
 using namespace Digikam;
@@ -84,15 +85,24 @@ void DatabaseMysqlInitTest::testMysqlInit()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Setup Mysql Database...";
 
-    MysqlInitBinary  mysqlInitBin;
+    MysqlUpgradeBinary mysqlUpgradeBin;
 
-    if (!mysqlInitBin.recheckDirectories())
+    if (!mysqlUpgradeBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
+        QWARN("Not able to found the Mysql Upgrade binary program. Test is aborted...");
         return;
     }
 
-    MysqlAdminBinary mysqlAdminBin;
+    MysqlServerBinary  mysqlServerBin;
+    mysqlServerBin.slotAddPossibleSearchDirectory(QLatin1String("/usr/sbin"));
+
+    if (!mysqlServerBin.recheckDirectories())
+    {
+        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        return;
+    }
+
+    MysqlAdminBinary   mysqlAdminBin;
 
     if (!mysqlAdminBin.recheckDirectories())
     {
@@ -100,12 +110,11 @@ void DatabaseMysqlInitTest::testMysqlInit()
         return;
     }
 
-    MysqlServBinary  mysqlServBin;
-    mysqlServBin.slotAddPossibleSearchDirectory(QLatin1String("/usr/sbin"));
+    MysqlInitBinary    mysqlInitBin;
 
-    if (!mysqlServBin.recheckDirectories())
+    if (!mysqlInitBin.recheckDirectories())
     {
-        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
         return;
     }
 
@@ -116,23 +125,24 @@ void DatabaseMysqlInitTest::testMysqlInit()
     }
 
     DbEngineParameters params;
-    QString defaultAkDir               = DbEngineParameters::internalServerPrivatePath();
-    QString miscDir                    = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
-    params.databaseType                = DbEngineParameters::MySQLDatabaseType();
-    params.databaseNameCore            = QLatin1String("digikam");
-    params.databaseNameThumbnails      = QLatin1String("digikam");
-    params.databaseNameFace            = QLatin1String("digikam");
-    params.databaseNameSimilarity      = QLatin1String("digikam");
-    params.userName                    = QLatin1String("root");
-    params.password                    = QString();
-    params.internalServer              = true;
-    params.internalServerDBPath        = m_tempDir.path();
-    params.internalServerMysqlServCmd  = mysqlServBin.path();
-    params.internalServerMysqlInitCmd  = mysqlInitBin.path();
-    params.internalServerMysqlAdminCmd = mysqlAdminBin.path();
-    params.hostName                    = QString();
-    params.port                        = -1;
-    params.connectOptions              = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
+    QString defaultAkDir                 = DbEngineParameters::serverPrivatePath();
+    QString miscDir                      = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
+    params.databaseType                  = DbEngineParameters::MySQLDatabaseType();
+    params.databaseNameCore              = QLatin1String("digikam");
+    params.databaseNameThumbnails        = QLatin1String("digikam");
+    params.databaseNameFace              = QLatin1String("digikam");
+    params.databaseNameSimilarity        = QLatin1String("digikam");
+    params.userName                      = QLatin1String("root");
+    params.password                      = QString();
+    params.internalServer                = true;
+    params.internalServerDBPath          = m_tempDir.path();
+    params.internalServerMysqlUpgradeCmd = mysqlUpgradeBin.path();
+    params.internalServerMysqlServerCmd  = mysqlServerBin.path();
+    params.internalServerMysqlAdminCmd   = mysqlAdminBin.path();
+    params.internalServerMysqlInitCmd    = mysqlInitBin.path();
+    params.hostName                      = QString();
+    params.port                          = -1;
+    params.connectOptions                = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
 
     // ------------------------------------------------------------------------------------
 

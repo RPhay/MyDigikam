@@ -59,9 +59,10 @@
 #include "dbinarysearch.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "mysqlupgradebinary.h"
+#include "mysqlserverbinary.h"
 #include "mysqladminbinary.h"
 #include "mysqlinitbinary.h"
-#include "mysqlservbinary.h"
 #include "albummanager.h"
 
 namespace Digikam
@@ -130,9 +131,10 @@ public:
 
     DBinarySearch*     dbBinariesWidget;
 
-    MysqlInitBinary    mysqlInitBin;
+    MysqlUpgradeBinary mysqlUpgradeBin;
+    MysqlServerBinary  mysqlServerBin;
     MysqlAdminBinary   mysqlAdminBin;
-    MysqlServBinary    mysqlServBin;
+    MysqlInitBinary    mysqlInitBin;
 
     DbEngineParameters orgPrms;
 

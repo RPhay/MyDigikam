@@ -99,9 +99,9 @@ private:
     DatabaseServerError initMysqlConfig()                                const;
 
     /**
-     * Check and remove mysql error log files.
+     * Copy and remove mysql error log files.
      */
-    bool checkAndRemoveMysqlLogs()                                       const;
+    void copyAndRemoveMysqlLogs()                                        const;
 
     /**
      * Creates initial Mysql database files for internal server.
@@ -116,7 +116,7 @@ private:
     /**
      * Creates or connects to database digikam in mysql.
      */
-    DatabaseServerError initMysqlDatabase()                              const;
+    DatabaseServerError initMysqlDatabase(bool useDatabase)              const;
 
     /**
      * Perform a mysql database upgrade.

@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -103,20 +103,24 @@ endif()
 HEADER_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/utilities DK_LOCAL_INCLUDES_UTILS)
 
 target_include_directories(showfoto
-                           PRIVATE
 
                            # We need to include the setup dir for showfoto BEFORE the other include dirs,
                            # otherwise the one from the "utilities" dir will be used
 
                            BEFORE
+                           PRIVATE
 
                            ${CMAKE_CURRENT_SOURCE_DIR}/folderview
                            ${CMAKE_CURRENT_SOURCE_DIR}/stackview
                            ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
                            ${CMAKE_CURRENT_SOURCE_DIR}/setup
                            ${CMAKE_CURRENT_SOURCE_DIR}/main
+)
+
+target_include_directories(showfoto
 
                            AFTER
+                           PRIVATE
 
                            $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
 
@@ -131,16 +135,16 @@ target_include_directories(showfoto
 if(KF${QT_VERSION_MAJOR}IconThemes_FOUND)
 
     target_include_directories(showfoto
-                               PRIVATE
                                AFTER
+                               PRIVATE
                                $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>
     )
 
     if (Qt6_FOUND)
 
         target_include_directories(showfoto
-                                   PRIVATE
                                    AFTER
+                                   PRIVATE
                                    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::IconWidgets,INTERFACE_INCLUDE_DIRECTORIES>
         )
 

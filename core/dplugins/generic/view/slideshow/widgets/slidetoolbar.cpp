@@ -55,7 +55,6 @@ public:
         setupBtn        (nullptr),
         screenSelectBtn (nullptr),
         currentlyPause  (false),
-        configDialog    (nullptr),
         settings        (nullptr)
     {
     }
@@ -71,7 +70,6 @@ public:
 
     bool                  currentlyPause;
 
-    SetupSlideShowDialog* configDialog;
     SlideShowSettings*    settings;
 };
 
@@ -91,8 +89,6 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->delayBtn       = new QToolButton(this);
     d->deleteBtn      = new QToolButton(this);
     d->setupBtn       = new QToolButton(this);
-
-    d->configDialog   = new SetupSlideShowDialog(d->settings);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!d->settings->autoPlayEnabled);
@@ -184,17 +180,10 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
     connect(d->setupBtn, SIGNAL(clicked()),
             this, SLOT(slotMenuSlideShowConfiguration()));
-
-    connect(d->configDialog, SIGNAL(finished(int)),
-            this, SIGNAL(signalUpdateSettings()));
-
-    connect(d->configDialog, SIGNAL(finished(int)),
-            this, SLOT(slotConfigurationAccepted()));
 }
 
 SlideToolBar::~SlideToolBar()
 {
-    delete d->configDialog;
     delete d;
 }
 
@@ -227,14 +216,6 @@ void SlideToolBar::setEnabledNext(bool val)
 void SlideToolBar::setEnabledPrev(bool val)
 {
     d->prevBtn->setEnabled(val);
-}
-
-void SlideToolBar::closeConfigurationDialog()
-{
-    if (d->configDialog->isVisible())
-    {
-        d->configDialog->reject();
-    }
 }
 
 void SlideToolBar::slotPlayBtnToggled()
@@ -291,13 +272,6 @@ void SlideToolBar::slotNexPrevClicked()
 
 void SlideToolBar::slotMenuSlideShowConfiguration()
 {
-    if (d->configDialog->isVisible())
-    {
-        d->configDialog->reject();
-
-        return;
-    }
-
     d->currentlyPause = isPaused();
 
     if (!d->currentlyPause && d->playBtn->isEnabled())
@@ -305,13 +279,15 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
         d->playBtn->animateClick();
     }
 
-    d->configDialog->show();
-    d->configDialog->raise();
-    d->configDialog->activateWindow();
-}
+    QPointer<SetupSlideShowDialog> setup = new SetupSlideShowDialog(d->settings);
+    int ret = setup->exec();
+    delete setup;
 
-void SlideToolBar::slotConfigurationAccepted()
-{
+    if (ret == QDialog::Accepted)
+    {
+        Q_EMIT signalUpdateSettings();
+    }
+
     if (!d->currentlyPause && d->playBtn->isEnabled())
     {
         d->playBtn->animateClick();
