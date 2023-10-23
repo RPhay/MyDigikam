@@ -153,7 +153,7 @@ BUGFIXES:
 139 ==> 475572 - Button is not floating now, but not going correctly while scrolling.
 140 ==> 472640 - Batch Queue Manager Cannot see resize pixel size when Macintosh Widgets are selected.
 141 ==> 470359 - Geolocation Edit plugin ignores lazy synchronization / immediately writes metadata.
-142 ==> 
+142 ==> 430277 - digiKam-MySQL-MariaDB crash.
 143 ==> 
 144 ==> 
 145 ==> 
