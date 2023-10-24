@@ -163,7 +163,7 @@ BUGFIXES:
 149 ==> 380328 - Close Geolocation Editor after applying changes.
 150 ==> 310153 - Images are not visible in the Main Image Window of Digikam, if the files are created as relative links.
 151 ==> 299829 - No taskbar icon for bookmark editor window.
-152 ==> 
+152 ==> 338724 - Symlink from one collection to another causes high CPU usage, freeze and DB lockup errors.
 153 ==> 
 154 ==> 
 155 ==> 
@@ -173,4 +173,14 @@ BUGFIXES:
 159 ==> 
 160 ==> 
 161 ==> 
+162 ==> 
+163 ==> 
+164 ==> 
+165 ==> 
+166 ==> 
+167 ==> 
+168 ==> 
+169 ==> 
+170 ==> 
+171 ==> 
 
