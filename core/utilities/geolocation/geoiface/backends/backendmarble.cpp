@@ -245,7 +245,7 @@ QWidget* BackendMarble::mapWidget()
         {
             QList<QAction*> actions = d->marbleWidget->popupMenu()->findChildren<QAction*>();
 
-            if ((actions.count() > 5) && actions[5])
+            if ((actions.size() > 5) && actions[5])
             {
                 actions[5]->setVisible(false);
             }
