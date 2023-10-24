@@ -162,7 +162,7 @@ BUGFIXES:
 148 ==> 468609 - Loads heif only with 8 bits color depth.
 149 ==> 380328 - Close Geolocation Editor after applying changes.
 150 ==> 310153 - Images are not visible in the Main Image Window of Digikam, if the files are created as relative links.
-151 ==> 
+151 ==> 299829 - No taskbar icon for bookmark editor window.
 152 ==> 
 153 ==> 
 154 ==> 
