@@ -161,7 +161,7 @@ BUGFIXES:
 147 ==> 425980 - Search freezes on large collection.
 148 ==> 468609 - Loads heif only with 8 bits color depth.
 149 ==> 380328 - Close Geolocation Editor after applying changes.
-150 ==> 
+150 ==> 310153 - Images are not visible in the Main Image Window of Digikam, if the files are created as relative links.
 151 ==> 
 152 ==> 
 153 ==> 
