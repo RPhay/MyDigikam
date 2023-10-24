@@ -164,7 +164,7 @@ BUGFIXES:
 150 ==> 310153 - Images are not visible in the Main Image Window of Digikam, if the files are created as relative links.
 151 ==> 299829 - No taskbar icon for bookmark editor window.
 152 ==> 338724 - Symlink from one collection to another causes high CPU usage, freeze and DB lockup errors.
-153 ==> 
+153 ==> 342425 - Geolocation window is independent of main window but not visible in taskbar.
 154 ==> 
 155 ==> 
 156 ==> 
