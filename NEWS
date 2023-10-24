@@ -167,17 +167,17 @@ BUGFIXES:
 153 ==> 342425 - Geolocation window is independent of main window but not visible in taskbar.
 154 ==> 474366 - HEIC thumbnail rotation.
 155 ==> 473396 - HEIC images not rotated correctly even though EXIF metadata could be read.
-156 ==> 
-157 ==> 
-158 ==> 
-159 ==> 
-160 ==> 
-161 ==> 
-162 ==> 
-163 ==> 
-164 ==> 
-165 ==> 
-166 ==> 
+156 ==> 472438 - Failed to update the database schema from version 15 to version 16.
+157 ==> 328460 - Size of thumbnail font fixed to system.
+158 ==> 318965 - Export digikam settings.
+159 ==> 305655 - Detect which pictures are actually new in the camera.
+160 ==> 302620 - Missing thumbnails in right hand window.
+161 ==> 297266 - Thumbnails do not display.
+162 ==> 293283 - Option to show files of all MIME-Types in album view.
+163 ==> 291304 - Single left click on album expands subtree.
+164 ==> 289038 - Compile error in debian: setAboutData.
+165 ==> 287787 - Can't build on Ubuntu x86-64.
+166 ==> 283373 - digikam shows splashscreen, but won't start - no crash report genereted.
 167 ==> 
 168 ==> 
 169 ==> 
