@@ -12,7 +12,6 @@ set(MosaicWall_Conf -DENABLE_DPLUGIN=ON
 if(${ENABLE_QTVERSION} MATCHES "6")
 
     set(MosaicWall_Conf ${MosaicWall_Conf} -DBUILD_WITH_QT6=ON)
-    set(patch "${PATCH_COMMAND};-p1;-i;${CMAKE_CURRENT_SOURCE_DIR}/mosaicwall-qt6-port.patch")
 
 else()
 
@@ -51,8 +50,6 @@ else() # MacOS and Linux
         GIT_REPOSITORY https://github.com/scheckmedia/ImageMosaicWall.git
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
-
-        PATCH_COMMAND ${patch}
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 
