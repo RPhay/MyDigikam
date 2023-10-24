@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28739,38 +28739,38 @@ msgstr ""
 msgid "Database type is not supported."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:304
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql server command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql administration command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, fuzzy, kde-format
 #| msgid "No path to mysqld set in server configuration."
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "គ្មាន​ផ្លូវ​សម្រាប់​កំណត់​ mysqld នៅ​ក្នុង​ការ​កំណត់​រចនាសម្ព័ន្ធ​ម៉ាស៊ីន​បម្រើ​ឡើយ ។"
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, fuzzy, kde-format
 msgid "Cannot create directory %1"
 msgstr "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​ថត"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to create MySQL server configuration file.\n"
@@ -28786,34 +28786,34 @@ msgstr ""
 "មាន​ន័យ​ថា​ឯកសារ​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម (mysql-global.conf) មិន​អាច​អាន​បាន​ទេ\n"
 "ឬ​ឯកសារ​គោលដៅ (mysql.conf) មិន​អាច​សរសេរ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, fuzzy, kde-format
 #| msgid "Did not find MySQL server default configuration (mysql-global.conf)."
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "កុំ​រក​​ការ​កំណត់​រចនាសម្ព័ន្ធ​លំនាំដើម​ម៉ាស៊ីន​បម្រើ MySQL  (mysql-global.conf) ។"
 
-#: core/libs/database/server/databaseserver.cpp:511
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not start database initializer."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."
@@ -28823,30 +28823,30 @@ msgstr ""
 "ដំណើរការ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ចេញ​ដោយ​មិន​រំពឹង អំឡុង​ពេល​ការ​តភ្ជាប់​ដំបូង ។<p>ឯកសារ​ប្រតិបត្តិ ៖ %1</"
 "p>”<p>កំហុស​ក្នុង​ការ​ដំណើរការ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​បង្កើត​មូលដ្ឋាន​ទិន្នន័យ<p>កំហុស​សំណួរ ៖ %1</p><p>កំហុស​មូលដ្ឋាន​ទិន្នន័យ ៖ %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "<b>កំពុង​វិភាគ​រក​សម្រាំង សូម​រង់ចាំ...</b>"
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "មិន​អាច​ចាប់ផ្ដើម​ម៉ាស៊ីន​បម្រើ​មូលដ្ឋាន​ទិន្នន័យ​បាន​ទេ ។"
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, fuzzy, kde-format
 #| msgid ""
 #| "Database process exited unexpectedly during initial connection."

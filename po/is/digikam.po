@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
 "PO-Revision-Date: 2023-10-05 09:38+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -28187,35 +28187,35 @@ msgstr "Þetta er upprunalega myndin"
 msgid "Database type is not supported."
 msgstr "Ekki er stuðningur við þessa tegund gagnagrunns."
 
-#: core/libs/database/server/databaseserver.cpp:304
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file."
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "Engin slóð á skipun mysqld-þjóns er sett í stillingaskránni."
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "Engin slóð á skipun mysqld-þjóns er sett í stillingaskránni."
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr "Engin slóð á mysql-stýriskipun er sett í stillingaskránni."
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "Engin slóð á mysql-ræsiskipun er sett í stillingaskránni."
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Get ekki búið til möppuna %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28226,44 +28226,44 @@ msgstr ""
 "hvort að sjálfgefna stillingaskráin</p><p>%1</p><p>var ekki lesanleg eða að "
 "ekki var hægt að skrifa úttaksskrána</p><p>%2</p>."
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Fann ekki sjálfgefnar stillingar MySQL-þjónsins (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:511
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Forvinnsla er í gangi, bíddu aðeins."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Gat ekki ræst frumstillingar gagnagrunnsþjóns."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "Gat ekki ræst gagnagrunnsþjón."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ógildur gagnagrunnshlutur í ræsingu gagnagrunnsþjóns"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Ferli gagnagrunns hætti óvænt á meðan á frumtengingu stóð."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Gat ekki tengst gagnagrunni eftir að hafa reynt í 60 sekúndur."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28271,19 +28271,19 @@ msgstr ""
 "Tókst ekki að búa til gagnagrunn<p>Fyrirspurnarvilla: %1</"
 "p><p>Gagnagrunnsvilla: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Forvinnsla er í gangi, bíddu aðeins."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Gat ekki uppfært gagnagrunn."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1.<p>Keyrsluskrá: %2</p>”<p>Viðföng: %3</p>”<p>Ferlisvilla: %4</p>"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
 "PO-Revision-Date: 2023-09-28 22:38+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -28203,21 +28203,21 @@ msgstr "Toto je nastavenie krivky svietivosti obrázka"
 msgid "Database type is not supported."
 msgstr "Typ databázy nie je podporovaný."
 
-#: core/libs/database/server/databaseserver.cpp:304
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre mysql server!"
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, fuzzy, kde-format
 #| msgid "No path to mysql server command set in configuration file!"
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre mysql server!"
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql administration command set in configuration file."
@@ -28225,7 +28225,7 @@ msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre inicializáciu "
 "mysql!"
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, fuzzy, kde-format
 #| msgid "No path to mysql initialization command set in configuration file!."
 msgid "No path to mysql initialization command set in configuration file."
@@ -28233,14 +28233,14 @@ msgstr ""
 "V konfiguračnom súbore nie je uvedená cesta k príkazu pre inicializáciu "
 "mysql!"
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Nie je možné vytvoriť adresár %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28251,43 +28251,43 @@ msgstr ""
 "predvolený konfiguračný súbor</p><p>%1</p><p>sa nedá čítať alebo do "
 "cieľového súboru</p><p>%2</p><p>sa nedá zapisovať.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Predvolená konfigurácia servera MySQL (mysql-global.conf) nebola nájdená."
 
-#: core/libs/database/server/databaseserver.cpp:511
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "Prebieha odpojenie od fotoaparátu, čakajte prosím..."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, fuzzy, kde-format
 msgid "Could not start database initializer."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, fuzzy, kde-format
 msgid "Could not start database server."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databázový proces neočakávane skončil počas nadväzovania spojenia."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ani po 60 sekundách sa nepodarilo pripojiť k databáze."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, fuzzy, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28295,17 +28295,17 @@ msgstr ""
 "Nepodarilo sa vytvoriť tabuľky v databáze.\n"
 " "
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, fuzzy, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "Prebieha odpojenie od fotoaparátu, čakajte prosím..."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, fuzzy, kde-format
 msgid "Could not upgrade database."
 msgstr "Nie je možné sa pripojiť k databázovému serveru \"%1\"."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""

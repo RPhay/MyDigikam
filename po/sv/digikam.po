@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
-"PO-Revision-Date: 2023-10-21 07:33+0200\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
+"PO-Revision-Date: 2023-10-23 21:15+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -28249,37 +28249,37 @@ msgstr "Det här är originalbilden"
 msgid "Database type is not supported."
 msgstr "Databastyp stöds inte."
 
-#: core/libs/database/server/databaseserver.cpp:304
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#: core/libs/database/server/databaseserver.cpp:296
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "Ingen sökväg till mysql-serverkommandot finns i inställningsfilen."
+msgstr ""
+"Ingen sökväg till mysql-uppgraderingskommando finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "Ingen sökväg till mysql-serverkommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Ingen sökväg till mysql-administrationskommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Ingen sökväg till mysql-initieringskommandot finns i inställningsfilen."
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Kan inte skapa katalogen %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28290,59 +28290,58 @@ msgstr ""
 "gick det inte att läsa standardinställningsfilen</p><p>%1</p><p>eller gick "
 "det inte att skriva målfilen</p><p>%2</p>."
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Kan inte hitta MySQL-serverns standardinställning (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:511
-#, fuzzy, kde-format
-#| msgid "A MySQL database upgrade is in progress, please wait..."
+#: core/libs/database/server/databaseserver.cpp:503
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "En uppgradering av MySQL-databasen pågår, vänta ..."
+msgstr "Den interna MySQL-databasen initieras, vänta ..."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Kunde inte starta databasinitiering."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "Kunde inte starta databasservern."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Ogiltigt databasobjekt under start av databasserver"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Databasprocessen avslutades oväntat vid initial anslutning."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Kunde inte ansluta till databasen efter att ha försökt 60 sekunder."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr "Misslyckades skapa databas<p>Frågefel: %1</p><p>Databasfel: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "En uppgradering av MySQL-databasen pågår, vänta ..."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Kunde inte uppgradera databas."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>Körbar fil: %2</p><p>Argument: %3</p><p>Processfel: %4</p>"
@@ -29288,13 +29287,11 @@ msgstr ""
 "Binärfilen används för att starta en dedicerad instans av MariaDB-servern."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Binärfilen används för att starta en dedicerad instans av MariaDB-servern."
+"Binärfilen används för att uppgradera databasen till aktuell serverversion."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format

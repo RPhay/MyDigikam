@@ -1,6 +1,7 @@
 # Translation of digikam into esperanto.
 # Copyright (C) 2009 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 # --- kipiplugin_dngconverter
 # Translation of kipiplugin_dngconverter into esperanto.
@@ -16,14 +17,14 @@
 #
 # --- libkexiv2
 # Translation of libkexiv2 into esperanto.
-#
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009, 2015.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
-"PO-Revision-Date: 2023-10-21 07:08+0100\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
+"PO-Revision-Date: 2023-10-23 21:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -28151,35 +28152,34 @@ msgstr "Ĉi tiu estas la originala bildo"
 msgid "Database type is not supported."
 msgstr "Datumbaza tipo ne estas subtenata."
 
-#: core/libs/database/server/databaseserver.cpp:304
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#: core/libs/database/server/databaseserver.cpp:296
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "Neniu vojo al mysql-servila komando agordita en agorda dosiero."
+msgstr "Neniu vojo al mysql-eldonpromocia komando agordita en agorddosiero."
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "Neniu vojo al mysql-servila komando agordita en agorda dosiero."
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr "Neniu vojo al mysql-administra komando agordita en agorda dosiero."
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "Neniu vojo al mysql-komenciga komando agordita en agorda dosiero."
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Ne povas krei dosierujon %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28190,60 +28190,59 @@ msgstr ""
 "defaŭlta agorda dosiero</p><p>%1</p><p>ne estis legebla aŭ la celdosiero</"
 "p><p>%2</p><p>ne eblis skribi.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Ne povas trovi defaŭltan agordon de MySQL-servilo (mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:511
-#, fuzzy, kde-format
-#| msgid "A MySQL database upgrade is in progress, please wait..."
+#: core/libs/database/server/databaseserver.cpp:503
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "MySQL-datumbaza eldonpromocio estas en progreso, bonvolu atendi."
+msgstr "La interna MySQL-datumbazo estas pravalorizanta, bonvolu atendi..."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Ne eblis lanĉi datumbazan pravalorizilon."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "Ne eblis lanĉi datumbazan servilon."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "Nevalida datumbaza objekto dum datumbaza servilo ekfunkciigas"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "Datumbaza procezo eliris neatendite dum komenca konekto."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "Ne eblis konektiĝi al datumbazo post provado dum 60 sekundoj."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "Malsukcesis krei datumbazon<p>Demanda eraro: %1</p><p>Datumbaza eraro: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "MySQL-datumbaza eldonpromocio estas en progreso, bonvolu atendi."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Ne eblis ĝisdatigi datumbazon."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29195,14 +29194,12 @@ msgstr ""
 "servilo."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Ĉi tiu binara dosiero estas uzata por komenci dediĉitan instancon de MariaDB-"
-"servilo."
+"Ĉi tiu binara dosiero estas uzata por eldonpromocii la datumbazon al aktuala "
+"versio de servilo."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format

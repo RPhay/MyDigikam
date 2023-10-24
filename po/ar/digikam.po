@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
+"POT-Creation-Date: 2023-10-24 00:40+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -28150,34 +28150,34 @@ msgstr "هذه الصّورة الأصليّة"
 msgid "Database type is not supported."
 msgstr "نوع قاعدة البيانات غير مدعوم."
 
-#: core/libs/database/server/databaseserver.cpp:304
+#: core/libs/database/server/databaseserver.cpp:296
 #, fuzzy, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr "لم يُضبط المسار إلى أمر خادوم mysql في ملفّ الضّبط"
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, fuzzy, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr "لم يُضبط المسار إلى أمر خادوم mysql في ملفّ الضّبط"
 
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, fuzzy, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr "لم يُضبط المسار إلى أمر خادوم mysql في ملفّ الضّبط"
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, fuzzy, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr "لم يُضبط المسار إلى أمر خادوم mysql في ملفّ الضّبط"
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "تعذّر إنشاء الدّليل %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, fuzzy, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28188,62 +28188,62 @@ msgstr ""
 "الافتراضيّ </p><p>%1</p><p> لم تكن ممكنة، أو تعذّر الكتابة في الملفّ الهدف</"
 "p><p>%2</p><p>."
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "تعذّر العثور على الضّبط الافتراضيّ لخادوم MySQL ‏(mysql-global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:511
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "يجري اكتشاف الجهاز، رجاء انتظر..."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "تعذّر بدء ممهّد قاعدة البيانات."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "تعذّر بدء خادوم قاعدة البيانات."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr "كائن قاعدة بيانات غير صالح أثناء بدء خادوم قاعدة البيانات"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr "خرجت عمليّة قاعدة البيانات بشكل غير متوقّع أثناء الاتّصال الأوّليّ."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr "تعذّر الاتّصال بقاعدة البيانات بعد المحاولة ل‍ 60 ثانية."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
 msgstr ""
 "فشل إنشاء قاعدة البيانات<p>خطأ الاستعلام: %1</p><p>خطأ قاعدة البيانات: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
+#: core/libs/database/server/databaseserver.cpp:750
 #, fuzzy, kde-format
 #| msgid "Device detection under progress, please wait..."
 msgid "A MySQL database upgrade is in progress, please wait..."
 msgstr "يجري اكتشاف الجهاز، رجاء انتظر..."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, fuzzy, kde-format
 #| msgid "Could not start database server."
 msgid "Could not upgrade database."
 msgstr "تعذّر بدء خادوم قاعدة البيانات."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr "%1<p>التّنفيذيّ: %2</p><p>المعاملات: %3</p><p>خطأ المعالجة: %4</p>"
