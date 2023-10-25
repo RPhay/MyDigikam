@@ -653,8 +653,8 @@ void ImportUI::setupStatusBar()
     if (cameraUseGPhotoDriver())
     {
         d->cameraFreeSpace->setMode(FreeSpaceWidget::GPhotoCamera);
-        connect(d->controller, SIGNAL(signalFreeSpace(ulong,ulong)),
-                this, SLOT(slotCameraFreeSpaceInfo(ulong,ulong)));
+        connect(d->controller, SIGNAL(signalFreeSpace(qint64,qint64)),
+                this, SLOT(slotCameraFreeSpaceInfo(qint64,qint64)));
     }
     else
     {
@@ -1172,23 +1172,23 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
     {
         // Check if space require to upload new items in camera is enough.
 
-        qint64 totalKbSize = 0;
+        qint64 totalBytesSize = 0;
 
         for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
         {
             QFileInfo fi((*it).toLocalFile());
-            totalKbSize += fi.size() / 1024;
+            totalBytesSize += fi.size();
         }
 
-        if (totalKbSize >= d->cameraFreeSpace->kBAvail())
+        if (totalBytesSize >= d->cameraFreeSpace->bytesAvail())
         {
             QMessageBox::critical(this, qApp->applicationName(),
                                   i18nc("@info", "There is not enough free space on the Camera Medium "
                                         "to upload pictures.\n\n"
                                         "Space require: %1\n"
                                         "Available free space: %2",
-                                        ItemPropertiesTab::humanReadableBytesCount(totalKbSize * 1024),
-                                        ItemPropertiesTab::humanReadableBytesCount(d->cameraFreeSpace->kBAvail() * 1024)));
+                                        ItemPropertiesTab::humanReadableBytesCount(totalBytesSize),
+                                        ItemPropertiesTab::humanReadableBytesCount(d->cameraFreeSpace->bytesAvail())));
             return;
         }
     }
@@ -1797,10 +1797,10 @@ void ImportUI::slotProgressTimerDone()
     d->progressTimer->start(300);
 }
 
-void ImportUI::itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSizeKB)
+void ImportUI::itemsSelectionSizeInfo(qint64& fSizeBytes, qint64& dSizeBytes)
 {
-    qint64 fSize = 0;  // Files size
-    qint64 dSize = 0;  // Estimated space requires to download and process files.
+    fSizeBytes = 0;  // Files size
+    dSizeBytes = 0;  // Estimated space requires to download and process files.
 
     const QList<QUrl>& selected = d->view->selectedUrls();
     DownloadSettings settings   = downloadSettings();
@@ -1816,7 +1816,7 @@ void ImportUI::itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSi
                 continue;
             }
 
-            fSize += size;
+            fSizeBytes += size;
 
             if (info.mime == QLatin1String("image/jpeg"))
             {
@@ -1824,37 +1824,34 @@ void ImportUI::itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSi
                 {
                     // Estimated size is around 5 x original size when JPEG=>PNG.
 
-                    dSize += size * 5;
+                    dSizeBytes += size * 5;
                 }
                 else if (settings.autoRotate)
                 {
                     // We need a double size to perform rotation.
 
-                    dSize += size * 2;
+                    dSizeBytes += size * 2;
                 }
                 else
                 {
                     // Real file size is added.
 
-                    dSize += size;
+                    dSizeBytes += size;
                 }
             }
             else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
             {
                 // Estimated size is around 2 x original size when RAW=>DNG.
 
-                dSize += size * 2;
+                dSizeBytes += size * 2;
             }
             else
             {
-                dSize += size;
+                dSizeBytes += size;
             }
 
         }
     }
-
-    fSizeKB = fSize / 1024;
-    dSizeKB = dSize / 1024;
 }
 
 void ImportUI::checkItem4Deletion(const CamItemInfo& info, QStringList& folders, QStringList& files,
@@ -1958,13 +1955,13 @@ bool ImportUI::checkDiskSpace(PAlbum *pAlbum)
         return false;
     }
 
-    unsigned long fSize   = 0;
-    unsigned long dSize   = 0;
-    itemsSelectionSizeInfo(fSize, dSize);
+    qint64 fSizeBytes = 0;
+    qint64 dSizeBytes = 0;
+    itemsSelectionSizeInfo(fSizeBytes, dSizeBytes);
     QString albumRootPath = pAlbum->albumRootPath();
-    unsigned long kBAvail = d->albumLibraryFreeSpace->kBAvail(albumRootPath);
+    qint64 bytesAvail     = d->albumLibraryFreeSpace->bytesAvail(albumRootPath);
 
-    if (dSize >= kBAvail)
+    if (dSizeBytes >= bytesAvail)
     {
         int result = QMessageBox::warning(this, i18nc("@title:window", "Insufficient Disk Space"),
                                           i18nc("@info", "There is not enough free space on the disk of the album you selected "
@@ -1972,8 +1969,8 @@ bool ImportUI::checkDiskSpace(PAlbum *pAlbum)
                                                 "Estimated space required: %1\n"
                                                 "Available free space: %2\n\n"
                                                 "Try Anyway?",
-                                                ItemPropertiesTab::humanReadableBytesCount(dSize * 1024),
-                                                ItemPropertiesTab::humanReadableBytesCount(kBAvail * 1024)),
+                                                ItemPropertiesTab::humanReadableBytesCount(dSizeBytes),
+                                                ItemPropertiesTab::humanReadableBytesCount(bytesAvail)),
                                           QMessageBox::Yes | QMessageBox::No);
 
         if (result == QMessageBox::No)
@@ -2211,10 +2208,10 @@ void ImportUI::slotNewSelection(bool hasSelection)
         d->renameCustomizer->setPreviewText(QString());
     }
 
-    unsigned long fSize = 0;
-    unsigned long dSize = 0;
-    itemsSelectionSizeInfo(fSize, dSize);
-    d->albumLibraryFreeSpace->setEstimatedDSizeKb(dSize);
+    qint64 fSizeBytes = 0;
+    qint64 dSizeBytes = 0;
+    itemsSelectionSizeInfo(fSizeBytes, dSizeBytes);
+    d->albumLibraryFreeSpace->setEstimatedDSizeBytes(dSizeBytes);
 }
 
 void ImportUI::slotImageSelected(const CamItemInfoList& selection, const CamItemInfoList& listAll)
@@ -2552,9 +2549,9 @@ void ImportUI::slotSetup()
     Setup::execDialog(this);
 }
 
-void ImportUI::slotCameraFreeSpaceInfo(unsigned long kBSize, unsigned long kBAvail)
+void ImportUI::slotCameraFreeSpaceInfo(qint64 bytesSize, qint64 bytesAvail)
 {
-    d->cameraFreeSpace->addInformation(kBSize, kBSize - kBAvail, kBAvail, QString());
+    d->cameraFreeSpace->addInformation(bytesSize, bytesSize - bytesAvail, bytesAvail, QString());
 }
 
 bool ImportUI::cameraDeleteSupport() const

@@ -52,18 +52,18 @@ class Q_DECL_HIDDEN MountPointInfo
 public:
 
     MountPointInfo()
-      : isValid (false),
-        kBSize  (0),
-        kBUsed  (0),
-        kBAvail (0)
+      : isValid    (false),
+        bytesSize  (0),
+        bytesUsed  (0),
+        bytesAvail (0)
     {
     }
 
     bool    isValid;
 
-    qint64  kBSize;
-    qint64  kBUsed;
-    qint64  kBAvail;
+    qint64  bytesSize;
+    qint64  bytesUsed;
+    qint64  bytesAvail;
 
     QString mountPoint;
 };
@@ -77,10 +77,10 @@ public:
     explicit Private()
       : isValid     (false),
         percentUsed (-1),
-        dSizeKb     (0),
-        kBSize      (0),
-        kBUsed      (0),
-        kBAvail     (0),
+        dSizeBytes  (0),
+        bytesSize   (0),
+        bytesUsed   (0),
+        bytesAvail  (0),
         timer       (nullptr),
         toolTip     (nullptr),
         mode        (FreeSpaceWidget::AlbumLibrary)
@@ -91,10 +91,10 @@ public:
 
     int                             percentUsed;
 
-    qint64                          dSizeKb;
-    qint64                          kBSize;
-    qint64                          kBUsed;
-    qint64                          kBAvail;
+    qint64                          dSizeBytes;
+    qint64                          bytesSize;
+    qint64                          bytesUsed;
+    qint64                          bytesAvail;
 
     QStringList                     paths;
     QHash<QString, MountPointInfo>  infos;
@@ -166,26 +166,26 @@ void FreeSpaceWidget::refresh()
     d->timer->start(10000);
 }
 
-void FreeSpaceWidget::addInformation(qint64 kBSize,
-                                     qint64 kBUsed,
-                                     qint64 kBAvail,
+void FreeSpaceWidget::addInformation(qint64 bytesSize,
+                                     qint64 bytesUsed,
+                                     qint64 bytesAvail,
                                      const QString& mountPoint)
 {
     MountPointInfo inf;
 
     inf.mountPoint = mountPoint;
-    inf.kBSize     = kBSize;
-    inf.kBUsed     = kBUsed;
-    inf.kBAvail    = kBAvail;
-    inf.isValid    = (kBSize > 0);
+    inf.bytesSize  = bytesSize;
+    inf.bytesUsed  = bytesUsed;
+    inf.bytesAvail = bytesAvail;
+    inf.isValid    = (bytesSize > 0);
 
     d->infos[mountPoint] = inf;
 
     // update cumulative data
 
-    d->kBSize      = 0;
-    d->kBUsed      = 0;
-    d->kBAvail     = 0;
+    d->bytesSize   = 0;
+    d->bytesUsed   = 0;
+    d->bytesAvail  = 0;
     d->isValid     = false;
     d->percentUsed = -1;
 
@@ -193,33 +193,33 @@ void FreeSpaceWidget::addInformation(qint64 kBSize,
     {
         if (info.isValid)
         {
-            d->kBSize  += info.kBSize;
-            d->kBUsed  += info.kBUsed;
-            d->kBAvail += info.kBAvail;
-            d->isValid  = true;
+            d->bytesSize  += info.bytesSize;
+            d->bytesUsed  += info.bytesUsed;
+            d->bytesAvail += info.bytesAvail;
+            d->isValid     = true;
         }
     }
 
-    if (kBSize > 0)
+    if (bytesSize > 0)
     {
-        d->percentUsed = lround(100.0 - (100.0 * kBAvail / kBSize));
+        d->percentUsed = lround(100.0 - (100.0 * bytesAvail / bytesSize));
     }
 
     updateToolTip();
     update();
 }
 
-void FreeSpaceWidget::setEstimatedDSizeKb(qint64 dSize)
+void FreeSpaceWidget::setEstimatedDSizeBytes(qint64 dSize)
 {
-    d->dSizeKb = dSize;
+    d->dSizeBytes = dSize;
 
     updateToolTip();
     update();
 }
 
-qint64 FreeSpaceWidget::estimatedDSizeKb() const
+qint64 FreeSpaceWidget::estimatedDSizeBytes() const
 {
-    return d->dSizeKb;
+    return d->dSizeBytes;
 }
 
 bool FreeSpaceWidget::isValid() const
@@ -232,22 +232,22 @@ int FreeSpaceWidget::percentUsed() const
     return d->percentUsed;
 }
 
-qint64 FreeSpaceWidget::kBSize() const
+qint64 FreeSpaceWidget::bytesSize() const
 {
-    return d->kBSize;
+    return d->bytesSize;
 }
 
-qint64 FreeSpaceWidget::kBUsed() const
+qint64 FreeSpaceWidget::bytesUsed() const
 {
-    return d->kBUsed;
+    return d->bytesUsed;
 }
 
-qint64 FreeSpaceWidget::kBAvail() const
+qint64 FreeSpaceWidget::bytesAvail() const
 {
-    return d->kBAvail;
+    return d->bytesAvail;
 }
 
-qint64 FreeSpaceWidget::kBAvail(const QString& path) const
+qint64 FreeSpaceWidget::bytesAvail(const QString& path) const
 {
     int mountPointMatch = 0;
     MountPointInfo selectedInfo;
@@ -273,7 +273,7 @@ qint64 FreeSpaceWidget::kBAvail(const QString& path) const
         return -1;
     }
 
-    return selectedInfo.kBAvail;
+    return selectedInfo.bytesAvail;
 }
 
 void FreeSpaceWidget::paintEvent(QPaintEvent*)
@@ -289,10 +289,10 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
     {
         // We will compute the estimated % of space size used to download and process.
 
-        qint64 eUsedKb = d->dSizeKb + d->kBUsed;
-        int peUsed     = (int)(100.0 * ((double)eUsedKb / (double)d->kBSize));
-        int pClamp     = (peUsed > 100) ? 100 : peUsed;
-        QColor barcol  = QColor(62, 255, 62);          // Smooth Green.
+        qint64 eUsedBytes = d->dSizeBytes + d->bytesUsed;
+        int peUsed        = (int)(100.0 * ((double)eUsedBytes / (double)d->bytesSize));
+        int pClamp        = (peUsed > 100) ? 100 : peUsed;
+        QColor barcol     = QColor(62, 255, 62);       // Smooth Green.
 
         if (peUsed > 80)
         {
@@ -340,24 +340,24 @@ void FreeSpaceWidget::updateToolTip()
 
         tip        += cnt.headBeg + header + cnt.headEnd;
 
-        if (d->dSizeKb > 0)
+        if (d->dSizeBytes > 0)
         {
             tip += cnt.cellBeg + i18nc("@info Storage", "Capacity:") + cnt.cellMid;
-            tip += ItemPropertiesTab::humanReadableBytesCount(d->kBSize * 1024) + cnt.cellEnd;
+            tip += ItemPropertiesTab::humanReadableBytesCount(d->bytesSize) + cnt.cellEnd;
 
             tip += cnt.cellBeg + i18nc("@info Storage", "Available:") + cnt.cellMid;
-            tip += ItemPropertiesTab::humanReadableBytesCount(d->kBAvail * 1024) + cnt.cellEnd;
+            tip += ItemPropertiesTab::humanReadableBytesCount(d->bytesAvail) + cnt.cellEnd;
 
             tip += cnt.cellBeg + i18nc("@info Storage", "Require:") + cnt.cellMid;
-            tip += ItemPropertiesTab::humanReadableBytesCount(d->dSizeKb * 1024) + cnt.cellEnd;
+            tip += ItemPropertiesTab::humanReadableBytesCount(d->dSizeBytes) + cnt.cellEnd;
         }
         else
         {
             tip += cnt.cellBeg + i18nc("@info Storage", "Capacity:") + cnt.cellMid;
-            tip += ItemPropertiesTab::humanReadableBytesCount(d->kBSize * 1024) + cnt.cellEnd;
+            tip += ItemPropertiesTab::humanReadableBytesCount(d->bytesSize) + cnt.cellEnd;
 
             tip += cnt.cellBeg + i18nc("@info Storage", "Available:") + cnt.cellMid;
-            tip += ItemPropertiesTab::humanReadableBytesCount(d->kBAvail * 1024) + cnt.cellEnd;
+            tip += ItemPropertiesTab::humanReadableBytesCount(d->bytesAvail) + cnt.cellEnd;
         }
 
         tip += cnt.tipFooter;
@@ -399,9 +399,9 @@ void FreeSpaceWidget::slotTimeout()
 
         if (info.isValid())
         {
-            addInformation((qint64)(info.bytesTotal()                           / 1024),
-                           (qint64)((info.bytesTotal() - info.bytesAvailable()) / 1024),
-                           (qint64)(info.bytesAvailable()                       / 1024),
+            addInformation((qint64)(info.bytesTotal()),
+                           (qint64)(info.bytesTotal() - info.bytesAvailable()),
+                           (qint64)(info.bytesAvailable()),
                            info.rootPath());
         }
     }

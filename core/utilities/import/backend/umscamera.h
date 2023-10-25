@@ -64,7 +64,7 @@ public:
     bool cameraManual(QString& manual)                                                                              override;
     bool cameraAbout(QString& about)                                                                                override;
 
-    bool getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)                                                override;
+    bool getFreeSpace(qint64& bytesSize, qint64& bytesAvail)                                                        override;
 
     bool getPreview(QImage& preview)                                                                                override;
     bool capture(CamItemInfo& itemInfo)                                                                             override;

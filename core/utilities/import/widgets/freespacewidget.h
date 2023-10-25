@@ -41,24 +41,24 @@ public:
     explicit FreeSpaceWidget(QWidget* const parent, int width);
     ~FreeSpaceWidget()                                override;
 
-    void          setEstimatedDSizeKb(qint64 dSize);
-    qint64 estimatedDSizeKb()           const;
+    void   setEstimatedDSizeBytes(qint64 dSize);
+    qint64 estimatedDSizeBytes()           const;
 
-    bool          isValid()             const;
-    int           percentUsed()         const;
-    qint64 kBSize()                     const;
-    qint64 kBUsed()                     const;
-    qint64 kBAvail()                    const;
-    qint64 kBAvail(const QString& path) const;
+    bool   isValid()                       const;
+    int    percentUsed()                   const;
+    qint64 bytesSize()                     const;
+    qint64 bytesUsed()                     const;
+    qint64 bytesAvail()                    const;
+    qint64 bytesAvail(const QString& path) const;
 
     void          refresh();
 
     void setMode(FreeSpaceMode mode);
     void setPath(const QString& path);
     void setPaths(const QStringList& paths);
-    void addInformation(qint64 kBSize,
-                        qint64 kBUsed,
-                        qint64 kBAvail,
+    void addInformation(qint64 bytesSize,
+                        qint64 bytesUsed,
+                        qint64 bytesAvail,
                         const QString& mountPoint);
 
 protected:
