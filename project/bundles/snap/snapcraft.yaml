@@ -1,4 +1,7 @@
-# Trigger rebuild 2
+
+# SPDX-FileCopyrightText: 2023 Scarlett Moore <sgmoore@kde.org>
+#
+# SPDX-License-Identifier: CC0-1.0
 ---
 name: digikam
 base: core22
@@ -25,6 +28,7 @@ apps:
         - mount-observe
         - network
         - network-bind
+        - network-manager-observe
         - removable-media
         - udisks2
         - unity7
@@ -55,11 +59,17 @@ plugs:
         content: foo
         default-provider: cups
         target: $SNAP_DATA/foo
+    hunspell-dictionaries:
+        content: hunspell-dictionaries
+        interface: content
+        target: "$SNAP/usr/share/hunspell"
+        default-provider: hunspell-dictionaries:hunspell-dictionaries
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
     PERL5LIB: "$SNAP/usr/share/perl5"
     LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/lapack"
+    DICPATH: "$SNAP/usr/share/hunspell"
 hooks:
     configure:
         plugs:

@@ -203,12 +203,17 @@ BookmarksDialog::BookmarksDialog(QWidget* const parent, BookmarksManager* const 
     : QDialog(parent),
       d      (new Private)
 {
-    d->manager = mngr;
+    setWindowFlags((windowFlags() & ~Qt::Dialog) |
+                   Qt::Window                    |
+                   Qt::WindowCloseButtonHint     |
+                   Qt::WindowMinMaxButtonsHint);
 
+    setWindowTitle(i18nc("@title:window", "Edit Geolocation Bookmarks"));
     setObjectName(QLatin1String("GeolocationBookmarksEditDialog"));
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowTitle(i18nc("@title:window", "Edit Geolocation Bookmarks"));
     resize(750, 450);
+
+    d->manager = mngr;
 
     d->search  = new SearchTextBar(this, QLatin1String("DigikamBookmarksGeolocationSearchBar"));
     d->search->setObjectName(QLatin1String("search"));

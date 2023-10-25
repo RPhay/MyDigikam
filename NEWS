@@ -158,8 +158,33 @@ BUGFIXES:
 144 ==> 475840 - Theme icons and text have gone dark on a dark background.
 145 ==> 472083 - Toolbar, footer, and selected tabs are unreadable in all dark themes.
 146 ==> 475482 - Icons and descriptions not readable in black body and other design.
-147 ==> 
-148 ==> 
-149 ==> 
-150 ==> 
-151 ==> 
+147 ==> 425980 - Search freezes on large collection.
+148 ==> 468609 - Loads heif only with 8 bits color depth.
+149 ==> 380328 - Close Geolocation Editor after applying changes.
+150 ==> 310153 - Images are not visible in the Main Image Window of digiKam, if the files are created as relative links.
+151 ==> 299829 - No taskbar icon for bookmark editor window.
+152 ==> 338724 - Symlink from one collection to another causes high CPU usage, freeze and DB lockup errors.
+153 ==> 342425 - Geolocation window is independent of main window but not visible in taskbar.
+154 ==> 474366 - HEIC thumbnail rotation.
+155 ==> 473396 - HEIC images not rotated correctly even though EXIF metadata could be read.
+156 ==> 472438 - Failed to update the database schema from version 15 to version 16.
+157 ==> 328460 - Size of thumbnail font fixed to system.
+158 ==> 318965 - List of digiKam setting files.
+159 ==> 305655 - Detect which pictures are actually new in the camera.
+160 ==> 302620 - Missing thumbnails in right hand window.
+161 ==> 297266 - Thumbnails do not display.
+162 ==> 293283 - Option to show files of all MIME-Types in album view.
+163 ==> 291304 - Single left click on album expands subtree.
+164 ==> 289038 - Compile error in debian: setAboutData.
+165 ==> 287787 - Can't build on Ubuntu x86-64.
+166 ==> 283373 - digiKam shows splashscreen, but won't start - no crash report genereted.
+167 ==> 329390 - Auto-rotate Using Exif information: rotates wrong picture.
+168 ==> 467226 - Allow albums/tags to exclude in duplicate finder workflow.
+169 ==> 
+170 ==> 
+171 ==> 
+172 ==> 
+173 ==>
+174 ==> 
+175 ==> 
+176 ==> 

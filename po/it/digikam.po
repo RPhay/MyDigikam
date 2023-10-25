@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 00:40+0000\n"
-"PO-Revision-Date: 2023-09-29 15:08+0200\n"
+"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"PO-Revision-Date: 2023-10-22 22:50+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -4717,7 +4717,7 @@ msgstr "Correzione HSL"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix Hue / Saturation / Lightness"
-msgstr "Strumento per correggere tonalità / saturazione / luminosità"
+msgstr "Strumento per correggere tonalità / saturazione / chiarezza"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:66
 #, kde-format
@@ -4727,7 +4727,7 @@ msgid ""
 "from images.</para>"
 msgstr ""
 "<para>Questo strumento del gestore elaborazione in serie può regolare la "
-"tonalità, la saturazione e la luminosità dalle immagini.</para>"
+"tonalità, la saturazione e la chiarezza dalle immagini.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:46
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:50
@@ -8086,13 +8086,13 @@ msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
 msgstr ""
 "Questo strumento dell'editor delle immagini può regolare la tonalità, la "
-"saturazione e la luminosità dall'immagine."
+"saturazione e la chiarezza dall'immagine."
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
-msgstr "Tonalità/saturazione/luminosità..."
+msgstr "Tonalità/saturazione/chiarezza..."
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:64
 #, kde-format
@@ -20185,7 +20185,7 @@ msgid "Add again"
 msgstr "Aggiungi ancora"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
 #, kde-format
 msgid "Remove"
 msgstr "Rimuovi"
@@ -28599,15 +28599,14 @@ msgstr "Questa è l'immagine originale"
 msgid "Database type is not supported."
 msgstr "Il tipo di banca dati non è supportata."
 
-#: core/libs/database/server/databaseserver.cpp:304
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#: core/libs/database/server/databaseserver.cpp:296
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
-"Nessun percorso impostato ai comandi del server mysql nel file di "
+"Nessun percorso impostato ai comandi di aggiornamento di mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:313
+#: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
 msgid "No path to mysql server command set in configuration file."
 msgstr ""
@@ -28615,28 +28614,28 @@ msgstr ""
 "configurazione."
 
 # VM: nel sorgente c'è un punto finale in più.
-#: core/libs/database/server/databaseserver.cpp:322
+#: core/libs/database/server/databaseserver.cpp:314
 #, kde-format
 msgid "No path to mysql administration command set in configuration file."
 msgstr ""
 "Nessun percorso impostato ai comandi di amministrazione mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:331
+#: core/libs/database/server/databaseserver.cpp:323
 #, kde-format
 msgid "No path to mysql initialization command set in configuration file."
 msgstr ""
 "Nessun percorso impostato ai comandi di inizializzazione mysql nel file di "
 "configurazione."
 
-#: core/libs/database/server/databaseserver.cpp:341
-#: core/libs/database/server/databaseserver.cpp:351
-#: core/libs/database/server/databaseserver.cpp:361
+#: core/libs/database/server/databaseserver.cpp:333
+#: core/libs/database/server/databaseserver.cpp:343
+#: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
 msgstr "Impossibile creare la cartella %1"
 
-#: core/libs/database/server/databaseserver.cpp:441
+#: core/libs/database/server/databaseserver.cpp:433
 #, kde-format
 msgid ""
 "Unable to create MySQL server configuration file.<p>This means that either "
@@ -28648,52 +28647,52 @@ msgstr ""
 "leggibile, o che il file di destinazione</p><p>%2</p><p>non può essere "
 "scritto.</p>"
 
-#: core/libs/database/server/databaseserver.cpp:463
+#: core/libs/database/server/databaseserver.cpp:455
 #, kde-format
 msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr ""
 "Impossibile trovare la configurazione predefinita del server MySQL (mysql-"
 "global.conf)."
 
-#: core/libs/database/server/databaseserver.cpp:511
+#: core/libs/database/server/databaseserver.cpp:503
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Pre-processing is in progress, please wait."
 msgid "The internal MySQL database is initializing, please wait..."
 msgstr "La pre-elaborazione è in corso, attendi."
 
-#: core/libs/database/server/databaseserver.cpp:559
+#: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
 msgid "Could not start database initializer."
 msgstr "Impossibile avviare l'inizializzatore della banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:622
+#: core/libs/database/server/databaseserver.cpp:614
 #, kde-format
 msgid "Could not start database server."
 msgstr "Impossibile avviare il server della banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:664
+#: core/libs/database/server/databaseserver.cpp:656
 #, kde-format
 msgid "Invalid database object during database server startup"
 msgstr ""
 "Oggetto della banca dati non valido durante l'avvio del server della banca "
 "dati"
 
-#: core/libs/database/server/databaseserver.cpp:695
+#: core/libs/database/server/databaseserver.cpp:687
 #, kde-format
 msgid "Database process exited unexpectedly during initial connection."
 msgstr ""
 "L'elaborazione della banca dati è uscita inaspettatamente durante la "
 "connessione iniziale."
 
-#: core/libs/database/server/databaseserver.cpp:701
+#: core/libs/database/server/databaseserver.cpp:693
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
 msgstr ""
 "Dopo aver provato per 60 secondi, non è stato possibile collegarsi alla "
 "banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:734
+#: core/libs/database/server/databaseserver.cpp:726
 #, kde-format
 msgid ""
 "Failed to create database<p>Query error: %1</p><p>Database error: %2</p>"
@@ -28701,19 +28700,17 @@ msgstr ""
 "Creazione della banca dati non riuscita<p>Errore interrogazione: %1</"
 "p><p>Errore della banca dati: %2</p>"
 
-#: core/libs/database/server/databaseserver.cpp:758
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#: core/libs/database/server/databaseserver.cpp:750
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "La pre-elaborazione è in corso, attendi."
+msgstr "È in corso un aggiornamento della banca dati MySQL, attendi..."
 
-#: core/libs/database/server/databaseserver.cpp:802
+#: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
 msgid "Could not upgrade database."
 msgstr "Impossibile aggiornare la banca dati."
 
-#: core/libs/database/server/databaseserver.cpp:838
+#: core/libs/database/server/databaseserver.cpp:830
 #, kde-format
 msgid "%1<p>Executable: %2</p><p>Arguments: %3</p><p>Process error: %4</p>"
 msgstr ""
@@ -29681,14 +29678,12 @@ msgstr ""
 "MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Questo file eseguibile è usato per avviare un'istanza dedicata del server "
-"MariaDB."
+"Questo file eseguibile è usato per aggiornare la banca dati alla versione "
+"attuale del server."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -30564,7 +30559,7 @@ msgstr "<b>Kodak HIE</b>:<p>Simula la pellicola da infrarosso Kodak HIE.</p>"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:234
 #, kde-format
 msgid "No Lens Filter"
-msgstr "Senza filtro lenticolare"
+msgstr "Senza filtro obiettivo"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:235
 #, kde-format
@@ -30572,8 +30567,8 @@ msgid ""
 "<b>No Lens Filter</b>:<p>Do not apply a lens filter when rendering the image."
 "</p>"
 msgstr ""
-"<b>Senza filtro lenticolare</b>:<p>Non applicare un filtro lenticolare "
-"durante la resa dell'immagine.</p>"
+"<b>Senza filtro obiettivo</b>:<p>Non applicare un filtro obiettivo durante "
+"la resa dell'immagine.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:238
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:324
@@ -30688,7 +30683,7 @@ msgstr "Forza:"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, kde-format
 msgid "Here, set the strength adjustment of the lens filter."
-msgstr "Imposta qui la regolazione della forza del filtro lenticolare."
+msgstr "Imposta qui la regolazione della forza del filtro obiettivo."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, kde-format
@@ -30788,7 +30783,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:372
 #, kde-format
 msgid "Lens Filters"
-msgstr "Filtri lenticolari"
+msgstr "Filtri obiettivo"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:374
 #, kde-format
@@ -32242,7 +32237,7 @@ msgstr ""
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:82
 #, kde-format
 msgid "Hue / Saturation / Lightness Filter"
-msgstr "Filtro Tonalità / saturazione / luminosità"
+msgstr "Filtro Tonalità / saturazione / chiarezza"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:87
 #, kde-format
@@ -32289,12 +32284,12 @@ msgstr ""
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:117
 #, kde-format
 msgid "Lightness:"
-msgstr "Luminosità:"
+msgstr "Chiarezza:"
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:122
 #, kde-format
 msgid "Set here the lightness adjustment of the image."
-msgstr "Imposta qui la regolazione della luminosità dell'immagine."
+msgstr "Imposta qui la regolazione della chiarezza dell'immagine."
 
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:67
 #, kde-format
@@ -42598,12 +42593,12 @@ msgstr ""
 "colore rendibile più vicino, mentre tutti gli altri sono mantenuti "
 "inalterati. L'obiettivo di prova non mantiene il punto bianco.</p></"
 "li><li><p>L'<b>obiettivo di saturazione</b> mantiene la saturazione dei "
-"colori nell'immagine, se necessario a spese della tonalità e della "
-"luminosità.</p><p>L'implementazione di questo obiettivo rimane un po' "
-"problematica, e l'ICC sta ancora lavorando sui metodi per ottenere gli "
-"effetti desiderati.</p><p>Quest'obiettivo è adatto soprattutto alla grafica "
-"professionale, tipo i grafici, dove è più importante che i colori siano "
-"vividi e in netto contrasto tra di loro.</p></li></ul>"
+"colori nell'immagine, se necessario a spese della tonalità e della chiarezza."
+"</p><p>L'implementazione di questo obiettivo rimane un po' problematica, e "
+"l'ICC sta ancora lavorando sui metodi per ottenere gli effetti desiderati.</"
+"p><p>Quest'obiettivo è adatto soprattutto alla grafica professionale, tipo i "
+"grafici, dove è più importante che i colori siano vividi e in netto "
+"contrasto tra di loro.</p></li></ul>"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:128
 #, kde-format
@@ -53464,13 +53459,13 @@ msgstr "Titolo del segnalibro"
 msgid "Bookmark comment"
 msgstr "Commento del segnalibro"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Modifica segnalibri di geolocalizzazione"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -53479,17 +53474,17 @@ msgstr "Modifica segnalibri di geolocalizzazione"
 msgid "&Remove"
 msgstr "&Rimuovi"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:236
 #, kde-format
 msgid "Add Folder"
 msgstr "Aggiungi cartella"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:427
 #, kde-format
 msgid "New Folder"
 msgstr "Nuova cartella"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:441
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -53588,12 +53583,12 @@ msgstr "Errore di esportazione"
 msgid "Error saving bookmarks"
 msgstr "Errore durante il salvataggio dei segnalibri"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Modifica segnalibri"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Aggiungi segnalibro..."
