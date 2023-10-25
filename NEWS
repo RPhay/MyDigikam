@@ -178,9 +178,13 @@ BUGFIXES:
 164 ==> 289038 - Compile error in debian: setAboutData.
 165 ==> 287787 - Can't build on Ubuntu x86-64.
 166 ==> 283373 - digikam shows splashscreen, but won't start - no crash report genereted.
-167 ==> 
+167 ==> 329390 - Auto-rotate Using Exif information: rotates wrong picture.
 168 ==> 
 169 ==> 
 170 ==> 
 171 ==> 
-
+172 ==> 
+173 ==>
+174 ==> 
+175 ==> 
+176 ==> 
