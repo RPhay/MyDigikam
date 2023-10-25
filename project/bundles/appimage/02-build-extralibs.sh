@@ -101,9 +101,15 @@ cmake --build . --config RelWithDebInfo --target ext_knotifyconfig              
 # libksane support
 cmake --build . --config RelWithDebInfo --target ext_sonnet                     -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_ktextwidgets               -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_qca                        -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_kwallet                    -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_ksanecore                  -- -j$CPU_CORES
+
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    cmake --build . --config RelWithDebInfo --target ext_qca                    -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_kwallet                -- -j$CPU_CORES
+    cmake --build . --config RelWithDebInfo --target ext_ksanecore              -- -j$CPU_CORES
+
+fi
+
 cmake --build . --config RelWithDebInfo --target ext_libksane                   -- -j$CPU_CORES
 
 # Geolocation support
