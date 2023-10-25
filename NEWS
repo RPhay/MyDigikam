@@ -169,7 +169,7 @@ BUGFIXES:
 155 ==> 473396 - HEIC images not rotated correctly even though EXIF metadata could be read.
 156 ==> 472438 - Failed to update the database schema from version 15 to version 16.
 157 ==> 328460 - Size of thumbnail font fixed to system.
-158 ==> 318965 - Export digiKam settings.
+158 ==> 318965 - List of digiKam setting files.
 159 ==> 305655 - Detect which pictures are actually new in the camera.
 160 ==> 302620 - Missing thumbnails in right hand window.
 161 ==> 297266 - Thumbnails do not display.
