@@ -135,7 +135,7 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
         }
         else
         {
-            scanner.scanFile(info, CollectionScanner::Rescan);
+            scanner.scanFile(info, CollectionScanner::CleanScan);
         }
     }
 

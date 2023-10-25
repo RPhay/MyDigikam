@@ -412,7 +412,7 @@ void GPCamera::cancel()
 
 }
 
-bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
+bool GPCamera::getFreeSpace(qint64& bytesSize, qint64& bytesAvail)
 {
 
 #ifdef HAVE_GPHOTO2
@@ -527,24 +527,23 @@ bool GPCamera::getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)
 
         if (sinfos[i].fields & GP_STORAGEINFO_MAXCAPACITY)
         {
-            kBSize += sinfos[i].capacitykbytes;
-            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage capacity: " << kBSize;
+            bytesSize += sinfos[i].capacitykbytes * 1024;
+            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage capacity: " << bytesSize;
         }
 
         if (sinfos[i].fields & GP_STORAGEINFO_FREESPACEKBYTES)
         {
-            kBAvail += sinfos[i].freekbytes;
-            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage free-space: " << kBAvail;
+            bytesAvail += sinfos[i].freekbytes * 1024;
+            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Storage free-space: " << bytesAvail;
         }
-     }
-
+    }
 
     return true;
 
 #else
 
-    Q_UNUSED(kBSize);
-    Q_UNUSED(kBAvail);
+    Q_UNUSED(bytesSize);
+    Q_UNUSED(bytesAvail);
     return false;
 
 #endif // HAVE_GPHOTO2
@@ -584,7 +583,7 @@ bool GPCamera::getPreview(QImage& preview)
         return false;
     }
 
-    preview.loadFromData((const uchar*) data, (uint) size);
+    preview.loadFromData((const uchar*)data, (uint)size);
 
     gp_file_unref(cfile);
     return true;

@@ -62,7 +62,7 @@ public:
     virtual void getItemInfo(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata)   = 0;
     virtual bool getThumbnail(const QString& folder, const QString& itemName, QImage& thumbnail)                    = 0;
     virtual bool getMetadata(const QString& folder, const QString& itemName, DMetadata& meta)                       = 0;
-    virtual bool getFreeSpace(unsigned long& kBSize, unsigned long& kBAvail)                                        = 0;
+    virtual bool getFreeSpace(qint64& bytesSize, qint64& bytesAvail)                                                = 0;
     virtual bool getPreview(QImage& preview)                                                                        = 0;
 
     virtual bool capture(CamItemInfo& itemInfo)                                                                     = 0;

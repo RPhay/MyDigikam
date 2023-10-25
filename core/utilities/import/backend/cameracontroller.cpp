@@ -444,16 +444,16 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
         case (CameraCommand::cam_freeSpace):
         {
-            unsigned long kBSize  = 0;
-            unsigned long kBAvail = 0;
+            qint64 bytesSize  = 0;
+            qint64 bytesAvail = 0;
 
-            if (!d->camera->getFreeSpace(kBSize, kBAvail))
+            if (!d->camera->getFreeSpace(bytesSize, bytesAvail))
             {
                 sendLogMsg(i18n("Failed to get free space from camera"),
                            DHistoryView::ErrorEntry);
             }
 
-            Q_EMIT signalFreeSpace(kBSize, kBAvail);
+            Q_EMIT signalFreeSpace(bytesSize, bytesAvail);
             break;
         }
 

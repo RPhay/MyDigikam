@@ -110,7 +110,7 @@ QByteArray UMSCamera::cameraMD5ID()
 }
 
 /// NOTE: implemented in gui, outside the camera thread.
-bool UMSCamera::getFreeSpace(unsigned long& /*kBSize*/, unsigned long& /*kBAvail*/)
+bool UMSCamera::getFreeSpace(qint64& /*bytesSize*/, qint64& /*bytesAvail*/)
 {
     return false;
 }
