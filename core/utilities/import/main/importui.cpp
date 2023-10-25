@@ -1172,7 +1172,7 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
     {
         // Check if space require to upload new items in camera is enough.
 
-        quint64 totalKbSize = 0;
+        qint64 totalKbSize = 0;
 
         for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
         {

@@ -59,13 +59,13 @@ public:
     {
     }
 
-    bool          isValid;
+    bool    isValid;
 
-    unsigned long kBSize;
-    unsigned long kBUsed;
-    unsigned long kBAvail;
+    qint64  kBSize;
+    qint64  kBUsed;
+    qint64  kBAvail;
 
-    QString       mountPoint;
+    QString mountPoint;
 };
 
 // ---------------------------------------------------------------------------------
@@ -91,10 +91,10 @@ public:
 
     int                             percentUsed;
 
-    unsigned long                   dSizeKb;
-    unsigned long                   kBSize;
-    unsigned long                   kBUsed;
-    unsigned long                   kBAvail;
+    qint64                          dSizeKb;
+    qint64                          kBSize;
+    qint64                          kBUsed;
+    qint64                          kBAvail;
 
     QStringList                     paths;
     QHash<QString, MountPointInfo>  infos;
@@ -166,8 +166,9 @@ void FreeSpaceWidget::refresh()
     d->timer->start(10000);
 }
 
-void FreeSpaceWidget::addInformation(unsigned long kBSize,
-                                     unsigned long kBUsed, unsigned long kBAvail,
+void FreeSpaceWidget::addInformation(qint64 kBSize,
+                                     qint64 kBUsed,
+                                     qint64 kBAvail,
                                      const QString& mountPoint)
 {
     MountPointInfo inf;
@@ -208,7 +209,7 @@ void FreeSpaceWidget::addInformation(unsigned long kBSize,
     update();
 }
 
-void FreeSpaceWidget::setEstimatedDSizeKb(unsigned long dSize)
+void FreeSpaceWidget::setEstimatedDSizeKb(qint64 dSize)
 {
     d->dSizeKb = dSize;
 
@@ -216,7 +217,7 @@ void FreeSpaceWidget::setEstimatedDSizeKb(unsigned long dSize)
     update();
 }
 
-unsigned long FreeSpaceWidget::estimatedDSizeKb() const
+qint64 FreeSpaceWidget::estimatedDSizeKb() const
 {
     return d->dSizeKb;
 }
@@ -231,22 +232,22 @@ int FreeSpaceWidget::percentUsed() const
     return d->percentUsed;
 }
 
-unsigned long FreeSpaceWidget::kBSize() const
+qint64 FreeSpaceWidget::kBSize() const
 {
     return d->kBSize;
 }
 
-unsigned long FreeSpaceWidget::kBUsed() const
+qint64 FreeSpaceWidget::kBUsed() const
 {
     return d->kBUsed;
 }
 
-unsigned long FreeSpaceWidget::kBAvail() const
+qint64 FreeSpaceWidget::kBAvail() const
 {
     return d->kBAvail;
 }
 
-unsigned long FreeSpaceWidget::kBAvail(const QString& path) const
+qint64 FreeSpaceWidget::kBAvail(const QString& path) const
 {
     int mountPointMatch = 0;
     MountPointInfo selectedInfo;
@@ -269,7 +270,7 @@ unsigned long FreeSpaceWidget::kBAvail(const QString& path) const
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Did not identify a valid mount point for" << path;
 
-        return (unsigned long)(-1);
+        return -1;
     }
 
     return selectedInfo.kBAvail;
@@ -288,19 +289,19 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
     {
         // We will compute the estimated % of space size used to download and process.
 
-        unsigned long eUsedKb = d->dSizeKb + d->kBUsed;
-        int peUsed            = (int)(100.0 * ((double)eUsedKb / (double)d->kBSize));
-        int pClamp            = (peUsed > 100) ? 100 : peUsed;
-        QColor barcol         = QColor(62, 255, 62);          // Smooth Green.
+        qint64 eUsedKb = d->dSizeKb + d->kBUsed;
+        int peUsed     = (int)(100.0 * ((double)eUsedKb / (double)d->kBSize));
+        int pClamp     = (peUsed > 100) ? 100 : peUsed;
+        QColor barcol  = QColor(62, 255, 62);          // Smooth Green.
 
         if (peUsed > 80)
         {
-            barcol = QColor(240, 255, 62);                    // Smooth Yellow.
+            barcol = QColor(240, 255, 62);             // Smooth Yellow.
         }
 
         if (peUsed > 95)
         {
-            barcol = QColor(255, 62, 62);                     // Smooth Red.
+            barcol = QColor(255, 62, 62);              // Smooth Red.
         }
 
         p.setBrush(barcol);
@@ -398,9 +399,9 @@ void FreeSpaceWidget::slotTimeout()
 
         if (info.isValid())
         {
-            addInformation((unsigned long)(info.bytesTotal()                         / 1024.0),
-                           (unsigned long)((info.bytesTotal()-info.bytesAvailable()) / 1024.0),
-                           (unsigned long)(info.bytesAvailable()                     / 1024.0),
+            addInformation((qint64)(info.bytesTotal()                           / 1024),
+                           (qint64)((info.bytesTotal() - info.bytesAvailable()) / 1024),
+                           (qint64)(info.bytesAvailable()                       / 1024),
                            info.rootPath());
         }
     }
