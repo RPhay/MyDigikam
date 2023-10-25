@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:40+0000\n"
+"POT-Creation-Date: 2023-10-25 00:40+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -19846,7 +19846,7 @@ msgid "Add again"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਲ..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ(&R)"
@@ -53619,13 +53619,13 @@ msgstr "ਟਿਕਾਣੇ ਉੱਤੇ ਜਾਓ"
 msgid "Bookmark comment"
 msgstr "ਟਿਕਾਣੇ ਉੱਤੇ ਜਾਓ"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "ਭੂਗੋਲੀ-ਟਿਕਾਣਾ"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -53634,19 +53634,19 @@ msgstr "ਭੂਗੋਲੀ-ਟਿਕਾਣਾ"
 msgid "&Remove"
 msgstr "ਹਟਾਓ(&R)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:236
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgid "Add Folder"
 msgstr "ਫੋਲਡਰ ਸ਼ਾਮਲ..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:427
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "New Folder"
 msgstr "ਫੋਲਡਰ"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:441
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -53757,13 +53757,13 @@ msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 msgid "Error saving bookmarks"
 msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, fuzzy, kde-format
 #| msgid "Add Watermark"
 msgid "Edit Bookmarks"
 msgstr "ਵਾਟਰਮਾਰਕ ਸ਼ਾਮਲ..."
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgid "Add Bookmark..."

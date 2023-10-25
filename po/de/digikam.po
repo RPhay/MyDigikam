@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:40+0000\n"
+"POT-Creation-Date: 2023-10-25 00:40+0000\n"
 "PO-Revision-Date: 2023-05-02 23:43+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -20162,7 +20162,7 @@ msgid "Add again"
 msgstr "Wieder hinzufügen"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
 #, kde-format
 msgid "Remove"
 msgstr "Entfernen"
@@ -54048,13 +54048,13 @@ msgstr "Lesezeichen-Titel"
 msgid "Bookmark comment"
 msgstr "Lesezeichen-Kommentar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Geolokalisierungs-Lesezeichen bearbeiten"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -54063,17 +54063,17 @@ msgstr "Geolokalisierungs-Lesezeichen bearbeiten"
 msgid "&Remove"
 msgstr "Entfe&rnen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:236
 #, kde-format
 msgid "Add Folder"
 msgstr "Ordner hinzufügen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:427
 #, kde-format
 msgid "New Folder"
 msgstr "Neuer Ordner"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:441
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -54172,12 +54172,12 @@ msgstr "Export-Fehler"
 msgid "Error saving bookmarks"
 msgstr "Fehler beim Speichern der Lesezeichen"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Lesezeichen bearbeiten"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Lesezeichen hinzufügen ..."

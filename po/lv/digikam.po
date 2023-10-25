@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:40+0000\n"
+"POT-Creation-Date: 2023-10-25 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -19548,7 +19548,7 @@ msgid "Add again"
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
 #, kde-format
 msgid "Remove"
 msgstr "Noņemt"
@@ -53412,14 +53412,14 @@ msgstr "Grāmatzīmes nosaukums"
 msgid "Bookmark comment"
 msgstr "Doties uz vietu"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Rediģēt ģeolokācijas grāmatzīmes"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -53428,17 +53428,17 @@ msgstr "Rediģēt ģeolokācijas grāmatzīmes"
 msgid "&Remove"
 msgstr "&Izņemt"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:236
 #, kde-format
 msgid "Add Folder"
 msgstr "Pievienot mapi"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:427
 #, kde-format
 msgid "New Folder"
 msgstr "Jauna mape"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:441
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you want to remove the collection \"%1\" from your list of collections?"
@@ -53543,12 +53543,12 @@ msgstr "Eksportēt"
 msgid "Error saving bookmarks"
 msgstr "Ielādē grāmatzīmi"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Rediģēt grāmatzīmes"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgid "Add Bookmark..."

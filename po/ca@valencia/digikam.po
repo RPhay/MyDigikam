@@ -2,9 +2,9 @@
 # Copyright (C) 2004-2023 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
+# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-24 00:40+0000\n"
-"PO-Revision-Date: 2023-09-26 11:59+0200\n"
+"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"PO-Revision-Date: 2023-10-23 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1513,7 +1513,7 @@ msgstr "Seleccioneu la carpeta que s'ha d'analitzar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr "Seleccioneu les carpetes per a importar a dins de l'àlbum"
+msgstr "Seleccioneu les carpetes que s'han d'importar cap a dins de l'àlbum"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -7089,7 +7089,7 @@ msgstr ""
 "<p>El valor de la qualitat de les imatges PGF:</p><p><b>1</b>: alta qualitat "
 "(sense compressió i mida gran de fitxer)<br/><b>3</b>: bona qualitat "
 "(predeterminat) <br/><b>6</b>: qualitat mitjana<br/><b>9</b>: baixa qualitat "
-"(compressió alta i mida de fitxer xicoteta)</p><p><b>Nota: El PGF no és un "
+"(compressió alta i mida de fitxer xicoteta)</p><p><b>Nota: PGF no és un "
 "format de compressió d'imatges sense pèrdua quan utilitzeu esta opció.</b></"
 "p>"
 
@@ -7122,9 +7122,9 @@ msgstr ""
 "utilitzant el còdec Libjpgf.</para><para>«Progressive Graphics File» (PGF) "
 "és un format de fitxer d'imatges eficient, que està basant en una "
 "transformació discreta d'ondetes amb característiques de codificació "
-"progressiva. El PGF es pot utilitzar per a compressió sense pèrdua i amb "
-"pèrdua. És més adequat per a les imatges naturals. El PGF es pot utilitzar "
-"com un substitut molt eficient i ràpid de JPEG-2000.</para><para>Per als "
+"progressiva. PGF es pot utilitzar per a compressió sense pèrdua i amb "
+"pèrdua. És més adequat per a les imatges naturals. PGF es pot utilitzar com "
+"un substitut molt eficient i ràpid de JPEG-2000.</para><para>Per als "
 "detalls, vegeu la <a href='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>documentació de Progressive Graphics File</a>.</"
 "para>"
@@ -7225,7 +7225,7 @@ msgstr ""
 "<p>El valor de la qualitat de les imatges AVIF:</p><p><b>1</b>: baixa "
 "qualitat (compressió alta i mida xicoteta de fitxer)<br/><b>50</b>: qualitat "
 "mitjana<br/><b>75</b>: bona qualitat (predeterminat) <br/><b>100</b>: alta "
-"qualitat (sense compressió i mida gran de fitxer)</p><p><b>Nota: L'AVIF no "
+"qualitat (sense compressió i mida gran de fitxer)</p><p><b>Nota: AVIF no "
 "serà un format de compressió d'imatges sense pèrdua quan utilitzeu esta "
 "opció.</b></p>"
 
@@ -16567,7 +16567,7 @@ msgid ""
 "instead of RGB."
 msgstr ""
 "Convertix al model d'aparença del color CIECAM02 durant el procés de "
-"barrejat, en lloc del RGB."
+"barrejat, en lloc de RGB."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:184
 #, kde-format
@@ -20104,7 +20104,7 @@ msgid "Add again"
 msgstr "Afig altra vegada"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:517
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:363
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:368
 #, kde-format
 msgid "Remove"
 msgstr "Elimina"
@@ -22967,7 +22967,9 @@ msgstr "Seleccioneu la ubicació d'importació..."
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:67
 #, kde-format
 msgid "This is the list of images to import into the current album."
-msgstr "Esta és la llista de les imatges que s'importaran a l'àlbum actual."
+msgstr ""
+"Esta és la llista de les imatges que s'importaran cap a dins de l'àlbum "
+"actual."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
 #, kde-format
@@ -25098,7 +25100,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item"
 msgid "First published in the United States before 1923"
-msgstr "Es va publicar per primera vegada als Estats Units abans del 1923"
+msgstr "Es va publicar per primera vegada en els Estats Units abans del 1923"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:417
 #, kde-format
@@ -27045,7 +27047,7 @@ msgid ""
 "Trying to upgrade old databases."
 msgstr ""
 "No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"nova ubicació («%2»). S'està intentat actualitzar la base de dades antiga."
+"ubicació nova («%2»). S'està intentat actualitzar la base de dades antiga."
 
 #: core/libs/album/manager/albummanager_database.cpp:606
 #, kde-format
@@ -27094,7 +27096,7 @@ msgid ""
 "Starting with an empty database."
 msgstr ""
 "No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"nova ubicació («%2»). Es comença amb una base de dades buida."
+"ubicació nova («%2»). Es comença amb una base de dades buida."
 
 #: core/libs/album/manager/albummanager_database.cpp:754
 #, kde-format
@@ -28249,7 +28251,7 @@ msgid ""
 "delete it."
 msgstr ""
 "No s'ha pogut copiar el fitxer de la base de dades antiga («%1») a la seua "
-"nova ubicació («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
+"ubicació nova («%2»). Missatge d'error: «%3». Assegureu-vos que el fitxer es "
 "puga copiar o suprimir."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:870
@@ -28551,12 +28553,11 @@ msgid "Database type is not supported."
 msgstr "El tipus de base de dades està admés."
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
-"No s'ha establit cap camí cap a l'ordre del servidor «mysql» en el fitxer de "
-"configuració."
+"No s'ha establit cap camí cap a l'ordre d'actualització de «mysql» en el "
+"fitxer de configuració."
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -28607,11 +28608,9 @@ msgstr ""
 "global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "El preprocessament està en curs, espereu."
+msgstr "La base de dades MySQL interna s'està inicialitzant, espereu..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -28653,11 +28652,9 @@ msgstr ""
 "interrogació: %1</p><p>S'ha produït un error de la base de dades: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "El preprocessament està en curs, espereu."
+msgstr "Hi ha una actualització de la base de dades MySQL en curs, espereu..."
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -29636,14 +29633,12 @@ msgstr ""
 "servidor MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Este fitxer executable s'utilitza per a iniciar una instància dedicada del "
-"servidor MariaDB."
+"Este fitxer executable s'utilitza per a actualitzar la base de dades a la "
+"versió actual del servidor."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -32940,7 +32935,7 @@ msgid ""
 msgstr ""
 "<b>Alfa</b>: mostra els valors del canal alfa de la imatge. Este canal "
 "correspon al valor de transparència i està admés en alguns formats d'imatge, "
-"com PNG o el TIF."
+"com PNG o TIF."
 
 #: core/libs/dimg/filters/levels/histogrampainter.cpp:468
 #, kde-format
@@ -38272,7 +38267,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Interpolate RGB as four colors"
-msgstr "Interpola el RGB com a quatre colors"
+msgstr "Interpola RGB com a quatre colors"
 
 # skip-rule: ff-resume
 #: core/libs/rawengine/drawdecoderwidget.cpp:244
@@ -38287,7 +38282,7 @@ msgid ""
 "but it eliminates false 2x2 mesh patterns with VNG quality method or mazes "
 "with AHD quality method.</para>"
 msgstr ""
-"<title>Interpola el RGB com a quatre colors</title><para>De manera "
+"<title>Interpola RGB com a quatre colors</title><para>De manera "
 "predeterminada, s'assumix que tots els píxels verds són el mateix. Si els "
 "píxels verds de les files parelles són més sensibles a la llum ultraviolada "
 "que els de les files senars, esta diferència provoca un patró mallat en "
@@ -51470,7 +51465,7 @@ msgstr "Afig només un interval específic d'una opció del canvi de nom"
 msgid ""
 "Extract a specific range (if '||to||' is omitted, go to the end of string)"
 msgstr ""
-"Extrau un interval específic (si s'omet, «||fins||», va al final de la "
+"Extrau un interval específic (si s'omet, «||fins||», va fins al final de la "
 "cadena)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -52046,8 +52041,8 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-"Nom del directori del pare, els caràcters «.» addicionals mouen amunt en la "
-"jerarquia de directoris"
+"Nom del directori del pare, els caràcters «.» addicionals mouen cap amunt en "
+"la jerarquia de directoris"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:38
 #, kde-format
@@ -52872,11 +52867,11 @@ msgstr ""
 "configuració de digiKam 4 no seran migrats. La base de dades antiga encara "
 "es pot utilitzar, només heu de triar els mateixos llocs per a les "
 "col·leccions i les bases de dades en els diàlegs. Es recomana crear una "
-"còpia de seguretat de la base de dades abans de continuar.</p><p>La nova "
-"ubicació per als fitxers de configuració és %1 (l'antiga %2). Hi ha "
-"problemes no resolts que informen quan es reutilitzen els fitxers de "
-"configuració antics, i per açò de moment no es recomana que ho feu, d'altra "
-"manera serà davall el vostre propi risc.</p></qt>"
+"còpia de seguretat de la base de dades abans de continuar.</p><p>La ubicació "
+"nova per als fitxers de configuració és %1 (l'antiga %2). Hi ha problemes no "
+"resolts que informen quan es reutilitzen els fitxers de configuració antics, "
+"i per açò de moment no es recomana que ho feu, d'altra manera serà davall el "
+"vostre propi risc.</p></qt>"
 
 # skip-rule: punctuation-period-no
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
@@ -53456,13 +53451,13 @@ msgstr "Títol del punt"
 msgid "Bookmark comment"
 msgstr "Comentari del punt"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Editeu els punts de geolocalització"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:233
 #: core/utilities/setup/album/setupcategory.cpp:99
 #: core/utilities/setup/camera/setupcamera.cpp:319
 #: core/utilities/setup/camera/setupcamera.cpp:441
@@ -53471,17 +53466,17 @@ msgstr "Editeu els punts de geolocalització"
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:231
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:236
 #, kde-format
 msgid "Add Folder"
 msgstr "Afig una carpeta"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:422
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:427
 #, kde-format
 msgid "New Folder"
 msgstr "Carpeta nova"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:441
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:446
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -53580,12 +53575,12 @@ msgstr "S'ha produït un error d'exportació"
 msgid "Error saving bookmarks"
 msgstr "S'ha produït un error en guardar els punts"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:157
 #, kde-format
 msgid "Edit Bookmarks"
 msgstr "Edita els punts"
 
-#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:151
+#: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:163
 #, kde-format
 msgid "Add Bookmark..."
 msgstr "Afig un punt..."
@@ -58415,7 +58410,7 @@ msgstr "Assigna les eines"
 #: core/utilities/queuemanager/views/toolsview.cpp:63
 #, kde-format
 msgid "This is the list of digiKam batch tools available."
-msgstr "Esta és la llista de les eines per lots disponibles a digiKam."
+msgstr "Esta és la llista de les eines per lots disponibles en digiKam."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:72
 #, kde-format
@@ -61349,7 +61344,7 @@ msgstr "Quant a esta eina per a importar RAW..."
 #, kde-format
 msgctxt "@title:tab"
 msgid "RAW Behavior"
-msgstr "Comportament del RAW"
+msgstr "Comportament de RAW"
 
 #: core/utilities/setup/editor/setupraw.cpp:205
 #, kde-format
@@ -61589,7 +61584,7 @@ msgid ""
 "more widely supported, though still not comparable to the tradition formats "
 "JPEG, PNG or TIFF. </item>"
 msgstr ""
-"<item><emphasis strong='true'>JPEG 2000</emphasis>: És similar al PGF. La "
+"<item><emphasis strong='true'>JPEG 2000</emphasis>: És similar a PGF. La "
 "càrrega o la guardada és lent, la relació de compressió és millor, i el "
 "format s'accepta més àmpliament, encara que no és comparable als formats "
 "tradicionals JPEG, PNG o TIFF.</item>"
@@ -64168,10 +64163,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid ""
-#~ "The database is now upgraded to the current server version, this can take "
-#~ "a while."
-#~ msgstr ""
-#~ "La base de dades s'actualitzarà ara a la versió actual del servidor, açò "
-#~ "pot prendre una mica de temps."
