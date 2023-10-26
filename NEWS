@@ -181,7 +181,7 @@ BUGFIXES:
 167 ==> 329390 - Auto-rotate Using Exif information: rotates wrong picture.
 168 ==> 467226 - Allow albums/tags to exclude in duplicate finder workflow.
 169 ==> 476073 - Assign Captions behavior in Batch Queue Manager.
-170 ==> 
+170 ==> 416446 - Import dialog: wrong pop-up media capacity in status bar.
 171 ==> 
 172 ==> 
 173 ==>
