@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"POT-Creation-Date: 2023-10-26 00:40+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -5651,9 +5651,9 @@ msgid "Enter caption text here."
 msgstr "Fungsi:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, kde-format
-msgid "Clean up and overwrite"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Clean up and overwrite metadata"
+msgstr "Mod Pengukuran"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -34442,7 +34442,7 @@ msgid "Description"
 msgstr "Huraian"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1907
+#: core/utilities/import/main/importui.cpp:1904
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -51968,7 +51968,7 @@ msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2417
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr ""
@@ -52058,7 +52058,7 @@ msgstr ""
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1534
+#: core/utilities/import/backend/gpcamera.cpp:1533
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -52069,7 +52069,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1541
+#: core/utilities/import/backend/gpcamera.cpp:1540
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -52082,23 +52082,23 @@ msgid ""
 "\n"
 msgstr ""
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, fuzzy, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "Ya"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, fuzzy, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -52739,7 +52739,7 @@ msgstr "Tidak dapat mencipta thumbnail untuk %1"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1901
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52748,7 +52748,7 @@ msgid ""
 "and try again."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1915
+#: core/utilities/import/main/importui.cpp:1912
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52762,19 +52762,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/import/main/importui.cpp:1925
+#: core/utilities/import/main/importui.cpp:1922
 #, fuzzy, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Amaran"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1966
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52787,8 +52787,8 @@ msgid ""
 "Try Anyway?"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2235
-#: core/utilities/import/main/importui.cpp:2263
+#: core/utilities/import/main/importui.cpp:2232
+#: core/utilities/import/main/importui.cpp:2260
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -52796,13 +52796,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Akan menghapuskan fail yang dipilih"
 msgstr[1] "Akan menghapuskan fail yang dipilih"
 
-#: core/utilities/import/main/importui.cpp:2255
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2)"
 
-#: core/utilities/import/main/importui.cpp:2274
+#: core/utilities/import/main/importui.cpp:2271
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -52810,22 +52810,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2349
 #, fuzzy, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/utilities/import/main/importui.cpp:2374
+#: core/utilities/import/main/importui.cpp:2371
 #, fuzzy, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Tidak dapat mencipta thumbnail untuk %1"
 
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2394
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2471
+#: core/utilities/import/main/importui.cpp:2468
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -52833,19 +52833,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2479
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2502
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Fail bernama \"%1\" telah wujud. Anda pasti ingin tulis semula?"
 
-#: core/utilities/import/main/importui.cpp:2518
+#: core/utilities/import/main/importui.cpp:2515
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -53188,33 +53188,33 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "Format Fail"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:331
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Kamera"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:335
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Album"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:344
-#: core/utilities/import/widgets/freespacewidget.cpp:355
+#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:356
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Bandar:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:347
-#: core/utilities/import/widgets/freespacewidget.cpp:358
+#: core/utilities/import/widgets/freespacewidget.cpp:348
+#: core/utilities/import/widgets/freespacewidget.cpp:359
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Boleh didapatkan:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:350
+#: core/utilities/import/widgets/freespacewidget.cpp:351
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"POT-Creation-Date: 2023-10-26 00:40+0000\n"
 "PO-Revision-Date: 2023-05-29 20:03-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -5941,9 +5941,11 @@ msgid "Enter caption text here."
 msgstr "ここにキャプションのテキストを入力します。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, kde-format
-msgid "Clean up and overwrite"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reading and Writing Metadata"
+msgid "Clean up and overwrite metadata"
+msgstr "メタデータを読み書き中"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -37688,7 +37690,7 @@ msgid "Description"
 msgstr "説明"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1907
+#: core/utilities/import/main/importui.cpp:1904
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -57235,7 +57237,7 @@ msgstr "<filename>%1</filename> のメタデータの取得に失敗しました
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2417
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename> のダウンロードに失敗しました"
@@ -57328,7 +57330,7 @@ msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
 "タグ <resource>%2</resource> が付けられているアイテムがあります。続けますか？"
 
-#: core/utilities/import/backend/gpcamera.cpp:1534
+#: core/utilities/import/backend/gpcamera.cpp:1533
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57340,7 +57342,7 @@ msgid ""
 msgstr ""
 
 # dummy markup
-#: core/utilities/import/backend/gpcamera.cpp:1541
+#: core/utilities/import/backend/gpcamera.cpp:1540
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57356,24 +57358,24 @@ msgstr ""
 "テムのアップロード: %4<br/>ディレクトリの作成: %5<br/>ディレクトリの削除: "
 "%6<br/><br/>"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "あり"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: gphoto backend feature"
@@ -58085,7 +58087,7 @@ msgstr "ファイル <filename>%1</filename> のアップロードに失敗し�
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "ファイル <filename>%1</filename> のアップロードに失敗しました。"
 
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1901
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58097,7 +58099,7 @@ msgstr ""
 "これらのアイテムは削除されません。本当に削除するのであれば、ロックを解除して"
 "やり直してください。"
 
-#: core/utilities/import/main/importui.cpp:1915
+#: core/utilities/import/main/importui.cpp:1912
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58112,20 +58114,20 @@ msgstr[0] ""
 "これら %1 個の画像を削除しようとしています。<warning>削除したファイルは元に戻"
 "せません。</warning>本当によろしいですか？"
 
-#: core/utilities/import/main/importui.cpp:1925
+#: core/utilities/import/main/importui.cpp:1922
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1966
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "ディスク領域が足りません"
 
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1967
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58143,15 +58145,15 @@ msgstr ""
 "必要な領域 (推定): %1\n"
 "利用可能な空き領域: %2"
 
-#: core/utilities/import/main/importui.cpp:2235
-#: core/utilities/import/main/importui.cpp:2263
+#: core/utilities/import/main/importui.cpp:2232
+#: core/utilities/import/main/importui.cpp:2260
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "アイテムが選択されていません"
 
-#: core/utilities/import/main/importui.cpp:2255
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -58159,7 +58161,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 / %3)"
 
-#: core/utilities/import/main/importui.cpp:2274
+#: core/utilities/import/main/importui.cpp:2271
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "%2/%1 item selected"
@@ -58169,22 +58171,22 @@ msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%1/%2 アイテム選択済み"
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2349
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "ファイル <filename>%1</filename> をスキップしました"
 
-#: core/utilities/import/main/importui.cpp:2374
+#: core/utilities/import/main/importui.cpp:2371
 #, fuzzy, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "ファイル <filename>%1</filename> のアップロードに失敗しました。"
 
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2394
 #, fuzzy, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "ファイル <filename>%1</filename> のアップロードに失敗しました。"
 
-#: core/utilities/import/main/importui.cpp:2471
+#: core/utilities/import/main/importui.cpp:2468
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -58192,13 +58194,13 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2479
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "画像のダウンロードが完了しました"
 
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2502
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -58206,7 +58208,7 @@ msgstr ""
 "同じ名前 (<filename>%1</filename>) のファイルがフォルダ <resource>%2</"
 "resource> に既に存在します。"
 
-#: core/utilities/import/main/importui.cpp:2518
+#: core/utilities/import/main/importui.cpp:2515
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -58616,35 +58618,35 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "画像を PNG フォーマットに変換します。"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:331
 #, fuzzy, kde-format
 #| msgid "Camera Media"
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "カメラメディア"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "Album Library"
 msgctxt "@title"
 msgid "Album Library"
 msgstr "アルバムライブラリ"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:344
-#: core/utilities/import/widgets/freespacewidget.cpp:355
+#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:356
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "容量:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:347
-#: core/utilities/import/widgets/freespacewidget.cpp:358
+#: core/utilities/import/widgets/freespacewidget.cpp:348
+#: core/utilities/import/widgets/freespacewidget.cpp:359
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "利用可能:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:350
+#: core/utilities/import/widgets/freespacewidget.cpp:351
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Require:"

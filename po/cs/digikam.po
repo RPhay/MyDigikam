@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Zdeněk Pech <zdpech@seznam.cz>, 2010.
-# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 00:40+0000\n"
-"PO-Revision-Date: 2023-08-07 11:43+0200\n"
+"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"PO-Revision-Date: 2023-10-19 14:39+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -5767,9 +5767,11 @@ msgid "Enter caption text here."
 msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, kde-format
-msgid "Clean up and overwrite"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Reading and Writing Metadata"
+msgid "Clean up and overwrite metadata"
+msgstr "Načítání a zápis metadat"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -27231,10 +27233,9 @@ msgid "Database type is not supported."
 msgstr "Typ databáze není podporován."
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "V konfiguračním souboru není uvedena cesta k příkazu pro mysql server."
+msgstr ""
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -27277,11 +27278,9 @@ msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "Výchozí konfigurace serveru MySQL (mysql-global.conf) nebyla nalezena."
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "Probíhá předběžné zpracování, čekejte prosím."
+msgstr ""
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -27316,11 +27315,9 @@ msgstr ""
 "Vytvoření databáze selhalo<p>Chyba dotazu: %1</p><p>Chyba databáze: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Probíhá předběžné zpracování, čekejte prosím."
+msgstr ""
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -27909,6 +27906,16 @@ msgid ""
 "If you have an enormous collection, you should start MySQL server with mysql "
 "--max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the settings</p>"
 msgstr ""
+"<p>Poznámka: Na Linuxu můžete databázi vytvořit následujícími příkazy:</"
+"p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u root</p><p>...</"
+"p><p>Do příkazové řádky MySQL vložte výše uvedený SQL kód pro vytvoření "
+"databáze digiKamu se správnými právy</p><p>...</p><p>quit</p><p>Poznámka: "
+"Pokud máte na Ubuntu problém se serverem MySQL, zadejte, použijte další "
+"příkaz v příkazové řádce mysql, abyste vytvořili spouštěče MySQL.<br>SET "
+"GLOBAL log_bin_trust_function_creators=1;<br><p>Poznámka: Pokud máte "
+"obrovskou sbírku obrázků, můžete spustit MySQL server příkazem mysql --"
+"max_allowed_packet=128M nebo v souboru my.ini či ~/.my.cnf změnit nastavení</"
+"p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:325
 #, kde-format
@@ -28228,14 +28235,10 @@ msgstr ""
 "MariaDB."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Tento binární soubor se používá pro spuštění samostatné instance databáze "
-"MariaDB."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -35718,7 +35721,7 @@ msgid "Description"
 msgstr "Popis"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1907
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -51341,7 +51344,7 @@ msgstr "Zobrazit ovládání škálování"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1647
 #, kde-format
 msgid "Google Maps API Key"
-msgstr ""
+msgstr "Klíč API pro Google Maps"
 
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:246
 #, kde-format
@@ -51362,7 +51365,7 @@ msgstr "Klíč API:"
 #: core/utilities/geolocation/geoiface/backends/backendgooglemaps.cpp:1710
 #, kde-format
 msgid "Javascript Message"
-msgstr ""
+msgstr "Zpráva Javascriptu"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:207
 #, kde-format
@@ -53731,7 +53734,7 @@ msgstr "Nelze získat metadata pro <filename>%1</filename>."
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2417
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Nelze stáhnout soubor <filename>%1</filename>"
@@ -53821,7 +53824,7 @@ msgstr ""
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr ""
 
-#: core/utilities/import/backend/gpcamera.cpp:1534
+#: core/utilities/import/backend/gpcamera.cpp:1533
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -53837,7 +53840,7 @@ msgstr ""
 "Cesta: \"%4\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1541
+#: core/utilities/import/backend/gpcamera.cpp:1540
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -53857,23 +53860,23 @@ msgstr ""
 "Vymazat adresáře: \"%6\"\n"
 "\n"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "ano"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -54558,7 +54561,7 @@ msgstr "Nezdařilo se posunutí souboru Sidecar pro <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Nezdařilo se přesunutí souboru pro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1901
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54570,7 +54573,7 @@ msgstr ""
 "položky nebudou smazány. Pokud si je přesto přejete vymazat, odemkněte je "
 "prosím a zkuste to znovu."
 
-#: core/utilities/import/main/importui.cpp:1915
+#: core/utilities/import/main/importui.cpp:1912
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54594,19 +54597,19 @@ msgstr[2] ""
 "Smazané soubory nelze obnovit.\n"
 "Jste si jisti?"
 
-#: core/utilities/import/main/importui.cpp:1925
+#: core/utilities/import/main/importui.cpp:1922
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Varování"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1966
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nedostatek místa na disku"
 
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -54626,8 +54629,8 @@ msgstr ""
 "\n"
 "Přesto zkusit?"
 
-#: core/utilities/import/main/importui.cpp:2235
-#: core/utilities/import/main/importui.cpp:2263
+#: core/utilities/import/main/importui.cpp:2232
+#: core/utilities/import/main/importui.cpp:2260
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -54636,13 +54639,13 @@ msgstr[0] "Není vybrána žádná položka (%1 položka)"
 msgstr[1] "Není vybrána žádná položka (%1 položky)"
 msgstr[2] "Není vybrána žádná položka (%1 položek)"
 
-#: core/utilities/import/main/importui.cpp:2255
+#: core/utilities/import/main/importui.cpp:2252
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 z %3)"
 
-#: core/utilities/import/main/importui.cpp:2274
+#: core/utilities/import/main/importui.cpp:2271
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -54651,22 +54654,22 @@ msgstr[0] "%1/%2 položka vybrána"
 msgstr[1] "%1/%2 položky vybrány"
 msgstr[2] "%1/%2 položek vybráno"
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2349
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Přeskočen soubor <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2374
+#: core/utilities/import/main/importui.cpp:2371
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Přejmenovat soubor na <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2394
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Nezdařilo se uložení souboru Sidecar pro <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2471
+#: core/utilities/import/main/importui.cpp:2468
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -54676,19 +54679,19 @@ msgstr ""
 "Stahování obrázků dokončeno, můžete odpojit váš fotoaparát, zatímco obrázky "
 "jsou automaticky otáčeny"
 
-#: core/utilities/import/main/importui.cpp:2479
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Stahování obrázků bylo dokončeno"
 
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2502
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Soubor se stejným názvem (\"%1) již ve složce \"%2\" existuje."
 
-#: core/utilities/import/main/importui.cpp:2518
+#: core/utilities/import/main/importui.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -55077,33 +55080,33 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "Zaškrtněte tuto volbu pro automatický převod do kontejneru DNG."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:331
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Médium fotoaparátu"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:335
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Knihovna alb"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:344
-#: core/utilities/import/widgets/freespacewidget.cpp:355
+#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:356
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Kapacita:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:347
-#: core/utilities/import/widgets/freespacewidget.cpp:358
+#: core/utilities/import/widgets/freespacewidget.cpp:348
+#: core/utilities/import/widgets/freespacewidget.cpp:359
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Dostupné:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:350
+#: core/utilities/import/widgets/freespacewidget.cpp:351
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -61818,10 +61821,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgid ""
-#~ "The database is now upgraded to the current server version, this can take "
-#~ "a while."
-#~ msgstr ""
-#~ "Databáze je nyní aktualizována na současnou verzi serveru. Může to "
-#~ "nějakou dobu trvat."

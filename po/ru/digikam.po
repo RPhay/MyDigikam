@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"POT-Creation-Date: 2023-10-26 00:40+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -6162,8 +6162,9 @@ msgid "Enter caption text here."
 msgstr "Введите здесь подпись."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, kde-format
-msgid "Clean up and overwrite"
+#, fuzzy, kde-format
+#| msgid "Clean up and overwrite"
+msgid "Clean up and overwrite metadata"
 msgstr "Всё очистить и заменить"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
@@ -37379,7 +37380,7 @@ msgid "Description"
 msgstr "Описание"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1907
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -55838,7 +55839,7 @@ msgstr "Не удалось получить метаданные для <filena
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2417
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Не удалось загрузить <filename>%1</filename>"
@@ -55929,7 +55930,7 @@ msgstr "Не удалось переключить файл блокировки
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "Не удалось переключить файл блокировки <b>%1</b>. Продолжить?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1534
+#: core/utilities/import/backend/gpcamera.cpp:1533
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -55945,7 +55946,7 @@ msgstr ""
 "Путь: «%4»\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1541
+#: core/utilities/import/backend/gpcamera.cpp:1540
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -55965,23 +55966,23 @@ msgstr ""
 "Удалённые каталоги: «%6»\n"
 "\n"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "да"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -56675,7 +56676,7 @@ msgstr "Не удалось переместить дополнительный 
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Не удалось переместить файл для <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1901
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56687,7 +56688,7 @@ msgstr ""
 "чтение). Эти объекты нельзя удалить. Если действительно необходимо удалить "
 "эти объекты, необходимо сначала снять защиту."
 
-#: core/utilities/import/main/importui.cpp:1915
+#: core/utilities/import/main/importui.cpp:1912
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56715,19 +56716,19 @@ msgstr[3] ""
 "Действие необратимо.\n"
 "Продолжить?"
 
-#: core/utilities/import/main/importui.cpp:1925
+#: core/utilities/import/main/importui.cpp:1922
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Предупреждение"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1966
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Недостаточно места на диске"
 
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56747,8 +56748,8 @@ msgstr ""
 "\n"
 "Всё равно продолжить?"
 
-#: core/utilities/import/main/importui.cpp:2235
-#: core/utilities/import/main/importui.cpp:2263
+#: core/utilities/import/main/importui.cpp:2232
+#: core/utilities/import/main/importui.cpp:2260
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -56758,14 +56759,14 @@ msgstr[1] "Ничего не выбрано (%1 объекта)"
 msgstr[2] "Ничего не выбрано (%1 объектов)"
 msgstr[3] "Ничего не выбрано (1 объект)"
 
-#: core/utilities/import/main/importui.cpp:2255
+#: core/utilities/import/main/importui.cpp:2252
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "«%1» (%2 из %3)"
 
 # BUGME: needs two i18np() - for %1 and %2 --aspotashev
-#: core/utilities/import/main/importui.cpp:2274
+#: core/utilities/import/main/importui.cpp:2271
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -56775,22 +56776,22 @@ msgstr[1] "Выбрано объектов: %2 из %1"
 msgstr[2] "Выбрано объектов: %2 из %1"
 msgstr[3] "Выбрано объектов: %2 из %1"
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2349
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Файл <filename>%1</filename> пропущен"
 
-#: core/utilities/import/main/importui.cpp:2374
+#: core/utilities/import/main/importui.cpp:2371
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Переименование файла в <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2394
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Не удалось сохранить дополнительный файл для <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2471
+#: core/utilities/import/main/importui.cpp:2468
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -56800,19 +56801,19 @@ msgstr ""
 "Загрузка изображений завершена, теперь можно отсоединить камеру; программа "
 "автоматически повернёт изображения"
 
-#: core/utilities/import/main/importui.cpp:2479
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Загрузка изображений завершена"
 
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2502
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Файл с таким именем («%1») уже существует в каталоге «%2»."
 
-#: core/utilities/import/main/importui.cpp:2518
+#: core/utilities/import/main/importui.cpp:2515
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
@@ -57211,33 +57212,33 @@ msgstr ""
 "Включите этот параметр, чтобы автоматически преобразовывать RAW-изображения "
 "(«цифровые негативы») в формат DNG."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:331
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Медиа-ресурсы камеры"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:335
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Библиотека альбомов"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:344
-#: core/utilities/import/widgets/freespacewidget.cpp:355
+#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:356
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Ёмкость:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:347
-#: core/utilities/import/widgets/freespacewidget.cpp:358
+#: core/utilities/import/widgets/freespacewidget.cpp:348
+#: core/utilities/import/widgets/freespacewidget.cpp:359
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Доступно:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:350
+#: core/utilities/import/widgets/freespacewidget.cpp:351
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"

@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-25 00:40+0000\n"
+"POT-Creation-Date: 2023-10-26 00:40+0000\n"
 "PO-Revision-Date: 2023-10-22 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -5998,8 +5998,9 @@ msgid "Enter caption text here."
 msgstr "Alt yazı metninizi buraya girin."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, kde-format
-msgid "Clean up and overwrite"
+#, fuzzy, kde-format
+#| msgid "Clean up and overwrite"
+msgid "Clean up and overwrite metadata"
 msgstr "Temizle ve üzerine yaz"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
@@ -37632,7 +37633,7 @@ msgid "Description"
 msgstr "Açıklama"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1907
+#: core/utilities/import/main/importui.cpp:1904
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -56736,7 +56737,7 @@ msgstr "<filename>%1</filename> dosyasının üst verisi alınamadı"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:996
-#: core/utilities/import/main/importui.cpp:2417
+#: core/utilities/import/main/importui.cpp:2414
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "<filename>%1</filename> indirilemedi"
@@ -56826,7 +56827,7 @@ msgstr "<b>%1</b> kilit dosyası devreye alınamadı."
 msgid "Failed to toggle lock file <b>%1</b>. Do you want to continue?"
 msgstr "<b>%1</b> kilit dosyası devreye alınamadı. Sürdürmek istiyor musunuz?"
 
-#: core/utilities/import/backend/gpcamera.cpp:1534
+#: core/utilities/import/backend/gpcamera.cpp:1533
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -56842,7 +56843,7 @@ msgstr ""
 "Yol: \"%4\"\n"
 "\n"
 
-#: core/utilities/import/backend/gpcamera.cpp:1541
+#: core/utilities/import/backend/gpcamera.cpp:1540
 #, fuzzy, kde-format
 #| msgctxt "@info List of supported device operations"
 #| msgid ""
@@ -56863,23 +56864,23 @@ msgstr ""
 "%3</b><br/>Ögeleri yükle: <b>%4</b><br/>Dizinler oluştur: <br/>%5</b><br/"
 ">Dizinleri sil: <b>%6</b><br/><br/>"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "yes"
 msgstr "evet"
 
+#: core/utilities/import/backend/gpcamera.cpp:1546
 #: core/utilities/import/backend/gpcamera.cpp:1547
 #: core/utilities/import/backend/gpcamera.cpp:1548
 #: core/utilities/import/backend/gpcamera.cpp:1549
 #: core/utilities/import/backend/gpcamera.cpp:1550
 #: core/utilities/import/backend/gpcamera.cpp:1551
-#: core/utilities/import/backend/gpcamera.cpp:1552
 #, kde-format
 msgctxt "@info: gphoto backend feature"
 msgid "no"
@@ -57598,7 +57599,7 @@ msgstr "<filename>%1</filename> için sidecar dosyası kaydetmesi başarısız"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> için sidecar dosyası kaydetmesi başarısız"
 
-#: core/utilities/import/main/importui.cpp:1904
+#: core/utilities/import/main/importui.cpp:1901
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57610,7 +57611,7 @@ msgstr ""
 "kilitlenmiş. Bu ögeler silinemez. Silmek istiyorsanız lütfen kilidi kaldırın "
 "ve yeniden deneyin."
 
-#: core/utilities/import/main/importui.cpp:1915
+#: core/utilities/import/main/importui.cpp:1912
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -57634,19 +57635,19 @@ msgstr[1] ""
 "%1 resmi silmek üzeresiniz. <b>Silinen dosyalar kurtarılamaz.</b> Emin "
 "misiniz?"
 
-#: core/utilities/import/main/importui.cpp:1925
+#: core/utilities/import/main/importui.cpp:1922
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: core/utilities/import/main/importui.cpp:1969
+#: core/utilities/import/main/importui.cpp:1966
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Yetersiz Disk Alanı"
 
-#: core/utilities/import/main/importui.cpp:1970
+#: core/utilities/import/main/importui.cpp:1967
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57666,8 +57667,8 @@ msgstr ""
 "\n"
 "Yine de denemek ister misiniz?"
 
-#: core/utilities/import/main/importui.cpp:2235
-#: core/utilities/import/main/importui.cpp:2263
+#: core/utilities/import/main/importui.cpp:2232
+#: core/utilities/import/main/importui.cpp:2260
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -57675,7 +57676,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Hiç öge seçilmedi (%1 öge)"
 msgstr[1] "Hiç öge seçilmedi (%1 öge)"
 
-#: core/utilities/import/main/importui.cpp:2255
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -57683,7 +57684,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 of %3)"
 
-#: core/utilities/import/main/importui.cpp:2274
+#: core/utilities/import/main/importui.cpp:2271
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -57691,22 +57692,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 öge seçildi"
 msgstr[1] "%2/%1 öge seçildi"
 
-#: core/utilities/import/main/importui.cpp:2352
+#: core/utilities/import/main/importui.cpp:2349
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "<filename>%1</filename> dosyası atlandı"
 
-#: core/utilities/import/main/importui.cpp:2374
+#: core/utilities/import/main/importui.cpp:2371
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Dosyayı <filename>%1</filename> olarak yeniden adlandır"
 
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2394
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "<filename>%1</filename> için sidecar dosyası kaydetmesi başarısız"
 
-#: core/utilities/import/main/importui.cpp:2471
+#: core/utilities/import/main/importui.cpp:2468
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -57720,13 +57721,13 @@ msgstr ""
 "Resim indirmesi tamamlandı, resimler otomatik döndürülürken kameranızı "
 "çıkartabilirsiniz"
 
-#: core/utilities/import/main/importui.cpp:2479
+#: core/utilities/import/main/importui.cpp:2476
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Resim indirmesi tamamlandı"
 
-#: core/utilities/import/main/importui.cpp:2505
+#: core/utilities/import/main/importui.cpp:2502
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -57738,7 +57739,7 @@ msgstr ""
 "Bu dizinde, bu dosya ile aynı isimde (<b>%1</b>) dosya mevcut <resource>%2</"
 "resource>."
 
-#: core/utilities/import/main/importui.cpp:2518
+#: core/utilities/import/main/importui.cpp:2515
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to find Album for path <b>%1</b>."
@@ -58187,33 +58188,33 @@ msgstr ""
 "HAM resimleri otomatik olarak DNG kapsayıcısına dönütürmek için bu seçeneği "
 "etkinleştirin."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
+#: core/utilities/import/widgets/freespacewidget.cpp:331
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Kamera Ortamı"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:334
+#: core/utilities/import/widgets/freespacewidget.cpp:335
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Albüm Kitaplığı"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:344
-#: core/utilities/import/widgets/freespacewidget.cpp:355
+#: core/utilities/import/widgets/freespacewidget.cpp:345
+#: core/utilities/import/widgets/freespacewidget.cpp:356
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Kapasite:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:347
-#: core/utilities/import/widgets/freespacewidget.cpp:358
+#: core/utilities/import/widgets/freespacewidget.cpp:348
+#: core/utilities/import/widgets/freespacewidget.cpp:359
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Kullanılabilir:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:350
+#: core/utilities/import/widgets/freespacewidget.cpp:351
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
