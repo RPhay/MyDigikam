@@ -182,9 +182,14 @@ BUGFIXES:
 168 ==> 467226 - Allow albums/tags to exclude in duplicate finder workflow.
 169 ==> 476073 - Assign Captions behavior in Batch Queue Manager.
 170 ==> 416446 - Import dialog: wrong pop-up media capacity in status bar.
-171 ==> 
+171 ==> 459221 - Online doc: add more details about Setup Metadata options.
 172 ==> 
 173 ==>
 174 ==> 
 175 ==> 
 176 ==> 
+177 ==> 
+178 ==> 
+179 ==> 
+180 ==> 
+181 ==> 
