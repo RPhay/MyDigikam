@@ -63,6 +63,7 @@
 
     Name "${MY_PRODUCT} ${VERSION}"
     Icon "digikam-installer.ico"
+    BrandingText "digikam Developement Team"
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
