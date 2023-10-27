@@ -206,7 +206,6 @@ public:
      */
     void restartCollectionScan();
 
-
 Q_SIGNALS:
 
     void databaseInitialized(bool success);
