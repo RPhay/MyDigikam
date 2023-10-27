@@ -183,8 +183,8 @@ BUGFIXES:
 169 ==> 476073 - Assign Captions behavior in Batch Queue Manager.
 170 ==> 416446 - Import dialog: wrong pop-up media capacity in status bar.
 171 ==> 459221 - Online doc: add more details about Setup Metadata options.
-172 ==> 
-173 ==>
+172 ==> 216915 - digikam 8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
+173 ==> 
 174 ==> 
 175 ==> 
 176 ==> 

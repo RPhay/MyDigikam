@@ -46,8 +46,8 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 # - 5:    stable Qt5 release.
 # - 6:    stable Qt6 release.
 
-DK_QTVERSION="6"
-#DK_QTVERSION="5"
+#DK_QTVERSION="6"
+DK_QTVERSION="5"
 
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
