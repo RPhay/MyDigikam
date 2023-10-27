@@ -198,6 +198,15 @@ public:
      */
     void resumeCollectionScan();
 
+    /**
+     * Restart a suspended collection scanning.
+     * All scheduled scanning tasks are queued
+     * and will be done when restartCollectionScan()
+     * has been called.
+     */
+    void restartCollectionScan();
+
+
 Q_SIGNALS:
 
     void databaseInitialized(bool success);

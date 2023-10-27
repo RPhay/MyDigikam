@@ -198,6 +198,17 @@ void ScanController::resumeCollectionScan()
     }
 }
 
+void ScanController::restartCollectionScan()
+{
+    QMutexLocker lock(&d->mutex);
+
+    if (d->scanSuspended)
+    {
+        d->scanSuspended = 0;
+        d->condVar.wakeAll();
+    }
+}
+
 void ScanController::slotStartCompleteScan()
 {
     d->totalFilesToScan = 0;

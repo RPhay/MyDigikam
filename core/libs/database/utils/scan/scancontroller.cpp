@@ -179,13 +179,13 @@ void ScanController::run()
                 d->needsInitialization = false;
                 doInit                 = true;
             }
-            else if (d->needsCompleteScan)
+            else if (d->needsCompleteScan && !d->scanSuspended)
             {
                 d->needsCompleteScan = false;
                 doScan               = true;
                 doScanDeferred       = d->deferFileScanning;
             }
-            else if (d->needsUpdateUniqueHash)
+            else if (d->needsUpdateUniqueHash && !d->scanSuspended)
             {
                 d->needsUpdateUniqueHash = false;
                 doUpdateUniqueHash       = true;

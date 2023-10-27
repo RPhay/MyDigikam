@@ -55,7 +55,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 
     // Shutdown possibly running collection scans.
-    // Must call resumeCollectionScan further down.
+    // Must call restartCollectionScan further down.
 
     ScanController::instance()->cancelAllAndSuspendCollectionScan();
 
@@ -190,10 +190,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
     d->albumWatch->setDbEngineParameters(params);
-
-    // still suspended from above
-
-    ScanController::instance()->resumeCollectionScan();
 
     ScanController::Advice advice = ScanController::instance()->databaseInitialization();
 
@@ -438,6 +434,10 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     }
 
     QApplication::restoreOverrideCursor();
+
+    // still suspended from above
+
+    ScanController::instance()->restartCollectionScan();
 
     return true;
 }
