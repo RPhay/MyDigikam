@@ -231,6 +231,7 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_ffmpeg
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw     -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
 
 #################################################################################################
 

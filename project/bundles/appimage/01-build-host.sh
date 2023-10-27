@@ -133,6 +133,7 @@ rm -fr /usr/local/include/openssl || true
 
 cmake --build . --config RelWithDebInfo --target ext_imagemagick     -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif            -- -j$CPU_CORES
 
 #################################################################################################
 
