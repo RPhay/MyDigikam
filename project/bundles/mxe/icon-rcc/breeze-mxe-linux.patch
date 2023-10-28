@@ -1,24 +1,27 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 22a16fcf..5abf8a0d 100644
+index 6c043fb4..384e331a 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -1,4 +1,4 @@
+@@ -1,6 +1,6 @@
 -cmake_minimum_required(VERSION 3.16)
 +cmake_minimum_required(VERSION 3.10)
  
- set(KF_VERSION "5.99.0") # handled by release scripts
+-set(KF_VERSION "5.110.0") # handled by release scripts
++set(KF_VERSION "5.40.0") # handled by release scripts
  project(BreezeIcons VERSION ${KF_VERSION})
+ 
+ # Disallow in-source build
 @@ -10,7 +10,7 @@ endif()
  
  # ECM setup
  include(FeatureSummary)
--find_package(ECM 5.106.0  NO_MODULE)
+-find_package(ECM 5.110.0  NO_MODULE)
 +find_package(ECM 5.40.0  NO_MODULE)
  set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
  feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
  
-@@ -18,12 +18,12 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
- 
+@@ -19,12 +19,12 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ include(ECMSetupVersion)
  include(KDEInstallDirs)
  include(KDECMakeSettings)
 -include(KDEGitCommitHooks)
@@ -32,7 +35,7 @@ index 22a16fcf..5abf8a0d 100644
  
  # Find Python 3
  find_package (Python 3 COMPONENTS Interpreter)
-@@ -71,6 +71,13 @@ function(generate_binary_resource target outfile)
+@@ -72,6 +72,13 @@ function(generate_binary_resource target outfile)
      set(RESOURCES_WORKING_DIR ${CMAKE_CURRENT_BINARY_DIR}/res)
      set(RESOURCE_FILE ${RESOURCES_WORKING_DIR}/breeze-${target}.qrc)
      set(BINARY_RESOURCE_FILE ${CMAKE_CURRENT_BINARY_DIR}/breeze-${target}.rcc)
@@ -46,7 +49,7 @@ index 22a16fcf..5abf8a0d 100644
  
      # Use $<IF:$<BOOL:${MSVC}>,PATH,LD_LIBRARY_PATH> instead of ${pathVarName} once CMake 3.8 is minimum
      if(MSVC)
-@@ -102,6 +109,7 @@ function(generate_binary_resource target outfile)
+@@ -103,6 +110,7 @@ function(generate_binary_resource target outfile)
      add_custom_command(OUTPUT ${BINARY_RESOURCE_FILE}
          COMMAND ${QT_RCC_EXECUTABLE} --binary
                      -o ${BINARY_RESOURCE_FILE}
@@ -54,7 +57,7 @@ index 22a16fcf..5abf8a0d 100644
                      ${RESOURCE_FILE}
          DEPENDS ${RESOURCE_FILE}
          WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-@@ -132,10 +140,10 @@ if(NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
+@@ -133,7 +141,7 @@ if(NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
  endif()
  
  
@@ -62,6 +65,8 @@ index 22a16fcf..5abf8a0d 100644
 +#add_subdirectory(autotests)
  add_subdirectory(icons)
  add_subdirectory(icons-dark)
+ 
+@@ -160,4 +168,4 @@ ecm_setup_version(PROJECT
  
  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES INCLUDE_QUIET_PACKAGES)
  

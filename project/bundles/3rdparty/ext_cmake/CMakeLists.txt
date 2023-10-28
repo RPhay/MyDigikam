@@ -1,6 +1,6 @@
 # Script to build Cmake.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -11,7 +11,7 @@ SET(EXTPREFIX_cmake "${EXTPREFIX}")
 ExternalProject_Add(ext_cmake
 
     GIT_REPOSITORY https://gitlab.kitware.com/cmake/cmake.git
-    GIT_TAG v3.22.2
+    GIT_TAG v3.27.7
 
     INSTALL_DIR ${EXTPREFIX_cmake}
 

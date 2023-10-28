@@ -82,7 +82,7 @@ public:
                                       const QString& dstPath,
                                       const QString& itemId = QString(),
                                       bool* const cancel = nullptr,
-                                      bool  countTotal = true);
+                                      bool useDstPath = false);
 
     /**
      * Copy a list of files to another place.

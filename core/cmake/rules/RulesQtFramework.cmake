@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -47,6 +47,7 @@ if(Qt6_FOUND)
                  NO_MODULE COMPONENTS
                  StateMachine
     )
+
     find_package(Qt${QT_VERSION_MAJOR}
                  OPTIONAL_COMPONENTS
                  OpenGLWidgets

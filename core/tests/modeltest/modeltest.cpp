@@ -495,33 +495,51 @@ void ModelTest::data()
 
     if (variant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(variant.canConvert(QMetaType(QMetaType::QString)));
+
 #else
+
         Q_ASSERT(variant.canConvert(QMetaType::QString));
+
 #endif
+
     }
 
     variant = model->data(model->index(0, 0), Qt::StatusTipRole);
 
     if (variant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(variant.canConvert(QMetaType(QMetaType::QString)));
+
 #else
+
         Q_ASSERT(variant.canConvert(QMetaType::QString));
+
 #endif
+
     }
 
     variant = model->data(model->index(0, 0), Qt::WhatsThisRole);
 
     if (variant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(variant.canConvert(QMetaType(QMetaType::QString)));
+
 #else
+
         Q_ASSERT(variant.canConvert(QMetaType::QString));
+
 #endif
+
     }
 
     // General Purpose roles that should return a QSize
@@ -529,11 +547,17 @@ void ModelTest::data()
 
     if (variant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(variant.canConvert(QMetaType(QMetaType::QSize)));
+
 #else
+
         Q_ASSERT(variant.canConvert(QMetaType::QSize));
+
 #endif
+
     }
 
     // General Purpose roles that should return a QFont
@@ -541,11 +565,17 @@ void ModelTest::data()
 
     if (fontVariant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(fontVariant.canConvert(QMetaType(QMetaType::QFont)));
+
 #else
+
         Q_ASSERT(fontVariant.canConvert(QMetaType::QFont));
+
 #endif
+
     }
 
     // Check that the alignment is one we know about
@@ -562,22 +592,34 @@ void ModelTest::data()
 
     if (colorVariant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(colorVariant.canConvert(QMetaType(QMetaType::QColor)));
+
 #else
+
         Q_ASSERT(colorVariant.canConvert(QMetaType::QColor));
+
 #endif
+
     }
 
     colorVariant = model->data(model->index(0, 0), Qt::ForegroundRole);
 
     if (colorVariant.isValid())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         Q_ASSERT(colorVariant.canConvert(QMetaType(QMetaType::QColor)));
+
 #else
+
         Q_ASSERT(colorVariant.canConvert(QMetaType::QColor));
+
 #endif
+
     }
 
     // Check that the "check state" is one we know about.

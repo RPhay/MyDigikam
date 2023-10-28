@@ -1,6 +1,6 @@
 # Script to build OpenCV for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -114,7 +114,7 @@ if(MINGW)
     ExternalProject_Add(ext_opencv
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.6.0
+        GIT_TAG 4.8.1
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
@@ -133,7 +133,7 @@ elseif(APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.6.0
+        GIT_TAG 4.8.1
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo x86_64 "${BASH_OPTIONS}"
@@ -154,7 +154,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.6.0
+        GIT_TAG 4.8.1
 
         INSTALL_DIR ${EXTPREFIX_opencv}
 

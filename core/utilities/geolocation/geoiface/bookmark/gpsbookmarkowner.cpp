@@ -19,6 +19,7 @@
 
 #include <QStandardItemModel>
 #include <QStandardPaths>
+#include <QPointer>
 
 // KDE includes
 
@@ -49,13 +50,14 @@ public:
     {
     }
 
-    QWidget*                 parent;
-    BookmarksManager*        bookmarkManager;
-    BookmarksMenu*           bookmarkMenu;
-    bool                     addBookmarkEnabled;
-    GPSBookmarkModelHelper*  bookmarkModelHelper;
-    GeoCoordinates           lastCoordinates;
-    QString                  lastTitle;
+    QWidget*                  parent;
+    BookmarksManager*         bookmarkManager;
+    BookmarksMenu*            bookmarkMenu;
+    QPointer<BookmarksDialog> bookmarksDialog;
+    bool                      addBookmarkEnabled;
+    GPSBookmarkModelHelper*   bookmarkModelHelper;
+    GeoCoordinates            lastCoordinates;
+    QString                   lastTitle;
 };
 
 GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* const parent)
@@ -118,8 +120,18 @@ void GPSBookmarkOwner::slotOpenBookmark(const QUrl& url)
 
 void GPSBookmarkOwner::slotShowBookmarksDialog()
 {
-    BookmarksDialog* const dlg = new BookmarksDialog(d->parent, d->bookmarkManager);
-    dlg->show();
+    if (d->bookmarksDialog &&
+        (d->bookmarksDialog->isMinimized() || !d->bookmarksDialog->isHidden()))
+    {
+        d->bookmarksDialog->showNormal();       // krazy:exclude=qmethods
+        d->bookmarksDialog->activateWindow();
+        d->bookmarksDialog->raise();
+    }
+    else
+    {
+        d->bookmarksDialog = new BookmarksDialog(d->parent, d->bookmarkManager);
+        d->bookmarksDialog->show();
+    }
 }
 
 void GPSBookmarkOwner::slotAddBookmark()

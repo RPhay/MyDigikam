@@ -6,7 +6,7 @@
  * Date        : 2017-05-15
  * Description : low level manager for bookmarks
  *
- * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -360,7 +360,7 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
                 {
                     case 0:
                     {
-                        return QString(50, 0xB7);
+                        return QString(50, QChar(0xB7));
                     }
 
                     case 1:
@@ -732,7 +732,16 @@ bool TreeProxyModel::filterAcceptsRow(int srow, const QModelIndex& sparent) cons
         return false;
     }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    if (index.data().toString().contains(filterRegularExpression()))
+
+#else
+
     if (index.data().toString().contains(filterRegExp()))
+
+#endif
+
     {
         return true;
     }

@@ -173,21 +173,32 @@ bool DTrash::prepareCollectionTrash(const QString& collectionPath)
 {
     QString trashFolder = collectionPath + QLatin1Char('/') + TRASH_FOLDER;
     QDir trashDir(trashFolder);
+    bool isCreated = true;
 
     if (!trashDir.exists())
     {
-        bool isCreated = true;
+        isCreated &= trashDir.mkpath(trashFolder);
+    }
 
-        isCreated     &= trashDir.mkpath(trashFolder);
-        isCreated     &= trashDir.mkpath(trashFolder + QLatin1Char('/') + FILES_FOLDER);
-        isCreated     &= trashDir.mkpath(trashFolder + QLatin1Char('/') + INFO_FOLDER);
+    if (isCreated && !trashDir.cd(FILES_FOLDER))
+    {
+        isCreated &= trashDir.mkdir(FILES_FOLDER);
+    }
+    else
+    {
+        trashDir.cdUp();
+    }
 
-        if (!isCreated)
-        {
-            qCDebug(DIGIKAM_IOJOB_LOG) << "DTrash: could not create trash folder for collection";
+    if (isCreated && !trashDir.cd(INFO_FOLDER))
+    {
+        isCreated &= trashDir.mkdir(INFO_FOLDER);
+    }
 
-            return false;
-        }
+    if (!isCreated)
+    {
+        qCDebug(DIGIKAM_IOJOB_LOG) << "DTrash: could not create trash folder for collection";
+
+        return false;
     }
 
     qCDebug(DIGIKAM_IOJOB_LOG) << "Trash folder for collection: " << trashFolder;

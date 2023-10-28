@@ -26,6 +26,7 @@
 #include <QReadWriteLock>
 #include <QUrlQuery>
 #include <QThread>
+#include <QUuid>
 
 // KDE includes
 
@@ -258,6 +259,12 @@ public:
 
     /// Make a user presentable description, regardless of current location status
     QString technicalDescription(const AlbumRootLocation* location);
+
+     /// Get the file UUID in the collection root if possible.
+    QString getCollectionUUID(const QString& path);
+
+    /// Check or create the file UUID in the collection root if possible.
+    bool checkCollectionUUID(AlbumRootLocation* const location, const QString& path);
 
 public:
 

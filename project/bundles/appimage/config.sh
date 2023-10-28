@@ -42,31 +42,23 @@ DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 # Location to build source code.
 DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
+# Qt version to use in bundle. Possible values:
+# - 5:    stable Qt5 release.
+# - 6:    stable Qt6 release.
+
+#DK_QTVERSION="6"
+DK_QTVERSION="5"
+
 # KDE Plasma version.
 # See official release here: https://download.kde.org/stable/plasma/
-DK_KP_VERSION="5.27.5"
+DK_KP_VERSION="5.27.8"
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="23.04.1"
-
-# KDE KF5 frameworks version.
-# See official release here: https://download.kde.org/stable/frameworks/
-DK_KDE_VERSION="5.106"
+DK_KA_VERSION="23.08.1"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=1
-
-# Qt version to use in bundle. Possible values:
-# - 5.15:     stable Qt5 release.
-# - 5.15-LTS: rolling release version 5 (can be not stbilized)
-# - 6.3.1:    stable Qt6 release.
-
-#DK_QTVERSION="6.3.1"
-DK_QTVERSION="5.15"
-
-# QtWebEngine version to use in bundle when 5.15-LTS is used.
-DK_QTWEBENGINEVERSION="5.15.9"
+DK_DEBUG=0
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
@@ -80,4 +72,18 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+# KDE frameworks version + Upload URL.
+# See official release here: https://download.kde.org/stable/frameworks/
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    DK_KDE_VERSION="5.110"
+    DK_UPLOADDIR="/srv/archives/files/digikam/"
+
+else
+
+    DK_KDE_VERSION="master"                                 # Qt6 version use master code for the moment.
+    DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+
+fi

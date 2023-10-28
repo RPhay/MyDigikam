@@ -175,11 +175,17 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
             // needs mouse tracking, obviously
             if ((o == d->view->viewport()) &&
                 !d->rect.isNull()          &&
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPosition().toPoint()))
+
 #else
+
                 !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPos()))
+
 #endif
+
             {
                 hide();
             }
@@ -203,10 +209,14 @@ void ItemViewToolTip::mouseMoveEvent(QMouseEvent* e)
         return;
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     QPoint pos = e->globalPosition().toPoint();
+
 #else
+
     QPoint pos = e->globalPos();
+
 #endif
 
     pos        = d->view->viewport()->mapFromGlobal(pos);

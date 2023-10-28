@@ -205,11 +205,16 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
     v = df.format(static_cast<DateFormat::Type>(ui->dateFormatPicker->currentIndex()));
     QString result;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (v.typeId() == QVariant::String)
+
 #else
+
     if (v.type() == QVariant::String)
+
 #endif
+
     {
         result = date.toString(v.toString());
     }
@@ -341,11 +346,16 @@ QString DateOption::parseOperation(ParseSettings& settings, const QRegularExpres
     else
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         if (v.typeId() == QVariant::String)
+
 #else
+
         if (v.type() == QVariant::String)
+
 #endif
+
         {
             result = dateTime.toString(v.toString());
         }
@@ -403,11 +413,16 @@ void DateOption::slotTokenTriggered(const QString& token)
             else
             {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 if (v.typeId() == QVariant::String)
+
 #else
+
                 if (v.type() == QVariant::String)
+
 #endif
+
                 {
                     dateString = date.toString(v.toString());
                 }

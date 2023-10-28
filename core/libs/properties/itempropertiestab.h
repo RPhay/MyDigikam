@@ -64,6 +64,8 @@ public:
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);
 
+    void setFileName(const QString& str);
+    void setFileFolder(const QString& str);
     void setFileModifiedDate(const QString& str);
     void setFileSize(const QString& str);
     void setFileOwner(const QString& str);

@@ -26,7 +26,7 @@
 
 // KDE includes
 
-#if (QT_VERSION < QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
 #   include <ksane_version.h>
 #endif
 
@@ -45,7 +45,7 @@ public:
     void setTargetFile(const QUrl& url, const QString& format);
     void setScannerModel(const QString& make, const QString& model);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     void setImageData(const QImage& imageData);
 

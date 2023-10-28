@@ -44,9 +44,20 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
     if (success)
     {
         /**
-         * @todo Here we save all data types as XMP Strings. Is that okay or do we have to store them as some other type?
+         * @todo Here we save all data types as XMP Strings.
+         * Is that okay or do we have to store them as some other type?
          */
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        switch (static_cast<QMetaType::Type>(value.typeId()))
+
+#else
+
         switch (value.type())
+
+#endif
+
         {
             case QVariant::Int:
             case QVariant::UInt:

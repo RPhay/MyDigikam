@@ -9,6 +9,16 @@ set(MosaicWall_Conf -DENABLE_DPLUGIN=ON
                     ${GLOBAL_PROFILE}
 )
 
+if(${ENABLE_QTVERSION} MATCHES "6")
+
+    set(MosaicWall_Conf ${MosaicWall_Conf} -DBUILD_WITH_QT6=ON)
+
+else()
+
+    set(MosaicWall_Conf ${MosaicWall_Conf} -DBUILD_WITH_QT6=OFF)
+
+endif()
+
 JoinListAsString("${MosaicWall_Conf}" " " BASH_OPTIONS)
 
 SET(PREFIX_ext_mosaicwall "${EXTPREFIX}")
@@ -41,7 +51,7 @@ else() # MacOS and Linux
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_DPLUGIN=ON
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 
         INSTALL_COMMAND cd <SOURCE_DIR>/dplugin && make install/fast
 

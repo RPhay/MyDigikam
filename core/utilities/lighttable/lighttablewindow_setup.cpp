@@ -156,7 +156,7 @@ void LightTableWindow::setupActions()
     d->rightZoomPlusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomplus_right"), d->rightZoomPlusAction);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     ac->setDefaultShortcut(d->rightZoomPlusAction, QKeySequence(QKeyCombination(Qt::ShiftModifier, d->rightZoomPlusAction->shortcut()[0].key())));
 
@@ -170,7 +170,7 @@ void LightTableWindow::setupActions()
     d->rightZoomMinusAction->setEnabled(false);
     ac->addAction(QLatin1String("lighttable_zoomminus_right"), d->rightZoomMinusAction);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     ac->setDefaultShortcut(d->rightZoomMinusAction, QKeySequence(QKeyCombination(Qt::ShiftModifier, d->rightZoomMinusAction->shortcut()[0].key())));
 

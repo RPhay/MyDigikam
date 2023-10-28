@@ -134,7 +134,7 @@ VersionsWidget::VersionsWidget(QWidget* const parent)
     connect(d->view->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotViewCurrentChanged(QModelIndex,QModelIndex)));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->viewButtonGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotViewModeChanged(int)));

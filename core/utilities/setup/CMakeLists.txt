@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -82,7 +82,7 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/camera/cameratype.cpp
 )
 
-if(ENABLE_MEDIAPLAYER)
+if(ENABLE_MEDIAPLAYER AND NOT ENABLE_QTMULTIMEDIA)
 
     set(libsetup_SRCS
         ${libsetup_SRCS}

@@ -6,7 +6,7 @@
  * Date        : 2009-08-16
  * Description : GeoCoordinates class
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -17,24 +17,28 @@
 
 // Marble includes
 
-#include <marble/GeoDataCoordinates.h>
+#ifdef HAVE_MARBLE
+
+#   include <marble/GeoDataCoordinates.h>
+
+#endif
 
 namespace Digikam
 {
 
 GeoCoordinates::GeoCoordinates()
-    : m_lat(0.0),
-      m_lon(0.0),
-      m_alt(0.0),
+    : m_lat     (0.0),
+      m_lon     (0.0),
+      m_alt     (0.0),
       m_hasFlags(HasNothing)
 {
 }
 
 GeoCoordinates::GeoCoordinates(const double inLat,
                                const double inLon)
-    : m_lat(inLat),
-      m_lon(inLon),
-      m_alt(0.0),
+    : m_lat     (inLat),
+      m_lon     (inLon),
+      m_alt     (0.0),
       m_hasFlags(HasCoordinates)
 {
 }
@@ -42,9 +46,9 @@ GeoCoordinates::GeoCoordinates(const double inLat,
 GeoCoordinates::GeoCoordinates(const double inLat,
                                const double inLon,
                                const double inAlt)
-    : m_lat(inLat),
-      m_lon(inLon),
-      m_alt(inAlt),
+    : m_lat     (inLat),
+      m_lon     (inLon),
+      m_alt     (inAlt),
       m_hasFlags(HasCoordinates | HasAltitude)
 {
 }
@@ -103,7 +107,6 @@ void GeoCoordinates::setLatLon(const double inLat,
     m_hasFlags |= HasCoordinates;
 }
 
-
 bool GeoCoordinates::hasAltitude()  const
 {
     return m_hasFlags.testFlag(HasAltitude);
@@ -132,20 +135,20 @@ void GeoCoordinates::clear()
 
 QString GeoCoordinates::altString() const
 {
-    return m_hasFlags.testFlag(HasAltitude)  ? QString::number(m_alt, 'g', 12)
-                                             : QString();
+    return (m_hasFlags.testFlag(HasAltitude)  ? QString::number(m_alt, 'g', 12)
+                                              : QString());
 }
 
 QString GeoCoordinates::latString() const
 {
-    return m_hasFlags.testFlag(HasLatitude)  ? QString::number(m_lat, 'g', 12)
-                                             : QString();
+    return (m_hasFlags.testFlag(HasLatitude)  ? QString::number(m_lat, 'g', 12)
+                                              : QString());
 }
 
 QString GeoCoordinates::lonString() const
 {
-    return m_hasFlags.testFlag(HasLongitude) ? QString::number(m_lon, 'g', 12)
-                                             : QString();
+    return (m_hasFlags.testFlag(HasLongitude) ? QString::number(m_lon, 'g', 12)
+                                              : QString());
 }
 
 QString GeoCoordinates::geoUrl() const
@@ -169,7 +172,8 @@ bool GeoCoordinates::sameLonLatAs(const GeoCoordinates& other) const
 {
     return m_hasFlags.testFlag(HasCoordinates)       &&
            other.m_hasFlags.testFlag(HasCoordinates) &&
-           (m_lat == other.m_lat)&&(m_lon == other.m_lon);
+           (m_lat == other.m_lat)                    &&
+           (m_lon == other.m_lon);
 }
 
 GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
@@ -216,6 +220,7 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
         if (!okay)
         {
             *parsedOkay = false;
+
             return GeoCoordinates();
         }
 
@@ -244,6 +249,16 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
     return position;
 }
 
+GeoCoordinates::Pair GeoCoordinates::makePair(const qreal lat1,
+                                              const qreal lon1,
+                                              const qreal lat2,
+                                              const qreal lon2)
+{
+    return Pair(GeoCoordinates(lat1, lon1), GeoCoordinates(lat2, lon2));
+}
+
+#ifdef HAVE_MARBLE
+
 Marble::GeoDataCoordinates GeoCoordinates::toMarbleCoordinates() const
 {
     Marble::GeoDataCoordinates marbleCoordinates;
@@ -267,18 +282,13 @@ GeoCoordinates GeoCoordinates::fromMarbleCoordinates(const Marble::GeoDataCoordi
                           marbleCoordinates.altitude());
 }
 
-GeoCoordinates::Pair GeoCoordinates::makePair(const qreal lat1,
-                                              const qreal lon1,
-                                              const qreal lat2,
-                                              const qreal lon2)
-{
-    return Pair(GeoCoordinates(lat1, lon1), GeoCoordinates(lat2, lon2));
-}
+#endif // HAVE_MARBLE
 
 } // namespace Digikam
 
 QDebug operator<<(QDebug debug, const Digikam::GeoCoordinates& coordinate)
 {
     debug << coordinate.geoUrl();
+
     return debug;
 }

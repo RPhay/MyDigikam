@@ -37,7 +37,7 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -47,7 +47,7 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_$1 -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_$1 -- -j$CPU_CORES
 
 #################################################################################################
 

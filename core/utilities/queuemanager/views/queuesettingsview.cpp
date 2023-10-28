@@ -403,7 +403,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     connect(d->albumSel, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotSettingsChanged()));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->renamingButtonGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotSettingsChanged()));

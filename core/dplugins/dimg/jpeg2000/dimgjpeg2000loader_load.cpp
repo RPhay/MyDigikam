@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework- load operations
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -79,7 +79,11 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     imageSetAttribute(QLatin1String("format"), QLatin1String("JP2"));
 
-#if JAS_VERSION_MAJOR < 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
+
+    // NOTE: nothing to do.
+
+#else
 
     QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
     QSize size             = metadata->getItemDimensions();
@@ -146,17 +150,17 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     int fmt   = jas_image_strtofmt(QByteArray("jp2").data());
 
-#if JAS_VERSION_MAJOR < 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
+
+    jp2_image = jas_image_decode(jp2_stream, fmt, nullptr);
+
+#else
 
     // See bug 447240 and UPSTREAM https://github.com/jasper-software/jasper/issues/315#issuecomment-1007872809
 
     qCDebug(DIGIKAM_DIMG_LOG_JP2K) << "jas_image_decode decoder options string:" << decoderOptions;
 
     jp2_image = jas_image_decode(jp2_stream, fmt, decoderOptions.toLatin1().data());
-
-#else
-
-    jp2_image = jas_image_decode(jp2_stream, fmt, nullptr);
 
 #endif
 
@@ -336,7 +340,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         }
     }
 
-#if JAS_VERSION_MAJOR >= 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
     if (!(m_loadFlags & LoadImageData) && !(m_loadFlags & LoadICCData))
     {

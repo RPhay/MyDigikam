@@ -264,11 +264,17 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
     bool alternatingRows          = alternatingRowColors();
     QStyleOptionViewItem option;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     initViewItemOption(&option);
+
 #else
+
     option = viewOptions();
+
 #endif
+
     option.widget                 = this;
 
     if (wordWrap())
@@ -349,11 +355,16 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             option.state &= ~QStyle::State_MouseOver;
         }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         itemDelegateForIndex(index)->paint(&painter, option, index);
+
 #else
+
         itemDelegate(index)->paint(&painter, option, index);
+
 #endif
+
     }
 
     // Redraw categories
@@ -949,10 +960,14 @@ void DCategorizedView::startDrag(Qt::DropActions supportedActions)
 void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
 {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     d->mousePosition    = event->position().toPoint();
+
 #else
+
     d->mousePosition    = event->pos();
+
 #endif
 
     d->dragLeftViewport = false;
@@ -972,10 +987,14 @@ void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
         return;
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     d->hovered = indexAt(event->position().toPoint());
+
 #else
+
     d->hovered = indexAt(event->pos());
+
 #endif
 
 #if !defined(DOLPHIN_DRAGANDDROP)
@@ -1392,20 +1411,31 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     else
     {
         QStyleOptionViewItem option;
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         initViewItemOption(&option);
+
 #else
+
         option = viewOptions();
+
 #endif
 
         for (int k = 0 ; k < rowCount ; ++k)
         {
             QModelIndex indexSize = (sortColumn == 0) ? modelIndexList[k] : d->proxyModel->index(k, 0);
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QSize hint            = itemDelegateForIndex(indexSize)->sizeHint(option, indexSize);
+
 #else
+
             QSize hint            = itemDelegate(indexSize)->sizeHint(option, indexSize);
+
 #endif
+
             d->biggestItemSize    = QSize(qMax(hint.width(),  d->biggestItemSize.width()),
                                           qMax(hint.height(), d->biggestItemSize.height()));
         }

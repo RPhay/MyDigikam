@@ -537,6 +537,8 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
         return;
     }
 
+    bool needToResort = false;
+
     for (int i = start ; i <= end ; ++i)
     {
         const QModelIndex imageModelIndex = s->imageModel->index(i, 0, parent);
@@ -558,10 +560,23 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
         beginRemoveRows(tableViewIndex.parent(), tableViewIndex.row(), tableViewIndex.row());
         item->parent->takeChild(item);
 
+        // move child items to parent item
+
+        while (!item->children.isEmpty())
+        {
+            item->parent->addChild(item->children.takeFirst());
+            needToResort = true;
+        }
+
         // child items will be deleted when item is deleted
 
         delete item;
         endRemoveRows();
+    }
+
+    if (needToResort)
+    {
+        scheduleResort();
     }
 }
 

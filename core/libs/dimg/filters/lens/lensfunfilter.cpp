@@ -97,12 +97,18 @@ QString LensFunFilter::DisplayableName()
 {
     static const struct FilterName
     {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
         const KLazyLocalizedString    title;
+
 #else
+
         const char*                   context;
         const char*                   title;
+
 #endif
+
     }
     FILTER_NAME =
     {
@@ -110,10 +116,15 @@ QString LensFunFilter::DisplayableName()
     };
 
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
     return FILTER_NAME.title.toString();
+
 #else
+
     return i18nc(FILTER_NAME.context, FILTER_NAME.title);
+
 #endif
+
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
@@ -282,11 +293,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterCCAMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterCCAMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );
@@ -311,11 +328,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterVIGMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterVIGMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );
@@ -350,11 +373,17 @@ void LensFunFilter::filterImage()
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &LensFunFilter::filterDSTMultithreaded, this,
+
 #else
+
                                            this, &LensFunFilter::filterDSTMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1])
             );

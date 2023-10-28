@@ -101,8 +101,8 @@ Q_SIGNALS:
     void signalCameraInformation(const QString& summary,
                                  const QString& manual,
                                  const QString& about);
-    void signalFreeSpace(unsigned long kBSize,
-                         unsigned long kBAvail);
+    void signalFreeSpace(qint64 bytesSize,
+                         qint64 bytesAvail);
     void signalPreview(const QImage& preview);
 
     void signalConnected(bool val);

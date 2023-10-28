@@ -56,7 +56,7 @@
 #endif
 
 #ifdef HAVE_MARBLE
-#   include "mapwidget.h"
+#   include "backendmarble.h"
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
@@ -215,6 +215,14 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Qt WebKit version") <<              QLatin1String(QTWEBKITWIDGETS_VERSION_STR));
 #endif
 
+#ifdef HAVE_QMULTIMEDIA
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+#else
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Qt Multimedia support") <<          SUPPORTED_YES);
+#endif
+
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "Exiv2") <<                          MetaEngine::Exiv2Version());
 
@@ -318,7 +326,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_MARBLE
     new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "Marble") <<                         MapWidget::MarbleWidgetVersion());
+                        i18nc(CONTEXT, "Marble") <<                         BackendMarble::MarbleWidgetVersion());
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Marble support") <<                 SUPPORTED_NO);

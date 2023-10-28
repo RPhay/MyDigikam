@@ -460,13 +460,33 @@ void DigikamApp::enableAlbumForwardHistory(bool enable)
 
 void DigikamApp::slotAboutToShowBackwardMenu()
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    d->backwardActionMenu->popupMenu()->clear();
+
+#else
+
     d->backwardActionMenu->menu()->clear();
+
+#endif
+
     QStringList titles;
     d->view->getBackwardHistory(titles);
 
     for (int i = 0 ; i < titles.size() ; ++i)
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        QAction* const action = d->backwardActionMenu->popupMenu()->addAction(titles.at(i));
+
+#else
+
         QAction* const action = d->backwardActionMenu->menu()->addAction(titles.at(i));
+
+#endif
+
         int id                = i + 1;
 
         connect(action, &QAction::triggered,
@@ -476,13 +496,33 @@ void DigikamApp::slotAboutToShowBackwardMenu()
 
 void DigikamApp::slotAboutToShowForwardMenu()
 {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    d->forwardActionMenu->popupMenu()->clear();
+
+#else
+
     d->forwardActionMenu->menu()->clear();
+
+#endif
+
     QStringList titles;
     d->view->getForwardHistory(titles);
 
     for (int i = 0 ; i < titles.size() ; ++i)
     {
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+        QAction* const action = d->forwardActionMenu->popupMenu()->addAction(titles.at(i));
+
+#else
+
         QAction* const action = d->forwardActionMenu->menu()->addAction(titles.at(i));
+
+#endif
+
         int id                = i + 1;
 
         connect(action, &QAction::triggered,

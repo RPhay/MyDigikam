@@ -339,11 +339,17 @@ void RefocusFilter::convolveImage(const Args& prm)
         for (int j = 0 ; runningFlag() && (j < vals.count()-1) ; ++j)
         {
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &RefocusFilter::convolveImageMultithreaded, this,
+
 #else
+
                                            this, &RefocusFilter::convolveImageMultithreaded,
+
 #endif
+
                                            vals[j],
                                            vals[j+1],
                                            y1,

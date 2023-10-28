@@ -150,23 +150,25 @@ void RedEyeCorrectionFilter::filterImage()
 
     QVariantMap params;
     params[QLatin1String("accuracy")]  = 0.8;
-    params[QLatin1String("useyolov3")] = false;
+    params[QLatin1String("useyolov3")] = true;
     d->facedetector.setParameters(params);
     const RedEye::ShapePredictor& sp   = *(d->sp);
 
     QList<QRectF> qrectfdets           = d->facedetector.detectFaces(m_orgImage);
 
-    if (qrectfdets.isEmpty())
+    if (runningFlag() && !qrectfdets.isEmpty())
     {
-        params[QLatin1String("useyolov3")] = true;
-        d->facedetector.setParameters(params);
-        qrectfdets                         = d->facedetector.detectFaces(m_orgImage);
-    }
-
-    if (runningFlag() && (qrectfdets.size() != 0))
-    {
+        QList<QRect> qrectdets;
         std::vector<cv::Rect> dets;
-        QList<QRect> qrectdets = FaceDetector::toAbsoluteRects(qrectfdets, m_orgImage.size());
+
+        Q_FOREACH (const QRect& rect, FaceDetector::toAbsoluteRects(qrectfdets, m_orgImage.size()))
+        {
+            int margin = qMax(rect.width(), rect.height());
+            margin    /= 10;
+
+            qrectdets << rect.adjusted(0, 0, margin, margin);
+        }
+
         QRectFtocvRect(qrectdets, dets);
 
         // Eye Detection

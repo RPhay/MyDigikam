@@ -55,7 +55,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 
     // Shutdown possibly running collection scans.
-    // Must call resumeCollectionScan further down.
+    // Must call restartCollectionScan further down.
 
     ScanController::instance()->cancelAllAndSuspendCollectionScan();
 
@@ -108,9 +108,12 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
             databaseError = i18n("The MySQL database directory was not found, please "
                                  "set the correct location in the next dialog.");
         }
-        else if ((!QFileInfo::exists(params.internalServerMysqlServCmd)                         &&
-                  QStandardPaths::findExecutable(params.internalServerMysqlServCmd).isEmpty())  ||
-                 (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                        &&
+        else if (
+                 (!QFileInfo::exists(params.internalServerMysqlUpgradeCmd)                        &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlUpgradeCmd).isEmpty()) ||
+                 (!QFileInfo::exists(params.internalServerMysqlServerCmd)                         &&
+                  QStandardPaths::findExecutable(params.internalServerMysqlServerCmd).isEmpty())  ||
+                 (!QFileInfo::exists(params.internalServerMysqlAdminCmd)                          &&
                   QStandardPaths::findExecutable(params.internalServerMysqlAdminCmd).isEmpty())
                 )
         {
@@ -187,10 +190,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
     d->albumWatch->setDbEngineParameters(params);
-
-    // still suspended from above
-
-    ScanController::instance()->resumeCollectionScan();
 
     ScanController::Advice advice = ScanController::instance()->databaseInitialization();
 
@@ -435,6 +434,10 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     }
 
     QApplication::restoreOverrideCursor();
+
+    // still suspended from above
+
+    ScanController::instance()->restartCollectionScan();
 
     return true;
 }

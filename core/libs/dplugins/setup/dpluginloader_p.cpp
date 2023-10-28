@@ -69,7 +69,7 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
     if (dkenv.isEmpty())
     {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
         pathList << QLibraryInfo::path(QLibraryInfo::PluginsPath) + QLatin1String("/digikam/");
 

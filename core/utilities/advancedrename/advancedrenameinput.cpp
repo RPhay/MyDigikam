@@ -90,7 +90,8 @@ void AdvancedRenameLineEdit::setupWidgets()
 
     QFontMetrics fm = fontMetrics();
     int textHeight  = fm.boundingRect(DUMMY_TEXT).height();
-    setFixedHeight(textHeight + fm.leading() + 8);
+    document()->setDocumentMargin(1);
+    setFixedHeight(textHeight + 8);
 
     // --------------------------------------------------------
 

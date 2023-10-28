@@ -192,6 +192,7 @@ bool ExifToolParser::applyChanges(const QString& path,
     }
 
     cmdArgs << QByteArray("-iptc:all=");
+    cmdArgs << QByteArray("-file:comment=");
 
     if (hasXmp)
     {

@@ -95,7 +95,7 @@ void CollectionManager::deviceRemoved(const QString& udi)
 
     // we can't access the Solid::Device to check because it is removed
     {
-        QReadLocker locker(&d->lock);
+        QReadLocker readLocker(&d->lock);
 
         if (!d->udisToWatch.contains(udi))
         {

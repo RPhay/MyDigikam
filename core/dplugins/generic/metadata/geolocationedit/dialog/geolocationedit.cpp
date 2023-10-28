@@ -6,7 +6,7 @@
  * Date        : 2006-05-16
  * Description : A tool to edit geolocation
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
@@ -45,6 +45,7 @@
 #include <QApplication>
 #include <QComboBox>
 #include <QDialogButtonBox>
+#include <QActionGroup>
 
 // KDE includes
 
@@ -152,47 +153,47 @@ class Q_DECL_HIDDEN GeolocationEdit::Private
 public:
 
     explicit Private()
+      : imageModel               (nullptr),
+        selectionModel           (nullptr),
+        uiEnabled                (true),
+        listViewContextMenu      (nullptr),
+        trackManager             (nullptr),
+        fileIOFutureWatcher      (nullptr),
+        fileIOCountDone          (0),
+        fileIOCountTotal         (0),
+        fileIOCloseAfterSaving   (false),
+        buttonBox                (nullptr),
+        VSplitter                (nullptr),
+        HSplitter                (nullptr),
+        treeView                 (nullptr),
+        stackedWidget            (nullptr),
+        tabBar                   (nullptr),
+        splitterSize             (0),
+        undoStack                (nullptr),
+        undoView                 (nullptr),
+        progressBar              (nullptr),
+        progressCancelButton     (nullptr),
+        progressCancelObject     (nullptr),
+        detailsWidget            (nullptr),
+        correlatorWidget         (nullptr),
+        rgWidget                 (nullptr),
+        searchWidget             (nullptr),
+        kmlWidget                (nullptr),
+        mapLayout                (MapLayoutOne),
+        mapSplitter              (nullptr),
+        mapWidget                (nullptr),
+        mapWidget2               (nullptr),
+        mapDragDropHandler       (nullptr),
+        mapModelHelper           (nullptr),
+        geoifaceMarkerModel      (nullptr),
+        sortActionOldestFirst    (nullptr),
+        sortActionYoungestFirst  (nullptr),
+        sortMenu                 (nullptr),
+        cbMapLayout              (nullptr),
+        bookmarkOwner            (nullptr),
+        actionBookmarkVisibility (nullptr),
+        iface                    (nullptr)
     {
-        imageModel               = nullptr;
-        selectionModel           = nullptr;
-        uiEnabled                = true;
-        listViewContextMenu      = nullptr;
-        trackManager             = nullptr;
-        fileIOFutureWatcher      = nullptr;
-        fileIOCountDone          = 0;
-        fileIOCountTotal         = 0;
-        fileIOCloseAfterSaving   = false;
-        buttonBox                = nullptr;
-        VSplitter                = nullptr;
-        HSplitter                = nullptr;
-        treeView                 = nullptr;
-        stackedWidget            = nullptr;
-        tabBar                   = nullptr;
-        splitterSize             = 0;
-        undoStack                = nullptr;
-        undoView                 = nullptr;
-        progressBar              = nullptr;
-        progressCancelButton     = nullptr;
-        progressCancelObject     = nullptr;
-        detailsWidget            = nullptr;
-        correlatorWidget         = nullptr;
-        rgWidget                 = nullptr;
-        searchWidget             = nullptr;
-        kmlWidget                = nullptr;
-        mapSplitter              = nullptr;
-        mapWidget                = nullptr;
-        mapWidget2               = nullptr;
-        mapDragDropHandler       = nullptr;
-        mapModelHelper           = nullptr;
-        geoifaceMarkerModel      = nullptr;
-        sortActionOldestFirst    = nullptr;
-        sortActionYoungestFirst  = nullptr;
-        sortMenu                 = nullptr;
-        mapLayout                = MapLayoutOne;
-        cbMapLayout              = nullptr;
-        bookmarkOwner            = nullptr;
-        actionBookmarkVisibility = nullptr;
-        iface                    = nullptr;
     }
 
     // General things
@@ -332,11 +333,16 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     connect(d->progressCancelButton, SIGNAL(clicked()),
             this, SLOT(slotProgressCancelButtonClicked()));
 
+    m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->addButton(QDialogButtonBox::Apply);
     m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->button(QDialogButtonBox::Ok)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Apply)->setAutoDefault(false);
     m_buttons->button(QDialogButtonBox::Close)->setAutoDefault(false);
     m_buttons->setParent(hbox);
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &GeolocationEdit::slotOkClicked);
 
     connect(m_buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &GeolocationEdit::slotApplyClicked);
@@ -523,7 +529,19 @@ bool GeolocationEdit::eventFilter(QObject* const o, QEvent* const e)
     {
         QMouseEvent const* m = static_cast<QMouseEvent*>(e);
 
-        QPoint p (m->x(), m->y());
+        QPoint p(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                 m->position().toPoint()
+#else
+
+                 m->x(), m->y()
+
+#endif
+
+        );
+
         const int var = d->tabBar->tabAt(p);
 
         if (var < 0)
@@ -1001,6 +1019,13 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
             close();
         }
     }
+}
+
+void GeolocationEdit::slotOkClicked()
+{
+    // save the changes, and close afterwards
+
+    saveChanges(true);
 }
 
 void GeolocationEdit::slotApplyClicked()

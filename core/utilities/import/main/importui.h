@@ -129,7 +129,7 @@ private:
     void deleteItems(bool onlySelected, bool onlyDownloaded);
     void toggleLock(CamItemInfo& info);
     void setDownloaded(CamItemInfo& itemInfo, int status);
-    void itemsSelectionSizeInfo(unsigned long& fSizeKB, unsigned long& dSizeKB);
+    void itemsSelectionSizeInfo(qint64& fSizeBytes, qint64& dSizeBytes);
     QMap<QString, int> countItemsByFolders() const;
     void checkItem4Deletion(const CamItemInfo& info, QStringList& folders, QStringList& files,
                             CamItemInfoList& deleteList, CamItemInfoList& lockedList);
@@ -167,7 +167,7 @@ private Q_SLOTS:
     void slotInformation();
     void slotCapture();
     void slotCameraInformation(const QString&, const QString&, const QString&);
-    void slotCameraFreeSpaceInfo(unsigned long kBSize, unsigned long kBAvail);
+    void slotCameraFreeSpaceInfo(qint64 bytesSize, qint64 bytesAvail);
     void slotCollectionLocationStatusChanged(const CollectionLocation& location, int oldStatus);
     void slotHistoryEntryClicked(const QVariant&);
 

@@ -54,9 +54,10 @@ public:
                        const QString& _databaseNameFace = QString(),
                        const QString& _databaseNameSimilarity = QString(),
                        const QString& _internalServerDBPath = QString(),
+                       const QString& _internalServerMysqlInitCmd = QString(),
                        const QString& _internalServerMysqlAdminCmd = QString(),
-                       const QString& _internalServerMysqlServCmd = QString(),
-                       const QString& _internalServerMysqlInitCmd = QString());
+                       const QString& _internalServerMysqlServerCmd = QString(),
+                       const QString& _internalServerMysqlUpgradeCmd = QString());
 
     DbEngineParameters();
 
@@ -168,12 +169,12 @@ public:
      * Return the hidden path from home directory to store private
      * data used by internal Mysql server.
      */
-    static QString internalServerPrivatePath();
+    static QString serverPrivatePath();
 
     /**
-     * Return the default Mysql server command name (Internal server only).
+     * Return the default Mysql initialization command name (Internal server only).
      */
-    static QString defaultMysqlServerCmd();
+    static QString defaultMysqlInitCmd();
 
     /**
      * Return the default Mysql server administration name (Internal server only).
@@ -181,9 +182,14 @@ public:
     static QString defaultMysqlAdminCmd();
 
     /**
-     * Return the default Mysql initialization command name (Internal server only).
+     * Return the default Mysql server command name (Internal server only).
      */
-    static QString defaultMysqlInitCmd();
+    static QString defaultMysqlServerCmd();
+
+    /**
+     * Return the default Mysql upgrade command name (Internal server only).
+     */
+    static QString defaultMysqlUpgradeCmd();
 
 public:
 
@@ -206,9 +212,10 @@ public:
      * Settings stored in config file and used only with internal server at runtime
      * to start server instance or init database tables.
      */
-    QString internalServerMysqlAdminCmd;
-    QString internalServerMysqlServCmd;
     QString internalServerMysqlInitCmd;
+    QString internalServerMysqlAdminCmd;
+    QString internalServerMysqlServerCmd;
+    QString internalServerMysqlUpgradeCmd;
 };
 
 DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const DbEngineParameters& t);

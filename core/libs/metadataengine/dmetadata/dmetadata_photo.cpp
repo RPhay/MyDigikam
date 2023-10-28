@@ -291,7 +291,7 @@ QString DMetadata::getLensDescription() const
         }
         else
         {
-            lensExifTags.append(lensModel);
+            lensExifTags.prepend(lensModel);
         }
     }
     else

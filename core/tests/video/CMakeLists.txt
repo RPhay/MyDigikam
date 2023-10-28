@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -37,12 +37,22 @@ target_link_libraries(framesencoder_cli
                       ${COMMON_TEST_LINK}
 )
 
+# -------------------------------------------------
+
+add_executable(videoplayer_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoplayer_gui.cpp)
+
+target_link_libraries(videoplayer_gui
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
 
 # -------------------------------------------------
 
-add_executable(player_gui ${CMAKE_CURRENT_SOURCE_DIR}/player_gui.cpp)
+add_executable(videoslide_gui ${CMAKE_CURRENT_SOURCE_DIR}/videoslide_gui.cpp)
 
-target_link_libraries(player_gui
+target_link_libraries(videoslide_gui
 
                       digikamcore
 

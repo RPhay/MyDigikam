@@ -568,28 +568,46 @@ bool DDateTable::event(QEvent *ev)
         case QEvent::HoverMove:
         {
             QHoverEvent* const e = static_cast<QHoverEvent*>(ev);
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             const int row        = e->position().toPoint().y() * d->numWeekRows / height();
+
 #else
+
             const int row        = e->pos().y() * d->numWeekRows / height();
+
 #endif
+
             int col;
 
             if (layoutDirection() == Qt::RightToLeft)
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 col = d->numDayColumns - (e->position().toPoint().x() * d->numDayColumns / width()) - 1;
+
 #else
+
                 col = d->numDayColumns - (e->pos().x() * d->numDayColumns / width()) - 1;
+
 #endif
+
             }
             else
             {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 col = e->position().toPoint().x() * d->numDayColumns / width();
+
 #else
+
                 col = e->pos().x() * d->numDayColumns / width();
+
 #endif
+
             }
 
             const int pos = row < 1 ? -1 : (d->numDayColumns * (row - 1)) + col;
@@ -688,11 +706,17 @@ void DDateTable::mousePressEvent(QMouseEvent *e)
         QMenu* const menu = new QMenu();
         menu->addSection(locale().toString(d->date));
         Q_EMIT aboutToShowContextMenu(menu, clickedDate);
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         menu->popup(e->globalPosition().toPoint());
+
 #else
+
         menu->popup(e->globalPos());
+
 #endif
+
     }
 }
 

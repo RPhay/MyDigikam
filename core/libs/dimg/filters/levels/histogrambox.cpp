@@ -144,7 +144,7 @@ HistogramBox::HistogramBox(QWidget* const parent, HistogramBoxType type, bool se
     connect(d->channelCB, SIGNAL(activated(int)),
             this, SLOT(slotChannelChanged()));
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->scaleBG, SIGNAL(idReleased(int)),
             this, SLOT(slotScaleChanged()));

@@ -83,11 +83,7 @@ find_package(BISON)                                # For Panorama tool.
 find_package(LibXslt)                              # For HTMLGallery tool.
 find_package(LibXml2)                              # For HTMLGallery tool.
 
-if(NOT Qt6_FOUND)
-
-    find_package(Marble)                           # For geolocation support (Qt5 only for the moment).
-
-endif()
+find_package(Marble)                               # For geolocation support.
 
 find_package(PkgConfig)
 find_package(Jasper)                               # For JPEG 2000 support.
@@ -219,6 +215,7 @@ MACRO_BOOL_TO_01(ENABLE_AKONADICONTACTSUPPORT HAVE_AKONADICONTACT)
 MACRO_BOOL_TO_01(ENABLE_MYSQLSUPPORT          HAVE_MYSQLSUPPORT)
 MACRO_BOOL_TO_01(ENABLE_INTERNALMYSQL         HAVE_INTERNALMYSQL)
 MACRO_BOOL_TO_01(ENABLE_MEDIAPLAYER           HAVE_MEDIAPLAYER)
+MACRO_BOOL_TO_01(ENABLE_QTMULTIMEDIA          HAVE_QTMULTIMEDIA)
 MACRO_BOOL_TO_01(ENABLE_DBUS                  HAVE_DBUS)
 MACRO_BOOL_TO_01(ENABLE_APPSTYLES             HAVE_APPSTYLE_SUPPORT)
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
@@ -249,6 +246,7 @@ PRINT_COMPONENT_COMPILE_STATUS("DBUS Support"                               ENAB
 PRINT_COMPONENT_COMPILE_STATUS("App. Style Support"                         ENABLE_APPSTYLES)
 PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"                         ENABLE_QWEBENGINE)
 PRINT_COMPONENT_COMPILE_STATUS("Media Player Support"                       ENABLE_MEDIAPLAYER)
+PRINT_COMPONENT_COMPILE_STATUS("QtMultimedia Support"                       ENABLE_QTMULTIMEDIA)
 
 # ==============================================================================
 
@@ -297,7 +295,7 @@ if(NOT Qt6_FOUND)
 
     # NOTE: This module have been removed with Qt6.
 
-PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://code.qt.io/cgit/qt/qtxmlpatterns.git/"                   "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
+    PRINT_OPTIONAL_LIBRARY_STATUS("libqtxmlpatterns"  "https://code.qt.io/cgit/qt/qtxmlpatterns.git/"                   "(version >= ${QT_MIN_VERSION})"        "digiKam will be compiled without Rajce tool support."                        HAVE_QTXMLPATTERNS)
 
 endif()
 
@@ -370,11 +368,11 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # TODO: revise dropped compiler flags accordingly with patched source code which fix compilation
 
-    # Remove suggest-override GCC flag which generate a lots of compilation warnings
+    # Remove GCC flags which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wsuggest-override")
-
-    # Remove cast-align GCC flag which generate a lots of compilation warnings
     REMOVE_GCC_COMPILER_WARNINGS("-Wcast-align")
+    REMOVE_GCC_COMPILER_WARNINGS("-Wzero-as-null-pointer-constant")
+    REMOVE_GCC_COMPILER_WARNINGS("-pedantic")
 
     # Remove deprecated-copy GCC warnings which generate a lots of compilation warnings
     DISABLE_GCC_COMPILER_WARNINGS("8.99.99" "-Wno-deprecated-copy")

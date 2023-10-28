@@ -1,6 +1,6 @@
 # Script to build jpegXL library for digiKam bundle.
 #
-# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -10,6 +10,36 @@ set(PREFIX_ext_libjxl "${EXTPREFIX}")
 
 set(JpegXL_Conf -DBUILD_SHARED_LIBS=ON
                 -DBUILD_TESTING=OFF
+                -DJPEGXL_ENABLE_EXAMPLES=OFF
+                -DJPEGXL_ENABLE_PLUGINS=OFF
+                -DJPEGXL_ENABLE_TOOLS=OFF
+                -DJPEGXL_ENABLE_FUZZERS=OFF
+                -DJPEGXL_ENABLE_DEVTOOLS=OFF
+                -DJPEGXL_ENABLE_JPEGLI=OFF
+                -DJPEGXL_ENABLE_JPEGLI_LIBJPEG=ON
+                -DJPEGXL_ENABLE_DOXYGEN=OFF
+                -DJPEGXL_ENABLE_MANPAGES=OFF
+                -DJPEGXL_ENABLE_BENCHMARK=OFF
+                -DJPEGXL_BUNDLE_LIBPNG=OFF
+                -DJPEGXL_ENABLE_JNI=OFF
+                -DJPEGXL_ENABLE_SJPEG=OFF
+                -DJPEGXL_ENABLE_OPENEXR=OFF
+                -DJPEGXL_ENABLE_SKCMS=OFF
+                -DJPEGXL_BUNDLE_SKCMS=OFF
+                -DJPEGXL_ENABLE_VIEWERS=OFF
+                -DJPEGXL_ENABLE_TCMALLOC=OFF
+                -DJPEGXL_ENABLE_COVERAGE=OFF
+                -DJPEGXL_ENABLE_PROFILER=OFF
+                -DJPEGXL_ENABLE_SIZELESS_VECTORS=OFF
+                -DJPEGXL_ENABLE_TRANSCODE_JPEG=ON
+                -DJPEGXL_ENABLE_BOXES=ON
+                -DJPEGXL_STATIC=OFF
+                -DJPEGXL_WARNINGS_AS_ERRORS=OFF
+                -DJPEGXL_FORCE_NEON=OFF
+                -DJPEGXL_FORCE_SYSTEM_BROTLI=OFF
+                -DJPEGXL_FORCE_SYSTEM_GTEST=OFF
+                -DJPEGXL_FORCE_SYSTEM_LCMS2=OFF
+                -DJPEGXL_FORCE_SYSTEM_HWY=OFF
 )
 
 if(MINGW)
@@ -30,9 +60,7 @@ if(MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-mxe.patch
+        GIT_TAG v0.8.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
@@ -40,12 +68,7 @@ if(MINGW)
 
         BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
 
-        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlicommon.dll ${PREFIX_ext_libjxl}/bin &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlidec.dll    ${PREFIX_ext_libjxl}/bin &&
-                        cp -f <SOURCE_DIR>/build.mxe/third_party/brotli/libbrotlienc.dll    ${PREFIX_ext_libjxl}/bin &&
-                        mv -f ${PREFIX_ext_libjxl}/lib/libjxl.dll                           ${PREFIX_ext_libjxl}/bin &&
-                        mv -f ${PREFIX_ext_libjxl}/lib/libjxl_threads.dll                   ${PREFIX_ext_libjxl}/bin
+        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) install/fast
 
         BUILD_IN_SOURCE 1
 
@@ -61,9 +84,7 @@ elseif(APPLE)
         # To use official release tarball
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-macports.patch
+        GIT_TAG v0.8.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
@@ -85,9 +106,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/libjxl/libjxl.git
-        GIT_TAG v0.6.1
-
-        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jxl-lib-linux.patch
+        GIT_TAG v0.8.2
 
         CONFIGURE_COMMAND git submodule update --init --recursive --depth 1 --recommend-shallow &&
                           $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_libjxl}

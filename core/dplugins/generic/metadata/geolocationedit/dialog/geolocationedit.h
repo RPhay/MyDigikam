@@ -6,7 +6,7 @@
  * Date        : 2006-05-16
  * Description : A tool to edit geolocation
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
  * SPDX-FileCopyrightText: 2014      by Justus Schwartz <justus at gmx dot li>
@@ -84,6 +84,7 @@ private Q_SLOTS:
     void slotImageActivated(const QModelIndex& index);
     void slotSetUIEnabled(const bool enabledState, QObject* const cancelObject, const QString& cancelSlot);
     void slotSetUIEnabled(const bool enabledState);
+    void slotOkClicked();
     void slotApplyClicked();
     void slotFileChangesSaved(int beginIndex, int endIndex);
     void slotFileMetadataLoaded(int beginIndex, int endIndex);

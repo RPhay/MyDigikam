@@ -5,9 +5,15 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+cmake_minimum_required(VERSION 3.3.2)
+
 project(digikam-bundles)
 
-cmake_minimum_required(VERSION 3.3.2)
+if(POLICY CMP0135)
+
+    cmake_policy(SET CMP0135 OLD)
+
+endif()
 
 function(JoinListAsString VALUES GLUE OUTPUT)
     string(REPLACE ";" "${GLUE}" _TMP_STR "${VALUES}")
@@ -99,7 +105,7 @@ function(GetKF5ApplicationMd5Sums
     endif()
 
     message(STATUS "--------------------------------")
-    message(STATUS "KF5 application    : ${name}")
+    message(STATUS "KDE application    : ${name}")
     message(STATUS "application version: ${version}")
     message(STATUS "application MD5    : ${md5sm}")
 
@@ -164,7 +170,7 @@ function(GetKF5PlasmaMd5Sums
     endif()
 
     message(STATUS "--------------------------------")
-    message(STATUS "KF5 Plasma component: ${name}")
+    message(STATUS "KDE Plasma component: ${name}")
     message(STATUS "component version   : ${version}")
     message(STATUS "component  MD5      : ${md5sm}")
 
@@ -193,7 +199,7 @@ add_subdirectory(ext_boost)
 add_subdirectory(ext_opencv)
 add_subdirectory(ext_openssl)
 add_subdirectory(ext_lensfun)
-add_subdirectory(ext_qt)
+add_subdirectory(ext_qt${ENABLE_QTVERSION})
 add_subdirectory(ext_qtwebkit)
 add_subdirectory(ext_fcitx-qt)
 add_subdirectory(ext_ffmpeg)
@@ -201,19 +207,17 @@ add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_uchardet)
 
-add_subdirectory(ext_kde_frameworks)
-add_subdirectory(ext_libksane)
-add_subdirectory(ext_breeze)
-add_subdirectory(ext_waylandprotocols)
+add_subdirectory(ext_kf${ENABLE_QTVERSION})
+add_subdirectory(ext_mosaicwall)
+add_subdirectory(ext_flowview)
+add_subdirectory(ext_gmicqt)
 
-if (${ENABLE_QTVERSION} MATCHES "5.*")
+if (${ENABLE_QTVERSION} MATCHES "5")
 
-    # Not yet ported to Qt6.
+    # included in KF6 target.
+    add_subdirectory(ext_plasma-wayland-protocols)
+    add_subdirectory(ext_libksane)
+    add_subdirectory(ext_breeze)
     add_subdirectory(ext_marble)
-
-    # Not yet ported to Qt6.
-    add_subdirectory(ext_gmicqt)
-    add_subdirectory(ext_mosaicwall)
-    add_subdirectory(ext_flowview)
 
 endif()

@@ -89,19 +89,31 @@ static DropAction copyOrMove(const QDropEvent* const e,
                              bool allowMove = true,
                              bool askForGrouping = false)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if      (e->modifiers() & Qt::ControlModifier)
+
 #else
+
     if      (e->keyboardModifiers() & Qt::ControlModifier)
+
 #endif
+
     {
         return CopyAction;
     }
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     else if (e->modifiers() & Qt::ShiftModifier)
+
 #else
+
     else if (e->keyboardModifiers() & Qt::ShiftModifier)
+
 #endif
+
     {
         return MoveAction;
     }
@@ -274,11 +286,17 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
     if (view)
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         album = view->albumAt(e->position().toPoint());
+
 #else
+
         album = view->albumAt(e->pos());
+
 #endif
+
     }
     else
     {
@@ -286,11 +304,17 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         if (tableViewTreeView)
         {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             album = tableViewTreeView->albumAt(e->position().toPoint());
+
 #else
+
             album = tableViewTreeView->albumAt(e->pos());
+
 #endif
+
         }
     }
 
@@ -413,11 +437,17 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             if (onlyInternal        &&
                 droppedOn.isValid() &&
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 (e->modifiers() == Qt::NoModifier))
+
 #else
+
                 (e->keyboardModifiers() == Qt::NoModifier))
+
 #endif
+
             {
                 action = s_groupAction(e, view);
             }
@@ -622,10 +652,15 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
             popFaceTagMenu.setMouseTracking(true);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
             QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->position().toPoint()));
+
 #else
+
             QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->pos()));
+
 #endif
 
             if (res)
@@ -672,10 +707,14 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
         popMenu.setMouseTracking(true);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         QAction* const choice = popMenu.exec(view->mapToGlobal(e->position().toPoint()));
+
 #else
+
         QAction* const choice = popMenu.exec(view->mapToGlobal(e->pos()));
+
 #endif
 
         if (choice)
@@ -728,10 +767,14 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->position().toPoint()));
+
 #else
+
         QAction* const choice        = popMenu.exec(iconView->mapToGlobal(e->pos()));
+
 #endif
 
         if (choice)
@@ -761,19 +804,31 @@ Qt::DropAction ItemDragDropHandler::accepts(const QDropEvent* e, const QModelInd
 
     if (DItemDrag::canDecode(e->mimeData()) || e->mimeData()->hasUrls())
     {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         if (e->modifiers() & Qt::ControlModifier)
+
 #else
+
         if (e->keyboardModifiers() & Qt::ControlModifier)
+
 #endif
+
         {
             return Qt::CopyAction;
         }
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
         else if (e->modifiers() & Qt::ShiftModifier)
+
 #else
+
         else if (e->keyboardModifiers() & Qt::ShiftModifier)
+
 #endif
+
         {
             return Qt::MoveAction;
         }

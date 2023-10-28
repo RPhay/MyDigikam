@@ -124,7 +124,6 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      libxslt \
      libjpeg-turbo \
      libpng \
-     djvulibre \
      tiff \
      boost \
      expat \
@@ -143,7 +142,6 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qtnetworkauth \
      qttranslations \
      qtimageformats \
-     qtnetworkauth \
      qttools \
      qtwinextras \
      qtscript \
@@ -169,6 +167,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      nsis
 
 #     libical \
+#     djvulibre \
 
 echo -e "\n"
 
@@ -192,7 +191,7 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
 fi
 
 # For legacy compatibility with bootstrap.mxe
-ln -s $MXE_ROOT_DIR $ORIG_WD/build.win64
+ln -sf $MXE_ROOT_DIR $ORIG_WD/build.win64
 
 cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
@@ -232,6 +231,7 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_ffmpeg
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_drmingw     -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
 
 #################################################################################################
 

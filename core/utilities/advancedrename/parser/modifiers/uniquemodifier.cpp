@@ -43,29 +43,40 @@ UniqueModifier::UniqueModifier()
              i18n("Add a suffix number, "
                   "||n|| specifies the number of digits to use, "
                   "||c|| specifies the separator char before the numbers, "
+                  "||a|| optional to include all options for uniqueness, "
                   "||0|| optional to always pad with ||n|| zero digits"));
-             QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?(,(0))?\\}"));
+             QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?(,(a|0|a0|0a))?\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
 
 QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
-    QFileInfo info(settings.fileUrl.toLocalFile());
     ParseResults::ResultsKey key = settings.currentResultsKey;
-    QString str2ModifyAndExt     = settings.str2Modify + QLatin1Char('.') + info.suffix();
+    QString tempStr2Modify;
 
-    cache[key] << str2ModifyAndExt;
-    bool notUnique               = (cache[key].count(str2ModifyAndExt) > 1);
 
-    if  (notUnique || (match.captured(6) == QLatin1String("0")))
+    if (match.captured(6).contains(QLatin1Char('a')))
+    {
+        QFileInfo info(settings.fileUrl.toLocalFile());
+        tempStr2Modify = settings.results.resultValuesAsString() + info.suffix();
+    }
+    else
+    {
+        tempStr2Modify = settings.str2Modify;
+    }
+
+    cache[key] << tempStr2Modify;
+    bool notUnique = (cache[key].count(tempStr2Modify) > 1);
+
+    if  (notUnique || (match.captured(6).contains(QLatin1Char('0'))))
     {
         QString result = settings.str2Modify;
         int index      = 0;
 
         if (notUnique)
         {
-            index      = cache[key].count(str2ModifyAndExt) - 1;
+            index      = cache[key].count(tempStr2Modify) - 1;
         }
 
         bool ok        = true;

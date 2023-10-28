@@ -102,6 +102,13 @@ public:
                   const bool useSaneZoomLevel)                                override;
     void setActive(const bool state)                                          override;
 
+public:
+
+    /**
+     * Return a string version of LibMarbleWidget release in format "major.minor.patch"
+     */
+    static QString MarbleWidgetVersion();
+
 public Q_SLOTS:
 
     void slotClustersNeedUpdating()                                           override;

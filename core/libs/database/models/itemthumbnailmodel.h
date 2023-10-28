@@ -94,13 +94,6 @@ public:
 public Q_SLOTS:
 
     /**
-     * Prepare the thumbnail loading for the given indexes
-     */
-    void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare);
-    void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare,
-                           const ThumbnailSize& thumbSize);
-
-    /**
      * Preload thumbnail for the given infos resp. indexes.
      * Note: Use setPreloadThumbnails to automatically preload all entries in the model.
      * Note: This only ensures thumbnail generation. It is not guaranteed that pixmaps

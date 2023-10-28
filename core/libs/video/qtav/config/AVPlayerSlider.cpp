@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2006-2010 Ricardo Villalba <rvm at escomposlinux dot org>
  * SPDX-FileCopyrightText: 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
- * SPDX-FileCopyrightText:      2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -84,11 +84,16 @@ int AVPlayerSlider::pixelPosToRangeValue(int pos) const
                                            sliderMax - sliderMin, opt.upsideDown);
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
 void AVPlayerSlider::enterEvent(QEnterEvent* e)
+
 #else
+
 void AVPlayerSlider::enterEvent(QEvent* e)
+
 #endif
+
 {
     Q_EMIT onEnter();
 
@@ -107,7 +112,15 @@ void AVPlayerSlider::mouseMoveEvent(QMouseEvent* e)
     const int o = style()->pixelMetric(QStyle::PM_SliderLength ) - 1;
     int v       = QStyle::sliderValueFromPosition(minimum(), maximum(), e->pos().x() - o / 2, width() - o, false);
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    Q_EMIT onHover(e->position().toPoint().x(), v);
+
+#else
+
     Q_EMIT onHover(e->x(), v);
+
+#endif
 
     QSlider::mouseMoveEvent(e);
 }

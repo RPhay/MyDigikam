@@ -17,22 +17,11 @@
 
 // Qt includes
 
-#include <QList>
-#include <QStringList>
-#include <QtGlobal>
-#include <QFile>
-#include <QFileInfo>
-#include <QDateTime>
-#include <QDir>
-#include <QVariant>
 #include <QSystemSemaphore>
-#include <QApplication>
-#include <QCoreApplication>
 
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "databaseserver.h"
 
 namespace Digikam

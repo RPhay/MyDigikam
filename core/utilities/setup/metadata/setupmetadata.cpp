@@ -219,10 +219,19 @@ bool SetupMetadata::exifAutoRotateHasChanged() const
 
 void SetupMetadata::slotSidecarReadWriteToggled()
 {
-    bool enabled = (d->readXMPSidecarBox->isChecked() ||
-                    d->writeXMPSidecarBox->isChecked());
+    bool writeEnabled = d->writeXMPSidecarBox->isChecked();
 
-    d->sidecarFileNameBox->setEnabled(enabled);
+    if (writeEnabled)
+    {
+        d->readXMPSidecarBox->setChecked(true);
+    }
+
+    bool fileBoxOn = (writeEnabled                    ||
+                      d->readXMPSidecarBox->isChecked());
+
+    d->readXMPSidecarBox->setEnabled(!writeEnabled);
+    d->writingModeCombo->setEnabled(writeEnabled);
+    d->sidecarFileNameBox->setEnabled(fileBoxOn);
 }
 
 void SetupMetadata::slotSidecarFileNameToggled(bool b)

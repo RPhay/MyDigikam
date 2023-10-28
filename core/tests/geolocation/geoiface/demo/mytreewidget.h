@@ -41,11 +41,15 @@ protected:
 
     void startDrag(Qt::DropActions supportedActions)                 override;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     QMimeData*  mimeData(const QList<QTreeWidgetItem*>& items) const override;
+
 #else
+
     // cppcheck-suppress passedByValue
     QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)  const override;      // clazy:exclude=function-args-by-ref
+
 #endif
 
     // cppcheck-suppress passedByValue

@@ -15,7 +15,6 @@
  * ============================================================ */
 
 #include "slideshowloader.h"
-#include "digikam_config.h"
 
 // Qt includes
 
@@ -258,6 +257,7 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
+
             break;
         }
 
@@ -273,25 +273,28 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
+
             break;
         }
+
+#ifdef HAVE_MEDIAPLAYER
 
         case VideoView:
         {
 
-#ifdef HAVE_MEDIAPLAYER
 
             d->osd->video(true);
             d->osd->pause(false);
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
 
-#endif
 
             break;
         }
 
-        default : // EndView
+#endif
+
+        default: // EndView
         {
 
 #ifdef HAVE_MEDIAPLAYER
@@ -303,6 +306,7 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 
             d->osd->pause(true);
             setCurrentIndex(view);
+
             break;
         }
     }
@@ -361,6 +365,7 @@ void SlideShowLoader::slotLoadNextItem()
                                    .name().startsWith(QLatin1String("video/")))
         {
             d->videoView->setCurrentUrl(currentItem());
+
             return;
         }
 
@@ -407,6 +412,7 @@ void SlideShowLoader::slotLoadPrevItem()
                                    .name().startsWith(QLatin1String("video/")))
         {
             d->videoView->setCurrentUrl(currentItem());
+
             return;
         }
 
@@ -481,7 +487,13 @@ void SlideShowLoader::slotVideoLoaded(bool loaded)
 {
     if (loaded)
     {
+
+#ifdef HAVE_MEDIAPLAYER
+
         setCurrentView(VideoView);
+
+#endif
+
     }
     else
     {
@@ -554,8 +566,6 @@ void SlideShowLoader::preloadNextItem()
 
 void SlideShowLoader::wheelEvent(QWheelEvent* e)
 {
-    d->osd->toolBar()->closeConfigurationDialog();
-
     if (e->angleDelta().y() < 0)
     {
         d->osd->pause(true);
@@ -578,8 +588,6 @@ void SlideShowLoader::wheelEvent(QWheelEvent* e)
 
 void SlideShowLoader::mousePressEvent(QMouseEvent* e)
 {
-    d->osd->toolBar()->closeConfigurationDialog();
-
     if      (e->button() == Qt::LeftButton)
     {
         if (d->fileIndex == -1)
@@ -618,6 +626,7 @@ void SlideShowLoader::keyPressEvent(QKeyEvent* e)
     if (e->key() == Qt::Key_F4)
     {
         d->osd->setVisible(!d->osd->isVisible());
+
         return;
     }
 
@@ -637,6 +646,7 @@ bool SlideShowLoader::eventFilter(QObject* obj, QEvent* ev)
 #endif
 
         d->mouseMoveTimer->start();
+
         return false;
     }
 
@@ -678,7 +688,8 @@ void SlideShowLoader::inhibitScreenSaver()
                                                           QLatin1String("org.freedesktop.ScreenSaver"),
                                                           QLatin1String("Inhibit"));
     message << QLatin1String("digiKam");
-    message << i18nc("Reason for inhibiting the screensaver activation, when the presentation mode is active", "Giving a slideshow");
+    message << i18nc("Reason for inhibiting the screensaver activation, when the presentation mode is active",
+                     "Giving a slideshow");
 
     QDBusReply<uint> reply = QDBusConnection::sessionBus().call(message);
 
@@ -788,7 +799,8 @@ void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
         return;
     }
 
-    qCWarning(DIGIKAM_GENERAL_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():" << shortcut;
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():"
+                                   << shortcut;
 }
 
 void SlideShowLoader::dispatchCurrentInfoChange(const QUrl& url)

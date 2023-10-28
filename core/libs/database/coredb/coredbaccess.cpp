@@ -82,7 +82,7 @@ CoreDbAccessStaticPriv* CoreDbAccess::d = nullptr;
 
 class Q_DECL_HIDDEN CoreDbAccessMutexLocker
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     : public QMutexLocker<QRecursiveMutex>
 

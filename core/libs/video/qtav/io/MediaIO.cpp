@@ -7,7 +7,7 @@
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *
  * SPDX-FileCopyrightText: 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
- * SPDX-FileCopyrightText:      2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -61,7 +61,7 @@ QStringList MediaIO::builtInNames()
 
     std::vector<const char*> ns(MediaIOFactory::Instance().registeredNames());
 
-    Q_FOREACH (const char* n, ns)
+    for (const char* n : ns)
     {
         names.append(QLatin1String(n));
     }
@@ -76,7 +76,7 @@ MediaIO* MediaIO::createForProtocol(const QString& protocol)
 {
     std::vector<MediaIOId> ids(MediaIOFactory::Instance().registeredIds());
 
-    Q_FOREACH (MediaIOId id, ids)
+    for (MediaIOId id : ids)
     {
         MediaIO* const in = MediaIO::create(id);
 

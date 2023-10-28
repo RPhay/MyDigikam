@@ -5,7 +5,6 @@
 #
 
 set(CMAKE_MIN_VERSION   "3.16")
-set(ECM_MIN_VERSION     "5.55.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -81,19 +80,38 @@ message(STATUS "----------------------------------------------------------------
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")
 
+# Extra check to detect Qt core with minimal version before to continue.
+
+set(QT5_MIN_VERSION       "5.14.0")
+set(QT6_MIN_VERSION       "6.5.0")
+set(CMAKE_MODULE_PATH 
+                      ${CMAKE_SOURCE_DIR}/core/cmake/modules
+                      ${CMAKE_SOURCE_DIR}/core/cmake/macros
+                      ${CMAKE_SOURCE_DIR}/core/cmake/rules
+)
+
+# Must be done before ECM checks.
+
+include(RulesFindQtCore)
+
+if(Qt6_FOUND)
+    set(ECM_MIN_VERSION "5.240.0")
+else()
+    set(ECM_MIN_VERSION "5.55.0")
+endif()
+
 ### ECM setup #########################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules
-                      ${CMAKE_SOURCE_DIR}/core/cmake/macros
-                      ${CMAKE_SOURCE_DIR}/core/cmake/rules
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
                       ${ECM_MODULE_PATH}
 )
 
-# KF${QT_VERSION_MAJOR} Framework macros
+# KDE Framework macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+remove_definitions(-DQT_NO_FOREACH)
 
 # ECM macros
 include(ECMSetupVersion)
@@ -189,13 +207,6 @@ else()
 endif()
 
 ######################################################################################################################
-
-# Extra check to detect Qt core with minimal version before to continue.
-
-set(QT5_MIN_VERSION       "5.14.0")
-set(QT6_MIN_VERSION       "6.2.3")
-
-include(RulesFindQtCore)
 
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     add_subdirectory(core)

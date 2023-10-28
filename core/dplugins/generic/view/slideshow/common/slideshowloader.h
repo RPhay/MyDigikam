@@ -26,6 +26,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_export.h"
 #include "dinfointerface.h"
 #include "loadingdescription.h"
@@ -47,7 +48,13 @@ public:
     {
         ErrorView = 0,
         ImageView,
+
+#ifdef HAVE_MEDIAPLAYER
+
         VideoView,
+
+#endif
+
         EndView
     };
 

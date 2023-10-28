@@ -204,7 +204,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 QMouseEvent evt(event->type(), viewport->mapFromGlobal(mouseEvent->globalPosition().toPoint()),
                                 mouseEvent->button(), mouseEvent->buttons(), mouseEvent->modifiers());
@@ -240,7 +240,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QTabletEvent* const tabletEvent = static_cast<QTabletEvent*>(event);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
                 QTabletEvent evt(event->type(),
                                  tabletEvent->pointingDevice(),

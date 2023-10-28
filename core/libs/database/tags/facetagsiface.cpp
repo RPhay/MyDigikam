@@ -201,11 +201,17 @@ FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, in
 
 FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
 {
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
     if (var.typeId() == QVariant::List)
+
 #else
+
     if (var.type() == QVariant::List)
+
 #endif
+
     {
         QList<QVariant> list(var.toList());
 

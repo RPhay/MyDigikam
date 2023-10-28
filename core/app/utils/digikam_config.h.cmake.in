@@ -6,7 +6,7 @@
  * Date        : 2009-08-03
  * Description : digiKam config header
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -104,6 +104,9 @@
 
 /* Define to 1 if changing application styles is supported */
 #cmakedefine HAVE_APPSTYLE_SUPPORT 1
+
+/* Define to 1 if system use QtMultimedia */
+#cmakedefine HAVE_QTMULTIMEDIA 1
 
 /* Define to 1 if system use QtWebEngine */
 #cmakedefine HAVE_QWEBENGINE 1

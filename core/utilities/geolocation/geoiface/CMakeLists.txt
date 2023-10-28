@@ -15,9 +15,13 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLU
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    ${MARBLE_INCLUDE_DIR}
 )
+
+if(${Marble_FOUND})
+
+    include_directories(${MARBLE_INCLUDE_DIR})
+
+endif()
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
@@ -26,15 +30,7 @@ else()
 endif()
 
 
-set(libgeoiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonames-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonamesUS-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-osm-rg.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/mapbackend.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarble.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarblelayer.cpp
-                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendgooglemaps.cpp
-
+set(libgeoiface_SRCS
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_correlator.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_correlator_thread.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/correlator/track_listmodel.cpp
@@ -83,9 +79,28 @@ set(libgeoiface_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/tiles/tilegrouper.cpp
                      ${CMAKE_CURRENT_SOURCE_DIR}/tiles/tileindex.cpp
 
-                     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonames-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-geonamesUS-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backend-osm-rg.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/mapbackend.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendgooglemaps.cpp
+
                      ${CMAKE_CURRENT_SOURCE_DIR}/widgets/placeholderwidget.cpp
+                     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/mapwidget.cpp
 )
+
+if(${Marble_FOUND})
+
+    set(libgeoiface_SRCS ${libgeoiface_SRCS}
+
+                         # TODO: files to port to Qt 6 when Marble will be ready
+
+                         ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarble.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/backends/backendmarblelayer.cpp
+    )
+
+endif()
 
 if(ENABLE_QWEBENGINE)
     set(libgeoiface_SRCS

@@ -234,11 +234,17 @@ void RainDropFilter::rainDropsImage(DImg* const orgImage, DImg* const destImage,
             prm.stop         = vals[j+1];
 
             tasks.append(QtConcurrent::run(
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                                            &RainDropFilter::rainDropsImageMultithreaded, this,
+
 #else
+
                                            this, &RainDropFilter::rainDropsImageMultithreaded,
+
 #endif
+
                                            prm
                                           )
             );

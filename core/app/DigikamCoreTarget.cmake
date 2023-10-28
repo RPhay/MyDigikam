@@ -141,6 +141,7 @@ target_link_libraries(digikamcore
                       KF${QT_VERSION_MAJOR}::XmlGui
                       KF${QT_VERSION_MAJOR}::I18n
                       KF${QT_VERSION_MAJOR}::Service
+                      KF${QT_VERSION_MAJOR}::CoreAddons
 
                       # Required by CImg which use pthread internally.
 
@@ -200,6 +201,16 @@ if(ENABLE_DBUS)
 endif()
 
 if(ENABLE_MEDIAPLAYER)
+
+    if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
+
+        target_link_libraries(digikamcore
+                              PRIVATE
+                              Qt${QT_VERSION_MAJOR}::Multimedia
+                              Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        )
+
+    endif()
 
     target_link_libraries(digikamcore
                           PRIVATE
@@ -410,6 +421,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     )
 
 endif()
+
+# Share the install include directory for the 3rdparty plugins
+target_include_directories(digikamcore INTERFACE "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/digikam>")
 
 ### Install Rules ###############################################################################################################
 

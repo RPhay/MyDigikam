@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Rules to prepare Ubuntu 18.04 Linux host.
+# Rules to prepare Ubuntu 18.04 and later Linux host.
 #
 # Copyright (c) 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -108,7 +108,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "mysql-server"                       # Run-time: mysql internal server init
                    "libeigen3-dev"                      # >= 3.2
                    "libgomp1"                           # For Libraw compilation
-                   "libjasper-dev"                      # >= 1.900.1
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
                    "liblqr-dev"                         # >= 0.4.2
@@ -125,9 +124,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "yasm"
                    "patch"
                    "libdrm-dev"
-                   "libxcb1-dev"
-                   "libxcb-util0-dev"
-                   "libxcb-keysyms1-dev"
+                   "libxcb*-dev"
                    "libx11-keyboard-perl"
                    "xscreensaver"
                    "gperf"
@@ -152,7 +149,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "patchelf"
                    "dpkg"
                    "clang"
-                   "python"
+                   "python3"
                    "libboost-all-dev"
                    "libgphoto2-dev"
                    "libsane-dev"
@@ -164,11 +161,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxkbcommon-x11-dev"
                    "libxkbfile-dev"
                    "libxinerama-dev"
-                   "libxcb-util-dev"
-                   "libxcb-xrm-dev"
-                   "libxcb-icccm4-dev"
-                   "libxcb-xinerama0-dev"
-                   "libxcb-xkb-dev"
                    "libxi-dev"
                    "libxtst-dev"
                    "libxrandr-dev"
@@ -202,15 +194,16 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libgl1-mesa-dev"
                    "libgles2-mesa-dev"
                    "libglu1-mesa-dev"
-                   "libxcb-image0-dev"
-                   "libxcb-cursor-dev"
-                   "libxcb-render-util0-dev"
-                   "libxcb-xrm-dev"
-                   "libxcb-res0-dev"
-                   "libxcb-record0-dev"
                    "libdbus-1-dev"
                    "libmount-dev"
                    "curl"
+                   "libicu-dev"
+                   "icu-devtools"
+                   "flite1-dev"
+                   "libxshmfence-dev"
+                   "libcanberra-dev"
+                   "libgcrypt11-dev"
+                   "wayland-protocols"
                   )
 
 
@@ -225,7 +218,6 @@ done
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install nodejs
 
-
 echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
@@ -236,13 +228,12 @@ sudo apt remove -y libjasper-dev || true
 echo -e "---------- Install more recent version of compiler\n"
 
 # https://askubuntu.com/questions/1140183/install-gcc-9-on-ubuntu-18-04
+# https://www.followchain.org/install-gcc-11-on-ubuntu/
 # https://linuxconfig.org/how-to-switch-between-multiple-gcc-and-g-compiler-versions-on-ubuntu-20-04-lts-focal-fossa
 
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:jonathonf/gcc
-sudo apt-get update
-sudo apt-get install gcc-9
-sudo apt-get install g++-9
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt install -y gcc-11
+sudo apt install -y g++-11
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 11
 

@@ -63,6 +63,7 @@
 
     Name "${MY_PRODUCT} ${VERSION}"
     Icon "digikam-installer.ico"
+    BrandingText "digikam Developement Team"
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
@@ -342,6 +343,8 @@
 
         ;Remove registry entries
 
+        DeleteRegValue HKLM "Software\${MY_PRODUCT}" ""
+        DeleteRegValue HKLM "Software\${MY_PRODUCT}" "Start Menu Folder"
         DeleteRegKey /ifempty HKLM "Software\${MY_PRODUCT}"
         DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${MY_PRODUCT}"
 

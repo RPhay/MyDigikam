@@ -40,10 +40,10 @@ class WorkflowItem : public QTreeWidgetItem
 public:
 
     WorkflowItem(WorkflowList* const parent, const QString& name);
-    ~WorkflowItem()                                                 override;
+    ~WorkflowItem()                                                  override;
 
-    QString title()                                           const;
-    int     count()                                           const;
+    QString title()                                            const;
+    int     count()                                            const;
 
 private:
 
@@ -59,7 +59,7 @@ class WorkflowList : public QTreeWidget
 public:
 
     explicit WorkflowList(QWidget* const parent);
-    ~WorkflowList()                                                 override;
+    ~WorkflowList()                                                  override;
 
 Q_SIGNALS:
 
@@ -80,17 +80,21 @@ private:
 
     WorkflowItem* findByTitle(const QString& title);
 
-    void        startDrag(Qt::DropActions supportedActions)         override;
-    QStringList mimeTypes()                                   const override;
+    void        startDrag(Qt::DropActions supportedActions)          override;
+    QStringList mimeTypes()                                    const override;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
-    QMimeData*  mimeData(const QList<QTreeWidgetItem*>& items)               const override;
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*>& items) const override;
+
 #else
+
     // cppcheck-suppress passedByValue
-    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)                const override;      // clazy:exclude=function-args-by-ref
+    QMimeData*  mimeData(const QList<QTreeWidgetItem*> items)  const override;      // clazy:exclude=function-args-by-ref
+
 #endif
 
-    void mouseDoubleClickEvent(QMouseEvent*)                        override;
+    void mouseDoubleClickEvent(QMouseEvent*)                         override;
 
 private:
 

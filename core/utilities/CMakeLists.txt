@@ -37,5 +37,7 @@ add_subdirectory(facemanagement)
 add_subdirectory(focuspointmanagement)
 
 if(${Marble_FOUND})
+
     add_subdirectory(geolocation)
+
 endif()

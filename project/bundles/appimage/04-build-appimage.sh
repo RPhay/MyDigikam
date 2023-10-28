@@ -3,7 +3,7 @@
 # Script to bundle data using previously-built KF5 with digiKam installation
 # and create a Linux AppImage bundle file.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -12,11 +12,6 @@
 set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
-
-if [ "root" != "$USER" ]; then
-    echo "This script must be run as root..."
-    exit
-fi
 
 #################################################################################################
 # Manage script traces to log file
@@ -60,7 +55,7 @@ fi
 
 #################################################################################################
 
-echo -e "---------- Prepare directories in bundle\n"
+echo -e "------------- Prepare directories in bundle\n"
 
 # Make sure we build from the /, parts of this script depends on that. We also need to run as root...
 cd /
@@ -71,6 +66,7 @@ mkdir -p $APP_IMG_DIR/usr/bin
 mkdir -p $APP_IMG_DIR/usr/etc
 mkdir -p $APP_IMG_DIR/usr/share
 mkdir -p $APP_IMG_DIR/usr/share/icons
+mkdir -p $APP_IMG_DIR/usr/share/X11
 mkdir -p $APP_IMG_DIR/usr/share/metainfo
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/interfaces
 mkdir -p $APP_IMG_DIR/usr/share/dbus-1/services
@@ -85,7 +81,7 @@ ln -s lib lib64
 
 #################################################################################################
 
-echo -e "---------- Copy Files in bundle\n"
+echo -e "------------- Copy Files in bundle\n"
 
 cd $APP_IMG_DIR
 
@@ -109,11 +105,32 @@ ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
 cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
 cp -r /usr/share/lensfun                                  ./usr/share
-cp -r /usr/share/knotifications5                          ./usr/share
-cp -r /usr/share/kservices5                               ./usr/share
-cp -r /usr/share/kservicetypes5                           ./usr/share
-cp -r /usr/share/kxmlgui5                                 ./usr/share
-cp -r /usr/share/kf5                                      ./usr/share
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp -r /usr/share/knotifications5                      ./usr/share
+    cp -r /usr/share/kservices5                           ./usr/share
+    cp -r /usr/share/kservicetypes5                       ./usr/share
+    cp -r /usr/share/kxmlgui5                             ./usr/share
+    cp -r /usr/share/kf5                                  ./usr/share
+
+else
+
+    cp -r /usr/share/knotifications6                      ./usr/share
+
+    # Not avaialble with KF6
+    cp -r /usr/share/kservices6                           ./usr/share  || true
+    cp -r /usr/share/kservicetypes6                       ./usr/share  || true
+
+    # KF6 still use kxmlgui5 subdir.
+    cp -r /usr/share/kxmlgui5                             ./usr/share
+    cp -r /usr/share/kf6                                  ./usr/share
+
+    # WHY it's necessary, else application menu are broken...
+    ln -s ./kxmlgui6                                      ./usr/share/kxmlgui5
+
+fi
+
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/icu                                      ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
@@ -122,10 +139,20 @@ cp -r /usr/share/mime                                     ./usr/share
 cp -r /usr/share/OpenCV                                   ./usr/share  || true
 cp -r /usr/share/opencv4                                  ./usr/share  || true
 
-cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/interfaces/
+# TODO check when kf6 prefix will be used here.
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 
-cp -r /usr/${LIBSUFFIX}/libexec/kf5                       ./usr/lib/libexec/
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp -r /usr/share/dbus-1/interfaces/kf5*               ./usr/share/dbus-1/interfaces/
+    cp -r /usr/${LIBSUFFIX}/libexec/kf5                   ./usr/lib/libexec/
+
+else
+
+    cp -r /usr/share/dbus-1/interfaces/kf6*               ./usr/share/dbus-1/interfaces/
+    cp -r /usr/${LIBSUFFIX}/libexec/kf6                   ./usr/lib/libexec/
+
+fi
 
 echo -e "------------- Copy AppImage stream data filess\n"
 
@@ -160,8 +187,9 @@ if [[ -e /usr/translations ]]; then
 
     echo -e "------------- Copy Qt translations files\n"
 
-    cp -r /usr/translations ./usr/share/digikam
-    ln -s ../digikam/translations ./usr/share/showfoto/translations
+    cp -r /usr/translations ./usr
+    ln -s ../../translations ./usr/share/digikam/translations
+    ln -s ../../translations ./usr/share/showfoto/translations
 
     # optimizations
 
@@ -178,11 +206,12 @@ if [[ -e /usr/translations ]]; then
 
 fi
 
-echo -e "------------- Copy KF5 translations files\n"
+echo -e "------------- Copy KDE translations files\n"
 
 FILES=$(cat $ORIG_WD/logs/build-extralibs.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
@@ -191,10 +220,11 @@ echo -e "------------- Copy digiKam translations files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/locale | grep -e .qm -e .mo | cut -d' ' -f3)
 
 for FILE in $FILES ; do
+    echo $FILE
     cp --parents $FILE ./
 done
 
-echo -e "---------- Copy digiKam icons files\n"
+echo -e "------------- Copy digiKam icons files\n"
 
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
@@ -205,13 +235,13 @@ for FILE in $FILES ; do
     fi
 done
 
-echo -e "---------- Copy Marble data and plugins files\n"
+echo -e "------------- Copy Marble data and plugins files\n"
 
 cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
 cp -r /usr/share/marble/data            ./usr/bin/
 
-echo -e "---------- Copy Git Revisions Manifest\n"
+echo -e "------------- Copy Git Revisions Manifest\n"
 
 touch ./usr/share/digikam/MANIFEST.txt
 
@@ -224,20 +254,11 @@ done
 
 ln -s ../digikam/MANIFEST.txt           ./usr/share/showfoto/MANIFEST.txt || true
 
-echo -e "---------- Copy system libraries for binary compatibility\n"
+echo -e "------------- Copy system libraries for binary compatibility\n"
 
 # otherwise segfaults!?
 
-if [[ "$OS_NAME" == "ubuntu" ]] ; then
-
-    cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.2    | cut -d ">" -f 2 | xargs) ./usr/lib/
-
-else
-
-    cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.3    | cut -d ">" -f 2 | xargs) ./usr/lib/
-
-fi
-
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libsasl2.so.2    | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGL.so.1       | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGLU.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
@@ -261,18 +282,28 @@ echo -e "---------- Copy target binaries\n"
 
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
-cp /usr/bin/kbuildsycoca5           ./usr/bin
-cp /usr/bin/solid-hardware5         ./usr/bin
+
+if [[ $DK_QTVERSION == 5 ]] ; then
+
+    cp /usr/bin/kbuildsycoca5       ./usr/bin
+    cp /usr/bin/solid-hardware5     ./usr/bin
+
+else
+
+    cp /usr/bin/kbuildsycoca6       ./usr/bin
+    cp /usr/bin/solid-hardware6     ./usr/bin
+
+fi
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    echo -e "---------- Copy QtWebEngine runtime process\n"
+    echo -e "------------- Copy QtWebEngine runtime process\n"
 
     [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
 
 else
 
-    echo -e "---------- Copy QtWebKit runtime process\n"
+    echo -e "------------- Copy QtWebKit runtime process\n"
 
     [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
     [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
@@ -281,7 +312,7 @@ else
 
 fi
 
-echo -e "---------- Copy Solid binary\n"
+echo -e "------------- Copy Solid binary\n"
 
 # For Solid action when camera is connected to computer
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
@@ -289,7 +320,7 @@ sed -i "/Exec=/c\Exec=digikam-camera downloadFromUdi %i" ./usr/share/solid/actio
 
 #################################################################################################
 
-echo -e "---------- Scan dependencies recurssively\n"
+echo -e "------------- Scan dependencies recurssively\n"
 
 CopyReccursiveDependencies /usr/bin/digikam                  ./usr/lib
 CopyReccursiveDependencies /usr/bin/showfoto                 ./usr/lib
@@ -381,13 +412,16 @@ for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+    else
+        echo -e "   ==> ${FILE} DO OT EXISTS!!!"
     fi
 done
 
 # This list is taken from older AppImage build script from krita
-# NOTE: libopenal   => see bug 390162.
-#       libdbus-1   => see Krita rules.
-#       libxcb-dri3 => see bug 417088.
+# NOTE: libopenal    => see bug 390162.
+#       libdbus-1    => see Krita rules.
+#       libxcb-dri3  => see bug 417088.
+#       libidn2.so.0 => Ubuntu 22.04
 
 EXTRA_EXCLUDE_FILES="\
 libgssapi_krb5.so.2 \
@@ -397,6 +431,7 @@ libheimbase.so.1 \
 libheimntlm.so.0 \
 libhx509.so.5 \
 libidn.so.11 \
+libidn2.so.0 \
 libk5crypto.so.3 \
 libkrb5.so.26 \
 libkrb5.so.3 \
@@ -425,10 +460,16 @@ for FILE in $EXTRA_EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
         echo -e "   ==> ${FILE} will be removed from the bundle"
         rm -f usr/lib/${FILE}
+    else
+        echo -e "   ==> ${FILE} DO NOT EXISTS!!!"
     fi
 done
 
-ln -s libssl.so.1.1 usr/lib/libssl.so || true
+if [[ -f usr/lib/libssl.so.1.1 ]] ; then
+
+    ln -s libssl.so.1.1 usr/lib/libssl.so || true
+
+fi
 
 # We don't bundle the developer stuff
 rm -rf usr/include         || true
@@ -441,7 +482,7 @@ rm -rf usr/share/pkgconfig || true
 #################################################################################################
 # See LFS instruction: http://www.linuxfromscratch.org/lfs/view/systemd/chapter05/stripping.html
 
-echo -e "---------- Strip Symbols in Binaries Files\n"
+echo -e "------------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
     FILES=$(find . -type f  -exec file {} \; | grep ELF | grep -Ev '(digikam|showfoto)' | cut -d':' -f1)
@@ -458,7 +499,7 @@ done
 
 #################################################################################################
 
-echo -e "---------- Strip Configuration Files \n"
+echo -e "------------- Strip Configuration Files \n"
 
 # Since we set $APP_IMG_DIR as the prefix, we need to patch it away too (FIXME)
 # Probably it would be better to use /app as a prefix because it has the same length for all apps
@@ -472,7 +513,16 @@ cd usr/ ; find . -type f -exec sed -i -e 's|/usr|././|g' {} \; ; cd ..
 # We do not bundle this, so let's not search that inside the AppImage.
 # Fixes "Qt: Failed to create XKB context!" and lets us enter text
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so
-sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
+
+if [[ $DK_QTVERSION == 6 ]] ; then
+
+    sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
+
+else
+
+    sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt5XcbQpa.so.5
+
+fi
 
 #################################################################################################
 # Install ExifTool binary.
@@ -512,9 +562,20 @@ else
 
 fi
 
-APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$DEBUG_SUF.appimage"
+if [[ $DK_QTVERSION == 5 ]] ; then
 
-echo -e "---------- Create Bundle with AppImage SDK stage1\n"
+    # No prefix for the Qt5 version.
+    QT_SUF=""
+
+else
+
+    QT_SUF="-Qt6"
+
+fi
+
+APPIMAGE=$APP"-"$DK_RELEASEID$DK_SUBVER"-x86-64$QT_SUF$DEBUG_SUF.appimage"
+
+echo -e "------------- Create Bundle with AppImage SDK stage1\n"
 
 # Source functions
 
@@ -542,7 +603,7 @@ cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/defaul
 
 mkdir -p $ORIG_WD/bundle
 
-rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+rm -f $ORIG_WD/bundle/*x86-64*$DEBUG_SUF* || true
 
 echo -e "---------- Create Bundle with AppImage SDK stage2\n"
 
@@ -596,11 +657,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
-    if [[ "$ARCH" = "x86_64" ]] ; then
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64$DEBUG_SUF.appimage*"
-    elif [[ "$ARCH" = "i686" ]] ; then
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-i386$DEBUG_SUF.appimage*"
-    fi
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-x86-64*$DEBUG_SUF.appimage*"
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 

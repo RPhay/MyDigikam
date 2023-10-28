@@ -34,11 +34,16 @@ static const struct NameSpaceDefinition
     NamespaceEntry::NamespaceType type;
 
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
     const KLazyLocalizedString    title;
+
 #else
+
     const char*                   context;
     const char*                   title;
+
 #endif
+
 }
 namespaceTitleDefinitions[] =
 {
@@ -70,56 +75,92 @@ namespaceTitleDefinitions[] =
 
 QString NamespaceEntry::DM_TAG_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::TAGS].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TAGS].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TAGS].context, namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+
 #endif
+
 }
 
 QString NamespaceEntry::DM_TITLE_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::TITLE].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TITLE].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::TITLE].context, namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+
 #endif
+
 }
 
 QString NamespaceEntry::DM_RATING_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::RATING].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::RATING].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::RATING].context, namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+
 #endif
+
 }
 
 QString NamespaceEntry::DM_COMMENT_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::COMMENT].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COMMENT].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COMMENT].context, namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+
 #endif
+
 }
 
 QString NamespaceEntry::DM_PICKLABEL_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].context, namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+
 #endif
+
 }
 
 QString NamespaceEntry::DM_COLORLABEL_CONTAINER()
 {
+
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-    return namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.toString();
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.untranslatedText());
+
 #else
-    return i18nc(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].context, namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+
+    return QString::fromUtf8(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+
 #endif
+
 }
 
 // ------------------------------------------------------------
@@ -271,16 +312,18 @@ void DMetadataSettingsContainer::readFromConfig(KConfigGroup& group)
 
 void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
 {
-   const QString readNameSpace  = QLatin1String("read%1Namespaces");
-   const QString writeNameSpace = QLatin1String("write%1Namespaces");
+    const QString readNameSpace  = QLatin1String("read%1Namespaces");
+    const QString writeNameSpace = QLatin1String("write%1Namespaces");
+
+    // Remove all old group elements.
+
+    Q_FOREACH (const QString& groupKey, group.groupList())
+    {
+        group.deleteGroup(groupKey);
+    }
 
     Q_FOREACH (const QString& str, mappingKeys())
     {
-        // Remove all old group elements.
-
-        group.group(readNameSpace.arg(str)).deleteGroup();
-        group.group(writeNameSpace.arg(str)).deleteGroup();
-
         writeOneGroup(group, readNameSpace.arg(str), getReadMapping(str));
         writeOneGroup(group, writeNameSpace.arg(str), getWriteMapping(str));
     }
@@ -456,11 +499,9 @@ void DMetadataSettingsContainer::defaultRatingValues()
 {
     QList<int> defaultVal;
     QList<int> microsoftMappings;
-    QList<int> iptcMappings;
 
     defaultVal        << 0 << 1 << 2  << 3  << 4  << 5;
     microsoftMappings << 0 << 1 << 25 << 50 << 75 << 99;
-    iptcMappings      << 8 << 6 << 5  << 4  << 2  << 1;
 
     NamespaceEntry ratingNs1;
     ratingNs1.namespaceName = QLatin1String("Xmp.xmp.Rating");
@@ -497,19 +538,11 @@ void DMetadataSettingsContainer::defaultRatingValues()
     ratingNs5.index         = 4;
     ratingNs5.subspace      = NamespaceEntry::EXIF;
 
-    NamespaceEntry ratingNs6;
-    ratingNs6.namespaceName = QLatin1String("Iptc.Application2.Urgency");
-    ratingNs6.convertRatio  = iptcMappings;
-    ratingNs6.nsType        = NamespaceEntry::RATING;
-    ratingNs6.index         = 5;
-    ratingNs6.subspace      = NamespaceEntry::IPTC;
-
     getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()) << ratingNs1
                                                           << ratingNs2
                                                           << ratingNs3
                                                           << ratingNs4
-                                                          << ratingNs5
-                                                          << ratingNs6;
+                                                          << ratingNs5;
 
     d->writeMappings[NamespaceEntry::DM_RATING_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()));
@@ -717,6 +750,74 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
         tmp.writeEntry("isDisabled",       e.isDisabled);
         tmp.writeEntry("isDefault",        e.isDefault);
     }
+}
+
+QString DMetadataSettingsContainer::translateMappingKey(const QString& key) const
+{
+
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+
+    if      (NamespaceEntry::DM_TAG_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::TAGS].title.toString();
+    }
+    else if (NamespaceEntry::DM_TITLE_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::TITLE].title.toString();
+    }
+    else if (NamespaceEntry::DM_RATING_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::RATING].title.toString();
+    }
+    else if (NamespaceEntry::DM_COMMENT_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::COMMENT].title.toString();
+    }
+    else if (NamespaceEntry::DM_PICKLABEL_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title.toString();
+    }
+    else if (NamespaceEntry::DM_COLORLABEL_CONTAINER() == key)
+    {
+        return namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title.toString();
+    }
+
+#else
+
+    if      (NamespaceEntry::DM_TAG_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::TAGS].context,
+                     namespaceTitleDefinitions[NamespaceEntry::TAGS].title);
+    }
+    else if (NamespaceEntry::DM_TITLE_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::TITLE].context,
+                     namespaceTitleDefinitions[NamespaceEntry::TITLE].title);
+    }
+    else if (NamespaceEntry::DM_RATING_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::RATING].context,
+                     namespaceTitleDefinitions[NamespaceEntry::RATING].title);
+    }
+    else if (NamespaceEntry::DM_COMMENT_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::COMMENT].context,
+                     namespaceTitleDefinitions[NamespaceEntry::COMMENT].title);
+    }
+    else if (NamespaceEntry::DM_PICKLABEL_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].context,
+                     namespaceTitleDefinitions[NamespaceEntry::PICKLABEL].title);
+    }
+    else if (NamespaceEntry::DM_COLORLABEL_CONTAINER() == key)
+    {
+        return i18nc(namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].context,
+                     namespaceTitleDefinitions[NamespaceEntry::COLORLABEL].title);
+    }
+
+#endif
+
+    return key;
 }
 
 QDebug operator<<(QDebug dbg, const DMetadataSettingsContainer& inf)

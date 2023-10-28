@@ -6,7 +6,7 @@
  * Date        : 2006-06-14
  * Description : A JPEG-2000 IO file for DImg framework
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -73,13 +73,13 @@ bool DImgJPEG2000Loader::isReadOnly() const
 int DImgJPEG2000Loader::initJasper()
 {
 
-#if JAS_VERSION_MAJOR < 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
-    return jas_init();
+    return jas_init_thread();
 
 #else
 
-    return jas_init_thread();
+    return jas_init();
 
 #endif
 
@@ -88,13 +88,13 @@ int DImgJPEG2000Loader::initJasper()
 void DImgJPEG2000Loader::cleanupJasper()
 {
 
-#if JAS_VERSION_MAJOR < 3
+#if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
-    jas_cleanup();
+    jas_cleanup_thread();
 
 #else
 
-    jas_cleanup_thread();
+    jas_cleanup();
 
 #endif
 

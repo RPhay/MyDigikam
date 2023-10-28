@@ -18,7 +18,7 @@ Notice to make release tarballs from GIT
     Note: after a stable release, the NEWS file is moved from the root directory to the project sub-directory
     with the release IDs as file-name suffix. The NEWS file from the root directory is cleaned for the next release.
 
-6/  Tag Git vith the release version in this format: vX.Y.Z-suffix.
+6/  Tag Git with the release version in this format: vX.Y.Z-suffix.
     Use these commands:
 
        git tag -a vX.Y.Z-suffix -m "Create version X.Y.Z-suffix"

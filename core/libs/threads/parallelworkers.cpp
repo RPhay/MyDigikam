@@ -171,7 +171,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
         for (int i = 0 ; i < types.size() ; ++i)
         {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             int typeId = QMetaType::fromName(QByteArrayView(types[i].constData())).id();
 
@@ -189,7 +189,7 @@ int ParallelWorkers::replacementStaticQtMetacall(QMetaObject::Call _c, int _id, 
 
             // We use QMetaType to copy the data. _a[0] is reserved for a return parameter.
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
             void* const data = QMetaType(typeId).create(_a[i+1]);
 

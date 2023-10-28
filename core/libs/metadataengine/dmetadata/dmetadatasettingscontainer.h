@@ -186,6 +186,8 @@ public:
 
     QList<QString> mappingKeys()                                                                    const;
 
+    QString translateMappingKey(const QString& key)                                                 const;
+
 private:
 
     void defaultTagValues();

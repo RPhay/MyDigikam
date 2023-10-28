@@ -6,7 +6,7 @@ These scripts build a binary digiKam AppImage bundle for Linux using Ubuntu 64 b
 AUTHORS
 -------
 
-(c) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+(c) 2015-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
 
 
 DESCRIPTION
@@ -24,7 +24,7 @@ additional explanation for how they work.
 BUNDLE CONTENTS
 ---------------
 
-Note : the bundle is rellocable.
+Note: the bundle is rellocable.
 
 .
 └── usr
@@ -160,5 +160,4 @@ AT RUN-TIME ON TARGET COMPUTER
 
 LICENSES
 --------
-The scripts and other contents of this package are licensed
-under the GNU General Public License version 2, or any later version.
+The scripts and other contents of this package are licensed under the BSD-3-Clause License.

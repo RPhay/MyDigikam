@@ -791,32 +791,35 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 qlonglong imageId = scanNewFile(info, albumID);
 
-                ItemInfo itemInfo(imageId);
-                QDate itemDate    = itemInfo.dateTime().date();
-
-                if (itemDate.isValid())
+                if (imageId > 0)
                 {
-                    if ((settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
-                        (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
-                    {
-                        // Change album date only if the item date is newer.
+                    ItemInfo itemInfo(imageId);
+                    QDate itemDate    = itemInfo.dateTime().date();
 
-                        if (itemDate > albumDateNew)
+                    if (itemDate.isValid())
+                    {
+                        if ((settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate) ||
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
                         {
-                            albumDateNew    = itemDate;
-                            updateAlbumDate = true;
+                            // Change album date only if the item date is newer.
+
+                            if (itemDate > albumDateNew)
+                            {
+                                albumDateNew    = itemDate;
+                                updateAlbumDate = true;
+                            }
                         }
-                    }
 
-                    if ((settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate) ||
-                        (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
-                    {
-                        // Change album date only if the item date is older.
-
-                        if (itemDate < albumDateOld)
+                        if ((settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate) ||
+                            (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate))
                         {
-                            albumDateOld    = itemDate;
-                            updateAlbumDate = true;
+                            // Change album date only if the item date is older.
+
+                            if (itemDate < albumDateOld)
+                            {
+                                albumDateOld    = itemDate;
+                                updateAlbumDate = true;
+                            }
                         }
                     }
                 }
@@ -1031,7 +1034,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
         srcId = d->hints->itemHints.value(NewlyAppearedFile(albumId, info.fileName()));
     }
 
-    if (srcId != 0)
+    if (srcId > 0)
     {
         scanner.copiedFrom(albumId, srcId);
     }
@@ -1048,7 +1051,7 @@ qlonglong CollectionScanner::scanNewFile(const QFileInfo& info, int albumId)
             srcId = CoreDbAccess().db()->getImageId(srcAlbum, info.fileName());
         }
 
-        if (srcId != 0)
+        if (srcId > 0)
         {
             scanner.copiedFrom(albumId, srcId);
         }

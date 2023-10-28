@@ -114,13 +114,17 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         return CollectionLocation();
     }
 
-    QWriteLocker locker(&d->lock);
+    AlbumRootLocation* albumLoc = nullptr;
 
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return CollectionLocation();
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return CollectionLocation();
+        }
     }
 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
@@ -167,8 +171,6 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->setType((CollectionLocation::Type)type);
         albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
 
-        locker.unlock();
-
         Q_EMIT locationPropertiesChanged(*albumLoc);
     }
     else
@@ -204,8 +206,6 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         albumLoc->setType((CollectionLocation::Type)type);
         albumLoc->identifier   = d->volumeIdentifier(path);
         albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
-
-        locker.unlock();
 
         Q_EMIT locationPropertiesChanged(*albumLoc);
     }
@@ -489,13 +489,17 @@ CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(c
 
 void CollectionManager::removeLocation(const CollectionLocation& location)
 {
-    QWriteLocker locker(&d->lock);
+    AlbumRootLocation* albumLoc = nullptr;
 
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return;
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return;
+        }
     }
 
     // Ensure that all albums are set to orphan and no images will be permanently deleted,
@@ -503,17 +507,15 @@ void CollectionManager::removeLocation(const CollectionLocation& location)
 
     CoreDbAccess access;
     QList<int> albumIds = access.db()->getAlbumsOnAlbumRoot(albumLoc->id());
+
     ChangingDB changing(d);
     CollectionScanner scanner;
     CoreDbTransaction transaction(&access);
-    locker.unlock();
+
     scanner.safelyRemoveAlbums(albumIds);
-    locker.relock();
     access.db()->deleteAlbumRoot(albumLoc->id());
 
     // Do not Q_EMIT the locationRemoved signal here, it is done in updateLocations()
-
-    locker.unlock();
 
     updateLocations();
 }
@@ -523,7 +525,7 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
     QList<CollectionLocation> disappearedLocations;
     QList<SolidVolumeInfo> volumes = d->listVolumes();
 
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -548,18 +550,21 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
     candidateIdentifiers->clear();
     candidateDescriptions->clear();
 
-    QList<SolidVolumeInfo> volumes = d->listVolumes();
+    AlbumRootLocation* albumLoc = nullptr;
 
-    QReadLocker locker(&d->lock);
-
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return;
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return;
+        }
     }
 
-    *description = d->technicalDescription(albumLoc);
+    QList<SolidVolumeInfo> volumes = d->listVolumes();
+    *description                   = d->technicalDescription(albumLoc);
 
     // Find possible new volumes where the specific path is found.
 
@@ -580,13 +585,17 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
 
 void CollectionManager::migrateToVolume(const CollectionLocation& location, const QString& identifier)
 {
-    QWriteLocker locker(&d->lock);
+    AlbumRootLocation* albumLoc = nullptr;
 
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return;
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return;
+        }
     }
 
     // update db
@@ -598,20 +607,22 @@ void CollectionManager::migrateToVolume(const CollectionLocation& location, cons
 
     albumLoc->identifier = identifier;
 
-    locker.unlock();
-
     updateLocations();
 }
 
 void CollectionManager::setLabel(const CollectionLocation& location, const QString& label)
 {
-    QWriteLocker locker(&d->lock);
+    AlbumRootLocation* albumLoc = nullptr;
 
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return;
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return;
+        }
     }
 
     // update db
@@ -623,20 +634,22 @@ void CollectionManager::setLabel(const CollectionLocation& location, const QStri
 
     albumLoc->setLabel(label);
 
-    locker.unlock();
-
     Q_EMIT locationPropertiesChanged(*albumLoc);
 }
 
 void CollectionManager::changeType(const CollectionLocation& location, int type)
 {
-    QWriteLocker locker(&d->lock);
+    AlbumRootLocation* albumLoc = nullptr;
 
-    AlbumRootLocation* const albumLoc = d->locations.value(location.id());
-
-    if (!albumLoc)
     {
-        return;
+        QReadLocker readLocker(&d->lock);
+
+        albumLoc = d->locations.value(location.id());
+
+        if (!albumLoc)
+        {
+            return;
+        }
     }
 
     // update db
@@ -648,14 +661,12 @@ void CollectionManager::changeType(const CollectionLocation& location, int type)
 
     albumLoc->setType((CollectionLocation::Type)type);
 
-    locker.unlock();
-
     Q_EMIT locationPropertiesChanged(*albumLoc);
 }
 
 QList<CollectionLocation> CollectionManager::allLocations()
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     QList<CollectionLocation> list;
 
@@ -669,7 +680,7 @@ QList<CollectionLocation> CollectionManager::allLocations()
 
 QList<CollectionLocation> CollectionManager::allAvailableLocations()
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     QList<CollectionLocation> list;
 
@@ -686,7 +697,7 @@ QList<CollectionLocation> CollectionManager::allAvailableLocations()
 
 CollectionLocation CollectionManager::locationForAlbumRootId(int id)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     AlbumRootLocation* const location = d->locations.value(id);
 
@@ -717,7 +728,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
         updateLocations();
     }
 
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -737,7 +748,7 @@ CollectionLocation CollectionManager::locationForUrl(const QUrl& fileUrl)
 
 CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 {
-    QReadLocker locker(&d->lock);
+    QReadLocker readLocker(&d->lock);
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -760,35 +771,35 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 
 void CollectionManager::updateLocations()
 {
-    QList<SolidVolumeInfo> volumes;
+    QMap<int, AlbumRootLocation*> locs;
 
-    // get information from Solid
-
-    volumes = d->listVolumes();
-
-    QWriteLocker locker(&d->lock);
-
-    // read information from database
-
-    QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
-
-    // synchronize map with database
-
-    QMap<int, AlbumRootLocation*> locs = d->locations;
-    d->locations.clear();
-
-    Q_FOREACH (const AlbumRootInfo& info, infos)
     {
-        if (locs.contains(info.id))
+        QWriteLocker writeLocker(&d->lock);
+
+        // read information from database
+
+        QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
+
+        // synchronize map with database
+
+        locs = d->locations;
+        d->locations.clear();
+
+        Q_FOREACH (const AlbumRootInfo& info, infos)
         {
-            d->locations[info.id] = locs.value(info.id);
-            locs.remove(info.id);
-        }
-        else
-        {
-            d->locations[info.id] = new AlbumRootLocation(info);
+            if (locs.contains(info.id))
+            {
+                d->locations[info.id] = locs.value(info.id);
+                locs.remove(info.id);
+            }
+            else
+            {
+                d->locations[info.id] = new AlbumRootLocation(info);
+            }
         }
     }
+
+    QReadLocker readLocker(&d->lock);
 
     // delete old locations
 
@@ -796,15 +807,20 @@ void CollectionManager::updateLocations()
     {
         CollectionLocation::Status oldStatus = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
-        locker.unlock();
+
         Q_EMIT locationStatusChanged(*location, oldStatus);
-        locker.relock();
+
         delete location;
     }
 
-    // update status with current access state, store old status in list
+    // update status with current access state,
+    // store old status in list
 
     QList<CollectionLocation::Status> oldStatus;
+
+    // get information from Solid
+
+    QList<SolidVolumeInfo> volumes = d->listVolumes();
 
     Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
@@ -816,10 +832,23 @@ void CollectionManager::updateLocations()
         {
             Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
-                QFileInfo fileInfo(path);
-                available    = (fileInfo.isReadable() &&
-                                QDirIterator(path, QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).hasNext());
-                absolutePath = path;
+                absolutePath      = path;
+                QUrl url(location->identifier);
+                QString uuidValue = d->getCollectionUUID(path);
+                QString queryItem = QUrlQuery(url).queryItemValue(QLatin1String("fileuuid"));
+
+                if      (!queryItem.isNull() && (queryItem == uuidValue))
+                {
+                    available = true;
+                }
+                else if (uuidValue.isNull() || queryItem.isNull())
+                {
+                    QFileInfo fileInfo(path);
+                    available = (fileInfo.isReadable() &&
+                                 QDirIterator(path, QDir::Dirs    |
+                                                    QDir::Files   |
+                                                    QDir::NoDotAndDotDot).hasNext());
+                }
 
                 if (available)
                 {
@@ -869,6 +898,14 @@ void CollectionManager::updateLocations()
         location->available = available;
         location->setAbsolutePath(absolutePath);
 
+        if (available)
+        {
+            if (d->checkCollectionUUID(location, absolutePath))
+            {
+                CoreDbAccess().db()->migrateAlbumRoot(location->id(), location->identifier);
+            }
+        }
+
         if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
         {
             QFileInfo writeInfo(absolutePath);
@@ -901,7 +938,7 @@ void CollectionManager::updateLocations()
             }
         }
 
-        qCDebug(DIGIKAM_DATABASE_LOG) << "location for" << absolutePath
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Location for" << absolutePath
                                       << "is available:" << available
                                       << "=>" << "case sensitivity:"
                                       << location->caseSensitivity();
@@ -919,9 +956,7 @@ void CollectionManager::updateLocations()
     {
         if (oldStatus.at(i) != location->status())
         {
-            locker.unlock();
             Q_EMIT locationStatusChanged(*location, oldStatus.at(i));
-            locker.relock();
         }
 
         ++i;

@@ -38,15 +38,7 @@ ORIG_WD="`pwd`"
 
 #################################################################################################
 
-if   [[ "$OS_NAME" == "mageia" ]] ; then
-
-    . ./host_mageia.inc
-
-elif [[ "$OS_NAME" == "ubuntu" ]] ; then
-
-    . ./host_ubuntu.inc
-
-fi
+. ./host_ubuntu.inc
 
 # Clean up previous openssl and libicu install
 
@@ -68,15 +60,11 @@ cd /
 
 # Create the build dir for the 3rdparty deps
 if [ ! -d $BUILDING_DIR ] ; then
-    mkdir $BUILDING_DIR
+    mkdir -p $BUILDING_DIR
 fi
 
 if [ ! -d $DOWNLOAD_DIR ] ; then
-    mkdir $DOWNLOAD_DIR
-fi
-
-if [ ! -d /opt/cmake ] ; then
-    mkdir /opt/cmake
+    mkdir -p $DOWNLOAD_DIR
 fi
 
 #################################################################################################
@@ -86,8 +74,8 @@ cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
 cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_INSTALL_PREFIX:PATH=/opt/cmake \
-      -DINSTALL_ROOT=/opt/cmake \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DINSTALL_ROOT=/usr \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DKA_VERSION=$DK_KA_VERSION \
@@ -96,9 +84,15 @@ cmake $ORIG_WD/../3rdparty \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-# Install new cmake recent version to /opt
+# Install new cmake recent version and shared lib
 
-cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_cmake           -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_jasper          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libde265        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libjxl          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libaom          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_libavif         -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_ffmpeg          -- -j$CPU_CORES
 
 #################################################################################################
 
@@ -106,7 +100,7 @@ cd $BUILDING_DIR
 
 rm -rf $BUILDING_DIR/* || true
 
-/opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
+cmake $ORIG_WD/../3rdparty \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DINSTALL_ROOT=/usr \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
@@ -117,30 +111,18 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -DQTWEBENGINE_VERSION=$DK_QTWEBENGINEVERSION
 
-# Low level libraries and Qt5 dependencies
+# Low level libraries and Qt dependencies
 # NOTE: The order to compile each component here is very important.
 
 # TODO: more recent libicu do not link yet with Qt6
-#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_openssl         -- -j$CPU_CORES
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
-
-#cp $DOWNLOAD_DIR/qt_manifest.txt $ORIG_WD/data/
-
-if [[ "$DK_QTVERSION" = "5.15-LTS" && $DK_QTWEBENGINE = 1 ]] ; then
-
-    # Patch QtWebEngine cmake config files to be compatible with Qt5.15 LTS which is versionned as 5.15.3
-
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngine_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngine_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineCore_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake /usr/lib/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfig.cmake
-    sed -e "s/$DK_QTWEBENGINEVERSION ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/5.15.3 ${_Qt5WebEngineWidgets_FIND_VERSION_EXACT}/g" /usr/lib/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake > ./tmp.cmake ; mv -f ./tmp.cmake Qt5WebEngineWidgetsConfig.cmake
-
-fi
+cmake --build . --config RelWithDebInfo --target ext_qt$DK_QTVERSION -- -j$CPU_CORES    # depend of tiff, png, jpeg
 
 if [[ $DK_QTWEBENGINE = 0 ]] ; then
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
+    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
 # Clean up previous openssl install
@@ -149,14 +131,9 @@ rm -fr /usr/local/lib/libssl.a    || true
 rm -fr /usr/local/lib/libcrypto.a || true
 rm -fr /usr/local/include/openssl || true
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_jasper        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libde265      -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libjxl        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libaom        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libavif       -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ffmpeg        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_imagemagick   -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_imagemagick     -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_opencv          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif            -- -j$CPU_CORES
 
 #################################################################################################
 

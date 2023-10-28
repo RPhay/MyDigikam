@@ -385,10 +385,14 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
             if      (ev->type() == QEvent::DragEnter)
             {
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
                 QEnterEvent* const e = static_cast<QEnterEvent*>(ev);
+
 #else
+
                 QDragEnterEvent* const e = static_cast<QDragEnterEvent*>(ev);
+
 #endif
 
                 enterEvent(e);

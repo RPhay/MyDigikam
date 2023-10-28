@@ -101,7 +101,7 @@ private:
 
 } // namespace Digikam
 
-QDebug operator<<(QDebug debugOut, const Digikam::TileIndex& tileIndex);
+DIGIKAM_EXPORT QDebug operator<<(QDebug debugOut, const Digikam::TileIndex& tileIndex);
 
 Q_DECLARE_TYPEINFO(Digikam::TileIndex, Q_MOVABLE_TYPE);
 

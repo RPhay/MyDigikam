@@ -44,7 +44,7 @@ public:
     {
     }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     QImage     imageData;
 
@@ -85,7 +85,7 @@ SaveImgThread::~SaveImgThread()
     delete d;
 }
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
 void SaveImgThread::setImageData(const QImage& imageData)
 {
@@ -129,7 +129,7 @@ void SaveImgThread::run()
 {
     Q_EMIT signalProgress(d->newUrl, 10);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     bool sixteenBit   = ((d->imageData.format() == QImage::Format_RGBX64) ||
                          (d->imageData.format() == QImage::Format_Grayscale16));

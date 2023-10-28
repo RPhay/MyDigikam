@@ -109,7 +109,7 @@ public:
     explicit ImageDialogIconProvider();
     ~ImageDialogIconProvider()                                 override;
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     QIcon icon(QAbstractFileIconProvider::IconType type) const override;
 

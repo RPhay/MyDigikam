@@ -6,7 +6,7 @@
  * Date        : 2009-12-01
  * Description : world map widget library
  *
- * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText:      2014 by Justus Schwartz <justus at gmx dot li>
  *
@@ -24,10 +24,11 @@
 
 // local includes
 
+#include "digikam_export.h"
+#include "digikam_config.h"
 #include "geoifacetypes.h"
 #include "geocoordinates.h"
 #include "geogroupstate.h"
-#include "digikam_export.h"
 
 class QAction;
 class QDragEnterEvent;
@@ -168,13 +169,6 @@ Q_SIGNALS:
     void signalStickyModeChanged();
     void signalMouseModeChanged(const Digikam::GeoMouseModes& currentMouseMode);
     void signalLoadTracksFromAlbums();
-
-public:
-
-    /**
-     * Return a string version of LibMarbleWidget release in format "major.minor.patch"
-     */
-    static QString MarbleWidgetVersion();
 
 protected:
 

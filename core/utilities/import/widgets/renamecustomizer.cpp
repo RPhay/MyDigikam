@@ -158,7 +158,7 @@ RenameCustomizer::RenameCustomizer(QWidget* const parent, const QString& cameraT
 
     // -- setup connections -------------------------------------------------
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     connect(d->buttonGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotRadioButtonClicked(int)));

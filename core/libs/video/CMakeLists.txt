@@ -30,19 +30,40 @@ target_compile_definitions(core_videotoolscommon_obj
 
 ###
 
-# NOTE: this part depends of QtAv dependency
-
 if(ENABLE_MEDIAPLAYER)
 
     set(libvideotools_SRCS
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidetask.cpp
+        # NOTE: this part depends of QtAv
+        # TODO: port to QtMultimedia when API will be ready to stream customized frames to QMediaRecoreder
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/qtav/vidslidetask.cpp
 
+        ${CMAKE_CURRENT_SOURCE_DIR}/manager/vidslidethread.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/player/vidplayerdlg.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/mediaplayerview.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/player/slidevideo.cpp
     )
+
+    if(Qt6_FOUND AND ENABLE_QTMULTIMEDIA)
+
+        # NOTE: this part depends of QtMultimedia
+
+        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::MultimediaWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+        )
+
+        set(libvideotools_SRCS ${libvideotools_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/mediaplayerview.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtmm/slidevideo.cpp
+        )
+
+    else()
+
+        # NOTE: this part depends of QtAv
+
+        set(libvideotools_SRCS ${libvideotools_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/mediaplayerview.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/player/qtav/slidevideo.cpp
+        )
+
+    endif()
 
     # Used by digikamcore
     add_library(core_videotools_obj OBJECT ${libvideotools_SRCS})

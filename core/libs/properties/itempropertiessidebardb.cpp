@@ -19,6 +19,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QRect>
 #include <QColor>
 #include <QSplitter>
@@ -630,9 +631,18 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             str = QLocale().toString(commonInfo.fileModificationDate, QLocale::ShortFormat);
             m_propertiesTab->setFileModifiedDate(str);
 
-            str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(fileInfo.size()))
+            str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(commonInfo.fileSize))
                                     .arg(QLocale().toString(commonInfo.fileSize));
             m_propertiesTab->setFileSize(str);
+
+            // If the collection is offline, url is empty.
+
+            if (url.isEmpty())
+            {
+                m_propertiesTab->setFileName(info.name());
+                QString path(QLatin1String("???") + info.relativePath());
+                m_propertiesTab->setFileFolder(QDir::toNativeSeparators(path));
+            }
 
             //  These infos are not stored in DB
 

@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibrariesPath);
     qCDebug(DIGIKAM_TESTS_LOG) << QLibraryInfo::path(QLibraryInfo::LibraryExecutablesPath);

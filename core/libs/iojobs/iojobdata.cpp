@@ -33,16 +33,19 @@ class Q_DECL_HIDDEN IOJobData::Private
 public:
 
     explicit Private()
-      : operation   (Unknown),
-        fileConflict(Continue),
-        srcAlbum    (nullptr),
-        destAlbum   (nullptr),
-        jobTime     (QDateTime::currentDateTime())
+      : operation    (Unknown),
+        fileConflict (Continue),
+        errorOrCancel(false),
+        srcAlbum     (nullptr),
+        destAlbum    (nullptr),
+        jobTime      (QDateTime::currentDateTime())
     {
     }
 
     int                operation;
     int                fileConflict;
+
+    bool               errorOrCancel;
 
     PAlbum*            srcAlbum;
     PAlbum*            destAlbum;
@@ -213,6 +216,11 @@ void IOJobData::setFileConflict(int fc)
     d->fileConflict = fc;
 }
 
+void IOJobData::setErrorOrCancel(bool err)
+{
+    d->errorOrCancel |= err;
+}
+
 int IOJobData::operation() const
 {
     return d->operation;
@@ -221,6 +229,11 @@ int IOJobData::operation() const
 int IOJobData::fileConflict() const
 {
     return d->fileConflict;
+}
+
+bool IOJobData::errorOrCancel() const
+{
+    return d->errorOrCancel;
 }
 
 PAlbum* IOJobData::srcAlbum() const
