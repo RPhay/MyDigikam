@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-10-19 14:39+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -25582,7 +25582,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -25594,7 +25594,7 @@ msgstr ""
 "používat. DigiKam se nyní spustí, ale <b>nebude</b> funkční. Zkontrolujte "
 "prosím nastavení databáze v <b>nabídce nastavení</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -25607,7 +25607,7 @@ msgstr ""
 "ale \"<b>nebude</b> funkční. Zkontrolujte prosím nastavení databáze v "
 "<b>nabídce nastavení</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -25621,7 +25621,7 @@ msgid ""
 "before restarting digiKam."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -25631,7 +25631,7 @@ msgstr ""
 "<p>Sbírka</p><p><b>%1</b><br/>(%2)</p><p> nebyla nyní na vašem systému "
 "nalezena.<br/> Pro vyřešení této situace vyberte prosím vhodnější volby:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -25642,7 +25642,7 @@ msgstr ""
 "způsobeno obnovením ze zálohy, změnou rozdělení disku, nebo změnou nastavení "
 "souborového systému.<br/>Sbírka je nyní umístěna zde:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -25651,7 +25651,7 @@ msgstr ""
 "Sbírka je umístěna na úložném zařízení, které není vždy připojeno. Označte "
 "sbírku jako odpojitelnou."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -25660,7 +25660,7 @@ msgstr ""
 "Nyní neprovádět žádnou činnost. Problém chci vyřešit později pomocí dialogu "
 "pro nastavení"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -27492,17 +27492,17 @@ msgstr "Procházení sbírky"
 msgid "Error"
 msgstr "Chyba"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Příprava procházení sbírky..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Vyhledávání odstraněných alb..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Vyhledávání obrázků v jednotlivých albech..."

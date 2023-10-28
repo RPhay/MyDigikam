@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-09-18 10:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -28223,7 +28223,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28241,7 +28241,7 @@ msgstr ""
 "funcional. Verifique as configurações de banco de dados no <b>menu de "
 "configuração</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -28260,7 +28260,7 @@ msgstr ""
 "Verifique as configurações de banco de dados no <b>menu de configuração</b>."
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -28291,7 +28291,7 @@ msgstr ""
 "de que deseja continuar, clique em 'Sim'. Caso contrário, clique em 'Não' e "
 "corrija a sua localização antes de reiniciar o digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -28306,7 +28306,7 @@ msgstr ""
 "sistema.<br/> Escolha a opção mais apropriada para lidar com esta situação:</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -28318,7 +28318,7 @@ msgstr ""
 "alteração do layout das partições ou pela configuração do sistema de "
 "arquivos.<br/>A coleção está agora localizada neste local:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -28327,7 +28327,7 @@ msgstr ""
 "A coleção está localizada em um dispositivo de armazenamento que não está "
 "sempre conectado. Marque a coleção como removível."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -28336,7 +28336,7 @@ msgstr ""
 "Não realizar nenhuma ação agora. Gostaria de resolver o problema mais tarde "
 "usando o diálogo de configuração"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
@@ -30367,17 +30367,17 @@ msgstr "Analisando a coleção"
 msgid "Error"
 msgstr "Erro"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Preparando a análise da coleção..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Procurando por álbuns removidos..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Procurando imagens nos álbuns individuais..."

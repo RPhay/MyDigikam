@@ -43,8 +43,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
-"PO-Revision-Date: 2023-10-23 21:15+0200\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
+"PO-Revision-Date: 2023-10-27 06:58+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -6000,10 +6000,9 @@ msgid "Enter caption text here."
 msgstr "Skriv in rubriktext här."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Rensa och skriv över"
+msgstr "Rensa och skriv över metadata"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -26577,7 +26576,7 @@ msgid ""
 "p>"
 msgstr "<p>Digikam försöker nu starta, men kommer <b>inte</b> att fungera.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26589,7 +26588,7 @@ msgstr ""
 "fungerande databas. Digikam försöker nu starta, men kommer <b>inte</b> att "
 "fungera. Kontrollera databasinställningarna i <b>inställningsmenyn</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26602,7 +26601,7 @@ msgstr ""
 "försöker nu starta, men kommer <b>inte</b> att fungera. Kontrollera "
 "databasinställningarna i <b>inställningsmenyn</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26626,7 +26625,7 @@ msgstr ""
 "Klicka annars på 'Nej' och rätta databasens teckenuppsättning innan du "
 "startar om Digikam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26637,7 +26636,7 @@ msgstr ""
 "på systemet.<br/> Välj det lämpligaste alternativet för att hantera "
 "situationen:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26649,7 +26648,7 @@ msgstr ""
 "partitionens layout eller filsystemets inställningar.<br/>Samlingen finns nu "
 "på följande plats:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26658,7 +26657,7 @@ msgstr ""
 "Samlingen finns på en lagringsenhet som inte alltid är ansluten. Markera "
 "samlingen som en flyttbar samling."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26667,7 +26666,7 @@ msgstr ""
 "Gör ingenting nu. Jag skulle vilja lösa problemet senare med "
 "inställningsdialogrutan."
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28523,17 +28522,17 @@ msgstr "Söker igenom samling"
 msgid "Error"
 msgstr "Fel"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Förbereder sökning av samling..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Söker efter borttagna album..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Söker efter bilder i individuella album..."

@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-10-22 10:57+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -26653,7 +26653,7 @@ msgstr ""
 "<p>digiKam spróbuje się uruchomić, ale <b>nie</b> będzie prawidłowo działał."
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26666,7 +26666,7 @@ msgstr ""
 "będzie prawidłowo działał.</b> Sprawdź ustawienia bazy danych w <b>menu "
 "ustawień</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26679,7 +26679,7 @@ msgstr ""
 "spróbuje się uruchomić, ale <b>nie będzie prawidłowo działał.</b> Proszę "
 "sprawdzić ustawienia bazy danych w <b>menu ustawień</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26702,7 +26702,7 @@ msgstr ""
 "przeciwnym wypadku, kliknij 'Nie' i popraw swój zestaw znaków przed ponownym "
 "uruchomieniem digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26712,7 +26712,7 @@ msgstr ""
 "<p>Zbioru </p><p><b>%1</b><br/>(%2)</p><p>nie można obecnie znaleźć w twoim "
 "systemie.<br/>Wybierz najlepszą opcję dla obecnej sytuacji:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26723,7 +26723,7 @@ msgstr ""
 "spowodowane odzyskiwaniem z kopii zapasowej, zmianą rozkładu partycji lub "
 "ustawieniami systemowymi.<br/>Zbiór jest przechowywany w tym miejscu:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26732,7 +26732,7 @@ msgstr ""
 "Zbiór jest przechowywany na nośniku, który nie zawsze jest podłączony. "
 "Zaznacz zbiór jako wymienny zbiór."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26741,7 +26741,7 @@ msgstr ""
 "Nie podejmuj teraz żadnych działań. Rozwiążę problem później korzystając z "
 "ustawień."
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28602,17 +28602,17 @@ msgstr "Skanowanie zbioru"
 msgid "Error"
 msgstr "Błąd"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Przygotowywanie skanowania zbioru..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Skanowanie w poszukiwaniu usuniętych albumów..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Skanowanie zdjęć w poszczególnych albumach..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -26940,7 +26940,7 @@ msgstr ""
 "<p>O digiKam irá tentar iniciar-se agora, mas <b>não</b> estará funcional.</"
 "p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26953,7 +26953,7 @@ msgstr ""
 "<b>não</b> estará funcional. Verifique por favor a configuração da base de "
 "dados no <b>menu de configuração</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26967,7 +26967,7 @@ msgstr ""
 "estará funcional. Verifique por favor a configuração da base de dados no "
 "<b>menu de configuração</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26990,7 +26990,7 @@ msgstr ""
 "'Sim' para iniciar o digiKam. Caso contrário, carregue em 'Não' e corrija a "
 "sua localização antes de reiniciar o digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27001,7 +27001,7 @@ msgstr ""
 "no seu sistema.<br/> Escolha por favor a opção mais apropriada para lidar "
 "com esta situação:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27013,7 +27013,7 @@ msgstr ""
 "disposição das partições ou à configuração do sistema de ficheiros.<br/>A "
 "colecção encontra-se agora neste local:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27022,7 +27022,7 @@ msgstr ""
 "A colecção está localizada num dispositivo de armazenamento que não está "
 "sempre ligado. Marcar a colecção como uma colecção removível."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27031,7 +27031,7 @@ msgstr ""
 "Não efectuar nenhuma acção agora. Gostaria de resolver o problema mais tarde "
 "na janela de configuração"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28919,17 +28919,17 @@ msgstr "A analisar a colecção"
 msgid "Error"
 msgstr "Erro"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "A preparar a análise da colecção..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "A procurar pelos álbuns removidos..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "A digitalizar as imagens nos álbuns individuais..."

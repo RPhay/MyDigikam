@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-10-26 09:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -26988,7 +26988,7 @@ msgstr ""
 "<p>digiKam спробує запуститися, але програма <b>не</b> буде повністю "
 "функціональною.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -27001,7 +27001,7 @@ msgstr ""
 "запущена програма <b>не</b> матиме належної функціональності. Будь ласка, "
 "перевірте параметри бази даних у <b>меню налаштування</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27015,7 +27015,7 @@ msgstr ""
 "<b>не</b> матиме належної функціональності. Будь ласка, перевірте параметри "
 "бази даних у <b>меню налаштування</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27037,7 +27037,7 @@ msgstr ""
 "«Так». У іншому разі, натисніть кнопку «Ні» і виправте налаштування вашого "
 "кодування бази даних, перш ніж перезапустити digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27048,7 +27048,7 @@ msgstr ""
 "системі.<br/> Будь ласка, оберіть найприйнятніший варіант розв'язання цієї "
 "проблеми:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27060,7 +27060,7 @@ msgstr ""
 "копії, зміна компонування розділів або параметрів файлової системи.<br/"
 ">Зараз збірка зберігається у такому місці:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27069,7 +27069,7 @@ msgstr ""
 "Збірка зберігається на пристрої, який не завжди з'єднано з системою. "
 "Позначити цю збірку, як збірку на портативному носії."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27078,7 +27078,7 @@ msgstr ""
 "Не виконувати зараз ніяких дій. Як бажаю розв'язати цю проблему пізніше за "
 "допомогою діалогового вікна налаштування."
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28959,17 +28959,17 @@ msgstr "Сканування збірки"
 msgid "Error"
 msgstr "Помилка"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Приготування до сканування збірки…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Виявлення вилучених альбомів…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Пошук зображень у окремих альбомах…"

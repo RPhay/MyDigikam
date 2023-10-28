@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -28079,7 +28079,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28097,7 +28097,7 @@ msgstr ""
 "προσπαθήσει να εκκινήσει, αλλά <b>δεν</b> θα είναι λειτουργικό. Παρακαλώ "
 "ελέγξτε τις ρυθμίσεις της βάσης δεδομένων στο <b>μενού διαμόρφωσης</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -28116,7 +28116,7 @@ msgstr ""
 "εκκινήσει τώρα, αλλά <b>δεν</b> θα είναι λειτουργικό. Παρακαλώ ελέγξτε τις "
 "ρυθμίσεις της βάσης δεδομένων στο <b>μενού διαμόρφωσης</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -28149,7 +28149,7 @@ msgstr ""
 "'Ναι'. Διαφορετικά, κάντε κλικ στο 'Όχι' και διορθώστε την τοπική ρύθμιση "
 "γλώσσας πριν την επανεκκίνηση του digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -28164,7 +28164,7 @@ msgstr ""
 "<br/> Επιλέξτε την πιο κατάλληλη από τις επιλογές για να αντιμετωπίσετε "
 "αυτήν την κατάσταση:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -28176,7 +28176,7 @@ msgstr ""
 "διάταξης στην κατάτμηση ή στις ρυθμίσεις του συστήματος.<br/>Η συλλογή τώρα "
 "βρίσκεται σε αυτήν τη θέση:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -28185,7 +28185,7 @@ msgstr ""
 "Η συλλογή βρίσκεται σε μια συσκευή αποθήκευσης η οποία δεν είναι πάντα "
 "προσαρτημένη. Να σημειωθεί η συλλογή ως αφαιρούμενη."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -28194,7 +28194,7 @@ msgstr ""
 "Να μη γίνει τίποτα τώρα. Θα ήθελα να λύσω το πρόβλημα αργότερα με χρήση του "
 "διαλόγου ρυθμίσεων"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
@@ -30235,17 +30235,17 @@ msgstr "Σάρωση συλλογής"
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Προετοιμασία σάρωσης συλλογής..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Σάρωση για αφαιρεμένα λευκώματα..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Σάρωση εικόνων για μεμονωμένα λευκώματα..."

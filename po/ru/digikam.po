@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-04-03 11:11+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -26957,7 +26957,7 @@ msgstr ""
 "<p>Будет произведена попытка запуска программы, но она </b>не будет</b> "
 "функционировать полностью.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26970,7 +26970,7 @@ msgstr ""
 "будет функционировать полностью. Следует проверить параметры базы данных в "
 "меню <b>Настройка</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26984,7 +26984,7 @@ msgstr ""
 "функционировать полностью. Следует проверить параметры базы данных в меню "
 "<b>Настройка</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27005,7 +27005,7 @@ msgstr ""
 "коллекции. Для продолжения нажмите «Да». В противном случае нажмите «Нет», "
 "исправьте настройку локали и запустите digiKam снова."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27015,7 +27015,7 @@ msgstr ""
 "<p>Коллекция </p><p><b>%1</b><br/>(%2)</p><p> на данный момент не найдена в "
 "системе.<br/> Выберите наиболее подходящий вариант для этой ситуации:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27027,7 +27027,7 @@ msgstr ""
 "расположения разделов диска или параметров файловой системы.<br/> Теперь "
 "коллекция находится в этом месте:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27036,7 +27036,7 @@ msgstr ""
 "Коллекция расположена на носителе, который не всегда может быть доступен "
 "(подключён). Отметьте коллекцию, как непостоянную."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27045,7 +27045,7 @@ msgstr ""
 "Не выполнять никаких действий. Я решу данную проблему с помощью диалога "
 "настройки позже."
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28923,17 +28923,17 @@ msgstr "Сканирование коллекции"
 msgid "Error"
 msgstr "Ошибка"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Подготовка к сканированию коллекции..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Поиск удалённых альбомов..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Поиск изображений в отдельных альбомах..."

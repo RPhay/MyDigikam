@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-09-15 21:40+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -27138,7 +27138,7 @@ msgstr ""
 "<p>digiKam tentera de démarrer maintenant mais il ne sera <b>pas</b> "
 "fonctionnel.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -27151,7 +27151,7 @@ msgstr ""
 "maintenant mais ne sera <b>pas</b> fonctionnel. Veuillez vérifier la "
 "configuration de la base de données dans le <b>menu de configuration</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -27165,7 +27165,7 @@ msgstr ""
 "mais il ne sera <b>pas</b> fonctionnel. Veuillez vérifier la configuration "
 "de la base de données dans le <b>menu de configuration</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -27190,7 +27190,7 @@ msgstr ""
 "cliquez sur « Non » et corrigez votre base de données de jeu de caractères "
 "avant de redémarrer digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -27201,7 +27201,7 @@ msgstr ""
 "de votre système.<br/> Veuillez choisir l'option la plus appropriée pour "
 "régler cette situation :</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -27213,7 +27213,7 @@ msgstr ""
 "disposition des partitions ou la configuration du système de fichiers.<br/"
 ">La collection se trouve maintenant à cet endroit.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -27222,7 +27222,7 @@ msgstr ""
 "La collection se trouve sur un périphérique de stockage qui n'est pas "
 "toujours connecté. Marquez la collection comme collection amovible."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -27231,7 +27231,7 @@ msgstr ""
 "Ne pas prendre de mesure pour le moment. J'aimerais résoudre le problème "
 "ultérieurement à l'aide de la boîte de dialogue de configuration"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -29148,17 +29148,17 @@ msgstr "Analyse d'une collection"
 msgid "Error"
 msgstr "Erreur"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Préparation de l'analyse d'une collection…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Analyse des albums supprimés…"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Analyse des images dans des albums individuels…"

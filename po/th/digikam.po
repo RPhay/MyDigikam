@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -26850,7 +26850,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26868,7 +26868,7 @@ msgstr ""
 "แต่มันก็อาจจะยังคง<b>ทำงานไม่ได้</b> หากเป็นเช่นนั้น โปรดทำการตรวจสอบการตั้งค่าฐานข้อมูลใน "
 "<b>เมนูการปรับแต่งค่า</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26886,7 +26886,7 @@ msgstr ""
 "จะพยายามเริ่มการทำงานอีกครั้งในตอนนี้ แต่มันก็อาจจะยังคง<b>ทำงานไม่ได้</b> "
 "หากเป็นเช่นนั้นโปรดได้ทำการตรวจสอบการตั้งค่าฐานข้อมูลใน <b>เมนูการปรับแต่งค่า</b></p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, fuzzy, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26908,7 +26908,7 @@ msgstr ""
 "ให้คลิกที่ปุ่ม 'ไม่ใช่' จากนั้นให้ปรับค่าโลเคลภาษาของระบบของคุณใหม่ให้ถูกต้อง "
 "ก่อนจะเริ่มการทำงานของดิจิแคมใหม่อีกครั้ง"
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -26922,7 +26922,7 @@ msgstr ""
 "<p>ไม่พลคลังภาพ </p><p><b>%1</b><br/>(%2)</p><p> บนระบบของคุณในปัจจุบัน <br/> "
 "โปรดเลือกตัวเลือกที่เหมาะสมเพื่อใช้จัดการกับสถานการณ์นี้:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26933,7 +26933,7 @@ msgstr ""
 ">ซึ่งอาจจะเกิดจากการเรียกคืนจากการสำรองข้อมูล, การเปลี่ยนแปลงพาร์ทิชัน "
 "หรือมีการตั้งค่าใหม่ให้กับระบบแฟ้มของคุณ <br/>ตอนนี้พบว่าคลังภาพอยู่ที่:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26942,14 +26942,14 @@ msgstr ""
 "คลังภาพอยู่บนอุปกรณ์จัดเก็บข้อมูลที่ยังไม่ได้เสียบเข้ามายังเครื่องของคุณ "
 "ทำการทำเครื่องหมายว่าคลังภาพนี้เป็นคลังภาพแบบสื่อถอด/เสียบได้"
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "ไม่มีการกระทำใด ๆ ในตอนนี้ ฉันต้องการให้ทำการแก้ไขปัญหาก่อน โดยใช้กล่องตั้งค่า"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
@@ -28850,17 +28850,17 @@ msgstr "การเพิ่มคลังภาพ"
 msgid "Error"
 msgstr "ผิดพลาด"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "เตรียมการตรวจค้นคลังภาพ"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "กำลังตรวจค้นอัลบั้มที่ถูกลบไปแล้ว"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, fuzzy, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "กำลังตรวจค้นรูปภาพในอัลบั้มส่วนบุคคล"

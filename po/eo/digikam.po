@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
-"PO-Revision-Date: 2023-10-23 21:19+0100\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
+"PO-Revision-Date: 2023-10-27 07:31+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -5967,10 +5967,9 @@ msgid "Enter caption text here."
 msgstr "Enigu la bildotekston ĉi tie."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Purigi kaj anstataŭigi"
+msgstr "Purigi kaj anstataŭigi metadatenojn"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -26481,7 +26480,7 @@ msgid ""
 "p>"
 msgstr "<p>digiKam provos komenci nun, sed ĝi <b>ne</b> estos funkcia.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26494,7 +26493,7 @@ msgstr ""
 "funkcia. Bonvolu kontroli la datumbazajn agordojn en la <b>agorda menuo</b>."
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26507,7 +26506,7 @@ msgstr ""
 "komenci nun, sed ĝi <b>ne</b> estos funkcia. Bonvolu kontroli la datumbazajn "
 "agordojn en la <b>agorda menuo</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26529,7 +26528,7 @@ msgstr ""
 "la kolekto. Se vi certas, ke vi volas daŭrigi, alklaku 'Jes'. Alie, alklaku "
 "'Ne' kaj korektu vian datumbazan signaron antaŭ rekomenci digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26540,7 +26539,7 @@ msgstr ""
 "sistemo.<br/> Bonvolu elekti la plej taŭga opcio por trakti ĉi tiun "
 "situacion:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26552,7 +26551,7 @@ msgstr ""
 "aŭ la agordoj de dosiersistemaj.<br/>La kolekto nun troviĝas ĉe ĉi tiu loko: "
 "</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26561,7 +26560,7 @@ msgstr ""
 "La kolekto troviĝas sur konserveja aparato, kiu ne ĉiam estas ligita. Marku "
 "la kolekton kiel forprenebla kolekto."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26569,7 +26568,7 @@ msgid ""
 msgstr ""
 "Ne agu nun. Mi ŝatus solvi la problemon poste uzante la agordan dialogon"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28426,17 +28425,17 @@ msgstr "Skananta kolekto"
 msgid "Error"
 msgstr "Eraro"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Preparante kolekto-skanadon..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Skanante por forigitaj albumoj..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Skanante bildojn en individuaj albumoj..."

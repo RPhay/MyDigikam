@@ -8,12 +8,13 @@
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
+# Josep M. Ferrer <txemaq@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
-"PO-Revision-Date: 2023-10-23 09:52+0200\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
+"PO-Revision-Date: 2023-10-26 13:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -6019,10 +6020,9 @@ msgid "Enter caption text here."
 msgstr "Introduïu ací el text de la llegenda."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Neteja i sobreescriu"
+msgstr "Neteja i sobreescriu les metadades"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -26860,7 +26860,7 @@ msgid ""
 msgstr ""
 "<p>digiKam ara intentarà iniciar-se, però <b>no</b> serà funcional.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26873,7 +26873,7 @@ msgstr ""
 "<b>no</b> serà funcional. Comproveu la configuració de la base de dades en "
 "el <b>menú de configuració</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26887,7 +26887,7 @@ msgstr ""
 "funcional. Comproveu la configuració de la base de dades en el <b>menú de "
 "configuració</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26911,7 +26911,7 @@ msgstr ""
 "continuar, cliqueu «Sí». Altrament, cliqueu «No» i corregiu el joc de "
 "caràcters de la base de dades abans de reiniciar digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26922,7 +26922,7 @@ msgstr ""
 "el sistema.<br/> Escolliu l'opció més apropiada per a gestionar esta "
 "situació:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26934,7 +26934,7 @@ msgstr ""
 "canvis en la disposició de la partició o a la Configureu el sistema de "
 "fitxers.<br/>Ara la col·lecció es troba a este lloc:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26943,7 +26943,7 @@ msgstr ""
 "La col·lecció es troba a un dispositiu d'emmagatzematge que no sempre està "
 "connectat. Marqueu la col·lecció com a col·lecció extraïble."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26952,7 +26952,7 @@ msgstr ""
 "De moment no faces res. Voldria solucionar el problema més tard utilitzant "
 "el diàleg de configuració"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -28847,17 +28847,17 @@ msgstr "S'està explorant la col·lecció"
 msgid "Error"
 msgstr "S'ha produït un error"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "S'està preparant l'escaneig de la col·lecció..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "S'estan explorant els àlbums eliminats..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "S'estan explorant les imatges en els àlbums individuals..."
@@ -47891,7 +47891,7 @@ msgstr "Illes Tokelau"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Trinidad and Tobago"
-msgstr "Trinitat i Tobago"
+msgstr "Trinidad i Tobago"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:264
 #, kde-format

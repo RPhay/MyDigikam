@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -28373,7 +28373,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28391,7 +28391,7 @@ msgstr ""
 "ali  <b>neće</b> raditi pravilno. Molimo Vas,provjerite postavke baze "
 "podataka  u <b> konfiguracijskom meniju </b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -28410,7 +28410,7 @@ msgstr ""
 "pravilno. Molimo Vas,provjerite postavke baze podataka  u <b>konfiguraciji</"
 "b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -28441,7 +28441,7 @@ msgstr ""
 "\". U suprotnom, pritisnite \"No\" i prepravite postavke Vaše lokacije prije "
 "ponovnog pokretanja digiKama-a."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -28456,7 +28456,7 @@ msgstr ""
 "<br/> Molimo Vas, odaberite najprikladniju opciju za podnošenje ove "
 "situacije:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -28468,7 +28468,7 @@ msgstr ""
 "ili promjenom postavki datoteka sistema.<br/>Kolekcija je sad postavljena  "
 "na ovu lokaciju :</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -28477,7 +28477,7 @@ msgstr ""
 "Kolekcija je spremljena na uređaju za skladištenje podataka koji nije uvijek "
 "priključen na kompjuter . Označite kolekciju kao uklonjivu kolekciju."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -28486,7 +28486,7 @@ msgstr ""
 "Ne poduzimajte ništa sad. Zelio/la bih riješiti problem kasnije koristeći "
 "dijalošku postavku"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
@@ -30540,17 +30540,17 @@ msgstr "Skenirajuća kolekcija"
 msgid "Error"
 msgstr "Greška"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "Priprema kolekciju za skeniranje..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Skeniranje uklonitih albuma..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Skeniranje slika u zasebnim albumima..."

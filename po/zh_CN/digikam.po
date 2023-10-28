@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2023-10-21 13:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -25736,7 +25736,7 @@ msgid ""
 "p>"
 msgstr "<p>digiKam 现在将尝试启动，但它将<b>无法</b>正常工作。</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -25748,7 +25748,7 @@ msgstr ""
 "在将尝试启动，但它将<b>无法</b>正常工作。请在设置菜单的<b>配置</b>对话框中检"
 "查数据库设置。</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -25760,7 +25760,7 @@ msgstr ""
 "少数据库的情况下使用 digiKam。digiKam 现在将尝试启动，但它将<b>无法</b>正常工"
 "作。请在设置菜单的<b>配置</b>对话框中检查数据库设置。</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -25780,7 +25780,7 @@ msgstr ""
 "可能将不再包含这些文件。如果您确定要继续，请单击“是”。否则请单击“否”，并在重"
 "新启动 digiKam 之前更改您的数据库字符集设置。"
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -25790,7 +25790,7 @@ msgstr ""
 "<p>相册集合</p><p><b>%1</b><br/>(%2)</p><p>当前无法在本机系统中找到。<br/>请"
 "选择合适的处理方式：</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -25800,21 +25800,21 @@ msgstr ""
 "<p>该相册集合依然存在，但它的标识符已被改变。<br/>这可能是由于恢复备份、更改"
 "存储分区布局或者文件系统设置造成的。<br/>该相册集合现在的位置是：</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr "此相册集合位于一个并非总是连接的存储设备上，将其标记为可移动媒介集合。"
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
 "dialog"
 msgstr "现在不采取任何操作。我会在之后通过配置对话框解决此问题。"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
@@ -27620,17 +27620,17 @@ msgstr "正在扫描相册集合"
 msgid "Error"
 msgstr "错误"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, kde-format
 msgid "Preparing collection scan..."
 msgstr "正在准备扫描相册集合..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, kde-format
 msgid "Scanning for removed albums..."
 msgstr "正在扫描已移除的相册..."
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "正在扫描每个相册中的图像..."

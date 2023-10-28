@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-26 00:40+0000\n"
+"POT-Creation-Date: 2023-10-28 00:40+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -26172,7 +26172,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:216
+#: core/libs/album/manager/albummanager_database.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26189,7 +26189,7 @@ msgstr ""
 "digiKam tagad mēģinās sākt darbu, bet programma <b>nedarbosies</b> korekti. "
 "Lūdzu, pārbaudiet datubāzes iestatījumus <b>konfigurācijas izvēlnē</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:225
+#: core/libs/album/manager/albummanager_database.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26207,7 +26207,7 @@ msgstr ""
 "digiKam mēģinās sākt darbu, bet programma <b>nebūs</b> funkcionējoša. Lūdzu, "
 "pārbaudiet datubāzes iestatījumus <b>konfigurācijas izvēlnē</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:258
+#: core/libs/album/manager/albummanager_database.cpp:254
 #, fuzzy, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26229,7 +26229,7 @@ msgstr ""
 "spiediet 'Nē' un izlabojiet jūsu lokāles iestatījumu, tad pārstartējiet "
 "digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:301
+#: core/libs/album/manager/albummanager_database.cpp:297
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -26243,7 +26243,7 @@ msgstr ""
 "<p>Kolekcija</p><p><b>%1</b><br/>(%2)</p><p> jūsu datorā nav atrasta. <br/> "
 "Lūdzu, izvēlieties piemērotāko opciju, kā rīkoties šajā situācijā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:320
+#: core/libs/album/manager/albummanager_database.cpp:316
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26255,7 +26255,7 @@ msgstr ""
 "izvietojuma maiņa vai arī failu sistēmas iestatījumi.<br/> Kolekcija pašreiz "
 "atrodas šajā vietā:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:339
+#: core/libs/album/manager/albummanager_database.cpp:335
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26264,7 +26264,7 @@ msgstr ""
 "Kolekcija atrodas glabāšanas ierīcē, kura ne vienmēr ir pievienota. "
 "Atzīmējiet kolekciju kā noņemamo."
 
-#: core/libs/album/manager/albummanager_database.cpp:346
+#: core/libs/album/manager/albummanager_database.cpp:342
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26273,7 +26273,7 @@ msgstr ""
 "Pašreiz nesākt nekādu darbību. Es vēlētos problēmu risināt vēlāk, izmantojot "
 "iestatīšanas dialoglogu"
 
-#: core/libs/album/manager/albummanager_database.cpp:360
+#: core/libs/album/manager/albummanager_database.cpp:356
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
@@ -28163,17 +28163,17 @@ msgstr "Pievieno kolekciju"
 msgid "Error"
 msgstr "Kļūda"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:206
+#: core/libs/database/utils/scan/scancontroller_start.cpp:217
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
 msgstr "Sagatavojas kolekcijas skenēšanai"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:234
+#: core/libs/database/utils/scan/scancontroller_start.cpp:245
 #, fuzzy, kde-format
 msgid "Scanning for removed albums..."
 msgstr "Meklē dzēstus albumus"
 
-#: core/libs/database/utils/scan/scancontroller_start.cpp:244
+#: core/libs/database/utils/scan/scancontroller_start.cpp:255
 #, fuzzy, kde-format
 msgid "Scanning images in individual albums..."
 msgstr "Meklē attēlus albumos"
