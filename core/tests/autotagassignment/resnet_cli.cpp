@@ -40,7 +40,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-void showObjects(const QString& imagePath, const QMap<QString, QVector<QRect>>& detectedBoxes)
+void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>& detectedBoxes)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
@@ -61,7 +61,7 @@ void showObjects(const QString& imagePath, const QMap<QString, QVector<QRect>>& 
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    for (QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
+    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
         it != detectedBoxes.constEnd(); it++)
     { 
         painter.drawText(QPoint(20, 30), it.key());

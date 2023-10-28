@@ -51,7 +51,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    QMap <QString, QVector<QRect>> detectedBoxes = yoloDetector->detectObjects(cvImage);
+    QHash <QString, QVector<QRect>> detectedBoxes = yoloDetector->detectObjects(cvImage);
 
     QPainter painter(&img);
     QPen paintPen(Qt::red);
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
     painter.setPen(paintPen);
    
     
-    for (QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
+    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
         it != detectedBoxes.constEnd(); it++)
     { 
         for (auto rectDraw : it.value())

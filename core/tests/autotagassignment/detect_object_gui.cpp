@@ -65,11 +65,11 @@ private:
 
 private: 
 
-    void     drawObjects(QImage& img, const QMap<QString, QVector<QRect>>& detectedObjects);
+    void     drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& detectedObjects);
 
 private:
 
-    QMap<QString, QVector<QRect>> detectObjects(const QString& imagePath) const;
+    QHash<QString, QVector<QRect>> detectObjects(const QString& imagePath) const;
 
 private Q_SLOTS:
 
@@ -154,7 +154,7 @@ MainWindow::~MainWindow()
 
 
 
-QMap<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath) const
+QHash<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath) const
 {
     cv::Mat cvImage = cv::imread(imagePath.toStdString());
     
@@ -168,7 +168,7 @@ QMap<QString, QVector<QRect>> MainWindow::detectObjects(const QString& imagePath
 }
 
 
-void MainWindow::drawObjects(QImage& img, const QMap<QString, QVector<QRect>>& detectedObjects)
+void MainWindow::drawObjects(QImage& img, const QHash<QString, QVector<QRect>>& detectedObjects)
 {
     if (detectedObjects.empty())
     {
@@ -200,7 +200,7 @@ void MainWindow::slotDetectObjects(const QListWidgetItem* imageItem)
     qDebug() << "Loading" << imagePath;
     QImage img(imagePath);
 
-    QMap<QString, QVector<QRect>> objects = detectObjects(imagePath);
+    QHash<QString, QVector<QRect>> objects = detectObjects(imagePath);
     drawObjects(img, objects);
 
     qDebug() << QString::fromLatin1("Inference Time %1").arg(m_yoloDetector->showInferenceTime()); 

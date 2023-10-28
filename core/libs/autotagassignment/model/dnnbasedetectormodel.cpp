@@ -46,10 +46,10 @@ DNNBaseDetectorModel::~DNNBaseDetectorModel()
 
 QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
 {
-    QMap<QString, QVector<QRect>> results = detectObjects(inputImage);
+    QHash<QString, QVector<QRect>> results = detectObjects(inputImage);
     QList<QString> objectNames;
 
-    for(QMap<QString, QVector<QRect>>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
+    for(QHash<QString, QVector<QRect>>::const_iterator it = results.constBegin() ; it != results.constEnd() ; ++it)
     {
         objectNames.append(it.key());
     }
@@ -59,13 +59,13 @@ QList<QString> DNNBaseDetectorModel::generateObjects(const cv::Mat& inputImage)
 
 QList<QList<QString>> DNNBaseDetectorModel::generateObjects(const std::vector<cv::Mat>& inputBatchImages)
 {
-    QList<QMap<QString, QVector<QRect>>> results = detectObjects(inputBatchImages);
+    QList<QHash<QString, QVector<QRect>>> results = detectObjects(inputBatchImages);
     QList<QList<QString>> objectNamesList;
 
     for (auto detectedBoxes: results)
     {
         QList<QString> objectNames;
-        for(QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
+        for(QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin() ; it != detectedBoxes.constEnd() ; ++it)
         {
             objectNames.append(it.key());
         }

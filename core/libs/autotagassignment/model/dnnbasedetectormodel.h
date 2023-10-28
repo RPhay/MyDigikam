@@ -21,7 +21,7 @@
 
 // Qt includes
 
-#include <QMap>
+#include <QHash>
 #include <QVector>
 #include <QString>
 #include <QRect>
@@ -48,12 +48,12 @@ public:
      * detectObjects return the predicted objects and localization as well (if we use deeplearning for object detection like YOLO, etc)
      * otherwise the map whose the key is the objects name and their values are empty
     */
-    virtual QMap<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage)   = 0;
+    virtual QHash<QString, QVector<QRect>> detectObjects(const cv::Mat& inputImage)   = 0;
 
     /**
      * detectObjects in batch images (fixed batch size)
     */
-    virtual QList<QMap<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
+    virtual QList<QHash<QString, QVector<QRect>>> detectObjects(const std::vector<cv::Mat>& inputBatchImages) = 0;
 
     /**
      * get predefined objects according to selected model

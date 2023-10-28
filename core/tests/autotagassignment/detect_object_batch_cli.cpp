@@ -40,7 +40,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     return parser;
 }
 
-void showObjects(const QString& imagePath, const QMap<QString, QVector<QRect>>& detectedBoxes)
+void showObjects(const QString& imagePath, const QHash<QString, QVector<QRect>>& detectedBoxes)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Loading " << imagePath;
     QImage img(imagePath);
@@ -61,7 +61,7 @@ void showObjects(const QString& imagePath, const QMap<QString, QVector<QRect>>& 
     paintPen.setWidth(1);
     painter.setPen(paintPen);
 
-    for (QMap<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
+    for (QHash<QString, QVector<QRect>>::const_iterator it = detectedBoxes.constBegin();
         it != detectedBoxes.constEnd(); it++)
     { 
         for (auto rectDraw : it.value())
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     }
 
     int batch_size = 16;
-    QList<QMap<QString, QVector<QRect>>> results; 
+    QList<QHash<QString, QVector<QRect>>> results; 
     QScopedPointer<DNNYoloDetector> yoloDetector (new DNNYoloDetector());
 
     int s = filesInfo.size() - filesInfo.size() % batch_size;
@@ -118,7 +118,7 @@ int main(int argc, char** argv)
         }
 
         // std::vector<cv::Mat> outs = yoloDetector->preprocess(cvBatchImages);
-        QList<QMap<QString, QVector<QRect>>> resBatch = yoloDetector->detectObjects(cvBatchImages);
+        QList<QHash<QString, QVector<QRect>>> resBatch = yoloDetector->detectObjects(cvBatchImages);
         int elapsed = timer.elapsed();
         qDebug() << "detected took: " << elapsed << " ms";
         // qDebug() << yoloDetector->showInferenceTime();

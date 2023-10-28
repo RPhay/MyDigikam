@@ -112,7 +112,7 @@ bool DNNResnetDetector::loadModels()
     return true;
 }
 
-QMap<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
+QHash<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& inputImage)
 {
 
     if (inputImage.empty())
@@ -125,7 +125,7 @@ QMap<QString, QVector<QRect>> DNNResnetDetector::detectObjects(const::cv::Mat& i
     return postprocess(inputImage, outs[0]);
 }
 
-QList<QMap<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
+QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::detectObjects(const std::vector<cv::Mat>& inputBatchImages)
 {
     if (inputBatchImages.empty())
     {
@@ -173,10 +173,10 @@ std::vector<cv::Mat> DNNResnetDetector::preprocess(const std::vector<cv::Mat>& i
     return outs;
 }
 
-QList<QMap<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
+QList<QHash<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::vector<cv::Mat>& inputBatchImages,
                                                                     const std::vector<cv::Mat>& outs) const
 {
-    QList<QMap<QString, QVector<QRect>>> detectedBoxesList;
+    QList<QHash<QString, QVector<QRect>>> detectedBoxesList;
     
     // outs = [batch_size x [rows x 85]] 
     for(int i = 0; i < inputBatchImages.size(); i++)
@@ -187,10 +187,10 @@ QList<QMap<QString, QVector<QRect>>> DNNResnetDetector::postprocess(const std::v
     return detectedBoxesList;
 }
 
-QMap<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inputImage,
+QHash<QString, QVector<QRect>> DNNResnetDetector::postprocess(const cv::Mat& inputImage,
                                                              const cv::Mat& out) const
 {
-    QMap<QString, QVector<QRect>> detectedBoxes;
+    QHash<QString, QVector<QRect>> detectedBoxes;
 
     cv::Point classIdPoint;
     double final_prob;
