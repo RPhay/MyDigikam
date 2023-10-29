@@ -192,7 +192,7 @@ BUGFIXES:
 178 ==> 447137 - Feature request: update metadata from picture file if associated sidecar is deleted.
 179 ==> 437646 - Images data in Grouped items are not visible in the Table view if the View / Show All Grouped Items As Open is not selected.
 180 ==> 439173 - Switch to thumbnail view should preserve the SORTING applied in table view.
-181 ==> 
+181 ==> 473430 - Tagging deletes the image file.
 182 ==> 
 183 ==> 
 184 ==> 
