@@ -470,6 +470,8 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << QFileInfo(filePath).fileName();
         }
 
+        image->writeMetadata();
+
 #ifdef _XMP_SUPPORT_
 
         if (!updateFileTimeStamp && (image->imageType() != Exiv2::ImageType::xmp))
@@ -480,35 +482,9 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 #endif // _XMP_SUPPORT_
 
         {
-            // Don't touch access and modification timestamp of file.
+            // Don't touch modification timestamp of file.
 
-#ifdef Q_OS_WIN64
-
-            struct __utimbuf64 ut;
-            struct __stat64    st;
-            int ret = _wstat64((const wchar_t*)filePath.utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-            struct _utimbuf    ut;
-            struct _stat       st;
-            int ret = _wstat((const wchar_t*)filePath.utf16(), &st);
-
-#else
-
-            struct utimbuf     ut;
-            QT_STATBUF         st;
-            int ret = QT_STAT(filePath.toUtf8().constData(), &st);
-
-#endif
-
-            if (ret == 0)
-            {
-                ut.modtime = st.st_mtime;
-                ut.actime  = st.st_atime;
-            }
-
-            image->writeMetadata();
+            QDateTime modDateTime = finfo.lastModified();
 
             QFile memFile(filePath);
 
@@ -520,6 +496,14 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
             }
 
             qint64 written = memFile.write((const char*)image->io().mmap(), image->io().size());
+
+            if (modDateTime.isValid())
+            {
+                memFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
+
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
+            }
+
             memFile.close();
 
             if (written != (qint64)image->io().size())
@@ -528,32 +512,9 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
                 return false;
             }
-
-            if (ret == 0)
-            {
-
-#ifdef Q_OS_WIN64
-
-                _wutime64((const wchar_t*)filePath.utf16(), &ut);
-
-#elif defined Q_OS_WIN
-
-                _wutime((const wchar_t*)filePath.utf16(), &ut);
-
-#else
-
-                ::utime(filePath.toUtf8().constData(), &ut);
-
-#endif
-
-            }
-
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
         }
         else
         {
-            image->writeMetadata();
-
             QFile memFile(filePath);
 
             if (!memFile.open(QIODevice::WriteOnly))
@@ -649,33 +610,9 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 
     if (!updateFileTimeStamp)
     {
-        // Don't touch access and modification timestamp of file.
+        // Don't touch modification timestamp of file.
 
-#ifdef Q_OS_WIN64
-
-        struct __utimbuf64 ut;
-        struct __stat64    st;
-        int ret = _wstat64((const wchar_t*)finfo.filePath().utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-        struct _utimbuf    ut;
-        struct _stat       st;
-        int ret = _wstat((const wchar_t*)finfo.filePath().utf16(), &st);
-
-#else
-
-        struct utimbuf     ut;
-        QT_STATBUF         st;
-        int ret = QT_STAT(finfo.filePath().toUtf8().constData(), &st);
-
-#endif
-
-        if (ret == 0)
-        {
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-        }
+        QDateTime modDateTime = finfo.lastModified();
 
         bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
@@ -688,26 +625,19 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             return false;
         }
 
-        if (ret == 0)
+        if (modDateTime.isValid())
         {
+            QFile modFile(finfo.filePath());
 
-#ifdef Q_OS_WIN64
+            if (modFile.open(QIODevice::ReadOnly))
+            {
+                modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
 
-            _wutime64((const wchar_t*)finfo.filePath().utf16(), &ut);
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
 
-#elif defined Q_OS_WIN
-
-            _wutime((const wchar_t*)finfo.filePath().utf16(), &ut);
-
-#else
-
-            ::utime(finfo.filePath().toUtf8().constData(), &ut);
-
-#endif
-
+                modFile.close();
+            }
         }
-
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
     }
     else
     {
