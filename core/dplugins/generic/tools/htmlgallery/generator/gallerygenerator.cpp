@@ -171,15 +171,16 @@ public:
 
         if (info->m_getOption == GalleryInfo::ALBUMS)
         {
-            // Loop over albums selection
+            // use QMap to sorting albums
 
+            QMap<QString, QPair<QString, int> > albumMap;
             DInfoInterface::DAlbumIDs::ConstIterator albumIt  = info->m_albumList.constBegin();
             DInfoInterface::DAlbumIDs::ConstIterator albumEnd = info->m_albumList.constEnd();
 
             for (; albumIt != albumEnd ; ++albumIt)
             {
-                int id                     = *albumIt;
-                DInfoInterface::DInfoMap   inf;
+                int id = *albumIt;
+                DInfoInterface::DInfoMap inf;
 
                 if (info->m_iface)
                 {
@@ -187,7 +188,18 @@ public:
                 }
 
                 DAlbumInfo anf(inf);
-                QString title              = anf.title();
+                albumMap.insert(anf.title(), qMakePair(anf.caption(), id));
+            }
+
+            // Loop over albums selection
+
+            QMap<QString, QPair<QString, int> >::const_iterator mapIt  = albumMap.constBegin();
+            QMap<QString, QPair<QString, int> >::const_iterator mapEnd = albumMap.constEnd();
+
+            for (; mapIt != mapEnd ; ++mapIt)
+            {
+                int id                     = mapIt.value().second;
+                QString title              = mapIt.key();
                 QString collectionFileName = webifyFileName(title);
                 QString destDir            = baseDestDir + QLatin1Char('/') + collectionFileName;
 
@@ -199,7 +211,7 @@ public:
                 XMLElement collectionX(xmlWriter,  QLatin1String("collection"));
                 xmlWriter.writeElement("name",     title);
                 xmlWriter.writeElement("fileName", collectionFileName);
-                xmlWriter.writeElement("comment",  anf.caption());
+                xmlWriter.writeElement("comment",  mapIt.value().first);
 
                 // Gather image element list
 

@@ -185,7 +185,7 @@ BUGFIXES:
 171 ==> 459221 - Online doc: add more details about Setup Metadata options.
 172 ==> 216915 - digikam 8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
 173 ==> 476157 - Crash in assert when importing old digikam db.
-174 ==> 
+174 ==> 476282 - HTML-Export, order of <collection>s in <collections> seames undefined.
 175 ==> 
 176 ==> 
 177 ==> 
