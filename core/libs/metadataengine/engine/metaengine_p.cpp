@@ -21,12 +21,6 @@
 extern "C"
 {
 #include <sys/stat.h>
-
-#ifndef Q_CC_MSVC
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
 }
 
 // Qt includes
