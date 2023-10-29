@@ -613,8 +613,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         // Don't touch modification timestamp of file.
 
         QDateTime modDateTime = finfo.fileTime(QFileDevice::FileModificationTime);
-
-        bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
+        bool hasCSet          = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
         if (!parser->applyChanges(finfo.filePath(), exvPath,
                                   parent->hasExif(), parent->hasXmp(), hasCSet))
@@ -629,7 +628,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         {
             QFile modFile(finfo.filePath());
 
-            if (modFile.open(QIODevice::ReadOnly))
+            if (modFile.open(QIODevice::ReadOnly | QIODevice::ExistingOnly))
             {
                 modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
 
