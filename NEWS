@@ -185,9 +185,9 @@ BUGFIXES:
 171 ==> 459221 - Online doc: add more details about Setup Metadata options.
 172 ==> 216915 - digikam 8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
 173 ==> 476157 - Crash in assert when importing old digikam db.
-174 ==> 394736 - XMP file created empty when image is hosted in a Samba share (GVFS).
-175 ==> 338462 - FILEIO : Image Editor hungs at attempt to create new image version on a samba share.
-176 ==> 446363 - EXIF of image cannot be read on Windows.
+174 ==> 
+175 ==> 
+176 ==> 
 177 ==> 
 178 ==> 
 179 ==> 

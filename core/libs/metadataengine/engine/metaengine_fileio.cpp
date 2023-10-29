@@ -141,26 +141,21 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
 
     try
     {
-        QFile memFile(filePath);
+        Exiv2::Image::AutoPtr image;
 
-        if (!memFile.open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not open file to load into memory" << filePath;
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
-            return false;
-        }
+        image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 
-        QByteArray buffer = memFile.readAll();
-        memFile.close();
+#elif defined Q_OS_WIN
 
-        if (buffer.size() == 0)
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << filePath;
+        image        = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
-            return false;
-        }
+#else
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+        image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
         image->readMetadata();
 
@@ -246,30 +241,25 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             QString xmpSidecarPath = sidecarFilePathForFile(filePath);
             QFileInfo xmpSidecarFileInfo(xmpSidecarPath);
 
+            Exiv2::Image::AutoPtr xmpsidecar;
+
             if (xmpSidecarFileInfo.exists() && xmpSidecarFileInfo.isReadable())
             {
                 // Read sidecar data
 
-                QFile memFile(xmpSidecarPath);
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
-                if (!memFile.open(QIODevice::ReadOnly))
-                {
-                    qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not open XMP sidecar to load into memory" << xmpSidecarPath;
+                xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
 
-                    return false;
-                }
+#elif defined Q_OS_WIN
 
-                QByteArray buffer = memFile.readAll();
-                memFile.close();
+                xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
 
-                if (buffer.size() == 0)
-                {
-                    qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read XMP sidecar into memory" << xmpSidecarPath;
+#else
 
-                    return false;
-                }
+                xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
 
-                Exiv2::Image::AutoPtr xmpsidecar = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+#endif
 
                 xmpsidecar->readMetadata();
 

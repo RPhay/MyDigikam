@@ -97,26 +97,20 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-        QFile memFile(filePath);
 
-        if (!memFile.open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not open file to load into memory" << filePath;
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
-            return;
-        }
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 
-        QByteArray buffer = memFile.readAll();
-        memFile.close();
+#elif defined Q_OS_WIN
 
-        if (buffer.size() == 0)
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << filePath;
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
-            return;
-        }
+#else
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
