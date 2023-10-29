@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-28 00:40+0000\n"
-"PO-Revision-Date: 2023-10-26 07:37+0200\n"
+"PO-Revision-Date: 2023-10-28 09:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.4\n"
 
@@ -18571,7 +18571,7 @@ msgstr "Določite DPI za vhodno sliko."
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr "Shrani rezultat v :"
+msgstr "Shrani rezultat v : "
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
 #, kde-format
@@ -41440,7 +41440,7 @@ msgstr "velikost"
 #: core/libs/video/qtav/config/MiscPage.cpp:64
 #, kde-format
 msgid "Force fps"
-msgstr "prisili sličic na sekundo"
+msgstr "Prisili sličic na sekundo"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:67
 #, kde-format
