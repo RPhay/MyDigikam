@@ -16,13 +16,6 @@
 
 #include "metaengine_p.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#include <sys/stat.h>
-}
-
 // Qt includes
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
