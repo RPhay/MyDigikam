@@ -987,7 +987,6 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     QDateTime modificationDate           = fi.lastModified();
 
     if (checkSidecar                   &&
-        settings.updateFileTimeStamp   &&
         settings.useXMPSidecar4Reading &&
         DMetadata::hasSidecar(fi.filePath()))
     {

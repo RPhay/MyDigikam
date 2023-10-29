@@ -189,7 +189,7 @@ BUGFIXES:
 175 ==> 476281 - Creating Gallery.xml, collection/content is empty.
 176 ==> 476290 - Scanning files results crash in JPEG2000 loader.
 177 ==> 472508 - Scanning AV1 files results in crash.
-178 ==> 
+178 ==> 447137 - Feature request: update metadata from picture file if associated sidecar is deleted.
 179 ==> 
 180 ==> 
 181 ==> 
