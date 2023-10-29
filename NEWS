@@ -183,10 +183,10 @@ BUGFIXES:
 169 ==> 476073 - Assign Captions behavior in Batch Queue Manager.
 170 ==> 416446 - Import dialog: wrong pop-up media capacity in status bar.
 171 ==> 459221 - Online doc: add more details about Setup Metadata options.
-172 ==> 216915 - digikam 8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
+172 ==> 216915 - digiKam-8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
 173 ==> 476157 - Crash in assert when importing old digikam db.
 174 ==> 476282 - HTML-Export, order of <collection>s in <collections> seames undefined.
-175 ==> 
+175 ==> 476281 - Creating Gallery.xml, collection/content is empty.
 176 ==> 
 177 ==> 
 178 ==> 

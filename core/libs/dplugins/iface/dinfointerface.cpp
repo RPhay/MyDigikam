@@ -493,7 +493,7 @@ QString DAlbumInfo::title() const
 QString DAlbumInfo::caption() const
 {
     QString ret;
-    DInfoInterface::DInfoMap::const_iterator it = m_info.find(QLatin1String("comment"));
+    DInfoInterface::DInfoMap::const_iterator it = m_info.find(QLatin1String("caption"));
 
     if (it != m_info.end())
     {
