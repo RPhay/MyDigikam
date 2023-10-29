@@ -150,17 +150,17 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
             return false;
         }
 
-        QByteArray buffer = memFile.readAll();
+        d->memBuffer = memFile.readAll();
         memFile.close();
 
-        if (buffer.size() == 0)
+        if (d->memBuffer.size() == 0)
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << filePath;
 
             return false;
         }
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)d->memBuffer.data(), d->memBuffer.size());
 
         image->readMetadata();
 
@@ -259,17 +259,17 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
                     return false;
                 }
 
-                QByteArray buffer = memFile.readAll();
+                d->memBuffer = memFile.readAll();
                 memFile.close();
 
-                if (buffer.size() == 0)
+                if (d->memBuffer.size() == 0)
                 {
                     qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read XMP sidecar into memory" << xmpSidecarPath;
 
                     return false;
                 }
 
-                Exiv2::Image::AutoPtr xmpsidecar = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+                Exiv2::Image::AutoPtr xmpsidecar = Exiv2::ImageFactory::open((const Exiv2::byte*)d->memBuffer.data(), d->memBuffer.size());
 
                 xmpsidecar->readMetadata();
 

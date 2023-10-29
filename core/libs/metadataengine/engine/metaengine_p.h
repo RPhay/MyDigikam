@@ -130,7 +130,7 @@ public:
     void copyPrivateData(const Private* const other);
 
     bool saveToXMPSidecar(const QFileInfo& finfo)                                 const;
-    bool saveToFile(const QFileInfo& finfo)                                       const;
+    bool saveToFile(const QFileInfo& finfo);
     bool saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
     bool saveUsingExifTool(const QFileInfo& finfo)                                const;
 
@@ -217,6 +217,8 @@ public:
     QString                                               filePath;
     QSize                                                 pixelSize;
     QString                                               mimeType;
+
+    QByteArray                                            memBuffer;
 
     MetaEngine*                                           parent;
 

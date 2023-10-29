@@ -202,7 +202,7 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 
 }
 
-bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
+bool MetaEngine::Private::saveToFile(const QFileInfo& finfo)
 {
     if (!finfo.isWritable())
     {
@@ -230,17 +230,17 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                 return false;
             }
 
-            QByteArray buffer = memFile.readAll();
+            memBuffer = memFile.readAll();
             memFile.close();
 
-            if (buffer.size() == 0)
+            if (memBuffer.size() == 0)
             {
                 qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << finfo.filePath();
 
                 return false;
             }
 
-            Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+            Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)memBuffer.data(), memBuffer.size());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
