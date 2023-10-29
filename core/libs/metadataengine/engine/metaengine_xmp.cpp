@@ -37,21 +37,28 @@ bool MetaEngine::canWriteXmp(const QString& filePath)
 
     try
     {
-#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
+        QFile memFile(filePath);
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+        if (!memFile.open(QIODevice::ReadOnly))
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not open file to load into memory" << filePath;
 
-#elif defined Q_OS_WIN
+            return false;
+        }
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+        QByteArray buffer = memFile.readAll();
+        memFile.close();
 
-#else
+        if (buffer.size() == 0)
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << filePath;
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+            return false;
+        }
 
-#endif
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
 
-        Exiv2::AccessMode mode = image->checkMode(Exiv2::mdXmp);
+        Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdXmp);
 
         return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
