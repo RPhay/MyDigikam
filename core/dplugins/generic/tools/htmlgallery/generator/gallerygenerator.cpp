@@ -171,9 +171,9 @@ public:
 
         if (info->m_getOption == GalleryInfo::ALBUMS)
         {
-            // use QMap to sorting albums
+            // use QMultiMap to sorting albums
 
-            QMap<QString, QPair<QString, int> > albumMap;
+            QMultiMap<QString, QPair<int, QString> > albumMap;
             DInfoInterface::DAlbumIDs::ConstIterator albumIt  = info->m_albumList.constBegin();
             DInfoInterface::DAlbumIDs::ConstIterator albumEnd = info->m_albumList.constEnd();
 
@@ -188,17 +188,17 @@ public:
                 }
 
                 DAlbumInfo anf(inf);
-                albumMap.insert(anf.title(), qMakePair(anf.caption(), id));
+                albumMap.insert(anf.title(), qMakePair(id, anf.caption()));
             }
 
             // Loop over albums selection
 
-            QMap<QString, QPair<QString, int> >::const_iterator mapIt  = albumMap.constBegin();
-            QMap<QString, QPair<QString, int> >::const_iterator mapEnd = albumMap.constEnd();
+            QMultiMap<QString, QPair<int, QString> >::const_iterator mapIt  = albumMap.constBegin();
+            QMultiMap<QString, QPair<int, QString> >::const_iterator mapEnd = albumMap.constEnd();
 
             for (; mapIt != mapEnd ; ++mapIt)
             {
-                int id                     = mapIt.value().second;
+                int id                     = mapIt.value().first;
                 QString title              = mapIt.key();
                 QString collectionFileName = webifyFileName(title);
                 QString destDir            = baseDestDir + QLatin1Char('/') + collectionFileName;
@@ -211,7 +211,7 @@ public:
                 XMLElement collectionX(xmlWriter,  QLatin1String("collection"));
                 xmlWriter.writeElement("name",     title);
                 xmlWriter.writeElement("fileName", collectionFileName);
-                xmlWriter.writeElement("comment",  mapIt.value().first);
+                xmlWriter.writeElement("comment",  mapIt.value().second);
 
                 // Gather image element list
 
