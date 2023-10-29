@@ -190,7 +190,7 @@ BUGFIXES:
 176 ==> 476290 - Scanning files results crash in JPEG2000 loader.
 177 ==> 472508 - Scanning AV1 files results in crash.
 178 ==> 447137 - Feature request: update metadata from picture file if associated sidecar is deleted.
-179 ==> 
+179 ==> 437646 - Images data in Grouped items are not visible in the Table view if the View / Show All Grouped Items As Open is not selected.
 180 ==> 
 181 ==> 
 182 ==> 
