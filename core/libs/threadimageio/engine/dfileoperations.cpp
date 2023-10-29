@@ -624,7 +624,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
         }
     }
 
-    qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to set modification time for file"
                                    << srcFile;
 
     return false;
