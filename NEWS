@@ -188,7 +188,7 @@ BUGFIXES:
 174 ==> 476282 - HTML-Export, order of <collection>s in <collections> seames undefined.
 175 ==> 476281 - Creating Gallery.xml, collection/content is empty.
 176 ==> 476290 - Scanning files results crash in JPEG2000 loader.
-177 ==> 
+177 ==> 472508 - Scanning AV1 files results in crash.
 178 ==> 
 179 ==> 
 180 ==> 
