@@ -484,7 +484,7 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
         {
             // Don't touch modification timestamp of file.
 
-            QDateTime modDateTime = finfo.lastModified();
+            QDateTime modDateTime = finfo.fileTime(QFileDevice::FileModificationTime);
 
             QFile memFile(filePath);
 
@@ -612,7 +612,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     {
         // Don't touch modification timestamp of file.
 
-        QDateTime modDateTime = finfo.lastModified();
+        QDateTime modDateTime = finfo.fileTime(QFileDevice::FileModificationTime);
 
         bool hasCSet = (parent->getIptcTagData("Iptc.Envelope.CharacterSet") == "\33%G");
 
