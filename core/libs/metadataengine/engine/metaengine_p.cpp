@@ -577,7 +577,11 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 
             // Same file permission for the possible XMP sidecar file
 
-            if (image->imageType() == Exiv2::ImageType::xmp)
+            if (
+                (image->imageType() == Exiv2::ImageType::xmp) &&
+                finfo.isReadable()                            &&
+                finfo.isWritable()
+               )
             {
                 memFile.setPermissions(finfo.permissions());
             }
