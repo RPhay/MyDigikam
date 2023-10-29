@@ -187,9 +187,19 @@ BUGFIXES:
 173 ==> 476157 - Crash in assert when importing old digikam db.
 174 ==> 476282 - HTML-Export, order of <collection>s in <collections> seames undefined.
 175 ==> 476281 - Creating Gallery.xml, collection/content is empty.
-176 ==> 
+176 ==> 476290 - Scanning files results crash in JPEG2000 loader.
 177 ==> 
 178 ==> 
 179 ==> 
 180 ==> 
 181 ==> 
+182 ==> 
+183 ==> 
+184 ==> 
+185 ==> 
+186 ==> 
+187 ==> 
+188 ==> 
+189 ==> 
+190 ==> 
+191 ==> 
