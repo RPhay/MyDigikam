@@ -196,7 +196,7 @@ BUGFIXES:
 182 ==> 376425 - Light table window not activated or brought to front.
 183 ==> 476316 - The drop-down menu located at the bottom left in digiKam on-line documentation does not work.
 184 ==> 476335 - For one name the "unconfirmed" is two rows but the upper row does not show correctly.
-185 ==> 
+185 ==> 469372 - "Image cannot be loaded" â some images not rendered correctly.
 186 ==> 
 187 ==> 
 188 ==> 
