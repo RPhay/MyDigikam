@@ -195,7 +195,7 @@ BUGFIXES:
 181 ==> 473430 - Tagging deletes the image file.
 182 ==> 376425 - Light table window not activated or brought to front.
 183 ==> 476316 - The drop-down menu located at the bottom left in digiKam on-line documentation does not work.
-184 ==> 
+184 ==> 476335 - For one name the "unconfirmed" is two rows but the upper row does not show correctly.
 185 ==> 
 186 ==> 
 187 ==> 

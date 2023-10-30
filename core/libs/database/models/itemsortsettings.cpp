@@ -276,10 +276,10 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             }
 
             leftValue  += fastNumberToString(leftFace.tagId()) +
-                          fastNumberToString(leftFace.type());
+                          fastNumberToString(leftFace.imageId());
 
             rightValue += fastNumberToString(rightFace.tagId()) +
-                          fastNumberToString(rightFace.type());
+                          fastNumberToString(rightFace.imageId());
 
             // Compare alphabetically based on the face name
 
