@@ -615,7 +615,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
         {
             QFile modFile(finfo.filePath());
 
-            if (modFile.open(QIODevice::ReadOnly | QIODevice::ExistingOnly))
+            if (modFile.open(QIODevice::WriteOnly | QIODevice::Append))
             {
                 modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
 

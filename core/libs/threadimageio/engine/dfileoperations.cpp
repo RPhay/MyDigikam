@@ -498,7 +498,7 @@ bool DFileOperations::renameFile(const QString& srcFile,
     {
         QFile modFile(dstFile);
 
-        if (modFile.open(QIODevice::ReadOnly | QIODevice::ExistingOnly))
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append))
         {
             modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
             modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
@@ -592,7 +592,7 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
     {
         QFile modFile(dstFile);
 
-        if (modFile.open(QIODevice::ReadOnly | QIODevice::ExistingOnly))
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append))
         {
             modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
             modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
@@ -615,7 +615,7 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     {
         QFile modFile(srcFile);
 
-        if (modFile.open(QIODevice::ReadOnly | QIODevice::ExistingOnly))
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append))
         {
             modFile.setFileTime(dateTime, QFileDevice::FileModificationTime);
             modFile.close();
