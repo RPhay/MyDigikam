@@ -194,7 +194,7 @@ BUGFIXES:
 180 ==> 439173 - Switch to thumbnail view should preserve the SORTING applied in table view.
 181 ==> 473430 - Tagging deletes the image file.
 182 ==> 376425 - Light table window not activated or brought to front.
-183 ==> 
+183 ==> 476316 - The drop-down menu located at the bottom left in digiKam on-line documentation does not work.
 184 ==> 
 185 ==> 
 186 ==> 
