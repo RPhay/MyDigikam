@@ -152,7 +152,7 @@ if(WIN32)
 #                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
-    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
+    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
     set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
     target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 
