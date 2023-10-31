@@ -37,6 +37,7 @@ QStringList CollectionManager::allAvailableAlbumRootPaths()
 QString CollectionManager::albumRootPath(int id)
 {
     QReadLocker readLocker(&d->lock);
+
     CollectionLocation* const location = d->locations.value(id);
 
     if (location && location->status() == CollectionLocation::LocationAvailable)
@@ -222,6 +223,7 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
             // label has changed
 
             CollectionLocation toBeEmitted;
+
             {
                 QReadLocker readLocker(&d->lock);
                 AlbumRootLocation* const location = d->locations.value(changeset.albumRootId());

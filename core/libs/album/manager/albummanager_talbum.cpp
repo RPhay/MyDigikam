@@ -1005,10 +1005,7 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
         case TagChangeset::Deleted:
         case TagChangeset::Reparented:
         {
-            if (!d->scanTAlbumsTimer->isActive())
-            {
-                d->scanTAlbumsTimer->start();
-            }
+            d->scanTAlbumsTimer->start();
 
             break;
         }
@@ -1071,10 +1068,7 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
                 }
             }
 
-            if (!d->tagItemCountTimer->isActive())
-            {
-                d->tagItemCountTimer->start();
-            }
+            d->tagItemCountTimer->start();
 
             break;
         }

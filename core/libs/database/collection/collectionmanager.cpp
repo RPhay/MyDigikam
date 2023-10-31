@@ -115,22 +115,23 @@ void CollectionManager::accessibilityChanged(bool accessible, const QString& udi
 
 void CollectionManager::clearLocations()
 {
-    QWriteLocker locker(&d->lock);
+    QMap<int, AlbumRootLocation*> oldLocations;
 
-    // Internal method: Called with write lock
-    // Cave: Difficult recursions with CoreDbAccess constructor and setParameters
-
-    Q_FOREACH (AlbumRootLocation* const location, d->locations)
     {
-        CollectionLocation::Status oldStatus = location->status();
-        location->setStatus(CollectionLocation::LocationDeleted);
-        locker.unlock();
-        Q_EMIT locationStatusChanged(*location, oldStatus);
-        locker.relock();
-        delete location;
+        QWriteLocker locker(&d->lock);
+
+        oldLocations = d->locations;
+        d->locations.clear();
     }
 
-    d->locations.clear();
+    Q_FOREACH (AlbumRootLocation* const location, oldLocations)
+    {
+        CollectionLocation::Status statusOld = location->status();
+        location->setStatus(CollectionLocation::LocationDeleted);
+        Q_EMIT locationStatusChanged(*location, statusOld);
+
+        delete location;
+    }
 }
 
 } // namespace Digikam
