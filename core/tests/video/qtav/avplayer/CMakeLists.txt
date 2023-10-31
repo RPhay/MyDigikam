@@ -145,7 +145,7 @@ if(WIN32)
 
     set(avplayer_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
 
-    ecm_add_app_icon(avplayer_windows_stub_SRCS ICONS ${ICONS_SRCS})
+#    ecm_add_app_icon(avplayer_windows_stub_SRCS ICONS ${ICONS_SRCS})
 
     add_executable(avplayer_windows_stub_exe
                    ${avplayer_windows_stub_SRCS}
