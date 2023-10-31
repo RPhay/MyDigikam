@@ -264,7 +264,12 @@ if(WIN32)
                    ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
-    target_link_libraries(showfoto_windows_stub_exe PRIVATE showfoto Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
+    if(NOT Qt6_FOUND)
+
+        target_link_libraries(showfoto_windows_stub_exe PRIVATE showfoto Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
+
+    endif()
+
     set_target_properties(showfoto_windows_stub_exe PROPERTIES OUTPUT_NAME "showfoto")
     target_include_directories(showfoto_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 
