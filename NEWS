@@ -197,7 +197,7 @@ BUGFIXES:
 183 ==> 476316 - The drop-down menu located at the bottom left in digiKam on-line documentation does not work.
 184 ==> 476335 - For one name the "unconfirmed" is two rows but the upper row does not show correctly.
 185 ==> 469372 - "Image cannot be loaded" â some images not rendered correctly.
-186 ==> 
+186 ==> 476374 - Cursor focus jumps when in Preview and entering a tag.
 187 ==> 
 188 ==> 
 189 ==> 
