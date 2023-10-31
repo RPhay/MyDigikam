@@ -18,7 +18,7 @@ ENDIF()
 
 # NOTE: even if OpenSSL libs paths are passed as arguments, an hardcoded patch is necessary else linking fail.
 
-ExternalProject_Add(ext_qt
+ExternalProject_Add(ext_qt5
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     URL https://download.qt.io/official_releases/qt/5.15/5.15.11/single/qt-everywhere-opensource-src-5.15.11.tar.xz
