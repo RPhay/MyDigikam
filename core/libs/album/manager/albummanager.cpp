@@ -141,6 +141,14 @@ void AlbumManager::cleanUp()
         d->personListJob->cancel();
         d->personListJob = nullptr;
     }
+
+    d->scanPAlbumsTimer->stop();
+    d->scanTAlbumsTimer->stop();
+    d->scanSAlbumsTimer->stop();
+    d->scanDAlbumsTimer->stop();
+    d->tagItemCountTimer->stop();
+    d->updatePAlbumsTimer->stop();
+    d->albumItemCountTimer->stop();
 }
 
 void AlbumManager::startScan()
