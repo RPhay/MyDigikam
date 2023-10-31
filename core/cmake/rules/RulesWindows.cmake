@@ -6,16 +6,33 @@
 
 if(WIN32)
 
-    # For LibRaw
+    if(MINGW)
 
-    find_library(WSOCK32_LIBRARY  wsock32)
-    find_library(WS2_32_LIBRARY   ws2_32)
+        # For LibRaw
 
-    # For MediaPlayer
+        find_library(WSOCK32_LIBRARY  wsock32)
+        find_library(WS2_32_LIBRARY   ws2_32)
 
-    find_library(NETAPI32_LIBRARY netapi32)
-    find_library(USEENV_LIBRARY   userenv)
-    find_library(PSAPI_LIBRARY    psapi)
+        # For MediaPlayer
+
+        find_library(NETAPI32_LIBRARY netapi32)
+        find_library(USEENV_LIBRARY   userenv)
+        find_library(PSAPI_LIBRARY    psapi)
+
+    else()  # MSVC
+
+        # For LibRaw
+
+        set(WSOCK32_LIBRARY  wsock32)
+        set(WS2_32_LIBRARY   ws2_32)
+
+        # For MediaPlayer
+
+        set(NETAPI32_LIBRARY netapi32)
+        set(USEENV_LIBRARY   userenv)
+        set(PSAPI_LIBRARY    psapi)
+
+    endif()
 
 endif()
 
