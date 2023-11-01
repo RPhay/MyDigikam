@@ -52,7 +52,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-30 00:40+0000\n"
+"POT-Creation-Date: 2023-11-01 00:40+0000\n"
 "PO-Revision-Date: 2023-10-22 22:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2866,7 +2866,7 @@ msgstr "Tam Ekran Göster"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:508
-#: core/libs/album/manager/albummanager.cpp:157
+#: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2957,7 +2957,7 @@ msgstr "Etiket Albümü Yok"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:581
-#: core/libs/album/manager/albummanager.cpp:160
+#: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
@@ -26776,7 +26776,7 @@ msgstr "Yeni albüm adını girin:"
 msgid "Scanning albums"
 msgstr "Yüzler taranıyor"
 
-#: core/libs/album/manager/albummanager.cpp:163
+#: core/libs/album/manager/albummanager.cpp:171
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -26784,28 +26784,28 @@ msgstr "Yüzler taranıyor"
 msgid "Searches"
 msgstr "Aramalar"
 
-#: core/libs/album/manager/albummanager_database.cpp:108
+#: core/libs/album/manager/albummanager_database.cpp:110
 #, kde-format
 msgid ""
 "The MySQL database directory was not found, please set the correct location "
 "in the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:120
+#: core/libs/album/manager/albummanager_database.cpp:122
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:128
+#: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:138
+#: core/libs/album/manager/albummanager_database.cpp:140
 #, kde-format
 msgid ""
 "\n"
@@ -26814,7 +26814,7 @@ msgid ""
 "delete the file %1"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:151
+#: core/libs/album/manager/albummanager_database.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>An error occurred during the internal server start.</b></"
@@ -26829,7 +26829,7 @@ msgstr ""
 "<p><b>Dahili sunucu başlatılırken bir hata oluştu.</b></p>Ayrıntılar:\n"
 " %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:167
+#: core/libs/album/manager/albummanager_database.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26847,14 +26847,14 @@ msgstr ""
 "<b>olmayacak</b>. Lütfen <b>yapılandırma menüsünden</b>veritabanı ayarlarını "
 "kontrol edin.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:176
+#: core/libs/album/manager/albummanager_database.cpp:178
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:212
+#: core/libs/album/manager/albummanager_database.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -26872,7 +26872,7 @@ msgstr ""
 "<b>olmayacak</b>. Lütfen <b>yapılandırma menüsünden</b>veritabanı ayarlarını "
 "kontrol edin.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:221
+#: core/libs/album/manager/albummanager_database.cpp:223
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26890,7 +26890,7 @@ msgstr ""
 "şimdi başlatılmaya çalışılacak, ancak işlevsel <b>olmayacak</b>. Lütfen "
 "<b>yapılandırma menüsünden</b>veritabanı ayarlarını kontrol edin.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:254
+#: core/libs/album/manager/albummanager_database.cpp:256
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -26921,7 +26921,7 @@ msgstr ""
 "takdirde, digiKam'ı yeniden başlatmadan önce 'Hayır'ı tıklayın ve yerel "
 "ayarınızı düzeltin."
 
-#: core/libs/album/manager/albummanager_database.cpp:297
+#: core/libs/album/manager/albummanager_database.cpp:299
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -26935,7 +26935,7 @@ msgstr ""
 "<p>Koleksiyon</p><p><b>%1</b><br/>(%2)</p><p>şu anda sisteminizde "
 "bulunamıyor.<br/>Lütfen bu durumu çözmek için en uygun seçeneği seçin:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:316
+#: core/libs/album/manager/albummanager_database.cpp:318
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26947,7 +26947,7 @@ msgstr ""
 "ayarlarının değiştirilmesi sebep olabilir.<br/>Koleksiyon şimdi şurada "
 "bulunuyor:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:335
+#: core/libs/album/manager/albummanager_database.cpp:337
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26956,7 +26956,7 @@ msgstr ""
 "Koleksiyon, her zaman bağlı olmayan bir depolama aygıtında bulunur. "
 "Koleksiyonu kaldırılabilir bir koleksiyon olarak imleyin."
 
-#: core/libs/album/manager/albummanager_database.cpp:342
+#: core/libs/album/manager/albummanager_database.cpp:344
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26965,21 +26965,21 @@ msgstr ""
 "Şimdi işlem yapma. Kurulum iletişim kutusunu kullanarak sorunu daha sonra "
 "çözmek isterim"
 
-#: core/libs/album/manager/albummanager_database.cpp:356
+#: core/libs/album/manager/albummanager_database.cpp:358
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Koleksiyon bulunamadı"
 
-#: core/libs/album/manager/albummanager_database.cpp:462
+#: core/libs/album/manager/albummanager_database.cpp:464
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Veritabanı Dizini"
 
-#: core/libs/album/manager/albummanager_database.cpp:463
+#: core/libs/album/manager/albummanager_database.cpp:465
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26995,34 +26995,34 @@ msgstr ""
 "misiniz - ya da eski dosyayı yok sayarak yeni bir veritabanı ile başlamak "
 "ister misiniz?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:473
-#: core/libs/album/manager/albummanager_database.cpp:541
-#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Veritabanını Yükselt"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
-#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:477
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:615
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Yeni Veritabanı Oluştur"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
-#: core/libs/album/manager/albummanager_database.cpp:555
-#: core/libs/album/manager/albummanager_database.cpp:605
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:534
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:607
+#: core/libs/album/manager/albummanager_database.cpp:639
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Yeni Veritabanı Klasörü"
 
-#: core/libs/album/manager/albummanager_database.cpp:533
+#: core/libs/album/manager/albummanager_database.cpp:535
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27037,16 +27037,16 @@ msgstr ""
 "veya mevcut veritabanını bu konuma kopyalamak ve kullanmaya devam etmek "
 "ister misiniz?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:615
-#: core/libs/album/manager/albummanager_database.cpp:646
+#: core/libs/album/manager/albummanager_database.cpp:547
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Geçerli Veritabanını Kopyala"
 
-#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:558
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27059,7 +27059,7 @@ msgstr ""
 "p> <p>Eski veritabanı dosyasını yükseltmek veya yeni bir veritabanı ile "
 "başlamak ister misiniz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:591
+#: core/libs/album/manager/albummanager_database.cpp:593
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27068,7 +27068,7 @@ msgstr ""
 "Eski veritabanı dosyası (\"%1\") yeni yerine kopyalanamadı (\"%2\"). Eski "
 "veritabanlarını yükseltmeye çalışılıyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:606
+#: core/libs/album/manager/albummanager_database.cpp:608
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -27079,7 +27079,7 @@ msgstr ""
 "p><p>Geçerli veritabanını bu konuma kopyalayıp kullanmaya devam etmek mi, "
 "yoksa yeni bir veritabanı ile başlatmak mı istiyorsunuz?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:638
+#: core/libs/album/manager/albummanager_database.cpp:640
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -27092,14 +27092,14 @@ msgstr ""
 "yeni veritabanı olarak kullanmak mı yoksa onu kaldırıp geçerli veritabanını "
 "bu yere kopyalamak mı istersiniz?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Var Olan Dosyayı Kullan"
 
-#: core/libs/album/manager/albummanager_database.cpp:703
+#: core/libs/album/manager/albummanager_database.cpp:705
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -27108,7 +27108,7 @@ msgstr ""
 "Var olan veritabanı dosyası (\"%1\") yedeklenemedi. Var olan dosyayı "
 "kullanarak yedekleme olmadan dosyayı değiştirme reddediliyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:721
+#: core/libs/album/manager/albummanager_database.cpp:723
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27117,7 +27117,7 @@ msgstr ""
 "Eski veritabanı dosyasının (\"%1\") yeni yerine kopyalanması (\"%2\") "
 "başarısız. Boş bir veritabanıyla başlanıyor."
 
-#: core/libs/album/manager/albummanager_database.cpp:754
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -27316,7 +27316,7 @@ msgstr ""
 "etiketleri tüm resimlerden gerçekten kaldırmak istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:1112
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -27327,7 +27327,7 @@ msgstr "Tekrar sorma"
 msgid "No such tag"
 msgstr "Böyle bir etiket yok"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1107
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"

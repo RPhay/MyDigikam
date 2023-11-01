@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-30 00:40+0000\n"
+"POT-Creation-Date: 2023-11-01 00:40+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3187,7 +3187,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:508
-#: core/libs/album/manager/albummanager.cpp:157
+#: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -3276,7 +3276,7 @@ msgstr "Album bez oznaka"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:581
-#: core/libs/album/manager/albummanager.cpp:160
+#: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
@@ -28295,7 +28295,7 @@ msgstr "Unesite novo ime albuma:"
 msgid "Scanning albums"
 msgstr "Skeniranje albuma..."
 
-#: core/libs/album/manager/albummanager.cpp:163
+#: core/libs/album/manager/albummanager.cpp:171
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -28303,28 +28303,28 @@ msgstr "Skeniranje albuma..."
 msgid "Searches"
 msgstr "Pretrage"
 
-#: core/libs/album/manager/albummanager_database.cpp:108
+#: core/libs/album/manager/albummanager_database.cpp:110
 #, kde-format
 msgid ""
 "The MySQL database directory was not found, please set the correct location "
 "in the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:120
+#: core/libs/album/manager/albummanager_database.cpp:122
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:128
+#: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:138
+#: core/libs/album/manager/albummanager_database.cpp:140
 #, kde-format
 msgid ""
 "\n"
@@ -28333,7 +28333,7 @@ msgid ""
 "delete the file %1"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:151
+#: core/libs/album/manager/albummanager_database.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>An error occurred during the internal server start.</b></"
@@ -28348,7 +28348,7 @@ msgstr ""
 "<p><b>Pojavila se greška tokom internog pokretanja servera.</b></p>Detalji:\n"
 " %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:167
+#: core/libs/album/manager/albummanager_database.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28366,14 +28366,14 @@ msgstr ""
 "ali  <b>neće</b> raditi pravilno. Molimo Vas,provjerite postavke baze "
 "podataka  u <b> konfiguracijskom meniju </b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:176
+#: core/libs/album/manager/albummanager_database.cpp:178
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:212
+#: core/libs/album/manager/albummanager_database.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28391,7 +28391,7 @@ msgstr ""
 "ali  <b>neće</b> raditi pravilno. Molimo Vas,provjerite postavke baze "
 "podataka  u <b> konfiguracijskom meniju </b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:221
+#: core/libs/album/manager/albummanager_database.cpp:223
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -28410,7 +28410,7 @@ msgstr ""
 "pravilno. Molimo Vas,provjerite postavke baze podataka  u <b>konfiguraciji</"
 "b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:254
+#: core/libs/album/manager/albummanager_database.cpp:256
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -28441,7 +28441,7 @@ msgstr ""
 "\". U suprotnom, pritisnite \"No\" i prepravite postavke Vaše lokacije prije "
 "ponovnog pokretanja digiKama-a."
 
-#: core/libs/album/manager/albummanager_database.cpp:297
+#: core/libs/album/manager/albummanager_database.cpp:299
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -28456,7 +28456,7 @@ msgstr ""
 "<br/> Molimo Vas, odaberite najprikladniju opciju za podnošenje ove "
 "situacije:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:316
+#: core/libs/album/manager/albummanager_database.cpp:318
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -28468,7 +28468,7 @@ msgstr ""
 "ili promjenom postavki datoteka sistema.<br/>Kolekcija je sad postavljena  "
 "na ovu lokaciju :</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:335
+#: core/libs/album/manager/albummanager_database.cpp:337
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -28477,7 +28477,7 @@ msgstr ""
 "Kolekcija je spremljena na uređaju za skladištenje podataka koji nije uvijek "
 "priključen na kompjuter . Označite kolekciju kao uklonjivu kolekciju."
 
-#: core/libs/album/manager/albummanager_database.cpp:342
+#: core/libs/album/manager/albummanager_database.cpp:344
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -28486,21 +28486,21 @@ msgstr ""
 "Ne poduzimajte ništa sad. Zelio/la bih riješiti problem kasnije koristeći "
 "dijalošku postavku"
 
-#: core/libs/album/manager/albummanager_database.cpp:356
+#: core/libs/album/manager/albummanager_database.cpp:358
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Kolekcija nije pronađena"
 
-#: core/libs/album/manager/albummanager_database.cpp:462
+#: core/libs/album/manager/albummanager_database.cpp:464
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Folder baze podataka"
 
-#: core/libs/album/manager/albummanager_database.cpp:463
+#: core/libs/album/manager/albummanager_database.cpp:465
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -28516,36 +28516,36 @@ msgstr ""
 "spremljenu u folderu \"%2\" - ili ignorisati staru datoteku i zapoceti sa "
 "novom bazom podataka?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:473
-#: core/libs/album/manager/albummanager_database.cpp:541
-#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Nadogradi bazu podataka"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
-#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:477
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:615
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Kreiraj novu bazu podataka"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
-#: core/libs/album/manager/albummanager_database.cpp:555
-#: core/libs/album/manager/albummanager_database.cpp:605
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:534
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:607
+#: core/libs/album/manager/albummanager_database.cpp:639
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Novi folder baze podataka"
 
-#: core/libs/album/manager/albummanager_database.cpp:533
+#: core/libs/album/manager/albummanager_database.cpp:535
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28560,16 +28560,16 @@ msgstr ""
 "započeti sa  novom bazom podataka ili  kopirati trenutnu bazu podataka na "
 "ovu lokaciju i nastaviti  je korisititi ?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:615
-#: core/libs/album/manager/albummanager_database.cpp:646
+#: core/libs/album/manager/albummanager_database.cpp:547
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopiraj trenutnu bazu podataka"
 
-#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:558
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28582,7 +28582,7 @@ msgstr ""
 "Želite li unaprijediti prijašnju verziju datoteke ove baze podataka ili  "
 "započeti sa korištenjem nove baze podataka?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:591
+#: core/libs/album/manager/albummanager_database.cpp:593
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28591,7 +28591,7 @@ msgstr ""
 "Kopiranje datoteke \"%1\" prijašnje baze podataka  na novu lokaciju (\"%2\") "
 "nije uspjelo. Probajte unaprijediti stariju verziju."
 
-#: core/libs/album/manager/albummanager_database.cpp:606
+#: core/libs/album/manager/albummanager_database.cpp:608
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -28603,7 +28603,7 @@ msgstr ""
 "nastaviti sa njenim korištenjem  ili  želite započeti rad sa novom bazom "
 "podataka?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:638
+#: core/libs/album/manager/albummanager_database.cpp:640
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28616,14 +28616,14 @@ msgstr ""
 "li koristit postojeću datoteku kao novu bazu podataka ili je pomjeriti i "
 "kopirati trenutnu bazu podataka na njeno mjesto?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Koristi postojeći fajl"
 
-#: core/libs/album/manager/albummanager_database.cpp:703
+#: core/libs/album/manager/albummanager_database.cpp:705
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -28632,7 +28632,7 @@ msgstr ""
 "Spremanje postojeće datoteke (\"%1\") baze podataka nije uspjelo. Nije "
 "moguće zamijeniti datoteku bez spremanja,koristeći postojeću datoteku."
 
-#: core/libs/album/manager/albummanager_database.cpp:721
+#: core/libs/album/manager/albummanager_database.cpp:723
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28641,7 +28641,7 @@ msgstr ""
 "Kopiranje stare datoteke baze podataka (\"%1\") na njegovu novu lokaciju "
 "(\"%2\") nije uspjelo. Započinje sa praznom bazom podataka."
 
-#: core/libs/album/manager/albummanager_database.cpp:754
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -28841,7 +28841,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Da li stvarno želite ukloniti izabranu oznaku sa svih slika?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:1112
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -28852,7 +28852,7 @@ msgstr "Ne pitaj više"
 msgid "No such tag"
 msgstr "Nema takve oznake"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1107
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
