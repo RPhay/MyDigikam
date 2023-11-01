@@ -479,8 +479,9 @@ bool DFileOperations::renameFile(const QString& srcFile,
     }
 
     QFileInfo srcInfo(srcFile);
-    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
+    QDateTime birDateTime = srcInfo.fileTime(QFileDevice::FileBirthTime);
     QDateTime accDateTime = srcInfo.fileTime(QFileDevice::FileAccessTime);
+    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
 
     bool ret              = (!QFileInfo::exists(dstFile));
 
@@ -494,14 +495,27 @@ bool DFileOperations::renameFile(const QString& srcFile,
         }
     }
 
-    if (ret && modDateTime.isValid() && accDateTime.isValid())
+    if (ret)
     {
         QFile modFile(dstFile);
 
         if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
         {
-            modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
-            modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
+            if (modDateTime.isValid())
+            {
+                modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
+            }
+
+            if (accDateTime.isValid())
+            {
+                modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
+            }
+
+            if (birDateTime.isValid())
+            {
+                modFile.setFileTime(birDateTime, QFileDevice::FileBirthTime);
+            }
+
             modFile.close();
 
             return ret;
@@ -534,8 +548,9 @@ bool DFileOperations::copyFile(const QString& srcFile,
 
     if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
     {
-        sFile.close();
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open destination file for writing:" << tmpFile;
+
+        sFile.close();
 
         return false;
     }
@@ -548,9 +563,6 @@ bool DFileOperations::copyFile(const QString& srcFile,
     {
         if ((cancel && *cancel) || (len == -1) || (dFile.write(buffer.data(), len) != len))
         {
-            sFile.close();
-            dFile.close();
-
             ret = false;
 
             break;
@@ -585,21 +597,32 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
                                            const QString& dstFile)
 {
     QFileInfo srcInfo(srcFile);
-    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
+    QDateTime birDateTime = srcInfo.fileTime(QFileDevice::FileBirthTime);
     QDateTime accDateTime = srcInfo.fileTime(QFileDevice::FileAccessTime);
+    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
 
-    if (modDateTime.isValid() && accDateTime.isValid())
+    QFile modFile(dstFile);
+
+    if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
     {
-        QFile modFile(dstFile);
-
-        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
+        if (modDateTime.isValid())
         {
             modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
-            modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
-            modFile.close();
-
-            return true;
         }
+
+        if (accDateTime.isValid())
+        {
+            modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
+        }
+
+        if (birDateTime.isValid())
+        {
+            modFile.setFileTime(birDateTime, QFileDevice::FileBirthTime);
+        }
+
+        modFile.close();
+
+        return true;
     }
 
     qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
