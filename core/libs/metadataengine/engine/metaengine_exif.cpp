@@ -48,26 +48,20 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
     try
     {
-        QFile memFile(filePath);
 
-        if (!memFile.open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not open file to load into memory" << filePath;
+#if defined Q_OS_WIN && defined EXV_UNICODE_PATH
 
-            return false;
-        }
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 
-        QByteArray buffer = memFile.readAll();
-        memFile.close();
+#elif defined Q_OS_WIN
 
-        if (buffer.size() == 0)
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Could not read file into memory" << filePath;
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
-            return false;
-        }
+#else
 
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const Exiv2::byte*)buffer.data(), buffer.size());
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+
+#endif
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdExif);
 
