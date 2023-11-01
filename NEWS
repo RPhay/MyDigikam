@@ -199,7 +199,7 @@ BUGFIXES:
 185 ==> 469372 - "Image cannot be loaded" â some images not rendered correctly.
 186 ==> 476374 - Cursor focus jumps when in Preview and entering a tag.
 187 ==> 430873 - H.264 video only plays audio on Raspberry Pi 4b (ARM).
-188 ==> 
+188 ==> 476419 - digiKam deleted images himself.
 189 ==> 
 190 ==> 
 191 ==> 
