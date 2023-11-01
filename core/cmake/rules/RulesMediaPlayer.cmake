@@ -104,11 +104,10 @@ if(ENABLE_MEDIAPLAYER)
             list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
             list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
 
-
             if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
 
                 set(FFMPEG_VER5_FOUND 1)
-                message(WARNING "FFMPEG API version 5 detected: support is under development and not yet finalized! "
+                message(WARNING "FFMPEG API version 5 or later detected. "
                                 "Please install lasted FFMPEG API version 4 LTS instead for a better video experience... "
                                 "More info at https://ffmpeg.org/download.html")
 
@@ -117,9 +116,9 @@ if(ENABLE_MEDIAPLAYER)
         endif()
 
         if (FFMPEG_VER5_FOUND)
-            message(STATUS "MediaPlayer will use FFMpeg 5 API                    : yes")
+            message(STATUS "MediaPlayer will use FFMpeg >= 5 API                 : yes")
         else()
-            message(STATUS "MediaPlayer will use FFMpeg 5 API                    : no")
+            message(STATUS "MediaPlayer will use FFMpeg >= 5 API                 : no")
         endif()
 
         MACRO_BOOL_TO_01(AVCODEC_FOUND         HAVE_LIBAVCODEC)
