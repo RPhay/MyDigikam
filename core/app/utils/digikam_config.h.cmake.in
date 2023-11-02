@@ -126,14 +126,18 @@
  * Disable indeep warnings from Visual Studio C++
  */
 #if defined(_MSC_VER)
+
 // To disable warnings about no suitable definition provided for explicit template instantiation request.
-#pragma warning(disable : 4661)
+#   pragma warning(disable : 4661)
 // To disable warnings about deprecated POSIX methods().
-#pragma warning(disable : 4996)
+#   pragma warning(disable : 4996)
 // To disable warnings about qualifier applied to reference type ignored.
-#pragma warning(disable : 4181)
+#   pragma warning(disable : 4181)
 // To disable warnings about 'storage-class-keyword' no longer supported as storage class.
-#pragma warning(disable : 5033)
+#   pragma warning(disable : 5033)
+// To disable warnings about size_t to uint conversion data lost.
+#   pragma warning(disable : 4267)
+
 #endif
 
 #endif // DIGIKAM_CONFIG_H
