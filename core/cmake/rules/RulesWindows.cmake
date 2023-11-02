@@ -97,6 +97,4 @@ if(MSVC)
     # To disable warnings about truncation from double to float.
     add_compile_options(/wd4305)
 
-#endif
-
 endif()
