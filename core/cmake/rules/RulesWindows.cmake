@@ -79,3 +79,22 @@ elseif(MINGW)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--stack,16777216")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--stack,16777216")
 endif()
+
+# Disable indeep warnings from Visual Studio C++
+
+if(MSVC)
+
+    # To disable warnings about no suitable definition provided for explicit template instantiation request.
+    add_compile_options(/wd4661)
+    # To disable warnings about deprecated POSIX methods().
+    add_compile_options(/wd4996)
+    # To disable warnings about qualifier applied to reference type ignored.
+    add_compile_options(/wd4181)
+    # To disable warnings about 'storage-class-keyword' no longer supported as storage class.
+    add_compile_options(/wd5033)
+    # To disable warnings about size_t to uint conversion data lost.
+    add_compile_options(/wd4267)
+
+#endif
+
+endif()
