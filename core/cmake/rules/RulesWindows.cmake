@@ -94,6 +94,8 @@ if(MSVC)
     add_compile_options(/wd5033)
     # To disable warnings about size_t to uint conversion data lost.
     add_compile_options(/wd4267)
+    # To disable warnings about truncation from double to float.
+    add_compile_options(/wd4305)
 
 #endif
 
