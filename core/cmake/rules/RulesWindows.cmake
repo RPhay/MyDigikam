@@ -96,5 +96,7 @@ if(MSVC)
     add_compile_options(/wd4267)
     # To disable warnings about truncation from double to float.
     add_compile_options(/wd4305)
+    # To disable warnings about overriding /W3 with /w.
+    add_compile_options(/wd9025)
 
 endif()
