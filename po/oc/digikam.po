@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 00:40+0000\n"
+"POT-Creation-Date: 2023-11-02 00:40+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -34891,7 +34891,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Colors"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1391
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1385
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
