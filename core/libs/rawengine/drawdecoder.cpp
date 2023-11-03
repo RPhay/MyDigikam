@@ -16,25 +16,6 @@
 
 #include "drawdecoder_p.h"
 
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-#include <QStringList>
-#include <QUrl>
-#include <QPointer>
-
-// LibRaw includes
-
-#include "libraw_version.h"
-#include "libraw_config.h"
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_config.h"
-#include "drawfiles.h"
-
 namespace Digikam
 {
 

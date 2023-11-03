@@ -20,8 +20,27 @@
 // Qt includes
 
 #include <QByteArray>
+#include <QFile>
+#include <QFileInfo>
+#include <QStringList>
+#include <QUrl>
+#include <QPointer>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_config.h"
+#include "drawinfo.h"
+#include "drawdecoder.h"
+#include "drawfiles.h"
+
+// LibRaw includes
+
+#include "libraw_version.h"
+#include "libraw_config.h"
 
 // Pragma directives to reduce warnings from LibRaw and LCMS2 headers
+
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
@@ -47,11 +66,6 @@
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
-
-// Local includes
-
-#include "drawinfo.h"
-#include "drawdecoder.h"
 
 namespace Digikam
 {
