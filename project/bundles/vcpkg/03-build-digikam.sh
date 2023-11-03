@@ -33,17 +33,6 @@ ChecksCPUCores
 RegisterRemoteServers
 
 #################################################################################################
-# Check if IcoTool CLI program is installed
-
-if ! which icotool ; then
-    echo "IcoTool is not installed"
-    echo "See https://www.nongnu.org/icoutils/ for details."
-    exit 1
-else
-    echo "Check IcoTool CLI passed..."
-fi
-
-#################################################################################################
 
 # Paths rules
 ORIG_PATH="$PATH"
@@ -59,6 +48,17 @@ fi
 cd $BUILDING_DIR/dk_cmake
 
 rm -rf $BUILDING_DIR/dk_cmake/* || true
+
+#################################################################################################
+# Check if IcoTool CLI program is installed
+
+if ! which icotool ; then
+    echo "IcoTool is not installed"
+    echo "See https://www.nongnu.org/icoutils/ for details."
+    exit 1
+else
+    echo "Check IcoTool CLI passed..."
+fi
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
