@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-02 00:40+0000\n"
-"PO-Revision-Date: 2023-09-15 21:40+0200\n"
+"PO-Revision-Date: 2023-11-01 15:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -79,7 +79,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 "X-Text-Markup: kde4\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -35739,7 +35739,7 @@ msgstr ""
 #, kde-format
 msgid "Could not move sidecar from file %1 to album %2"
 msgstr ""
-"Impossible de déplacer le fichier à partir du fichier« %1 » vers l'album "
+"Impossible de déplacer le fichier à partir du fichier « %1 » vers l'album "
 "« %2 »"
 
 #: core/libs/iojobs/iojob.cpp:194
@@ -63648,7 +63648,7 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 "Configuration des aperçus de vidéos\n"
-"Personnalisez les paramètres pour la lecture de media vidéo."
+"Personnalisez les paramètres pour la lecture de média vidéo."
 
 #: core/utilities/setup/setup.cpp:198
 #, kde-format
