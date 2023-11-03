@@ -59,26 +59,10 @@ set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS        OFF)
 
-# See bug #454941 and the OpenCV detection in RelWithDebInfo target
-
-if(MSVC)
-
-    message(STATUS "Target Build Type: ${CMAKE_BUILD_TYPE}")
-
-    if("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
-
-        message(STATUS "Switch Target Build Type to Release to prevent linking failure with OpenCV...")
-
-        set(CMAKE_BUILD_TYPE "Release"
-            CACHE STRING "Build type: Debug, Release, RelWithDebInfo or MinSizeRel" FORCE)
-
-    endif()
-
-endif()
-
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")
+message(STATUS "Target Build Type: ${CMAKE_BUILD_TYPE}")
 
 # Extra check to detect Qt core with minimal version before to continue.
 
@@ -149,7 +133,7 @@ set(CMAKE_AUTOMOC ON)
 
 if(MSVC)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
 endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
