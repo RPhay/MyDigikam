@@ -25,7 +25,7 @@ fi
 
 BUILD_TYPE=$2
 
-if [ "$BUILD_TYPE" = "" ]; then
+if [[ $BUILD_TYPE == "" ]]; then
     BUILD_TYPE=RelWithDebInfo
 fi
 
