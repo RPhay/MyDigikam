@@ -137,7 +137,7 @@ fi
 echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
-cd build
+cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
 cmake --build . --parallel
 
 if [ $? -ne 0 ]; then
@@ -157,7 +157,10 @@ echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
-cmake --install . && cd "$ORIG_WD"
+cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
+cmake --install .
+
+cd "$ORIG_WD"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot install digiKam $DK_VERSION."
