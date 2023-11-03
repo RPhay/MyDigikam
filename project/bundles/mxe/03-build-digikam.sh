@@ -1,9 +1,8 @@
 #! /bin/bash
 
 # Script to build digiKam using MXE
-# This script must be run as sudo
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -21,7 +20,7 @@ exec > >(tee ./logs/build-digikam.full.log) 2>&1
 
 #################################################################################################
 
-echo "03-build-digikam.sh : build digiKam using MEX."
+echo "03-build-digikam.sh : build digiKam using MXE."
 echo "---------------------------------------------------"
 
 #################################################################################################

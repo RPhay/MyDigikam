@@ -29,7 +29,7 @@ if [ "$BUILD_TYPE" = "" ]; then
     BUILD_TYPE=RelWithDebInfo
 fi
 
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf
+export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
 echo "PATH=$PATH"
 
 if [ ! -d "build" ]; then

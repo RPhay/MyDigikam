@@ -60,3 +60,4 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
 
     2) ./02-build-extralibs.sh
 
+    3) ./03-build-digikam.sh
