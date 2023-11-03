@@ -26,7 +26,7 @@ fi
 BUILD_TYPE=$2
 
 if [ "$BUILD_TYPE" = "" ]; then
-    BUILD_TYPE=RelWithDebInfo
+    BUILD_TYPE=Release
 fi
 
 export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
