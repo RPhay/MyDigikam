@@ -179,8 +179,8 @@ PLT_SyncMediaBrowser::OnMSStateVariablesChanged(PLT_Service*                  se
             // look for update id
             if (value.GetLength()) {
                 index = value.Find(',');
-                update_id = (index<0)?value:value.Left(index);
-                value = (index<0)?"":value.SubString(index+1);
+                update_id = ((index < 0) ? value : value.Left(index));
+                value = ((index < 0) ? NPT_String() : value.SubString(index + 1));
 
                 // clear cache for that device
                 if (m_UseCache) m_Cache.Clear(device->GetUUID(), item_id);
