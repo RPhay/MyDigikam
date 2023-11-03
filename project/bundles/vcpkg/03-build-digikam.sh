@@ -126,7 +126,7 @@ sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.vcpk
 
 chmod +x ./bootstrap.vcpkg
 
-./bootstrap.vcpkg $INSTALL_DIR/$VCPKG_TRIPLET Release
+./bootstrap.vcpkg $INSTALL_DIR/$VCPKG_TRIPLET RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
@@ -185,7 +185,7 @@ cmake $ORIG_WD/../3rdparty \
                            -DCMAKE_COLOR_MAKEFILE=ON \
                            -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
                            -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+                           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                            -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
                            -DBUILD_TESTING=OFF \
                            -DBUILD_WITH_QT6=ON \
@@ -196,9 +196,9 @@ cmake $ORIG_WD/../3rdparty \
                            -DENABLE_QTVERSION=$DK_QTVERSION \
                            -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
-cmake --build . --config Release --target ext_mosaicwall --parallel
-cmake --build . --config Release --target ext_flowview   --parallel
-cmake --build . --config Release --target ext_gmic_qt    --parallel
+cmake --build . --config RelWithDebInfo --target ext_mosaicwall --parallel
+cmake --build . --config RelWithDebInfo --target ext_flowview   --parallel
+cmake --build . --config RelWithDebInfo --target ext_gmic_qt    --parallel
 
 #################################################################################################
 
