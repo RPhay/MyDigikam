@@ -264,9 +264,15 @@ if(WIN32)
                    ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
+    target_link_libraries(showfoto_windows_stub_exe
+                          PRIVATE
+                          showfoto)
+
     if(NOT Qt6_FOUND)
 
-        target_link_libraries(showfoto_windows_stub_exe PRIVATE showfoto Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
+        target_link_libraries(showfoto_windows_stub_exe
+                              PRIVATE
+                              Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
 
     endif()
 

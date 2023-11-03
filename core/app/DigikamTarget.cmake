@@ -137,9 +137,15 @@ if(WIN32)
                    ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
+    target_link_libraries(digikam_windows_stub_exe
+                          PRIVATE
+                          digikam)
+
     if(NOT Qt6_FOUND)
 
-        target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt${QT_VERSION_MAJOR}::WinMain)
+        target_link_libraries(digikam_windows_stub_exe
+                              PRIVATE
+                              Qt${QT_VERSION_MAJOR}::WinMain)
 
     endif()
 
