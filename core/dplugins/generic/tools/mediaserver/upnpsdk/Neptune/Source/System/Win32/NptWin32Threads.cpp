@@ -545,7 +545,7 @@ NPT_Win32Thread::EntryPoint(void* argument)
 NPT_Result
 NPT_Win32Thread::Start()
 {
-    if (m_ThreadHandle > 0) {
+    if (m_ThreadHandle) {
         // failed
         NPT_LOG_WARNING("thread already started !");
         return NPT_ERROR_INVALID_STATE;
