@@ -56,8 +56,6 @@ else() # MacOS and Linux
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 
-        INSTALL_COMMAND cd <SOURCE_DIR>/dplugin && ${INSTALL_COMMAND}
-
         BUILD_IN_SOURCE 1
 
         UPDATE_COMMAND ""
