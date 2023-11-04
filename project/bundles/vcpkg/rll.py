@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/e/dk/x64-windows/tools/python3/python
 
 # Python script that takes an EXE file, automatically figures out all the DLL dependencies,
 # and copies them next to the EXE.

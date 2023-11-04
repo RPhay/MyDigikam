@@ -41,7 +41,7 @@ RegisterRemoteServers
 
 if ! which ${MXE_BUILDROOT}/usr/bin/x86_64-w64-mingw32.shared-makensis ; then
     echo "NSIS CLI tool is not installed"
-    echo "See http://nsis.sourceforge.net/ for details."
+    echo "See https://nsis.sourceforge.io for details."
     exit 1
 else
     echo "Check NSIS CLI tools passed..."
