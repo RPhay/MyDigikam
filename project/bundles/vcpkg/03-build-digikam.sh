@@ -135,7 +135,7 @@ echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
 cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
-cmake --build . --parallel
+cmake --build . --parallel --config RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot compile digiKam $DK_VERSION."
