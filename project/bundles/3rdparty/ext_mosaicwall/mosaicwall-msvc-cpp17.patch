@@ -1,0 +1,64 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ec6d70e..aa28098 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -24,6 +24,12 @@ endif()
+ 
+ include(FeatureSummary)
+ 
++if(MSVC)
++    add_compile_options(/utf-8)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zc:__cplusplus")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
++endif()
++
+ set(CMAKE_CXX_STANDARD 17)
+ 
+ if(CMAKE_VERSION VERSION_LESS "3.7.0")
+@@ -34,7 +40,6 @@ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTORCC ON)
+ set(CMAKE_AUTOUIC ON)
+ 
+-
+ if(BUILD_WITH_QT6)
+ 
+     find_package(Qt6 "6.5.0" REQUIRED
+diff --git a/imageprocessing.cpp b/imageprocessing.cpp
+index 407d943..b4609a8 100644
+--- a/imageprocessing.cpp
++++ b/imageprocessing.cpp
+@@ -1,5 +1,6 @@
+ #include "imageprocessing.h"
+ #include <algorithm>
++#include <cstdlib>
+ #include <QDebug>
+ #include <QImage>
+ #include <QImageReader>
+@@ -18,6 +19,18 @@
+ #   define kerErrorMessage ErrorCode::kerErrorMessage
+ #endif
+ 
++template<class RandomIt>
++void my_random_shuffle(RandomIt first, RandomIt last)
++{
++    typedef typename std::iterator_traits<RandomIt>::difference_type diff_t;
++
++    for (diff_t i = last - first - 1; i > 0; --i)
++    {
++        using std::swap;
++        swap(first[i], first[std::rand() % (i + 1)]);
++    }
++}
++
+ ImageProcessing::ImageProcessing(QObject *parent)
+     : QObject(parent)
+     , m_skipBackgroundProcess(false)
+@@ -189,7 +202,7 @@ void ImageProcessing::calculateMosaicPositions(const QSize gridSize, const int s
+     for (uint32_t i = startPos; i < startPos + length; ++i)
+         positions.push_back(i);
+ 
+-    std::random_shuffle(positions.begin(), positions.end());
++    my_random_shuffle(positions.begin(), positions.end());
+     for (auto pos : positions)
+     {
+         if (m_skipBackgroundProcess)
