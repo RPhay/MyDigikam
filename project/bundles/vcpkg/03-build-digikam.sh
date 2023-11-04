@@ -153,7 +153,7 @@ echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
 cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
-cmake --install .
+cmake --install . --config RelWithDebInfo
 
 cd "$ORIG_WD"
 
