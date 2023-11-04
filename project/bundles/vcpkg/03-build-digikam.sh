@@ -121,7 +121,7 @@ sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.vcpk
 
 chmod +x ./bootstrap.vcpkg
 
-./bootstrap.vcpkg $INSTALL_DIR/$VCPKG_TRIPLET RelWithDebInfo
+./bootstrap.vcpkg $INSTALL_DIR RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot configure digiKam $DK_VERSION."
