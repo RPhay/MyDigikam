@@ -32,7 +32,6 @@ Name[sl]=Plavajoče karte
 Name[sv]=Fria kort
 Name[tr]=Yüzen Kartlar
 Name[uk]=Картки, що плавають
-Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
 Comment=A dark theme with floating thumbnail/description cards. Fast navigation through the gallery.
 Comment[be]=Цёмная тэма з выплыўнымі карткамі з мініяцюрамі альбо апісаннем, праз якія можна хутка перамяшчацца па галерэі.
@@ -66,7 +65,6 @@ Comment[sl]=Temna tema s plavajočimi sličicami / opisnimi karticami. Hitro krm
 Comment[sv]=Ett mörkt tema med fria miniatyrbilder och beskrivningskort. Fast navigering genom galleriet.
 Comment[tr]=Yüzen küçük görsel/açıklama kartları ile koyu bir tema. Galeri içerisinde hızlı dolaşım.
 Comment[uk]=Темна тема з картками мініатюр або описів, що неначебто плавають панеллю. Пришвидшує орієнтування у галереї.
-Comment[x-test]=xxA dark theme with floating thumbnail/description cards. Fast navigation through the gallery.xx
 Comment[zh_CN]=一款深色主题，显示浮动的缩略图和描述卡片，能快速在相册中进行导航。
 
 [X-HTMLGallery Author]
@@ -102,7 +100,6 @@ Name[sl]=Jiří Boháč
 Name[sv]=Jiří Boháč
 Name[tr]=Jiří Boháč
 Name[uk]=Jiří Boháč
-Name[x-test]=xxJiří Boháčxx
 Name[zh_CN]=Jiří Boháč
 Url=mailto:jiri@boha.cz
 
@@ -139,7 +136,6 @@ Name[sl]=Plavajoče karte
 Name[sv]=Fria kort
 Name[tr]=Yüzen Kartlar
 Name[uk]=Картки, що плавають
-Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
 Url=preview.png
 
@@ -177,7 +173,6 @@ Name[sl]=Krmarjenje tipkovnice in potegov prstov
 Name[sv]=Tangentbords- och svepnavigering
 Name[tr]=Klavye ve kaydırma dolaşımı
 Name[uk]=Навігація за допомогою клавіатури і дотику
-Name[x-test]=xxKeyboard & swipe navigationxx
 Name[zh_CN]=键盘和滑动手势导航
 Type=list
 Default=1
@@ -227,7 +222,6 @@ Name[sl]=Prednaloženo
 Name[sv]=Läs in i förväg
 Name[tr]=Önyükleme
 Name[uk]=Попереднє завантаження
-Name[x-test]=xxPreloadxx
 Name[zh_CN]=预加载
 Type=list
 Default=1

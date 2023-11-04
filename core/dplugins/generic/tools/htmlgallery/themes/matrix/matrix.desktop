@@ -34,7 +34,6 @@ Name[sl]=Matrika
 Name[sv]=Matrix
 Name[tr]=Matrix
 Name[uk]=Матриця
-Name[x-test]=xxMatrixxx
 Name[zh_CN]=黑客帝国
 Comment=Show your photos with Matrix style
 Comment[be]=Паказ фотаздымкаў у стылі матрыцы
@@ -68,7 +67,6 @@ Comment[sl]=Prikaži vaše slike v slogu matrike
 Comment[sv]=Visa foton med Matrix-stil
 Comment[tr]=Fotoğraflarınızı Matrix tarzında gösterin
 Comment[uk]=Показує фотографії в стилі Матриці
-Comment[x-test]=xxShow your photos with Matrix stylexx
 Comment[zh_CN]=用黑客帝国的风格展示照片
 
 [X-HTMLGallery Author]
@@ -106,7 +104,6 @@ Name[sl]=Aurélien Gâteau
 Name[sv]=Aurélien Gâteau
 Name[tr]=Aurélien Gâteau
 Name[uk]=Aurélien Gâteau
-Name[x-test]=xxAurélien Gâteauxx
 Name[zh_CN]=Aurélien Gâteau
 Url=mailto:aurelien.gateau@free.fr
 
@@ -145,6 +142,5 @@ Name[sl]=Matrika
 Name[sv]=Matrix
 Name[tr]=Matrix
 Name[uk]=Матриця
-Name[x-test]=xxMatrixxx
 Name[zh_CN]=黑客帝国
 Url=preview.png

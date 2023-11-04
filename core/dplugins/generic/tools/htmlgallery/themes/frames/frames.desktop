@@ -34,7 +34,6 @@ Name[sl]=Okvirji
 Name[sv]=Ramar
 Name[tr]=Çerçeveler
 Name[uk]=Рамки
-Name[x-test]=xxFramesxx
 Name[zh_CN]=Frames 相框
 Comment=A frame theme
 Comment[be]=Тэма з рамкамі
@@ -68,7 +67,6 @@ Comment[sl]=Tema okvirjev
 Comment[sv]=Ett ramtema
 Comment[tr]=Bir çerçeve teması
 Comment[uk]=Тема рамок
-Comment[x-test]=xxA frame themexx
 Comment[zh_CN]=一个相框主题
 
 [X-HTMLGallery Author]
@@ -105,7 +103,6 @@ Name[sl]=Ruediger Bente
 Name[sv]=Ruediger Bente
 Name[tr]=Ruediger Bente
 Name[uk]=Ruediger Bente
-Name[x-test]=xxRuediger Bentexx
 Name[zh_CN]=Ruediger Bente
 Url=mailto:ruediger.bente@gmx.de
 
@@ -144,6 +141,5 @@ Name[sl]=Okvirji
 Name[sv]=Ramar
 Name[tr]=Çerçeveler
 Name[uk]=Рамки
-Name[x-test]=xxFramesxx
 Name[zh_CN]=Frames 相框
 Url=preview.png
