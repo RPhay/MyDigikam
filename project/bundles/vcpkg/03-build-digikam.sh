@@ -47,8 +47,6 @@ fi
 
 cd $BUILDING_DIR/dk_cmake
 
-rm -rf $BUILDING_DIR/dk_cmake/* || true
-
 #################################################################################################
 # Check if IcoTool CLI program is installed
 
@@ -69,8 +67,8 @@ FILES=$(find "$INSTALL_DIR/$VCPKG_TRIPLET" -name \* | grep -E '(digikam|showfoto
 
 for FILE in $FILES ; do
     if [[ -f $FILE || -d $FILE ]] ; then
-        echo -e "   ==> $INSTALL_DIR/$VCPKG_TRIPLET/$FILE will be removed from previous install"
-        rm -fr $INSTALL_DIR/$VCPKG_TRIPLET/$FILE
+        echo -e "   ==> $FILE will be removed from previous install"
+        rm -fr $FILE
     fi
 done
 
