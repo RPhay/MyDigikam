@@ -32,7 +32,6 @@ Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[tr]=Mavi Çerçeveler
 Name[uk]=Сині рамки
-Name[x-test]=xxBlue Framesxx
 Name[zh_CN]=蓝色型 Frames
 Comment=A theme variation based Frames theme
 Comment[be]=Тэма на аснове аздаблення з сінімі рамкамі
@@ -63,7 +62,6 @@ Comment[sl]=Variacija teme na osnovi okvirjev
 Comment[sv]=En temavariant baserad på temat Ramar
 Comment[tr]=Tema varyasyonu tabanlı Çerçeveler teması
 Comment[uk]=Варіант теми на основі теми «Рамки»
-Comment[x-test]=xxA theme variation based Frames themexx
 Comment[zh_CN]=基于 Frames 主题的换色主题
 
 [X-HTMLGallery Author]
@@ -101,7 +99,6 @@ Name[sl]=Elizabeth Marmorstein
 Name[sv]=Elizabeth Marmorstein
 Name[tr]=Elizabeth Marmorstein
 Name[uk]=Elizabeth Marmorstein
-Name[x-test]=xxElizabeth Marmorsteinxx
 Name[zh_CN]=Elizabeth Marmorstein
 Url=mailto:purplegamba@cox.net
 
@@ -138,6 +135,5 @@ Name[sl]=Modri okvirji
 Name[sv]=Blåa ramar
 Name[tr]=Mavi Çerçeveler
 Name[uk]=Сині рамки
-Name[x-test]=xxBlue Framesxx
 Name[zh_CN]=蓝色型 Frames
 Url=preview.png
