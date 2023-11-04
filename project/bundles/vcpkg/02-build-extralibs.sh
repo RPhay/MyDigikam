@@ -111,6 +111,10 @@ cmake --build . --parallel --config RelWithDebInfo --target ext_marble
 # Calendar support
 cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 
+# Marble install shared lib at wrong place.
+mv $INSTALL_DIR/$VCPKG_TRIPLET/libmarble* $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
+mv $INSTALL_DIR/$VCPKG_TRIPLET/libastro*  $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
+
 #################################################################################################
 
 if [[ $DK_QTVERSION == 6 ]] ; then
