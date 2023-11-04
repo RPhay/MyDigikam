@@ -51,6 +51,9 @@ else() # MacOS and Linux
 
         INSTALL_DIR ${PREFIX_ext_mosaicwall}
 
+        PATCH_COMMAND git reset --hard &&
+                      ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/mosaicwall-msvc-options.patch
+
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_mosaicwall} -DCMAKE_BUILD_TYPE=RelWithDebInfo ${MosaicWall_Conf}
 
         INSTALL_COMMAND cd <SOURCE_DIR>/dplugin && make install/fast
