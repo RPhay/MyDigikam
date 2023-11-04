@@ -39,7 +39,7 @@ RegisterRemoteServers
 #################################################################################################
 # Check if NSIS CLI tools is installed
 
-if ! which ${MXE_BUILDROOT}/usr/bin/x86_64-w64-mingw32.shared-makensis ; then
+if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
     echo "See https://nsis.sourceforge.io for details."
     exit 1
@@ -89,7 +89,7 @@ cmake . \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
       -Wno-dev
 
-cmake --build . --paralell
+cmake --build . --parallel
 
 mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons/breeze-icons.rcc           $BUILDDIR/icon-rcc/
 mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons-dark/breeze-icons-dark.rcc $BUILDDIR/icon-rcc/
@@ -301,25 +301,14 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 
 mkdir -p $ORIG_WD/bundle
 
-if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win32$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win32$DEBUG_SUF* || true
-
-else
-
-    TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
-    PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
-    CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
-
-fi
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
+rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-${MXE_BUILDROOT}/usr/bin/x86_64-w64-mingw32.shared-makensis -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
