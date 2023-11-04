@@ -13,6 +13,7 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
+VCPKG_DIR="/c/vcpkg"
 VCPKG_TRIPLET="x64-windows"
 
 INSTALL_DIR=$1
@@ -29,6 +30,12 @@ if [[ $BUILD_TYPE == "" ]]; then
     BUILD_TYPE=RelWithDebInfo
 fi
 
+OPTIONS=$3
+
+echo "Installing to $INSTALL_DIR for target $VCPKG_TRIPLET with build mode $BUILD_TYPE and configure options $OPTIONS"
+
+# Paths rules
+ORIG_PATH="$PATH"
 export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
 echo "PATH=$PATH"
 
@@ -38,26 +45,32 @@ fi
 
 cd build
 
-cmake .. -DCMAKE_TOOLCHAIN_FILE=/c/vcpkg/scripts/buildsystems/vcpkg.cmake \
-                           -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
-                           -DCMAKE_COLOR_MAKEFILE=ON \
-                           -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-                           -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-                           -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DBUILD_TESTING=OFF \
-                           -DBUILD_WITH_QT6=ON \
-                           -DDIGIKAMSC_COMPILE_PO=OFF \
-                           -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
-                           -DENABLE_KFILEMETADATASUPPORT=OFF \
-                           -DENABLE_AKONADICONTACTSUPPORT=OFF \
-                           -DENABLE_MYSQLSUPPORT=ON \
-                           -DENABLE_INTERNALMYSQL=ON \
-                           -DENABLE_MEDIAPLAYER=OFF \
-                           -DENABLE_DBUS=OFF \
-                           -DENABLE_APPSTYLES=ON \
-                           -DENABLE_QWEBENGINE=ON \
-                           -DENABLE_QTMULTIMEDIA=ON \
-                           ${OPTIONS} \
-                           -Wno-dev
+cmake .. \
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
+      -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
+      -DCMAKE_COLOR_MAKEFILE=ON \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+      -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DBUILD_TESTING=OFF \
+      -DBUILD_WITH_QT6=ON \
+      -DDIGIKAMSC_COMPILE_PO=OFF \
+      -DDIGIKAMSC_COMPILE_DIGIKAM=ON \
+      -DENABLE_KFILEMETADATASUPPORT=OFF \
+      -DENABLE_AKONADICONTACTSUPPORT=OFF \
+      -DENABLE_MYSQLSUPPORT=ON \
+      -DENABLE_INTERNALMYSQL=ON \
+      -DENABLE_MEDIAPLAYER=OFF \
+      -DENABLE_DBUS=OFF \
+      -DENABLE_APPSTYLES=ON \
+      -DENABLE_QWEBENGINE=ON \
+      -DENABLE_QTMULTIMEDIA=ON \
+      ${OPTIONS} \
+      -Wno-dev
 
+CMAKE_VAL_RET=$?
+
+export PATH=$ORIG_PATH
+
+exit $CMAKE_VAL_RET
