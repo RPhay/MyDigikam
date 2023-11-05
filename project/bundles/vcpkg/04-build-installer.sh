@@ -147,9 +147,7 @@ EXE_FILES="\
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/digikam.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/showfoto.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca5.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/qt5/bin/QtWebNetworkProcess.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/qt5/bin/QtWebProcess.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/qt5/bin/QtWebStorageProcess.exe \
+$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
 for app in $EXE_FILES ; do
 
@@ -160,13 +158,9 @@ done
 
 DLL_FILES="\
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/libs/plugins||'`        \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/qt5/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/qt5/plugins||'`         \
+`find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/qt5/plugins||'`         \
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins/||'`            \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2      -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2||'`      \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2_port -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2_port||'` \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/exchndl.dll  \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/mgwhelp.dll  \
 "
 
 for app in $DLL_FILES ; do
