@@ -208,7 +208,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
     echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
     ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
 
-else
+#else
 
 #    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
 #    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
