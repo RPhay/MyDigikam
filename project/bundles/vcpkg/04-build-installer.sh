@@ -89,9 +89,9 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/data/*                                        
 
 echo -e "\n---------- Generics data"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/digikam                              $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/showfoto                             $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/solid                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Qt config"
@@ -102,7 +102,7 @@ cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc        
 cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/qt5/translations/qt*                          $BUNDLEDIR/translations         2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/qt*                              $BUNDLEDIR/translations         2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
