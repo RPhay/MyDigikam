@@ -64,37 +64,6 @@ ORIG_WD="`pwd`"
 DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 
 #################################################################################################
-# Build icons-set resource
-
-echo -e "\n---------- Build icons-set resource\n"
-
-cd $ORIG_WD/icon-rcc
-
-rm -f CMakeCache.txt > /dev/null
-rm -f Makefile > /dev/null
-rm -f cmake_install.cmake > /dev/null
-rm -fr CMakeFiles > /dev/null
-rm -fr icon-rcc-prefix > /dev/null
-rm -f *.rcc > /dev/null
-
-cmake . \
-      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
-      -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
-      -DCMAKE_COLOR_MAKEFILE=ON \
-      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-      -DKA_VERSION=$DK_KA_VERSION \
-      -DKP_VERSION=$DK_KP_VERSION \
-      -DKDE_VERSION=$DK_KDE_VERSION \
-      -DENABLE_QTVERSION=$DK_QTVERSION \
-      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
-      -Wno-dev
-
-cmake --build . --parallel
-
-mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons/breeze-icons.rcc           $BUILDDIR/icon-rcc/
-mv $BUILDDIR/icon-rcc/icon-rcc-prefix/src/icon-rcc-build/icons-dark/breeze-icons-dark.rcc $BUILDDIR/icon-rcc/
-
-#################################################################################################
 # Copy files
 
 echo -e "\n---------- Copy files in bundle directory\n"
@@ -125,18 +94,12 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/showfoto                             
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/solid                                $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
 
-# Copy digiKam hi-colors PNG icons-set to the bundle
-
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons                                $BUNDLEDIR/data                 2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/breeze*                                                                    2>/dev/null
-rm -fr $BUNDLEDIR/data/icons/*.qrc                                                                      2>/dev/null
-
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                            $BUNDLEDIR/                     2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                                    $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $BUILDDIR/icon-rcc/breeze-icons.rcc                               $BUNDLEDIR/breeze.rcc           2>/dev/null
-cp    $BUILDDIR/icon-rcc/breeze-icons-dark.rcc                          $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
+cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc           2>/dev/null
+cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/qt5/translations/qt*                          $BUNDLEDIR/translations         2>/dev/null
@@ -148,8 +111,8 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/xdg                                  
 
 # See bug 471058
 echo -e "\n---------- Freedesktop"
-mkdir -p $BUNDLEDIR/share/mime/packages/                                                                2>/dev/null
-cp -r /usr/share/mime/packages/freedesktop.org.xml                      $BUNDLEDIR/share/mime/packages  2>/dev/null
+mkdir -p $BUNDLEDIR/share/mime/packages/                                                                        2>/dev/null
+cp -r /usr/share/mime/packages/freedesktop.org.xml                              $BUNDLEDIR/share/mime/packages  2>/dev/null
 
 echo -e "\n---------- Copy Git Revisions Manifest"
 
