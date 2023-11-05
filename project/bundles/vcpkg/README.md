@@ -43,6 +43,9 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
 
+    - Python 3.10 or later                              https://www.python.org/downloads/
+        + Add python path to current user
+
 * Build:
 --------
 
