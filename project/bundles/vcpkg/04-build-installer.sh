@@ -127,33 +127,17 @@ done
 
 # Plugins Shared libraries -------------------------------------------------------------------
 
-echo -e "\n---------- Qt plugins"
+echo -e "\n---------- Qt6 plugins"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- Marble plugins"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
 
-echo -e "\n---------- digiKam and KF5 plugins"
+echo -e "\n---------- digiKam and KF6 plugins"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
-
-echo -e "\n---------- DrMinGw run-time"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/exchndl.dll                               $BUNDLEDIR/                     2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/mgwhelp.dll                               $BUNDLEDIR/                     2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/dbgcore.dll                               $BUNDLEDIR/                     2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/symsrv.dll                                $BUNDLEDIR/                     2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/symsrv.yes                                $BUNDLEDIR/                     2>/dev/null
-
-# Do not include this file from DrMinGW as it require extra devel dll from Microsoft at run-time.
-#cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/dbghelp.dll                               $BUNDLEDIR/                    2>/dev/null
-
-echo -e "\n---------- libgphoto2 drivers"
-mkdir $BUNDLEDIR/libgphoto2                                                                             2>/dev/null
-mkdir $BUNDLEDIR/libgphoto2_port                                                                        2>/dev/null
-cp $INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2/*/*.dll                           $BUNDLEDIR/libgphoto2           2>/dev/null
-cp $INSTALL_DIR/$VCPKG_TRIPLET/lib/libgphoto2_port/*/*.dll                      $BUNDLEDIR/libgphoto2_port      2>/dev/null
 
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
