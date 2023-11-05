@@ -102,7 +102,7 @@ cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc        
 cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/qt*                              $BUNDLEDIR/translations         2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/                                 $BUNDLEDIR/translations         2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
