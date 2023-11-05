@@ -221,7 +221,7 @@ fi
 cd $DOWNLOAD_DIR
 
 #if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    curl https://files.kde.org/digikam/exiftool/exiftool.zip -o exiftool.zip
+    curl -o exiftool.zip https://files.kde.org/digikam/exiftool/exiftool.zip
 #fi
 
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
