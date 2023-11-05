@@ -49,9 +49,10 @@ fi
 
 # Check if DumpBin CLI tool is installed
 
-DUMP_BIN=$(find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin" -type f)
+DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
+echo "$DUMP_BIN"
 
-if ! which "$DUMP_BIN" ; then
+if [ ! -f "$DUMP_BIN" ] ; then
     echo "DumpBin CLI tool is not installed"
     echo "Install VSCommunity C++ Profiling tools component."
     exit 1
@@ -158,13 +159,13 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 EXE_FILES="\
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/digikam.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/showfoto.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca5.exe \
+$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca6.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
-    $ORIG_WD/rll.py --copy --installprefix $INSTALL_DIR/$VCPKG_TRIPLET --odir $BUNDLEDIR --efile $app
+	CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
@@ -177,7 +178,7 @@ $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
 
 for app in $DLL_FILES ; do
 
-    $ORIG_WD/rll.py --copy --installprefix $INSTALL_DIR/$VCPKG_TRIPLET --odir $BUNDLEDIR --efile $app
+	CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
