@@ -63,7 +63,7 @@ fi
 #################################################################################################
 # Configurations
 
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/bin
+export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
 echo "PATH=$PATH"
 
 # Directory where this script is located (default - current directory)
@@ -165,7 +165,7 @@ $INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
-	CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
@@ -178,7 +178,7 @@ $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
 
 for app in $DLL_FILES ; do
 
-	CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
@@ -221,7 +221,7 @@ fi
 cd $DOWNLOAD_DIR
 
 #if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    wget https://files.kde.org/digikam/exiftool/exiftool.zip -O exiftool.zip
+    curl https://files.kde.org/digikam/exiftool/exiftool.zip -o exiftool.zip
 #fi
 
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
