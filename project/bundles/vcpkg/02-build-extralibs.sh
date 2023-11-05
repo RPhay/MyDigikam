@@ -48,17 +48,20 @@ cd $BUILDING_DIR/dk_cmake
 rm -rf $BUILDING_DIR/dk_cmake/* || true
 
 cmake $ORIG_WD/../3rdparty \
-                           -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
-                           -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
-                           -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-                           -DCMAKE_COLOR_MAKEFILE=ON \
-                           -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
-                           -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
-                           -DKA_VERSION=$DK_KA_VERSION \
-                           -DKP_VERSION=$DK_KP_VERSION \
-                           -DKDE_VERSION=$DK_KDE_VERSION
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
+      -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_COLOR_MAKEFILE=ON \
+      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKP_VERSION=$DK_KP_VERSION \
+      -DKDE_VERSION=$DK_KDE_VERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+      -Wno-dev
 
 # NOTE: The order to compile each component here is very important.
 
