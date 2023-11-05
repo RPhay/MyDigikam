@@ -81,7 +81,7 @@ If you have questions, comments, and suggestions, write an email to:
 
 digikam-users@kde.org
 
-If you want contribute to digiKam developments write an email to:
+If you want to contribute to digiKam developments write an email to:
 
 digikam-devel@kde.org
 
