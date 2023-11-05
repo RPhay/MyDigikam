@@ -68,9 +68,10 @@ echo "Scan dependencies for $2"
 FILES=$("$1" -DEPENDENTS "$2" | grep ".dll" | awk '{print $1}')
 #echo "deps: $FILES"
 for FILE in $FILES ; do
-    if [ -f "$4/$FILE" ] ; then
+    if [[ -f "$4/$FILE"  && ! -f  "$3/$FILE" ]] ; then
         cp -u "$4/$FILE" "$3" 2> /dev/null || true
 #        echo "   ==> $4/$FILE"
+		CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
     fi
 done
 
