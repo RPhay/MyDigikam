@@ -37,7 +37,7 @@ ChecksCPUCores
 RegisterRemoteServers
 
 #################################################################################################
-# Check if NSIS CLI tools is installed
+# Check if NSIS CLI tool is installed
 
 if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
@@ -45,6 +45,18 @@ if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     exit 1
 else
     echo "Check NSIS CLI tools passed..."
+fi
+
+# Check if DumpBin CLI tool is installed
+
+DUMP_BIN=$(find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin" -type f)
+
+if ! which "$DUMP_BIN" ; then
+    echo "DumpBin CLI tool is not installed"
+    echo "Install VSCommunity C++ Profiling tools component."
+    exit 1
+else
+    echo "Check DumpBin CLI tools passed..."
 fi
 
 #################################################################################################
@@ -158,7 +170,7 @@ done
 
 DLL_FILES="\
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/libs/plugins||'`        \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/qt5/plugins||'`         \
+`find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins||'`         \
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins/||'`            \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
 "
