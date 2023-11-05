@@ -221,7 +221,7 @@ fi
 cd $DOWNLOAD_DIR
 
 #if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    curl -o exiftool.zip https://files.kde.org/digikam/exiftool/exiftool.zip
+    curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
 #fi
 
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
@@ -262,7 +262,7 @@ rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE

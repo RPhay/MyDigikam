@@ -14,10 +14,9 @@
  ; Script arguments:
  ; VERSION    : the digiKam version as string.
  ; BUNDLEPATH : the path where whole digiKam bundle is installed.
- ; TARGETARCH : the target Windows architecture (32 or 64 bits).
  ; OUTPUT     : the output installer file name as string.
  ;
- ; Example: makensis -DVERSION=5.0.0 -DTARGETARCH=32 -DBUNDLEPATH=../bundle digikam.nsi
+ ; Example: makensis -DVERSION=8.0.0 -DBUNDLEPATH=../bundle digikam.nsi
  ;
  ; NSIS script reference can be found at this url:
  ; https://nsis.sourceforge.net/Docs/Chapter4.html
@@ -205,7 +204,7 @@
 
         SetOutPath "$INSTDIR"
 
-        File "../data/releasenotes.html"
+        File "..\data\releasenotes.html"
         File "digikam-uninstaller.ico"
 
         ;Copy only required directories
@@ -219,7 +218,6 @@
         File "${BUNDLEPATH}\*.conf"
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
-        File "${BUNDLEPATH}\*.yes"
         File "${BUNDLEPATH}\*.txt"
 
         SetOutPath "$INSTDIR\etc"
@@ -236,12 +234,6 @@
 
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
-
-        SetOutPath "$INSTDIR\libgphoto2"
-        File /r "${BUNDLEPATH}\libgphoto2\*.*"
-
-        SetOutPath "$INSTDIR\libgphoto2_port"
-        File /r "${BUNDLEPATH}\libgphoto2_port\*.*"
 
         ;Store installation folder
 
@@ -309,7 +301,6 @@
         Delete "$INSTDIR\*.conf"
         Delete "$INSTDIR\*.rcc"
         Delete "$INSTDIR\*.dll"
-        Delete "$INSTDIR\*.yes"
         Delete "$INSTDIR\*.txt"
 
         Delete "$INSTDIR\Uninstall.exe"
@@ -322,8 +313,6 @@
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\translations"
-        RMDir /r "$INSTDIR\libgphoto2"
-        RMDir /r "$INSTDIR\libgphoto2_port"
 
         ;Do not do a recursive removal of $INSTDIR because user may have accidentally installed into system critical directory!
 

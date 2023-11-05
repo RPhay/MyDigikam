@@ -20,23 +20,18 @@ Function .onInit
 
     ;Do not permit to install 64 bits to 32 bits.
 
-    ${If} ${TARGETARCH} == "64"
-    ${AndIfNot} ${RunningX64}
+	${IfNot} ${RunningX64}
 
-        MessageBox MB_OK|MB_ICONSTOP|MB_TOPMOST|MB_SETFOREGROUND "This is the 64 bits installer, and it cannot be installed to a 32 bits system."
-        SetErrorLevel 2
-        Quit
+		MessageBox MB_OK|MB_ICONSTOP|MB_TOPMOST|MB_SETFOREGROUND "This is the 64 bits installer, and it cannot be installed to a 32 bits system."
+		SetErrorLevel 2
+		Quit
 
     ${EndIf}
 
     ;Default installation folder depending of target architecture.
 
     ${If} $InstDir == "" ; Don't override setup.exe /D=c:\custom\dir
-        ${If} ${TARGETARCH} == "64"
-                StrCpy $InstDir "$PROGRAMFILES64\${MY_PRODUCT}"
-        ${Else}
-                StrCpy $InstDir "$PROGRAMFILES32\${MY_PRODUCT}"
-        ${EndIf}
+		StrCpy $InstDir "$PROGRAMFILES64\${MY_PRODUCT}"
     ${EndIf}
 
     Push $0
@@ -118,7 +113,7 @@ FunctionEnd
 ;-------------------------------------------
 
 Function .onInstSuccess
-    ExecWait '"$instdir\kbuildsycoca5.exe" "--noincremental"'
+    ExecWait '"$instdir\kbuildsycoca6.exe" "--noincremental"'
 FunctionEnd
 
 !endif ;EVENTS_FUNCTIONS_INCLUDED
