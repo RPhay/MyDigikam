@@ -186,9 +186,9 @@ def main():
 
     print("Scan dependencies for " + args.efile)
 
-    # The mingw paths matches in MXE build directory
+    # The paths matches in build directory
     default_path_prefixes = [
-        args.installprefix + "/qt5/bin/",
+        args.installprefix + "/Qt6/bin/",
         args.installprefix + "/bin/",
     ]
 

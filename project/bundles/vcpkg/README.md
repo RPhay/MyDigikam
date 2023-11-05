@@ -34,6 +34,7 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
             + C++ ATL for latest v143 build tools
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
+            + C++ Profiling tools.
 
     - NSIS 3.x                                          https://nsis-dev.github.io/
 
