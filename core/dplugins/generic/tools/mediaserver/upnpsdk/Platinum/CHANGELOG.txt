@@ -340,7 +340,7 @@ changed: handling of http requests when device host server is being used for ser
 added: more log to MicroMediaController
 added: XmlHelper Serialize function
 fixed: WMP wouldn't return resource url if the browse filter didn't contain 'res'
-changed: be more relaxed about invalid  or missing resource uri and invalid protocolinfo, maybe the filter didn't request it afterall
+changed: be more relaxed about invalid  or missing resource uri and invalid protocolinfo, maybe the filter didn't request it after all
 
 Platinum 0.5.3
 --------------
@@ -357,7 +357,7 @@ changed: putting back GetVolumeDBRange & GetVolumeDB since it seems to be requir
 fixed: GetTransportAction not returning current protocol info
 changed: remove argument from argument list if value was not allowed
 changed: now returns NPT_ERROR_INVALID_PARAMETERS when validating state variable value if failed
-changed: dont' fail if action contains unknown argument names, simply return NPT_ERROR_NO_SUCH_NAME
+changed: don't fail if action contains unknown argument names, simply return NPT_ERROR_NO_SUCH_NAME
 changed: now uses individual scpd cpp files for each scpd
 updated: now uses a batch file and header tool to convert scpd xml file to cpp for inclusion
 added: PlayTo functionality by supporting advertising and responding on localhost
@@ -515,7 +515,7 @@ fixed: mp3 invalid protocol
 
 Platinum 0.4.2
 --------------
-changed: don't set an entity on request if no body is expected
+changed: don't set an entity on request if nobody is expected
 added: support for PS3 (basic dlna support)
 changed: MediaCrawler now derives from MediaConnect so that it's seen by XBox 360
 fixed: now passes the proper reachable interface when subscribing to events by keeping track of which interface was used when retrieving a device description
@@ -713,7 +713,7 @@ Fixes/Changes:
 - Stopping a ControlPoint will also stop the SSDP search tasks.
 - HttpServer can limit the number of connections (threads) it can handle at once.
 - Didl processing rewrote. Didl objects are more C++ oriented now.
-- Some progress in regards to DLNA validation. HTTP Server is 1.0 only (connections are closed immediately once all data has been sent. No more keep-alive support).
+- Some progress in regard to DLNA validation. HTTP Server is 1.0 only (connections are closed immediately once all data has been sent. No more keep-alive support).
 - Started working on Ozone (Sqlite3 abstraction layer)
 
 Platinum 0.3.1
