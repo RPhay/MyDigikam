@@ -112,7 +112,7 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/xdg                                  
 # See bug 471058
 echo -e "\n---------- Freedesktop"
 mkdir -p $BUNDLEDIR/share/mime/packages/                                                                        2>/dev/null
-cp -r /usr/share/mime/packages/freedesktop.org.xml                              $BUNDLEDIR/share/mime/packages  2>/dev/null
+cp -r  $ORIG_WD/data/freedesktop.org.xml                                        $BUNDLEDIR/share/mime/packages  2>/dev/null
 
 echo -e "\n---------- Copy Git Revisions Manifest"
 
@@ -127,8 +127,8 @@ done
 
 # Plugins Shared libraries -------------------------------------------------------------------
 
-echo -e "\n---------- Qt5 plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/qt5/plugins                                   $BUNDLEDIR/                     2>/dev/null
+echo -e "\n---------- Qt plugins"
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- Marble plugins"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
