@@ -250,14 +250,6 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "LensFun support") <<                SUPPORTED_NO);
 #endif
 
-#ifdef HAVE_LIBLQR_1
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "LibLqr support") <<                 SUPPORTED_YES);
-#else
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "LibLqr support") <<                 SUPPORTED_NO);
-#endif
-
 #ifdef HAVE_IMAGE_MAGICK
     new QTreeWidgetItem(m_libraries, QStringList() <<
                         i18nc(CONTEXT, "ImageMagick codecs") <<             QLatin1String(MagickLibVersionText));
