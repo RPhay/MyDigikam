@@ -202,9 +202,9 @@ BUGFIXES:
 188 ==> 476419 - digiKam deleted images himself.
 189 ==> 476431 - Crash report showfoto.
 190 ==> 476556 - Images vignettes are very low quality with PNG files.
-191 ==> 
-192 ==> 
-193 ==> 
+191 ==> 476578 - digiKam crashes when opening 'Tools' menu.
+192 ==> 476604 - Not possible to configure keyboard shortcut for "open with file manager".
+193 ==> 471503 - Can't find Liquid Rescale tool.
 194 ==> 
 195 ==> 
 196 ==> 

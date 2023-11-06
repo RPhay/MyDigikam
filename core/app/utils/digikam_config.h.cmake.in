@@ -18,9 +18,6 @@
 /* Define to 1 if you have KDEPIM shared library installed */
 #cmakedefine HAVE_AKONADICONTACT 1
 
-/* Define to 1 if an external liblqr-1 shared library have been found */
-#cmakedefine HAVE_LIBLQR_1 1
-
 /* Define to 1 if an external lensfun shared library have been found */
 #cmakedefine HAVE_LENSFUN 1
 

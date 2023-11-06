@@ -126,6 +126,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install hunspell
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install lensfun
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install graphicsmagick
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openal-soft
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install curl
 
 echo -e "\n"
 

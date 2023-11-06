@@ -2,7 +2,9 @@
 
 # Script to bundle data using previously-built KDE and digiKam installation
 # and create a Windows installer file with NSIS application
-# Dependency : NSIS makensis program for Linux.
+# Dependencies:
+#   - NSIS makensis program for Windows.
+#   - DumpBin from VSCommunity C++ profiling tools.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -49,9 +51,10 @@ fi
 
 # Check if DumpBin CLI tool is installed
 
-DUMP_BIN=$(find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin" -type f)
+DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
+echo "$DUMP_BIN"
 
-if ! which "$DUMP_BIN" ; then
+if [ ! -f "$DUMP_BIN" ] ; then
     echo "DumpBin CLI tool is not installed"
     echo "Install VSCommunity C++ Profiling tools component."
     exit 1
@@ -62,7 +65,7 @@ fi
 #################################################################################################
 # Configurations
 
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/bin
+export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/bin
 echo "PATH=$PATH"
 
 # Directory where this script is located (default - current directory)
@@ -104,7 +107,10 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/lensfun                                 
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/kxmlgui5                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/knotifications6                         $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/resources                                     $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                                    $BUNDLEDIR/                     2>/dev/null
@@ -114,7 +120,7 @@ cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc        
 cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/                                 $BUNDLEDIR/translations         2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/Qt6                              $BUNDLEDIR/translations         2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
@@ -158,26 +164,26 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 EXE_FILES="\
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/digikam.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/showfoto.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca5.exe \
+$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca6.exe \
 $INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
-    $ORIG_WD/rll.py --copy --installprefix $INSTALL_DIR/$VCPKG_TRIPLET --odir $BUNDLEDIR --efile $app
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
 DLL_FILES="\
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/libs/plugins||'`        \
 `find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins||'`         \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins/||'`            \
+`find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins||'`            \
 $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
 "
 
 for app in $DLL_FILES ; do
 
-    $ORIG_WD/rll.py --copy --installprefix $INSTALL_DIR/$VCPKG_TRIPLET --odir $BUNDLEDIR --efile $app
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
 
@@ -207,10 +213,10 @@ if [[ $DK_DEBUG = 1 ]] ; then
     echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
     ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
 
-else
+#else
 
-    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+#    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
+#    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
 
 fi
 
@@ -220,7 +226,7 @@ fi
 cd $DOWNLOAD_DIR
 
 #if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    wget https://files.kde.org/digikam/exiftool/exiftool.zip -O exiftool.zip
+    curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
 #fi
 
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
@@ -247,6 +253,8 @@ else
 
 fi
 
+#FIXME
+exit
 #################################################################################################
 # Build NSIS installer and Portable archive.
 
@@ -261,7 +269,7 @@ rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE

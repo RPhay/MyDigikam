@@ -3,7 +3,7 @@
 Usage: ./configure [OPTION]... [VAR=VALUE]...
 
 To assign environment variables (e.g., CC, CFLAGS...), specify them as
-VAR=VALUE.  See below for descriptions of some of the useful variables.
+VAR=VALUE.  See below for descriptions of some useful variables.
 
 Defaults for the options are specified in brackets.
 

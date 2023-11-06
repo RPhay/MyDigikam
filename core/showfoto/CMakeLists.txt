@@ -272,7 +272,7 @@ if(WIN32)
 
         target_link_libraries(showfoto_windows_stub_exe
                               PRIVATE
-                              Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
+                              Qt${QT_VERSION_MAJOR}/bin::WinMain)
 
     endif()
 

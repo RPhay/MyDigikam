@@ -55,6 +55,29 @@ echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($
 }
 
 ########################################################################
+# Copy dependencies with dumpbin analysis
+# arg1 : dumpbin program full path.
+# arg2 : original file path to parse.
+# arg3 : target path to copy dependencies.
+# arg4 : dependencies path (only copy shared libs from this path).
+CopyReccursiveDependencies()
+{
+
+echo "Scan dependencies for $2"
+
+FILES=$("$1" -DEPENDENTS "$2" | grep ".dll" | awk '{print $1}')
+#echo "deps: $FILES"
+for FILE in $FILES ; do
+    if [[ -f "$4/$FILE"  && ! -f  "$3/$FILE" ]] ; then
+        cp -u "$4/$FILE" "$3" 2> /dev/null || true
+#        echo "   ==> $4/$FILE"
+		CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
+    fi
+done
+
+}
+
+########################################################################
 # Automatically register the remote servers has know hosts
 RegisterRemoteServers()
 {

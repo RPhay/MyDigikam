@@ -135,14 +135,7 @@ endif()
 # More Optional Dependencies and Rules
 
 find_package(Doxygen)
-
-if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-
-    # Lqr-1 packaging and detection under FreeBSD is problematic since a very long time and break the Gitlab CI
-
-    find_package(LQR-1)
-
-endif()
+find_package(GLIB2)
 
 if(BUILD_WITH_CCACHE)
 
@@ -206,7 +199,6 @@ MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}KIO_FOUND                 HAVE_KIO)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}IconThemes_FOUND          HAVE_KICONTHEMES)
 MACRO_BOOL_TO_01(KF${QT_VERSION_MAJOR}Sonnet_FOUND              HAVE_SONNET)
 MACRO_BOOL_TO_01(LensFun_FOUND                HAVE_LENSFUN)
-MACRO_BOOL_TO_01(LQR-1_FOUND                  HAVE_LIBLQR_1)
 MACRO_BOOL_TO_01(Gphoto2_FOUND                HAVE_GPHOTO2)
 MACRO_BOOL_TO_01(Jasper_FOUND                 HAVE_JASPER)
 MACRO_BOOL_TO_01(Eigen3_FOUND                 HAVE_EIGEN3)
@@ -282,7 +274,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://invent.kde.org/framew
 PRINT_OPTIONAL_LIBRARY_STATUS("libsonnet"         "https://invent.kde.org/frameworks/sonnet"                        "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without spell-checking support."                    KF${QT_VERSION_MAJOR}Sonnet_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://invent.kde.org/graphics/libksane"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF${QT_VERSION_MAJOR}Sane_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://github.com/lensfun/lensfun"                              "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://github.com/carlobaldassi/liblqr"                         "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       LQR-1_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libglib2"          "https://developer.gnome.org/glib/"                               "(version >= 2.0.0)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       GLIB2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://invent.kde.org/education/marble"                         "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://invent.kde.org/frameworks/threadweaver"                  "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF${QT_VERSION_MAJOR}ThreadWeaver_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://gitlab.gnome.org/GNOME/libxml2/"                         "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
