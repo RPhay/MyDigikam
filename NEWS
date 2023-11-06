@@ -205,7 +205,7 @@ BUGFIXES:
 191 ==> 476578 - digiKam crashes when opening 'Tools' menu.
 192 ==> 476604 - Not possible to configure keyboard shortcut for "open with file manager".
 193 ==> 471503 - Can't find Liquid Rescale tool.
-194 ==> 
+194 ==> 476573 - Preview - Picture is shifted upward.
 195 ==> 
 196 ==> 
 197 ==> 
