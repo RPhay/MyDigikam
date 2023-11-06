@@ -46,7 +46,7 @@ if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
 fi
 
 cd $BUILDING_DIR/dk_cmake
-if [ ] ; then
+
 #################################################################################################
 # Check if IcoTool CLI program is installed
 
@@ -163,7 +163,7 @@ if [ $? -ne 0 ]; then
     echo "---------- Aborting..."
     exit;
 fi
-fi
+
 #################################################################################################
 # Install Extra Plugins
 
