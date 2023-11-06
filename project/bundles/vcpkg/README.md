@@ -51,6 +51,8 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
 
     1) ./01-build-vcpkg.sh
 
+    To build and install the base of VCPKG tools-chain and all low level dependencies.
+
     NOTE: due to long path problems while compiling under Windows and MSVC, VCPKG working directories must adjusted as shortest as possible:
         VCPKG_DIR=C:/vcpkg/
         INSTALL_DIR=E:/dk/
@@ -61,4 +63,12 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
 
     2) ./02-build-extralibs.sh
 
+    To Build and install the KDE framework components.
+
     3) ./03-build-digikam.sh
+
+    To build and install digiKam and 3rd party plugins.
+
+    4) ./04-build-installer.sh
+
+    To build the Windows installer.
