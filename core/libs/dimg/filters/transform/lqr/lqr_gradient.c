@@ -43,8 +43,9 @@ lqr_grad_sumabs(gdouble x, gdouble y)
 }
 
 gfloat
-lqr_grad_xabs(gdouble x, gdouble /*y*/)
+lqr_grad_xabs(gdouble x, gdouble y)
 {
+    (void)y;
     return (gfloat) fabs(x);
 }
 

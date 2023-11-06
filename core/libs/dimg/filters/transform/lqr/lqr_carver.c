@@ -1393,8 +1393,9 @@ lqr_carver_propagate_vsmap(LqrCarver *r)
 }
 
 LqrRetVal
-lqr_carver_propagate_vsmap_attached(LqrCarver *r, LqrDataTok /*data*/)
+lqr_carver_propagate_vsmap_attached(LqrCarver *r, LqrDataTok data)
 {
+    (void)data;
     /* LqrDataTok data_tok;
     data_tok.data = NULL; */
     r->vs = r->root->vs;
@@ -1561,8 +1562,9 @@ lqr_carver_flatten(LqrCarver *r)
 }
 
 LqrRetVal
-lqr_carver_flatten_attached(LqrCarver *r, LqrDataTok /*data*/)
+lqr_carver_flatten_attached(LqrCarver *r, LqrDataTok data)
 {
+    (void)data;
     return lqr_carver_flatten(r);
 }
 
@@ -1736,8 +1738,9 @@ lqr_carver_transpose(LqrCarver *r)
 }
 
 LqrRetVal
-lqr_carver_transpose_attached(LqrCarver *r, LqrDataTok /*data*/)
+lqr_carver_transpose_attached(LqrCarver *r, LqrDataTok data)
 {
+    (void)data;
     return lqr_carver_transpose(r);
 }
 

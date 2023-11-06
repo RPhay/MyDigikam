@@ -363,28 +363,37 @@ lqr_energy_builtin_grad_all(gint x, gint y, gint img_width, gint img_height, Lqr
 
 gfloat
 lqr_energy_builtin_grad_norm(gint x, gint y, gint img_width, gint img_height, LqrReadingWindow *rwindow,
-                             gpointer /*extra_data*/)
+                             gpointer extra_data)
 {
+    (void)extra_data;
     return lqr_energy_builtin_grad_all(x, y, img_width, img_height, rwindow, lqr_grad_norm);
 }
 
 gfloat
 lqr_energy_builtin_grad_sumabs(gint x, gint y, gint img_width, gint img_height, LqrReadingWindow *rwindow,
-                               gpointer /*extra_data*/)
+                               gpointer extra_data)
 {
+    (void)extra_data;
     return lqr_energy_builtin_grad_all(x, y, img_width, img_height, rwindow, lqr_grad_sumabs);
 }
 
 gfloat
 lqr_energy_builtin_grad_xabs(gint x, gint y, gint img_width, gint img_height, LqrReadingWindow *rwindow,
-                             gpointer /*extra_data*/)
+                             gpointer extra_data)
 {
+    (void)extra_data;
     return lqr_energy_builtin_grad_all(x, y, img_width, img_height, rwindow, lqr_grad_xabs);
 }
 
 gfloat
-lqr_energy_builtin_null(gint /*x*/, gint /*y*/, gint /*img_width*/, gint /*img_height*/, LqrReadingWindow* /*rwindow*/, gpointer /*extra_data*/)
+lqr_energy_builtin_null(gint x, gint y, gint img_width, gint img_height, LqrReadingWindow* rwindow, gpointer extra_data)
 {
+    (void)x;
+    (void)y;
+    (void)img_width;
+    (void)img_height;
+    (void)rwindow;
+    (void)extra_data;
     return 0;
 }
 
