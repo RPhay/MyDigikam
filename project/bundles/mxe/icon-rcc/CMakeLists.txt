@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.10)
 
 if(POLICY CMP0063)
     # C++ symbols visibility policy introduced in CMake version 3.3
