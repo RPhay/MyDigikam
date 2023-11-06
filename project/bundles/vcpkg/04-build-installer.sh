@@ -2,7 +2,9 @@
 
 # Script to bundle data using previously-built KDE and digiKam installation
 # and create a Windows installer file with NSIS application
-# Dependency : NSIS makensis program for Linux.
+# Dependencies:
+#   - NSIS makensis program for Windows.
+#   - DumpBin from VSCommunity C++ profiling tools.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -105,7 +107,10 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/lensfun                                 
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/kxmlgui5                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/knotifications6                         $BUNDLEDIR/data                 2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/resources                                     $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                                    $BUNDLEDIR/                     2>/dev/null
@@ -115,7 +120,7 @@ cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc        
 cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/                                 $BUNDLEDIR/translations         2>/dev/null
+cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/Qt6                              $BUNDLEDIR/translations         2>/dev/null
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
@@ -248,6 +253,8 @@ else
 
 fi
 
+#FIXME
+exit
 #################################################################################################
 # Build NSIS installer and Portable archive.
 
