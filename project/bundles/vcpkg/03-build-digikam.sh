@@ -46,7 +46,7 @@ if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
 fi
 
 cd $BUILDING_DIR/dk_cmake
-
+if [ ] ; then
 #################################################################################################
 # Check if IcoTool CLI program is installed
 
@@ -163,7 +163,7 @@ if [ $? -ne 0 ]; then
     echo "---------- Aborting..."
     exit;
 fi
-
+fi
 #################################################################################################
 # Install Extra Plugins
 
@@ -180,9 +180,9 @@ cmake $ORIG_WD/../3rdparty \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR \
+      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DINSTALL_ROOT=$INSTALL_DIR \
       -DBUILD_TESTING=OFF \
       -DBUILD_WITH_QT6=ON \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
