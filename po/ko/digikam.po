@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-06 00:39+0000\n"
+"POT-Creation-Date: 2023-11-07 01:11+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -29995,7 +29995,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "라이브러리"
 
-#: core/libs/dialogs/libsinfodlg.cpp:284
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30003,7 +30003,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/libs/dialogs/libsinfodlg.cpp:365
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -30011,34 +30011,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/libs/dialogs/libsinfodlg.cpp:393
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "카메라 설정"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "예"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "아니요"
 
-#: core/libs/dialogs/libsinfodlg.cpp:614
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

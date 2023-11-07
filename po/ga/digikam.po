@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-06 00:39+0000\n"
+"POT-Creation-Date: 2023-11-07 01:11+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -29959,7 +29959,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Leabharlann Albam"
 
-#: core/libs/dialogs/libsinfodlg.cpp:284
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29967,7 +29967,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/libs/dialogs/libsinfodlg.cpp:365
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -29975,13 +29975,13 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Anaithnid"
 
-#: core/libs/dialogs/libsinfodlg.cpp:393
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
@@ -29990,7 +29990,7 @@ msgstr "Cumraíocht Cheamara"
 
 # three in cameraitempropertiestab: is readable? is writable? downloaded?
 # imagepropertiescolorstab.cpp: yes/no for "hasAlpha"
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
@@ -29998,14 +29998,14 @@ msgid "Yes"
 msgstr "Tá"
 
 # see "Yes" comments
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Níl"
 
-#: core/libs/dialogs/libsinfodlg.cpp:614
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"
