@@ -124,6 +124,10 @@ endif()
 
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 
+if(APPLE)
+    install(FILES "$<TARGET_FILE:digikam>.dSYM" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+endif()
+
 if(WIN32)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)

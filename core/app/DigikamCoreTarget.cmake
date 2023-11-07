@@ -427,6 +427,7 @@ target_include_directories(digikamcore INTERFACE "$<INSTALL_INTERFACE:${CMAKE_IN
 ### Install Rules ###############################################################################################################
 
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
+
 install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore" NAMESPACE Digikam::)
 
 write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
@@ -435,6 +436,12 @@ write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVe
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore")
+
+# install debug symbols
+
+if(MSVC)
+    install(FILES "$<TARGET_FILE:digikamcore>.pdb" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+endif()
 
 if(APPLE)
     install(FILES "$<TARGET_FILE:digikamcore>.dSYM" DESTINATION "${CMAKE_INSTALL_LIBDIR}" CONFIGURATIONS Debug RelWithDebInfo)
