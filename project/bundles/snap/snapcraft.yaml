@@ -66,9 +66,9 @@ plugs:
         default-provider: hunspell-dictionaries:hunspell-dictionaries
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
+    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins/digikam"
     PERL5LIB: "$SNAP/usr/share/perl5"
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/lapack"
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
     DICPATH: "$SNAP/usr/share/hunspell"
 hooks:
     configure:
