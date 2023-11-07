@@ -183,13 +183,34 @@ BUGFIXES:
 169 ==> 476073 - Assign Captions behavior in Batch Queue Manager.
 170 ==> 416446 - Import dialog: wrong pop-up media capacity in status bar.
 171 ==> 459221 - Online doc: add more details about Setup Metadata options.
-172 ==> 216915 - digikam 8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
+172 ==> 216915 - digiKam-8.2.0 AppImage bundle do not start under OpenSuse Tumbleweed.
 173 ==> 476157 - Crash in assert when importing old digikam db.
-174 ==> 
-175 ==> 
-176 ==> 
-177 ==> 
-178 ==> 
-179 ==> 
-180 ==> 
-181 ==> 
+174 ==> 476282 - HTML-Export, order of <collection>s in <collections> seames undefined.
+175 ==> 476281 - Creating Gallery.xml, collection/content is empty.
+176 ==> 476290 - Scanning files results crash in JPEG2000 loader.
+177 ==> 472508 - Scanning AV1 files results in crash.
+178 ==> 447137 - Feature request: update metadata from picture file if associated sidecar is deleted.
+179 ==> 437646 - Images data in Grouped items are not visible in the Table view if the View / Show All Grouped Items As Open is not selected.
+180 ==> 439173 - Switch to thumbnail view should preserve the SORTING applied in table view.
+181 ==> 473430 - Tagging deletes the image file.
+182 ==> 376425 - Light table window not activated or brought to front.
+183 ==> 476316 - The drop-down menu located at the bottom left in digiKam on-line documentation does not work.
+184 ==> 476335 - For one name the "unconfirmed" is two rows but the upper row does not show correctly.
+185 ==> 469372 - "Image cannot be loaded" â some images not rendered correctly.
+186 ==> 476374 - Cursor focus jumps when in Preview and entering a tag.
+187 ==> 430873 - H.264 video only plays audio on Raspberry Pi 4b (ARM).
+188 ==> 476419 - digiKam deleted images himself.
+189 ==> 476431 - Crash report showfoto.
+190 ==> 476556 - Images vignettes are very low quality with PNG files.
+191 ==> 476578 - digiKam crashes when opening 'Tools' menu.
+192 ==> 476604 - Not possible to configure keyboard shortcut for "open with file manager".
+193 ==> 471503 - Can't find Liquid Rescale tool.
+194 ==> 476573 - Preview - Picture is shifted upward.
+195 ==> 
+196 ==> 
+197 ==> 
+198 ==> 
+199 ==> 
+200 ==> 
+201 ==> 
+

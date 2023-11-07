@@ -805,7 +805,7 @@ PLT_CtrlPoint::ProcessEventNotification(PLT_EventSubscriberReference subscriber,
         var = service->FindStateVariable(property->GetTag());
         if (var == NULL) continue;
 
-        if (NPT_FAILED(var->SetValue(property->GetText()?*property->GetText():""))) {
+        if (NPT_FAILED(var->SetValue((property->GetText() ? *property->GetText() : NPT_String())))) {
             NPT_CHECK_LABEL_WARNING(NPT_FAILURE, failure);
         }
 
@@ -1814,7 +1814,7 @@ PLT_CtrlPoint::ProcessActionResponse(NPT_Result                    res,
         NPT_XmlElementNode* child = (*args)->AsElementNode();
         if (!child) continue;
 
-        action->SetArgumentValue(child->GetTag(), child->GetText()?*child->GetText():"");
+        action->SetArgumentValue(child->GetTag(), (child->GetText() ? *child->GetText() : NPT_String()));
         if (NPT_FAILED(res)) goto failure;
     }
 

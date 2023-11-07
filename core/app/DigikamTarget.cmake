@@ -124,6 +124,10 @@ endif()
 
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 
+if(APPLE)
+    install(FILES "$<TARGET_FILE:digikam>.dSYM" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+endif()
+
 if(WIN32)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
@@ -137,7 +141,18 @@ if(WIN32)
                    ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
-    target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)
+    target_link_libraries(digikam_windows_stub_exe
+                          PRIVATE
+                          digikam)
+
+    if(NOT Qt6_FOUND)
+
+        target_link_libraries(digikam_windows_stub_exe
+                              PRIVATE
+                              Qt${QT_VERSION_MAJOR}::WinMain)
+
+    endif()
+
     set_target_properties(digikam_windows_stub_exe PROPERTIES OUTPUT_NAME "digikam")
     target_include_directories(digikam_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 

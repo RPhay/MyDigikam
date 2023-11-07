@@ -110,7 +110,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libgomp1"                           # For Libraw compilation
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
-                   "liblqr-dev"                         # >= 0.4.2
                    "libfftw3-dev"                       # For GMic-Qt compilation
                    "libx265-dev"                        # >= 2.2
                    "wget"

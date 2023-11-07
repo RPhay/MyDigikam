@@ -1,10 +1,10 @@
 #
-# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-cmake_minimum_required(VERSION 3.3.2)
+cmake_minimum_required(VERSION 3.10)
 
 if(POLICY CMP0063)
     # C++ symbols visibility policy introduced in CMake version 3.3

@@ -38,7 +38,7 @@ set(avplayer_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/utils/ConfigDialog.cpp
 
 # Set the application icon on the application
 
-file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")
+#file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")
 
 if(WIN32)
 
@@ -51,14 +51,14 @@ if(WIN32)
 
 elseif(APPLE)
 
-    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
+#    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
 #    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/main/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(avplayer ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 else()
 
-    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
+#    ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
     add_executable(avplayer ${avplayer_SRCS})
 
 endif()
@@ -145,14 +145,19 @@ if(WIN32)
 
     set(avplayer_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
 
-    ecm_add_app_icon(avplayer_windows_stub_SRCS ICONS ${ICONS_SRCS})
+#    ecm_add_app_icon(avplayer_windows_stub_SRCS ICONS ${ICONS_SRCS})
 
     add_executable(avplayer_windows_stub_exe
                    ${avplayer_windows_stub_SRCS}
-                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+#                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
-    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
+    if(NOT Qt6_FOUND)
+
+        target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt${CMAKE_INSTALL_PREFIX}/bin::WinMain)
+
+    endif()
+
     set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
     target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 

@@ -159,14 +159,25 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 
 endif()
 
-if(LQR-1_FOUND)
+if(GLIB2_FOUND)
 
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        filters/transform/contentawarefilter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/contentawarefilter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_carver_bias.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_carver.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_carver_list.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_carver_rigmask.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_cursor.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_energy.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_gradient.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_progress.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_rwindow.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_vmap.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/filters/transform/lqr/lqr_vmap_list.c
     )
 
-    include_directories(${LQR-1_INCLUDE_DIRS})
+    include_directories(${GLIB2_INCLUDE_DIR})
 
 endif()
 

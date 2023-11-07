@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Script to build extra libraries using MEX.
+# Script to build extra libraries using MXE.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -20,7 +20,7 @@ exec > >(tee ./logs/build-extralibs.full.log) 2>&1
 
 #################################################################################################
 
-echo "02-build-extralibs.sh : build extra libraries using MEX."
+echo "02-build-extralibs.sh : build extra libraries using MXE."
 echo "--------------------------------------------------------"
 
 #################################################################################################

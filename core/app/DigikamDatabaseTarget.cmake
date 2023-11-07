@@ -83,6 +83,12 @@ write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConf
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamDatabase")
 
+# Install debug Symbols
+
+if(MSVC)
+    install(FILES "$<TARGET_FILE:digikamdatabase>.pdb" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+endif()
+
 if(APPLE)
     install(FILES "$<TARGET_FILE:digikamdatabase>.dSYM" DESTINATION "${CMAKE_INSTALL_LIBDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()

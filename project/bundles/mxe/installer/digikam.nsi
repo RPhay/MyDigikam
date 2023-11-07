@@ -1,7 +1,7 @@
 ;; ============================================================
  ;
  ; This file is a part of digiKam project
- ; http://www.digikam.org
+ ; https://www.digikam.org
  ;
  ; Date        : 2010-11-08
  ; Description : Null Soft Windows Installer based for digiKam.
@@ -20,7 +20,7 @@
  ; Example: makensis -DVERSION=5.0.0 -DTARGETARCH=32 -DBUNDLEPATH=../bundle digikam.nsi
  ;
  ; NSIS script reference can be found at this url:
- ; http://nsis.sourceforge.net/Docs/Chapter4.html
+ ; https://nsis.sourceforge.net/Docs/Chapter4.html
  ;
  ; SPDX-License-Identifier: GPL-2.0-or-later
  ;

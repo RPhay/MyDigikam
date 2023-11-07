@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+########################################################################
+# Check if run as root
+ChecksRunAsRoot()
+{
+
+if [[ $EUID -ne 0 ]]; then
+    echo "This script should be run as root using sudo command."
+    exit 1
+else
+    echo "Check run as root passed..."
+fi
+
+}
+
+########################################################################
+# Check CPU core available (Linux or MacOS)
+ChecksCPUCores()
+{
+
+CPU_CORES=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
+
+if [[ $CPU_CORES -gt 1 ]]; then
+    CPU_CORES=$((CPU_CORES-1))
+fi
+
+echo "CPU Cores to use : $CPU_CORES"
+
+}
+
+########################################################################
+# For time execution measurement ; startup
+StartScript()
+{
+
+BEGIN_SCRIPT=$(date +"%s")
+
+}
+
+########################################################################
+# For time execution measurement : shutdown
+TerminateScript()
+{
+
+TERMIN_SCRIPT=$(date +"%s")
+difftimelps=$(($TERMIN_SCRIPT-$BEGIN_SCRIPT))
+echo "Elaspsed time for script execution : $(($difftimelps / 3600 )) hours $((($difftimelps % 3600) / 60)) minutes $(($difftimelps % 60)) seconds"
+
+}
+
+########################################################################
+# Copy dependencies with dumpbin analysis
+# arg1 : dumpbin program full path.
+# arg2 : original file path to parse.
+# arg3 : target path to copy dependencies.
+# arg4 : dependencies path (only copy shared libs from this path).
+CopyReccursiveDependencies()
+{
+
+echo "Scan dependencies for $2"
+
+FILES=$("$1" -DEPENDENTS "$2" | grep ".dll" | awk '{print $1}')
+#echo "deps: $FILES"
+for FILE in $FILES ; do
+    if [[ -f "$4/$FILE"  && ! -f  "$3/$FILE" ]] ; then
+        cp -u "$4/$FILE" "$3" 2> /dev/null || true
+#        echo "   ==> $4/$FILE"
+		CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
+    fi
+done
+
+}
+
+########################################################################
+# Automatically register the remote servers has know hosts
+RegisterRemoteServers()
+{
+
+SERVER_LIST="\
+invent.kde.org \
+tinami.kde.org \
+"
+
+if [[ ! -f ~/.ssh/known_hosts ]] ; then
+    touch ~/.ssh/known_hosts
+fi
+
+for server in $SERVER_LIST; do
+
+    echo "Register $server"
+
+    ssh-keygen -R $server
+    ssh-keyscan -H $server >> ~/.ssh/known_hosts
+
+done
+
+}

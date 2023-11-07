@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 00:40+0000\n"
+"POT-Creation-Date: 2023-11-07 01:11+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -2906,7 +2906,7 @@ msgstr "Έμφάνιση πλήρους οθόνης"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:508
-#: core/libs/album/manager/albummanager.cpp:157
+#: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2998,7 +2998,7 @@ msgstr "Λεύκωμα χωρίς ετικέτες"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:581
-#: core/libs/album/manager/albummanager.cpp:160
+#: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
@@ -17940,14 +17940,14 @@ msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Αδυναμία εκκίνησης του εξυπηρετητή βάσης δεδομένων."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Διαγραφή αρχείου %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17955,21 +17955,21 @@ msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Όταν περιστρέφεται ένα αρχείο"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Αδυναμία ανοίγματος του '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Αδυναμία ανοίγματος του '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
 #, fuzzy, kde-format
 #| msgid "Error loading GPX file"
 #| msgid_plural "Error loading GPX files"
@@ -17977,184 +17977,184 @@ msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Σφάλμα κατά τη φόρτωση GPX αρχείου"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Αποτυχία ανοίγματος αρχείου για εγγραφή"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Λήψη αρχείου %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:419
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Αδυναμία ανοίγματος προσωρινού αρχείου στο φάκελο \"%1\": %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
 #, fuzzy, kde-format
 #| msgid "Could not open: %1"
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Αδυναμία ανοίγματος του '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:453
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:454
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Επόμενο"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Λευκώματα"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "%1<nl/>(Αρχική εικόνα)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Make:"
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Κατασκευή:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Μοντέλο"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 #| msgid "Image orientation"
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Προσανατολισμός εικόνας"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Περιοχή εικόνας"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Περιοχή εικόνας"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, fuzzy, kde-format
 #| msgid "Image Region"
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Περιοχή εικόνας"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Ημερομηνία & ώρα"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Θέση:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Χρόνος έκθεσης"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Αριθμός:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Λειτουργία έκθεσης"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, fuzzy, kde-format
 #| msgid "Imported ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Εισηγμένες αξιολογήσεις"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Διάφραγμα: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Εστιακή απόσταση"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, fuzzy, kde-format
 #| msgid "Altitude"
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "Υψόμετρο"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, fuzzy, kde-format
 #| msgid "Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "Γεωγραφικό πλάτος"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgctxt "@info: xslt param"
@@ -20664,7 +20664,7 @@ msgid ""
 "You can crop each image differently, or just click the 'Next' button to use "
 "the default crop \n"
 "setting for each photo.\n"
-"Enable \"Do not crop\" to avoid cropping all of the photos."
+"Enable \"Do not crop\" to avoid cropping all the photos."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_disableCrop)
@@ -28000,7 +28000,7 @@ msgstr "Εισαγωγή νέου ονόματος για λεύκωμα:"
 msgid "Scanning albums"
 msgstr "Σάρωση λευκωμάτων..."
 
-#: core/libs/album/manager/albummanager.cpp:163
+#: core/libs/album/manager/albummanager.cpp:171
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -28008,28 +28008,28 @@ msgstr "Σάρωση λευκωμάτων..."
 msgid "Searches"
 msgstr "Αναζητήσεις"
 
-#: core/libs/album/manager/albummanager_database.cpp:108
+#: core/libs/album/manager/albummanager_database.cpp:110
 #, kde-format
 msgid ""
 "The MySQL database directory was not found, please set the correct location "
 "in the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:120
+#: core/libs/album/manager/albummanager_database.cpp:122
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
 "next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:128
+#: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
 "the next dialog."
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:138
+#: core/libs/album/manager/albummanager_database.cpp:140
 #, kde-format
 msgid ""
 "\n"
@@ -28038,7 +28038,7 @@ msgid ""
 "delete the file %1"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:151
+#: core/libs/album/manager/albummanager_database.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><b>An error occurred during the internal server start.</b></"
@@ -28054,7 +28054,7 @@ msgstr ""
 "p>Λεπτομέρειες:\n"
 " %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:167
+#: core/libs/album/manager/albummanager_database.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28072,14 +28072,14 @@ msgstr ""
 "προσπαθήσει να εκκινήσει, αλλά <b>δεν</b> θα είναι λειτουργικό. Παρακαλώ "
 "ελέγξτε τις ρυθμίσεις της βάσης δεδομένων στο <b>μενού διαμόρφωσης</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:176
+#: core/libs/album/manager/albummanager_database.cpp:178
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
 
-#: core/libs/album/manager/albummanager_database.cpp:212
+#: core/libs/album/manager/albummanager_database.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. </p><p>You cannot use digiKam without a "
@@ -28097,7 +28097,7 @@ msgstr ""
 "προσπαθήσει να εκκινήσει, αλλά <b>δεν</b> θα είναι λειτουργικό. Παρακαλώ "
 "ελέγξτε τις ρυθμίσεις της βάσης δεδομένων στο <b>μενού διαμόρφωσης</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:221
+#: core/libs/album/manager/albummanager_database.cpp:223
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -28116,7 +28116,7 @@ msgstr ""
 "εκκινήσει τώρα, αλλά <b>δεν</b> θα είναι λειτουργικό. Παρακαλώ ελέγξτε τις "
 "ρυθμίσεις της βάσης δεδομένων στο <b>μενού διαμόρφωσης</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:254
+#: core/libs/album/manager/albummanager_database.cpp:256
 #, fuzzy, kde-format
 #| msgid ""
 #| "Your locale has changed since this album was last opened.\n"
@@ -28149,7 +28149,7 @@ msgstr ""
 "'Ναι'. Διαφορετικά, κάντε κλικ στο 'Όχι' και διορθώστε την τοπική ρύθμιση "
 "γλώσσας πριν την επανεκκίνηση του digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:297
+#: core/libs/album/manager/albummanager_database.cpp:299
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found "
@@ -28164,7 +28164,7 @@ msgstr ""
 "<br/> Επιλέξτε την πιο κατάλληλη από τις επιλογές για να αντιμετωπίσετε "
 "αυτήν την κατάσταση:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:316
+#: core/libs/album/manager/albummanager_database.cpp:318
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -28176,7 +28176,7 @@ msgstr ""
 "διάταξης στην κατάτμηση ή στις ρυθμίσεις του συστήματος.<br/>Η συλλογή τώρα "
 "βρίσκεται σε αυτήν τη θέση:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:335
+#: core/libs/album/manager/albummanager_database.cpp:337
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -28185,7 +28185,7 @@ msgstr ""
 "Η συλλογή βρίσκεται σε μια συσκευή αποθήκευσης η οποία δεν είναι πάντα "
 "προσαρτημένη. Να σημειωθεί η συλλογή ως αφαιρούμενη."
 
-#: core/libs/album/manager/albummanager_database.cpp:342
+#: core/libs/album/manager/albummanager_database.cpp:344
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -28194,21 +28194,21 @@ msgstr ""
 "Να μη γίνει τίποτα τώρα. Θα ήθελα να λύσω το πρόβλημα αργότερα με χρήση του "
 "διαλόγου ρυθμίσεων"
 
-#: core/libs/album/manager/albummanager_database.cpp:356
+#: core/libs/album/manager/albummanager_database.cpp:358
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Η συλλογή δεν βρέθηκε"
 
-#: core/libs/album/manager/albummanager_database.cpp:462
+#: core/libs/album/manager/albummanager_database.cpp:464
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Φάκελος βάσης δεδομένων"
 
-#: core/libs/album/manager/albummanager_database.cpp:463
+#: core/libs/album/manager/albummanager_database.cpp:465
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -28224,36 +28224,36 @@ msgstr ""
 "πράγματι δημιουργήθηκε για τις φωτογραφίες του φακέλου \"%2\" - ή θα "
 "αγνοήσετε το παλιό αρχείο και θα ξεκινήσετε με μια νέα βάση δεδομένων;</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:473
-#: core/libs/album/manager/albummanager_database.cpp:541
-#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
 #, fuzzy, kde-format
 #| msgid "Upgrade Database"
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Αναβάθμιση βάσης δεδομένων"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
-#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:477
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:615
 #, fuzzy, kde-format
 #| msgid "Create New Database"
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Δημιουργία νέας βάσης δεδομένων"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
-#: core/libs/album/manager/albummanager_database.cpp:555
-#: core/libs/album/manager/albummanager_database.cpp:605
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:534
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:607
+#: core/libs/album/manager/albummanager_database.cpp:639
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Νέος φάκελος βάσης δεδομένων"
 
-#: core/libs/album/manager/albummanager_database.cpp:533
+#: core/libs/album/manager/albummanager_database.cpp:535
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28268,16 +28268,16 @@ msgstr ""
 "βάσης δεδομένων, τη χρήση μιας νέας βάσης δεδομένων, ή την αντιγραφή της "
 "τρέχουσας βάσης δεδομένων στη θέση της παλαιάς;</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:615
-#: core/libs/album/manager/albummanager_database.cpp:646
+#: core/libs/album/manager/albummanager_database.cpp:547
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, fuzzy, kde-format
 #| msgid "Copy Current Database"
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Αντιγραφή τρέχουσας βάσης δεδομένων"
 
-#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:558
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28290,7 +28290,7 @@ msgstr ""
 "έκδοση του digiKam.</p> <p>Επιθυμείτε την αναβάθμιση του παλιού αρχείου "
 "βάσης δεδομένων ή τη χρήση μιας νέας βάσης δεδομένων;</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:591
+#: core/libs/album/manager/albummanager_database.cpp:593
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28299,7 +28299,7 @@ msgstr ""
 "Αποτυχία αντιγραφής του παλιού αρχείου της βάσης δεδομένων (\"%1\") στη νέα "
 "τοποθεσία του (\"%2\"). Προσπάθεια αναβάθμισης της παλιάς βάσης δεδομένων."
 
-#: core/libs/album/manager/albummanager_database.cpp:606
+#: core/libs/album/manager/albummanager_database.cpp:608
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -28311,7 +28311,7 @@ msgstr ""
 "αυτήν την τοποθεσία και τη συνέχιση της χρήσης της, ή την έναρξη μιας νέας "
 "βάσης δεδομένων;</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:638
+#: core/libs/album/manager/albummanager_database.cpp:640
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -28324,14 +28324,14 @@ msgstr ""
 "<p>Επιθυμείτε τη χρήση του υπάρχοντος αρχείου για τη νέα βάση, ή την "
 "αφαίρεσή του και αντιγραφή της τρέχουσας βάσης δεδομένων στη θέση του;</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, fuzzy, kde-format
 #| msgid "Use Existing File"
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Χρήση υπάρχοντος αρχείου"
 
-#: core/libs/album/manager/albummanager_database.cpp:703
+#: core/libs/album/manager/albummanager_database.cpp:705
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -28341,7 +28341,7 @@ msgstr ""
 "δεδομένων (\"%1\"). Άρνηση αντικατάστασης αρχείου χωρίς εφεδρικό αντίγραφο, "
 "θα χρησιμοποιηθεί το υπάρχον αρχείο."
 
-#: core/libs/album/manager/albummanager_database.cpp:721
+#: core/libs/album/manager/albummanager_database.cpp:723
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28350,7 +28350,7 @@ msgstr ""
 "Αποτυχία αντιγραφής του παλιού αρχείου της βάσης δεδομένων (\"%1\") στη νέα "
 "τοποθεσία του (\"%2\"). Εκκίνηση με μια κενή βάση δεδομένων."
 
-#: core/libs/album/manager/albummanager_database.cpp:754
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, fuzzy, kde-format
 #| msgid "New database folder"
 msgctxt "@action:button"
@@ -28550,7 +28550,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Επιθυμείτε την αφαίρεση της επιλεγμένης ετικέτας από όλες τις εικόνες;"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:1112
 #, fuzzy, kde-format
 #| msgid "Do not ask again"
 msgid "Don't ask again at this session"
@@ -28561,7 +28561,7 @@ msgstr "Να μη γίνει ερώτηση ξανά"
 msgid "No such tag"
 msgstr "Δεν υπάρχει τέτοια ετικέτα"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1107
 #, fuzzy, kde-format
 #| msgid ""
 #| "This operation can take long time depending on collection size.\n"
@@ -31413,7 +31413,7 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Βιβλιοθήκη λευκωμάτων"
 
-#: core/libs/dialogs/libsinfodlg.cpp:284
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31421,7 +31421,7 @@ msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:365
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -31429,34 +31429,34 @@ msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/libs/dialogs/libsinfodlg.cpp:393
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr ""
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Διαμόρφωση φωτογραφικής μηχανής"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Όχι"
 
-#: core/libs/dialogs/libsinfodlg.cpp:614
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: tri state"

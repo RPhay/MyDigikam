@@ -587,7 +587,7 @@ PLT_DeviceHost::ProcessHttpPostRequest(NPT_HttpRequest&              request,
 
         res = action->SetArgumentValue(
             name,
-            child->GetText()?*child->GetText():"");
+            (child->GetText() ? *child->GetText() : NPT_String()));
 
         // test if value was correct
         if (res == NPT_ERROR_INVALID_PARAMETERS) {

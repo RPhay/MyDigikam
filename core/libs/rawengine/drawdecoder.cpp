@@ -6,7 +6,7 @@
  * Date        : 2006-12-09
  * Description : a tread-safe libraw Qt interface
  *
- * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2007-2008 by Guillaume Castagnino <casta at xwing dot info>
  *
@@ -15,25 +15,6 @@
  * ============================================================ */
 
 #include "drawdecoder_p.h"
-
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-#include <QStringList>
-#include <QUrl>
-#include <QPointer>
-
-// LibRaw includes
-
-#include "libraw_version.h"
-#include "libraw_config.h"
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_config.h"
-#include "drawfiles.h"
 
 namespace Digikam
 {

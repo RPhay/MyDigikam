@@ -18,9 +18,6 @@
 /* Define to 1 if you have KDEPIM shared library installed */
 #cmakedefine HAVE_AKONADICONTACT 1
 
-/* Define to 1 if an external liblqr-1 shared library have been found */
-#cmakedefine HAVE_LIBLQR_1 1
-
 /* Define to 1 if an external lensfun shared library have been found */
 #cmakedefine HAVE_LENSFUN 1
 
@@ -121,19 +118,5 @@
 #cmakedefine HAVE_DRMINGW 1
 
 #define LIBEXEC_INSTALL_DIR "${KDE_INSTALL_FULL_LIBEXECDIR}"
-
-/*
- * Disable indeep warnings from Visual Studio C++
- */
-#if defined(_MSC_VER)
-// To disable warnings about no suitable definition provided for explicit template instantiation request.
-#pragma warning(disable : 4661)
-// To disable warnings about deprecated POSIX methods().
-#pragma warning(disable : 4996)
-// To disable warnings about qualifier applied to reference type ignored.
-#pragma warning(disable : 4181)
-// To disable warnings about 'storage-class-keyword' no longer supported as storage class.
-#pragma warning(disable : 5033)
-#endif
 
 #endif // DIGIKAM_CONFIG_H

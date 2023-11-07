@@ -128,7 +128,6 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      boost \
      expat \
      lcms \
-     liblqr-1 \
      eigen \
      jasper \
      zlib \

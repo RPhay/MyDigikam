@@ -21,12 +21,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#ifndef Q_CC_MSVC
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-
 // Qt includes
 
 #include <QByteArray>
@@ -484,27 +478,12 @@ bool DFileOperations::renameFile(const QString& srcFile,
         return true;
     }
 
-#ifdef Q_OS_WIN64
+    QFileInfo srcInfo(srcFile);
+    QDateTime birDateTime = srcInfo.fileTime(QFileDevice::FileBirthTime);
+    QDateTime accDateTime = srcInfo.fileTime(QFileDevice::FileAccessTime);
+    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
 
-    struct __utimbuf64 ut;
-    struct __stat64    st;
-    int stat = _wstat64((const wchar_t*)srcFile.utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-    struct _utimbuf    ut;
-    struct _stat       st;
-    int stat = _wstat((const wchar_t*)srcFile.utf16(), &st);
-
-#else
-
-    struct utimbuf     ut;
-    QT_STATBUF         st;
-    int stat = QT_STAT(srcFile.toUtf8().constData(), &st);
-
-#endif
-
-    bool ret = (!QFileInfo::exists(dstFile));
+    bool ret              = (!QFileInfo::exists(dstFile));
 
     if (ret)
     {
@@ -516,30 +495,34 @@ bool DFileOperations::renameFile(const QString& srcFile,
         }
     }
 
-    if (ret && (stat == 0))
+    if (ret)
     {
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
+        QFile modFile(dstFile);
 
-#ifdef Q_OS_WIN64
-
-        stat       = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
-
-#elif defined Q_OS_WIN
-
-        stat       = _wutime((const wchar_t*)dstFile.utf16(), &ut);
-
-#else
-
-        stat       = ::utime(dstFile.toUtf8().constData(), &ut);
-
-#endif
-
-        if (stat != 0)
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
         {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                           << dstFile;
+            if (modDateTime.isValid())
+            {
+                modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
+            }
+
+            if (accDateTime.isValid())
+            {
+                modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
+            }
+
+            if (birDateTime.isValid())
+            {
+                modFile.setFileTime(birDateTime, QFileDevice::FileBirthTime);
+            }
+
+            modFile.close();
+
+            return ret;
         }
+
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
+                                       << dstFile;
     }
 
     return ret;
@@ -565,8 +548,9 @@ bool DFileOperations::copyFile(const QString& srcFile,
 
     if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
     {
-        sFile.close();
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open destination file for writing:" << tmpFile;
+
+        sFile.close();
 
         return false;
     }
@@ -579,9 +563,6 @@ bool DFileOperations::copyFile(const QString& srcFile,
     {
         if ((cancel && *cancel) || (len == -1) || (dFile.write(buffer.data(), len) != len))
         {
-            sFile.close();
-            dFile.close();
-
             ret = false;
 
             break;
@@ -615,111 +596,61 @@ bool DFileOperations::copyFile(const QString& srcFile,
 bool DFileOperations::copyModificationTime(const QString& srcFile,
                                            const QString& dstFile)
 {
+    QFileInfo srcInfo(srcFile);
+    QDateTime birDateTime = srcInfo.fileTime(QFileDevice::FileBirthTime);
+    QDateTime accDateTime = srcInfo.fileTime(QFileDevice::FileAccessTime);
+    QDateTime modDateTime = srcInfo.fileTime(QFileDevice::FileModificationTime);
 
-#ifdef Q_OS_WIN64
+    QFile modFile(dstFile);
 
-    struct __utimbuf64 ut;
-    struct __stat64    st;
-    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-    struct _utimbuf    ut;
-    struct _stat       st;
-    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
-
-#else
-
-    struct utimbuf     ut;
-    QT_STATBUF         st;
-    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
-
-#endif
-
-    if (ret == 0)
+    if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
     {
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
+        if (modDateTime.isValid())
+        {
+            modFile.setFileTime(modDateTime, QFileDevice::FileModificationTime);
+        }
 
-#ifdef Q_OS_WIN64
+        if (accDateTime.isValid())
+        {
+            modFile.setFileTime(accDateTime, QFileDevice::FileAccessTime);
+        }
 
-        ret        = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+        if (birDateTime.isValid())
+        {
+            modFile.setFileTime(birDateTime, QFileDevice::FileBirthTime);
+        }
 
-#elif defined Q_OS_WIN
+        modFile.close();
 
-        ret        = _wutime((const wchar_t*)dstFile.utf16(), &ut);
-
-#else
-
-        ret        = ::utime(dstFile.toUtf8().constData(), &ut);
-
-#endif
-
+        return true;
     }
 
-    if (ret != 0)
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                       << dstFile;
-        return false;
-    }
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
+                                   << dstFile;
 
-    return true;
+    return false;
 }
 
 bool DFileOperations::setModificationTime(const QString& srcFile,
                                           const QDateTime& dateTime)
 {
-
-#ifdef Q_OS_WIN64
-
-    struct __utimbuf64 ut;
-    struct __stat64    st;
-    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
-
-#elif defined Q_OS_WIN
-
-    struct _utimbuf    ut;
-    struct _stat       st;
-    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
-
-#else
-
-    struct utimbuf     ut;
-    QT_STATBUF         st;
-    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
-
-#endif
-
-    if (ret == 0)
+    if (dateTime.isValid())
     {
-        ut.modtime = dateTime.toSecsSinceEpoch();
-        ut.actime  = st.st_atime;
+        QFile modFile(srcFile);
 
-#ifdef Q_OS_WIN64
+        if (modFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::ExistingOnly))
+        {
+            modFile.setFileTime(dateTime, QFileDevice::FileModificationTime);
+            modFile.close();
 
-        ret        = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
-
-#elif defined Q_OS_WIN
-
-        ret        = _wutime((const wchar_t*)srcFile.utf16(), &ut);
-
-#else
-
-        ret        = ::utime(srcFile.toUtf8().constData(), &ut);
-
-#endif
-
+            return true;
+        }
     }
 
-    if (ret != 0)
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to set modification time for file"
-                                       << srcFile;
-        return false;
-    }
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to set modification time for file"
+                                   << srcFile;
 
-    return true;
+    return false;
 }
 
 QString DFileOperations::findExecutable(const QString& name)

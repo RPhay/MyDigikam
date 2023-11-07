@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-28 00:40+0000\n"
-"PO-Revision-Date: 2023-10-26 07:37+0200\n"
+"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"PO-Revision-Date: 2023-10-28 09:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2896,7 +2896,7 @@ msgstr "Prikaži celozaslonsko"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:107
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:89
 #: core/libs/album/engine/album.cpp:508
-#: core/libs/album/manager/albummanager.cpp:157
+#: core/libs/album/manager/albummanager.cpp:165
 #: core/libs/album/treeview/albumselectiontreeview.cpp:266
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
@@ -2987,7 +2987,7 @@ msgstr "Album brez značk"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:581
-#: core/libs/album/manager/albummanager.cpp:160
+#: core/libs/album/manager/albummanager.cpp:168
 #: core/libs/album/widgets/albumselecttabs.cpp:192
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
@@ -16957,193 +16957,193 @@ msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Ni bilo mogoče ustvariti gallery.xml"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Generiram datoteke za \"%1\""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:325
 #, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Generiram datoteke HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Ni bilo mogoče naložiti datoteke XSL '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:342
 #, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Ni bilo mogoče naložiti datoteke XML '%1'"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:378
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Napaka pri obdelovanju datoteke XML"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:387
 #, kde-format
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Ni mogoče odpreti '%1' za pisanje"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:414
 #, kde-format
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Prejemanje oddaljenih datotek za \"%1\""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:419
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:431
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Ni mogoče odpreti začasne datoteke"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:446
 #, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Ni bilo mogoče prenesti %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:453
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Predhodni"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:454
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Naslednji"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Seznam albumov"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Izvirna slika"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Pojdi gor"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Izdelaj"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Model"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Usmerjenost slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Ločljivost X slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Ločljivost Y slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Enota ločljivosti slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Datum in čas slike"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Pozicioniranje YCBCR"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:479
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Čas osvetlitve"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:480
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Število F"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:481
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Indeks osvetlitve"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:482
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Občutljivost ISO"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:483
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr "Vrednosti hitrosti zaklepa"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:484
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Zaslonka"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:485
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Goriščna razdalja"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:486
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS višina"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:487
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS geografska širina"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:488
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
@@ -18571,7 +18571,7 @@ msgstr "Določite DPI za vhodno sliko."
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr "Shrani rezultat v :"
+msgstr "Shrani rezultat v : "
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
 #, kde-format
@@ -19491,14 +19491,21 @@ msgstr "Družina pisave:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Move the box in order to crop photos so that they fit inside the photo "
+#| "sizes you have given.  \n"
+#| "You can crop each image differently, or just click the 'Next' button to "
+#| "use the default crop \n"
+#| "setting for each photo.\n"
+#| "Enable \"Do not crop\" to avoid cropping all of the photos."
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
 "You can crop each image differently, or just click the 'Next' button to use "
 "the default crop \n"
 "setting for each photo.\n"
-"Enable \"Do not crop\" to avoid cropping all of the photos."
+"Enable \"Do not crop\" to avoid cropping all the photos."
 msgstr ""
 "Premaknite polje, da obrezujete fotografije tako, da se prilegajo znotraj "
 "danih velikosti fotografij.\n"
@@ -26508,7 +26515,7 @@ msgstr "Vnesite novo ime albuma:"
 msgid "Scanning albums"
 msgstr "Preiskovanje albumov"
 
-#: core/libs/album/manager/albummanager.cpp:163
+#: core/libs/album/manager/albummanager.cpp:171
 #: core/libs/album/widgets/albumselecttabs.cpp:193
 #: core/libs/models/albummodel_search.cpp:25
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:77
@@ -26516,7 +26523,7 @@ msgstr "Preiskovanje albumov"
 msgid "Searches"
 msgstr "Iskanja"
 
-#: core/libs/album/manager/albummanager_database.cpp:108
+#: core/libs/album/manager/albummanager_database.cpp:110
 #, kde-format
 msgid ""
 "The MySQL database directory was not found, please set the correct location "
@@ -26525,7 +26532,7 @@ msgstr ""
 "Mape za podatkovno bazo MySQL ni mogoče najti, nastavite pravilno mesto "
 "zanjo v naslednjem pogovornem oknu."
 
-#: core/libs/album/manager/albummanager_database.cpp:120
+#: core/libs/album/manager/albummanager_database.cpp:122
 #, kde-format
 msgid ""
 "The MySQL binary tools was not found, please set the correct location in the "
@@ -26534,7 +26541,7 @@ msgstr ""
 "Binarnih orodij MySQL ni mogoče najti, nastavite pravilno lokacijo zanje v "
 "naslednjem pogovornem oknu."
 
-#: core/libs/album/manager/albummanager_database.cpp:128
+#: core/libs/album/manager/albummanager_database.cpp:130
 #, kde-format
 msgid ""
 "The SQLite core database was not found, please set the correct location in "
@@ -26543,7 +26550,7 @@ msgstr ""
 "Binarnih orodij MySQL ni mogoče najti, nastavite pravilno lokacijo zanje v "
 "naslednjem pogovornem oknu."
 
-#: core/libs/album/manager/albummanager_database.cpp:138
+#: core/libs/album/manager/albummanager_database.cpp:140
 #, kde-format
 msgid ""
 "\n"
@@ -26556,7 +26563,7 @@ msgstr ""
 "Če želite začeti z novo sestavo in čarovnikom prvega zagona, zbrišite "
 "datoteko %1"
 
-#: core/libs/album/manager/albummanager_database.cpp:151
+#: core/libs/album/manager/albummanager_database.cpp:153
 #, kde-format
 msgid ""
 "An error occurred during the internal server start.\n"
@@ -26569,7 +26576,7 @@ msgstr ""
 "Podrobnosti:\n"
 "%1"
 
-#: core/libs/album/manager/albummanager_database.cpp:167
+#: core/libs/album/manager/albummanager_database.cpp:169
 #, kde-format
 msgid ""
 "Failed to open the database.\n"
@@ -26582,7 +26589,7 @@ msgstr ""
 "DigiKama ne morete uporabljati brez delujoče podatkovne zbirke.\n"
 "Preverite nastavitve podatkovne zbirke v naslednjem dialogu."
 
-#: core/libs/album/manager/albummanager_database.cpp:176
+#: core/libs/album/manager/albummanager_database.cpp:178
 #, kde-format
 msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
@@ -26590,7 +26597,7 @@ msgid ""
 msgstr ""
 "<p>digiKam se bo poskusil zdaj zagnati, a <b>ne</b> bo funkcionalen.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:212
+#: core/libs/album/manager/albummanager_database.cpp:214
 #, kde-format
 msgid ""
 "<p>Failed to open the database.</p><p>You cannot use digiKam without a "
@@ -26603,7 +26610,7 @@ msgstr ""
 "zagnati, ampak <b>ne</b> bo polno funkcionalen. Preverite nastavitve "
 "podatkovne zbirke v <b>meniju z nastavitvami</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:221
+#: core/libs/album/manager/albummanager_database.cpp:223
 #, kde-format
 msgid ""
 "<p>Failed to open the database. Error message from database:</p><p><b>%1</"
@@ -26617,7 +26624,7 @@ msgstr ""
 "polno delujoč. Preverite nastavitve podatkovne zbirke v <b>meniju z "
 "nastavitvami</b>.</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:254
+#: core/libs/album/manager/albummanager_database.cpp:256
 #, kde-format
 msgid ""
 "Your database character set has changed since this album was last opened.\n"
@@ -26640,7 +26647,7 @@ msgstr ""
 "kliknite 'Ne' in popravite vašo nastavitev kodne tabele ter ponovno zaženite "
 "digiKam."
 
-#: core/libs/album/manager/albummanager_database.cpp:297
+#: core/libs/album/manager/albummanager_database.cpp:299
 #, kde-format
 msgid ""
 "<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on "
@@ -26651,7 +26658,7 @@ msgstr ""
 "vašem sistemu.<br/>Izberite najbolj primerno možnost za obravnavo tega "
 "položaja:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:316
+#: core/libs/album/manager/albummanager_database.cpp:318
 #, kde-format
 msgid ""
 "<p>The collection is still available, but the identifier changed.<br/>This "
@@ -26662,7 +26669,7 @@ msgstr ""
 "lahko povzroči obnovitev varnostne kopije, sprememba razporeda razdelkov ali "
 "nastavitev datotečnega sistema.<br/>Zbirka je sedaj na tem mestu:</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:335
+#: core/libs/album/manager/albummanager_database.cpp:337
 #, kde-format
 msgid ""
 "The collection is located on a storage device which is not always attached. "
@@ -26671,7 +26678,7 @@ msgstr ""
 "Zbirka se nahaja na shranjevalni napravi, ki ni vedno pripeta. Označite "
 "zbirko kot odstranljivo."
 
-#: core/libs/album/manager/albummanager_database.cpp:342
+#: core/libs/album/manager/albummanager_database.cpp:344
 #, kde-format
 msgid ""
 "Take no action now. I would like to solve the problem later using the setup "
@@ -26680,19 +26687,19 @@ msgstr ""
 "Ne naredi nič. Težavo bi rad rešil kasneje z uporabo pogovornega okna "
 "nastavitev"
 
-#: core/libs/album/manager/albummanager_database.cpp:356
+#: core/libs/album/manager/albummanager_database.cpp:358
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Zbirka ni najdena"
 
-#: core/libs/album/manager/albummanager_database.cpp:462
+#: core/libs/album/manager/albummanager_database.cpp:464
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Mapa s podatkovno zbirko"
 
-#: core/libs/album/manager/albummanager_database.cpp:463
+#: core/libs/album/manager/albummanager_database.cpp:465
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the place to store the database. A "
@@ -26708,33 +26715,33 @@ msgstr ""
 "slik v mapi \"%2\" - ali želite prezreti staro datoteko in začeti z novo "
 "podatkovno zbirko?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:473
-#: core/libs/album/manager/albummanager_database.cpp:541
-#: core/libs/album/manager/albummanager_database.cpp:563
+#: core/libs/album/manager/albummanager_database.cpp:475
+#: core/libs/album/manager/albummanager_database.cpp:543
+#: core/libs/album/manager/albummanager_database.cpp:565
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Nadgradi podatkovno zbirko"
 
-#: core/libs/album/manager/albummanager_database.cpp:475
-#: core/libs/album/manager/albummanager_database.cpp:543
-#: core/libs/album/manager/albummanager_database.cpp:565
-#: core/libs/album/manager/albummanager_database.cpp:613
+#: core/libs/album/manager/albummanager_database.cpp:477
+#: core/libs/album/manager/albummanager_database.cpp:545
+#: core/libs/album/manager/albummanager_database.cpp:567
+#: core/libs/album/manager/albummanager_database.cpp:615
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Ustvari novo podatkovno zbirko"
 
-#: core/libs/album/manager/albummanager_database.cpp:532
-#: core/libs/album/manager/albummanager_database.cpp:555
-#: core/libs/album/manager/albummanager_database.cpp:605
-#: core/libs/album/manager/albummanager_database.cpp:637
+#: core/libs/album/manager/albummanager_database.cpp:534
+#: core/libs/album/manager/albummanager_database.cpp:557
+#: core/libs/album/manager/albummanager_database.cpp:607
+#: core/libs/album/manager/albummanager_database.cpp:639
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Nova mapa s podatkovno zbirko"
 
-#: core/libs/album/manager/albummanager_database.cpp:533
+#: core/libs/album/manager/albummanager_database.cpp:535
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26749,15 +26756,15 @@ msgstr ""
 "zbirko, začeti z novo podatkovno zbirko ali kopirati trenutno podatkovno "
 "zbirko na to mesto in nadaljevati z njeno uporabo?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:545
-#: core/libs/album/manager/albummanager_database.cpp:615
-#: core/libs/album/manager/albummanager_database.cpp:646
+#: core/libs/album/manager/albummanager_database.cpp:547
+#: core/libs/album/manager/albummanager_database.cpp:617
+#: core/libs/album/manager/albummanager_database.cpp:648
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopiraj trenutno podatkovno zbirko"
 
-#: core/libs/album/manager/albummanager_database.cpp:556
+#: core/libs/album/manager/albummanager_database.cpp:558
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26770,7 +26777,7 @@ msgstr ""
 "različice digiKama.</p><p>Ali želite nadgraditi staro datoteko s podatkovno "
 "zbirko ali začeti z novo podatkovno zbirko?</p>"
 
-#: core/libs/album/manager/albummanager_database.cpp:591
+#: core/libs/album/manager/albummanager_database.cpp:593
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26779,7 +26786,7 @@ msgstr ""
 "Ni bilo mogoče kopirati datoteke s staro podatkovno zbirko (\"%1\") na njeno "
 "novo mesto (\"%2\"). Poskus nadgradnje starih podatkovnih zbirk."
 
-#: core/libs/album/manager/albummanager_database.cpp:606
+#: core/libs/album/manager/albummanager_database.cpp:608
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database."
@@ -26790,7 +26797,7 @@ msgstr ""
 "\"%1\".</p><p>Ali želite kopirati trenutno podatkovno zbirko na to mesto in "
 "nadaljevati z njeno uporabo ali želite začeti z novo podatkovno zbirko?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:638
+#: core/libs/album/manager/albummanager_database.cpp:640
 #, kde-format
 msgid ""
 "<p>You have chosen the folder \"%1\" as the new place to store the database. "
@@ -26803,13 +26810,13 @@ msgstr ""
 "uporabiti to obstoječo datoteko kot novo podatkovno zbirko ali jo želite "
 "odstraniti in na njeno mesto kopirati trenutno podatkovno zbirko?</p> "
 
-#: core/libs/album/manager/albummanager_database.cpp:648
+#: core/libs/album/manager/albummanager_database.cpp:650
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Uporabi obstoječo datoteko"
 
-#: core/libs/album/manager/albummanager_database.cpp:703
+#: core/libs/album/manager/albummanager_database.cpp:705
 #, kde-format
 msgid ""
 "Failed to backup the existing database file (\"%1\"). Refusing to replace "
@@ -26819,7 +26826,7 @@ msgstr ""
 "(\"%1\"). Brez varnostne kopije ne bo zamenjave datoteke, uporabljena bo "
 "obstoječa datoteka."
 
-#: core/libs/album/manager/albummanager_database.cpp:721
+#: core/libs/album/manager/albummanager_database.cpp:723
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -26828,7 +26835,7 @@ msgstr ""
 "Ni bilo mogoče kopirati datoteke s staro podatkovno zbirko (\"%1\") na njeno "
 "novo mesto (\"%2\"). Začenjanje s prazno podatkovno zbirko."
 
-#: core/libs/album/manager/albummanager_database.cpp:754
+#: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
@@ -27015,7 +27022,7 @@ msgid "Do you want to merge tag '%1' into tag '%2'?"
 msgstr "Ali želite zliti značko '%1' v značko '%2'?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:618
-#: core/libs/album/manager/albummanager_talbum.cpp:1118
+#: core/libs/album/manager/albummanager_talbum.cpp:1112
 #, kde-format
 msgid "Don't ask again at this session"
 msgstr "Ne vprašaj več na tej seji"
@@ -27025,7 +27032,7 @@ msgstr "Ne vprašaj več na tej seji"
 msgid "No such tag"
 msgstr "Ni take značke"
 
-#: core/libs/album/manager/albummanager_talbum.cpp:1113
+#: core/libs/album/manager/albummanager_talbum.cpp:1107
 #, kde-format
 msgid ""
 "This operation can take a long time in the background.\n"
@@ -29653,43 +29660,43 @@ msgctxt "@title"
 msgid "Libraries"
 msgstr "Knjižnice"
 
-#: core/libs/dialogs/libsinfodlg.cpp:284
+#: core/libs/dialogs/libsinfodlg.cpp:276
 #, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:365
+#: core/libs/dialogs/libsinfodlg.cpp:357
 #, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
 msgstr "Neznano"
 
-#: core/libs/dialogs/libsinfodlg.cpp:393
+#: core/libs/dialogs/libsinfodlg.cpp:385
 #, kde-format
 msgctxt "@item: component info"
 msgid "Manifests"
 msgstr "Manifesti"
 
-#: core/libs/dialogs/libsinfodlg.cpp:421
+#: core/libs/dialogs/libsinfodlg.cpp:413
 #, kde-format
 msgctxt "@item: opencv info"
 msgid "OpenCV Configuration"
 msgstr "Konfiguracija OpenCV"
 
-#: core/libs/dialogs/libsinfodlg.cpp:604
+#: core/libs/dialogs/libsinfodlg.cpp:596
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/dialogs/libsinfodlg.cpp:609
+#: core/libs/dialogs/libsinfodlg.cpp:601
 #, kde-format
 msgctxt "@info: tri state"
 msgid "No"
 msgstr "Ne"
 
-#: core/libs/dialogs/libsinfodlg.cpp:614
+#: core/libs/dialogs/libsinfodlg.cpp:606
 #, kde-format
 msgctxt "@info: tri state"
 msgid "Unknown"
@@ -41440,7 +41447,7 @@ msgstr "velikost"
 #: core/libs/video/qtav/config/MiscPage.cpp:64
 #, kde-format
 msgid "Force fps"
-msgstr "prisili sličic na sekundo"
+msgstr "Prisili sličic na sekundo"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:67
 #, kde-format

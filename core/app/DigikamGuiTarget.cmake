@@ -375,6 +375,12 @@ write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVer
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamGui")
 
+# Install debug symbols
+
+if(MSVC)
+    install(FILES "$<TARGET_FILE:digikamgui>.pdb" ${INSTALL_TARGETS_DEFAULT_ARGS} CONFIGURATIONS Debug RelWithDebInfo)
+endif()
+
 if(APPLE)
     install(FILES "$<TARGET_FILE:digikamgui>.dSYM" DESTINATION "${CMAKE_INSTALL_LIBDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()

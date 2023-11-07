@@ -80,10 +80,10 @@ Special actions:
 6) => 9) : Works fine (add items to LT)
 7) => 9) : Works fine (add items to LT)
 
-1) => 10) : Doesn't work : Expected result: Items must be add to list
-2) => 10) : Doesn't work : Expected result: Items must be add to list
-6) => 10) : Doesn't work : Expected result: Items must be add to list
-7) => 10) : Doesn't work : Expected result: Items must be add to list
+1) => 10) : Doesn't work : Expected result: Items must be added to list
+2) => 10) : Doesn't work : Expected result: Items must be added to list
+6) => 10) : Doesn't work : Expected result: Items must be added to list
+7) => 10) : Doesn't work : Expected result: Items must be added to list
 
 (*) You can D&D between these views by dragging the item(s) over the sidebar button, the menu will expand automatically after a while
 

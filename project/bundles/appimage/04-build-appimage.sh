@@ -91,6 +91,9 @@ rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
 
+# See bug #476290
+rm -fr ./usr/plugins/imageformats/libqjp2.so
+
 echo -e "------------- Copy runtime data files\n"
 
 cp -r /usr/share/digikam                                  ./usr/share

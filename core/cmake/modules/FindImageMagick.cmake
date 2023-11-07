@@ -62,7 +62,7 @@
 #
 # Based on cmake project implementation <https://cmake.org>
 #
-# SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -89,7 +89,7 @@ function(FIND_IMAGEMAGICK_API component header)
                   ${ImageMagick_INCLUDE_DIRS}
                   "[HKEY_LOCAL_MACHINE\\SOFTWARE\\ImageMagick\\Current;BinPath]/include"
               PATH_SUFFIXES
-                  ImageMagick ImageMagick-6 ImageMagick-7
+                  ImageMagick ImageMagick-6 ImageMagick-7 Magick++
               DOC "Path to the ImageMagick arch-independent include dir."
               NO_DEFAULT_PATH
     )

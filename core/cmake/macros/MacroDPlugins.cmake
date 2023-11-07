@@ -80,6 +80,15 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
     )
 
+    # Install debug symbols
+
+    if(MSVC)
+        install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.pdb"
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
     if(APPLE)
         install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.dSYM"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
@@ -157,6 +166,15 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor
     )
+
+    # Install debug symbols
+
+    if(MSVC)
+        install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.pdb"
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.dSYM"
@@ -239,6 +257,15 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
     )
 
+    # Install debug symbols
+
+    if(MSVC)
+        install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.pdb"
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
     if(APPLE)
         install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.dSYM"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
@@ -317,6 +344,15 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
     )
 
+    # Install debug symbols
+
+    if(MSVC)
+        install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.pdb"
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
+
     if(APPLE)
         install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.dSYM"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
@@ -392,6 +428,15 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
     install(TARGETS DImg_${_parse_results_NAME}_Plugin
             DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg
     )
+
+    # Install debug symbols
+
+    if(MSVC)
+        install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.pdb"
+                DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg
+                CONFIGURATIONS Debug RelWithDebInfo
+        )
+    endif()
 
     if(APPLE)
         install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.dSYM"

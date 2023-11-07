@@ -6,16 +6,33 @@
 
 if(WIN32)
 
-    # For LibRaw
+    if(MINGW)
 
-    find_library(WSOCK32_LIBRARY  wsock32)
-    find_library(WS2_32_LIBRARY   ws2_32)
+        # For LibRaw
 
-    # For MediaPlayer
+        find_library(WSOCK32_LIBRARY  wsock32)
+        find_library(WS2_32_LIBRARY   ws2_32)
 
-    find_library(NETAPI32_LIBRARY netapi32)
-    find_library(USEENV_LIBRARY   userenv)
-    find_library(PSAPI_LIBRARY    psapi)
+        # For MediaPlayer
+
+        find_library(NETAPI32_LIBRARY netapi32)
+        find_library(USEENV_LIBRARY   userenv)
+        find_library(PSAPI_LIBRARY    psapi)
+
+    else()  # MSVC
+
+        # For LibRaw
+
+        set(WSOCK32_LIBRARY  wsock32)
+        set(WS2_32_LIBRARY   ws2_32)
+
+        # For MediaPlayer
+
+        set(NETAPI32_LIBRARY netapi32)
+        set(USEENV_LIBRARY   userenv)
+        set(PSAPI_LIBRARY    psapi)
+
+    endif()
 
 endif()
 
@@ -61,4 +78,25 @@ elseif(MINGW)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--stack,16777216")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--stack,16777216")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--stack,16777216")
+endif()
+
+# Disable indeep warnings from Visual Studio C++
+
+if(MSVC)
+
+    # To disable warnings about no suitable definition provided for explicit template instantiation request.
+    add_compile_options(/wd4661)
+    # To disable warnings about deprecated POSIX methods().
+    add_compile_options(/wd4996)
+    # To disable warnings about qualifier applied to reference type ignored.
+    add_compile_options(/wd4181)
+    # To disable warnings about 'storage-class-keyword' no longer supported as storage class.
+    add_compile_options(/wd5033)
+    # To disable warnings about size_t to uint conversion data lost.
+    add_compile_options(/wd4267)
+    # To disable warnings about truncation from double to float.
+    add_compile_options(/wd4305)
+    # To disable warnings about linking object specified multiple times.
+    add_link_options(/ignore:4197)
+
 endif()

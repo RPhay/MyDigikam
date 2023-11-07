@@ -332,13 +332,6 @@ void FaceGroup::load()
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
 
-    // See bug 408982
-
-    if (!faces.isEmpty())
-    {
-        d->view->setFocus();
-    }
-
     Q_FOREACH (const FaceTagsIface& face, faces)
     {
         d->addItem(face);
@@ -349,6 +342,13 @@ void FaceGroup::load()
     if (d->view->previewItem()->isLoaded())
     {
         d->visibilityController->show();
+    }
+
+    // See bug 408982
+
+    if (d->visibilityController->hasVisibleItems())
+    {
+        d->view->setFocus();
     }
 }
 

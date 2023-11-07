@@ -243,10 +243,7 @@ void AlbumManager::slotAlbumChange(const AlbumChangeset& changeset)
         case AlbumChangeset::Added:
         case AlbumChangeset::Deleted:
         {
-            if (!d->scanPAlbumsTimer->isActive())
-            {
-                d->scanPAlbumsTimer->start();
-            }
+            d->scanPAlbumsTimer->start();
 
             break;
         }
@@ -258,10 +255,7 @@ void AlbumManager::slotAlbumChange(const AlbumChangeset& changeset)
 
             d->changedPAlbums << changeset.albumId();
 
-            if (!d->updatePAlbumsTimer->isActive())
-            {
-                d->updatePAlbumsTimer->start();
-            }
+            d->updatePAlbumsTimer->start();
 
             break;
         }
