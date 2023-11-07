@@ -50,7 +50,7 @@ QList<QString>  DNNResnetDetector::loadImageNetClass()
 
     // NOTE storing all model definition at the same application path as face engine
     QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/autotagassignment"),
+                                             QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
     QString imageNetClasses = appPath + QLatin1Char('/') + QLatin1String("classification_classes_ILSVRC2012.txt");
@@ -74,7 +74,7 @@ QList<QString> DNNResnetDetector::getPredefinedClasses() const
 bool DNNResnetDetector::loadModels()
 {
     QString appPath =  QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/autotagassignment"),
+                                             QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
     QString model;

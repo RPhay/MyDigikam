@@ -51,7 +51,7 @@ QList<QString>  DNNYoloDetector::loadCOCOClass()
 
     // NOTE storing all model definition at the same application path as face engine
     QString appPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/autotagassignment"),
+                                             QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
     QString cocoClasses = appPath + QLatin1Char('/') + QLatin1String("coco.names");
@@ -75,7 +75,7 @@ QList<QString> DNNYoloDetector::getPredefinedClasses() const
 bool DNNYoloDetector::loadModels()
 {
     QString appPath =  QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/autotagassignment"),
+                                             QLatin1String("digikam/facesengine"),
                                              QStandardPaths::LocateDirectory);
 
     QString model;

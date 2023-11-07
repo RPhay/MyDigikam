@@ -118,6 +118,36 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
                              QLatin1String("8923e3daff71c07533b9023ef32c69d8c058d1e0931d76d8b81241a201138538"),
                              88007527
                             );
+    
+    d->files << DownloadInfo(QLatin1String("autotags/"),
+                             QLatin1String("yolov5n_batch_16_s320.onnx"),
+                             QLatin1String("43cf201144e6918354892a2fda7ccb07b3df1abc136ddac3b5c968dffc847009"),
+                             7616008
+                            );
+    
+    d->files << DownloadInfo(QLatin1String("autotags/"),
+                             QLatin1String("yolov5x_batch_16_s320.onnx"),
+                             QLatin1String("e56b5024e6d29f8a35dbfbdd67bbdb69593fb67bfb275915081f9a463fcd355b"),
+                             347010839
+                            );
+    
+    d->files << DownloadInfo(QLatin1String("autotags/"),
+                             QLatin1String("resnet50.onnx"),
+                             QLatin1String("490e2761519cbf8a4433f880c2aa16b457730085cf9a8aab1e43d82bcadba4f1"),
+                             102146365
+                            );
+    
+    d->files << DownloadInfo(QLatin1String("autotags/"),
+                             QLatin1String("coco.names"),
+                             QLatin1String("634a1132eb33f8091d60f2c346ababe8b905ae08387037aed883953b7329af84"),
+                             625
+                            );
+    
+    d->files << DownloadInfo(QLatin1String("autotags/"),
+                             QLatin1String("classification_classes_ILSVRC2012.txt"),
+                             QLatin1String("4eb3da435cf544e4a6f390f62c84cb9c9bb68cf8b14e97f8a063452382e5efd2"),
+                             21675
+                            );
 
     if (qApp->applicationName() == QLatin1String("digikam"))
     {
