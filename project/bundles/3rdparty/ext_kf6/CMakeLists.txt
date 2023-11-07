@@ -78,7 +78,7 @@ InstallKF6Component(solid                    ${KDE_VERSION} "${Qt6CommonOptions}
 InstallKF6Component(kcoreaddons              ${KDE_VERSION} "${Qt6CommonOptions};-DKCOREADDONS_USE_QML=OFF"          "")
 InstallKF6Component(threadweaver             ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kwindowsystem            ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
-InstallKF6Component(karchive                 ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
+InstallKF6Component(karchive                 ${KDE_VERSION} "${Qt6CommonOptions};-DWITH_LIBZSTD=OFF"                 "")
 InstallKF6Component(kdbusaddons              ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(ki18n                    ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
 InstallKF6Component(kcrash                   ${KDE_VERSION} "${Qt6CommonOptions}"                                    "")
