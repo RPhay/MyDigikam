@@ -114,6 +114,9 @@ cmake --build . --parallel --config RelWithDebInfo --target ext_marble
 # Calendar support
 cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 
+# Breeze style support
+cmake --build . --parallel --config RelWithDebInfo --target ext_breeze
+
 # Marble install shared lib at wrong place.
 mv $INSTALL_DIR/$VCPKG_TRIPLET/libmarble* $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
 mv $INSTALL_DIR/$VCPKG_TRIPLET/libastro*  $INSTALL_DIR/$VCPKG_TRIPLET/bin || true
@@ -124,7 +127,7 @@ if [[ $DK_QTVERSION == 6 ]] ; then
 
     KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
 
-    echo "List git sub-module revisions in $KF6_GITREV_LST"
+    echo "Populate git sub-module revisions in $KF6_GITREV_LST"
 
     if [ -f $KF6_GITREV_LST ] ; then
         rm -f $KF6_GITREV_LST
@@ -135,15 +138,20 @@ if [[ $DK_QTVERSION == 6 ]] ; then
 
     # --- List git revisions for all sub-modules
 
-    DIRS=$(find $BUILDING_DIR/ext_kf6/ -name "ext_*-prefix")
+    DIRS=$(find $BUILDING_DIR/dk_cmake/ext_kf6/ -name "ext_*-prefix")
 
     for ITEM in $DIRS ; do
 
-        COMPONENT=(echo $ITEM | cut -d'_' -f 1 | cut -d'-' -f 2)
-        SUBDIR=$BUILDING_DIR/dk_cmake/ext_kf6/$ITEM/src/$COMPONENT
-        cd $SUBDIR
-        echo "$(basename "$SUBDIR"):$(git rev-parse HEAD)" >> $KF6_GITREV_LST
-        cd $ORIG_WD
+        BASE=$(basename $ITEM | awk -F'_' '{print $2}')
+		COMPONENT=${BASE%-prefix}
+        SUBDIR=$ITEM/src/ext_$COMPONENT
+
+		if [[ -f "$SUBDIR/.git" ]] ; then 
+			echo "Parsed dir: $SUBDIR"
+			cd $SUBDIR
+			echo "$BASE:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
+			cd $ORIG_WD
+		fi
 
     done
 
