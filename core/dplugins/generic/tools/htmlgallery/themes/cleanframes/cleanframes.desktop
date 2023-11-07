@@ -34,6 +34,7 @@ Name[sl]=Enostavni okvirji
 Name[sv]=Rena ramar
 Name[tr]=Çerçeveleri Temizle
 Name[uk]=Чіткі рамки
+Name[x-test]=xxClean Framesxx
 Name[zh_CN]=简洁型 Frames
 Comment=A frame theme based on Ruediger Bente's frame theme
 Comment[be]=Тэма на аснове тэмы ад Ruediger Bente
@@ -67,6 +68,7 @@ Comment[sl]=Tema osnovana na temi z okvirji avtorja Ruediger Bente
 Comment[sv]=Ett ramtema baserat på Ruediger Bentes ramtema.
 Comment[tr]=Ruediger Bente'nin çerçeve teması tabanlı bir çerçeve teması
 Comment[uk]=Тема рамок на основі теми Ruediger Bente
+Comment[x-test]=xxA frame theme based on Ruediger Bente's frame themexx
 Comment[zh_CN]=基于 Ruediger Bente 的 Frames 主题的相框主题
 
 [X-HTMLGallery Author]
@@ -104,6 +106,7 @@ Name[sl]=Elizabeth Marmorstein
 Name[sv]=Elizabeth Marmorstein
 Name[tr]=Elizabeth Marmorstein
 Name[uk]=Elizabeth Marmorstein
+Name[x-test]=xxElizabeth Marmorsteinxx
 Name[zh_CN]=Elizabeth Marmorstein
 Url=mailto:purplegamba@cox.net
 
@@ -142,6 +145,7 @@ Name[sl]=Enostavni okvirji
 Name[sv]=Rena ramar
 Name[tr]=Çerçeveleri Temizle
 Name[uk]=Чіткі рамки
+Name[x-test]=xxClean Framesxx
 Name[zh_CN]=简洁型 Frames
 Url=preview.png
 
@@ -183,6 +187,7 @@ Name[sl]=Slog
 Name[sv]=Stil
 Name[tr]=Biçem
 Name[uk]=Стиль
+Name[x-test]=xxStylexx
 Name[zh_CN]=样式
 Type=list
 Default=pink.css
