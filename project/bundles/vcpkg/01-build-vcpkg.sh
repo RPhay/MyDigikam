@@ -104,6 +104,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libavif
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libheif
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install freeglut
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install brotli
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install liblzma
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zlib
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install bzip2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg
