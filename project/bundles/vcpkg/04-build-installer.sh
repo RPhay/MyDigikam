@@ -157,6 +157,19 @@ cp -r $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins                                   
 echo -e "\n---------- OpenAL for QtAV"
 cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
 
+#################################################################################################
+# Add debug symbols for few binary files to optimize space.
+# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
+# Only the digiKam shared libraries debug symbols are preserved. All digiKam plugins are not present.
+
+if [[ $DK_DEBUG = 1 ]] ; then
+
+    echo -e "\n---------- Add debug symbols in the bundle"
+
+    cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/libdigikam*.pdb                       $BUNDLEDIR/                     2>/dev/null
+
+fi
+
 echo -e "\n---------- Copy executables with recursive dependencies in bundle directory\n"
 
 # Executables and plugins shared libraries dependencies scan ---------------------------------
@@ -186,39 +199,6 @@ for app in $DLL_FILES ; do
     CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
 
 done
-
-#################################################################################################
-# Cleanup symbols in binary files to free space.
-# NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
-# The following code to do lets all debug symbols in each digiKam componets, else size will be largest than 2Gb.
-# only the digiKam/Showfoto executable and shared libraries debug symbols are preserved. All digiKam plugins are stripped.
-
-echo -e "\n---------- Strip symbols in binary files\n"
-
-if [[ $DK_DEBUG = 1 ]] ; then
-
-    DEBUG_EXE_STRIP_ALL="`find $BUNDLEDIR -name \*exe | grep -Ev '(digikam|showfoto)'`"
-    echo "DEBUG_EXE_STRIP_ALL=$DEBUG_EXE_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_EXE_STRIP_ALL
-
-    DEBUG_DLL_STRIP_ALL="`find $BUNDLEDIR -name \*dll | grep -Ev '(digikam|showfoto)'`"
-    echo "DEBUG_DLL_STRIP_ALL=$DEBUG_DLL_STRIP_ALL"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP_ALL
-
-#    DEBUG_EXE_STRIP="`find $BUNDLEDIR -name \*exe | grep -E '(digikam|showfoto)'`"
-#    echo "DEBUG_EXE_STRIP=$DEBUG_EXE_STRIP"
-#    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --only-keep-debug $DEBUG_EXE_STRIP
-
-    DEBUG_DLL_STRIP="`find $BUNDLEDIR -name \*dll | grep -E '(digikam|showfoto)' | grep -Ev '(libdigikam|digikam.dll|showfoto.dll)'`"
-    echo "DEBUG_DLL_STRIP=$DEBUG_DLL_STRIP"
-    ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip $DEBUG_DLL_STRIP
-
-#else
-
-#    find $BUNDLEDIR -name \*exe | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-#    find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip --strip-all
-
-fi
 
 #################################################################################################
 # Install ExifTool binary.
