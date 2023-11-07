@@ -326,12 +326,12 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    scp -v $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
+    scp -v $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
-        scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
-        scp $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
+        scp -v $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
+        scp -v $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
     fi
 
     # update remote files list
@@ -342,7 +342,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rm $ORIG_WD/bundle/ls.tmp
     rm $ORIG_WD/bundle/ls.txt
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
-    rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+    scp -v $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
 
