@@ -440,7 +440,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
 # install debug symbols
 
 if(MSVC)
-    install(FILES "$<TARGET_FILE:digikamcore>.pdb" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
+    install(FILES "$<TARGET_PDB_FILE:digikamcore>" DESTINATION "${CMAKE_INSTALL_BINDIR}" CONFIGURATIONS Debug RelWithDebInfo)
 endif()
 
 if(APPLE)

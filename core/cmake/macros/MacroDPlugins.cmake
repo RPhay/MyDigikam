@@ -83,7 +83,7 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
     # Install debug symbols
 
     if(MSVC)
-        install(FILES "$<TARGET_FILE:Generic_${_parse_results_NAME}_Plugin>.pdb"
+        install(FILES "$<TARGET_PDB_FILE:Generic_${_parse_results_NAME}_Plugin>"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/generic
                 CONFIGURATIONS Debug RelWithDebInfo
         )
@@ -170,7 +170,7 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     # Install debug symbols
 
     if(MSVC)
-        install(FILES "$<TARGET_FILE:Editor_${_parse_results_NAME}_Plugin>.pdb"
+        install(FILES "$<TARGET_PDB_FILE:Editor_${_parse_results_NAME}_Plugin>"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/editor
                 CONFIGURATIONS Debug RelWithDebInfo
         )
@@ -260,7 +260,7 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
     # Install debug symbols
 
     if(MSVC)
-        install(FILES "$<TARGET_FILE:Bqm_${_parse_results_NAME}_Plugin>.pdb"
+        install(FILES "$<TARGET_PDB_FILE:Bqm_${_parse_results_NAME}_Plugin>"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/bqm
                 CONFIGURATIONS Debug RelWithDebInfo
         )
@@ -347,7 +347,7 @@ macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
     # Install debug symbols
 
     if(MSVC)
-        install(FILES "$<TARGET_FILE:RawImport_${_parse_results_NAME}_Plugin>.pdb"
+        install(FILES "$<TARGET_PDB_FILE:RawImport_${_parse_results_NAME}_Plugin>"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/rawimport
                 CONFIGURATIONS Debug RelWithDebInfo
         )
@@ -432,7 +432,7 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
     # Install debug symbols
 
     if(MSVC)
-        install(FILES "$<TARGET_FILE:DImg_${_parse_results_NAME}_Plugin>.pdb"
+        install(FILES "$<TARGET_PDB_FILE:DImg_${_parse_results_NAME}_Plugin>"
                 DESTINATION ${KDE_INSTALL_FULL_PLUGINDIR}/digikam/dimg
                 CONFIGURATIONS Debug RelWithDebInfo
         )
