@@ -65,7 +65,7 @@ fi
 #################################################################################################
 # Configurations
 
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/tools/pkgconf:$INSTALL_DIR/$VCPKG_TRIPLET/bin
+export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/tools/pkgconf:$INSTALL_DIR/$VCPKG_TRIPLET/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin
 echo "PATH=$PATH"
 
 # Directory where this script is located (default - current directory)
