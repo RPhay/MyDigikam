@@ -67,8 +67,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         disconnect(CoreDbAccess::databaseWatch(), nullptr, this, nullptr);
     }
 
-    disconnect(ItemAttributesWatch::instance(), nullptr, d->scanDAlbumsTimer, nullptr);
-
     d->albumWatch->clear();
 
     cleanUp();
