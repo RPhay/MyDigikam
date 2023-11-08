@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-07 01:11+0000\n"
-"PO-Revision-Date: 2023-11-01 15:44+0100\n"
+"PO-Revision-Date: 2023-11-06 21:55+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -5785,7 +5785,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Anti-Vignetting"
-msgstr "Antivignettage"
+msgstr "Anti-vignettage"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:61
 #, kde-format
@@ -10215,7 +10215,7 @@ msgstr "Configuration avancée"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
 #, kde-format
 msgid "Liquid Rescale"
-msgstr "Liquid Rescale"
+msgstr "Re-dimensionnement fluide"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:44
 #, kde-format
@@ -16170,7 +16170,7 @@ msgstr "A4"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:70
 #, kde-format
 msgid "US Letter"
-msgstr "US Letter"
+msgstr "Lettre US"
 
 #. i18n: ectx: property (currentText), widget (QComboBox, resolutionCombo)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:85
@@ -17844,12 +17844,12 @@ msgstr "Début de la génération jAlbum…"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
-msgstr "Jalbum a terminé, mais des avertissements ont eu lieu."
+msgstr "JAlbum a terminé, mais en signalant certaines alarmes."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
 msgid "Jalbum completed."
-msgstr "Jalbum terminé."
+msgstr "JAlbum terminé."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:83
 #, fuzzy, kde-format
@@ -20588,7 +20588,7 @@ msgstr "Évolution"
 #, kde-format
 msgctxt "Mail client: KMAIL"
 msgid "Kmail"
-msgstr "Kmail"
+msgstr "KMail"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:118
 #, kde-format
@@ -20620,7 +20620,7 @@ msgstr "Thunderbird"
 #, kde-format
 msgctxt "Image format: JPEG"
 msgid "Jpeg"
-msgstr "Jpeg"
+msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
@@ -20628,7 +20628,7 @@ msgstr "Jpeg"
 #, kde-format
 msgctxt "Image format: PNG"
 msgid "Png"
-msgstr "Png"
+msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
 #, kde-format
@@ -20755,7 +20755,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:129
 #, kde-format
 msgid " MB"
-msgstr "MB"
+msgstr "Mo"
 
 # Xavier : simplication pour plus de clarté
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
@@ -28679,7 +28679,7 @@ msgid ""
 "The driver \"SQLITE\" for Sqlite3 databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"Le pilote « SQLITE » pour les bases de données SQLite3 n'est pas "
+"Le pilote « SQLite » pour les bases de données SQLite3 n'est pas "
 "disponible.\n"
 "digiKam dépend des pilotes fournis par le module Qt::SQL."
 
@@ -28689,8 +28689,8 @@ msgid ""
 "The driver \"MYSQL\" for MySQL databases is not available.\n"
 "digiKam depends on the drivers provided by the Qt::SQL module."
 msgstr ""
-"Le pilote « MYSQL » pour les bases de données MySQL n'est pas disponible.\n"
-"digiKam dépend des pilotes fournis par le module Qt::SQL."
+"Le pilote « MySQL » pour les bases de données MySQL n'est pas disponible.\n"
+"digiKam dépend des pilotes fournis par le module « Qt::SQL.MySQL »"
 
 #: core/libs/database/engine/dbengineconfigloader.cpp:171
 #, kde-format
@@ -29256,7 +29256,7 @@ msgid ""
 "items.</p>"
 msgstr ""
 "<p>Sélectionnez ici le type de moteur de base de données.</p><p>Le moteur "
-"<b>SQlite</b> sert aux bases locales de petite ou moyenne taille. Il s'agit "
+"<b>SQLite</b> sert aux bases locales de petite ou moyenne taille. Il s'agit "
 "du moteur par défaut, recommandé pour les collections de moins de 100 000 "
 "éléments.</p>"
 
@@ -32784,7 +32784,7 @@ msgstr ""
 #: core/libs/dimg/filters/lens/antivignettingfilter.cpp:58
 #, kde-format
 msgid "Anti-Vignetting Tool"
-msgstr "Outil Antivignettage"
+msgstr "Outil Anti-vignettage"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:103
 #, kde-format
@@ -41567,7 +41567,7 @@ msgstr "UXGA - 1600 x 1200 - 4 : 3"
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
-msgstr "BLUERAY - 1920x1080 - 16:9"
+msgstr "Blue-Ray - 1920x1080 - 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
@@ -43604,7 +43604,7 @@ msgstr "Tarek Talaat"
 #: core/libs/widgets/mainview/daboutdata.cpp:196
 #, kde-format
 msgid "New OneDrive, Pinterrest, and Box export tools"
-msgstr "Nouveaux outils d'export OneDrive, Pinterrest et Box"
+msgstr "Nouveaux outils d'export OneDrive, Pinterest et Box"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -45287,7 +45287,7 @@ msgstr "Arabe (Irak)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
-msgstr "Arabe (Israel)"
+msgstr "Arabe (Israël)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 msgctxt "@info: country code"
@@ -63196,7 +63196,7 @@ msgid ""
 msgstr ""
 "Cochez cette option pour créer des fichiers  XMP » avec un nom de fichier "
 "compatible « BASENAME.xmp », utilisés par de nombreux programmes "
-"commerciaux. Ne pas activer cette option pour Darktable."
+"commerciaux. Ne pas activer cette option pour DarkTable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
