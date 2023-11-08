@@ -18,7 +18,7 @@ endif()
 
 # Exiv2 version < 0.28 use auto_ptr instead unique_ptr which is deprecated.
 
-if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
+if("${LibExiv2_VERSION}" VERSION_LESS "0.27.99")
 
     DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated")
 
@@ -112,7 +112,7 @@ include_directories(
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:LibExiv2_INCLUDE_DIRS>
 )
 
 # Used by digikamcore

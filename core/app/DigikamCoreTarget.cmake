@@ -152,7 +152,7 @@ target_link_libraries(digikamcore
                       ${TIFF_LIBRARIES}
                       PNG::PNG
                       ${JPEG_LIBRARIES}
-                      exiv2lib
+                      ${LibExiv2_LIBRARIES}
 
                       ${OPENMP_LDFLAGS}
 
