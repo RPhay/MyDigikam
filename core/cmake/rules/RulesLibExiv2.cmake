@@ -20,10 +20,9 @@ else()
 endif()
 
 set_package_properties(${EXIV2_PACKAGE_NAME} PROPERTIES
-                       DESCRIPTION           "Required to build digiKam"
                        URL                   "https://www.exiv2.org"
                        TYPE                  RECOMMENDED
-                       PURPOSE               "Library to manage image metadata"
+                       PURPOSE               "Library to manage image metadata (Required to build digiKam)"
 )
 
 if(LibExiv2_FOUND)
