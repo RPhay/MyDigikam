@@ -6,7 +6,7 @@
 
 find_package(LibExiv2 OPTIONAL_COMPONENTS)
 
-if(LibExiv2_FOUND AND ("${LibExiv2_VERSION}" VERSION_GREATER "0.28.0"))
+if(LibExiv2_FOUND AND ("${LibExiv2_VERSION}" VERSION_GREATER "0.27.99"))
 
     find_package(LibExiv2 REQUIRED)
 
