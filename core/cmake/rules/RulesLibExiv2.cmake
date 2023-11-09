@@ -6,12 +6,13 @@
 
 find_package(LibExiv2 OPTIONAL_COMPONENTS)
 
-if(LibExiv2_FOUND)
+if(LibExiv2_FOUND AND ("${LibExiv2_VERSION}" VERSION_GREATER "0.28.0"))
 
     find_package(LibExiv2 REQUIRED)
 
 else()
 
+    set (LibExiv2_FOUND FALSE)
     find_package(exiv2 REQUIRED)
 
 endif()
