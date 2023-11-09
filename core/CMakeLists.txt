@@ -246,7 +246,7 @@ PRINT_LIBRARY_STATUS("libboostgraph" "https://github.com/boostorg/boost"        
 
 if(LibExiv2_FOUND)
 
-    PRINT_LIBRARY_STATUS("libexiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
+    PRINT_LIBRARY_STATUS("LibExiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
 
 else()
 
