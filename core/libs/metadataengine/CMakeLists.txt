@@ -111,9 +111,17 @@ include_directories(
 
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-
-    $<TARGET_PROPERTY:LibExiv2_INCLUDE_DIRS>
 )
+
+if(LibExiv2_FOUND)
+
+    include_directories($<TARGET_PROPERTY:LibExiv2_INCLUDE_DIRS>)
+
+else()
+
+    include_directories($<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>)
+
+endif()
 
 # Used by digikamcore
 add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})

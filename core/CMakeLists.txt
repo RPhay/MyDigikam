@@ -243,7 +243,17 @@ PRINT_COMPONENT_COMPILE_STATUS("QtMultimedia Support"                       ENAB
 # ==============================================================================
 
 PRINT_LIBRARY_STATUS("libboostgraph" "https://github.com/boostorg/boost"                 "(version >= 1.43.0)"                Boost_FOUND)
-PRINT_LIBRARY_STATUS("libexiv2"      "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
+
+if(LibExiv2_FOUND)
+
+    PRINT_LIBRARY_STATUS("libexiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
+
+else()
+
+    PRINT_LIBRARY_STATUS("libexiv2"  "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
+
+endif()
+
 PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF${QT_VERSION_MAJOR}_MIN_VERSION})"    KF${QT_VERSION_MAJOR}_FOUND)
@@ -294,7 +304,7 @@ endif()
 # ==============================================================================
 
 if(Boost_FOUND                          AND
-   LibExiv2_FOUND                       AND
+   (LibExiv2_FOUND OR exiv2_FOUND)      AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
    KF${QT_VERSION_MAJOR}_FOUND          AND

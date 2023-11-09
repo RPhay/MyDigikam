@@ -152,7 +152,6 @@ target_link_libraries(digikamcore
                       ${TIFF_LIBRARIES}
                       PNG::PNG
                       ${JPEG_LIBRARIES}
-                      ${LibExiv2_LIBRARIES}
 
                       ${OPENMP_LDFLAGS}
 
@@ -164,6 +163,22 @@ target_link_libraries(digikamcore
                       opencv_ml
                       opencv_flann
 )
+
+if(LibExiv2_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          ${LibExiv2_LIBRARIES}
+    )
+
+else()
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          exiv2lib
+    )
+
+endif()
 
 if(Qt6_FOUND)
 
