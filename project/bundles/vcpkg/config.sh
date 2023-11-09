@@ -34,6 +34,8 @@ VCPKG_COMMON_OPTIONS=(
 "--vcpkg-root=${VCPKG_DIR}"
 )
 
+VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
+
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code

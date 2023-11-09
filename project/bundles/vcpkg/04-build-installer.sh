@@ -37,6 +37,7 @@ echo "--------------------------------------------------------"
 StartScript
 ChecksCPUCores
 RegisterRemoteServers
+AppendVCPKGPaths
 
 #################################################################################################
 # Check if NSIS CLI tool is installed
@@ -64,9 +65,6 @@ fi
 
 #################################################################################################
 # Configurations
-
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/tools/pkgconf:$INSTALL_DIR/$VCPKG_TRIPLET/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin
-echo "PATH=$PATH"
 
 # Directory where this script is located (default - current directory)
 BUILDDIR="$PWD"
@@ -100,32 +98,32 @@ mkdir -p $BUNDLEDIR/translations
 # Data files ---------------------------------------------------------------------------------
 
 echo -e "\n---------- Marble data"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/data/*                                        $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Generics data"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/kxmlgui5                                $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/share/knotifications6                         $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/resources                                     $BUNDLEDIR/                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                 2>/dev/null
 
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                                    $BUNDLEDIR/                     2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc           2>/dev/null
-cp    $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
+cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc           2>/dev/null
+cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc      2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/translations/Qt6                              $BUNDLEDIR/translations         2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6                              $BUNDLEDIR/translations         2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                 2>/dev/null
 
 echo -e "\n---------- Xdg"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/etc/xdg                                       $BUNDLEDIR/etc                  2>/dev/null
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/data/xdg                                  $BUNDLEDIR/share                2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                  2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                2>/dev/null
 
 # See bug 471058
 echo -e "\n---------- Freedesktop"
@@ -146,16 +144,16 @@ done
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt6 plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins                                   $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- Marble plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins              2>/dev/null
 
 echo -e "\n---------- digiKam and KF6 plugins"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                     2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
-cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                     2>/dev/null
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
@@ -166,7 +164,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
     echo -e "\n---------- Add debug symbols in the bundle"
 
-    cp -r $INSTALL_DIR/$VCPKG_TRIPLET/bin/libdigikam*.pdb                       $BUNDLEDIR/                     2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/libdigikam*.pdb                       $BUNDLEDIR/                     2>/dev/null
 
 fi
 
@@ -175,28 +173,28 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/digikam.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/showfoto.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/kbuildsycoca6.exe \
-$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin/QtWebEngineProcess.exe \
+$VCPKG_INSTALL_PREFIX/bin/digikam.exe \
+$VCPKG_INSTALL_PREFIX/bin/showfoto.exe \
+$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe \
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
-    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
 
 DLL_FILES="\
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/lib/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/libs/plugins||'`        \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins         -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/Qt6/plugins||'`         \
-`find  $INSTALL_DIR/$VCPKG_TRIPLET/plugins             -name "*.dll" -type f | sed 's|$INSTALL_DIR/$VCPKG_TRIPLET/plugins||'`            \
-$INSTALL_DIR/$VCPKG_TRIPLET/bin/OpenAL32.dll \
+`find  $VCPKG_INSTALL_PREFIX/lib/plugins         -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/libs/plugins||'`        \
+`find  $VCPKG_INSTALL_PREFIX/Qt6/plugins         -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`         \
+`find  $VCPKG_INSTALL_PREFIX/plugins             -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`            \
+$VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll \
 "
 
 for app in $DLL_FILES ; do
 
-    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$INSTALL_DIR/$VCPKG_TRIPLET/bin"
+    CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
 

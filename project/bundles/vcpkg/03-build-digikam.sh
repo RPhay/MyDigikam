@@ -31,15 +31,12 @@ echo "------------------------------------------------"
 StartScript
 ChecksCPUCores
 RegisterRemoteServers
+AppendVCPKGPaths
 
 #################################################################################################
 
 # Paths rules
-ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
-
-export PATH=$PATH:/c/bison:/c/icoutils/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/gperf:$INSTALL_DIR/$VCPKG_TRIPLET/tools/curl:$INSTALL_DIR/$VCPKG_TRIPLET/tools/python3:$INSTALL_DIR/$VCPKG_TRIPLET/tools/pkgconf:$INSTALL_DIR/$VCPKG_TRIPLET/bin:$INSTALL_DIR/$VCPKG_TRIPLET/tools/Qt6/bin
-echo "PATH=$PATH"
 
 if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
     mkdir -p $BUILDING_DIR/dk_cmake
@@ -63,7 +60,7 @@ fi
 
 # Clean up previous install (see bug #459276)
 
-FILES=$(find "$INSTALL_DIR/$VCPKG_TRIPLET" -name \* | grep -E '(digikam|showfoto)') || true
+FILES=$(find "$VCPKG_INSTALL_PREFIX" -name \* | grep -E '(digikam|showfoto)') || true
 
 for FILE in $FILES ; do
     if [[ -f $FILE || -d $FILE ]] ; then
@@ -180,9 +177,9 @@ cmake $ORIG_WD/../3rdparty \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-      -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+      -DINSTALL_ROOT=$VCPKG_INSTALL_PREFIX \
       -DBUILD_TESTING=OFF \
       -DBUILD_WITH_QT6=ON \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \

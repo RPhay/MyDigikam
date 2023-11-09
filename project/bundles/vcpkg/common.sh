@@ -71,7 +71,7 @@ for FILE in $FILES ; do
     if [[ -f "$4/$FILE"  && ! -f  "$3/$FILE" ]] ; then
         cp -u "$4/$FILE" "$3" 2> /dev/null || true
 #        echo "   ==> $4/$FILE"
-		CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
+        CopyReccursiveDependencies "$1" "$4/$FILE" "$3" "$4"
     fi
 done
 
@@ -99,5 +99,27 @@ for server in $SERVER_LIST; do
     ssh-keyscan -H $server >> ~/.ssh/known_hosts
 
 done
+
+}
+
+########################################################################
+# Append paths to the wanted VCPKG binary tools
+AppendVCPKGPaths()
+{
+
+ORIG_PATH="$PATH"
+
+export PATH="\
+$PATH:\
+/c/bison:/c/icoutils/bin:\
+$VCPKG_INSTALL_PREFIX/tools/gperf:\
+$VCPKG_INSTALL_PREFIX/tools/curl:\
+$VCPKG_INSTALL_PREFIX/tools/python3:\
+$VCPKG_INSTALL_PREFIX/tools/pkgconf:\
+$VCPKG_INSTALL_PREFIX/bin:\
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
+"
+
+echo "PATH=$PATH"
 
 }
