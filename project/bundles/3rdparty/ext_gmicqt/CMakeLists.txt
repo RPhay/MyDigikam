@@ -7,17 +7,11 @@
 
 set(PREFIX_ext_gmicqt "${EXTPREFIX}")
 
-#if (APPLE)
-#    set(FFTW_SUPPORT OFF)
-#else()
-    set(FFTW_SUPPORT ON)
-#endif()
-
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
-                -DENABLE_FFTW3=${FFTW_SUPPORT}
+                -DENABLE_FFTW3=ON
                 -DENABLE_SYSTEM_GMIC=OFF
-                -DENABLE_CURL=ON
+                -DENABLE_CURL=OFF
                 ${GLOBAL_PROFILE}
 )
 
