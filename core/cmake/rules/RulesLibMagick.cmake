@@ -97,7 +97,7 @@ else()
         set(GraphicsMagickWand_FOUND TRUE)
     endif()
 
-    if(MSVC AND GraphicsMagickCore_FOUND)
+    if(MSVC AND GraphicsMagickCore_FOUND AND GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagickWand_INCLUDE_DIRS)
         # VCPKG group all libraries in one file.
         set(GraphicsMagick_FOUND TRUE)
     elseif(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)

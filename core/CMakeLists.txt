@@ -213,7 +213,7 @@ MACRO_BOOL_TO_01(ENABLE_APPSTYLES                               HAVE_APPSTYLE_SU
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE                              HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW                                 HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND                     HAVE_IMAGE_MAGICK)
-MACRO_BOOL_TO_01(GraphicsMagick_Magick++_FOUND                  HAVE_GRAPHICS_MAGICK)
+MACRO_BOOL_TO_01(GraphicsMagick_FOUND                           HAVE_GRAPHICS_MAGICK)
 MACRO_BOOL_TO_01(HEIF_FOUND                                     HAVE_HEIF)
 MACRO_BOOL_TO_01(X265_FOUND                                     HAVE_X265)
 MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND                           HAVE_QTXMLPATTERNS)
