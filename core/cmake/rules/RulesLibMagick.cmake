@@ -97,9 +97,22 @@ else()
         set(GraphicsMagickWand_FOUND TRUE)
     endif()
 
-    if(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
+    if(MSVC AND GraphicsMagickCore_FOUND)
+        # VCPKG group all libraries in one file.
+        set(GraphicsMagick_FOUND TRUE)
+    else if(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
+        # Other tool-chain must provide 3 files.
+        set(GraphicsMagick_FOUND TRUE)
+    else
+        set(GraphicsMagick_FOUND FALSE)
+    endif()
+
+    if(GraphicsMagick_FOUND)
 
         message(STATUS "GraphicsMagick API used instead ImageMagick")
+
+        # Populate ImageMagick variables
+
         set(ImageMagick_FOUND TRUE)
 
         set(ImageMagick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
