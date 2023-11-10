@@ -53,6 +53,8 @@ $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 
 echo "PATH=$PATH"
 
+export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
+
 if [ ! -d "build" ]; then
     mkdir build
 fi
@@ -75,7 +77,7 @@ cmake .. \
       -DENABLE_AKONADICONTACTSUPPORT=OFF \
       -DENABLE_MYSQLSUPPORT=ON \
       -DENABLE_INTERNALMYSQL=ON \
-      -DENABLE_MEDIAPLAYER=OFF \
+      -DENABLE_MEDIAPLAYER=ON \
       -DENABLE_DBUS=OFF \
       -DENABLE_APPSTYLES=ON \
       -DENABLE_QWEBENGINE=ON \
