@@ -122,4 +122,6 @@ $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 
 echo "PATH=$PATH"
 
+export PKG_CONFIG_PATH=$VCPKG_INSTALL_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH
+
 }
