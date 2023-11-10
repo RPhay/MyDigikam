@@ -100,10 +100,10 @@ else()
     if(MSVC AND GraphicsMagickCore_FOUND)
         # VCPKG group all libraries in one file.
         set(GraphicsMagick_FOUND TRUE)
-    else if(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
+    elseif(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
         # Other tool-chain must provide 3 files.
         set(GraphicsMagick_FOUND TRUE)
-    else
+    else()
         set(GraphicsMagick_FOUND FALSE)
     endif()
 
