@@ -367,11 +367,11 @@ if(LensFun_FOUND)
 
 endif()
 
-if(ImageMagick_FOUND)
+if(Magick_FOUND)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          ${ImageMagick_LIBRARIES}
+                          ${Magick_LIBRARIES}
     )
 
 endif()

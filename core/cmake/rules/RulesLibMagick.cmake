@@ -8,15 +8,19 @@ find_package(ImageMagick COMPONENTS Magick++
                                     MagickCore
                                     MagickWand)
 
-if(ImageMagick_Magick++_FOUND)
-
-    add_definitions(${ImageMagick_Magick++_DEFINITIONS})
-
-endif()
-
 if(ImageMagick_FOUND)
 
-    include_directories(${ImageMagick_INCLUDE_DIRS})
+    set(Magick_FOUND TRUE)
+    set(Magick_INCLUDE_DIRS ${ImageMagick_INCLUDE_DIRS})
+    set(Magick_LIBRARIES ${ImageMagick_LIBRARIES})
+    include_directories(${Magick_INCLUDE_DIRS})
+
+    if(ImageMagick_Magick++_FOUND)
+
+        set(Magick++_DEFINITIONS ${ImageMagick_Magick++_DEFINITIONS})
+        add_definitions(${Magick++_DEFINITIONS})
+
+    endif()
 
 else()
 
@@ -115,15 +119,15 @@ else()
 
         # Populate ImageMagick variables
 
-        set(ImageMagick_FOUND TRUE)
+        set(Magick_FOUND TRUE)
 
-        set(ImageMagick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
-        include_directories(${ImageMagick_INCLUDE_DIRS})
+        set(Magick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
+        include_directories(${Magick_INCLUDE_DIRS})
 
-        set(ImageMagick_LIBRARIES ${GraphicsMagickCore_LIBRARIES} ${GraphicsMagick++_LIBRARIES} ${GraphicsMagickWand_LIBRARIES})
+        set(Magick_LIBRARIES ${GraphicsMagickCore_LIBRARIES} ${GraphicsMagick++_LIBRARIES} ${GraphicsMagickWand_LIBRARIES})
 
-        set(ImageMagick_Magick++_DEFINITIONS ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER})
-        add_definitions(${ImageMagick_Magick++_DEFINITIONS})
+        set(Magick++_DEFINITIONS ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER})
+        add_definitions(${Magick++_DEFINITIONS})
 
     endif()
 
