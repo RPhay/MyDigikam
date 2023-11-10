@@ -85,7 +85,7 @@ echo -e "\n---------- Copy files in bundle directory\n"
 
 cd $ORIG_WD
 
-if [ -d "$BUNDLEDIR" ]; then
+if [ -d "$BUNDLEDIR" ] ; then
     rm -fr $BUNDLEDIR
     mkdir $BUNDLEDIR
 fi
@@ -98,37 +98,37 @@ mkdir -p $BUNDLEDIR/translations
 # Data files ---------------------------------------------------------------------------------
 
 echo -e "\n---------- Marble data"
-cp -r $VCPKG_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data               		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/data/*                                        $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Generics data"
-cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data              		    2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data             		    2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data             		    2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data            		    2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data           		    2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                 		2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                 		2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                     		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/lensfun                                 $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/digikam                                 $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/showfoto                                $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/solid                                   $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/kxmlgui5                                $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/share/knotifications6                         $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/k*                                   $BUNDLEDIR/data                       2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/resources                                     $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Qt config"
-cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                     		2>/dev/null
+cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- icons-set"
 cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
 cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
 
 echo -e "\n---------- i18n"
-cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6                              $BUNDLEDIR/translations         		2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                 		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6                              $BUNDLEDIR/translations               2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Xdg"
-cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                  		2>/dev/null
-cp -r $VCPKG_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                        2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/data/xdg                                  $BUNDLEDIR/share                      2>/dev/null
 
 # See bug 471058
 echo -e "\n---------- Freedesktop"
 mkdir -p $BUNDLEDIR/share/mime/packages/                                                                        2>/dev/null
-cp -r  $ORIG_WD/data/freedesktop.org.xml                                        $BUNDLEDIR/share/mime/packages  2>/dev/null
+cp -r  $ORIG_WD/data/freedesktop.org.xml                                  $BUNDLEDIR/share/mime/packages        2>/dev/null
 
 echo -e "\n---------- Copy Git Revisions Manifest"
 
@@ -144,16 +144,16 @@ done
 # Plugins Shared libraries -------------------------------------------------------------------
 
 echo -e "\n---------- Qt6 plugins"
-cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                     		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/Qt6/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- Marble plugins"
-cp -r $VCPKG_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins              		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/plugins/*.dll                                 $BUNDLEDIR/plugins                    2>/dev/null
 
 echo -e "\n---------- digiKam and KF6 plugins"
-cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                     		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- OpenAL for QtAV"
-cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                     		2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
@@ -164,7 +164,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
     echo -e "\n---------- Add debug symbols in the bundle"
 
-    cp -r $VCPKG_INSTALL_PREFIX/bin/digikam*.pdb                       $BUNDLEDIR/                       		2>/dev/null
+    cp -r $VCPKG_INSTALL_PREFIX/bin/digikam*.pdb                       $BUNDLEDIR/                              2>/dev/null
 
 fi
 
