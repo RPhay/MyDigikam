@@ -18,32 +18,82 @@ if(ImageMagick_FOUND)
 
     include_directories(${ImageMagick_INCLUDE_DIRS})
 
-else()
-
-    # Fail back to GraphicsMagick if available
-
-    pkg_check_modules(MAGICK_PLUS GraphicsMagick++)
-    pkg_check_modules(MAGICK_CORE GraphicsMagick)
-    pkg_check_modules(MAGICK_WAND GraphicsMagickWand)
-
-    if(MAGICK_PLUS_FOUND AND MAGICK_CORE_FOUND AND MAGICK_WAND_FOUND)
-
-        message(STATUS "GraphicsMagick API used instead ImageMagick")
-        set(ImageMagick_FOUND TRUE)
-
-        message(STATUS "GraphicsMagick definitions: ${MAGICK_PLUS_DEFINITIONS}")
-        add_definitions(${MAGICK_PLUS_DEFINITIONS})
-
-        message(STATUS "GraphicsMagick includes: ${MAGICK_CORE_DEFINITIONS}")
-        include_directories(${MAGICK_CORE_INCLUDE_DIRS})
-
-    endif()
-
-#   ImageMagick_FOUND                  - TRUE if all components are found.
-#   ImageMagick_EXECUTABLE_DIR         - Full path to executables directory.
-#   ImageMagick_<component>_FOUND      - TRUE if <component> is found.
-#   ImageMagick_<component>_EXECUTABLE - Full path to <component> executable.
-#   ImageMagick_VERSION_STRING         - the version of ImageMagick found
-
+# else()
+#
+#     # Fail back to GraphicsMagick if available
+#
+#     pkg_check_modules(MAGICK_CORE GraphicsMagick)
+#     pkg_check_modules(MAGICK_PLUS GraphicsMagick++)
+#     pkg_check_modules(MAGICK_WAND GraphicsMagickWand)
+#
+#     if(MAGICK_PLUS_FOUND AND MAGICK_CORE_FOUND AND MAGICK_WAND_FOUND)
+#
+#         message(STATUS "GraphicsMagick API used instead ImageMagick")
+#         set(ImageMagick_FOUND TRUE)
+#
+#         # Core include directories rules.
+#
+#         find_path(GraphicsMagickCore_INCLUDE_DIRS
+#                   NAMES magick/api.h
+#                   HINTS ${MAGICK_CORE_PKGCONF_INCLUDE_DIRS}
+#                   PATH_SUFFIXES GraphicsMagick
+#         )
+#
+#         # Core libraries rules.
+#
+#         find_library(GraphicsMagickCore_LIBRARIES
+#                      NAMES GraphicsMagick
+#                      HINTS ${MAGICK_CORE_PKGCONF_LIBRARIES}
+#         )
+#
+#         # C++ include directories rules.
+#
+#         find_path(GraphicsMagick++_INCLUDE_DIRS
+#                   NAMES Magick++
+#                   HINTS ${MAGICK_PLUS_PKGCONF_INCLUDE_DIRS}
+#                   PATH_SUFFIXES GraphicsMagick
+#         )
+#
+#         # C++ libraries rules.
+#
+#         find_library(GraphicsMagick++_LIBRARIES
+#                      NAMES Magick++
+#                      HINTS ${MAGICK_PLUS_PKGCONF_LIBRARIES}
+#         )
+#
+#         # Wand include directories rules.
+#
+#         find_path(GraphicsMagickWand_INCLUDE_DIRS
+#                   NAMES wand/magick_wand.h
+#                   HINTS ${MAGICK_WAND_PKGCONF_INCLUDE_DIRS}
+#                   PATH_SUFFIXES GraphicsMagick
+#         )
+#
+#         # Wand libraries rules.
+#
+#         find_library(GraphicsMagickWand_LIBRARIES
+#                      NAMES Wand
+#                      HINTS ${MAGICK_WAND_PKGCONF_LIBRARIES}
+#         )
+#
+#         message(STATUS "GraphicsMagickCore includes   : ${GraphicsMagickCore_INCLUDE_DIRS}")
+#         message(STATUS "GraphicsMagickCore libraries  : ${GraphicsMagickCore_LIBRARIES}")
+#         message(STATUS "GraphicsMagickCore definitions: ${MAGICK_CORE_PKGCONF_CFLAGS_OTHER}")
+#         message(STATUS "GraphicsMagick++ includes     : ${GraphicsMagick++_INCLUDE_DIRS}")
+#         message(STATUS "GraphicsMagick++ libraries    : ${GraphicsMagick++_LIBRARIES}")
+#         message(STATUS "GraphicsMagick++ definitions  : ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER}")
+#         message(STATUS "GraphicsMagickWand includes   : ${GraphicsMagickWand_INCLUDE_DIRS}")
+#         message(STATUS "GraphicsMagickWand libraries  : ${GraphicsMagickWand_LIBRARIES}")
+#         message(STATUS "GraphicsMagickWand definitions: ${MAGICK_WAND_PKGCONF_CFLAGS_OTHER}")
+#
+#         set(ImageMagick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
+#         include_directories(${ImageMagick_INCLUDE_DIRS})
+#
+#         set(ImageMagick_LIBRARIES ${GraphicsMagickCore_LIBRARIES} ${GraphicsMagick++_LIBRARIES} ${GraphicsMagickWand_LIBRARIES})
+#
+#         set(ImageMagick_Magick++_DEFINITIONS ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER})
+#         add_definitions(${ImageMagick_Magick++_DEFINITIONS})
+#
+#     endif()
 
 endif()
