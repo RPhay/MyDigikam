@@ -31,7 +31,7 @@
 # SPDX-FileCopyrightText: 2006,     by Matthias Kretz, <kretz at kde dot org>
 # SPDX-FileCopyrightText: 2008,     by Alexander Neundorf, <neundorf at kde dot org>
 # SPDX-FileCopyrightText: 2011      by Michael Jansen, <kde at michael-jansen dot biz>
-# SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2016-2023 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -78,7 +78,12 @@ MACRO(find_component _component _pkgconfig _library _header)
 
     IF(PKG_CONFIG_FOUND)
 
+		MESSAGE(STATUS "Use PkgConfig to check FFMPEG ${_component} availability...")
         pkg_check_modules(PC_${_component} ${_pkgconfig})
+
+	ELSE()
+	
+		MESSAGE(WARNING "PkgConfig not found!")
 
     ENDIF()
 
@@ -102,7 +107,7 @@ MACRO(find_component _component _pkgconfig _library _header)
     SET(${_component}_VERSION      ${PC_${_component}_VERSION}
         CACHE STRING "The ${_component} version number.")
 
-    SET_COMPONENT_FOUND(${_component})
+    set_component_found(${_component})
 
     MARK_AS_ADVANCED(
         ${_component}_INCLUDE_DIRS
@@ -119,15 +124,15 @@ if(NOT FFMPEG_LIBRARIES)
 
     # Check for all possible component.
 
-    FIND_COMPONENT(AVCODEC    libavcodec    avcodec    libavcodec/avcodec.h)
-    FIND_COMPONENT(AVFILTER   libavfilter   avfilter   libavfilter/avfilter.h)
-    FIND_COMPONENT(AVFORMAT   libavformat   avformat   libavformat/avformat.h)
-    FIND_COMPONENT(AVDEVICE   libavdevice   avdevice   libavdevice/avdevice.h)
-    FIND_COMPONENT(AVUTIL     libavutil     avutil     libavutil/avutil.h)
-    FIND_COMPONENT(SWSCALE    libswscale    swscale    libswscale/swscale.h)
-    FIND_COMPONENT(POSTPROC   libpostproc   postproc   libpostproc/postprocess.h)
-    FIND_COMPONENT(AVRESAMPLE libavresample avresample libavresample/avresample.h)
-    FIND_COMPONENT(SWRESAMPLE libswresample swresample libswresample/swresample.h)
+    find_component(AVCODEC    libavcodec    avcodec    libavcodec/avcodec.h)
+    find_component(AVFILTER   libavfilter   avfilter   libavfilter/avfilter.h)
+    find_component(AVFORMAT   libavformat   avformat   libavformat/avformat.h)
+    find_component(AVDEVICE   libavdevice   avdevice   libavdevice/avdevice.h)
+    find_component(AVUTIL     libavutil     avutil     libavutil/avutil.h)
+    find_component(SWSCALE    libswscale    swscale    libswscale/swscale.h)
+    find_component(POSTPROC   libpostproc   postproc   libpostproc/postprocess.h)
+    find_component(AVRESAMPLE libavresample avresample libavresample/avresample.h)
+    find_component(SWRESAMPLE libswresample swresample libswresample/swresample.h)
 
     # Check if the required components were found and add their stuff to the FFMPEG_* vars.
 
@@ -174,7 +179,7 @@ ENDIF()
 
 FOREACH(_component AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL POSTPROCESS SWSCALE AVRESAMPLE SWRESAMPLE)
 
-    SET_COMPONENT_FOUND(${_component})
+    set_component_found(${_component})
 
 ENDFOREACH()
 
@@ -182,7 +187,9 @@ ENDFOREACH()
 SET(_FFmpeg_REQUIRED_VARS FFMPEG_LIBRARIES FFMPEG_INCLUDE_DIRS)
 
 FOREACH(_component ${FFmpeg_FIND_COMPONENTS})
+
     LIST(APPEND _FFmpeg_REQUIRED_VARS ${_component}_LIBRARIES ${_component}_INCLUDE_DIRS)
+
 ENDFOREACH()
 
 # Give a nice error message if some of the required vars are missing.
