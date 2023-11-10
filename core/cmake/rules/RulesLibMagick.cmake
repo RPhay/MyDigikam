@@ -85,6 +85,18 @@ else()
     message(STATUS "GraphicsMagickWand libraries  : ${GraphicsMagickWand_LIBRARIES}")
     message(STATUS "GraphicsMagickWand definitions: ${MAGICK_WAND_PKGCONF_CFLAGS_OTHER}")
 
+    if(GraphicsMagickCore_INCLUDE_DIRS AND GraphicsMagickCore_LIBRARIES)
+        set(GraphicsMagickCore_FOUND TRUE)
+    endif()
+
+    if(GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagick++_LIBRARIES)
+        set(GraphicsMagick++_FOUND TRUE)
+    endif()
+
+    if(GraphicsMagickWand_INCLUDE_DIRS AND GraphicsMagickWand_LIBRARIES)
+        set(GraphicsMagickWand_FOUND TRUE)
+    endif()
+
     if(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
 
         message(STATUS "GraphicsMagick API used instead ImageMagick")
