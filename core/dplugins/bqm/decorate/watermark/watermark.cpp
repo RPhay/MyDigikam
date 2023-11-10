@@ -870,7 +870,8 @@ bool WaterMark::toolOperations()
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                 }
 
-                watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue - 1 - marginW, marginH));
+                watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue - marginW - 1,
+                                                  marginH));
                 break;
             }
 
@@ -881,7 +882,8 @@ bool WaterMark::toolOperations()
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
 
-                watermarkRect.moveBottomLeft(QPoint(marginW, image().height() + yAdditionalValue - 1 - marginH));
+                watermarkRect.moveBottomLeft(QPoint(marginW,
+                                                    image().height() + yAdditionalValue - marginH - 1));
                 break;
             }
 
@@ -905,7 +907,8 @@ bool WaterMark::toolOperations()
                     xAdditionalValue += (watermarkRect.width() - watermarkRect.height()) / 2;
                 }
 
-                watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue), marginH));
+                watermarkRect.moveCenter(QPoint((int)(image().width()   / 2  + xAdditionalValue),
+                                                (watermarkRect.height() / 2) + marginH));
                 break;
             }
 
@@ -917,8 +920,9 @@ bool WaterMark::toolOperations()
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
 
-                watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
-                                                image().height() + yAdditionalValue - 1 - marginH));
+                watermarkRect.moveCenter(QPoint((int)(image().width()   / 2  + xAdditionalValue),
+                                                image().height() + yAdditionalValue -
+                                                (watermarkRect.height() / 2) - marginH - 1));
                 break;
             }
 
@@ -926,12 +930,12 @@ bool WaterMark::toolOperations()
             {
                 if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
-                    xAdditionalValue += watermarkRect.width() - watermarkRect.height();
+                    xAdditionalValue += watermarkRect.width()  - watermarkRect.height();
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
 
-                watermarkRect.moveBottomRight(QPoint(image().width()  + xAdditionalValue - 1 - marginW,
-                                                     image().height() + yAdditionalValue - 1 - marginH));
+                watermarkRect.moveBottomRight(QPoint(image().width()  + xAdditionalValue - marginW - 1,
+                                                     image().height() + yAdditionalValue - marginH - 1));
                 break;
             }
         }
