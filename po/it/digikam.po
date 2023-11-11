@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-07 01:11+0000\n"
-"PO-Revision-Date: 2023-10-22 22:50+0200\n"
+"PO-Revision-Date: 2023-11-08 22:07+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -6044,10 +6044,9 @@ msgid "Enter caption text here."
 msgstr "Immetti qui la didascalia."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Pulisci e sovrascrivi"
+msgstr "Pulisci e sovrascrivi i metadati"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -7946,7 +7945,7 @@ msgstr "Questa immagine sta già usando una profondità di 16 bit/colore/pixel."
 #: core/dplugins/editor/colors/film/filmtool.cpp:147
 #, kde-format
 msgid "Color Negative Film"
-msgstr "Negativo a colori "
+msgstr "Negativo a colori"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:193
 #, kde-format
@@ -19745,14 +19744,7 @@ msgstr "Famiglia caratteri:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -28663,11 +28655,9 @@ msgstr ""
 "global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "La pre-elaborazione è in corso, attendi."
+msgstr "Si sta inizializzando la banca dati MySQL interna, attendi..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -31559,7 +31549,7 @@ msgstr "Ribalta"
 #, kde-format
 msgctxt "Crop image"
 msgid "Crop"
-msgstr "Taglia"
+msgstr "Ritaglia"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:508
 #, kde-format
@@ -32540,7 +32530,7 @@ msgstr ""
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:128
 #, kde-format
 msgid "Feather:"
-msgstr "Piuma:"
+msgstr "Sfumatura:"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:133
 #, kde-format
@@ -32548,8 +32538,8 @@ msgid ""
 "This value is used as the exponent controlling the fall-off in density from "
 "the inner circle of the filter to the outer circle."
 msgstr ""
-"Questo valore è usato come l'esponente che controlla la caduta di densità "
-"dal cerchio interno del filtro al cerchio esterno."
+"Questo valore è usato come l'esponente che controlla la diminuzione di "
+"densità dal cerchio interno del filtro al cerchio esterno."
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:139
 #, kde-format
@@ -32606,7 +32596,7 @@ msgstr "Compensazione Y "
 #: core/libs/dimg/filters/lens/lensdistortionfilter.cpp:67
 #, kde-format
 msgid "Lens Distortion Tool"
-msgstr "Strumento Distorsione lenticolare"
+msgstr "Strumento Distorsione dell'obiettivo"
 
 #: core/libs/dimg/filters/lens/lensfuncameraselector.cpp:140
 #, kde-format
@@ -32706,7 +32696,7 @@ msgstr "(ho trovato una corrispondenza esatta)"
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction Tool"
-msgstr "Strumento Correzione lenticolare automatica"
+msgstr "Strumento Correzione automatica dell'obiettivo"
 
 #: core/libs/dimg/filters/lens/lensfunfilter.cpp:415
 #, kde-format
@@ -33439,7 +33429,7 @@ msgstr ""
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:109
 #, kde-format
 msgid "Auto-crop:"
-msgstr "Taglio automatico:"
+msgstr "Ritaglio automatico:"
 
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:111
 #, kde-format
