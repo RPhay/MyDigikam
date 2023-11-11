@@ -216,6 +216,7 @@ parts:
         - libgdal30
         - libarmadillo10
         - libblas3
+        - kimageformat-plugins
         stage-snaps:
         - ffmpeg-2204
         build-environment: &id005
