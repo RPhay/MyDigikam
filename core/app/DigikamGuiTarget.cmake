@@ -216,7 +216,7 @@ set_target_properties(digikamgui PROPERTIES
 
 target_compile_definitions(digikamgui
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
 
 add_dependencies(digikamgui digikamcore digikamdatabase)
