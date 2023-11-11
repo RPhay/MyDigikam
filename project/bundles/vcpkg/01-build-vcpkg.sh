@@ -78,7 +78,7 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 fi
 
 #################################################################################################
-# MXE git revision to use
+# Update VCPKG port files
 
 cd $VCPKG_DIR
 
