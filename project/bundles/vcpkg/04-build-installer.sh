@@ -63,6 +63,19 @@ else
     echo "Check DumpBin CLI tools passed..."
 fi
 
+# Check for redistributable VCOMP140.dll
+
+VCOMP140="`find "/c/Program Files/Microsoft Visual Studio/" -name "VCOMP140.dll" -type f -executable | grep '/x64/' | awk '!/onecore/'`"
+echo "$VCOMP140"
+
+if [ ! -f "$VCOMP140" ] ; then
+    echo "VCOMP140.dll redistributable is not available in your VSCode installation"
+    exit 1
+else
+    echo "Check VCOMP140.dll passed..."
+fi
+
+
 #################################################################################################
 # Configurations
 
