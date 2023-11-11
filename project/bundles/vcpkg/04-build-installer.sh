@@ -238,10 +238,10 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 
 mkdir -p $ORIG_WD/bundle
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
-rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.sum
+rm -f $ORIG_WD/bundle/*Win64-Qt6$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
