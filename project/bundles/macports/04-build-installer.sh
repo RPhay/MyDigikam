@@ -5,7 +5,7 @@
 # This script must be run as sudo
 #
 # SPDX-FileCopyrightText: 2015      by Shanti, <listaccount at revenant dot org>
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -108,7 +108,7 @@ libexec/qt5/plugins/bearer/*.dylib \
 binaries="$OTHER_APPS"
 
 # Additional Files/Directories - to be copied recursively but not checked for dependencies
-# Note: dSYM directories aee copied as well and cleaned later if debug symbols must be removed in final bundle.
+# Note: dSYM directories are copied as well and cleaned later if debug symbols must be removed in final bundle.
 OTHER_DIRS="\
 libexec/qt5/translations \
 lib/libdigikam*.dSYM \

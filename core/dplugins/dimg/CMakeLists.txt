@@ -19,6 +19,6 @@ if(Jasper_FOUND)
     add_subdirectory(jpeg2000)
 endif()
 
-if(ImageMagick_FOUND)
+if(Magick_FOUND)
     add_subdirectory(imagemagick)
 endif()

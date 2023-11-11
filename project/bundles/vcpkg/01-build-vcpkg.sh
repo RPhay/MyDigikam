@@ -78,7 +78,7 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 fi
 
 #################################################################################################
-# MXE git revision to use
+# Update VCPKG port files
 
 cd $VCPKG_DIR
 
@@ -104,7 +104,9 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libavif
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libheif
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install freeglut
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install brotli
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install liblzma
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zlib
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zstd
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install bzip2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt
@@ -161,8 +163,8 @@ cmake $ORIG_WD/../3rdparty \
                            -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
                            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                            -DCMAKE_COLOR_MAKEFILE=ON \
-                           -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET \
-                           -DINSTALL_ROOT=$INSTALL_DIR/$VCPKG_TRIPLET \
+                           -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
+                           -DINSTALL_ROOT=$VCPKG_INSTALL_PREFIX \
                            -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
                            -DKA_VERSION=$DK_KA_VERSION \

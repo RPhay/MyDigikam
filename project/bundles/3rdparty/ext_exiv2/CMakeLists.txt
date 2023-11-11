@@ -54,6 +54,7 @@ if(MINGW)
 
         # To use official release tag
 #        GIT_TAG v0.28.0
+        # See the bug https://github.com/Exiv2/exiv2/issues/2637
         GIT_TAG 0.27-maintenance
 
 #        PATCH_COMMAND git reset --hard &&
@@ -86,7 +87,7 @@ elseif(APPLE)
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-        GIT_TAG v0.28.0
+        GIT_TAG v0.28.1
 #       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
@@ -113,7 +114,7 @@ else() # Linux
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
-        GIT_TAG v0.28.0
+        GIT_TAG v0.28.1
 #       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&

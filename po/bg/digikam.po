@@ -28,13 +28,13 @@
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011.
 # Yasen Pramatarov <yasen@lindeas.com>, 2011, 2015.
 # Yasen Pramatarov <yasen@lindeas.com>, 2005, 2006, 2009, 2010, 2011, 2012, 2021.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-07 01:11+0000\n"
-"PO-Revision-Date: 2023-09-24 22:12+0200\n"
+"PO-Revision-Date: 2023-11-08 11:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -6027,10 +6027,9 @@ msgid "Enter caption text here."
 msgstr "Въведете текста на заглавието тук."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "Почистване и презаписване"
+msgstr "Почистване и презаписване на метаданните"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -19706,14 +19705,7 @@ msgstr "Фамилия на шрифта:"
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -28596,11 +28588,11 @@ msgid "Database type is not supported."
 msgstr "Типът на базата данни не се поддържа."
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
 msgstr ""
-"Няма път до командата за сървър на mysql, зададена в конфигурационния файл."
+"Няма път до командата за актуализиране  на mysql, зададен в конфигурационния "
+"файл."
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -28649,11 +28641,9 @@ msgstr ""
 "global.conf)."
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "Предварителната обработка е в ход, моля, изчакайте."
+msgstr "Инициализира се  вътрешната база данни на MySQL. Моля, изчакайте..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -28695,11 +28685,9 @@ msgstr ""
 "на базата от данни: %2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "Предварителната обработка е в ход, моля, изчакайте."
+msgstr "Актуализация на базата данни на MySQL е в ход, моля, изчакайте."
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -29665,14 +29653,12 @@ msgstr ""
 "MariaDB сървър."
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr ""
-"Този двоичен файл се използва за стартиране на специална инстанция на "
-"MariaDB сървър."
+"Този двоичен файл се използва за обновяване на базата данни до текущата "
+"версия на сървъра."
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format

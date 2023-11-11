@@ -62,7 +62,7 @@
 
     Name "${MY_PRODUCT} ${VERSION}"
     Icon "digikam-installer.ico"
-    BrandingText "digikam Developement Team"
+    BrandingText "digiKam Project (https://www.digikam.org)"
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
@@ -232,6 +232,9 @@
         SetOutPath "$INSTDIR\plugins"
         File /r "${BUNDLEPATH}\plugins\*.*"
 
+        SetOutPath "$INSTDIR\resources"
+        File /r "${BUNDLEPATH}\resources\*.*"
+		
         SetOutPath "$INSTDIR\translations"
         File /r "${BUNDLEPATH}\translations\*.*"
 
@@ -312,6 +315,7 @@
         RMDir /r "$INSTDIR\data"
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
+        RMDir /r "$INSTDIR\resources"
         RMDir /r "$INSTDIR\translations"
 
         ;Do not do a recursive removal of $INSTDIR because user may have accidentally installed into system critical directory!

@@ -4,27 +4,51 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-find_package(exiv2 REQUIRED)
+find_package(LibExiv2 OPTIONAL_COMPONENTS)
 
-set_package_properties("exiv2"     PROPERTIES
-                       DESCRIPTION "Required to build digiKam"
-                       URL         "https://www.exiv2.org"
-                       TYPE        RECOMMENDED
-                       PURPOSE     "Library to manage image metadata"
-)
+if(LibExiv2_FOUND AND ("${LibExiv2_VERSION}" VERSION_GREATER "0.27.99"))
 
-if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
-
-    message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
-
-endif()
-
-if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
-
-    set(EXIV2_CXX_STANDARD 11)
+    find_package(LibExiv2 REQUIRED)
+    set(EXIV2_PACKAGE_NAME "LibExiv2")
 
 else()
 
+    set(LibExiv2_FOUND FALSE)
+    find_package(exiv2 REQUIRED)
+    set(EXIV2_PACKAGE_NAME "exiv2")
+
+endif()
+
+set_package_properties(${EXIV2_PACKAGE_NAME} PROPERTIES
+                       URL                   "https://www.exiv2.org"
+                       TYPE                  RECOMMENDED
+                       PURPOSE               "Library to manage image metadata (Required to build digiKam)"
+)
+
+if(LibExiv2_FOUND)
+
+    if("${LibExiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+
+        message(FATAL_ERROR "Exiv2 version is too old (${LibExiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+
+    endif()
+
+else()
+
+    if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+
+        message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+
+    endif()
+
+endif()
+
+if(("${exiv2_VERSION}" VERSION_GREATER "0.27.99") OR ("${LibExiv2_VERSION}" VERSION_GREATER "0.27.99"))
+
     set(EXIV2_CXX_STANDARD 17)
+
+else()
+
+    set(EXIV2_CXX_STANDARD 11)
 
 endif()

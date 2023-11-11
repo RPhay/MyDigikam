@@ -34,6 +34,8 @@ VCPKG_COMMON_OPTIONS=(
 "--vcpkg-root=${VCPKG_DIR}"
 )
 
+VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
+
 #-------------------------------------------------------------------------------------------
 
 # URL to git repository to checkout digiKam source code
@@ -74,7 +76,7 @@ DK_VERSION=master
 #DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
