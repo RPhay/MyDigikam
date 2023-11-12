@@ -1,10 +1,73 @@
 Scripts to install compiled digiKam dependencies with MSVC under Windows
 ========================================================================
 
-Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
+* RESUME
+--------
 
-* Requirements:
----------------
+These scripts build a binary digiKam installer for Windows under Windows using VCPKG, MSVC tool-chain,
+and NSIS application.
+
+This script follow instructions from Qt bundle deployment for Windows as shared libraries
+available at this url: https://doc.qt.io/qt-6/windows-deployment.html
+
+* AUTHORS
+---------
+
+(c) Gilles Caulier <caulier dot gilles at gmail dot com>
+
+* DESCRIPTION
+-------------
+
+These files and scripts are used to make binary installer of the digiKam
+Software Collection for Windows 64 bits. In addition to this README,
+there are comments in the scripts that provide some additional explanations for
+how they work.
+
+* BUNDLE CONTENTS
+-----------------
+
+Note: the bundle is relocatable.
+
+'''
+    |                                                    Executable, shared dlls, KDE plugins dlls, qt.conf
+    |--- data
+    |   |--- audio                                       Marble data files
+    |   |--- bitmaps                                     Marble data files
+    |   |--- digikam                                     digiKam data files
+    |   |--- flags                                       Marble data files
+    |   |--- kconf_update                                Really need ?
+    |   |--- kf5                                         Really need ?
+    |   |   |--- kauth
+    |   |   |-- kcharselect
+    |   |--- knotifications5                             Really need ?
+    |   |--- kservices5                                  KDE service descriptions
+    |   |--- kservicetypes5                              KDE service type definitions
+    |   |--- kxmlgui5                                    KDE xml gui description files
+    |   |   |--- digikam
+    |   |   |-- showfoto
+    |   |--- lensfun                                     Lensfun data files
+    |   |--- locale                                      KDE GUI translations
+    |   |--- maps                                        Marble data files
+    |   |--- mwdbii                                      Marble data files
+    |   |--- naturalearth                                Marble data files
+    |   |--- placemarks                                  Marble data files
+    |   |--- showfoto                                    Showfoto data files
+    |   |--- solid                                       Solid service descriptions
+    |   |--- stars                                       Marble data files
+    |   |--- svg                                         Marble data files
+    |   |-- weather                                      Marble data files
+    |--- etc                                             Really need ?
+    |   |-- xdg
+    |       |-- ui
+    |--- plugins                                         Qt plugins
+    |--- share                                           Really need ?
+    |   |-- xdg
+    |       |-- menus
+    |-- translations                                     Qt GUI translations
+'''
+
+* REQUIREMENTS
+--------------
 
     - VirtualBox 7.x + guest extension pack             https://www.virtualbox.org/wiki/Downloads
         + Memory : 24 Gb                                Note: QtWebEngine requires a lots of memory with parallelized build
@@ -44,10 +107,20 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
 
-* Build:
---------
+* BUILD
+-------
 
-    To start Qt compilation use these scripts in a git-bash console:
+    You must set the right target architecture : windows 32 or 64 bits.
+    You must set the digiKam git tags to checkout right source code in installer.
+    You must set the option to host debug symbols or not in installer.
+
+    Note: Look in config.sh file for settings details.
+
+    There are 4 scripts to be run by the user. 2 first ones installs
+    VCPKG and all dependencies, next one digiKam, and last one makes a
+    binary installer for Windows.
+
+    To start compilation use these scripts in a git-bash console:
 
     1) ./01-build-vcpkg.sh
 
@@ -71,4 +144,39 @@ Authors : Gilles Caulier <caulier dot gilles at gmail dot com>
 
     4) ./04-build-installer.sh
 
-    To build the Windows installer.
+    To build the Windows installer. Once you've successfully built digiKam, files to bundle may contain over 4GB of files.
+    This script grabs the ~300MB needed to run digiKam and showfoto.
+    These include applications documentations and translations.
+
+    This script creates Windows application links for the programs that will
+    be run by the user (digiKam and Showfoto). It use makensis CLI tool from NSIS
+    application dedicated to build Windows installer.
+    The version >= 3 is required to be compatible with Windows 10.
+
+    Depending of configuration done in config.sh, this script is able to upload automatically
+    the bundle file on files.kde.org digiKam area through ssh. A valid ssh key configured
+    with remote KDE server need to be set previously with the account. You can load ssh key
+    at startup following instruction give at this url:
+
+    https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
+
+    Note: the bundle can be signed with GPG. You must setup your private and public keys before
+    and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt)
+
+* EXTRA SCRIPTS
+---------------
+
+    makeall.sh
+
+    This script allows to build whole 64 bits installers from scratch.
+
+    update.sh
+
+    This script re-build only digiKam and installers 64 bits.
+
+
+* LICENSES
+----------
+
+The scripts and other contents of this package are licensed
+under the GNU General Public License version 2, or any later version.
