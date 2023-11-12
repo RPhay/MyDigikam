@@ -181,6 +181,12 @@ cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDL
 echo -e "\n---------- OpenAL for QtAV"
 cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null
 
+echo -e "\n---------- ImageMagick"
+
+cp -r $MAGICK_PREFIX/lib/*.dll                                            $BUNDLEDIR/                           2>/dev/null
+cp -r $MAGICK_PREFIX/modules/coders/*.dll                                 $BUNDLEDIR/                           2>/dev/null
+cp -r $MAGICK_PREFIX/modules/filters/*.dll                                $BUNDLEDIR/                           2>/dev/null
+
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
 # NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
