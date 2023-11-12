@@ -183,7 +183,7 @@ public:
     void adjustVideoSize()
     {
         videoWidget->setSize(videoView->size());
-        int orientation = videoMediaOrientation();
+        const int orientation = videoMediaOrientation();
 
         if ((orientation == 0) || (orientation == 180))
         {
@@ -213,6 +213,7 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
+        videoView->resetTransform();
         videoView->rotate(orientation);
         videoOrientation = orientation;
         adjustVideoSize();
@@ -400,7 +401,14 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
     if (newState == QMediaPlayer::PlayingState)
     {
         int rotate = d->videoMediaOrientation();
-        d->setVideoItemOrientation((-rotate) + d->videoOrientation);
+        rotate     = (-rotate) + d->videoOrientation;
+
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoOrientation;
+        }
+
+        d->setVideoItemOrientation(rotate);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
                                      << d->videoOrientation;
