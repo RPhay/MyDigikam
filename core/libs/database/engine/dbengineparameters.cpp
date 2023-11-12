@@ -40,35 +40,35 @@
 namespace
 {
 
-const QLatin1String configGroupDatabase                         ("Database Settings");
-const QLatin1String configInternalDatabaseServer                ("Internal Database Server");
-const QLatin1String configInternalDatabaseServerPath            ("Internal Database Server Path");
-const QLatin1String configInternalDatabaseServerUseMariaDB      ("Internal Database Server Use MariaDB");
-const QLatin1String configInternalDatabaseServerMysqlInitCmd    ("Internal Database Server Mysql Init Command");
-const QLatin1String configInternalDatabaseServerMysqlAdminCmd   ("Internal Database Server Mysql Admin Command");
-const QLatin1String configInternalDatabaseServerMysqlServerCmd  ("Internal Database Server Mysql Server Command");
-const QLatin1String configInternalDatabaseServerMysqlUpgradeCmd ("Internal Database Server Mysql Upgrade Command");
-const QLatin1String configDatabaseType                          ("Database Type");
-const QLatin1String configDatabaseName                          ("Database Name");              ///< For Sqlite the DB file path, for Mysql the DB name
-const QLatin1String configDatabaseNameThumbnails                ("Database Name Thumbnails");   ///< For Sqlite the DB file path, for Mysql the DB name
-const QLatin1String configDatabaseNameFace                      ("Database Name Face");         ///< For Sqlite the DB file path, for Mysql the DB name
-const QLatin1String configDatabaseNameSimilarity                ("Database Name Similarity");   ///< For Sqlite the DB file path, for Mysql the DB name
-const QLatin1String configDatabaseHostName                      ("Database Hostname");
-const QLatin1String configDatabasePort                          ("Database Port");
-const QLatin1String configDatabaseUsername                      ("Database Username");
-const QLatin1String configDatabasePassword                      ("Database Password");          ///< For compatbilitity. Use encrypted version instead.
-const QLatin1String configDatabaseEncryptedPassword             ("Database Encrypted Password");
-const QLatin1String configDatabaseConnectOptions                ("Database Connectoptions");
-const QLatin1String configDatabaseWALMode                       ("Database WAL Mode");
+static const QLatin1String configGroupDatabase                         ("Database Settings");
+static const QLatin1String configInternalDatabaseServer                ("Internal Database Server");
+static const QLatin1String configInternalDatabaseServerPath            ("Internal Database Server Path");
+static const QLatin1String configInternalDatabaseServerUseMariaDB      ("Internal Database Server Use MariaDB");
+static const QLatin1String configInternalDatabaseServerMysqlInitCmd    ("Internal Database Server Mysql Init Command");
+static const QLatin1String configInternalDatabaseServerMysqlAdminCmd   ("Internal Database Server Mysql Admin Command");
+static const QLatin1String configInternalDatabaseServerMysqlServerCmd  ("Internal Database Server Mysql Server Command");
+static const QLatin1String configInternalDatabaseServerMysqlUpgradeCmd ("Internal Database Server Mysql Upgrade Command");
+static const QLatin1String configDatabaseType                          ("Database Type");
+static const QLatin1String configDatabaseName                          ("Database Name");              ///< For Sqlite the DB file path, for Mysql the DB name
+static const QLatin1String configDatabaseNameThumbnails                ("Database Name Thumbnails");   ///< For Sqlite the DB file path, for Mysql the DB name
+static const QLatin1String configDatabaseNameFace                      ("Database Name Face");         ///< For Sqlite the DB file path, for Mysql the DB name
+static const QLatin1String configDatabaseNameSimilarity                ("Database Name Similarity");   ///< For Sqlite the DB file path, for Mysql the DB name
+static const QLatin1String configDatabaseHostName                      ("Database Hostname");
+static const QLatin1String configDatabasePort                          ("Database Port");
+static const QLatin1String configDatabaseUsername                      ("Database Username");
+static const QLatin1String configDatabasePassword                      ("Database Password");          ///< For compatbilitity. Use encrypted version instead.
+static const QLatin1String configDatabaseEncryptedPassword             ("Database Encrypted Password");
+static const QLatin1String configDatabaseConnectOptions                ("Database Connectoptions");
+static const QLatin1String configDatabaseWALMode                       ("Database WAL Mode");
 
 /// Legacy for older versions.
-const QLatin1String configDatabaseFilePathEntry                 ("Database File Path");
-const QLatin1String configAlbumPathEntry                        ("Album Path");
+static const QLatin1String configDatabaseFilePathEntry                 ("Database File Path");
+static const QLatin1String configAlbumPathEntry                        ("Album Path");
 /// Sqlite DB file names
-const QLatin1String digikam4db                                  ("digikam4.db");
-const QLatin1String thumbnails_digikamdb                        ("thumbnails-digikam.db");
-const QLatin1String face_digikamdb                              ("recognition.db");
-const QLatin1String similarity_digikamdb                        ("similarity.db");
+static const QLatin1String digikam4db                                  ("digikam4.db");
+static const QLatin1String thumbnails_digikamdb                        ("thumbnails-digikam.db");
+static const QLatin1String face_digikamdb                              ("recognition.db");
+static const QLatin1String similarity_digikamdb                        ("similarity.db");
 
 }
 
