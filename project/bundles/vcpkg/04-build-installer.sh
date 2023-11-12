@@ -213,7 +213,7 @@ for app in $DLL_FILES ; do
 done
 
 echo -e "\n---------- Redistributable VSCommunity compatibility dll"
-cp -r $VCOMP_DLL $BUNDLEDIR/ 2>/dev/null
+cp -r "$VCOMP_DLL" $BUNDLEDIR/ 2>/dev/null
 
 #################################################################################################
 # Install ExifTool binary.
