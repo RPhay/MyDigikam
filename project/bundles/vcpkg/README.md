@@ -2,33 +2,29 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 ========================================================================
 
 * RESUME
---------
 
-These scripts build a binary digiKam installer for Windows under Windows using VCPKG, MSVC tool-chain,
-and NSIS application.
+    These scripts build a binary digiKam installer for Windows under Windows using VCPKG, MSVC tool-chain,
+    and NSIS application.
 
-This script follow instructions from Qt bundle deployment for Windows as shared libraries
-available at this url: https://doc.qt.io/qt-6/windows-deployment.html
+    This script follow instructions from Qt bundle deployment for Windows as shared libraries
+    available at this url: https://doc.qt.io/qt-6/windows-deployment.html
 
 * AUTHORS
----------
 
-(c) Gilles Caulier <caulier dot gilles at gmail dot com>
+    (c) Gilles Caulier <caulier dot gilles at gmail dot com>
 
 * DESCRIPTION
--------------
 
-These files and scripts are used to make binary installer of the digiKam
-Software Collection for Windows 64 bits. In addition to this README,
-there are comments in the scripts that provide some additional explanations for
-how they work.
+    These files and scripts are used to make binary installer of the digiKam
+    Software Collection for Windows 64 bits. In addition to this README,
+    there are comments in the scripts that provide some additional explanations for
+    how they work.
 
 * BUNDLE CONTENTS
------------------
 
-Note: the bundle is relocatable.
+    Note: the bundle is relocatable.
 
-'''
+```
     |                                                    Executable, shared dlls, KDE plugins dlls, qt.conf
     |--- data
     |   |--- audio                                       Marble data files
@@ -36,15 +32,15 @@ Note: the bundle is relocatable.
     |   |--- digikam                                     digiKam data files
     |   |--- flags                                       Marble data files
     |   |--- kconf_update                                Really need ?
-    |   |--- kf5                                         Really need ?
+    |   |--- kf6                                         Really need ?
     |   |   |--- kauth
-    |   |   |-- kcharselect
-    |   |--- knotifications5                             Really need ?
-    |   |--- kservices5                                  KDE service descriptions
-    |   |--- kservicetypes5                              KDE service type definitions
+    |   |   |--- kcharselect
+    |   |--- knotifications6                             Really need ?
+    |   |--- kservices6                                  KDE service descriptions
+    |   |--- kservicetypes6                              KDE service type definitions
     |   |--- kxmlgui5                                    KDE xml gui description files
     |   |   |--- digikam
-    |   |   |-- showfoto
+    |   |   |--- showfoto
     |   |--- lensfun                                     Lensfun data files
     |   |--- locale                                      KDE GUI translations
     |   |--- maps                                        Marble data files
@@ -64,10 +60,9 @@ Note: the bundle is relocatable.
     |   |-- xdg
     |       |-- menus
     |-- translations                                     Qt GUI translations
-'''
+```
 
 * REQUIREMENTS
---------------
 
     - VirtualBox 7.x + guest extension pack             https://www.virtualbox.org/wiki/Downloads
         + Memory : 24 Gb                                Note: QtWebEngine requires a lots of memory with parallelized build
@@ -108,7 +103,6 @@ Note: the bundle is relocatable.
         + Uncompress the binary archive to C:/icoutils
 
 * BUILD
--------
 
     You must set the right target architecture : windows 32 or 64 bits.
     You must set the digiKam git tags to checkout right source code in installer.
@@ -164,7 +158,6 @@ Note: the bundle is relocatable.
     and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt)
 
 * EXTRA SCRIPTS
----------------
 
     makeall.sh
 
@@ -176,7 +169,6 @@ Note: the bundle is relocatable.
 
 
 * LICENSES
-----------
 
-The scripts and other contents of this package are licensed
-under the GNU General Public License version 2, or any later version.
+    The scripts and other contents of this package are licensed
+    under the GNU General Public License version 2, or any later version.
