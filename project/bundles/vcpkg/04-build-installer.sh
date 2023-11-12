@@ -5,6 +5,7 @@
 # Dependencies:
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
+#   - Redistributable VSCommunity compatibility dll.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -40,7 +41,8 @@ RegisterRemoteServers
 AppendVCPKGPaths
 
 #################################################################################################
-# Check if NSIS CLI tool is installed
+
+# Check if NSIS CLI tool is installed.
 
 if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
@@ -50,7 +52,7 @@ else
     echo "Check NSIS CLI tools passed..."
 fi
 
-# Check if DumpBin CLI tool is installed
+# Check if DumpBin CLI tool is installed.
 
 DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
 echo "$DUMP_BIN"
@@ -61,6 +63,18 @@ if [ ! -f "$DUMP_BIN" ] ; then
     exit 1
 else
     echo "Check DumpBin CLI tools passed..."
+fi
+
+# Check for redistributable VSCommunity compatibility dll.
+
+VCOMP_DLL="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp140.dll" -type f -executable | grep '/x64/' | awk '!/onecore/'`"
+echo "$VCOMP_DLL"
+
+if [ ! -f "$VCOMP_DLL" ] ; then
+    echo "vcomp140.dll redistributable is not available in your VSCode installation"
+    exit 1
+else
+    echo "Check VSCommunity compatibility dll passed..."
 fi
 
 #################################################################################################
@@ -198,6 +212,9 @@ for app in $DLL_FILES ; do
 
 done
 
+echo -e "\n---------- Redistributable VSCommunity compatibility dll"
+cp -r "$VCOMP_DLL" $BUNDLEDIR/ 2>/dev/null
+
 #################################################################################################
 # Install ExifTool binary.
 
@@ -238,10 +255,10 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 
 mkdir -p $ORIG_WD/bundle
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
-rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.sum
+rm -f $ORIG_WD/bundle/*Win64-Qt6$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
@@ -312,22 +329,17 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-    if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.exe*"
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win32$DEBUG_SUF.tar.xz*"
-    else
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
-        sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
-    fi
+	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
+	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    scp -v $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    scp -v $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    scp $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
+    scp $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
-        scp -v $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
-        scp -v $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
+        scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
+        scp $ORIG_WD/bundle/$PORTABLE_FILE.sig $DK_UPLOADURL:$DK_UPLOADDIR
     fi
 
     # update remote files list
@@ -338,7 +350,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rm $ORIG_WD/bundle/ls.tmp
     rm $ORIG_WD/bundle/ls.txt
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
-    scp -v $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+    scp $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
 

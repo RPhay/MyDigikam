@@ -144,10 +144,10 @@ if [[ $DK_QTVERSION == 6 ]] ; then
         COMPONENT=${BASE%-prefix}
         SUBDIR=$ITEM/src/ext_$COMPONENT
 
-        if [[ -f "$SUBDIR/.git" ]] ; then 
+        if [[ -d "$SUBDIR/.git" ]] ; then 
             echo "Parsed dir: $SUBDIR"
             cd $SUBDIR
-            echo "$BASE:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
+            echo "$COMPONENT:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
             cd $ORIG_WD
         fi
 

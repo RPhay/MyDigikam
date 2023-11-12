@@ -112,9 +112,9 @@ fi
 echo -e "\n\n"
 echo "---------- Configure digiKam $DK_VERSION"
 
-sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.vcpkg > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
-sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.vcpkg > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
-sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.vcpkg > ./tmp.mxe ; mv -f ./tmp.mxe ./bootstrap.mxe
+sed -e "s/DIGIKAMSC_COMPILE_PO=OFF/DIGIKAMSC_COMPILE_PO=ON/g"   ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
+sed -e "s/DBUILD_TESTING=ON/DBUILD_TESTING=OFF/g"               ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
+sed -e "s/DENABLE_DBUS=ON/DENABLE_DBUS=OFF/g"                   ./bootstrap.vcpkg > ./tmp.vcpkg ; mv -f ./tmp.vcpkg ./bootstrap.vcpkg
 
 chmod +x ./bootstrap.vcpkg
 

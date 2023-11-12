@@ -24,7 +24,7 @@ Complete list of supported formats are listed below:
 
 Format   Read       Write  Write      Description                              Codec           Notes
                     KIMG   IM
-                           
+
 KRA      yes        no     no         Krita Raster image                       KIMG
 ORA      yes        no     no         OpenRaster image                         KIMG
 PIC      yes        no     no         Softimage Raster image                   KIMG

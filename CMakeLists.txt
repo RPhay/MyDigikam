@@ -146,7 +146,7 @@ option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"      
 
 #######################################################################################################################
 
-if(DIGIKAMSC_COMPILE_PO)
+if(DIGIKAMSC_COMPILE_PO AND NOT MSVC)
     set_property(GLOBAL PROPERTY ALLOW_DUPLICATE_CUSTOM_TARGETS 1)
 endif()
 

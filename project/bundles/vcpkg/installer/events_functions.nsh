@@ -20,18 +20,18 @@ Function .onInit
 
     ;Do not permit to install 64 bits to 32 bits.
 
-	${IfNot} ${RunningX64}
+    ${IfNot} ${RunningX64}
 
-		MessageBox MB_OK|MB_ICONSTOP|MB_TOPMOST|MB_SETFOREGROUND "This is the 64 bits installer, and it cannot be installed to a 32 bits system."
-		SetErrorLevel 2
-		Quit
+        MessageBox MB_OK|MB_ICONSTOP|MB_TOPMOST|MB_SETFOREGROUND "This is the 64 bits installer, and it cannot be installed to a 32 bits system."
+        SetErrorLevel 2
+        Quit
 
     ${EndIf}
 
     ;Default installation folder depending of target architecture.
 
     ${If} $InstDir == "" ; Don't override setup.exe /D=c:\custom\dir
-		StrCpy $InstDir "$PROGRAMFILES64\${MY_PRODUCT}"
+        StrCpy $InstDir "$PROGRAMFILES64\${MY_PRODUCT}"
     ${EndIf}
 
     Push $0

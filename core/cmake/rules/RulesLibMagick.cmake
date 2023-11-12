@@ -24,110 +24,114 @@ if(ImageMagick_FOUND)
 
 else()
 
-    # Fail back to GraphicsMagick if available
+    if(ENABLE_GRAPHICSMAGICK)
 
-    # Try PKGConfig in first.
+        # Fail back to GraphicsMagick if available
 
-    pkg_check_modules(MAGICK_CORE GraphicsMagick)
-    pkg_check_modules(MAGICK_PLUS GraphicsMagick++)
-    pkg_check_modules(MAGICK_WAND GraphicsMagickWand)
+        # Try PKGConfig in first.
 
-    # Basic search path in second.
+        pkg_check_modules(MAGICK_CORE GraphicsMagick)
+        pkg_check_modules(MAGICK_PLUS GraphicsMagick++)
+        pkg_check_modules(MAGICK_WAND GraphicsMagickWand)
 
-    # Core include directories rules.
+        # Basic search path in second.
 
-    find_path(GraphicsMagickCore_INCLUDE_DIRS
-              NAMES magick/api.h
-              HINTS ${MAGICK_CORE_PKGCONF_INCLUDE_DIRS}
-              PATH_SUFFIXES GraphicsMagick
-    )
+        # Core include directories rules.
 
-    # Core libraries rules.
+        find_path(GraphicsMagickCore_INCLUDE_DIRS
+                NAMES magick/api.h
+                HINTS ${MAGICK_CORE_PKGCONF_INCLUDE_DIRS}
+                PATH_SUFFIXES GraphicsMagick
+        )
 
-    find_library(GraphicsMagickCore_LIBRARIES
-                 NAMES GraphicsMagick
-                 HINTS ${MAGICK_CORE_PKGCONF_LIBRARIES}
-    )
+        # Core libraries rules.
 
-    # C++ include directories rules.
+        find_library(GraphicsMagickCore_LIBRARIES
+                    NAMES GraphicsMagick
+                    HINTS ${MAGICK_CORE_PKGCONF_LIBRARIES}
+        )
 
-    find_path(GraphicsMagick++_INCLUDE_DIRS
-              NAMES Magick++
-              HINTS ${MAGICK_PLUS_PKGCONF_INCLUDE_DIRS}
-              PATH_SUFFIXES GraphicsMagick
-    )
+        # C++ include directories rules.
 
-    # C++ libraries rules.
+        find_path(GraphicsMagick++_INCLUDE_DIRS
+                NAMES Magick++
+                HINTS ${MAGICK_PLUS_PKGCONF_INCLUDE_DIRS}
+                PATH_SUFFIXES GraphicsMagick
+        )
 
-    find_library(GraphicsMagick++_LIBRARIES
-                 NAMES Magick++
-                 HINTS ${MAGICK_PLUS_PKGCONF_LIBRARIES}
-    )
+        # C++ libraries rules.
 
-    # Wand include directories rules.
+        find_library(GraphicsMagick++_LIBRARIES
+                    NAMES Magick++
+                    HINTS ${MAGICK_PLUS_PKGCONF_LIBRARIES}
+        )
 
-    find_path(GraphicsMagickWand_INCLUDE_DIRS
-              NAMES wand/magick_wand.h
-              HINTS ${MAGICK_WAND_PKGCONF_INCLUDE_DIRS}
-              PATH_SUFFIXES GraphicsMagick
-    )
+        # Wand include directories rules.
 
-    # Wand libraries rules.
+        find_path(GraphicsMagickWand_INCLUDE_DIRS
+                NAMES wand/magick_wand.h
+                HINTS ${MAGICK_WAND_PKGCONF_INCLUDE_DIRS}
+                PATH_SUFFIXES GraphicsMagick
+        )
 
-    find_library(GraphicsMagickWand_LIBRARIES
-                 NAMES Wand
-                 HINTS ${MAGICK_WAND_PKGCONF_LIBRARIES}
-    )
+        # Wand libraries rules.
 
-    message(STATUS "GraphicsMagickCore includes   : ${GraphicsMagickCore_INCLUDE_DIRS}")
-    message(STATUS "GraphicsMagickCore libraries  : ${GraphicsMagickCore_LIBRARIES}")
-    message(STATUS "GraphicsMagickCore definitions: ${MAGICK_CORE_PKGCONF_CFLAGS_OTHER}")
-    message(STATUS "GraphicsMagick++ includes     : ${GraphicsMagick++_INCLUDE_DIRS}")
-    message(STATUS "GraphicsMagick++ libraries    : ${GraphicsMagick++_LIBRARIES}")
-    message(STATUS "GraphicsMagick++ definitions  : ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER}")
-    message(STATUS "GraphicsMagickWand includes   : ${GraphicsMagickWand_INCLUDE_DIRS}")
-    message(STATUS "GraphicsMagickWand libraries  : ${GraphicsMagickWand_LIBRARIES}")
-    message(STATUS "GraphicsMagickWand definitions: ${MAGICK_WAND_PKGCONF_CFLAGS_OTHER}")
+        find_library(GraphicsMagickWand_LIBRARIES
+                    NAMES Wand
+                    HINTS ${MAGICK_WAND_PKGCONF_LIBRARIES}
+        )
 
-    if(GraphicsMagickCore_INCLUDE_DIRS AND GraphicsMagickCore_LIBRARIES)
-        set(GraphicsMagickCore_FOUND TRUE)
-    endif()
+        message(STATUS "GraphicsMagickCore includes   : ${GraphicsMagickCore_INCLUDE_DIRS}")
+        message(STATUS "GraphicsMagickCore libraries  : ${GraphicsMagickCore_LIBRARIES}")
+        message(STATUS "GraphicsMagickCore definitions: ${MAGICK_CORE_PKGCONF_CFLAGS_OTHER}")
+        message(STATUS "GraphicsMagick++ includes     : ${GraphicsMagick++_INCLUDE_DIRS}")
+        message(STATUS "GraphicsMagick++ libraries    : ${GraphicsMagick++_LIBRARIES}")
+        message(STATUS "GraphicsMagick++ definitions  : ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER}")
+        message(STATUS "GraphicsMagickWand includes   : ${GraphicsMagickWand_INCLUDE_DIRS}")
+        message(STATUS "GraphicsMagickWand libraries  : ${GraphicsMagickWand_LIBRARIES}")
+        message(STATUS "GraphicsMagickWand definitions: ${MAGICK_WAND_PKGCONF_CFLAGS_OTHER}")
 
-    if(GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagick++_LIBRARIES)
-        set(GraphicsMagick++_FOUND TRUE)
-    endif()
+        if(GraphicsMagickCore_INCLUDE_DIRS AND GraphicsMagickCore_LIBRARIES)
+            set(GraphicsMagickCore_FOUND TRUE)
+        endif()
 
-    if(GraphicsMagickWand_INCLUDE_DIRS AND GraphicsMagickWand_LIBRARIES)
-        set(GraphicsMagickWand_FOUND TRUE)
-    endif()
+        if(GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagick++_LIBRARIES)
+            set(GraphicsMagick++_FOUND TRUE)
+        endif()
 
-    if(MSVC AND GraphicsMagickCore_FOUND AND GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagickWand_INCLUDE_DIRS)
-        # VCPKG group all libraries in one file.
-        set(GraphicsMagick_FOUND TRUE)
-        set(GraphicsMagick++_LIBRARIES ${GraphicsMagickCore_LIBRARIES})
-        set(GraphicsMagickWand_LIBRARIES ${GraphicsMagickCore_LIBRARIES})
-    elseif(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
-        # Other tool-chain must provide 3 files.
-        set(GraphicsMagick_FOUND TRUE)
-    else()
-        set(GraphicsMagick_FOUND FALSE)
-    endif()
+        if(GraphicsMagickWand_INCLUDE_DIRS AND GraphicsMagickWand_LIBRARIES)
+            set(GraphicsMagickWand_FOUND TRUE)
+        endif()
 
-    if(GraphicsMagick_FOUND)
+        if(MSVC AND GraphicsMagickCore_FOUND AND GraphicsMagick++_INCLUDE_DIRS AND GraphicsMagickWand_INCLUDE_DIRS)
+            # VCPKG group all libraries in one file.
+            set(GraphicsMagick_FOUND TRUE)
+            set(GraphicsMagick++_LIBRARIES ${GraphicsMagickCore_LIBRARIES})
+            set(GraphicsMagickWand_LIBRARIES ${GraphicsMagickCore_LIBRARIES})
+        elseif(GraphicsMagickCore_FOUND AND GraphicsMagick++_FOUND AND GraphicsMagickWand_FOUND)
+            # Other tool-chain must provide 3 files.
+            set(GraphicsMagick_FOUND TRUE)
+        else()
+            set(GraphicsMagick_FOUND FALSE)
+        endif()
 
-        message(STATUS "GraphicsMagick API used instead ImageMagick")
+        if(GraphicsMagick_FOUND)
 
-        # Populate ImageMagick variables
+            message(STATUS "GraphicsMagick API used instead ImageMagick")
 
-        set(Magick_FOUND TRUE)
+            # Populate ImageMagick variables
 
-        set(Magick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
-        include_directories(${Magick_INCLUDE_DIRS})
+            set(Magick_FOUND TRUE)
 
-        set(Magick_LIBRARIES ${GraphicsMagickCore_LIBRARIES} ${GraphicsMagick++_LIBRARIES} ${GraphicsMagickWand_LIBRARIES})
+            set(Magick_INCLUDE_DIRS ${GraphicsMagickCore_INCLUDE_DIRS} ${GraphicsMagick++_INCLUDE_DIRS} ${GraphicsMagickWand_INCLUDE_DIRS})
+            include_directories(${Magick_INCLUDE_DIRS})
 
-        set(Magick++_DEFINITIONS ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER})
-        add_definitions(${Magick++_DEFINITIONS})
+            set(Magick_LIBRARIES ${GraphicsMagickCore_LIBRARIES} ${GraphicsMagick++_LIBRARIES} ${GraphicsMagickWand_LIBRARIES})
+
+            set(Magick++_DEFINITIONS ${MAGICK_PLUS_PKGCONF_CFLAGS_OTHER})
+            add_definitions(${Magick++_DEFINITIONS})
+
+        endif()
 
     endif()
 

@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-21
- * Description : ImageMagick DImg plugin.
+ * Description : Magick DImg plugin.
  *
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -21,6 +21,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "dplugindimg.h"
 #include "dimg.h"
 
