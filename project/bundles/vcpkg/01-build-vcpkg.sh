@@ -131,7 +131,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install eigen3
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install expat
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libxml2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libxslt
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install exiv2
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install exiv2[xmp,nls,bmff,png]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libical
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install fftw3
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openexr
