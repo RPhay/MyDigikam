@@ -162,7 +162,7 @@ void DBWindow::reactivate()
 void DBWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Dropbox Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Dropbox Settings"));
     d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
@@ -184,7 +184,7 @@ void DBWindow::readSettings()
 void DBWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Dropbox Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Dropbox Settings"));
 
     grp.writeEntry("Current Album",   d->currentAlbumName);
     grp.writeEntry("Resize",          d->widget->getResizeCheckBox()->isChecked());

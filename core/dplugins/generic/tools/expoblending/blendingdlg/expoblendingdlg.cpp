@@ -399,7 +399,7 @@ void ExpoBlendingDlg::slotDefault()
 void ExpoBlendingDlg::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ExpoBlending Settings");
+    KConfigGroup group      = config->group(QLatin1String("ExpoBlending Settings"));
 
     d->enfuseSettingsBox->readSettings(group);
     d->saveSettingsBox->readSettings(group);
@@ -407,7 +407,7 @@ void ExpoBlendingDlg::readSettings()
     d->templateFileName->setText(group.readEntry("Template File Name", QString::fromLatin1("enfuse")));
 
     winId();
-    KConfigGroup group2 = config->group("ExpoBlending Dialog");
+    KConfigGroup group2 = config->group(QLatin1String("ExpoBlending Dialog"));
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group2);
     resize(windowHandle()->size());
 }
@@ -415,14 +415,14 @@ void ExpoBlendingDlg::readSettings()
 void ExpoBlendingDlg::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ExpoBlending Settings");
+    KConfigGroup group      = config->group(QLatin1String("ExpoBlending Settings"));
 
     d->enfuseSettingsBox->writeSettings(group);
     d->saveSettingsBox->writeSettings(group);
 
     group.writeEntry("Template File Name", d->templateFileName->text());
 
-    KConfigGroup group2 = config->group("ExpoBlending Dialog");
+    KConfigGroup group2 = config->group(QLatin1String("ExpoBlending Dialog"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), group2);
     config->sync();
 }

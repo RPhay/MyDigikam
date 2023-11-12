@@ -78,7 +78,7 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
     d->settings          = new MailSettings;
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Email Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Email Dialog Settings"));
     d->settings->readSettings(group);
 
     d->introPage         = new MailIntroPage(this,    i18n("Welcome to Email Tool"));
@@ -91,7 +91,7 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
 MailWizard::~MailWizard()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Email Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Email Dialog Settings"));
     d->settings->writeSettings(group);
 
     delete d;

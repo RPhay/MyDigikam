@@ -81,7 +81,7 @@ CaptureDlg::CaptureDlg(QWidget* const parent,
     vbx->addWidget(d->buttons);
     setLayout(vbx);
 
-    KConfigGroup group     = KSharedConfig::openConfig()->group("Capture Tool Dialog");
+    KConfigGroup group     = KSharedConfig::openConfig()->group(QLatin1String("Capture Tool Dialog"));
 
     winId();
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
@@ -171,7 +171,7 @@ void CaptureDlg::slotCapture()
     disconnect(d->controller, SIGNAL(signalPreview(QImage)),
                this, SLOT(slotPreviewDone(QImage)));
 
-    KConfigGroup group = KSharedConfig::openConfig()->group("Capture Tool Dialog");
+    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("Capture Tool Dialog"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     d->controller->capture();
 

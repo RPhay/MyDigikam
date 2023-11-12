@@ -598,7 +598,7 @@ void PresentationKB::paintTexture(KBImage* const img)
 void PresentationKB::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Presentation Settings");
+    KConfigGroup group      = config->group(QLatin1String("Presentation Settings"));
 
     d->delay                = group.readEntry("Delay", 8000) / 1000;
     d->disableFadeInOut     = group.readEntry("KB Disable FadeInOut", false);

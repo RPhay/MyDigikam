@@ -75,7 +75,7 @@ JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
     d->settings          = new JAlbumSettings(iface);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("jAlbum tool");
+    KConfigGroup group      = config->group(QLatin1String("jAlbum tool"));
     d->settings->readSettings(group);
 
     d->introPage         = new JAlbumIntroPage(this,         i18n("Welcome to jAlbum Export Tool"));
@@ -104,7 +104,7 @@ bool JAlbumWizard::validateCurrentPage()
     if (currentPage() == d->outputPage)
     {
         KSharedConfigPtr config = KSharedConfig::openConfig();
-        KConfigGroup group      = config->group("jAlbum tool");
+        KConfigGroup group      = config->group(QLatin1String("jAlbum tool"));
         d->settings->writeSettings(group);
     }
 

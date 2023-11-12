@@ -302,7 +302,7 @@ void RenameCustomizer::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-    KConfigGroup group   = config->group("Camera Settings");
+    KConfigGroup group   = config->group(QLatin1String("Camera Settings"));
     int def              = group.readEntry("Rename Method",        0);
     int chcaseT          = group.readEntry("Case Type",            (int)NONE);
     QString manualRename = group.readEntry("Manual Rename String", QString());
@@ -316,7 +316,7 @@ void RenameCustomizer::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
 
-    KConfigGroup group = config->group("Camera Settings");
+    KConfigGroup group = config->group(QLatin1String("Camera Settings"));
     group.writeEntry("Rename Method",        d->buttonGroup->checkedId());
     group.writeEntry("Case Type",            d->renameDefaultCaseType->currentIndex());
     group.writeEntry("Manual Rename String", d->advancedRenameWidget->parseString());

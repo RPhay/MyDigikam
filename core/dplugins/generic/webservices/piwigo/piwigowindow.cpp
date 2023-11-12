@@ -295,7 +295,7 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    if (!config->hasGroup("Piwigo Settings"))
+    if (!config->hasGroup(QLatin1String("Piwigo Settings")))
     {
         QPointer<PiwigoLoginDlg> dlg = new PiwigoLoginDlg(QApplication::activeWindow(),
                                                           d->pPiwigo, i18n("Edit Piwigo Data"));
@@ -312,7 +312,7 @@ PiwigoWindow::~PiwigoWindow()
     // write config
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("PiwigoSync Galleries");
+    KConfigGroup group      = config->group(QLatin1String("PiwigoSync Galleries"));
 
     group.writeEntry("Resize",         d->resizeCheckBox->isChecked());
     group.writeEntry("Maximum Width",  d->widthSpinBox->value());
@@ -366,7 +366,7 @@ void PiwigoWindow::connectSignals()
 void PiwigoWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("PiwigoSync Galleries");
+    KConfigGroup group      = config->group(QLatin1String("PiwigoSync Galleries"));
 
     if (group.readEntry("Resize", false))
     {

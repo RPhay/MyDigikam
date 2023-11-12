@@ -193,7 +193,7 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     // ----------------------
 
-    KConfigGroup group = KSharedConfig::openConfig()->group("WebBrowserDlg");
+    KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
 
     winId();
     windowHandle()->resize(800, 600);

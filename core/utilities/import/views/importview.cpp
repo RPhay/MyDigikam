@@ -297,7 +297,7 @@ void ImportView::loadViewState()
     d->filterWidget->loadState();
 */
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Import MainWindow");
+    KConfigGroup group        = config->group(QLatin1String("Import MainWindow"));
 
     // Restore the splitter
 
@@ -320,7 +320,7 @@ void ImportView::loadViewState()
 void ImportView::saveViewState()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Import MainWindow");
+    KConfigGroup group        = config->group(QLatin1String("Import MainWindow"));
 /*
     TODO
     d->filterWidget->saveState();

@@ -492,7 +492,7 @@ void RajceWidget::setEnabledWidgets(bool enabled)
 void RajceWidget::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("RajceExport Settings");
+    KConfigGroup grp        = config->group(QLatin1String("RajceExport Settings"));
 
     RajceSession session;
 
@@ -515,7 +515,7 @@ void RajceWidget::readSettings()
 void RajceWidget::writeSettings()
 {
     KSharedConfigPtr config     = KSharedConfig::openConfig();
-    KConfigGroup grp            = config->group("RajceExport Settings");
+    KConfigGroup grp            = config->group(QLatin1String("RajceExport Settings"));
     const RajceSession& session = d->talker->session();
 
     grp.writeEntry("token",        session.sessionToken());

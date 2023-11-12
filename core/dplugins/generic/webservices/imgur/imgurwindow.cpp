@@ -312,7 +312,7 @@ void ImgurWindow::closeEvent(QCloseEvent* e)
 void ImgurWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup groupAuth  = config->group("Imgur Auth");
+    KConfigGroup groupAuth  = config->group(QLatin1String("Imgur Auth"));
     d->username             = groupAuth.readEntry("username", QString());
     slotApiAuthorized(!d->username.isEmpty(), d->username);
 }
@@ -320,7 +320,7 @@ void ImgurWindow::readSettings()
 void ImgurWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup groupAuth  = config->group("Imgur Auth");
+    KConfigGroup groupAuth  = config->group(QLatin1String("Imgur Auth"));
     groupAuth.writeEntry("username", d->username);
 }
 

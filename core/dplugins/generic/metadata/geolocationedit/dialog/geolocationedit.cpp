@@ -663,7 +663,7 @@ void GeolocationEdit::slotFileMetadataLoaded(int beginIndex, int endIndex)
 void GeolocationEdit::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Geolocation Edit Settings");
+    KConfigGroup group        = config->group(QLatin1String("Geolocation Edit Settings"));
 
     // --------------------------
 
@@ -745,7 +745,7 @@ void GeolocationEdit::readSettings()
 void GeolocationEdit::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("Geolocation Edit Settings");
+    KConfigGroup group = config->group(QLatin1String("Geolocation Edit Settings"));
 
     // --------------------------
 
@@ -1142,7 +1142,7 @@ void GeolocationEdit::adjustMapLayout(const bool syncSettings)
             if (syncSettings)
             {
                 KSharedConfig::Ptr config         = KSharedConfig::openConfig();
-                KConfigGroup group                = config->group("Geolocation Edit Settings");
+                KConfigGroup group                = config->group(QLatin1String("Geolocation Edit Settings"));
                 const KConfigGroup groupMapWidget = KConfigGroup(&group, "Map Widget");
                 d->mapWidget2->readSettingsFromGroup(&groupMapWidget);
                 d->mapWidget2->setActive(true);

@@ -179,7 +179,7 @@ void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)
 
 void ItemPropertiesMetadataTab::loadFilters()
 {
-    KConfigGroup grp2 = KSharedConfig::openConfig()->group("Image Properties SideBar");
+    KConfigGroup grp2 = KSharedConfig::openConfig()->group(QLatin1String("Image Properties SideBar"));
     d->exifWidget->setTagsFilter(grp2.readEntry("EXIF Tags Filter",           QStringList()));
     d->makernoteWidget->setTagsFilter(grp2.readEntry("MAKERNOTE Tags Filter", QStringList()));
     d->iptcWidget->setTagsFilter(grp2.readEntry("IPTC Tags Filter",           QStringList()));

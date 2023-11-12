@@ -105,7 +105,7 @@ AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const ifac
     d->previewThread   = new AdvPrintThread(this);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("PrintCreator");
+    KConfigGroup group      = config->group(QLatin1String("PrintCreator"));
     d->settings->readSettings(group);
 
     d->introPage       = new AdvPrintIntroPage(this,   i18n("Welcome to Print Creator"));
@@ -139,7 +139,7 @@ AdvPrintWizard::~AdvPrintWizard()
     d->previewThread->cancel();
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("PrintCreator");
+    KConfigGroup group      = config->group(QLatin1String("PrintCreator"));
     d->settings->writeSettings(group);
 
     delete d->settings;

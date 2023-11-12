@@ -585,7 +585,7 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
     {
         // Empty 1.3 config: migration from older versions
 
-        KConfigGroup group = config->group("Album Settings");
+        KConfigGroup group = config->group(QLatin1String("Album Settings"));
 
         QString databaseFilePath;
 
@@ -618,7 +618,7 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
 void DbEngineParameters::removeLegacyConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Album Settings");
+    KConfigGroup group        = config->group(QLatin1String("Album Settings"));
 
     if (group.hasKey(configDatabaseFilePathEntry))
     {

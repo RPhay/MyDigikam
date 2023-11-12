@@ -259,7 +259,7 @@ void IpfsWindow::closeEvent(QCloseEvent* e)
 void IpfsWindow::readSettings()
 {
     KSharedConfigPtr config  = KSharedConfig::openConfig();
-    KConfigGroup groupAuth   = config->group("IPFS Auth");
+    KConfigGroup groupAuth   = config->group(QLatin1String("IPFS Auth"));
     d->username              = groupAuth.readEntry("UserName", QString());
 /*
     apiAuthorized(!d->username.isEmpty(), d->username);
@@ -269,7 +269,7 @@ void IpfsWindow::readSettings()
 void IpfsWindow::saveSettings()
 {
     KSharedConfigPtr config  = KSharedConfig::openConfig();
-    KConfigGroup groupAuth   = config->group("IPFS Auth");
+    KConfigGroup groupAuth   = config->group(QLatin1String("IPFS Auth"));
     groupAuth.writeEntry("UserName", d->username);
 }
 
