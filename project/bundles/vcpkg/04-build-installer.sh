@@ -82,7 +82,7 @@ fi
 MAGICK_PREFIX="`find "/c/Program Files/" -maxdepth 1 -name "ImageMagick*" -type d`"
 echo "$MAGICK_PREFIX"
 
-if [ ! -f "$MAGICK_PREFIX" ] ; then
+if [ ! -d "$MAGICK_PREFIX" ] ; then
     echo "ImageMagick is not installed"
     exit 1
 else
