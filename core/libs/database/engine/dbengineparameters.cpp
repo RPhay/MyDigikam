@@ -40,35 +40,35 @@
 namespace
 {
 
-static const char* configGroupDatabase                         = "Database Settings";
-static const char* configInternalDatabaseServer                = "Internal Database Server";
-static const char* configInternalDatabaseServerPath            = "Internal Database Server Path";
-static const char* configInternalDatabaseServerUseMariaDB      = "Internal Database Server Use MariaDB";
-static const char* configInternalDatabaseServerMysqlInitCmd    = "Internal Database Server Mysql Init Command";
-static const char* configInternalDatabaseServerMysqlAdminCmd   = "Internal Database Server Mysql Admin Command";
-static const char* configInternalDatabaseServerMysqlServerCmd  = "Internal Database Server Mysql Server Command";
-static const char* configInternalDatabaseServerMysqlUpgradeCmd = "Internal Database Server Mysql Upgrade Command";
-static const char* configDatabaseType                          = "Database Type";
-static const char* configDatabaseName                          = "Database Name";              ///< For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameThumbnails                = "Database Name Thumbnails";   ///< For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameFace                      = "Database Name Face";         ///< For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseNameSimilarity                = "Database Name Similarity";   ///< For Sqlite the DB file path, for Mysql the DB name
-static const char* configDatabaseHostName                      = "Database Hostname";
-static const char* configDatabasePort                          = "Database Port";
-static const char* configDatabaseUsername                      = "Database Username";
-static const char* configDatabasePassword                      = "Database Password";          ///< For compatbilitity. Use encrypted version instead.
-static const char* configDatabaseEncryptedPassword             = "Database Encrypted Password";
-static const char* configDatabaseConnectOptions                = "Database Connectoptions";
-static const char* configDatabaseWALMode                       = "Database WAL Mode";
+const QLatin1String configGroupDatabase                         ("Database Settings");
+const QLatin1String configInternalDatabaseServer                ("Internal Database Server");
+const QLatin1String configInternalDatabaseServerPath            ("Internal Database Server Path");
+const QLatin1String configInternalDatabaseServerUseMariaDB      ("Internal Database Server Use MariaDB");
+const QLatin1String configInternalDatabaseServerMysqlInitCmd    ("Internal Database Server Mysql Init Command");
+const QLatin1String configInternalDatabaseServerMysqlAdminCmd   ("Internal Database Server Mysql Admin Command");
+const QLatin1String configInternalDatabaseServerMysqlServerCmd  ("Internal Database Server Mysql Server Command");
+const QLatin1String configInternalDatabaseServerMysqlUpgradeCmd ("Internal Database Server Mysql Upgrade Command");
+const QLatin1String configDatabaseType                          ("Database Type");
+const QLatin1String configDatabaseName                          ("Database Name");              ///< For Sqlite the DB file path, for Mysql the DB name
+const QLatin1String configDatabaseNameThumbnails                ("Database Name Thumbnails");   ///< For Sqlite the DB file path, for Mysql the DB name
+const QLatin1String configDatabaseNameFace                      ("Database Name Face");         ///< For Sqlite the DB file path, for Mysql the DB name
+const QLatin1String configDatabaseNameSimilarity                ("Database Name Similarity");   ///< For Sqlite the DB file path, for Mysql the DB name
+const QLatin1String configDatabaseHostName                      ("Database Hostname");
+const QLatin1String configDatabasePort                          ("Database Port");
+const QLatin1String configDatabaseUsername                      ("Database Username");
+const QLatin1String configDatabasePassword                      ("Database Password");          ///< For compatbilitity. Use encrypted version instead.
+const QLatin1String configDatabaseEncryptedPassword             ("Database Encrypted Password");
+const QLatin1String configDatabaseConnectOptions                ("Database Connectoptions");
+const QLatin1String configDatabaseWALMode                       ("Database WAL Mode");
 
 /// Legacy for older versions.
-static const char* configDatabaseFilePathEntry                 = "Database File Path";
-static const char* configAlbumPathEntry                        = "Album Path";
+const QLatin1String configDatabaseFilePathEntry                 ("Database File Path");
+const QLatin1String configAlbumPathEntry                        ("Album Path");
 /// Sqlite DB file names
-static const char* digikam4db                                  = "digikam4.db";
-static const char* thumbnails_digikamdb                        = "thumbnails-digikam.db";
-static const char* face_digikamdb                              = "recognition.db";
-static const char* similarity_digikamdb                        = "similarity.db";
+const QLatin1String digikam4db                                  ("digikam4.db");
+const QLatin1String thumbnails_digikamdb                        ("thumbnails-digikam.db");
+const QLatin1String face_digikamdb                              ("recognition.db");
+const QLatin1String similarity_digikamdb                        ("similarity.db");
 
 }
 
@@ -407,7 +407,8 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
 
         if (!password.isEmpty())
         {
-            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword,       QCryptographicHash::Sha1).toULongLong());
+            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword.latin1(),
+                                                          QCryptographicHash::Sha1).toULongLong());
             password = crypto.decryptToString(password);
         }
     }
@@ -660,7 +661,8 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configDatabaseWALMode,                       walMode);
     group.writeEntry(configDatabaseUsername,                      userName);
 
-    O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
+    O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword.latin1(),
+                                                  QCryptographicHash::Sha1).toULongLong());
     group.writeEntry(configDatabaseEncryptedPassword,             crypto.encryptToString(password));
 
     group.writeEntry(configDatabaseConnectOptions,                connectOptions);
