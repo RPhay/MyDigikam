@@ -66,7 +66,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - VirtualBox 7.x + guest extension pack             https://www.virtualbox.org/wiki/Downloads
         + Memory : 24 Gb                                Note: QtWebEngine requires a lots of memory with parallelized build
-        + CPU    : 8
+        + CPU    : 8                                    Very important: do not assign more CPU to compile QtWebEngine, else required memory become huge.
         + Disk0  : VDI static NTFS 150 Gb               C:/ SYSTEM VCPKG cache build target on $HOME/AppData/Local/vcpkg/archives
         + Disk1  : VDI static NTFS 250 Gb               E:/ DATA   for the build, download, install storage
 
