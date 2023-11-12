@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-21
- * Description : ImageMagick DImg plugin.
+ * Description : Magick DImg plugin.
  *
- * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -44,7 +44,10 @@
 #endif
 
 using namespace Magick;
+
+#ifdef HAVE_IMAGE_MAGICK
 using namespace MagickCore;
+#endif
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
@@ -130,10 +133,10 @@ QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2019-2022"))
+                             QString::fromUtf8("(C) 2019-2023"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2022"))
+                             QString::fromUtf8("(C) 2006-2023"))
             ;
 }
 
