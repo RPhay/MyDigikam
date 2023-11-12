@@ -5,6 +5,7 @@
 # Dependencies:
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
+#   - Redistributable VSCommunity compatibility dll.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -40,7 +41,8 @@ RegisterRemoteServers
 AppendVCPKGPaths
 
 #################################################################################################
-# Check if NSIS CLI tool is installed
+
+# Check if NSIS CLI tool is installed.
 
 if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
@@ -50,7 +52,7 @@ else
     echo "Check NSIS CLI tools passed..."
 fi
 
-# Check if DumpBin CLI tool is installed
+# Check if DumpBin CLI tool is installed.
 
 DUMP_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "dumpbin.exe" -type f -executable | grep 'Hostx64/x64/dumpbin.exe'`"
 echo "$DUMP_BIN"
@@ -63,18 +65,17 @@ else
     echo "Check DumpBin CLI tools passed..."
 fi
 
-# Check for redistributable VCOMP140.dll
+# Check for redistributable VSCommunity compatibility dll.
 
-VCOMP140="`find "/c/Program Files/Microsoft Visual Studio/" -name "VCOMP140.dll" -type f -executable | grep '/x64/' | awk '!/onecore/'`"
-echo "$VCOMP140"
+VCOMP_DLL="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp140.dll" -type f -executable | grep '/x64/' | awk '!/onecore/'`"
+echo "$VCOMP_DLL"
 
-if [ ! -f "$VCOMP140" ] ; then
-    echo "VCOMP140.dll redistributable is not available in your VSCode installation"
+if [ ! -f "$VCOMP_DLL" ] ; then
+    echo "vcomp140.dll redistributable is not available in your VSCode installation"
     exit 1
 else
-    echo "Check VCOMP140.dll passed..."
+    echo "Check VSCommunity compatibility dll passed..."
 fi
-
 
 #################################################################################################
 # Configurations
@@ -210,6 +211,9 @@ for app in $DLL_FILES ; do
     CopyReccursiveDependencies "$DUMP_BIN" "$app" "$BUNDLEDIR/" "$VCPKG_INSTALL_PREFIX/bin"
 
 done
+
+echo -e "\n---------- Redistributable VSCommunity compatibility dll"
+cp -r $VCOMP_DLL $BUNDLEDIR/ 2>/dev/null
 
 #################################################################################################
 # Install ExifTool binary.
