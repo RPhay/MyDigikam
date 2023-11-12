@@ -479,7 +479,7 @@ void EditorWindow::setupStandardActions()
                                                "under-exposing the image."));
     connect(d->viewUnderExpoAction, SIGNAL(triggered(bool)), this, SLOT(slotSetUnderExposureIndicator(bool)));
     ac->addAction(QLatin1String("editorwindow_underexposure"), d->viewUnderExpoAction);
-    ac->setDefaultShortcut(d->viewUnderExpoAction, QKeySequence(Qt::Key_F10));
+    ac->setDefaultShortcut(d->viewUnderExpoAction, QKeySequence(Qt::CTRL | Qt::Key_F11));
 
     d->viewOverExpoAction = new QAction(QIcon::fromTheme(QLatin1String("overexposure")),
                                         i18nc("@action", "Over-Exposure Indicator"), this);
