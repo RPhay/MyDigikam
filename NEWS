@@ -207,7 +207,7 @@ BUGFIXES:
 193 ==> 471503 - Can't find Liquid Rescale tool.
 194 ==> 476573 - Preview - Picture is shifted upward.
 195 ==> 476793 - Inconsistent margin in BQM.
-196 ==> 
+196 ==> 476863 - Faces in People panel do not respect the sort order.
 197 ==> 
 198 ==> 
 199 ==> 

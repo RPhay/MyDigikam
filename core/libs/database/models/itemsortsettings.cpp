@@ -265,6 +265,10 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             {
                 leftValue = left.getSuggestedNames().value(leftFace.region().toXml());
             }
+            else
+            {
+                leftValue = TagPropertyName::unknownPerson();
+            }
 
             if      (rightFace.type() == FaceTagsIface::ConfirmedName)
             {
@@ -274,14 +278,16 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
             {
                  rightValue = right.getSuggestedNames().value(rightFace.region().toXml());
             }
+            else
+            {
+                rightValue = TagPropertyName::unknownPerson();
+            }
 
-            leftValue  += fastNumberToString(leftFace.type())  +
-                          fastNumberToString(leftFace.tagId()) +
-                          fastNumberToString(leftFace.imageId());
+            leftValue  += fastNumberToString(leftFace.type()) +
+                          fastNumberToString(leftFace.tagId());
 
-            rightValue += fastNumberToString(rightFace.type())  +
-                          fastNumberToString(rightFace.tagId()) +
-                          fastNumberToString(rightFace.imageId());
+            rightValue += fastNumberToString(rightFace.type()) +
+                          fastNumberToString(rightFace.tagId());
 
             // Compare alphabetically based on the face name
 
