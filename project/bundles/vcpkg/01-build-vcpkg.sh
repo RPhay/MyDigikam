@@ -119,6 +119,8 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qttools
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtsvg
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtscxml
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtspeech
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtwebchannel
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtpositioning
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtwebengine
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5compat
 
