@@ -119,6 +119,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qttools
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtsvg
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtscxml
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtwebengine
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt5compat
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost
