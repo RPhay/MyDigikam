@@ -49,7 +49,7 @@ if [ -d "$VCPKG_DIR" ] ; then
 
     if echo "$answer" | grep -iq "^r" ;then
 
-        echo "---------- Removing existing $MXE_BUILDROOT"
+        echo "---------- Removing existing $VCPKG_BUILDROOT"
         rm -rf "$VCPKG_DIR"
 
     elif echo "$answer" | grep -iq "^c" ;then
