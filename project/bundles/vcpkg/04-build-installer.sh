@@ -77,6 +77,18 @@ else
     echo "Check VSCommunity compatibility dll passed..."
 fi
 
+# Check for the ImageMagick install directory.
+
+MAGICK_PREFIX="`find "/c/Program Files/" -maxdepth 1 -name "ImageMagick*" -type d`"
+echo "$MAGICK_PREFIX"
+
+if [ ! -f "$MAGICK_PREFIX" ] ; then
+    echo "ImageMagick is not installed"
+    exit 1
+else
+    echo "Check ImageMagick install path passed..."
+fi
+
 #################################################################################################
 # Configurations
 
@@ -168,6 +180,12 @@ cp -r $VCPKG_INSTALL_PREFIX/lib/plugins                                   $BUNDL
 
 echo -e "\n---------- OpenAL for QtAV"
 cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDLEDIR/                           2>/dev/null
+
+echo -e "\n---------- ImageMagick"
+
+cp -r $MAGICK_PREFIX/lib/*.dll                                            $BUNDLEDIR/                           2>/dev/null
+cp -r $MAGICK_PREFIX/modules/coders/*.dll                                 $BUNDLEDIR/                           2>/dev/null
+cp -r $MAGICK_PREFIX/modules/filters/*.dll                                $BUNDLEDIR/                           2>/dev/null
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.

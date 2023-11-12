@@ -141,13 +141,13 @@ void ImageShackSession::readSettings()
     bLoaded = true;
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ImageShack Settings");
+    KConfigGroup group      = config->group(QLatin1String("ImageShack Settings"));
 }
 
 void ImageShackSession::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ImageShack Settings");
+    KConfigGroup group      = config->group(QLatin1String("ImageShack Settings"));
 
     config->sync();
 }

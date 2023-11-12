@@ -92,7 +92,7 @@ void PiwigoSession::setPassword(const QString& password)
 void PiwigoSession::load()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Piwigo Settings");
+    KConfigGroup group      = config->group(QLatin1String("Piwigo Settings"));
 
     d->url                  = group.readEntry("URL",      QString());
     d->username             = group.readEntry("Username", QString());
@@ -102,7 +102,7 @@ void PiwigoSession::load()
 void PiwigoSession::save()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Piwigo Settings");
+    KConfigGroup group      = config->group(QLatin1String("Piwigo Settings"));
 
     group.writeEntry(QString::fromUtf8("URL"),      url());
     group.writeEntry(QString::fromUtf8("Username"), username());

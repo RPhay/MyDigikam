@@ -108,7 +108,7 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
     d->title->setWordWrap(true);
 
     KSharedConfigPtr config         = KSharedConfig::openConfig();
-    KConfigGroup group              = config->group("Panorama Settings");
+    KConfigGroup group              = config->group(QLatin1String("Panorama Settings"));
 
     d->horizonCheckbox              = new QCheckBox(i18nc("@option: check", "Level horizon"), vbox);
     d->horizonCheckbox->setChecked(group.readEntry("Horizon", true));
@@ -166,7 +166,7 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 PanoOptimizePage::~PanoOptimizePage()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Panorama Settings");
+    KConfigGroup group      = config->group(QLatin1String("Panorama Settings"));
     group.writeEntry("Horizon", d->horizonCheckbox->isChecked());
 /*
     group.writeEntry("Output Projection And Size", d->projectionAndSizeCheckbox->isChecked());

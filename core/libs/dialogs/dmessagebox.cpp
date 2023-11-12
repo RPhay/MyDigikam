@@ -47,7 +47,7 @@ bool DMessageBox::readMsgBoxShouldBeShown(const QString& dontShowAgainName)
     }
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Notification Messages");
+    KConfigGroup group      = config->group(QLatin1String("Notification Messages"));
     bool value              = group.readEntry(dontShowAgainName, false);
 
     return value;
@@ -61,7 +61,7 @@ void DMessageBox::saveMsgBoxShouldBeShown(const QString& dontShowAgainName, bool
     }
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Notification Messages");
+    KConfigGroup group      = config->group(QLatin1String("Notification Messages"));
 
     group.writeEntry(dontShowAgainName, value);
     config->sync();

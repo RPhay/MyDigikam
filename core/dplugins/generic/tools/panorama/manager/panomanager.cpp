@@ -61,7 +61,7 @@ public:
         plugin                      (nullptr),
         wizard                      (nullptr),
         config                      (KSharedConfig::openConfig()),
-        group                       (config->group("Panorama Settings"))
+        group                       (config->group(QLatin1String("Panorama Settings")))
     {
         gPano    = group.readEntry("GPano", false);
 /*

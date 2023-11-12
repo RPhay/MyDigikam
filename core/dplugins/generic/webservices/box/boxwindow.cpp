@@ -152,7 +152,7 @@ BOXWindow::~BOXWindow()
 void BOXWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Box Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Box Settings"));
     d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
@@ -173,7 +173,7 @@ void BOXWindow::readSettings()
 void BOXWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Box Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Box Settings"));
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());

@@ -118,7 +118,6 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtimageformats
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qttools
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtsvg
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtscxml
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtscript
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtwebengine
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv

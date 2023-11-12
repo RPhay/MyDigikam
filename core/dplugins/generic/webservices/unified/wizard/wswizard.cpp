@@ -89,7 +89,7 @@ WSWizard::WSWizard(DInfoInterface* const iface, QWidget* const parent)
     d->wsAuth               = new WSAuthentication(this, d->iface);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Web Services Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Web Services Dialog Settings"));
     d->settings->readSettings(group);
 
     d->introPage            = new WSIntroPage(this,    i18n("Welcome to Web Services Tool"));
@@ -103,7 +103,7 @@ WSWizard::WSWizard(DInfoInterface* const iface, QWidget* const parent)
 WSWizard::~WSWizard()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Web Services Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Web Services Dialog Settings"));
     d->settings->writeSettings(group);
 
     delete d;

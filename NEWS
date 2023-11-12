@@ -208,7 +208,7 @@ BUGFIXES:
 194 ==> 476573 - Preview - Picture is shifted upward.
 195 ==> 476793 - Inconsistent margin in BQM.
 196 ==> 476863 - Faces in People panel do not respect the sort order.
-197 ==> 
+197 ==> 452441 - After Cancelling Import digikam shows no albums.
 198 ==> 
 199 ==> 
 200 ==> 

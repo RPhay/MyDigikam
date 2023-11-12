@@ -180,7 +180,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     grid->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Media Player Settings");
+    KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);

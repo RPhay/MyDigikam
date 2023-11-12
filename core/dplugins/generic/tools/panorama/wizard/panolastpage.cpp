@@ -79,7 +79,7 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
        d          (new Private)
 {
     KSharedConfigPtr config         = KSharedConfig::openConfig();
-    KConfigGroup group              = config->group("Panorama Settings");
+    KConfigGroup group              = config->group(QLatin1String("Panorama Settings"));
 
     d->mngr                         = mngr;
 
@@ -142,7 +142,7 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
 PanoLastPage::~PanoLastPage()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Panorama Settings");
+    KConfigGroup group      = config->group(QLatin1String("Panorama Settings"));
     group.writeEntry("Save PTO", d->savePtoCheckBox->isChecked());
     config->sync();
 

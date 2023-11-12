@@ -479,7 +479,7 @@ void EditorWindow::setupStandardActions()
                                                "under-exposing the image."));
     connect(d->viewUnderExpoAction, SIGNAL(triggered(bool)), this, SLOT(slotSetUnderExposureIndicator(bool)));
     ac->addAction(QLatin1String("editorwindow_underexposure"), d->viewUnderExpoAction);
-    ac->setDefaultShortcut(d->viewUnderExpoAction, QKeySequence(Qt::Key_F10));
+    ac->setDefaultShortcut(d->viewUnderExpoAction, QKeySequence(Qt::Key_F11));
 
     d->viewOverExpoAction = new QAction(QIcon::fromTheme(QLatin1String("overexposure")),
                                         i18nc("@action", "Over-Exposure Indicator"), this);
@@ -489,7 +489,7 @@ void EditorWindow::setupStandardActions()
                                               "over-exposing the image."));
     connect(d->viewOverExpoAction, SIGNAL(triggered(bool)), this, SLOT(slotSetOverExposureIndicator(bool)));
     ac->addAction(QLatin1String("editorwindow_overexposure"), d->viewOverExpoAction);
-    ac->setDefaultShortcut(d->viewOverExpoAction, QKeySequence(Qt::Key_F11));
+    ac->setDefaultShortcut(d->viewOverExpoAction, QKeySequence(Qt::CTRL | Qt::Key_F11));
 
     d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")),
                                       i18nc("@action", "Color-Managed View"), this);

@@ -168,7 +168,7 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
     Q_D(const ShowfotoDelegate);
     ShowfotoItemInfo info     = ShowfotoItemModel::retrieveShowfotoItemInfo(index);
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("ImageViewer Settings");
+    KConfigGroup group        = config->group(QLatin1String("ImageViewer Settings"));
 
     if (info.isNull())
     {
