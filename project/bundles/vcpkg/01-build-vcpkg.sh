@@ -109,7 +109,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zlib
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install zstd
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install bzip2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qt[sql-mysql]
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost

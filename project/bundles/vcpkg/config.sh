@@ -27,6 +27,7 @@ VCPKG_TRIPLET="x64-windows"
 
 VCPKG_COMMON_OPTIONS=(
 "--disable-metrics"
+"--no-print-usage"
 "--triplet ${VCPKG_TRIPLET}"
 "--x-buildtrees-root=${BUILDING_DIR}"
 "--x-install-root=${INSTALL_DIR}"
