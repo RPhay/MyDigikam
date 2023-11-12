@@ -102,6 +102,12 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
 
+    - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
+        + x64 Version with Q16 and HDR support
+        + Install only C/C++ headers and libraries
+        + Disable all others features                   Note: in 'Addition Tasks' step
+        + Use default install path in C:/
+
 * BUILD
 
     You must set the right target architecture : windows 32 or 64 bits.
