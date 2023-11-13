@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ec6d70e..05017e7 100644
+index ec6d70e..a716393 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,17 +1,18 @@
@@ -97,7 +97,7 @@ index ec6d70e..05017e7 100644
 +
 +else()
 +
-+    include_directories($<TARGET_PROPERTY:exiv2,INTERFACE_INCLUDE_DIRECTORIES>)
++    include_directories($<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>)
 +
 +endif()
 +
