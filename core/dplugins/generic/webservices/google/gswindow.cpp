@@ -284,11 +284,11 @@ void GSWindow::readSettings()
     switch (d->service)
     {
         case GoogleService::GDrive:
-            grp = config->group("Google Drive Settings");
+            grp = config->group(QLatin1String("Google Drive Settings"));
             break;
 
         default:
-            grp = config->group("Google Photo Settings");
+            grp = config->group(QLatin1String("Google Photo Settings"));
             break;
     }
 
@@ -324,11 +324,11 @@ void GSWindow::writeSettings()
     switch (d->service)
     {
         case GoogleService::GDrive:
-            grp = config->group("Google Drive Settings");
+            grp = config->group(QLatin1String("Google Drive Settings"));
             break;
 
         default:
-            grp = config->group("Google Photo Settings");
+            grp = config->group(QLatin1String("Google Photo Settings"));
             break;
     }
 

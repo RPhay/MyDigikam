@@ -351,7 +351,7 @@ void SmugWindow::authenticate()
 void SmugWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Smug Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Smug Settings"));
     d->anonymousImport      = grp.readEntry("AnonymousImport", true);
     d->email                = grp.readEntry("Email");
     d->password             = grp.readEntry("Password");
@@ -378,7 +378,7 @@ void SmugWindow::readSettings()
 void SmugWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Smug Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Smug Settings"));
     grp.writeEntry("AnonymousImport", d->anonymousImport);
     grp.writeEntry("Email",           d->email);
     grp.writeEntry("Password",        d->password);

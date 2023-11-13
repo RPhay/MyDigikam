@@ -193,7 +193,7 @@ void ImageShackWindow::closeEvent(QCloseEvent* e)
 void ImageShackWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ImageShack Settings");
+    KConfigGroup group      = config->group(QLatin1String("ImageShack Settings"));
 
     if (group.readEntry("Private", false))
     {
@@ -213,7 +213,7 @@ void ImageShackWindow::readSettings()
 void ImageShackWindow::saveSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ImageShack Settings");
+    KConfigGroup group      = config->group(QLatin1String("ImageShack Settings"));
 
     group.writeEntry("Private", d->widget->d->privateImagesChb->isChecked());
     group.writeEntry("Rembar",  d->widget->d->remBarChb->isChecked());

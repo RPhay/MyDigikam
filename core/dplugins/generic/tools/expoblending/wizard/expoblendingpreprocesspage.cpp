@@ -90,7 +90,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
     d->title->setOpenExternalLinks(true);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ExpoBlending Settings");
+    KConfigGroup group      = config->group(QLatin1String("ExpoBlending Settings"));
     d->alignCheckBox        = new QCheckBox(i18nc("@option: check", "Align bracketed images"), vbox);
     d->alignCheckBox->setChecked(group.readEntry("Auto Alignment", true));
 
@@ -123,7 +123,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 ExpoBlendingPreProcessPage::~ExpoBlendingPreProcessPage()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("ExpoBlending Settings");
+    KConfigGroup group      = config->group(QLatin1String("ExpoBlending Settings"));
     group.writeEntry("Auto Alignment", d->alignCheckBox->isChecked());
     config->sync();
 

@@ -1,6 +1,7 @@
 All the bundles rules are located in relevant README file from sub-directories of project/bundles/:
 
-- appimage : bundle for Linux 32 and 64 bits.
+- appimage : bundle for Linux 64 bits.
 - macports : bundle 64 bits for MacOS (Intel).
-- mxe      : bundle for windows 32 and 64 bits.
+- mxe      : bundle for windows 64 bits cross-compiled with MinGW.
+- vcpkg    : bundle for windows 64 bits compiled with MSVC.
 - flatpak  : bundle for Linux 64 bits.

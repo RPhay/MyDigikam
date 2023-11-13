@@ -291,7 +291,7 @@ QStringList MetadataPanel::defaultExifToolFilter()
 void MetadataPanel::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Image Properties SideBar");
+    KConfigGroup group        = config->group(QLatin1String("Image Properties SideBar"));
 
     if (d->exifViewerConfig->itemsCount())
     {
@@ -327,7 +327,7 @@ void MetadataPanel::slotTabChanged(int)
     qApp->setOverrideCursor(Qt::WaitCursor);
     qApp->processEvents();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Image Properties SideBar");
+    KConfigGroup group        = config->group(QLatin1String("Image Properties SideBar"));
     QWidget* const tab        = d->tab->currentWidget();
 
     if      (tab == d->exifViewerConfig)

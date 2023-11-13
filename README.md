@@ -89,7 +89,7 @@ IRC channel from irc.libera.chat server: #digikam (or use [web chat](https://web
 
 # Bug reports
 
-IMPORTANT : the bug reports and wishlist entries are hosted by the Bugzilla
+IMPORTANT: the bug reports and wishlist entries are hosted by the Bugzilla
 system which can be reached from the standard Help menu of digiKam.
 A mail will automatically be sent to the digiKam development mailing list.
 There is no need to contact directly the digiKam mailing list for a bug report
@@ -116,23 +116,21 @@ See the [online Configuration rules](https://www.digikam.org/api/index.html#cmak
 
 # Installation
 
-In order to compile, just use something like that:
+In order to compile for qt5, just use something like that:
 
-    export VERBOSE=1
     export QTDIR=/usr/lib/qt5
     export PATH=$QTDIR/bin:$PATH
     cmake .
     make -j4
-    sudo make install
+    sudo make install/fast
 
 Usual CMake options :
 
 * `-DCMAKE_INSTALL_PREFIX`     : decide where the program will be install on your computer.
 * `-DCMAKE_BUILD_TYPE`         : decide which type of build you want. You can chose between:
-  * `debugfull`.               : for hacking. Include all debug information.
-  * `relwithdebinfo`           : default. use gcc `-O2` `-g` options.
-  * `release`                  : generate stripped and optimized bin files. For packaging.
-* `-DCMAKE_INSTALL_PREFIX=/usr`: install program in /usr.
+  * `Debug`.                   : for hacking. Include all debug information.
+  * `RelWithDebInfo`           : default. use gcc `-O2` `-g` options.
+  * `Release`                  : generate stripped and optimized bin files. For packaging.
 
 More details can be found [at this url](https://community.kde.org/Guidelines_and_HOWTOs/CMake)
 

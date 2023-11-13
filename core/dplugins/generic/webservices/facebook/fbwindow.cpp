@@ -234,7 +234,7 @@ void FbWindow::closeEvent(QCloseEvent* e)
 void FbWindow::readSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Facebook Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Facebook Settings"));
 
     if (grp.readEntry("Resize", false))
     {
@@ -255,7 +255,7 @@ void FbWindow::readSettings()
 void FbWindow::writeSettings()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup grp        = config->group("Facebook Settings");
+    KConfigGroup grp        = config->group(QLatin1String("Facebook Settings"));
 
     grp.writeEntry("Current Album", d->currentAlbumID);
     grp.writeEntry("Resize",        d->resizeChB->isChecked());

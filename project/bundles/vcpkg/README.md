@@ -36,7 +36,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     |   |   |--- kauth
     |   |   |--- kcharselect
     |   |--- knotifications6                             Really need ?
-    |   |--- kservices6                                  KDE service descriptions
     |   |--- kservicetypes6                              KDE service type definitions
     |   |--- kxmlgui5                                    KDE xml gui description files
     |   |   |--- digikam
@@ -66,7 +65,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - VirtualBox 7.x + guest extension pack             https://www.virtualbox.org/wiki/Downloads
         + Memory : 24 Gb                                Note: QtWebEngine requires a lots of memory with parallelized build
-        + CPU    : 8
+        + CPU    : 8                                    Very important: do not assign more CPU to compile QtWebEngine, else required memory become huge.
         + Disk0  : VDI static NTFS 150 Gb               C:/ SYSTEM VCPKG cache build target on $HOME/AppData/Local/vcpkg/archives
         + Disk1  : VDI static NTFS 250 Gb               E:/ DATA   for the build, download, install storage
 
@@ -92,7 +91,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + C++ ATL for latest v143 build tools
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
-            + C++ Profiling tools.
+            + C++ Profiling tools.                      For DumpBin tool.
 
     - NSIS 3.x                                          https://nsis-dev.github.io/
 
@@ -102,9 +101,14 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
 
+    - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
+        + x64 Version with Q16 and HDR support
+        + Install only C/C++ headers and libraries
+        + Disable all others features                   Note: in 'Addition Tasks' step
+        + Use default install path in C:/
+
 * BUILD
 
-    You must set the right target architecture : windows 32 or 64 bits.
     You must set the digiKam git tags to checkout right source code in installer.
     You must set the option to host debug symbols or not in installer.
 
@@ -118,7 +122,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     1) ./01-build-vcpkg.sh
 
-    To build and install the base of VCPKG tools-chain and all low level dependencies.
+    To build and install the base of VCPKG tools-chain including Qt framework and all low level dependencies.
 
     NOTE: due to long path problems while compiling under Windows and MSVC, VCPKG working directories must adjusted as shortest as possible:
         VCPKG_DIR=C:/vcpkg/
@@ -140,7 +144,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     To build the Windows installer. Once you've successfully built digiKam, files to bundle may contain over 4GB of files.
     This script grabs the ~300MB needed to run digiKam and showfoto.
-    These include applications documentations and translations.
+    These include applications translations.
 
     This script creates Windows application links for the programs that will
     be run by the user (digiKam and Showfoto). It use makensis CLI tool from NSIS

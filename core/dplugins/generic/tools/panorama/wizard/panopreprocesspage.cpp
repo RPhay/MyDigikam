@@ -105,7 +105,7 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
     d->title->setOpenExternalLinks(true);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Panorama Settings");
+    KConfigGroup group      = config->group(QLatin1String("Panorama Settings"));
 
     d->celesteCheckBox      = new QCheckBox(i18nc("@option: check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
@@ -139,7 +139,7 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 PanoPreProcessPage::~PanoPreProcessPage()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Panorama Settings");
+    KConfigGroup group      = config->group(QLatin1String("Panorama Settings"));
     group.writeEntry("Celeste", d->celesteCheckBox->isChecked());
     config->sync();
 

@@ -81,7 +81,7 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
     d->settings             = new VidSlideSettings;
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Video SlideShow Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Video SlideShow Dialog Settings"));
     d->settings->readSettings(group);
 
     d->introPage            = new VidSlideIntroPage(this,  i18n("Welcome to Video Slideshow Tool"));
@@ -98,7 +98,7 @@ VidSlideWizard::VidSlideWizard(QWidget* const parent, DInfoInterface* const ifac
 VidSlideWizard::~VidSlideWizard()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
-    KConfigGroup group      = config->group("Video SlideShow Dialog Settings");
+    KConfigGroup group      = config->group(QLatin1String("Video SlideShow Dialog Settings"));
     d->settings->writeSettings(group);
 
     delete d;

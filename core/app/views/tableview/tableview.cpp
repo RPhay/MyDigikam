@@ -141,7 +141,7 @@ void TableView::doLoadState()
     const KConfigGroup group                        = getConfigGroup();
 
     TableViewColumnProfile profile;
-    const KConfigGroup groupCurrentProfile          = group.group("Current Profile");
+    const KConfigGroup groupCurrentProfile          = group.group(QLatin1String("Current Profile"));
     profile.loadSettings(groupCurrentProfile);
     s->tableViewModel->loadColumnProfile(profile);
 
@@ -161,7 +161,7 @@ void TableView::doSaveState()
 
     TableViewColumnProfile profile   = s->tableViewModel->getColumnProfile();
     profile.headerState              = s->treeView->header()->saveState();
-    KConfigGroup groupCurrentProfile = group.group("Current Profile");
+    KConfigGroup groupCurrentProfile = group.group(QLatin1String("Current Profile"));
     profile.saveSettings(groupCurrentProfile);
     group.writeEntry("Grouping mode", int(s->tableViewModel->groupingMode()));
 }

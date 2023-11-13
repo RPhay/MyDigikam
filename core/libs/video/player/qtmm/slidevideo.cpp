@@ -97,7 +97,7 @@ public:
     void adjustVideoSize()
     {
         videoWidget->setSize(videoView->size());
-        int orientation = videoMediaOrientation();
+        const int orientation = videoMediaOrientation();
 
         if ((orientation == 0) || (orientation == 180))
         {
@@ -126,6 +126,7 @@ public:
 
     void setVideoItemOrientation(int orientation)
     {
+        videoView->resetTransform();
         videoView->rotate(orientation);
         videoOrientation = orientation;
         adjustVideoSize();
@@ -180,7 +181,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
     grid->setContentsMargins(QMargins());
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group("Media Player Settings");
+    KConfigGroup group        = config->group(QLatin1String("Media Player Settings"));
     int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);
@@ -293,7 +294,14 @@ void SlideVideo::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
     if (newState == QMediaPlayer::PlayingState)
     {
         int rotate = d->videoMediaOrientation();
-        d->setVideoItemOrientation((-rotate) + d->videoOrientation);
+        rotate     = (-rotate) + d->videoOrientation;
+
+        if ((rotate > 270) || (rotate < 0))
+        {
+            rotate = d->videoOrientation;
+        }
+
+        d->setVideoItemOrientation(rotate);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation with QtMultimedia:"
                                      << d->videoOrientation;
