@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to cleanup installation of KF6 framework from the MXE install.
+# Script to cleanup installation of KF6 framework from the VCPKG install.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #

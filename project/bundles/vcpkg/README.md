@@ -36,7 +36,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     |   |   |--- kauth
     |   |   |--- kcharselect
     |   |--- knotifications6                             Really need ?
-    |   |--- kservices6                                  KDE service descriptions
     |   |--- kservicetypes6                              KDE service type definitions
     |   |--- kxmlgui5                                    KDE xml gui description files
     |   |   |--- digikam
@@ -92,7 +91,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + C++ ATL for latest v143 build tools
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
-            + C++ Profiling tools.
+            + C++ Profiling tools.                      For DumpBin tool.
 
     - NSIS 3.x                                          https://nsis-dev.github.io/
 
@@ -110,7 +109,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
 * BUILD
 
-    You must set the right target architecture : windows 32 or 64 bits.
     You must set the digiKam git tags to checkout right source code in installer.
     You must set the option to host debug symbols or not in installer.
 
@@ -124,7 +122,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     1) ./01-build-vcpkg.sh
 
-    To build and install the base of VCPKG tools-chain and all low level dependencies.
+    To build and install the base of VCPKG tools-chain including Qt framework and all low level dependencies.
 
     NOTE: due to long path problems while compiling under Windows and MSVC, VCPKG working directories must adjusted as shortest as possible:
         VCPKG_DIR=C:/vcpkg/
@@ -146,7 +144,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     To build the Windows installer. Once you've successfully built digiKam, files to bundle may contain over 4GB of files.
     This script grabs the ~300MB needed to run digiKam and showfoto.
-    These include applications documentations and translations.
+    These include applications translations.
 
     This script creates Windows application links for the programs that will
     be run by the user (digiKam and Showfoto). It use makensis CLI tool from NSIS

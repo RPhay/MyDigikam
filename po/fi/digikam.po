@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 01:11+0000\n"
+"POT-Creation-Date: 2023-11-13 00:40+0000\n"
 "PO-Revision-Date: 2023-10-24 17:56+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2874,7 +2874,7 @@ msgstr ""
 
 #: core/app/views/preview/itempreviewview.cpp:186
 #: core/libs/video/player/qtav/mediaplayerview.cpp:193
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:233
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:234
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
@@ -2882,7 +2882,7 @@ msgstr "Edellinen"
 
 #: core/app/views/preview/itempreviewview.cpp:188
 #: core/libs/video/player/qtav/mediaplayerview.cpp:195
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:235
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:236
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
@@ -7048,7 +7048,6 @@ msgstr "HEIF-koodaus"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
@@ -7057,6 +7056,7 @@ msgstr "HEIF-koodaus"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:119
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
@@ -7071,7 +7071,6 @@ msgstr "kyllä"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:188
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
@@ -7080,6 +7079,7 @@ msgstr "kyllä"
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:191
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:120
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
@@ -7093,56 +7093,11 @@ msgstr "kyllä"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:189
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:192
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
 msgctxt "@info: cannot write file format"
-msgid "no"
-msgstr "ei"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:86
-#, kde-format
-msgctxt "@title"
-msgid "ImageMagick loader"
-msgstr "ImageMagick-latain"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:101
-#, fuzzy, kde-format
-#| msgid "An image loader based on ImageMagick coders"
-msgctxt "@info"
-msgid "An image loader based on ImageMagick coders"
-msgstr "ImageMagickiin perustuva kuvalatain"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:106
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This plugin permit to load and save image using ImageMagick coders.</"
-#| "p><p>ImageMagick is a free and open-source software suite for converting "
-#| "raster image and vector image files. It can read and write over 200 image "
-#| "file formats.</p><p>See <a href='https://en.wikipedia.org/wiki/"
-#| "ImageMagick'>ImageMagick documentation</a> for details.</p>"
-msgctxt "@info"
-msgid ""
-"<para>This plugin allows users to load and save image using ImageMagick "
-"coders.</para><para>ImageMagick is a free and open-source software suite for "
-"converting raster image and vector image files. It can read and write over "
-"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
-"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
-msgstr ""
-"<p>Tämä liitännäinen mahdollistaa kuvien lataamisen ja tallentamisen "
-"ImageMagick-lataajin.</p><p>ImageMagick on vapaa avoimen lähdekoodin "
-"ohjelmisto bittikartta- ja vektorikuvien muuntamiseen. Se osaa lukea ja "
-"kirjoittaa yli 200 kuvatiedostomuotoa.</p><p>Ks. lisätietoa <a href='https://"
-"fi.wikipedia.org/wiki/ImageMagick'>Wikipediasta</a>.</p>"
-
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:186
-#: core/libs/dplugins/core/dplugindimg.cpp:59
-#: core/libs/dplugins/core/dplugindimg.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@info: status"
-#| msgid "no"
-msgctxt "@info: cannot read file format"
 msgid "no"
 msgstr "ei"
 
@@ -7355,6 +7310,51 @@ msgstr "JPEG-2000-virta"
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
 msgstr "JPEG-2000-todennusmalli"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:89
+#, kde-format
+msgctxt "@title"
+msgid "ImageMagick loader"
+msgstr "ImageMagick-latain"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:104
+#, fuzzy, kde-format
+#| msgid "An image loader based on ImageMagick coders"
+msgctxt "@info"
+msgid "An image loader based on ImageMagick coders"
+msgstr "ImageMagickiin perustuva kuvalatain"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:109
+#, fuzzy, kde-kuit-format
+#| msgid ""
+#| "<p>This plugin permit to load and save image using ImageMagick coders.</"
+#| "p><p>ImageMagick is a free and open-source software suite for converting "
+#| "raster image and vector image files. It can read and write over 200 image "
+#| "file formats.</p><p>See <a href='https://en.wikipedia.org/wiki/"
+#| "ImageMagick'>ImageMagick documentation</a> for details.</p>"
+msgctxt "@info"
+msgid ""
+"<para>This plugin allows users to load and save image using ImageMagick "
+"coders.</para><para>ImageMagick is a free and open-source software suite for "
+"converting raster image and vector image files. It can read and write over "
+"200 image file formats.</para><para>See <a href='https://en.wikipedia.org/"
+"wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
+msgstr ""
+"<p>Tämä liitännäinen mahdollistaa kuvien lataamisen ja tallentamisen "
+"ImageMagick-lataajin.</p><p>ImageMagick on vapaa avoimen lähdekoodin "
+"ohjelmisto bittikartta- ja vektorikuvien muuntamiseen. Se osaa lukea ja "
+"kirjoittaa yli 200 kuvatiedostomuotoa.</p><p>Ks. lisätietoa <a href='https://"
+"fi.wikipedia.org/wiki/ImageMagick'>Wikipediasta</a>.</p>"
+
+#: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:189
+#: core/libs/dplugins/core/dplugindimg.cpp:59
+#: core/libs/dplugins/core/dplugindimg.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@info: status"
+#| msgid "no"
+msgctxt "@info: cannot read file format"
+msgid "no"
+msgstr "ei"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -41240,27 +41240,27 @@ msgid "Default from Desktop"
 msgstr "Työpöydän oletus"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:197
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:237
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:238
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Tauko/Toista"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:199
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:239
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:240
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Kaappaa"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:202
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:249
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:250
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Mediasoittimessa tapahtui virhe…"
 
 #: core/libs/video/player/qtav/mediaplayerview.cpp:229
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:288
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:289
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Toista/älä toista silmukassa"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to run all MXE based sub-scripts to build Windows installer.
+# Script to run all VCPKG based sub-scripts to build Windows installer.
 # Possible option : "-f" to force operations without to ask confirmation to user.
 #
 # SPDX-FileCopyrightText: 2013-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
@@ -17,22 +17,22 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older host logs from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-mxe.full.log.gz"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-vcpkg.full.log.gz"
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 <<< "rm build-extralibs.full.log.gz"
 
     echo -e "---------- Compress host log files \n"
 
-    gzip -k $ORIG_WD/logs/build-mxe.full.log $ORIG_WD/logs/build-mxe.full.log.gz             || true
+    gzip -k $ORIG_WD/logs/build-mxe.full.log $ORIG_WD/logs/build-vcpkg.full.log.gz             || true
     gzip -k $ORIG_WD/logs/build-extralibs.full.log $ORIG_WD/logs/build-extralibs.full.log.gz || true
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    scp $ORIG_WD/logs/build-mxe.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64       || true
+    scp $ORIG_WD/logs/build-vcpkg.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64       || true
     scp $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
-    rm -f $ORIG_WD/logs/build-mxe.full.log.gz       || true
+    rm -f $ORIG_WD/logs/build-vcpkg.full.log.gz       || true
     rm -f $ORIG_WD/logs/build-extralibs.full.log.gz || true
 
 fi
@@ -51,33 +51,39 @@ ORIG_WD="`pwd`"
 . ./common.sh
 StartScript
 
-echo "This script will build from scratch the digiKam installer for Windows using MXE."
-echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "This script will build from scratch the digiKam installer for Windows using VCPKG."
+echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-if [[ -d "`pwd`/build.win64" ]] ; then
+if [ -d "$VCPKG_DIR" ] ; then
 
     if [ "$1" != "-f" ] ; then
 
-        read -p "Previous MXE build already exist and it will be removed. Do you want to continue ? [(c)ontinue/(s)top] " answer
+        read -p "$VCPKG_DIR already exist. Do you want to remove it or to continue an aborted previous installation ? [(r)emove/(c)ontinue/(s)top] " answer
 
-        if echo "$answer" | grep -iq "^s" ; then
+        if echo "$answer" | grep -iq "^r" ;then
+
+            echo "---------- Removing existing $VCPKG_BUILDROOT"
+            rm -rf "$VCPKG_DIR"
+
+        elif echo "$answer" | grep -iq "^c" ;then
+
+            echo "---------- Continue aborted previous installation in $VCPKG_DIR"
+            CONTINUE_INSTALL=1
+
+        else
 
             echo "---------- Aborting..."
             exit;
-
         fi
 
     fi
-
-    echo "---------- Removing existing MXE build"
-    rm -fr `pwd`/build.win64
 
 fi
 
 echo "++++++++++++++++   Build 64 bits Installer   ++++++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-./01-build-mxe.sh
+./01-build-vcpkg.sh
 ./02-build-extralibs.sh
 ./update.sh
 

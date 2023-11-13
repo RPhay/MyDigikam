@@ -82,7 +82,7 @@ fi
 MAGICK_PREFIX="`find "/c/Program Files/" -maxdepth 1 -name "ImageMagick*" -type d`"
 echo "$MAGICK_PREFIX"
 
-if [ ! -f "$MAGICK_PREFIX" ] ; then
+if [ ! -d "$MAGICK_PREFIX" ] ; then
     echo "ImageMagick is not installed"
     exit 1
 else
@@ -144,8 +144,12 @@ cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc              
 cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
 
 echo -e "\n---------- i18n"
+# Qt framekork translations
 cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6                              $BUNDLEDIR/translations               2>/dev/null
+# KDE framework translations
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
+# digiKam translations
+cp -r $VCPKG_INSTALL_PREFIX/share/locale                                  $BUNDLEDIR/data                       2>/dev/null
 
 echo -e "\n---------- Xdg"
 cp -r $VCPKG_INSTALL_PREFIX/etc/xdg                                       $BUNDLEDIR/etc                        2>/dev/null
@@ -183,9 +187,9 @@ cp -r $VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                              $BUNDL
 
 echo -e "\n---------- ImageMagick"
 
-cp -r $MAGICK_PREFIX/lib/*.dll                                            $BUNDLEDIR/                           2>/dev/null
-cp -r $MAGICK_PREFIX/modules/coders/*.dll                                 $BUNDLEDIR/                           2>/dev/null
-cp -r $MAGICK_PREFIX/modules/filters/*.dll                                $BUNDLEDIR/                           2>/dev/null
+cp -r "$MAGICK_PREFIX"/CORE_RL_*.dll                                      $BUNDLEDIR/                           2>/dev/null
+cp -r "$MAGICK_PREFIX"/modules/coders/*.dll                               $BUNDLEDIR/                           2>/dev/null
+cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDLEDIR/                           2>/dev/null
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
@@ -347,8 +351,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
-	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
+	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.exe*"
+	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 

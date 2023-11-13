@@ -66,9 +66,9 @@ plugs:
         default-provider: hunspell-dictionaries:hunspell-dictionaries
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/plugins/digikam"
+    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins/digikam"
     PERL5LIB: "$SNAP/usr/share/perl5"
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/lapack"
+    LD_LIBRARY_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/$SNAP/usr/lib:/snap/ffmpeg-2204/current/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
     DICPATH: "$SNAP/usr/share/hunspell"
 hooks:
     configure:
@@ -154,6 +154,7 @@ parts:
         - liblqr-1-0-dev
         - libqtav-dev
         - libmarble-dev
+        - libexiv2-dev
         build-snaps:
         - ffmpeg-2204-sdk
         stage-packages:
@@ -216,6 +217,8 @@ parts:
         - libgdal30
         - libarmadillo10
         - libblas3
+        - kimageformat-plugins
+        - libexiv2-27
         stage-snaps:
         - ffmpeg-2204
         build-environment: &id005
@@ -245,7 +248,7 @@ parts:
         - "-DENABLE_QWEBENGINE=ON"
         - "-DOpenCV_DIR=$CRAFT_STAGE/usr/share/OpenCV"
         - "-DENABLE_FACESENGINE_DNN=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-111-qt-5-15-11-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-111-qt-5-15-11-core22-sdk/current\\;/snap/ffmpeg-2204/current"
         - "-Wno-dev"
         override-build: |
             craftctl default

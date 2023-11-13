@@ -56,6 +56,40 @@ else
 fi
 
 #################################################################################################
+# Install out-dated dependencies
+
+if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
+    mkdir -p $BUILDING_DIR/dk_cmake
+fi
+
+cd $BUILDING_DIR/dk_cmake
+
+rm -rf $BUILDING_DIR/dk_cmake/* || true
+
+cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
+      -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
+      -DCMAKE_COLOR_MAKEFILE=ON \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DCMAKE_INSTALL_PREFIX=$VCPKG_INSTALL_PREFIX \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DINSTALL_ROOT=$VCPKG_INSTALL_PREFIX \
+      -DBUILD_TESTING=OFF \
+      -DBUILD_WITH_QT6=ON \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DKP_VERSION=$DK_KP_VERSION \
+      -DKA_VERSION=$DK_KA_VERSION \
+      -DKDE_VERSION=$DK_KDE_VERSION \
+      -DENABLE_QTVERSION=$DK_QTVERSION \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
+      -Wno-dev
+
+cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel
+cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
+cmake --build . --config RelWithDebInfo --target ext_lensfun --parallel
+cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
+
+#################################################################################################
 # Build digiKam in temporary directory and installation
 
 # Clean up previous install (see bug #459276)

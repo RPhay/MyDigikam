@@ -7,6 +7,7 @@ Libraw : Update to snapshot 30/07/2023
 Bundles: MacOS PKG is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Linux AppImage is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Windows installer is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
+Bundles: New Windows installer compiled under Windows with VCPKG tool-chain and based on Qt6 and KF6 frameworks.
 Bundles: Exiftool updated to last 12.67.
 
 *****************************************************************************************************
@@ -209,7 +210,7 @@ BUGFIXES:
 195 ==> 476793 - Inconsistent margin in BQM.
 196 ==> 476863 - Faces in People panel do not respect the sort order.
 197 ==> 452441 - After Cancelling Import digikam shows no albums.
-198 ==> 
+198 ==> 476905 - Crash during Find New Items on startup when an AVIF file is in the folder structure.
 199 ==> 
 200 ==> 
 201 ==> 

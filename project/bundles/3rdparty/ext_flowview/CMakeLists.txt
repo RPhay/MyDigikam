@@ -20,8 +20,6 @@ endif()
 
 JoinListAsString("${FlowView_Conf}" " " BASH_OPTIONS)
 
-message(STATUS "FlowView Options: ${FlowView_Conf}")
-
 set(PREFIX_ext_flowview "${EXTPREFIX}")
 
 if (MINGW)

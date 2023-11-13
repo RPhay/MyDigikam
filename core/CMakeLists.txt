@@ -213,7 +213,6 @@ MACRO_BOOL_TO_01(ENABLE_APPSTYLES                               HAVE_APPSTYLE_SU
 MACRO_BOOL_TO_01(ENABLE_QWEBENGINE                              HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW                                 HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_FOUND                              HAVE_IMAGE_MAGICK)
-MACRO_BOOL_TO_01(GraphicsMagick_FOUND                           HAVE_GRAPHICS_MAGICK)
 MACRO_BOOL_TO_01(HEIF_FOUND                                     HAVE_HEIF)
 MACRO_BOOL_TO_01(X265_FOUND                                     HAVE_X265)
 MACRO_BOOL_TO_01(Qt5XmlPatterns_FOUND                           HAVE_QTXMLPATTERNS)
@@ -273,11 +272,6 @@ PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"          
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libakonadicontact" "https://invent.kde.org/pim/akonadi-contacts"                     "(version >= ${AKONADI_MIN_VERSION})"   "digiKam will be compiled without KDE desktop address book support."          KF${QT_VERSION_MAJOR}AkonadiContact_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libimagemagick"    "https://github.com/ImageMagick/ImageMagick.git"                  "(version >= 6.7.0)"                    "digiKam will be compiled without ImageMagick codecs."                        HAVE_IMAGE_MAGICK)
-
-if(ENABLE_GRAPHICSMAGICK)
-    PRINT_OPTIONAL_LIBRARY_STATUS("libgraphicsmagick" "http://hg.code.sf.net/p/graphicsmagick/code/"                "(version >= 1.3.0)"                    "digiKam will be compiled without GraphicsMagick codecs."                     HAVE_GRAPHICS_MAGICK)
-endif()
-
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto/libgphoto2"                            "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)

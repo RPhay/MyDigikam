@@ -213,8 +213,12 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
 
         case CategoryByMonth:
         {
-            return compareByOrder(left.dateTime().date(),
-                                  right.dateTime().date(),
+            int leftMonth  = left.dateTime().date().year()  * 100 +
+                             left.dateTime().date().month();
+            int rightMonth = right.dateTime().date().year() * 100 +
+                             right.dateTime().date().month();
+
+            return compareByOrder(leftMonth, rightMonth,
                                   currentCategorizationSortOrder);
         }
 
