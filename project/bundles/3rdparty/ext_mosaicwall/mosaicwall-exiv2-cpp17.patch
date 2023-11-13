@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ec6d70e..eca52b2 100644
+index ec6d70e..50b1b59 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,17 +1,18 @@
@@ -61,7 +61,7 @@ index ec6d70e..eca52b2 100644
 +
 +else()
 +
-+    set(LibExiv2_FOUND FALSE)
++    unset(LibExiv2_FOUND)
 +    find_package(exiv2 REQUIRED)
 +    set(EXIV2_PACKAGE_NAME "exiv2")
  
@@ -89,7 +89,7 @@ index ec6d70e..eca52b2 100644
                      ${CMAKE_SOURCE_DIR}
  )
  
-+if(${LibExiv2_FOUND})
++if(LibExiv2_FOUND)
 +
 +    include_directories($<TARGET_PROPERTY:LibExiv2_INCLUDE_DIRS>)
 +
@@ -148,7 +148,7 @@ index ec6d70e..eca52b2 100644
 +                          ${CMAKE_THREAD_LIBS_INIT}
 +    )
 +
-+    if(${LibExiv2_FOUND})
++    if(LibExiv2_FOUND)
  
 -if(APPLE)
 -  set(APPS "\${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app")
@@ -199,7 +199,7 @@ index ec6d70e..eca52b2 100644
 +
  endif()
 diff --git a/dplugin/CMakeLists.txt b/dplugin/CMakeLists.txt
-index 2842f45..271398d 100644
+index 2842f45..51d9aef 100644
 --- a/dplugin/CMakeLists.txt
 +++ b/dplugin/CMakeLists.txt
 @@ -36,9 +36,23 @@ target_link_libraries(Generic_ImageMosaicWall_Plugin
@@ -210,7 +210,7 @@ index 2842f45..271398d 100644
 +                      ${LibExiv2_LIBRARIES}
  )
  
-+if(${LibExiv2_FOUND})
++if(LibExiv2_FOUND)
 +
 +    target_link_libraries(Generic_ImageMosaicWall_Plugin
 +                          ${LibExiv2_LIBRARIES}
