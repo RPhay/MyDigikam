@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ec6d70e..237e303 100644
+index ec6d70e..10ea075 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,17 +1,18 @@
@@ -78,7 +78,7 @@ index ec6d70e..237e303 100644
  if(Qt6_FOUND)
  
      qt6_wrap_ui(imagemosaicwall_core_SRCS ${CMAKE_SOURCE_DIR}/mainwindow.ui
-@@ -119,47 +122,56 @@ set(libimagemosaicwall_core_SRCS
+@@ -119,47 +122,54 @@ set(libimagemosaicwall_core_SRCS
  
  add_library(imagemosaicwallcore STATIC ${libimagemosaicwall_core_SRCS})
  
@@ -86,8 +86,6 @@ index ec6d70e..237e303 100644
 +                      PUBLIC
 +                      exiv2lib
 +)
-+
-+endif()
 +
  if(NOT MSVC)
      target_compile_options(imagemosaicwallcore PRIVATE -fPIC)
@@ -123,25 +121,25 @@ index ec6d70e..237e303 100644
 +                          Qt${QT_VERSION_MAJOR}::Widgets
 +                          Qt${QT_VERSION_MAJOR}::Gui
 +                          Qt${QT_VERSION_MAJOR}::Concurrent
++
++                          ${CMAKE_THREAD_LIBS_INIT}
++    )
++
++    if(APPLE)
++        set(APPS "\${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app")
++        set(DIRS "\${CMAKE_INSTALL_PREFIX}/share")
  
 -if(APPLE)
 -  set(APPS "\${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app")
 -  set(DIRS "\${CMAKE_INSTALL_PREFIX}/share")
-+                          ${CMAKE_THREAD_LIBS_INIT}
-+    )
++        install(TARGETS ${PROJECT_NAME}
++                BUNDLE DESTINATION . COMPONENT Runtime
++                RUNTIME DESTINATION bin COMPONENT Runtime)
  
 -  install(TARGETS ${PROJECT_NAME}
 -    BUNDLE DESTINATION . COMPONENT Runtime
 -    RUNTIME DESTINATION bin COMPONENT Runtime
 -  )
-+    if(APPLE)
-+        set(APPS "\${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app")
-+        set(DIRS "\${CMAKE_INSTALL_PREFIX}/share")
-+
-+        install(TARGETS ${PROJECT_NAME}
-+                BUNDLE DESTINATION . COMPONENT Runtime
-+                RUNTIME DESTINATION bin COMPONENT Runtime)
-+
 +        install(CODE "
 +            include(BundleUtilities)
 +            fixup_bundle(\"${APPS}\"  \"\"  \"${DIRS}\")
