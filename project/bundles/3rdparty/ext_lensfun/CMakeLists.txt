@@ -93,6 +93,7 @@ elseif(MSVC) # VCPKG
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_lensfun}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                   -DCMAKE_INSTALL_DATAROOTDIR=${EXTPREFIX_lensfun}/share
                    ${Lensfun_Conf}
                    ${GLOBAL_PROFILE}
 
