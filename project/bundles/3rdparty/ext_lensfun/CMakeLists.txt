@@ -26,9 +26,9 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-		
-		# Rolling-release code do not compile with MinGW
-		# https://github.com/lensfun/lensfun/issues/2001
+
+        # Rolling-release code do not compile with MinGW
+        # https://github.com/lensfun/lensfun/issues/2001
         GIT_TAG v0.3.3
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_regex_mxe.patch
@@ -76,7 +76,7 @@ elseif (APPLE)
         ALWAYS 0
     )
 
-else() # Linux and MSVC
+elseif(MSVC) # VCPKG
 
     ExternalProject_Add(ext_lensfun
 
@@ -88,6 +88,31 @@ else() # Linux and MSVC
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
         PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                      cd <SOURCE_DIR> &&
+                      <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun
+
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_lensfun}
+                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                   ${Lensfun_Conf}
+                   ${GLOBAL_PROFILE}
+
+        UPDATE_COMMAND ""
+        ALWAYS 0
+    )
+
+else() # Linux
+
+    ExternalProject_Add(ext_lensfun
+
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        GIT_REPOSITORY https://github.com/lensfun/lensfun.git
+        #GIT_TAG v0.3.3
+
+        INSTALL_DIR ${EXTPREFIX_lensfun}
+
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_fixbuild_vcpkg.patch &&
+                      cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                       cd <SOURCE_DIR> &&
                       <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun
 

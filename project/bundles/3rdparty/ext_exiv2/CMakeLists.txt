@@ -103,7 +103,7 @@ elseif(APPLE)
         ALWAYS 0
     )
 
-elseif(MSVC) 
+elseif(MSVC)
 
     ExternalProject_Add(ext_exiv2
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -113,7 +113,8 @@ elseif(MSVC)
         # To use official release tag
         GIT_TAG v0.28.1
 
-        PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-brotli-vcpkg.patch &&
+                      cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                       cd <SOURCE_DIR> &&
                       <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2
 
@@ -121,7 +122,7 @@ elseif(MSVC)
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    ${Exiv2_Conf}
                    ${GLOBAL_PROFILE}
-				   
+
         UPDATE_COMMAND ""
         ALWAYS 0
     )
