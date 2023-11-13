@@ -1,7 +1,16 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 75f0ae6a..e2063cda 100644
+index 75f0ae6a..96e4461d 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 3.12 FATAL_ERROR)
+ 
+ # path for helper modules
+-set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_SOURCE_DIR}/cmake/modules")
++set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules" "${CMAKE_MODULE_PATH}")
+ GET_FILENAME_COMPONENT(SOURCE_BASE_DIR ${CMAKE_SOURCE_DIR} PATH CACHE)
+ 
+ #  global setup
 @@ -94,7 +94,7 @@ IF(BUILD_FOR_SSE2)
    ENDIF()
  ENDIF()
