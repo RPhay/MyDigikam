@@ -26,6 +26,9 @@ if (MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
+		
+		# Rolling-release code do not compile with MinGW
+		# https://github.com/lensfun/lensfun/issues/2001
         GIT_TAG v0.3.3
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_regex_mxe.patch
@@ -53,7 +56,7 @@ elseif (APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        GIT_TAG v0.3.3
+#        GIT_TAG v0.3.3
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 
@@ -73,14 +76,14 @@ elseif (APPLE)
         ALWAYS 0
     )
 
-else() # Linux
+else() # Linux and MSVC
 
     ExternalProject_Add(ext_lensfun
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/lensfun/lensfun.git
-        GIT_TAG v0.3.3
+        #GIT_TAG v0.3.3
 
         INSTALL_DIR ${EXTPREFIX_lensfun}
 

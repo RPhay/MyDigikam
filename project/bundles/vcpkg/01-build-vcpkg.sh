@@ -131,14 +131,12 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install eigen3
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install expat
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libxml2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libxslt
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install exiv2[xmp,nls,bmff,png]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libical
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install fftw3
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openexr
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install gperf
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libsnoretoast
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install hunspell
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install lensfun
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install openal-soft
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install curl
 

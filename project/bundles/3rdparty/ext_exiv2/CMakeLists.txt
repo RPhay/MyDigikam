@@ -81,8 +81,6 @@ elseif(APPLE)
     ExternalProject_Add(ext_exiv2
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        # To use official release tarball
-
         GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
 
         # To use official release tag
@@ -137,7 +135,6 @@ else() # Linux
 
         # To use official release tag
         GIT_TAG v0.28.1
-#       GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                           cd <SOURCE_DIR> &&
