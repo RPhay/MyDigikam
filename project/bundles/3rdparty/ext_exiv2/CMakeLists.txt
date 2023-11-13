@@ -76,7 +76,6 @@ if(MINGW)
         ALWAYS 0
     )
 
-
 elseif(APPLE)
 
     ExternalProject_Add(ext_exiv2
@@ -102,6 +101,29 @@ elseif(APPLE)
 
         BUILD_IN_SOURCE 1
 
+        UPDATE_COMMAND ""
+        ALWAYS 0
+    )
+
+elseif(MSVC) 
+
+    ExternalProject_Add(ext_exiv2
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+
+        # To use official release tag
+        GIT_TAG v0.28.1
+
+        PATCH_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
+                      cd <SOURCE_DIR> &&
+                      <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2
+
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_exiv2}
+                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
+                   ${Exiv2_Conf}
+                   ${GLOBAL_PROFILE}
+				   
         UPDATE_COMMAND ""
         ALWAYS 0
     )
