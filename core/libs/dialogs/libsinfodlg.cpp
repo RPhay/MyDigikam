@@ -6,7 +6,7 @@
  * Date        : 2008-07-11
  * Description : shared libraries list dialog common to digiKam and Showfoto
  *
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

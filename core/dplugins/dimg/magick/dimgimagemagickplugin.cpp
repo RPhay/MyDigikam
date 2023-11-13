@@ -44,10 +44,7 @@
 #endif
 
 using namespace Magick;
-
-#ifdef HAVE_IMAGE_MAGICK
 using namespace MagickCore;
-#endif
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
