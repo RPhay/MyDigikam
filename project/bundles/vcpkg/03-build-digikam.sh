@@ -58,8 +58,13 @@ fi
 #################################################################################################
 # Install out-dated dependencies
 
-cd $BUILDING_DIR
-rm -rf $BUILDING_DIR/* || true
+if [ ! -d $BUILDING_DIR/dk_cmake ] ; then
+    mkdir -p $BUILDING_DIR/dk_cmake
+fi
+
+cd $BUILDING_DIR/dk_cmake
+
+rm -rf $BUILDING_DIR/dk_cmake/* || true
 
 cmake $ORIG_WD/../3rdparty \
       -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
