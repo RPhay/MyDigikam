@@ -154,6 +154,7 @@ parts:
         - liblqr-1-0-dev
         - libqtav-dev
         - libmarble-dev
+        - libexiv2-dev
         build-snaps:
         - ffmpeg-2204-sdk
         stage-packages:
@@ -217,6 +218,7 @@ parts:
         - libarmadillo10
         - libblas3
         - kimageformat-plugins
+        - libexiv2-27
         stage-snaps:
         - ffmpeg-2204
         build-environment: &id005
