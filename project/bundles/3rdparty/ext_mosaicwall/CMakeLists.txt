@@ -42,7 +42,7 @@ if (MINGW)
         UPDATE_COMMAND ""
     )
 
-else() # MacOS and Linux
+else() # MacOS, Linux, and VCPKG
 
     ExternalProject_Add(ext_mosaicwall
 
