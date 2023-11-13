@@ -210,7 +210,7 @@ BUGFIXES:
 195 ==> 476793 - Inconsistent margin in BQM.
 196 ==> 476863 - Faces in People panel do not respect the sort order.
 197 ==> 452441 - After Cancelling Import digikam shows no albums.
-198 ==> 
+198 ==> 476905 - Crash during Find New Items on startup when an AVIF file is in the folder structure.
 199 ==> 
 200 ==> 
 201 ==> 
