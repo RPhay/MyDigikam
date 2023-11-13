@@ -144,7 +144,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     To build the Windows installer. Once you've successfully built digiKam, files to bundle may contain over 4GB of files.
     This script grabs the ~300MB needed to run digiKam and showfoto.
-    These include applications documentations and translations.
+    These include applications translations.
 
     This script creates Windows application links for the programs that will
     be run by the user (digiKam and Showfoto). It use makensis CLI tool from NSIS
