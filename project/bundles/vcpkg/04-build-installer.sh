@@ -132,7 +132,7 @@ cp    $BUILDDIR/data/qt.conf                                              $BUNDL
 
 echo -e "\n---------- icons-set"
 # Temporary solution until breeze-icons generator works under windows.
-cp    $BUILDDIR/data/breeze-icons.rcc									  $BUNDLEDIR/breeze.rcc          		2>/dev/null
+cp    $BUILDDIR/data/breeze.rcc									          $BUNDLEDIR/breeze.rcc          		2>/dev/null
 cp    $BUILDDIR/data/breeze-dark.rcc				      		  	      $BUNDLEDIR/breeze-dark.rcc     		2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
