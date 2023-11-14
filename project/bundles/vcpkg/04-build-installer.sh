@@ -131,8 +131,11 @@ echo -e "\n---------- Qt config"
 cp    $BUILDDIR/data/qt.conf                                              $BUNDLEDIR/                           2>/dev/null
 
 echo -e "\n---------- icons-set"
-cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
-cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
+# Temporary solution until breeze-icons generator works under windows.
+cp    $BUILDDIR/data/breeze-icons.rcc									  $BUNDLEDIR/breeze.rcc          		2>/dev/null
+cp    $BUILDDIR/data/breeze-dark.rcc				      		  	      $BUNDLEDIR/breeze-dark.rcc     		2>/dev/null
+#cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
+#cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
 
 echo -e "\n---------- i18n"
 # Qt framekork translations
