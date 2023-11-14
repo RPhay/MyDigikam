@@ -5,7 +5,7 @@
 # Dependencies:
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
-#   - Redistributable VSCommunity compatibility dll.
+#   - ImageMagick for the rune-time dll.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -66,16 +66,6 @@ else
 fi
 
 # Check for redistributable VSCommunity compatibility dll.
-
-VCOMP_DLL="`find "/c/Program Files/Microsoft Visual Studio/" -name "vcomp140.dll" -type f -executable | grep '/x64/' | awk '!/onecore/'`"
-echo "$VCOMP_DLL"
-
-if [ ! -f "$VCOMP_DLL" ] ; then
-    echo "vcomp140.dll redistributable is not available in your VSCode installation"
-    exit 1
-else
-    echo "Check VSCommunity compatibility dll passed..."
-fi
 
 # Check for the ImageMagick install directory.
 
@@ -222,10 +212,10 @@ for app in $EXE_FILES ; do
 done
 
 DLL_FILES="\
-`find  $VCPKG_INSTALL_PREFIX/lib/plugins         -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/libs/plugins||'`       \
-`find  $VCPKG_INSTALL_PREFIX/Qt6/plugins         -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`        \
-`find  $VCPKG_INSTALL_PREFIX/plugins             -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`            \
-$VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll \
+`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/libs/plugins||'` \
+`find  $VCPKG_INSTALL_PREFIX/Qt6/plugins -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/Qt6/plugins||'`  \
+`find  $VCPKG_INSTALL_PREFIX/plugins     -name "*.dll" -type f | sed 's|$VCPKG_INSTALL_PREFIX/plugins||'`      \
+$VCPKG_INSTALL_PREFIX/bin/OpenAL32.dll                                                                         \
 "
 
 for app in $DLL_FILES ; do
@@ -234,8 +224,24 @@ for app in $DLL_FILES ; do
 
 done
 
-echo -e "\n---------- Redistributable VSCommunity compatibility dll"
-cp -r "$VCOMP_DLL" $BUNDLEDIR/ 2>/dev/null
+echo -e "\n---------- Copy redistributable VSCommunity compatibility dlls"
+
+VS_DLL_FILES="\
+$VCPKG_INSTALL_PREFIX/bin/msvcp140.dll              \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_1.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_2.dll            \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_atomic_wait.dll  \
+$VCPKG_INSTALL_PREFIX/bin/msvcp140_codecvt_ids.dll  \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime140_1.dll        \
+$VCPKG_INSTALL_PREFIX/bin/vcruntime140.dll          \
+$VCPKG_INSTALL_PREFIX/bin/concrt140.dll             \
+"
+
+for vsdll in $VS_DLL_FILES ; do
+
+    cp -r "$vsdll" $BUNDLEDIR/ 2>/dev/null
+
+done
 
 #################################################################################################
 # Install ExifTool binary.
