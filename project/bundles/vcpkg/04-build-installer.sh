@@ -137,6 +137,9 @@ cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc    
 echo -e "\n---------- i18n"
 # Qt framekork translations
 cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                            $BUNDLEDIR/translations               2>/dev/null
+rm -fr $BUNDLEDIR/translations/assistant*.qm
+rm -fr $BUNDLEDIR/translations/designer*.qm
+rm -fr $BUNDLEDIR/translations/linguist*.qm
 # KDE framework translations
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
 # digiKam translations
