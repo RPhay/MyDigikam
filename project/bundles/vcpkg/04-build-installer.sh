@@ -140,6 +140,7 @@ cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                            $BUNDL
 rm -fr $BUNDLEDIR/translations/assistant*.qm
 rm -fr $BUNDLEDIR/translations/designer*.qm
 rm -fr $BUNDLEDIR/translations/linguist*.qm
+rm -fr $BUNDLEDIR/translations/qt_help*.qm
 # KDE framework translations
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
 # digiKam translations
@@ -250,12 +251,10 @@ done
 #################################################################################################
 # Install ExifTool binary.
 
+echo -e "\n---------- Copy ExifTool executable"
+
 cd $DOWNLOAD_DIR
-
-#if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
-    curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
-#fi
-
+curl -LO https://files.kde.org/digikam/exiftool/exiftool.zip
 unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
 
