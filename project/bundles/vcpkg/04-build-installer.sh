@@ -199,7 +199,7 @@ PDB_FILES="`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
-    echo -e "\n   => $pdb"
+    echo -e "   => $pdb"
     rm -rf "$pdb"
 
 done
@@ -259,6 +259,7 @@ $VCPKG_INSTALL_PREFIX/bin/concrt140.dll             \
 
 for vsdll in $VS_DLL_FILES ; do
 
+    echo -e "   => $vsdll"
     cp -r "$vsdll" $BUNDLEDIR/ 2>/dev/null
 
 done
