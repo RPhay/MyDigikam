@@ -95,7 +95,7 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 #################################################################################################
 # Copy files
 
-echo -e "\n---------- Copy files in bundle directory"
+echo -e "\n---------- Preparing files to host in the bundle"
 
 # Directories creation -----------------------------------------------------------------------
 
@@ -195,7 +195,7 @@ cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDL
 
 echo -e "\n---------- Clean up debug symbols in the bundle"
 
-PDB_FILES=`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.pdb" -type f
+PDB_FILES="`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
