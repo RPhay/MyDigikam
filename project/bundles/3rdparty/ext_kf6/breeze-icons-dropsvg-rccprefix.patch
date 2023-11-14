@@ -1,16 +1,48 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 769e40db..e9811807 100644
+index 769e40db..f2fa009b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -36,7 +36,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+@@ -36,23 +36,23 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  
  # FIXME: This is a temporary solution to unbreak KDE's Windows CI.
  # Remove "NOT WIN32" when icon generation works on Windows.
 -if(Python_FOUND AND NOT WIN32)
-+if(Python_FOUND)
-     # Find lxml Python 3 module
-     exec_program(${Python_EXECUTABLE}
-         ARGS "-c \"import lxml; from lxml import etree; print(lxml.get_include())\""
+-    # Find lxml Python 3 module
+-    exec_program(${Python_EXECUTABLE}
+-        ARGS "-c \"import lxml; from lxml import etree; print(lxml.get_include())\""
+-        RETURN_VALUE LXML_NOT_FOUND # Returns 0 or false if successful
+-    )
+-
+-    # Generating icons is not required, but strongly recommended in most cases
+-    if(LXML_NOT_FOUND)
+-        message(WARNING "lxml or lxml.etree not found; icon generation disabled")
+-        set(WITH_ICON_GENERATION OFF)
+-    else()
+-        option(WITH_ICON_GENERATION "Icon generation" ON)
+-    endif()
+-else()
+-    set(WITH_ICON_GENERATION OFF)
+-endif()
++#if(Python_FOUND AND NOT WIN32)
++#    # Find lxml Python 3 module
++#    exec_program(${Python_EXECUTABLE}
++#        ARGS "-c \"import lxml; from lxml import etree; print(lxml.get_include())\""
++#        RETURN_VALUE LXML_NOT_FOUND # Returns 0 or false if successful
++#    )
++#
++#    # Generating icons is not required, but strongly recommended in most cases
++#    if(LXML_NOT_FOUND)
++#        message(WARNING "lxml or lxml.etree not found; icon generation disabled")
++#        set(WITH_ICON_GENERATION OFF)
++#    else()
++#        option(WITH_ICON_GENERATION "Icon generation" ON)
++#    endif()
++#else()
++#    set(WITH_ICON_GENERATION OFF)
++#endif()
+ 
+ if(WITH_ICON_GENERATION)
+     find_package(Qt6 NO_MODULE REQUIRED Core Gui)
 diff --git a/icons/apps/48/digikam.svg b/icons/apps/48/digikam.svg
 deleted file mode 100644
 index 63796ad9..00000000
