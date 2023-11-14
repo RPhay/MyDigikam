@@ -64,97 +64,97 @@ cmake $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 # core KDE frameworks dependencies
-cmake --build . --parallel --config RelWithDebInfo --target ext_extra-cmake-modules
-cmake --build . --parallel --config RelWithDebInfo --target ext_kconfig
+#cmake --build . --parallel --config RelWithDebInfo --target ext_extra-cmake-modules
+#cmake --build . --parallel --config RelWithDebInfo --target ext_kconfig
 cmake --build . --parallel --config RelWithDebInfo --target ext_breeze-icons
-cmake --build . --parallel --config RelWithDebInfo --target ext_kcoreaddons
-cmake --build . --parallel --config RelWithDebInfo --target ext_kwindowsystem
-cmake --build . --parallel --config RelWithDebInfo --target ext_solid
-cmake --build . --parallel --config RelWithDebInfo --target ext_threadweaver
-cmake --build . --parallel --config RelWithDebInfo --target ext_karchive
-cmake --build . --parallel --config RelWithDebInfo --target ext_kdbusaddons
-cmake --build . --parallel --config RelWithDebInfo --target ext_ki18n
-cmake --build . --parallel --config RelWithDebInfo --target ext_kcrash
-cmake --build . --parallel --config RelWithDebInfo --target ext_kcodecs
-cmake --build . --parallel --config RelWithDebInfo --target ext_kguiaddons
-cmake --build . --parallel --config RelWithDebInfo --target ext_kwidgetsaddons
-cmake --build . --parallel --config RelWithDebInfo --target ext_kitemviews
-cmake --build . --parallel --config RelWithDebInfo --target ext_kcompletion
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kcoreaddons
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kwindowsystem
+# cmake --build . --parallel --config RelWithDebInfo --target ext_solid
+# cmake --build . --parallel --config RelWithDebInfo --target ext_threadweaver
+# cmake --build . --parallel --config RelWithDebInfo --target ext_karchive
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kdbusaddons
+# cmake --build . --parallel --config RelWithDebInfo --target ext_ki18n
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kcrash
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kcodecs
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kguiaddons
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kwidgetsaddons
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kitemviews
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kcompletion
 
-if [[ $DK_QTVERSION == 6 ]] ; then
+# if [[ $DK_QTVERSION == 6 ]] ; then
 
-    cmake --build . --parallel --config RelWithDebInfo --target ext_kcolorscheme
+    # cmake --build . --parallel --config RelWithDebInfo --target ext_kcolorscheme
 
-fi
+# fi
 
-cmake --build . --parallel --config RelWithDebInfo --target ext_kconfigwidgets
-cmake --build . --parallel --config RelWithDebInfo --target ext_kiconthemes
-cmake --build . --parallel --config RelWithDebInfo --target ext_kservice
-cmake --build . --parallel --config RelWithDebInfo --target ext_kxmlgui
-cmake --build . --parallel --config RelWithDebInfo --target ext_kbookmarks
-cmake --build . --parallel --config RelWithDebInfo --target ext_kimageformats
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kconfigwidgets
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kiconthemes
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kservice
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kxmlgui
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kbookmarks
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kimageformats
 
-# Extra support for digiKam
+# # Extra support for digiKam
 
-# Desktop integration support
-cmake --build . --parallel --config RelWithDebInfo --target ext_knotifications
-cmake --build . --parallel --config RelWithDebInfo --target ext_kjobwidgets
-cmake --build . --parallel --config RelWithDebInfo --target ext_kio
-cmake --build . --parallel --config RelWithDebInfo --target ext_knotifyconfig
+# # Desktop integration support
+# cmake --build . --parallel --config RelWithDebInfo --target ext_knotifications
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kjobwidgets
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kio
+# cmake --build . --parallel --config RelWithDebInfo --target ext_knotifyconfig
 
-# libksane support
-cmake --build . --parallel --config RelWithDebInfo --target ext_sonnet
-cmake --build . --parallel --config RelWithDebInfo --target ext_ktextwidgets
+# # libksane support
+# cmake --build . --parallel --config RelWithDebInfo --target ext_sonnet
+# cmake --build . --parallel --config RelWithDebInfo --target ext_ktextwidgets
 
-# Geolocation support
-cmake --build . --parallel --config RelWithDebInfo --target ext_marble
+# # Geolocation support
+# cmake --build . --parallel --config RelWithDebInfo --target ext_marble
 
-# Calendar support
-cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
+# # Calendar support
+# cmake --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 
-# Breeze style support
-cmake --build . --parallel --config RelWithDebInfo --target ext_breeze
+# # Breeze style support
+# cmake --build . --parallel --config RelWithDebInfo --target ext_breeze
 
-# Marble install shared lib at wrong place.
-mv $VCPKG_INSTALL_PREFIX/libmarble* $VCPKG_INSTALL_PREFIX/bin || true
-mv $VCPKG_INSTALL_PREFIX/libastro*  $VCPKG_INSTALL_PREFIX/bin || true
+# # Marble install shared lib at wrong place.
+# mv $VCPKG_INSTALL_PREFIX/libmarble* $VCPKG_INSTALL_PREFIX/bin || true
+# mv $VCPKG_INSTALL_PREFIX/libastro*  $VCPKG_INSTALL_PREFIX/bin || true
 
-#################################################################################################
+# #################################################################################################
 
-if [[ $DK_QTVERSION == 6 ]] ; then
+# if [[ $DK_QTVERSION == 6 ]] ; then
 
-    KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
+    # KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
 
-    echo "Populate git sub-module revisions in $KF6_GITREV_LST"
+    # echo "Populate git sub-module revisions in $KF6_GITREV_LST"
 
-    if [ -f $KF6_GITREV_LST ] ; then
-        rm -f $KF6_GITREV_LST
-    fi
+    # if [ -f $KF6_GITREV_LST ] ; then
+        # rm -f $KF6_GITREV_LST
+    # fi
 
-    currentDate=`date +"%Y-%m-%d"`
-    echo "+KF6 Snapshot $currentDate" > $KF6_GITREV_LST
+    # currentDate=`date +"%Y-%m-%d"`
+    # echo "+KF6 Snapshot $currentDate" > $KF6_GITREV_LST
 
-    # --- List git revisions for all sub-modules
+    # # --- List git revisions for all sub-modules
 
-    DIRS=$(find $BUILDING_DIR/dk_cmake/ext_kf6/ -name "ext_*-prefix")
+    # DIRS=$(find $BUILDING_DIR/dk_cmake/ext_kf6/ -name "ext_*-prefix")
 
-    for ITEM in $DIRS ; do
+    # for ITEM in $DIRS ; do
 
-        BASE=$(basename $ITEM | awk -F'_' '{print $2}')
-        COMPONENT=${BASE%-prefix}
-        SUBDIR=$ITEM/src/ext_$COMPONENT
+        # BASE=$(basename $ITEM | awk -F'_' '{print $2}')
+        # COMPONENT=${BASE%-prefix}
+        # SUBDIR=$ITEM/src/ext_$COMPONENT
 
-        if [[ -d "$SUBDIR/.git" ]] ; then 
-            echo "Parsed dir: $SUBDIR"
-            cd $SUBDIR
-            echo "$COMPONENT:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
-            cd $ORIG_WD
-        fi
+        # if [[ -d "$SUBDIR/.git" ]] ; then 
+            # echo "Parsed dir: $SUBDIR"
+            # cd $SUBDIR
+            # echo "$COMPONENT:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
+            # cd $ORIG_WD
+        # fi
 
-    done
+    # done
 
-    cat $KF6_GITREV_LST
+    # cat $KF6_GITREV_LST
 
-fi
+# fi
 
 TerminateScript
