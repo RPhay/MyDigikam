@@ -102,8 +102,8 @@ echo -e "\n---------- Copy files in bundle directory\n"
 cd $ORIG_WD
 
 if [ -d "$BUNDLEDIR" ] ; then
-    rm -fr $BUNDLEDIR
-    mkdir $BUNDLEDIR
+    rm -fr "$BUNDLEDIR"
+    mkdir "$BUNDLEDIR"
 fi
 
 mkdir -p $BUNDLEDIR/data
@@ -357,13 +357,13 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.exe*"
-	sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.tar.xz*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.exe*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    scp $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    scp $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    scp -v $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
+    scp -v $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
