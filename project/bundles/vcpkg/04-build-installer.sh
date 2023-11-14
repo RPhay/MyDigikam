@@ -95,13 +95,14 @@ DK_RELEASEID=`cat $ORIG_WD/data/RELEASEID.txt`
 #################################################################################################
 # Copy files
 
-echo -e "\n---------- Copy files in bundle directory\n"
+echo -e "\n---------- Copy files in bundle directory"
 
 # Directories creation -----------------------------------------------------------------------
 
 cd $ORIG_WD
 
 if [ -d "$BUNDLEDIR" ] ; then
+    echo "Cleanup temporary directory $BUNDLEDIR..."
     rm -fr "$BUNDLEDIR"
     mkdir "$BUNDLEDIR"
 fi
@@ -135,7 +136,7 @@ cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc    
 
 echo -e "\n---------- i18n"
 # Qt framekork translations
-cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6                              $BUNDLEDIR/translations               2>/dev/null
+cp -r $VCPKG_INSTALL_PREFIX/translations/Qt6/*                            $BUNDLEDIR/translations               2>/dev/null
 # KDE framework translations
 cp -r $VCPKG_INSTALL_PREFIX/bin/data/locale                               $BUNDLEDIR/data                       2>/dev/null
 # digiKam translations
@@ -362,8 +363,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    scp -v $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    scp -v $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    scp $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
+    scp $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
