@@ -186,6 +186,11 @@ public:
     static bool supportXmp();
 
     /**
+     * Return true if Exiv2 library is compiled with JpegXL metadata support.
+     */
+    static bool supportJpegXL();
+
+    /**
      * Return true if library support Base Media File Format (aka CR3, HEIF, HEIC, and AVIF).
      * Note: use this function only after to call initializeExiv2(), else false will always returned.
      * The function return true only if Exiv2 >= 0.27.4 compiled with BMFF support.

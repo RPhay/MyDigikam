@@ -130,6 +130,21 @@ bool MetaEngine::supportXmp()
 
 }
 
+bool MetaEngine::supportJpegXL()
+{
+
+#ifdef EXV_HAVE_BROTLI
+
+    return true;
+
+#else
+
+    return false;
+
+#endif // EXV_HAVE_BROTLI
+
+}
+
 bool MetaEngine::supportMetadataWriting(const QString& /*typeMime*/)
 {
 /* FIXME : use Exiv2 API to return right writings support
