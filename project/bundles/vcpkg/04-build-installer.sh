@@ -207,7 +207,7 @@ cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDL
 
 echo -e "\n---------- Clean up debug symbols in the bundle"
 
-PDB_FILES="`find  $VCPKG_INSTALL_PREFIX/lib/plugins -name "*.pdb" -type f`"
+PDB_FILES="`find "$VCPKG_INSTALL_PREFIX/lib/plugins" -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
@@ -222,7 +222,7 @@ if [[ $DK_DEBUG = 1 ]] ; then
 
     echo -e "\n---------- Add necessary debug symbols in the bundle"
 
-    cp -r $VCPKG_INSTALL_PREFIX/bin/digikam*.pdb                       $BUNDLEDIR/                              2>/dev/null
+    cp -r "$VCPKG_INSTALL_PREFIX/bin/digikam*.pdb"                        $BUNDLEDIR/                           2>/dev/null
 
 fi
 
