@@ -116,7 +116,7 @@ elseif(MSVC)
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-brotli-vcpkg.patch &&
                       cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                       cd <SOURCE_DIR> &&
-                      <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2
+                      bash --noprofile <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} exiv2
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_exiv2}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}

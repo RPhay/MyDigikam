@@ -90,7 +90,7 @@ elseif(MSVC) # VCPKG
 		PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/lensfun_fixbuild_vcpkg.patch &&
                       cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../scripts/create_manifest.sh <SOURCE_DIR>/. &&
                       cd <SOURCE_DIR> &&
-                      <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun
+                      bash --noprofile <SOURCE_DIR>/create_manifest.sh ${EXTERNALS_DOWNLOAD_DIR} lensfun
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_lensfun}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
