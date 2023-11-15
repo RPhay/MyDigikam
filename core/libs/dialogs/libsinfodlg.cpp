@@ -168,21 +168,24 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     listView()->addTopLevelItem(m_features);
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Parallelized demosaicing") <<       checkTriState(DRawDecoder::librawUseGomp()));
+                        i18nc(CONTEXT, "Parallelized demosaicing") <<        checkTriState(DRawDecoder::librawUseGomp()));
 
 #ifdef HAVE_QTXMLPATTERNS
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Rajce support") <<                  SUPPORTED_YES);
+                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Rajce support") <<                  SUPPORTED_YES);
+                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
 #endif
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Exiv2 supports XMP metadata") <<    (MetaEngine::supportXmp() ?  SUPPORTED_YES : SUPPORTED_NO));
+                        i18nc(CONTEXT, "Exiv2 supports XMP metadata") <<     (MetaEngine::supportXmp() ?  SUPPORTED_YES : SUPPORTED_NO));
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Exiv2 supports Base Media") <<      (MetaEngine::supportBmff() ? SUPPORTED_YES : SUPPORTED_NO));
+                        i18nc(CONTEXT, "Exiv2 supports Base Media") <<       (MetaEngine::supportBmff() ? SUPPORTED_YES : SUPPORTED_NO));
+
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Exiv2 supports JPEG-XL metadata") << (MetaEngine::supportJpegXL() ? SUPPORTED_YES : SUPPORTED_NO));
 
     // ---
 
