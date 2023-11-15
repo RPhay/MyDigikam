@@ -211,8 +211,17 @@ PDB_FILES="`find "$VCPKG_INSTALL_PREFIX"/lib/plugins -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
-    echo -e "   => $pdb"
-    rm -rf "$pdb"
+    if [ "$DK_DEBUG" = 0 ] ; then
+
+        echo -e "   => $pdb"
+        rm -rf "$pdb"
+
+    elif [[ $pdb != *digikam* ]] ; then
+
+        echo -e "   => $pdb"
+        rm -rf "$pdb"
+
+    fi
 
 done
 
