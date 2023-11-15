@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-14 00:40+0000\n"
-"PO-Revision-Date: 2023-11-10 16:28+0100\n"
+"PO-Revision-Date: 2023-11-14 13:07+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -3159,7 +3159,7 @@ msgstr ""
 #: core/app/views/stack/trashview.cpp:148
 #, kde-format
 msgid "Selected Items Permanently"
-msgstr "Všechny položky trvale"
+msgstr "Vybrané položky trvale"
 
 #: core/app/views/stack/trashview.cpp:151
 #, kde-format
@@ -3195,9 +3195,9 @@ msgstr "Potvrdit smazání"
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Opravdu si přejete navždy smazat %1 položku?"
+msgstr[1] "Opravdu si přejete navždy smazat %1 položky?"
+msgstr[2] "Opravdu si přejete navždy smazat %1 položek?"
 
 #: core/app/views/stack/trashview.cpp:383
 #, kde-format
@@ -41244,7 +41244,7 @@ msgstr "Profesionální správa fotografií pomocí svobodného software"
 #: core/libs/widgets/mainview/daboutdata.cpp:63
 #, kde-format
 msgid "A KDE Family Project"
-msgstr ""
+msgstr "Projekt z rodiny KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
 #, kde-format
