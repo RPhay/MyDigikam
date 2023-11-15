@@ -22,17 +22,17 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Compress host log files \n"
 
-    gzip -k $ORIG_WD/logs/build-mxe.full.log $ORIG_WD/logs/build-vcpkg.full.log.gz             || true
+    gzip -k $ORIG_WD/logs/build-mxe.full.log $ORIG_WD/logs/build-vcpkg.full.log.gz           || true
     gzip -k $ORIG_WD/logs/build-extralibs.full.log $ORIG_WD/logs/build-extralibs.full.log.gz || true
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    scp $ORIG_WD/logs/build-vcpkg.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64       || true
-    scp $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-vcpkg.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64     || true
+    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
-    rm -f $ORIG_WD/logs/build-vcpkg.full.log.gz       || true
+    rm -f $ORIG_WD/logs/build-vcpkg.full.log.gz     || true
     rm -f $ORIG_WD/logs/build-extralibs.full.log.gz || true
 
 fi

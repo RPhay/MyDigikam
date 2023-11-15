@@ -6,6 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
+#	- RSync program from Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -65,7 +66,15 @@ else
     echo "Check DumpBin CLI tools passed..."
 fi
 
-# Check for redistributable VSCommunity compatibility dll.
+# Check if RSync CLI tool is installed.
+
+if ! which "/c/Program Files/Git/usr/bin/rsync" ; then
+    echo "RSync CLI tool is not installed"
+    echo "See https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3 for details."
+    exit 1
+else
+    echo "Check RSync CLI tools passed..."
+fi
 
 # Check for the ImageMagick install directory.
 
@@ -384,8 +393,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 
-    scp -v $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
-    scp -v $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
+    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$TARGET_INSTALLER $DK_UPLOADURL:$DK_UPLOADDIR
+    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$PORTABLE_FILE $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then
         scp $ORIG_WD/bundle/$TARGET_INSTALLER.sig $DK_UPLOADURL:$DK_UPLOADDIR
@@ -400,7 +409,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     rm $ORIG_WD/bundle/ls.tmp
     rm $ORIG_WD/bundle/ls.txt
     sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm FILES"
-    scp $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
+    rsync -r -v --progress -e ssh $BUILDDIR/bundle/FILES $DK_UPLOADURL:$DK_UPLOADDIR
 
 else
 

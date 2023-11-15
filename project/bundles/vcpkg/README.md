@@ -101,8 +101,8 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
 
-    - Python 3.10 or later                              https://www.python.org/downloads/
-        + Add python path to current user
+	- RSync for git-bash								https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3
+		+ Follow instructions to install Msys rsync package in git-bash install directory
 
     - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
         + x64 Version with Q16 and HDR support
