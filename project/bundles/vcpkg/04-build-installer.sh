@@ -218,7 +218,7 @@ done
 
 # Second add only wanted pdb files in the bundles
 
-if [[ $DK_DEBUG = 1 ]] ; then
+if [ "$DK_DEBUG" = 1 ] ; then
 
     echo -e "\n---------- Add necessary debug symbols in the bundle"
 
@@ -288,7 +288,7 @@ mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
 
 #################################################################################################
 
-if [[ $DK_DEBUG = 1 ]] ; then
+if [ "$DK_DEBUG" = 1 ] ; then
 
     DEBUG_SUF="-debug"
 
@@ -349,7 +349,7 @@ shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE" | { read first rest ; echo $first 
 # Checksums to post on Phabricator at release time.
 shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE" >> $ORIG_WD/bundle/$CHECKSUM_FILE
 
-if [[ $DK_SIGN = 1 ]] ; then
+if [ "$DK_SIGN" = 1 ] ; then
 
     echo -e "\n---------- Compute Signature checksums for digiKam installer $DK_RELEASEID\n"    >  $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 
@@ -384,7 +384,7 @@ fi
 cat $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 cat $ORIG_WD/bundle/$PORTABLE_FILE.sum
 
-if [[ $DK_UPLOAD = 1 ]] ; then
+if [ "$DK_UPLOAD" = 1 ] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
