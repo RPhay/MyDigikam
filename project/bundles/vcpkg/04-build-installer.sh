@@ -203,7 +203,7 @@ cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDL
 # NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
 # Only the digiKam shared libraries debug symbols are preserved. All digiKam plugins are not present.
 
-# First drop all exisisting pdb files from the bundles if any.
+# First drop all existing pdb files from the bundles if any.
 
 echo -e "\n---------- Clean up debug symbols in the bundle"
 
@@ -211,17 +211,8 @@ PDB_FILES="`find "$VCPKG_INSTALL_PREFIX"/lib/plugins -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
-    if [ "$DK_DEBUG" = 0 ] ; then
-
-        echo -e "   => $pdb"
-        rm -rf "$pdb"
-
-    elif [[ $pdb != *digikam* ]] ; then
-
-        echo -e "   => $pdb"
-        rm -rf "$pdb"
-
-    fi
+    echo -e "   => $pdb"
+    rm -rf "$pdb"
 
 done
 
@@ -231,7 +222,18 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
     echo -e "\n---------- Add necessary debug symbols in the bundle"
 
+    # digikam libs
     cp -r "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
+
+    # digiKam plugins
+    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/bqm/*.pdb           $BUNDLEDIR/                           2>/dev/null
+    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/dimg/*.pdb          $BUNDLEDIR/                           2>/dev/null
+    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/editor/*.pdb        $BUNDLEDIR/                           2>/dev/null
+    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/generic/*.pdb       $BUNDLEDIR/                           2>/dev/null
+    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/rawimport/*.pdb     $BUNDLEDIR/                           2>/dev/null
+
+    # GMic-qt plugin
+    cp -r "$VCPKG_INSTALL_PREFIX"/Qt6/plugins/digikam/editor/*.pdb        $BUNDLEDIR/                           2>/dev/null
 
 fi
 
