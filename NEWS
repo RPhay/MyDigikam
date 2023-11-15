@@ -9,6 +9,7 @@ Bundles: Linux AppImage is now based on Qt framework 5.15.11 and KDE frameworks 
 Bundles: Windows installer is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: New Windows installer compiled under Windows with VCPKG tool-chain and based on Qt6 and KF6 frameworks.
 Bundles: Exiftool updated to last 12.67.
+Bundles: Exiv2 updated to last 0.28.1.
 
 *****************************************************************************************************
 BUGFIXES:
