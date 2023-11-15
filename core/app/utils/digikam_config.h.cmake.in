@@ -75,9 +75,6 @@
 /* Define to 1 if Panorama tool is supported */
 #cmakedefine HAVE_PANORAMA 1
 
-/* Define to 1 if VKontakte tool is supported */
-#cmakedefine HAVE_VKONTAKTE 1
-
 /* Define to 1 if HTMLGallery tool is supported */
 #cmakedefine HAVE_HTMLGALLERY 1
 
