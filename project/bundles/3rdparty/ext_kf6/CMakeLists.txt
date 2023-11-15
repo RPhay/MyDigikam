@@ -65,7 +65,7 @@ function(InstallKF6Component
 endfunction()
 
 if(MSVC)
-    set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF)
+    set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=OFF -DSKIP_INSTALL_ICONS=OFF -DWITH_ICON_GENERATION=OFF)
 else()
     set(BreezeIconsOptions -DBINARY_ICONS_RESOURCE=ON)
 endif()
