@@ -6,7 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
-#	- RSync program from Windows.
+#	- MSys/RSync program from Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -66,14 +66,14 @@ else
     echo "Check DumpBin CLI tools passed..."
 fi
 
-# Check if RSync CLI tool is installed.
+# Check if MSys/RSync CLI tool is installed.
 
 if ! which "/c/Program Files/Git/usr/bin/rsync" ; then
-    echo "RSync CLI tool is not installed"
-    echo "See https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3 for details."
+    echo "MSys/RSync CLI tool is not installed"
+    echo "See https://repo.msys2.org/msys/x86_64/ for details."
     exit 1
 else
-    echo "Check RSync CLI tools passed..."
+    echo "Check MSys/RSync CLI tools passed..."
 fi
 
 # Check for the ImageMagick install directory.
