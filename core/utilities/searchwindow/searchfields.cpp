@@ -61,11 +61,13 @@ void SearchField::setup(QGridLayout* const layout, int line)
 
     if (qApp->isLeftToRight())
     {
-        m_clearButton->setPixmap(QIcon::fromTheme(QLatin1String("edit-clear-locationbar-rtl")).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)));
+        m_clearButton->setPixmap(QIcon::fromTheme(QLatin1String("edit-clear-locationbar-rtl"))
+                                 .pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)));
     }
     else
     {
-        m_clearButton->setPixmap(QIcon::fromTheme(QLatin1String("edit-clear-locationbar-ltr")).pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)));
+        m_clearButton->setPixmap(QIcon::fromTheme(QLatin1String("edit-clear-locationbar-ltr"))
+                                 .pixmap(QApplication::style()->pixelMetric(QStyle::PM_SmallIconSize)));
     }
 
     // Important: Don't cause re-layouting when button gets hidden/shown!
@@ -143,8 +145,8 @@ void SearchField::setCategoryLabelVisibleFromPreviousField(SearchField* previous
         setCategoryLabelVisible(true);
     }
 
-    if (previousField->m_name == QLatin1String("filesize") &&
-        this->m_name          == QLatin1String("bytesize"))
+    if ((previousField->m_name == QLatin1String("filesize")) &&
+        (this->m_name          == QLatin1String("bytesize")))
     {
         connect(previousField, &SearchField::signalVisibilityChanged,
                 this, &SearchField::clearButtonClicked);
