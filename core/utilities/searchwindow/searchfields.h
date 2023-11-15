@@ -88,6 +88,10 @@ public:
     void setVisible(bool visible) override;
     bool isVisible()              override;
 
+Q_SIGNALS:
+
+    void signalVisibilityChanged();
+
 protected Q_SLOTS:
 
     void clearButtonClicked();

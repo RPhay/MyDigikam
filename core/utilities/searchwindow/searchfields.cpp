@@ -142,6 +142,16 @@ void SearchField::setCategoryLabelVisibleFromPreviousField(SearchField* previous
     {
         setCategoryLabelVisible(true);
     }
+
+    if (previousField->m_name == QLatin1String("filesize") &&
+        this->m_name          == QLatin1String("bytesize"))
+    {
+        connect(previousField, &SearchField::signalVisibilityChanged,
+                this, &SearchField::clearButtonClicked);
+
+        connect(this, &SearchField::signalVisibilityChanged,
+                previousField, &SearchField::clearButtonClicked);
+    }
 }
 
 QList<QRect> SearchField::widgetRects(WidgetRectType type) const
@@ -173,6 +183,8 @@ void SearchField::setValidValueState(bool valueIsValid)
         // NOTE: setVisible visibility is independent from animateVisible visibility!
 
         m_clearButton->animateVisible(m_valueIsValid);
+
+        Q_EMIT signalVisibilityChanged();
     }
 }
 
