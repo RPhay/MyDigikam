@@ -6,7 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
-#	- MSys/RSync program from Windows.
+#   - MSys/RSync program from Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -141,8 +141,8 @@ cp    $BUILDDIR/data/qt.conf                                              $BUNDL
 
 echo -e "\n---------- icons-set"
 # Temporary solution until breeze-icons generator works under windows.
-cp    $BUILDDIR/data/breeze.rcc									          $BUNDLEDIR/breeze.rcc          		2>/dev/null
-cp    $BUILDDIR/data/breeze-dark.rcc				      		  	      $BUNDLEDIR/breeze-dark.rcc     		2>/dev/null
+cp    $BUILDDIR/data/breeze.rcc                                           $BUNDLEDIR/breeze.rcc                 2>/dev/null
+cp    $BUILDDIR/data/breeze-dark.rcc                                      $BUNDLEDIR/breeze-dark.rcc            2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze/breeze-icons.rcc               $BUNDLEDIR/breeze.rcc          2>/dev/null
 #cp    $VCPKG_INSTALL_PREFIX/bin/data/icons/breeze-dark/breeze-icons-dark.rcc     $BUNDLEDIR/breeze-dark.rcc     2>/dev/null
 
