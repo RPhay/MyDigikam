@@ -22,7 +22,9 @@ export Exiv2Options='-DBUILD_SHARED_LIBS=ON \
                      -DEXIV2_ENABLE_EXTERNAL_XMP=OFF \
                      -DEXIV2_ENABLE_PNG=ON \
                      -DEXIV2_ENABLE_BMFF=ON \
+                     -DEXIV2_ENABLE_BROTLI=ON \
                      -DEXIV2_ENABLE_NLS=ON \
+                     -DEXIV2_ENABLE_INIH=ON \
                      -DEXIV2_ENABLE_PRINTUCS2=ON \
                      -DEXIV2_ENABLE_LENSDATA=ON \
                      -DEXIV2_ENABLE_VIDEO=OFF \
