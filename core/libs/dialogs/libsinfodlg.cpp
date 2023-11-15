@@ -175,7 +175,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
 #else
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_YES);
+                        i18nc(CONTEXT, "Rajce support") <<                   SUPPORTED_NO);
 #endif
 
     new QTreeWidgetItem(m_features, QStringList() <<
