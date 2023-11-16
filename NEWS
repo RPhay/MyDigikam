@@ -213,6 +213,15 @@ BUGFIXES:
 197 ==> 452441 - After Cancelling Import digikam shows no albums.
 198 ==> 476905 - Crash during Find New Items on startup when an AVIF file is in the folder structure.
 199 ==> 476990 - Allow entering small file sizes in the Advanced Search.
-200 ==> 
+200 ==> 467384 - Compile digiKam bundle under Windows with MSVC compiler.
 201 ==> 
-
+202 ==> 
+203 ==> 
+204 ==> 
+205 ==> 
+206 ==> 
+207 ==> 
+208 ==> 
+209 ==> 
+210 ==> 
+211 ==> 
