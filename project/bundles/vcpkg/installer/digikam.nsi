@@ -55,6 +55,7 @@
     !define SUPPORT_HOMEPAGE "https://www.digikam.org/support"
     !define ABOUT_HOMEPAGE "https://www.digikam.org/about"
     !define OUTFILE "${OUTPUT}"
+    !define DEBUG_MODE "${DEBUG}"
 
 ;-------------------------------------------------------------------------------
 ;General Setup
@@ -225,7 +226,7 @@
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
 
-        ${If} ${DEBUG} == "1"
+        ${If} ${DEBUG_MODE} == "1"
             File "${BUNDLEPATH}\*.pdb"
         ${EndIf}
 
@@ -317,7 +318,7 @@
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.txt"
 
-        ${If} ${DEBUG} == "1"
+        ${If} ${DEBUG_MODE} == "1"
             Delete "$INSTDIR\*.pdb"
         ${EndIf}
 
