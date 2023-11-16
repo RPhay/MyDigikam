@@ -215,14 +215,18 @@ for pdb in $PDB_FILES ; do
 
         # In non debug clean all
 
-        echo "   (ND) ==> $pdb"
+        echo "   (ND del) ==> $pdb"
         rm -rf "$pdb"
     
-    elif [[ $pdb != *"digikam"* ]] ; then
+    elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
 
         # In debug preserve digiKam Plugins
 
-        echo "   (DB) ==> $pdb"
+        echo "   (Skip) ==> $pdb"
+
+    else
+    
+        echo "   (DB del) ==> $pdb"
         rm -rf "$pdb"
 
     fi
@@ -308,7 +312,7 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
 fi
 
-if [[ $DK_VERSION != v* ]] ; then
+if [[ "$DK_VERSION" != "v"* ]] ; then
 
     # with non-official release version, use build time-stamp as sub-version string.
     DK_SUBVER="-`cat $ORIG_WD/data/BUILDDATE.txt`"

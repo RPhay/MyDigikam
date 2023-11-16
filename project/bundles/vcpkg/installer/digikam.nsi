@@ -223,6 +223,7 @@
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
+        File "${BUNDLEPATH}\*.pdb"
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
