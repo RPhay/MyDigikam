@@ -14,7 +14,7 @@
  ; Script arguments:
  ; VERSION    : the digiKam version                              [string].
  ; BUNDLEPATH : the path where whole digiKam bundle is installed [string].
- ; DEBUG      : the bundle includes binary debug symbols (.pdb)  [boolean].
+ ; DEBUG      : the bundle includes binary debug symbols (.pdb)  [string:boolean].
  ; OUTPUT     : the output installer file name                   [string].
  ;
  ; Example: makensis -DVERSION=8.0.0 -DBUNDLEPATH=../bundle -DDEBUG=0 digikam.nsi
@@ -225,7 +225,7 @@
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
 
-        ${If} ${DEBUG} == 1
+        ${If} ${DEBUG} == "1"
             File "${BUNDLEPATH}\*.pdb"
         ${EndIf}
 
@@ -317,7 +317,7 @@
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.txt"
 
-        ${If} ${DEBUG} == 1
+        ${If} ${DEBUG} == "1"
             Delete "$INSTDIR\*.pdb"
         ${EndIf}
 
