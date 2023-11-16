@@ -226,7 +226,7 @@
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
 
-        ${If} ${DEBUG_MODE} == "1"
+        ${If} "${DEBUG_MODE}" == "1"
             File "${BUNDLEPATH}\*.pdb"
         ${EndIf}
 
@@ -318,7 +318,7 @@
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.txt"
 
-        ${If} ${DEBUG_MODE} == "1"
+        ${If} "${DEBUG_MODE}" == "1"
             Delete "$INSTDIR\*.pdb"
         ${EndIf}
 
