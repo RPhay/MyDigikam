@@ -3,7 +3,7 @@
     These scripts build a binary digiKam installer for Windows under Linux using cross-compiler
     environment MXE and NSIS application.
 
-    This script follow instructions from Qt bundle deployment for Windows as shared libraries
+    These scripts follow instructions from Qt bundle deployment for Windows as shared libraries
     available at this url: http://doc.qt.io/qt-5/windows-deployment.html
 
 * AUTHORS
@@ -27,7 +27,7 @@
 
 * BUNDLE CONTENTS
 
-    Note: the bundle is relocatable.
+    Note: the bundle is relocatable and compatible with Windows 7 and later.
 
     |                                                    Executable, shared dlls, KDE plugins dlls, qt.conf
     |--- data
