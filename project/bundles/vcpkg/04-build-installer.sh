@@ -339,7 +339,13 @@ rm -f $ORIG_WD/bundle/*Win64-Qt6$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DDEBUG=$DK_DEBUG -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+if [ "$DK_DEBUG" = 1 ] ; then
+
+    DEBUG_SYMB="-DDEBUG_SYMB"
+
+fi
+
+"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR $DEBUG_SYMB -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
