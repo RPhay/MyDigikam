@@ -6,7 +6,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     These scripts build a binary digiKam installer for Windows under Windows using VCPKG, MSVC tool-chain,
     and NSIS application.
 
-    This script follow instructions from Qt bundle deployment for Windows as shared libraries
+    These scripts follow instructions from Qt bundle deployment for Windows as shared libraries
     available at this url: https://doc.qt.io/qt-6/windows-deployment.html
 
 * AUTHORS
@@ -22,7 +22,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
 * BUNDLE CONTENTS
 
-    Note: the bundle is relocatable.
+    Note: the bundle is relocatable and compatible with Windows 10 and later.
 
 ```
     |                                                    Executable, shared dlls, KDE plugins dlls, qt.conf
