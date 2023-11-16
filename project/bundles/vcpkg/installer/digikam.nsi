@@ -225,9 +225,9 @@
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
 
-        $ifdef DEBUG_SYMB
+        !ifdef DEBUG_SYMB
             File "${BUNDLEPATH}\*.pdb"
-        ${EndIf}
+        !endif
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
@@ -317,9 +317,9 @@
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.txt"
 
-        $ifdef DEBUG_SYMB
+        !ifdef DEBUG_SYMB
             Delete "$INSTDIR\*.pdb"
-        ${EndIf}
+        !endif
 
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
