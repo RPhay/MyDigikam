@@ -118,11 +118,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     {
         SearchFieldRangeDouble* const field = new SearchFieldRangeDouble(parent);
         field->setFieldName(name);
-        field->setText(i18n("File Size"), i18n("Size of the file"));
+        field->setText(i18n("File Size"), i18n("Size of the file in megabytes"));
         field->setBetweenText(i18nc("Size of the file ...-...", "-"));
         field->setNumberPrefixAndSuffix(QString(), QLatin1String("MiB"));
         field->setBoundary(0, 1000000, 1, 0.5);
         field->setFactor(1024 * 1024);
+
+        return field;
+    }
+    else if (name == QLatin1String("bytesize"))
+    {
+        SearchFieldRangeInt* const field = new SearchFieldRangeInt(parent);
+        field->setFieldName(name);
+        field->setText(i18n("File Size"), i18n("Size of the file in bytes"));
+        field->setBetweenText(i18nc("Size of the file ...-...", "-"));
+        field->setNumberPrefixAndSuffix(QString(), QLatin1String("B"));
+        field->setBoundary(0, 1024 * 1024, 100);
 
         return field;
     }
