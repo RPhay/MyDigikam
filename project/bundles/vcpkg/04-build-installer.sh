@@ -211,8 +211,21 @@ PDB_FILES="`find "$BUNDLEDIR"/plugins -name "*.pdb" -type f`"
 
 for pdb in $PDB_FILES ; do
 
-    echo -e "   => $pdb"
-    rm -rf "$pdb"
+    if [ "$DK_DEBUG" = 0 ] ; then
+
+        # In non debug clean all
+
+        echo "   (ND) ==> $pdb"
+        rm -rf "$pdb"
+    
+    elif [[ $pdb != *"digikam"* ]] ; then
+
+        # In debug preserve digiKam Plugins
+
+        echo "   (DB) ==> $pdb"
+        rm -rf "$pdb"
+
+    fi
 
 done
 
@@ -223,17 +236,7 @@ if [ "$DK_DEBUG" = 1 ] ; then
     echo -e "\n---------- Add necessary debug symbols in the bundle"
 
     # digikam libs
-    cp -r "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
-
-    # digiKam plugins
-    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/bqm/*.pdb           $BUNDLEDIR/                           2>/dev/null
-    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/dimg/*.pdb          $BUNDLEDIR/                           2>/dev/null
-    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/editor/*.pdb        $BUNDLEDIR/                           2>/dev/null
-    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/generic/*.pdb       $BUNDLEDIR/                           2>/dev/null
-    cp -r "$VCPKG_INSTALL_PREFIX"/lib/plugins/digikam/rawimport/*.pdb     $BUNDLEDIR/                           2>/dev/null
-
-    # GMic-qt plugin
-    cp -r "$VCPKG_INSTALL_PREFIX"/Qt6/plugins/digikam/editor/*.pdb        $BUNDLEDIR/                           2>/dev/null
+    cp -rv "$VCPKG_INSTALL_PREFIX"/bin/digikam*.pdb                        $BUNDLEDIR/                           2>/dev/null
 
 fi
 
