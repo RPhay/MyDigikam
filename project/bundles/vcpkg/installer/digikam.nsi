@@ -12,11 +12,12 @@
  ; SPDX-FileCopyrightText: 2010-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; Script arguments:
- ; VERSION    : the digiKam version as string.
- ; BUNDLEPATH : the path where whole digiKam bundle is installed.
- ; OUTPUT     : the output installer file name as string.
+ ; VERSION    : the digiKam version                              [string].
+ ; BUNDLEPATH : the path where whole digiKam bundle is installed [string].
+ ; DEBUG      : the bundle includes binary debug symbols (.pdb)  [boolean].
+ ; OUTPUT     : the output installer file name                   [string].
  ;
- ; Example: makensis -DVERSION=8.0.0 -DBUNDLEPATH=../bundle digikam.nsi
+ ; Example: makensis -DVERSION=8.0.0 -DBUNDLEPATH=../bundle -DDEBUG=0 digikam.nsi
  ;
  ; NSIS script reference can be found at this url:
  ; https://nsis.sourceforge.net/Docs/Chapter4.html
@@ -223,7 +224,10 @@
         File "${BUNDLEPATH}\*.rcc"
         File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.txt"
-        File "${BUNDLEPATH}\*.pdb"
+
+        ${If} ${DEBUG}
+            File "${BUNDLEPATH}\*.pdb"
+        ${EndIf}
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
@@ -313,17 +317,26 @@
         Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.txt"
 
+        ${If} ${DEBUG}
+            Delete "$INSTDIR\*.pdb"
+        ${EndIf}
+
         Delete "$INSTDIR\Uninstall.exe"
         Delete "$INSTDIR\releasenotes.html"
         Delete "$INSTDIR\digikam-uninstaller.ico"
 
-        RMDir /r "$INSTDIR\bin"
         RMDir /r "$INSTDIR\etc"
         RMDir /r "$INSTDIR\data"
         RMDir /r "$INSTDIR\share"
         RMDir /r "$INSTDIR\plugins"
         RMDir /r "$INSTDIR\resources"
         RMDir /r "$INSTDIR\translations"
+
+        ;MXE Legacy
+        Delete "$INSTDIR\*.yes"
+        RMDir /r "$INSTDIR\bin"
+        RMDir /r "$INSTDIR\libgphoto2"
+        RMDir /r "$INSTDIR\libgphoto2_port"
 
         ;Do not do a recursive removal of $INSTDIR because user may have accidentally installed into system critical directory!
 

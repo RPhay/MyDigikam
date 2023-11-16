@@ -217,7 +217,7 @@ for pdb in $PDB_FILES ; do
 
         echo "   (ND del) ==> $pdb"
         rm -rf "$pdb"
-    
+
     elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
 
         # In debug preserve digiKam Plugins
@@ -225,7 +225,7 @@ for pdb in $PDB_FILES ; do
         echo "   (Skip) ==> $pdb"
 
     else
-    
+
         echo "   (DB del) ==> $pdb"
         rm -rf "$pdb"
 
@@ -339,7 +339,7 @@ rm -f $ORIG_WD/bundle/*Win64-Qt6$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DDEBUG=$DK_DEBUG -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
