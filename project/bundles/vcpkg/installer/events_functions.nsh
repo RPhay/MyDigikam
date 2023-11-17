@@ -113,7 +113,9 @@ FunctionEnd
 ;-------------------------------------------
 
 Function .onInstSuccess
-    ExecWait '"$instdir\kbuildsycoca6.exe" "--noincremental"'
+
+    nsExec::ExecToLog /TIMEOUT=2000 '"$instdir\kbuildsycoca6.exe --noincremental"'
+
 FunctionEnd
 
 !endif ;EVENTS_FUNCTIONS_INCLUDED
