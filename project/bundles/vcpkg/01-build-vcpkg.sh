@@ -111,7 +111,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install bzip2
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install ffmpeg
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtbase[sql-mysql]
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtmultimedia
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtmultimedia[ffmpeg]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtnetworkauth
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qttranslations
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install qtimageformats
