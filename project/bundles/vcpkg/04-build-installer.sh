@@ -198,6 +198,40 @@ cp -r "$MAGICK_PREFIX"/CORE_RL_*.dll                                      $BUNDL
 cp -r "$MAGICK_PREFIX"/modules/coders/*.dll                               $BUNDLEDIR/                           2>/dev/null
 cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDLEDIR/                           2>/dev/null
 
+# Black-list of ImageMagick coders to not host in the bundles.
+# Prior digiKam/Qt image loaders first which provides the same type-mimes.
+
+IM_CODER_BL="\
+IM_MOD_RL_dng_.dll\
+IM_MOD_RL_exr_.dll\
+IM_MOD_RL_gif_.dll\
+IM_MOD_RL_hdr_.dll\
+IM_MOD_RL_heic_.dll\
+IM_MOD_RL_jp2_.dll\
+IM_MOD_RL_jpeg_.dll\
+IM_MOD_RL_jxl_.dll\
+IM_MOD_RL_ora_.dll\
+IM_MOD_RL_pcx_.dll\
+IM_MOD_RL_pdf_.dll\
+IM_MOD_RL_png_.dll\
+IM_MOD_RL_psd_.dll\
+IM_MOD_RL_raw_.dll\
+IM_MOD_RL_svg_.dll\
+IM_MOD_RL_tga_.dll\
+IM_MOD_RL_tiff_.dll\
+IM_MOD_RL_video_.dll\
+IM_MOD_RL_wbmp_.dll\
+IM_MOD_RL_webp_.dll\
+IM_MOD_RL_xcf_.dll\
+"
+
+for coder in $IM_CODERS_BL ; do
+
+    rm -rf "$BUNDLEDIR/$coder"
+
+done
+
+
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
 # NOTE: NSIS only support < 2Gb of file to package in the same installer. If size is bigger, a bus error exception is genenrated.
