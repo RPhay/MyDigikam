@@ -67,6 +67,16 @@
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
+    ; Add Installer Windows file properties
+
+    VIAddVersionKey /LANG=0 "ProductName"     "${MY_PRODUCT}"
+    VIAddVersionKey /LANG=0 "Comments"        "Professional Photo Management with the Power of Open Source"
+    VIAddVersionKey /LANG=0 "CompanyName"     "digiKam.org"
+    VIAddVersionKey /LANG=0 "LegalTrademarks" "https://www.digikam.org"
+    VIAddVersionKey /LANG=0 "LegalCopyright"  "digiKam developers team"
+    VIAddVersionKey /LANG=0 "FileDescription" "digiKam Application Installer for Windows"
+    VIAddVersionKey /LANG=0 "FileVersion"     "${VERSION}"
+
     ;Request application privileges for Windows Vista and upper versions
 
     RequestExecutionLevel admin
