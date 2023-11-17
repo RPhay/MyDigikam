@@ -214,8 +214,8 @@ BUGFIXES:
 198 ==> 476905 - Crash during Find New Items on startup when an AVIF file is in the folder structure.
 199 ==> 476990 - Allow entering small file sizes in the Advanced Search.
 200 ==> 467384 - Compile digiKam bundle under Windows with MSVC compiler.
-201 ==> 
-202 ==> 
+201 ==> 467333 - Error on exiftool install on Win10 64bit.
+202 ==> 437813 - Exiftool.exe is preventing the installation if digiKam is terminate inexplicably.
 203 ==> 
 204 ==> 
 205 ==> 
