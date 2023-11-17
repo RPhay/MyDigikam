@@ -201,36 +201,35 @@ cp -r "$MAGICK_PREFIX"/modules/filters/*.dll                              $BUNDL
 # Black-list of ImageMagick coders to not host in the bundles.
 # Prior digiKam/Qt image loaders first which provides the same type-mimes.
 
-IM_CODER_BL="\
-IM_MOD_RL_dng_.dll\
-IM_MOD_RL_exr_.dll\
-IM_MOD_RL_gif_.dll\
-IM_MOD_RL_hdr_.dll\
-IM_MOD_RL_heic_.dll\
-IM_MOD_RL_jp2_.dll\
-IM_MOD_RL_jpeg_.dll\
-IM_MOD_RL_jxl_.dll\
-IM_MOD_RL_ora_.dll\
-IM_MOD_RL_pcx_.dll\
-IM_MOD_RL_pdf_.dll\
-IM_MOD_RL_png_.dll\
-IM_MOD_RL_psd_.dll\
-IM_MOD_RL_raw_.dll\
-IM_MOD_RL_svg_.dll\
-IM_MOD_RL_tga_.dll\
-IM_MOD_RL_tiff_.dll\
-IM_MOD_RL_video_.dll\
-IM_MOD_RL_wbmp_.dll\
-IM_MOD_RL_webp_.dll\
-IM_MOD_RL_xcf_.dll\
+IM_CODERS_BL="\
+$BUNDLEDIR/IM_MOD_RL_dng_.dll   \
+$BUNDLEDIR/IM_MOD_RL_exr_.dll   \
+$BUNDLEDIR/IM_MOD_RL_gif_.dll   \
+$BUNDLEDIR/IM_MOD_RL_hdr_.dll   \
+$BUNDLEDIR/IM_MOD_RL_heic_.dll  \
+$BUNDLEDIR/IM_MOD_RL_jp2_.dll   \
+$BUNDLEDIR/IM_MOD_RL_jpeg_.dll  \
+$BUNDLEDIR/IM_MOD_RL_jxl_.dll   \
+$BUNDLEDIR/IM_MOD_RL_ora_.dll   \
+$BUNDLEDIR/IM_MOD_RL_pcx_.dll   \
+$BUNDLEDIR/IM_MOD_RL_pdf_.dll   \
+$BUNDLEDIR/IM_MOD_RL_png_.dll   \
+$BUNDLEDIR/IM_MOD_RL_psd_.dll   \
+$BUNDLEDIR/IM_MOD_RL_raw_.dll   \
+$BUNDLEDIR/IM_MOD_RL_svg_.dll   \
+$BUNDLEDIR/IM_MOD_RL_tga_.dll   \
+$BUNDLEDIR/IM_MOD_RL_tiff_.dll  \
+$BUNDLEDIR/IM_MOD_RL_video_.dll \
+$BUNDLEDIR/IM_MOD_RL_wbmp_.dll  \
+$BUNDLEDIR/IM_MOD_RL_webp_.dll  \
+$BUNDLEDIR/IM_MOD_RL_xcf_.dll   \
 "
 
 for coder in $IM_CODERS_BL ; do
 
-    rm -rf "$BUNDLEDIR/$coder"
+    rm -rf "$coder"
 
 done
-
 
 #################################################################################################
 # Add debug symbols for few binary files to optimize space.
@@ -283,9 +282,9 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-$VCPKG_INSTALL_PREFIX/bin/digikam.exe \
-$VCPKG_INSTALL_PREFIX/bin/showfoto.exe \
-$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe \
+$VCPKG_INSTALL_PREFIX/bin/digikam.exe                      \
+$VCPKG_INSTALL_PREFIX/bin/showfoto.exe                     \
+$VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe                \
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
 for app in $EXE_FILES ; do
