@@ -69,6 +69,7 @@
 
     ; Add Installer Windows file properties
 
+    VIProductVersion ${VERSION}
     VIAddVersionKey /LANG=0 "ProductName"     "${MY_PRODUCT}"
     VIAddVersionKey /LANG=0 "Comments"        "Professional Photo Management with the Power of Open Source"
     VIAddVersionKey /LANG=0 "CompanyName"     "digiKam.org"
