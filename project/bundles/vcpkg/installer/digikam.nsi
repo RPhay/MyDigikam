@@ -311,6 +311,10 @@
         Call un.CheckDigikamRunning
         Call un.CheckShowfotoRunning
 
+        ;See bug #437813: be sure that all background ExifTool process are done
+
+        nsExec::ExecToLog /TIMEOUT=2000 'taskkill.exe /F /T /IM exiftool.exe'
+
         Delete "$INSTDIR\*.exe"
         Delete "$INSTDIR\*.conf"
         Delete "$INSTDIR\*.rcc"
