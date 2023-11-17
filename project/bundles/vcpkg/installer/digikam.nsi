@@ -69,13 +69,13 @@
 
     ; Add Installer Windows file properties
 
-    VIAddVersionKey /LANG="English" "ProductName"     "${MY_PRODUCT}"
-    VIAddVersionKey /LANG="English" "Comments"        "Professional Photo Management with the Power of Open Source"
-    VIAddVersionKey /LANG="English" "CompanyName"     "digiKam.org"
-    VIAddVersionKey /LANG="English" "LegalTrademarks" "https://www.digikam.org"
-    VIAddVersionKey /LANG="English" "LegalCopyright"  "digiKam developers team"
-    VIAddVersionKey /LANG="English" "FileDescription" "digiKam Application Installer for Windows"
-    VIAddVersionKey /LANG="English" "FileVersion"     "${VERSION}"
+    VIAddVersionKey /LANG=0 "ProductName"     "${MY_PRODUCT}"
+    VIAddVersionKey /LANG=0 "Comments"        "Professional Photo Management with the Power of Open Source"
+    VIAddVersionKey /LANG=0 "CompanyName"     "digiKam.org"
+    VIAddVersionKey /LANG=0 "LegalTrademarks" "https://www.digikam.org"
+    VIAddVersionKey /LANG=0 "LegalCopyright"  "digiKam developers team"
+    VIAddVersionKey /LANG=0 "FileDescription" "digiKam Application Installer for Windows"
+    VIAddVersionKey /LANG=0 "FileVersion"     "${VERSION}"
 
     ;Request application privileges for Windows Vista and upper versions
 
