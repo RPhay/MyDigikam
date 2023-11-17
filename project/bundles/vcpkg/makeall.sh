@@ -27,8 +27,8 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new host logs to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-vcpkg.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64     || true
-    rsync -r -v --progress -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
+    rsync -r -v --progress --bwlimit=1000 -e ssh $ORIG_WD/logs/build-vcpkg.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64     || true
+    rsync -r -v --progress --bwlimit=1000 -e ssh $ORIG_WD/logs/build-extralibs.full.log.gz $DK_UPLOADURL:$DK_UPLOADDIR/build.logs/win64 || true
 
     echo -e "---------- Cleanup local bundle log file archives \n"
 
