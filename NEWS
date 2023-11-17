@@ -218,7 +218,7 @@ BUGFIXES:
 202 ==> 437813 - Exiftool.exe is preventing the installation if digiKam is terminate inexplicably.
 203 ==> 453815 - Small glitch with Exiftool tab title in metadata side-bar.
 204 ==> 471299 - Crash when opening the setup dialog.
-205 ==> 
+205 ==> 477156 - Display database configuration dialog again.
 206 ==> 
 207 ==> 
 208 ==> 
