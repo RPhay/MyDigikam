@@ -100,7 +100,7 @@ $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install jasper
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libde265
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libjxl
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install aom
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libavif
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libavif[aom]
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install libheif
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install freeglut
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install brotli
