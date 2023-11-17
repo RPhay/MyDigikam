@@ -71,12 +71,16 @@
 
     VIProductVersion ${VERSION}.0
     VIAddVersionKey /LANG=0 "ProductName"     "${MY_PRODUCT}"
+    VIAddVersionKey /LANG=0 "ProductVersion"  "${VERSION}"
     VIAddVersionKey /LANG=0 "Comments"        "Professional Photo Management with the Power of Open Source"
     VIAddVersionKey /LANG=0 "CompanyName"     "digiKam.org"
+    VIAddVersionKey /LANG=0 "InternalName"    "${MY_PRODUCT}"
     VIAddVersionKey /LANG=0 "LegalTrademarks" "https://www.digikam.org"
     VIAddVersionKey /LANG=0 "LegalCopyright"  "digiKam developers team"
     VIAddVersionKey /LANG=0 "FileDescription" "digiKam Application Installer for Windows"
     VIAddVersionKey /LANG=0 "FileVersion"     "${VERSION}"
+    VIAddVersionKey /LANG=0 "PrivateBuild"    "MXE Toolchain"
+    VIAddVersionKey /LANG=0 "SpecialBuild"    "MinGW Compiler"
 
     ;Request application privileges for Windows Vista and upper versions
 
