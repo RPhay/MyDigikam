@@ -73,16 +73,20 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - Msys2 64 bits                                     https://www.msys2.org/
         * Install to default path
-        + Start the MinTTY terminal
-        + Update Msys2    (pacman -Syuu)
-        + Install git     (pacman -S git)
-        * Install openssh (pacman -S openssh)
-        * Install mc      (pacman -S mc)
-        * Install rsync   (pacman -S rsync)
-        * Install cmake   (pacman -S cmake)
-        * Install bison   (pacman -S bison)
-        * Install flex    (pacman -S flex)
-        * Install unzip   (pacman -S unzip)
+        + Start the MinTTY/MINGW64 terminal
+        + Update Msys2                                  pacman -Syuu
+        + Install git                                   pacman -S git
+        * Install openssh                               pacman -S openssh
+        * Install mc                                    pacman -S mc
+        * Install rsync                                 pacman -S rsync
+        * Install cmake                                 pacman -S cmake
+        * Install bison                                 pacman -S bison
+        * Install flex                                  pacman -S flex
+        * Install unzip                                 pacman -S unzip
+        * Install python3                               pacman -S python3
+        * Install python-lxml                           pacman -S python-lxml
+        * Install nsis                                  pacman -S mingw64/mingw-w64-x86_64-nsis
+        * Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
@@ -95,11 +99,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + C++/CLI support for v143
             + C++ Clang tools for Windows (16.0.5)
             + C++ Profiling tools.                      For DumpBin tool.
-
-    - NSIS 3.x                                          https://nsis-dev.github.io/
-
-    - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
-        + Uncompress the binary archive to C:/icoutils
 
     - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
         + x64 Version with Q16 and HDR support
@@ -118,7 +117,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     VCPKG and all dependencies, next one digiKam, and last one makes a
     binary installer for Windows.
 
-    To start compilation use these scripts in a git-bash console:
+    To start compilation use these scripts in a MinTTY/MINGW64 terminal:
 
     1) ./01-build-vcpkg.sh
 

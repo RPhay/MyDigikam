@@ -111,10 +111,8 @@ ORIG_PATH="$PATH"
 
 export PATH="\
 $PATH:\
-/c/icoutils/bin:\
 $VCPKG_INSTALL_PREFIX/tools/gperf:\
 $VCPKG_INSTALL_PREFIX/tools/curl:\
-$VCPKG_INSTALL_PREFIX/tools/python3:\
 $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
