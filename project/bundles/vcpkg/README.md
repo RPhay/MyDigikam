@@ -88,6 +88,9 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         * Install nsis                                  pacman -S mingw64/mingw-w64-x86_64-nsis
         * Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
 
+    - CMake 3.27 or later                               https://cmake.org/download/
+        + Add CMake path to current user
+
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
             + C++ core desktop features

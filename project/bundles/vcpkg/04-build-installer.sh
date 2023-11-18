@@ -45,9 +45,9 @@ AppendVCPKGPaths
 
 # Check if NSIS CLI tool is installed.
 
-if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
+if ! which "makensis" ; then
     echo "NSIS CLI tool is not installed"
-    echo "See https://nsis.sourceforge.io for details."
+    echo "Install Msys2::nsis with pacman tool."
     exit 1
 else
     echo "Check NSIS CLI tools passed..."
