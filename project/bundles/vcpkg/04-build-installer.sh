@@ -368,7 +368,11 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
 fi
 
-"/c/Program Files (x86)/NSIS/Bin/makensis" -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR $DEBUG_SYMB -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+makensis -DVERSION=$DK_RELEASEID \
+         -DBUNDLEPATH=$BUNDLEDIR \
+         $DEBUG_SYMB \
+         -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER \
+         ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
