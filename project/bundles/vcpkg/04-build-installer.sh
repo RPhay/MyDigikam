@@ -6,7 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
-#   - MSys2 from Windows.
+#   - Msys2 CLI tools for Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -45,7 +45,7 @@ AppendVCPKGPaths
 
 # Check if NSIS CLI tool is installed.
 
-if ! which "makensis" ; then
+if ! which "/c/Program Files (x86)/NSIS/Bin/makensis" ; then
     echo "NSIS CLI tool is not installed"
     echo "Install Msys2::nsis with pacman tool."
     exit 1
@@ -368,11 +368,12 @@ if [ "$DK_DEBUG" = 1 ] ; then
 
 fi
 
-makensis -DVERSION=$DK_RELEASEID \
-         -DBUNDLEPATH=$BUNDLEDIR \
-         $DEBUG_SYMB \
-         -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER \
-         ./digikam.nsi
+"/c/Program Files (x86)/NSIS/Bin/makensis" \
+        -DVERSION=$DK_RELEASEID \
+        -DBUNDLEPATH=$BUNDLEDIR \
+        $DEBUG_SYMB \
+        -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER \
+        ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE

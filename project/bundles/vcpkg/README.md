@@ -79,17 +79,18 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Install openssh                               pacman -S openssh
         + Install mc                                    pacman -S mc
         + Install rsync                                 pacman -S rsync
-        + Install cmake                                 pacman -S cmake
         + Install bison                                 pacman -S bison
         + Install flex                                  pacman -S flex
         + Install unzip                                 pacman -S unzip
         + Install python3                               pacman -S python3
         + Install python-lxml                           pacman -S python-lxml
-        + Install nsis                                  pacman -S mingw64/mingw-w64-x86_64-nsis
         + Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
 
     - CMake 3.27 or later                               https://cmake.org/download/
         + Add CMake path to current user                Cmake needs to be installed outside Msys2
+
+    - NSIS 3.x                                          https://nsis-dev.github.io/
+                                                        Note: version from Msys2 do not works.
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
