@@ -6,7 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
-#   - MSys/RSync program from Windows.
+#   - MSys2 from Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -64,16 +64,6 @@ if [ ! -f "$DUMP_BIN" ] ; then
     exit 1
 else
     echo "Check DumpBin CLI tools passed..."
-fi
-
-# Check if MSys/RSync CLI tool is installed.
-
-if ! which "/c/Program Files/Git/usr/bin/rsync" ; then
-    echo "MSys/RSync CLI tool is not installed"
-    echo "See https://repo.msys2.org/msys/x86_64/ for details."
-    exit 1
-else
-    echo "Check MSys/RSync CLI tools passed..."
 fi
 
 # Check for the ImageMagick install directory.

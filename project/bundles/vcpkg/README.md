@@ -71,15 +71,16 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - Windows 10 22H2 or later                          https://www.microsoft.com/en-us/software-download/windows10
 
-    - CMake 3.27 or later                               https://cmake.org/download/
-        + Add CMake path to current user
-
-    - Git 2.42 or later                                 https://git-scm.com/download/win
-        + Git-bash console
-        + Bundled OpenSSH
-        + OpenSSH library
-        + Checkout/Commit Unix EOL
-        + MinTTY Terminal
+    - MSys2 64 bits                                     https://www.msys2.org/
+        * Install to default path
+        + Start the MinTTY terminal
+        + Install git     (pacman -S git)
+        * Install openssh (pacman -S openssh)
+        * Install mc      (pacman -S mc)
+        * Install rsync   (pacman -S rsync)
+        * Install cmake   (pacman -S cmake)
+        * Install bison   (pacman -S bison)
+        * Install flex    (pacman -S flex)
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
@@ -95,15 +96,8 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - NSIS 3.x                                          https://nsis-dev.github.io/
 
-    - WinFlexBison 2.5 or later                         https://github.com/lexxmark/winflexbison/releases
-        + Uncompress the binary archive to C:/bison
-
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
         + Uncompress the binary archive to C:/icoutils
-
-    - RSync 3.2 or later for git-bash                   Tutorial: https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3
-        + Install Msys/RSync and deps packages          MSys repo: https://repo.msys2.org/msys/x86_64/
-          target: git-bash/usr install directory        C:/Program Files/Git/usr/
 
     - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
         + x64 Version with Q16 and HDR support
