@@ -71,9 +71,10 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - Windows 10 22H2 or later                          https://www.microsoft.com/en-us/software-download/windows10
 
-    - MSys2 64 bits                                     https://www.msys2.org/
+    - Msys2 64 bits                                     https://www.msys2.org/
         * Install to default path
         + Start the MinTTY terminal
+        + Update Msys2    (pacman -Syuu)
         + Install git     (pacman -S git)
         * Install openssh (pacman -S openssh)
         * Install mc      (pacman -S mc)
