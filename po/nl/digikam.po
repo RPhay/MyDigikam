@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-17 00:40+0000\n"
+"POT-Creation-Date: 2023-11-18 00:40+0000\n"
 "PO-Revision-Date: 2023-11-16 18:46+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2669,7 +2669,7 @@ msgstr "Hoofdwerkbalk"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
@@ -2677,7 +2677,7 @@ msgstr ""
 "Jasper van der Marel,Rinse de Vries,Sander Devrieze,Freek de Kruijf - 2006 t/"
 "m 2022"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -49652,19 +49652,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "Mappen"
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "Bestand(en) of map(pen) om te openen"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
