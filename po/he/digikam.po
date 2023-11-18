@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-17 00:40+0000\n"
+"POT-Creation-Date: 2023-11-18 00:40+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -2686,13 +2686,13 @@ msgstr "סרגל כלים ראשי"
 msgid "digiKam"
 msgstr "digiKam"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "צוות התרגום של KDE ישראל"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
@@ -47604,20 +47604,20 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "תיקייה:"
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 #| msgid "File(s) or folder(s) to open"
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "קבץ(ים) או תיקייה(יות) לפתוח"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""

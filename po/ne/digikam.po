@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-17 00:40+0000\n"
+"POT-Creation-Date: 2023-11-18 00:40+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2639,14 +2639,14 @@ msgstr "रङ"
 msgid "digiKam"
 msgstr "डिजिक्याम"
 
-#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:163
+#: core/app/main/main.cpp:203 core/showfoto/main/main.cpp:170
 #, fuzzy, kde-format
 #| msgid "Author:"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "लेखक:"
 
-#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:164
+#: core/app/main/main.cpp:204 core/showfoto/main/main.cpp:171
 #, fuzzy, kde-format
 #| msgid "Author:"
 msgctxt "EMAIL OF TRANSLATORS"
@@ -47874,19 +47874,19 @@ msgctxt "@title: file system tree"
 msgid "Folders"
 msgstr "फोल्डरद्वारा"
 
-#: core/showfoto/main/main.cpp:154
+#: core/showfoto/main/main.cpp:161
 #, kde-format
 msgctxt "@title"
 msgid "Showfoto"
 msgstr ""
 
-#: core/showfoto/main/main.cpp:172
+#: core/showfoto/main/main.cpp:179
 #, fuzzy, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
 msgstr "खोल्ने फाइल"
 
-#: core/showfoto/main/main.cpp:203
+#: core/showfoto/main/main.cpp:210
 #, kde-format
 msgctxt "#info"
 msgid ""
