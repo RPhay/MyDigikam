@@ -81,6 +81,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         * Install cmake   (pacman -S cmake)
         * Install bison   (pacman -S bison)
         * Install flex    (pacman -S flex)
+        * Install unzip   (pacman -S unzip)
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
