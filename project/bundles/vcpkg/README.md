@@ -72,21 +72,21 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     - Windows 10 22H2 or later                          https://www.microsoft.com/en-us/software-download/windows10
 
     - Msys2 64 bits                                     https://www.msys2.org/
-        * Install to default path
+        + Install to default path
         + Start the MinTTY/MINGW64 terminal
         + Update Msys2                                  pacman -Syuu
         + Install git                                   pacman -S git
-        * Install openssh                               pacman -S openssh
-        * Install mc                                    pacman -S mc
-        * Install rsync                                 pacman -S rsync
-        * Install cmake                                 pacman -S cmake
-        * Install bison                                 pacman -S bison
-        * Install flex                                  pacman -S flex
-        * Install unzip                                 pacman -S unzip
-        * Install python3                               pacman -S python3
-        * Install python-lxml                           pacman -S python-lxml
-        * Install nsis                                  pacman -S mingw64/mingw-w64-x86_64-nsis
-        * Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
+        + Install openssh                               pacman -S openssh
+        + Install mc                                    pacman -S mc
+        + Install rsync                                 pacman -S rsync
+        + Install cmake                                 pacman -S cmake
+        + Install bison                                 pacman -S bison
+        + Install flex                                  pacman -S flex
+        + Install unzip                                 pacman -S unzip
+        + Install python3                               pacman -S python3
+        + Install python-lxml                           pacman -S python-lxml
+        + Install nsis                                  pacman -S mingw64/mingw-w64-x86_64-nsis
+        + Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
 
     - CMake 3.27 or later                               https://cmake.org/download/
         + Add CMake path to current user                Cmake needs to be installed outside Msys2
