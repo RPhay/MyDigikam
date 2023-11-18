@@ -89,7 +89,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         * Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
 
     - CMake 3.27 or later                               https://cmake.org/download/
-        + Add CMake path to current user
+        + Add CMake path to current user                Cmake needs to be installed outside Msys2
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
@@ -104,7 +104,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
             + C++ Profiling tools.                      For DumpBin tool.
 
     - ImageMagick 7.1 or later                          https://imagemagick.org/script/download.php#windows
-        + x64 Version with Q16 and HDR support
+        + x64 Version with Q16 and HDR support          Note: IM version compiled with MSVC
         + Install only C/C++ headers and libraries
         + Disable all others features                   Note: in 'Addition Tasks' step
         + Use default install path in C:/
