@@ -71,26 +71,28 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     - Windows 10 22H2 or later                          https://www.microsoft.com/en-us/software-download/windows10
 
-    - Msys2 64 bits                                     https://www.msys2.org/
-        + Install to default path
-        + Start the MinTTY/MINGW64 terminal
-        + Update Msys2                                  pacman -Syuu
-        + Install git                                   pacman -S git
-        + Install openssh                               pacman -S openssh
-        + Install mc                                    pacman -S mc
-        + Install rsync                                 pacman -S rsync
-        + Install bison                                 pacman -S bison
-        + Install flex                                  pacman -S flex
-        + Install unzip                                 pacman -S unzip
-        + Install python3                               pacman -S python3
-        + Install python-lxml                           pacman -S python-lxml
-        + Install icoutils                              pacman -S mingw64/mingw-w64-x86_64-icoutils
+    - Git 2.42 or later                                 https://git-scm.com/download/win
+        + Git-bash console
+        + Bundled OpenSSH
+        + OpenSSH library
+        + Checkout/Commit Unix EOL
+        + MinTTY Terminal
 
     - CMake 3.27 or later                               https://cmake.org/download/
+        + Install to default path
         + Add CMake path to current user                Cmake needs to be installed outside Msys2
 
     - NSIS 3.x                                          https://nsis-dev.github.io/
-                                                        Note: version from Msys2 do not works.
+
+    - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
+        + Uncompress the binary archive to C:/icoutils
+
+    - WinFlexBison 2.5 or later                         https://github.com/lexxmark/winflexbison/releases
+        + Uncompress the binary archive to C:/bison
+
+    - RSync 3.2 or later for git-bash                   Tutorial: https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3
+        + Install Msys/RSync and deps packages          MSys repo: https://repo.msys2.org/msys/x86_64/
+        + target: git-bash/usr install directory        C:/Program Files/Git/usr/
 
     - Visual Studio 2022                                https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022
         + Desktop development with C++
@@ -121,7 +123,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     VCPKG and all dependencies, next one digiKam, and last one makes a
     binary installer for Windows.
 
-    To start compilation use these scripts in a MinTTY/MINGW64 terminal:
+    To start compilation use these scripts in a Git-bash terminal:
 
     1) ./01-build-vcpkg.sh
 
@@ -146,7 +148,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     4) ./04-build-installer.sh
 
     To build the Windows installer. Once you've successfully built digiKam, files to bundle may contain over 4GB of files.
-    This script grabs the ~300MB needed to run digiKam and showfoto.
+    This script grabs the ~300MB needed to run digiKam and Showfoto.
     These include applications translations.
 
     This script creates Windows application links for the programs that will

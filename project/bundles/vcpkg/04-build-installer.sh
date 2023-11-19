@@ -6,7 +6,7 @@
 #   - NSIS makensis program for Windows.
 #   - DumpBin from VSCommunity C++ profiling tools.
 #   - ImageMagick for the rune-time dll.
-#   - Msys2 CLI tools for Windows.
+#   - Msys2/Rsync CLI tools for Windows.
 #
 # SPDX-FileCopyrightText: 2015-2023 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -277,6 +277,7 @@ $VCPKG_INSTALL_PREFIX/bin/showfoto.exe                     \
 $VCPKG_INSTALL_PREFIX/bin/kbuildsycoca6.exe                \
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin/QtWebEngineProcess.exe \
 "
+
 for app in $EXE_FILES ; do
 
     cp $app $BUNDLEDIR/
