@@ -225,7 +225,7 @@ BUGFIXES:
 209 ==> 456926 - Program crash when deleting a tag while new items are being scanned.
 210 ==> 459403 - Since upgrading to 7.8.0 digikam will no longer start. see attachment for error message.
 211 ==> 465002 - Program crash when scanning albums.
-212 ==> 
+212 ==> 469688 - Unable to launch the software after installation.
 213 ==> 
 214 ==> 
 215 ==> 
