@@ -222,10 +222,16 @@ BUGFIXES:
 206 ==> 477203 - Two maps - horizontal and Two maps - vertical it works the other way around.
 207 ==> 449637 - Freeze due to Error in Exiv2::XMLValidator.
 208 ==> 450348 - Crash when open properties of a tag.
-209 ==> 
+209 ==> 456926 - Program crash when deleting a tag while new items are being scanned.
 210 ==> 
 211 ==> 
 212 ==> 
 213 ==> 
 214 ==> 
 215 ==> 
+216 ==> 
+217 ==> 
+218 ==> 
+219 ==> 
+220 ==> 
+221 ==> 
