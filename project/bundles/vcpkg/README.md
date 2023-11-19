@@ -176,6 +176,33 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
 
     This script re-build only digiKam and installers 64 bits.
 
+* SSH CONFIGURATION
+
+    Git-bash include openssh for windows which needs some tune to work properly with the remote KDE servers:
+
+    - To register the git credential with your RSA key stored in C:/Users/${USER}/.ssh,
+      create a C:/Users/${USER}/.bash_profile with this code:
+
+    ```
+    eval `ssh-agent`
+
+    added_keys=`ssh-add -l`
+    echo "Registered ssh keys: $added_keys"
+
+    if [ ! $(echo $added_keys | grep -o -e "$HOME/.ssh/id_rsa") ] ; then
+        ssh-add "$HOME/.ssh/id_rsa" &
+    fi
+    ```
+    Git password will be ask once when the git-bash terminal session will be open.
+
+    - To prevent unexpected disconnections from the remote server,
+      create a C:/Users/{USER}/.ssh/ssh_config with this settings:
+
+    ```
+    Host *
+    ServerAliveInterval 20
+    TCPKeepAlive no
+    ```
 
 * LICENSES
 
