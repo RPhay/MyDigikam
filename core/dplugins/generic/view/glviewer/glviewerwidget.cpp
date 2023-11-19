@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * SPDX-FileCopyrightText: 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -516,7 +516,7 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
         {
             middlepoint = QPoint(width() / 2, height() / 2);
 
-            if (d->texture->setNewSize(d->zoomsize))
+            if (d->texture && d->texture->setNewSize(d->zoomsize))
             {
                 downloadTexture(d->texture); // load full resolution image
             }
@@ -532,7 +532,7 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
         {
             middlepoint = QPoint(width() / 2, height() / 2);
 
-            if (d->texture->setNewSize(d->zoomsize))
+            if (d->texture && d->texture->setNewSize(d->zoomsize))
             {
                 downloadTexture(d->texture); // load full resolution image
             }
@@ -546,14 +546,18 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
 
         case Qt::Key_O:
         {
-            d->texture->loadFullSize();
-
-            if (d->texture->setNewSize(QSize(0, 0)))
+            if (d->texture)
             {
-                downloadTexture(d->texture); // load full resolution image
+                d->texture->loadFullSize();
+
+                if (d->texture->setNewSize(QSize(0, 0)))
+                {
+                    downloadTexture(d->texture); // load full resolution image
+                }
+
+                d->texture->zoomToOriginal();
             }
 
-            d->texture->zoomToOriginal();
             update();
 
             break;
@@ -608,9 +612,9 @@ void GLViewerWidget::keyReleaseEvent(QKeyEvent* e)
             {
                 unsetCursor();
 
-                if (d->texture->setNewSize(QSize(0, 0)))
+                if (d->texture && d->texture->setNewSize(QSize(0, 0)))
                 {
-                    downloadTexture(d->texture); //load full resolution image
+                    downloadTexture(d->texture); // load full resolution image
                 }
 
                 update();
@@ -742,7 +746,7 @@ void GLViewerWidget::mousePressEvent(QMouseEvent* e)
     // scale down d->texture  for fast zooming
     // d->texture will be set to original size on mouse up
 
-    if (d->texture->setNewSize(d->zoomsize))
+    if (d->texture && d->texture->setNewSize(d->zoomsize))
     {
         // load downsampled image
 
@@ -854,7 +858,7 @@ void GLViewerWidget::mouseReleaseEvent(QMouseEvent*)
     d->timerMouseMove.start(2000);
     unsetCursor();
 
-    if (d->texture->setNewSize(QSize(0, 0)))
+    if (d->texture && d->texture->setNewSize(QSize(0, 0)))
     {
         // load full resolution image
 
