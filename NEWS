@@ -223,7 +223,7 @@ BUGFIXES:
 207 ==> 449637 - Freeze due to Error in Exiv2::XMLValidator.
 208 ==> 450348 - Crash when open properties of a tag.
 209 ==> 456926 - Program crash when deleting a tag while new items are being scanned.
-210 ==> 
+210 ==> 459403 - Since upgrading to 7.8.0 digikam will no longer start. see attachment for error message.
 211 ==> 
 212 ==> 
 213 ==> 
