@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:40+0000\n"
+"POT-Creation-Date: 2023-11-19 00:40+0000\n"
 "PO-Revision-Date: 2023-11-13 16:53+0300\n"
 "Last-Translator: Алевтина  <karashokovaaa@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -11281,16 +11281,20 @@ msgid "One map"
 msgstr "Одна карта"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item"
+#| msgid "Two maps - vertical"
 msgctxt "@item"
-msgid "Two maps - horizontal"
-msgstr "Две карты по горизонтали"
+msgid "Two maps - left and right"
+msgstr "Две карты по вертикали"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item"
+#| msgid "Two maps - horizontal"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr "Две карты по вертикали"
+msgid "Two maps - top and bottom"
+msgstr "Две карты по горизонтали"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format

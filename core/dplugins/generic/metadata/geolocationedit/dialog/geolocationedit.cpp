@@ -315,9 +315,9 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     DHBox* const hbox            = new DHBox(this);
     QLabel* const labelMapLayout = new QLabel(i18nc("@label", "Layout:"), hbox);
     d->cbMapLayout               = new QComboBox(hbox);
-    d->cbMapLayout->addItem(i18nc("@item", "One map"),               QVariant::fromValue(MapLayoutOne));
-    d->cbMapLayout->addItem(i18nc("@item", "Two maps - horizontal"), QVariant::fromValue(MapLayoutHorizontal));
-    d->cbMapLayout->addItem(i18nc("@item", "Two maps - vertical"),   QVariant::fromValue(MapLayoutVertical));
+    d->cbMapLayout->addItem(i18nc("@item", "One map"),                   QVariant::fromValue(MapLayoutOne));
+    d->cbMapLayout->addItem(i18nc("@item", "Two maps - left and right"), QVariant::fromValue(MapLayoutVertical));
+    d->cbMapLayout->addItem(i18nc("@item", "Two maps - top and bottom"), QVariant::fromValue(MapLayoutHorizontal));
     labelMapLayout->setBuddy(d->cbMapLayout);
 
     d->progressBar          = new StatusProgressBar(hbox);

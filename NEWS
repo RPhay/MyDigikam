@@ -219,7 +219,7 @@ BUGFIXES:
 203 ==> 453815 - Small glitch with Exiftool tab title in metadata side-bar.
 204 ==> 471299 - Crash when opening the setup dialog.
 205 ==> 477156 - Display database configuration dialog again.
-206 ==> 
+206 ==> 477203 - Two maps - horizontal and Two maps - vertical it works the other way around.
 207 ==> 
 208 ==> 
 209 ==> 

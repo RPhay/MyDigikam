@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 00:40+0000\n"
+"POT-Creation-Date: 2023-11-19 00:40+0000\n"
 "PO-Revision-Date: 2023-04-22 19:09+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -11122,14 +11122,15 @@ msgstr "Izar bat"
 #, fuzzy, kde-format
 #| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - horizontal"
+msgid "Two maps - left and right"
 msgstr "Irauli horizontalki"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Flip horizontally"
 msgctxt "@item"
-msgid "Two maps - vertical"
-msgstr ""
+msgid "Two maps - top and bottom"
+msgstr "Irauli horizontalki"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, fuzzy, kde-format
