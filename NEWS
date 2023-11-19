@@ -229,7 +229,7 @@ BUGFIXES:
 213 ==> 473436 - digiKam Sometimes hangs when the editor saves.
 214 ==> 473961 - The program get close when i am trying to qualify several images automatically at once.
 215 ==> 456849 - Malfunctions increase with more folders.
-216 ==> 
+216 ==> 438429 - digiKam freeze whenever I confirm People Tags using a multiple selection with many faces (aprox 20).
 217 ==> 
 218 ==> 
 219 ==> 
