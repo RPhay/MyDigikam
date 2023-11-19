@@ -227,7 +227,7 @@ BUGFIXES:
 211 ==> 465002 - Program crash when scanning albums.
 212 ==> 469688 - Unable to launch the software after installation.
 213 ==> 473436 - digiKam Sometimes hangs when the editor saves.
-214 ==> 
+214 ==> 473961 - The program get close when i am trying to qualify several images automatically at once.
 215 ==> 
 216 ==> 
 217 ==> 
