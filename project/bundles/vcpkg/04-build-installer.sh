@@ -241,11 +241,14 @@ for pdb in $PDB_FILES ; do
         echo "   (ND del) ==> $pdb"
         rm -rf "$pdb"
 
-    elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
-
-        # In debug preserve digiKam Plugins
-
-        echo "   (Skip) ==> $pdb"
+#    NOTE: due to size limitation of NSIS archive to 2Gb,
+#    the number of extra debug symbols must be limited.
+#
+#    elif [[ "$pdb" = *"plugins/digikam"* ]] ; then
+#
+#        # In debug preserve digiKam Plugins
+#
+#        echo "   (Skip) ==> $pdb"
 
     else
 
