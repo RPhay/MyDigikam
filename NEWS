@@ -226,7 +226,7 @@ BUGFIXES:
 210 ==> 459403 - Since upgrading to 7.8.0 digikam will no longer start. see attachment for error message.
 211 ==> 465002 - Program crash when scanning albums.
 212 ==> 469688 - Unable to launch the software after installation.
-213 ==> 
+213 ==> 473436 - digiKam Sometimes hangs when the editor saves.
 214 ==> 
 215 ==> 
 216 ==> 
