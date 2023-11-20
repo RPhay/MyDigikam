@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 00:40+0000\n"
-"PO-Revision-Date: 2023-11-16 13:56+0100\n"
+"PO-Revision-Date: 2023-11-19 08:56+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.4.1\n"
 
@@ -11127,20 +11127,16 @@ msgid "One map"
 msgstr "En zemljevid"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:319
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - vertical"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "Dva zemljevida - navpično"
+msgstr "Dva zemljevida - levo in desno"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Two maps - horizontal"
+#, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Dva zemljevida - vodoravno"
+msgstr "Dva zemljevida - na vrhu in spodaj"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:362
 #, kde-format

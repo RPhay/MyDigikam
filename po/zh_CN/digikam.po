@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 00:40+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"PO-Revision-Date: 2023-11-19 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -497,7 +497,7 @@ msgstr "全屏显示"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:63
 #: core/app/views/preview/itempreviewview.cpp:192
@@ -505,7 +505,7 @@ msgstr "向左旋转"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/items/overlays/itemselectionoverlay.cpp:49
 #, kde-format
@@ -2253,43 +2253,43 @@ msgstr "正常"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/app/main/digikamapp_setup.cpp:979
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
-msgstr "180 度旋转"
+msgstr "旋转 (180 度)"
 
 #: core/app/main/digikamapp_setup.cpp:981
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/app/main/digikamapp_setup.cpp:983
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr "向右旋转/水平翻转"
+msgstr "旋转 (向右) / 翻转 (水平)"
 
 #: core/app/main/digikamapp_setup.cpp:985
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/main/digikamapp_setup.cpp:987
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr "向右旋转/垂直翻转"
+msgstr "旋转 (向右) / 翻转 (垂直)"
 
 #: core/app/main/digikamapp_setup.cpp:989
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/main/digikamapp_setup.cpp:1050
 #, kde-format
@@ -2301,13 +2301,13 @@ msgstr "旋转"
 #, kde-format
 msgctxt "@action: rotate image left"
 msgid "Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/app/main/digikamapp_setup.cpp:1061
 #, kde-format
 msgctxt "@action: rotate image right"
 msgid "Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/app/main/digikamapp_setup.cpp:1071
 #, kde-format
@@ -2319,13 +2319,13 @@ msgstr "翻转"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Horizontally"
-msgstr "水平翻转"
+msgstr "水平"
 
 #: core/app/main/digikamapp_setup.cpp:1082
 #, kde-format
 msgctxt "@action: setup"
 msgid "Vertically"
-msgstr "垂直翻转"
+msgstr "垂直"
 
 #: core/app/main/digikamapp_setup.cpp:1092
 #, kde-format
@@ -5779,10 +5779,9 @@ msgid "Enter caption text here."
 msgstr "在此输入说明文字。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
-#, fuzzy, kde-format
-#| msgid "Clean up and overwrite"
+#, kde-format
 msgid "Clean up and overwrite metadata"
-msgstr "清空并覆盖"
+msgstr "清理和覆盖元数据"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -6224,7 +6223,7 @@ msgstr "翻转"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr "水平或者垂直翻转图像"
+msgstr "翻转图像 (水平/垂直)"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
 #, kde-kuit-format
@@ -10069,7 +10068,7 @@ msgstr "勾选此项将显示黄金三角线。"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
 msgid "Flip horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:447
 #, kde-format
@@ -10079,7 +10078,7 @@ msgstr "勾选此项将水平翻转显示参考线。"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:449
 #, kde-format
 msgid "Flip vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:450
 #, kde-format
@@ -18774,14 +18773,7 @@ msgstr "字体："
 
 #. i18n: ectx: property (whatsThis), widget (DigikamGenericPrintCreatorPlugin::AdvPrintCropFrame, cropFrame)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Move the box in order to crop photos so that they fit inside the photo "
-#| "sizes you have given.  \n"
-#| "You can crop each image differently, or just click the 'Next' button to "
-#| "use the default crop \n"
-#| "setting for each photo.\n"
-#| "Enable \"Do not crop\" to avoid cropping all of the photos."
+#, kde-format
 msgid ""
 "Move the box in order to crop photos so that they fit inside the photo sizes "
 "you have given.  \n"
@@ -18813,13 +18805,13 @@ msgstr "不进行裁剪"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
 #, kde-format
 msgid "Rotate photo to the left"
-msgstr "向左旋转照片"
+msgstr "旋转照片 (向左)"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
 #, kde-format
 msgid "Rotate &left"
-msgstr "向左旋转(&L)"
+msgstr "旋转 (向左)(&L)"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, BtnCropRotateRight)
 #. i18n: ectx: property (whatsThis), widget (QPushButton, BtnCropRotateRight)
@@ -18827,13 +18819,13 @@ msgstr "向左旋转(&L)"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
 #, kde-format
 msgid "Rotate photo to the right"
-msgstr "向右旋转照片"
+msgstr "旋转照片 (向右)"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
 #, kde-format
 msgid "Rotate &right"
-msgstr "向右旋转(&R)"
+msgstr "旋转 (向右)(&R)"
 
 #. i18n: ectx: property (toolTip), widget (QToolButton, BtnPreviewPageDown)
 #. i18n: ectx: property (whatsThis), widget (QToolButton, BtnPreviewPageDown)
@@ -27363,10 +27355,9 @@ msgid "Database type is not supported."
 msgstr "数据库类型不支持。"
 
 #: core/libs/database/server/databaseserver.cpp:296
-#, fuzzy, kde-format
-#| msgid "No path to mysql server command set in configuration file."
+#, kde-format
 msgid "No path to mysql upgrade command set in configuration file."
-msgstr "配置文件中并未设置 MySQL 服务器命令的路径。"
+msgstr "配置文件中并未设置 MySQL 升级命令的路径。"
 
 #: core/libs/database/server/databaseserver.cpp:305
 #, kde-format
@@ -27406,11 +27397,9 @@ msgid "Cannot find MySQL server default configuration (mysql-global.conf)."
 msgstr "无法找到 MySQL 服务器的默认配置文件 (mysql-global.conf)。"
 
 #: core/libs/database/server/databaseserver.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "The internal MySQL database is initializing, please wait..."
-msgstr "正在处理，请稍候。"
+msgstr "内建 MySQL 数据库正在初始化，请稍候..."
 
 #: core/libs/database/server/databaseserver.cpp:551
 #, kde-format
@@ -27444,11 +27433,9 @@ msgid ""
 msgstr "无法创建数据库<p>查询错误：%1</p><p>数据库错误：%2</p>"
 
 #: core/libs/database/server/databaseserver.cpp:750
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Pre-processing is in progress, please wait."
+#, kde-format
 msgid "A MySQL database upgrade is in progress, please wait..."
-msgstr "正在处理，请稍候。"
+msgstr "正在进行 MySQL 数据库升级，请稍候..."
 
 #: core/libs/database/server/databaseserver.cpp:794
 #, kde-format
@@ -28365,12 +28352,10 @@ msgid ""
 msgstr "此可执行文件用于启动一个 MariaDB 服务器的专用实例。"
 
 #: core/libs/database/utils/widgets/mysqlupgradebinary.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "This binary file is used to start a dedicated instance of MariaDB server."
+#, kde-format
 msgid ""
 "This binary file is used to upgrade the database to current server version."
-msgstr "此可执行文件用于启动一个 MariaDB 服务器的专用实例。"
+msgstr "此二进制文件用于将数据库升级到当前服务器的版本。"
 
 #: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
@@ -30088,27 +30073,27 @@ msgstr "设置合并纹理到图像时的浮雕效果。"
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:387
 #, kde-format
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
 #, kde-format
 msgid "Rotate 180 degrees"
-msgstr "180 度旋转"
+msgstr "旋转 (180 度)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:402
 #, kde-format
 msgid "Flip Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:407
 #, kde-format
 msgid "Flip Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:412
 #, kde-format
@@ -33199,7 +33184,7 @@ msgstr "正在应用元数据"
 #: core/libs/fileactionmanager/fileactionmngr.cpp:269
 #, kde-format
 msgid "Rotating images"
-msgstr "正在旋转图像"
+msgstr "旋转图像"
 
 #: core/libs/fileactionmanager/fileactionmngr.cpp:285
 #, kde-format
@@ -33936,43 +33921,43 @@ msgstr "正常"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:871
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated by 180 Degrees"
-msgstr "旋转 180 度"
+msgstr "旋转 (180 度)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:876
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:881
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally and Rotated Left"
-msgstr "水平翻转并向左旋转"
+msgstr "翻转 (水平) 并旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:886
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:891
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically and Rotated Left"
-msgstr "垂直翻转并向左旋转"
+msgstr "翻转 (垂直) 并旋转 (向左)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:896
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:901
 #, kde-format
@@ -53030,27 +53015,27 @@ msgstr "此菜单项用于裁剪图像。请先建立选区以使用此操作。
 #, kde-format
 msgctxt "@action"
 msgid "Flip Horizontally"
-msgstr "水平翻转"
+msgstr "翻转 (水平)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:534
 #, kde-format
 msgctxt "@action"
 msgid "Flip Vertically"
-msgstr "垂直翻转"
+msgstr "翻转 (垂直)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:544
 #: core/utilities/import/views/importpreviewview.cpp:212
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:552
 #: core/utilities/import/views/importpreviewview.cpp:213
 #, kde-format
 msgctxt "@action"
 msgid "Rotate Right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #: core/utilities/import/main/importui.cpp:530
@@ -56438,10 +56423,9 @@ msgid "File Size"
 msgstr "文件体积"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:121
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in megabytes"
-msgstr "文件体积范围"
+msgstr "文件大小 (MB)"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:122
 #: core/utilities/searchwindow/searchfields_createfield.cpp:134
@@ -56451,10 +56435,9 @@ msgid "-"
 msgstr "到"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
-#, fuzzy, kde-format
-#| msgid "Size of the file"
+#, kde-format
 msgid "Size of the file in bytes"
-msgstr "文件体积范围"
+msgstr "文件大小 (B)"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:144
 #, kde-format
@@ -61523,8 +61506,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid ""
-#~ "The database is now upgraded to the current server version, this can take "
-#~ "a while."
-#~ msgstr "digiKam 数据库正在升级为当前服务器版本，这可能需要一段时间。"
