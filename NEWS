@@ -231,7 +231,12 @@ BUGFIXES:
 215 ==> 456849 - Malfunctions increase with more folders.
 216 ==> 438429 - digiKam freeze whenever I confirm People Tags using a multiple selection with many faces (aprox 20).
 217 ==> 474762 - New album (on external HDD) scan crashes at startup.
-218 ==> 
-219 ==> 
+218 ==> 437658 - Crash on windows without OpenGL.
+219 ==> 458143 - Opening a picture using OpenGL viewer generates an OpenGL error then digikam crashes.
 220 ==> 
 221 ==> 
+222 ==> 
+223 ==> 
+224 ==> 
+225 ==> 
+226 ==> 
