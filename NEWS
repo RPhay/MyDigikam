@@ -233,7 +233,7 @@ BUGFIXES:
 217 ==> 474762 - New album (on external HDD) scan crashes at startup.
 218 ==> 437658 - Crash on windows without OpenGL.
 219 ==> 458143 - Opening a picture using OpenGL viewer generates an OpenGL error then digikam crashes.
-220 ==> 
+220 ==> 460168 - Cannot start digiKam 7.8.0.
 221 ==> 
 222 ==> 
 223 ==> 
