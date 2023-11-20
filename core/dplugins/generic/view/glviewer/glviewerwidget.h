@@ -25,6 +25,7 @@
 #include <QTimer>
 #include <QWheelEvent>
 #include <QUrl>
+#include <QList>
 
 // Local includes
 
@@ -45,12 +46,13 @@ class GLViewerWidget : public QOpenGLWidget
 public:
 
     explicit GLViewerWidget(DPlugin* const plugin,
-                            DInfoInterface* const iface);
+                            DInfoInterface* const iface,
+                            const QList<QUrl>& myfiles,
+                            const QString& selectedImage);
     ~GLViewerWidget() override;
 
     void prevImage();
     void nextImage();
-    bool listOfFilesIsEmpty()                  const;
 
     OGLstate getOGLstate()                     const;
 

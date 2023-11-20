@@ -20,8 +20,6 @@
 #include <QApplication>
 #include <QScreen>
 #include <QWindow>
-#include <QUrl>
-#include <QList>
 #include <QIcon>
 #include <QPointer>
 #include <QMimeType>
@@ -62,9 +60,11 @@ public:
 
     struct Cache
     {
-        int              file_index;
-        GLViewerTexture* texture;
+        int              file_index = 0;
+        GLViewerTexture* texture    = nullptr;
     };
+
+public:
 
     enum WheelAction
     {
@@ -153,7 +153,8 @@ public:
     DPlugin*         plugin;
 };
 
-GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const iface)
+GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const iface,
+                               const QList<QUrl>& myfiles, const QString& selectedImage)
     : QOpenGLWidget(),
       d            (new Private)
 {
@@ -176,37 +177,16 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
 
     d->screenSize         = screen->size();
 
-    QList<QUrl> myfiles;                                            // pics which are displayed in imageviewer
-    QList<QUrl> selection = d->iface->currentSelectedItems();
-    QString selectedImage;                                          // selected pic in hostapp
+    // populate QStringList::d->files
 
     int foundNumber       = 0;
 
-    if      (selection.count() == 0)
-    {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no image selected, load entire album";
-        myfiles = d->iface->currentAlbumItems();
-    }
-    else if (selection.count() == 1)
-    {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "one image selected, load entire album and start with selected image";
-        selectedImage = selection.first().toLocalFile();
-        myfiles       = d->iface->currentAlbumItems();
-    }
-    else if (selection.count() > 1)
-    {
-        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "load" << selection.count() << "selected images";
-        myfiles = selection;
-    }
-
-    // populate QStringList::d->files
-
-    for (QList<QUrl>::Iterator it = myfiles.begin() ; it != myfiles.end() ; ++it)
+    Q_FOREACH (const QUrl& url, myfiles)
     {
         // find selected image in album in order to determine the first displayed image
         // in case one image was selected and the entire album was loaded
 
-        QString s = it->toLocalFile();
+        QString s = url.toLocalFile();
 
         if (s == selectedImage)
         {
@@ -228,11 +208,6 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     }
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->files.count() << "images loaded";
-
-    if (d->files.isEmpty())
-    {
-        return;
-    }
 
     showFullScreen(); // krazy:exclude=qmethods
 
@@ -285,11 +260,6 @@ void GLViewerWidget::initializeGL()
         d->cache[i].file_index = EMPTY;
         d->cache[i].texture    = new GLViewerTexture(d->iface, this);
     }
-}
-
-bool GLViewerWidget::listOfFilesIsEmpty() const
-{
-    return d->files.isEmpty();
 }
 
 void GLViewerWidget::paintGL()

@@ -151,13 +151,35 @@ void GLViewerPlugin::setup(QObject* const parent)
 
 void GLViewerPlugin::slotGLViewer()
 {
-    DInfoInterface* const iface   = infoIface(sender());
-    QPointer<GLViewerWidget> view = new GLViewerWidget(this, iface);
+    DInfoInterface* const iface = infoIface(sender());
 
-    if (view->listOfFilesIsEmpty())
+    QList<QUrl> myfiles;                                            // pics which are displayed in imageviewer
+    QList<QUrl> selection       = iface->currentSelectedItems();
+    QString selectedImage;                                          // selected pic in hostapp
+
+    if      (selection.count() == 0)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no image selected, load entire album";
+        myfiles = iface->currentAlbumItems();
+    }
+    else if (selection.count() == 1)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "one image selected, load entire album and start with selected image";
+        selectedImage = selection.first().toLocalFile();
+        myfiles       = iface->currentAlbumItems();
+    }
+    else if (selection.count() > 1)
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "load" << selection.count() << "selected images";
+        myfiles = selection;
+    }
+
+    if (myfiles.isEmpty())
     {
         return;
     }
+
+    QPointer<GLViewerWidget> view = new GLViewerWidget(this, iface, myfiles, selectedImage);
 
     switch (view->getOGLstate())
     {
@@ -170,14 +192,18 @@ void GLViewerPlugin::slotGLViewer()
         case oglNoRectangularTexture:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GL_ARB_texture_rectangle not supported";
-            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("GL_ARB_texture_rectangle not supported"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"),
+                                  i18n("GL_ARB_texture_rectangle OpenGL extension is not supported on your system"));
+            view->close();
             break;
         }
 
         case oglNoContext:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no OpenGL context found";
-            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("No OpenGL context found"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"),
+                                  i18n("No OpenGL context have been found"));
+            view->close();
             break;
         }
     }
