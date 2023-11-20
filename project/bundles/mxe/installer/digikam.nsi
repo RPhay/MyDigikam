@@ -304,7 +304,6 @@
         ;Create shortcuts
 
         CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-        SetOutPath "$INSTDIR\bin"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\${MY_PRODUCT}.lnk" "$INSTDIR\digikam.exe"
         CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Showfoto.lnk" "$INSTDIR\showfoto.exe"
 
