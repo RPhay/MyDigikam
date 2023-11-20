@@ -7,7 +7,7 @@
  * Description : setup Metadata tab.
  *
  * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
@@ -74,12 +74,12 @@ void SetupMetadata::appendSidecarsTab()
 
     QLabel* const extensionsGroupLabel = new QLabel(
                 i18nc("@info", "Add file types to be recognised as sidecars.\n"
-                      "digiKam (optionally) writes metadata to *.xmp sidecar\n"
-                      "files. Other programs might use different types, which\n"
-                      "can be specified below. digiKam will neither display these\n"
-                      "nor read from or write to them. But whenever a matching album\n"
-                      "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed,\n"
-                      "moved, copied or deleted, the same operation will be done\n"
+                      "digiKam (optionally) writes metadata to *.xmp sidecar "
+                      "files. Other programs might use different types, which "
+                      "can be specified below. digiKam will neither display these "
+                      "nor read from or write to them. But whenever a matching album "
+                      "item (e.g. \"image.dng\" for \"image.dng.pp3\") is renamed, "
+                      "moved, copied or deleted, the same operation will be done "
                       "on these sidecar files.\n"
                       "Multiple extensions must be separated by a semicolon or a space."));
     extensionsGroupLabel->setWordWrap(true);

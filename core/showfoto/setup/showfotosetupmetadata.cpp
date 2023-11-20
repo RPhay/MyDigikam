@@ -6,7 +6,7 @@
  * Date        : 2009-07-18
  * Description : setup Metadata tab.
  *
- * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -78,7 +78,7 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     setWidgetResizable(true);
 
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const panel          = new QWidget(d->tab);
     QVBoxLayout* const mainLayout = new QVBoxLayout(panel);
@@ -106,15 +106,9 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QFrame* const box       = new QFrame(panel);
-    QGridLayout* const grid = new QGridLayout(box);
+    QFrame* const box         = new QFrame(panel);
+    QGridLayout* const grid   = new QGridLayout(box);
     box->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
-
-    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://www.exiv2.org")),
-                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                          QLatin1String("digikam/data/logo-exiv2.png")),
-                                                          box);
-    exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
 
     QLabel* const explanation = new QLabel(box);
     explanation->setOpenExternalLinks(true);
@@ -138,9 +132,9 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     explanation->setText(txt);
     explanation->setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
-    grid->addWidget(exiv2LogoLabel, 0, 0, 1, 1);
-    grid->addWidget(explanation,    0, 1, 1, 2);
-    grid->setColumnStretch(1, 10);
+    grid->addWidget(explanation, 0, 0, 1, 1);
+    grid->setColumnStretch(0, 10);
+    grid->setRowStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(0);
 
@@ -167,7 +161,7 @@ ShowfotoSetupMetadata::ShowfotoSetupMetadata(QWidget* const parent)
     // --------------------------------------------------------
 
     readSettings();
-    
+
     QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
 }
 

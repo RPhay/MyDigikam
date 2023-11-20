@@ -7,7 +7,7 @@
  * Description : setup Metadata tab.
  *
  * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
- * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
@@ -24,6 +24,9 @@ void SetupMetadata::appendBehaviorTab()
 {
     QWidget* const panel            = new QWidget;
     QVBoxLayout* const mainLayout   = new QVBoxLayout;
+
+    const int spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                           QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->fieldsGroup                  = new QGroupBox;
     QGridLayout* const fieldsLayout = new QGridLayout;
@@ -173,11 +176,6 @@ void SetupMetadata::appendBehaviorTab()
     QGridLayout* const infoBoxGrid     = new QGridLayout;
     infoBox->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
-    DActiveLabel* const exiv2LogoLabel = new DActiveLabel(QUrl(QLatin1String("https://github.com/Exiv2/exiv2")),
-                                                          QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/logo-exiv2.png")),
-                                                          infoBox);
-    exiv2LogoLabel->setWhatsThis(i18nc("@info:whatsthis", "Visit Exiv2 project website"));
-
     QLabel* const explanation          = new QLabel(infoBox);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
@@ -199,11 +197,12 @@ void SetupMetadata::appendBehaviorTab()
 
     explanation->setText(txt);
 
-    infoBoxGrid->addWidget(exiv2LogoLabel, 0, 0, 1, 1);
-    infoBoxGrid->addWidget(explanation,    0, 1, 1, 2);
-    infoBoxGrid->setColumnStretch(1, 10);
-    infoBoxGrid->setRowStretch(1, 10);
+    infoBoxGrid->addWidget(explanation, 0, 0, 1, 1);
+    infoBoxGrid->setColumnStretch(0, 10);
+    infoBoxGrid->setRowStretch(0, 10);
+    infoBoxGrid->setContentsMargins(spacing, spacing, spacing, spacing);
     infoBoxGrid->setSpacing(0);
+
     infoBox->setLayout(infoBoxGrid);
 
     // --------------------------------------------------------
