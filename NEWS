@@ -234,7 +234,7 @@ BUGFIXES:
 218 ==> 437658 - Crash on windows without OpenGL.
 219 ==> 458143 - Opening a picture using OpenGL viewer generates an OpenGL error then digikam crashes.
 220 ==> 460168 - Cannot start digiKam 7.8.0.
-221 ==> 
+221 ==> 465791 - File rename does not work correctly if a single file is selected.
 222 ==> 
 223 ==> 
 224 ==> 
