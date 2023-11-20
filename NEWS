@@ -237,9 +237,9 @@ BUGFIXES:
 221 ==> 465791 - File rename does not work correctly if a single file is selected.
 222 ==> 459875 - Properties popup not displaying details.
 223 ==> 453880 - Updated to version 7.6.0 and now there are no thumbnails displaying.
-224 ==> 
-225 ==> 
-226 ==> 
+224 ==> 475432 - Deleting impossible.
+225 ==> 475469 - Photos deleting.
+226 ==> 475525 - Problem with delete file permission .dtrash.
 227 ==> 
 228 ==> 
 229 ==> 
