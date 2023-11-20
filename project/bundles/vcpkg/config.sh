@@ -85,4 +85,4 @@ DK_SIGN=0
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
 DK_UPLOADURL="digikam@tinami.kde.org"
-DK_UPLOADDIR="/srv/archives/files/digikam/unstable"     # Qt6 version is considerated unstable for the moment.
+DK_UPLOADDIR="/srv/archives/files/digikam"

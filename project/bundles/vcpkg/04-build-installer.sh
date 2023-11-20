@@ -359,10 +359,10 @@ echo -e "\n---------- Build NSIS installer and Portable archive\n"
 
 mkdir -p $ORIG_WD/bundle
 
-TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.exe
-PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.tar.xz
-CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64-Qt6$DEBUG_SUF.sum
-rm -f $ORIG_WD/bundle/*Win64-Qt6$DEBUG_SUF* || true
+TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.exe
+PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.tar.xz
+CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_SUBVER-Win64$DEBUG_SUF.sum
+rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 
 cd $ORIG_WD/installer
 
@@ -444,8 +444,8 @@ if [ "$DK_UPLOAD" = 1 ] ; then
 
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.exe*"
-    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64-Qt6$DEBUG_SUF.tar.xz*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.exe*"
+    sftp -q $DK_UPLOADURL:$DK_UPLOADDIR <<< "rm *-Win64$DEBUG_SUF.tar.xz*"
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
 

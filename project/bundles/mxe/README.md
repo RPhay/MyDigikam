@@ -6,6 +6,8 @@
     These scripts follow instructions from Qt bundle deployment for Windows as shared libraries
     available at this url: http://doc.qt.io/qt-5/windows-deployment.html
 
+    Important: the MXE tool-chain is deprecated since 8.2.0 and have been replaced by VCPKG.
+
 * AUTHORS
 
     (c) 2015-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
