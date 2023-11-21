@@ -240,9 +240,13 @@ BUGFIXES:
 224 ==> 475432 - Deleting impossible.
 225 ==> 475469 - Photos deleting.
 226 ==> 475525 - Problem with delete file permission .dtrash.
-227 ==> 
-228 ==> 
-229 ==> 
+227 ==> 397864 - Print creator aborts when export to PDF.
+228 ==> 434341 - Print Creator has a default of "Print to PDF" but "Page Settings" won't work.
+229 ==> 474257 - PrintCreator does not save page settings set in the dialog.
 230 ==> 
 231 ==> 
-
+232 ==> 
+233 ==> 
+234 ==> 
+235 ==> 
+236 ==> 
