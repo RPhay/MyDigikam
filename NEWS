@@ -240,9 +240,19 @@ BUGFIXES:
 224 ==> 475432 - Deleting impossible.
 225 ==> 475469 - Photos deleting.
 226 ==> 475525 - Problem with delete file permission .dtrash.
-227 ==> 
-228 ==> 
-229 ==> 
-230 ==> 
-231 ==> 
-
+227 ==> 397864 - Print creator aborts when export to PDF.
+228 ==> 434341 - Print Creator has a default of "Print to PDF" but "Page Settings" won't work.
+229 ==> 420508 - Closing a Menu leaves dotted line.
+230 ==> 466134 - Improve task progress information.
+231 ==> 414572 - Playing video stuttering in fullscreen mode / slideshow.
+232 ==> 472133 - At 4k resolution, high resolution adaptation mode is selected, and some window fonts are too small.
+233 ==> 
+234 ==> 
+235 ==> 
+236 ==> 
+237 ==> 
+238 ==> 
+239 ==> 
+240 ==> 
+241 ==> 
+242 ==> 

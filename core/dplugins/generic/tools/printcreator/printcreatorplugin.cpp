@@ -6,7 +6,7 @@
  * Date        : 2018-07-30
  * Description : a plugin to create print compositions.
  *
- * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -91,7 +91,7 @@ QList<DPluginAuthor> PrintCreatorPlugin::authors() const
                              i18n("Contributor"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2020"),
+                             QString::fromUtf8("(C) 2004-2023"),
                              i18n("Developer and Maintainer"))
             ;
 }
