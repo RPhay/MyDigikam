@@ -244,9 +244,15 @@ BUGFIXES:
 228 ==> 434341 - Print Creator has a default of "Print to PDF" but "Page Settings" won't work.
 229 ==> 420508 - Closing a Menu leaves dotted line.
 230 ==> 466134 - Improve task progress information.
-231 ==> 
+231 ==> 414572 - Playing video stuttering in fullscreen mode / slideshow.
 232 ==> 
 233 ==> 
 234 ==> 
 235 ==> 
 236 ==> 
+237 ==> 
+238 ==> 
+239 ==> 
+240 ==> 
+241 ==> 
+242 ==> 
