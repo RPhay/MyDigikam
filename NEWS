@@ -243,7 +243,7 @@ BUGFIXES:
 227 ==> 397864 - Print creator aborts when export to PDF.
 228 ==> 434341 - Print Creator has a default of "Print to PDF" but "Page Settings" won't work.
 229 ==> 420508 - Closing a Menu leaves dotted line.
-230 ==> 
+230 ==> 466134 - Improve task progress information.
 231 ==> 
 232 ==> 
 233 ==> 
