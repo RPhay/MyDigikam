@@ -32,7 +32,7 @@ namespace DigikamGenericPrintCreatorPlugin
 
 AdvPrintSettings::AdvPrintSettings()
     : selMode           (IMAGES),
-      printerName       (outputName(FILE)),
+      printerName       (outputName(FILES)),
 
       /// Select a different page to force a refresh in initPhotoSizes.
       pageSize          (QSizeF(-1, -1)),
@@ -71,7 +71,7 @@ void AdvPrintSettings::readSettings(KConfigGroup& group)
     savedPhotoSize    = group.readEntry("PhotoSize",
                         QString());
     printerName       = group.readEntry("Printer",
-                        outputName(FILE));
+                        outputName(FILES));
     captionType       = (CaptionType)group.readEntry(QLatin1String("CaptionType"),
                         (int)NONE);
     captionColor      = group.readEntry(QLatin1String("CaptionColor"),
