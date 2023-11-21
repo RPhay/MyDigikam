@@ -3,7 +3,7 @@ digiKam 8.2.0 - Release date: 2023-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-Libraw : Update to snapshot 30/07/2023
+Libraw : Update to snapshot 21/11/2023
 Bundles: MacOS PKG is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Linux AppImage is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
 Bundles: Windows installer is now based on Qt framework 5.15.11 and KDE frameworks 5.110.
