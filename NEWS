@@ -245,7 +245,7 @@ BUGFIXES:
 229 ==> 420508 - Closing a Menu leaves dotted line.
 230 ==> 466134 - Improve task progress information.
 231 ==> 414572 - Playing video stuttering in fullscreen mode / slideshow.
-232 ==> 
+232 ==> 472133 - At 4k resolution, high resolution adaptation mode is selected, and some window fonts are too small.
 233 ==> 
 234 ==> 
 235 ==> 
